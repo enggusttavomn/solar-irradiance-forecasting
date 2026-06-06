@@ -1,0 +1,81 @@
+"""Criacao de features temporais e divisao cronologica treino/teste."""
+
+from __future__ import annotations
+
+import pandas as pd
+
+
+def criar_features_temporais(
+    dados: pd.DataFrame,
+    lags: tuple[int, ...] = (1, 2, 3, 7),
+    moving_windows: tuple[int, ...] = (3, 7, 30),
+) -> tuple[pd.DataFrame, list[str]]:
+    """Cria lags, medias moveis e alvo do dia seguinte sem vazamento de dados.
+
+    Args:
+        dados: DataFrame com colunas ``data``, ``ghi`` e ``ghi_normalizado``.
+        lags: Defasagens usadas como entradas do modelo.
+        moving_windows: Janelas das medias moveis.
+
+    Returns:
+        DataFrame com as features criadas e lista de colunas de entrada.
+    """
+    dados = dados.copy()
+    feature_columns: list[str] = []
+
+    # Lags: usam apenas valores observados antes do instante previsto.
+    for lag in lags:
+        coluna = f"ghi_t-{lag}"
+        dados[coluna] = dados["ghi_normalizado"].shift(lag)
+        feature_columns.append(coluna)
+
+    # Medias moveis: shift(1) remove o valor do proprio dia da janela.
+    valores_passados = dados["ghi_normalizado"].shift(1)
+    for janela in moving_windows:
+        coluna = f"ghi_media_movel_{janela}d"
+        dados[coluna] = valores_passados.rolling(window=janela, min_periods=janela).mean()
+        feature_columns.append(coluna)
+
+    # Alvo: o modelo recebe o dia t e preve o GHI normalizado do dia t+1.
+    dados["data_alvo"] = dados["data"].shift(-1)
+    dados["ghi_alvo"] = dados["ghi_normalizado"].shift(-1)
+    dados["ghi_alvo_quantizado"] = dados["ghi_quantizado"].shift(-1)
+    dados["ghi_alvo_original"] = dados["ghi"].shift(-1)
+
+    dados = dados.dropna(subset=feature_columns + ["ghi_alvo"]).reset_index(drop=True)
+    return dados, feature_columns
+
+
+def dividir_treino_teste_temporal(
+    dados: pd.DataFrame,
+    feature_columns: list[str],
+    target_column: str = "ghi_alvo",
+    train_ratio: float = 0.8,
+):
+    """Divide a base em treino e teste mantendo a ordem temporal.
+
+    Args:
+        dados: Base supervisionada ja ordenada cronologicamente.
+        feature_columns: Colunas usadas como entradas.
+        target_column: Coluna alvo.
+        train_ratio: Proporcao inicial da serie usada no treino.
+
+    Returns:
+        Tupla ``X_train, X_test, y_train, y_test, dados_treino, dados_teste``.
+    """
+    if not 0 < train_ratio < 1:
+        raise ValueError("train_ratio deve estar entre 0 e 1.")
+
+    train_size = int(len(dados) * train_ratio)
+    if train_size == 0 or train_size == len(dados):
+        raise ValueError("A serie nao tem observacoes suficientes para treino e teste.")
+
+    dados_treino = dados.iloc[:train_size].copy()
+    dados_teste = dados.iloc[train_size:].copy()
+
+    X_train = dados_treino[feature_columns]
+    X_test = dados_teste[feature_columns]
+    y_train = dados_treino[target_column]
+    y_test = dados_teste[target_column]
+
+    return X_train, X_test, y_train, y_test, dados_treino, dados_teste
