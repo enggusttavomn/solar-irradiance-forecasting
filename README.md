@@ -1,711 +1,193 @@
 # TCC - Previsão Diária de GHI com Machine Learning
 
-Este repositório contém um pipeline completo para previsão diária de **GHI** (*Global Horizontal Irradiance*, ou Irradiância Solar Global Horizontal) usando modelos de Machine Learning.
+Pipeline completo para prever a **Irradiância Global Horizontal (GHI) média do
+dia seguinte** em dez localidades associadas a fábricas de veículos elétricos.
 
-O projeto foi organizado para servir como base do Trabalho de Conclusão de Curso (TCC), com código-fonte modular, notebooks explicativos, dados de entrada, relatórios HTML e testes automatizados.
+O projeto usa dados oficiais do **NLR/NSRDB**, transforma a série histórica em
+features temporais e compara dois modelos de regressão:
 
-## Objetivo do Projeto
+- XGBoost;
+- rede neural MLP.
 
-O objetivo é prever o valor diário de GHI do dia seguinte a partir de uma série temporal histórica. Para isso, o pipeline:
+Além do código de treinamento, o repositório contém dados auditáveis, testes,
+notebooks explicativos, resultados, gráficos e relatórios HTML.
 
-1. Lê dados brutos de GHI em CSV, Excel ou Parquet.
-2. Limpa e padroniza a série temporal.
-3. Agrega os dados para resolução diária, quando necessário.
-4. Quantiza os valores de GHI em 128 níveis.
-5. Normaliza os valores para o intervalo de 0 a 1.
-6. Cria features temporais, como lags e médias móveis.
-7. Divide a base em treino e teste respeitando a ordem cronológica.
-8. Treina os modelos XGBoost e MLP.
-9. Calcula métricas de avaliação.
-10. Salva previsões, modelos treinados, gráficos e relatórios.
-
-## Estrutura Geral
+## Visão rápida
 
 ```text
-.
-|-- README.md
-|-- requirements.txt
-|-- pytest.ini
-|-- .gitignore
-|-- .gitattributes
-|-- .env
-|-- treinamento_principal.py
-|-- treinar_todas_localidades.py
-|-- codigo_fonte/
-|   |-- __init__.py
-|   |-- configuracao.py
-|   |-- utilitarios.py
-|   |-- preprocessamento.py
-|   |-- features.py
-|   |-- modelos.py
-|   |-- avaliacao.py
-|   +-- graficos.py
-|-- dados/
-|   |-- brutos/
-|   |   +-- localidades_ev/
-|   +-- processados/
-|-- cadernos_jupyter/
-|   |-- 00_coleta_dados_localidades.ipynb
-|   |-- 01_explicacao_teorica_pipeline.ipynb
-|   +-- 02_resultados_todas_localidades.ipynb
-|-- relatorios/
-|   |-- 01_explicacao_teorica_pipeline.html
-|   +-- 02_resultados_todas_localidades.html
-|-- resultados/
-|-- testes/
-+-- tools/
+Dados horários NLR/NSRDB
+        ↓
+Média diária de GHI
+        ↓
+Validação e limpeza
+        ↓
+Quantização em 128 níveis
+        ↓
+Normalização para [0, 1]
+        ↓
+Lags + médias móveis
+        ↓
+Previsão do dia seguinte
+        ↓
+Treino cronológico de XGBoost e MLP
+        ↓
+Métricas, previsões, modelos e gráficos
 ```
 
-## Explicação dos Arquivos da Raiz
-
-### `README.md`
-
-Arquivo de documentação principal do projeto. Explica a finalidade do repositório, a estrutura de pastas, como instalar dependências, como executar scripts, como rodar testes e qual é o papel de cada arquivo.
-
-### `requirements.txt`
-
-Lista as bibliotecas Python necessárias para executar o projeto:
-
-- `pandas`: manipulação de tabelas e séries temporais.
-- `numpy`: cálculos numéricos.
-- `pvlib`: coleta e tratamento de dados solares, incluindo integracao com NLR/NSRDB.
-- `python-dotenv`: leitura das variáveis do arquivo `.env`.
-- `openpyxl`: leitura de arquivos Excel.
-- `pytest`: execução dos testes automatizados.
-- `matplotlib`: geração de gráficos.
-- `seaborn`: estilo visual complementar para gráficos.
-- `scikit-learn`: modelo MLP e métricas auxiliares.
-- `xgboost`: modelo XGBoost.
-- `joblib`: salvamento dos modelos treinados.
-- `jupyter`: abertura e execução dos notebooks.
-- `nbconvert`: exportação dos notebooks para HTML.
-- `pillow`: suporte a imagens em alguns gráficos dos notebooks.
-- `cartopy`: geração de mapas nos notebooks.
-
-### `pytest.ini`
-
-Configura a raiz do projeto no caminho de importação e limita a descoberta
-automática de testes à pasta `testes/`.
-
-### `.gitignore`
-
-Define arquivos e pastas que não devem ser versionados, como:
-
-- `.env`, por conter credenciais.
-- `__pycache__/` e arquivos `.pyc`.
-- ambientes virtuais como `venv/` e `.venv/`.
-- caches do Jupyter e pytest.
-- modelos treinados e resultados gerados automaticamente.
-
-### `.gitattributes`
-
-Padroniza arquivos de texto com final de linha LF. Isso mantém os hashes
-SHA-256 dos CSVs estáveis entre Linux e Windows.
-
-### `.env`
-
-Arquivo local para credenciais da API NLR/NSRDB. Os nomes historicos das
-variaveis (`NREL_API_KEY` e `NREL_EMAIL`) foram mantidos por compatibilidade.
-O arquivo não deve ser enviado para repositórios públicos.
-
-Formato esperado:
-
-```env
-NREL_API_KEY=sua_chave
-NREL_EMAIL=seu_email
-```
-
-Para o treinamento das 10 localidades, os CSVs locais em
-`dados/brutos/localidades_ev/` só são aceitos quando têm cobertura diária
-completa, unidade `W/m2` e metadados compatíveis com a coleta NLR/NSRDB.
-Arquivos sintéticos são rejeitados e precisam ser baixados novamente pela API.
-
-O recorte oficial atual é 2019-2024. Em 6 de junho de 2026, o produto GOES
-Aggregated PSM v4 ainda disponibiliza anos históricos somente até 2024; 2025
-não é preenchido artificialmente.
-
-### `treinamento_principal.py`
-
-Script principal para executar o pipeline em uma única série de GHI.
-
-Ele faz:
-
-- criação das pastas padrão;
-- carregamento de um arquivo informado por `--data-path` ou busca automática de um arquivo de dados;
-- preparação da base de modelagem;
-- divisão temporal treino/teste;
-- treinamento de XGBoost e MLP;
-- cálculo das métricas;
-- salvamento dos modelos, previsões, métricas e gráficos.
-
-Exemplo:
-
-```bash
-python treinamento_principal.py --data-path dados/brutos/localidades_ev/byd_camacari.csv
-```
-
-Esse comando exige que o CSV em `dados/brutos/localidades_ev/` tenha proveniência NLR/NSRDB validável. Se o arquivo for antigo/sintético, execute antes `python treinar_todas_localidades.py --somente-download --forcar-download`.
-
-Também é possível executar sem informar arquivo:
-
-```bash
-python treinamento_principal.py
-```
-
-Nesse caso, o script procura automaticamente arquivos tabulares nas pastas de dados.
-
-### `treinar_todas_localidades.py`
-
-Script para treinar e avaliar os modelos nas 10 localidades de fábricas de veículos elétricos.
-
-Ele usa a lista interna `LOCALIDADES`, que contém:
-
-- nome da localidade;
-- país;
-- latitude;
-- longitude.
-
-Para cada localidade, o script:
-
-- procura o CSV correspondente em `dados/brutos/localidades_ev/`;
-- usa o cadastro auditavel de coordenadas e fontes em `codigo_fonte/localidades_ev.py`;
-- valida se o CSV local foi coletado da API NLR/NSRDB;
-- se o arquivo não existir ou falhar na validação, tenta coletar dados da API NLR/NSRDB;
-- se a API falhar, interrompe a execução sem gerar dados sintéticos;
-- prepara a série temporal;
-- treina XGBoost e MLP;
-- salva modelos por localidade;
-- salva previsões;
-- gera gráficos;
-- cria tabelas comparativas finais.
-
-O notebook `02_resultados_todas_localidades.ipynb` confere ainda os hashes
-SHA-256 do manifesto, as fontes oficiais das fabricas, os elementos do
-OpenStreetMap usados nas coordenadas e a distancia ate o ponto da grade NSRDB
-antes de liberar os resultados de Machine Learning.
-
-Exemplo:
-
-```bash
-python treinar_todas_localidades.py
-```
-
-Para validar apenas a origem dos CSVs locais:
-
-```bash
-python treinar_todas_localidades.py --validar-dados
-```
-
-Para baixar novamente todos os CSVs pela API, ignorando os arquivos locais:
-
-```bash
-python treinar_todas_localidades.py --somente-download --forcar-download
-```
-
-## Pasta `codigo_fonte/`
-
-Contém os módulos Python reutilizados pelos scripts e notebooks. A ideia é deixar a lógica principal fora dos notebooks, de forma organizada e testável.
-
-### `codigo_fonte/__init__.py`
-
-Marca `codigo_fonte` como um pacote Python. Isso permite importar módulos com:
-
-```python
-from codigo_fonte.preprocessamento import preparar_serie_temporal
-```
-
-### `codigo_fonte/configuracao.py`
-
-Centraliza os caminhos padrão do projeto.
-
-Define constantes como:
-
-- `PROJECT_ROOT`
-- `PASTA_DADOS`
-- `PASTA_DADOS_BRUTOS`
-- `PASTA_DADOS_PROCESSADOS`
-- `PASTA_RESULTADOS`
-- `PASTA_FIGURAS`
-- `PASTA_METRICAS`
-- `PASTA_MODELOS`
-- `PASTA_RELATORIOS`
-- `PASTA_TESTES`
-- `PASTA_TOOLS`
-
-Também fornece:
-
-- `criar_pastas()`: cria as pastas necessárias para execução do pipeline.
-- `garantir_diretorios()`: alias mantido para compatibilidade com versões anteriores.
-
-### `codigo_fonte/utilitarios.py`
-
-Contém funções auxiliares de uso geral.
-
-Função principal:
-
-- `localizar_arquivo_dados()`: procura automaticamente arquivos `.csv`, `.xlsx`, `.xls` ou `.parquet` nas pastas de dados. A busca é recursiva, então também encontra arquivos dentro de `dados/brutos/localidades_ev/`.
-
-### `codigo_fonte/preprocessamento.py`
-
-Responsável por leitura, limpeza, coleta, quantização e normalização da série de GHI.
-
-Principais componentes:
-
-- `PreparationResult`: dataclass que guarda o resultado da preparação da série.
-- `detectar_colunas(df)`: identifica automaticamente a coluna de data e a coluna de GHI.
-- `limpar_serie_ghi(df)`: padroniza a base para as colunas `data` e `ghi`.
-- `garantir_resolucao_diaria(df)`: agrega dados para frequência diária usando média.
-- `encontrar_arquivo_ghi()`: procura um arquivo de GHI no projeto.
-- `coletar_ghi_nrel(...)`: coleta dados da API NSRDB/NLR usando `pvlib`.
-- `carregar_serie_ghi(data_path=None)`: carrega dados locais ou tenta usar a API.
-- `quantizar_ghi(...)`: transforma valores contínuos de GHI em níveis discretos de 0 a 127.
-- `normalizar_minmax(...)`: normaliza valores para o intervalo `[0, 1]`.
-- `preparar_serie_temporal(...)`: executa o pré-processamento completo e cria a base final de modelagem.
-
-### `codigo_fonte/features.py`
-
-Cria as variáveis de entrada usadas pelos modelos.
-
-Funções:
-
-- `criar_features_temporais(...)`: cria lags, médias móveis e alvo do dia seguinte.
-- `dividir_treino_teste_temporal(...)`: separa treino e teste mantendo a ordem temporal.
-
-Features criadas:
-
-- `ghi_t-1`
-- `ghi_t-2`
-- `ghi_t-3`
-- `ghi_t-7`
-- `ghi_media_movel_3d`
-- `ghi_media_movel_7d`
-- `ghi_media_movel_30d`
-- `ghi_alvo`
-
-### `codigo_fonte/modelos.py`
-
-Contém as funções de treinamento e salvamento dos modelos.
-
-Funções:
-
-- `treinar_xgboost(X_train, y_train)`: treina um `XGBRegressor`.
-- `treinar_mlp(X_train, y_train)`: treina um `MLPRegressor`.
-- `salvar_modelo(model, output_path)`: salva o modelo treinado em `.joblib`.
-
-Modelos usados:
-
-- **XGBoost**: modelo baseado em árvores de decisão com gradient boosting.
-- **MLP**: rede neural artificial do tipo *Multi-Layer Perceptron*.
-
-### `codigo_fonte/avaliacao.py`
-
-Calcula métricas e salva previsões.
-
-Funções:
-
-- `calcular_metricas(y_true, y_pred, modelo)`: calcula MAE, MSE, RMSE e R².
-- `salvar_metricas(metricas, output_path)`: salva uma tabela CSV com as métricas.
-- `salvar_previsoes(datas, y_true, predicoes, output_dir)`: salva CSVs de previsões por modelo e uma tabela comparativa.
-
-Métricas:
-
-- **MAE**: erro absoluto médio.
-- **MSE**: erro quadrático médio.
-- **RMSE**: raiz do erro quadrático médio.
-- **R²**: coeficiente de determinação.
-
-### `codigo_fonte/graficos.py`
-
-Gera gráficos de avaliação dos modelos.
-
-Funções:
-
-- `gerar_grafico_temporal(...)`: compara valores reais e previstos ao longo do tempo.
-- `gerar_grafico_real_vs_previsto(...)`: gera gráfico temporal para um modelo específico.
-- `gerar_grafico_dispersao(...)`: gera dispersão entre real e previsto.
-- `salvar_graficos(...)`: salva todos os gráficos obrigatórios.
-
-## Pasta `dados/`
-
-Armazena dados brutos e dados processados.
-
-### `dados/brutos/localidades_ev/`
-
-Contém os CSVs de entrada das localidades de fábricas de veículos elétricos.
-
-Arquivos atuais:
-
-- `byd_camacari.csv`
-- `tesla_gigafactory_nevada.csv`
-- `tesla_gigafactory_texas.csv`
-- `hyundai_metaplant_georgia.csv`
-- `rivian_normal.csv`
-- `tesla_fremont_factory.csv`
-- `lucid_amp_1_casa_grande.csv`
-- `gm_factory_zero.csv`
-- `ford_rouge_electric_vehicle_center.csv`
-- `bmw_san_luis_potosi.csv`
-
-Formato validado para as 10 localidades:
-
-```csv
-data,ghi,localidade,pais,lat,lon,ano,fonte_dados,produto_dados,versao_dados,endpoint_api,intervalo_minutos,agregacao,unidade_ghi,lat_grade_nsrdb,lon_grade_nsrdb
-2019-01-01,304.98,BYD Camacari,Brasil,-12.6977,-38.324,2019,NLR/NSRDB,GOES Aggregated PSM v4,4.1.2,https://developer.nlr.gov/api/nsrdb/v2/solar/nsrdb-GOES-aggregated-v4-0-0-download.csv,60,media_diaria,W/m2,-12.7,-38.32
-```
-
-Colunas:
-
-- `data`: data da observação.
-- `ghi`: valor diário de GHI.
-- `localidade`: nome da fábrica/localidade definida no script.
-- `pais`: país da localidade.
-- `lat`: latitude.
-- `lon`: longitude.
-- `ano`: ano da observação.
-- `fonte_dados`: origem dos dados. Para o pipeline das 10 localidades, deve ser `NLR/NSRDB`.
-- `produto_dados`, `versao_dados` e `endpoint_api`: identificam o produto e a consulta.
-- `intervalo_minutos`, `agregacao` e `unidade_ghi`: documentam como o GHI diario foi calculado.
-- `lat_grade_nsrdb` e `lon_grade_nsrdb`: ponto da grade de satelite retornado pela API.
-
-### `dados/processados/`
-
-Guarda bases geradas após o pré-processamento.
-
-A subpasta `localidades_ev/` contém uma base de features para cada uma das dez
-localidades.
-
-- `localidades_ev/*_features.csv`
-
-Esses arquivos contêm as bases finais com features temporais, valores
-normalizados e alvo de previsão. O script de série única também pode gerar
-localmente `ghi_features.csv`, mas esse artefato recriável não é versionado.
-
-Principais colunas:
-
-- `data`
-- `ghi`
-- `ghi_quantizado`
-- `ghi_normalizado`
-- `ghi_t-1`
-- `ghi_t-2`
-- `ghi_t-3`
-- `ghi_t-7`
-- `ghi_media_movel_3d`
-- `ghi_media_movel_7d`
-- `ghi_media_movel_30d`
-- `data_alvo`
-- `ghi_alvo`
-- `ghi_alvo_quantizado`
-- `ghi_alvo_original`
-
-## Pasta `cadernos_jupyter/`
-
-Contém os notebooks usados para explicação, análise e apresentação dos resultados.
-
-### `00_coleta_dados_localidades.ipynb`
-
-Notebook de aquisição dos dados das dez localidades. Ele consulta a API
-NLR/NSRDB, valida a cobertura diária e salva os CSVs brutos usados pelo
-treinamento. Sua execução exige as credenciais `NREL_API_KEY` e `NREL_EMAIL`
-no arquivo `.env`.
-
-### `01_explicacao_teorica_pipeline.ipynb`
-
-Notebook didático. Explica teoricamente o pipeline:
-
-- o que é GHI;
-- como os dados são coletados;
-- como funciona a limpeza;
-- por que usar quantização;
-- por que usar normalização;
-- como são criadas as features temporais;
-- por que a divisão treino/teste deve ser cronológica;
-- como funcionam XGBoost e MLP;
-- como interpretar as métricas.
-
-### `02_resultados_todas_localidades.ipynb`
-
-Notebook de análise dos resultados das 10 localidades.
-
-Ele apresenta:
-
-- leitura das métricas gerais;
-- tabela resumo por localidade;
-- comparação entre XGBoost e MLP;
-- gráficos de R², RMSE e MAE;
-- visualização por localidade;
-- análise final dos modelos.
-
-## Pasta `relatorios/`
-
-Contém versões HTML exportadas dos notebooks.
-
-Arquivos:
-
-- `01_explicacao_teorica_pipeline.html`
-- `02_resultados_todas_localidades.html`
-
-Esses arquivos são úteis para abrir os resultados no navegador sem precisar executar o Jupyter.
-
-Para gerar novamente:
-
-```bash
-jupyter nbconvert --to html cadernos_jupyter/01_explicacao_teorica_pipeline.ipynb --output-dir relatorios
-jupyter nbconvert --to html cadernos_jupyter/02_resultados_todas_localidades.ipynb --output-dir relatorios
-```
-
-## Pasta `testes/`
-
-Contém testes automatizados do projeto.
-
-### `testes/test_preprocessamento.py`
-
-Testa funções importantes do pré-processamento:
-
-- se a quantização gera níveis esperados;
-- se a normalização fica entre 0 e 1;
-- se a preparação da série cria as features temporais corretamente;
-- se a divisão treino/teste fica válida.
-
-Para executar:
-
-```bash
-python -m pytest testes -q
-```
-
-## Pasta `tools/`
-
-Guarda ferramentas auxiliares de manutenção do projeto.
-
-### `tools/README.md`
-
-Explica o objetivo da pasta `tools`.
-
-### `tools/verificar_estrutura.ps1`
-
-Script PowerShell que confere se os principais arquivos e pastas existem.
-
-Uso no Windows:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\tools\verificar_estrutura.ps1
-```
-
-Se tudo estiver correto, a saída será:
+| Item | Configuração atual |
+|---|---|
+| Problema | regressão de série temporal |
+| Variável prevista | GHI médio diário do próximo dia |
+| Horizonte | 1 dia à frente |
+| Fonte | NLR/NSRDB, GOES Aggregated PSM v4 |
+| Período | 1º de janeiro de 2019 a 31 de dezembro de 2024 |
+| Localidades | 10 |
+| Dados brutos | 2.192 dias por localidade |
+| Base de modelagem | 2.162 exemplos por localidade |
+| Features | 4 lags e 3 médias móveis |
+| Divisão | 80% treino e 20% teste, sem embaralhamento |
+| Modelos | XGBoost e MLP |
+| Métricas | MAE, MSE, RMSE e R² |
+
+## Sumário
+
+- [Objetivo e escopo](#objetivo-e-escopo)
+- [Como executar rapidamente](#como-executar-rapidamente)
+- [Dados e localidades](#dados-e-localidades)
+- [Como as médias funcionam](#como-as-médias-funcionam)
+- [Pipeline técnico](#pipeline-técnico)
+- [Features e alvo](#features-e-alvo)
+- [Treino, modelos e avaliação](#treino-modelos-e-avaliação)
+- [Resultados atuais](#resultados-atuais)
+- [Estrutura do repositório](#estrutura-do-repositório)
+- [Arquivos gerados](#arquivos-gerados)
+- [Testes e relatórios](#testes-e-relatórios)
+- [Limitações](#limitações)
+- [Problemas comuns](#problemas-comuns)
+
+## Objetivo e escopo
+
+O objetivo é estimar o GHI do dia `t+1` usando somente informações disponíveis
+até o dia `t`.
 
 ```text
-Estrutura principal OK.
+Entradas: histórico diário até hoje
+Saída:    GHI de amanhã
 ```
 
-## Pasta `resultados/`
+O projeto prevê **irradiância solar**, não:
 
-Essa pasta é criada ou atualizada durante a execução dos scripts. Ela pode não existir em uma cópia inicial do projeto.
+- produção elétrica de uma fábrica;
+- consumo de energia;
+- geração de um sistema fotovoltaico;
+- condições meteorológicas completas.
 
-Estrutura esperada:
+Para converter irradiância em geração fotovoltaica seriam necessários dados
+adicionais, como área e eficiência dos módulos, inclinação, temperatura e
+perdas do sistema.
 
-```text
-resultados/
-|-- figuras/
-|-- metricas/
-|-- modelos/
-+-- todas_localidades/
-    |-- figuras/
-    |-- previsoes/
-    |-- metricas_geral.csv
-    +-- resumo_localidades.csv
-```
+As fábricas são usadas como pontos geográficos de análise. O trabalho não
+afirma que elas causam alterações na irradiância.
 
-Arquivos gerados:
+## Como executar rapidamente
 
-- `resultados/metricas/metricas_modelos.csv`: métricas para uma execução única.
-- `resultados/metricas/previsoes_modelos.csv`: previsões para uma execução única.
-- `resultados/modelos/xgboost_ghi.joblib`: modelo XGBoost treinado.
-- `resultados/modelos/mlp_ghi.joblib`: modelo MLP treinado.
-- `resultados/figuras/*.png`: gráficos da execução única.
-- `resultados/todas_localidades/metricas_geral.csv`: métricas de todos os modelos em todas as localidades.
-- `resultados/todas_localidades/resumo_localidades.csv`: resumo comparativo por localidade.
-- `resultados/todas_localidades/previsoes/`: previsões separadas por localidade.
-- `resultados/todas_localidades/figuras/`: gráficos separados por localidade.
-
-## Como Instalar
+### 1. Preparar o ambiente
 
 Pré-requisitos:
 
-- Python 3.8 ou superior.
-- `pip`.
-- Ambiente virtual recomendado.
+- Python 3.10 ou superior;
+- `pip`;
+- ambiente virtual recomendado.
 
-No Windows:
+Linux ou macOS:
 
 ```bash
-python -m venv venv
-venv\Scripts\activate
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Se `cartopy` falhar na instalação, o pipeline principal ainda pode ser usado. O `cartopy` é necessário principalmente para mapas no notebook de resultados.
+Windows:
 
-## Como Executar
-
-### Executar uma localidade
-
-```bash
-python treinamento_principal.py --data-path dados/brutos/localidades_ev/byd_camacari.csv
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
 ```
 
-Use esse caminho somente depois de validar ou baixar novamente os CSVs NLR/NSRDB.
-
-### Executar com busca automática de dados
-
-```bash
-python treinamento_principal.py
-```
-
-### Executar todas as localidades
-
-```bash
-python treinar_todas_localidades.py
-```
-
-### Validar origem dos CSVs das localidades
+### 2. Validar os CSVs oficiais
 
 ```bash
 python treinar_todas_localidades.py --validar-dados
 ```
 
-### Baixar novamente os dados NLR/NSRDB
+Essa validação verifica origem, cobertura, unidade, coordenadas e hashes
+SHA-256 antes do treinamento.
+
+### 3. Treinar as dez localidades
 
 ```bash
-python treinar_todas_localidades.py --somente-download --forcar-download
+python treinar_todas_localidades.py
 ```
 
-### Executar sem gerar gráficos
+### 4. Consultar os resultados
+
+Os principais arquivos são:
+
+```text
+resultados/todas_localidades/metricas_geral.csv
+resultados/todas_localidades/resumo_localidades.csv
+relatorios/02_resultados_todas_localidades.html
+```
+
+### Treinar somente uma localidade
 
 ```bash
-python treinamento_principal.py --data-path dados/brutos/localidades_ev/byd_camacari.csv --sem-graficos
+python treinamento_principal.py \
+  --data-path dados/brutos/localidades_ev/byd_camacari.csv
 ```
 
-Também aqui, o CSV precisa passar na validação de proveniência NLR/NSRDB.
+Sem gerar gráficos:
 
-## Fluxo Técnico do Pipeline
+```bash
+python treinamento_principal.py \
+  --data-path dados/brutos/localidades_ev/byd_camacari.csv \
+  --sem-graficos
+```
 
-### 1. Entrada
+Sem `--data-path`, o script procura automaticamente um CSV, Excel ou Parquet
+nas pastas de dados:
 
-O pipeline recebe uma tabela com pelo menos:
+```bash
+python treinamento_principal.py
+```
 
-- uma coluna de data;
-- uma coluna numérica de GHI.
+Para evitar ambiguidades, recomenda-se informar explicitamente o arquivo.
 
-Nomes aceitos para data incluem:
+## Dados e localidades
 
-- `data`
-- `date`
-- `datetime`
-- `timestamp`
-- `time`
-- `ds`
+### Fonte dos dados
 
-Nomes aceitos para GHI incluem:
-
-- `ghi`
-- `global_horizontal_irradiance`
-- `irradiancia_global_horizontal`
-- nomes que contenham `ghi`.
-
-### 2. Limpeza
-
-O código:
-
-- converte datas para `datetime`;
-- converte GHI para número;
-- remove datas inválidas;
-- remove GHI ausente;
-- remove GHI negativo;
-- ordena a série temporal;
-- remove duplicatas;
-- agrega para frequência diária.
-
-### 3. Quantização
-
-Os valores contínuos de GHI são convertidos para 128 níveis:
+Os dados são coletados pelo `pvlib` a partir do:
 
 ```text
-0, 1, 2, ..., 127
+NLR/NSRDB
+Produto: GOES Aggregated PSM v4
+Variável: GHI
+Intervalo solicitado: 60 minutos
+Unidade retornada: W/m²
 ```
 
-Essa etapa reduz ruído e transforma a série em uma escala discreta controlada.
+O recorte oficial é 2019–2024. O projeto não completa anos indisponíveis com
+dados sintéticos.
 
-### 4. Normalização
-
-Depois da quantização, os valores são normalizados para:
-
-```text
-[0, 1]
-```
-
-Essa etapa é importante principalmente para o modelo MLP.
-
-### 5. Features Temporais
-
-O modelo usa valores anteriores para prever o próximo dia:
-
-```text
-ghi_t-1
-ghi_t-2
-ghi_t-3
-ghi_t-7
-```
-
-Também usa médias móveis:
-
-```text
-ghi_media_movel_3d
-ghi_media_movel_7d
-ghi_media_movel_30d
-```
-
-### 6. Alvo
-
-O alvo é o GHI normalizado do dia seguinte:
-
-```text
-ghi_alvo = GHI no dia t+1
-```
-
-### 7. Treino e Teste
-
-A divisão é cronológica:
-
-```text
-80% inicial -> treino
-20% final   -> teste
-```
-
-A série temporal não é embaralhada, porque isso causaria vazamento de informação do futuro.
-
-### 8. Modelos
-
-São treinados dois modelos:
-
-- **XGBoost**, bom para dados tabulares e relações não-lineares.
-- **MLP**, uma rede neural simples para regressão.
-
-### 9. Avaliação
-
-As previsões são comparadas com os valores reais usando:
-
-- MAE;
-- MSE;
-- RMSE;
-- R².
-
-## Localidades Usadas
-
-O script `treinar_todas_localidades.py` trabalha com 10 localidades:
+### Localidades
 
 | # | Localidade | País |
-|---|------------|------|
-| 1 | BYD Camacari | Brasil |
+|---:|---|---|
+| 1 | BYD Camaçari | Brasil |
 | 2 | Tesla Gigafactory Nevada | EUA |
 | 3 | Tesla Gigafactory Texas | EUA |
 | 4 | Hyundai Metaplant Georgia | EUA |
@@ -714,104 +196,699 @@ O script `treinar_todas_localidades.py` trabalha com 10 localidades:
 | 7 | Lucid AMP 1 Casa Grande | EUA |
 | 8 | GM Factory Zero | EUA |
 | 9 | Ford Rouge Electric Vehicle Center | EUA |
-| 10 | BMW San Luis Potosi | México |
+| 10 | BMW San Luis Potosí | México |
 
-## Comandos Úteis
+Cada localidade possui:
 
-Verificar estrutura:
+- um CSV bruto próprio;
+- uma base processada própria;
+- um XGBoost próprio;
+- uma MLP própria;
+- métricas, previsões e gráficos próprios.
 
-```powershell
-powershell -ExecutionPolicy Bypass -File .\tools\verificar_estrutura.ps1
+Os dados das localidades não são misturados em um treinamento global.
+
+### Cobertura
+
+Cada CSV oficial possui uma linha para todos os dias entre 2019 e 2024:
+
+```text
+2019: 365 dias
+2020: 366 dias
+2021: 365 dias
+2022: 365 dias
+2023: 365 dias
+2024: 366 dias
+Total: 2.192 dias
 ```
 
-Rodar testes:
+### Proveniência e integridade
+
+Os CSVs registram:
+
+- localidade, país, endereço, latitude e longitude;
+- fontes usadas para validar a fábrica e suas coordenadas;
+- elemento OpenStreetMap;
+- produto, versão e endpoint da API;
+- intervalo, agregação e unidade;
+- coordenadas e identificação do ponto da grade NSRDB;
+- fuso, elevação e data de coleta.
+
+O arquivo `dados/brutos/localidades_ev/manifesto_nsrdb.csv` guarda o hash
+SHA-256 de cada CSV.
+
+O validador rejeita, entre outros casos:
+
+- metadados obrigatórios ausentes;
+- fonte diferente de `NLR/NSRDB`;
+- datas inválidas, duplicadas ou incompletas;
+- GHI fora da faixa diária esperada de 0 a 500 W/m²;
+- coordenadas incompatíveis com o cadastro;
+- ponto NSRDB a mais de 5 km da fábrica;
+- arquivo diferente do registrado no manifesto;
+- indícios de dados sintéticos.
+
+### Recoletar os dados
+
+Crie um arquivo `.env` na raiz:
+
+```env
+NREL_API_KEY=sua_chave
+NREL_EMAIL=seu_email
+```
+
+Depois execute:
 
 ```bash
-python -m pytest testes -q
+python treinar_todas_localidades.py \
+  --somente-download \
+  --forcar-download
 ```
 
-Treinar uma localidade:
+O `.env` contém credenciais e não deve ser versionado ou compartilhado.
+
+## Como as médias funcionam
+
+Existem três conceitos diferentes no projeto.
+
+### Média diária
+
+A API fornece uma observação de GHI a cada 60 minutos. O projeto calcula:
+
+```text
+GHI diário = média das observações horárias daquele dia
+```
+
+Essa operação gera a série usada pelos modelos.
+
+A unidade continua sendo `W/m²`, pois é uma média de potência por área. Ela
+não representa energia diária acumulada em `Wh/m²` ou `kWh/m²/dia`.
+
+### Média mensal
+
+O notebook de coleta agrupa os valores diários de cada mês:
+
+```python
+mensal = dados_diarios.resample("ME").mean()
+```
+
+A média mensal é usada **somente para visualização exploratória**. Ela não
+entra no treinamento.
+
+### Média móvel
+
+As médias móveis são features dos modelos:
+
+```text
+média móvel de 3 dias
+média móvel de 7 dias
+média móvel de 30 dias
+```
+
+Para uma linha referente a 30 de janeiro:
+
+```text
+média 3d  = média de 28, 29 e 30 de janeiro
+média 7d  = média dos últimos 7 dias até 30 de janeiro
+média 30d = média dos últimos 30 dias até 30 de janeiro
+```
+
+No dia seguinte, a janela avança uma posição. Uma janela de 30 dias não é o
+mesmo que um mês civil e pode atravessar a virada do mês.
+
+| Média | Origem | Uso |
+|---|---|---|
+| diária | observações horárias | série principal |
+| mensal | valores diários do mês | gráficos exploratórios |
+| móvel | últimos 3, 7 ou 30 dias | feature dos modelos |
+
+## Pipeline técnico
+
+### 1. Entrada
+
+O pipeline aceita CSV, Excel ou Parquet com:
+
+- uma coluna de data;
+- uma coluna numérica de GHI.
+
+Nomes de data reconhecidos:
+
+```text
+data, date, datetime, timestamp, time, ds
+```
+
+Nomes de GHI reconhecidos incluem:
+
+```text
+ghi
+global_horizontal_irradiance
+irradiancia_global_horizontal
+```
+
+Também são aceitos nomes que contenham `ghi`.
+
+### 2. Limpeza e padronização
+
+A função `limpar_serie_ghi`:
+
+1. detecta as colunas;
+2. converte datas e valores numéricos;
+3. remove registros inválidos ou ausentes;
+4. remove GHI negativo;
+5. ordena cronologicamente;
+6. remove datas duplicadas;
+7. agrega para frequência diária usando média.
+
+Mesmo quando o CSV já é diário, essa etapa garante um contrato único para o
+restante do pipeline.
+
+### 3. Quantização
+
+O GHI contínuo é convertido para 128 níveis inteiros:
+
+```text
+0, 1, 2, ..., 127
+```
+
+Conceitualmente:
+
+```text
+q = arredondar((x - mínimo) / (máximo - mínimo) × 127)
+```
+
+A quantização reduz pequenas variações, mas também perde parte da precisão
+original. Ela é uma escolha metodológica, não uma exigência dos modelos.
+
+### 4. Normalização
+
+Os níveis quantizados são normalizados para `[0, 1]`:
+
+```text
+ghi_normalizado = ghi_quantizado / 127
+```
+
+Isso é especialmente importante para o treinamento da MLP.
+
+Os limites da quantização são ajustados somente no trecho de treinamento. O
+teste é transformado com os mesmos parâmetros, evitando que estatísticas
+futuras definam a escala do passado.
+
+### 5. Criação das features
+
+São criadas quatro defasagens e três médias móveis sobre o GHI quantizado e
+normalizado.
+
+### 6. Criação do alvo
+
+Para a linha do dia `t`:
+
+```text
+data_alvo = t+1
+ghi_alvo  = GHI normalizado de t+1
+```
+
+Também são preservados o alvo quantizado e o valor original para auditoria.
+
+### 7. Remoção de linhas incompletas
+
+A janela de 30 dias precisa de histórico completo, e a última data não possui
+um dia seguinte dentro da base:
+
+```text
+Base diária original:             2.192 linhas
+Perda pela janela inicial de 30d:    29 linhas
+Perda pela ausência do alvo t+1:      1 linha
+Base final:                       2.162 linhas
+```
+
+## Features e alvo
+
+### Entradas dos modelos
+
+| Feature | Significado em relação ao alvo do dia `t+1` |
+|---|---|
+| `ghi_t-1` | GHI do dia `t` |
+| `ghi_t-2` | GHI do dia `t-1` |
+| `ghi_t-3` | GHI do dia `t-2` |
+| `ghi_t-7` | GHI do dia `t-6` |
+| `ghi_media_movel_3d` | média de `t-2` até `t` |
+| `ghi_media_movel_7d` | média de `t-6` até `t` |
+| `ghi_media_movel_30d` | média de `t-29` até `t` |
+
+O nome `ghi_t-1` é contado em relação ao **alvo**. Como a linha do dia `t`
+prevê `t+1`, `ghi_t-1` contém o próprio valor observado no dia `t`.
+
+### Exemplo de alinhamento
+
+Para uma linha em 3 de janeiro:
+
+```text
+ghi_t-1   = GHI de 03/01
+ghi_t-2   = GHI de 02/01
+ghi_t-3   = GHI de 01/01
+média 3d  = média de 01/01 a 03/01
+alvo      = GHI de 04/01
+```
+
+As features usam somente informações disponíveis até a data da linha. O alvo
+fica no futuro imediato.
+
+### Prevenção de vazamento temporal
+
+O projeto evita vazamento porque:
+
+- as janelas terminam no dia `t`;
+- o alvo está em `t+1`;
+- a escala é ajustada no treinamento;
+- a divisão preserva a ordem cronológica;
+- existe teste automatizado para o alinhamento.
+
+## Treino, modelos e avaliação
+
+### Divisão temporal
+
+Os 2.162 exemplos são divididos sem embaralhamento:
+
+```text
+Treino: 1.729 exemplos
+Teste:    433 exemplos
+```
+
+Período dos alvos:
+
+```text
+Treino: 31/01/2019 a 25/10/2023
+Teste:  26/10/2023 a 31/12/2024
+```
+
+Essa estratégia simula o uso real: aprender com o passado e avaliar em dados
+posteriores.
+
+### XGBoost
+
+Configuração:
+
+```python
+XGBRegressor(
+    n_estimators=300,
+    max_depth=3,
+    learning_rate=0.05,
+    subsample=0.9,
+    colsample_bytree=0.9,
+    objective="reg:squarederror",
+    random_state=42,
+    n_jobs=-1,
+)
+```
+
+É adequado a dados tabulares e captura relações não lineares por meio de um
+conjunto sequencial de árvores.
+
+### MLP
+
+Arquitetura:
+
+```text
+7 entradas → 64 neurônios → 32 neurônios → 1 saída
+```
+
+Configuração principal:
+
+```python
+MLPRegressor(
+    hidden_layer_sizes=(64, 32),
+    activation="relu",
+    solver="adam",
+    max_iter=1000,
+    learning_rate_init=0.001,
+    random_state=42,
+)
+```
+
+As previsões dos dois modelos são limitadas ao intervalo `[0, 1]`.
+
+### Métricas
+
+| Métrica | Interpretação | Melhor valor |
+|---|---|---|
+| MAE | média do erro absoluto | menor |
+| MSE | média do erro ao quadrado | menor |
+| RMSE | raiz do MSE, penaliza erros grandes | menor |
+| R² | proporção da variação explicada | maior |
+
+As métricas são calculadas na escala quantizada e normalizada. Portanto, MAE
+e RMSE não estão diretamente em `W/m²`.
+
+Uma conversão aproximada depende da faixa de treinamento da localidade:
+
+```text
+erro em W/m² ≈ erro normalizado × (máximo_treino - mínimo_treino)
+```
+
+### Gráficos
+
+Para cada localidade são gerados:
+
+- série temporal do teste com real, XGBoost e MLP;
+- real versus previsto de cada modelo;
+- dispersão real versus previsto de cada modelo.
+
+No gráfico de dispersão, previsões melhores ficam mais próximas da diagonal.
+
+## Resultados atuais
+
+Resultados presentes em `resultados/todas_localidades/resumo_localidades.csv`:
+
+| Localidade | Melhor modelo por R² | Melhor R² |
+|---|---|---:|
+| BYD Camaçari | MLP | 0,3884 |
+| Tesla Gigafactory Nevada | XGBoost | 0,8596 |
+| Tesla Gigafactory Texas | MLP | 0,5716 |
+| Hyundai Metaplant Georgia | MLP | 0,5190 |
+| Rivian Normal | MLP | 0,6401 |
+| Tesla Fremont Factory | XGBoost | 0,8698 |
+| Lucid AMP 1 Casa Grande | XGBoost | 0,8167 |
+| GM Factory Zero | MLP | 0,6366 |
+| Ford Rouge Electric Vehicle Center | XGBoost | 0,6512 |
+| BMW San Luis Potosí | MLP | 0,5903 |
+
+Síntese:
+
+```text
+MLP foi melhor em 6 localidades.
+XGBoost foi melhor em 4 localidades.
+```
+
+Médias entre as dez localidades:
+
+| Modelo | MAE médio | RMSE médio | R² médio |
+|---|---:|---:|---:|
+| XGBoost | 0,1068 | 0,1410 | 0,6398 |
+| MLP | 0,1052 | 0,1390 | 0,6529 |
+
+Não existe um vencedor universal. A previsibilidade varia entre localidades,
+e resultados menores indicam dificuldade para representar as mudanças diárias
+usando somente o histórico do próprio GHI.
+
+## Estrutura do repositório
+
+```text
+.
+|-- README.md
+|-- requirements.txt
+|-- pytest.ini
+|-- treinamento_principal.py
+|-- treinar_todas_localidades.py
+|-- codigo_fonte/
+|   |-- configuracao.py
+|   |-- utilitarios.py
+|   |-- preprocessamento.py
+|   |-- features.py
+|   |-- modelos.py
+|   |-- avaliacao.py
+|   |-- graficos.py
+|   +-- localidades_ev.py
+|-- dados/
+|   |-- brutos/localidades_ev/
+|   +-- processados/localidades_ev/
+|-- cadernos_jupyter/
+|   |-- 00_coleta_dados_localidades.ipynb
+|   |-- 01_explicacao_teorica_pipeline.ipynb
+|   +-- 02_resultados_todas_localidades.ipynb
+|-- relatorios/
+|-- resultados/
+|-- testes/
++-- tools/
+```
+
+### Scripts principais
+
+#### `treinamento_principal.py`
+
+Executa o pipeline para uma série:
+
+- carrega e prepara os dados;
+- divide treino e teste;
+- treina XGBoost e MLP;
+- salva modelos, métricas, previsões e gráficos.
+
+#### `treinar_todas_localidades.py`
+
+Executa o fluxo completo das dez localidades:
+
+- valida ou coleta os CSVs;
+- prepara uma base por local;
+- treina os dois modelos;
+- gera resultados individuais e comparativos;
+- atualiza o manifesto de integridade.
+
+Opções:
+
+```text
+--validar-dados    valida os arquivos sem treinar
+--somente-download coleta e valida sem treinar
+--forcar-download  ignora os CSVs existentes e coleta novamente
+```
+
+### Módulos
+
+| Módulo | Responsabilidade |
+|---|---|
+| `configuracao.py` | caminhos e criação das pastas |
+| `utilitarios.py` | localização automática de arquivos |
+| `preprocessamento.py` | coleta, limpeza, quantização e normalização |
+| `features.py` | lags, médias móveis, alvo e divisão temporal |
+| `modelos.py` | treinamento e salvamento dos modelos |
+| `avaliacao.py` | métricas e arquivos de previsão |
+| `graficos.py` | gráficos temporais e de dispersão |
+| `localidades_ev.py` | cadastro auditável das localidades |
+
+### Notebooks
+
+| Notebook | Conteúdo |
+|---|---|
+| `00_coleta_dados_localidades.ipynb` | coleta, validação e exploração dos dados |
+| `01_explicacao_teorica_pipeline.ipynb` | guia completo para entender e apresentar o projeto |
+| `02_resultados_todas_localidades.ipynb` | análise comparativa dos resultados |
+
+Os notebooks documentam e apresentam. A lógica reutilizável permanece nos
+módulos Python, o que facilita testes e execução fora do Jupyter.
+
+## Arquivos gerados
+
+### Dados processados
+
+```text
+dados/processados/localidades_ev/*_features.csv
+```
+
+Colunas principais:
+
+```text
+data
+ghi
+ghi_quantizado
+ghi_normalizado
+ghi_t-1
+ghi_t-2
+ghi_t-3
+ghi_t-7
+ghi_media_movel_3d
+ghi_media_movel_7d
+ghi_media_movel_30d
+data_alvo
+ghi_alvo
+ghi_alvo_quantizado
+ghi_alvo_original
+```
+
+### Modelos
+
+```text
+resultados/modelos/localidades/xgboost_<localidade>.joblib
+resultados/modelos/localidades/mlp_<localidade>.joblib
+```
+
+### Métricas e previsões
+
+```text
+resultados/todas_localidades/metricas_geral.csv
+resultados/todas_localidades/resumo_localidades.csv
+resultados/todas_localidades/previsoes/<localidade>/
+```
+
+### Figuras
+
+```text
+resultados/todas_localidades/figuras/<localidade>/
+```
+
+### Execução de uma única série
+
+```text
+resultados/metricas/
+resultados/modelos/xgboost_ghi.joblib
+resultados/modelos/mlp_ghi.joblib
+resultados/figuras/
+```
+
+## Testes e relatórios
+
+### Executar os testes
 
 ```bash
-python treinamento_principal.py --data-path dados/brutos/localidades_ev/byd_camacari.csv
+pytest -q
 ```
 
-O CSV dessa pasta precisa ter `fonte_dados=NLR/NSRDB`.
+Os testes verificam:
 
-Treinar todas as localidades:
+- quantização;
+- normalização;
+- criação das features;
+- alinhamento entre features e alvo;
+- rejeição de dados sintéticos;
+- validação de metadados, unidade e distância da grade.
 
-```bash
-python treinar_todas_localidades.py
-```
-
-Abrir Jupyter:
+### Abrir os notebooks
 
 ```bash
 jupyter notebook
 ```
 
-Exportar notebooks para HTML:
+### Exportar para HTML
 
 ```bash
-jupyter nbconvert --to html cadernos_jupyter/01_explicacao_teorica_pipeline.ipynb --output-dir relatorios
-jupyter nbconvert --to html cadernos_jupyter/02_resultados_todas_localidades.ipynb --output-dir relatorios
+jupyter nbconvert --to html \
+  cadernos_jupyter/01_explicacao_teorica_pipeline.ipynb \
+  --output-dir relatorios
+
+jupyter nbconvert --to html \
+  cadernos_jupyter/02_resultados_todas_localidades.ipynb \
+  --output-dir relatorios
 ```
 
-## Observações Importantes
+Relatórios disponíveis:
 
-- O arquivo `.env` contém credenciais e não deve ser compartilhado publicamente.
-- Os arquivos em `resultados/` são saídas geradas pelos scripts.
-- Os notebooks em `cadernos_jupyter/` são usados para explicação e análise.
-- Os relatórios HTML em `relatorios/` são versões exportadas dos notebooks e devem ser regenerados após uma nova coleta NLR/NSRDB.
-- A pasta `dados/brutos/localidades_ev/` contém os dados de entrada usados no treinamento das 10 localidades; para esse fluxo, cada CSV deve passar em `python treinar_todas_localidades.py --validar-dados`.
-- A pasta `dados/processados/` contém bases intermediárias/finais geradas pelo pré-processamento.
+```text
+relatorios/01_explicacao_teorica_pipeline.html
+relatorios/02_resultados_todas_localidades.html
+```
 
-## Problemas Comuns
+## Limitações
+
+O projeto atual:
+
+- usa somente o histórico do GHI;
+- prevê apenas um dia à frente;
+- usa uma única divisão temporal 80/20;
+- utiliza hiperparâmetros fixos;
+- não compara formalmente com um baseline de persistência;
+- não inclui variáveis meteorológicas;
+- não inclui features sazonais explícitas;
+- avalia principalmente na escala normalizada;
+- quantiza o sinal e, portanto, perde resolução;
+- treina modelos independentes por localidade.
+
+Melhorias naturais:
+
+- baseline `previsão = GHI de hoje`;
+- validação temporal *walk-forward*;
+- temperatura, nuvens, umidade e precipitação;
+- mês, dia do ano e codificação seno/cosseno;
+- comparação entre GHI contínuo e quantizado;
+- otimização de hiperparâmetros dentro do treino;
+- métricas também na escala original;
+- armazenamento dos transformadores junto aos modelos.
+
+## Problemas comuns
 
 ### `python` não é reconhecido
 
-Instale o Python pelo site oficial ou ajuste o PATH do Windows.
-
-Depois confirme:
+Confirme a instalação e o PATH:
 
 ```bash
 python --version
-pip --version
+python -m pip --version
 ```
 
-### `cartopy` falha ao instalar
+Em alguns sistemas o comando é `python3`.
 
-O pipeline principal pode funcionar sem o mapa. O `cartopy` é mais importante para visualizações geográficas nos notebooks.
+### Dependência não instalada
+
+```bash
+pip install -r requirements.txt
+```
+
+Se `cartopy` falhar, o pipeline de treinamento pode funcionar sem os mapas,
+mas o notebook de resultados pode perder visualizações geográficas.
 
 ### Arquivo de dados não encontrado
 
-Confira se os CSVs estão em:
-
-```text
-dados/brutos/localidades_ev/
-```
-
-Ou execute informando explicitamente o caminho:
+Informe explicitamente:
 
 ```bash
 python treinamento_principal.py --data-path caminho/do/arquivo.csv
 ```
 
-### Relatório HTML está desatualizado
+Para o fluxo oficial, os arquivos ficam em:
 
-Exporte novamente o notebook:
-
-```bash
-jupyter nbconvert --to html cadernos_jupyter/02_resultados_todas_localidades.ipynb --output-dir relatorios
+```text
+dados/brutos/localidades_ev/
 ```
 
-## Resumo Final
+### CSV oficial rejeitado
 
-Este projeto está organizado em quatro partes principais:
+Verifique o motivo:
 
-- **Código-fonte** em `codigo_fonte/`, com a lógica do pipeline.
-- **Dados** em `dados/`, com entradas brutas e bases processadas.
-- **Análises e relatórios** em `cadernos_jupyter/` e `relatorios/`.
-- **Execução e validação** por meio dos scripts da raiz, testes e ferramentas auxiliares.
+```bash
+python treinar_todas_localidades.py --validar-dados
+```
 
-Com isso, o projeto fica pronto para treinamento, avaliação, apresentação e manutenção.
+Se houver credenciais configuradas, faça uma nova coleta:
+
+```bash
+python treinar_todas_localidades.py \
+  --somente-download \
+  --forcar-download
+```
+
+### Credenciais ausentes
+
+Configure no `.env`:
+
+```env
+NREL_API_KEY=sua_chave
+NREL_EMAIL=seu_email
+```
+
+### Relatório HTML desatualizado
+
+Exporte novamente o notebook correspondente com `jupyter nbconvert`.
+
+### Resultados diferentes após alterações
+
+Os modelos usam `random_state=42`, mas versões diferentes das bibliotecas ou
+mudanças nos dados podem alterar os resultados. Registre o ambiente e valide
+novamente os CSVs antes de comparar execuções.
+
+## Documentação recomendada
+
+Para uma explicação detalhada e preparada para apresentação:
+
+```text
+cadernos_jupyter/01_explicacao_teorica_pipeline.ipynb
+relatorios/01_explicacao_teorica_pipeline.html
+```
+
+Para analisar tabelas e gráficos das dez localidades:
+
+```text
+cadernos_jupyter/02_resultados_todas_localidades.ipynb
+relatorios/02_resultados_todas_localidades.html
+```
+
+Em uma frase:
+
+> O projeto transforma dados horários oficiais em uma série diária auditável,
+> cria informações históricas sem acessar o futuro e compara XGBoost e MLP na
+> previsão do GHI médio do dia seguinte.

@@ -1,4 +1,4 @@
-"""Metricas e salvamento das previsoes dos modelos de GHI."""
+"""Avaliacao dos modelos e persistencia dos resultados tabulares."""
 
 from __future__ import annotations
 
@@ -19,13 +19,14 @@ def calcular_metricas(y_true, y_pred, modelo: str) -> dict[str, float | str]:
     Returns:
         Dicionario com as metricas no formato da tabela comparativa final.
     """
+    # O MSE e calculado uma vez e reaproveitado para obter a raiz (RMSE).
     mse = mean_squared_error(y_true, y_pred)
     return {
         "Modelo": modelo,
-        "MAE": mean_absolute_error(y_true, y_pred),
+        "MAE": mean_absolute_error(y_true, y_pred),  # Erro absoluto medio.
         "MSE": mse,
-        "RMSE": mse**0.5,
-        "R2": r2_score(y_true, y_pred),
+        "RMSE": mse**0.5,  # Volta para a mesma escala normalizada do alvo.
+        "R2": r2_score(y_true, y_pred),  # Fracao da variacao explicada.
     }
 
 
@@ -39,6 +40,7 @@ def salvar_metricas(metricas: list[dict[str, float | str]], output_path: str | P
     Returns:
         DataFrame com a tabela comparativa final.
     """
+    # A lista explicita de colunas mantem a mesma ordem em todas as execucoes.
     df_metricas = pd.DataFrame(metricas, columns=["Modelo", "MAE", "MSE", "RMSE", "R2"])
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -66,8 +68,10 @@ def salvar_previsoes(
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    # ``.values`` ignora indices antigos e alinha tudo pela ordem das amostras.
     resultados = pd.DataFrame({"data": datas.values, "ghi_real": y_true.values})
     for nome_modelo, y_pred in predicoes.items():
+        # Alem do CSV consolidado, cria um arquivo simples para cada modelo.
         nome_seguro = nome_modelo.lower()
         coluna = f"ghi_previsto_{nome_seguro}"
         resultados[coluna] = y_pred
@@ -76,5 +80,6 @@ def salvar_previsoes(
             index=False,
         )
 
+    # O arquivo consolidado facilita comparar os modelos linha a linha.
     resultados.to_csv(output_dir / "previsoes_modelos.csv", index=False)
     return resultados

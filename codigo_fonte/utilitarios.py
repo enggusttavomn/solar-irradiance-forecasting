@@ -1,4 +1,4 @@
-"""Funcoes auxiliares de caminhos e localizacao de dados."""
+"""Funcoes auxiliares compartilhadas pelos scripts do projeto."""
 
 from __future__ import annotations
 
@@ -23,8 +23,15 @@ def localizar_arquivo_dados(
 
     Returns:
         Caminho do arquivo encontrado ou ``None`` quando nao ha dados locais.
+
+    Notes:
+        A busca e recursiva. Quando existem varios arquivos, a chave de
+        ordenacao favorece dados brutos e nomes relacionados a GHI diario.
+        Ainda assim, informar ``--data-path`` e a opcao mais explicita.
     """
     candidatos: list[Path] = []
+
+    # Reune todos os formatos tabulares aceitos em todas as pastas informadas.
     for diretorio in diretorios:
         if not diretorio.exists():
             continue
@@ -34,7 +41,8 @@ def localizar_arquivo_dados(
     if not candidatos:
         return None
 
-    # Prioriza nomes que deixam claro que o arquivo contem GHI diario.
+    # Cada expressao booleana vale False (0) ou True (1). Como False vem
+    # primeiro, arquivos brutos, diarios e de localidades recebem prioridade.
     return sorted(
         candidatos,
         key=lambda path: (
@@ -48,4 +56,5 @@ def localizar_arquivo_dados(
     )[0]
 
 
+# Define a interface publica esperada quando este modulo e importado.
 __all__ = ["criar_pastas", "localizar_arquivo_dados"]

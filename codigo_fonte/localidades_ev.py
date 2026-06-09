@@ -1,4 +1,9 @@
-"""Cadastro auditavel das localidades de fabricas de veiculos eletricos."""
+"""Cadastro auditavel das localidades usadas no estudo.
+
+Cada item identifica uma fabrica e registra de onde vieram o endereco e as
+coordenadas. O cadastro e separado dos scripts para que coleta, validacao,
+notebooks e testes utilizem exatamente os mesmos pontos geograficos.
+"""
 
 from __future__ import annotations
 
@@ -7,11 +12,14 @@ import math
 import pandas as pd
 
 
+# Texto comum gravado nos CSVs para documentar como os pontos foram obtidos.
 METODO_COORDENADAS = (
     "Centroide do elemento da fabrica no OpenStreetMap/Nominatim, "
     "validado contra fonte oficial da empresa em 2026-06-06"
 )
 
+# Lista de dicionarios: um dicionario representa uma localidade independente.
+# As URLs sao parte da proveniencia e nao sao usadas como entrada dos modelos.
 LOCALIDADES_EV = [
     {
         "nome": "BYD Camacari",
@@ -130,6 +138,7 @@ LOCALIDADES_EV = [
     },
 ]
 
+# Evita repetir o mesmo texto em todos os dez dicionarios acima.
 for localidade in LOCALIDADES_EV:
     localidade["metodo_coordenadas"] = METODO_COORDENADAS
 
@@ -140,24 +149,34 @@ def distancia_haversine_km(
     lat2: float,
     lon2: float,
 ) -> float:
-    """Calcula a distancia de grande circulo entre dois pontos."""
+    """Calcula a distancia de grande circulo entre dois pontos.
+
+    A formula de Haversine considera a curvatura da Terra. Ela e usada para
+    confirmar que o ponto de grade retornado pelo NSRDB esta proximo da fabrica.
+    """
+    # Raio medio da Terra recomendado pela International Union of Geodesy.
     raio_terra_km = 6371.0088
+
+    # Funcoes trigonometricas de ``math`` trabalham com radianos.
     phi1 = math.radians(lat1)
     phi2 = math.radians(lat2)
     delta_phi = math.radians(lat2 - lat1)
     delta_lambda = math.radians(lon2 - lon1)
+    # Termo intermediario da formula de Haversine.
     a = (
         math.sin(delta_phi / 2) ** 2
         + math.cos(phi1) * math.cos(phi2) * math.sin(delta_lambda / 2) ** 2
     )
+    # O arco angular e convertido em distancia ao multiplicar pelo raio.
     return 2 * raio_terra_km * math.asin(math.sqrt(a))
 
 
 def dataframe_localidades() -> pd.DataFrame:
-    """Retorna uma copia tabular do cadastro de localidades."""
+    """Retorna uma copia tabular sem expor a lista global a alteracoes."""
     return pd.DataFrame(LOCALIDADES_EV).copy()
 
 
+# Interface publica deste modulo.
 __all__ = [
     "LOCALIDADES_EV",
     "METODO_COORDENADAS",

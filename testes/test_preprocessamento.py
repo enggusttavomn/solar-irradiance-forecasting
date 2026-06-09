@@ -1,3 +1,10 @@
+"""Testes das transformacoes e das regras de proveniencia dos dados.
+
+Os testes usam bases pequenas e controladas para verificar o comportamento sem
+depender da API. ``pytest`` descobre automaticamente funcoes iniciadas por
+``test_`` e informa qual regra deixou de ser atendida.
+"""
+
 import pandas as pd
 import pytest
 
@@ -18,7 +25,10 @@ from treinar_todas_localidades import validar_csv_nrel_localidade
 
 
 def criar_base_nsrdb_valida():
+    """Monta um CSV oficial minimo que deve passar por todas as validacoes."""
+    # Reutilizar o cadastro real evita repetir coordenadas e fontes nos testes.
     local = LOCALIDADES_EV[0]
+    # A cobertura completa e uma exigencia do validador oficial.
     datas = pd.date_range("2019-01-01", "2024-12-31", freq="D")
     return pd.DataFrame(
         {
@@ -54,6 +64,7 @@ def criar_base_nsrdb_valida():
 
 
 def test_quantizar_ghi_cria_128_niveis_possiveis():
+    """Confirma o mapeamento dos extremos e do ponto medio para 0..127."""
     valores = pd.Series([0.0, 50.0, 100.0])
 
     quantizado = quantizar_ghi(valores, n_niveis=128)
@@ -62,6 +73,7 @@ def test_quantizar_ghi_cria_128_niveis_possiveis():
 
 
 def test_normalizar_minmax_limita_entre_zero_e_um():
+    """Confirma que a escala quantizada e convertida para o intervalo unitario."""
     valores = pd.Series([0, 64, 127])
 
     normalizado = normalizar_minmax(valores, minimo=0, maximo=127)
@@ -71,6 +83,8 @@ def test_normalizar_minmax_limita_entre_zero_e_um():
 
 
 def test_preparar_serie_temporal_cria_features_sem_futuro():
+    """Verifica a estrutura basica da base supervisionada produzida."""
+    # Sessenta dias sao suficientes para uma janela completa de 30 dias.
     df = pd.DataFrame(
         {
             "data": pd.date_range("2024-01-01", periods=60, freq="D"),
@@ -88,6 +102,8 @@ def test_preparar_serie_temporal_cria_features_sem_futuro():
 
 
 def test_features_ficam_alinhadas_com_o_alvo_do_dia_seguinte():
+    """Demonstra numericamente que as entradas terminam antes do alvo."""
+    # Uma sequencia 0..9 torna cada deslocamento facil de conferir.
     datas = pd.date_range("2024-01-01", periods=10, freq="D")
     dados = pd.DataFrame(
         {
@@ -103,6 +119,7 @@ def test_features_ficam_alinhadas_com_o_alvo_do_dia_seguinte():
         lags=(1, 2, 3),
         moving_windows=(3,),
     )
+    # A primeira linha valida tem os dias 1, 2 e 3 como historico.
     primeira = modelagem.iloc[0]
 
     assert primeira["data"] == pd.Timestamp("2024-01-03")
@@ -115,6 +132,8 @@ def test_features_ficam_alinhadas_com_o_alvo_do_dia_seguinte():
 
 
 def test_validar_csv_nrel_rejeita_dado_sintetico(tmp_path):
+    """Rejeita um arquivo sem metadados e com nome sintetico por coordenada."""
+    # ``tmp_path`` e uma pasta temporaria isolada fornecida pelo pytest.
     arquivo = tmp_path / "byd_camacari.csv"
     pd.DataFrame(
         {
@@ -137,6 +156,7 @@ def test_validar_csv_nrel_rejeita_dado_sintetico(tmp_path):
 
 
 def test_validar_csv_nrel_aceita_metadados_oficiais(tmp_path):
+    """Confirma o caminho feliz com cobertura e proveniencia completas."""
     arquivo = tmp_path / "byd_camacari.csv"
     criar_base_nsrdb_valida().to_csv(arquivo, index=False)
 
@@ -150,6 +170,7 @@ def test_validar_csv_nrel_aceita_metadados_oficiais(tmp_path):
 
 
 def test_validar_csv_nrel_rejeita_ghi_fora_da_unidade_declarada(tmp_path):
+    """Detecta valor diario incompativel com a faixa esperada em W/m2."""
     arquivo = tmp_path / "byd_camacari.csv"
     dados = criar_base_nsrdb_valida()
     dados["ghi"] = 6009
@@ -165,6 +186,7 @@ def test_validar_csv_nrel_rejeita_ghi_fora_da_unidade_declarada(tmp_path):
 
 
 def test_validar_csv_nrel_rejeita_grade_distante_da_fabrica(tmp_path):
+    """Impede associar a fabrica a um ponto NSRDB geograficamente distante."""
     arquivo = tmp_path / "byd_camacari.csv"
     dados = criar_base_nsrdb_valida()
     dados["lat_grade_nsrdb"] = 0.0
@@ -178,6 +200,7 @@ def test_validar_csv_nrel_rejeita_grade_distante_da_fabrica(tmp_path):
 
 
 def test_carregar_serie_rejeita_csv_sintetico_em_localidades_ev(tmp_path):
+    """Garante que ate o carregador simples proteja a pasta oficial."""
     pasta = tmp_path / "dados" / "brutos" / "localidades_ev"
     pasta.mkdir(parents=True)
     arquivo = pasta / "byd_camacari.csv"
@@ -192,5 +215,6 @@ def test_carregar_serie_rejeita_csv_sintetico_em_localidades_ev(tmp_path):
         }
     ).to_csv(arquivo, index=False)
 
+    # O contexto passa somente se a excecao e sua mensagem forem as esperadas.
     with pytest.raises(ValueError, match="proveniencia NLR/NSRDB"):
         carregar_serie_ghi(arquivo)

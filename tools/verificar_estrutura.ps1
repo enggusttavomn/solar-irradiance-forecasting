@@ -1,7 +1,9 @@
+# Parametro opcional: por padrao, a raiz e a pasta acima de ``tools``.
 param(
     [string]$ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 )
 
+# Lista dos arquivos e diretorios minimos para considerar o projeto completo.
 $requiredPaths = @(
     "README.md",
     "requirements.txt",
@@ -22,19 +24,23 @@ $requiredPaths = @(
     "tools"
 )
 
+# Acumula todos os itens ausentes para exibi-los de uma vez ao usuario.
 $missing = @()
 foreach ($path in $requiredPaths) {
+    # ``Join-Path`` monta caminhos validos sem concatenar separadores manualmente.
     $fullPath = Join-Path $ProjectRoot $path
     if (-not (Test-Path $fullPath)) {
         $missing += $path
     }
 }
 
+# Codigo de saida 1 sinaliza falha para terminais e ferramentas de automacao.
 if ($missing.Count -gt 0) {
     Write-Host "Estrutura incompleta:" -ForegroundColor Red
     $missing | ForEach-Object { Write-Host " - $_" -ForegroundColor Red }
     exit 1
 }
 
+# Codigo 0 indica que todos os caminhos obrigatorios foram encontrados.
 Write-Host "Estrutura principal OK." -ForegroundColor Green
 exit 0

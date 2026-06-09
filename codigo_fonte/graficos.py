@@ -1,4 +1,4 @@
-"""Geracao e salvamento dos graficos de avaliacao."""
+"""Geracao dos graficos usados para avaliar visualmente as previsoes."""
 
 from __future__ import annotations
 
@@ -15,9 +15,11 @@ def gerar_grafico_temporal(
     caminho_saida: str | Path,
 ) -> None:
     """Gera grafico temporal comparando valores reais e previstos no teste."""
+    # A funcao cria a pasta de destino para poder ser chamada isoladamente.
     caminho_saida = Path(caminho_saida)
     caminho_saida.parent.mkdir(parents=True, exist_ok=True)
 
+    # A linha preta e a referencia real; as demais sao as previsoes.
     plt.figure(figsize=(12, 4.5))
     plt.plot(datas, y_true, label="Real", linewidth=2.2, color="black")
     for nome_modelo, y_pred in predicoes.items():
@@ -29,7 +31,9 @@ def gerar_grafico_temporal(
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
+    # ``tight_layout`` evita cortes nos rotulos; 300 dpi atende uso em relatorio.
     plt.savefig(caminho_saida, dpi=300)
+    # Fechar libera memoria, importante ao gerar dezenas de figuras em lote.
     plt.close()
 
 
@@ -44,6 +48,7 @@ def gerar_grafico_real_vs_previsto(
     caminho_saida = Path(caminho_saida)
     caminho_saida.parent.mkdir(parents=True, exist_ok=True)
 
+    # Este grafico isola um modelo para facilitar a leitura de atrasos e picos.
     plt.figure(figsize=(11, 4))
     plt.plot(datas, y_true, label="Real", linewidth=2)
     plt.plot(datas, y_pred, label=f"Previsto - {modelo}", linewidth=2, alpha=0.85)
@@ -67,10 +72,12 @@ def gerar_grafico_dispersao(
     caminho_saida = Path(caminho_saida)
     caminho_saida.parent.mkdir(parents=True, exist_ok=True)
 
+    # Os limites comuns permitem desenhar a diagonal ideal y_previsto = y_real.
     min_value = min(float(pd.Series(y_true).min()), float(pd.Series(y_pred).min()))
     max_value = max(float(pd.Series(y_true).max()), float(pd.Series(y_pred).max()))
 
     plt.figure(figsize=(5, 5))
+    # Quanto mais perto um ponto estiver da diagonal, menor e o erro da amostra.
     plt.scatter(y_true, y_pred, alpha=0.65)
     plt.plot([min_value, max_value], [min_value, max_value], color="black", linestyle="--")
     plt.title(f"Dispersao real vs previsto - {modelo}")
@@ -92,6 +99,7 @@ def salvar_graficos(
     pasta_saida = Path(pasta_saida)
     pasta_saida.mkdir(parents=True, exist_ok=True)
 
+    # Primeiro salva a visao conjunta dos dois modelos.
     gerar_grafico_temporal(
         datas,
         y_true,
@@ -99,6 +107,7 @@ def salvar_graficos(
         pasta_saida / "serie_temporal_teste_real_xgboost_mlp.png",
     )
 
+    # Depois cria duas figuras especificas para cada modelo.
     for nome_modelo, y_pred in predicoes.items():
         nome_seguro = nome_modelo.lower()
         gerar_grafico_real_vs_previsto(
