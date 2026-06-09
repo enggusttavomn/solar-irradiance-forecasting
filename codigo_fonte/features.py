@@ -23,17 +23,20 @@ def criar_features_temporais(
     dados = dados.copy()
     feature_columns: list[str] = []
 
-    # Lags: usam apenas valores observados antes do instante previsto.
+    # A linha de data t preve t+1. Portanto, lag 1 e o valor observado em t,
+    # exatamente um dia antes do alvo.
     for lag in lags:
         coluna = f"ghi_t-{lag}"
-        dados[coluna] = dados["ghi_normalizado"].shift(lag)
+        dados[coluna] = dados["ghi_normalizado"].shift(lag - 1)
         feature_columns.append(coluna)
 
-    # Medias moveis: shift(1) remove o valor do proprio dia da janela.
-    valores_passados = dados["ghi_normalizado"].shift(1)
+    # As janelas terminam em t e contêm somente dias anteriores ao alvo t+1.
     for janela in moving_windows:
         coluna = f"ghi_media_movel_{janela}d"
-        dados[coluna] = valores_passados.rolling(window=janela, min_periods=janela).mean()
+        dados[coluna] = dados["ghi_normalizado"].rolling(
+            window=janela,
+            min_periods=janela,
+        ).mean()
         feature_columns.append(coluna)
 
     # Alvo: o modelo recebe o dia t e preve o GHI normalizado do dia t+1.

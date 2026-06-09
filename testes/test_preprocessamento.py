@@ -12,6 +12,7 @@ from codigo_fonte.preprocessamento import (
     preparar_serie_temporal,
     quantizar_ghi,
 )
+from codigo_fonte.features import criar_features_temporais
 from codigo_fonte.localidades_ev import LOCALIDADES_EV
 from treinar_todas_localidades import validar_csv_nrel_localidade
 
@@ -84,6 +85,33 @@ def test_preparar_serie_temporal_cria_features_sem_futuro():
     assert "ghi_media_movel_30d" in result.feature_columns
     assert result.train_size > 0
     assert result.train_size < len(result.dados_modelagem)
+
+
+def test_features_ficam_alinhadas_com_o_alvo_do_dia_seguinte():
+    datas = pd.date_range("2024-01-01", periods=10, freq="D")
+    dados = pd.DataFrame(
+        {
+            "data": datas,
+            "ghi": range(10),
+            "ghi_quantizado": range(10),
+            "ghi_normalizado": range(10),
+        }
+    )
+
+    modelagem, _ = criar_features_temporais(
+        dados,
+        lags=(1, 2, 3),
+        moving_windows=(3,),
+    )
+    primeira = modelagem.iloc[0]
+
+    assert primeira["data"] == pd.Timestamp("2024-01-03")
+    assert primeira["data_alvo"] == pd.Timestamp("2024-01-04")
+    assert primeira["ghi_t-1"] == 2
+    assert primeira["ghi_t-2"] == 1
+    assert primeira["ghi_t-3"] == 0
+    assert primeira["ghi_media_movel_3d"] == pytest.approx(1.0)
+    assert primeira["ghi_alvo_original"] == 3
 
 
 def test_validar_csv_nrel_rejeita_dado_sintetico(tmp_path):

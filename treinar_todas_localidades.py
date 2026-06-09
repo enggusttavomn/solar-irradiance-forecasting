@@ -86,7 +86,7 @@ def gerar_manifesto_dados() -> pd.DataFrame:
         )
 
     manifesto = pd.DataFrame(registros)
-    manifesto.to_csv(MANIFESTO_DADOS, index=False)
+    manifesto.to_csv(MANIFESTO_DADOS, index=False, lineterminator="\n")
     return manifesto
 
 
@@ -474,9 +474,28 @@ def main():
     if args.validar_dados:
         print("\nValidando CSVs locais em dados/brutos/localidades_ev/...")
         invalidos = []
+        manifesto = (
+            pd.read_csv(MANIFESTO_DADOS)
+            if MANIFESTO_DADOS.exists()
+            else pd.DataFrame()
+        )
+        colunas_manifesto_validas = {"arquivo", "sha256"}.issubset(manifesto.columns)
         for local in LOCALIDADES:
             arquivo = OUTPUT_DIR / f"{nome_arquivo(local['nome'])}.csv"
             valido, motivo = validar_csv_nrel_localidade(arquivo, local)
+            if not colunas_manifesto_validas:
+                valido = False
+                motivo = "manifesto SHA-256 ausente ou com colunas invalidas"
+            else:
+                registro_manifesto = manifesto.loc[
+                    manifesto["arquivo"] == arquivo.name
+                ]
+                if len(registro_manifesto) != 1:
+                    valido = False
+                    motivo = "arquivo ausente ou duplicado no manifesto SHA-256"
+                elif registro_manifesto.iloc[0]["sha256"] != calcular_sha256(arquivo):
+                    valido = False
+                    motivo = "hash SHA-256 diverge do manifesto"
             status = "OK" if valido else "INVALIDO"
             print(f"  [{status}] {local['nome']}: {motivo}")
             if not valido:
@@ -537,6 +556,9 @@ def main():
         raise SystemExit(
             "Corrija a coleta NLR/NSRDB antes de regenerar metricas, notebooks ou relatorios."
         )
+
+    gerar_manifesto_dados()
+    print(f"\n[OK] Manifesto SHA-256 atualizado em: {MANIFESTO_DADOS}")
     
     # Gerar tabela comparativa final
     print("\n" + "="*60)

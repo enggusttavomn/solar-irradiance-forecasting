@@ -7796,22 +7796,18 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div style="border: 2px solid #0f766e; background: #ecfdf5; color: #134e4a; padding: 16px; margin: 16px; font-family: sans-serif;">
-<strong>Nota de proveniencia dos dados.</strong>
-No fluxo atual, os CSVs das 10 localidades so sao aceitos quando validados como NREL/NSRDB.
-Arquivos sinteticos ou sem <code>fonte_dados=NREL/NSRDB</code> devem ser rejeitados e baixados novamente pela API.
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
 <h1 id="%F0%9F%94%8D-Vis%C3%A3o-Geral-do-Pipeline">🔍 Visão Geral do Pipeline<a class="anchor-link" href="#%F0%9F%94%8D-Vis%C3%A3o-Geral-do-Pipeline">¶</a></h1><h2 id="Fluxo-Completo-de-Processamento">Fluxo Completo de Processamento<a class="anchor-link" href="#Fluxo-Completo-de-Processamento">¶</a></h2><pre><code>┌─────────────────────────────────────────────────────────────────────────┐
 │                         PIPELINE COMPLETO                                │
 ├─────────────────────────────────────────────────────────────────────────┤
 │  1. COLETA DE DADOS                                                      │
-│     API NREL/NSRDB → GHI diário (2019-2024)                              │
+│     API NLR/NSRDB → GHI diário (2019-2024)                               │
 │                          │                                               │
 │                          ▼                                               │
 │  2. PRÉ-PROCESSAMENTO                                                    │
@@ -7843,7 +7839,7 @@ Arquivos sinteticos ou sem <code>fonte_dados=NREL/NSRDB</code> devem ser rejeita
 <tbody>
 <tr>
 <td><strong>1. Coleta</strong></td>
-<td>Obtenção e validação de dados da API NREL/NSRDB</td>
+<td>Obtenção de dados da API NLR/NSRDB</td>
 <td><code>preprocessamento.py</code></td>
 </tr>
 <tr>
@@ -7884,8 +7880,8 @@ Arquivos sinteticos ou sem <code>fonte_dados=NREL/NSRDB</code> devem ser rejeita
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h1 id="1%EF%B8%8F%E2%83%A3-Coleta-de-Dados:-API-NREL/NSRDB-(2019-2024)">1️⃣ Coleta de Dados: API NREL/NSRDB (2019-2024)<a class="anchor-link" href="#1%EF%B8%8F%E2%83%A3-Coleta-de-Dados:-API-NREL/NSRDB-(2019-2024)">¶</a></h1><h2 id="%F0%9F%93%8C-O-que-%C3%A9-esta-etapa?">📌 O que é esta etapa?<a class="anchor-link" href="#%F0%9F%93%8C-O-que-%C3%A9-esta-etapa?">¶</a></h2><p>A primeira etapa do pipeline é responsável por <strong>obter os dados brutos</strong> de irradiância solar que serão usados para treinar os modelos.</p>
-<h2 id="%F0%9F%8F%9B%EF%B8%8F-API-NREL/NSRDB">🏛️ API NREL/NSRDB<a class="anchor-link" href="#%F0%9F%8F%9B%EF%B8%8F-API-NREL/NSRDB">¶</a></h2><p><strong>NREL</strong> = <em>National Renewable Energy Laboratory</em></p>
+<h1 id="1%EF%B8%8F%E2%83%A3-Coleta-de-Dados:-API-NLR/NSRDB-(2019-2024)">1️⃣ Coleta de Dados: API NLR/NSRDB (2019-2024)<a class="anchor-link" href="#1%EF%B8%8F%E2%83%A3-Coleta-de-Dados:-API-NLR/NSRDB-(2019-2024)">¶</a></h1><h2 id="%F0%9F%93%8C-O-que-%C3%A9-esta-etapa?">📌 O que é esta etapa?<a class="anchor-link" href="#%F0%9F%93%8C-O-que-%C3%A9-esta-etapa?">¶</a></h2><p>A primeira etapa do pipeline é responsável por <strong>obter os dados brutos</strong> de irradiância solar que serão usados para treinar os modelos.</p>
+<h2 id="%F0%9F%8F%9B%EF%B8%8F-API-NLR/NSRDB">🏛️ API NLR/NSRDB<a class="anchor-link" href="#%F0%9F%8F%9B%EF%B8%8F-API-NLR/NSRDB">¶</a></h2><p><strong>NLR</strong> = <em>National Laboratory of the Rockies</em> (denominação atual do antigo NREL)</p>
 <p><strong>NSRDB</strong> = <em>National Solar Radiation Database</em></p>
 <h3 id="Caracter%C3%ADsticas-da-API:">Características da API:<a class="anchor-link" href="#Caracter%C3%ADsticas-da-API:">¶</a></h3><table>
 <thead>
@@ -7912,13 +7908,13 @@ Arquivos sinteticos ou sem <code>fonte_dados=NREL/NSRDB</code> devem ser rejeita
 <td>2km x 2km a 10km x 10km</td>
 </tr>
 <tr>
-<td><strong>Período Disponível</strong></td>
-<td>1998 - presente</td>
+<td><strong>Período disponível no produto utilizado</strong></td>
+<td>1998 - 2024 no momento da coleta</td>
 </tr>
 </tbody>
 </table>
 <h2 id="%F0%9F%93%85-Per%C3%ADodo-2019-2024">📅 Período 2019-2024<a class="anchor-link" href="#%F0%9F%93%85-Per%C3%ADodo-2019-2024">¶</a></h2><ul>
-<li>✅ <strong>5-6 anos de dados</strong>: Suficiente para capturar padrões sazonais</li>
+<li>✅ <strong>6 anos de dados</strong>: Suficiente para capturar padrões sazonais</li>
 <li>✅ <strong>Dados recentes</strong>: Condições climáticas atuais</li>
 <li>✅ <strong>Consistência</strong>: Mesma tecnologia de medição</li>
 <li>✅ <strong>Completo</strong>: Sem grandes lacunas de dados</li>
@@ -7938,15 +7934,15 @@ Arquivos sinteticos ou sem <code>fonte_dados=NREL/NSRDB</code> devem ser rejeita
 <td>1</td>
 <td>BYD Camacari</td>
 <td>Brasil</td>
-<td>-12.70°</td>
-<td>-38.32°</td>
+<td>-12.67°</td>
+<td>-38.28°</td>
 </tr>
 <tr>
 <td>2</td>
 <td>Tesla Gigafactory Nevada</td>
 <td>EUA</td>
 <td>39.54°</td>
-<td>-119.45°</td>
+<td>-119.44°</td>
 </tr>
 <tr>
 <td>3</td>
@@ -7960,14 +7956,14 @@ Arquivos sinteticos ou sem <code>fonte_dados=NREL/NSRDB</code> devem ser rejeita
 <td>Hyundai Metaplant Georgia</td>
 <td>EUA</td>
 <td>32.16°</td>
-<td>-81.61°</td>
+<td>-81.45°</td>
 </tr>
 <tr>
 <td>5</td>
 <td>Rivian Normal</td>
 <td>EUA</td>
 <td>40.51°</td>
-<td>-88.95°</td>
+<td>-89.05°</td>
 </tr>
 <tr>
 <td>6</td>
@@ -7980,14 +7976,14 @@ Arquivos sinteticos ou sem <code>fonte_dados=NREL/NSRDB</code> devem ser rejeita
 <td>7</td>
 <td>Lucid AMP 1 Casa Grande</td>
 <td>EUA</td>
-<td>32.88°</td>
-<td>-111.76°</td>
+<td>32.86°</td>
+<td>-111.78°</td>
 </tr>
 <tr>
 <td>8</td>
 <td>GM Factory Zero</td>
 <td>EUA</td>
-<td>42.39°</td>
+<td>42.38°</td>
 <td>-83.05°</td>
 </tr>
 <tr>
@@ -7995,14 +7991,14 @@ Arquivos sinteticos ou sem <code>fonte_dados=NREL/NSRDB</code> devem ser rejeita
 <td>Ford Rouge EV Center</td>
 <td>EUA</td>
 <td>42.31°</td>
-<td>-83.22°</td>
+<td>-83.17°</td>
 </tr>
 <tr>
 <td>10</td>
 <td>BMW San Luis Potosi</td>
 <td>México</td>
-<td>22.09°</td>
-<td>-100.87°</td>
+<td>21.97°</td>
+<td>-100.85°</td>
 </tr>
 </tbody>
 </table>
@@ -8059,7 +8055,7 @@ Arquivos sinteticos ou sem <code>fonte_dados=NREL/NSRDB</code> devem ser rejeita
 <tbody>
 <tr>
 <td>2023-01-01</td>
-<td>5000</td>
+<td>200</td>
 </tr>
 <tr>
 <td>2023-01-02</td>
@@ -8067,15 +8063,15 @@ Arquivos sinteticos ou sem <code>fonte_dados=NREL/NSRDB</code> devem ser rejeita
 </tr>
 <tr>
 <td>2023-01-02</td>
-<td>4800</td>
+<td>180</td>
 </tr>
 <tr>
 <td>2023-01-03</td>
-<td>-100</td>
+<td>-10</td>
 </tr>
 <tr>
 <td>2023-01-04</td>
-<td>5200</td>
+<td>220</td>
 </tr>
 </tbody>
 </table>
@@ -8090,15 +8086,15 @@ Arquivos sinteticos ou sem <code>fonte_dados=NREL/NSRDB</code> devem ser rejeita
 <tbody>
 <tr>
 <td>2023-01-01</td>
-<td>5000</td>
+<td>200</td>
 </tr>
 <tr>
 <td>2023-01-02</td>
-<td>4800</td>
+<td>180</td>
 </tr>
 <tr>
 <td>2023-01-04</td>
-<td>5200</td>
+<td>220</td>
 </tr>
 </tbody>
 </table>
@@ -8107,7 +8103,7 @@ Arquivos sinteticos ou sem <code>fonte_dados=NREL/NSRDB</code> devem ser rejeita
 </blockquote>
 <hr/>
 <h2 id="%F0%9F%93%8A-2.2-Quantiza%C3%A7%C3%A3o-em-128-N%C3%ADveis">📊 2.2 Quantização em 128 Níveis<a class="anchor-link" href="#%F0%9F%93%8A-2.2-Quantiza%C3%A7%C3%A3o-em-128-N%C3%ADveis">¶</a></h2><h3 id="O-que-%C3%A9-Quantiza%C3%A7%C3%A3o?">O que é Quantização?<a class="anchor-link" href="#O-que-%C3%A9-Quantiza%C3%A7%C3%A3o?">¶</a></h3><p><strong>Quantização</strong> é o processo de converter valores <strong>contínuos</strong> em valores <strong>discretos</strong>.</p>
-<pre><code>Contínuo:  0, 1, 2, ... 7998, 7999, 8000 (infinitos valores)
+<pre><code>Contínuo:  0, 1, 2, ... 398, 399, 400 (infinitos valores possíveis)
               ↓↓ Quantização ↓↓
 Discreto:  0, 1, 2, ... 126, 127 (apenas 128 valores)
 </code></pre>
@@ -8135,7 +8131,7 @@ Discreto:  0, 1, 2, ... 126, 127 (apenas 128 valores)
 </table>
 <h3 id="F%C3%B3rmula-da-Quantiza%C3%A7%C3%A3o:">Fórmula da Quantização:<a class="anchor-link" href="#F%C3%B3rmula-da-Quantiza%C3%A7%C3%A3o:">¶</a></h3><div class="highlight"><pre><span></span><span class="n">nivel</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">valor</span> <span class="o">-</span> <span class="n">minimo</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">maximo</span> <span class="o">-</span> <span class="n">minimo</span><span class="p">)</span> <span class="o">*</span> <span class="mi">127</span><span class="p">)</span>
 </pre></div>
-<h3 id="Exemplo-Num%C3%A9rico:">Exemplo Numérico:<a class="anchor-link" href="#Exemplo-Num%C3%A9rico:">¶</a></h3><p>Suponha: mínimo = 0, máximo = 8000, níveis = 128</p>
+<h3 id="Exemplo-Num%C3%A9rico:">Exemplo Numérico:<a class="anchor-link" href="#Exemplo-Num%C3%A9rico:">¶</a></h3><p>Suponha: mínimo = 0, máximo = 400, níveis = 128</p>
 <table>
 <thead>
 <tr>
@@ -8146,23 +8142,23 @@ Discreto:  0, 1, 2, ... 126, 127 (apenas 128 valores)
 </thead>
 <tbody>
 <tr>
-<td>0 Wh/m²</td>
-<td>(0-0)/(8000-0) * 127 = 0</td>
+<td>0 W/m²</td>
+<td>(0-0)/(400-0) * 127 = 0</td>
 <td><strong>0</strong></td>
 </tr>
 <tr>
-<td>4000 Wh/m²</td>
-<td>(4000-0)/(8000-0) * 127 = 63.5</td>
+<td>200 W/m²</td>
+<td>(200-0)/(400-0) * 127 = 63.5</td>
 <td><strong>64</strong></td>
 </tr>
 <tr>
-<td>8000 Wh/m²</td>
-<td>(8000-0)/(8000-0) * 127 = 127</td>
+<td>400 W/m²</td>
+<td>(400-0)/(400-0) * 127 = 127</td>
 <td><strong>127</strong></td>
 </tr>
 <tr>
-<td>2000 Wh/m²</td>
-<td>(2000-0)/(8000-0) * 127 = 31.75</td>
+<td>100 W/m²</td>
+<td>(100-0)/(400-0) * 127 = 31.75</td>
 <td><strong>32</strong></td>
 </tr>
 </tbody>
@@ -8313,12 +8309,12 @@ Discreto:  0, 1, 2, ... 126, 127 (apenas 128 valores)
 </tr>
 </tbody>
 </table>
-<h3 id="%E2%9A%A0%EF%B8%8F-Importante:-Shift-para-Evitar-Vazamento!">⚠️ Importante: Shift para Evitar Vazamento!<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-Importante:-Shift-para-Evitar-Vazamento!">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># CORRETO: usa apenas valores PASSADOS</span>
-<span class="n">valores_passados</span> <span class="o">=</span> <span class="n">dados</span><span class="p">[</span><span class="s1">'ghi_normalizado'</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">media_3d</span> <span class="o">=</span> <span class="n">valores_passados</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<h3 id="%E2%9A%A0%EF%B8%8F-Importante:-Alinhamento-com-o-Alvo">⚠️ Importante: Alinhamento com o Alvo<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-Importante:-Alinhamento-com-o-Alvo">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># CORRETO: a linha de data t preve t+1</span>
+<span class="c1"># A janela termina em t e usa somente dias anteriores ao alvo.</span>
+<span class="n">media_3d</span> <span class="o">=</span> <span class="n">dados</span><span class="p">[</span><span class="s1">'ghi_normalizado'</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
-<span class="c1"># ERRADO: inclui valor do dia atual (vazamento!)</span>
-<span class="n">media_3d</span> <span class="o">=</span> <span class="n">dados</span><span class="p">[</span><span class="s1">'ghi_normalizado'</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>  <span class="c1"># ❌</span>
+<span class="c1"># ERRADO: deslocar para o futuro incluiria o valor-alvo na entrada.</span>
+<span class="n">media_3d</span> <span class="o">=</span> <span class="n">dados</span><span class="p">[</span><span class="s1">'ghi_normalizado'</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>  <span class="c1"># ❌</span>
 </pre></div>
 <h2 id="%F0%9F%8E%AF-Resumo-da-Etapa-3">🎯 Resumo da Etapa 3<a class="anchor-link" href="#%F0%9F%8E%AF-Resumo-da-Etapa-3">¶</a></h2><ul>
 <li><strong>4 lags</strong> + <strong>3 médias móveis</strong> = <strong>7 features temporais</strong></li>
@@ -8548,7 +8544,7 @@ Discreto:  0, 1, 2, ... 126, 127 (apenas 128 valores)
 <h2 id="%F0%9F%93%8A-6.3-RMSE---Raiz-do-Erro-Quadr%C3%A1tico-M%C3%A9dio">📊 6.3 RMSE - Raiz do Erro Quadrático Médio<a class="anchor-link" href="#%F0%9F%93%8A-6.3-RMSE---Raiz-do-Erro-Quadr%C3%A1tico-M%C3%A9dio">¶</a></h2><h3 id="F%C3%B3rmula:">Fórmula:<a class="anchor-link" href="#F%C3%B3rmula:">¶</a></h3><pre><code>RMSE = √MSE
 </code></pre>
 <h3 id="Vantagem:">Vantagem:<a class="anchor-link" href="#Vantagem:">¶</a></h3><ul>
-<li>✅ <strong>Mesma unidade</strong> dos dados originais</li>
+<li>✅ <strong>Mesma escala</strong> da variável avaliada; neste projeto, a escala normalizada [0, 1]</li>
 </ul>
 <hr/>
 <h2 id="%F0%9F%93%8A-6.4-R%C2%B2---Coeficiente-de-Determina%C3%A7%C3%A3o">📊 6.4 R² - Coeficiente de Determinação<a class="anchor-link" href="#%F0%9F%93%8A-6.4-R%C2%B2---Coeficiente-de-Determina%C3%A7%C3%A3o">¶</a></h2><h3 id="F%C3%B3rmula:">Fórmula:<a class="anchor-link" href="#F%C3%B3rmula:">¶</a></h3><pre><code>R² = 1 - (SSE / SST)
@@ -8638,7 +8634,7 @@ Onde:
 │                        PIPELINE COMPLETO                             │
 ├─────────────────────────────────────────────────────────────────────┤
 │  1. COLETA                                                           │
-│     API NREL → Dados brutos de GHI (2019-2024)                      │
+│     API NLR → Dados brutos de GHI (2019-2024)                       │
 │                          │                                           │
 │                          ▼                                           │
 │  2. PRÉ-PROCESSAMENTO                                                │
@@ -8701,6 +8697,18 @@ Onde:
 </tr>
 </tbody>
 </table>
+<hr/>
+<h2 id="%F0%9F%93%9A-Refer%C3%AAncias">📚 Referências<a class="anchor-link" href="#%F0%9F%93%9A-Refer%C3%AAncias">¶</a></h2><ul>
+<li><strong>XGBoost</strong>: <a href="https://xgboost.readthedocs.io/">https://xgboost.readthedocs.io/</a></li>
+<li><strong>Scikit-learn MLP</strong>: <a href="https://scikit-learn.org/stable/modules/neural_networks_supervised.html">https://scikit-learn.org/stable/modules/neural_networks_supervised.html</a></li>
+<li><strong>PVLib</strong>: <a href="https://pvlib-python.readthedocs.io/">https://pvlib-python.readthedocs.io/</a></li>
+<li><strong>NLR NSRDB</strong>: <a href="https://developer.nlr.gov/docs/solar/nsrdb/">https://developer.nlr.gov/docs/solar/nsrdb/</a></li>
+</ul>
+<hr/>
+<div align="center">
+<p><strong>Material criado para apresentação do TCC</strong></p>
+<p>Previsão e Geração de Séries Temporais de GHI usando XGBoost e MLP</p>
+</div>
 </div>
 </div>
 </div>

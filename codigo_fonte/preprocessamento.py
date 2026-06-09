@@ -408,7 +408,7 @@ def coletar_ghi_nrel(
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     temporary_path = output_path.with_suffix(output_path.suffix + ".tmp")
-    ghi_daily.to_csv(temporary_path, index=False)
+    ghi_daily.to_csv(temporary_path, index=False, lineterminator="\n")
     temporary_path.replace(output_path)
     return ghi_daily
 
@@ -540,9 +540,26 @@ def preparar_serie_temporal(
     """
     if not 0 < train_ratio < 1:
         raise ValueError("train_ratio deve estar entre 0 e 1.")
+    if any(lag < 1 for lag in lags):
+        raise ValueError("Todos os lags devem ser maiores ou iguais a 1.")
+    if any(janela < 1 for janela in moving_windows):
+        raise ValueError("Todas as janelas moveis devem ser maiores ou iguais a 1.")
 
     serie = limpar_serie_ghi(df)
-    raw_train_size = max(1, int(len(serie) * train_ratio))
+    historico_necessario = max(
+        [lag - 1 for lag in lags] + [janela - 1 for janela in moving_windows],
+        default=0,
+    )
+    quantidade_modelagem = len(serie) - historico_necessario - 1
+    train_size = int(quantidade_modelagem * train_ratio)
+    if train_size <= 0 or train_size >= quantidade_modelagem:
+        raise ValueError(
+            "A serie nao tem observacoes suficientes para criar treino e teste "
+            "apos lags e medias moveis."
+        )
+
+    # Inclui todo o historico e todos os alvos pertencentes ao conjunto de treino.
+    raw_train_size = historico_necessario + train_size + 1
 
     # A quantizacao e a normalizacao usam parametros ajustados somente no trecho
     # de treino, evitando que estatisticas do futuro vazem para o conjunto teste.
@@ -571,12 +588,6 @@ def preparar_serie_temporal(
         moving_windows=moving_windows,
     )
     train_size = int(len(dados_modelagem) * train_ratio)
-
-    if train_size == 0 or train_size == len(dados_modelagem):
-        raise ValueError(
-            "A serie nao tem observacoes suficientes para criar treino e teste "
-            "apos lags e medias moveis."
-        )
 
     if output_path is not None:
         output_path = Path(output_path)

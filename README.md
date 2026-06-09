@@ -25,7 +25,9 @@ O objetivo é prever o valor diário de GHI do dia seguinte a partir de uma sér
 .
 |-- README.md
 |-- requirements.txt
+|-- pytest.ini
 |-- .gitignore
+|-- .gitattributes
 |-- .env
 |-- treinamento_principal.py
 |-- treinar_todas_localidades.py
@@ -43,7 +45,13 @@ O objetivo é prever o valor diário de GHI do dia seguinte a partir de uma sér
 |   |   +-- localidades_ev/
 |   +-- processados/
 |-- cadernos_jupyter/
+|   |-- 00_coleta_dados_localidades.ipynb
+|   |-- 01_explicacao_teorica_pipeline.ipynb
+|   +-- 02_resultados_todas_localidades.ipynb
 |-- relatorios/
+|   |-- 01_explicacao_teorica_pipeline.html
+|   +-- 02_resultados_todas_localidades.html
+|-- resultados/
 |-- testes/
 +-- tools/
 ```
@@ -74,6 +82,11 @@ Lista as bibliotecas Python necessárias para executar o projeto:
 - `pillow`: suporte a imagens em alguns gráficos dos notebooks.
 - `cartopy`: geração de mapas nos notebooks.
 
+### `pytest.ini`
+
+Configura a raiz do projeto no caminho de importação e limita a descoberta
+automática de testes à pasta `testes/`.
+
 ### `.gitignore`
 
 Define arquivos e pastas que não devem ser versionados, como:
@@ -83,6 +96,11 @@ Define arquivos e pastas que não devem ser versionados, como:
 - ambientes virtuais como `venv/` e `.venv/`.
 - caches do Jupyter e pytest.
 - modelos treinados e resultados gerados automaticamente.
+
+### `.gitattributes`
+
+Padroniza arquivos de texto com final de linha LF. Isso mantém os hashes
+SHA-256 dos CSVs estáveis entre Linux e Windows.
 
 ### `.env`
 
@@ -353,11 +371,14 @@ Colunas:
 
 Guarda bases geradas após o pré-processamento.
 
-Arquivo principal:
+A subpasta `localidades_ev/` contém uma base de features para cada uma das dez
+localidades.
 
-- `ghi_features.csv`
+- `localidades_ev/*_features.csv`
 
-Esse arquivo contém a base final com features temporais, valores normalizados e alvo de previsão.
+Esses arquivos contêm as bases finais com features temporais, valores
+normalizados e alvo de previsão. O script de série única também pode gerar
+localmente `ghi_features.csv`, mas esse artefato recriável não é versionado.
 
 Principais colunas:
 
@@ -380,6 +401,13 @@ Principais colunas:
 ## Pasta `cadernos_jupyter/`
 
 Contém os notebooks usados para explicação, análise e apresentação dos resultados.
+
+### `00_coleta_dados_localidades.ipynb`
+
+Notebook de aquisição dos dados das dez localidades. Ele consulta a API
+NLR/NSRDB, valida a cobertura diária e salva os CSVs brutos usados pelo
+treinamento. Sua execução exige as credenciais `NREL_API_KEY` e `NREL_EMAIL`
+no arquivo `.env`.
 
 ### `01_explicacao_teorica_pipeline.ipynb`
 
