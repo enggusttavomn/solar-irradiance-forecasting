@@ -202,6 +202,50 @@ def garantir_resolucao_diaria(df: pd.DataFrame) -> pd.DataFrame:
     return diario
 
 
+def calcular_estatisticas_ghi_horario(df: pd.DataFrame) -> dict[str, float | str]:
+    """Calcula media, sigma e COV do GHI horario antes da agregacao diaria."""
+    date_col, ghi_col = detectar_colunas(df)
+    if date_col is None:
+        if isinstance(df.index, pd.DatetimeIndex):
+            datas = pd.Series(df.index, index=df.index)
+        else:
+            raise ValueError("Nao foi encontrada coluna de data para estatisticas horarias.")
+    else:
+        datas = pd.to_datetime(df[date_col], errors="coerce")
+
+    ghi = pd.to_numeric(df[ghi_col], errors="coerce")
+    valido = datas.notna() & ghi.notna() & (ghi >= 0)
+    datas_validas = datas.loc[valido].sort_values()
+    ghi_valido = ghi.loc[datas_validas.index].astype(float)
+
+    if ghi_valido.empty:
+        return {
+            "ghi_horario_media": float("nan"),
+            "ghi_horario_sigma": float("nan"),
+            "ghi_horario_cov": float("nan"),
+            "ghi_horario_cov_percentual": float("nan"),
+            "ghi_horario_observacoes": 0.0,
+            "ghi_horario_fonte_estatistica": "indisponivel",
+        }
+
+    deltas = datas_validas.diff().dropna()
+    intervalo_mediano_horas = deltas.median() / pd.Timedelta(hours=1) if not deltas.empty else float("nan")
+    fonte = "horaria" if pd.notna(intervalo_mediano_horas) and intervalo_mediano_horas <= 1.5 else "nao_horaria"
+
+    media = float(ghi_valido.mean())
+    sigma = float(ghi_valido.std(ddof=0))
+    cov = float("nan") if np.isclose(media, 0.0) else sigma / media
+    return {
+        "ghi_horario_media": media,
+        "ghi_horario_sigma": sigma,
+        "ghi_horario_cov": cov,
+        "ghi_horario_cov_percentual": cov * 100 if not np.isnan(cov) else float("nan"),
+        "ghi_horario_observacoes": float(len(ghi_valido)),
+        "ghi_horario_intervalo_mediano_horas": float(intervalo_mediano_horas),
+        "ghi_horario_fonte_estatistica": fonte,
+    }
+
+
 def _read_data_file(path: Path) -> pd.DataFrame:
     """Escolhe o leitor do pandas de acordo com a extensao do arquivo."""
     suffix = path.suffix.lower()
@@ -398,6 +442,7 @@ def coletar_ghi_nrel(
     # Cada ano e coletado separadamente porque este e o contrato da API.
     frames = []
     metadata_by_year = []
+    hourly_frames = []
     for index, year in enumerate(anos_solicitados):
         # Faz ate tres tentativas para tolerar falhas transitorias de rede.
         for attempt in range(3):
@@ -424,6 +469,7 @@ def coletar_ghi_nrel(
 
         # Reduz as observacoes horarias a uma media por dia. Horas noturnas
         # tambem fazem parte da media diaria de 24 horas.
+        hourly_frames.append(df_year[["ghi"]])
         daily = df_year[["ghi"]].resample("D").mean()
         # Remove apenas a informacao de fuso, preservando o horario local usado
         # pela consulta (``utc=False``).
@@ -438,6 +484,7 @@ def coletar_ghi_nrel(
 
     # Une todos os anos, limpa novamente e garante uma serie diaria ordenada.
     ghi_daily = pd.concat(frames).reset_index()
+    estatisticas_horarias = calcular_estatisticas_ghi_horario(pd.concat(hourly_frames))
     ghi_daily = limpar_serie_ghi(ghi_daily)
 
     # Bloco de identificacao geografica da localidade.
@@ -479,6 +526,8 @@ def coletar_ghi_nrel(
     ghi_daily["timezone_nsrdb"] = metadata_by_year[0].get("Time Zone")
     ghi_daily["elevacao_grade_m"] = metadata_by_year[0].get("altitude")
     ghi_daily["ghi_unidade_api"] = metadata_by_year[0].get("GHI Units")
+    for coluna, valor in estatisticas_horarias.items():
+        ghi_daily[coluna] = valor
     # Data em UTC permite saber quando o arquivo foi obtido.
     ghi_daily["data_coleta_utc"] = datetime.now(timezone.utc).isoformat()
 

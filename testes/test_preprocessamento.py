@@ -8,12 +8,14 @@ depender da API. ``pytest`` descobre automaticamente funcoes iniciadas por
 import pandas as pd
 import pytest
 
+from codigo_fonte.avaliacao import calcular_metricas, desnormalizar_ghi
 from codigo_fonte.preprocessamento import (
     NSRDB_API_URL,
     NSRDB_DAILY_AGGREGATION,
     NSRDB_GHI_UNIT,
     NSRDB_PRODUCT,
     NSRDB_SOURCE,
+    calcular_estatisticas_ghi_horario,
     carregar_serie_ghi,
     normalizar_minmax,
     preparar_serie_temporal,
@@ -80,6 +82,46 @@ def test_normalizar_minmax_limita_entre_zero_e_um():
 
     assert normalizado.min() >= 0
     assert normalizado.max() <= 1
+
+
+def test_desnormalizar_ghi_volta_para_escala_wm2():
+    """Confirma a conversao aproximada da escala normalizada para W/m2."""
+    valores = pd.Series([0.0, 0.5, 1.0])
+
+    desnormalizado = desnormalizar_ghi(valores, {"min": 100.0, "max": 300.0})
+
+    assert desnormalizado.tolist() == [100.0, 200.0, 300.0]
+
+
+def test_calcular_metricas_inclui_nrmse():
+    """Verifica a normalizacao do RMSE pela media real."""
+    metricas = calcular_metricas(
+        pd.Series([100.0, 200.0, 300.0]),
+        pd.Series([100.0, 200.0, 240.0]),
+        "Teste",
+        sufixo="wm2",
+    )
+
+    assert metricas["RMSE_wm2"] == pytest.approx((3600 / 3) ** 0.5)
+    assert metricas["nRMSE_wm2"] == pytest.approx(metricas["RMSE_wm2"] / 200.0)
+    assert metricas["nRMSE_percentual_wm2"] == pytest.approx(metricas["nRMSE_wm2"] * 100)
+
+
+def test_calcular_estatisticas_ghi_horario_retorna_cov():
+    """Calcula sigma/media usando observacoes horarias antes da media diaria."""
+    df = pd.DataFrame(
+        {
+            "data": pd.date_range("2024-01-01", periods=4, freq="h"),
+            "ghi": [0.0, 100.0, 200.0, 300.0],
+        }
+    )
+
+    estatisticas = calcular_estatisticas_ghi_horario(df)
+
+    assert estatisticas["ghi_horario_media"] == pytest.approx(150.0)
+    assert estatisticas["ghi_horario_sigma"] == pytest.approx(111.80339887498948)
+    assert estatisticas["ghi_horario_cov"] == pytest.approx(0.7453559924999299)
+    assert estatisticas["ghi_horario_fonte_estatistica"] == "horaria"
 
 
 def test_preparar_serie_temporal_cria_features_sem_futuro():
