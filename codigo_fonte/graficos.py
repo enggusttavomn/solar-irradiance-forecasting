@@ -13,6 +13,8 @@ def gerar_grafico_temporal(
     y_true: pd.Series,
     predicoes: dict[str, pd.Series],
     caminho_saida: str | Path,
+    y_label: str = "GHI quantizado normalizado",
+    titulo_sufixo: str = "",
 ) -> None:
     """Gera grafico temporal comparando valores reais e previstos no teste."""
     # A funcao cria a pasta de destino para poder ser chamada isoladamente.
@@ -25,9 +27,9 @@ def gerar_grafico_temporal(
     for nome_modelo, y_pred in predicoes.items():
         plt.plot(datas, y_pred, label=nome_modelo, linewidth=1.8, alpha=0.85)
 
-    plt.title("Serie temporal no conjunto de teste")
+    plt.title(f"Serie temporal no conjunto de teste{titulo_sufixo}")
     plt.xlabel("Data")
-    plt.ylabel("GHI quantizado normalizado")
+    plt.ylabel(y_label)
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
@@ -43,6 +45,8 @@ def gerar_grafico_real_vs_previsto(
     y_pred: pd.Series,
     modelo: str,
     caminho_saida: str | Path,
+    y_label: str = "GHI quantizado normalizado",
+    titulo_sufixo: str = "",
 ) -> None:
     """Gera grafico temporal para um modelo especifico."""
     caminho_saida = Path(caminho_saida)
@@ -52,9 +56,9 @@ def gerar_grafico_real_vs_previsto(
     plt.figure(figsize=(11, 4))
     plt.plot(datas, y_true, label="Real", linewidth=2)
     plt.plot(datas, y_pred, label=f"Previsto - {modelo}", linewidth=2, alpha=0.85)
-    plt.title(f"Valores reais vs previstos - {modelo}")
+    plt.title(f"Valores reais vs previstos - {modelo}{titulo_sufixo}")
     plt.xlabel("Data")
-    plt.ylabel("GHI quantizado normalizado")
+    plt.ylabel(y_label)
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
@@ -67,6 +71,8 @@ def gerar_grafico_dispersao(
     y_pred: pd.Series,
     modelo: str,
     caminho_saida: str | Path,
+    eixo_label: str = "GHI",
+    titulo_sufixo: str = "",
 ) -> None:
     """Gera grafico de dispersao real vs previsto para um modelo."""
     caminho_saida = Path(caminho_saida)
@@ -80,9 +86,9 @@ def gerar_grafico_dispersao(
     # Quanto mais perto um ponto estiver da diagonal, menor e o erro da amostra.
     plt.scatter(y_true, y_pred, alpha=0.65)
     plt.plot([min_value, max_value], [min_value, max_value], color="black", linestyle="--")
-    plt.title(f"Dispersao real vs previsto - {modelo}")
-    plt.xlabel("GHI real")
-    plt.ylabel("GHI previsto")
+    plt.title(f"Dispersao real vs previsto - {modelo}{titulo_sufixo}")
+    plt.xlabel(f"{eixo_label} real")
+    plt.ylabel(f"{eixo_label} previsto")
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
     plt.savefig(caminho_saida, dpi=300)
@@ -94,6 +100,8 @@ def salvar_graficos(
     y_true: pd.Series,
     predicoes: dict[str, pd.Series],
     pasta_saida: str | Path,
+    y_label: str = "GHI quantizado normalizado",
+    titulo_sufixo: str = "",
 ) -> None:
     """Salva todos os graficos obrigatorios da avaliacao dos modelos."""
     pasta_saida = Path(pasta_saida)
@@ -105,6 +113,8 @@ def salvar_graficos(
         y_true,
         predicoes,
         pasta_saida / "serie_temporal_teste_real_xgboost_mlp.png",
+        y_label=y_label,
+        titulo_sufixo=titulo_sufixo,
     )
 
     # Depois cria duas figuras especificas para cada modelo.
@@ -116,10 +126,14 @@ def salvar_graficos(
             y_pred,
             nome_modelo,
             pasta_saida / f"{nome_seguro}_real_vs_previsto.png",
+            y_label=y_label,
+            titulo_sufixo=titulo_sufixo,
         )
         gerar_grafico_dispersao(
             y_true,
             y_pred,
             nome_modelo,
             pasta_saida / f"{nome_seguro}_dispersao_real_vs_previsto.png",
+            eixo_label=y_label,
+            titulo_sufixo=titulo_sufixo,
         )

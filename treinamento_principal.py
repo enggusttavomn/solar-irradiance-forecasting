@@ -13,7 +13,12 @@ from pathlib import Path
 
 import pandas as pd
 
-from codigo_fonte.avaliacao import calcular_metricas, salvar_metricas, salvar_previsoes
+from codigo_fonte.avaliacao import (
+    calcular_metricas,
+    desnormalizar_ghi,
+    salvar_metricas,
+    salvar_previsoes,
+)
 from codigo_fonte.configuracao import PASTA_FIGURAS, PASTA_METRICAS, PASTA_MODELOS
 from codigo_fonte.features import dividir_treino_teste_temporal
 from codigo_fonte.graficos import salvar_graficos
@@ -76,6 +81,11 @@ def executar_pipeline(data_path: str | Path | None = None, gerar_graficos: bool 
         "XGBoost": pd.Series(xgb_model.predict(X_test), index=y_test.index).clip(0, 1).reset_index(drop=True),
         "MLP": pd.Series(mlp_model.predict(X_test), index=y_test.index).clip(0, 1).reset_index(drop=True),
     }
+    y_test_original = dados_teste["ghi_alvo_original"].reset_index(drop=True)
+    predicoes_original = {
+        nome_modelo: desnormalizar_ghi(y_pred, preparation.quantization_params)
+        for nome_modelo, y_pred in predicoes.items()
+    }
 
     print("[4/5] Salvando modelos, metricas e previsoes...")
     # Modelos e resultados sao salvos antes dos graficos, que podem ser omitidos.
@@ -83,17 +93,49 @@ def executar_pipeline(data_path: str | Path | None = None, gerar_graficos: bool 
     salvar_modelo(mlp_model, PASTA_MODELOS / "mlp_ghi.joblib")
 
     # A mesma funcao de metricas e aplicada aos dois vetores de previsao.
-    metricas = [
-        calcular_metricas(y_test_reset, predicoes["XGBoost"], "XGBoost"),
-        calcular_metricas(y_test_reset, predicoes["MLP"], "MLP"),
-    ]
+    metricas = []
+    for nome_modelo in ("XGBoost", "MLP"):
+        metricas_modelo = calcular_metricas(
+            y_test_reset,
+            predicoes[nome_modelo],
+            nome_modelo,
+            sufixo="normalizado",
+        )
+        metricas_modelo.update(
+            calcular_metricas(
+                y_test_original,
+                predicoes_original[nome_modelo],
+                nome_modelo,
+                sufixo="wm2",
+            )
+        )
+        metricas_modelo["MAE"] = metricas_modelo["MAE_normalizado"]
+        metricas_modelo["MSE"] = metricas_modelo["MSE_normalizado"]
+        metricas_modelo["RMSE"] = metricas_modelo["RMSE_normalizado"]
+        metricas_modelo["R2"] = metricas_modelo["R2_normalizado"]
+        metricas.append(metricas_modelo)
     df_metricas = salvar_metricas(metricas, PASTA_METRICAS / "metricas_modelos.csv")
-    salvar_previsoes(datas_teste, y_test_reset, predicoes, PASTA_METRICAS)
+    salvar_previsoes(
+        datas_teste,
+        y_test_reset,
+        predicoes,
+        PASTA_METRICAS,
+        y_true_original=y_test_original,
+        predicoes_original=predicoes_original,
+    )
 
     # A flag existe para ambientes sem interface grafica ou execucoes de teste.
     if gerar_graficos:
         print("[5/5] Gerando graficos...")
-        salvar_graficos(datas_teste, y_test_reset, predicoes, PASTA_FIGURAS)
+        salvar_graficos(datas_teste, y_test_reset, predicoes, PASTA_FIGURAS / "normalizado")
+        salvar_graficos(
+            datas_teste,
+            y_test_original,
+            predicoes_original,
+            PASTA_FIGURAS / "wm2",
+            y_label="GHI medio diario (W/m2)",
+            titulo_sufixo=" - escala real",
+        )
     else:
         print("[5/5] Geracao de graficos ignorada.")
 

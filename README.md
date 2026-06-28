@@ -47,7 +47,7 @@ Métricas, previsões, modelos e gráficos
 | Features | 4 lags e 3 médias móveis |
 | Divisão | 80% treino e 20% teste, sem embaralhamento |
 | Modelos | XGBoost e MLP |
-| Métricas | MAE, MSE, RMSE e R² |
+| Métricas | MAE, MSE, RMSE, R², nRMSE e COV horário |
 
 ## Sumário
 
@@ -535,15 +535,26 @@ As previsões dos dois modelos são limitadas ao intervalo `[0, 1]`.
 | MSE | média do erro ao quadrado | menor |
 | RMSE | raiz do MSE, penaliza erros grandes | menor |
 | R² | proporção da variação explicada | maior |
+| nRMSE | RMSE dividido pela média do GHI real | menor |
+| COV horário | `sigma / média` do GHI horário | contextual |
 
-As métricas são calculadas na escala quantizada e normalizada. Portanto, MAE
-e RMSE não estão diretamente em `W/m²`.
+As métricas são salvas em duas escalas. A versão normalizada preserva a leitura
+interna do modelo, enquanto a versão `wm2` calcula os erros depois de converter
+real e previsto para a escala física aproximada em `W/m²`.
 
-Uma conversão aproximada depende da faixa de treinamento da localidade:
+A desnormalização depende da faixa de treinamento da localidade:
 
 ```text
-erro em W/m² ≈ erro normalizado × (máximo_treino - mínimo_treino)
+GHI em W/m² ≈ GHI normalizado × (máximo_treino - mínimo_treino) + mínimo_treino
+nRMSE = RMSE_wm2 / média(GHI real em W/m²)
+COV horário = sigma(GHI horário) / média(GHI horário)
 ```
+
+O arquivo `resultados/todas_localidades/estatisticas_horarias.csv` registra
+média, sigma e COV dos dados horários quando a localidade foi coletada com essa
+granularidade. CSVs antigos que já estão agregados por dia ficam marcados como
+`indisponivel_csv_diario`, pois não é possível reconstruir a variabilidade
+horária a partir da média diária.
 
 ### Gráficos
 
@@ -551,7 +562,8 @@ Para cada localidade são gerados:
 
 - série temporal do teste com real, XGBoost e MLP;
 - real versus previsto de cada modelo;
-- dispersão real versus previsto de cada modelo.
+- dispersão real versus previsto de cada modelo;
+- versões normalizadas e versões desnormalizadas em `W/m²`.
 
 No gráfico de dispersão, previsões melhores ficam mais próximas da diagonal.
 
@@ -561,16 +573,16 @@ Resultados presentes em `resultados/todas_localidades/resumo_localidades.csv`:
 
 | Localidade | Melhor modelo por R² | Melhor R² |
 |---|---|---:|
-| BYD Camaçari | MLP | 0,3884 |
+| BYD Camaçari | MLP | 0,3892 |
 | Tesla Gigafactory Nevada | XGBoost | 0,8596 |
 | Tesla Gigafactory Texas | MLP | 0,5716 |
-| Hyundai Metaplant Georgia | MLP | 0,5190 |
+| Hyundai Metaplant Georgia | MLP | 0,5188 |
 | Rivian Normal | MLP | 0,6401 |
-| Tesla Fremont Factory | XGBoost | 0,8698 |
-| Lucid AMP 1 Casa Grande | XGBoost | 0,8167 |
-| GM Factory Zero | MLP | 0,6366 |
-| Ford Rouge Electric Vehicle Center | XGBoost | 0,6512 |
-| BMW San Luis Potosí | MLP | 0,5903 |
+| Tesla Fremont Factory | XGBoost | 0,8701 |
+| Lucid AMP 1 Casa Grande | MLP | 0,8161 |
+| GM Factory Zero | MLP | 0,6362 |
+| Ford Rouge Electric Vehicle Center | XGBoost | 0,6515 |
+| BMW San Luis Potosí | MLP | 0,5895 |
 
 Síntese:
 
@@ -581,10 +593,10 @@ XGBoost foi melhor em 4 localidades.
 
 Médias entre as dez localidades:
 
-| Modelo | MAE médio | RMSE médio | R² médio |
-|---|---:|---:|---:|
-| XGBoost | 0,1068 | 0,1410 | 0,6398 |
-| MLP | 0,1052 | 0,1390 | 0,6529 |
+| Modelo | MAE médio normalizado | RMSE médio normalizado | RMSE médio W/m² | nRMSE médio W/m² | R² médio W/m² |
+|---|---:|---:|---:|---:|---:|
+| XGBoost | 0,1068 | 0,1410 | 50,77 | 27,41% | 0,6396 |
+| MLP | 0,1052 | 0,1390 | 50,08 | 27,05% | 0,6529 |
 
 Não existe um vencedor universal. A previsibilidade varia entre localidades,
 e resultados menores indicam dificuldade para representar as mudanças diárias
@@ -785,7 +797,6 @@ O projeto atual:
 - não compara formalmente com um baseline de persistência;
 - não inclui variáveis meteorológicas;
 - não inclui features sazonais explícitas;
-- avalia principalmente na escala normalizada;
 - quantiza o sinal e, portanto, perde resolução;
 - treina modelos independentes por localidade.
 
@@ -797,7 +808,7 @@ Melhorias naturais:
 - mês, dia do ano e codificação seno/cosseno;
 - comparação entre GHI contínuo e quantizado;
 - otimização de hiperparâmetros dentro do treino;
-- métricas também na escala original;
+- recoleta dos CSVs para preencher COV horário nas bases antigas;
 - armazenamento dos transformadores junto aos modelos.
 
 ## Problemas comuns

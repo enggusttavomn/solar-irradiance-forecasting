@@ -7811,11 +7811,13 @@ a.anchor-link {
 <li>criação e alinhamento das features temporais;</li>
 <li>separação cronológica entre treino e teste;</li>
 <li>funcionamento dos modelos XGBoost e MLP;</li>
-<li>métricas, gráficos, resultados e artefatos;</li>
+<li>métricas normalizadas e métricas desnormalizadas em <code>W/m²</code>;</li>
+<li>nRMSE e COV horário (<code>sigma / média</code>);</li>
+<li>gráficos, resultados e artefatos;</li>
 <li>limitações, decisões metodológicas e perguntas comuns de banca.</li>
 </ul>
 <blockquote>
-<p><strong>Ideia central:</strong> para cada localidade, o modelo recebe somente informações disponíveis até o dia <code>t</code> e estima o GHI do dia seguinte, <code>t+1</code>.</p>
+<p><strong>Ideia central:</strong> para cada localidade, o modelo recebe somente informações disponíveis até o dia <code>t</code> e estima o GHI do dia seguinte, <code>t+1</code>. O modelo treina na escala normalizada, mas a avaliação final também é apresentada na escala física aproximada em <code>W/m²</code>.</p>
 </blockquote>
 <hr/>
 <h3 id="Sum%C3%A1rio">Sumário<a class="anchor-link" href="#Sum%C3%A1rio">¶</a></h3><ol>
@@ -7858,14 +7860,18 @@ Horizonte de previsão: 1 dia à frente
 <div class="highlight"><pre><span></span>ŷ(t+1) = f(GHI(t), GHI(t-1), GHI(t-2), GHI(t-6), médias históricas)
 </pre></div>
 <h2 id="Escopo-atual">Escopo atual<a class="anchor-link" href="#Escopo-atual">¶</a></h2><ul>
-<li>10 localidades;</li>
-<li>dados diários de 1º de janeiro de 2019 a 31 de dezembro de 2024;</li>
+<li>10 localidades, representadas por latitude e longitude da fábrica;</li>
+<li>dados originalmente obtidos da API com intervalo de 60 minutos;</li>
+<li>série salva e modelada em escala diária, após média dos valores horários de cada dia;</li>
+<li>período de 1º de janeiro de 2019 a 31 de dezembro de 2024;</li>
 <li>2 modelos: XGBoost e MLP;</li>
 <li>7 features temporais;</li>
 <li>divisão 80%/20% cronológica;</li>
-<li>métricas MAE, MSE, RMSE e R².</li>
+<li>métricas MAE, MSE, RMSE, R² e nRMSE;</li>
+<li>métricas apresentadas na escala normalizada e também após desnormalização para <code>W/m²</code>;</li>
+<li>estrutura para COV horário (<code>sigma/média</code>) quando os dados horários originais estiverem disponíveis.</li>
 </ul>
-<p>O projeto prevê <strong>irradiância</strong>, não produção elétrica da fábrica, consumo energético ou potência de painéis fotovoltaicos. Para estimar energia fotovoltaica seriam necessários dados adicionais, como área dos módulos, eficiência, inclinação, temperatura e perdas do sistema.</p>
+<p>O projeto prevê <strong>irradiância</strong>, não produção elétrica da fábrica, consumo energético ou potência de painéis fotovoltaicos. O GHI em <code>W/m²</code> representa potência solar por metro quadrado de uma superfície horizontal ideal no ponto geográfico consultado; não é uma área real calculada a partir da latitude e longitude. Para estimar energia fotovoltaica seriam necessários dados adicionais, como área dos módulos, eficiência, inclinação, temperatura e perdas do sistema.</p>
 </div>
 </div>
 </div>
@@ -7981,6 +7987,8 @@ Horizonte de previsão: 1 dia à frente
             ↓
 Coleta horária de GHI pela API NLR/NSRDB
             ↓
+Cálculo de estatísticas horárias: média, sigma e COV = sigma/média
+            ↓
 Agregação das observações para média diária
             ↓
 Validação de origem, unidade, cobertura e integridade
@@ -8003,7 +8011,11 @@ Treinamento independente de XGBoost e MLP
             ↓
 Previsões no período de teste
             ↓
-MAE, MSE, RMSE, R², CSVs, modelos e gráficos
+Desnormalização das previsões para W/m²
+            ↓
+MAE, MSE, RMSE, R² e nRMSE nas escalas normalizada e W/m²
+            ↓
+CSVs, modelos e gráficos nas duas escalas
             ↓
 Comparação dos modelos nas 10 localidades
 </pre></div>
@@ -8011,7 +8023,7 @@ Comparação dos modelos nas 10 localidades
 <div class="highlight"><pre><span></span>features ≤ dia t
 alvo      = dia t+1
 </pre></div>
-<p>O futuro nunca pode entrar nas features.</p>
+<p>O futuro nunca pode entrar nas features. A normalização e a quantização também são ajustadas somente com o trecho de treinamento.</p>
 </div>
 </div>
 </div>
@@ -8439,7 +8451,7 @@ Teste:  26/10/2023 a 31/12/2024
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="14.-M%C3%A9tricas-de-avalia%C3%A7%C3%A3o">14. Métricas de avaliação<a class="anchor-link" href="#14.-M%C3%A9tricas-de-avalia%C3%A7%C3%A3o">¶</a></h1><p>As métricas são calculadas sobre o <strong>alvo quantizado e normalizado</strong>, portanto MAE e RMSE estão na escala <code>[0, 1]</code>.</p>
+<h1 id="14.-M%C3%A9tricas-de-avalia%C3%A7%C3%A3o">14. Métricas de avaliação<a class="anchor-link" href="#14.-M%C3%A9tricas-de-avalia%C3%A7%C3%A3o">¶</a></h1><p>O modelo é treinado com o <strong>alvo quantizado e normalizado</strong> na escala <code>[0, 1]</code>. Para interpretação física, as previsões também são convertidas de volta para uma aproximação em <code>W/m²</code>, e as métricas são calculadas nas duas escalas.</p>
 <h2 id="MAE-%E2%80%94-Erro-Absoluto-M%C3%A9dio">MAE — Erro Absoluto Médio<a class="anchor-link" href="#MAE-%E2%80%94-Erro-Absoluto-M%C3%A9dio">¶</a></h2><div class="highlight"><pre><span></span>MAE = média(|real - previsto|)
 </pre></div>
 <ul>
@@ -8456,10 +8468,15 @@ Teste:  26/10/2023 a 31/12/2024
 <h2 id="RMSE-%E2%80%94-Raiz-do-Erro-Quadr%C3%A1tico-M%C3%A9dio">RMSE — Raiz do Erro Quadrático Médio<a class="anchor-link" href="#RMSE-%E2%80%94-Raiz-do-Erro-Quadr%C3%A1tico-M%C3%A9dio">¶</a></h2><div class="highlight"><pre><span></span>RMSE = √MSE
 </pre></div>
 <ul>
-<li>volta à mesma escala normalizada do alvo;</li>
-<li>sensível a erros grandes;</li>
+<li>volta à mesma unidade da variável avaliada;</li>
+<li>na escala normalizada fica em <code>[0, 1]</code>;</li>
+<li>na escala desnormalizada fica em <code>W/m²</code>;</li>
 <li>menor é melhor.</li>
 </ul>
+<h2 id="nRMSE-%E2%80%94-RMSE-normalizado-pela-m%C3%A9dia-real">nRMSE — RMSE normalizado pela média real<a class="anchor-link" href="#nRMSE-%E2%80%94-RMSE-normalizado-pela-m%C3%A9dia-real">¶</a></h2><div class="highlight"><pre><span></span>nRMSE = RMSE_wm2 / média(GHI real em W/m²)
+nRMSE_% = 100 × nRMSE
+</pre></div>
+<p>Essa métrica mostra o erro em relação ao nível médio de irradiância da localidade. Ela facilita comparar localidades com médias de GHI diferentes.</p>
 <h2 id="R%C2%B2-%E2%80%94-Coeficiente-de-determina%C3%A7%C3%A3o">R² — Coeficiente de determinação<a class="anchor-link" href="#R%C2%B2-%E2%80%94-Coeficiente-de-determina%C3%A7%C3%A3o">¶</a></h2><div class="highlight"><pre><span></span>R² = 1 - erro do modelo / variabilidade total
 </pre></div>
 <p>Interpretação:</p>
@@ -8485,11 +8502,27 @@ Teste:  26/10/2023 a 31/12/2024
 </tr>
 </tbody>
 </table>
-<p>R² maior é melhor, mas deve ser analisado junto com MAE, RMSE e gráficos.</p>
-<h2 id="Convers%C3%A3o-aproximada-do-erro">Conversão aproximada do erro<a class="anchor-link" href="#Convers%C3%A3o-aproximada-do-erro">¶</a></h2><p>Como houve quantização baseada no mínimo e máximo do treino, um erro normalizado só pode ser convertido para W/m² conhecendo os parâmetros daquela localidade:</p>
-<div class="highlight"><pre><span></span>erro aproximado em W/m² ≈ erro normalizado × (máximo_treino - mínimo_treino)
+<p>R² maior é melhor, mas deve ser analisado junto com MAE, RMSE, nRMSE e gráficos.</p>
+<h2 id="COV-hor%C3%A1rio-%E2%80%94-Coeficiente-de-varia%C3%A7%C3%A3o-dos-dados-hor%C3%A1rios">COV horário — Coeficiente de variação dos dados horários<a class="anchor-link" href="#COV-hor%C3%A1rio-%E2%80%94-Coeficiente-de-varia%C3%A7%C3%A3o-dos-dados-hor%C3%A1rios">¶</a></h2><div class="highlight"><pre><span></span>COV = sigma(GHI horário) / média(GHI horário)
+COV_% = 100 × COV
 </pre></div>
-<p>Devido ao arredondamento da quantização, essa conversão é aproximada.</p>
+<p>O COV não é uma métrica de erro do modelo. Ele descreve a variabilidade dos dados horários originais antes da agregação diária. Por isso deve ser calculado no momento da coleta, antes de transformar a série horária em média diária.</p>
+<h3 id="Observa%C3%A7%C3%A3o-importante-sobre-os-CSVs-atuais">Observação importante sobre os CSVs atuais<a class="anchor-link" href="#Observa%C3%A7%C3%A3o-importante-sobre-os-CSVs-atuais">¶</a></h3><p>A API NLR/NSRDB fornece observações com intervalo de 60 minutos, mas o pipeline salva em <code>dados/brutos/localidades_ev/*.csv</code> a série <strong>já agregada por média diária</strong>. Isso aparece nos próprios metadados dos arquivos:</p>
+<div class="highlight"><pre><span></span>intervalo_minutos = 60
+agregacao = media_diaria
+</pre></div>
+<p>A média diária é calculada no código com:</p>
+<div class="highlight"><pre><span></span><span class="n">daily</span> <span class="o">=</span> <span class="n">df_year</span><span class="p">[[</span><span class="s2">"ghi"</span><span class="p">]]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">"D"</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+<p>Depois dessa etapa, cada arquivo passa a ter uma linha por dia. Assim, a variabilidade horária original é perdida no CSV diário. Por isso, nos resultados atuais, o COV horário aparece como <code>indisponivel_csv_diario</code>. Isso não significa erro no cálculo das métricas do modelo; significa apenas que a estatística <code>sigma/média</code> horária precisa ser calculada antes da agregação diária ou a partir de uma nova coleta/recuperação dos dados horários.</p>
+<p>Com os CSVs atuais, seria possível calcular apenas um COV diário:</p>
+<div class="highlight"><pre><span></span>COV diário = sigma(GHI diário) / média(GHI diário)
+</pre></div>
+<p>Mas esse valor responde a outra pergunta: ele mede a variação entre dias, não a variação horária dentro da série original.</p>
+<h2 id="Desnormaliza%C3%A7%C3%A3o-do-GHI">Desnormalização do GHI<a class="anchor-link" href="#Desnormaliza%C3%A7%C3%A3o-do-GHI">¶</a></h2><p>Como a escala foi ajustada com o mínimo e o máximo do treino de cada localidade, a conversão aproximada é:</p>
+<div class="highlight"><pre><span></span>GHI em W/m² ≈ GHI normalizado × (máximo_treino - mínimo_treino) + mínimo_treino
+</pre></div>
+<p>Devido à quantização em 128 níveis, essa reconstrução é aproximada. Mesmo assim, ela permite apresentar os erros na unidade física usada no trabalho.</p>
 </div>
 </div>
 </div>
@@ -8500,7 +8533,8 @@ Teste:  26/10/2023 a 31/12/2024
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="15.-Gr%C3%A1ficos-e-artefatos">15. Gráficos e artefatos<a class="anchor-link" href="#15.-Gr%C3%A1ficos-e-artefatos">¶</a></h1><h2 id="Gr%C3%A1ficos-gerados-por-localidade">Gráficos gerados por localidade<a class="anchor-link" href="#Gr%C3%A1ficos-gerados-por-localidade">¶</a></h2><ol>
+<h1 id="15.-Gr%C3%A1ficos-e-artefatos">15. Gráficos e artefatos<a class="anchor-link" href="#15.-Gr%C3%A1ficos-e-artefatos">¶</a></h1><h2 id="Gr%C3%A1ficos-gerados-por-localidade">Gráficos gerados por localidade<a class="anchor-link" href="#Gr%C3%A1ficos-gerados-por-localidade">¶</a></h2><p>Para cada localidade são geradas duas versões dos gráficos: uma na escala normalizada e outra na escala desnormalizada em <code>W/m²</code>.</p>
+<ol>
 <li>série temporal de teste com real, XGBoost e MLP;</li>
 <li>real versus previsto do XGBoost;</li>
 <li>dispersão real versus previsto do XGBoost;</li>
@@ -8511,17 +8545,20 @@ Teste:  26/10/2023 a 31/12/2024
 <li>linhas próximas no gráfico temporal indicam bom acompanhamento da dinâmica;</li>
 <li>na dispersão, pontos próximos da diagonal representam previsões próximas do real;</li>
 <li>afastamentos sistemáticos podem indicar viés;</li>
-<li>dificuldade em picos e quedas mostra limitações diante de mudanças rápidas.</li>
+<li>dificuldade em picos e quedas mostra limitações diante de mudanças rápidas;</li>
+<li>a versão em <code>W/m²</code> mostra a magnitude física do erro, enquanto a versão normalizada mostra a escala usada no treinamento.</li>
 </ul>
 <h2 id="Arquivos-gerados">Arquivos gerados<a class="anchor-link" href="#Arquivos-gerados">¶</a></h2><div class="highlight"><pre><span></span>dados/processados/localidades_ev/*_features.csv
 resultados/modelos/localidades/*.joblib
 resultados/todas_localidades/metricas_geral.csv
 resultados/todas_localidades/resumo_localidades.csv
+resultados/todas_localidades/estatisticas_horarias.csv
 resultados/todas_localidades/previsoes/&lt;localidade&gt;/*.csv
-resultados/todas_localidades/figuras/&lt;localidade&gt;/*.png
+resultados/todas_localidades/figuras/&lt;localidade&gt;/normalizado/*.png
+resultados/todas_localidades/figuras/&lt;localidade&gt;/wm2/*.png
 dados/brutos/localidades_ev/manifesto_nsrdb.csv
 </pre></div>
-<p>Os arquivos <code>.joblib</code> guardam os modelos treinados. Para fazer previsões futuras de forma reproduzível também é necessário conservar os parâmetros de quantização/normalização e construir as mesmas sete features.</p>
+<p>Os CSVs de previsões registram o real e o previsto lado a lado tanto na escala normalizada quanto em <code>W/m²</code>. Os arquivos <code>.joblib</code> guardam os modelos treinados. Para fazer previsões futuras de forma reproduzível também é necessário conservar os parâmetros de quantização/normalização e construir as mesmas sete features.</p>
 </div>
 </div>
 </div>
@@ -8532,20 +8569,20 @@ dados/brutos/localidades_ev/manifesto_nsrdb.csv
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="16.-Resultados-atuais">16. Resultados atuais<a class="anchor-link" href="#16.-Resultados-atuais">¶</a></h1><p>Resumo dos resultados já gerados:</p>
+<h1 id="16.-Resultados-atuais">16. Resultados atuais<a class="anchor-link" href="#16.-Resultados-atuais">¶</a></h1><p>Resumo dos resultados já gerados, usando o maior <code>R²_wm2</code> em cada localidade:</p>
 <table>
 <thead>
 <tr>
 <th>Localidade</th>
 <th>Melhor modelo</th>
-<th style="text-align:right">Melhor R²</th>
+<th style="text-align:right">Melhor R² em W/m²</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>BYD Camaçari</td>
 <td>MLP</td>
-<td style="text-align:right">0,3884</td>
+<td style="text-align:right">0,3892</td>
 </tr>
 <tr>
 <td>Tesla Gigafactory Nevada</td>
@@ -8560,7 +8597,7 @@ dados/brutos/localidades_ev/manifesto_nsrdb.csv
 <tr>
 <td>Hyundai Metaplant Georgia</td>
 <td>MLP</td>
-<td style="text-align:right">0,5190</td>
+<td style="text-align:right">0,5188</td>
 </tr>
 <tr>
 <td>Rivian Normal</td>
@@ -8570,41 +8607,43 @@ dados/brutos/localidades_ev/manifesto_nsrdb.csv
 <tr>
 <td>Tesla Fremont Factory</td>
 <td>XGBoost</td>
-<td style="text-align:right">0,8698</td>
+<td style="text-align:right">0,8701</td>
 </tr>
 <tr>
 <td>Lucid AMP 1 Casa Grande</td>
-<td>XGBoost</td>
-<td style="text-align:right">0,8167</td>
+<td>MLP</td>
+<td style="text-align:right">0,8161</td>
 </tr>
 <tr>
 <td>GM Factory Zero</td>
 <td>MLP</td>
-<td style="text-align:right">0,6366</td>
+<td style="text-align:right">0,6362</td>
 </tr>
 <tr>
 <td>Ford Rouge Electric Vehicle Center</td>
 <td>XGBoost</td>
-<td style="text-align:right">0,6512</td>
+<td style="text-align:right">0,6515</td>
 </tr>
 <tr>
 <td>BMW San Luis Potosí</td>
 <td>MLP</td>
-<td style="text-align:right">0,5903</td>
+<td style="text-align:right">0,5895</td>
 </tr>
 </tbody>
 </table>
-<h2 id="S%C3%ADntese">Síntese<a class="anchor-link" href="#S%C3%ADntese">¶</a></h2><div class="highlight"><pre><span></span>MLP foi melhor em R²:      6 localidades
-XGBoost foi melhor em R²:  4 localidades
+<h2 id="S%C3%ADntese">Síntese<a class="anchor-link" href="#S%C3%ADntese">¶</a></h2><div class="highlight"><pre><span></span>MLP foi melhor em R²:      7 localidades
+XGBoost foi melhor em R²:  3 localidades
 </pre></div>
 <p>Médias entre as dez localidades:</p>
 <table>
 <thead>
 <tr>
 <th>Modelo</th>
-<th style="text-align:right">MAE médio</th>
-<th style="text-align:right">RMSE médio</th>
-<th style="text-align:right">R² médio</th>
+<th style="text-align:right">MAE médio normalizado</th>
+<th style="text-align:right">RMSE médio normalizado</th>
+<th style="text-align:right">RMSE médio W/m²</th>
+<th style="text-align:right">nRMSE médio W/m²</th>
+<th style="text-align:right">R² médio W/m²</th>
 </tr>
 </thead>
 <tbody>
@@ -8612,12 +8651,16 @@ XGBoost foi melhor em R²:  4 localidades
 <td>XGBoost</td>
 <td style="text-align:right">0,1068</td>
 <td style="text-align:right">0,1410</td>
-<td style="text-align:right">0,6398</td>
+<td style="text-align:right">50,77</td>
+<td style="text-align:right">27,41%</td>
+<td style="text-align:right">0,6396</td>
 </tr>
 <tr>
 <td>MLP</td>
 <td style="text-align:right">0,1052</td>
 <td style="text-align:right">0,1390</td>
+<td style="text-align:right">50,08</td>
+<td style="text-align:right">27,05%</td>
 <td style="text-align:right">0,6529</td>
 </tr>
 </tbody>
@@ -8625,9 +8668,10 @@ XGBoost foi melhor em R²:  4 localidades
 <h2 id="Leitura-correta">Leitura correta<a class="anchor-link" href="#Leitura-correta">¶</a></h2><ul>
 <li>nenhum modelo vence em todas as localidades;</li>
 <li>a MLP possui resultado médio ligeiramente melhor;</li>
-<li>XGBoost alcança os maiores R² individuais;</li>
+<li>XGBoost alcança alguns dos maiores R² individuais, como Fremont e Nevada;</li>
 <li>diferenças climáticas e de previsibilidade entre localidades afetam o desempenho;</li>
-<li>resultados baixos, como em Camaçari, indicam maior dificuldade para explicar variações diárias usando somente o histórico do próprio GHI.</li>
+<li>resultados baixos, como em Camaçari, indicam maior dificuldade para explicar variações diárias usando somente o histórico do próprio GHI;</li>
+<li>as métricas em <code>W/m²</code> tornam a interpretação física mais clara do que a escala normalizada isolada.</li>
 </ul>
 <p>Não se deve concluir causalidade entre a fábrica e a irradiância. As fábricas funcionam como pontos geográficos de estudo.</p>
 </div>
@@ -8746,7 +8790,7 @@ XGBoost foi melhor em R²:  4 localidades
 <li><strong>Média diária inclui horas noturnas.</strong> Isso é coerente com o valor médio de 24 horas, mas outra definição poderia usar apenas período diurno ou energia integrada.</li>
 <li><strong>Features sazonais explícitas não são usadas.</strong> Mês, dia do ano, seno/cosseno sazonais e posição solar poderiam ajudar.</li>
 <li><strong>Não existe baseline explícito nas tabelas.</strong> Comparar com persistência, como <code>previsão = GHI de hoje</code>, fortaleceria a avaliação.</li>
-<li><strong>Métricas principais estão normalizadas.</strong> Relatar também erros em W/m² facilitaria a interpretação física.</li>
+<li><strong>COV horário depende da série horária original.</strong> A API fornece dados de 60 minutos, mas os CSVs salvos atualmente já estão agregados por média diária. Depois dessa agregação, não é possível reconstruir <code>sigma/média</code> horário com rigor.</li>
 <li><strong>Modelos são locais.</strong> Não existe um modelo global que aprenda conjuntamente com latitude, longitude e localidade.</li>
 </ol>
 <h2 id="Melhorias-priorit%C3%A1rias">Melhorias prioritárias<a class="anchor-link" href="#Melhorias-priorit%C3%A1rias">¶</a></h2><ul>
@@ -8757,7 +8801,7 @@ XGBoost foi melhor em R²:  4 localidades
 <li>adicionar features sazonais;</li>
 <li>otimizar hiperparâmetros somente dentro do treino;</li>
 <li>salvar parâmetros de transformação junto ao modelo;</li>
-<li>calcular métricas também na escala original.</li>
+<li>recoletar os CSVs horários quando necessário para preencher o COV horário das bases antigas.</li>
 </ul>
 <p>Esses pontos não invalidam o trabalho. Eles delimitam o que foi avaliado e indicam continuidade científica.</p>
 </div>
@@ -8776,7 +8820,10 @@ XGBoost foi melhor em R²:  4 localidades
 <h2 id="%E2%80%9CO-modelo-v%C3%AA-o-valor-do-dia-que-deve-prever?%E2%80%9D">“O modelo vê o valor do dia que deve prever?”<a class="anchor-link" href="#%E2%80%9CO-modelo-v%C3%AA-o-valor-do-dia-que-deve-prever?%E2%80%9D">¶</a></h2><p>Não. A linha do dia <code>t</code> usa dados até <code>t</code> e prevê <code>t+1</code>. Esse alinhamento é implementado com <code>shift</code> e verificado por teste automatizado.</p>
 <h2 id="%E2%80%9CPor-que-n%C3%A3o-embaralhar-os-dados?%E2%80%9D">“Por que não embaralhar os dados?”<a class="anchor-link" href="#%E2%80%9CPor-que-n%C3%A3o-embaralhar-os-dados?%E2%80%9D">¶</a></h2><p>Porque a ordem temporal representa a aplicação real. Embaralhar permitiria que o futuro influenciasse o treinamento.</p>
 <h2 id="%E2%80%9CPor-que-quantizar?%E2%80%9D">“Por que quantizar?”<a class="anchor-link" href="#%E2%80%9CPor-que-quantizar?%E2%80%9D">¶</a></h2><p>Para representar o sinal em 128 níveis e reduzir pequenas variações. Porém, isso também perde precisão e deve ser tratado como escolha experimental.</p>
-<h2 id="%E2%80%9CQual-modelo-foi-melhor?%E2%80%9D">“Qual modelo foi melhor?”<a class="anchor-link" href="#%E2%80%9CQual-modelo-foi-melhor?%E2%80%9D">¶</a></h2><p>Depende da localidade. A MLP venceu em seis e o XGBoost em quatro pelo R². Em média, a MLP foi ligeiramente melhor, mas o XGBoost obteve os maiores R² individuais.</p>
+<h2 id="%E2%80%9CAs-m%C3%A9tricas-est%C3%A3o-normalizadas-ou-em-W/m%C2%B2?%E2%80%9D">“As métricas estão normalizadas ou em W/m²?”<a class="anchor-link" href="#%E2%80%9CAs-m%C3%A9tricas-est%C3%A3o-normalizadas-ou-em-W/m%C2%B2?%E2%80%9D">¶</a></h2><p>As duas versões são apresentadas. O modelo treina com o alvo normalizado, mas os resultados finais também incluem MAE, RMSE, R² e nRMSE após desnormalização para <code>W/m²</code>.</p>
+<h2 id="%E2%80%9CO-que-%C3%A9-nRMSE?%E2%80%9D">“O que é nRMSE?”<a class="anchor-link" href="#%E2%80%9CO-que-%C3%A9-nRMSE?%E2%80%9D">¶</a></h2><p>É o RMSE dividido pela média do GHI real. No trabalho, o nRMSE em porcentagem indica o erro típico do modelo em relação ao nível médio de irradiância da localidade.</p>
+<h2 id="%E2%80%9CO-que-%C3%A9-COV-ou-sigma/m%C3%A9dia?%E2%80%9D">“O que é COV ou sigma/média?”<a class="anchor-link" href="#%E2%80%9CO-que-%C3%A9-COV-ou-sigma/m%C3%A9dia?%E2%80%9D">¶</a></h2><p>É o coeficiente de variação dos dados horários: <code>COV = sigma / média</code>. Ele mede a variabilidade do GHI horário antes da agregação diária. Não é uma métrica de erro do modelo. Nos CSVs atuais ele aparece como indisponível porque os arquivos já foram salvos com uma linha por dia; para preencher esse campo é preciso calcular durante a coleta horária ou recoletar os dados horários.</p>
+<h2 id="%E2%80%9CQual-modelo-foi-melhor?%E2%80%9D">“Qual modelo foi melhor?”<a class="anchor-link" href="#%E2%80%9CQual-modelo-foi-melhor?%E2%80%9D">¶</a></h2><p>Depende da localidade. Considerando o <code>R²_wm2</code>, a MLP venceu em sete localidades e o XGBoost em três. Em média, a MLP foi ligeiramente melhor, mas o XGBoost obteve excelentes resultados individuais em Fremont, Nevada e Ford Rouge.</p>
 <h2 id="%E2%80%9C%C3%89-previs%C3%A3o-do-clima-ou-de-gera%C3%A7%C3%A3o-solar?%E2%80%9D">“É previsão do clima ou de geração solar?”<a class="anchor-link" href="#%E2%80%9C%C3%89-previs%C3%A3o-do-clima-ou-de-gera%C3%A7%C3%A3o-solar?%E2%80%9D">¶</a></h2><p>É previsão do GHI médio diário. Não é previsão meteorológica completa nem cálculo direto de energia fotovoltaica.</p>
 <h2 id="%E2%80%9CPor-que-escolher-f%C3%A1bricas-de-ve%C3%ADculos-el%C3%A9tricos?%E2%80%9D">“Por que escolher fábricas de veículos elétricos?”<a class="anchor-link" href="#%E2%80%9CPor-que-escolher-f%C3%A1bricas-de-ve%C3%ADculos-el%C3%A9tricos?%E2%80%9D">¶</a></h2><p>Elas definem locais geográficos relevantes para comparar disponibilidade solar. O projeto não afirma que as fábricas causam mudanças na irradiância.</p>
 <h2 id="%E2%80%9CO-resultado-serve-para-opera%C3%A7%C3%A3o-em-tempo-real?%E2%80%9D">“O resultado serve para operação em tempo real?”<a class="anchor-link" href="#%E2%80%9CO-resultado-serve-para-opera%C3%A7%C3%A3o-em-tempo-real?%E2%80%9D">¶</a></h2><p>Como prova de conceito preditiva, sim. Para implantação operacional ainda seriam necessários atualização automática dos dados, persistência dos transformadores, monitoramento e variáveis meteorológicas previstas.</p>
@@ -8793,11 +8840,12 @@ XGBoost foi melhor em R²:  4 localidades
 <h1 id="21.-Roteiro-curto-para-apresentar-o-projeto">21. Roteiro curto para apresentar o projeto<a class="anchor-link" href="#21.-Roteiro-curto-para-apresentar-o-projeto">¶</a></h1><blockquote>
 <p>“O trabalho avalia a previsão diária de irradiância solar em dez localidades de fábricas de veículos elétricos. Os dados vêm da base oficial NLR/NSRDB, originalmente com intervalo de 60 minutos, e são agregados em uma média para cada dia entre 2019 e 2024.</p>
 <p>Depois da limpeza, o GHI é quantizado em 128 níveis e normalizado entre zero e um. Para transformar a série temporal em um problema supervisionado, criamos quatro defasagens e três médias móveis, totalizando sete features. Cada linha usa informações disponíveis até o dia atual para prever o GHI do dia seguinte.</p>
-<p>A separação é cronológica: os primeiros 80% dos exemplos são usados no treinamento e os 20% finais no teste. Comparamos XGBoost e uma rede neural MLP usando MAE, MSE, RMSE e R².</p>
-<p>Os resultados mostram que não existe um único vencedor em todas as localidades: a MLP foi melhor em seis e o XGBoost em quatro. Isso reforça que a previsibilidade varia conforme o local. Como limitações, o modelo usa apenas o histórico do GHI e ainda não inclui variáveis meteorológicas ou validação temporal em múltiplas janelas.”</p>
+<p>A separação é cronológica: os primeiros 80% dos exemplos são usados no treinamento e os 20% finais no teste. Comparamos XGBoost e uma rede neural MLP usando MAE, MSE, RMSE, R² e nRMSE. As métricas foram mantidas na escala normalizada e também recalculadas após desnormalizar o GHI para <code>W/m²</code>, o que facilita interpretar o tamanho físico dos erros.</p>
+<p>Além disso, o pipeline passou a registrar o COV horário, calculado como <code>sigma/média</code> do GHI horário antes da agregação diária, quando a série horária original está disponível. Os resultados mostram que não existe um único vencedor em todas as localidades: a MLP foi melhor em sete e o XGBoost em três pelo R² em <code>W/m²</code>. Como limitações, o modelo usa apenas o histórico do GHI e ainda não inclui variáveis meteorológicas ou validação temporal em múltiplas janelas.”</p>
 </blockquote>
-<h2 id="Frase-central-para-memorizar">Frase central para memorizar<a class="anchor-link" href="#Frase-central-para-memorizar">¶</a></h2><div class="highlight"><pre><span></span>Dados horários → média diária → transformações → histórico temporal
-→ previsão do dia seguinte → avaliação cronológica
+<h2 id="Frase-central-para-memorizar">Frase central para memorizar<a class="anchor-link" href="#Frase-central-para-memorizar">¶</a></h2><div class="highlight"><pre><span></span>Dados horários → COV horário → média diária → transformações
+→ histórico temporal → previsão do dia seguinte
+→ métricas normalizadas e métricas em W/m²
 </pre></div>
 </div>
 </div>
@@ -8859,7 +8907,11 @@ XGBoost foi melhor em R²:  4 localidades
 </tr>
 <tr>
 <td>Quais métricas?</td>
-<td>MAE, MSE, RMSE e R²</td>
+<td>MAE, MSE, RMSE, R² e nRMSE, nas escalas normalizada e <code>W/m²</code></td>
+</tr>
+<tr>
+<td>O que é COV horário?</td>
+<td><code>sigma/média</code> do GHI horário, calculado antes da média diária</td>
 </tr>
 <tr>
 <td>Como se evita vazamento?</td>
@@ -8867,7 +8919,7 @@ XGBoost foi melhor em R²:  4 localidades
 </tr>
 </tbody>
 </table>
-<p>O ponto mais importante é compreender que o projeto mantém a causalidade temporal: <strong>o passado e o presente formam as entradas; o próximo dia é o alvo</strong>.</p>
+<p>O ponto mais importante é compreender que o projeto mantém a causalidade temporal: <strong>o passado e o presente formam as entradas; o próximo dia é o alvo</strong>. Para apresentação dos resultados, a escala em <code>W/m²</code> deve acompanhar a escala normalizada porque ela mostra a magnitude física do erro.</p>
 </div>
 </div>
 </div>

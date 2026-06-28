@@ -45,6 +45,15 @@ MANIFESTO_DADOS = OUTPUT_DIR / "manifesto_nsrdb.csv"
 RESULTADOS_DIR = PASTA_RESULTADOS / "todas_localidades"
 ANO_INICIAL_DADOS = 2019
 ANO_FINAL_DADOS = 2024
+COLUNAS_ESTATISTICAS_HORARIAS = [
+    "ghi_horario_media",
+    "ghi_horario_sigma",
+    "ghi_horario_cov",
+    "ghi_horario_cov_percentual",
+    "ghi_horario_observacoes",
+    "ghi_horario_intervalo_mediano_horas",
+    "ghi_horario_fonte_estatistica",
+]
 
 
 def nome_arquivo(local: str) -> str:
@@ -60,6 +69,30 @@ def calcular_sha256(arquivo: Path) -> str:
         for bloco in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(bloco)
     return digest.hexdigest()
+
+
+def ler_estatisticas_horarias_localidade(local: dict) -> dict[str, float | str]:
+    """Le sigma/media horario salvo na coleta ou marca indisponivel."""
+    arquivo = OUTPUT_DIR / f"{nome_arquivo(local['nome'])}.csv"
+    base = {
+        "Localidade": local["nome"],
+        "Pais": local["pais"],
+        "ghi_horario_media": float("nan"),
+        "ghi_horario_sigma": float("nan"),
+        "ghi_horario_cov": float("nan"),
+        "ghi_horario_cov_percentual": float("nan"),
+        "ghi_horario_observacoes": float("nan"),
+        "ghi_horario_intervalo_mediano_horas": float("nan"),
+        "ghi_horario_fonte_estatistica": "indisponivel_csv_diario",
+    }
+    if not arquivo.exists():
+        return base
+
+    dados = pd.read_csv(arquivo, nrows=1)
+    for coluna in COLUNAS_ESTATISTICAS_HORARIAS:
+        if coluna in dados.columns:
+            base[coluna] = dados.iloc[0][coluna]
+    return base
 
 
 def gerar_manifesto_dados() -> pd.DataFrame:
@@ -371,6 +404,7 @@ def treinar_localidade(local: dict, verbose: bool = True, forcar_download: bool 
     """
     # Importacoes locais reduzem o custo dos modos que apenas validam ou baixam.
     from codigo_fonte.avaliacao import calcular_metricas, salvar_previsoes
+    from codigo_fonte.avaliacao import desnormalizar_ghi
     from codigo_fonte.features import dividir_treino_teste_temporal
     from codigo_fonte.graficos import salvar_graficos
     from codigo_fonte.modelos import salvar_modelo, treinar_mlp, treinar_xgboost
@@ -440,10 +474,48 @@ def treinar_localidade(local: dict, verbose: bool = True, forcar_download: bool 
     }
     y_test_reset = y_test.reset_index(drop=True)
     datas_reset = datas_teste.reset_index(drop=True)
+    y_test_original = dados_teste["ghi_alvo_original"].reset_index(drop=True)
+    predicoes_original = {
+        nome_modelo: desnormalizar_ghi(y_pred, preparation.quantization_params)
+        for nome_modelo, y_pred in predicoes.items()
+    }
     
-    # As metricas sao calculadas sobre a mesma escala [0, 1].
-    metricas_xgb = calcular_metricas(y_test_reset, predicoes["XGBoost"], "XGBoost")
-    metricas_mlp = calcular_metricas(y_test_reset, predicoes["MLP"], "MLP")
+    # Mantem as metricas normalizadas e acrescenta a escala fisica em W/m2.
+    metricas_xgb = calcular_metricas(
+        y_test_reset,
+        predicoes["XGBoost"],
+        "XGBoost",
+        sufixo="normalizado",
+    )
+    metricas_xgb.update(
+        calcular_metricas(
+            y_test_original,
+            predicoes_original["XGBoost"],
+            "XGBoost",
+            sufixo="wm2",
+        )
+    )
+    metricas_mlp = calcular_metricas(
+        y_test_reset,
+        predicoes["MLP"],
+        "MLP",
+        sufixo="normalizado",
+    )
+    metricas_mlp.update(
+        calcular_metricas(
+            y_test_original,
+            predicoes_original["MLP"],
+            "MLP",
+            sufixo="wm2",
+        )
+    )
+
+    # Alias historicos preservam compatibilidade e continuam na escala [0, 1].
+    for metricas in (metricas_xgb, metricas_mlp):
+        metricas["MAE"] = metricas["MAE_normalizado"]
+        metricas["MSE"] = metricas["MSE_normalizado"]
+        metricas["RMSE"] = metricas["RMSE_normalizado"]
+        metricas["R2"] = metricas["R2_normalizado"]
     
     # Adiciona contexto geografico para montar a tabela consolidada depois.
     metricas_xgb["Localidade"] = nome
@@ -459,22 +531,48 @@ def treinar_localidade(local: dict, verbose: bool = True, forcar_download: bool 
     # Etapa 7: salvar valores linha a linha para auditoria e graficos.
     pasta_previsoes_local = RESULTADOS_DIR / "previsoes"
     pasta_previsoes_local.mkdir(parents=True, exist_ok=True)
-    salvar_previsoes(datas_reset, y_test_reset, predicoes, pasta_previsoes_local / nome_arquivo(nome))
+    salvar_previsoes(
+        datas_reset,
+        y_test_reset,
+        predicoes,
+        pasta_previsoes_local / nome_arquivo(nome),
+        y_true_original=y_test_original,
+        predicoes_original=predicoes_original,
+    )
     
-    # Etapa 8: produzir as cinco figuras padrao desta localidade.
+    # Etapa 8: produzir figuras nas duas escalas para a mesma localidade.
     pasta_figuras_local = RESULTADOS_DIR / "figuras"
     pasta_figuras_local.mkdir(parents=True, exist_ok=True)
-    salvar_graficos(datas_reset, y_test_reset, predicoes, pasta_figuras_local / nome_arquivo(nome))
+    salvar_graficos(
+        datas_reset,
+        y_test_reset,
+        predicoes,
+        pasta_figuras_local / nome_arquivo(nome) / "normalizado",
+    )
+    salvar_graficos(
+        datas_reset,
+        y_test_original,
+        predicoes_original,
+        pasta_figuras_local / nome_arquivo(nome) / "wm2",
+        y_label="GHI medio diario (W/m2)",
+        titulo_sufixo=" - escala real",
+    )
     
     if verbose:
         print(f"\n  Metricas XGBoost:")
-        print(f"    MAE: {metricas_xgb['MAE']:.4f}")
-        print(f"    RMSE: {metricas_xgb['RMSE']:.4f}")
-        print(f"    R2: {metricas_xgb['R2']:.4f}")
+        print(f"    MAE normalizado: {metricas_xgb['MAE_normalizado']:.4f}")
+        print(f"    RMSE normalizado: {metricas_xgb['RMSE_normalizado']:.4f}")
+        print(f"    MAE W/m2: {metricas_xgb['MAE_wm2']:.2f}")
+        print(f"    RMSE W/m2: {metricas_xgb['RMSE_wm2']:.2f}")
+        print(f"    nRMSE W/m2: {metricas_xgb['nRMSE_percentual_wm2']:.2f}%")
+        print(f"    R2 W/m2: {metricas_xgb['R2_wm2']:.4f}")
         print(f"\n  Metricas MLP:")
-        print(f"    MAE: {metricas_mlp['MAE']:.4f}")
-        print(f"    RMSE: {metricas_mlp['RMSE']:.4f}")
-        print(f"    R2: {metricas_mlp['R2']:.4f}")
+        print(f"    MAE normalizado: {metricas_mlp['MAE_normalizado']:.4f}")
+        print(f"    RMSE normalizado: {metricas_mlp['RMSE_normalizado']:.4f}")
+        print(f"    MAE W/m2: {metricas_mlp['MAE_wm2']:.2f}")
+        print(f"    RMSE W/m2: {metricas_mlp['RMSE_wm2']:.2f}")
+        print(f"    nRMSE W/m2: {metricas_mlp['nRMSE_percentual_wm2']:.2f}%")
+        print(f"    R2 W/m2: {metricas_mlp['R2_wm2']:.4f}")
     
     # O retorno alimenta a consolidacao feita por ``main``.
     return {
@@ -488,7 +586,11 @@ def treinar_localidade(local: dict, verbose: bool = True, forcar_download: bool 
         "y_test": y_test_reset,
         "y_pred_xgb": predicoes["XGBoost"],
         "y_pred_mlp": predicoes["MLP"],
+        "y_test_original": y_test_original,
+        "y_pred_xgb_original": predicoes_original["XGBoost"],
+        "y_pred_mlp_original": predicoes_original["MLP"],
         "datas_teste": datas_reset,
+        "estatisticas_horarias": ler_estatisticas_horarias_localidade(local),
     }
 
 
@@ -642,19 +744,23 @@ def main():
                 "Localidade": res["localidade"],
                 "Pais": res["pais"],
                 "Modelo": "XGBoost",
-                "MAE": res["xgboost"]["MAE"],
-                "MSE": res["xgboost"]["MSE"],
-                "RMSE": res["xgboost"]["RMSE"],
-                "R2": res["xgboost"]["R2"],
+                **{
+                    chave: valor
+                    for chave, valor in res["xgboost"].items()
+                    if chave != "Modelo"
+                    and chave not in {"Localidade", "Pais", "Lat", "Lon"}
+                },
             })
             metricas_geral.append({
                 "Localidade": res["localidade"],
                 "Pais": res["pais"],
                 "Modelo": "MLP",
-                "MAE": res["mlp"]["MAE"],
-                "MSE": res["mlp"]["MSE"],
-                "RMSE": res["mlp"]["RMSE"],
-                "R2": res["mlp"]["R2"],
+                **{
+                    chave: valor
+                    for chave, valor in res["mlp"].items()
+                    if chave != "Modelo"
+                    and chave not in {"Localidade", "Pais", "Lat", "Lon"}
+                },
             })
     
     df_metricas = pd.DataFrame(metricas_geral)
@@ -667,6 +773,7 @@ def main():
     
     # Esta tabela larga facilita comparar os dois modelos na mesma linha.
     resumo = []
+    estatisticas_horarias = []
     for res in resultados:
         if "erro" not in res:
             resumo.append({
@@ -674,28 +781,43 @@ def main():
                 "Pais": res["pais"],
                 "Lat": res["lat"],
                 "Lon": res["lon"],
-                "XGBoost_MAE": res["xgboost"]["MAE"],
-                "XGBoost_RMSE": res["xgboost"]["RMSE"],
-                "XGBoost_R2": res["xgboost"]["R2"],
-                "MLP_MAE": res["mlp"]["MAE"],
-                "MLP_RMSE": res["mlp"]["RMSE"],
-                "MLP_R2": res["mlp"]["R2"],
+                "XGBoost_MAE_normalizado": res["xgboost"]["MAE_normalizado"],
+                "XGBoost_RMSE_normalizado": res["xgboost"]["RMSE_normalizado"],
+                "XGBoost_MAE_wm2": res["xgboost"]["MAE_wm2"],
+                "XGBoost_RMSE_wm2": res["xgboost"]["RMSE_wm2"],
+                "XGBoost_nRMSE_percentual_wm2": res["xgboost"]["nRMSE_percentual_wm2"],
+                "XGBoost_R2_wm2": res["xgboost"]["R2_wm2"],
+                "MLP_MAE_normalizado": res["mlp"]["MAE_normalizado"],
+                "MLP_RMSE_normalizado": res["mlp"]["RMSE_normalizado"],
+                "MLP_MAE_wm2": res["mlp"]["MAE_wm2"],
+                "MLP_RMSE_wm2": res["mlp"]["RMSE_wm2"],
+                "MLP_nRMSE_percentual_wm2": res["mlp"]["nRMSE_percentual_wm2"],
+                "MLP_R2_wm2": res["mlp"]["R2_wm2"],
                 # O vencedor do resumo e definido pelo maior R2.
-                "Melhor_Modelo": "XGBoost" if res["xgboost"]["R2"] > res["mlp"]["R2"] else "MLP",
+                "Melhor_Modelo": "XGBoost" if res["xgboost"]["R2_wm2"] > res["mlp"]["R2_wm2"] else "MLP",
             })
+            estatisticas_horarias.append(res["estatisticas_horarias"])
     
     df_resumo = pd.DataFrame(resumo)
     df_resumo.to_csv(RESULTADOS_DIR / "resumo_localidades.csv", index=False)
+    df_estatisticas_horarias = pd.DataFrame(estatisticas_horarias)
+    df_estatisticas_horarias.to_csv(
+        RESULTADOS_DIR / "estatisticas_horarias.csv",
+        index=False,
+    )
     
     print("\n" + "="*60)
     print("RESUMO POR LOCALIDADE")
     print("="*60)
     print(df_resumo.to_string(index=False))
+    print("\nEstatisticas horarias de GHI:")
+    print(df_estatisticas_horarias.to_string(index=False))
     
     print("\n[OK] Pipeline finalizado!")
     print(f"[INFO] Resultados salvos em: {RESULTADOS_DIR.absolute()}")
     print(f"[INFO] Metricas gerais: {RESULTADOS_DIR / 'metricas_geral.csv'}")
     print(f"[INFO] Resumo: {RESULTADOS_DIR / 'resumo_localidades.csv'}")
+    print(f"[INFO] Estatisticas horarias: {RESULTADOS_DIR / 'estatisticas_horarias.csv'}")
     
     return resultados
 
