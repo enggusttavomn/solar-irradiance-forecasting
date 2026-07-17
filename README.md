@@ -1,13 +1,17 @@
-# TCC - Previsão Diária de GHI com Machine Learning
+# TCC - Previsão Diária e Mensal de GHI com Machine Learning
 
 Pipeline completo para prever a **Irradiância Global Horizontal (GHI) média do
-dia seguinte** em dez localidades associadas a fábricas de veículos elétricos.
+próximo período** em dez localidades associadas a fábricas de veículos elétricos.
+O fluxo principal trabalha com média diária e o fluxo complementar trabalha com
+média mensal.
 
 O projeto usa dados oficiais do **NLR/NSRDB**, transforma a série histórica em
-features temporais e compara dois modelos de regressão:
+features temporais e compara quatro modelos de regressão:
 
 - XGBoost;
-- rede neural MLP.
+- rede neural MLP;
+- rede recorrente simples (RNN);
+- rede LSTM.
 
 Além do código de treinamento, o repositório contém dados auditáveis, testes,
 notebooks explicativos, resultados, gráficos e relatórios HTML.
@@ -18,8 +22,10 @@ notebooks explicativos, resultados, gráficos e relatórios HTML.
 Dados horários NLR/NSRDB
         ↓
 Média diária de GHI
+        ├── Fluxo diário: previsão do dia seguinte
         ↓
-Validação e limpeza
+Média mensal de GHI
+        └── Fluxo mensal: previsão do mês seguinte
         ↓
 Quantização em 128 níveis
         ↓
@@ -27,9 +33,9 @@ Normalização para [0, 1]
         ↓
 Lags + médias móveis
         ↓
-Previsão do dia seguinte
+Previsão do próximo período
         ↓
-Treino cronológico de XGBoost e MLP
+Treino cronológico de XGBoost, MLP, RNN e LSTM
         ↓
 Métricas, previsões, modelos e gráficos
 ```
@@ -37,16 +43,17 @@ Métricas, previsões, modelos e gráficos
 | Item | Configuração atual |
 |---|---|
 | Problema | regressão de série temporal |
-| Variável prevista | GHI médio diário do próximo dia |
-| Horizonte | 1 dia à frente |
+| Variável prevista | GHI médio diário do próximo dia ou GHI médio mensal do próximo mês |
+| Horizonte | 1 dia à frente no fluxo diário; 1 mês à frente no fluxo mensal |
 | Fonte | NLR/NSRDB, GOES Aggregated PSM v4 |
 | Período | 1º de janeiro de 2019 a 31 de dezembro de 2024 |
 | Localidades | 10 |
 | Dados brutos | 2.192 dias por localidade |
-| Base de modelagem | 2.162 exemplos por localidade |
+| Base de modelagem diária | 2.162 exemplos por localidade |
+| Base de modelagem mensal | 60 exemplos por localidade |
 | Features | 4 lags e 3 médias móveis |
 | Divisão | 80% treino e 20% teste, sem embaralhamento |
-| Modelos | XGBoost e MLP |
+| Modelos | XGBoost, MLP, RNN e LSTM |
 | Métricas | MAE, MSE, RMSE, R², nRMSE e COV horário |
 
 ## Sumário
@@ -67,12 +74,17 @@ Métricas, previsões, modelos e gráficos
 
 ## Objetivo e escopo
 
-O objetivo é estimar o GHI do dia `t+1` usando somente informações disponíveis
-até o dia `t`.
+O objetivo é estimar o GHI do próximo período usando somente informações
+disponíveis até o período atual.
 
 ```text
+Fluxo diário:
 Entradas: histórico diário até hoje
-Saída:    GHI de amanhã
+Saída:    GHI médio diário de amanhã
+
+Fluxo mensal:
+Entradas: histórico mensal até o mês atual
+Saída:    GHI médio mensal do próximo mês
 ```
 
 O projeto prevê **irradiância solar**, não:
@@ -132,6 +144,19 @@ SHA-256 antes do treinamento.
 python treinar_todas_localidades.py
 ```
 
+Por padrão, esse comando executa o fluxo diário. Para executar também o fluxo
+mensal:
+
+```bash
+python treinar_todas_localidades.py --frequencia ambas
+```
+
+Para rodar somente o mensal:
+
+```bash
+python treinar_todas_localidades.py --frequencia mensal
+```
+
 ### 4. Consultar os resultados
 
 Os principais arquivos são:
@@ -139,6 +164,8 @@ Os principais arquivos são:
 ```text
 resultados/todas_localidades/metricas_geral.csv
 resultados/todas_localidades/resumo_localidades.csv
+resultados/todas_localidades_mensal/metricas_geral.csv
+resultados/todas_localidades_mensal/resumo_localidades.csv
 relatorios/02_resultados_todas_localidades.html
 ```
 
@@ -286,14 +313,15 @@ não representa energia diária acumulada em `Wh/m²` ou `kWh/m²/dia`.
 
 ### Média mensal
 
-O notebook de coleta agrupa os valores diários de cada mês:
+O fluxo mensal agrupa os valores diários de cada mês:
 
 ```python
 mensal = dados_diarios.resample("ME").mean()
 ```
 
-A média mensal é usada **somente para visualização exploratória**. Ela não
-entra no treinamento.
+Essa média passou a entrar em um segundo experimento de modelagem. Nesse caso,
+o alvo é a média mensal de GHI do mês seguinte, e as features usam lags e
+médias móveis mensais.
 
 ### Média móvel
 
@@ -303,6 +331,7 @@ As médias móveis são features dos modelos:
 média móvel de 3 dias
 média móvel de 7 dias
 média móvel de 30 dias
+média móvel de 3, 6 e 12 meses no fluxo mensal
 ```
 
 Para uma linha referente a 30 de janeiro:
@@ -318,8 +347,8 @@ mesmo que um mês civil e pode atravessar a virada do mês.
 
 | Média | Origem | Uso |
 |---|---|---|
-| diária | observações horárias | série principal |
-| mensal | valores diários do mês | gráficos exploratórios |
+| diária | observações horárias | previsão do dia seguinte |
+| mensal | valores diários do mês | previsão do mês seguinte |
 | móvel | últimos 3, 7 ou 30 dias | feature dos modelos |
 
 ## Pipeline técnico
@@ -525,7 +554,31 @@ MLPRegressor(
 )
 ```
 
-As previsões dos dois modelos são limitadas ao intervalo `[0, 1]`.
+### RNN
+
+Arquitetura:
+
+```text
+7 passos sequenciais → SimpleRNN(32) → 16 neurônios → 1 saída
+```
+
+As sete features tabulares são reinterpretadas como uma sequência curta, com
+uma variável por passo. Isso permite comparar uma arquitetura recorrente usando
+o mesmo corte temporal, o mesmo alvo e as mesmas entradas usadas pelos modelos
+tabulares.
+
+### LSTM
+
+Arquitetura:
+
+```text
+7 passos sequenciais → LSTM(32) → 16 neurônios → 1 saída
+```
+
+A LSTM segue a mesma preparação da RNN, mas usa células com memória interna para
+modelar dependências entre os passos da sequência de entrada.
+
+As previsões dos quatro modelos são limitadas ao intervalo `[0, 1]`.
 
 ### Métricas
 
@@ -560,7 +613,7 @@ horária a partir da média diária.
 
 Para cada localidade são gerados:
 
-- série temporal do teste com real, XGBoost e MLP;
+- série temporal do teste com real, XGBoost, MLP, RNN e LSTM;
 - real versus previsto de cada modelo;
 - dispersão real versus previsto de cada modelo;
 - versões normalizadas e versões desnormalizadas em `W/m²`.
@@ -569,26 +622,30 @@ No gráfico de dispersão, previsões melhores ficam mais próximas da diagonal.
 
 ## Resultados atuais
 
+### Fluxo diário
+
 Resultados presentes em `resultados/todas_localidades/resumo_localidades.csv`:
 
 | Localidade | Melhor modelo por R² | Melhor R² |
 |---|---|---:|
 | BYD Camaçari | MLP | 0,3892 |
 | Tesla Gigafactory Nevada | XGBoost | 0,8596 |
-| Tesla Gigafactory Texas | MLP | 0,5716 |
-| Hyundai Metaplant Georgia | MLP | 0,5188 |
+| Tesla Gigafactory Texas | RNN | 0,5749 |
+| Hyundai Metaplant Georgia | RNN | 0,5240 |
 | Rivian Normal | MLP | 0,6401 |
 | Tesla Fremont Factory | XGBoost | 0,8701 |
-| Lucid AMP 1 Casa Grande | MLP | 0,8161 |
-| GM Factory Zero | MLP | 0,6362 |
+| Lucid AMP 1 Casa Grande | RNN | 0,8168 |
+| GM Factory Zero | RNN | 0,6432 |
 | Ford Rouge Electric Vehicle Center | XGBoost | 0,6515 |
-| BMW San Luis Potosí | MLP | 0,5895 |
+| BMW San Luis Potosí | RNN | 0,6011 |
 
-Síntese:
+Síntese da última execução com XGBoost, MLP, RNN e LSTM:
 
 ```text
-MLP foi melhor em 6 localidades.
-XGBoost foi melhor em 4 localidades.
+RNN foi melhor em 5 localidades.
+XGBoost foi melhor em 3 localidades.
+MLP foi melhor em 2 localidades.
+LSTM não foi o melhor modelo em nenhuma localidade nesta rodada.
 ```
 
 Médias entre as dez localidades:
@@ -597,10 +654,52 @@ Médias entre as dez localidades:
 |---|---:|---:|---:|---:|---:|
 | XGBoost | 0,1068 | 0,1410 | 50,77 | 27,41% | 0,6396 |
 | MLP | 0,1052 | 0,1390 | 50,08 | 27,05% | 0,6529 |
+| RNN | 0,1053 | 0,1386 | 49,91 | 26,95% | 0,6538 |
+| LSTM | 0,1120 | 0,1482 | 53,37 | 28,71% | 0,6063 |
 
 Não existe um vencedor universal. A previsibilidade varia entre localidades,
 e resultados menores indicam dificuldade para representar as mudanças diárias
 usando somente o histórico do próprio GHI.
+
+### Fluxo mensal
+
+Resultados presentes em `resultados/todas_localidades_mensal/resumo_localidades.csv`:
+
+| Localidade | Melhor modelo por R² | Melhor R² |
+|---|---|---:|
+| BYD Camaçari | RNN | 0,6537 |
+| Tesla Gigafactory Nevada | MLP | 0,9829 |
+| Tesla Gigafactory Texas | MLP | 0,8978 |
+| Hyundai Metaplant Georgia | XGBoost | 0,9150 |
+| Rivian Normal | MLP | 0,9046 |
+| Tesla Fremont Factory | RNN | 0,9834 |
+| Lucid AMP 1 Casa Grande | XGBoost | 0,9920 |
+| GM Factory Zero | RNN | 0,9563 |
+| Ford Rouge Electric Vehicle Center | RNN | 0,9606 |
+| BMW San Luis Potosí | XGBoost | 0,6929 |
+
+Síntese da execução mensal:
+
+```text
+RNN foi melhor em 4 localidades.
+MLP foi melhor em 3 localidades.
+XGBoost foi melhor em 3 localidades.
+LSTM não foi o melhor modelo em nenhuma localidade nesta rodada.
+```
+
+Médias mensais entre as dez localidades:
+
+| Modelo | MAE médio W/m² | RMSE médio W/m² | nRMSE médio W/m² | R² médio W/m² |
+|---|---:|---:|---:|---:|
+| XGBoost | 15,23 | 19,41 | 9,70% | 0,8751 |
+| MLP | 16,13 | 19,70 | 9,58% | 0,8609 |
+| RNN | 14,81 | 18,23 | 8,97% | 0,8781 |
+| LSTM | 20,60 | 24,69 | 11,99% | 0,7848 |
+
+Considerando o melhor modelo de cada localidade no fluxo mensal, a média geral
+foi MAE de 13,63 W/m², RMSE de 16,77 W/m², nRMSE de 8,28% e R² de 0,8939.
+O desempenho mensal é naturalmente superior ao diário porque a agregação por
+mês suaviza variações meteorológicas rápidas.
 
 ## Estrutura do repositório
 
@@ -611,6 +710,7 @@ usando somente o histórico do próprio GHI.
 |-- pytest.ini
 |-- treinamento_principal.py
 |-- treinar_todas_localidades.py
+|-- experimentos_redes_avancadas.py
 |-- codigo_fonte/
 |   |-- configuracao.py
 |   |-- utilitarios.py
@@ -626,7 +726,8 @@ usando somente o histórico do próprio GHI.
 |-- cadernos_jupyter/
 |   |-- 00_coleta_dados_localidades.ipynb
 |   |-- 01_explicacao_teorica_pipeline.ipynb
-|   +-- 02_resultados_todas_localidades.ipynb
+|   |-- 02_resultados_todas_localidades.ipynb
+|   +-- 03_experimentos_redes_avancadas.ipynb
 |-- relatorios/
 |-- resultados/
 |-- testes/
@@ -641,7 +742,7 @@ Executa o pipeline para uma série:
 
 - carrega e prepara os dados;
 - divide treino e teste;
-- treina XGBoost e MLP;
+- treina XGBoost, MLP, RNN e LSTM;
 - salva modelos, métricas, previsões e gráficos.
 
 #### `treinar_todas_localidades.py`
@@ -650,7 +751,7 @@ Executa o fluxo completo das dez localidades:
 
 - valida ou coleta os CSVs;
 - prepara uma base por local;
-- treina os dois modelos;
+- treina os quatro modelos;
 - gera resultados individuais e comparativos;
 - atualiza o manifesto de integridade.
 
@@ -660,7 +761,19 @@ Opções:
 --validar-dados    valida os arquivos sem treinar
 --somente-download coleta e valida sem treinar
 --forcar-download  ignora os CSVs existentes e coleta novamente
+--frequencia       escolhe diaria, mensal ou ambas
 ```
+
+#### `experimentos_redes_avancadas.py`
+
+Executa testes paralelos com modelos candidatos, sem alterar o pipeline oficial:
+
+- DilatedRNN;
+- DeepAR experimental;
+- DeepNPTS aproximado.
+
+Os resultados ficam isolados em `resultados/experimentos_redes_avancadas/` e
+são comparados com os CSVs oficiais de XGBoost, MLP, RNN e LSTM.
 
 ### Módulos
 
@@ -682,6 +795,7 @@ Opções:
 | `00_coleta_dados_localidades.ipynb` | coleta, validação e exploração dos dados |
 | `01_explicacao_teorica_pipeline.ipynb` | guia completo para entender e apresentar o projeto |
 | `02_resultados_todas_localidades.ipynb` | análise comparativa dos resultados |
+| `03_experimentos_redes_avancadas.ipynb` | leitura dos testes paralelos com DilatedRNN, DeepAR experimental e DeepNPTS aproximado |
 
 Os notebooks documentam e apresentam. A lógica reutilizável permanece nos
 módulos Python, o que facilita testes e execução fora do Jupyter.
@@ -719,6 +833,8 @@ ghi_alvo_original
 ```text
 resultados/modelos/localidades/xgboost_<localidade>.joblib
 resultados/modelos/localidades/mlp_<localidade>.joblib
+resultados/modelos/localidades/rnn_<localidade>.keras
+resultados/modelos/localidades/lstm_<localidade>.keras
 ```
 
 ### Métricas e previsões
@@ -741,6 +857,8 @@ resultados/todas_localidades/figuras/<localidade>/
 resultados/metricas/
 resultados/modelos/xgboost_ghi.joblib
 resultados/modelos/mlp_ghi.joblib
+resultados/modelos/rnn_ghi.keras
+resultados/modelos/lstm_ghi.keras
 resultados/figuras/
 ```
 
@@ -901,5 +1019,6 @@ relatorios/02_resultados_todas_localidades.html
 Em uma frase:
 
 > O projeto transforma dados horários oficiais em uma série diária auditável,
-> cria informações históricas sem acessar o futuro e compara XGBoost e MLP na
-> previsão do GHI médio do dia seguinte.
+> também agrega a série em escala mensal, cria informações históricas sem
+> acessar o futuro e compara XGBoost, MLP, RNN e LSTM na previsão do GHI médio
+> do próximo período.

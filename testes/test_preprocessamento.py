@@ -17,6 +17,7 @@ from codigo_fonte.preprocessamento import (
     NSRDB_SOURCE,
     calcular_estatisticas_ghi_horario,
     carregar_serie_ghi,
+    garantir_resolucao_mensal,
     normalizar_minmax,
     preparar_serie_temporal,
     quantizar_ghi,
@@ -139,6 +140,48 @@ def test_preparar_serie_temporal_cria_features_sem_futuro():
     assert "ghi_t-1" in result.feature_columns
     assert "ghi_t-7" in result.feature_columns
     assert "ghi_media_movel_30d" in result.feature_columns
+    assert result.train_size > 0
+    assert result.train_size < len(result.dados_modelagem)
+
+
+def test_garantir_resolucao_mensal_calcula_media_dos_dias():
+    """Confirma que a serie mensal representa a media diaria dentro do mes."""
+    df = pd.DataFrame(
+        {
+            "data": pd.date_range("2024-01-01", periods=60, freq="D"),
+            "ghi": [100.0] * 31 + [200.0] * 29,
+        }
+    )
+
+    mensal = garantir_resolucao_mensal(df)
+
+    assert len(mensal) == 2
+    assert mensal.loc[0, "data"] == pd.Timestamp("2024-01-31")
+    assert mensal.loc[0, "ghi"] == pytest.approx(100.0)
+    assert mensal.loc[1, "data"] == pd.Timestamp("2024-02-29")
+    assert mensal.loc[1, "ghi"] == pytest.approx(200.0)
+
+
+def test_preparar_serie_temporal_mensal_cria_alvo_do_mes_seguinte():
+    """Verifica o fluxo mensal com lags e medias moveis em meses."""
+    df = pd.DataFrame(
+        {
+            "data": pd.date_range("2019-01-01", "2024-12-31", freq="D"),
+            "ghi": range(len(pd.date_range("2019-01-01", "2024-12-31", freq="D"))),
+        }
+    )
+
+    result = preparar_serie_temporal(
+        df,
+        frequencia_modelagem="mensal",
+        output_path=None,
+    )
+    primeira = result.dados_modelagem.iloc[0]
+
+    assert "ghi_t-6" in result.feature_columns
+    assert "ghi_media_movel_12m" in result.feature_columns
+    assert primeira["data"] == pd.Timestamp("2019-12-31")
+    assert primeira["data_alvo"] == pd.Timestamp("2020-01-31")
     assert result.train_size > 0
     assert result.train_size < len(result.dados_modelagem)
 

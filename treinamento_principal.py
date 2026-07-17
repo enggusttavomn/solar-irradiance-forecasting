@@ -22,7 +22,7 @@ from codigo_fonte.avaliacao import (
 from codigo_fonte.configuracao import PASTA_FIGURAS, PASTA_METRICAS, PASTA_MODELOS
 from codigo_fonte.features import dividir_treino_teste_temporal
 from codigo_fonte.graficos import salvar_graficos
-from codigo_fonte.modelos import salvar_modelo, treinar_mlp, treinar_xgboost
+from codigo_fonte.modelos import salvar_modelo, treinar_lstm, treinar_mlp, treinar_rnn, treinar_xgboost
 from codigo_fonte.preprocessamento import carregar_serie_ghi, preparar_serie_temporal
 from codigo_fonte.utilitarios import criar_pastas
 
@@ -31,12 +31,17 @@ from codigo_fonte.utilitarios import criar_pastas
 warnings.filterwarnings("ignore")
 
 
-def executar_pipeline(data_path: str | Path | None = None, gerar_graficos: bool = True) -> dict[str, object]:
+def executar_pipeline(
+    data_path: str | Path | None = None,
+    gerar_graficos: bool = True,
+    frequencia_modelagem: str = "diaria",
+) -> dict[str, object]:
     """Executa todas as etapas para um arquivo ou serie localizada automaticamente.
 
     Args:
         data_path: Arquivo de entrada. Se for ``None``, procura nas pastas padrao.
         gerar_graficos: Permite desativar as figuras em execucoes mais rapidas.
+        frequencia_modelagem: ``diaria`` ou ``mensal``.
 
     Returns:
         Dicionario com metricas, base preparada, previsoes e modelos ajustados.
@@ -45,7 +50,7 @@ def executar_pipeline(data_path: str | Path | None = None, gerar_graficos: bool 
     criar_pastas()
 
     print("=" * 60)
-    print("TREINAMENTO PRINCIPAL - PREVISAO DIARIA DE GHI")
+    print(f"TREINAMENTO PRINCIPAL - PREVISAO {frequencia_modelagem.upper()} DE GHI")
     print("=" * 60)
 
     print("\n[1/5] Carregando serie de GHI...")
@@ -54,8 +59,13 @@ def executar_pipeline(data_path: str | Path | None = None, gerar_graficos: bool 
     print(f"      Observacoes carregadas: {len(serie_ghi)}")
 
     print("[2/5] Preparando features temporais...")
-    # Quantiza, normaliza, cria as sete features e alinha o alvo de t+1.
-    preparation = preparar_serie_temporal(serie_ghi)
+    # Quantiza, normaliza, cria as features e alinha o alvo do proximo periodo.
+    output_features = PASTA_METRICAS / f"ghi_features_{frequencia_modelagem}.csv"
+    preparation = preparar_serie_temporal(
+        serie_ghi,
+        output_path=output_features,
+        frequencia_modelagem=frequencia_modelagem,
+    )
     dados = preparation.dados_modelagem
     feature_columns = preparation.feature_columns
 
@@ -72,14 +82,23 @@ def executar_pipeline(data_path: str | Path | None = None, gerar_graficos: bool 
     y_test_reset = y_test.reset_index(drop=True)
 
     print("[3/5] Treinando modelos...")
-    # Ambos recebem exatamente X_train e y_train, tornando a comparacao justa.
-    xgb_model = treinar_xgboost(X_train, y_train)
-    mlp_model = treinar_mlp(X_train, y_train)
+    # Todos recebem exatamente X_train e y_train, tornando a comparacao justa.
+    sufixo_modelo = "" if frequencia_modelagem == "diaria" else "_mensal"
+    treinadores = {
+        "XGBoost": (treinar_xgboost, PASTA_MODELOS / f"xgboost_ghi{sufixo_modelo}.joblib"),
+        "MLP": (treinar_mlp, PASTA_MODELOS / f"mlp_ghi{sufixo_modelo}.joblib"),
+        "RNN": (treinar_rnn, PASTA_MODELOS / f"rnn_ghi{sufixo_modelo}.keras"),
+        "LSTM": (treinar_lstm, PASTA_MODELOS / f"lstm_ghi{sufixo_modelo}.keras"),
+    }
+    modelos = {}
+    for nome_modelo, (treinador, _) in treinadores.items():
+        print(f"      Treinando {nome_modelo}...")
+        modelos[nome_modelo] = treinador(X_train, y_train)
 
     # Alguns regressores podem extrapolar. O ``clip`` respeita a escala [0, 1].
     predicoes = {
-        "XGBoost": pd.Series(xgb_model.predict(X_test), index=y_test.index).clip(0, 1).reset_index(drop=True),
-        "MLP": pd.Series(mlp_model.predict(X_test), index=y_test.index).clip(0, 1).reset_index(drop=True),
+        nome_modelo: pd.Series(modelo.predict(X_test), index=y_test.index).clip(0, 1).reset_index(drop=True)
+        for nome_modelo, modelo in modelos.items()
     }
     y_test_original = dados_teste["ghi_alvo_original"].reset_index(drop=True)
     predicoes_original = {
@@ -89,12 +108,12 @@ def executar_pipeline(data_path: str | Path | None = None, gerar_graficos: bool 
 
     print("[4/5] Salvando modelos, metricas e previsoes...")
     # Modelos e resultados sao salvos antes dos graficos, que podem ser omitidos.
-    salvar_modelo(xgb_model, PASTA_MODELOS / "xgboost_ghi.joblib")
-    salvar_modelo(mlp_model, PASTA_MODELOS / "mlp_ghi.joblib")
+    for nome_modelo, modelo in modelos.items():
+        salvar_modelo(modelo, treinadores[nome_modelo][1])
 
-    # A mesma funcao de metricas e aplicada aos dois vetores de previsao.
+    # A mesma funcao de metricas e aplicada a todos os vetores de previsao.
     metricas = []
-    for nome_modelo in ("XGBoost", "MLP"):
+    for nome_modelo in modelos:
         metricas_modelo = calcular_metricas(
             y_test_reset,
             predicoes[nome_modelo],
@@ -133,7 +152,7 @@ def executar_pipeline(data_path: str | Path | None = None, gerar_graficos: bool 
             y_test_original,
             predicoes_original,
             PASTA_FIGURAS / "wm2",
-            y_label="GHI medio diario (W/m2)",
+            y_label=f"GHI medio {frequencia_modelagem} (W/m2)",
             titulo_sufixo=" - escala real",
         )
     else:
@@ -148,14 +167,14 @@ def executar_pipeline(data_path: str | Path | None = None, gerar_graficos: bool 
         "metricas": df_metricas,
         "dados_modelagem": dados,
         "predicoes": predicoes,
-        "modelos": {"XGBoost": xgb_model, "MLP": mlp_model},
+        "modelos": modelos,
     }
 
 
 def main() -> dict[str, object]:
     """Le argumentos da linha de comando e chama o pipeline."""
     # ``argparse`` gera automaticamente a ajuda exibida com ``--help``.
-    parser = argparse.ArgumentParser(description="Treina XGBoost e MLP para previsao diaria de GHI.")
+    parser = argparse.ArgumentParser(description="Treina XGBoost, MLP, RNN e LSTM para previsao diaria ou mensal de GHI.")
     parser.add_argument(
         "--data-path",
         type=Path,
@@ -167,8 +186,18 @@ def main() -> dict[str, object]:
         action="store_true",
         help="Executa o treino sem gerar figuras PNG.",
     )
+    parser.add_argument(
+        "--frequencia",
+        choices=["diaria", "mensal"],
+        default="diaria",
+        help="Escala temporal da modelagem: diaria ou mensal.",
+    )
     args = parser.parse_args()
-    return executar_pipeline(args.data_path, gerar_graficos=not args.sem_graficos)
+    return executar_pipeline(
+        args.data_path,
+        gerar_graficos=not args.sem_graficos,
+        frequencia_modelagem=args.frequencia,
+    )
 
 
 # Este bloco so executa quando o arquivo e chamado diretamente. Em importacoes,

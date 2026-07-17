@@ -107,17 +107,17 @@ def salvar_graficos(
     pasta_saida = Path(pasta_saida)
     pasta_saida.mkdir(parents=True, exist_ok=True)
 
-    # Primeiro salva a visao conjunta dos dois modelos.
+    # Primeiro salva a visao conjunta de todos os modelos.
     gerar_grafico_temporal(
         datas,
         y_true,
         predicoes,
-        pasta_saida / "serie_temporal_teste_real_xgboost_mlp.png",
+        pasta_saida / "serie_temporal_teste_real_modelos.png",
         y_label=y_label,
         titulo_sufixo=titulo_sufixo,
     )
 
-    # Depois cria duas figuras especificas para cada modelo.
+    # Depois cria figuras especificas para cada modelo.
     for nome_modelo, y_pred in predicoes.items():
         nome_seguro = nome_modelo.lower()
         gerar_grafico_real_vs_previsto(
