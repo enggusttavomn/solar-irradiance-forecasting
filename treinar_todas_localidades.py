@@ -43,6 +43,7 @@ LOCALIDADES = LOCALIDADES_EV
 OUTPUT_DIR = PASTA_DADOS_BRUTOS / "localidades_ev"
 MANIFESTO_DADOS = OUTPUT_DIR / "manifesto_nsrdb.csv"
 RESULTADOS_DIR = PASTA_RESULTADOS / "todas_localidades"
+RESULTADOS_MENSAIS_DIR = PASTA_RESULTADOS / "todas_localidades_mensal"
 ANO_INICIAL_DADOS = 2019
 ANO_FINAL_DADOS = 2024
 COLUNAS_ESTATISTICAS_HORARIAS = [
@@ -391,13 +392,29 @@ def carregar_ou_coletar_localidade(local: dict, forcar_download: bool = False) -
         ) from exc
 
 
-def treinar_localidade(local: dict, verbose: bool = True, forcar_download: bool = False) -> dict:
+def caminho_resultados_frequencia(frequencia_modelagem: str) -> Path:
+    """Retorna a pasta de resultados da escala temporal solicitada."""
+    if frequencia_modelagem == "diaria":
+        return RESULTADOS_DIR
+    if frequencia_modelagem == "mensal":
+        return RESULTADOS_MENSAIS_DIR
+    raise ValueError("frequencia_modelagem deve ser 'diaria' ou 'mensal'.")
+
+
+def treinar_localidade(
+    local: dict,
+    verbose: bool = True,
+    forcar_download: bool = False,
+    frequencia_modelagem: str = "diaria",
+) -> dict:
     """Executa o pipeline completo e independente para uma localidade.
 
     Args:
         local: Dicionario do cadastro ``LOCALIDADES_EV``.
         verbose: Controla as mensagens detalhadas no terminal.
         forcar_download: Quando verdadeiro, ignora o CSV local.
+        frequencia_modelagem: ``diaria`` para prever o dia seguinte ou
+            ``mensal`` para prever o mes seguinte.
 
     Returns:
         Dicionario com metricas, modelos e informacoes da localidade.
@@ -407,15 +424,18 @@ def treinar_localidade(local: dict, verbose: bool = True, forcar_download: bool 
     from codigo_fonte.avaliacao import desnormalizar_ghi
     from codigo_fonte.features import dividir_treino_teste_temporal
     from codigo_fonte.graficos import salvar_graficos
-    from codigo_fonte.modelos import salvar_modelo, treinar_mlp, treinar_xgboost
+    from codigo_fonte.modelos import salvar_modelo, treinar_lstm, treinar_mlp, treinar_rnn, treinar_xgboost
     from codigo_fonte.preprocessamento import preparar_serie_temporal
 
     nome = local["nome"]
     pais = local["pais"]
+    resultados_dir = caminho_resultados_frequencia(frequencia_modelagem)
+    resultados_dir.mkdir(parents=True, exist_ok=True)
     
     if verbose:
         print(f"\n{'='*60}")
         print(f"Localidade: {nome} ({pais})")
+        print(f"Frequencia: {frequencia_modelagem}")
         print(f"Latitude: {local['lat']}, Longitude: {local['lon']}")
         print(f"{'='*60}")
     
@@ -425,13 +445,15 @@ def treinar_localidade(local: dict, verbose: bool = True, forcar_download: bool 
     # Etapa 2: limpar, transformar e salvar a base de features desta localidade.
     if verbose:
         print("  Preparando serie temporal (quantizacao 128 niveis, features)...")
+    sufixo_features = "" if frequencia_modelagem == "diaria" else "_mensal"
     preparation = preparar_serie_temporal(
         serie_ghi,
         output_path=(
             PASTA_DADOS_PROCESSADOS
             / "localidades_ev"
-            / f"{nome_arquivo(nome)}_features.csv"
+            / f"{nome_arquivo(nome)}_features{sufixo_features}.csv"
         ),
+        frequencia_modelagem=frequencia_modelagem,
     )
     dados = preparation.dados_modelagem
     feature_columns = preparation.feature_columns
@@ -446,32 +468,37 @@ def treinar_localidade(local: dict, verbose: bool = True, forcar_download: bool 
     # A data associada a cada previsao e a data do alvo t+1.
     datas_teste = pd.to_datetime(dados_teste["data_alvo"])
     
-    # Etapa 4: treinar e prever com XGBoost.
-    if verbose:
-        print("  Treinando XGBoost...")
-    xgb_model = treinar_xgboost(X_train, y_train)
-    # Limita a saida ao dominio da variavel normalizada.
-    pred_xgb = pd.Series(xgb_model.predict(X_test), index=y_test.index).clip(0, 1)
-    
     # Um nome por localidade impede que modelos sejam sobrescritos no lote.
-    pasta_modelo_local = PASTA_MODELOS / "localidades"
+    pasta_modelo_local = PASTA_MODELOS / (
+        "localidades" if frequencia_modelagem == "diaria" else "localidades_mensal"
+    )
     pasta_modelo_local.mkdir(parents=True, exist_ok=True)
-    salvar_modelo(xgb_model, pasta_modelo_local / f"xgboost_{nome_arquivo(nome)}.joblib")
-    
-    # Etapa 5: treinar e prever com a MLP usando a mesma divisao.
-    if verbose:
-        print("  Treinando MLP...")
-    mlp_model = treinar_mlp(X_train, y_train)
-    pred_mlp = pd.Series(mlp_model.predict(X_test), index=y_test.index).clip(0, 1)
-    
-    # O formato joblib permite recarregar o estimador ajustado.
-    salvar_modelo(mlp_model, pasta_modelo_local / f"mlp_{nome_arquivo(nome)}.joblib")
-    
-    # Etapa 6: zerar os indices facilita alinhar datas, reais e previsoes.
-    predicoes = {
-        "XGBoost": pred_xgb.reset_index(drop=True),
-        "MLP": pred_mlp.reset_index(drop=True),
+
+    treinadores = {
+        "XGBoost": (treinar_xgboost, "xgboost", ".joblib"),
+        "MLP": (treinar_mlp, "mlp", ".joblib"),
+        "RNN": (treinar_rnn, "rnn", ".keras"),
+        "LSTM": (treinar_lstm, "lstm", ".keras"),
     }
+    modelos = {}
+    predicoes = {}
+    for nome_modelo, (treinador, slug, extensao) in treinadores.items():
+        if verbose:
+            print(f"  Treinando {nome_modelo}...")
+        modelo = treinador(X_train, y_train)
+        modelos[nome_modelo] = modelo
+        # Limita a saida ao dominio da variavel normalizada.
+        predicoes[nome_modelo] = (
+            pd.Series(modelo.predict(X_test), index=y_test.index)
+            .clip(0, 1)
+            .reset_index(drop=True)
+        )
+        salvar_modelo(
+            modelo,
+            pasta_modelo_local / f"{slug}_{nome_arquivo(nome)}{extensao}",
+        )
+
+    # Etapa 6: zerar os indices facilita alinhar datas, reais e previsoes.
     y_test_reset = y_test.reset_index(drop=True)
     datas_reset = datas_teste.reset_index(drop=True)
     y_test_original = dados_teste["ghi_alvo_original"].reset_index(drop=True)
@@ -481,55 +508,36 @@ def treinar_localidade(local: dict, verbose: bool = True, forcar_download: bool 
     }
     
     # Mantem as metricas normalizadas e acrescenta a escala fisica em W/m2.
-    metricas_xgb = calcular_metricas(
-        y_test_reset,
-        predicoes["XGBoost"],
-        "XGBoost",
-        sufixo="normalizado",
-    )
-    metricas_xgb.update(
-        calcular_metricas(
-            y_test_original,
-            predicoes_original["XGBoost"],
-            "XGBoost",
-            sufixo="wm2",
+    metricas_modelos = {}
+    for nome_modelo in predicoes:
+        metricas = calcular_metricas(
+            y_test_reset,
+            predicoes[nome_modelo],
+            nome_modelo,
+            sufixo="normalizado",
         )
-    )
-    metricas_mlp = calcular_metricas(
-        y_test_reset,
-        predicoes["MLP"],
-        "MLP",
-        sufixo="normalizado",
-    )
-    metricas_mlp.update(
-        calcular_metricas(
-            y_test_original,
-            predicoes_original["MLP"],
-            "MLP",
-            sufixo="wm2",
+        metricas.update(
+            calcular_metricas(
+                y_test_original,
+                predicoes_original[nome_modelo],
+                nome_modelo,
+                sufixo="wm2",
+            )
         )
-    )
-
-    # Alias historicos preservam compatibilidade e continuam na escala [0, 1].
-    for metricas in (metricas_xgb, metricas_mlp):
+        # Alias historicos preservam compatibilidade e continuam na escala [0, 1].
         metricas["MAE"] = metricas["MAE_normalizado"]
         metricas["MSE"] = metricas["MSE_normalizado"]
         metricas["RMSE"] = metricas["RMSE_normalizado"]
         metricas["R2"] = metricas["R2_normalizado"]
-    
-    # Adiciona contexto geografico para montar a tabela consolidada depois.
-    metricas_xgb["Localidade"] = nome
-    metricas_xgb["Pais"] = pais
-    metricas_xgb["Lat"] = local["lat"]
-    metricas_xgb["Lon"] = local["lon"]
-    
-    metricas_mlp["Localidade"] = nome
-    metricas_mlp["Pais"] = pais
-    metricas_mlp["Lat"] = local["lat"]
-    metricas_mlp["Lon"] = local["lon"]
+        # Adiciona contexto geografico para montar a tabela consolidada depois.
+        metricas["Localidade"] = nome
+        metricas["Pais"] = pais
+        metricas["Lat"] = local["lat"]
+        metricas["Lon"] = local["lon"]
+        metricas_modelos[nome_modelo] = metricas
     
     # Etapa 7: salvar valores linha a linha para auditoria e graficos.
-    pasta_previsoes_local = RESULTADOS_DIR / "previsoes"
+    pasta_previsoes_local = resultados_dir / "previsoes"
     pasta_previsoes_local.mkdir(parents=True, exist_ok=True)
     salvar_previsoes(
         datas_reset,
@@ -541,7 +549,7 @@ def treinar_localidade(local: dict, verbose: bool = True, forcar_download: bool 
     )
     
     # Etapa 8: produzir figuras nas duas escalas para a mesma localidade.
-    pasta_figuras_local = RESULTADOS_DIR / "figuras"
+    pasta_figuras_local = resultados_dir / "figuras"
     pasta_figuras_local.mkdir(parents=True, exist_ok=True)
     salvar_graficos(
         datas_reset,
@@ -554,25 +562,19 @@ def treinar_localidade(local: dict, verbose: bool = True, forcar_download: bool 
         y_test_original,
         predicoes_original,
         pasta_figuras_local / nome_arquivo(nome) / "wm2",
-        y_label="GHI medio diario (W/m2)",
+        y_label=f"GHI medio {frequencia_modelagem} (W/m2)",
         titulo_sufixo=" - escala real",
     )
     
     if verbose:
-        print(f"\n  Metricas XGBoost:")
-        print(f"    MAE normalizado: {metricas_xgb['MAE_normalizado']:.4f}")
-        print(f"    RMSE normalizado: {metricas_xgb['RMSE_normalizado']:.4f}")
-        print(f"    MAE W/m2: {metricas_xgb['MAE_wm2']:.2f}")
-        print(f"    RMSE W/m2: {metricas_xgb['RMSE_wm2']:.2f}")
-        print(f"    nRMSE W/m2: {metricas_xgb['nRMSE_percentual_wm2']:.2f}%")
-        print(f"    R2 W/m2: {metricas_xgb['R2_wm2']:.4f}")
-        print(f"\n  Metricas MLP:")
-        print(f"    MAE normalizado: {metricas_mlp['MAE_normalizado']:.4f}")
-        print(f"    RMSE normalizado: {metricas_mlp['RMSE_normalizado']:.4f}")
-        print(f"    MAE W/m2: {metricas_mlp['MAE_wm2']:.2f}")
-        print(f"    RMSE W/m2: {metricas_mlp['RMSE_wm2']:.2f}")
-        print(f"    nRMSE W/m2: {metricas_mlp['nRMSE_percentual_wm2']:.2f}%")
-        print(f"    R2 W/m2: {metricas_mlp['R2_wm2']:.4f}")
+        for nome_modelo, metricas in metricas_modelos.items():
+            print(f"\n  Metricas {nome_modelo}:")
+            print(f"    MAE normalizado: {metricas['MAE_normalizado']:.4f}")
+            print(f"    RMSE normalizado: {metricas['RMSE_normalizado']:.4f}")
+            print(f"    MAE W/m2: {metricas['MAE_wm2']:.2f}")
+            print(f"    RMSE W/m2: {metricas['RMSE_wm2']:.2f}")
+            print(f"    nRMSE W/m2: {metricas['nRMSE_percentual_wm2']:.2f}%")
+            print(f"    R2 W/m2: {metricas['R2_wm2']:.4f}")
     
     # O retorno alimenta a consolidacao feita por ``main``.
     return {
@@ -580,25 +582,162 @@ def treinar_localidade(local: dict, verbose: bool = True, forcar_download: bool 
         "pais": pais,
         "lat": local["lat"],
         "lon": local["lon"],
-        "xgboost": metricas_xgb,
-        "mlp": metricas_mlp,
+        "frequencia_modelagem": frequencia_modelagem,
+        "xgboost": metricas_modelos["XGBoost"],
+        "mlp": metricas_modelos["MLP"],
+        "rnn": metricas_modelos["RNN"],
+        "lstm": metricas_modelos["LSTM"],
+        "metricas_modelos": metricas_modelos,
+        "modelos": modelos,
         "dados": dados,
         "y_test": y_test_reset,
-        "y_pred_xgb": predicoes["XGBoost"],
-        "y_pred_mlp": predicoes["MLP"],
+        "predicoes": predicoes,
         "y_test_original": y_test_original,
-        "y_pred_xgb_original": predicoes_original["XGBoost"],
-        "y_pred_mlp_original": predicoes_original["MLP"],
+        "predicoes_original": predicoes_original,
         "datas_teste": datas_reset,
         "estatisticas_horarias": ler_estatisticas_horarias_localidade(local),
     }
+
+
+def consolidar_resultados(resultados: list[dict], resultados_dir: Path) -> pd.DataFrame:
+    """Salva as tabelas consolidadas para uma escala temporal de modelagem."""
+    # Consolida uma linha por par localidade/modelo.
+    print("\n" + "="*60)
+    print("TABELA COMPARATIVA FINAL")
+    print("="*60)
+    
+    metricas_geral = []
+    for res in resultados:
+        if "erro" not in res:
+            for nome_modelo, metricas in res["metricas_modelos"].items():
+                metricas_geral.append({
+                    "Localidade": res["localidade"],
+                    "Pais": res["pais"],
+                    "Frequencia": res["frequencia_modelagem"],
+                    "Modelo": nome_modelo,
+                    **{
+                        chave: valor
+                        for chave, valor in metricas.items()
+                        if chave != "Modelo"
+                        and chave not in {"Localidade", "Pais", "Lat", "Lon"}
+                    },
+                })
+    
+    df_metricas = pd.DataFrame(metricas_geral)
+    df_metricas.to_csv(resultados_dir / "metricas_geral.csv", index=False)
+    
+    print("\nTabela de metricas (todas as localidades):")
+    print(df_metricas.to_string(index=False))
+    
+    # Esta tabela larga facilita comparar todos os modelos na mesma linha.
+    resumo = []
+    estatisticas_horarias = []
+    for res in resultados:
+        if "erro" not in res:
+            linha_resumo = {
+                "Localidade": res["localidade"],
+                "Pais": res["pais"],
+                "Frequencia": res["frequencia_modelagem"],
+                "Lat": res["lat"],
+                "Lon": res["lon"],
+            }
+            for nome_modelo, metricas in res["metricas_modelos"].items():
+                linha_resumo.update({
+                    f"{nome_modelo}_MAE_normalizado": metricas["MAE_normalizado"],
+                    f"{nome_modelo}_RMSE_normalizado": metricas["RMSE_normalizado"],
+                    f"{nome_modelo}_MAE_wm2": metricas["MAE_wm2"],
+                    f"{nome_modelo}_RMSE_wm2": metricas["RMSE_wm2"],
+                    f"{nome_modelo}_nRMSE_percentual_wm2": metricas["nRMSE_percentual_wm2"],
+                    f"{nome_modelo}_R2_wm2": metricas["R2_wm2"],
+                })
+            # O vencedor do resumo e definido pelo maior R2 em escala fisica.
+            linha_resumo["Melhor_Modelo"] = max(
+                res["metricas_modelos"].items(),
+                key=lambda item: item[1]["R2_wm2"],
+            )[0]
+            resumo.append(linha_resumo)
+            estatisticas_horarias.append(res["estatisticas_horarias"])
+    
+    df_resumo = pd.DataFrame(resumo)
+    df_resumo.to_csv(resultados_dir / "resumo_localidades.csv", index=False)
+    df_estatisticas_horarias = pd.DataFrame(estatisticas_horarias)
+    df_estatisticas_horarias.to_csv(
+        resultados_dir / "estatisticas_horarias.csv",
+        index=False,
+    )
+    
+    print("\n" + "="*60)
+    print("RESUMO POR LOCALIDADE")
+    print("="*60)
+    print(df_resumo.to_string(index=False))
+    print("\nEstatisticas horarias de GHI:")
+    print(df_estatisticas_horarias.to_string(index=False))
+    
+    print("\n[OK] Pipeline finalizado!")
+    print(f"[INFO] Resultados salvos em: {resultados_dir.absolute()}")
+    print(f"[INFO] Metricas gerais: {resultados_dir / 'metricas_geral.csv'}")
+    print(f"[INFO] Resumo: {resultados_dir / 'resumo_localidades.csv'}")
+    print(f"[INFO] Estatisticas horarias: {resultados_dir / 'estatisticas_horarias.csv'}")
+    return df_resumo
+
+
+def executar_lote_modelagem(
+    frequencia_modelagem: str,
+    verbose: bool = True,
+    forcar_download: bool = False,
+) -> list[dict]:
+    """Executa treinamento e consolidacao de uma escala temporal."""
+    resultados_dir = caminho_resultados_frequencia(frequencia_modelagem)
+    resultados_dir.mkdir(parents=True, exist_ok=True)
+
+    print("\n" + "="*60)
+    print(f"ESCALA DE MODELAGEM: {frequencia_modelagem.upper()}")
+    print("="*60)
+
+    resultados = []
+    for local in LOCALIDADES:
+        try:
+            resultado = treinar_localidade(
+                local,
+                verbose=verbose,
+                forcar_download=forcar_download,
+                frequencia_modelagem=frequencia_modelagem,
+            )
+            resultados.append(resultado)
+        except Exception as e:
+            # Registra a falha para apresentar todas as localidades problematicas.
+            print(f"  ERRO ao processar {local['nome']}: {e}")
+            resultados.append({
+                "localidade": local["nome"],
+                "pais": local["pais"],
+                "lat": local["lat"],
+                "lon": local["lon"],
+                "frequencia_modelagem": frequencia_modelagem,
+                "erro": str(e),
+            })
+
+    # Nao gera tabelas parciais, pois elas poderiam parecer um resultado completo.
+    erros = [res for res in resultados if "erro" in res]
+    if erros:
+        print("\n" + "="*60)
+        print("EXECUCAO INTERROMPIDA")
+        print("="*60)
+        print("Uma ou mais localidades falharam. Nenhuma tabela final sera gerada.")
+        for erro in erros:
+            print(f"  - {erro['localidade']}: {erro['erro']}")
+        raise SystemExit(
+            "Corrija a coleta NLR/NSRDB antes de regenerar metricas, notebooks ou relatorios."
+        )
+
+    consolidar_resultados(resultados, resultados_dir)
+    return resultados
 
 
 def main():
     """Interpreta o modo solicitado e coordena as dez localidades."""
     # As opcoes permitem separar validacao, coleta e treinamento.
     parser = argparse.ArgumentParser(
-        description="Treina XGBoost e MLP para previsao diaria de GHI em todas as localidades."
+        description="Treina XGBoost, MLP, RNN e LSTM para previsao diaria ou mensal de GHI em todas as localidades."
     )
     parser.add_argument(
         "--verbose",
@@ -621,11 +760,18 @@ def main():
         action="store_true",
         help="Baixa e valida os CSVs das localidades sem treinar os modelos.",
     )
+    parser.add_argument(
+        "--frequencia",
+        choices=["diaria", "mensal", "ambas"],
+        default="diaria",
+        help="Escala temporal da modelagem. Use 'ambas' para rodar diaria e mensal.",
+    )
     args = parser.parse_args()
     
     # Prepara a estrutura antes de qualquer modo de execucao.
     criar_pastas()
     RESULTADOS_DIR.mkdir(parents=True, exist_ok=True)
+    RESULTADOS_MENSAIS_DIR.mkdir(parents=True, exist_ok=True)
     
     print("="*60)
     print("TREINAMENTO DE MODELOS PARA TODAS AS LOCALIDADES")
@@ -693,133 +839,20 @@ def main():
         print("\n[OK] Download e validacao das 10 localidades concluidos.")
         return []
     
-    # Modo padrao: executa o pipeline completo em sequencia para cada local.
-    resultados = []
-    
-    for local in LOCALIDADES:
-        try:
-            resultado = treinar_localidade(
-                local,
-                verbose=args.verbose,
-                forcar_download=args.forcar_download,
-            )
-            resultados.append(resultado)
-        except Exception as e:
-            # Registra a falha para apresentar todas as localidades problematicas.
-            print(f"  ERRO ao processar {local['nome']}: {e}")
-            resultados.append({
-                "localidade": local["nome"],
-                "pais": local["pais"],
-                "lat": local["lat"],
-                "lon": local["lon"],
-                "erro": str(e),
-            })
-
-    # Nao gera tabelas parciais, pois elas poderiam parecer um resultado completo.
-    erros = [res for res in resultados if "erro" in res]
-    if erros:
-        print("\n" + "="*60)
-        print("EXECUCAO INTERROMPIDA")
-        print("="*60)
-        print("Uma ou mais localidades falharam. Nenhuma tabela final sera gerada.")
-        for erro in erros:
-            print(f"  - {erro['localidade']}: {erro['erro']}")
-        raise SystemExit(
-            "Corrija a coleta NLR/NSRDB antes de regenerar metricas, notebooks ou relatorios."
-        )
-
     # Os CSVs usados no experimento ficam registrados apos uma execucao valida.
     gerar_manifesto_dados()
     print(f"\n[OK] Manifesto SHA-256 atualizado em: {MANIFESTO_DADOS}")
+
+    frequencias = ["diaria", "mensal"] if args.frequencia == "ambas" else [args.frequencia]
+    resultados_por_frequencia = {}
+    for frequencia_modelagem in frequencias:
+        resultados_por_frequencia[frequencia_modelagem] = executar_lote_modelagem(
+            frequencia_modelagem,
+            verbose=args.verbose,
+            forcar_download=args.forcar_download,
+        )
     
-    # Consolida duas linhas por localidade: uma para cada modelo.
-    print("\n" + "="*60)
-    print("TABELA COMPARATIVA FINAL")
-    print("="*60)
-    
-    metricas_geral = []
-    for res in resultados:
-        if "erro" not in res:
-            metricas_geral.append({
-                "Localidade": res["localidade"],
-                "Pais": res["pais"],
-                "Modelo": "XGBoost",
-                **{
-                    chave: valor
-                    for chave, valor in res["xgboost"].items()
-                    if chave != "Modelo"
-                    and chave not in {"Localidade", "Pais", "Lat", "Lon"}
-                },
-            })
-            metricas_geral.append({
-                "Localidade": res["localidade"],
-                "Pais": res["pais"],
-                "Modelo": "MLP",
-                **{
-                    chave: valor
-                    for chave, valor in res["mlp"].items()
-                    if chave != "Modelo"
-                    and chave not in {"Localidade", "Pais", "Lat", "Lon"}
-                },
-            })
-    
-    df_metricas = pd.DataFrame(metricas_geral)
-    
-    # Esta tabela longa e adequada para filtros e graficos por modelo.
-    df_metricas.to_csv(RESULTADOS_DIR / "metricas_geral.csv", index=False)
-    
-    print("\nTabela de metricas (todas as localidades):")
-    print(df_metricas.to_string(index=False))
-    
-    # Esta tabela larga facilita comparar os dois modelos na mesma linha.
-    resumo = []
-    estatisticas_horarias = []
-    for res in resultados:
-        if "erro" not in res:
-            resumo.append({
-                "Localidade": res["localidade"],
-                "Pais": res["pais"],
-                "Lat": res["lat"],
-                "Lon": res["lon"],
-                "XGBoost_MAE_normalizado": res["xgboost"]["MAE_normalizado"],
-                "XGBoost_RMSE_normalizado": res["xgboost"]["RMSE_normalizado"],
-                "XGBoost_MAE_wm2": res["xgboost"]["MAE_wm2"],
-                "XGBoost_RMSE_wm2": res["xgboost"]["RMSE_wm2"],
-                "XGBoost_nRMSE_percentual_wm2": res["xgboost"]["nRMSE_percentual_wm2"],
-                "XGBoost_R2_wm2": res["xgboost"]["R2_wm2"],
-                "MLP_MAE_normalizado": res["mlp"]["MAE_normalizado"],
-                "MLP_RMSE_normalizado": res["mlp"]["RMSE_normalizado"],
-                "MLP_MAE_wm2": res["mlp"]["MAE_wm2"],
-                "MLP_RMSE_wm2": res["mlp"]["RMSE_wm2"],
-                "MLP_nRMSE_percentual_wm2": res["mlp"]["nRMSE_percentual_wm2"],
-                "MLP_R2_wm2": res["mlp"]["R2_wm2"],
-                # O vencedor do resumo e definido pelo maior R2.
-                "Melhor_Modelo": "XGBoost" if res["xgboost"]["R2_wm2"] > res["mlp"]["R2_wm2"] else "MLP",
-            })
-            estatisticas_horarias.append(res["estatisticas_horarias"])
-    
-    df_resumo = pd.DataFrame(resumo)
-    df_resumo.to_csv(RESULTADOS_DIR / "resumo_localidades.csv", index=False)
-    df_estatisticas_horarias = pd.DataFrame(estatisticas_horarias)
-    df_estatisticas_horarias.to_csv(
-        RESULTADOS_DIR / "estatisticas_horarias.csv",
-        index=False,
-    )
-    
-    print("\n" + "="*60)
-    print("RESUMO POR LOCALIDADE")
-    print("="*60)
-    print(df_resumo.to_string(index=False))
-    print("\nEstatisticas horarias de GHI:")
-    print(df_estatisticas_horarias.to_string(index=False))
-    
-    print("\n[OK] Pipeline finalizado!")
-    print(f"[INFO] Resultados salvos em: {RESULTADOS_DIR.absolute()}")
-    print(f"[INFO] Metricas gerais: {RESULTADOS_DIR / 'metricas_geral.csv'}")
-    print(f"[INFO] Resumo: {RESULTADOS_DIR / 'resumo_localidades.csv'}")
-    print(f"[INFO] Estatisticas horarias: {RESULTADOS_DIR / 'estatisticas_horarias.csv'}")
-    
-    return resultados
+    return resultados_por_frequencia
 
 
 # Evita iniciar a coleta ou o treinamento quando o modulo e importado em testes.
