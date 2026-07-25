@@ -1,10 +1,10 @@
-"""Coleta e preparacao da serie diaria de GHI.
+"""Coleta e preparacao das series diaria e mensal de GHI.
 
 Este modulo cobre a parte anterior ao treinamento:
 
 1. identifica e le dados tabulares;
 2. coleta GHI oficial quando necessario;
-3. limpa e agrega a serie em frequencia diaria;
+3. limpa e agrega a serie em frequencia diaria ou mensal;
 4. ajusta quantizacao e normalizacao sem usar estatisticas do teste;
 5. chama a criacao das features e devolve a base pronta.
 """
@@ -60,6 +60,7 @@ NSRDB_PRODUCT = "GOES Aggregated PSM v4"
 NSRDB_SOURCE = "NLR/NSRDB"
 NSRDB_GHI_UNIT = "W/m2"
 NSRDB_DAILY_AGGREGATION = "media_diaria"
+FREQUENCIAS_MODELAGEM = {"diaria", "mensal"}
 
 
 @dataclass
@@ -70,8 +71,10 @@ class PreparationResult:
         dados_modelagem: Tabela com features e alvos alinhados.
         feature_columns: Nomes das colunas fornecidas aos modelos.
         train_size: Quantidade de exemplos destinada ao treino.
-        quantization_params: Limites usados para converter GHI em 128 niveis.
+        quantization_params: Limites min--max do treino. O nome e preservado
+            por compatibilidade e tambem serve a coluna quantizada de auditoria.
         normalization_params: Limites usados para mapear os niveis para [0, 1].
+        target_transform: Transformacao efetivamente usada pelos modelos.
     """
 
     dados_modelagem: pd.DataFrame
@@ -79,6 +82,7 @@ class PreparationResult:
     train_size: int
     quantization_params: dict[str, float]
     normalization_params: dict[str, float]
+    target_transform: str = "continuo_minmax"
 
 
 def _normalizar_nome_coluna(column: str) -> str:
@@ -200,6 +204,26 @@ def garantir_resolucao_diaria(df: pd.DataFrame) -> pd.DataFrame:
         .reset_index()
     )
     return diario
+
+
+def garantir_resolucao_mensal(df: pd.DataFrame) -> pd.DataFrame:
+    """Agrega a serie diaria para resolucao mensal usando media dos dias.
+
+    Args:
+        df: DataFrame diario com colunas ``data`` e ``ghi``.
+
+    Returns:
+        DataFrame mensal com colunas ``data`` e ``ghi``. A data fica no fim do
+        mes civil para preservar a semantica do agrupamento mensal.
+    """
+    mensal = (
+        df.set_index("data")[["ghi"]]
+        .resample("ME")
+        .mean()
+        .dropna(subset=["ghi"])
+        .reset_index()
+    )
+    return mensal
 
 
 def calcular_estatisticas_ghi_horario(df: pd.DataFrame) -> dict[str, float | str]:
@@ -659,13 +683,16 @@ def normalizar_minmax(
 
 def preparar_serie_temporal(
     df: pd.DataFrame,
-    lags: tuple[int, ...] = (1, 2, 3, 7),
-    moving_windows: tuple[int, ...] = (3, 7, 30),
+    lags: tuple[int, ...] | None = None,
+    moving_windows: tuple[int, ...] | None = None,
     n_niveis: int = 128,
     train_ratio: float = 0.8,
     output_path: str | Path | None = PASTA_DADOS_PROCESSADOS / "ghi_features.csv",
+    frequencia_modelagem: str = "diaria",
+    usar_quantizacao: bool = False,
+    incluir_calendario: bool = True,
 ) -> PreparationResult:
-    """Prepara a base supervisionada para previsao do GHI do dia seguinte.
+    """Prepara a base supervisionada para prever o proximo periodo de GHI.
 
     Args:
         df: Serie bruta contendo data e GHI.
@@ -675,29 +702,64 @@ def preparar_serie_temporal(
         train_ratio: Proporcao cronologica inicial usada para treino.
         output_path: Arquivo opcional para salvar as features. Use ``None``
             para preparar os dados sem escrever no disco.
+        frequencia_modelagem: ``diaria`` para prever o dia seguinte ou
+            ``mensal`` para prever o mes seguinte.
+        usar_quantizacao: Quando verdadeiro, usa os 128 niveis como alvo. O
+            padrao preserva a GHI continua e deixa a quantizacao apenas como
+            coluna de auditoria/ablacao.
+        incluir_calendario: Inclui a codificacao circular do periodo do alvo.
 
     Returns:
         Objeto ``PreparationResult`` com a base de modelagem, colunas de
         entrada, tamanho do treino e parametros de transformacao.
 
     Notes:
-        A quantizacao e ajustada antes da criacao definitiva das features, mas
-        o corte bruto e calculado para corresponder ao mesmo conjunto de alvos
-        que sera usado no treino depois das janelas.
+        Todas as transformacoes sao ajustadas exclusivamente no trecho que
+        origina os alvos de treino. A quantizacao nao e necessaria para uma
+        regressao continua e, portanto, nao e aplicada por padrao.
     """
     # Validacoes antecipadas produzem mensagens claras antes de iniciar calculos.
     if not 0 < train_ratio < 1:
         raise ValueError("train_ratio deve estar entre 0 e 1.")
+    if frequencia_modelagem not in FREQUENCIAS_MODELAGEM:
+        raise ValueError("frequencia_modelagem deve ser 'diaria' ou 'mensal'.")
+
+    if lags is None:
+        lags = tuple(range(1, 8)) if frequencia_modelagem == "diaria" else tuple(range(1, 13))
+    if moving_windows is None:
+        moving_windows = (3, 7, 30) if frequencia_modelagem == "diaria" else (3, 6, 12)
+
     if any(lag < 1 for lag in lags):
         raise ValueError("Todos os lags devem ser maiores ou iguais a 1.")
     if any(janela < 1 for janela in moving_windows):
         raise ValueError("Todas as janelas moveis devem ser maiores ou iguais a 1.")
 
-    # Etapa 1: contrato comum com duas colunas, ordem cronologica e escala diaria.
+    # Etapa 1: contrato comum com duas colunas, ordem cronologica e escala escolhida.
     serie = limpar_serie_ghi(df)
+    periodo_label = "d"
+    if frequencia_modelagem == "mensal":
+        serie = garantir_resolucao_mensal(serie)
+        periodo_label = "m"
 
-    # Uma janela de N dias perde N-1 linhas no inicio. Um lag chamado t-k usa
-    # ``shift(k-1)`` porque os nomes sao relativos ao alvo do dia seguinte.
+    # Um deslocamento por linha so representa um periodo se a grade for regular.
+    # Falhar explicitamente e mais seguro do que transformar um buraco temporal
+    # em um lag com semantica incorreta.
+    frequencia_esperada = "D" if frequencia_modelagem == "diaria" else "ME"
+    grade_esperada = pd.date_range(
+        serie["data"].min(),
+        serie["data"].max(),
+        freq=frequencia_esperada,
+    )
+    if len(grade_esperada) != len(serie) or not np.array_equal(
+        grade_esperada.to_numpy(), serie["data"].to_numpy()
+    ):
+        raise ValueError(
+            f"A serie {frequencia_modelagem} possui periodos ausentes; "
+            "preencha ou remova o intervalo incompleto antes de criar lags."
+        )
+
+    # Uma janela de N periodos perde N-1 linhas no inicio. Um lag chamado t-k
+    # usa ``shift(k-1)`` porque os nomes sao relativos ao alvo seguinte.
     historico_necessario = max(
         [lag - 1 for lag in lags] + [janela - 1 for janela in moving_windows],
         default=0,
@@ -726,24 +788,38 @@ def preparar_serie_temporal(
         maximo=float(train_ghi.max()),
         return_params=True,
     )
-    # Como a entrada da normalizacao ja esta em 0..127, seus limites sao fixos.
-    ghi_normalizado, normalization_params = normalizar_minmax(
-        ghi_quantizado,
-        minimo=0,
-        maximo=n_niveis - 1,
-        return_params=True,
-    )
+    if usar_quantizacao:
+        # Modo de ablacao compativel com o pipeline historico.
+        ghi_normalizado, normalization_params = normalizar_minmax(
+            ghi_quantizado,
+            minimo=0,
+            maximo=n_niveis - 1,
+            return_params=True,
+        )
+        target_transform = "quantizado_128_minmax"
+    else:
+        # Para regressao, mantem toda a resolucao do valor fisico. Os limites
+        # continuam ajustados apenas no treino e valores futuros sao recortados.
+        ghi_normalizado, normalization_params = normalizar_minmax(
+            serie["ghi"],
+            minimo=float(train_ghi.min()),
+            maximo=float(train_ghi.max()),
+            return_params=True,
+        )
+        target_transform = "continuo_minmax"
 
     # Etapa 2: anexa as duas representacoes transformadas a serie original.
     dados = serie.copy()
     dados["ghi_quantizado"] = ghi_quantizado.astype(int)
     dados["ghi_normalizado"] = ghi_normalizado.astype(float)
 
-    # Etapa 3: cria lags, medias moveis e o alvo do dia seguinte.
+    # Etapa 3: cria lags, medias moveis e o alvo do periodo seguinte.
     dados_modelagem, feature_columns = criar_features_temporais(
         dados,
         lags=lags,
         moving_windows=moving_windows,
+        periodo_label=periodo_label,
+        incluir_calendario=incluir_calendario,
     )
     # Recalcula sobre o tamanho real como verificacao final do corte.
     train_size = int(len(dados_modelagem) * train_ratio)
@@ -760,4 +836,5 @@ def preparar_serie_temporal(
         train_size=train_size,
         quantization_params=quantization_params,
         normalization_params=normalization_params,
+        target_transform=target_transform,
     )

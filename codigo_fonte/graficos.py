@@ -13,7 +13,7 @@ def gerar_grafico_temporal(
     y_true: pd.Series,
     predicoes: dict[str, pd.Series],
     caminho_saida: str | Path,
-    y_label: str = "GHI quantizado normalizado",
+    y_label: str = "GHI normalizado",
     titulo_sufixo: str = "",
 ) -> None:
     """Gera grafico temporal comparando valores reais e previstos no teste."""
@@ -45,7 +45,7 @@ def gerar_grafico_real_vs_previsto(
     y_pred: pd.Series,
     modelo: str,
     caminho_saida: str | Path,
-    y_label: str = "GHI quantizado normalizado",
+    y_label: str = "GHI normalizado",
     titulo_sufixo: str = "",
 ) -> None:
     """Gera grafico temporal para um modelo especifico."""
@@ -100,24 +100,24 @@ def salvar_graficos(
     y_true: pd.Series,
     predicoes: dict[str, pd.Series],
     pasta_saida: str | Path,
-    y_label: str = "GHI quantizado normalizado",
+    y_label: str = "GHI normalizado",
     titulo_sufixo: str = "",
 ) -> None:
     """Salva todos os graficos obrigatorios da avaliacao dos modelos."""
     pasta_saida = Path(pasta_saida)
     pasta_saida.mkdir(parents=True, exist_ok=True)
 
-    # Primeiro salva a visao conjunta dos dois modelos.
+    # Primeiro salva a visao conjunta de todos os modelos.
     gerar_grafico_temporal(
         datas,
         y_true,
         predicoes,
-        pasta_saida / "serie_temporal_teste_real_xgboost_mlp.png",
+        pasta_saida / "serie_temporal_teste_real_modelos.png",
         y_label=y_label,
         titulo_sufixo=titulo_sufixo,
     )
 
-    # Depois cria duas figuras especificas para cada modelo.
+    # Depois cria figuras especificas para cada modelo.
     for nome_modelo, y_pred in predicoes.items():
         nome_seguro = nome_modelo.lower()
         gerar_grafico_real_vs_previsto(

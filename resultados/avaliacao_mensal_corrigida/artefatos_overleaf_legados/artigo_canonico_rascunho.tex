@@ -1,0 +1,862 @@
+% RASCUNHO OPCIONAL — NAO PUBLICAR.
+% O pipeline global descrito aqui nao possui execucao completa. Este arquivo
+% contem marcadores @@...@@ e nao fornece os resultados dos artigos atuais.
+% Para a submissao corrigida, use exclusivamente: overlief/IEEE/artigo.tex.
+\documentclass[10pt,conference,a4paper]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{tikz}
+\usepackage{url}
+\usetikzlibrary{arrows.meta,calc,fit,positioning}
+
+\graphicspath{{../figuras/}}
+\emergencystretch=2em
+\renewcommand{\abstractname}{Resumo}
+\renewcommand{\IEEEkeywordsname}{Palavras-chave}
+\newcounter{algoritmo}
+
+\title{Avaliação do DeepNPTS e de Modelos de Referência para Previsão Mensal
+de Irradiância Global Horizontal em Localidades de Fábricas de Veículos
+Elétricos}
+
+\author{Gustavo de Melo Nascimento, Thales Wulfert Cabral e Gustavo Fraidenraich%
+\thanks{Os autores são da Faculdade de Engenharia Elétrica e de Computação,
+Universidade Estadual de Campinas, Campinas, SP, Brasil. E-mails:
+g239679@dac.unicamp.br, t264377@dac.unicamp.br e gfraiden@unicamp.br.}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Este artigo avalia o Deep Non-Parametric Time Series Forecaster (DeepNPTS) na
+previsão de séries mensais de Irradiância Global Horizontal (GHI), com
+horizonte de um mês. A avaliação considera dez séries relacionadas, cujas
+coordenadas correspondem a localidades de fábricas de veículos elétricos, e
+dados da National Solar Radiation Database entre 2019 e 2024. As séries são
+agregadas por mês civil, normalizadas por min--max e quantizadas em 128 níveis
+com parâmetros estimados apenas no treinamento. Uma única rede global do
+DeepNPTS discreto, proveniente da implementação oficial do GluonTS, é comparada
+à persistência, ao sazonal ingênuo, à climatologia mensal, ao XGBoost, ao
+perceptron multicamadas, à rede neural recorrente, à LSTM, à DilatedRNN e ao
+DeepAR. O protocolo
+retrospectivo emprega 48 alvos de treinamento e 12 origens de teste por
+localidade, cinco sementes e previsão 
+\textit{walk-forward} de um passo sem reajuste. O menor MAE médio entre
+localidades foi obtido por \textbf{@@MODELO-MELHOR@@}, com
+\textbf{@@MAE-MELHOR@@ W/m$^2$}. O DeepNPTS alcançou MAE de
+\textbf{@@MAE-DEEPNPTS@@ W/m$^2$} e posição \textbf{@@POSICAO-DEEPNPTS@@} no
+ranqueamento. Para DeepNPTS e DeepAR, CRPS, cobertura e largura dos intervalos
+de 90\% também são analisados. Os resultados caracterizam exclusivamente o
+protocolo e a janela retrospectiva estudados.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Irradiância solar, GHI, previsão probabilística, séries temporais, DeepNPTS,
+DeepAR.
+\end{IEEEkeywords}
+
+\section{Introdução}
+\label{sec:introducao}
+
+A disponibilidade do recurso solar condiciona a produção de sistemas
+fotovoltaicos e influencia decisões de dimensionamento, planejamento e
+operação energética. A previsão de irradiância contribui para reduzir a
+incerteza associada à geração solar; sua formulação, porém, depende do horizonte
+temporal, da resolução e das informações meteorológicas disponíveis
+\cite{antonanzas2016,voyant2017,yang2018}.
+
+Este trabalho concentra-se na Irradiância Global Horizontal (GHI), isto é, na
+irradiância total que incide sobre uma superfície horizontal. Em termos das
+componentes direta e difusa,
+
+\begin{equation}
+  \mathrm{GHI}=\mathrm{DHI}+\mathrm{DNI}\cos(\theta_z),
+  \label{eq:ghi}
+\end{equation}
+
+\noindent em que DHI é a irradiância difusa horizontal, DNI é a irradiância
+direta normal e $\theta_z$ é o ângulo zenital solar \cite{duffie2013}. A GHI é
+empregada por expressar, em W/m$^2$, a disponibilidade solar sobre o plano
+horizontal e por integrar produtos padronizados da National Solar Radiation
+Database (NSRDB) \cite{sengupta2018}. Neste estudo, a variável-alvo é a média
+mensal de GHI, não energia em Wh/m$^2$ nem produção fotovoltaica.
+
+A previsão de uma série mensal com horizonte de um mês pode apoiar a comparação
+de localidades e análises preliminares de planejamento. A agregação mensal
+atenua flutuações intradiárias e explicita a sazonalidade, mas reduz o número de
+amostras a doze por ano \cite{antonanzas2016,voyant2022}. Portanto, modelos
+flexíveis precisam ser confrontados com referências sazonais simples, sobretudo
+quando o histórico contém poucos ciclos anuais.
+
+A literatura de previsão solar abrange métodos estatísticos, aprendizado de
+máquina e redes neurais \cite{voyant2017,sobri2018}. Neste trabalho, os modelos
+pontuais aprendidos incluem XGBoost \cite{chen2016}, Perceptron Multicamadas
+(MLP) \cite{hornik1989}, Rede Neural Recorrente (RNN) \cite{elman1990}, Long
+Short-Term Memory (LSTM) \cite{hochreiter1997} e DilatedRNN
+\cite{chang2017}. Persistência, sazonal ingênuo e climatologia mensal compõem
+as referências determinísticas.
+
+Avanços em previsão global permitem ajustar um único modelo a várias séries
+relacionadas. O DeepAR, por exemplo, aprende uma distribuição preditiva por
+meio de uma rede recorrente autorregressiva global \cite{salinas2020}. O Deep
+Non-Parametric Time Series Forecaster (DeepNPTS) também explora séries
+relacionadas, mas constrói a distribuição preditiva a partir de valores do
+próprio contexto histórico, com probabilidades aprendidas por uma rede global
+\cite{rangapuram2023}. Essa propriedade é pertinente a séries curtas porque
+restringe a variante discreta a valores já representados no contexto, embora
+não garanta melhor acurácia em qualquer aplicação.
+
+O objetivo deste artigo é avaliar a implementação discreta oficial do
+DeepNPTS, disponível no GluonTS \cite{alexandrov2020}, para prever a GHI média
+do mês seguinte em dez localidades, comparando-a sob o mesmo protocolo temporal
+com seis modelos aprendidos e três referências simples. As fábricas definem
+apenas os pontos geográficos das consultas; não são utilizados dados de carga,
+produção industrial, geração fotovoltaica ou consumo de energia dessas
+instalações.
+
+\subsection{Principais contribuições}
+
+As contribuições deste estudo são:
+
+\begin{enumerate}
+  \item avaliação do DeepNPTS discreto como um único modelo global treinado nas
+  dez séries relacionadas, com amostragem probabilística e identidade da
+  localidade como atributo categórico estático;
+  \item comparação temporal homogênea com três referências simples e seis
+  modelos aprendidos, incluindo arquiteturas tabulares, recorrentes e
+  probabilísticas;
+  \item protocolo auditável com transformações ajustadas apenas no treinamento,
+  validação cronológica, cinco sementes, previsões linha a linha e métricas
+  pontuais e probabilísticas; e
+  \item análise explícita das limitações de uma janela retrospectiva curta, sem
+  alegação de pioneirismo, superioridade universal ou validação prospectiva.
+\end{enumerate}
+
+O restante do artigo está organizado da seguinte forma. A
+Seção~\ref{sec:sistema} descreve o sistema e o DeepNPTS. A
+Seção~\ref{sec:configuracao} apresenta dados, protocolo, modelos e métricas. A
+Seção~\ref{sec:resultados} discute os resultados, e a
+Seção~\ref{sec:conclusoes} apresenta as conclusões.
+
+\section{Sistema de previsão mensal de GHI}
+\label{sec:sistema}
+
+A Fig.~\ref{fig:sistema} apresenta o fluxo completo. Os blocos são explicados
+na mesma ordem da figura e formalizados no Algoritmo~\ref{alg:sistema}.
+
+\begin{figure*}[!t]
+\centering
+\resizebox{0.98\textwidth}{!}{%
+\begin{tikzpicture}[
+  grupo/.style={draw,dashed,rounded corners=1pt,minimum height=3.5cm,inner sep=4pt},
+  caixa/.style={draw,align=center,minimum height=0.72cm,font=\scriptsize,fill=white},
+  titulo/.style={align=center,font=\scriptsize\bfseries},
+  rotulo/.style={font=\scriptsize},
+  seta/.style={-{Latex[length=2.1mm]},thick}
+]
+\node[grupo,minimum width=2.45cm] (ga) at (0,0) {};
+\node[titulo] at ([yshift=-0.33cm]ga.north) {Dez séries\\relacionadas};
+\node[caixa,minimum width=1.75cm] (dados) at ([yshift=-1.70cm]ga.north)
+  {GHI diária\\NSRDB\\2019--2024};
+\node[rotulo] at ([yshift=-0.27cm]ga.south) {(a)};
+
+\node[grupo,minimum width=2.65cm] (gb) at (2.95,0) {};
+\node[titulo] at ([yshift=-0.33cm]gb.north) {Auditoria e\\agregação};
+\node[caixa,minimum width=2.05cm] (audit) at ([yshift=-1.28cm]gb.north)
+  {Cobertura, lacunas,\\duplicidades e sinais};
+\node[caixa,minimum width=2.05cm,below=0.25cm of audit] (mensal)
+  {Média por\\mês civil};
+\draw[seta] (audit)--(mensal);
+\node[rotulo] at ([yshift=-0.27cm]gb.south) {(b)};
+
+\node[grupo,minimum width=3.05cm] (gc) at (6.15,0) {};
+\node[titulo] at ([yshift=-0.33cm]gc.north) {Transformação e\\representações};
+\node[caixa,minimum width=2.35cm] (transforma) at ([yshift=-1.18cm]gc.north)
+  {Min--max do treino\\+ quantização};
+\node[caixa,minimum width=2.35cm,below=0.23cm of transforma] (janelas)
+  {Janelas causais,\\atributos e categoria};
+\draw[seta] (transforma)--(janelas);
+\node[rotulo] at ([yshift=-0.27cm]gc.south) {(c)};
+
+\node[grupo,minimum width=3.45cm] (gd) at (9.95,0) {};
+\node[titulo] at ([yshift=-0.33cm]gd.north) {Treinamento global\\e referências};
+\node[caixa,minimum width=2.75cm] (aprendidos) at ([yshift=-1.17cm]gd.north)
+  {XGBoost, MLP, RNN, LSTM,\\DilatedRNN, DeepAR, DeepNPTS};
+\node[caixa,minimum width=2.75cm,below=0.23cm of aprendidos] (baselines)
+  {Persistência, sazonal\\e climatologia};
+\node[rotulo] at ([yshift=-0.27cm]gd.south) {(d)};
+
+\node[grupo,minimum width=2.95cm] (ge) at (13.65,0) {};
+\node[titulo] at ([yshift=-0.33cm]ge.north) {Teste retrospectivo\\walk-forward};
+\node[caixa,minimum width=2.25cm] (origens) at ([yshift=-1.17cm]ge.north)
+  {Um mês à frente\\sem reajuste};
+\node[caixa,minimum width=2.25cm,below=0.23cm of origens] (amostras)
+  {Ponto, amostras\\e intervalos};
+\draw[seta] (origens)--(amostras);
+\node[rotulo] at ([yshift=-0.27cm]ge.south) {(e)};
+
+\node[grupo,minimum width=2.75cm] (gf) at (17.00,0) {};
+\node[titulo] at ([yshift=-0.33cm]gf.north) {Avaliação};
+\node[caixa,minimum width=2.05cm] (metrica) at ([yshift=-1.18cm]gf.north)
+  {Métricas por\\localidade};
+\node[caixa,minimum width=2.05cm,below=0.23cm of metrica] (macro)
+  {Macro-MAE e\\incerteza};
+\draw[seta] (metrica)--(macro);
+\node[rotulo] at ([yshift=-0.27cm]gf.south) {(f)};
+
+\draw[seta] (dados.east)--(audit.west);
+\draw[seta] (mensal.east)--(transforma.west);
+\draw[seta] (janelas.east)--(aprendidos.west);
+\draw[seta] (aprendidos.east)--(origens.west);
+\draw[seta] (amostras.east)--(metrica.west);
+\end{tikzpicture}%
+}
+\caption{Visão geral do sistema: (a) séries de GHI; (b) auditoria e
+agregação; (c) transformação e construção das entradas; (d) ajuste dos modelos
+e cálculo das referências; (e) previsão retrospectiva de um passo; e
+(f) avaliação por localidade e agregação macro.}
+\label{fig:sistema}
+\end{figure*}
+
+\noindent\textbf{Estágio (a) -- séries relacionadas.} Cada localidade
+$\ell\in\mathcal L$ fornece uma série diária $S_\ell$. As dez séries possuem a
+mesma variável e frequência, mas escalas e sazonalidades locais distintas. A
+identidade $\ell$ é preservada em todas as previsões.
+
+\noindent\textbf{Estágio (b) -- auditoria e agregação.} O sistema rejeita datas
+inválidas, duplicidades diárias, lacunas de cobertura, valores não finitos e
+GHI negativa. Em seguida, calcula a média de cada mês civil. Os arquivos
+preservados contêm médias diárias derivadas da consulta de 60 minutos; as
+respostas horárias brutas não são reconstituídas.
+
+\noindent\textbf{Estágio (c) -- transformação e entradas.} Para cada
+localidade, os limites min--max são estimados sem usar os alvos de teste. Os
+valores transformados são discretizados uniformemente. Modelos tabulares
+recebem defasagens consecutivas, médias móveis, calendário e codificação da
+localidade. Redes recorrentes recebem a sequência cronológica por um ramo e as
+covariáveis por outro. DeepNPTS e DeepAR recebem diretamente as séries
+normalizadas e a categoria estática da localidade.
+
+\noindent\textbf{Estágio (d) -- treinamento e referências.} Cada modelo
+aprendido é global: seus parâmetros são compartilhados pelas dez séries. A
+seleção de épocas ou árvores, quando aplicável, utiliza uma janela cronológica
+interna, e o modelo final é reajustado em todo o treinamento. As três
+referências não possuem parâmetros aprendidos conjuntamente.
+
+\noindent\textbf{Estágio (e) -- teste retrospectivo.} Em cada origem, o
+histórico é truncado no último mês disponível e o mês seguinte é previsto. O
+valor de referência de um mês de 2024 torna-se disponível para a origem
+seguinte, mas os parâmetros dos modelos permanecem fixos. Portanto, o protocolo
+não equivale a prever conjuntamente os doze meses de 2024 em dezembro de 2023.
+
+\noindent\textbf{Estágio (f) -- avaliação.} Todas as previsões retornam à escala
+física em W/m$^2$. Calculam-se métricas em cada localidade e, depois, a média
+não ponderada entre localidades. DeepNPTS e DeepAR também produzem amostras e
+intervalos preditivos.
+
+\subsection{DeepNPTS global discreto}
+
+A Fig.~\ref{fig:deepnpts} detalha o modelo central do estudo. Um único
+DeepNPTS é ajustado com instâncias extraídas das dez séries. Para uma janela de
+contexto $\mathbf z_{\ell,t}=(z_{\ell,t-C+1},\ldots,z_{\ell,t})$, a rede
+feedforward combina valores passados, indicadores de observação, atributos de
+tempo e o \textit{embedding} da localidade. Sua saída define probabilidades
+$p_{\ell,t,j}$ sobre as $C$ posições do contexto.
+
+\begin{figure}[!t]
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tikzpicture}[
+  caixa/.style={draw,rounded corners=1pt,align=center,minimum height=0.83cm,
+                minimum width=1.85cm,font=\scriptsize},
+  seta/.style={-{Latex[length=1.9mm]},thick},
+  node distance=0.34cm
+]
+\node[caixa] (series) {Dez séries\\de treinamento};
+\node[caixa,right=of series] (instancias) {Contextos $\mathbf z_{\ell,t}$,\\tempo e localidade};
+\node[caixa,right=of instancias,fill=blue!5] (rede) {Rede global\\compartilhada};
+\node[caixa,right=of rede] (prob) {Probabilidades\\$p_{\ell,t,1:C}$};
+\node[caixa,right=of prob,fill=green!8] (dist) {Distribuição discreta\\$\sum_jp_j\delta_{z_j}$};
+\node[caixa,below=0.42cm of dist] (saida) {Amostras, mediana\\e quantis};
+\draw[seta] (series)--(instancias);
+\draw[seta] (instancias)--(rede);
+\draw[seta] (rede)--(prob);
+\draw[seta] (prob)--(dist);
+\draw[seta] (dist)--(saida);
+\end{tikzpicture}%
+}
+\caption{DeepNPTS global discreto. A rede aprende, nas séries relacionadas,
+probabilidades sobre os valores que compõem o contexto de cada previsão.}
+\label{fig:deepnpts}
+\end{figure}
+
+A distribuição preditiva de um passo é
+
+\begin{equation}
+  \widehat F_{\ell,t+1}(x)
+  =\sum_{j=1}^{C}p_{\ell,t,j}\,
+  \mathbb{I}\!\left(z_{\ell,t-C+j}\leq x\right),
+  \quad \sum_{j=1}^{C}p_{\ell,t,j}=1,
+  \label{eq:deepnpts_dist}
+\end{equation}
+
+\noindent em que $\mathbb{I}(\cdot)$ é a função indicadora. Equivalentemente,
+$J\sim\mathrm{Categorical}(p_{\ell,t,1:C})$ e
+$\widetilde z_{\ell,t+1}=z_{\ell,t-C+J}$. A repetição da amostragem representa
+a incerteza da previsão. A variante avaliada é a rede discreta oficial do
+GluonTS 0.16.2; não se trata do suavizador determinístico por similaridade e
+recência utilizado em experimentos anteriores do projeto.
+
+O ponto associado ao MAE é a mediana da mistura das amostras produzidas nas
+sementes. Para os demais modelos aprendidos pontuais, utiliza-se a média das
+previsões por semente:
+
+\begin{equation}
+ \widehat y_i^{\mathrm{ens}}=\frac{1}{|\mathcal S|}
+ \sum_{s\in\mathcal S}\widehat y_{i,s}.
+ \label{eq:ensemble}
+\end{equation}
+
+\subsection{Procedimento experimental}
+
+O Algoritmo~\ref{alg:sistema} usa apenas símbolos; os valores adotados são
+apresentados na Seção~\ref{sec:configuracao}.
+
+\begin{figure*}[!t]
+\centering
+\refstepcounter{algoritmo}\label{alg:sistema}
+\textbf{Algoritmo \thealgoritmo: Treinamento global, previsão e avaliação}
+
+\fbox{%
+\begin{minipage}{0.94\textwidth}
+\footnotesize
+\begin{tabbing}
+\quad\=\quad\=\kill
+\textbf{Entrada:} séries $\mathcal D$, localidades $\mathcal L$, modelos $\mathcal M$,
+sementes $\mathcal S$, contexto $C$, horizonte $h$, corte $c$, níveis $Q$ e origens $\mathcal O$.\\
+\textbf{Para cada} $\ell\in\mathcal L$ \textbf{faça}\\
+\> $S_\ell\leftarrow$ auditar e agregar $\mathcal D_\ell$ por mês civil;\\
+\> $T_\ell\leftarrow$ ajustar min--max antes de $c$ e quantizar em $Q$ níveis;\\
+\> $(D_\ell^{tr},D_\ell^{va},D_\ell^{te})\leftarrow$
+construir janelas causais de contexto $C$ e horizonte $h$;\\
+\textbf{fim}\\
+\textbf{Para cada} $m\in\mathcal M$ \textbf{e} $s\in\mathcal S$ \textbf{faça}\\
+\> $\eta_m\leftarrow$ fixar a configuração; quando aplicável, selecionar sua complexidade em $D^{tr}$ e $D^{va}$;\\
+\> $\theta_{m,s}\leftarrow$ ajustar ou reajustar $m$ no conjunto pré-teste completo com $\eta_m$;\\
+\> \textbf{Para cada} origem $o\in\mathcal O$ \textbf{faça}\\
+\>\> $H_o\leftarrow$ truncar cada série na origem $o$;\\
+\>\> $\widehat F_{m,s,o}\leftarrow$ prever $h$ passos com $\theta_{m,s}$ e $H_o$;\\
+\> \textbf{fim}\\
+\textbf{fim}\\
+$\widehat F_m\leftarrow$ consolidar sementes; calcular métricas por localidade e médias macro;\\
+$m^\star\leftarrow\arg\min_{m\in\mathcal M}\overline{\mathrm{MAE}}_m$;\\
+\textbf{Saída:} previsões, amostras, intervalos, métricas, $m^\star$ e manifesto.
+\end{tabbing}
+\end{minipage}}
+\end{figure*}
+
+\section{Configuração experimental e métricas}
+\label{sec:configuracao}
+
+\subsection{Base de dados e protocolo temporal}
+
+Foram utilizados dados do produto GOES Aggregated PSM v4 da NSRDB
+\cite{sengupta2018,nlr2026}. A NSRDB combina informação de satélite e modelos
+físicos; seus valores são tratados como referência modelada, e não como
+medição de solo em sentido metrológico. A consulta original adotou intervalo de
+60 minutos. O projeto preserva médias das 24 horas de cada dia, inclusive o
+período noturno, que são posteriormente agregadas pela média de cada mês civil.
+
+As localidades são BYD Camaçari, BMW San Luis Potosí, Ford Rouge Electric
+Vehicle Center, GM Factory Zero, Hyundai Metaplant Georgia, Lucid AMP 1 Casa
+Grande, Rivian Normal, Tesla Fremont Factory, Tesla Gigafactory Nevada e Tesla
+Gigafactory Texas. Cada arquivo contém 2.192 dias de 1 de janeiro de 2019 a 31
+de dezembro de 2024; a auditoria dos dez arquivos totalizou 21.920 linhas e não
+encontrou datas inválidas, duplicidades, lacunas diárias, GHI não finita ou GHI
+negativa.
+
+Com contexto de 12 meses, cada localidade fornece 60 alvos: 48 no treinamento,
+de janeiro de 2020 a dezembro de 2023, e 12 no teste, de janeiro a dezembro de
+2024. O ano de 2019 fornece o contexto dos primeiros exemplos. A janela de 2024
+foi inspecionada durante o desenvolvimento do projeto; assim, a análise é
+retrospectiva e exploratória, não uma confirmação prospectiva em dados nunca
+vistos.
+
+A Tabela~\ref{tab:setup} resume o protocolo. A normalização e a quantização são
+ajustadas separadamente por localidade. Na seleção cronológica interna, os
+limites são estimados somente antes da validação; no reajuste final, usam-se
+apenas dados até dezembro de 2023. Os modelos aprendidos recebem valores
+quantizados, enquanto as referências simples operam nos valores físicos exatos.
+Essa diferença faz parte do protocolo declarado e deve ser considerada na
+interpretação.
+
+\begin{table}[!t]
+\centering
+\caption{Configuração do experimento mensal.}
+\label{tab:setup}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.05cm}>{\raggedright\arraybackslash}p{5.95cm}}
+\toprule
+\textbf{Item} & \textbf{Configuração} \\
+\midrule
+Fonte e variável & NSRDB, GOES Aggregated PSM v4; média mensal de GHI em W/m$^2$. \\
+Cobertura & 2019--2024; dez localidades; 72 meses por série. \\
+Coleta preservada & Médias diárias derivadas de consultas com intervalo de 60 min; sem respostas horárias brutas. \\
+Contexto e horizonte & 12 meses de contexto; previsão de um mês. \\
+Particionamento & 48 alvos de treino (2020--2023) e 12 alvos de teste (2024) por localidade. \\
+Teste & 12 origens \textit{walk-forward}, valor anterior disponível e modelo fixo. \\
+Transformação & Min--max ajustado somente no pré-teste e quantização uniforme em 128 níveis. \\
+Sementes & 11, 23, 42, 67 e 89. \\
+Amostragem & 500 amostras por semente e origem para DeepNPTS/DeepAR; 2.500 na mistura final. \\
+Hardware & @@HARDWARE-CPU-RAM-SO@@. \\
+Software & Python 3.12.1; GluonTS 0.16.2; TensorFlow 2.21; PyTorch 2.6; versões completas no manifesto. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Modelos e hiperparâmetros}
+
+As entradas tabulares possuem 12 defasagens consecutivas, médias móveis de 3,
+6 e 12 meses, seno e cosseno do mês-alvo e codificação \textit{one-hot} da
+localidade. RNN, LSTM e DilatedRNN recebem a sequência $12\times1$ e, em um ramo
+auxiliar, médias móveis, calendário e localidade. A DilatedRNN implementa
+conexões recorrentes de salto $h_t=\phi(Wx_t+Uh_{t-s}+b)$ com $s\in\{1,2,4\}$,
+em vez de tratar colunas tabulares como passos temporais.
+
+DeepNPTS e DeepAR são os estimadores PyTorch oficiais do GluonTS 0.16.2. Ambos
+compartilham parâmetros entre as dez séries e usam a localidade como categoria
+estática. O DeepNPTS discreto utiliza duas camadas ocultas de 12 unidades e
+\textit{embedding} de dimensão 5, conforme os padrões determinados pela
+cardinalidade na versão fixada da biblioteca. A Tabela~\ref{tab:hiper} apresenta
+os demais hiperparâmetros.
+
+\begin{table*}[!t]
+\centering
+\caption{Hiperparâmetros dos modelos aprendidos.}
+\label{tab:hiper}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.06}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{14.8cm}}
+\toprule
+\textbf{Modelo} & \textbf{Configuração} \\
+\midrule
+XGBoost & Profundidade 3; taxa 0,03; peso mínimo do filho 4; \textit{subsample}=0,8; \textit{colsample}=0,8; $L_1=0,1$; $L_2=10$; até 1.000 árvores, parada após 40 rodadas sem melhora em 2023 e reajuste com a quantidade escolhida. \\
+MLP & Camadas 64 e 32; ReLU; otimizador L-BFGS; $\alpha=0,05$; máximo de 2.000 iterações; padronização interna das entradas. \\
+RNN & SimpleRNN com 16 unidades \textit{tanh}; ramo denso de 16 unidades ReLU; saída linear; Adam 0,001; MSE; lote 32; até 300 épocas e paciência 30. \\
+LSTM & LSTM com 16 unidades \textit{tanh}; ramo denso de 16 unidades ReLU; saída linear; Adam 0,001; MSE; lote 32; até 300 épocas e paciência 30. \\
+DilatedRNN & Três camadas recorrentes com 16 unidades e dilatações 1, 2 e 4; ramo denso 16 ReLU; saída linear; Adam 0,001; MSE; lote 32; até 300 épocas e paciência 30. \\
+DeepNPTS & Variante discreta global; contexto 12; camadas 12--12; categoria estática; log-verossimilhança discreta; Adam $10^{-5}$; 100 épocas; 100 lotes/época; lote 32; sem escalonamento interno; 500 amostras por semente e origem. \\
+DeepAR & Duas camadas recorrentes de 40 unidades; saída Student-$t$ e log-verossimilhança; \textit{dropout}=0,1; lags 1--12; categoria estática; Adam 0,001; 100 épocas; 50 lotes/época; lote 32; sem escalonamento interno; 500 amostras por semente e origem. \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+A quantidade de árvores e de épocas é escolhida usando 2023 como validação
+cronológica, sem o teste. Depois, XGBoost, RNN, LSTM e DilatedRNN são
+reinicializados e ajustados em 2020--2023 com a complexidade selecionada.
+DeepNPTS e DeepAR usam a configuração fixa da Tabela~\ref{tab:hiper}. O
+processo é repetido para cinco sementes. Todos os ajustes são executados em CPU.
+
+\subsection{Métricas pontuais e seleção}
+
+Sejam $y_{\ell,i}$ a GHI de referência da NSRDB,
+$\widehat y_{\ell,i,m}$ a previsão do modelo $m$, $\bar y_\ell$ a média dos
+$n_\ell$ alvos de teste e $e_{\ell,i,m}=y_{\ell,i}-\widehat y_{\ell,i,m}$. As
+métricas pontuais são
+
+\begin{align}
+ \mathrm{MAE}_{\ell,m}
+ &=\frac{1}{n_\ell}\sum_{i=1}^{n_\ell}|e_{\ell,i,m}|,
+ \label{eq:mae}\\
+ \mathrm{MSE}_{\ell,m}
+ &=\frac{1}{n_\ell}\sum_{i=1}^{n_\ell}e_{\ell,i,m}^{2},
+ \label{eq:mse}\\
+ \mathrm{RMSE}_{\ell,m}
+ &=\sqrt{\frac{1}{n_\ell}\sum_{i=1}^{n_\ell}e_{\ell,i,m}^{2}},
+ \label{eq:rmse}\\
+ R^2_{\ell,m}
+ &=1-\frac{\sum_{i=1}^{n_\ell}e_{\ell,i,m}^{2}}
+ {\sum_{i=1}^{n_\ell}(y_{\ell,i}-\bar y_\ell)^2},
+ \label{eq:r2}\\
+ \mathrm{nRMSE}_{\ell,m}(\%)
+ &=100\,\frac{\mathrm{RMSE}_{\ell,m}}{\bar y_\ell}.
+ \label{eq:nrmse}
+\end{align}
+
+MAE e RMSE retornam a W/m$^2$; MSE é expresso em
+W$^2$/m$^4$; $R^2$ é adimensional; e nRMSE expressa erro relativo à média da
+localidade. MAE é a métrica primária por sua interpretação direta e menor
+sensibilidade a desvios extremos que métricas quadráticas. As demais métricas
+descrevem propriedades complementares do erro \cite{hyndman2006}.
+
+O critério primário é a média não ponderada do MAE nas localidades:
+
+\begin{equation}
+ \overline{\mathrm{MAE}}_m=\frac{1}{|\mathcal L|}
+ \sum_{\ell\in\mathcal L}\mathrm{MAE}_{\ell,m},
+ \qquad
+ m^\star=\arg\min_{m\in\mathcal M}\overline{\mathrm{MAE}}_m.
+ \label{eq:macro}
+\end{equation}
+
+O rótulo $m^\star$ identifica apenas o menor erro neste protocolo, não um
+modelo universalmente superior. Intervalos de 95\% para o macro-MAE são obtidos
+por \textit{bootstrap} de localidades. Diferenças pareadas
+$\Delta_{\ell,m}=\mathrm{MAE}_{\ell,m}-\mathrm{MAE}_{\ell,\mathrm{clim}}$ são
+comparadas com zero pelo teste de Wilcoxon, com correção de Holm para múltiplas
+comparações; valores positivos favorecem a climatologia.
+
+\subsection{Métricas probabilísticas}
+
+Para DeepNPTS e DeepAR, sejam $x_{i,b}$ a $b$-ésima de $B$ amostras
+preditivas e $q_{i,u}$ o quantil de nível $u$. O CRPS empírico é
+\cite{gneiting2007}
+
+\begin{equation}
+ \mathrm{CRPS}_i=
+ \frac{1}{B}\sum_{b=1}^{B}|x_{i,b}-y_i|
+ -\frac{1}{2B^2}\sum_{b=1}^{B}\sum_{c=1}^{B}|x_{i,b}-x_{i,c}|.
+ \label{eq:crps}
+\end{equation}
+
+Para o intervalo preditivo central de nível $1-\alpha$, calculam-se
+
+\begin{align}
+ \mathrm{PICP}
+ &=\frac{1}{n}\sum_{i=1}^{n}
+ \mathbb{I}\!\left(q_{i,\alpha/2}\le y_i\le q_{i,1-\alpha/2}\right),
+ \label{eq:picp}\\
+ \mathrm{MPIW}
+ &=\frac{1}{n}\sum_{i=1}^{n}
+ \left(q_{i,1-\alpha/2}-q_{i,\alpha/2}\right).
+ \label{eq:mpiw}
+\end{align}
+
+CRPS mede simultaneamente calibração e concentração e é menor quando a
+distribuição está mais próxima do alvo. PICP mede a cobertura empírica, e MPIW,
+em W/m$^2$, mede a largura média. Cobertura isolada não basta, pois intervalos
+arbitrariamente largos podem cobrir mais observações \cite{gneiting2007}.
+
+\section{Resultados e discussão}
+\label{sec:resultados}
+
+\subsection{Comparação média dos modelos}
+
+A Tabela~\ref{tab:metricas_medias} apresenta as métricas da previsão
+consolidada, ordenadas pelo macro-MAE. O desvio de sementes se refere ao
+macro-MAE das cinco execuções; não representa a dispersão entre localidades.
+
+\begin{table*}[!t]
+\centering
+\caption{Métricas médias entre as dez localidades no teste retrospectivo.}
+\label{tab:metricas_medias}
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.04}
+\begin{tabular}{lrrrrrr}
+\toprule
+\textbf{Modelo} & \textbf{MAE} & \textbf{DP seeds} & \textbf{MSE} & \textbf{RMSE} & \textbf{$R^2$} & \textbf{nRMSE} \\
+ & \textbf{W/m$^2$} & \textbf{W/m$^2$} & \textbf{W$^2$/m$^4$} & \textbf{W/m$^2$} & & \textbf{\%} \\
+\midrule
+Persistência     & @@MAE-PERSISTENCIA@@ & -- & @@MSE-PERSISTENCIA@@ & @@RMSE-PERSISTENCIA@@ & @@R2-PERSISTENCIA@@ & @@NRMSE-PERSISTENCIA@@ \\
+Sazonal ingênuo  & @@MAE-SAZONAL@@ & -- & @@MSE-SAZONAL@@ & @@RMSE-SAZONAL@@ & @@R2-SAZONAL@@ & @@NRMSE-SAZONAL@@ \\
+Climatologia     & @@MAE-CLIMATOLOGIA@@ & -- & @@MSE-CLIMATOLOGIA@@ & @@RMSE-CLIMATOLOGIA@@ & @@R2-CLIMATOLOGIA@@ & @@NRMSE-CLIMATOLOGIA@@ \\
+XGBoost          & @@MAE-XGBOOST@@ & @@DP-XGBOOST@@ & @@MSE-XGBOOST@@ & @@RMSE-XGBOOST@@ & @@R2-XGBOOST@@ & @@NRMSE-XGBOOST@@ \\
+MLP              & @@MAE-MLP@@ & @@DP-MLP@@ & @@MSE-MLP@@ & @@RMSE-MLP@@ & @@R2-MLP@@ & @@NRMSE-MLP@@ \\
+RNN              & @@MAE-RNN@@ & @@DP-RNN@@ & @@MSE-RNN@@ & @@RMSE-RNN@@ & @@R2-RNN@@ & @@NRMSE-RNN@@ \\
+LSTM             & @@MAE-LSTM@@ & @@DP-LSTM@@ & @@MSE-LSTM@@ & @@RMSE-LSTM@@ & @@R2-LSTM@@ & @@NRMSE-LSTM@@ \\
+DilatedRNN       & @@MAE-DILATEDRNN@@ & @@DP-DILATEDRNN@@ & @@MSE-DILATEDRNN@@ & @@RMSE-DILATEDRNN@@ & @@R2-DILATEDRNN@@ & @@NRMSE-DILATEDRNN@@ \\
+DeepAR           & @@MAE-DEEPAR@@ & @@DP-DEEPAR@@ & @@MSE-DEEPAR@@ & @@RMSE-DEEPAR@@ & @@R2-DEEPAR@@ & @@NRMSE-DEEPAR@@ \\
+DeepNPTS         & @@MAE-DEEPNPTS@@ & @@DP-DEEPNPTS@@ & @@MSE-DEEPNPTS@@ & @@RMSE-DEEPNPTS@@ & @@R2-DEEPNPTS@@ & @@NRMSE-DEEPNPTS@@ \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{figure}[!t]
+\centering
+\IfFileExists{../figuras/mae_medio_modelos.pdf}{%
+  \includegraphics[width=\columnwidth]{mae_medio_modelos.pdf}%
+}{\fbox{\parbox[c][3.7cm][c]{0.92\columnwidth}{\centering
+Figura pendente: \texttt{mae\_medio\_modelos.pdf}}}}
+\caption{Macro-MAE dos modelos. As barras de erro representam o desvio entre
+sementes quando aplicável; valores menores são melhores.}
+\label{fig:mae_medio}
+\end{figure}
+
+No protocolo avaliado, \textbf{@@MODELO-MELHOR@@} apresentou o menor
+macro-MAE, de \textbf{@@MAE-MELHOR@@ W/m$^2$}, com intervalo de 95\%
+\textbf{[@@IC-INF-MELHOR@@; @@IC-SUP-MELHOR@@]}. O DeepNPTS ficou na posição
+\textbf{@@POSICAO-DEEPNPTS@@}, com diferença de
+\textbf{@@DELTA-DEEPNPTS-CLIM@@ W/m$^2$} em relação à climatologia; o intervalo
+pareado foi \textbf{[@@IC-INF-DEEPNPTS-CLIM@@;
+@@IC-SUP-DEEPNPTS-CLIM@@]} e o valor $p$ ajustado por Holm foi
+\textbf{@@P-HOLM-DEEPNPTS-CLIM@@}. Esses valores
+\textbf{@@INTERPRETACAO-ESTATISTICA-DEEPNPTS@@}.
+
+O desempenho relativo deve ser interpretado à luz de apenas quatro ciclos
+anuais para ajuste dos alvos. Referências sazonais podem ser competitivas nesse
+regime, enquanto redes mais parametrizadas precisam estimar relações globais a
+partir de poucas instâncias temporais. Por outro lado, compartilhar parâmetros
+entre localidades aumenta o conjunto de instâncias, mas não cria novos anos de
+variabilidade climática.
+
+\subsection{Resultados do DeepNPTS por localidade}
+
+A Tabela~\ref{tab:deepnpts_local} detalha as métricas do DeepNPTS. O menor MAE
+ocorreu em \textbf{@@LOCAL-MELHOR-DEEPNPTS@@}
+(\textbf{@@MAE-LOCAL-MELHOR-DEEPNPTS@@ W/m$^2$}), e o maior em
+\textbf{@@LOCAL-PIOR-DEEPNPTS@@}
+(\textbf{@@MAE-LOCAL-PIOR-DEEPNPTS@@ W/m$^2$}). A amplitude foi
+\textbf{@@AMPLITUDE-MAE-DEEPNPTS@@ W/m$^2$}. Essa variação mostra que a média
+global não descreve uniformemente as dez localidades.
+
+\begin{table*}[!t]
+\centering
+\caption{Desempenho pontual do DeepNPTS por localidade.}
+\label{tab:deepnpts_local}
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.03}
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Localidade} & \textbf{MAE} & \textbf{MSE} & \textbf{RMSE} & \textbf{$R^2$} & \textbf{nRMSE} \\
+ & \textbf{W/m$^2$} & \textbf{W$^2$/m$^4$} & \textbf{W/m$^2$} & & \textbf{\%} \\
+\midrule
+BMW San Luis Potosí & @@BMW-MAE@@ & @@BMW-MSE@@ & @@BMW-RMSE@@ & @@BMW-R2@@ & @@BMW-NRMSE@@ \\
+BYD Camaçari & @@BYD-MAE@@ & @@BYD-MSE@@ & @@BYD-RMSE@@ & @@BYD-R2@@ & @@BYD-NRMSE@@ \\
+Ford Rouge & @@FORD-MAE@@ & @@FORD-MSE@@ & @@FORD-RMSE@@ & @@FORD-R2@@ & @@FORD-NRMSE@@ \\
+GM Factory Zero & @@GM-MAE@@ & @@GM-MSE@@ & @@GM-RMSE@@ & @@GM-R2@@ & @@GM-NRMSE@@ \\
+Hyundai Georgia & @@HYUNDAI-MAE@@ & @@HYUNDAI-MSE@@ & @@HYUNDAI-RMSE@@ & @@HYUNDAI-R2@@ & @@HYUNDAI-NRMSE@@ \\
+Lucid Casa Grande & @@LUCID-MAE@@ & @@LUCID-MSE@@ & @@LUCID-RMSE@@ & @@LUCID-R2@@ & @@LUCID-NRMSE@@ \\
+Rivian Normal & @@RIVIAN-MAE@@ & @@RIVIAN-MSE@@ & @@RIVIAN-RMSE@@ & @@RIVIAN-R2@@ & @@RIVIAN-NRMSE@@ \\
+Tesla Fremont & @@FREMONT-MAE@@ & @@FREMONT-MSE@@ & @@FREMONT-RMSE@@ & @@FREMONT-R2@@ & @@FREMONT-NRMSE@@ \\
+Tesla Nevada & @@NEVADA-MAE@@ & @@NEVADA-MSE@@ & @@NEVADA-RMSE@@ & @@NEVADA-R2@@ & @@NEVADA-NRMSE@@ \\
+Tesla Texas & @@TEXAS-MAE@@ & @@TEXAS-MSE@@ & @@TEXAS-RMSE@@ & @@TEXAS-R2@@ & @@TEXAS-NRMSE@@ \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{figure*}[!t]
+\centering
+\IfFileExists{../figuras/mae_deepnpts_por_localidade.pdf}{%
+  \includegraphics[width=0.78\textwidth]{mae_deepnpts_por_localidade.pdf}%
+}{\fbox{\parbox[c][5.0cm][c]{0.75\textwidth}{\centering
+Figura pendente: \texttt{mae\_deepnpts\_por\_localidade.pdf}}}}
+\caption{MAE do DeepNPTS e do concorrente de menor MAE em cada localidade. A
+escolha do concorrente local é descritiva e posterior ao teste; não constitui
+uma regra prévia de seleção.}
+\label{fig:deepnpts_local}
+\end{figure*}
+
+Pelo menor MAE local, os modelos tiveram a seguinte distribuição descritiva de
+vitórias: \textbf{@@CONTAGEM-VITORIAS@@}. Especificamente,
+\textbf{@@VENCEDORES-POR-LOCALIDADE@@}. Essa contagem não substitui o critério
+primário da Eq.~\eqref{eq:macro} nem demonstra superioridade fora das origens
+avaliadas.
+
+\subsection{Previsões e incerteza ao longo do tempo}
+
+A Fig.~\ref{fig:serie_byd} compara a referência modelada da NSRDB, o DeepNPTS e
+\textbf{@@COMPARACAO-BYD@@} nas doze origens de Camaçari. O DeepNPTS apresentou
+menor erro absoluto em \textbf{@@MESES-DEEPNPTS-MELHOR-BYD@@} dos doze meses e
+MAE de \textbf{@@BYD-MAE@@ W/m$^2$}; o concorrente obteve
+\textbf{@@BYD-MAE-COMPARACAO@@ W/m$^2$}. A melhor sobreposição visual ocorreu
+em \textbf{@@COMENTARIO-SOBREPOSICAO-BYD@@}. A comparação mês a mês é auxiliar:
+a conclusão quantitativa decorre das métricas sobre todas as origens.
+
+\begin{figure}[!t]
+\centering
+\IfFileExists{../figuras/previsao_mensal_byd_camacari.pdf}{%
+  \includegraphics[width=\columnwidth]{previsao_mensal_byd_camacari.pdf}%
+}{\fbox{\parbox[c][3.8cm][c]{0.92\columnwidth}{\centering
+Figura pendente: \texttt{previsao\_mensal\_byd\_camacari.pdf}}}}
+\caption{GHI de referência da NSRDB e previsões consolidadas do DeepNPTS e de
+\textbf{@@COMPARACAO-BYD@@} para Camaçari em 2024.}
+\label{fig:serie_byd}
+\end{figure}
+
+A Tabela~\ref{tab:prob} reúne a avaliação probabilística. Para o intervalo
+nominal de 90\%, o DeepNPTS apresentou cobertura de
+\textbf{@@PICP-DEEPNPTS@@\%} e largura média de
+\textbf{@@MPIW-DEEPNPTS@@ W/m$^2$}; o CRPS foi
+\textbf{@@CRPS-DEEPNPTS@@ W/m$^2$}. O DeepAR alcançou, respectivamente,
+\textbf{@@PICP-DEEPAR@@\%}, \textbf{@@MPIW-DEEPAR@@ W/m$^2$} e
+\textbf{@@CRPS-DEEPAR@@ W/m$^2$}. Assim,
+\textbf{@@INTERPRETACAO-PROBABILISTICA@@}.
+
+\begin{table}[!t]
+\centering
+\caption{Métricas probabilísticas médias entre localidades.}
+\label{tab:prob}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Modelo} & \textbf{CRPS} & \textbf{PICP 90\%} & \textbf{MPIW} \\
+ & \textbf{W/m$^2$} & \textbf{\%} & \textbf{W/m$^2$} \\
+\midrule
+DeepNPTS & @@CRPS-DEEPNPTS@@ & @@PICP-DEEPNPTS@@ & @@MPIW-DEEPNPTS@@ \\
+DeepAR   & @@CRPS-DEEPAR@@ & @@PICP-DEEPAR@@ & @@MPIW-DEEPAR@@ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[!t]
+\centering
+\IfFileExists{../figuras/intervalo_deepnpts_byd_camacari.pdf}{%
+  \includegraphics[width=\columnwidth]{intervalo_deepnpts_byd_camacari.pdf}%
+}{\fbox{\parbox[c][3.8cm][c]{0.92\columnwidth}{\centering
+Figura pendente: \texttt{intervalo\_deepnpts\_byd\_camacari.pdf}}}}
+\caption{Mediana e intervalo preditivo central de 90\% do DeepNPTS para
+Camaçari. A linha de referência corresponde ao produto modelado da NSRDB.}
+\label{fig:intervalo_byd}
+\end{figure}
+
+\subsection{Limitações}
+
+Há cinco limitações principais. Primeiro, quatro anos de alvos de treinamento
+representam poucos ciclos sazonais. Segundo, a janela de 2024 já foi examinada
+durante o desenvolvimento, o que restringe a interpretação a uma reanálise
+retrospectiva. Terceiro, cinco sementes quantificam apenas uma parte da
+variabilidade computacional. Quarto, a quantização impõe discretização aos
+modelos aprendidos, enquanto as referências simples usam os valores físicos
+exatos. Quinto, os dados da NSRDB são referência modelada, e as localidades das
+fábricas não fornecem qualquer informação sobre geração, carga ou operação
+industrial. Consequentemente, os resultados não devem ser extrapolados para
+produção fotovoltaica ou para outras regiões sem nova validação.
+
+\section{Conclusões}
+\label{sec:conclusoes}
+
+Este trabalho avaliou o DeepNPTS discreto oficial em um protocolo global de
+previsão mensal de GHI. Dez séries relacionadas foram processadas com janelas
+causais, transformação ajustada somente no pré-teste, cinco sementes e doze
+origens retrospectivas de um mês à frente. A comparação incluiu três
+referências simples e seis modelos aprendidos, além do DeepNPTS, e analisou
+acurácia pontual e incerteza probabilística.
+
+No protocolo estudado, \textbf{@@MODELO-MELHOR@@} obteve o menor macro-MAE,
+\textbf{@@MAE-MELHOR@@ W/m$^2$}. O DeepNPTS alcançou
+\textbf{@@MAE-DEEPNPTS@@ W/m$^2$}, ocupou a posição
+\textbf{@@POSICAO-DEEPNPTS@@} e apresentou
+\textbf{@@RESUMO-DEEPNPTS-VS-REFERENCIAS@@}. Na avaliação probabilística,
+\textbf{@@RESUMO-DEEPNPTS-VS-DEEPAR@@}. Esses achados respondem à pergunta
+experimental dentro da janela analisada, mas não estabelecem um modelo
+universalmente superior.
+
+Trabalhos futuros devem incorporar anos adicionais, reservar um período
+prospectivo ainda não inspecionado, avaliar outras resoluções e horizontes e
+examinar variáveis meteorológicas exógenas. Também é necessário estudar a
+sensibilidade à quantização e ampliar o número de repetições antes de formular
+conclusões externas sobre o DeepNPTS.
+
+\begin{thebibliography}{99}
+
+\bibitem{antonanzas2016}
+J. Antonanzas et al., ``Review of photovoltaic power forecasting,''
+\textit{Solar Energy}, vol. 136, pp. 78--111, 2016,
+doi: 10.1016/j.solener.2016.06.069.
+
+\bibitem{voyant2017}
+C. Voyant et al., ``Machine learning methods for solar radiation forecasting:
+A review,'' \textit{Renewable Energy}, vol. 105, pp. 569--582, 2017,
+doi: 10.1016/j.renene.2016.12.095.
+
+\bibitem{yang2018}
+D. Yang et al., ``History and trends in solar irradiance and PV power
+forecasting: A preliminary assessment and review using text mining,''
+\textit{Solar Energy}, vol. 168, pp. 60--101, 2018,
+doi: 10.1016/j.solener.2017.11.023.
+
+\bibitem{duffie2013}
+J. A. Duffie and W. A. Beckman, \textit{Solar Engineering of Thermal
+Processes}, 4th ed. Hoboken, NJ, USA: Wiley, 2013.
+
+\bibitem{sengupta2018}
+M. Sengupta et al., ``The National Solar Radiation Data Base (NSRDB),''
+\textit{Renewable and Sustainable Energy Reviews}, vol. 89, pp. 51--60, 2018,
+doi: 10.1016/j.rser.2018.03.003.
+
+\bibitem{voyant2022}
+C. Voyant et al., ``Benchmarks for solar radiation time series forecasting,''
+\textit{Renewable Energy}, vol. 191, pp. 747--762, 2022,
+doi: 10.1016/j.renene.2022.04.065.
+
+\bibitem{sobri2018}
+S. Sobri, S. Koohi-Kamali, and N. A. Rahim, ``Solar photovoltaic generation
+forecasting methods: A review,'' \textit{Energy Conversion and Management},
+vol. 156, pp. 459--497, 2018, doi: 10.1016/j.enconman.2017.11.019.
+
+\bibitem{chen2016}
+T. Chen and C. Guestrin, ``XGBoost: A scalable tree boosting system,'' in
+\textit{Proc. 22nd ACM SIGKDD Int. Conf. Knowledge Discovery and Data Mining},
+2016, pp. 785--794, doi: 10.1145/2939672.2939785.
+
+\bibitem{hornik1989}
+K. Hornik, M. Stinchcombe, and H. White, ``Multilayer feedforward networks are
+universal approximators,'' \textit{Neural Networks}, vol. 2, no. 5,
+pp. 359--366, 1989, doi: 10.1016/0893-6080(89)90020-8.
+
+\bibitem{elman1990}
+J. L. Elman, ``Finding structure in time,'' \textit{Cognitive Science},
+vol. 14, no. 2, pp. 179--211, 1990,
+doi: 10.1207/s15516709cog1402\_1.
+
+\bibitem{hochreiter1997}
+S. Hochreiter and J. Schmidhuber, ``Long short-term memory,''
+\textit{Neural Computation}, vol. 9, no. 8, pp. 1735--1780, 1997,
+doi: 10.1162/neco.1997.9.8.1735.
+
+\bibitem{chang2017}
+S. Chang et al., ``Dilated recurrent neural networks,'' in
+\textit{Advances in Neural Information Processing Systems}, vol. 30, 2017.
+
+\bibitem{salinas2020}
+D. Salinas, V. Flunkert, J. Gasthaus, and T. Januschowski, ``DeepAR:
+Probabilistic forecasting with autoregressive recurrent networks,''
+\textit{International Journal of Forecasting}, vol. 36, no. 3,
+pp. 1181--1191, 2020, doi: 10.1016/j.ijforecast.2019.07.001.
+
+\bibitem{rangapuram2023}
+S. S. Rangapuram, J. Gasthaus, L. Stella, V. Flunkert, D. Salinas, Y. Wang,
+and T. Januschowski, ``Deep non-parametric time series forecaster,''
+\textit{arXiv preprint arXiv:2312.14657}, 2023,
+doi: 10.48550/arXiv.2312.14657.
+
+\bibitem{alexandrov2020}
+A. Alexandrov et al., ``GluonTS: Probabilistic and neural time series modeling
+in Python,'' \textit{Journal of Machine Learning Research}, vol. 21, no. 116,
+pp. 1--6, 2020.
+
+\bibitem{nlr2026}
+National Laboratory of the Rockies, ``GOES Aggregated PSM v4 Download API,''
+2026. [Online]. Available:
+\url{https://developer.nlr.gov/docs/solar/nsrdb/nsrdb-GOES-aggregated-v4-0-0-download/}.
+Accessed: Jul. 19, 2026.
+
+\bibitem{hyndman2006}
+R. J. Hyndman and A. B. Koehler, ``Another look at measures of forecast
+accuracy,'' \textit{International Journal of Forecasting}, vol. 22, no. 4,
+pp. 679--688, 2006, doi: 10.1016/j.ijforecast.2006.03.001.
+
+\bibitem{gneiting2007}
+T. Gneiting and A. E. Raftery, ``Strictly proper scoring rules, prediction, and
+estimation,'' \textit{Journal of the American Statistical Association},
+vol. 102, no. 477, pp. 359--378, 2007,
+doi: 10.1198/016214506000001437.
+
+\end{thebibliography}
+
+\end{document}

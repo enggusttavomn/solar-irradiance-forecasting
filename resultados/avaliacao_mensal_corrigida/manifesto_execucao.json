@@ -1,0 +1,136 @@
+{
+  "ambiente": {
+    "dependencias": {
+      "gluonts": "0.16.2",
+      "joblib": "1.5.3",
+      "keras": "3.15.0",
+      "lightning": "2.4.0",
+      "matplotlib": "3.10.9",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "pvlib": "0.15.1",
+      "pytorch-lightning": "2.4.0",
+      "scikit-learn": "1.9.0",
+      "scipy": "1.15.3",
+      "seaborn": "0.13.2",
+      "tensorflow": "2.21.0",
+      "torch": "2.6.0+cpu",
+      "xgboost": "3.2.0"
+    },
+    "executavel": "python",
+    "implementacao_python": "CPython",
+    "plataforma": "Linux-6.8.0-1052-azure-x86_64-with-glibc2.39",
+    "python": "3.12.1"
+  },
+  "arquivos_entrada": [
+    {
+      "caminho": "codigo_fonte/avaliacao.py",
+      "sha256": "f53558c894caf242c481b0574c3301d98d0c6cf791aa4b792d56945477d98014",
+      "tamanho_bytes": 12311
+    },
+    {
+      "caminho": "codigo_fonte/baselines.py",
+      "sha256": "f5c6d554181793407ac460341a178ff90d78ee1c48396e9435d9cf66cec427ef",
+      "tamanho_bytes": 4012
+    },
+    {
+      "caminho": "codigo_fonte/features.py",
+      "sha256": "1b1627ad43fe6c1a03509773304850d18264797009360016b85d44d987e1dd72",
+      "tamanho_bytes": 5722
+    },
+    {
+      "caminho": "codigo_fonte/modelos.py",
+      "sha256": "677d2c7b2e437fab4dbb69e91cdfda33ae254d87c769e63931e70f5197d705ad",
+      "tamanho_bytes": 13876
+    },
+    {
+      "caminho": "codigo_fonte/preprocessamento.py",
+      "sha256": "200ab221e554f583e12c4d8589c1d17b1e9c5fdb4ba87dad32d76934e9bc005e",
+      "tamanho_bytes": 33054
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/bmw_san_luis_potosi.csv",
+      "sha256": "d98ec7e97bf68864fda836f1948a863d296badae2dd1aa34e225425d1344b1f5",
+      "tamanho_bytes": 1502950
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/byd_camacari.csv",
+      "sha256": "8347f0b81babcf58456e14568c875e9df7ca6aba792e8865cff5e5df1afde783",
+      "tamanho_bytes": 1492308
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/ford_rouge_electric_vehicle_center.csv",
+      "sha256": "d490600c96bf0348ad6c74d08b5f8c700a64dd643b9e886464ed6e165475011e",
+      "tamanho_bytes": 1429125
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/gm_factory_zero.csv",
+      "sha256": "be2a8b340938686a582a9beed1dcf8fcef11a4655a6a2678dd6f78fd2de6e572",
+      "tamanho_bytes": 1343423
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/hyundai_metaplant_georgia.csv",
+      "sha256": "f5e3e825469277e654957e2d4b7e149c1e55232acaf288c4380ffa906188abf7",
+      "tamanho_bytes": 1380769
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/lucid_amp_1_casa_grande.csv",
+      "sha256": "78f6690b63a1ea378be8abf178e725376aca8a2e71135ba0cda73b53d433b94f",
+      "tamanho_bytes": 1516757
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/rivian_normal.csv",
+      "sha256": "133ad89c6e7ac30c890cec033f8c1c4914c01362920b49a0c0fd540a9ec9520d",
+      "tamanho_bytes": 1317015
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/tesla_fremont_factory.csv",
+      "sha256": "1c6401e77938057f6dfc14c58dbf70ce098dde92ac46da55e0c9c9c279945453",
+      "tamanho_bytes": 1306395
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/tesla_gigafactory_nevada.csv",
+      "sha256": "d40616d7151007f2e917c8c90b2f411260126f506ebd2d770024d90a12f8500c",
+      "tamanho_bytes": 1314874
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/tesla_gigafactory_texas.csv",
+      "sha256": "55d80fcfcce0be92c28338ed16a6c13b906741a482cbfa01453897c9aa06bd8d",
+      "tamanho_bytes": 1284356
+    },
+    {
+      "caminho": "reavaliar_modelos_salvos.py",
+      "sha256": "5f9b425f9c137431e3b86741db1d05d85a39c34f97c3a7cf6c0ca9455a6b401e",
+      "tamanho_bytes": 8546
+    },
+    {
+      "caminho": "requirements.txt",
+      "sha256": "3562cdc4d27f3b914487e163607dff68b2909bae5a92cd5d75ab2847f6e00165",
+      "tamanho_bytes": 1015
+    },
+    {
+      "caminho": "treinar_todas_localidades.py",
+      "sha256": "8805e0b88200c50043be1416fbc325ca45ed87f1cf9d90bf6199c6a737d5d5e3",
+      "tamanho_bytes": 52567
+    }
+  ],
+  "configuracao": {
+    "frequencia": "mensal",
+    "horizonte_passos": 1,
+    "metrica_primaria": "MAE_wm2",
+    "modo_previsao": "walk_forward_modelo_fixo_com_observacao_t",
+    "quantizacao_modelagem": false,
+    "referencia_primaria": "Climatologia",
+    "repeticoes_redes": 3,
+    "seed_base": 42,
+    "status_inferencia": "retrospectiva_exploratoria",
+    "train_ratio": 0.8
+  },
+  "configuracao_sha256": "9a51880237d3d88ffa4da224bf2c0ed76753c40a615f26b074d0d5ccc2b9d0cd",
+  "gerado_em_utc": "2026-07-19T01:39:08.842206+00:00",
+  "metadados": {
+    "observacao": "A janela de 2024 ja foi inspecionada durante o desenvolvimento; os resultados nao constituem confirmacao prospectiva independente."
+  },
+  "seed": 42,
+  "versao_esquema": 1
+}
