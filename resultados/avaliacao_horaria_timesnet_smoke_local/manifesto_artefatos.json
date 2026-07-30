@@ -1,0 +1,79 @@
+{
+  "versao_esquema": 1,
+  "criado_em_utc": "2026-07-30T13:47:32.555784+00:00",
+  "modo_execucao": "smoke",
+  "resultado_smoke_nao_publicavel": true,
+  "semente": 42,
+  "epocas_escolhidas_exclusivamente_na_validacao_2023": {
+    "LSTM": 1,
+    "TimesNet": 1
+  },
+  "xgboost_multi_strategy": "multi_output_tree",
+  "politica_borda": "somente_origens_com_72_horas_totalmente_observadas; sem completar a borda de 2024 com dados de 2025",
+  "ambiente": {
+    "python": "3.12.1",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "torch": "2.6.0+cpu",
+    "pvlib": "0.15.1",
+    "xgboost": "3.2.0"
+  },
+  "arquivos": {
+    "configuracao_execucao.json": {
+      "sha256": "e45eda34886136584955a962ac6fcff91cf0f3f6a0a684dc34bbb3bf68f86502",
+      "bytes": 893
+    },
+    "escalas_minmax_pre_corte.csv": {
+      "sha256": "de264f736eb6815354cb99a70daeb144c86a5ef060718b85b413269ea7593cb7",
+      "bytes": 602
+    },
+    "figuras/previsao_horaria_timesnet_72h.png": {
+      "sha256": "d7db3ae54f07635063a2b93b15ff1b8a444c8788af9110c644e0d224e02f9194",
+      "bytes": 261606
+    },
+    "historico_treinamento.csv": {
+      "sha256": "b7b57b2d87d9dcfbf47521446476307c38ba027091f41573c5e4ec41991041c5",
+      "bytes": 292
+    },
+    "metricas_macro.csv": {
+      "sha256": "802e9308b8eb155a1776e20ec2c56cbbbd57810716c71b8ed1a8ff01a6d3fe61",
+      "bytes": 18528
+    },
+    "metricas_por_localidade.csv": {
+      "sha256": "c88f43b052e77a47d1b5134ba9fda2a734031a4b2c2fedf38f99f14ca574dbcb",
+      "bytes": 40178
+    },
+    "modelos/lstm_encoder_direto_refit.pt": {
+      "sha256": "0e2a04f3924693f8ceee81eb5bd26b5b9ef7069996095be906ed95a8f45b527f",
+      "bytes": 33930
+    },
+    "modelos/timesnet_refit.pt": {
+      "sha256": "8bd5afeb3407e46c41b92e41e6d97014f6b1be3836d99538b8082cce67728f14",
+      "bytes": 115062
+    },
+    "modelos/xgboost_multioutput_refit.joblib": {
+      "sha256": "74d8735f03971c81148724e38e77b4bb26579f0c9d1b17035636090f3580e4ed",
+      "bytes": 12712
+    },
+    "previsoes_teste.csv.gz": {
+      "sha256": "79cd3dd5a314c7aeeb778e8c8afcdf8fe446e5896e293573e382e7ceba262061",
+      "bytes": 24375
+    },
+    "previsoes_validacao.csv.gz": {
+      "sha256": "7b93ffee9fb057e1562632833a32aba31d1f34cb4474d7e86ae0ad38443510eb",
+      "bytes": 24186
+    },
+    "protocolo_temporal.csv": {
+      "sha256": "18df19ccb18c8d1d2c3cc5656e0bd9d08346f681c353ed1e22cb594bc8613df5",
+      "bytes": 1613
+    },
+    "resumo_execucao.json": {
+      "sha256": "af5353db8ac54f934ee20112dd828f10b122504cecf379f226af2fc6d8f68263",
+      "bytes": 6943
+    },
+    "status_execucao.json": {
+      "sha256": "6d5fdacacf5ffd198ed30f20810ebb50d29f4226738f37e4c423a216043f9a2b",
+      "bytes": 156
+    }
+  }
+}

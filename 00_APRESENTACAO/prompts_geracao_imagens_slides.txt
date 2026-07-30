@@ -1,0 +1,628 @@
+PROMPTS PARA GERAÇÃO DAS IMAGENS DA APRESENTAÇÃO
+================================================
+
+Fluxo recomendado
+-----------------
+
+1. Gere primeiro o Slide 1.
+2. Nos próximos slides, envie a imagem do Slide 1 como referência visual.
+3. Peça para manter as mesmas cores, tipografia e identidade visual.
+4. Gere todas as imagens em 16:9, com resolução de 1920 × 1080.
+5. Confira cuidadosamente textos e números antes de copiar para o PowerPoint.
+6. Nos slides de resultados, caso o gerador altere algum número, corrija o texto
+   diretamente no PowerPoint ou solicite uma nova geração.
+
+
+SLIDE 1 — OPENING
+-----------------
+
+Create a complete premium 16:9 PowerPoint slide, 1920×1080.
+
+Title:
+“Beyond the Basics: Advanced ML Architectures for Time-Series Forecasting”
+
+Subtitle:
+“From Strong Baselines to Probabilistic Models”
+
+Create a cinematic but professional technology presentation cover. Use a deep
+navy background, subtle grid, thin glowing lines, and a sophisticated
+data-science aesthetic.
+
+The central visual should show a time series evolving from left to right and
+passing through different machine learning representations: regression trees,
+dense neural networks, recurrent cells, multi-scale temporal connections, and
+finally a probabilistic forecast distribution.
+
+Use teal, cyan, orange, purple, lime, and magenta accents. Make the visual feel
+advanced, elegant, and suitable for an internal corporate knowledge-sharing
+session.
+
+Use large clean white typography, strong hierarchy, generous spacing, safe
+margins, and subtle depth. Avoid visual clutter.
+
+Do not use company logos, stock photos, watermarks, random text, fake equations,
+or decorative AI brains. All visible text must be exactly as specified.
+
+
+SLIDE 2 — FORECASTING CHALLENGE
+-------------------------------
+
+Create a complete premium 16:9 PowerPoint slide, 1920×1080, matching the visual
+identity of the previous slide: deep navy background, white typography, teal
+and orange highlights, thin technical lines, elegant data-science aesthetic.
+
+Small category label:
+“THE USE CASE”
+
+Main title:
+“The Forecasting Challenge: From Historical Patterns to Future Values”
+
+Create a visual pipeline that shows 12 months of historical observations on
+the left, a forecasting model in the center, and the prediction for the next
+month on the right.
+
+Show the historical values as a clean monthly time-series chart with
+seasonality. Highlight the 12-month context window and the next-month target
+using different colors.
+
+Add four small protocol cards:
+“10 related time series”
+“12-month context”
+“1-month horizon”
+“2024 retrospective test”
+
+Include a very subtle solar-radiation symbol only to indicate that monthly GHI
+is the case study. The main focus must remain generic time-series forecasting.
+
+Add a bottom takeaway:
+“One forecasting task. Multiple ways to represent time.”
+
+Use clean vector diagrams, precise alignment, minimal text, safe margins, no
+logos, no watermarks, and no unnecessary decoration. All visible text must be
+exactly as specified.
+
+
+SLIDE 3 — MODEL LANDSCAPE
+-------------------------
+
+Create a complete premium 16:9 PowerPoint slide, 1920×1080, using the same dark
+navy, high-end technology presentation style.
+
+Small category label:
+“MODEL LANDSCAPE”
+
+Main title:
+“One Problem, Multiple Perspectives: Mapping the Model Landscape”
+
+Create a clear visual taxonomy with four horizontal or vertical families.
+
+Family 1 — TABULAR
+“XGBoost”
+“MLP”
+Visual language: regression trees and dense neural layers.
+Caption: “Time represented as engineered features”
+
+Family 2 — RECURRENT
+“RNN”
+“LSTM”
+“DilatedRNN”
+Visual language: sequential recurrent cells and temporal connections.
+Caption: “Time represented as an ordered sequence”
+
+Family 3 — PROBABILISTIC
+“DeepAR”
+“DeepNPTS”
+Visual language: multiple possible future trajectories and probability
+distributions.
+Caption: “Forecasting distributions instead of a single value”
+
+Family 4 — UNDER EVALUATION
+“TimesNPTS”
+Visual language: experimental blueprint, active research path, glowing
+unfinished module.
+Caption: “Current experimental extension”
+
+At the bottom, add a separate baseline strip:
+“Persistence · Seasonal Naive · Climatology”
+
+Add the three guiding questions:
+“How do the data enter?”
+“How is the past represented?”
+“What does the model output?”
+
+Use different accent colors for each family, but preserve a coherent visual
+system. No fake text, no logos, no watermarks. All visible text must be exactly
+as specified.
+
+
+SLIDE 4 — XGBOOST AND MLP
+-------------------------
+
+Create a complete premium 16:9 PowerPoint slide, 1920×1080, in the same dark
+navy technical presentation style.
+
+Small category label:
+“TABULAR MODELS”
+
+Main title:
+“From Features to Forecasts: XGBoost and MLP”
+
+Create a split-screen comparison.
+
+LEFT — XGBoost
+Show an ensemble of several small regression trees. Each tree corrects the
+residual error of the previous tree. Visually combine their outputs through a
+summation symbol into one point forecast.
+
+Labels:
+“Regression trees”
+“Sequential error correction”
+“Point forecast”
+
+Strength:
+“Strong on tabular interactions”
+
+Watch for:
+“Requires temporal feature engineering”
+
+RIGHT — MLP
+Show an elegant dense neural network with an input layer, hidden layers of 64
+and 32 nodes, and one output node.
+
+Labels:
+“64 hidden units”
+“32 hidden units”
+“Point forecast”
+
+Strength:
+“Flexible nonlinear relationships”
+
+Watch for:
+“Sensitive to scaling and regularization”
+
+At the bottom, show the shared input features:
+“12 lags · 3/6/12-month averages · calendar · series identity”
+
+Use orange for XGBoost and blue/cyan for MLP. Create technically accurate
+regression trees and neural-network diagrams. Avoid decorative AI imagery. All
+visible text must be exactly as specified.
+
+
+SLIDE 5 — RNN
+-------------
+
+Create a complete premium 16:9 PowerPoint slide, 1920×1080, matching the same
+dark navy technology presentation style.
+
+Small category label:
+“SEQUENCE MODEL”
+
+Main title:
+“Learning Through Time: How RNNs Carry Context”
+
+Create a technically accurate unrolled recurrent neural network diagram.
+
+Show five consecutive observations:
+“xₜ₋₄”
+“xₜ₋₃”
+“xₜ₋₂”
+“xₜ₋₁”
+“xₜ”
+
+Each observation enters an RNN cell. Connect the cells horizontally through
+hidden states:
+“h₁”
+“h₂”
+“h₃”
+“h₄”
+“h₅”
+
+The final hidden state produces:
+“ŷₜ₊₁”
+
+Add a compact equation:
+“hₜ = tanh(Wₓxₜ + Wₕhₜ₋₁ + b)”
+
+Add two callout cards:
+
+Strength:
+“Temporal order is part of the architecture”
+
+Limitation:
+“Distant information may fade during training”
+
+Add a bottom takeaway:
+“The hidden state carries a compressed summary of the past.”
+
+Use teal accents for the sequential flow and lime for the forecast output.
+Keep the diagram clean, instructional, elegant, and technically credible. All
+visible text must be exactly as specified.
+
+
+SLIDE 6 — LSTM
+--------------
+
+Create a complete premium 16:9 PowerPoint slide, 1920×1080, matching the
+established dark navy presentation style.
+
+Small category label:
+“SELECTIVE MEMORY”
+
+Main title:
+“Remembering What Matters: Selective Memory with LSTMs”
+
+Create a sophisticated but understandable LSTM cell diagram.
+
+Show a horizontal cell-state highway:
+“cₜ₋₁” flowing to “cₜ”
+
+Visualize three gates:
+
+“FORGET GATE”
+Caption: “What should be removed?”
+
+“INPUT GATE”
+Caption: “What should be stored?”
+
+“OUTPUT GATE”
+Caption: “What should be exposed?”
+
+Show the current input “xₜ” and previous hidden state “hₜ₋₁” entering the
+gates, and the new hidden state “hₜ” leaving the cell.
+
+Use distinct colors:
+Orange for the forget gate
+Teal for the input gate
+Purple for the output gate
+Lime for the cell-state highway
+
+Add two callout cards:
+
+Strength:
+“Preserves relevant information over longer horizons”
+
+Trade-off:
+“More parameters and more careful training”
+
+Add a bottom takeaway:
+“Long-term memory is controlled, not automatic.”
+
+Use clean vector architecture, no biological brain imagery, no random
+formulas, no logos, and no watermarks. All visible text must be exactly as
+specified.
+
+
+SLIDE 7 — DILATEDRNN
+--------------------
+
+Create a complete premium 16:9 PowerPoint slide, 1920×1080, using the same dark
+navy technical visual identity.
+
+Small category label:
+“MULTI-SCALE RECURRENCE”
+
+Main title:
+“Looking Across Multiple Scales: The DilatedRNN Approach”
+
+Create a horizontal timeline with 12 temporal nodes labeled from “t−11” to
+“t”.
+
+Above the timeline, show three levels of recurrent connections:
+
+“s = 1”
+Short teal connections between adjacent months.
+Caption: “Local dynamics”
+
+“s = 2”
+Orange connections that skip one month.
+Caption: “Intermediate patterns”
+
+“s = 4”
+Purple connections that jump across four months.
+Caption: “Broader temporal context”
+
+Show the three levels combining into a final representation and then one point
+forecast:
+“ŷₜ₊₁”
+
+Add a compact equation:
+“hₜ = φ(Wₓxₜ + Wₕhₜ₋ₛ + b)”
+
+Add two callout cards:
+
+Strength:
+“Captures patterns at different temporal scales”
+
+Watch for:
+“Dilation design must match the data”
+
+Add a bottom takeaway:
+“Not all temporal dependencies occur at the same scale.”
+
+Create a technically accurate, visually striking network diagram with glowing
+multi-level connections. All visible text must be exactly as specified.
+
+
+SLIDE 8 — DEEPAR
+----------------
+
+Create a complete premium 16:9 PowerPoint slide, 1920×1080, matching the same
+dark navy, high-end machine learning presentation style.
+
+Small category label:
+“PROBABILISTIC FORECASTING”
+
+Main title:
+“Forecasting More Than a Number: Probabilistic Modeling with DeepAR”
+
+Create a left-to-right architecture.
+
+LEFT:
+Show several related time series in different colors entering one shared
+model.
+Label:
+“Multiple related time series”
+
+CENTER:
+Show a shared recurrent neural network.
+Label:
+“Global autoregressive model”
+
+RIGHT:
+Show the observed historical trajectory continuing into a fan of possible
+future trajectories. Include a shaded predictive interval and three quantile
+lines:
+“P10”
+“P50”
+“P90”
+
+Add a configuration strip:
+“12-month context · 2 recurrent layers · 40 hidden units”
+“500 samples per seed · 2,500 samples in the final mixture”
+
+Add two callout cards:
+
+Strength:
+“Shares information across related series”
+
+Challenge:
+“Accuracy depends on distributional assumptions and calibration”
+
+Add a bottom takeaway:
+“DeepAR predicts a distribution of possible futures.”
+
+Use magenta and purple for uncertainty, teal for historical series, and white
+for the median forecast. All visible text must be exactly as specified.
+
+
+SLIDE 9 — DEEPNPTS
+------------------
+
+Create a complete premium 16:9 PowerPoint slide, 1920×1080, matching the
+established dark navy technical presentation style.
+
+Small category label:
+“NON-PARAMETRIC FORECASTING”
+
+Main title:
+“Turning History into Possibilities: The DeepNPTS Approach”
+
+Create a four-stage probabilistic forecasting diagram.
+
+STAGE 1 — CONTEXT
+Show a sequence of observed historical values.
+Caption:
+“Observed historical candidates”
+
+STAGE 2 — SCORING
+Show horizontal score bars with different lengths.
+Caption:
+“Similarity and temporal relevance”
+
+STAGE 3 — PROBABILITIES
+Show a softmax-style transformation into weighted probability circles.
+Include:
+“Σpᵢ = 1”
+
+STAGE 4 — FORECAST
+Show samples drawn from the historical candidate values and forming a discrete
+predictive distribution.
+Caption:
+“Probability mass over observed values”
+
+Add two callout cards:
+
+Strength:
+“Produces plausible values from historical support”
+
+Limitation:
+“Future values are constrained by the available history”
+
+Add a technical note:
+“Official discrete DeepNPTSEstimator · Global training · Probabilistic output”
+
+Add a bottom takeaway:
+“The history is not only input — it becomes the set of possible outcomes.”
+
+Use yellow for sampled candidates, purple for probabilities, orange for
+scores, and teal for context. All visible text must be exactly as specified.
+
+
+SLIDE 10 — TIMESNPTS
+--------------------
+
+Observação: como a arquitetura exata do TimesNPTS ainda não foi informada, este
+prompt apresenta o modelo como pesquisa em andamento, sem inventar seu
+funcionamento. Substitua o blueprint pela arquitetura real quando ela estiver
+definida.
+
+Create a complete premium 16:9 PowerPoint slide, 1920×1080, matching the same
+dark navy advanced machine learning presentation style.
+
+Small category label:
+“WORK IN PROGRESS”
+
+Main title:
+“Extending the Non-Parametric Approach: TimesNPTS Under Evaluation”
+
+Create a sophisticated experimental research blueprint rather than a finalized
+architecture.
+
+On the left, show:
+“DeepNPTS”
+Represented by historical candidates, learned scores, probability weights, and
+a discrete forecast.
+
+In the center, show an evolution arrow labeled:
+“Research hypothesis”
+
+On the right, show:
+“TimesNPTS”
+Represented as an active experimental module with three clearly separated
+research questions:
+
+“Temporal representation”
+“How can temporal patterns be represented more effectively?”
+
+“Candidate selection”
+“Which historical observations should influence the forecast?”
+
+“Probabilistic output”
+“Can calibration improve without excessively wide intervals?”
+
+Add an evaluation pipeline:
+“Implementation → Training → Validation → Benchmark”
+
+Highlight the current status:
+“UNDER EVALUATION”
+
+Add the comparison criteria:
+“MAE · CRPS · Coverage · Interval Width · Stability”
+
+Add a bottom takeaway:
+“A new model should be evaluated under the same protocol as the existing
+benchmark.”
+
+The design should feel like an advanced R&D blueprint: precise grids,
+connected modules, active experiment indicators, subtle glowing lines, and
+strong visual hierarchy. Do not claim any final result or finalized
+architecture. All visible text must be exactly as specified.
+
+
+SLIDE 11 — POINT RESULTS
+------------------------
+
+Create a complete premium 16:9 PowerPoint slide, 1920×1080, using the same dark
+navy corporate data-science visual identity.
+
+Small category label:
+“POINT FORECAST RESULTS”
+
+Main title:
+“What the Data Revealed: Comparing Forecast Accuracy”
+
+Create a precise horizontal bar chart titled:
+“Macro-MAE across 10 locations — lower is better”
+
+Use the following exact ranking and values in W/m²:
+
+1. Climatology — 12.07
+2. LSTM — 12.22
+3. RNN — 12.55
+4. DilatedRNN — 13.42
+5. DeepAR — 14.18
+6. XGBoost — 14.57
+7. MLP — 16.06
+8. Seasonal Naive — 16.94
+9. DeepNPTS — 17.70
+10. Persistence — 35.09
+
+The bar lengths must accurately reflect the numerical values.
+
+Highlight:
+Climatology in lime
+LSTM in teal
+RNN and DilatedRNN in purple tones
+DeepAR in magenta
+XGBoost in orange
+MLP in blue
+DeepNPTS in yellow
+Other baselines in muted gray
+
+Add three insight cards:
+
+“BEST OVERALL”
+“Climatology — 12.07 W/m²”
+
+“BEST LEARNED MODEL”
+“LSTM — 12.22 W/m²”
+
+“KEY RESULT”
+“Recurrent models occupied three of the top four positions”
+
+Add a small note:
+“TimesNPTS is still under evaluation and is not included in this ranking.”
+
+Use precise professional data visualization. Do not change, round differently,
+reorder, or invent any values. All visible text must be exactly as specified.
+
+
+SLIDE 12 — PROBABILISTIC RESULTS AND TAKEAWAYS
+----------------------------------------------
+
+Create a complete premium 16:9 PowerPoint slide, 1920×1080, matching the
+established dark navy presentation style.
+
+Small category label:
+“PROBABILISTIC RESULTS”
+
+Main title:
+“Beyond the Benchmark: Accuracy, Calibration, and Next Steps”
+
+Create a side-by-side comparison between DeepAR and DeepNPTS.
+
+DEEPAR
+“CRPS: 10.83 W/m²”
+“90% Coverage: 61.67%”
+“Mean Interval Width: 35.50 W/m²”
+
+Visual interpretation:
+Show a relatively narrow predictive interval that fails to cover some observed
+points.
+
+Caption:
+“Sharper intervals, but undercoverage”
+
+DEEPNPTS
+“CRPS: 15.90 W/m²”
+“90% Coverage: 90.83%”
+“Mean Interval Width: 145.56 W/m²”
+
+Visual interpretation:
+Show a much wider predictive interval covering almost every observed point.
+
+Caption:
+“Near-nominal coverage, but very wide intervals”
+
+The difference in interval width must be visually obvious: the DeepNPTS
+interval should appear approximately four times wider than the DeepAR
+interval.
+
+Add a “KEY TAKEAWAYS” section:
+
+“Strong baselines are essential.”
+“Temporal representation matters.”
+“Complexity does not guarantee better performance.”
+“Coverage must be evaluated together with interval width.”
+“There is no universal winning model.”
+
+Add a “NEXT STEP” card:
+“Evaluate TimesNPTS under the same experimental protocol.”
+
+Final statement:
+“Choose models by their assumptions, evidence, and decision value — not by
+complexity alone.”
+
+Use precise technical visuals, elegant spacing, clean typography, and a strong
+closing composition. Do not change or invent any result values. All visible
+text must be exactly as specified.
