@@ -129,9 +129,11 @@ Regere as figuras oficiais com:
 ```bash
 python gerar_figuras_avaliacao_canonica.py \
   --resultados resultados/avaliacao_mensal_canonica
-cp resultados/avaliacao_mensal_canonica/figuras/previsao_mensal_byd_camacari.png overlief/figuras/
-cp resultados/avaliacao_mensal_canonica/figuras/intervalo_deepnpts_byd_camacari.png overlief/figuras/
 ```
+
+Essas figuras mensais permanecem como artefatos desta execução. Os
+manuscritos atuais mantêm apenas suas imagens efetivamente usadas em
+`overlief/IEEE/figuras/` e `overlief/MCSM/figuras/`.
 
 ## Limitações obrigatórias na interpretação
 

@@ -178,9 +178,11 @@ Gere novamente as figuras a partir dos CSVs e das amostras canônicas:
 ```bash
 python gerar_figuras_avaliacao_canonica.py \
   --resultados resultados/avaliacao_mensal_canonica
-cp resultados/avaliacao_mensal_canonica/figuras/previsao_mensal_byd_camacari.png overlief/figuras/
-cp resultados/avaliacao_mensal_canonica/figuras/intervalo_deepnpts_byd_camacari.png overlief/figuras/
 ```
+
+As imagens usadas nos manuscritos são mantidas separadamente em
+`overlief/IEEE/figuras/` e `overlief/MCSM/figuras/`; a pasta compartilhada
+`overlief/figuras/` não é mais utilizada.
 
 Os artigos são preenchidos diretamente a partir dos artefatos finais por
 `preencher_artigos_canonicos.py`; números não devem ser transcritos de pastas
@@ -231,7 +233,7 @@ artigos atuais:
   não eram registrados corretamente pelo PyTorch;
 - `resultados/todas_localidades/`, `resultados/todas_localidades_mensal/` e
   `resultados/experimentos_redes_avancadas/`: fluxos exploratórios anteriores;
-- figuras com sufixo `_ieee.png` em `overlief/figuras/`: exportações da rodada
+- figuras com sufixo `_ieee.png` nos artefatos legados: exportações da rodada
   VHP, incompatíveis com os números canônicos atuais.
 
 O material atual dos manuscritos está em `overlief/IEEE/` e `overlief/MCSM/`.

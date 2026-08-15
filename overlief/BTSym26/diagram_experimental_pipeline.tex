@@ -1,0 +1,78 @@
+% Vector diagram kept separate from the main article source.
+% Its thin strokes, dashed stage frames, and compact labels follow the visual
+% hierarchy of the reference articles while fitting the LNCS text block.
+\begin{tikzpicture}[
+  stage/.style={
+    draw=black!55,
+    dash pattern=on 1.8pt off 1.5pt,
+    rounded corners=1pt,
+    minimum width=2.45cm,
+    minimum height=3.00cm,
+    inner sep=3pt
+  },
+  process/.style={
+    draw=black!65,
+    rounded corners=1pt,
+    fill=white,
+    align=center,
+    text width=1.92cm,
+    minimum height=0.68cm,
+    inner sep=2pt,
+    font=\scriptsize
+  },
+  proposed/.style={
+    process,
+    draw=blue!55!black,
+    line width=0.75pt,
+    fill=blue!4
+  },
+  stage title/.style={
+    font=\footnotesize\bfseries,
+    align=center,
+    fill=white,
+    inner xsep=2pt,
+    inner ysep=0pt
+  },
+  flow/.style={-{Latex[length=1.7mm,width=1.2mm]},line width=0.60pt},
+  inner flow/.style={-{Latex[length=1.45mm,width=1.0mm]},line width=0.45pt}
+]
+  \node[stage] (data-stage) at (0,0) {};
+  \node[stage] (prep-stage) at (3.02,0) {};
+  \node[stage] (model-stage) at (6.04,0) {};
+  \node[stage] (eval-stage) at (9.06,0) {};
+
+  \node[stage title] at ([yshift=-0.25cm]data-stage.north)
+    {\textbf{1}\enspace Data};
+  \node[process] (raw) at ([yshift=-1.02cm]data-stage.north)
+    {NSRDB hourly GHI\\10 sites, 2019--2024};
+  \node[process,below=0.13cm of raw] (aggregate)
+    {Audit; daily/monthly\\aggregation};
+
+  \node[stage title] at ([yshift=-0.25cm]prep-stage.north)
+    {\textbf{2}\enspace Preparation};
+  \node[process] (split) at ([yshift=-1.02cm]prep-stage.north)
+    {Pre-test context and\\training, 2019--2023};
+  \node[process,below=0.13cm of split] (transform)
+    {Min--max scaling and\\128-level quantization};
+
+  \node[stage title] at ([yshift=-0.25cm]model-stage.north)
+    {\textbf{3}\enspace Modeling};
+  \node[proposed] (dilated) at ([yshift=-1.02cm]model-stage.north)
+    {\textbf{DilatedRNN}\\skips 1--2--4\\5 seeds};
+  \node[process,below=0.13cm of dilated] (comparators)
+    {2 learned comparators\\and 2 baselines};
+
+  \node[stage title] at ([yshift=-0.25cm]eval-stage.north)
+    {\textbf{4}\enspace Evaluation};
+  \node[process] (walk-forward) at ([yshift=-1.02cm]eval-stage.north)
+    {Walk-forward\\12 origins in 2024};
+  \node[process,below=0.13cm of walk-forward] (metrics)
+    {Macro-MAE; local,\\temporal, and seed analyses};
+
+  \draw[inner flow] (raw)--(aggregate);
+  \draw[inner flow] (split)--(transform);
+  \draw[inner flow] (walk-forward)--(metrics);
+  \draw[flow] (data-stage.east)--(prep-stage.west);
+  \draw[flow] (prep-stage.east)--(model-stage.west);
+  \draw[flow] (model-stage.east)--(eval-stage.west);
+\end{tikzpicture}

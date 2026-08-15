@@ -10,6 +10,7 @@ from __future__ import annotations
 import math
 import sys
 import textwrap
+from io import BytesIO
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -20,8 +21,8 @@ from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 
 DPI = 120
 EMU_PER_INCH = 914400
-REGULAR_FONT = "/usr/share/fonts/truetype/lato/Lato-Medium.ttf"
-BOLD_FONT = "/usr/share/fonts/truetype/lato/Lato-Heavy.ttf"
+REGULAR_FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+BOLD_FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
 
 def px(emu: int) -> int:
@@ -163,17 +164,28 @@ def draw_auto_shape(draw, shape, bbox):
 
 
 def render_slide(prs, slide):
+    try:
+        background = color_from(slide.background.fill.fore_color, (255, 255, 255))
+    except (AttributeError, TypeError, ValueError):
+        background = (255, 255, 255)
     canvas = Image.new(
         "RGB",
         (px(prs.slide_width), px(prs.slide_height)),
-        color_from(slide.background.fill.fore_color, (7, 20, 33)),
+        background,
     )
     draw = ImageDraw.Draw(canvas)
     for shape in slide.shapes:
         left, top = px(shape.left), px(shape.top)
         right, bottom = left + px(shape.width), top + px(shape.height)
         bbox = (left, top, right, bottom)
-        if shape.shape_type == MSO_SHAPE_TYPE.LINE:
+        if shape.shape_type == MSO_SHAPE_TYPE.PICTURE:
+            picture = Image.open(BytesIO(shape.image.blob)).convert("RGB")
+            picture = picture.resize(
+                (max(1, right - left), max(1, bottom - top)),
+                Image.Resampling.LANCZOS,
+            )
+            canvas.paste(picture, (left, top))
+        elif shape.shape_type == MSO_SHAPE_TYPE.LINE:
             color = shape_line(shape) or (39, 70, 92)
             width = max(
                 1,

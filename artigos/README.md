@@ -7,9 +7,13 @@ quebrar testes, figuras e sincronizacoes existentes:
 |---|---|
 | Artigo IEEE | `overlief/IEEE/artigo.tex` |
 | Artigo MCSM | `overlief/MCSM/artigo_mcsm.tex` |
-| Figuras dos artigos | `overlief/figuras/` |
+| Figura do IEEE | `overlief/IEEE/figuras/` |
+| Figuras do MCSM | `overlief/MCSM/figuras/` |
 | Templates preenchiveis | `templates_artigos/` |
 
 A grafia historica `overlief` esta incorreta, mas a renomeacao fisica sera
 feita somente depois de congelar ou atualizar todos os caminhos de publicacao.
 Este indice fornece desde ja uma entrada com nome correto e explicito.
+
+Cada pasta de manuscrito contém somente as figuras que ele realmente inclui;
+não há mais uma pasta compartilhada de imagens no pacote do Overleaf.
