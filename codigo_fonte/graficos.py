@@ -13,7 +13,7 @@ def gerar_grafico_temporal(
     y_true: pd.Series,
     predicoes: dict[str, pd.Series],
     caminho_saida: str | Path,
-    y_label: str = "GHI quantizado normalizado",
+    y_label: str = "GHI normalizado",
     titulo_sufixo: str = "",
 ) -> None:
     """Gera grafico temporal comparando valores reais e previstos no teste."""
@@ -45,7 +45,7 @@ def gerar_grafico_real_vs_previsto(
     y_pred: pd.Series,
     modelo: str,
     caminho_saida: str | Path,
-    y_label: str = "GHI quantizado normalizado",
+    y_label: str = "GHI normalizado",
     titulo_sufixo: str = "",
 ) -> None:
     """Gera grafico temporal para um modelo especifico."""
@@ -100,7 +100,7 @@ def salvar_graficos(
     y_true: pd.Series,
     predicoes: dict[str, pd.Series],
     pasta_saida: str | Path,
-    y_label: str = "GHI quantizado normalizado",
+    y_label: str = "GHI normalizado",
     titulo_sufixo: str = "",
 ) -> None:
     """Salva todos os graficos obrigatorios da avaliacao dos modelos."""

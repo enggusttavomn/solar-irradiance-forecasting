@@ -1,0 +1,189 @@
+{
+  "ambiente": {
+    "dependencias": {
+      "gluonts": "0.16.2",
+      "joblib": "1.5.3",
+      "keras": "3.15.0",
+      "lightning": "2.4.0",
+      "matplotlib": "3.10.9",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "pvlib": "0.15.1",
+      "pytorch-lightning": "2.4.0",
+      "scikit-learn": "1.9.0",
+      "scipy": "1.15.3",
+      "seaborn": "0.13.2",
+      "tensorflow": "2.21.0",
+      "torch": "2.6.0+cpu",
+      "xgboost": "3.2.0"
+    },
+    "executavel": "python",
+    "implementacao_python": "CPython",
+    "plataforma": "Linux-6.8.0-1052-azure-x86_64-with-glibc2.39",
+    "python": "3.12.1"
+  },
+  "arquivos_entrada": [
+    {
+      "caminho": "codigo_fonte/avaliacao.py",
+      "sha256": "f53558c894caf242c481b0574c3301d98d0c6cf791aa4b792d56945477d98014",
+      "tamanho_bytes": 12311
+    },
+    {
+      "caminho": "codigo_fonte/dados_mensais_globais.py",
+      "sha256": "47ab3e14f2127810282a0d96086298680ed1d50d68a57fa1fc909ebd0f370d52",
+      "tamanho_bytes": 15963
+    },
+    {
+      "caminho": "codigo_fonte/dilated_rnn.py",
+      "sha256": "307c62cc79b32272ffd3541be03be268e199aaed1abcfb2737a3377f7a5c6536",
+      "tamanho_bytes": 15209
+    },
+    {
+      "caminho": "codigo_fonte/experimento_mensal_canonico.py",
+      "sha256": "eed15b16532a956484242f51e2efb0193e561f24c1369cc9b7b82e8f971c260a",
+      "tamanho_bytes": 42414
+    },
+    {
+      "caminho": "codigo_fonte/figuras_experimento_canonico.py",
+      "sha256": "e11f81bd0107b8d0bf009cb4f06f3862d7e937db49e846e3ed039a1e5b5020aa",
+      "tamanho_bytes": 10070
+    },
+    {
+      "caminho": "codigo_fonte/modelos_globais_gluonts.py",
+      "sha256": "198820e34309e2cfcc764ec92e852ffa8f09b72a74fafedbbfc6970b82ad0196",
+      "tamanho_bytes": 35125
+    },
+    {
+      "caminho": "codigo_fonte/modelos_neurais_globais.py",
+      "sha256": "bc7990b6e25f93060543fe87da7d3e2eed5f9737eb505ea11ae1066026e2c780",
+      "tamanho_bytes": 10806
+    },
+    {
+      "caminho": "codigo_fonte/modelos_tabulares_globais.py",
+      "sha256": "a78b04fe00437e392cb4edbb8788231d693e68683af25586f3321b8ed176ecf6",
+      "tamanho_bytes": 6173
+    },
+    {
+      "caminho": "codigo_fonte/reprodutibilidade.py",
+      "sha256": "82cdf7ce2287798ddf55b14f55dc38258fbc0fe7f8c9e6610d017967870bdcf3",
+      "tamanho_bytes": 12419
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/bmw_san_luis_potosi.csv",
+      "sha256": "d98ec7e97bf68864fda836f1948a863d296badae2dd1aa34e225425d1344b1f5",
+      "tamanho_bytes": 1502950
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/byd_camacari.csv",
+      "sha256": "8347f0b81babcf58456e14568c875e9df7ca6aba792e8865cff5e5df1afde783",
+      "tamanho_bytes": 1492308
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/ford_rouge_electric_vehicle_center.csv",
+      "sha256": "d490600c96bf0348ad6c74d08b5f8c700a64dd643b9e886464ed6e165475011e",
+      "tamanho_bytes": 1429125
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/gm_factory_zero.csv",
+      "sha256": "be2a8b340938686a582a9beed1dcf8fcef11a4655a6a2678dd6f78fd2de6e572",
+      "tamanho_bytes": 1343423
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/hyundai_metaplant_georgia.csv",
+      "sha256": "f5e3e825469277e654957e2d4b7e149c1e55232acaf288c4380ffa906188abf7",
+      "tamanho_bytes": 1380769
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/lucid_amp_1_casa_grande.csv",
+      "sha256": "78f6690b63a1ea378be8abf178e725376aca8a2e71135ba0cda73b53d433b94f",
+      "tamanho_bytes": 1516757
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/rivian_normal.csv",
+      "sha256": "133ad89c6e7ac30c890cec033f8c1c4914c01362920b49a0c0fd540a9ec9520d",
+      "tamanho_bytes": 1317015
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/tesla_fremont_factory.csv",
+      "sha256": "1c6401e77938057f6dfc14c58dbf70ce098dde92ac46da55e0c9c9c279945453",
+      "tamanho_bytes": 1306395
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/tesla_gigafactory_nevada.csv",
+      "sha256": "d40616d7151007f2e917c8c90b2f411260126f506ebd2d770024d90a12f8500c",
+      "tamanho_bytes": 1314874
+    },
+    {
+      "caminho": "dados/brutos/localidades_ev/tesla_gigafactory_texas.csv",
+      "sha256": "55d80fcfcce0be92c28338ed16a6c13b906741a482cbfa01453897c9aa06bd8d",
+      "tamanho_bytes": 1284356
+    },
+    {
+      "caminho": "executar_avaliacao_mensal_canonica.py",
+      "sha256": "4743c27c85f39dc3b3ea740775ae2314bd47ea6837bc19d9815dc77b86342288",
+      "tamanho_bytes": 291
+    },
+    {
+      "caminho": "gerar_figuras_avaliacao_canonica.py",
+      "sha256": "8e1348749f4bea5b6242a14b7c667cddb7dd0cc2c8b85af338059d9926225e61",
+      "tamanho_bytes": 5140
+    },
+    {
+      "caminho": "requirements.txt",
+      "sha256": "3562cdc4d27f3b914487e163607dff68b2909bae5a92cd5d75ab2847f6e00165",
+      "tamanho_bytes": 1015
+    }
+  ],
+  "configuracao": {
+    "amostras_probabilisticas_por_semente": 500,
+    "contexto": 12,
+    "epocas_deepar": 100,
+    "epocas_deepnpts": 100,
+    "inicio_validacao": "2023-01-01",
+    "lotes_por_epoca_deepar": 50,
+    "lotes_por_epoca_deepnpts": 100,
+    "max_epocas_keras": 300,
+    "modo_execucao": "completa",
+    "niveis_quantizacao": 128,
+    "nivel_intervalo": 0.9,
+    "paciencia_keras": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ],
+    "train_ratio": 0.8
+  },
+  "configuracao_sha256": "a9938425a13221713a32f1fc2aeed52f54b24066d5a38eb09d805684b0a41c9b",
+  "gerado_em_utc": "2026-07-19T02:35:11.471757+00:00",
+  "metadados": {
+    "ajuste_transformacao_selecao": "somente_antes_da_validacao",
+    "contrato_adotado_em_retomada": true,
+    "execucao_retomada": true,
+    "fonte_artigos_atuais": true,
+    "frequencia": "mensal",
+    "hardware": {
+      "arquitetura": "x86_64",
+      "cpus_logicas": 2,
+      "gpu": "nenhuma; execucao forcada em CPU",
+      "kernel": "6.8.0-1052-azure",
+      "memoria_total_gib": 7.758,
+      "processador": "x86_64",
+      "sistema": "Linux"
+    },
+    "horizonte_meses": 1,
+    "localidades": 10,
+    "metricas_principais": "recalculadas_na_previsao_consolidada",
+    "modo_execucao": "completa",
+    "natureza_teste": "retrospectivo_exploratorio",
+    "origens_teste": 12,
+    "previsao_pontual_probabilistica": "mediana_das_amostras",
+    "previsao_principal_redes": "ensemble_media_sementes",
+    "protocolo_canonico": true,
+    "retomada_sem_contrato_anterior": true
+  },
+  "seed": 11,
+  "versao_esquema": 1
+}

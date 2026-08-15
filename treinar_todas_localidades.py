@@ -8,12 +8,16 @@ pasta sao apresentados como o conjunto oficial e auditavel do trabalho.
 from __future__ import annotations
 
 import argparse
+import gc
 import hashlib
 import math
+import multiprocessing as mp
 import os
 from pathlib import Path
+import traceback
 import warnings
 
+import numpy as np
 import pandas as pd
 
 from codigo_fonte.configuracao import (
@@ -43,7 +47,10 @@ LOCALIDADES = LOCALIDADES_EV
 OUTPUT_DIR = PASTA_DADOS_BRUTOS / "localidades_ev"
 MANIFESTO_DADOS = OUTPUT_DIR / "manifesto_nsrdb.csv"
 RESULTADOS_DIR = PASTA_RESULTADOS / "todas_localidades"
-RESULTADOS_MENSAIS_DIR = PASTA_RESULTADOS / "todas_localidades_mensal"
+# O diretorio historico ``todas_localidades_mensal`` e preservado. A avaliacao
+# corrigida fica separada para impedir que tabelas de protocolos diferentes
+# sejam combinadas acidentalmente no artigo.
+RESULTADOS_MENSAIS_DIR = PASTA_RESULTADOS / "avaliacao_mensal_corrigida"
 ANO_INICIAL_DADOS = 2019
 ANO_FINAL_DADOS = 2024
 COLUNAS_ESTATISTICAS_HORARIAS = [
@@ -406,6 +413,10 @@ def treinar_localidade(
     verbose: bool = True,
     forcar_download: bool = False,
     frequencia_modelagem: str = "diaria",
+    repeticoes_redes: int = 3,
+    seed_base: int = 42,
+    gerar_figuras: bool = True,
+    reter_modelos: bool = True,
 ) -> dict:
     """Executa o pipeline completo e independente para uma localidade.
 
@@ -415,16 +426,34 @@ def treinar_localidade(
         forcar_download: Quando verdadeiro, ignora o CSV local.
         frequencia_modelagem: ``diaria`` para prever o dia seguinte ou
             ``mensal`` para prever o mes seguinte.
+        repeticoes_redes: Sementes independentes para MLP, RNN e LSTM. As
+            previsoes publicadas sao a media do conjunto.
+        seed_base: Primeira semente da sequencia reproduzivel.
+        gerar_figuras: Desativa apenas figuras por localidade, sem afetar CSVs.
+        reter_modelos: Mantem objetos ajustados no retorno. O lote desativa esta
+            opcao porque os modelos ja foram salvos e o TensorFlow consumiria
+            memoria cumulativa entre localidades.
 
     Returns:
         Dicionario com metricas, modelos e informacoes da localidade.
     """
     # Importacoes locais reduzem o custo dos modos que apenas validam ou baixam.
+    if repeticoes_redes < 1:
+        raise ValueError("repeticoes_redes deve ser positivo.")
+
     from codigo_fonte.avaliacao import calcular_metricas, salvar_previsoes
     from codigo_fonte.avaliacao import desnormalizar_ghi
+    from codigo_fonte.baselines import normalizar_previsoes_fisicas, prever_baselines
     from codigo_fonte.features import dividir_treino_teste_temporal
     from codigo_fonte.graficos import salvar_graficos
-    from codigo_fonte.modelos import salvar_modelo, treinar_lstm, treinar_mlp, treinar_rnn, treinar_xgboost
+    from codigo_fonte.modelos import (
+        salvar_modelo,
+        treinar_lstm,
+        treinar_mlp,
+        treinar_rnn,
+        treinar_vizinhos_historicos,
+        treinar_xgboost,
+    )
     from codigo_fonte.preprocessamento import preparar_serie_temporal
 
     nome = local["nome"]
@@ -444,8 +473,8 @@ def treinar_localidade(
     
     # Etapa 2: limpar, transformar e salvar a base de features desta localidade.
     if verbose:
-        print("  Preparando serie temporal (quantizacao 128 niveis, features)...")
-    sufixo_features = "" if frequencia_modelagem == "diaria" else "_mensal"
+        print("  Preparando serie temporal continua, lags e calendario...")
+    sufixo_features = "" if frequencia_modelagem == "diaria" else "_mensal_v2"
     preparation = preparar_serie_temporal(
         serie_ghi,
         output_path=(
@@ -459,7 +488,7 @@ def treinar_localidade(
     feature_columns = preparation.feature_columns
     
     # Etapa 3: corte cronologico. Os ultimos 20% simulam o futuro nao visto.
-    X_train, X_test, y_train, y_test, _, dados_teste = dividir_treino_teste_temporal(
+    X_train, X_test, y_train, y_test, dados_treino, dados_teste = dividir_treino_teste_temporal(
         dados,
         feature_columns,
         target_column="ghi_alvo",
@@ -470,33 +499,73 @@ def treinar_localidade(
     
     # Um nome por localidade impede que modelos sejam sobrescritos no lote.
     pasta_modelo_local = PASTA_MODELOS / (
-        "localidades" if frequencia_modelagem == "diaria" else "localidades_mensal"
+        "localidades"
+        if frequencia_modelagem == "diaria"
+        else "avaliacao_mensal_corrigida"
     )
     pasta_modelo_local.mkdir(parents=True, exist_ok=True)
 
     treinadores = {
-        "XGBoost": (treinar_xgboost, "xgboost", ".joblib"),
-        "MLP": (treinar_mlp, "mlp", ".joblib"),
-        "RNN": (treinar_rnn, "rnn", ".keras"),
-        "LSTM": (treinar_lstm, "lstm", ".keras"),
+        "XGBoost": (treinar_xgboost, "xgboost", ".joblib", False),
+        "MLP": (treinar_mlp, "mlp", ".joblib", True),
+        "RNN": (treinar_rnn, "rnn", ".keras", True),
+        "LSTM": (treinar_lstm, "lstm", ".keras", True),
+        "VizinhosHistoricos": (
+            treinar_vizinhos_historicos,
+            "vizinhos_historicos",
+            ".joblib",
+            False,
+        ),
     }
     modelos = {}
     predicoes = {}
-    for nome_modelo, (treinador, slug, extensao) in treinadores.items():
+    predicoes_repeticoes = []
+    for nome_modelo, (treinador, slug, extensao, repetir) in treinadores.items():
         if verbose:
             print(f"  Treinando {nome_modelo}...")
-        modelo = treinador(X_train, y_train)
-        modelos[nome_modelo] = modelo
-        # Limita a saida ao dominio da variavel normalizada.
-        predicoes[nome_modelo] = (
-            pd.Series(modelo.predict(X_test), index=y_test.index)
-            .clip(0, 1)
-            .reset_index(drop=True)
-        )
-        salvar_modelo(
-            modelo,
-            pasta_modelo_local / f"{slug}_{nome_arquivo(nome)}{extensao}",
-        )
+        sementes = list(range(seed_base, seed_base + repeticoes_redes)) if repetir else [seed_base]
+        previsoes_semente = []
+        modelos_semente = []
+        for semente in sementes:
+            modelo = treinador(X_train, y_train, random_state=semente)
+            if reter_modelos:
+                modelos_semente.append(modelo)
+            y_pred_semente = (
+                pd.Series(modelo.predict(X_test), index=y_test.index)
+                .clip(0, 1)
+                .reset_index(drop=True)
+            )
+            previsoes_semente.append(y_pred_semente)
+            sufixo_seed = f"_seed{semente}" if repetir else ""
+            salvar_modelo(
+                modelo,
+                pasta_modelo_local
+                / f"{slug}_{nome_arquivo(nome)}{sufixo_seed}{extensao}",
+            )
+            predicoes_repeticoes.append(
+                {
+                    "Localidade": nome,
+                    "Pais": pais,
+                    "Modelo": nome_modelo,
+                    "Seed": semente,
+                    "Predicao_normalizada": y_pred_semente,
+                }
+            )
+        if reter_modelos:
+            modelos[nome_modelo] = modelos_semente if repetir else modelos_semente[0]
+        predicoes[nome_modelo] = pd.concat(previsoes_semente, axis=1).mean(axis=1)
+
+    # Referencias sazonais sao parte do protocolo, nao um pos-processamento.
+    baselines_original = prever_baselines(
+        dados_treino,
+        dados_teste,
+        frequencia=frequencia_modelagem,
+    )
+    baselines_normalizados = normalizar_previsoes_fisicas(
+        baselines_original,
+        preparation.quantization_params,
+    )
+    predicoes.update(baselines_normalizados)
 
     # Etapa 6: zerar os indices facilita alinhar datas, reais e previsoes.
     y_test_reset = y_test.reset_index(drop=True)
@@ -505,8 +574,31 @@ def treinar_localidade(
     predicoes_original = {
         nome_modelo: desnormalizar_ghi(y_pred, preparation.quantization_params)
         for nome_modelo, y_pred in predicoes.items()
+        if nome_modelo not in baselines_original
     }
-    
+    predicoes_original.update(
+        {
+            nome_modelo: pd.Series(valores).reset_index(drop=True)
+            for nome_modelo, valores in baselines_original.items()
+        }
+    )
+
+    # Guarda a dispersao entre sementes sem confundi-la com a metrica do
+    # ensemble, que e a previsao principal usada na comparacao entre modelos.
+    metricas_repeticoes = []
+    for registro in predicoes_repeticoes:
+        predicao_wm2 = desnormalizar_ghi(
+            registro.pop("Predicao_normalizada"),
+            preparation.quantization_params,
+        )
+        metrica_seed = calcular_metricas(
+            y_test_original,
+            predicao_wm2,
+            registro["Modelo"],
+            sufixo="wm2",
+        )
+        metricas_repeticoes.append({**registro, **metrica_seed})
+
     # Mantem as metricas normalizadas e acrescenta a escala fisica em W/m2.
     metricas_modelos = {}
     for nome_modelo in predicoes:
@@ -524,11 +616,6 @@ def treinar_localidade(
                 sufixo="wm2",
             )
         )
-        # Alias historicos preservam compatibilidade e continuam na escala [0, 1].
-        metricas["MAE"] = metricas["MAE_normalizado"]
-        metricas["MSE"] = metricas["MSE_normalizado"]
-        metricas["RMSE"] = metricas["RMSE_normalizado"]
-        metricas["R2"] = metricas["R2_normalizado"]
         # Adiciona contexto geografico para montar a tabela consolidada depois.
         metricas["Localidade"] = nome
         metricas["Pais"] = pais
@@ -549,22 +636,23 @@ def treinar_localidade(
     )
     
     # Etapa 8: produzir figuras nas duas escalas para a mesma localidade.
-    pasta_figuras_local = resultados_dir / "figuras"
-    pasta_figuras_local.mkdir(parents=True, exist_ok=True)
-    salvar_graficos(
-        datas_reset,
-        y_test_reset,
-        predicoes,
-        pasta_figuras_local / nome_arquivo(nome) / "normalizado",
-    )
-    salvar_graficos(
-        datas_reset,
-        y_test_original,
-        predicoes_original,
-        pasta_figuras_local / nome_arquivo(nome) / "wm2",
-        y_label=f"GHI medio {frequencia_modelagem} (W/m2)",
-        titulo_sufixo=" - escala real",
-    )
+    if gerar_figuras:
+        pasta_figuras_local = resultados_dir / "figuras"
+        pasta_figuras_local.mkdir(parents=True, exist_ok=True)
+        salvar_graficos(
+            datas_reset,
+            y_test_reset,
+            predicoes,
+            pasta_figuras_local / nome_arquivo(nome) / "normalizado",
+        )
+        salvar_graficos(
+            datas_reset,
+            y_test_original,
+            predicoes_original,
+            pasta_figuras_local / nome_arquivo(nome) / "wm2",
+            y_label=f"GHI medio {frequencia_modelagem} (W/m2)",
+            titulo_sufixo=" - escala real",
+        )
     
     if verbose:
         for nome_modelo, metricas in metricas_modelos.items():
@@ -575,6 +663,19 @@ def treinar_localidade(
             print(f"    RMSE W/m2: {metricas['RMSE_wm2']:.2f}")
             print(f"    nRMSE W/m2: {metricas['nRMSE_percentual_wm2']:.2f}%")
             print(f"    R2 W/m2: {metricas['R2_wm2']:.4f}")
+
+    # Checkpoints tabulares permitem retomar/consolidar um lote interrompido
+    # sem repetir modelos ja finalizados.
+    pasta_parciais = resultados_dir / "parciais_localidades"
+    pasta_parciais.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame(metricas_modelos.values()).to_csv(
+        pasta_parciais / f"metricas_{nome_arquivo(nome)}.csv",
+        index=False,
+    )
+    pd.DataFrame(metricas_repeticoes).to_csv(
+        pasta_parciais / f"seeds_{nome_arquivo(nome)}.csv",
+        index=False,
+    )
     
     # O retorno alimenta a consolidacao feita por ``main``.
     return {
@@ -588,6 +689,7 @@ def treinar_localidade(
         "rnn": metricas_modelos["RNN"],
         "lstm": metricas_modelos["LSTM"],
         "metricas_modelos": metricas_modelos,
+        "metricas_repeticoes": metricas_repeticoes,
         "modelos": modelos,
         "dados": dados,
         "y_test": y_test_reset,
@@ -595,17 +697,137 @@ def treinar_localidade(
         "y_test_original": y_test_original,
         "predicoes_original": predicoes_original,
         "datas_teste": datas_reset,
+        "feature_columns": feature_columns,
+        "target_transform": preparation.target_transform,
+        "inicio_treino": pd.to_datetime(dados_treino["data_alvo"]).min(),
+        "fim_treino": pd.to_datetime(dados_treino["data_alvo"]).max(),
+        "inicio_teste": pd.to_datetime(dados_teste["data_alvo"]).min(),
+        "fim_teste": pd.to_datetime(dados_teste["data_alvo"]).max(),
+        "n_treino": len(dados_treino),
+        "n_teste": len(dados_teste),
+        "estatisticas_horarias": ler_estatisticas_horarias_localidade(local),
+    }
+
+
+def reconstruir_resultado_localidade(
+    local: dict,
+    frequencia_modelagem: str = "mensal",
+) -> dict:
+    """Reconstrui metricas a partir das previsoes salvas e valida o alinhamento."""
+    from codigo_fonte.avaliacao import calcular_metricas
+    from codigo_fonte.features import dividir_treino_teste_temporal
+    from codigo_fonte.preprocessamento import preparar_serie_temporal
+
+    resultados_dir = caminho_resultados_frequencia(frequencia_modelagem)
+    slug_local = nome_arquivo(local["nome"])
+    arquivo_previsoes = (
+        resultados_dir / "previsoes" / slug_local / "previsoes_modelos.csv"
+    )
+    if not arquivo_previsoes.exists():
+        raise FileNotFoundError(f"Previsoes ausentes para {local['nome']}.")
+    previsoes = pd.read_csv(arquivo_previsoes, parse_dates=["data"])
+
+    # Refaz apenas o preprocessamento leve para comprovar que datas, valores de
+    # referencia, features e corte ainda correspondem ao codigo atual.
+    serie = carregar_ou_coletar_localidade(local, forcar_download=False)
+    preparation = preparar_serie_temporal(
+        serie,
+        output_path=None,
+        frequencia_modelagem=frequencia_modelagem,
+    )
+    dados = preparation.dados_modelagem
+    _, _, _, _, dados_treino, dados_teste = dividir_treino_teste_temporal(
+        dados,
+        preparation.feature_columns,
+        target_column="ghi_alvo",
+        train_ratio=0.8,
+    )
+    datas_esperadas = pd.to_datetime(dados_teste["data_alvo"]).reset_index(drop=True)
+    y_normalizado = dados_teste["ghi_alvo"].reset_index(drop=True)
+    y_wm2 = dados_teste["ghi_alvo_original"].reset_index(drop=True)
+    if not previsoes["data"].reset_index(drop=True).equals(datas_esperadas):
+        raise ValueError(f"Datas salvas divergentes para {local['nome']}.")
+    if not np.allclose(previsoes["ghi_real_wm2"], y_wm2, rtol=0, atol=1e-9):
+        raise ValueError(f"Valores de referencia divergentes para {local['nome']}.")
+
+    modelos = {
+        "XGBoost": "xgboost",
+        "MLP": "mlp",
+        "RNN": "rnn",
+        "LSTM": "lstm",
+        "VizinhosHistoricos": "vizinhoshistoricos",
+        "Persistencia": "persistencia",
+        "SazonalIngenuo": "sazonalingenuo",
+        "Climatologia": "climatologia",
+    }
+    metricas_modelos = {}
+    for nome_modelo, slug_modelo in modelos.items():
+        coluna_norm = f"ghi_previsto_{slug_modelo}_normalizado"
+        coluna_wm2 = f"ghi_previsto_{slug_modelo}_wm2"
+        if coluna_norm not in previsoes or coluna_wm2 not in previsoes:
+            raise ValueError(f"Previsao de {nome_modelo} ausente para {local['nome']}.")
+        metricas = calcular_metricas(
+            y_normalizado,
+            previsoes[coluna_norm],
+            nome_modelo,
+            sufixo="normalizado",
+        )
+        metricas.update(
+            calcular_metricas(
+                y_wm2,
+                previsoes[coluna_wm2],
+                nome_modelo,
+                sufixo="wm2",
+            )
+        )
+        metricas.update(
+            {
+                "Localidade": local["nome"],
+                "Pais": local["pais"],
+                "Lat": local["lat"],
+                "Lon": local["lon"],
+            }
+        )
+        metricas_modelos[nome_modelo] = metricas
+
+    arquivo_seeds = resultados_dir / "parciais_localidades" / f"seeds_{slug_local}.csv"
+    metricas_repeticoes = (
+        pd.read_csv(arquivo_seeds).to_dict("records")
+        if arquivo_seeds.exists() and arquivo_seeds.stat().st_size > 1
+        else []
+    )
+    return {
+        "localidade": local["nome"],
+        "pais": local["pais"],
+        "lat": local["lat"],
+        "lon": local["lon"],
+        "frequencia_modelagem": frequencia_modelagem,
+        "metricas_modelos": metricas_modelos,
+        "metricas_repeticoes": metricas_repeticoes,
+        "feature_columns": preparation.feature_columns,
+        "target_transform": preparation.target_transform,
+        "inicio_treino": pd.to_datetime(dados_treino["data_alvo"]).min(),
+        "fim_treino": pd.to_datetime(dados_treino["data_alvo"]).max(),
+        "inicio_teste": pd.to_datetime(dados_teste["data_alvo"]).min(),
+        "fim_teste": pd.to_datetime(dados_teste["data_alvo"]).max(),
+        "n_treino": len(dados_treino),
+        "n_teste": len(dados_teste),
         "estatisticas_horarias": ler_estatisticas_horarias_localidade(local),
     }
 
 
 def consolidar_resultados(resultados: list[dict], resultados_dir: Path) -> pd.DataFrame:
     """Salva as tabelas consolidadas para uma escala temporal de modelagem."""
+    from codigo_fonte.avaliacao import (
+        comparar_mae_com_referencia,
+        resumir_metricas_por_modelo,
+    )
+
     # Consolida uma linha por par localidade/modelo.
     print("\n" + "="*60)
     print("TABELA COMPARATIVA FINAL")
     print("="*60)
-    
+
     metricas_geral = []
     for res in resultados:
         if "erro" not in res:
@@ -622,13 +844,79 @@ def consolidar_resultados(resultados: list[dict], resultados_dir: Path) -> pd.Da
                         and chave not in {"Localidade", "Pais", "Lat", "Lon"}
                     },
                 })
-    
+
     df_metricas = pd.DataFrame(metricas_geral)
+    df_metricas = df_metricas.sort_values(["Localidade", "MAE_wm2", "Modelo"])
     df_metricas.to_csv(resultados_dir / "metricas_geral.csv", index=False)
-    
+
+    # Media e intervalo entre localidades: unidade de repeticao do estudo.
+    df_resumo_modelos = resumir_metricas_por_modelo(df_metricas, "MAE_wm2")
+    df_resumo_modelos.to_csv(
+        resultados_dir / "resumo_modelos_mae.csv",
+        index=False,
+    )
+    if "Climatologia" in set(df_metricas["Modelo"]):
+        df_comparacao = comparar_mae_com_referencia(df_metricas, "Climatologia")
+        df_comparacao.to_csv(
+            resultados_dir / "comparacao_climatologia.csv",
+            index=False,
+        )
+
+    # Resultados de cada seed ficam separados do ensemble para quantificar
+    # sensibilidade a inicializacao sem inflar artificialmente a amostra.
+    metricas_repeticoes = [
+        linha
+        for res in resultados
+        if "erro" not in res
+        for linha in res.get("metricas_repeticoes", [])
+    ]
+    df_repeticoes = pd.DataFrame(metricas_repeticoes)
+    if not df_repeticoes.empty:
+        df_repeticoes.to_csv(
+            resultados_dir / "metricas_por_seed.csv",
+            index=False,
+        )
+        resumo_seeds = (
+            df_repeticoes.groupby(["Localidade", "Pais", "Modelo"], as_index=False)
+            .agg(
+                N_seeds=("Seed", "nunique"),
+                MAE_wm2_media_seeds=("MAE_wm2", "mean"),
+                MAE_wm2_desvio_seeds=("MAE_wm2", "std"),
+                RMSE_wm2_media_seeds=("RMSE_wm2", "mean"),
+                RMSE_wm2_desvio_seeds=("RMSE_wm2", "std"),
+            )
+        )
+        resumo_seeds.to_csv(
+            resultados_dir / "variabilidade_sementes.csv",
+            index=False,
+        )
+
+    divisoes = pd.DataFrame(
+        [
+            {
+                "Localidade": res["localidade"],
+                "Frequencia": res["frequencia_modelagem"],
+                "Inicio_treino": res["inicio_treino"],
+                "Fim_treino": res["fim_treino"],
+                "N_treino": res["n_treino"],
+                "Inicio_teste": res["inicio_teste"],
+                "Fim_teste": res["fim_teste"],
+                "N_teste": res["n_teste"],
+                "Horizonte_passos": 1,
+                "Modo": "walk_forward_modelo_fixo_com_observacao_t",
+                "Transformacao_alvo": res["target_transform"],
+                "Features": ";".join(res["feature_columns"]),
+                "Status_inferencia": "retrospectiva_exploratoria",
+            }
+            for res in resultados
+            if "erro" not in res
+        ]
+    )
+    divisoes.to_csv(resultados_dir / "protocolo_temporal.csv", index=False)
+
     print("\nTabela de metricas (todas as localidades):")
     print(df_metricas.to_string(index=False))
-    
+
     # Esta tabela larga facilita comparar todos os modelos na mesma linha.
     resumo = []
     estatisticas_horarias = []
@@ -650,14 +938,14 @@ def consolidar_resultados(resultados: list[dict], resultados_dir: Path) -> pd.Da
                     f"{nome_modelo}_nRMSE_percentual_wm2": metricas["nRMSE_percentual_wm2"],
                     f"{nome_modelo}_R2_wm2": metricas["R2_wm2"],
                 })
-            # O vencedor do resumo e definido pelo maior R2 em escala fisica.
-            linha_resumo["Melhor_Modelo"] = max(
+            # MAE em W/m2 e a metrica primaria declarada antes da comparacao.
+            linha_resumo["Melhor_Modelo_MAE"] = min(
                 res["metricas_modelos"].items(),
-                key=lambda item: item[1]["R2_wm2"],
+                key=lambda item: item[1]["MAE_wm2"],
             )[0]
             resumo.append(linha_resumo)
             estatisticas_horarias.append(res["estatisticas_horarias"])
-    
+
     df_resumo = pd.DataFrame(resumo)
     df_resumo.to_csv(resultados_dir / "resumo_localidades.csv", index=False)
     df_estatisticas_horarias = pd.DataFrame(estatisticas_horarias)
@@ -665,26 +953,125 @@ def consolidar_resultados(resultados: list[dict], resultados_dir: Path) -> pd.Da
         resultados_dir / "estatisticas_horarias.csv",
         index=False,
     )
-    
+
     print("\n" + "="*60)
     print("RESUMO POR LOCALIDADE")
     print("="*60)
     print(df_resumo.to_string(index=False))
     print("\nEstatisticas horarias de GHI:")
     print(df_estatisticas_horarias.to_string(index=False))
-    
+
     print("\n[OK] Pipeline finalizado!")
     print(f"[INFO] Resultados salvos em: {resultados_dir.absolute()}")
     print(f"[INFO] Metricas gerais: {resultados_dir / 'metricas_geral.csv'}")
     print(f"[INFO] Resumo: {resultados_dir / 'resumo_localidades.csv'}")
+    print(f"[INFO] Comparacao com climatologia: {resultados_dir / 'comparacao_climatologia.csv'}")
+    print(f"[INFO] Protocolo temporal: {resultados_dir / 'protocolo_temporal.csv'}")
     print(f"[INFO] Estatisticas horarias: {resultados_dir / 'estatisticas_horarias.csv'}")
     return df_resumo
+
+
+def _reduzir_resultado_para_consolidacao(resultado: dict) -> dict:
+    """Remove objetos grandes que nao sao usados depois de salvar cada local."""
+    chaves = {
+        "localidade",
+        "pais",
+        "lat",
+        "lon",
+        "frequencia_modelagem",
+        "metricas_modelos",
+        "metricas_repeticoes",
+        "feature_columns",
+        "target_transform",
+        "inicio_treino",
+        "fim_treino",
+        "inicio_teste",
+        "fim_teste",
+        "n_treino",
+        "n_teste",
+        "estatisticas_horarias",
+    }
+    return {chave: valor for chave, valor in resultado.items() if chave in chaves}
+
+
+def _worker_treinar_localidade(conexao, kwargs: dict) -> None:
+    """Executa uma localidade em processo descartavel e devolve dados pequenos."""
+    try:
+        resultado = treinar_localidade(**kwargs, reter_modelos=False)
+        conexao.send(("ok", _reduzir_resultado_para_consolidacao(resultado)))
+    except BaseException as exc:  # a falha precisa atravessar a fronteira do processo
+        conexao.send(
+            (
+                "erro",
+                {
+                    "mensagem": str(exc),
+                    "tipo": type(exc).__name__,
+                    "traceback": traceback.format_exc(),
+                },
+            )
+        )
+    finally:
+        conexao.close()
+
+
+def salvar_manifesto_execucao(
+    frequencia_modelagem: str,
+    repeticoes_redes: int,
+    seed_base: int,
+) -> None:
+    """Registra entradas, codigo, ambiente e protocolo do lote consolidado."""
+    from codigo_fonte.reprodutibilidade import salvar_manifesto
+
+    resultados_dir = caminho_resultados_frequencia(frequencia_modelagem)
+    arquivos_entrada = [
+        OUTPUT_DIR / f"{nome_arquivo(local['nome'])}.csv" for local in LOCALIDADES
+    ]
+    arquivos_entrada.extend(
+        [
+            Path(__file__),
+            Path(__file__).resolve().parent / "reavaliar_modelos_salvos.py",
+            Path(__file__).resolve().parent / "requirements.txt",
+            Path(__file__).resolve().parent / "codigo_fonte" / "preprocessamento.py",
+            Path(__file__).resolve().parent / "codigo_fonte" / "features.py",
+            Path(__file__).resolve().parent / "codigo_fonte" / "modelos.py",
+            Path(__file__).resolve().parent / "codigo_fonte" / "avaliacao.py",
+            Path(__file__).resolve().parent / "codigo_fonte" / "baselines.py",
+        ]
+    )
+    salvar_manifesto(
+        resultados_dir / "manifesto_execucao.json",
+        arquivos_entrada=arquivos_entrada,
+        configuracao={
+            "frequencia": frequencia_modelagem,
+            "train_ratio": 0.8,
+            "horizonte_passos": 1,
+            "modo_previsao": "walk_forward_modelo_fixo_com_observacao_t",
+            "repeticoes_redes": repeticoes_redes,
+            "seed_base": seed_base,
+            "metrica_primaria": "MAE_wm2",
+            "referencia_primaria": "Climatologia",
+            "quantizacao_modelagem": False,
+            "status_inferencia": "retrospectiva_exploratoria",
+        },
+        seed=seed_base,
+        raiz_projeto=Path(__file__).resolve().parent,
+        metadados={
+            "observacao": (
+                "A janela de 2024 ja foi inspecionada durante o desenvolvimento; "
+                "os resultados nao constituem confirmacao prospectiva independente."
+            )
+        },
+    )
 
 
 def executar_lote_modelagem(
     frequencia_modelagem: str,
     verbose: bool = True,
     forcar_download: bool = False,
+    repeticoes_redes: int = 5,
+    seed_base: int = 42,
+    gerar_figuras: bool = True,
+    isolar_localidades: bool = True,
 ) -> list[dict]:
     """Executa treinamento e consolidacao de uma escala temporal."""
     resultados_dir = caminho_resultados_frequencia(frequencia_modelagem)
@@ -697,13 +1084,50 @@ def executar_lote_modelagem(
     resultados = []
     for local in LOCALIDADES:
         try:
-            resultado = treinar_localidade(
-                local,
-                verbose=verbose,
-                forcar_download=forcar_download,
-                frequencia_modelagem=frequencia_modelagem,
-            )
+            parametros = {
+                "local": local,
+                "verbose": verbose,
+                "forcar_download": forcar_download,
+                "frequencia_modelagem": frequencia_modelagem,
+                "repeticoes_redes": repeticoes_redes,
+                "seed_base": seed_base,
+                "gerar_figuras": gerar_figuras,
+            }
+            if isolar_localidades:
+                contexto = mp.get_context("spawn")
+                conexao_pai, conexao_filho = contexto.Pipe(duplex=False)
+                processo = contexto.Process(
+                    target=_worker_treinar_localidade,
+                    args=(conexao_filho, parametros),
+                    name=f"ghi-{nome_arquivo(local['nome'])}",
+                )
+                processo.start()
+                conexao_filho.close()
+                try:
+                    status, payload = conexao_pai.recv()
+                except EOFError as exc:
+                    processo.join()
+                    raise RuntimeError(
+                        f"Subprocesso terminou sem resultado (exit code {processo.exitcode})."
+                    ) from exc
+                finally:
+                    conexao_pai.close()
+                processo.join()
+                if status == "erro":
+                    raise RuntimeError(
+                        f"{payload['tipo']}: {payload['mensagem']}\n{payload['traceback']}"
+                    )
+                if processo.exitcode != 0:
+                    raise RuntimeError(
+                        f"Subprocesso terminou com exit code {processo.exitcode}."
+                    )
+                resultado = payload
+            else:
+                resultado = _reduzir_resultado_para_consolidacao(
+                    treinar_localidade(**parametros, reter_modelos=False)
+                )
             resultados.append(resultado)
+            gc.collect()
         except Exception as e:
             # Registra a falha para apresentar todas as localidades problematicas.
             print(f"  ERRO ao processar {local['nome']}: {e}")
@@ -730,6 +1154,8 @@ def executar_lote_modelagem(
         )
 
     consolidar_resultados(resultados, resultados_dir)
+
+    salvar_manifesto_execucao(frequencia_modelagem, repeticoes_redes, seed_base)
     return resultados
 
 
@@ -737,7 +1163,10 @@ def main():
     """Interpreta o modo solicitado e coordena as dez localidades."""
     # As opcoes permitem separar validacao, coleta e treinamento.
     parser = argparse.ArgumentParser(
-        description="Treina XGBoost, MLP, RNN e LSTM para previsao diaria ou mensal de GHI em todas as localidades."
+        description=(
+            "Avalia baselines, XGBoost, MLP, RNN, LSTM e vizinhos historicos "
+            "para previsao de GHI em todas as localidades."
+        )
     )
     parser.add_argument(
         "--verbose",
@@ -766,7 +1195,38 @@ def main():
         default="diaria",
         help="Escala temporal da modelagem. Use 'ambas' para rodar diaria e mensal.",
     )
+    parser.add_argument(
+        "--repeticoes-redes",
+        type=int,
+        default=3,
+        help="Numero de sementes para MLP, RNN e LSTM (padrao: 5).",
+    )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=42,
+        help="Semente inicial reproduzivel (padrao: 42).",
+    )
+    parser.add_argument(
+        "--sem-figuras",
+        action="store_true",
+        help="Nao gera o grande conjunto de figuras por localidade.",
+    )
+    parser.add_argument(
+        "--somente-consolidar",
+        action="store_true",
+        help=(
+            "Revalida e consolida previsoes existentes sem treinar novamente; "
+            "util para retomar um lote interrompido."
+        ),
+    )
     args = parser.parse_args()
+    if args.repeticoes_redes < 1:
+        parser.error("--repeticoes-redes deve ser positivo")
+
+    from codigo_fonte.reprodutibilidade import definir_seed_global
+
+    definir_seed_global(args.seed, configurar_tensorflow=False)
     
     # Prepara a estrutura antes de qualquer modo de execucao.
     criar_pastas()
@@ -846,11 +1306,30 @@ def main():
     frequencias = ["diaria", "mensal"] if args.frequencia == "ambas" else [args.frequencia]
     resultados_por_frequencia = {}
     for frequencia_modelagem in frequencias:
-        resultados_por_frequencia[frequencia_modelagem] = executar_lote_modelagem(
-            frequencia_modelagem,
-            verbose=args.verbose,
-            forcar_download=args.forcar_download,
-        )
+        if args.somente_consolidar:
+            resultados = [
+                reconstruir_resultado_localidade(local, frequencia_modelagem)
+                for local in LOCALIDADES
+            ]
+            consolidar_resultados(
+                resultados,
+                caminho_resultados_frequencia(frequencia_modelagem),
+            )
+            salvar_manifesto_execucao(
+                frequencia_modelagem,
+                args.repeticoes_redes,
+                args.seed,
+            )
+            resultados_por_frequencia[frequencia_modelagem] = resultados
+        else:
+            resultados_por_frequencia[frequencia_modelagem] = executar_lote_modelagem(
+                frequencia_modelagem,
+                verbose=args.verbose,
+                forcar_download=args.forcar_download,
+                repeticoes_redes=args.repeticoes_redes,
+                seed_base=args.seed,
+                gerar_figuras=not args.sem_figuras,
+            )
     
     return resultados_por_frequencia
 

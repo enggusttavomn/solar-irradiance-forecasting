@@ -6,7 +6,6 @@
 \usepackage[brazil]{babel}
 \usepackage{amsmath,amssymb}
 \usepackage{array}
-\usepackage{balance}
 \usepackage{booktabs}
 \usepackage{cite}
 \usepackage{graphicx}
@@ -15,15 +14,13 @@
 \usepackage{url}
 \usetikzlibrary{arrows.meta,fit,positioning}
 
-\graphicspath{{../figuras/}}
+\graphicspath{{figuras/}}
 \emergencystretch=2em
 \renewcommand{\abstractname}{Resumo}
 \renewcommand{\IEEEkeywordsname}{Palavras-chave}
-\newcounter{algoritmo}
-\newcommand{\pendente}[1]{\texttt{\detokenize{#1}}}
 
-\title{Previsão Horária de Irradiância Global Horizontal em Localidades de
-Fábricas de Veículos Elétricos com TimesNet}
+\title{Previsão Horária de Irradiância Global Horizontal em Localidades
+Associadas a Fábricas de Veículos Elétricos com TimesNet}
 
 \author{Gustavo de Melo Nascimento, Thales Wulfert Cabral e Gustavo Fraidenraich%
 \thanks{Os autores são da Faculdade de Engenharia Elétrica e de Computação,
@@ -35,24 +32,23 @@ g239679@dac.unicamp.br, t264377@dac.unicamp.br e gfraiden@unicamp.br.}}
 \maketitle
 
 \begin{abstract}
-Este artigo investiga o TimesNet na previsão horária de Irradiância Global
-Horizontal (GHI) em dez localidades de fábricas de veículos elétricos, com
-horizontes de 24, 48 e 72 horas. Os dados do produto GOES Aggregated PSM v4 da
-National Solar Radiation Database cobrem 2019--2024; a resolução nativa de
-30 minutos é agregada por média para uma hora. Cada exemplo fornece as 336
-horas anteriores e tem como alvo as 72 horas seguintes. O protocolo
-cronológico usa 2019--2022 para treinamento, 2023 para validação,
-2019--2023 para o ajuste final e 2024 exclusivamente para teste. O TimesNet é
-comparado à persistência diária, ao sazonal ingênuo anual, ao XGBoost e à
-LSTM. Após a inversão da normalização, todas as previsões são submetidas ao
-mesmo pós-processamento físico: valores negativos são truncados em zero e
-horas com elevação solar não positiva são zeradas. No horizonte de 72 horas,
-o TimesNet obteve RMSE médio de
-\pendente{PENDENTE_RMSE_TIMESNET_72H} W/m$^2$, frente a
-\pendente{PENDENTE_RMSE_MELHOR_COMPETIDOR_72H} W/m$^2$ do melhor competidor.
-A síntese comparativa final é
-\pendente{PENDENTE_SINTESE_RESULTADOS_ABSTRACT}. Os resultados se restringem
-às localidades, aos anos e ao protocolo retrospectivo avaliados.
+Este artigo avalia uma adaptação compacta do TimesNet para prever, em escala
+horária, a irradiância global horizontal (GHI) em dez localidades associadas
+a fábricas de veículos elétricos. Usam-se 336 h de histórico para prever
+diretamente as 72 h seguintes, avaliando-se também os prefixos de 24 e 48 h.
+As séries da National Solar Radiation Database (NSRDB) cobrem 2019--2024 e
+agregam registros de 30 min em médias horárias. A divisão cronológica destina
+2019--2022 ao treinamento, 2023 à seleção do número de épocas, 2019--2023 ao
+ajuste final e 2024 ao teste retrospectivo. Comparam-se TimesNet, uma rede
+\textit{Long Short-Term Memory} (LSTM), persistência diária e sazonal ingênuo
+anual sob as mesmas origens e regras físicas de pós-processamento.
+% AUTO-RESULTADOS-ABSTRACT-BEGIN
+Em 72 h, o TimesNet obteve raiz do erro quadrático médio (RMSE) macro de
+101,04 W/m$^2$, enquanto a LSTM obteve 104,68 W/m$^2$, o que corresponde a uma
+redução relativa de 3,48\%. O TimesNet também apresentou RMSE menor que o da
+LSTM nos demais horizontes e que o das duas referências nos três horizontes.
+Os resultados limitam-se às localidades, aos anos e ao protocolo estudados.
+% AUTO-RESULTADOS-ABSTRACT-END
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -63,72 +59,61 @@ TimesNet.
 \section{Introdução}
 \label{sec:introducao}
 
-A disponibilidade do recurso solar condiciona a produção fotovoltaica e
-influencia decisões de dimensionamento, planejamento e operação energética.
-Previsões de irradiância podem reduzir a incerteza associada a essas decisões,
-mas sua formulação depende do horizonte, da resolução e das informações
-meteorológicas disponíveis \cite{antonanzas2016,voyant2017,yang2018}. Em
-resolução horária, a previsão para vários dias precisa representar tanto a
-alternância entre noite e dia quanto o formato intradiário da curva solar.
+Previsões de irradiância subsidiam o dimensionamento, o planejamento e a
+operação energética, mas sua utilidade depende da resolução, do horizonte e
+das informações disponíveis na origem
+\cite{antonanzas2016,voyant2017,yang2018}. Em resolução horária e para
+horizontes de vários dias, é preciso representar o ciclo noite--dia e as
+variações meteorológicas que alteram a amplitude e a forma dos perfis diurnos.
 
-Este trabalho considera a Irradiância Global Horizontal (GHI), a irradiância
-total incidente em uma superfície horizontal. Em termos das componentes direta
-e difusa,
+A literatura combina redes recorrentes, modelos convolucionais e mecanismos
+de atenção, com diferentes entradas, horizontes e protocolos
+\cite{voyant2017}; isso dificulta separar o efeito da arquitetura dos efeitos
+das partições, origens e pós-processamento. O TimesNet identifica períodos
+dominantes, reorganiza a sequência em duas dimensões e aplica convoluções 2D
+às variações dentro e entre períodos \cite{wu2023}.
 
-\begin{equation}
-  \mathrm{GHI}=\mathrm{DHI}+\mathrm{DNI}\cos(\theta_z),
-  \label{eq:ghi}
-\end{equation}
+Investiga-se se uma adaptação compacta do TimesNet reduz o erro em relação a
+uma LSTM e referências temporais quando todos os métodos compartilham dados,
+origens e tratamento físico. Avaliam-se 336 h de contexto, uma saída direta de
+72 h e seus prefixos de 24 e 48 h. As contribuições são: (i) um modelo global
+para dez localidades com \textit{embedding} do identificador; (ii) uma
+uma versão compacta do TimesNet para a previsão univariada de GHI; (iii) a comparação
+de quatro métodos sob o mesmo protocolo cronológico, por horizonte, passo e
+localidade; e (iv) a quantificação do efeito das restrições físicas. As
+fábricas definem apenas os pontos geográficos, sem uso de dados industriais.
 
-\noindent em que DHI é a irradiância difusa horizontal, DNI é a irradiância
-direta normal e $\theta_z$ é o ângulo zenital solar \cite{duffie2013}. A GHI é
-empregada por representar, em W/m$^2$, a disponibilidade solar sobre o plano
-horizontal e por integrar produtos padronizados da National Solar Radiation
-Database (NSRDB) \cite{sengupta2018}. A variável-alvo deste estudo é a média
-horária de GHI, não energia nem produção fotovoltaica.
+\subsection{Fundamentação e trabalhos relacionados}
+\label{sec:fundamentacao}
 
-A sequência horária exibe múltiplas periodicidades e variações meteorológicas.
-Em dias consecutivos, cada arco de irradiância corresponde aproximadamente ao
-nascer do sol, crescimento da GHI, pico, decaimento e pôr do sol. O problema
-considerado consiste em usar as últimas 336 horas, equivalentes a 14 dias, para
-prever conjuntamente as próximas 72 horas. Os prefixos dessa previsão também
-são avaliados em 24 e 48 horas, permitindo medir a degradação do desempenho à
-medida que o horizonte aumenta.
+A GHI é a irradiância total em uma superfície horizontal:
+$\mathrm{GHI}=\mathrm{DHI}+\mathrm{DNI}\cos(\theta_z)$, em que DHI e DNI são
+as componentes difusa horizontal e direta normal, e $\theta_z$ é o ângulo
+zenital \cite{duffie2013}. O alvo é a GHI média horária da NSRDB em W/m$^2$
+\cite{sengupta2018}, não energia acumulada nem potência fotovoltaica. Seu ciclo
+diário é modulado pela sazonalidade e pelas condições atmosféricas, gerando
+variações intraperíodo e interperíodo.
 
-A literatura de previsão solar abrange métodos estatísticos, aprendizado de
-máquina e redes neurais \cite{voyant2017,voyant2022}. Neste estudo, XGBoost
-\cite{chen2016} representa a regressão baseada em árvores e Long Short-Term
-Memory (LSTM) \cite{hochreiter1997} representa as redes recorrentes. A
-persistência diária e o sazonal ingênuo anual fornecem referências clássicas
-que exploram, respectivamente, os ciclos diário e anual.
+A previsão solar abrange estatística, aprendizado de máquina e redes neurais
+\cite{voyant2017,voyant2022}. Referências ingênuas indicam se a complexidade
+adicional traz ganho, e a LSTM constitui um comparador recorrente consolidado
+\cite{hochreiter1997}.
 
-O modelo principal é o TimesNet, que transforma uma sequência unidimensional
-em múltiplas representações bidimensionais orientadas pelos períodos dominantes
-detectados no domínio da frequência \cite{wu2023}. Convoluções
-bidimensionais modelam conjuntamente variações dentro de cada período e entre
-períodos. Essa estrutura é pertinente à GHI horária porque a regularidade
-astronômica diária convive com mudanças de amplitude e formato entre dias.
-Sua adequação, contudo, deve ser verificada contra competidores sob um
-protocolo temporal comum.
+Na resolução horária, redes densas e LSTM já foram usadas em previsão de
+múltiplos passos \cite{guariso2020}, e o TimesNet, em séries solares
+multivariadas e diferentes horizontes \cite{zhu2024}. Em escala mensal,
+Cabral, Fraidenraich e Capretz avaliaram modelos de linguagem e variantes de
+Transformer em 40 localidades e horizonte de cinco anos \cite{cabral2026}.
+As escalas distintas impedem comparar diretamente os erros: resolução,
+horizonte e protocolo definem problemas experimentais diferentes.
 
-O objetivo é avaliar se o TimesNet reduz o erro de previsão horária de GHI em
-relação à LSTM, ao XGBoost e às duas referências ingênuas nos horizontes de
-24, 48 e 72 horas. As fábricas definem somente os dez pontos geográficos; não
-são utilizados dados de carga, geração, produção ou operação industrial.
+Este estudo prevê diretamente 72 h em resolução horária, usa apenas o
+histórico de GHI como entrada dinâmica, acrescenta o identificador estático da
+localidade e reserva um ano completo para teste. A contribuição é configurar
+e avaliar experimentalmente o TimesNet, não propor sua arquitetura.
 
-\subsection{Principais contribuições}
-
-As contribuições são: (i) formulação de uma previsão global de GHI com entrada
-de 336 horas e saída conjunta de 72 horas para dez localidades; (ii) avaliação
-do TimesNet contra persistência diária, sazonal ingênuo anual, XGBoost e LSTM
-nas mesmas origens de 2024; (iii) protocolo cronológico com seleção em 2023,
-reajuste em 2019--2023 e teste mantido fora do ajuste; e (iv)
-pós-processamento explícito que impõe a não negatividade da GHI e a anulação
-das previsões noturnas por posição solar.
-
-O restante do artigo está organizado da seguinte forma. A Seção~II descreve o
-sistema e o protocolo; a Seção~III apresenta a configuração e as métricas; a
-Seção~IV discute os resultados; e a Seção~V reúne as conclusões.
+\section{Metodologia e protocolo experimental}
+\label{sec:metodo}
 
 \begin{figure*}[!t]
 \centering
@@ -143,7 +128,7 @@ Seção~IV discute os resultados; e a Seção~V reúne as conclusões.
 \node[grupo,minimum width=2.55cm] (ga) at (0,0) {};
 \node[titulo] at ([yshift=-0.31cm]ga.north) {Locais e dados};
 \node[caixa,minimum width=1.95cm] (fabricas) at ([yshift=-1.05cm]ga.north)
-  {10 fábricas\\coordenadas};
+  {Coordenadas de\\10 fábricas};
 \node[caixa,minimum width=1.95cm,below=0.20cm of fabricas] (dados)
   {GHI NSRDB\\30 min, 2019--2024};
 \draw[seta] (fabricas)--(dados);
@@ -154,7 +139,7 @@ Seção~IV discute os resultados; e a Seção~V reúne as conclusões.
 \node[caixa,minimum width=2.25cm] (audit) at ([yshift=-1.05cm]gb.north)
   {Auditoria e média\\30 min $\rightarrow$ 1 h};
 \node[caixa,minimum width=2.25cm,below=0.20cm of audit] (normaliza)
-  {Tempo local fixo\\e normalização};
+  {Tempo-padrão local\\e normalização};
 \draw[seta] (audit)--(normaliza);
 \node[rotulo] at ([yshift=-0.25cm]gb.south) {(b)};
 
@@ -168,11 +153,11 @@ Seção~IV discute os resultados; e a Seção~V reúne as conclusões.
 \node[rotulo] at ([yshift=-0.25cm]gc.south) {(c)};
 
 \node[grupo,minimum width=3.05cm] (gd) at (9.65,0) {};
-\node[titulo] at ([yshift=-0.31cm]gd.north) {Modelos globais};
+\node[titulo] at ([yshift=-0.31cm]gd.north) {Métodos avaliados};
 \node[caixa,minimum width=2.45cm] (timesnet) at ([yshift=-1.05cm]gd.north)
-  {\textbf{TimesNet}};
+  {\textbf{TimesNet} e LSTM};
 \node[caixa,minimum width=2.45cm,below=0.20cm of timesnet] (competidores)
-  {LSTM, XGBoost,\\persistência e sazonal};
+  {Persistência diária\\e sazonal ingênuo anual};
 \node[rotulo] at ([yshift=-0.25cm]gd.south) {(d)};
 
 \node[grupo,minimum width=2.75cm] (ge) at (13.05,0) {};
@@ -185,294 +170,247 @@ Seção~IV discute os resultados; e a Seção~V reúne as conclusões.
 \node[rotulo] at ([yshift=-0.25cm]ge.south) {(e)};
 
 \node[grupo,minimum width=2.75cm] (gf) at (16.20,0) {};
-\node[titulo] at ([yshift=-0.31cm]gf.north) {Restrição física};
+\node[titulo] at ([yshift=-0.31cm]gf.north) {Pós-processamento};
 \node[caixa,minimum width=2.15cm] (clip) at ([yshift=-1.05cm]gf.north)
-  {Clipping\\$\widehat{\mathrm{GHI}}\geq0$};
+  {Truncamento em zero\\$\widehat{\mathrm{GHI}}\geq0$};
 \node[caixa,minimum width=2.15cm,below=0.20cm of clip] (noite)
-  {Máscara noturna\\elevação $\leq0^\circ$};
+  {Máscara solar\\centro da hora $\leq0^\circ$};
 \draw[seta] (clip)--(noite);
 \node[rotulo] at ([yshift=-0.25cm]gf.south) {(f)};
 
 \node[grupo,minimum width=3.05cm] (gg) at (19.55,0) {};
-\node[titulo] at ([yshift=-0.31cm]gg.north) {Avaliação e artigo};
+\node[titulo] at ([yshift=-0.31cm]gg.north) {Avaliação};
 \node[caixa,minimum width=2.45cm] (metrica) at ([yshift=-0.93cm]gg.north)
-  {24/48/72 h\\RMSE, MAE, nRMSE, $R^2$};
-\node[caixa,minimum width=2.45cm,below=0.16cm of metrica] (artefatos)
-  {Tabelas e figura};
-\node[caixa,minimum width=2.45cm,below=0.16cm of artefatos] (overleaf)
-  {Atualização do\\artigo no Overleaf};
-\draw[seta] (metrica)--(artefatos);
-\draw[seta] (artefatos)--(overleaf);
+  {24, 48 e 72 h\\RMSE, MAE, nRMSE, $R^2$};
+\node[caixa,minimum width=2.45cm,below=0.16cm of metrica] (analise_macro)
+  {Análise macro e\\por localidade};
+\node[caixa,minimum width=2.45cm,below=0.16cm of analise_macro] (analise_temporal)
+  {Análise por passo\\e período diurno};
+\draw[seta] (metrica)--(analise_macro);
+\draw[seta] (analise_macro)--(analise_temporal);
 \node[rotulo] at ([yshift=-0.25cm]gg.south) {(g)};
 
 \draw[seta] (dados.east)--(audit.west);
 \draw[seta] (normaliza.east)--(janelas.west);
-\draw[seta] (origens.east)--(timesnet.west);
-\draw[seta] (timesnet.east)--(previsao.west);
+\draw[seta] (origens.east)--(gd.west);
+\draw[seta] (gd.east)--(previsao.west);
 \draw[seta] (inversao.east)--(clip.west);
 \draw[seta] (noite.east)--(metrica.west);
 \end{tikzpicture}%
 }
-\caption{Fluxo do sistema, das localidades das fábricas e dos dados horários
-até a previsão multi-horizonte, as restrições físicas, a avaliação e a
-atualização dos artefatos do artigo.}
+\caption{Fluxo metodológico desde a aquisição dos dados horários até a
+avaliação. As coordenadas das fábricas definem as séries. Todos os métodos são
+avaliados nas mesmas origens, alvos e partições temporais e submetidos às
+mesmas regras de pós-processamento.}
 \label{fig:sistema}
 \end{figure*}
 
-\section{Sistema e método experimental}
-\label{sec:metodo}
+A Fig.~\ref{fig:sistema} resume o procedimento. Cada coordenada define uma
+série $S_\ell$, $\ell\in\mathcal L$. A auditoria verifica cobertura,
+ordenação, duplicidades, lacunas e valores inválidos; pares consecutivos de
+30 min são então convertidos em médias horárias. O índice permanece em UTC e
+recebe também uma representação em tempo-padrão local com deslocamento fixo.
+Para cada origem diária $t$ às 00 h locais, constroem-se
+$\mathbf x_{\ell,t}=(y_{\ell,t-336},\ldots,y_{\ell,t-1})$ e
+$\mathbf y_{\ell,t}=(y_{\ell,t},\ldots,y_{\ell,t+71})$, sem informação
+posterior à origem.
 
-A Fig.~\ref{fig:sistema} resume o fluxo, cujos blocos são descritos na mesma
-ordem.
+As 336 h de entrada correspondem a 14 ciclos diários completos e a duas
+semanas, enquanto as 72 h de saída cobrem três dias. As origens diárias
+reduzem a redundância em comparação com origens a cada hora, mas os alvos de
+origens consecutivas ainda se sobrepõem. A estratégia direta estima todos os
+passos conjuntamente e evita realimentar previsões como entradas; em
+contrapartida, exige que a cabeça do modelo aprenda de uma vez a estrutura de
+erro ao longo das 72 h.
 
-\noindent\textbf{Estágio (a) -- localidades e dados.} Cada fábrica define uma
-coordenada geográfica e, portanto, uma série $S_\ell$ para
-$\ell\in\mathcal L$. O produto público GOES Aggregated PSM v4.0.0 é obtido em
-HDF5 na resolução nativa de 30 minutos. O período 2019--2024 resulta, após a
-agregação horária, em 52.608 valores por localidade e 526.080 valores nas dez
-séries.
-
-\noindent\textbf{Estágio (b) -- pré-processamento.} São auditados cobertura
-temporal, ordenação, duplicidades, lacunas, valores não finitos e sinais. Cada
-par de registros consecutivos de 30 minutos é agregado pela média aritmética,
-produzindo GHI horária. O índice é mantido em UTC e também expresso em tempo
-local padrão mediante um deslocamento UTC fixo por localidade. Os parâmetros
-da normalização são estimados somente no subconjunto de treinamento
-correspondente e reaplicados aos dados posteriores.
-
-\noindent\textbf{Estágio (c) -- janelas.} Para uma origem $t$ às 00 h locais,
-a entrada é
-$\mathbf x_{\ell,t}=(y_{\ell,t-336},\ldots,y_{\ell,t-1})$ e o alvo é
-$\mathbf y_{\ell,t}=(y_{\ell,t},\ldots,y_{\ell,t+71})$. Assim, o comprimento
-de entrada é $T=336$ e o horizonte máximo é $H=72$. As origens avançam em
-passos de 24 horas. Apenas informações anteriores a cada origem entram na
-janela.
-
-\noindent\textbf{Estágio (d) -- modelos.} As janelas das dez localidades são
-reunidas para o ajuste de um modelo global por arquitetura, com parâmetros
-compartilhados entre as séries. O TimesNet é o modelo proposto. XGBoost e LSTM
-recebem o mesmo histórico normalizado e produzem 72 saídas por estratégia
-direta. A persistência repete o último perfil diário observado, enquanto o
-sazonal ingênuo usa a defasagem anual de 8.760 horas:
+TimesNet e LSTM compartilham parâmetros entre localidades e geram as 72 saídas
+em uma passagem. A persistência repete o último perfil diário e a referência
+sazonal usa a mesma hora local do ano anterior:
 
 \begin{align}
  \widehat y^{\mathrm{per}}_{\ell,t+h-1}
  &=y_{\ell,t-24+((h-1)\bmod 24)},\label{eq:persistencia}\\
  \widehat y^{\mathrm{saz}}_{\ell,t+h-1}
- &=y_{\ell,t+h-1-8760},\qquad h=1,\ldots,72.\label{eq:sazonal}
+ &=y_{\ell,\operatorname{anoAnt}(t+h-1)},\quad h=1,\ldots,72.
+ \label{eq:sazonal}
 \end{align}
 
-\noindent\textbf{Estágio (e) -- previsão e escala física.} Cada modelo gera a
-curva completa de 72 horas. As previsões normalizadas dos modelos aprendidos
-são então invertidas para W/m$^2$ com os parâmetros da respectiva localidade.
-As referências já operam na escala física.
-
-\noindent\textbf{Estágio (f) -- pós-processamento físico.} A GHI é uma
-grandeza fisicamente não negativa. Por isso, previsões negativas são
-truncadas para zero. Além disso, a posição solar é calculada para cada
-coordenada e instante com o pvlib \cite{anderson2023}; quando a elevação solar
-$\alpha_{\ell,t+h-1}$ é menor ou igual a $0^\circ$, a previsão é zerada
-independentemente da saída do modelo. Formalmente,
+\noindent em que $\operatorname{anoAnt}(\cdot)$ preserva mês, dia e hora, com
+29 de fevereiro mapeado para 28 de fevereiro. Após a inversão da normalização,
+o pós-processamento aplica o truncamento em zero (\textit{clipping}) aos valores negativos e
+zera a previsão quando a elevação solar no centro do intervalo, calculada com
+\textit{pvlib}
+\cite{anderson2023}, não é positiva:
 
 \begin{equation}
- \widehat y^{\mathrm{fis}}_{\ell,t+h-1}
+ \widehat y^{\mathrm{pos}}_{\ell,t+h-1}
  =\max\!\left(0,\widehat y^{\mathrm{inv}}_{\ell,t+h-1}\right)
   \mathbb I\!\left(\alpha_{\ell,t+h-1}>0^\circ\right).
  \label{eq:posprocessamento}
 \end{equation}
 
-\noindent A máscara usa apenas geometria solar determinística, sem observar a
-GHI futura, e é aplicada de modo idêntico aos cinco métodos antes do cálculo
-das métricas. Não se impõe limite superior.
+\noindent A regra usa apenas geometria determinística e é comum aos quatro
+métodos. Como o alvo é uma média horária, a classificação pelo centro do
+intervalo é aproximada. Avaliam-se os prefixos de 24, 48 e 72 h por localidade
+e por passo, além da média macro e do subconjunto com elevação positiva.
 
-\noindent\textbf{Estágio (g) -- avaliação e artefatos.} Os prefixos de 24, 48
-e 72 horas de cada previsão são avaliados. O fluxo exporta as métricas, as
-tabelas e a figura de previsão em formato compatível com a atualização do
-artigo no Overleaf.
+\subsection{Arquitetura TimesNet adaptada}
 
-\subsection{TimesNet}
-
-Seja $\mathbf X^{(r)}\in\mathbb R^{T'\times d}$ a representação no bloco
-$r$, em que $d$ é a dimensão latente e $T'$ inclui a extensão temporal
-necessária à previsão. O TimesNet identifica periodicidades dominantes por uma
-transformada rápida de Fourier (FFT) ao longo do eixo temporal. A amplitude
-média entre canais é
-
-\begin{equation}
- \mathbf a^{(r)}
- =\operatorname{Avg}_{d}\!\left(
-   \left|\operatorname{FFT}\!\left(\mathbf X^{(r)}\right)\right|
-  \right).
- \label{eq:fft}
-\end{equation}
-
-\noindent As $k$ frequências não nulas de maior amplitude,
-$f_1,\ldots,f_k$, definem períodos $p_i\approx T'/f_i$. Para cada período, a
-sequência é preenchida até um comprimento compatível e reorganizada de
-$1$D para $2$D:
+Seja $\mathbf X_b^{(r)}\in\mathbb R^{T\times d}$ a representação da amostra
+$b$ no bloco $r$, em que $T$ é o comprimento temporal e $d$ é a dimensão
+latente. A transformada rápida de Fourier (FFT) identifica os $k$ índices
+espectrais não nulos $f_i$ de maior amplitude média no lote; cada índice
+define o período discreto $p_i=\lfloor T/f_i\rfloor$. Após preenchimento, a
+sequência é reorganizada em
+$c_i=\lceil T/p_i\rceil$ ciclos de $p_i$ posições e processada por convoluções
+2D multiescala. Denotando por $a_{b,f_i}^{(r)}$ a amplitude da amostra $b$ no
+índice $f_i$, as saídas $\mathbf Z_{b,i}^{(r)}$ são combinadas por
 
 \begin{equation}
- \mathbf X^{(r)}_{2D,i}
- =\operatorname{Reshape}_{p_i,f_i}\!\left(
-   \operatorname{Pad}(\mathbf X^{(r)})\right).
- \label{eq:timesnet_2d}
+ w_{b,i}^{(r)}=\frac{\exp(a_{b,f_i}^{(r)})}
+ {\sum_{j=1}^{k}\exp(a_{b,f_j}^{(r)})},\qquad
+ \mathbf X_b^{(r+1)}=\mathbf X_b^{(r)}+
+ \sum_{i=1}^{k}w_{b,i}^{(r)}\mathbf Z_{b,i}^{(r)}.
+ \label{eq:timesnet}
 \end{equation}
 
-\noindent Um eixo da matriz representa posições dentro do período e o outro,
-suas repetições sucessivas. Um bloco Inception, formado por convoluções
-bidimensionais com diferentes tamanhos de núcleo, extrai simultaneamente
-variações intraperíodo e interperíodo. A saída é reconvertida para $1$D e
-recortada ao comprimento original:
+Nesta adaptação, uma convolução circular unidimensional de núcleo 3 projeta a
+entrada univariada; somam-se codificação posicional e \textit{embedding}
+estático do identificador da localidade. O TimesBlock contém dois bancos
+Inception separados por uma ativação GELU (\textit{Gaussian Error Linear
+Unit}); a saída residual do bloco é seguida por normalização em camada. Por
+fim, uma projeção direta transforma as 336 posições nas 72 estimativas. O
+mecanismo periódico segue o TimesNet original \cite{wu2023}; a configuração
+compacta é detalhada a seguir.
+
+Antes dessa projeção, cada janela já transformada pela escala min--max é
+padronizada por sua própria média $\mu_b$ e desvio-padrão $\sigma_b$; a
+operação inversa é aplicada à saída do modelo:
 
 \begin{equation}
- \mathbf Z^{(r)}_i
- =\operatorname{Trunc}\!\left[
-  \operatorname{Reshape}^{-1}\!\left(
-   \operatorname{Inception}(\mathbf X^{(r)}_{2D,i})\right)\right].
- \label{eq:inception}
+ \widetilde{\mathbf x}_b=
+ \frac{\mathbf x_b-\mu_b}{\sqrt{\sigma_b^2+\epsilon}},\qquad
+ \widehat{\mathbf y}_b=
+ \widehat{\widetilde{\mathbf y}}_b\sqrt{\sigma_b^2+\epsilon}+\mu_b.
+ \label{eq:normalizacao_janela}
 \end{equation}
 
-\noindent As representações dos $k$ períodos são combinadas por pesos
-normalizados derivados de suas amplitudes,
+\noindent Essa etapa preserva o nível e a escala observados na própria origem,
+sem usar o alvo. A normalização min--max externa mantém comparabilidade entre
+localidades durante a otimização, enquanto a Eq.~\eqref{eq:normalizacao_janela}
+atenua mudanças locais de nível. O \textit{embedding} permite especialização
+por sítio dentro de um único modelo global, mas não representa coordenadas e,
+portanto, não oferece extrapolação direta para uma localidade não vista.
 
-\begin{align}
- w_i^{(r)}
- &=\frac{\exp(a^{(r)}_{f_i})}
- {\sum_{j=1}^{k}\exp(a^{(r)}_{f_j})},\label{eq:peso_timesnet}\\
- \mathbf X^{(r+1)}
- &=\mathbf X^{(r)}+\sum_{i=1}^{k}w_i^{(r)}\mathbf Z_i^{(r)}.
- \label{eq:residual_timesnet}
-\end{align}
+\subsection{Dados e recorte geográfico}
 
-\noindent A conexão residual preserva a representação de entrada entre os
-blocos. Após a pilha de TimesBlocks, uma projeção linear produz as 72
-estimativas horárias. A arquitetura segue o TimesNet original
-\cite{wu2023}; seus hiperparâmetros efetivamente selecionados são registrados
-na Tabela~\ref{tab:hiper}.
-
-\subsection{Algoritmo compacto}
-
-\refstepcounter{algoritmo}\label{alg:sistema}
-\noindent\textbf{Algoritmo \thealgoritmo: Previsão horária e avaliação}
-
-\noindent\fbox{%
-\begin{minipage}{0.94\columnwidth}
-\scriptsize
-\textbf{Entrada:} séries em 30 min $\mathcal D$, localidades $\mathcal L$,
-modelos $\mathcal M$, contexto $T=336$, horizonte $H=72$ e origens
-$\mathcal O$.\par
-\textbf{1:} auditar os dados, agregar pares de 30 min por média e construir o
-índice horário local com deslocamento UTC fixo.\par
-\textbf{2:} ajustar a normalização no treinamento e construir janelas causais
-de 336 h para 72 h, com origens diárias às 00 h locais.\par
-\textbf{3:} selecionar a configuração dos modelos aprendidos em 2023,
-reinicializá-los e reajustá-los em 2019--2023.\par
-\textbf{4:} para cada origem de 2024, prever 72 h sem reajuste e inverter a
-normalização.\par
-\textbf{5:} aplicar clipping em zero e a máscara de elevação solar
-$\leq0^\circ$ a todos os modelos.\par
-\textbf{6:} calcular RMSE, MAE, nRMSE e $R^2$ nos prefixos de 24, 48 e 72 h e
-exportar tabelas e figura.\par
-\textbf{Saída:} previsões físicas e artefatos de avaliação.
-\end{minipage}}
-
-\section{Configuração experimental e métricas}
-\label{sec:configuracao}
-
-Foram utilizados dados do produto GOES Aggregated PSM v4 da NSRDB
-\cite{sengupta2018,nlr2026}. A NSRDB combina informação de satélite e modelos
-físicos; seus valores são referência modelada, não medição de solo. Foram
-extraídos arquivos HDF5 públicos da versão 4.0.0 na frequência nativa de 30
-minutos e calculadas médias horárias.
-
-As localidades são BYD Camaçari, BMW San Luis Potosí, Ford Rouge, GM Factory
-Zero, Hyundai Georgia, Lucid Casa Grande, Rivian Normal e Tesla Fremont, Nevada
-e Texas. Cada uma contém 52.608 observações horárias de 2019 a 2024. No total,
-são 526.080 valores.
-
-A divisão é estritamente cronológica. O treinamento de 2019--2022 contém
-14.450 janelas completas entre as dez localidades. A validação de 2023 contém
-3.630 janelas, podendo usar como contexto somente observações anteriores ao
-alvo. Após a seleção, cada modelo é reinicializado e reajustado com 18.100
-janelas de 2019--2023. O teste de 2024 contém 3.630 janelas (363 por
-localidade), termina na origem local de 28 de dezembro e não participa da
-seleção nem do ajuste; uma origem em 29 de dezembro exigiria horas UTC de 2025
-nas localidades com deslocamento negativo. Esses números consideram entrada
-de 336 h, alvo de 72 h e avanço diário. Os alvos de cada subconjunto ficam
-integralmente dentro do respectivo intervalo de calendário.
-
-Os modelos aprendidos compartilham pesos entre localidades e são treinados
-para produzir as 72 horas em uma única passagem. Os resultados de 24 e 48
-horas são calculados a partir dos respectivos prefixos, sem treinar modelos
-específicos para cada horizonte. A normalização é ajustada por localidade em
-2019--2022 durante a validação e em 2019--2023 no ajuste final. O tipo e os
-parâmetros exatos da transformação serão registrados como
-\pendente{PENDENTE_NORMALIZACAO}. As referências usam GHI em W/m$^2$ e todos
-os métodos passam pelo pós-processamento da Eq.~\eqref{eq:posprocessamento}.
-
-\subsection{Modelos e hiperparâmetros}
-
-O XGBoost recebe cada janela de 336 valores como vetor e ajusta uma regressão
-direta para cada passo do horizonte. A LSTM recebe a sequência cronológica e
-usa uma cabeça densa de 72 saídas. O TimesNet usa a transformação
-multi-periódica descrita na Seção~\ref{sec:metodo}. A função de perda dos
-modelos neurais e a estratégia de seleção são
-\pendente{PENDENTE_FUNCAO_PERDA_E_SELECAO}. A
-Tabela~\ref{tab:hiper} contém somente os três modelos treináveis; persistência
-e sazonal ingênuo não têm parâmetros ajustados.
+O produto GOES Aggregated PSM v4.0.0 da NSRDB combina informações de satélite
+e modelos físicos; trata-se, portanto, de uma referência modelada, não de
+medições em solo
+\cite{sengupta2018,nlr2026}. Os arquivos HDF5 de 30 min foram convertidos em
+médias horárias. Cada uma das dez séries contém 52.608 observações referentes
+ao período de 2019 a 2024, totalizando 526.080 valores. A
+Tabela~\ref{tab:localidades} registra
+os pontos de grade e os deslocamentos locais usados.
 
 \begin{table*}[!t]
 \centering
-\caption{Hiperparâmetros dos modelos aprendidos.}
-\label{tab:hiper}
+\caption{Pontos de grade da NSRDB. Latitude e longitude em graus;
+deslocamentos UTC em horas.}
+\label{tab:localidades}
 \scriptsize
-\setlength{\tabcolsep}{3.0pt}
-\renewcommand{\arraystretch}{1.05}
-\begin{tabular}{>{\raggedright\arraybackslash}p{1.75cm}>{\raggedright\arraybackslash}p{15.25cm}}
+\setlength{\tabcolsep}{2.2pt}
+\renewcommand{\arraystretch}{0.96}
+\begin{tabular}{lrrrr@{\hspace{7pt}}lrrrr}
 \toprule
-\textbf{Modelo} & \textbf{Configuração selecionada e execução efetiva} \\
+\textbf{Localidade} & \textbf{Lat.} & \textbf{Lon.} & \textbf{Célula} &
+\textbf{UTC} & \textbf{Localidade} & \textbf{Lat.} & \textbf{Lon.} &
+\textbf{Célula} & \textbf{UTC} \\
 \midrule
-XGBoost & 336 entradas e 72 regressões diretas; número de árvores
-\pendente{PENDENTE_XGBOOST_N_ARVORES}; profundidade
-\pendente{PENDENTE_XGBOOST_PROFUNDIDADE}; taxa de aprendizado
-\pendente{PENDENTE_XGBOOST_TAXA}; \textit{subsample}
-\pendente{PENDENTE_XGBOOST_SUBSAMPLE}; \textit{colsample}
-\pendente{PENDENTE_XGBOOST_COLSAMPLE}; regularização
-\pendente{PENDENTE_XGBOOST_REGULARIZACAO}; parada antecipada
-\pendente{PENDENTE_XGBOOST_EARLY_STOPPING}. \\
-LSTM & Entrada $336\times1$ e saída 72; camadas
-\pendente{PENDENTE_LSTM_CAMADAS}; unidades
-\pendente{PENDENTE_LSTM_UNIDADES}; \textit{dropout}
-\pendente{PENDENTE_LSTM_DROPOUT}; otimizador e taxa
-\pendente{PENDENTE_LSTM_OTIMIZADOR_TAXA}; lote
-\pendente{PENDENTE_LSTM_LOTE}; máximo de épocas
-\pendente{PENDENTE_LSTM_MAX_EPOCAS}; paciência
-\pendente{PENDENTE_LSTM_PACIENCIA}; épocas efetivas
-\pendente{PENDENTE_LSTM_EPOCAS_EFETIVAS}. \\
-TimesNet & Entrada 336 e saída 72; dimensão latente
-\pendente{PENDENTE_TIMESNET_D_MODEL}; dimensão interna
-\pendente{PENDENTE_TIMESNET_D_FF}; TimesBlocks
-\pendente{PENDENTE_TIMESNET_E_LAYERS}; frequências $k$
-\pendente{PENDENTE_TIMESNET_TOP_K}; núcleos Inception
-\pendente{PENDENTE_TIMESNET_NUM_KERNELS}; \textit{dropout}
-\pendente{PENDENTE_TIMESNET_DROPOUT}; otimizador e taxa
-\pendente{PENDENTE_TIMESNET_OTIMIZADOR_TAXA}; lote
-\pendente{PENDENTE_TIMESNET_LOTE}; máximo de épocas
-\pendente{PENDENTE_TIMESNET_MAX_EPOCAS}; paciência
-\pendente{PENDENTE_TIMESNET_PACIENCIA}; épocas efetivas
-\pendente{PENDENTE_TIMESNET_EPOCAS_EFETIVAS}. \\
+BMW San Luis Potosí & 21,97 & $-100,86$ & 593265 & $-6$ &
+Lucid Casa Grande & 32,85 & $-111,78$ & 329823 & $-7$ \\
+BYD Camaçari & $-12,67$ & $-38,30$ & 2000061 & $-3$ &
+Rivian Normal & 40,49 & $-89,06$ & 871382 & $-6$ \\
+Ford Rouge & 42,29 & $-83,18$ & 995809 & $-5$ &
+Tesla Fremont & 37,49 & $-121,94$ & 144390 & $-8$ \\
+GM Factory Zero & 42,37 & $-83,06$ & 998284 & $-5$ &
+Tesla Nevada & 39,53 & $-119,42$ & 184510 & $-8$ \\
+Hyundai Georgia & 32,17 & $-81,46$ & 1031588 & $-5$ &
+Tesla Texas & 30,21 & $-97,62$ & 681461 & $-6$ \\
 \bottomrule
 \end{tabular}
 \end{table*}
+
+\subsection{Partições temporais e normalização}
+
+A divisão estritamente cronológica contém 14.450 janelas em 2019--2022 para
+treinamento, 3.630 em 2023 para validação e 3.630 (363 por localidade) em 2024
+para teste. Após selecionar o número de épocas, cada rede é reinicializada e
+ajustada em 18.100 janelas de 2019--2023. Os alvos permanecem integralmente no
+respectivo período. O teste termina na origem local correspondente a 28 de dezembro, pois a
+origem seguinte exigiria dados UTC de 2025 em parte das localidades.
+
+O teste é retrospectivo e deslizante: observações já disponíveis em cada origem de 2024
+podem compor o contexto, sem novo ajuste das redes. Os resultados de 24 e 48 h
+são prefixos da mesma saída de 72 h. A normalização min--max é estimada por
+localidade em 2019--2022 na seleção e em 2019--2023 no ajuste final; valores
+posteriores não são limitados ao intervalo $[0,1]$. O TimesNet ainda padroniza
+cada janela internamente. Todos os métodos retornam à escala física antes da
+Eq.~\eqref{eq:posprocessamento}.
+
+\subsection{Modelos e hiperparâmetros}
+
+A LSTM usa 32 unidades, concatena ao estado final o \textit{embedding} de
+localidade de dimensão 8 e não aplica \textit{dropout}; foram selecionadas 22
+épocas. O TimesNet usa $d_{\mathrm{model}}=8$, $d_{\mathrm{ff}}=16$, um
+TimesBlock, $k=3$, núcleos $1\times1$ e $3\times3$, \textit{dropout} 0,1,
+\textit{embedding} de dimensão 8 e $\epsilon=10^{-5}$ como estabilizador da
+padronização por janela; foram selecionadas 14 épocas. Em ambos, Adam minimiza
+o erro quadrático médio (MSE) na escala normalizada, com taxa de aprendizado
+$10^{-3}$, \textit{weight decay} $10^{-5}$, tamanho de lote 128, limite de 30 épocas e
+paciência de cinco épocas.
+As configurações foram fixadas antes do teste e toda a execução usou uma única
+semente aleatória (42).
+
+\begin{table}[!t]
+\centering
+\caption{Resumo das redes neurais avaliadas.}
+\label{tab:configuracao_redes}
+\scriptsize
+\setlength{\tabcolsep}{3.2pt}
+\renewcommand{\arraystretch}{0.96}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Característica} & \textbf{LSTM} & \textbf{TimesNet} \\
+\midrule
+Representação principal & 32 estados & $d_{\mathrm{model}}=8$ \\
+Profundidade & 1 camada & 1 TimesBlock \\
+\textit{Embedding} local & 8 & 8 \\
+Saída direta & 72 h & 72 h \\
+Parâmetros treináveis & 7.512 & 27.009 \\
+Épocas selecionadas & 22 & 14 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+O número de épocas corresponde à época em que se observou o menor MSE de
+validação antes da parada antecipada. No ajuste final, cada rede foi
+reinicializada com a mesma semente e treinada exatamente por esse número de
+épocas, sem reutilizar o estado da seleção. A
+Tabela~\ref{tab:configuracao_redes} mostra também que o TimesNet compacto tem
+3,60 vezes o número de parâmetros da LSTM; o ganho de erro deve, portanto, ser
+interpretado junto desse aumento de capacidade.
 
 \subsection{Métricas}
 
 Sejam $\mathcal L$ o conjunto das dez localidades, $\ell\in\mathcal L$ uma
 localidade, $m$ o modelo, $q\in\{24,48,72\}$ o horizonte avaliado e
-$i=1,\ldots,n_{\ell,q}$ um par origem--passo. Denotam-se por $y_{\ell,i}$ a
-GHI de referência, $\widehat y_{\ell,i,m}$ a previsão após o
+$i\in\{1,\ldots,n_{\ell,q}\}$ o índice de um par origem--passo. Denotam-se por
+$y_{\ell,i}$ a GHI de referência, $\widehat y_{\ell,i,m}$ a previsão após o
 pós-processamento, $\bar y_{\ell,q}$ a média dos alvos e
-$e_{\ell,i,m}=y_{\ell,i}-\widehat y_{\ell,i,m}$ o erro. Calculam-se
+$e_{\ell,i,m}=y_{\ell,i}-\widehat y_{\ell,i,m}$ o erro. Calculam-se a raiz do
+erro quadrático médio (RMSE), o erro absoluto médio (MAE), o RMSE normalizado
+(nRMSE) e o coeficiente de determinação ($R^2$):
 
 \begin{align}
  \mathrm{RMSE}_{\ell,m,q}
@@ -486,201 +424,240 @@ $e_{\ell,i,m}=y_{\ell,i}-\widehat y_{\ell,i,m}$ o erro. Calculam-se
  {\sum_i(y_{\ell,i}-\bar y_{\ell,q})^2}.\label{eq:r2}
 \end{align}
 
-O RMSE é o critério primário e penaliza mais intensamente erros grandes; o MAE
-mantém interpretação direta em W/m$^2$ \cite{hyndman2006}. O nRMSE expressa
-o RMSE como percentual da GHI média local e o $R^2$ mede a fração de
-variabilidade explicada. Para impedir que uma localidade domine a comparação,
-cada métrica apresentada na Tabela~\ref{tab:metricas_medias} é primeiro
-calculada localmente e depois submetida à média macro não ponderada. Para o
-RMSE,
-
-\begin{equation}
- \overline{\mathrm{RMSE}}_{m,q}
- =|\mathcal L|^{-1}\sum_{\ell\in\mathcal L}
- \mathrm{RMSE}_{\ell,m,q}.
- \label{eq:macro}
-\end{equation}
-
-As médias macro de MAE, nRMSE e $R^2$ são definidas de modo análogo. Um RMSE
-menor é melhor; para $R^2$, valores maiores são melhores. O teste não é usado
-para ordenar configurações, escolher épocas nem modificar o
-pós-processamento.
+O RMSE é o critério primário; o MAE mantém interpretação direta em W/m$^2$
+\cite{hyndman2006}; o nRMSE normaliza o RMSE pela GHI média local; e o $R^2$
+compara o desempenho do modelo ao de um preditor constante. Cada métrica é
+calculada primeiro por localidade e depois resumida pela média macro não
+ponderada, evitando que uma localidade domine
+a comparação.
+Para 363 origens por localidade, os horizontes de 24, 48 e 72 h contêm,
+respectivamente, 87.120, 174.240 e 261.360 pares alvo--previsão no conjunto das
+dez séries. Esses pares quantificam erro, mas não são réplicas independentes
+devido à sobreposição entre janelas. O conjunto de teste não foi usado para
+selecionar configurações nem alterar o procedimento.
 
 \section{Resultados e discussão}
 \label{sec:resultados}
 
-\subsection{Comparação média}
+\subsection{Desempenho agregado por horizonte}
 
-A Tabela~\ref{tab:metricas_medias} apresenta as métricas macro após a inversão
-da normalização e o pós-processamento físico. Há 15 linhas de resultados:
-cinco modelos em cada um dos três prefixos da mesma previsão de 72 horas.
+A Tabela~\ref{tab:metricas_medias} reúne as métricas macro dos quatro métodos
+nos três prefixos da previsão de 72 h e permite verificar se o ordenamento se
+mantém com o aumento do horizonte.
 
 \begin{table*}[!t]
 \centering
-\caption{Métricas macro entre as dez localidades no teste de 2024.}
+\caption{Médias macro no teste retrospectivo de 2024. RMSE e MAE em W/m$^2$;
+nRMSE em \%.}
 \label{tab:metricas_medias}
 \scriptsize
-\setlength{\tabcolsep}{3.0pt}
-\renewcommand{\arraystretch}{1.0}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{llrrrr}
-\toprule
-\textbf{Modelo} & \textbf{Horizonte} & \textbf{RMSE (W/m$^2$)}
-& \textbf{MAE (W/m$^2$)} & \textbf{nRMSE (\%)} & \textbf{$R^2$} \\
-\midrule
-Persistência & 24 h & \pendente{PENDENTE_RMSE_PERSISTENCIA_24H} & \pendente{PENDENTE_MAE_PERSISTENCIA_24H} & \pendente{PENDENTE_NRMSE_PERSISTENCIA_24H} & \pendente{PENDENTE_R2_PERSISTENCIA_24H} \\
-Persistência & 48 h & \pendente{PENDENTE_RMSE_PERSISTENCIA_48H} & \pendente{PENDENTE_MAE_PERSISTENCIA_48H} & \pendente{PENDENTE_NRMSE_PERSISTENCIA_48H} & \pendente{PENDENTE_R2_PERSISTENCIA_48H} \\
-Persistência & 72 h & \pendente{PENDENTE_RMSE_PERSISTENCIA_72H} & \pendente{PENDENTE_MAE_PERSISTENCIA_72H} & \pendente{PENDENTE_NRMSE_PERSISTENCIA_72H} & \pendente{PENDENTE_R2_PERSISTENCIA_72H} \\
-Sazonal ingênuo & 24 h & \pendente{PENDENTE_RMSE_SAZONAL_24H} & \pendente{PENDENTE_MAE_SAZONAL_24H} & \pendente{PENDENTE_NRMSE_SAZONAL_24H} & \pendente{PENDENTE_R2_SAZONAL_24H} \\
-Sazonal ingênuo & 48 h & \pendente{PENDENTE_RMSE_SAZONAL_48H} & \pendente{PENDENTE_MAE_SAZONAL_48H} & \pendente{PENDENTE_NRMSE_SAZONAL_48H} & \pendente{PENDENTE_R2_SAZONAL_48H} \\
-Sazonal ingênuo & 72 h & \pendente{PENDENTE_RMSE_SAZONAL_72H} & \pendente{PENDENTE_MAE_SAZONAL_72H} & \pendente{PENDENTE_NRMSE_SAZONAL_72H} & \pendente{PENDENTE_R2_SAZONAL_72H} \\
-XGBoost & 24 h & \pendente{PENDENTE_RMSE_XGBOOST_24H} & \pendente{PENDENTE_MAE_XGBOOST_24H} & \pendente{PENDENTE_NRMSE_XGBOOST_24H} & \pendente{PENDENTE_R2_XGBOOST_24H} \\
-XGBoost & 48 h & \pendente{PENDENTE_RMSE_XGBOOST_48H} & \pendente{PENDENTE_MAE_XGBOOST_48H} & \pendente{PENDENTE_NRMSE_XGBOOST_48H} & \pendente{PENDENTE_R2_XGBOOST_48H} \\
-XGBoost & 72 h & \pendente{PENDENTE_RMSE_XGBOOST_72H} & \pendente{PENDENTE_MAE_XGBOOST_72H} & \pendente{PENDENTE_NRMSE_XGBOOST_72H} & \pendente{PENDENTE_R2_XGBOOST_72H} \\
-LSTM & 24 h & \pendente{PENDENTE_RMSE_LSTM_24H} & \pendente{PENDENTE_MAE_LSTM_24H} & \pendente{PENDENTE_NRMSE_LSTM_24H} & \pendente{PENDENTE_R2_LSTM_24H} \\
-LSTM & 48 h & \pendente{PENDENTE_RMSE_LSTM_48H} & \pendente{PENDENTE_MAE_LSTM_48H} & \pendente{PENDENTE_NRMSE_LSTM_48H} & \pendente{PENDENTE_R2_LSTM_48H} \\
-LSTM & 72 h & \pendente{PENDENTE_RMSE_LSTM_72H} & \pendente{PENDENTE_MAE_LSTM_72H} & \pendente{PENDENTE_NRMSE_LSTM_72H} & \pendente{PENDENTE_R2_LSTM_72H} \\
-TimesNet & 24 h & \pendente{PENDENTE_RMSE_TIMESNET_24H} & \pendente{PENDENTE_MAE_TIMESNET_24H} & \pendente{PENDENTE_NRMSE_TIMESNET_24H} & \pendente{PENDENTE_R2_TIMESNET_24H} \\
-TimesNet & 48 h & \pendente{PENDENTE_RMSE_TIMESNET_48H} & \pendente{PENDENTE_MAE_TIMESNET_48H} & \pendente{PENDENTE_NRMSE_TIMESNET_48H} & \pendente{PENDENTE_R2_TIMESNET_48H} \\
-TimesNet & 72 h & \pendente{PENDENTE_RMSE_TIMESNET_72H} & \pendente{PENDENTE_MAE_TIMESNET_72H} & \pendente{PENDENTE_NRMSE_TIMESNET_72H} & \pendente{PENDENTE_R2_TIMESNET_72H} \\
-\bottomrule
-\end{tabular}
-}
-\end{table*}
-
-No horizonte de 24 h, o menor RMSE foi obtido por
-\pendente{PENDENTE_MELHOR_MODELO_24H}, com
-\pendente{PENDENTE_MELHOR_RMSE_24H} W/m$^2$; o TimesNet apresentou
-\pendente{PENDENTE_RMSE_TIMESNET_24H} W/m$^2$. Em 48 h, os valores
-correspondentes foram \pendente{PENDENTE_MELHOR_RMSE_48H} W/m$^2$ para
-\pendente{PENDENTE_MELHOR_MODELO_48H} e
-\pendente{PENDENTE_RMSE_TIMESNET_48H} W/m$^2$ para o TimesNet. Em 72 h,
-\pendente{PENDENTE_MELHOR_MODELO_72H} obteve
-\pendente{PENDENTE_MELHOR_RMSE_72H} W/m$^2$, frente a
-\pendente{PENDENTE_RMSE_TIMESNET_72H} W/m$^2$ do TimesNet.
-
-Em relação à LSTM, principal competidor neural, a variação relativa do RMSE do
-TimesNet foi de \pendente{PENDENTE_DELTA_RMSE_TN_LSTM_24H}\%,
-\pendente{PENDENTE_DELTA_RMSE_TN_LSTM_48H}\% e
-\pendente{PENDENTE_DELTA_RMSE_TN_LSTM_72H}\% nos três horizontes. A leitura
-conjunta das métricas mostra que
-\pendente{PENDENTE_MODELO_SUPERIOR_AO_TIMESNET_EM_OUTRA_METRICA} superou o
-TimesNet em \pendente{PENDENTE_METRICA_E_HORIZONTE_DA_EXCECAO}. Esse caso deve
-ser reportado explicitamente, pois uma vantagem em RMSE não implica domínio
-simultâneo em MAE, nRMSE e $R^2$. A síntese observada é
-\pendente{PENDENTE_DISCUSSAO_COMPARATIVA_FINAL}.
-
-\subsection{TimesNet por localidade}
-
-\begin{table*}[!t]
-\centering
-\caption{Desempenho do TimesNet por localidade no horizonte de 72 h.}
-\label{tab:timesnet_local}
-\scriptsize
-\setlength{\tabcolsep}{3.0pt}
-\renewcommand{\arraystretch}{1.02}
-\resizebox{\textwidth}{!}{%
+\setlength{\tabcolsep}{2.0pt}
+\renewcommand{\arraystretch}{0.96}
+% AUTO-TABELA-MACRO-BEGIN
 \begin{tabular}{lrrrr}
 \toprule
-\textbf{Localidade} & \textbf{RMSE (W/m$^2$)}
-& \textbf{MAE (W/m$^2$)} & \textbf{nRMSE (\%)} & \textbf{$R^2$} \\
+\multicolumn{5}{c}{\textbf{24 h}} \\
+\textbf{Modelo} & \textbf{RMSE} & \textbf{MAE} & \textbf{nRMSE} & \textbf{$R^2$} \\
 \midrule
-BMW San Luis Potosí & \pendente{PENDENTE_RMSE_TN_BMW_72H} & \pendente{PENDENTE_MAE_TN_BMW_72H} & \pendente{PENDENTE_NRMSE_TN_BMW_72H} & \pendente{PENDENTE_R2_TN_BMW_72H} \\
-BYD Camaçari & \pendente{PENDENTE_RMSE_TN_BYD_72H} & \pendente{PENDENTE_MAE_TN_BYD_72H} & \pendente{PENDENTE_NRMSE_TN_BYD_72H} & \pendente{PENDENTE_R2_TN_BYD_72H} \\
-Ford Rouge & \pendente{PENDENTE_RMSE_TN_FORD_72H} & \pendente{PENDENTE_MAE_TN_FORD_72H} & \pendente{PENDENTE_NRMSE_TN_FORD_72H} & \pendente{PENDENTE_R2_TN_FORD_72H} \\
-GM Factory Zero & \pendente{PENDENTE_RMSE_TN_GM_72H} & \pendente{PENDENTE_MAE_TN_GM_72H} & \pendente{PENDENTE_NRMSE_TN_GM_72H} & \pendente{PENDENTE_R2_TN_GM_72H} \\
-Hyundai Georgia & \pendente{PENDENTE_RMSE_TN_HYUNDAI_72H} & \pendente{PENDENTE_MAE_TN_HYUNDAI_72H} & \pendente{PENDENTE_NRMSE_TN_HYUNDAI_72H} & \pendente{PENDENTE_R2_TN_HYUNDAI_72H} \\
-Lucid Casa Grande & \pendente{PENDENTE_RMSE_TN_LUCID_72H} & \pendente{PENDENTE_MAE_TN_LUCID_72H} & \pendente{PENDENTE_NRMSE_TN_LUCID_72H} & \pendente{PENDENTE_R2_TN_LUCID_72H} \\
-Rivian Normal & \pendente{PENDENTE_RMSE_TN_RIVIAN_72H} & \pendente{PENDENTE_MAE_TN_RIVIAN_72H} & \pendente{PENDENTE_NRMSE_TN_RIVIAN_72H} & \pendente{PENDENTE_R2_TN_RIVIAN_72H} \\
-Tesla Fremont & \pendente{PENDENTE_RMSE_TN_FREMONT_72H} & \pendente{PENDENTE_MAE_TN_FREMONT_72H} & \pendente{PENDENTE_NRMSE_TN_FREMONT_72H} & \pendente{PENDENTE_R2_TN_FREMONT_72H} \\
-Tesla Nevada & \pendente{PENDENTE_RMSE_TN_NEVADA_72H} & \pendente{PENDENTE_MAE_TN_NEVADA_72H} & \pendente{PENDENTE_NRMSE_TN_NEVADA_72H} & \pendente{PENDENTE_R2_TN_NEVADA_72H} \\
-Tesla Texas & \pendente{PENDENTE_RMSE_TN_TEXAS_72H} & \pendente{PENDENTE_MAE_TN_TEXAS_72H} & \pendente{PENDENTE_NRMSE_TN_TEXAS_72H} & \pendente{PENDENTE_R2_TN_TEXAS_72H} \\
+Persist. & 122,21 & 52,58 & 61,28 & 0,801 \\
+Sazonal & 142,78 & 65,91 & 71,19 & 0,734 \\
+LSTM & 100,01 & 50,91 & 49,95 & 0,869 \\
+TimesNet & 97,21 & 49,08 & 48,54 & 0,876 \\
 \bottomrule
 \end{tabular}
-}
+\hfill
+\begin{tabular}{lrrrr}
+\toprule
+\multicolumn{5}{c}{\textbf{48 h}} \\
+\textbf{Modelo} & \textbf{RMSE} & \textbf{MAE} & \textbf{nRMSE} & \textbf{$R^2$} \\
+\midrule
+Persist. & 128,35 & 56,16 & 64,34 & 0,781 \\
+Sazonal & 142,79 & 65,92 & 71,21 & 0,734 \\
+LSTM & 103,00 & 52,79 & 51,39 & 0,862 \\
+TimesNet & 100,26 & 51,86 & 49,99 & 0,869 \\
+\bottomrule
+\end{tabular}
+\hfill
+\begin{tabular}{lrrrr}
+\toprule
+\multicolumn{5}{c}{\textbf{72 h}} \\
+\textbf{Modelo} & \textbf{RMSE} & \textbf{MAE} & \textbf{nRMSE} & \textbf{$R^2$} \\
+\midrule
+Persist. & 131,32 & 58,11 & 65,77 & 0,771 \\
+Sazonal & 142,76 & 65,90 & 71,20 & 0,734 \\
+LSTM & 104,68 & 53,39 & 52,17 & 0,858 \\
+TimesNet & 101,04 & 52,21 & 50,35 & 0,867 \\
+\bottomrule
+\end{tabular}
+% AUTO-TABELA-MACRO-END
 \end{table*}
 
-No horizonte de 72 h, o menor RMSE local do TimesNet ocorreu em
-\pendente{PENDENTE_MELHOR_LOCAL_TIMESNET_72H}, com
-\pendente{PENDENTE_MELHOR_RMSE_LOCAL_TIMESNET_72H} W/m$^2$, e o maior em
-\pendente{PENDENTE_PIOR_LOCAL_TIMESNET_72H}, com
-\pendente{PENDENTE_PIOR_RMSE_LOCAL_TIMESNET_72H} W/m$^2$. O TimesNet liderou
-em \pendente{PENDENTE_NUM_LOCAIS_LIDERADOS_TIMESNET_72H} das dez localidades.
-A heterogeneidade espacial observada é
-\pendente{PENDENTE_DISCUSSAO_HETEROGENEIDADE_LOCAL}.
+% AUTO-DISCUSSAO-MACRO-BEGIN
+Em 24, 48 e 72 h, os valores de RMSE do TimesNet foram 97,21, 100,26 e 101,04
+W/m$^2$, contra 100,01, 103,00 e 104,68 W/m$^2$ da LSTM: reduções de 2,80\%,
+2,66\% e 3,48\%. O mesmo ordenamento entre as duas redes foi observado para
+MAE, nRMSE e $R^2$.
 
-\subsection{Evolução temporal e efeito das restrições físicas}
+Em relação à persistência diária, as reduções de RMSE do TimesNet foram
+20,46\%, 21,89\% e 23,06\%; em relação ao sazonal ingênuo, foram 31,92\%,
+29,79\% e 29,22\%. Do prefixo de 24 h ao de 72 h, o RMSE cresceu 3,94\% no
+TimesNet e 4,67\% na LSTM. Como os prefixos provêm de uma única saída direta,
+essa variação descreve a dificuldade associada à ampliação do horizonte, e não
+a propagação recursiva de previsões.
 
-A Fig.~\ref{fig:previsao_72h} apresenta uma origem representativa, com 336
-horas históricas e a curva de 72 horas prevista pelo TimesNet. Os arcos
-diários permitem verificar visualmente o nascer do sol, o crescimento, o pico,
-o decaimento e o pôr do sol ao longo de dias consecutivos.
+Das 261.360 previsões de 72 h, 130.764 pertencem ao subconjunto com elevação
+solar positiva. Nesse recorte, o TimesNet obteve RMSE de 142,80 W/m$^2$, nRMSE
+de 35,67\% e $R^2$ de 0,739; o RMSE da LSTM foi 147,94 W/m$^2$. É esperado que
+o RMSE diurno seja maior do que o calculado considerando todas as horas, pois
+as horas noturnas, predominantemente nulas, tornam a tarefa agregada menos
+exigente.
+
+As diferenças entre as redes são moderadas e descritivas: não há ablação que
+as atribua à transformação 1D--2D, e o uso de uma única semente não permite
+estimar a variabilidade do treinamento. Os resultados mostram consistência
+interna neste protocolo, mas não constituem um teste de superioridade
+estatística.
+% AUTO-DISCUSSAO-MACRO-END
+
+% AUTO-DISCUSSAO-CURVAS-BEGIN
+Na Fig.~\ref{fig:comparacao_rmse}(a), o erro inicial próximo de zero e a não
+monotonicidade decorrem das origens à meia-noite e da alternância entre horas
+diurnas e noturnas. O TimesNet permaneceu abaixo da LSTM a partir do prefixo
+de 6 h. No painel (b), seu RMSE foi inferior nas dez localidades, logo a
+diferença macro não resulta de uma única localidade.
+% AUTO-DISCUSSAO-CURVAS-END
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{comparacao_rmse_modelos.png}
+\caption{RMSE após o pós-processamento no teste de 2024. (a) Evolução do RMSE
+macro para cada prefixo da previsão, com destaque para 24, 48 e 72 h. (b)
+Comparação entre TimesNet e LSTM por localidade no horizonte de 72 h, com os
+sítios ordenados pelo erro do TimesNet.}
+\label{fig:comparacao_rmse}
+\end{figure*}
+
+\subsection{Desempenho por localidade}
+
+% AUTO-DISCUSSAO-LOCAL-BEGIN
+\begin{table}[!t]
+\centering
+\caption{RMSE por localidade em 72 h. Valores em W/m$^2$; $\Delta$ é a redução relativa do TimesNet em relação à LSTM.}
+\label{tab:metricas_locais}
+\scriptsize
+\setlength{\tabcolsep}{2.4pt}
+\renewcommand{\arraystretch}{0.94}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Localidade} & \textbf{TimesNet} & \textbf{LSTM} & \textbf{$\Delta$ (\%)} \\
+\midrule
+Lucid Casa Grande & 74,35 & 79,59 & 6,59 \\
+Tesla Fremont & 76,67 & 81,34 & 5,75 \\
+Tesla Nevada & 82,72 & 87,15 & 5,09 \\
+BMW S. L. Potosí & 97,70 & 100,29 & 2,58 \\
+BYD Camaçari & 106,56 & 106,81 & 0,23 \\
+Tesla Texas & 113,46 & 117,13 & 3,13 \\
+Ford Rouge & 113,98 & 118,98 & 4,20 \\
+Hyundai Georgia & 114,53 & 118,01 & 2,95 \\
+Rivian Normal & 115,09 & 116,94 & 1,59 \\
+GM Factory Zero & 115,36 & 120,59 & 4,34 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Em 72 h, o RMSE do TimesNet variou de 74,35 W/m$^2$ em Lucid Casa Grande a
+115,36 W/m$^2$ em GM Factory Zero e foi inferior ao da LSTM nas dez
+localidades. O nRMSE variou de 30,02\% a 71,40\%, evidenciando heterogeneidade
+entre as localidades avaliadas.
+
+A redução do TimesNet em relação à LSTM teve mediana de 3,67\% e variou de
+0,23\% em BYD Camaçari a 6,59\% em Lucid Casa Grande. Assim, o sinal da
+diferença foi espacialmente consistente, embora sua magnitude tenha sido
+pequena em Camaçari. A amplitude dos erros absolutos e normalizados também
+indica que um único valor macro não caracteriza igualmente todos os regimes
+climáticos.
+% AUTO-DISCUSSAO-LOCAL-END
+
+\subsection{Exemplo de previsão e pós-processamento}
+
+A Fig.~\ref{fig:previsao_72h} mostra a primeira origem de teste da BYD
+Camaçari, escolhida por ordem cronológica, e não por desempenho favorável. A
+janela reúne 336 h de histórico e 72 h de previsão; as curvas exibidas permitem
+inspecionar a coerência das transições diárias.
 
 \begin{figure}[!t]
 \centering
-\IfFileExists{../figuras/previsao_horaria_timesnet_72h.png}{%
-  \includegraphics[width=\columnwidth]{previsao_horaria_timesnet_72h.png}%
-}{%
-  \fbox{\parbox[c][3.6cm][c]{0.93\columnwidth}{\centering
-  \pendente{PENDENTE_FIGURA_PREVISAO_HORARIA_TIMESNET_72H}}}%
-}
-\caption{Exemplo de previsão horária de GHI com o TimesNet. A curva amarela
-representa as 336 h de histórico; após a origem, são mostradas a referência e
-a previsão das 72 h seguintes, já submetida ao clipping e à máscara noturna.}
+\includegraphics[width=\columnwidth]{previsao_horaria_timesnet_72h.png}
+\caption{Primeira origem de teste da BYD Camaçari: histórico de 336 h,
+referência da NSRDB, previsão bruta e previsão pós-processada nas 72 h seguintes.}
 \label{fig:previsao_72h}
 \end{figure}
 
-Antes do pós-processamento, o TimesNet produziu
-\pendente{PENDENTE_NUM_PREVISOES_NEGATIVAS_TIMESNET} valores negativos e
-\pendente{PENDENTE_NUM_PREVISOES_NOTURNAS_POSITIVAS_TIMESNET} valores
-positivos durante a noite. O clipping e a máscara os corrigiram,
-respectivamente. No horizonte de 72 h, a alteração do RMSE causada pelas duas
-restrições foi de \pendente{PENDENTE_DELTA_RMSE_POS_PROCESSAMENTO_72H}\%.
-Como a elevação solar é conhecida deterministicamente, a máscara elimina
-saídas fisicamente impossíveis sem incorporar observações meteorológicas do
-período previsto.
+% AUTO-POS-PROCESSAMENTO-BEGIN
+No horizonte de 72 h, o TimesNet gerou 261.360 previsões brutas nas dez
+localidades, das quais 109.295 (41,82\%) eram negativas. Entre as previsões
+negativas, 108.766 (99,52\%) ocorreram fora do período diurno e 529 durante
+ele. Portanto, esses valores concentram-se nas horas em que a saída
+fisicamente esperada está próxima de zero.
 
-\subsection{Limitações}
+O RMSE macro foi 101,199 W/m$^2$ na saída bruta, 101,035 W/m$^2$ após o
+truncamento e 101,041 W/m$^2$ após a máscara. A redução líquida de 0,16\%
+decorreu do truncamento; isoladamente, a máscara elevou o RMSE em 0,006
+W/m$^2$. Ela zerou 21.830 estimativas que permaneceram positivas após o
+truncamento; contudo, a média da GHI de referência nessas horas foi 0,85
+W/m$^2$. Esse resíduo decorre de intervalos que atravessam o nascer ou o pôr
+do sol e explica por que classificar somente pelo centro da hora pode piorar
+ligeiramente a métrica.
+% AUTO-POS-PROCESSAMENTO-END
 
-O histórico cobre seis anos, dos quais 2024 forma uma única janela anual de
-teste retrospectivo. As dez localidades foram escolhidas pela presença das
-fábricas e não constituem amostra espacial aleatória. A NSRDB é uma referência
-modelada, não uma rede de medições de solo. O uso de um deslocamento UTC fixo
-mantém dias solares regulares, mas não representa mudanças civis de horário de
-verão.
+\subsection{Validade e limitações}
 
-Os modelos usam apenas o histórico de GHI; não recebem previsões futuras de
-nuvens ou outras variáveis meteorológicas. A avaliação inclui horas diurnas e
-noturnas, e a máscara física torna triviais as previsões quando o Sol está
-abaixo do horizonte. Por fim, os resultados não devem ser extrapolados para
-geração fotovoltaica, operação industrial, outras regiões ou horizonte de 168
-horas sem nova validação.
+A evidência é retrospectiva e espacialmente restrita: o teste cobre apenas
+2024, as dez localidades não formam amostra aleatória e as origens sobrepostas
+não podem ser tratadas como independentes. A NSRDB é uma referência modelada,
+o deslocamento UTC fixo ignora o horário de verão e os modelos não recebem
+meteorologia futura.
+
+Do ponto de vista experimental, as configurações não resultam de busca ampla e
+o uso de uma única semente não permite estimar a variabilidade do treinamento.
+A máscara baseada no centro da hora é aproximada, e a comparação entre duas
+redes e duas referências não sustenta conclusões sobre outras classes de
+modelos. Portanto, a extrapolação para outras regiões, medições em solo,
+geração fotovoltaica, operação industrial ou horizonte de 168 h requer nova
+validação.
+
+Há ainda duas restrições de interpretação. Primeiro, o \textit{embedding}
+aprende identificadores das dez séries e não uma função contínua de latitude e
+longitude; avaliar um ponto novo exigiria novo ajuste ou uma representação
+geográfica apropriada. Segundo, as origens diárias compartilham até 48 h de
+alvos, de modo que testes que suponham erros independentes superestimariam a
+quantidade efetiva de evidência. Intervalos de confiança futuros devem usar
+blocos temporais e repetir o treinamento com várias sementes.
 
 \section{Conclusões}
 \label{sec:conclusoes}
 
-Este trabalho formulou a previsão horária de GHI como um problema
-multi-horizonte com 336 horas de entrada e 72 horas de saída e avaliou o
-TimesNet contra LSTM, XGBoost, persistência diária e sazonal ingênuo anual.
-Todos os métodos foram submetidos às mesmas origens e às mesmas restrições
-físicas após a previsão.
+Este trabalho investigou se uma adaptação compacta do TimesNet melhora a
+previsão horária de GHI em comparação com uma LSTM e duas referências
+temporais, sob um protocolo cronológico comum com 336 h de entrada e 72 h de
+saída.
 
-No horizonte de 72 h, o TimesNet alcançou RMSE de
-\pendente{PENDENTE_RMSE_TIMESNET_72H} W/m$^2$ e a LSTM,
-\pendente{PENDENTE_RMSE_LSTM_72H} W/m$^2$. O modelo proposto ocupou a
-\pendente{PENDENTE_POSICAO_TIMESNET_72H} posição entre os cinco métodos pelo
-RMSE. Em conjunto, os resultados indicam
-\pendente{PENDENTE_CONCLUSAO_SUPERIORIDADE_TIMESNET}. Eventuais métricas em
-que outro modelo foi superior permanecem parte da conclusão e impedem uma
-alegação de domínio absoluto.
+% AUTO-CONCLUSAO-RESULTADOS-BEGIN
+Em 72 h, o TimesNet obteve RMSE macro de 101,04 W/m$^2$, ante 104,68 W/m$^2$
+da LSTM, o que corresponde a uma redução relativa de 3,48\%. O TimesNet também
+apresentou RMSE menor que o da LSTM em 24 e 48 h e que o das duas referências
+nos três horizontes, dentro do recorte estudado.
+% AUTO-CONCLUSAO-RESULTADOS-END
 
-O clipping garantiu previsões não negativas e a máscara de elevação solar
-eliminou GHI prevista durante a noite, tornando explícita a coerência física do
-pipeline. Trabalhos futuros devem testar o horizonte de 168 h, ampliar o
-histórico e o número de localidades, reservar uma avaliação prospectiva e
-incorporar previsões meteorológicas exógenas e quantificação de incerteza.
+Em conjunto, os resultados indicam uma vantagem moderada e consistente do
+TimesNet nos horizontes e localidades avaliados, sem demonstrar superioridade
+universal nem isolar o efeito causal da transformação 1D--2D. O truncamento em
+zero garantiu a não negatividade das previsões; o efeito da máscara baseada no
+centro da hora foi desprezível e motiva a avaliação de uma regra que considere
+a hora inteira. Trabalhos futuros devem
+incluir múltiplas sementes, novas localidades, avaliação prospectiva,
+horizonte de 168 h, meteorologia exógena e incerteza.
 
-\balance
 \begin{thebibliography}{99}
 
 \bibitem{antonanzas2016}
@@ -699,6 +676,12 @@ forecasting: A preliminary assessment and review using text mining,''
 \textit{Solar Energy}, vol. 168, pp. 60--101, 2018,
 doi: 10.1016/j.solener.2017.11.023.
 
+\bibitem{wu2023}
+H. Wu, T. Hu, Y. Liu, H. Zhou, J. Wang, and M. Long, ``TimesNet: Temporal
+2D-variation modeling for general time series analysis,'' in
+\textit{Proc. Int. Conf. Learning Representations (ICLR)}, 2023. [Online].
+Available: \url{https://openreview.net/forum?id=ju_Uqw384Oq}.
+
 \bibitem{duffie2013}
 J. A. Duffie and W. A. Beckman, \textit{Solar Engineering of Thermal
 Processes}, 4th ed. Hoboken, NJ, USA: Wiley, 2013.
@@ -713,21 +696,28 @@ C. Voyant et al., ``Benchmarks for solar radiation time series forecasting,''
 \textit{Renewable Energy}, vol. 191, pp. 747--762, 2022,
 doi: 10.1016/j.renene.2022.04.065.
 
-\bibitem{chen2016}
-T. Chen and C. Guestrin, ``XGBoost: A scalable tree boosting system,'' in
-\textit{Proc. 22nd ACM SIGKDD Int. Conf. Knowledge Discovery and Data Mining},
-2016, pp. 785--794, doi: 10.1145/2939672.2939785.
-
 \bibitem{hochreiter1997}
 S.~Hochreiter and J.~Schmidhuber, ``Long short-term memory,''
 \textit{Neural Computation}, vol. 9, no. 8, pp. 1735--1780, 1997,
 doi: 10.1162/neco.1997.9.8.1735.
 
-\bibitem{wu2023}
-H. Wu, T. Hu, Y. Liu, H. Zhou, J. Wang, and M. Long, ``TimesNet: Temporal
-2D-variation modeling for general time series analysis,'' in
-\textit{Proc. Int. Conf. Learning Representations (ICLR)}, 2023. [Online].
-Available: \url{https://openreview.net/forum?id=ju_Uqw384Oq}.
+\bibitem{guariso2020}
+G. Guariso, G. Nunnari, and M. Sangiorgio, ``Multi-step solar irradiance
+forecasting and domain adaptation of deep neural networks,'' \textit{Energies},
+vol. 13, no. 15, Art. no. 3987, 2020, doi: 10.3390/en13153987.
+
+\bibitem{zhu2024}
+Y. Zhu, M. Li, X. Ma, Y. Wang, G. Li, Y. Zhang, Y. Liu, and R. H. E.
+Hassanien, ``Solar irradiance prediction with variable time lengths and
+multi-parameters in full climate conditions based on photovoltaic greenhouse,''
+\textit{Energy Conversion and Management}, vol. 315, Art. no. 118758, 2024,
+doi: 10.1016/j.enconman.2024.118758.
+
+\bibitem{cabral2026}
+T. W. Cabral, G. Fraidenraich, and M. A. M. Capretz, ``Can large language
+models predict solar irradiance in the long term?,'' \textit{Solar Energy},
+vol. 317, Art. no. 114964, 2026,
+doi: 10.1016/j.solener.2026.114964.
 
 \bibitem{anderson2023}
 K. S. Anderson, C. W. Hansen, W. F. Holmgren, A. R. Jensen, M. A. Mikofski,
@@ -739,7 +729,7 @@ doi: 10.21105/joss.05994.
 National Laboratory of the Rockies, ``GOES Aggregated PSM v4 Download API,''
 2026. [Online]. Available:
 \url{https://developer.nlr.gov/docs/solar/nsrdb/nsrdb-GOES-aggregated-v4-0-0-download/}.
-Accessed: Jul. 19, 2026.
+Accessed: Jul. 30, 2026.
 
 \bibitem{hyndman2006}
 R. J. Hyndman and A. B. Koehler, ``Another look at measures of forecast

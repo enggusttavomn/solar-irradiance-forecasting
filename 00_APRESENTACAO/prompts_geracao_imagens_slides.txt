@@ -1,6 +1,108 @@
 PROMPTS PARA GERAÇÃO DAS IMAGENS DA APRESENTAÇÃO
 ================================================
 
+REPOSITÓRIO OFICIAL E REGRAS DE VERIFICAÇÃO
+--------------------------------------------
+
+Repositório oficial:
+https://github.com/enggusttavomn/TCC
+
+Branch de referência:
+https://github.com/enggusttavomn/TCC/tree/main
+
+Fontes principais:
+
+Documentação geral:
+https://github.com/enggusttavomn/TCC/blob/main/README.md
+
+Modelos do experimento mensal:
+https://github.com/enggusttavomn/TCC/tree/main/codigo_fonte/modelos
+
+Resultados mensais canônicos:
+https://github.com/enggusttavomn/TCC/tree/main/resultados/avaliacao_mensal_canonica
+
+Ranking mensal:
+https://github.com/enggusttavomn/TCC/blob/main/resultados/avaliacao_mensal_canonica/metricas_medias_modelos.csv
+
+Métricas probabilísticas mensais:
+https://github.com/enggusttavomn/TCC/blob/main/resultados/avaliacao_mensal_canonica/metricas_probabilisticas_medias.csv
+
+Implementação do TimesNet horário:
+https://github.com/enggusttavomn/TCC/blob/main/codigo_fonte/timesnet_horario.py
+
+Protocolo do TimesNet horário:
+https://github.com/enggusttavomn/TCC/blob/main/codigo_fonte/experimento_horario_timesnet.py
+
+Configuração da execução TimesNet:
+https://github.com/enggusttavomn/TCC/blob/main/resultados/avaliacao_horaria_timesnet/configuracao_execucao.json
+
+Status da execução TimesNet:
+https://github.com/enggusttavomn/TCC/blob/main/resultados/avaliacao_horaria_timesnet/status_execucao.json
+
+
+INSTRUÇÃO OBRIGATÓRIA PARA O GPT
+--------------------------------
+
+Use a branch main do repositório como fonte oficial de verdade.
+
+Antes de gerar cada slide, consulte os arquivos relevantes do repositório
+sempre que o conteúdo envolver arquitetura, entradas, saídas, hiperparâmetros,
+protocolo experimental, métricas, ranking, intervalos, limitações ou status de
+execução.
+
+Regras:
+
+1. Não invente arquiteturas, hiperparâmetros, resultados ou interpretações.
+2. Se este arquivo divergir do repositório, siga o repositório.
+3. Para o benchmark mensal, use somente os resultados concluídos em:
+   resultados/avaliacao_mensal_canonica/
+4. Não use pastas de legado, smoke test ou execuções incompletas como evidência
+   científica principal.
+5. O modelo novo se chama TimesNet, não TimesNPTS.
+6. TimesNet pertence a um experimento horário multistep separado. Não o misture
+   diretamente com o ranking mensal.
+7. O protocolo TimesNet usa 336 horas de contexto e previsão direta de 72 horas,
+   avaliada nos horizontes de 24, 48 e 72 horas.
+8. Enquanto status_execucao.json não indicar conclusão e não existirem métricas
+   finais publicáveis, apresente TimesNet como “under evaluation”.
+9. O alvo é GHI em W/m². Não o descreva como energia, geração fotovoltaica ou
+   irradiação acumulada.
+10. Se algum arquivo não estiver acessível, peça o conteúdo ao usuário. Não
+    complete lacunas com suposições.
+11. Antes de gerar slides de resultados, confira cada número nos CSVs oficiais.
+12. Após gerar o slide, informe quais arquivos do repositório foram consultados.
+
+
+TEXTO PARA ENVIAR AO GPT ANTES DE GERAR OS SLIDES
+-------------------------------------------------
+
+Use this GitHub repository and its main branch as the official source of truth:
+
+https://github.com/enggusttavomn/TCC/tree/main
+
+Before generating each slide, inspect the relevant repository files whenever
+the slide includes model architecture, input representation, hyperparameters,
+experimental protocol, metrics, rankings, probabilistic intervals,
+interpretations, limitations, or execution status.
+
+For the completed monthly benchmark, use only:
+resultados/avaliacao_mensal_canonica/
+
+For the hourly TimesNet experiment, inspect:
+codigo_fonte/timesnet_horario.py
+codigo_fonte/experimento_horario_timesnet.py
+resultados/avaliacao_horaria_timesnet/configuracao_execucao.json
+resultados/avaliacao_horaria_timesnet/status_execucao.json
+
+TimesNet is a separate hourly multi-step experiment. Do not mix preliminary
+TimesNet outputs with the completed monthly ranking. Treat it as “under
+evaluation” until the repository contains a completed status and final
+publishable metrics.
+
+Do not invent missing technical details. If the repository is inaccessible,
+ask me to provide the relevant files. After generating each slide, list the
+repository files used to verify its content.
+
 Fluxo recomendado
 -----------------
 
@@ -117,10 +219,10 @@ distributions.
 Caption: “Forecasting distributions instead of a single value”
 
 Family 4 — UNDER EVALUATION
-“TimesNPTS”
-Visual language: experimental blueprint, active research path, glowing
-unfinished module.
-Caption: “Current experimental extension”
+“TimesNet”
+Visual language: dominant-period FFT, 1D-to-2D temporal grids, Inception
+convolutions, and direct multi-step output.
+Caption: “Hourly multi-step model under evaluation”
 
 At the bottom, add a separate baseline strip:
 “Persistence · Seasonal Naive · Climatology”
@@ -448,65 +550,79 @@ Use yellow for sampled candidates, purple for probabilities, orange for
 scores, and teal for context. All visible text must be exactly as specified.
 
 
-SLIDE 10 — TIMESNPTS
---------------------
-
-Observação: como a arquitetura exata do TimesNPTS ainda não foi informada, este
-prompt apresenta o modelo como pesquisa em andamento, sem inventar seu
-funcionamento. Substitua o blueprint pela arquitetura real quando ela estiver
-definida.
+SLIDE 10 — TIMESNET
+-------------------
 
 Create a complete premium 16:9 PowerPoint slide, 1920×1080, matching the same
 dark navy advanced machine learning presentation style.
 
+Before generating this slide, verify the TimesNet implementation, experiment
+protocol, configuration, and execution status in the official repository.
+
 Small category label:
-“WORK IN PROGRESS”
+“HOURLY MULTI-STEP FORECASTING”
 
 Main title:
-“Extending the Non-Parametric Approach: TimesNPTS Under Evaluation”
+“From 1D Signals to 2D Temporal Patterns: TimesNet Under Evaluation”
 
-Create a sophisticated experimental research blueprint rather than a finalized
-architecture.
+Create a technically accurate left-to-right TimesNet architecture.
 
-On the left, show:
-“DeepNPTS”
-Represented by historical candidates, learned scores, probability weights, and
-a discrete forecast.
+STAGE 1 — HOURLY CONTEXT
+Show a univariate GHI time series containing:
+“336 hours of context”
 
-In the center, show an evolution arrow labeled:
-“Research hypothesis”
+STAGE 2 — PERIOD DISCOVERY
+Show a Fast Fourier Transform spectrum selecting:
+“Top 3 dominant non-zero frequencies”
+Label the operation:
+“FFT-based period discovery”
 
-On the right, show:
-“TimesNPTS”
-Represented as an active experimental module with three clearly separated
-research questions:
+STAGE 3 — TEMPORAL 2D VARIATIONS
+For each selected period, reshape the one-dimensional sequence into a
+two-dimensional grid:
+“cycles × period”
+Show three different temporal grids corresponding to the selected periods.
 
-“Temporal representation”
-“How can temporal patterns be represented more effectively?”
+STAGE 4 — MULTI-SCALE FEATURE EXTRACTION
+Apply compact Inception-style 2D convolution blocks to each grid.
+Label:
+“Multi-kernel 2D convolutions”
+“intra-period and inter-period patterns”
 
-“Candidate selection”
-“Which historical observations should influence the forecast?”
+STAGE 5 — ADAPTIVE AGGREGATION
+Combine the periodic representations using weights derived from their spectral
+amplitudes.
+Label:
+“Amplitude-weighted aggregation”
+Show a residual connection around the TimesBlock.
 
-“Probabilistic output”
-“Can calibration improve without excessively wide intervals?”
+STAGE 6 — DIRECT MULTI-STEP OUTPUT
+Show one direct forecast containing:
+“72 hourly values”
+Mark the evaluation horizons:
+“24 h”
+“48 h”
+“72 h”
 
-Add an evaluation pipeline:
-“Implementation → Training → Validation → Benchmark”
+Add a configuration strip:
+“Global univariate model · Optional locality embedding”
+“d_model = 8 · d_ff = 16 · 1 TimesBlock · top_k = 3 · 2 kernels”
 
-Highlight the current status:
-“UNDER EVALUATION”
+Add an experiment strip:
+“Train: 2019–2022 · Validation: 2023 · Test: 2024”
 
-Add the comparison criteria:
-“MAE · CRPS · Coverage · Interval Width · Stability”
+Add a visible status badge:
+“UNDER EVALUATION — FINAL RESULTS NOT YET AVAILABLE”
 
 Add a bottom takeaway:
-“A new model should be evaluated under the same protocol as the existing
-benchmark.”
+“TimesNet converts dominant temporal periods into 2D structures that can be
+processed by convolutional blocks.”
 
-The design should feel like an advanced R&D blueprint: precise grids,
-connected modules, active experiment indicators, subtle glowing lines, and
-strong visual hierarchy. Do not claim any final result or finalized
-architecture. All visible text must be exactly as specified.
+Use teal for the original sequence, purple for the frequency spectrum, orange
+and cyan for the 2D temporal grids, and lime for the 72-hour output. Make the
+diagram visually impressive but technically faithful. Do not show final
+metrics. Do not describe TimesNet as an NPTS variant. All visible text must be
+exactly as specified.
 
 
 SLIDE 11 — POINT RESULTS
@@ -561,7 +677,7 @@ Add three insight cards:
 “Recurrent models occupied three of the top four positions”
 
 Add a small note:
-“TimesNPTS is still under evaluation and is not included in this ranking.”
+“TimesNet belongs to a separate hourly experiment and is still under evaluation.”
 
 Use precise professional data visualization. Do not change, round differently,
 reorder, or invent any values. All visible text must be exactly as specified.
@@ -617,7 +733,7 @@ Add a “KEY TAKEAWAYS” section:
 “There is no universal winning model.”
 
 Add a “NEXT STEP” card:
-“Evaluate TimesNPTS under the same experimental protocol.”
+“Complete the separate TimesNet hourly evaluation at 24, 48, and 72 hours.”
 
 Final statement:
 “Choose models by their assumptions, evidence, and decision value — not by
@@ -626,3 +742,4 @@ complexity alone.”
 Use precise technical visuals, elegant spacing, clean typography, and a strong
 closing composition. Do not change or invent any result values. All visible
 text must be exactly as specified.
+

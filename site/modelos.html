@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Referências simples, modelos tabulares, redes recorrentes e previsores probabilísticos.">
+  <title>ML Models · GHI Forecast</title>
+  <link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="nav-shell">
+    <a class="brand" href="index.html"><span class="brand-mark">GHI</span><span>Monthly Forecast Study</span></a>
+    <nav class="nav-links" aria-label="Navegação principal"><a href="index.html">HOME</a><a href="data.html">DATA</a><a href="modelos.html" aria-current="page">ML MODELS</a><a href="resultados.html">RESULTADOS</a></nav>
+  </div>
+</header>
+<header class="page-hero compact">
+  <span class="eyebrow">Modelos de previsão</span>
+  <h1>Dez métodos, uma comparação controlada.</h1>
+  <p>Referências simples, modelos tabulares, redes recorrentes e previsores probabilísticos.</p>
+</header>
+<main>
+<section><div class="container">
+  <div class="section-head"><span class="kicker">Comparação</span><h2>Um arquivo para cada método</h2><p class="lead">O DeepNPTS é o objeto principal. Os demais métodos mostram se sua complexidade produz ganho sobre alternativas conhecidas.</p></div>
+  <div class="grid-3"><article class="card model-card"><span class="model-type">Referência</span><h3>Persistência</h3><p>Repete o último mês observado.</p><a href="../codigo_fonte/modelos/referencias_simples/persistencia.py"><code>referencias_simples/persistencia.py</code></a></article><article class="card model-card"><span class="model-type">Referência</span><h3>Sazonal ingênuo</h3><p>Usa o mesmo mês do ano anterior.</p><a href="../codigo_fonte/modelos/referencias_simples/sazonal_ingenuo.py"><code>referencias_simples/sazonal_ingenuo.py</code></a></article><article class="card model-card"><span class="model-type">Referência</span><h3>Climatologia</h3><p>Média histórica do mês e da localidade.</p><a href="../codigo_fonte/modelos/referencias_simples/climatologia.py"><code>referencias_simples/climatologia.py</code></a></article><article class="card model-card"><span class="model-type">Tabular</span><h3>XGBoost</h3><p>Árvores impulsionadas sobre atributos temporais.</p><a href="../codigo_fonte/modelos/tabulares/xgboost.py"><code>tabulares/xgboost.py</code></a></article><article class="card model-card"><span class="model-type">Tabular</span><h3>MLP</h3><p>Rede densa aplicada à representação tabular.</p><a href="../codigo_fonte/modelos/tabulares/mlp.py"><code>tabulares/mlp.py</code></a></article><article class="card model-card"><span class="model-type">Recorrente</span><h3>RNN</h3><p>Recorrência simples sobre 12 meses.</p><a href="../codigo_fonte/modelos/recorrentes/rnn.py"><code>recorrentes/rnn.py</code></a></article><article class="card model-card"><span class="model-type">Recorrente</span><h3>LSTM</h3><p>Recorrência com mecanismos de memória.</p><a href="../codigo_fonte/modelos/recorrentes/lstm.py"><code>recorrentes/lstm.py</code></a></article><article class="card model-card"><span class="model-type">Recorrente</span><h3>DilatedRNN</h3><p>Saltos recorrentes de 1, 2 e 4 meses.</p><a href="../codigo_fonte/modelos/recorrentes/dilated_rnn.py"><code>recorrentes/dilated_rnn.py</code></a></article><article class="card model-card"><span class="model-type">Probabilístico</span><h3>DeepAR</h3><p>Distribuição Student-t autorregressiva.</p><a href="../codigo_fonte/modelos/probabilisticos/deepar.py"><code>probabilisticos/deepar.py</code></a></article><article class="card model-card"><span class="model-type">Modelo principal</span><h3>DeepNPTS</h3><p>Distribuição discreta sobre valores do contexto.</p><a href="../codigo_fonte/modelos/probabilisticos/deepnpts.py"><code>probabilisticos/deepnpts.py</code></a></article></div>
+</div></section>
+<section class="alt"><div class="container">
+  <div class="section-head"><span class="kicker">Treinamento</span><h2>O que todos compartilham</h2></div>
+  <div class="grid-4">
+    <div class="card"><span class="card-number">GLOBAL</span><h3>Dez séries</h3><p>Um modelo por arquitetura e semente.</p></div>
+    <div class="card"><span class="card-number">SEMENTES</span><h3>Cinco execuções</h3><p>11, 23, 42, 67 e 89.</p></div>
+    <div class="card"><span class="card-number">HORIZONTE</span><h3>Um mês</h3><p>Uma previsão em cada origem.</p></div>
+    <div class="card"><span class="card-number">TESTE</span><h3>Sem reajuste</h3><p>Pesos fixos durante 2024.</p></div>
+  </div>
+  <div class="notice" style="margin-top:20px"><strong>Importante:</strong> o DeepNPTS atual é o estimador discreto do GluonTS. Ele não é o antigo VHP baseado em uma regra manual de vizinhança.</div>
+</div></section></main>
+<footer class="page-footer"><div class="container footer-inner"><span>Avaliação mensal canônica de GHI</span><span>Fonte oficial: <a href="../resultados/avaliacao_mensal_canonica/README.md">resultados canônicos</a></span></div></footer>
+</body>
+</html>

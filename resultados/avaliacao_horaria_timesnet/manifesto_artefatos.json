@@ -1,0 +1,95 @@
+{
+  "versao_esquema": 1,
+  "criado_em_utc": "2026-08-03T02:31:27.536291+00:00",
+  "modo_execucao": "completa",
+  "resultado_smoke_nao_publicavel": false,
+  "semente": 42,
+  "epocas_escolhidas_exclusivamente_na_validacao_2023": {
+    "LSTM": 22,
+    "TimesNet": 14
+  },
+  "xgboost_multi_strategy": "multi_output_tree",
+  "politica_borda": "somente_origens_com_72_horas_totalmente_observadas; sem completar a borda de 2024 com dados de 2025",
+  "ambiente": {
+    "python": "3.12.1",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "torch": "2.6.0+cpu",
+    "pvlib": "0.15.1",
+    "xgboost": "3.2.0"
+  },
+  "arquivos": {
+    "configuracao_execucao.json": {
+      "sha256": "43f96c708ad90b7a49f172b79369a9e7420cbfab0b9f34e3234b2237216c484e",
+      "bytes": 896
+    },
+    "escalas_minmax_pre_corte.csv": {
+      "sha256": "80b3d7878948fd490c4ff49c9ced882eb51d43455dc57268798e9be7acb8bf84",
+      "bytes": 2454
+    },
+    "figuras/comparacao_rmse_modelos.png": {
+      "sha256": "efaec01b05e4641cba2997a8d107bac3847ce7a632a2705c2d7a4e76782881a6",
+      "bytes": 257474
+    },
+    "figuras/previsao_horaria_timesnet_72h.png": {
+      "sha256": "e55d555b167967af85c13230d2a370b4a41b394c4d049e949845e79a93be2bb7",
+      "bytes": 251531
+    },
+    "historico_treinamento.csv": {
+      "sha256": "805639449ade9c49e69ed68ad60ae137f91164494becc920ed3e04219e4cdaf3",
+      "bytes": 1996
+    },
+    "metricas_macro.csv": {
+      "sha256": "e18a6d62ce81f720e6f7fe0474ea4bd71102fbd1f52bcbeaf624b8b4624eaef7",
+      "bytes": 18899
+    },
+    "metricas_por_localidade.csv": {
+      "sha256": "2fcaf3b46dce7e4d9eec465550700649a68e99df1ce7613e48693ccbb11e4a5e",
+      "bytes": 209095
+    },
+    "modelos/lstm_encoder_direto_refit.pt": {
+      "sha256": "444af3634597f1d6d8bd6973bc22d90c3a3a0251aaa1e8219ee3a7d62da9b503",
+      "bytes": 34186
+    },
+    "modelos/timesnet_refit.pt": {
+      "sha256": "ce528f79500ac79bc9973a15f95dac2bc3d5ed1ef05b87ebd44f829b9216f2a4",
+      "bytes": 115318
+    },
+    "modelos/xgboost_multioutput_refit.joblib": {
+      "sha256": "9361502f6052c04ae1c13e10fb017bc489d8d7b78efb278494680c62d3514ea2",
+      "bytes": 1169932
+    },
+    "previsoes_teste.csv.gz": {
+      "sha256": "3dfe0425e6d7b248d5fb3a12de57375feec92dd9174e5ab1223e650503d8ac61",
+      "bytes": 14020375
+    },
+    "previsoes_validacao.csv.gz": {
+      "sha256": "2c3b96955dc3dca3add9d658cdf9305706c1575fad91452cb36f176d226e06e5",
+      "bytes": 14028430
+    },
+    "protocolo_temporal.csv": {
+      "sha256": "f1d52fe64e3f369b64d94b8f0040490da75cae0572bafeea72eae9ad97c43c99",
+      "bytes": 5334
+    },
+    "resumo_execucao.json": {
+      "sha256": "54d2435b6dc256cefa09ec58db01687e51bd8c6f20fbad0828309dbb97a492c9",
+      "bytes": 7027
+    },
+    "retomada/epocas_timesnet.json": {
+      "sha256": "d9730863daf2f38b811dd6222c449d33a9f37aae1b3748057ee93fc542d3cad7",
+      "bytes": 140
+    },
+    "retomada/historico_timesnet_refit.csv": {
+      "sha256": "0021971193f4bb936ee801b84be2fec52d192fed9bbadfa4575f83a985fb1b55",
+      "bytes": 797
+    },
+    "retomada/historico_timesnet_selecao.csv": {
+      "sha256": "fc32652a7c4ae5a5f23b7a6093d622972abb5bc5bf1702a0c0fd7bba485a7f1c",
+      "bytes": 1361
+    },
+    "status_execucao.json": {
+      "sha256": "13a619c476be42df970c6c99aa6fcc6f5f8f9c3f32662ec610a5485d87ec2b49",
+      "bytes": 201
+    }
+  }
+}

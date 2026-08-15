@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Origem, cobertura, auditoria, divisão temporal e construção das entradas utilizadas pelos modelos.">
+  <title>Data · GHI Forecast</title>
+  <link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="nav-shell">
+    <a class="brand" href="index.html"><span class="brand-mark">GHI</span><span>Monthly Forecast Study</span></a>
+    <nav class="nav-links" aria-label="Navegação principal"><a href="index.html">HOME</a><a href="data.html" aria-current="page">DATA</a><a href="modelos.html">ML MODELS</a><a href="resultados.html">RESULTADOS</a></nav>
+  </div>
+</header>
+<header class="page-hero compact">
+  <span class="eyebrow">Dados e preparação</span>
+  <h1>Da NSRDB à base mensal.</h1>
+  <p>Origem, cobertura, auditoria, divisão temporal e construção das entradas utilizadas pelos modelos.</p>
+</header>
+<main>
+<section><div class="container">
+  <div class="section-head"><span class="kicker">Fonte</span><h2>NLR / NSRDB</h2><p class="lead">Produto modelado GOES Aggregated PSM v4. Não são medições de solo nem dados internos das fábricas.</p></div>
+  <div class="grid-3">
+    <div class="card"><span class="card-number">RESOLUÇÃO DA API</span><h3>60 minutos</h3><p>Consulta anual da GHI para cada coordenada.</p></div>
+    <div class="card"><span class="card-number">DADO PRESERVADO</span><h3>Média diária</h3><p>As 24 horas são agregadas, mantendo a unidade W/m².</p></div>
+    <div class="card"><span class="card-number">COBERTURA</span><h3>2019–2024</h3><p>2.192 dias completos por localidade.</p></div>
+  </div>
+</div></section>
+<section class="alt"><div class="container">
+  <div class="section-head"><span class="kicker">Divisão temporal</span><h2>Contexto, treino e teste</h2></div>
+  <div class="timeline"><div class="time"><strong>2019</strong><span>contexto inicial</span></div><div class="time train"><strong>2020–2023</strong><span>48 alvos de treinamento por localidade</span></div><div class="time"><strong>2024</strong><span>12 alvos de teste</span></div></div>
+  <div class="notice" style="margin-top:20px"><strong>Sem vazamento:</strong> os parâmetros da transformação são estimados antes do teste. O valor real de cada mês de 2024 entra apenas no contexto da origem seguinte.</div>
+</div></section>
+<section><div class="container">
+  <div class="section-head"><span class="kicker">Auditoria</span><h2>Integridade das dez séries</h2></div>
+  <div class="table-wrap"><table><thead><tr><th>Localidade</th><th>Período</th><th>Dias</th><th>Ausentes</th><th>Duplicados</th><th>GHI inválida</th></tr></thead><tbody><tr><td>BMW San Luis Potosí</td><td>2019-01-01 — 2024-12-31</td><td>2.192</td><td>0</td><td>0</td><td>0</td></tr><tr><td>BYD Camaçari</td><td>2019-01-01 — 2024-12-31</td><td>2.192</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Ford Rouge</td><td>2019-01-01 — 2024-12-31</td><td>2.192</td><td>0</td><td>0</td><td>0</td></tr><tr><td>GM Factory Zero</td><td>2019-01-01 — 2024-12-31</td><td>2.192</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Hyundai Georgia</td><td>2019-01-01 — 2024-12-31</td><td>2.192</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Lucid Casa Grande</td><td>2019-01-01 — 2024-12-31</td><td>2.192</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Rivian Normal</td><td>2019-01-01 — 2024-12-31</td><td>2.192</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Tesla Fremont</td><td>2019-01-01 — 2024-12-31</td><td>2.192</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Tesla Nevada</td><td>2019-01-01 — 2024-12-31</td><td>2.192</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Tesla Texas</td><td>2019-01-01 — 2024-12-31</td><td>2.192</td><td>0</td><td>0</td><td>0</td></tr></tbody></table></div>
+</div></section>
+<section class="alt"><div class="container">
+  <div class="section-head"><span class="kicker">Preparação</span><h2>Como as entradas são construídas</h2></div>
+  <div class="grid-2">
+    <div class="card"><h3>Transformação</h3><p>Média por mês civil, min–max por localidade, saturação em [0,1] e quantização uniforme em 128 níveis.</p></div>
+    <div class="card"><h3>Atributos</h3><p>12 defasagens, médias de 3, 6 e 12 meses, seno/cosseno do mês-alvo e identificação da localidade.</p></div>
+  </div>
+  <div class="grid-2" style="margin-top:18px">
+    <div class="code-card"><div class="code-head"><span>Coleta</span><a href="../codigo_fonte/coleta/api_nsrdb.py">abrir código</a></div><pre>coletar_ghi(
+    lat=local["lat"],
+    lon=local["lon"],
+    start_year=2019,
+    end_year=2024,
+    inter=60,
+)</pre></div>
+    <div class="code-card"><div class="code-head"><span>Base mensal</span><a href="../codigo_fonte/preparacao/base_mensal.py">abrir código</a></div><pre>base = carregar_base_mensal(
+    contexto=12,
+    train_ratio=0.8,
+    niveis_quantizacao=128,
+)</pre></div>
+  </div>
+</div></section></main>
+<footer class="page-footer"><div class="container footer-inner"><span>Avaliação mensal canônica de GHI</span><span>Fonte oficial: <a href="../resultados/avaliacao_mensal_canonica/README.md">resultados canônicos</a></span></div></footer>
+</body>
+</html>

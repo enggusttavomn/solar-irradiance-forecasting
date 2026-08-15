@@ -1,19 +1,21 @@
-"""Experimentos isolados com redes/candidatos avancados de serie temporal.
+"""Experimentos LEGADOS com candidatos avancados de serie temporal.
 
-Este script nao altera o pipeline oficial do TCC. Ele reutiliza as mesmas bases,
-o mesmo corte temporal e as mesmas metricas para testar modelos candidatos em
-uma pasta separada:
+Este script nao altera a avaliacao mensal corrigida. Sua rodada historica nao
+usa o protocolo publicavel atual e NAO PODE ser citada no TCC, em artigo ou em
+congresso. Uma nova execucao exige a flag explicita de aceite e grava resultados
+em uma pasta separada:
 
     resultados/experimentos_redes_avancadas/
 
 Modelos avaliados:
 - DilatedRNN: rede recorrente multiescala com subamostragens dilatadas.
-- DeepAR: aproximacao probabilistica autoregressiva com LSTM e perda Gaussiana.
-- DeepNPTS_aprox: baseline nao parametrico inspirado em NPTS, com vizinhos
-  historicos ponderados por similaridade e recencia.
+- DeepAR_exp: aproximacao probabilistica autoregressiva com LSTM e perda
+  Gaussiana; nao e a implementacao canonica.
+- VizinhosHistoricos_aprox: suavizador nao parametrico por vizinhos historicos
+  ponderados por similaridade e recencia; nao e DeepNPTS.
 
-Observacao: DeepAR e DeepNPTS aqui sao experimentos de comparacao, nao entram no
-artigo/pipeline oficial ate validacao metodologica.
+O pipeline opcional com DeepAR e DeepNPTS canonicos do GluonTS esta em outro
+modulo e ainda nao possui resultados completos validados para publicacao.
 """
 
 from __future__ import annotations
@@ -35,6 +37,10 @@ from codigo_fonte.preprocessamento import preparar_serie_temporal
 
 RESULTADOS_EXPERIMENTOS = PASTA_RESULTADOS / "experimentos_redes_avancadas"
 FREQUENCIAS_VALIDAS = {"diaria", "mensal"}
+AVISO_LEGADO = (
+    "Experimento legado e nao comparavel ao resultado publicavel. "
+    "E proibido usar suas saidas no TCC, em artigo ou em congresso."
+)
 
 
 def nome_arquivo(local: str) -> str:
@@ -193,16 +199,16 @@ class DeepARExperimentalRegressor(KerasExperimentalRegressor):
         return 1 / (1 + np.exp(-pred[:, 0]))
 
 
-class DeepNPTSApproxRegressor:
-    """Baseline nao parametrico inspirado em NPTS para teste rapido.
+class VizinhosHistoricosApproxRegressor:
+    """Suavizador por vizinhos historicos para teste exploratorio.
 
     A previsao e uma media ponderada dos alvos historicos. Os pesos combinam
     similaridade entre o vetor de features atual e exemplos de treino com um
     fator de recencia. O modelo nao usa TensorFlow e serve como referencia
-    experimental de baixo custo.
+    experimental de baixo custo. Ele nao implementa DeepNPTS.
     """
 
-    nome_modelo = "DeepNPTS_aprox"
+    nome_modelo = "VizinhosHistoricos_aprox"
 
     def __init__(self, k: int = 80, temperature: float = 0.08, recency_decay: float = 0.995):
         self.k = k
@@ -212,7 +218,11 @@ class DeepNPTSApproxRegressor:
         self.y_train_: np.ndarray | None = None
         self.recency_weights_: np.ndarray | None = None
 
-    def fit(self, X_train: pd.DataFrame, y_train: pd.Series) -> "DeepNPTSApproxRegressor":
+    def fit(
+        self,
+        X_train: pd.DataFrame,
+        y_train: pd.Series,
+    ) -> "VizinhosHistoricosApproxRegressor":
         self.X_train_ = np.asarray(X_train, dtype=np.float32)
         self.y_train_ = np.asarray(y_train, dtype=np.float32)
         n = len(self.y_train_)
@@ -251,7 +261,7 @@ def criar_modelos_experimentais() -> dict[str, object]:
     return {
         "DilatedRNN": DilatedRNNRegressor(),
         "DeepAR_exp": DeepARExperimentalRegressor(),
-        "DeepNPTS_aprox": DeepNPTSApproxRegressor(),
+        "VizinhosHistoricos_aprox": VizinhosHistoricosApproxRegressor(),
     }
 
 
@@ -281,12 +291,12 @@ def avaliar_modelo_experimental(
     y_train: pd.Series,
     y_test: pd.Series,
     y_test_original: pd.Series,
-    quantization_params: dict[str, float],
+    normalization_params: dict[str, float],
 ) -> ResultadoExperimento:
     """Treina, preve e calcula metricas de um modelo experimental."""
     modelo.fit(X_train, y_train)
     y_pred = pd.Series(modelo.predict(X_test), index=y_test.index).clip(0, 1).reset_index(drop=True)
-    y_pred_original = desnormalizar_ghi(y_pred, quantization_params)
+    y_pred_original = desnormalizar_ghi(y_pred, normalization_params)
     metricas = calcular_metricas(
         y_test.reset_index(drop=True),
         y_pred,
@@ -308,14 +318,19 @@ def avaliar_modelo_experimental(
     return ResultadoExperimento(metricas, y_pred, y_pred_original)
 
 
-def carregar_metricas_oficiais(frequencia: str) -> pd.DataFrame:
-    """Le os resultados oficiais para comparar com os experimentos."""
-    if frequencia == "diaria":
-        caminho = PASTA_RESULTADOS / "todas_localidades" / "metricas_geral.csv"
-    elif frequencia == "mensal":
-        caminho = PASTA_RESULTADOS / "todas_localidades_mensal" / "metricas_geral.csv"
-    else:
+def carregar_metricas_referencia(frequencia: str) -> pd.DataFrame:
+    """Le apenas a avaliacao mensal corrigida, quando houver comparacao.
+
+    Nao existe uma referencia diaria com o mesmo nivel de auditoria; portanto,
+    experimentos diarios nao recebem uma tabela rotulada como comparacao
+    oficial. Mesmo no caso mensal, a tabela e somente diagnostica e nao autoriza
+    combinar protocolos em publicacoes.
+    """
+    if frequencia not in FREQUENCIAS_VALIDAS:
         raise ValueError("frequencia deve ser 'diaria' ou 'mensal'.")
+    if frequencia == "diaria":
+        return pd.DataFrame()
+    caminho = PASTA_RESULTADOS / "avaliacao_mensal_corrigida" / "metricas_geral.csv"
     if not caminho.exists():
         return pd.DataFrame()
     return pd.read_csv(caminho)
@@ -325,8 +340,20 @@ def rodar_experimentos(
     frequencias: Iterable[str],
     localidades: Iterable[dict],
     continuar_em_erro: bool = True,
+    aceitar_experimento_legado: bool = False,
 ) -> pd.DataFrame:
-    """Executa os modelos experimentais e salva resultados separados."""
+    """Executa modelos legados somente depois de um aceite explicito."""
+    if not aceitar_experimento_legado:
+        raise RuntimeError(
+            f"{AVISO_LEGADO} Informe aceitar_experimento_legado=True "
+            "conscientemente."
+        )
+    RESULTADOS_EXPERIMENTOS.mkdir(parents=True, exist_ok=True)
+    (RESULTADOS_EXPERIMENTOS / "AVISO_NAO_PUBLICAR.txt").write_text(
+        f"{AVISO_LEGADO}\n",
+        encoding="utf-8",
+    )
+    print(f"AVISO: {AVISO_LEGADO}")
     registros_metricas = []
     registros_status = []
 
@@ -359,7 +386,7 @@ def rodar_experimentos(
                         y_train,
                         y_test,
                         y_test_original,
-                        preparation.quantization_params,
+                        preparation.normalization_params,
                     )
                 except Exception as exc:
                     registros_status.append(
@@ -410,19 +437,26 @@ def rodar_experimentos(
             df_freq = df_metricas[df_metricas["Frequencia"] == frequencia]
             df_freq.to_csv(pasta_freq / "metricas_experimentos.csv", index=False)
 
-            oficiais = carregar_metricas_oficiais(frequencia)
-            if not oficiais.empty:
-                oficiais = oficiais.copy()
-                oficiais = oficiais[oficiais["Localidade"].isin(df_freq["Localidade"].unique())]
-                oficiais["Frequencia"] = frequencia
-                oficiais["Origem"] = "oficial"
+            referencia = carregar_metricas_referencia(frequencia)
+            if not referencia.empty:
+                referencia = referencia.copy()
+                referencia = referencia[
+                    referencia["Localidade"].isin(df_freq["Localidade"].unique())
+                ]
+                referencia["Frequencia"] = frequencia
+                referencia["Origem"] = "avaliacao_mensal_corrigida"
                 df_comp = df_freq.copy()
-                df_comp["Origem"] = "experimento"
-                colunas_comuns = [col for col in df_comp.columns if col in oficiais.columns]
+                df_comp["Origem"] = "experimento_legado"
+                colunas_comuns = [
+                    col for col in df_comp.columns if col in referencia.columns
+                ]
                 pd.concat(
-                    [oficiais[colunas_comuns], df_comp[colunas_comuns]],
+                    [referencia[colunas_comuns], df_comp[colunas_comuns]],
                     ignore_index=True,
-                ).to_csv(pasta_freq / "comparacao_com_modelos_oficiais.csv", index=False)
+                ).to_csv(
+                    pasta_freq / "comparacao_com_avaliacao_mensal_corrigida.csv",
+                    index=False,
+                )
 
     df_status = pd.DataFrame(registros_status)
     if not df_status.empty:
@@ -449,9 +483,18 @@ def selecionar_localidades(nomes: list[str] | None) -> list[dict]:
 def main() -> pd.DataFrame:
     parser = argparse.ArgumentParser(
         description=(
-            "Roda experimentos isolados com DilatedRNN, DeepAR experimental e "
-            "DeepNPTS aproximado sem alterar os resultados oficiais."
-        )
+            "Roda experimento LEGADO com DilatedRNN, DeepAR experimental e "
+            "VizinhosHistoricos_aprox. Suas saidas nao podem ser publicadas."
+        ),
+        epilog=AVISO_LEGADO,
+    )
+    parser.add_argument(
+        "--aceitar-experimento-legado",
+        action="store_true",
+        help=(
+            "Confirma que a rodada e apenas diagnostica e que seus resultados "
+            "nao serao usados em TCC, artigo ou congresso."
+        ),
     )
     parser.add_argument(
         "--frequencia",
@@ -473,6 +516,11 @@ def main() -> pd.DataFrame:
         help="Interrompe a execucao no primeiro erro de modelo.",
     )
     args = parser.parse_args()
+    if not args.aceitar_experimento_legado:
+        parser.error(
+            "a execucao foi bloqueada: informe --aceitar-experimento-legado "
+            "depois de ler o aviso de nao publicacao"
+        )
 
     frequencias = ["diaria", "mensal"] if args.frequencia == "ambas" else [args.frequencia]
     localidades = selecionar_localidades(args.localidade)
@@ -480,6 +528,7 @@ def main() -> pd.DataFrame:
         frequencias=frequencias,
         localidades=localidades,
         continuar_em_erro=not args.parar_em_erro,
+        aceitar_experimento_legado=True,
     )
 
 

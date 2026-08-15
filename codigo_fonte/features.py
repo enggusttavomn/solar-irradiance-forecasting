@@ -7,6 +7,7 @@ representacao sem permitir que informacoes futuras aparecam nas entradas.
 
 from __future__ import annotations
 
+import numpy as np
 import pandas as pd
 
 
@@ -15,6 +16,7 @@ def criar_features_temporais(
     lags: tuple[int, ...] = (1, 2, 3, 7),
     moving_windows: tuple[int, ...] = (3, 7, 30),
     periodo_label: str = "d",
+    incluir_calendario: bool = True,
 ) -> tuple[pd.DataFrame, list[str]]:
     """Cria lags, medias moveis e alvo seguinte sem vazamento de dados.
 
@@ -23,6 +25,8 @@ def criar_features_temporais(
         lags: Defasagens usadas como entradas do modelo.
         moving_windows: Janelas das medias moveis.
         periodo_label: Sufixo textual das janelas, como ``d`` ou ``m``.
+        incluir_calendario: Inclui seno/cosseno do periodo do alvo. Essas
+            variaveis sao conhecidas antes da previsao e nao causam vazamento.
 
     Returns:
         DataFrame com as features criadas e lista de colunas de entrada.
@@ -32,8 +36,18 @@ def criar_features_temporais(
         dos lags sao definidos em relacao ao alvo: ``ghi_t-1`` e o valor do
         proprio periodo ``t``, exatamente um periodo antes do alvo.
     """
+    colunas_obrigatorias = {"data", "ghi", "ghi_normalizado", "ghi_quantizado"}
+    faltantes = sorted(colunas_obrigatorias - set(dados.columns))
+    if faltantes:
+        raise ValueError(f"Colunas obrigatorias ausentes: {', '.join(faltantes)}")
+    if periodo_label not in {"d", "m"}:
+        raise ValueError("periodo_label deve ser 'd' ou 'm'.")
+    if len(set(lags)) != len(lags) or len(set(moving_windows)) != len(moving_windows):
+        raise ValueError("Lags e janelas moveis nao podem conter duplicatas.")
+
     # A copia evita modificar silenciosamente o DataFrame recebido pelo chamador.
     dados = dados.copy()
+    dados["data"] = pd.to_datetime(dados["data"])
     feature_columns: list[str] = []
 
     # A linha de data t preve t+1. Portanto, lag 1 e o valor observado em t,
@@ -60,6 +74,19 @@ def criar_features_temporais(
     dados["ghi_alvo"] = dados["ghi_normalizado"].shift(-1)
     dados["ghi_alvo_quantizado"] = dados["ghi_quantizado"].shift(-1)
     dados["ghi_alvo_original"] = dados["ghi"].shift(-1)
+
+    # O calendario do periodo previsto esta disponivel no instante da previsao.
+    # A codificacao circular evita a descontinuidade artificial dezembro/janeiro.
+    if incluir_calendario:
+        if periodo_label == "m":
+            fase = 2 * np.pi * (dados["data_alvo"].dt.month - 1) / 12
+            nomes = ("mes_alvo_sin", "mes_alvo_cos")
+        else:
+            fase = 2 * np.pi * (dados["data_alvo"].dt.dayofyear - 1) / 365.2425
+            nomes = ("dia_ano_alvo_sin", "dia_ano_alvo_cos")
+        dados[nomes[0]] = np.sin(fase)
+        dados[nomes[1]] = np.cos(fase)
+        feature_columns.extend(nomes)
 
     # Remove o inicio sem historico completo e a ultima linha, que nao possui
     # um periodo seguinte dentro da serie. O indice e refeito para ficar continuo.

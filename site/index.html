@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Visão geral do projeto, do problema científico e do caminho entre dados, modelos e resultados.">
+  <title>Home · GHI Forecast</title>
+  <link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="nav-shell">
+    <a class="brand" href="index.html"><span class="brand-mark">GHI</span><span>Monthly Forecast Study</span></a>
+    <nav class="nav-links" aria-label="Navegação principal"><a href="index.html" aria-current="page">HOME</a><a href="data.html">DATA</a><a href="modelos.html">ML MODELS</a><a href="resultados.html">RESULTADOS</a></nav>
+  </div>
+</header>
+<header class="page-hero">
+  <span class="eyebrow">TCC · previsão de séries temporais</span>
+  <h1>Previsão mensal de irradiância solar.</h1>
+  <p>Visão geral do projeto, do problema científico e do caminho entre dados, modelos e resultados.</p>
+</header>
+<main>
+<section><div class="container">
+  <div class="section-head"><span class="kicker">Pergunta central</span><h2>O DeepNPTS supera alternativas mais simples?</h2><p class="lead">O projeto compara o DeepNPTS com seis modelos aprendidos e três referências temporais na previsão da GHI média do mês seguinte.</p></div>
+  <div class="grid-2">
+    <div class="card"><span class="card-number">OBJETIVO</span><h3>Previsão mensal de GHI</h3><p>Dez séries associadas a localidades de fábricas de veículos elétricos. As fábricas definem somente os pontos geográficos.</p></div>
+    <div class="card dark-card"><span class="card-number">RESULTADO PRINCIPAL</span><h3>A climatologia obteve o menor erro</h3><p>Macro-MAE de 12,07 W/m². O DeepNPTS obteve 17,70 W/m² e ficou em 9º lugar entre dez métodos.</p></div>
+  </div>
+</div></section>
+<section class="alt"><div class="container">
+  <div class="section-head"><span class="kicker">Fluxo do projeto</span><h2>Da API ao artigo</h2></div>
+  <div class="flow">
+    <div class="flow-step"><span class="card-number">01</span><h3>Dados</h3><p>NSRDB, auditoria e agregação mensal.</p><small>Veja DATA</small></div>
+    <div class="flow-step"><span class="card-number">02</span><h3>Preparação</h3><p>Contexto, quantização e atributos temporais.</p><small>Veja DATA</small></div>
+    <div class="flow-step"><span class="card-number">03</span><h3>Modelos</h3><p>Dez métodos globais e referências simples.</p><small>Veja ML MODELS</small></div>
+    <div class="flow-step"><span class="card-number">04</span><h3>Avaliação</h3><p>Walk-forward, métricas e comparação.</p><small>Veja RESULTADOS</small></div>
+  </div>
+</div></section>
+<section><div class="container">
+  <div class="section-head"><span class="kicker">Números do estudo</span><h2>Escopo em uma leitura</h2></div>
+  <div class="grid-4">
+    <div class="card"><strong style="font-size:2rem">10</strong><p>localidades</p></div>
+    <div class="card"><strong style="font-size:2rem">72</strong><p>meses por série</p></div>
+    <div class="card"><strong style="font-size:2rem">10</strong><p>métodos</p></div>
+    <div class="card"><strong style="font-size:2rem">120</strong><p>alvos de teste</p></div>
+  </div>
+  <div class="button-row"><a class="button" href="data.html">Explorar os dados</a><a class="button secondary" href="resultados.html">Abrir resultados</a></div>
+</div></section></main>
+<footer class="page-footer"><div class="container footer-inner"><span>Avaliação mensal canônica de GHI</span><span>Fonte oficial: <a href="../resultados/avaliacao_mensal_canonica/README.md">resultados canônicos</a></span></div></footer>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{
+  "categorias_localidade": {
+    "BMW San Luis Potosi": 0,
+    "BYD Camacari": 1,
+    "Ford Rouge Electric Vehicle Center": 2,
+    "GM Factory Zero": 3,
+    "Hyundai Metaplant Georgia": 4,
+    "Lucid AMP 1 Casa Grande": 5,
+    "Rivian Normal": 6,
+    "Tesla Fremont Factory": 7,
+    "Tesla Gigafactory Nevada": 8,
+    "Tesla Gigafactory Texas": 9
+  },
+  "configuracao": {
+    "amostragem_treino": {
+      "classe": "ExpectedNumInstanceSampler",
+      "min_future": 1,
+      "min_past": 12,
+      "num_instances": 1.0
+    },
+    "batch_size": 32,
+    "cache_data": true,
+    "context_length": 12,
+    "device": "cpu",
+    "diretorio_saida": "resultados/avaliacao_mensal_canonica/logs_treinamento/deepar_seed_89",
+    "dropout_rate": 0.1,
+    "embedding_dimension": null,
+    "epochs": 100,
+    "hidden_size": 40,
+    "lags_seq": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "learning_rate": 0.001,
+    "nonnegative_pred_samples": false,
+    "num_batches_per_epoch": 50,
+    "num_layers": 2,
+    "num_samples": 500,
+    "numero_localidades_esperado": 10,
+    "patience": 10,
+    "scaling": false,
+    "seed": 89
+  },
+  "frequencia": "M",
+  "modelo": "DeepAR",
+  "prediction_length": 1,
+  "versao_esquema": 1,
+  "versao_gluonts": "0.16.2"
+}

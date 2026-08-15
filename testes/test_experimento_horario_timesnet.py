@@ -273,3 +273,7 @@ def test_smoke_executa_cinco_modelos_e_gera_artefatos(tmp_path: Path) -> None:
         artefatos["figura_timesnet"].name
         == "previsao_horaria_timesnet_72h.png"
     )
+    assert (
+        artefatos["figura_comparacao_rmse"].name
+        == "comparacao_rmse_modelos.png"
+    )

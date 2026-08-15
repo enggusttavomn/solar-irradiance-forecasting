@@ -1,62 +1,55 @@
-# Experimentos com redes avancadas
+# Experimentos avançados — legado, não publicável
 
-Rodada executada em 2026-06-29 para comparar modelos experimentais com o
-pipeline oficial, sem alterar os resultados oficiais ja existentes.
+> **Não use nenhum arquivo desta pasta no TCC, em artigo, congresso, resumo,
+> apresentação ou comparação principal.** A única fonte numérica publicável
+> atual é `resultados/avaliacao_mensal_corrigida/`.
 
-Modelos avaliados:
+Esta pasta preserva uma rodada exploratória executada em 2026-06-29. Ela foi
+produzida antes da correção integrada do alvo contínuo, das 12 defasagens, das
+baselines, das sementes e da inferência estatística. Seus resultados não são
+metodologicamente intercambiáveis com a avaliação mensal corrigida.
 
-- `DilatedRNN`: rede recorrente multiescala com subamostragens dilatadas.
-- `DeepAR_exp`: aproximacao experimental do DeepAR com LSTM probabilistica.
-- `DeepNPTS_aprox`: baseline nao parametrico inspirado em NPTS.
+Os arquivos históricos usam os rótulos:
 
-Arquivos principais:
+- `DilatedRNN`: rede recorrente multiescala experimental;
+- `DeepAR_exp`: aproximação local com LSTM e perda Gaussiana, não o DeepAR
+  canônico;
+- `DeepNPTS_aprox`: rótulo histórico incorreto para um suavizador por vizinhos
+  ponderados. Ele **não implementa DeepNPTS** e deve ser lido como
+  `VizinhosHistoricos_aprox`.
 
-- `metricas_experimentos_todas.csv`: metricas dos 3 modelos experimentais em
-  frequencia diaria e mensal.
-- `status_execucao.csv`: status de cada treino.
-- `diaria/comparacao_com_modelos_oficiais.csv`: modelos oficiais e
-  experimentais na frequencia diaria.
-- `mensal/comparacao_com_modelos_oficiais.csv`: modelos oficiais e
-  experimentais na frequencia mensal.
+Os CSVs existentes não foram renomeados nem recalculados para preservar a
+trilha histórica. As antigas tabelas
+`comparacao_com_modelos_oficiais.csv` também são legado: elas liam pastas do
+pipeline anterior e não constituem comparação válida com os resultados
+corrigidos.
 
-## Status da execucao
+O script `experimentos_redes_avancadas.py` agora:
 
-| Frequencia | Treinos ok | Erros |
-| --- | ---: | ---: |
-| diaria | 30 | 0 |
-| mensal | 30 | 0 |
+- bloqueia a execução sem `--aceitar-experimento-legado`;
+- usa o nome `VizinhosHistoricos_aprox` para novas saídas;
+- não cria comparação diária rotulada como oficial;
+- quando solicitado no mensal, lê somente
+  `resultados/avaliacao_mensal_corrigida/metricas_geral.csv` e rotula a junção
+  como diagnóstica.
 
-## Media dos modelos experimentais
+Mesmo uma nova execução continua proibida como fonte de publicação. A flag
+serve apenas para evitar execução acidental:
 
-| Frequencia | Modelo | MAE W/m2 | RMSE W/m2 | R2 | nRMSE (%) |
-| --- | --- | ---: | ---: | ---: | ---: |
-| diaria | DilatedRNN | 37.70 | 49.71 | 0.657 | 26.86 |
-| diaria | DeepNPTS_aprox | 39.32 | 51.65 | 0.629 | 27.86 |
-| diaria | DeepAR_exp | 41.44 | 54.40 | 0.586 | 29.33 |
-| mensal | DeepNPTS_aprox | 12.96 | 16.39 | 0.916 | 8.10 |
-| mensal | DilatedRNN | 15.25 | 18.73 | 0.878 | 9.29 |
-| mensal | DeepAR_exp | 61.02 | 68.57 | 0.010 | 34.21 |
+```bash
+python experimentos_redes_avancadas.py \
+  --aceitar-experimento-legado \
+  --frequencia mensal
+```
 
-## Melhor modelo geral por localidade
+DeepAR e DeepNPTS canônicos do GluonTS pertencem ao pipeline global opcional
+`executar_avaliacao_mensal_canonica.py`. Esse pipeline ainda não possui uma
+execução completa validada para publicação; saídas de smoke test não devem ser
+citadas.
 
-Na frequencia diaria, os modelos experimentais foram melhores em 5 das 10
-localidades, sempre com `DilatedRNN`. Os outros 5 melhores resultados
-continuaram nos modelos oficiais.
+Para análise, reprodução e redação atuais, use:
 
-Na frequencia mensal, os modelos experimentais foram melhores em 6 das 10
-localidades: `DeepNPTS_aprox` venceu em 5 e `DilatedRNN` venceu em 1. Os
-modelos oficiais continuaram melhores nas outras 4 localidades.
-
-## Leitura tecnica
-
-Os resultados indicam que `DilatedRNN` e `DeepNPTS_aprox` merecem ser mantidos
-como candidatos experimentais para discussao. A `DilatedRNN` e competitiva na
-escala diaria, enquanto o `DeepNPTS_aprox` apresentou bons resultados na escala
-mensal. A aproximacao `DeepAR_exp`, nesta configuracao inicial, nao superou os
-demais modelos e teve desempenho especialmente fraco no fluxo mensal.
-
-Como esses modelos ainda sao uma rodada paralela, os resultados nao substituem
-automaticamente as tabelas oficiais do artigo. Para entrar no texto principal,
-o ideal e repetir a rodada, revisar hiperparametros e documentar claramente que
-`DeepAR_exp` e `DeepNPTS_aprox` sao aproximacoes experimentais, nao
-implementacoes canonicas das bibliotecas originais.
+```text
+resultados/avaliacao_mensal_corrigida/
+cadernos_jupyter/04_avaliacao_mensal_corrigida.ipynb
+```

@@ -1474,6 +1474,9 @@ def gerar_figura_timesnet_horaria(
     primeira_localidade = (
         "BYD Camacari" if "BYD Camacari" in localidades else localidades[0]
     )
+    nome_exibicao = {
+        "BYD Camacari": "BYD Camaçari",
+    }.get(primeira_localidade, primeira_localidade)
     subconjunto = previsoes_teste.loc[
         previsoes_teste["localidade"] == primeira_localidade
     ]
@@ -1511,7 +1514,7 @@ def gerar_figura_timesnet_horaria(
         alvo["ghi_real_wm2"],
         color="#202124",
         linewidth=1.5,
-        label="GHI observado",
+        label="GHI de referência (NSRDB)",
     )
     eixo.plot(
         pd.to_datetime(alvo["timestamp_alvo_local_fixo"]),
@@ -1520,14 +1523,14 @@ def gerar_figura_timesnet_horaria(
         linewidth=1.0,
         linestyle="--",
         alpha=0.65,
-        label="TimesNet bruto",
+        label="Saída bruta do TimesNet",
     )
     eixo.plot(
         pd.to_datetime(alvo["timestamp_alvo_local_fixo"]),
         alvo["previsao_pos_timesnet_wm2"],
         color="#1F5AA6",
         linewidth=1.7,
-        label="TimesNet pós-processado",
+        label="Previsão pós-processada do TimesNet",
     )
     eixo.axvline(
         pd.Timestamp(alvo["origem_local_fixa"].iloc[0]),
@@ -1536,9 +1539,11 @@ def gerar_figura_timesnet_horaria(
         linestyle=":",
         label="Origem da previsão",
     )
+    sinal_utc = "+" if serie.offset_horas >= 0 else "−"
+    deslocamento_utc = f"{sinal_utc}{abs(serie.offset_horas):g}"
     eixo.set(
-        title=f"Previsão horária TimesNet — {primeira_localidade}",
-        xlabel="Horário local fixo da NSRDB",
+        title=f"Previsão horária com o TimesNet — {nome_exibicao}",
+        xlabel=f"Tempo-padrão local (UTC{deslocamento_utc})",
         ylabel="GHI (W/m²)",
     )
     eixo.set_ylim(bottom=min(-5.0, float(alvo["previsao_bruta_timesnet_wm2"].min())))
@@ -1547,6 +1552,203 @@ def gerar_figura_timesnet_horaria(
     figura.autofmt_xdate()
     figura.tight_layout()
     figura.savefig(caminho, dpi=220, bbox_inches="tight")
+    plt.close(figura)
+
+
+def gerar_figura_comparacao_rmse(
+    previsoes_teste: pd.DataFrame,
+    configuracao: ConfiguracaoExperimentoHorario,
+    caminho: Path,
+) -> None:
+    """Resume a evolucao do RMSE e a variacao espacial dos modelos.
+
+    O painel esquerdo usa todos os prefixos entre 1 h e ``pred_len``. Para
+    manter a mesma ponderacao do artigo, o RMSE e calculado primeiro em cada
+    localidade e depois agregado por media macro. O painel direito compara os
+    tres modelos aprendidos no horizonte completo.
+    """
+
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    colunas_necessarias = {
+        "localidade",
+        "passo_h",
+        "ghi_real_wm2",
+        *(f"previsao_pos_{SLUG_MODELOS[modelo]}_wm2" for modelo in MODELOS),
+    }
+    ausentes = colunas_necessarias - set(previsoes_teste.columns)
+    if ausentes:
+        raise ValueError(
+            "Colunas ausentes para a figura comparativa: "
+            + ", ".join(sorted(ausentes))
+        )
+
+    dados = previsoes_teste.loc[
+        previsoes_teste["passo_h"].between(1, configuracao.pred_len)
+    ].copy()
+    if dados.empty:
+        raise ValueError("Sem previsoes para gerar a figura comparativa.")
+
+    curvas: dict[str, pd.Series] = {}
+    rmse_locais: dict[str, pd.Series] = {}
+    for modelo in MODELOS:
+        coluna = f"previsao_pos_{SLUG_MODELOS[modelo]}_wm2"
+        erro_quadratico = (dados["ghi_real_wm2"] - dados[coluna]) ** 2
+        por_passo = (
+            dados.assign(erro_quadratico=erro_quadratico)
+            .groupby(["localidade", "passo_h"], sort=True)["erro_quadratico"]
+            .agg(["sum", "count"])
+        )
+        por_passo["soma_acumulada"] = por_passo.groupby(level=0)["sum"].cumsum()
+        por_passo["n_acumulado"] = por_passo.groupby(level=0)["count"].cumsum()
+        por_passo["rmse_acumulado"] = np.sqrt(
+            por_passo["soma_acumulada"] / por_passo["n_acumulado"]
+        )
+        curvas[modelo] = por_passo.groupby(level=1)["rmse_acumulado"].mean()
+        rmse_locais[modelo] = np.sqrt(
+            dados.assign(erro_quadratico=erro_quadratico)
+            .groupby("localidade", sort=True)["erro_quadratico"]
+            .mean()
+        )
+
+    nomes_locais = {
+        "BMW San Luis Potosi": "BMW San Luis Potosi",
+        "BYD Camacari": "BYD Camacari",
+        "Ford Rouge Electric Vehicle Center": "Ford Rouge",
+        "GM Factory Zero": "GM Factory Zero",
+        "Hyundai Metaplant Georgia": "Hyundai Georgia",
+        "Lucid AMP 1 Casa Grande": "Lucid Casa Grande",
+        "Rivian Normal": "Rivian Normal",
+        "Tesla Fremont Factory": "Tesla Fremont",
+        "Tesla Gigafactory Nevada": "Tesla Nevada",
+        "Tesla Gigafactory Texas": "Tesla Texas",
+    }
+    cores = {
+        "Persistência": "#7A7A7A",
+        "Sazonal ingênuo": "#B5B5B5",
+        "XGBoost": "#D55E00",
+        "LSTM": "#009E73",
+        "TimesNet": "#2864B7",
+    }
+    estilos = {
+        "Persistência": "--",
+        "Sazonal ingênuo": ":",
+        "XGBoost": "-",
+        "LSTM": "-.",
+        "TimesNet": "-",
+    }
+    marcadores = {"XGBoost": "o", "LSTM": "^", "TimesNet": "s"}
+    nomes_ascii = {
+        "Persistência": "Persistência",
+        "Sazonal Ingênuo": "Sazonal ingênuo",
+        "XGBoost": "XGBoost",
+        "LSTM": "LSTM",
+        "TimesNet": "TimesNet",
+    }
+
+    caminho.parent.mkdir(parents=True, exist_ok=True)
+    figura, (eixo_a, eixo_b) = plt.subplots(
+        1,
+        2,
+        figsize=(12.6, 4.8),
+        gridspec_kw={"width_ratios": [1.08, 1.0]},
+    )
+
+    ordem_curvas = (
+        "Persistência",
+        "Sazonal Ingênuo",
+        "XGBoost",
+        "LSTM",
+        "TimesNet",
+    )
+    for modelo in ordem_curvas:
+        rotulo = nomes_ascii[modelo]
+        curva = curvas[modelo]
+        destaque = modelo == "TimesNet"
+        eixo_a.plot(
+            curva.index,
+            curva.values,
+            color=cores[rotulo],
+            linestyle=estilos[rotulo],
+            linewidth=2.2 if destaque else 1.45,
+            label=rotulo,
+            zorder=4 if destaque else 2,
+        )
+        pontos = [
+            valor
+            for valor in configuracao.horizontes
+            if valor in curva.index and valor <= configuracao.pred_len
+        ]
+        if pontos:
+            eixo_a.scatter(
+                pontos,
+                curva.loc[pontos],
+                color=cores[rotulo],
+                s=18 if destaque else 11,
+                zorder=5,
+            )
+    eixo_a.set(
+        title="(a) Evolução com o horizonte",
+        xlabel="Prefixo acumulado da previsão (h)",
+        ylabel=r"RMSE macro (W m$^{-2}$)",
+        xlim=(1, configuracao.pred_len),
+    )
+    eixo_a.set_xticks(
+        sorted({1, *configuracao.horizontes, configuracao.pred_len})
+    )
+    eixo_a.grid(axis="both", alpha=0.18)
+    eixo_a.legend(
+        ncol=2,
+        fontsize=8,
+        frameon=False,
+        loc="upper left",
+    )
+
+    aprendidos = ("XGBoost", "TimesNet", "LSTM")
+    quadro_local = pd.DataFrame({m: rmse_locais[m] for m in aprendidos})
+    quadro_local = quadro_local.sort_values("TimesNet", ascending=True)
+    posicoes = np.arange(len(quadro_local))
+    deslocamentos = {"XGBoost": -0.18, "TimesNet": 0.0, "LSTM": 0.18}
+    for modelo in aprendidos:
+        eixo_b.scatter(
+            quadro_local[modelo],
+            posicoes + deslocamentos[modelo],
+            color=cores[modelo],
+            marker=marcadores[modelo],
+            s=31,
+            label=modelo,
+            zorder=4,
+        )
+    for posicao, (_, linha) in enumerate(quadro_local.iterrows()):
+        eixo_b.plot(
+            [linha.min(), linha.max()],
+            [posicao, posicao],
+            color="#D6D6D6",
+            linewidth=1.0,
+            zorder=1,
+        )
+    eixo_b.set(
+        title=f"(b) Modelos aprendidos em {configuracao.pred_len} h",
+        xlabel=r"RMSE (W m$^{-2}$)",
+        yticks=posicoes,
+        yticklabels=[nomes_locais.get(nome, nome) for nome in quadro_local.index],
+    )
+    eixo_b.grid(axis="x", alpha=0.18)
+    eixo_b.legend(ncol=3, fontsize=8, frameon=False, loc="lower right")
+
+    for eixo in (eixo_a, eixo_b):
+        eixo.spines["top"].set_visible(False)
+        eixo.spines["right"].set_visible(False)
+        eixo.tick_params(labelsize=8.5)
+        eixo.title.set_fontsize(10)
+        eixo.xaxis.label.set_fontsize(9)
+        eixo.yaxis.label.set_fontsize(9)
+
+    figura.tight_layout(w_pad=2.0)
+    figura.savefig(caminho, dpi=240, bbox_inches="tight")
     plt.close(figura)
 
 
@@ -1740,6 +1942,11 @@ def executar_experimento(
         configuracao,
         saida / "figuras" / "previsao_horaria_timesnet_72h.png",
     )
+    gerar_figura_comparacao_rmse(
+        tabela_teste,
+        configuracao,
+        saida / "figuras" / "comparacao_rmse_modelos.png",
+    )
 
     resumo_final = metricas_macro.loc[
         (metricas_macro["particao"] == "teste_2024")
@@ -1782,6 +1989,9 @@ def executar_experimento(
         "metricas_macro": saida / "metricas_macro.csv",
         "figura_timesnet": (
             saida / "figuras" / "previsao_horaria_timesnet_72h.png"
+        ),
+        "figura_comparacao_rmse": (
+            saida / "figuras" / "comparacao_rmse_modelos.png"
         ),
         "manifesto": saida / "manifesto_artefatos.json",
     }
@@ -1854,6 +2064,7 @@ __all__ = [
     "construir_janelas_diarias",
     "executar_experimento",
     "gerar_figura_timesnet_horaria",
+    "gerar_figura_comparacao_rmse",
     "main",
     "montar_tabela_previsoes",
     "preparar_series_localidades",

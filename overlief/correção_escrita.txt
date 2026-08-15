@@ -1,0 +1,81 @@
+Seção: Introdução [sempre encontrando fontes/artigos científicos que confirmem suas afirmações/indicações textuais]
+
+- A previsão de irradiância solar…. A importância
+
+- Pq/motivo de empregar GHI
+
+- Dizer que a previsão/predição de longo prazo (Mensal) é um fator chave para….
+
+- O que usam para realizar essa predição?
+
+- Atualmente, modelos de IA
+
+- Quais modelos? (Modelos baseline)
+
+- Avanços recentes em IA permitiram o emprego de modelos mais robustos
+
+- O seu objetivo, para isso vc vai empregar um sistema para previsão de GHI baseado no modelo X.
+
+- pq utilizar tal modelo? …. Pq tal modelo é capaz de fazer predições mais acuradas… Ou predições de séries temporais de forma mais robusta (sempre citando alguma artigo que confirme suas afirmações)
+Subseção: Principais contribuições
+
+É primeiro trabalho que emprega DeepNPTS para a previsão de longo prazo de GHI;
+
+É o primeiro trabalho que avalia experimentalmente o DeepNPTS na previsão de longo-prazo ou mensal de GHI, apresentando resultados experimentais evidenciam a robustez do DeepNPTS para a previsão de longo prazo de GHI.
+
+Subseção: Sistema proposto para a previsão mensal de GHI baseado em DeepNPTS
+
+Como escolher o modelo? Dentre todas as localidades testadas (fábricas), faz a média das métricas. MAE_camaçari, MAE_2, MAE_3 —> MAE_médio -> pega o modelo cujo MAE_médio é o menor.
+
+
+Fazer um diagrama / desenho (da visão geral do seu sistema) [indicação: fazer esse diagrama em blocos]
+
+Coleta de dados -> Data cleaning > Pré-processamento (quantização + min-max)-> Modelo de IA.
+
+Pseudo código do seu sistema, mas sem valores, apenas letras/variáveis.
+
+Fazer um texto explicando o seu sistema onde cada bloco da imagem / do código é um parágrafo.
+Subseção: Resultados e Discussão
+
+Escreve sobre a base de dados/qual a grandeza (GHI) / frequência de coleta / as localidades utilizadas.
+
+Configurações do setup
+
+frequência de coleta
+
+anos de coleta (período de coleta)
+
+horizonte de previsão/predição
+
+particionamento dos dados (80%/20%)
+
+hiperparâmetros utilizados do modelo (tabela)
+
+configurações de hardware empregadas para treinar/rodar o modelo
+
+Métricas de avaliação (MAE,...)
+
+Texto justificando o pq de utilizar elas (citar referência do pq utilizar)
+
+Colocar a fórmula da métrica, e explicar o que é cada variável da fórmula da métrica. [FAZER ISSO para todas as métricas empregadas no artigo]
+
+
+Tabela com os valores das métricas (do modelo DeepNPTS para todas as localidades/fábricas)
+
+Comentar sobre os valores obtidos, qual foi o pior modeo, qual foi o melhor, qual é o ganho do melhor em relação ao pior. (MAE_modelo_1 e MAE_modelo_2, se o modelo 2 foi melhor, ganho MAE_modelo_2-MAE_modelo_1, se quiser fazer a porcentagem, pode fazer também).
+
+Tabela com as médias dos valores das métricas (Baseline + DeepNPTS)
+
+Comentar sobre os valores obtidos…..
+
+Plot com a predição/previsão do GHI de teste, Baseline predito (predição do modelo baseline), predição/previsão do DeepNPTS [TUDO isso é dados de teste vs dados preditos]
+
+Comentar sobre o plot, qual tem o melhor sobreposição entre o GHI real e o modelo campeão.
+
+Qual vence por localidade… Faça um texto comentado este resultado
+
+Subseção: Conclusão
+
+Este trabalho avança o campo de previsão mensal de GHI através da introdução do modelo DeepNPTS… Compara sobre o ganho entre o baseline e o modelo DeepNPTS (no caso o DeepNPTS obteve o melhor resultado para qual localidade, e depois, venceu quais modelos em termos de valores médios). Qual é o campeão overall?
+Subseção: Referências utilizadas (citadas no texto)
+ 

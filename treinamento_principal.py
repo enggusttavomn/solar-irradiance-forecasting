@@ -19,10 +19,18 @@ from codigo_fonte.avaliacao import (
     salvar_metricas,
     salvar_previsoes,
 )
+from codigo_fonte.baselines import normalizar_previsoes_fisicas, prever_baselines
 from codigo_fonte.configuracao import PASTA_FIGURAS, PASTA_METRICAS, PASTA_MODELOS
 from codigo_fonte.features import dividir_treino_teste_temporal
 from codigo_fonte.graficos import salvar_graficos
-from codigo_fonte.modelos import salvar_modelo, treinar_lstm, treinar_mlp, treinar_rnn, treinar_xgboost
+from codigo_fonte.modelos import (
+    salvar_modelo,
+    treinar_lstm,
+    treinar_mlp,
+    treinar_rnn,
+    treinar_vizinhos_historicos,
+    treinar_xgboost,
+)
 from codigo_fonte.preprocessamento import carregar_serie_ghi, preparar_serie_temporal
 from codigo_fonte.utilitarios import criar_pastas
 
@@ -48,6 +56,11 @@ def executar_pipeline(
     """
     # Garante que todas as pastas de saida existam antes de salvar artefatos.
     criar_pastas()
+    pasta_metricas = PASTA_METRICAS / frequencia_modelagem
+    pasta_figuras = PASTA_FIGURAS / frequencia_modelagem
+    pasta_modelos = PASTA_MODELOS / "serie_unica" / frequencia_modelagem
+    for pasta in (pasta_metricas, pasta_figuras, pasta_modelos):
+        pasta.mkdir(parents=True, exist_ok=True)
 
     print("=" * 60)
     print(f"TREINAMENTO PRINCIPAL - PREVISAO {frequencia_modelagem.upper()} DE GHI")
@@ -59,8 +72,8 @@ def executar_pipeline(
     print(f"      Observacoes carregadas: {len(serie_ghi)}")
 
     print("[2/5] Preparando features temporais...")
-    # Quantiza, normaliza, cria as features e alinha o alvo do proximo periodo.
-    output_features = PASTA_METRICAS / f"ghi_features_{frequencia_modelagem}.csv"
+    # Normaliza a serie continua, cria as features e alinha o proximo alvo.
+    output_features = pasta_metricas / "ghi_features.csv"
     preparation = preparar_serie_temporal(
         serie_ghi,
         output_path=output_features,
@@ -71,7 +84,7 @@ def executar_pipeline(
 
     # O corte e cronologico. O DataFrame de treino completo nao e usado aqui,
     # por isso sua posicao na tupla e recebida por ``_``.
-    X_train, X_test, y_train, y_test, _, dados_teste = dividir_treino_teste_temporal(
+    X_train, X_test, y_train, y_test, dados_treino, dados_teste = dividir_treino_teste_temporal(
         dados,
         feature_columns,
         target_column="ghi_alvo",
@@ -83,12 +96,15 @@ def executar_pipeline(
 
     print("[3/5] Treinando modelos...")
     # Todos recebem exatamente X_train e y_train, tornando a comparacao justa.
-    sufixo_modelo = "" if frequencia_modelagem == "diaria" else "_mensal"
     treinadores = {
-        "XGBoost": (treinar_xgboost, PASTA_MODELOS / f"xgboost_ghi{sufixo_modelo}.joblib"),
-        "MLP": (treinar_mlp, PASTA_MODELOS / f"mlp_ghi{sufixo_modelo}.joblib"),
-        "RNN": (treinar_rnn, PASTA_MODELOS / f"rnn_ghi{sufixo_modelo}.keras"),
-        "LSTM": (treinar_lstm, PASTA_MODELOS / f"lstm_ghi{sufixo_modelo}.keras"),
+        "XGBoost": (treinar_xgboost, pasta_modelos / "xgboost_ghi.joblib"),
+        "MLP": (treinar_mlp, pasta_modelos / "mlp_ghi.joblib"),
+        "RNN": (treinar_rnn, pasta_modelos / "rnn_ghi.keras"),
+        "LSTM": (treinar_lstm, pasta_modelos / "lstm_ghi.keras"),
+        "VizinhosHistoricos": (
+            treinar_vizinhos_historicos,
+            pasta_modelos / "vizinhos_historicos_ghi.joblib",
+        ),
     }
     modelos = {}
     for nome_modelo, (treinador, _) in treinadores.items():
@@ -101,10 +117,28 @@ def executar_pipeline(
         for nome_modelo, modelo in modelos.items()
     }
     y_test_original = dados_teste["ghi_alvo_original"].reset_index(drop=True)
+    baselines_original = prever_baselines(
+        dados_treino,
+        dados_teste,
+        frequencia=frequencia_modelagem,
+    )
+    predicoes.update(
+        normalizar_previsoes_fisicas(
+            baselines_original,
+            preparation.quantization_params,
+        )
+    )
     predicoes_original = {
         nome_modelo: desnormalizar_ghi(y_pred, preparation.quantization_params)
         for nome_modelo, y_pred in predicoes.items()
+        if nome_modelo not in baselines_original
     }
+    predicoes_original.update(
+        {
+            nome_modelo: pd.Series(valores).reset_index(drop=True)
+            for nome_modelo, valores in baselines_original.items()
+        }
+    )
 
     print("[4/5] Salvando modelos, metricas e previsoes...")
     # Modelos e resultados sao salvos antes dos graficos, que podem ser omitidos.
@@ -113,7 +147,7 @@ def executar_pipeline(
 
     # A mesma funcao de metricas e aplicada a todos os vetores de previsao.
     metricas = []
-    for nome_modelo in modelos:
+    for nome_modelo in predicoes:
         metricas_modelo = calcular_metricas(
             y_test_reset,
             predicoes[nome_modelo],
@@ -128,17 +162,13 @@ def executar_pipeline(
                 sufixo="wm2",
             )
         )
-        metricas_modelo["MAE"] = metricas_modelo["MAE_normalizado"]
-        metricas_modelo["MSE"] = metricas_modelo["MSE_normalizado"]
-        metricas_modelo["RMSE"] = metricas_modelo["RMSE_normalizado"]
-        metricas_modelo["R2"] = metricas_modelo["R2_normalizado"]
         metricas.append(metricas_modelo)
-    df_metricas = salvar_metricas(metricas, PASTA_METRICAS / "metricas_modelos.csv")
+    df_metricas = salvar_metricas(metricas, pasta_metricas / "metricas_modelos.csv")
     salvar_previsoes(
         datas_teste,
         y_test_reset,
         predicoes,
-        PASTA_METRICAS,
+        pasta_metricas,
         y_true_original=y_test_original,
         predicoes_original=predicoes_original,
     )
@@ -146,12 +176,12 @@ def executar_pipeline(
     # A flag existe para ambientes sem interface grafica ou execucoes de teste.
     if gerar_graficos:
         print("[5/5] Gerando graficos...")
-        salvar_graficos(datas_teste, y_test_reset, predicoes, PASTA_FIGURAS / "normalizado")
+        salvar_graficos(datas_teste, y_test_reset, predicoes, pasta_figuras / "normalizado")
         salvar_graficos(
             datas_teste,
             y_test_original,
             predicoes_original,
-            PASTA_FIGURAS / "wm2",
+            pasta_figuras / "wm2",
             y_label=f"GHI medio {frequencia_modelagem} (W/m2)",
             titulo_sufixo=" - escala real",
         )
