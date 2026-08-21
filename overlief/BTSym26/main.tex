@@ -175,7 +175,7 @@ The primary criterion is macro-MAE, the unweighted mean of ten local MAEs~\cite{
 
 \subsection{Overall Model Comparison}
 
-Table~\ref{tab:overall} is ordered by macro-MAE. Among the five methods compared, DilatedRNN ranked first by macro-MAE; it also ranked first among the three learned models. Its MAE of 13.42~W/m$^2$ was 0.76~W/m$^2$ (5.36\%) lower than the 14.18~W/m$^2$ obtained by the second-ranked model, DeepAR.
+Table~\ref{tab:overall} is ordered from the highest (worst) to the lowest (best) macro-MAE, leaving the proposed model in the final highlighted row. Among the five methods compared, DilatedRNN ranked first by macro-MAE; it also ranked first among the three learned models. Its MAE of 13.42~W/m$^2$ was 0.76~W/m$^2$ (5.36\%) lower than the 14.18~W/m$^2$ obtained by the second-ranked model, DeepAR.
 
 \begin{table}[t]
 \caption{Mean metrics across the ten locations in the retrospective test.}
@@ -188,11 +188,12 @@ Table~\ref{tab:overall} is ordered by macro-MAE. Among the five methods compared
 \textbf{Model} & \textbf{MAE} & \textbf{SD} & \textbf{MSE} & \textbf{RMSE} & \textbf{$R^2$} & \textbf{nRMSE} \\
  & \textbf{W/m$^2$} & \textbf{W/m$^2$} & \textbf{W$^2$/m$^4$} & \textbf{W/m$^2$} & & \textbf{\%} \\
 \midrule
-\textbf{DilatedRNN} & \textbf{13.42} & \textbf{0.83} & \textbf{286.63} & \textbf{16.20} & \textbf{0.898} & \textbf{7.93} \\
-DeepAR         & 14.18 & 0.90 & 336.88  & 17.94 & 0.892 & 8.78 \\
-MLP            & 16.06 & 0.46 & 418.44  & 19.77 & 0.875 & 9.70 \\
-Seasonal naive & 16.94 & --   & 496.86  & 21.37 & 0.829 & 10.38 \\
 Persistence    & 35.09 & --   & 1808.74 & 42.17 & 0.576 & 20.89 \\
+Seasonal naive & 16.94 & --   & 496.86  & 21.37 & 0.829 & 10.38 \\
+MLP            & 16.06 & 0.46 & 418.44  & 19.77 & 0.875 & 9.70 \\
+DeepAR         & 14.18 & 0.90 & 336.88  & 17.94 & 0.892 & 8.78 \\
+\midrule
+\textbf{DilatedRNN} & \textbf{13.42} & \textbf{0.83} & \textbf{286.63} & \textbf{16.20} & \textbf{0.898} & \textbf{7.93} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -204,7 +205,7 @@ Relative to the two simple baselines, DilatedRNN reduced MAE by 20.78\% against 
 Table~\ref{tab:local} uses the mean forecast across the five seeds. Its SD column is the sample standard deviation of the five local MAEs, not a probabilistic prediction interval.
 
 \begin{table}[t]
-\caption{DilatedRNN performance by location.}
+\caption{DilatedRNN performance by location, ordered from highest to lowest MAE.}
 \label{tab:local}
 \centering
 \scriptsize
@@ -215,15 +216,15 @@ Table~\ref{tab:local} uses the mean forecast across the five seeds. Its SD colum
  & \textbf{W/m$^2$} & \textbf{W/m$^2$} & \textbf{W$^2$/m$^4$} & \textbf{W/m$^2$} & & \textbf{\%} \\
 \midrule
 BMW San Luis Potosí & 20.92 & 3.44 & 621.48 & 24.93 & 0.692 & 10.06 \\
+Rivian Normal       & 18.45 & 1.81 & 459.08 & 21.43 & 0.922 & 11.91 \\
 BYD Camaçari        & 16.83 & 2.47 & 495.90 & 22.27 & 0.646 & 9.43 \\
+Tesla Texas         & 13.67 & 2.07 & 270.32 & 16.44 & 0.919 & 7.87 \\
+Hyundai Georgia     & 12.96 & 1.13 & 257.23 & 16.04 & 0.914 & 8.09 \\
 Ford Rouge          & 12.67 & 1.64 & 210.28 & 14.50 & 0.965 & 9.04 \\
 GM Factory Zero     & 12.38 & 0.94 & 206.05 & 14.35 & 0.965 & 8.96 \\
-Hyundai Georgia     & 12.96 & 1.13 & 257.23 & 16.04 & 0.914 & 8.09 \\
-Lucid Casa Grande   & 8.40  & 0.66 & 118.70 & 10.90 & 0.979 & 4.42 \\
-Rivian Normal       & 18.45 & 1.81 & 459.08 & 21.43 & 0.922 & 11.91 \\
-Tesla Fremont       & 7.45  & 2.59 & 83.40  & 9.13  & 0.991 & 4.14 \\
 Tesla Nevada        & 10.49 & 2.00 & 143.89 & 12.00 & 0.984 & 5.40 \\
-Tesla Texas         & 13.67 & 2.07 & 270.32 & 16.44 & 0.919 & 7.87 \\
+Lucid Casa Grande   & 8.40  & 0.66 & 118.70 & 10.90 & 0.979 & 4.42 \\
+\textbf{Tesla Fremont} & \textbf{7.45} & \textbf{2.59} & \textbf{83.40} & \textbf{9.13} & \textbf{0.991} & \textbf{4.14} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -257,7 +258,7 @@ Aggregate MAE does not show how consistently one method wins at individual forec
 \setlength{\tabcolsep}{5.0pt}
 \begin{tabular}{@{}lrrrr@{}}
 \toprule
-\textbf{Comparator} & \textbf{Wins} & \textbf{Losses} & \textbf{Win rate} & \textbf{Mean gap (W/m$^2$)} \\
+\textbf{Model} & \textbf{Wins} & \textbf{Losses} & \textbf{Win rate} & \textbf{Mean gap (W/m$^2$)} \\
 \midrule
 DeepAR         & 66 & 54 & 55.0\% & 0.76 \\
 MLP            & 75 & 45 & 62.5\% & 2.64 \\
