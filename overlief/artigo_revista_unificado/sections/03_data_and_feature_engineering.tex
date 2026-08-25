@@ -1,0 +1,50 @@
+\section{Data and Feature Engineering}
+\label{sec:data}
+
+The study uses the GOES Aggregated Physical Solar Model v4 product from the
+National Solar Radiation Database. The common geographic sample comprises ten
+locations associated with electric-vehicle factories in Brazil, Mexico, and
+the United States. Coordinates select the corresponding NSRDB grid cells and
+are not interpreted as factory-level irradiance measurements.
+
+Table~\ref{tab:variables} separates measured or retrieved fields from derived
+attributes. This distinction is necessary because the hourly and monthly
+studies currently use different representations. The unified experiments will
+fit every transformation on pre-test data only and will document the exact
+input available at each forecast origin.
+
+\begin{table}[htbp]
+\centering
+\caption{Data fields and derived variables used in the unified study.}
+\label{tab:variables}
+\small
+\begin{tabular}{p{0.20\textwidth}p{0.20\textwidth}p{0.46\textwidth}}
+\toprule
+\textbf{Group} & \textbf{Variable} & \textbf{Role} \\
+\midrule
+Target & GHI & Mean irradiance in W/m$^2$ at the selected temporal resolution. \\
+Time & Timestamp & Chronological ordering, local-time conversion, and forecast origins. \\
+Location & Site identifier & Categorical identifier for global models. \\
+Geography & Latitude/longitude & NSRDB cell selection and geographic analysis; not a dynamic covariate. \\
+Lagged input & GHI lags & Past target values available before the forecast origin. \\
+Statistics & Moving averages & Trailing summaries fitted without future observations. \\
+Calendar & Cyclical encodings & Sine/cosine representation of hour, day, or month when applicable. \\
+Physics & Solar elevation & Deterministic nighttime post-processing for hourly predictions. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Before modeling, each series is audited for ordering, duplicate timestamps,
+coverage, missing values, non-finite values, and physically invalid negative
+GHI. Aggregation is performed only after this audit. Scaling parameters,
+quantization boundaries when used, and other learned transformations are
+estimated from training data and then reused unchanged in validation and test.
+This ordering prevents information from future periods from influencing model
+development.
+
+Table~\ref{tab:locations} reports the grid points already used by the hourly
+study. A climate-zone column will be added only after assigning every location
+with a single documented classification source.
+
+\input{tables/locations}
+

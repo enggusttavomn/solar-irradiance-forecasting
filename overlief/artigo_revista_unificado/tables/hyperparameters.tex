@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\centering
+\caption{Verified configurations in the two source experiments.}
+\label{tab:hyperparameters}
+\small
+\begin{tabular}{p{0.20\textwidth}p{0.31\textwidth}p{0.34\textwidth}}
+\toprule
+\textbf{Item} & \textbf{Hourly TimesNet} & \textbf{Monthly DilatedRNN} \\
+\midrule
+Context/output & 336 h / 72 h & 12 months / 1 month \\
+Main width & $d_{\mathrm{model}}=8$, $d_{\mathrm{ff}}=16$ & Three recurrent layers, 16 units each \\
+Temporal blocks & One TimesBlock, $k=3$ & Dilations 1--2--4 \\
+Optimizer & Adam, learning rate $10^{-3}$ & Adam, learning rate $10^{-3}$ \\
+Batch size & 128 & 32 \\
+Loss & MSE & MSE \\
+Seeds & 42 & 11, 23, 42, 67, 89 \\
+\bottomrule
+\end{tabular}
+\end{table}
+

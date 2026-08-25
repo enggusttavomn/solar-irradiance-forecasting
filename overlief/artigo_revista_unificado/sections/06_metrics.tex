@@ -1,0 +1,52 @@
+\section{Evaluation Metrics}
+\label{sec:metrics}
+
+Let $y_i$ denote a reference GHI value, $\widehat y_i$ its forecast,
+$e_i=y_i-\widehat y_i$, $\bar y$ the mean reference value, and $n$ the number
+of evaluated targets. Metrics are calculated by location before the unweighted
+macro-average is formed.
+
+\subsection{Mean absolute error}
+
+\begin{equation}
+ \mathrm{MAE}=\frac{1}{n}\sum_{i=1}^{n}|e_i|.
+ \label{eq:mae}
+\end{equation}
+MAE remains in W/m$^2$ and gives every absolute deviation linear weight. It is
+easy to interpret but does not emphasize rare large errors.
+
+\subsection{Root mean squared error}
+
+\begin{equation}
+ \mathrm{RMSE}=\sqrt{\frac{1}{n}\sum_{i=1}^{n}e_i^2}.
+ \label{eq:rmse}
+\end{equation}
+RMSE is also expressed in W/m$^2$ and penalizes large deviations more strongly
+than MAE. Its value can therefore be dominated by a small number of extreme
+forecast errors.
+
+\subsection{Normalized root mean squared error}
+
+\begin{equation}
+ \mathrm{nRMSE}(\%)=100\frac{\mathrm{RMSE}}{\bar y}.
+ \label{eq:nrmse}
+\end{equation}
+nRMSE makes errors more comparable across locations with different mean GHI,
+but becomes unstable when the denominator is close to zero. It is therefore
+not computed on nighttime-only subsets.
+
+\subsection{Coefficient of determination}
+
+\begin{equation}
+ R^2=1-\frac{\sum_{i=1}^{n}e_i^2}
+ {\sum_{i=1}^{n}(y_i-\bar y)^2}.
+ \label{eq:r2}
+\end{equation}
+$R^2$ measures tracked variation relative to a constant mean predictor. It can
+be negative and should not replace scale-dependent error metrics.
+
+The choice of a primary metric will be fixed for each resolution before the
+final test comparison. MAE, RMSE, nRMSE, and $R^2$ provide complementary
+evidence and will not be selectively reported according to which favors the
+proposed model \cite{hyndman2006}.
+

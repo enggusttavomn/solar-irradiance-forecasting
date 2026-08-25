@@ -1,0 +1,81 @@
+\section{Methodology}
+\label{sec:methodology}
+
+The common pipeline is divided into three blocks following the presentation
+logic of the reference journal article. Each block has an explicit input,
+transformation, output, and pseudocode. Figure~\ref{fig:pipeline} summarizes
+their relationship.
+
+\input{figures/pipeline}
+
+\subsection{Block A: data preparation}
+
+Block A converts audited NSRDB series into resolution-specific supervised
+examples. All calculations for an origin $t$ use only values available before
+or at that origin.
+
+\begin{algorithm}[htbp]
+\caption{Block A---data preparation and temporal windows}
+\label{alg:block_a}
+\begin{algorithmic}[1]
+\Require Raw series, locations $\mathcal{L}$, resolution $r$, context $c$, horizon $h$
+\Ensure Chronological training, validation, and test windows
+\For{each location $\ell\in\mathcal{L}$}
+  \State audit timestamps, missing values, duplicates, and invalid GHI
+  \State aggregate GHI at resolution $r$
+  \State split the series chronologically before fitting transformations
+  \State fit scaling and derived-feature rules on training data only
+  \State create $(c,h)$ windows without crossing partition boundaries
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+The output of Block A is a set of origin-aligned samples shared by every model
+within the same experiment. This prevents changes in sample availability from
+being mistaken for architectural gains.
+
+\subsection{Block B: model development and forecasting}
+
+\begin{algorithm}[htbp]
+\caption{Block B---matched training and forecasting}
+\label{alg:block_b}
+\begin{algorithmic}[1]
+\Require Training and validation windows, predefined model search spaces
+\Ensure Fixed models and raw forecasts for every test origin
+\For{each model $m\in\{\text{TimesNet},\text{DilatedRNN},\text{baselines}\}$}
+  \State select hyperparameters using validation data only
+  \State reinitialize and refit the selected configuration on pre-test data
+  \For{each chronological test origin}
+    \State predict the complete horizon without future target information
+  \EndFor
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+TimesNet and DilatedRNN will be trained with the same samples and forecast
+origins at each shared resolution. Architecture-specific context lengths may
+be studied as an ablation, but the primary comparison will keep the available
+information equivalent.
+
+\subsection{Block C: physical post-processing and evaluation}
+
+\begin{algorithm}[htbp]
+\caption{Block C---post-processing, metrics, and case selection}
+\label{alg:block_c}
+\begin{algorithmic}[1]
+\Require Raw forecasts, reference targets, location metadata
+\Ensure Aggregate, local, horizon-wise, and adverse-case results
+\State invert training-fitted transformations
+\State apply the same non-negativity rule to every eligible model
+\State apply the documented solar-elevation rule to hourly forecasts
+\State compute every metric first by location and then its macro-average
+\State rank models under the declared primary metric
+\State select favorable and unfavorable cases using a rule fixed in advance
+\end{algorithmic}
+\end{algorithm}
+
+The favorable and unfavorable examples are selected after computing all
+location--origin errors, but the selection rule must be declared before their
+interpretation. A weather case will be labeled rainy or cloudy only when an
+independent meteorological field or source confirms that condition.
+

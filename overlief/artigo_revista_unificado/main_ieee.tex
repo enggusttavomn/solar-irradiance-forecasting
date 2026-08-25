@@ -1,0 +1,58 @@
+\documentclass[10pt,journal]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[hidelinks]{hyperref}
+
+\graphicspath{{figures/}}
+\emergencystretch=2em
+\newcommand{\DraftNote}[1]{\textcolor{red!70!black}{[Draft note: #1]}}
+
+\title{Multi-Resolution Global Horizontal Irradiance Forecasting at Electric-Vehicle Manufacturing Locations: TimesNet and Dilated Recurrent Networks}
+\author{Gustavo de Melo Nascimento, Thales Wulfert Cabral, and Gustavo Fraidenraich}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This journal extension consolidates hourly TimesNet and monthly DilatedRNN
+studies of global horizontal irradiance forecasting at ten locations associated
+with electric-vehicle factories. It also defines the daily and matched-horizon
+experiments needed for a fair multi-resolution comparison. Existing errors are
+not compared across temporal resolutions because their targets and protocols
+differ. \DraftNote{Insert the consolidated results after the missing experiments.}
+\end{abstract}
+
+\begin{IEEEkeywords}
+Global horizontal irradiance, solar forecasting, TimesNet, DilatedRNN,
+multi-resolution forecasting.
+\end{IEEEkeywords}
+
+\input{sections/01_introduction}
+\input{sections/02_theoretical_background}
+\input{sections/03_data_and_feature_engineering}
+\input{sections/04_methodology}
+\input{sections/05_experimental_setup}
+\input{sections/06_metrics}
+\input{sections/07_results_and_discussion}
+\input{sections/08_limitations}
+\input{sections/09_conclusion}
+
+\appendices
+\input{appendices/appendix_a}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
+

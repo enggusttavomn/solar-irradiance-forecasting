@@ -1,0 +1,57 @@
+\section{Theoretical Background and Related Work}
+\label{sec:background}
+
+\subsection{Solar irradiance and forecasting horizons}
+
+Global horizontal irradiance is the total irradiance incident on a horizontal
+surface,
+\begin{equation}
+  \mathrm{GHI}=\mathrm{DHI}+\mathrm{DNI}\cos(\theta_z),
+  \label{eq:ghi}
+\end{equation}
+where DHI and DNI denote diffuse horizontal and direct normal irradiance, and
+$\theta_z$ is the solar zenith angle \cite{duffie2013}. The NSRDB provides a
+satellite-derived, model-based irradiance reference rather than measurements
+collected at the factories \cite{sengupta2018}.
+
+Hourly forecasts preserve the night--day cycle and short atmospheric
+variations. Daily aggregation suppresses intraday structure while retaining
+weather-driven and seasonal changes. Monthly aggregation emphasizes the
+annual cycle but produces very short training series. Accordingly, forecast
+horizon must be stated jointly with temporal resolution; terms such as
+``short-term'' and ``long-term'' are ambiguous without both quantities.
+
+\subsection{Time-series learning for solar forecasting}
+
+Solar forecasting uses statistical baselines, tree-based learners, recurrent
+networks, convolutional models, and attention-based architectures
+\cite{voyant2017,voyant2022}. Transparent persistence and seasonal-naive
+forecasts remain essential because they reveal whether added architectural
+complexity improves upon temporal continuity and seasonality.
+
+TimesNet transforms dominant one-dimensional temporal variations into
+two-dimensional representations and processes within-period and between-period
+variation with convolutional kernels \cite{wu2023}. This representation is
+well suited to signals with multiple periodicities, including the diurnal and
+seasonal components of GHI.
+
+Dilated recurrent networks connect a state to selected earlier states through
+increasing temporal skips. The shorter computational paths can expose
+dependencies at several scales without extending a conventional recurrent
+chain one step at a time \cite{chang2017}. Global models additionally share
+parameters across related locations while using a site identifier to preserve
+location-specific behavior \cite{montero2021}.
+
+\subsection{Industrial transition and climate variability}
+
+\DraftNote{Expand this subsection with verified primary and high-quality
+sources on industrial electrification, photovoltaic adoption at manufacturing
+sites, the energy transition through 2050/2060, and the documented Ca\c{c}apava
+industrial example. Do not state a legal obligation unless the applicable
+jurisdiction and regulation are identified.}
+
+Cloud variability deforms otherwise regular solar profiles and generally
+increases forecast difficulty. The final literature review will distinguish
+irradiance variability, cloud cover, and precipitation instead of treating low
+GHI alone as proof of a rainy day.
+

@@ -1,0 +1,40 @@
+\section{Introduction}
+\label{sec:introduction}
+
+The rapid expansion of photovoltaic generation has increased the importance of
+solar-resource forecasts for system planning, energy management, and grid
+integration. Forecast usefulness is nevertheless conditional on temporal
+resolution, prediction horizon, available covariates, and evaluation protocol
+\cite{antonanzas2016,voyant2017,yang2018}. A model that performs well for an
+hourly three-day trajectory does not necessarily remain competitive for daily
+or monthly planning.
+
+Industrial decarbonization makes this distinction especially relevant for
+manufacturing facilities. Electric-vehicle factories provide a geographically
+diverse case study because their locations span different latitudes, seasonal
+cycles, and atmospheric regimes. In this work, the factories identify the
+geographic points at which solar irradiance is studied; no production,
+consumption, or proprietary operational data are used.
+
+Two preceding studies motivate this journal extension. The first configured a
+compact TimesNet for direct 72-hour global horizontal irradiance (GHI)
+forecasting and evaluated the 24-, 48-, and 72-hour prefixes. The second
+evaluated a Dilated Recurrent Neural Network (DilatedRNN) for one-month-ahead
+forecasting from short monthly series. Their results cannot yet establish which
+architecture is preferable across scales because the targets, context lengths,
+forecast origins, competitors, and primary metrics differ.
+
+This extension therefore has three objectives: (i) provide a unified and
+reproducible description of the data, transformations, architectures, and
+evaluation rules; (ii) evaluate TimesNet and DilatedRNN at shared hourly,
+daily, and longer planning horizons; and (iii) characterize when performance
+changes with location, horizon, and climate-related variability. Its intended
+contribution is a matched multi-resolution comparison, rather than a direct
+juxtaposition of incomparable errors from the preceding manuscripts.
+
+The remainder of the article reviews the theoretical background, documents the
+data and feature engineering, defines the common experimental protocol,
+presents the evaluation metrics separately, and analyzes aggregate and adverse
+cases. Full hyperparameter grids and location-level results are assigned to the
+appendix.
+

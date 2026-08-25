@@ -1,0 +1,76 @@
+\documentclass[review,12pt]{elsarticle}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[hidelinks]{hyperref}
+
+\journal{Journal manuscript under preparation}
+\graphicspath{{figures/}}
+\emergencystretch=2em
+
+\newcommand{\DraftNote}[1]{\textcolor{red!70!black}{[Draft note: #1]}}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Multi-Resolution Global Horizontal Irradiance Forecasting at Electric-Vehicle Manufacturing Locations: TimesNet and Dilated Recurrent Networks}
+
+\author[unicamp]{Gustavo de Melo Nascimento}
+\author[unicamp]{Thales Wulfert Cabral}
+\author[unicamp]{Gustavo Fraidenraich}
+\address[unicamp]{School of Electrical and Computer Engineering, University of Campinas, Campinas, SP, Brazil}
+
+\begin{abstract}
+This journal extension investigates global horizontal irradiance forecasting at
+ten locations associated with electric-vehicle factories across complementary
+temporal resolutions. It consolidates an hourly TimesNet study and a monthly
+DilatedRNN study under a common methodological description and defines the
+additional daily and matched-horizon experiments required for a fair
+cross-model comparison. The hourly study uses 336 hours of context to predict
+the following 72 hours, while the monthly study predicts one month ahead from
+short multiyear series. Because their current targets, horizons, sample sizes,
+and primary metrics differ, their published errors are reported as prior
+evidence rather than compared directly. The completed extension will evaluate
+TimesNet and DilatedRNN under identical chronological splits, forecast origins,
+post-processing rules, and location-level aggregation at every shared temporal
+resolution. \DraftNote{Replace this final sentence with consolidated numerical
+results only after the missing matched experiments have been executed.}
+\end{abstract}
+
+\begin{keyword}
+global horizontal irradiance \sep solar forecasting \sep TimesNet \sep
+dilated recurrent neural network \sep multi-resolution forecasting \sep
+electric-vehicle factories
+\end{keyword}
+
+\end{frontmatter}
+
+\input{sections/01_introduction}
+\input{sections/02_theoretical_background}
+\input{sections/03_data_and_feature_engineering}
+\input{sections/04_methodology}
+\input{sections/05_experimental_setup}
+\input{sections/06_metrics}
+\input{sections/07_results_and_discussion}
+\input{sections/08_limitations}
+\input{sections/09_conclusion}
+
+\appendix
+\input{appendices/appendix_a}
+
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+
+\end{document}
+

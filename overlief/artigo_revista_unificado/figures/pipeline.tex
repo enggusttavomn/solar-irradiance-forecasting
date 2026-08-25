@@ -1,0 +1,24 @@
+\begin{figure}[htbp]
+\centering
+\setlength{\fboxsep}{8pt}
+\fbox{\begin{minipage}{0.27\textwidth}
+\centering
+\textbf{Block A: Data}\\[3pt]
+Audit $\rightarrow$ aggregation $\rightarrow$ features $\rightarrow$ windows
+\end{minipage}}
+\hfill$\longrightarrow$\hfill
+\fbox{\begin{minipage}{0.27\textwidth}
+\centering
+\textbf{Block B: Models}\\[3pt]
+Selection $\rightarrow$ refit $\rightarrow$ TimesNet/DilatedRNN forecasts
+\end{minipage}}
+\hfill$\longrightarrow$\hfill
+\fbox{\begin{minipage}{0.27\textwidth}
+\centering
+\textbf{Block C: Evaluation}\\[3pt]
+Physical rules $\rightarrow$ metrics $\rightarrow$ favorable/adverse cases
+\end{minipage}}
+\caption{Unified experimental pipeline. Each block is detailed by a separate pseudocode and explanatory subsection.}
+\label{fig:pipeline}
+\end{figure}
+

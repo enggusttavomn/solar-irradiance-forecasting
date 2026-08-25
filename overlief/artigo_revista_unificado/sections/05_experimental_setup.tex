@@ -1,0 +1,39 @@
+\section{Experimental Setup}
+\label{sec:experiments}
+
+The preceding hourly and monthly experiments are retained as evidence from the
+two source manuscripts. They are not treated as a matched comparison. The
+extension adds only experiments that align resolution, context, horizon,
+origins, and evaluation rules for TimesNet and DilatedRNN.
+
+\input{tables/study_design}
+
+\subsection{Hourly protocol}
+
+The available TimesNet protocol uses 336 hourly observations as context and
+predicts 72 hours directly. The 24- and 48-hour results are prefixes of the
+same 72-hour output. Training spans 2019--2022, 2023 is used for model
+selection, the final model is refitted on 2019--2023, and 2024 is reserved for
+retrospective testing.
+
+\subsection{Monthly protocol}
+
+The available DilatedRNN protocol uses a 12-month context and predicts the next
+monthly mean GHI. It evaluates the 12 chronological origins of 2024 after
+training and model selection on pre-test observations. This is a one-step
+monthly task; it will not be described as a multi-month forecast.
+
+\subsection{Daily and matched long-horizon protocols}
+
+\DraftNote{Execute the daily TimesNet and DilatedRNN experiments at identical
+origins. Fix the daily horizons before inspecting test performance. If
+``long-term'' means multiple monthly steps, execute both architectures with the
+same direct or recursive forecast strategy and report each horizon separately.}
+
+The primary configuration table will contain only the parameters needed to
+understand and reproduce the comparison. Complete search spaces, selected
+epochs by seed, and secondary settings are assigned to
+Appendix~\ref{app:hyperparameters}.
+
+\input{tables/hyperparameters}
+

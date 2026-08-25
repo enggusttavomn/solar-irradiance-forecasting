@@ -1,0 +1,48 @@
+\section{Results and Discussion}
+\label{sec:results}
+
+\subsection{Evidence from the hourly source study}
+
+Under the existing 72-hour hourly protocol, TimesNet achieved a macro-RMSE of
+101.04~W/m$^2$, compared with 104.68~W/m$^2$ for the LSTM, a relative
+reduction of 3.48\%. TimesNet also obtained lower RMSE than the LSTM at the
+24- and 48-hour prefixes and lower RMSE than both temporal baselines at all
+three prefixes. These values describe the hourly source experiment only.
+
+\subsection{Evidence from the monthly source study}
+
+In the existing one-month-ahead experiment, the consolidated DilatedRNN
+forecast achieved a macro-MAE of 13.42~W/m$^2$, an RMSE of 16.20~W/m$^2$,
+and an $R^2$ of 0.898. It ranked first among five evaluated methods by
+macro-MAE, but led at only four of the ten locations. Local MAE ranged from
+7.45 to 20.92~W/m$^2$. These values describe the monthly source experiment
+only and are not numerically compared with the hourly TimesNet errors.
+
+\subsection{Matched multi-resolution comparison}
+
+\DraftNote{Insert the daily and matched TimesNet--DilatedRNN tables generated
+from the new experiment artifacts. Report one overall table by resolution and
+horizon, followed by location-level comparisons.}
+
+The final analysis will distinguish three questions: which model minimizes the
+declared primary metric on average, how often that model wins at matched test
+origins, and whether its advantage is consistent across locations. A method
+will not be described as universally superior when the location-level evidence
+shows losses.
+
+\subsection{Favorable and unfavorable cases}
+
+\DraftNote{Create one table for the strongest relative gains and another for
+the largest deficits of the proposed method. Include location, date or origin,
+horizon, reference GHI, both forecasts, absolute errors, and confirmed weather
+context when available.}
+
+\subsection{Geographic and climatic interpretation}
+
+Climate zones and factory locations will be used as descriptive context. With
+only ten locations, apparent differences between zones cannot by themselves
+establish a causal climatic effect. Sites in the same country may remain far
+apart and occupy distinct regimes, while nearby sites may share correlated
+weather. The discussion will therefore combine the map, zone classification,
+and error profiles without overstating statistical evidence.
+
