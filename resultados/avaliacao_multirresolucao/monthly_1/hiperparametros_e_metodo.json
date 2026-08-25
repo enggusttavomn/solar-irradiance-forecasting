@@ -1,0 +1,101 @@
+{
+  "avaliacoes_horizonte": [
+    "prefixo_cumulativo",
+    "lead_exato"
+  ],
+  "btsym": "artigo_fonte_do_DilatedRNN; numeros_quantizados_nao_importados",
+  "comparacao_pareada": "unidade_localidade; inferencia_descritiva",
+  "configuracao": {
+    "batch_size_diario": 128,
+    "batch_size_mensal": 32,
+    "dilated_dilatacoes": [
+      1,
+      2,
+      4
+    ],
+    "dilated_dropout": 0.0,
+    "dilated_unidades": 16,
+    "dilated_unidades_densas": 16,
+    "embedding_localidade": 8,
+    "epocas_smoke": 1,
+    "limite_localidades_smoke": 2,
+    "limite_origens_smoke": 3,
+    "lstm_camadas": 1,
+    "lstm_ocultos": 32,
+    "max_epocas_diario": 30,
+    "max_epocas_mensal": 300,
+    "modo_execucao": "completa",
+    "paciencia_diario": 5,
+    "paciencia_mensal": 30,
+    "peso_decay": 1e-05,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ],
+    "taxa_aprendizado": 0.001,
+    "threads_torch": 1,
+    "timesnet_blocos": 1,
+    "timesnet_d_ff": 16,
+    "timesnet_d_model": 8,
+    "timesnet_dropout": 0.1,
+    "timesnet_kernels": 2,
+    "timesnet_top_k": 3,
+    "xgb_colsample": 0.8,
+    "xgb_estimadores": 150,
+    "xgb_estimadores_smoke": 2,
+    "xgb_n_jobs": 1,
+    "xgb_profundidade": 3,
+    "xgb_subsample": 0.8,
+    "xgb_taxa_aprendizado": 0.05
+  },
+  "metrica_primaria": "macro_MAE_por_localidade",
+  "modelos": [
+    "Persistencia",
+    "Sazonal ingenuo",
+    "Climatologia",
+    "XGBoost",
+    "LSTM",
+    "TimesNet",
+    "DilatedRNN"
+  ],
+  "observacao_dependencia": "janelas_sobrepostas_nao_sao_tratadas_como_observacoes_iid",
+  "pos_processamento": "somente_piso_zero_sem_limite_superior",
+  "tarefa": {
+    "ajuste": {
+      "fim_alvo": "2022-12-31",
+      "fim_origem": "2022-12-31",
+      "inicio_origem": "2020-01-31",
+      "origens_esperadas_por_localidade": 36
+    },
+    "exploratoria": false,
+    "frequencia": "ME",
+    "horizontes": [
+      1
+    ],
+    "pred_len": 1,
+    "refit": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-31",
+      "inicio_origem": "2020-01-31",
+      "origens_esperadas_por_localidade": 48
+    },
+    "resolucao": "mensal",
+    "seq_len": 12,
+    "slug": "monthly_1",
+    "teste": {
+      "fim_alvo": "2024-12-31",
+      "fim_origem": "2024-12-31",
+      "inicio_origem": "2024-01-31",
+      "origens_esperadas_por_localidade": 12
+    },
+    "validacao": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-31",
+      "inicio_origem": "2023-01-31",
+      "origens_esperadas_por_localidade": 12
+    }
+  }
+}

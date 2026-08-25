@@ -1,16 +1,69 @@
 \section{Threats to Validity and Limitations}
 \label{sec:limitations}
 
-The NSRDB values are satellite-derived, model-based estimates and not sensors
-installed at the factories. The factory sample is geographic and does not
-represent industrial energy consumption or photovoltaic output. Monthly
-training series contain only four complete pre-test target years, whereas
-overlapping hourly forecast windows produce dependent errors. These properties
-limit conventional significance tests that assume independent samples.
+\subsection{Construct and data validity}
 
-Architecture comparisons may also be confounded by parameter count, context
-length, and optimization budget. The matched experiments will therefore report
-capacity, search space, selected configuration, random seeds, and forecast
-strategy. Generalization beyond the ten locations and the 2019--2024 period
-requires a prospective evaluation on new sites or years.
+NSRDB GHI is a satellite-informed physical-model estimate
+\cite{sengupta2018}, not an on-site pyranometer record. Factory coordinates
+select product grid cells, so neither the target nor its error quantifies the
+irradiance at a particular roof surface. The purposive set of ten
+factory-associated locations is also not a sample of factory electricity
+demand, photovoltaic output, roof area, or operational constraints. The
+industrial framing therefore identifies geographically relevant forecasting
+sites; it does not establish plant-level energy savings.
 
+The matched input deliberately contains only causal GHI and site identity.
+This restriction isolates architectural effects, but it omits potentially
+useful exogenous forecasts such as cloud motion, numerical weather prediction,
+aerosols, and temperature. A site embedding can also encode persistent
+location-specific behaviour and does not demonstrate transfer to an unseen
+factory. Fixed local offsets produce regular hourly grids but do not reproduce
+daylight-saving clock changes.
+
+\subsection{Temporal and statistical validity}
+
+All test evidence is retrospective and restricted to 2024. It does not measure
+prospective robustness under later satellite-product revisions, climate
+nonstationarity, or new sites. The monthly primary task has only 48 pre-test
+refit origins per site, and the exploratory six-month task has seven test
+origins per site. Its long output therefore cannot support the same empirical
+resolution as the hourly or daily tasks.
+
+Targets from adjacent multi-step origins overlap, creating strongly dependent
+errors. Site-first aggregation avoids allowing that overlap to change spatial
+weights, but it does not make the origins independent. The paired summaries
+accordingly use ten locations as descriptive units and do not attach an
+i.i.d. significance test to thousands of overlapping target points.
+
+\subsection{Model-comparison validity}
+
+TimesNet and DilatedRNN share inputs, origins, seeds, optimization limits, and
+post-processing in the daily and monthly tasks, but their parameterizations and
+inductive biases are not identical. The frozen configuration is a controlled
+comparison rather than an exhaustive architecture-specific search. Moreover,
+the hourly extension adds DilatedRNN with the single official seed 42 to
+read-only comparator forecasts, whereas daily and monthly estimates use five
+seeds. Cross-resolution claims therefore concern protocol behaviour and are
+not interpreted as equal-precision estimates of random-seed variability.
+
+The zero floor imposes a defensible physical bound on all resolutions. The
+additional hourly nighttime mask uses deterministic solar geometry, but no
+common upper physical envelope is imposed. Consequently, implausibly high
+daytime extrapolations remain visible in the errors rather than being hidden by
+post-processing.
+
+\subsection{Contextual-data validity}
+
+The K\"oppen--Geiger labels are categorical cells from the present nominal
+1-km map \cite{beck2018}; they do not resolve microclimates within a cell or
+conditions on a specific roof. Class boundaries are uncertain, as made explicit
+by the 50\% confidence of the BMW San Luis Potos\'i assignment. Climate labels
+are descriptive strata, not model inputs and not explanations of individual
+forecast errors.
+
+NASA POWER is likewise a gridded, model-based external product rather than
+local rain-gauge or ceilometer evidence \cite{nasapowerdaily}. The 1~mm/day
+precipitation and 80\% cloud thresholds provide reproducible post-hoc tags, but
+thresholding cannot establish that weather caused a particular error.
+Weather-case observations therefore supplement the full aggregate evaluation;
+they do not replace it or determine which model is reported.

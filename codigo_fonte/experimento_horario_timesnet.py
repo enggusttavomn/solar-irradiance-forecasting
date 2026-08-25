@@ -917,13 +917,17 @@ def timestamps_alvo(janelas: JanelasHorarias) -> tuple[pd.DatetimeIndex, pd.Date
     """Expande origens para os timestamps UTC e locais de cada passo."""
 
     passos = np.tile(np.arange(janelas.pred_len), len(janelas.x_bruto))
+    deslocamentos = pd.to_timedelta(passos, unit="h")
+    # Nao combine os inteiros de DatetimeIndex.asi8 diretamente. Desde o
+    # pandas 3, a unidade interna pode ser microssegundos em vez de
+    # nanossegundos; reconstruir o indice a partir desses inteiros deslocaria
+    # as datas para 1970 e corromperia a mascara de elevacao solar. A aritmetica
+    # entre indices e timedeltas preserva explicitamente unidade e fuso.
     utc = pd.DatetimeIndex(
-        np.repeat(janelas.origem_utc.asi8, janelas.pred_len)
-        + pd.to_timedelta(passos, unit="h").asi8
-    ).tz_localize("UTC")
+        janelas.origem_utc.repeat(janelas.pred_len) + deslocamentos
+    )
     local = pd.DatetimeIndex(
-        np.repeat(janelas.origem_local.asi8, janelas.pred_len)
-        + pd.to_timedelta(passos, unit="h").asi8
+        janelas.origem_local.repeat(janelas.pred_len) + deslocamentos
     )
     return utc, local
 

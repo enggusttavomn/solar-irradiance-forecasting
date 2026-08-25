@@ -1,0 +1,57 @@
+{
+  "batch_size": 128,
+  "dilatacoes": [
+    1,
+    2,
+    4
+  ],
+  "dropout": 0.0,
+  "embedding_localidade": 8,
+  "max_epocas": 30,
+  "metrica_primaria": "macro_MAE_por_localidade",
+  "modelo_adicionado": "DilatedRNN",
+  "modelos_existentes": "lidos_dos_artefatos_oficiais_sem_retreino",
+  "paciencia": 5,
+  "pos_processamento": "piso_zero_e_mascara_noturna_identicos_ao_protocolo_oficial",
+  "semente": 42,
+  "tarefa": {
+    "ajuste": {
+      "fim_alvo": "2022-12-31",
+      "fim_origem": "2022-12-29",
+      "inicio_origem": "2019-01-15",
+      "origens_esperadas_por_localidade": 1445
+    },
+    "exploratoria": false,
+    "frequencia": "h",
+    "horizontes": [
+      24,
+      48,
+      72
+    ],
+    "pred_len": 72,
+    "refit": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-29",
+      "inicio_origem": "2019-01-15",
+      "origens_esperadas_por_localidade": 1810
+    },
+    "resolucao": "horaria",
+    "seq_len": 336,
+    "slug": "hourly_72_extension",
+    "teste": {
+      "fim_alvo": "2024-12-31",
+      "fim_origem": "2024-12-28",
+      "inicio_origem": "2024-01-01",
+      "origens_esperadas_por_localidade": 363
+    },
+    "validacao": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-29",
+      "inicio_origem": "2023-01-01",
+      "origens_esperadas_por_localidade": 363
+    }
+  },
+  "taxa_aprendizado": 0.001,
+  "unidades_densas": 16,
+  "unidades_por_camada": 16
+}

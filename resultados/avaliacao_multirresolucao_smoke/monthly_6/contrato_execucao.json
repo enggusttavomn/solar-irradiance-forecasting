@@ -1,0 +1,119 @@
+{
+  "codigo_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\dilated_rnn_direta.py": "5c2e93953d028f22340cbb57f78ef62bc41cbd81b97681e1cc1fe3d5469d94b3",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_horario_timesnet.py": "b78bb4ddf478a229e30e63111aba9bd58115d8344fb48065306681ec5f24663f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py": "6bd687ead27d2d174a0e1beb7c69dcb29c4695549553f4cbf2142e159f8ba991",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\timesnet_horario.py": "dff0d34ffa24e7b82f1cdac4d511aa38944cffde65042009b179150f0be2c6e0",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\executar_avaliacao_multirresolucao.py": "05452c1cb63755c4b1a383dfa8c0fdbfc67a10f92dfc558e65311500d688101a"
+  },
+  "configuracao": {
+    "batch_size_diario": 128,
+    "batch_size_mensal": 32,
+    "dilated_dilatacoes": [
+      1,
+      2,
+      4
+    ],
+    "dilated_dropout": 0.0,
+    "dilated_unidades": 16,
+    "dilated_unidades_densas": 16,
+    "embedding_localidade": 8,
+    "epocas_smoke": 1,
+    "limite_localidades_smoke": 2,
+    "limite_origens_smoke": 3,
+    "lstm_camadas": 1,
+    "lstm_ocultos": 32,
+    "max_epocas_diario": 30,
+    "max_epocas_mensal": 300,
+    "modo_execucao": "smoke",
+    "paciencia_diario": 5,
+    "paciencia_mensal": 30,
+    "peso_decay": 1e-05,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ],
+    "taxa_aprendizado": 0.001,
+    "threads_torch": 1,
+    "timesnet_blocos": 1,
+    "timesnet_d_ff": 16,
+    "timesnet_d_model": 8,
+    "timesnet_dropout": 0.1,
+    "timesnet_kernels": 2,
+    "timesnet_top_k": 3,
+    "xgb_colsample": 0.8,
+    "xgb_estimadores": 150,
+    "xgb_estimadores_smoke": 2,
+    "xgb_n_jobs": 1,
+    "xgb_profundidade": 3,
+    "xgb_subsample": 0.8,
+    "xgb_taxa_aprendizado": 0.05
+  },
+  "dependencias": {
+    "joblib": "1.5.3",
+    "numpy": "2.4.4",
+    "pandas": "3.0.3",
+    "python": "3.14.4",
+    "scikit-learn": "1.9.0",
+    "torch": "2.12.0",
+    "xgboost": "3.2.0"
+  },
+  "entradas_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\bmw_san_luis_potosi.csv": "d98ec7e97bf68864fda836f1948a863d296badae2dd1aa34e225425d1344b1f5",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\byd_camacari.csv": "8347f0b81babcf58456e14568c875e9df7ca6aba792e8865cff5e5df1afde783",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\ford_rouge_electric_vehicle_center.csv": "d490600c96bf0348ad6c74d08b5f8c700a64dd643b9e886464ed6e165475011e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\gm_factory_zero.csv": "be2a8b340938686a582a9beed1dcf8fcef11a4655a6a2678dd6f78fd2de6e572",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\hyundai_metaplant_georgia.csv": "f5e3e825469277e654957e2d4b7e149c1e55232acaf288c4380ffa906188abf7",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\lucid_amp_1_casa_grande.csv": "78f6690b63a1ea378be8abf178e725376aca8a2e71135ba0cda73b53d433b94f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\rivian_normal.csv": "133ad89c6e7ac30c890cec033f8c1c4914c01362920b49a0c0fd540a9ec9520d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\tesla_fremont_factory.csv": "1c6401e77938057f6dfc14c58dbf70ce098dde92ac46da55e0c9c9c279945453",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\tesla_gigafactory_nevada.csv": "d40616d7151007f2e917c8c90b2f411260126f506ebd2d770024d90a12f8500c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\tesla_gigafactory_texas.csv": "55d80fcfcce0be92c28338ed16a6c13b906741a482cbfa01453897c9aa06bd8d"
+  },
+  "gravacao_atomica": "fsync; os.replace_com_retry_exponencial; fallback_Windows_por_hardlink_para_destino_novo_ou_ReplaceFileW_para_destino_existente",
+  "informacao_compartilhada": "sequencia_causal_ghi_mais_id_localidade",
+  "regressao": "continua",
+  "resultados_btsym_importados": false,
+  "sha256_contrato": "b599513a51635522fd9d16d2148c7a1817955f00906def191829da947784fc2f",
+  "tarefa": {
+    "ajuste": {
+      "fim_alvo": "2022-12-31",
+      "fim_origem": "2022-07-31",
+      "inicio_origem": "2020-01-31",
+      "origens_esperadas_por_localidade": 31
+    },
+    "exploratoria": true,
+    "frequencia": "ME",
+    "horizontes": [
+      1,
+      3,
+      6
+    ],
+    "pred_len": 6,
+    "refit": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-07-31",
+      "inicio_origem": "2020-01-31",
+      "origens_esperadas_por_localidade": 43
+    },
+    "resolucao": "mensal",
+    "seq_len": 12,
+    "slug": "monthly_6",
+    "teste": {
+      "fim_alvo": "2024-12-31",
+      "fim_origem": "2024-07-31",
+      "inicio_origem": "2024-01-31",
+      "origens_esperadas_por_localidade": 7
+    },
+    "validacao": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-07-31",
+      "inicio_origem": "2023-01-31",
+      "origens_esperadas_por_localidade": 7
+    }
+  },
+  "versao_contrato": 1
+}

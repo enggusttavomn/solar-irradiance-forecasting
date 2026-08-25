@@ -1,50 +1,152 @@
 \section{Data and Feature Engineering}
 \label{sec:data}
 
-The study uses the GOES Aggregated Physical Solar Model v4 product from the
-National Solar Radiation Database. The common geographic sample comprises ten
-locations associated with electric-vehicle factories in Brazil, Mexico, and
-the United States. Coordinates select the corresponding NSRDB grid cells and
-are not interpreted as factory-level irradiance measurements.
+\subsection{Forecasting data and spatial sampling}
 
-Table~\ref{tab:variables} separates measured or retrieved fields from derived
-attributes. This distinction is necessary because the hourly and monthly
-studies currently use different representations. The unified experiments will
-fit every transformation on pre-test data only and will document the exact
-input available at each forecast origin.
+The forecasting target is global horizontal irradiance (GHI), expressed as a
+mean irradiance in W/m$^2$ at each temporal resolution. The underlying product
+is the GOES Aggregated Physical Solar Model v4 distributed through the National
+Solar Radiation Database (NSRDB) \cite{sengupta2018,nlr2026}. NSRDB irradiance
+is a satellite-informed, physically modelled grid product; it is not a
+measurement from a pyranometer installed at any factory. The factory
+coordinates therefore serve only to select the associated NSRDB grid cell.
+Throughout the article, the term \emph{location} denotes that
+factory-associated grid point, not a plant-level measurement system.
 
-\begin{table}[htbp]
+The ten locations form a common panel covering Brazil, Mexico, and the United
+States, but the temporal tasks use two independently acquired NSRDB archives.
+The official hourly archive contains native 30-min records that its pipeline
+aggregates to one-hour means. The daily archive was requested separately at a
+60-min interval and exported as arithmetic civil-day means; monthly GHI is then
+computed as the arithmetic mean of those daily values in each civil month.
+Both archives cover the same ten factory-associated locations and the nominal
+2019--2024 study period, but the daily/monthly records are not reaggregations of
+the exact HDF5 records used by the hourly experiment. Differences caused by
+independent retrieval resolution or product revision are therefore part of the
+cross-task provenance and are one reason numerical errors are compared only
+within a matched task. Observations from 2019 provide the initial context needed
+by tasks whose first forecast origin occurs in 2020.
+
+Table~\ref{tab:variables} distinguishes model inputs from indexing and
+context-only fields. This separation is central to the matched comparison:
+TimesNet, DilatedRNN, LSTM, and XGBoost receive the same causal GHI history and
+the same site identifier. Calendar variables, coordinates, climate classes,
+and meteorological descriptors are not supplied as predictors.
+
+\begin{table}[!t]
 \centering
-\caption{Data fields and derived variables used in the unified study.}
+\caption{Fields used by the forecasting and contextual pipelines.}
 \label{tab:variables}
-\small
-\begin{tabular}{p{0.20\textwidth}p{0.20\textwidth}p{0.46\textwidth}}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{0.20\linewidth}
+  >{\raggedright\arraybackslash}p{0.25\linewidth}
+  >{\raggedright\arraybackslash}p{0.47\linewidth}@{}}
 \toprule
-\textbf{Group} & \textbf{Variable} & \textbf{Role} \\
+\textbf{Role} & \textbf{Field} & \textbf{Use} \\
 \midrule
-Target & GHI & Mean irradiance in W/m$^2$ at the selected temporal resolution. \\
-Time & Timestamp & Chronological ordering, local-time conversion, and forecast origins. \\
-Location & Site identifier & Categorical identifier for global models. \\
-Geography & Latitude/longitude & NSRDB cell selection and geographic analysis; not a dynamic covariate. \\
-Lagged input & GHI lags & Past target values available before the forecast origin. \\
-Statistics & Moving averages & Trailing summaries fitted without future observations. \\
-Calendar & Cyclical encodings & Sine/cosine representation of hour, day, or month when applicable. \\
-Physics & Solar elevation & Deterministic nighttime post-processing for hourly predictions. \\
+Target and lagged input & GHI & Direct forecast target and causal history at
+the task resolution. \\
+Static model input & Site identifier & Embedding for neural models and one-hot
+encoding for XGBoost. \\
+Temporal index & Timestamp & Ordering, partition boundaries, forecast origins,
+and target alignment; not an additional covariate. \\
+Spatial index & Factory latitude/longitude & Selection of the NSRDB grid cell
+and sampling of contextual maps; not a learned input. \\
+Learned transform & Site-wise min--max scale & Fitted strictly before the
+selection or test cut and reused without clipping. \\
+Hourly physical rule & Solar elevation & Sets post-processed nighttime
+forecasts to zero; not an input to model fitting. \\
+Context only & K\"oppen--Geiger class and NASA POWER fields & Post-hoc
+geographical and adverse-weather interpretation; never used for training,
+selection, or forecasting. \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Before modeling, each series is audited for ordering, duplicate timestamps,
-coverage, missing values, non-finite values, and physically invalid negative
-GHI. Aggregation is performed only after this audit. Scaling parameters,
-quantization boundaries when used, and other learned transformations are
-estimated from training data and then reused unchanged in validation and test.
-This ordering prevents information from future periods from influencing model
-development.
+\subsection{Quality control and leakage control}
 
-Table~\ref{tab:locations} reports the grid points already used by the hourly
-study. A climate-zone column will be added only after assigning every location
-with a single documented classification source.
+Each stored source is audited according to its schema before modelling.
+Timestamp and GHI fields are parsed, the records are sorted chronologically,
+and the resulting index must be unique, monotonic, regular, and common across
+locations. Invalid timestamps, nonnumeric or non-finite GHI, negative GHI,
+duplicates, discontinuous grids, and an inconsistent stored site identity are
+rejected. Thus the daily loader repairs source row order by sorting rather than
+claiming to reject a merely unsorted input. Product and retrieval metadata are
+retained as provenance rather than supplied to the forecast models. Monthly
+aggregation is performed only after the daily checks.
+
+For a site $\ell$, the matched input at origin $t$ is
+\begin{equation}
+ \mathbf{x}_{\ell,t}
+ =
+ \left(y_{\ell,t-c},\ldots,y_{\ell,t-1};\,\ell\right),
+ \label{eq:matched_input}
+\end{equation}
+where $c$ is the task-specific context length and $\ell$ is the fixed site
+identifier. Every target vector starts at $t$, and window construction rejects
+an origin if its complete target would cross the declared partition boundary.
+Consequently, no lag, normalization parameter, or target value is obtained
+from beyond the relevant cut.
+
+Min--max parameters are estimated separately for each site. Model selection
+uses scales fitted to observations strictly before 1 January 2023. After the
+epoch count has been selected, the refitted model uses new scales fitted
+strictly before 1 January 2024. The same parameters transform the corresponding
+inputs and targets and invert the forecasts. Values outside the training range
+are not clipped, so genuine extrapolation remains observable.
+
+\subsection{Geographical and climatic context}
+
+Table~\ref{tab:locations} reports the canonical factory coordinates and the
+present K\"oppen--Geiger class sampled at those coordinates. Classes and their
+confidence values come from the aligned 0.008333-degree (nominal 1-km) products
+of Beck et al. \cite{beck2018}. Sampling uses the raster cell containing each
+WGS84 point, without interpolation. The 0.5-degree product is used only as the
+background of the world map and never to assign a site's class.
 
 \input{tables/locations}
 
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{mapa_contexto_geografico.pdf}
+\caption{Geographical and climatic context of the ten factory-associated
+locations. The world panel uses the present 0.5-degree K\"oppen--Geiger raster
+for visual context; site assignments and confidence values are sampled from
+the present nominal 1-km raster. The United States and Detroit insets separate
+spatially close labels. The map is descriptive and its climate fields are not
+forecast-model inputs.}
+\label{fig:geographic_context}
+\end{figure*}
+
+Nine sites have a class confidence of 100\%. BMW San Luis Potos\'i is the
+exception: its BSh assignment has 50\% confidence and is therefore treated as
+uncertain in interpretation. Climate codes, confidence values, raster-cell
+indices, source metadata, and file hashes are retained in the geographical
+context artifact described in Appendix~\ref{app:hyperparameters}. They are
+descriptive attributes and do not alter the matched forecasting inputs in
+Eq.~\eqref{eq:matched_input}.
+
+\subsection{Independent post-hoc meteorological context}
+
+Daily NASA POWER fields for 2024 provide an external context layer for error
+interpretation \cite{nasapowerdaily}. These are gridded estimates rather than
+in-situ confirmation of weather at a factory. The retained variables are
+corrected precipitation, cloud amount, all-sky surface shortwave irradiation,
+and clear-sky surface shortwave irradiation in local solar time. The complete
+table contains 366 dates for each of the ten locations.
+
+The adverse-condition rules were declared independently of forecast error:
+the author-defined operational tags are precipitation-indicated when corrected
+precipitation is at least 1~mm/day, high-cloud when cloud amount is at least
+80\%, and adverse when either condition holds. These thresholds are not
+presented as universal meteorological definitions and are applied only after
+forecasts and errors have been fixed. NASA POWER values are not joined to
+training, validation, refit, or test input matrices and are not used to select a
+model or metric. The join matches POWER local-solar-time dates to the fixed-
+offset NSRDB local calendar and uses factory coordinates rather than the exact
+NSRDB grid-cell centres. It therefore supports only an approximate, day-level,
+post-hoc description; it neither confirms conditions at a particular forecast
+hour nor supports causal attribution of forecast errors.

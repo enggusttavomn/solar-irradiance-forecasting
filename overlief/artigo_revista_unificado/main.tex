@@ -12,13 +12,12 @@
 \usepackage{xcolor}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
+\usepackage{tikz}
 \usepackage[hidelinks]{hyperref}
 
 \journal{Journal manuscript under preparation}
 \graphicspath{{figures/}}
 \emergencystretch=2em
-
-\newcommand{\DraftNote}[1]{\textcolor{red!70!black}{[Draft note: #1]}}
 
 \begin{document}
 
@@ -41,11 +40,10 @@ cross-model comparison. The hourly study uses 336 hours of context to predict
 the following 72 hours, while the monthly study predicts one month ahead from
 short multiyear series. Because their current targets, horizons, sample sizes,
 and primary metrics differ, their published errors are reported as prior
-evidence rather than compared directly. The completed extension will evaluate
+evidence rather than compared directly. The matched extension evaluates
 TimesNet and DilatedRNN under identical chronological splits, forecast origins,
 post-processing rules, and location-level aggregation at every shared temporal
-resolution. \DraftNote{Replace this final sentence with consolidated numerical
-results only after the missing matched experiments have been executed.}
+resolution.
 \end{abstract}
 
 \begin{keyword}
@@ -57,6 +55,7 @@ electric-vehicle factories
 \end{frontmatter}
 
 \input{sections/01_introduction}
+\input{sections/02_related_work}
 \input{sections/02_theoretical_background}
 \input{sections/03_data_and_feature_engineering}
 \input{sections/04_methodology}

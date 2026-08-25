@@ -1,20 +1,35 @@
-\begin{table}[htbp]
+\begin{table}[!t]
 \centering
-\caption{Verified configurations in the two source experiments.}
+\caption{Compact frozen configuration of the matched implementation.}
 \label{tab:hyperparameters}
-\small
-\begin{tabular}{p{0.20\textwidth}p{0.31\textwidth}p{0.34\textwidth}}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{0.27\linewidth}
+  >{\raggedright\arraybackslash}p{0.66\linewidth}@{}}
 \toprule
-\textbf{Item} & \textbf{Hourly TimesNet} & \textbf{Monthly DilatedRNN} \\
+\textbf{Component} & \textbf{Frozen setting} \\
 \midrule
-Context/output & 336 h / 72 h & 12 months / 1 month \\
-Main width & $d_{\mathrm{model}}=8$, $d_{\mathrm{ff}}=16$ & Three recurrent layers, 16 units each \\
-Temporal blocks & One TimesBlock, $k=3$ & Dilations 1--2--4 \\
-Optimizer & Adam, learning rate $10^{-3}$ & Adam, learning rate $10^{-3}$ \\
-Batch size & 128 & 32 \\
-Loss & MSE & MSE \\
-Seeds & 42 & 11, 23, 42, 67, 89 \\
+Matched input & Causal GHI sequence plus fixed site identifier only \\
+Regression/output & Continuous GHI; direct vector of task-specific length \\
+Neural optimization & Adam; MSE loss; learning rate $10^{-3}$;
+weight decay $10^{-5}$ \\
+Batch size & 128 for hourly/daily; 32 for monthly \\
+Epoch selection & Hourly/daily: maximum 30, patience 5; monthly:
+maximum 300, patience 30 \\
+Seeds & Daily/monthly: 11, 23, 42, 67, 89; official hourly and
+DilatedRNN extension: 42 \\
+TimesNet & $d_{\mathrm{model}}=8$, $d_{\mathrm{ff}}=16$, one TimesBlock,
+top-$k=3$, two kernels, dropout 0.1 \\
+DilatedRNN & Dilations $(1,2,4)$; 16 units/layer; dense width 16;
+dropout 0 \\
+LSTM & One layer; hidden width 32; direct output head \\
+Site embedding & Width 8 for all neural models \\
+XGBoost & 150 trees; depth 3; learning rate 0.05; row and column
+subsampling 0.8; histogram tree method \\
+Post-processing & Zero floor for all tasks; hourly values also set to zero
+when solar elevation is nonpositive \\
 \bottomrule
 \end{tabular}
 \end{table}
-

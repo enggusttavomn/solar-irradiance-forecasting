@@ -12,12 +12,11 @@
 \usepackage{xcolor}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
+\usepackage{tikz}
 \usepackage[hidelinks]{hyperref}
 
 \graphicspath{{figures/}}
 \emergencystretch=2em
-\newcommand{\DraftNote}[1]{\textcolor{red!70!black}{[Draft note: #1]}}
-
 \title{Multi-Resolution Global Horizontal Irradiance Forecasting at Electric-Vehicle Manufacturing Locations: TimesNet and Dilated Recurrent Networks}
 \author{Gustavo de Melo Nascimento, Thales Wulfert Cabral, and Gustavo Fraidenraich}
 
@@ -27,10 +26,10 @@
 \begin{abstract}
 This journal extension consolidates hourly TimesNet and monthly DilatedRNN
 studies of global horizontal irradiance forecasting at ten locations associated
-with electric-vehicle factories. It also defines the daily and matched-horizon
-experiments needed for a fair multi-resolution comparison. Existing errors are
+with electric-vehicle factories. It implements daily and matched-horizon experiments under a common
+multi-resolution comparison. Existing errors are
 not compared across temporal resolutions because their targets and protocols
-differ. \DraftNote{Insert the consolidated results after the missing experiments.}
+differ.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -39,6 +38,7 @@ multi-resolution forecasting.
 \end{IEEEkeywords}
 
 \input{sections/01_introduction}
+\input{sections/02_related_work}
 \input{sections/02_theoretical_background}
 \input{sections/03_data_and_feature_engineering}
 \input{sections/04_methodology}

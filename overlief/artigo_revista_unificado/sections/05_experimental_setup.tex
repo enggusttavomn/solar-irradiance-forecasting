@@ -1,39 +1,103 @@
 \section{Experimental Setup}
 \label{sec:experiments}
 
-The preceding hourly and monthly experiments are retained as evidence from the
-two source manuscripts. They are not treated as a matched comparison. The
-extension adds only experiments that align resolution, context, horizon,
-origins, and evaluation rules for TimesNet and DilatedRNN.
+The executable study defines four frozen tasks rather than comparing errors
+across unlike resolutions. Table~\ref{tab:study_design} lists their contexts,
+direct outputs, evaluation horizons, and expected origin counts. Within a task,
+all models share sites, origins, targets, preprocessing cuts, and
+post-processing. Across tasks, metrics retain their resolution-specific units
+and are not pooled.
 
 \input{tables/study_design}
 
-\subsection{Hourly protocol}
+\subsection{Common matched protocol}
 
-The available TimesNet protocol uses 336 hourly observations as context and
-predicts 72 hours directly. The 24- and 48-hour results are prefixes of the
-same 72-hour output. Training spans 2019--2022, 2023 is used for model
-selection, the final model is refitted on 2019--2023, and 2024 is reserved for
-retrospective testing.
+The daily and monthly experiments contain three deterministic references
+(persistence, annual seasonal na\"ive, and calendar climatology) and four
+learned references (XGBoost, LSTM, TimesNet, and DilatedRNN). Every learned
+model receives only causal GHI and site identity. Neural models use the five
+seeds 11, 23, 42, 67, and 89, and XGBoost is likewise refitted under each of
+those seeds because row and column subsampling are stochastic; both seed-level
+forecasts and the arithmetic mean of every learned model are retained.
+Deterministic references are evaluated once. The primary model comparison uses
+macro-MAE after computing
+MAE separately at each site. RMSE, nRMSE, and $R^2$, as well as cumulative and
+exact-lead scopes, remain mandatory complementary outputs.
 
-\subsection{Monthly protocol}
+For selection, neural networks are initialized under each seed, fitted to the
+adjustment windows, and monitored on the 2023 windows using normalized MSE.
+Early stopping chooses an epoch count for each model--seed pair. The network is
+then discarded, reinitialized under the same seed, and fitted to the pre-2024
+refit windows for exactly that number of epochs. XGBoost uses its frozen tree
+budget in separate adjustment and refit instances. Test forecasts are generated
+only by the refitted instances.
 
-The available DilatedRNN protocol uses a 12-month context and predicts the next
-monthly mean GHI. It evaluates the 12 chronological origins of 2024 after
-training and model selection on pre-test observations. This is a one-step
-monthly task; it will not be described as a multi-month forecast.
+Within each partition, forecasts follow the rolling-origin protocol of
+Section~\ref{sec:methodology}: the official hourly task advances one local-
+midnight origin per day, the daily task advances one origin per day, and the
+monthly tasks advance one origin per civil month. Parameters remain fixed in
+the test partition while each context incorporates only observations that have
+become available before its first target.
 
-\subsection{Daily and matched long-horizon protocols}
+\subsection{Hourly protocol and DilatedRNN extension}
 
-\DraftNote{Execute the daily TimesNet and DilatedRNN experiments at identical
-origins. Fix the daily horizons before inspecting test performance. If
-``long-term'' means multiple monthly steps, execute both architectures with the
-same direct or recursive forecast strategy and report each horizon separately.}
+The official hourly task uses 336 past hours (14 days) and produces the next
+72 hours directly. The reported checkpoints are 24, 48, and 72 hours; they are
+prefixes and exact leads extracted from the same 72-hour output, not separately
+trained models. Adjustment origins run from 15 January 2019 through
+29 December 2022 (1,445 per site), and validation origins run from
+1 January through 29 December 2023 (363 per site). The pre-test refit combines
+origins from 15 January 2019 through 29 December 2023 (1,810 per site). The
+retrospective test contains 363 origins from 1 January through
+28 December 2024. The last 72-hour window ends at 23:00 on 30 December in the
+fixed local-time index; corresponding UTC timestamps can extend into
+31 December for western locations.
 
-The primary configuration table will contain only the parameters needed to
-understand and reproduce the comparison. Complete search spaces, selected
-epochs by seed, and secondary settings are assigned to
-Appendix~\ref{app:hyperparameters}.
+The official artifact fixes seed 42 and contains persistence, annual seasonal
+na\"ive, XGBoost, LSTM, and TimesNet predictions. The extension trains only a
+direct DilatedRNN with seed 42 under the same 336-to-72 contract. Its forecasts
+are merged one-to-one with the read-only official artifact by site, forecast
+origin, target timestamp, and lead. Target equality is checked during the
+one-to-one merge, and the hashes of all official inputs are rechecked before
+the extension is marked complete. Thus the hourly extension does not silently
+retrain or overwrite an official comparator.
+
+\subsection{Daily protocol}
+
+The daily primary task uses 365 daily means to predict a 30-day vector. Metrics
+are retained at 1, 3, 7, 14, and 30 days. Adjustment origins extend from
+1 January 2020 through 2 December 2022, with targets ending no later than
+31 December 2022 (1,067 origins per site). Validation uses
+1 January--2 December 2023 (336 origins), and refit uses
+1 January 2020--2 December 2023 (1,432 origins). The 2024 test uses
+1 January--2 December and contains 337 complete origins per site because 2024
+is a leap year.
+
+\subsection{Monthly primary and exploratory protocols}
+
+Civil-month means are calculated from the audited daily series. The primary
+monthly task uses 12 months to predict the next month. It has 36 adjustment
+origins in 2020--2022, 12 validation origins in 2023, 48 refit origins in
+2020--2023, and 12 test origins in 2024, for every site.
+
+The exploratory monthly task uses the same 12-month context and directly
+predicts six months. Its declared checkpoints are months 1, 3, and 6.
+Complete-target constraints restrict origins to January--July: adjustment has
+31 origins from January 2020 through July 2022, validation has seven in 2023,
+refit has 43 through July 2023, and test has seven in 2024. This task is
+explicitly labelled exploratory because each site contributes only seven test
+origins and the output covers one half-year.
+
+For the six-month task, exact leads are evaluated on different target-month
+sets: lead 1 covers January--July, whereas lead 6 covers June--December. Its
+horizon profile therefore combines lead-time and seasonal effects and is not
+interpreted as an isolated degradation curve.
+
+\subsection{Frozen optimization settings}
+
+Table~\ref{tab:hyperparameters} gives the compact configuration needed to
+interpret the main comparison. Appendix~\ref{app:hyperparameters} records the
+full temporal boundaries, model settings, baseline definitions, artifact
+contract, and external-context integrity hashes.
 
 \input{tables/hyperparameters}
-

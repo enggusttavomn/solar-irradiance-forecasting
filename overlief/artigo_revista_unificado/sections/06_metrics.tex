@@ -1,52 +1,103 @@
 \section{Evaluation Metrics}
 \label{sec:metrics}
 
-Let $y_i$ denote a reference GHI value, $\widehat y_i$ its forecast,
-$e_i=y_i-\widehat y_i$, $\bar y$ the mean reference value, and $n$ the number
-of evaluated targets. Metrics are calculated by location before the unweighted
-macro-average is formed.
+Let $y_i$ be a reference GHI value, $\widehat{y}_i$ its post-processed
+forecast, $e_i=y_i-\widehat{y}_i$, $\bar{y}$ the mean reference value in the
+same evaluation vector, and $n$ its number of target points. Each metric is
+computed first for one site, one model estimate, one partition, one declared
+horizon, and one horizon scope.
 
 \subsection{Mean absolute error}
 
 \begin{equation}
- \mathrm{MAE}=\frac{1}{n}\sum_{i=1}^{n}|e_i|.
+ \mathrm{MAE}
+ =
+ \frac{1}{n}\sum_{i=1}^{n}\left|e_i\right|.
  \label{eq:mae}
 \end{equation}
-MAE remains in W/m$^2$ and gives every absolute deviation linear weight. It is
-easy to interpret but does not emphasize rare large errors.
+MAE is the primary error measure and remains in W/m$^2$. Its linear penalty
+makes the magnitude directly interpretable and less dominated by individual
+large deviations than a squared-error score \cite{hyndman2006}. Lower values
+are better.
 
 \subsection{Root mean squared error}
 
 \begin{equation}
- \mathrm{RMSE}=\sqrt{\frac{1}{n}\sum_{i=1}^{n}e_i^2}.
+ \mathrm{RMSE}
+ =
+ \sqrt{\frac{1}{n}\sum_{i=1}^{n}e_i^2}.
  \label{eq:rmse}
 \end{equation}
-RMSE is also expressed in W/m$^2$ and penalizes large deviations more strongly
-than MAE. Its value can therefore be dominated by a small number of extreme
-forecast errors.
+RMSE is also expressed in W/m$^2$, but squaring gives larger deviations more
+weight. Reporting it alongside MAE reveals whether occasional large errors
+change the model ordering, a standard concern in deterministic solar-forecast
+verification \cite{yang2020verification}. Lower values are better.
 
 \subsection{Normalized root mean squared error}
 
 \begin{equation}
- \mathrm{nRMSE}(\%)=100\frac{\mathrm{RMSE}}{\bar y}.
+ \mathrm{nRMSE}
+ =
+ \frac{\mathrm{RMSE}}{\bar{y}},
+ \qquad
+ \mathrm{nRMSE}_{\%}=100\,\mathrm{nRMSE}.
  \label{eq:nrmse}
 \end{equation}
-nRMSE makes errors more comparable across locations with different mean GHI,
-but becomes unstable when the denominator is close to zero. It is therefore
-not computed on nighttime-only subsets.
+The machine-readable artifacts store the dimensionless ratio; tables that use
+percent explicitly multiply it by 100. Normalization supports comparison among
+sites with different mean irradiance levels, but it inherits the instability
+of a small denominator \cite{voyant2022}. The value is therefore left undefined
+when $\bar{y}$ is numerically zero. Lower values are better.
 
 \subsection{Coefficient of determination}
 
 \begin{equation}
- R^2=1-\frac{\sum_{i=1}^{n}e_i^2}
- {\sum_{i=1}^{n}(y_i-\bar y)^2}.
+ R^2
+ =
+ 1-
+ \frac{\sum_{i=1}^{n}e_i^2}
+      {\sum_{i=1}^{n}(y_i-\bar{y})^2}.
  \label{eq:r2}
 \end{equation}
-$R^2$ measures tracked variation relative to a constant mean predictor. It can
-be negative and should not replace scale-dependent error metrics.
+$R^2$ measures variation tracked relative to a constant predictor built from
+the evaluation mean \cite{yang2020verification}. It is undefined for fewer
+than two targets or a constant reference vector and can be negative when the
+forecast is worse than that constant reference. Higher values are better;
+$R^2$ does not replace the scale-dependent errors.
 
-The choice of a primary metric will be fixed for each resolution before the
-final test comparison. MAE, RMSE, nRMSE, and $R^2$ provide complementary
-evidence and will not be selectively reported according to which favors the
-proposed model \cite{hyndman2006}.
+\subsection{Horizon scopes and spatial aggregation}
 
+For a declared horizon $H$, the cumulative scope concatenates leads
+$1,\ldots,H$ over all valid origins, whereas the exact-lead scope retains only
+lead $H$. The two scopes are identical at $H=1$. This distinction is applied at
+24, 48, and 72 hours; 1, 3, 7, 14, and 30 days; and, for the exploratory
+multi-month task, 1, 3, and 6 months. A horizon label therefore always denotes
+both a numerical lead and an explicitly named scope.
+
+If $M_{\ell}$ is any valid site-level metric and $L=10$, the macro result is
+\begin{equation}
+ M_{\mathrm{macro}}
+ =
+ \frac{1}{L}\sum_{\ell=1}^{L}M_{\ell}.
+ \label{eq:macro_metric}
+\end{equation}
+Equal site weighting prevents a site with more valid target points from
+dominating the geographical summary. Macro-MAE is the predeclared primary
+metric at every resolution; MAE, RMSE, nRMSE, and $R^2$ are nevertheless
+retained together rather than selectively reported.
+
+For daily and monthly learned models, seed-level metrics quantify variability,
+whereas the TimesNet--DilatedRNN paired comparison uses the arithmetic
+five-seed ensemble forecast. The hourly extension compares the single
+registered seed 42 for both models. For each site, metric, horizon, and scope,
+the pipeline stores
+\begin{equation}
+ \Delta_{\ell,M}
+ =
+ M_{\ell,\mathrm{TimesNet}}-M_{\ell,\mathrm{DilatedRNN}}.
+ \label{eq:paired_difference}
+\end{equation}
+A negative $\Delta_{\ell,M}$ is a TimesNet win for the three error metrics; a
+positive value is a win for $R^2$. Mean and median differences and the number
+of site wins are descriptive. Overlapping multi-step windows are not treated
+as independent observations for an i.i.d. significance test.

@@ -1,0 +1,45 @@
+tarefa,resolucao,particao,modelo,tipo_estimativa,semente,tipo_horizonte,horizonte,N_localidades,N_origens,N_pontos,MAE_wm2,RMSE_wm2,nRMSE,R2,agregacao
+monthly_1,mensal,validacao_2023,Climatologia,deterministica,,cumulativo,1,2,6,6,8.304503122965494,10.078077446867596,0.05580409344107649,0.9852867238900933,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,Climatologia,deterministica,,lead_exato,1,2,6,6,8.304503122965494,10.078077446867596,0.05580409344107649,0.9852867238900933,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,DilatedRNN,ensemble,,cumulativo,1,2,6,6,109.69302715336991,136.82886171781212,0.7001882429354982,-3.2489378234677004,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,DilatedRNN,ensemble,,lead_exato,1,2,6,6,109.69302715336991,136.82886171781212,0.7001882429354982,-3.2489378234677004,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,DilatedRNN,semente,11.0,cumulativo,1,2,6,6,109.69302715336991,136.82886171781212,0.7001882429354982,-3.2489378234677004,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,DilatedRNN,semente,11.0,lead_exato,1,2,6,6,109.69302715336991,136.82886171781212,0.7001882429354982,-3.2489378234677004,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,LSTM,ensemble,,cumulativo,1,2,6,6,111.89360355717201,137.10990463662722,0.7081415810226029,-2.978351277647964,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,LSTM,ensemble,,lead_exato,1,2,6,6,111.89360355717201,137.10990463662722,0.7081415810226029,-2.978351277647964,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,LSTM,semente,11.0,cumulativo,1,2,6,6,111.89360355717201,137.10990463662722,0.7081415810226029,-2.978351277647964,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,LSTM,semente,11.0,lead_exato,1,2,6,6,111.89360355717201,137.10990463662722,0.7081415810226029,-2.978351277647964,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,Persistencia,deterministica,,cumulativo,1,2,6,6,20.36048126220703,22.412487151435453,0.11928967346488936,0.9136972155924582,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,Persistencia,deterministica,,lead_exato,1,2,6,6,20.36048126220703,22.412487151435453,0.11928967346488936,0.9136972155924582,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,Sazonal ingenuo,deterministica,,cumulativo,1,2,6,6,15.285284678141277,16.978132821393142,0.08961481124426089,0.9477500457723355,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,Sazonal ingenuo,deterministica,,lead_exato,1,2,6,6,15.285284678141277,16.978132821393142,0.08961481124426089,0.9477500457723355,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,TimesNet,ensemble,,cumulativo,1,2,6,6,85.26504292500606,86.55212945428813,0.46938060956244615,-0.1631267342170421,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,TimesNet,ensemble,,lead_exato,1,2,6,6,85.26504292500606,86.55212945428813,0.46938060956244615,-0.1631267342170421,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,TimesNet,semente,11.0,cumulativo,1,2,6,6,85.26504292500606,86.55212945428813,0.46938060956244615,-0.1631267342170421,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,TimesNet,semente,11.0,lead_exato,1,2,6,6,85.26504292500606,86.55212945428813,0.46938060956244615,-0.1631267342170421,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,XGBoost,ensemble,,cumulativo,1,2,6,6,75.81182350829253,76.2989410009709,0.4073143079249595,0.01774290856023575,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,XGBoost,ensemble,,lead_exato,1,2,6,6,75.81182350829253,76.2989410009709,0.4073143079249595,0.01774290856023575,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,XGBoost,semente,11.0,cumulativo,1,2,6,6,75.81182350829253,76.2989410009709,0.4073143079249595,0.01774290856023575,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,validacao_2023,XGBoost,semente,11.0,lead_exato,1,2,6,6,75.81182350829253,76.2989410009709,0.4073143079249595,0.01774290856023575,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,Climatologia,deterministica,,cumulativo,1,2,6,6,9.944599405924476,12.435460560393913,0.05633073389531282,0.9447208769558741,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,Climatologia,deterministica,,lead_exato,1,2,6,6,9.944599405924476,12.435460560393913,0.05633073389531282,0.9447208769558741,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,DilatedRNN,ensemble,,cumulativo,1,2,6,6,121.36494698096857,151.71419470941822,0.7398012165369018,-3.423190588681244,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,DilatedRNN,ensemble,,lead_exato,1,2,6,6,121.36494698096857,151.71419470941822,0.7398012165369018,-3.423190588681244,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,DilatedRNN,semente,11.0,cumulativo,1,2,6,6,121.36494698096857,151.71419470941822,0.7398012165369018,-3.423190588681244,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,DilatedRNN,semente,11.0,lead_exato,1,2,6,6,121.36494698096857,151.71419470941822,0.7398012165369018,-3.423190588681244,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,LSTM,ensemble,,cumulativo,1,2,6,6,123.30926635039921,151.62072459838348,0.7451510927091983,-3.12822307105251,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,LSTM,ensemble,,lead_exato,1,2,6,6,123.30926635039921,151.62072459838348,0.7451510927091983,-3.12822307105251,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,LSTM,semente,11.0,cumulativo,1,2,6,6,123.30926635039921,151.62072459838348,0.7451510927091983,-3.12822307105251,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,LSTM,semente,11.0,lead_exato,1,2,6,6,123.30926635039921,151.62072459838348,0.7451510927091983,-3.12822307105251,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,Persistencia,deterministica,,cumulativo,1,2,6,6,18.60930887858073,22.51448959873923,0.10178712366339197,0.8160325844203994,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,Persistencia,deterministica,,lead_exato,1,2,6,6,18.60930887858073,22.51448959873923,0.10178712366339197,0.8160325844203994,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,Sazonal ingenuo,deterministica,,cumulativo,1,2,6,6,11.925120035807293,15.940239650841084,0.07681831294506952,0.9458626275410413,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,Sazonal ingenuo,deterministica,,lead_exato,1,2,6,6,11.925120035807293,15.940239650841084,0.07681831294506952,0.9458626275410413,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,TimesNet,ensemble,,cumulativo,1,2,6,6,91.29231393024254,93.0236283107493,0.47484354261245415,-0.15783365029646246,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,TimesNet,ensemble,,lead_exato,1,2,6,6,91.29231393024254,93.0236283107493,0.47484354261245415,-0.15783365029646246,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,TimesNet,semente,11.0,cumulativo,1,2,6,6,91.29231393024254,93.0236283107493,0.47484354261245415,-0.15783365029646246,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,TimesNet,semente,11.0,lead_exato,1,2,6,6,91.29231393024254,93.0236283107493,0.47484354261245415,-0.15783365029646246,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,XGBoost,ensemble,,cumulativo,1,2,6,6,82.33334027817477,89.16344556615698,0.4467032552515481,-0.2173283765360527,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,XGBoost,ensemble,,lead_exato,1,2,6,6,82.33334027817477,89.16344556615698,0.4467032552515481,-0.2173283765360527,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,XGBoost,semente,11.0,cumulativo,1,2,6,6,82.33334027817477,89.16344556615698,0.4467032552515481,-0.2173283765360527,media_aritmetica_das_metricas_por_localidade
+monthly_1,mensal,teste_2024,XGBoost,semente,11.0,lead_exato,1,2,6,6,82.33334027817477,89.16344556615698,0.4467032552515481,-0.2173283765360527,media_aritmetica_das_metricas_por_localidade

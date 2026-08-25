@@ -1,24 +1,117 @@
-\begin{figure}[htbp]
-\centering
-\setlength{\fboxsep}{8pt}
-\fbox{\begin{minipage}{0.27\textwidth}
-\centering
-\textbf{Block A: Data}\\[3pt]
-Audit $\rightarrow$ aggregation $\rightarrow$ features $\rightarrow$ windows
-\end{minipage}}
-\hfill$\longrightarrow$\hfill
-\fbox{\begin{minipage}{0.27\textwidth}
-\centering
-\textbf{Block B: Models}\\[3pt]
-Selection $\rightarrow$ refit $\rightarrow$ TimesNet/DilatedRNN forecasts
-\end{minipage}}
-\hfill$\longrightarrow$\hfill
-\fbox{\begin{minipage}{0.27\textwidth}
-\centering
-\textbf{Block C: Evaluation}\\[3pt]
-Physical rules $\rightarrow$ metrics $\rightarrow$ favorable/adverse cases
-\end{minipage}}
-\caption{Unified experimental pipeline. Each block is detailed by a separate pseudocode and explanatory subsection.}
-\label{fig:pipeline}
-\end{figure}
+% The TikZ branch is activated when the document template loads tikz.
+% A package-free fallback keeps this fragment portable across journal classes.
+\ifdefined\tikzset
+  \usetikzlibrary{arrows.meta,positioning}
+  \begin{figure}[!t]
+  \centering
+  \begin{tikzpicture}[
+    font=\footnotesize,
+    flow/.style={
+      draw=#1!70!black,
+      fill=#1!7,
+      rounded corners=2pt,
+      line width=0.65pt,
+      text width=0.84\linewidth,
+      align=left,
+      inner xsep=5mm,
+      inner ysep=3.5mm
+    },
+    badge/.style={
+      circle,
+      draw=#1!80!black,
+      fill=#1!18,
+      minimum size=5.5mm,
+      inner sep=0pt,
+      font=\bfseries\footnotesize
+    },
+    arrow/.style={
+      -{Stealth[length=2.3mm,width=1.7mm]},
+      line width=0.8pt,
+      draw=black!65
+    },
+    note/.style={
+      draw=black!35,
+      fill=black!3,
+      rounded corners=1.5pt,
+      text width=0.84\linewidth,
+      align=center,
+      inner sep=2.5mm,
+      font=\scriptsize
+    }
+  ]
+  \node[flow=blue] (a) {
+    \textbf{Block A --- data contract and windows}\\[1.5mm]
+    \textbf{Input:} modelled NSRDB GHI and fixed site identity.\\
+    \textbf{Operations:} audit $\rightarrow$ daily/monthly resolution
+    $\rightarrow$ chronological cuts $\rightarrow$ pre-cut min--max scales
+    $\rightarrow$ origin-aligned direct windows.\\
+    \textbf{Output:} identical causal GHI histories and targets for every model.
+  };
+  \node[badge=blue,anchor=north west,xshift=2mm,yshift=-2mm]
+    at (a.north west) {A};
 
+  \node[flow=green,below=5mm of a] (b) {
+    \textbf{Block B --- matched development and forecasting}\\[1.5mm]
+    \textbf{References:} persistence, annual seasonal na\"ive, climatology,
+    XGBoost, and LSTM.\\
+    \textbf{Compared models:} TimesNet and direct DilatedRNN.\\
+    \textbf{Protocol:} 2023 epoch selection $\rightarrow$ fresh initialization
+    $\rightarrow$ pre-2024 fixed-epoch refit $\rightarrow$ direct 2024 horizon.
+  };
+  \node[badge=green,anchor=north west,xshift=2mm,yshift=-2mm]
+    at (b.north west) {B};
+
+  \node[flow=orange,below=5mm of b] (c) {
+    \textbf{Block C --- physically consistent evidence}\\[1.5mm]
+    \textbf{Operations:} inverse scaling $\rightarrow$ zero floor
+    $\rightarrow$ hourly nighttime rule $\rightarrow$ site metrics
+    $\rightarrow$ equal-weight macro-average and paired site differences.\\
+    \textbf{Context:} 1-km K\"oppen--Geiger and NASA POWER adverse-day labels
+    are joined only after forecasts and errors are fixed.
+  };
+  \node[badge=orange,anchor=north west,xshift=2mm,yshift=-2mm]
+    at (c.north west) {C};
+
+  \draw[arrow] (a.south) -- (b.north);
+  \draw[arrow] (b.south) -- (c.north);
+
+  \node[note,below=4mm of c] (guard) {
+    \textbf{Fair-comparison guard:} coordinates, climate, cloud, precipitation,
+    and future targets never enter the matched model input.
+  };
+  \end{tikzpicture}
+  \caption{Unified multi-resolution pipeline. Each panel states its input,
+  operations, and output; Algorithms~\ref{alg:block_a}--\ref{alg:block_c}
+  provide the corresponding pseudocode.}
+  \label{fig:pipeline}
+  \end{figure}
+\else
+  \begin{figure}[!t]
+  \centering
+  \setlength{\fboxsep}{6pt}
+  \begin{minipage}{0.96\linewidth}
+  \fcolorbox{blue!65!black}{blue!5}{%
+    \parbox{0.91\linewidth}{\footnotesize
+    \textbf{A --- Data contract and windows.}
+    Modelled NSRDB GHI and site identity are audited, resolved, split,
+    scaled before each cut, and converted to aligned direct windows.}}
+  \par\smallskip
+  \centering$\Downarrow$\par\smallskip
+  \fcolorbox{green!55!black}{green!5}{%
+    \parbox{0.91\linewidth}{\footnotesize
+    \textbf{B --- Matched development and forecasting.}
+    Common origins support deterministic references, XGBoost, LSTM, TimesNet,
+    and DilatedRNN; 2023 selects epochs before a fresh pre-2024 refit.}}
+  \par\smallskip
+  \centering$\Downarrow$\par\smallskip
+  \fcolorbox{orange!70!black}{orange!7}{%
+    \parbox{0.91\linewidth}{\footnotesize
+    \textbf{C --- Physically consistent evidence.}
+    Inverse scaling and common physical rules precede site-wise metrics,
+    macro-averages, paired differences, and post-hoc contextual joins.}}
+  \end{minipage}
+  \caption{Unified multi-resolution pipeline. Each block is formalized by a
+  separate pseudocode in Algorithms~\ref{alg:block_a}--\ref{alg:block_c}.}
+  \label{fig:pipeline}
+  \end{figure}
+\fi

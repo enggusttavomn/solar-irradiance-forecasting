@@ -1,0 +1,123 @@
+\section{Related Work}
+\label{sec:related_work}
+
+This section reviews empirical solar-forecasting studies and positions the
+present comparison. Definitions of irradiance, temporal support, and the two
+neural architectures are intentionally reserved for
+Section~\ref{sec:background}; the purpose here is to compare what prior studies
+predicted, which information they used, how far ahead they forecast, and how
+they evaluated the forecasts.
+
+\subsection{Forecasting scope and evaluation practice}
+
+Solar-forecasting reviews consistently organize methods by forecast horizon,
+input source, target variable, and application
+\cite{diagne2013,inman2013,antonanzas2016,voyant2017}. This organization is not
+merely terminological. Irradiance nowcasting from sky images, hourly GHI
+forecasting from lagged and meteorological variables, numerical-weather-
+prediction-based day-ahead forecasting, and monthly resource forecasting have
+different information sets and error structures. Text-mining evidence also
+shows that the field has diversified in both methods and applications
+\cite{yang2018}. Reviews focused on photovoltaic power reach the same general
+conclusion: reported performance is conditional on horizon, data, and
+optimization procedure \cite{ahmed2020}. GHI, solar irradiation, and
+photovoltaic power are therefore retained as distinct targets in this review.
+
+Evaluation practice is equally important. Deterministic solar forecasts should
+be verified against explicit reference methods, with metrics selected for the
+decision context and reported at the relevant horizons
+\cite{yang2020verification}. General forecast-evaluation results caution that
+percentage measures and scale-dependent errors answer different questions
+\cite{hyndman2006}. Voyant et al.\ \cite{voyant2022} further demonstrate that
+the appropriate naive reference depends on temporal structure and horizon;
+their comparison of training-free statistical references across multiple
+climates argues against using one convenient persistence rule as the sole
+benchmark in every setting.
+
+\subsection{From intra-hour to week-ahead forecasting}
+
+At very short horizons, cloud observations can carry information that is not
+contained in a univariate irradiance history. Chow et al.\ \cite{chow2011}
+derived cloud maps and motion vectors from 30-s total-sky images and evaluated
+cloud and irradiance nowcasts at a distributed test bed. Reviews of intra-hour
+methods distinguish such ground-imagery pipelines from satellite, numerical
+weather prediction, and time-series approaches \cite{chu2021,lin2023}. This
+literature also shows why performance during broken-cloud conditions cannot be
+inferred from clear-sky or annual-average behavior.
+
+For hourly time series, hybrid networks commonly combine representation
+learning with recurrent dynamics. Huang et al.\ \cite{huang2021} used wavelet
+packet decomposition, convolution, long short-term memory (LSTM), and
+multilayer-perceptron branches with irradiance and meteorological inputs for
+1-h-ahead prediction at three United States sites. Guariso et al.\
+\cite{guariso2020} compared feed-forward and LSTM networks under recursive,
+horizon-specific, and multi-output strategies for horizons of up to 12~h,
+including persistence and clear-sky references and a transfer analysis across
+sites. These studies differ not only in model complexity but also in whether
+future steps are produced recursively or jointly.
+
+The horizon can be extended while retaining hourly outputs. Cheng et al.\
+\cite{cheng2021} combined one-dimensional convolution and LSTM components for
+day-ahead to week-ahead irradiance prediction using recent irradiance and a
+small set of weather variables. Zhao et al.\ \cite{zhao2024timesnet} coupled
+improved complete ensemble empirical mode decomposition with adaptive noise
+(ICEEMDAN) to TimesNet for week-ahead hourly solar-irradiation forecasting.
+The latter establishes the relevance of TimesNet to solar forecasting, but its
+decomposition stage and week-ahead protocol do not isolate the effect of the
+TimesNet backbone or provide a matched comparison with a DilatedRNN.
+
+\subsection{Coarser resolution, multiple locations, and climate context}
+
+Coarser targets lead to a different learning problem. Ozoegwu
+\cite{ozoegwu2019} forecast monthly-mean daily global solar radiation with
+nonlinear autoregressive, exogenous-input, and hybrid neural formulations.
+Jung et al.\ \cite{jung2020} examined recurrent modeling for long-term
+photovoltaic-power forecasting, a related task whose target incorporates the
+conversion system and must not be equated with GHI. Cabral et al.\
+\cite{cabral2026} evaluated a GHI-only GPT-Neo pipeline and contemporary
+competitors over 40 locations and a very-long-term horizon. That work provides
+a cross-location precedent for long-horizon evaluation, whereas the present
+study addresses how two time-series architectures behave when temporal
+resolution and forecast design are matched.
+
+Cross-location learning can increase the effective sample size by sharing
+parameters, but it also changes the estimand from a collection of independent
+local models to a global forecasting rule \cite{montero2021}. The broader
+recurrent-neural-network (RNN) literature emphasizes the same need to separate
+architectural capacity from window construction, optimization, and evaluation
+design \cite{hewamalage2021}. Climate diversity adds another layer: Zhu et al.\
+\cite{zhu2024} compared several deep time-series models over horizons from
+minutes to 24~h, seasons, input combinations, and training-set lengths. Such
+factorial evaluation is informative, but climate labels and seasons remain
+descriptive unless the study design supports causal attribution.
+
+Tables~\ref{tab:literature_review_short}--%
+\ref{tab:literature_review_long} consolidate representative primary studies in
+three temporal groups using factual dimensions adapted to this article's
+research question. They do not rank papers by reported error because their
+targets, sites, horizons, inputs, and test protocols are not commensurate.
+
+\input{tables/literature_review}
+
+\subsection{Research gap and positioning}
+
+Taken together, the reviewed studies supply strong architecture-specific and
+horizon-specific evidence, but none provides the exact matched comparison
+required here. The reviewed TimesNet solar application predicts week-ahead hourly
+irradiation after signal decomposition \cite{zhao2024timesnet}; monthly neural
+studies use different targets and architectures \cite{ozoegwu2019}; and the
+very-long-term cross-location study centers on a language-model backbone
+\cite{cabral2026}. Directly ordering their published errors would therefore
+confound model choice with temporal aggregation, information availability,
+location set, and evaluation protocol.
+
+The contribution of the present study is consequently experimental rather
+than a claim that one architecture is universally superior. TimesNet and
+DilatedRNN are evaluated on common samples at each shared resolution, using
+the same chronological forecast origins, admissible inputs, post-processing
+rules, baselines, and location aggregation. Hourly multi-day forecasts are
+kept distinct from forecasts of daily aggregates, and a one-step monthly
+forecast is not presented as a multi-month trajectory. This design directly
+addresses the comparability limitations identified by solar-forecast
+verification and benchmarking research
+\cite{yang2020verification,voyant2022}.

@@ -1,81 +1,156 @@
 \section{Methodology}
 \label{sec:methodology}
 
-The common pipeline is divided into three blocks following the presentation
-logic of the reference journal article. Each block has an explicit input,
-transformation, output, and pseudocode. Figure~\ref{fig:pipeline} summarizes
-their relationship.
+The unified method is an origin-aligned, multi-resolution comparison rather
+than a numerical pooling of the two source studies. TimesNet
+\cite{wu2023} and DilatedRNN \cite{chang2017} are evaluated on identical
+windows within each matched task. The DilatedRNN source study motivates the
+architecture, but its quantized forecasts and previously reported errors are not imported
+into the present continuous-regression protocol. Figure~\ref{fig:pipeline}
+summarizes the three reproducible blocks; Algorithms~\ref{alg:block_a}--%
+\ref{alg:block_c} specify them separately.
 
 \input{figures/pipeline}
 
-\subsection{Block A: data preparation}
+\subsection{Block A: data contract and temporal windows}
 
-Block A converts audited NSRDB series into resolution-specific supervised
-examples. All calculations for an origin $t$ use only values available before
-or at that origin.
+Block A establishes the information set before any model is fitted. It audits
+the regular series, applies the task resolution, assigns a stable site
+identifier, creates the chronological partitions, and fits two independent
+sets of site-wise min--max parameters. The selection scale contains only
+observations before 2023, whereas the refit scale contains only observations
+before 2024.
 
-\begin{algorithm}[htbp]
-\caption{Block A---data preparation and temporal windows}
+\begin{algorithm}[!t]
+\caption{Block A: leakage-controlled data preparation}
 \label{alg:block_a}
 \begin{algorithmic}[1]
-\Require Raw series, locations $\mathcal{L}$, resolution $r$, context $c$, horizon $h$
-\Ensure Chronological training, validation, and test windows
-\For{each location $\ell\in\mathcal{L}$}
-  \State audit timestamps, missing values, duplicates, and invalid GHI
-  \State aggregate GHI at resolution $r$
-  \State split the series chronologically before fitting transformations
-  \State fit scaling and derived-feature rules on training data only
-  \State create $(c,h)$ windows without crossing partition boundaries
-\EndFor
-\end{algorithmic}
-\end{algorithm}
-
-The output of Block A is a set of origin-aligned samples shared by every model
-within the same experiment. This prevents changes in sample availability from
-being mistaken for architectural gains.
-
-\subsection{Block B: model development and forecasting}
-
-\begin{algorithm}[htbp]
-\caption{Block B---matched training and forecasting}
-\label{alg:block_b}
-\begin{algorithmic}[1]
-\Require Training and validation windows, predefined model search spaces
-\Ensure Fixed models and raw forecasts for every test origin
-\For{each model $m\in\{\text{TimesNet},\text{DilatedRNN},\text{baselines}\}$}
-  \State select hyperparameters using validation data only
-  \State reinitialize and refit the selected configuration on pre-test data
-  \For{each chronological test origin}
-    \State predict the complete horizon without future target information
+\Require Site series $\{y_{\ell,t}\}$; task $(r,c,h,\mathcal{H})$; fixed cuts
+\Ensure Aligned fit, validation, refit, and test windows
+\For{each site $\ell$}
+  \State parse, sort, and verify a complete nonnegative GHI series
+  \If{$r$ is monthly}
+    \State aggregate daily GHI by civil-month arithmetic mean
+  \EndIf
+  \State assign the fixed identifier $\ell$
+  \State fit $s_{\ell}^{\mathrm{sel}}$ using observations before 2023
+  \State fit $s_{\ell}^{\mathrm{refit}}$ using observations before 2024
+  \For{each declared partition $P$}
+    \State create $(c,h)$ direct windows whose complete targets lie in $P$
+    \State assert the expected origin count and chronological boundaries
   \EndFor
 \EndFor
+\State concatenate sites and sort each partition by origin and site identifier
 \end{algorithmic}
 \end{algorithm}
 
-TimesNet and DilatedRNN will be trained with the same samples and forecast
-origins at each shared resolution. Architecture-specific context lengths may
-be studied as an ablation, but the primary comparison will keep the available
-information equivalent.
+The resulting sample has the input defined in Eq.~\eqref{eq:matched_input}.
+A timestamp determines availability and alignment but is not presented as a
+feature. Likewise, latitude, longitude, climate class, NASA POWER variables,
+and future calendar information are excluded. Holding the information set
+constant prevents a feature advantage from being attributed to an
+architecture.
 
-\subsection{Block C: physical post-processing and evaluation}
+\subsection{Block B: matched model development}
 
-\begin{algorithm}[htbp]
-\caption{Block C---post-processing, metrics, and case selection}
+The deterministic references are persistence, annual seasonal na\"ive, and
+calendar climatology, with resolution-specific definitions. In the hourly
+task, daily-profile persistence repeats the last 24 observed local hours
+cyclically across the 72-hour output; the annual seasonal baseline retrieves the
+same local hour one year earlier. In the daily and monthly tasks, persistence
+repeats the most recent daily or monthly aggregate throughout the output, and
+the annual baseline retrieves the same civil day or month one year earlier.
+Every annual reference is asserted to precede the forecast origin, with
+29 February mapped to 28 February. Daily and monthly climatology averages each
+calendar day or month using only values before the relevant cut. The official
+hourly artifact contains
+persistence and annual seasonal na\"ive forecasts.
+
+The learned comparison comprises XGBoost, a direct LSTM, TimesNet, and a direct
+DilatedRNN. These models share the scaled GHI sequence and site identifier;
+neural models encode the identifier with a learned embedding, whereas XGBoost
+uses a one-hot representation. A single global model is fitted across sites,
+which shares temporal structure while retaining site identity
+\cite{montero2021}. Every multi-step model produces the complete target vector
+in one forward pass, so no predicted GHI is recursively returned as input.
+
+\begin{algorithm}[!t]
+\caption{Block B: validation, reinitialization, and direct forecasting}
+\label{alg:block_b}
+\begin{algorithmic}[1]
+\Require Block-A partitions; models $\mathcal{M}$; frozen seeds and settings
+\Ensure Validation and retrospective-test forecasts on common origins
+\State compute causal deterministic baselines at every origin
+\For{each learned model $m\in\mathcal{M}$ and declared seed $s$}
+  \If{$m$ is a neural model}
+    \State initialize $m$ with seed $s$ and fit on the adjustment partition
+    \State select the epoch count by 2023 normalized MSE and early stopping
+    \State retain the corresponding 2023 forecast
+    \State reinitialize $m$ with seed $s$
+    \State refit on the pre-2024 partition for the selected fixed epoch count
+  \Else
+    \State fit fixed-configuration XGBoost on adjustment and pre-2024 windows
+  \EndIf
+  \State generate the complete direct horizon at every 2024 origin
+\EndFor
+\State retain seed-level forecasts and the daily/monthly five-seed mean
+\end{algorithmic}
+\end{algorithm}
+
+Reinitialization is mandatory: the validation checkpoint is not continued into
+the test fit. For neural models, 2023 selects only the number of epochs for each
+model--seed pair. The final instance is trained from a fresh initialization on
+all declared pre-test windows for exactly that number of epochs. XGBoost has a
+fixed tree budget and is independently fitted on the adjustment and refit
+partitions. The hourly extension is narrower: all official model forecasts are
+read without modification, and only DilatedRNN with seed 42 is added and
+aligned by site, origin, target timestamp, and lead.
+
+All partitions are evaluated in rolling-origin form. Model parameters and the
+refit scale remain fixed throughout the 2024 test, but the causal context is
+advanced at every eligible origin and may include GHI observations from earlier
+in 2024 once they have become historical. No test target enters a context before
+its timestamp, and no weights are updated during the test. The design is thus a
+retrospective walk-forward evaluation with fixed parameters, not a single
+forecast issued at the end of 2023 for every target in 2024.
+
+\subsection{Block C: physical consistency and evaluation}
+
+After inverse scaling, all forecasts receive the same non-negativity floor.
+Daily and monthly forecasts have no upper truncation. Hourly forecasts also use
+solar elevation computed at the centre of each hourly interval; predictions
+are set to zero when elevation is nonpositive, following the deterministic
+geometry implemented with \texttt{pvlib} \cite{anderson2023}. Solar elevation
+is therefore a post-processing constraint, not privileged predictive
+information.
+
+\begin{algorithm}[!t]
+\caption{Block C: post-processing, metrics, and contextual analysis}
 \label{alg:block_c}
 \begin{algorithmic}[1]
-\Require Raw forecasts, reference targets, location metadata
-\Ensure Aggregate, local, horizon-wise, and adverse-case results
-\State invert training-fitted transformations
-\State apply the same non-negativity rule to every eligible model
-\State apply the documented solar-elevation rule to hourly forecasts
-\State compute every metric first by location and then its macro-average
-\State rank models under the declared primary metric
-\State select favorable and unfavorable cases using a rule fixed in advance
+\Require Raw forecasts, targets, site metadata, and post-hoc context
+\Ensure Site-level, macro, horizon-wise, and contextual evidence
+\For{each model forecast}
+  \State invert the scale fitted for its evaluation cut
+  \State apply $\widehat y\leftarrow\max(\widehat y,0)$
+  \If{the task is hourly}
+    \State set $\widehat y=0$ wherever solar elevation is nonpositive
+  \EndIf
+\EndFor
+\For{each site and declared horizon}
+  \State compute metrics for the cumulative prefix and the exact lead
+\EndFor
+\State average site metrics with equal site weight
+\State form TimesNet--DilatedRNN differences paired by site
+\State attach climate and adverse-day labels only after errors are fixed
 \end{algorithmic}
 \end{algorithm}
 
-The favorable and unfavorable examples are selected after computing all
-location--origin errors, but the selection rule must be declared before their
-interpretation. A weather case will be labeled rainy or cloudy only when an
-independent meteorological field or source confirms that condition.
-
+The unit of the matched descriptive comparison is the location. For each
+metric and horizon scope, the pipeline retains the TimesNet--DilatedRNN
+difference, its mean and median across the ten sites, and the number of sites
+won by TimesNet. It does not treat overlapping forecast origins as independent
+replicates. The NASA POWER join occurs only in the final interpretive layer,
+using the predeclared operational 1~mm/day and 80\% thresholds from
+Section~\ref{sec:data}; it cannot influence training, model selection, or the
+reported aggregate metrics.
