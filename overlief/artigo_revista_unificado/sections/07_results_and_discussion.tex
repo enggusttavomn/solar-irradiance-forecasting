@@ -18,31 +18,127 @@ macro-MAE, but led at only four of the ten locations. Local MAE ranged from
 7.45 to 20.92~W/m$^2$. These values describe the monthly source experiment
 only and are not numerically compared with the hourly TimesNet errors.
 
-\subsection{Matched multi-resolution comparison}
+\subsection{Matched multi-resolution performance}
 
-\DraftNote{Insert the daily and matched TimesNet--DilatedRNN tables generated
-from the new experiment artifacts. Report one overall table by resolution and
-horizon, followed by location-level comparisons.}
+Table~\ref{tab:desempenho-macro-auditavel} reports the equal-site-weighted
+macro-MAE for every cumulative checkpoint in the matched protocol. XGBoost
+ranked first at every daily and hourly checkpoint, with 30-day and 72-hour
+MAEs of 43.93 and 50.50~W/m$^2$, respectively. Calendar climatology ranked
+first in both monthly tasks, reaching 12.57~W/m$^2$ at one month and
+13.03~W/m$^2$ over the six-month prefix. These baseline results show that the
+architecture comparison should not be read as a claim that either neural
+model dominates the complete benchmark set.
 
-The final analysis will distinguish three questions: which model minimizes the
-declared primary metric on average, how often that model wins at matched test
-origins, and whether its advantage is consistent across locations. A method
-will not be described as universally superior when the location-level evidence
-shows losses.
+\input{tables/desempenho_macro}
+
+Figure~\ref{fig:ranking_tasks} summarizes the model ranking at each task's
+terminal cumulative horizon. Results are not pooled across resolutions because
+an hourly, daily, and monthly target represents a different aggregation and
+operational horizon.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.88\textwidth]{ranking_por_tarefa.png}
+\caption{Macro-MAE ranking at the terminal cumulative horizon of each matched
+task. Lower values indicate better performance; cross-resolution bar heights
+are descriptive and are not pooled into a single score.}
+\label{fig:ranking_tasks}
+\end{figure*}
+
+\subsection{TimesNet--DilatedRNN comparison}
+
+Table~\ref{tab:vitorias-timesnet-dilatedrnn} gives the site-paired comparison;
+a negative mean or median difference denotes lower TimesNet MAE. TimesNet had
+the lower macro-MAE at all hourly checkpoints, by 1.65, 0.29, and
+0.75~W/m$^2$ at 24, 48, and 72 hours. Its site wins nevertheless fell from
+eight at 24 hours to four at both 48 and 72 hours, so a minority of larger
+TimesNet gains determined the later macro averages.
+
+In the daily task, TimesNet led by 0.07--0.17~W/m$^2$ through seven days and
+by 0.02~W/m$^2$ at 14 days. At 30 days, DilatedRNN led by
+0.23~W/m$^2$ and won six sites. DilatedRNN also led the principal one-month
+task by 0.93~W/m$^2$ and won six sites. In the exploratory six-month task,
+the models were effectively tied at its one-month prefix (a
+0.005~W/m$^2$ TimesNet advantage and five wins each); DilatedRNN led by
+0.23 and 0.14~W/m$^2$ at three and six months and won seven sites at the
+terminal horizon. These changes in sign and win count rule out a universal
+architecture ranking.
+
+\input{tables/comparacao_timesnet_dilatedrnn_resumo}
+
+Table~\ref{tab:terminal_location_comparison} retains the ten location-level
+terminal comparisons rather than reporting only aggregate wins. It exposes
+both the geographic heterogeneity and the occasions on which a task-level
+winner loses locally.
+
+\input{tables/terminal_location_comparison}
+
+\subsection{Variability across seeds}
+
+Daily and monthly estimates use five independent seeds. As shown in
+Table~\ref{tab:variabilidade-sementes}, the 30-day seed-level MAE was
+$44.29\pm0.29$~W/m$^2$ for TimesNet and $44.10\pm0.60$~W/m$^2$ for
+DilatedRNN. At one month it was $14.61\pm0.76$ versus
+$13.45\pm0.35$~W/m$^2$, respectively. The exploratory six-month values were
+$15.29\pm0.81$ and $14.77\pm0.45$~W/m$^2$. The hourly rows contain one
+seed and therefore do not estimate seed variability.
+
+\input{tables/variabilidade_sementes}
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.90\textwidth]{variabilidade_por_semente.png}
+\caption{Seed-level macro-MAE distributions for learned models. The hourly
+extension is shown as a single observation and must not be interpreted as a
+variability estimate.}
+\label{fig:seed_variability}
+\end{figure*}
 
 \subsection{Favorable and unfavorable cases}
 
-\DraftNote{Create one table for the strongest relative gains and another for
-the largest deficits of the proposed method. Include location, date or origin,
-horizon, reference GHI, both forecasts, absolute errors, and confirmed weather
-context when available.}
+The global case rule was fixed before meteorological annotation: for every
+site, origin, and cumulative horizon, it selects the maximum and minimum of
+$\mathrm{MAE}_{\mathrm{DilatedRNN}}-\mathrm{MAE}_{\mathrm{TimesNet}}$.
+The strongest TimesNet gain occurred for GM Factory Zero at the 24-hour
+forecast from 31 March: 46.30 versus 109.90~W/m$^2$, a
+63.61~W/m$^2$ advantage. Post-hoc NASA POWER context described 99.64\% mean
+cloud amount and 0.80~mm precipitation. The strongest deficit occurred for
+Tesla Gigafactory Texas at the 24-hour forecast from 28 March: 150.82 versus
+73.92~W/m$^2$, a 76.90~W/m$^2$ TimesNet disadvantage, with no independently
+flagged adverse day. Both are hourly single-seed cases and illustrate why
+selected examples cannot replace the full aggregate evaluation.
+
+\input{tables/caso_maior_ganho_timesnet}
+\input{tables/caso_maior_deficit_timesnet}
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.94\textwidth]{previsoes_casos_contrastantes.png}
+\caption{Observed GHI and the two model forecasts for the globally selected
+largest TimesNet gain and deficit. Weather annotations were joined only after
+selection.}
+\label{fig:contrasting_cases}
+\end{figure*}
 
 \subsection{Geographic and climatic interpretation}
 
-Climate zones and factory locations will be used as descriptive context. With
-only ten locations, apparent differences between zones cannot by themselves
-establish a causal climatic effect. Sites in the same country may remain far
-apart and occupy distinct regimes, while nearby sites may share correlated
-weather. The discussion will therefore combine the map, zone classification,
-and error profiles without overstating statistical evidence.
+Figure~\ref{fig:geographic_context} locates the ten sites in their descriptive
+K\"oppen--Geiger context. With only ten purposively selected locations,
+apparent differences between zones cannot establish a causal climatic effect.
+Sites in the same country may remain far apart and occupy distinct regimes,
+while nearby sites may share correlated weather.
 
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.90\textwidth]{mapa_contexto_geografico.pdf}
+\caption{Factory-associated locations and descriptive K\"oppen--Geiger climate
+classes. Climate is not a model input.}
+\label{fig:geographic_context}
+\end{figure*}
+
+As an error-independent check, the predeclared meteorological rule selected
+Hyundai Metaplant Georgia on 5 August 2024, with 82.66~mm/day corrected
+precipitation and 99.47\% cloud amount. This case was selected without
+consulting either model's error and is descriptive rather than causal.
+
+\input{tables/caso_meteorologico_independente}

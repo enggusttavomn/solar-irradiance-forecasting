@@ -32,7 +32,7 @@ def test_cada_modelo_possui_modulo_publico_proprio() -> None:
         "modelos/probabilisticos/deepnpts.py",
     }
     encontrados = {
-        str(caminho.relative_to(RAIZ / "codigo_fonte"))
+        caminho.relative_to(RAIZ / "codigo_fonte").as_posix()
         for caminho in (RAIZ / "codigo_fonte" / "modelos").rglob("*.py")
         if caminho.name != "__init__.py"
     }
@@ -79,5 +79,11 @@ def test_site_possui_quatro_paginas_com_navegacao_horizontal() -> None:
 
 
 def test_indice_de_artigos_aponta_para_os_manuscritos_reais() -> None:
-    assert (RAIZ / "artigos" / "ieee" / "artigo.tex").is_file()
-    assert (RAIZ / "artigos" / "mcsm" / "artigo_mcsm.tex").is_file()
+    def resolver_atalho(caminho: Path) -> Path:
+        if caminho.is_dir():
+            return caminho
+        alvo = caminho.read_text(encoding="utf-8").strip()
+        return (caminho.parent / alvo).resolve()
+
+    assert (resolver_atalho(RAIZ / "artigos" / "ieee") / "artigo.tex").is_file()
+    assert (resolver_atalho(RAIZ / "artigos" / "mcsm") / "main.tex").is_file()

@@ -1,0 +1,31 @@
+{
+  "N_origens_horizontes_avaliados": 28070,
+  "adverso": "chuva_relevante OU muito_nublado",
+  "alegacao_causal": false,
+  "caso_meteorologico_independente_disponivel": true,
+  "contexto_usado_no_modelo": false,
+  "desempate": "lexical order by task, site, origin, and horizon",
+  "formula": "MAE(DilatedRNN)-MAE(TimesNet) within each origin/horizon",
+  "ghi_usado_para_classificar_chuva_ou_nuvens": false,
+  "limiar_chuva_mm_dia": 1.0,
+  "limiar_muito_nublado_percentual": 80.0,
+  "maior_deficit": "global argmin before meteorological annotation",
+  "maior_ganho": "global argmax before meteorological annotation",
+  "meteorologia_usada_na_selecao_dos_extremos": false,
+  "observacao_mensal": "Monthly contrasts remain eligible globally, but daily weather is not assigned to a selected monthly target.",
+  "ordem_operacoes": [
+    "aggregate absolute errors by origin and cumulative horizon",
+    "select global maximum and minimum model contrasts",
+    "attach NASA POWER context post hoc when the temporal scale supports it"
+  ],
+  "parametros_contexto": [
+    "PRECTOTCORR",
+    "CLOUD_AMT",
+    "ALLSKY_SFC_SW_DWN",
+    "CLRSKY_SFC_SW_DWN"
+  ],
+  "regra_caso_meteorologico": "maximize corrected precipitation among independently confirmed adverse NASA POWER dates with daily/hourly forecast support; model errors excluded",
+  "time_standard_contexto": "LST",
+  "unidade_extremo": "site_forecast_origin_cumulative_horizon",
+  "versao": 2
+}

@@ -56,6 +56,14 @@ def test_caminho_portatil_remove_prefixo_da_maquina() -> None:
     )
 
 
+def test_json_auditavel_permanece_lf_em_todas_as_plataformas() -> None:
+    atributos = (Path(__file__).resolve().parents[1] / ".gitattributes").read_text(
+        encoding="utf-8"
+    )
+
+    assert "*.json text eol=lf" in atributos.splitlines()
+
+
 def test_promocao_atomica_repete_winerrors_transitorios(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:

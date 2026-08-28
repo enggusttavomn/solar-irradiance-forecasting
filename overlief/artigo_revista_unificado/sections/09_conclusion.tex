@@ -1,14 +1,34 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-This journal extension establishes a common framework for evaluating TimesNet
-and DilatedRNN across hourly, daily, and longer planning resolutions at ten
-electric-vehicle manufacturing locations. The existing source studies provide
-promising but resolution-specific evidence: TimesNet is competitive in direct
-hourly forecasting, while DilatedRNN is competitive for one-month-ahead
-forecasting from short monthly series.
+This study completed a common, leakage-controlled evaluation of TimesNet and
+DilatedRNN across hourly, daily, and monthly GHI forecasting tasks at ten
+electric-vehicle manufacturing locations. The matched design fixes inputs,
+chronological partitions, forecast origins, post-processing, metrics, and
+location weights within each task, while retaining the different meanings of
+hourly, daily, and monthly targets.
 
-\DraftNote{Replace this draft conclusion after the daily and matched-horizon
-experiments. The final claims must follow the complete aggregate and
-location-level results, including unfavorable cases.}
+No architecture was universally superior. TimesNet had the lower macro-MAE at
+all hourly checkpoints and through 14 days in the daily task. DilatedRNN led at
+30 days, in the principal one-month task, and at the three- and six-month
+prefixes of the exploratory task. Terminal location wins favored DilatedRNN at
+six of ten hourly, daily, and one-month sites and seven of ten six-month sites,
+even when a few larger TimesNet gains reversed a macro average. XGBoost led the
+full benchmark set in the daily and hourly tasks, whereas calendar climatology
+led the monthly tasks; consequently, the neural comparison does not imply
+benchmark-wide dominance.
 
+Five-seed daily and monthly results support the observed ranking patterns, but
+the hourly extension has only the official seed 42 and provides no seed-level
+uncertainty estimate. Overlapping multi-step targets further restrict the
+paired evidence to descriptive site-level comparisons. The globally strongest
+TimesNet gain and deficit both occurred in 24-hour forecasts and had opposite
+weather contexts, reinforcing that post-hoc meteorology cannot be treated as a
+causal explanation.
+
+Future work should evaluate prospective years and unseen sites, repeat the
+hourly extension over multiple seeds, and test whether causal exogenous inputs
+such as numerical weather prediction and cloud-motion forecasts improve on the
+strong tabular and climatological references. The released contracts,
+forecast-origin outputs, seed-level metrics, context manifests, and SHA-256
+artifact manifest provide the basis for those extensions.

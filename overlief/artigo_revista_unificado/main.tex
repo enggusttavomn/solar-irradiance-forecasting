@@ -31,19 +31,21 @@
 \address[unicamp]{School of Electrical and Computer Engineering, University of Campinas, Campinas, SP, Brazil}
 
 \begin{abstract}
-This journal extension investigates global horizontal irradiance forecasting at
-ten locations associated with electric-vehicle factories across complementary
-temporal resolutions. It consolidates an hourly TimesNet study and a monthly
-DilatedRNN study under a common methodological description and defines the
-additional daily and matched-horizon experiments required for a fair
-cross-model comparison. The hourly study uses 336 hours of context to predict
-the following 72 hours, while the monthly study predicts one month ahead from
-short multiyear series. Because their current targets, horizons, sample sizes,
-and primary metrics differ, their published errors are reported as prior
-evidence rather than compared directly. The matched extension evaluates
-TimesNet and DilatedRNN under identical chronological splits, forecast origins,
-post-processing rules, and location-level aggregation at every shared temporal
-resolution.
+This study presents a matched multi-resolution evaluation of global horizontal
+irradiance (GHI) forecasting at ten electric-vehicle manufacturing locations.
+TimesNet and DilatedRNN are compared with identical chronological splits,
+forecast origins, inputs, post-processing, and location-first aggregation
+within hourly, daily, and monthly tasks. At the terminal cumulative horizons,
+TimesNet and DilatedRNN respectively obtained macro-MAEs of 52.21 and
+52.96~W/m$^2$ at 72 hours, 44.08 and 43.85~W/m$^2$ at 30 days, 13.93
+and 13.01~W/m$^2$ at one month, and 14.51 and 14.37~W/m$^2$ at six
+months. TimesNet led the hourly macro-average at all checkpoints and the
+daily comparison through 14 days; DilatedRNN led at 30 days and in the
+principal one-month task. Location-level win counts sometimes reversed the
+macro-average ranking, demonstrating that neither architecture was universally
+superior. Daily and monthly learned models were evaluated over five seeds;
+the hourly extension used the single official seed. All claims are descriptive
+because adjacent multi-step targets overlap, and weather is post-hoc context.
 \end{abstract}
 
 \begin{keyword}

@@ -24,12 +24,20 @@
 \maketitle
 
 \begin{abstract}
-This journal extension consolidates hourly TimesNet and monthly DilatedRNN
-studies of global horizontal irradiance forecasting at ten locations associated
-with electric-vehicle factories. It implements daily and matched-horizon experiments under a common
-multi-resolution comparison. Existing errors are
-not compared across temporal resolutions because their targets and protocols
-differ.
+This study presents a matched multi-resolution evaluation of global horizontal
+irradiance (GHI) forecasting at ten electric-vehicle manufacturing locations.
+TimesNet and DilatedRNN share chronological splits, origins, inputs,
+post-processing, and location-first aggregation within each task. At the
+terminal cumulative horizons, their respective macro-MAEs were 52.21 and
+52.96~W/m$^2$ at 72 hours, 44.08 and 43.85~W/m$^2$ at 30 days, 13.93
+and 13.01~W/m$^2$ at one month, and 14.51 and 14.37~W/m$^2$ at six
+months. TimesNet led the hourly macro-average at every checkpoint and the
+daily comparison through 14 days; DilatedRNN led at 30 days and in the
+principal one-month task. Location-level wins sometimes reversed the aggregate
+ranking, so neither architecture was universally superior. Daily and monthly
+learned models used five seeds, whereas the hourly extension used one. Claims
+remain descriptive because multi-step targets overlap and meteorology is used
+only as post-hoc context.
 \end{abstract}
 
 \begin{IEEEkeywords}

@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Largest global TimesNet deficit relative to DilatedRNN}
+\label{tab:caso-maior-deficit-timesnet}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lr}
+\toprule
+Field & Value \\
+\midrule
+Case & Largest TimesNet deficit \\
+Contrast interpretation & Largest TimesNet deficit \\
+Task & Hourly 336--72 \\
+Resolution & Hourly \\
+Site & Tesla Gigafactory Texas \\
+Forecast origin & 2024-03-28 06:00:00+00:00 \\
+Horizon & 24.0000 \\
+Points & 24.0000 \\
+TimesNet MAE (W/m2) & 150.8193 \\
+DilatedRNN MAE (W/m2) & 73.9152 \\
+TimesNet gain (W/m2) & -76.9040 \\
+Weather context available & Yes \\
+Total precipitation (mm) & 0.0600 \\
+Mean cloud amount (\%) & 2.1400 \\
+Adverse-context days & 0.0000 \\
+Interpretation & Post-hoc descriptive context only; no causal attribution. \\
+Seed limitation & Hourly extension uses seed 42 only; seed variability unavailable \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

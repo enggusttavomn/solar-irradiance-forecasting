@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Macro test MAE by task and cumulative forecast horizon. Complete metrics and exact-lead results are provided in the CSV artifact.}
+\label{tab:desempenho-macro-auditavel}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+Task & Resolution & Horizon & Climatology & DilatedRNN & LSTM & Persistence & Seasonal naive & TimesNet & XGBoost & Seeds \\
+\midrule
+Daily 365--30 & Daily & 1 & 45.7364 & 43.2724 & 42.0382 & 43.8717 & 58.8975 & 43.1982 & 41.5791 & 5 \\
+Daily 365--30 & Daily & 3 & 45.7623 & 43.8049 & 43.1397 & 50.1666 & 58.9756 & 43.6330 & 43.0919 & 5 \\
+Daily 365--30 & Daily & 7 & 45.7486 & 44.0759 & 43.6946 & 53.7699 & 59.0035 & 43.9484 & 43.7148 & 5 \\
+Daily 365--30 & Daily & 14 & 45.6395 & 44.1071 & 44.0043 & 56.4073 & 58.9131 & 44.0874 & 43.9569 & 5 \\
+Daily 365--30 & Daily & 30 & 45.5125 & 43.8520 & 44.1844 & 60.2759 & 58.7765 & 44.0780 & 43.9335 & 5 \\
+Hourly 336--72 & Hourly & 24 & NA & 50.7340 & 50.9062 & 52.5837 & 65.9088 & 49.0816 & 48.3661 & 1 \\
+Hourly 336--72 & Hourly & 48 & NA & 52.1465 & 52.7943 & 56.1632 & 65.9204 & 51.8593 & 49.8145 & 1 \\
+Hourly 336--72 & Hourly & 72 & NA & 52.9580 & 53.3917 & 58.1088 & 65.8965 & 52.2059 & 50.5025 & 1 \\
+Monthly 12--1 & Monthly & 1 & 12.5747 & 13.0054 & 14.2711 & 35.0877 & 16.9428 & 13.9320 & 14.8171 & 5 \\
+Monthly 12--6 & Monthly & 1 & 13.6086 & 14.8877 & 15.7404 & 33.1934 & 16.4964 & 14.8828 & 14.7265 & 5 \\
+Monthly 12--6 & Monthly & 3 & 13.0772 & 14.3254 & 15.3286 & 61.4482 & 17.0600 & 14.5588 & 14.9267 & 5 \\
+Monthly 12--6 & Monthly & 6 & 13.0272 & 14.3692 & 14.7565 & 91.8868 & 18.0012 & 14.5102 & 14.7222 & 5 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

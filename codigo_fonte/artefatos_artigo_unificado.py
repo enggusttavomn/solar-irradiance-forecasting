@@ -1488,10 +1488,19 @@ _CABECALHOS_ARTIGO = {
     "limitacao_sementes": "Seed limitation",
     "campo": "Field",
     "valor": "Value",
+    "caso": "Case",
 }
 
 _VALORES_ARTIGO = {
     "horaria": "Hourly",
+    "daily_30": "Daily 365--30",
+    "hourly_72_extension": "Hourly 336--72",
+    "monthly_1": "Monthly 12--1",
+    "monthly_6": "Monthly 12--6",
+    "Climatologia": "Climatology",
+    "Persistencia": "Persistence",
+    "Sazonal ingenuo": "Seasonal naive",
+    "SazonalIngenuo": "Seasonal naive",
     "diaria": "Daily",
     "mensal": "Monthly",
     "cumulativo": "Cumulative",
@@ -1500,6 +1509,11 @@ _VALORES_ARTIGO = {
     "maior_ganho_timesnet": "Largest TimesNet gain",
     "maior_deficit_timesnet": "Largest TimesNet deficit",
     "caso_meteorologico_independente": "Independent meteorological case",
+    "True": "Yes",
+    "False": "No",
+    "extensao_horaria_com_uma_semente_seed_42;sem_variabilidade_entre_sementes": (
+        "Hourly extension uses seed 42 only; seed variability unavailable"
+    ),
 }
 
 
@@ -1689,7 +1703,7 @@ def _grafico_ranking(desempenho: pd.DataFrame, pasta: Path) -> None:
                 dados["posicao_MAE"],
                 marker="o",
                 linewidth=1.5,
-                label=modelo,
+                label=_VALORES_ARTIGO.get(str(modelo), str(modelo)),
             )
         limitacao = (
             " - single-seed extension"
@@ -1699,7 +1713,8 @@ def _grafico_ranking(desempenho: pd.DataFrame, pasta: Path) -> None:
         resolucao = _VALORES_ARTIGO.get(
             str(grupo["resolucao"].iloc[0]), str(grupo["resolucao"].iloc[0])
         )
-        eixo.set_title(f"{tarefa} ({resolucao}){limitacao}")
+        tarefa_artigo = _VALORES_ARTIGO.get(str(tarefa), str(tarefa)).replace("--", "\N{EN DASH}")
+        eixo.set_title(f"{tarefa_artigo} ({resolucao}){limitacao}")
         eixo.set_xlabel("Forecast horizon")
         eixo.set_ylabel("MAE rank (1 = best)")
         eixo.invert_yaxis()
@@ -1730,7 +1745,7 @@ def _grafico_variabilidade(variabilidade: pd.DataFrame, pasta: Path) -> None:
                 marker="o",
                 capsize=3,
                 linewidth=1.3,
-                label=modelo,
+                label=_VALORES_ARTIGO.get(str(modelo), str(modelo)),
             )
         if (grupo["N_sementes"] == 1).all():
             eixo.text(
@@ -1745,7 +1760,8 @@ def _grafico_variabilidade(variabilidade: pd.DataFrame, pasta: Path) -> None:
         resolucao = _VALORES_ARTIGO.get(
             str(grupo["resolucao"].iloc[0]), str(grupo["resolucao"].iloc[0])
         )
-        eixo.set_title(f"{tarefa} ({resolucao})")
+        tarefa_artigo = _VALORES_ARTIGO.get(str(tarefa), str(tarefa)).replace("--", "\N{EN DASH}")
+        eixo.set_title(f"{tarefa_artigo} ({resolucao})")
         eixo.set_xlabel("Forecast horizon")
         eixo.set_ylabel("Macro MAE (W m$^{-2}$)")
         eixo.grid(True, alpha=0.25)
@@ -2027,33 +2043,36 @@ def gerar_artefatos_artigo_unificado(
             temporaria / "contrastes_por_origem_horizonte.csv",
         )
 
-        for nome, legenda in (
+        for identificador, nome_arquivo, legenda in (
             (
+                "maior_ganho_timesnet",
                 "caso_maior_ganho_timesnet",
                 "Largest global TimesNet gain relative to DilatedRNN",
             ),
             (
+                "maior_deficit_timesnet",
                 "caso_maior_deficit_timesnet",
                 "Largest global TimesNet deficit relative to DilatedRNN",
             ),
             (
                 "caso_meteorologico_independente",
+                "caso_meteorologico_independente",
                 "Meteorological case selected independently of model errors",
             ),
         ):
-            caso = casos.loc[casos["caso"] == nome]
+            caso = casos.loc[casos["caso"] == identificador]
             if caso.empty:
-                if nome == "caso_meteorologico_independente":
+                if identificador == "caso_meteorologico_independente":
                     continue
                 raise ArtefatoNaoPublicavelError(
-                    f"Required model-contrast case is missing: {nome}."
+                    f"Required model-contrast case is missing: {identificador}."
                 )
-            _gravar_csv(caso, temporaria / f"{nome}.csv")
+            _gravar_csv(caso, temporaria / f"{nome_arquivo}.csv")
             _gravar_caso_latex(
                 caso,
-                temporaria / f"{nome}.tex",
+                temporaria / f"{nome_arquivo}.tex",
                 legenda=legenda,
-                rotulo=f"tab:{nome}",
+                rotulo=f"tab:{nome_arquivo}",
             )
         (temporaria / "regra_selecao_casos.json").write_text(
             json.dumps(regra_casos, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

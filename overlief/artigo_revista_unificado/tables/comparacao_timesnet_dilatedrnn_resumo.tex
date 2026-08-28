@@ -1,0 +1,26 @@
+\begin{table*}[htbp]
+\centering
+\small
+\caption{Descriptive paired comparison of TimesNet and DilatedRNN across sites. Overlapping target windows are not treated as independent observations.}
+\label{tab:vitorias-timesnet-dilatedrnn}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Task & Resolution & Horizon & Sites & Mean (T--D) MAE (W/m2) & Median (T--D) MAE (W/m2) & TimesNet site wins & DilatedRNN site wins & Ties & Overlapping targets \\
+\midrule
+Daily 365--30 & Daily & 1 & 10 & -0.0742 & -0.0375 & 5 & 5 & 0 & Yes \\
+Daily 365--30 & Daily & 3 & 10 & -0.1718 & -0.1461 & 5 & 5 & 0 & Yes \\
+Daily 365--30 & Daily & 7 & 10 & -0.1275 & -0.2321 & 6 & 4 & 0 & Yes \\
+Daily 365--30 & Daily & 14 & 10 & -0.0197 & -0.0936 & 6 & 4 & 0 & Yes \\
+Daily 365--30 & Daily & 30 & 10 & 0.2260 & 0.0921 & 4 & 6 & 0 & Yes \\
+Hourly 336--72 & Hourly & 24 & 10 & -1.6524 & -1.7114 & 8 & 2 & 0 & Yes \\
+Hourly 336--72 & Hourly & 48 & 10 & -0.2872 & 0.2490 & 4 & 6 & 0 & Yes \\
+Hourly 336--72 & Hourly & 72 & 10 & -0.7521 & 0.1561 & 4 & 6 & 0 & Yes \\
+Monthly 12--1 & Monthly & 1 & 10 & 0.9267 & 0.5515 & 4 & 6 & 0 & No \\
+Monthly 12--6 & Monthly & 1 & 10 & -0.0048 & 0.0507 & 5 & 5 & 0 & Yes \\
+Monthly 12--6 & Monthly & 3 & 10 & 0.2334 & 0.1190 & 4 & 6 & 0 & Yes \\
+Monthly 12--6 & Monthly & 6 & 10 & 0.1410 & 0.8528 & 3 & 7 & 0 & Yes \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

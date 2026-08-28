@@ -1,0 +1,31 @@
+\begin{table*}[!t]
+\centering
+\caption{Location-level MAE (W/m$^2$) at each task's terminal cumulative
+horizon. T: TimesNet; D: DilatedRNN; W: lower-MAE winner. Site names are
+shortened for layout only.}
+\label{tab:terminal_location_comparison}
+\scriptsize
+\setlength{\tabcolsep}{2.2pt}
+\renewcommand{\arraystretch}{1.08}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrcrrcrrcrrc}
+\toprule
+& \multicolumn{3}{c}{Daily 30 d} & \multicolumn{3}{c}{Hourly 72 h} &
+\multicolumn{3}{c}{Monthly 1} & \multicolumn{3}{c}{Monthly 6} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}\cmidrule(lr){11-13}
+Site & T & D & W & T & D & W & T & D & W & T & D & W \\
+\midrule
+BMW San Luis Potosi & 41.93 & 39.56 & D & 49.85 & 49.76 & D & 25.45 & 19.80 & D & 26.31 & 24.89 & D \\
+BYD Camacari & 42.74 & 43.41 & T & 55.50 & 53.77 & D & 14.40 & 14.81 & T & 10.03 & 13.77 & T \\
+Ford Rouge EV Center & 52.17 & 52.04 & D & 60.12 & 63.81 & T & 12.84 & 12.06 & D & 11.69 & 11.49 & D \\
+GM Factory Zero & 53.71 & 52.99 & D & 61.03 & 64.66 & T & 12.38 & 12.06 & D & 12.34 & 12.01 & D \\
+Hyundai Metaplant & 53.97 & 53.51 & D & 62.24 & 60.26 & D & 13.35 & 12.39 & D & 15.74 & 14.28 & D \\
+Lucid AMP-1 & 27.45 & 27.70 & T & 34.20 & 33.80 & D & 10.68 & 9.74 & D & 15.10 & 13.45 & D \\
+Rivian Normal & 52.99 & 52.93 & D & 61.37 & 62.74 & T & 15.98 & 17.07 & T & 14.04 & 17.24 & T \\
+Tesla Fremont & 29.09 & 30.12 & T & 38.29 & 38.04 & D & 8.75 & 9.06 & T & 11.34 & 8.96 & D \\
+Tesla Giga Nevada & 35.10 & 35.23 & T & 40.15 & 43.65 & T & 9.45 & 10.69 & T & 13.10 & 11.72 & D \\
+Tesla Giga Texas & 51.63 & 51.02 & D & 59.30 & 59.09 & D & 16.03 & 12.37 & D & 15.41 & 15.87 & T \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
