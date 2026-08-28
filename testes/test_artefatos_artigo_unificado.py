@@ -8,6 +8,7 @@ import pandas as pd
 import pytest
 
 import codigo_fonte.artefatos_artigo_unificado as artefatos
+from codigo_fonte.artefatos_fragmentados import preparar_manifesto_fragmentado
 from codigo_fonte.artefatos_artigo_unificado import (
     ArtefatoNaoPublicavelError,
     gerar_artefatos_artigo_unificado,
@@ -593,6 +594,27 @@ def _criar_contexto(raiz: Path) -> tuple[Path, Path]:
         },
     )
     return csv, manifesto
+
+
+def test_materializa_previsoes_fragmentadas_sem_alterar_bytes(tmp_path: Path) -> None:
+    tarefa = _criar_tarefa_diaria(tmp_path / "entradas")
+    nomes = ("previsoes_validacao.csv.gz", "previsoes_teste.csv.gz")
+    originais = {nome: (tarefa / nome).read_bytes() for nome in nomes}
+
+    manifesto = preparar_manifesto_fragmentado(
+        tarefa,
+        nomes,
+        tamanho_parte=257,
+    )
+    assert {item["arquivo"] for item in manifesto["arquivos_fragmentados"]} == set(
+        nomes
+    )
+    for nome in nomes:
+        (tarefa / nome).unlink()
+
+    artefatos.validar_pasta_tarefa(tarefa)
+
+    assert {nome: (tarefa / nome).read_bytes() for nome in nomes} == originais
 
 
 def test_gera_pacote_auditavel_e_casos_por_contexto_independente(tmp_path: Path) -> None:

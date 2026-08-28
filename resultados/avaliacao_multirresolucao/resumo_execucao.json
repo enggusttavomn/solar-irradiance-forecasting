@@ -1,23 +1,28 @@
 {
-  "atualizado_em_utc": "2026-08-25T17:58:47.466711+00:00",
+  "atualizado_em_utc": "2026-08-28T13:16:32.214480+00:00",
   "etapa": "concluida",
   "modo_execucao": "completa",
   "resultados": [
     {
       "N_localidades": 10,
-      "atualizado_em_utc": "2026-08-25T17:58:47.115433+00:00",
+      "atualizado_em_utc": "2026-08-28T13:16:32.101104+00:00",
+      "carater_exploratorio": false,
       "etapa": "concluida",
-      "fonte_oficial_somente_leitura": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_horaria_timesnet",
-      "modelo_adicionado": "DilatedRNN",
       "modo_execucao": "completa",
       "resultado_publicavel": true,
       "resultado_smoke_nao_publicavel": false,
-      "semente": 42,
-      "sha256_contrato": "9e1706c86a2110e63453826f398743616abe698aa4f42a3a8f0e4d826e7583ad",
-      "tarefa": "hourly_72_extension"
+      "sementes_efetivas": [
+        11,
+        23,
+        42,
+        67,
+        89
+      ],
+      "sha256_contrato": "181fcff9675489148118011e2dbfecc806a48fab70d089d71c5f9fa6d1d9578e",
+      "tarefa": "daily_30"
     }
   ],
   "tarefas": [
-    "hourly_72_extension"
+    "daily_30"
   ]
 }

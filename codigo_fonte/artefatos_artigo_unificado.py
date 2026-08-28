@@ -32,6 +32,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+from codigo_fonte.artefatos_fragmentados import (
+    ArtefatoFragmentadoError,
+    materializar_arquivo_fragmentado,
+)
+
 
 SEMENTES_CANONICAS = (11, 23, 42, 67, 89)
 TAREFA_HORARIA = "hourly_72_extension"
@@ -263,6 +268,48 @@ def _validar_manifesto(pasta: Path, manifesto: Mapping[str, object]) -> None:
             raise ArtefatoNaoPublicavelError(f"SHA-256 invalido para {caminho}.")
         if sha256_arquivo(caminho) != esperado:
             raise ArtefatoNaoPublicavelError(f"SHA-256 divergente: {caminho}.")
+    fragmentados = manifesto.get("arquivos_fragmentados", [])
+    if not isinstance(fragmentados, list):
+        raise ArtefatoNaoPublicavelError(
+            f"arquivos_fragmentados deve ser uma lista em {pasta}."
+        )
+    declarados_fragmentados: set[str] = set()
+    for especificacao in fragmentados:
+        if not isinstance(especificacao, Mapping):
+            raise ArtefatoNaoPublicavelError(
+                f"Especificacao fragmentada invalida em {pasta}."
+            )
+        relativo = str(especificacao.get("arquivo", "")).replace("\\", "/")
+        _caminho_manifestado(pasta, relativo)
+        if (
+            not relativo
+            or relativo in declarados
+            or relativo in declarados_fragmentados
+        ):
+            raise ArtefatoNaoPublicavelError(
+                f"Artefato fragmentado vazio ou duplicado: {relativo!r}."
+            )
+        partes = especificacao.get("partes")
+        if not isinstance(partes, list) or not partes:
+            raise ArtefatoNaoPublicavelError(
+                f"Artefato fragmentado sem partes: {relativo!r}."
+            )
+        partes_declaradas = {
+            str(parte.get("arquivo", "")).replace("\\", "/")
+            for parte in partes
+            if isinstance(parte, Mapping)
+        }
+        if len(partes_declaradas) != len(partes) or not partes_declaradas <= declarados:
+            raise ArtefatoNaoPublicavelError(
+                f"Partes nao manifestadas ou duplicadas para {relativo!r}."
+            )
+        try:
+            materializar_arquivo_fragmentado(pasta, especificacao)
+        except (ArtefatoFragmentadoError, OSError) as erro:
+            raise ArtefatoNaoPublicavelError(
+                f"Falha ao validar artefato fragmentado {relativo!r}: {erro}"
+            ) from erro
+        declarados_fragmentados.add(relativo)
     obrigatorios = set(ARQUIVOS_COMUNS_OBRIGATORIOS)
     if (pasta / "status_execucao.json").is_file():
         status = _carregar_json(pasta / "status_execucao.json")
@@ -270,7 +317,7 @@ def _validar_manifesto(pasta: Path, manifesto: Mapping[str, object]) -> None:
             obrigatorios.add("vinculo_artefatos_oficiais.json")
         else:
             obrigatorios |= {"variabilidade_sementes.csv", "auditoria_entradas.csv"}
-    faltantes = obrigatorios - declarados
+    faltantes = obrigatorios - declarados - declarados_fragmentados
     if faltantes:
         raise ArtefatoNaoPublicavelError(
             f"Arquivos obrigatorios nao manifestados em {pasta}: {sorted(faltantes)}."

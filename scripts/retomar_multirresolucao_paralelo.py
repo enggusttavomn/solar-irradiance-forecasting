@@ -451,6 +451,12 @@ def consolidar_com_contrato_existente() -> None:
         experimento.construir_contrato = construir_original
     if not resumos or resumos[0].get("resultado_publicavel") is not True:
         raise RuntimeError("A consolidacao nao marcou o resultado como publicavel.")
+    from codigo_fonte.artefatos_fragmentados import preparar_manifesto_fragmentado
+
+    preparar_manifesto_fragmentado(
+        PASTA_TAREFA,
+        ("previsoes_validacao.csv.gz", "previsoes_teste.csv.gz"),
+    )
 
 
 def construir_parser() -> argparse.ArgumentParser:
