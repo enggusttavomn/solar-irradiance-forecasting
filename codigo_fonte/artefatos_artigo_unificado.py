@@ -38,6 +38,7 @@ TAREFA_HORARIA = "hourly_72_extension"
 MODELOS_APRENDIDOS = {"XGBoost", "LSTM", "TimesNet", "DilatedRNN"}
 MODELOS_COMPARADOS = ("TimesNet", "DilatedRNN")
 TOLERANCIA_EMPATE_WM2 = 1e-12
+RAIZ_PROJETO = Path(__file__).resolve().parents[1]
 
 ARQUIVOS_COMUNS_OBRIGATORIOS = {
     "status_execucao.json",
@@ -90,6 +91,16 @@ COLUNAS_CONTEXTO = {
 
 class ArtefatoNaoPublicavelError(ValueError):
     """Indica que uma entrada nao satisfaz o contrato de publicacao."""
+
+
+def caminho_portatil(caminho: str | Path) -> str:
+    """Representa arquivos do projeto sem incorporar o caminho da maquina."""
+
+    resolvido = Path(caminho).resolve()
+    try:
+        return resolvido.relative_to(RAIZ_PROJETO).as_posix()
+    except ValueError:
+        return str(resolvido)
 
 
 @dataclass(frozen=True)
@@ -794,7 +805,7 @@ def _iterar_previsoes_normalizadas(
         normalizado["passo"] = normalizado["passo"].astype(int)
         normalizado["_local_key"] = normalizado["localidade"].map(_slug)
         normalizado["_data_key"] = normalizado["data_local_nasa_power"]
-        normalizado["arquivo_previsoes_entrada"] = str(esquema.caminho.resolve())
+        normalizado["arquivo_previsoes_entrada"] = caminho_portatil(esquema.caminho)
         if esquema.elevacao:
             normalizado["elevacao_solar_graus"] = pd.to_numeric(
                 bruto[esquema.elevacao], errors="coerce"
@@ -1336,7 +1347,7 @@ def detectar_medicoes_computacionais(
         for nome_arquivo in ("epocas_selecionadas.csv", "historico_treinamento.csv"):
             caminho = entrada.pasta / nome_arquivo
             quadro = pd.read_csv(caminho)
-            fontes_inspecionadas.append(str(caminho.resolve()))
+            fontes_inspecionadas.append(caminho_portatil(caminho))
             for metrica, candidatos in _CAMPOS_MEDICOES_COMPUTACIONAIS.items():
                 for coluna in candidatos:
                     if coluna not in quadro.columns:
@@ -1364,7 +1375,7 @@ def detectar_medicoes_computacionais(
                                     if metrica == "trainable_parameter_count"
                                     else "s"
                                 ),
-                                "fonte": str(caminho.resolve()),
+                                "fonte": caminho_portatil(caminho),
                                 "coluna_fonte": coluna,
                             }
                         )
@@ -2011,14 +2022,14 @@ def gerar_artefatos_artigo_unificado(
             "versao_esquema": 1,
             "gerado_em_utc": gerado_em,
             "gerador": {
-                "arquivo": str(Path(__file__).resolve()),
+                "arquivo": caminho_portatil(__file__),
                 "sha256": sha256_arquivo(__file__),
             },
             "tarefas": [
                 {
                     "tarefa": e.tarefa,
                     "resolucao": e.resolucao,
-                    "pasta": str(e.pasta.resolve()),
+                    "pasta": caminho_portatil(e.pasta),
                     "sha256_status": sha256_arquivo(e.pasta / "status_execucao.json"),
                     "sha256_manifesto": sha256_arquivo(e.pasta / "manifesto_artefatos.json"),
                     "sha256_contrato": e.status["sha256_contrato"],
@@ -2027,9 +2038,9 @@ def gerar_artefatos_artigo_unificado(
                 for e in entradas
             ],
             "contexto_nasa_power": {
-                "csv": str(Path(caminho_contexto_nasa).resolve()),
+                "csv": caminho_portatil(caminho_contexto_nasa),
                 "sha256_csv": sha256_arquivo(caminho_contexto_nasa),
-                "manifesto": str(Path(caminho_manifesto_contexto_nasa).resolve()),
+                "manifesto": caminho_portatil(caminho_manifesto_contexto_nasa),
                 "sha256_manifesto": sha256_arquivo(caminho_manifesto_contexto_nasa),
                 "uso": "pos_hoc;fora_do_modelo",
             },
