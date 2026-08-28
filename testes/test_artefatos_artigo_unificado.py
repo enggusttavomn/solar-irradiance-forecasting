@@ -47,6 +47,14 @@ def test_latex_contem_tabular_na_largura_da_coluna_e_fecha_balanceado(
     )
 
 
+def test_caminho_portatil_remove_prefixo_da_maquina() -> None:
+    caminho = artefatos.RAIZ_PROJETO / "codigo_fonte" / "artefatos_artigo_unificado.py"
+
+    assert artefatos.caminho_portatil(caminho) == (
+        "codigo_fonte/artefatos_artigo_unificado.py"
+    )
+
+
 def test_promocao_atomica_repete_winerrors_transitorios(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
@@ -673,7 +681,7 @@ def test_gera_pacote_auditavel_e_casos_por_contexto_independente(tmp_path: Path)
     assert "Resolution" in latex_desempenho
     assert "Desempenho" not in latex_desempenho
     assert "Horizonte" not in latex_desempenho
-    assert latex_desempenho.count(r" \") == 2
+    assert latex_desempenho.count(r" \\") == 2
     assert "Factory \\& North" in (saida / "caso_maior_ganho_timesnet.tex").read_text(
         encoding="utf-8"
     )
