@@ -9,8 +9,8 @@ partir de dois trabalhos-base:
 O trabalho do MCSM e a aproximação DeepNPTS estão fora do escopo. Os arquivos
 originais não devem ser alterados durante a unificação.
 
-`main.tex` é o manuscrito principal, em formato Elsevier de coluna única para
-revisão. `main_ieee.tex` oferece uma visualização alternativa no formato IEEE,
+`main.tex` é o manuscrito principal no formato Elsevier 5p, Times e duas
+colunas. `main_ieee.tex` oferece uma visualização alternativa no formato IEEE,
 reutilizando exatamente as mesmas seções.
 
 Os resultados horários e mensais dos trabalhos-base não são diretamente
