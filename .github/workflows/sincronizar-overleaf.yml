@@ -1,0 +1,86 @@
+name: Sincronizar artigo com o Overleaf
+
+on:
+  push:
+    paths:
+      - 'overlief/artigo_revista_unificado/**'
+      - '.github/workflows/sincronizar-overleaf.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: overleaf-6a8dc7b2da2512458af80763
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    env:
+      OVERLEAF_PROJECT_ID: 6a8dc7b2da2512458af80763
+      OVERLEAF_TOKEN: ${{ secrets.OVERLEAF_TOKEN }}
+    steps:
+      - name: Baixar o repositorio
+        uses: actions/checkout@v4
+
+      - name: Validar o token
+        shell: bash
+        run: |
+          if [[ -z "$OVERLEAF_TOKEN" ]]; then
+            echo '::error::Crie o secret OVERLEAF_TOKEN nas configuracoes do repositorio.'
+            exit 1
+          fi
+
+      - name: Baixar o projeto do Overleaf
+        shell: bash
+        run: |
+          askpass="$RUNNER_TEMP/overleaf-askpass.sh"
+          printf '%s\n' \
+            '#!/usr/bin/env bash' \
+            'case "$1" in' \
+            '  *Username*) printf "%s\n" git ;;' \
+            '  *Password*) printf "%s\n" "$OVERLEAF_TOKEN" ;;' \
+            'esac' > "$askpass"
+          chmod 700 "$askpass"
+          export GIT_ASKPASS="$askpass"
+          export GIT_TERMINAL_PROMPT=0
+          git clone "https://git.overleaf.com/$OVERLEAF_PROJECT_ID" "$RUNNER_TEMP/overleaf"
+
+      - name: Copiar somente os fontes do artigo
+        shell: bash
+        run: |
+          rsync -a --delete \
+            --exclude='.git/' \
+            --exclude='*.aux' \
+            --exclude='*.bbl' \
+            --exclude='*.bcf' \
+            --exclude='*.blg' \
+            --exclude='*.fdb_latexmk' \
+            --exclude='*.fls' \
+            --exclude='*.log' \
+            --exclude='*.out' \
+            --exclude='*.synctex.gz' \
+            --exclude='*.toc' \
+            --exclude='main.pdf' \
+            'overlief/artigo_revista_unificado/' \
+            "$RUNNER_TEMP/overleaf/"
+
+      - name: Publicar alteracoes
+        shell: bash
+        run: |
+          cd "$RUNNER_TEMP/overleaf"
+          if git diff --quiet && git diff --cached --quiet && \
+             [[ -z "$(git ls-files --others --exclude-standard)" ]]; then
+            echo 'O Overleaf ja esta atualizado.'
+            exit 0
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m "Sincronizacao automatica do GitHub (${GITHUB_SHA::7})"
+
+          export GIT_ASKPASS="$RUNNER_TEMP/overleaf-askpass.sh"
+          export GIT_TERMINAL_PROMPT=0
+          git push origin HEAD
