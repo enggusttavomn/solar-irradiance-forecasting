@@ -20,6 +20,39 @@ SEMENTES = (11, 23, 42, 67, 89)
 LOCAIS = ("Factory & North", "Factory South")
 
 
+def _assert_png_valido_e_horizontal(caminho: Path) -> None:
+    with caminho.open('rb') as arquivo:
+        cabecalho = arquivo.read(24)
+
+    assinatura_png = bytes((0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A))
+    assert cabecalho.startswith(assinatura_png)
+    assert cabecalho[12:16] == b'IHDR'
+    largura = int.from_bytes(cabecalho[16:20], byteorder='big')
+    altura = int.from_bytes(cabecalho[20:24], byteorder='big')
+    assert largura >= 1_000
+    assert altura >= 400
+    assert 1.2 <= largura / altura <= 4.0
+
+
+def _assert_svg_valido(caminho: Path) -> None:
+    conteudo = caminho.read_text(encoding='utf-8-sig').lstrip()
+
+    assert conteudo.startswith(('<?xml', '<svg'))
+    assert '<svg' in conteudo[:2_048]
+
+
+def test_grade_de_quatro_tarefas_e_larga_e_usa_dois_por_dois() -> None:
+    figura, eixos = artefatos._criar_grade_tarefas(
+        ("daily_30", "hourly_72_extension", "monthly_1", "monthly_6")
+    )
+    try:
+        largura, altura = figura.get_size_inches()
+        assert eixos.shape == (4,)
+        assert largura > altura
+    finally:
+        artefatos.plt.close(figura)
+
+
 def test_latex_contem_tabular_na_largura_da_coluna_e_fecha_balanceado(
     tmp_path: Path,
 ) -> None:
@@ -640,8 +673,16 @@ def test_gera_pacote_auditavel_e_casos_por_contexto_independente(tmp_path: Path)
 
     assert resumo["tarefas"] == ["daily_30"]
     esperados = {
+        'ranking_por_tarefa.svg',
+        'variabilidade_por_semente.svg',
+        'previsoes_casos_contrastantes.svg',
+        'heterogeneidade_local_delta_mae.png',
+        'heterogeneidade_local_delta_mae.pdf',
+        'heterogeneidade_local_delta_mae.svg',
         "desempenho_macro.csv",
         "desempenho_macro.tex",
+        "metricas_terminais.csv",
+        "metricas_terminais.tex",
         "comparacao_timesnet_dilatedrnn_resumo.csv",
         "comparacao_timesnet_dilatedrnn_resumo.tex",
         "contrastes_por_origem_horizonte.csv",
@@ -664,6 +705,23 @@ def test_gera_pacote_auditavel_e_casos_por_contexto_independente(tmp_path: Path)
     }
     nomes_gerados = {p.name for p in saida.iterdir()}
     assert esperados <= nomes_gerados
+    heatmap = saida / 'heterogeneidade_local_delta_mae.png'
+    assert heatmap.is_file()
+
+    for nome_png in (
+        'ranking_por_tarefa.png',
+        'variabilidade_por_semente.png',
+        'previsoes_casos_contrastantes.png',
+        'heterogeneidade_local_delta_mae.png',
+    ):
+        _assert_png_valido_e_horizontal(saida / nome_png)
+    for nome_svg in (
+        'ranking_por_tarefa.svg',
+        'variabilidade_por_semente.svg',
+        'previsoes_casos_contrastantes.svg',
+        'heterogeneidade_local_delta_mae.svg',
+    ):
+        _assert_svg_valido(saida / nome_svg)
     assert "comparacao_timesnet_dilatedrnn_por_localidade.tex" not in nomes_gerados
     assert "epocas_parametros_tempos.csv" not in nomes_gerados
     assert "epocas_parametros_tempos.tex" not in nomes_gerados
@@ -708,10 +766,13 @@ def test_gera_pacote_auditavel_e_casos_por_contexto_independente(tmp_path: Path)
     latex_desempenho = (saida / "desempenho_macro.tex").read_text(encoding="utf-8")
     assert "Macro test MAE" in latex_desempenho
     assert "Task" in latex_desempenho
-    assert "Resolution" in latex_desempenho
+    assert "Resolution" not in latex_desempenho
     assert "Desempenho" not in latex_desempenho
     assert "Horizonte" not in latex_desempenho
     assert latex_desempenho.count(r" \\") == 2
+    latex_metricas = (saida / "metricas_terminais.tex").read_text(encoding="utf-8")
+    assert "RMSE (W/m$^2$)" in latex_metricas
+    assert "nRMSE (\\%)" in latex_metricas
     assert "Factory \\& North" in (saida / "caso_maior_ganho_timesnet.tex").read_text(
         encoding="utf-8"
     )

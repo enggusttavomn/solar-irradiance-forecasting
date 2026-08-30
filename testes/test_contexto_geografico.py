@@ -170,7 +170,7 @@ def test_mapa_original_e_gerado_em_png_e_pdf(
     assert png.stat().st_size > 50_000
     assert pdf.stat().st_size > 20_000
     imagem = mpimg.imread(png)
-    assert imagem.shape[:2] == (810, 1440)
+    assert imagem.shape[:2] == (603, 900)
 
 
 def test_validacao_rejeita_localidade_duplicada(

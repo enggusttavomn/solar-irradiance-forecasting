@@ -28,6 +28,7 @@ from typing import Iterable, Iterator, Mapping, Sequence
 import matplotlib
 
 matplotlib.use("Agg", force=True)
+import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -1453,7 +1454,8 @@ _CABECALHOS_ARTIGO = {
     "MAE_wm2": "MAE (W/m2)",
     "RMSE_wm2": "RMSE (W/m2)",
     "nRMSE": "nRMSE",
-    "R2": "R2",
+    "nRMSE_percentual": "nRMSE (%)",
+    "R2": "R-squared",
     "MAE_timesnet_wm2": "TimesNet MAE (W/m2)",
     "MAE_dilatedrnn_wm2": "DilatedRNN MAE (W/m2)",
     "diferenca_MAE_timesnet_menos_dilatedrnn_wm2": (
@@ -1469,7 +1471,7 @@ _CABECALHOS_ARTIGO = {
     "origem": "Forecast origin",
     "primeiro_alvo_local": "First target",
     "ultimo_alvo_local": "Last target",
-    "ganho_timesnet_vs_dilatedrnn_wm2": "TimesNet gain (W/m2)",
+    "ganho_timesnet_vs_dilatedrnn_wm2": "DilatedRNN MAE - TimesNet MAE (W/m2)",
     "interpretacao_extremo": "Contrast interpretation",
     "contexto_meteorologico_disponivel": "Weather context available",
     "precipitacao_total_mm": "Total precipitation (mm)",
@@ -1517,17 +1519,38 @@ _VALORES_ARTIGO = {
 }
 
 
+def _ordenar_tabela_tarefas(
+    tabela: pd.DataFrame,
+    *colunas_secundarias: str,
+) -> pd.DataFrame:
+    resultado = tabela.copy()
+    resultado["_ordem_tarefa"] = (
+        resultado["tarefa"]
+        .map(_ORDEM_TAREFAS_ARTIGO)
+        .fillna(len(_ORDEM_TAREFAS_ARTIGO))
+        .astype(int)
+    )
+    return (
+        resultado.sort_values(
+            ["_ordem_tarefa", *colunas_secundarias],
+            ignore_index=True,
+        )
+        .drop(columns="_ordem_tarefa")
+    )
+
+
 def _tabela_desempenho_compacta(desempenho: pd.DataFrame) -> pd.DataFrame:
     base = desempenho.loc[desempenho["tipo_horizonte"] == "cumulativo"].copy()
-    indice = ["tarefa", "resolucao", "horizonte"]
+    indice = ["tarefa", "horizonte"]
     tabela = base.pivot(index=indice, columns="modelo", values="MAE_wm2").reset_index()
     sementes = (
         base.loc[base["tipo_estimativa"] != "deterministica"]
         .groupby(indice, as_index=False)["N_sementes"]
         .max()
     )
-    return tabela.merge(sementes, on=indice, how="left").sort_values(
-        ["tarefa", "horizonte"], ignore_index=True
+    return _ordenar_tabela_tarefas(
+        tabela.merge(sementes, on=indice, how="left"),
+        "horizonte",
     )
 
 
@@ -1542,19 +1565,50 @@ def _tabela_variabilidade_compacta(variabilidade: pd.DataFrame) -> pd.DataFrame:
             pd.Series([linha["MAE_wm2_desvio_padrao"]]), errors="coerce"
         ).iloc[0]
         if pd.isna(desvio):
-            return f"{media:.2f} (one seed; SD unavailable)"
-        return f"{media:.2f} (SD {float(desvio):.2f})"
+            return f"{media:.2f} (n=1)"
+        return f"{media:.2f} ({float(desvio):.2f})"
 
     base["MAE_mean_SD"] = base.apply(formatar, axis=1)
-    return (
-        base.pivot(
-            index=["tarefa", "resolucao", "horizonte"],
-            columns="modelo",
-            values="MAE_mean_SD",
-        )
-        .reset_index()
-        .sort_values(["tarefa", "horizonte"], ignore_index=True)
+    tabela = base.pivot(
+        index=["tarefa", "horizonte"],
+        columns="modelo",
+        values="MAE_mean_SD",
+    ).reset_index()
+    return _ordenar_tabela_tarefas(tabela, "horizonte")
+
+
+def _tabela_metricas_terminais(desempenho: pd.DataFrame) -> pd.DataFrame:
+    """Resume as quatro metricas dos dois modelos no horizonte terminal."""
+
+    base = desempenho.loc[
+        (desempenho["tipo_horizonte"] == "cumulativo")
+        & desempenho["modelo"].isin(["TimesNet", "DilatedRNN"])
+    ].copy()
+    terminais = base.groupby("tarefa")["horizonte"].transform("max")
+    tabela = base.loc[
+        base["horizonte"] == terminais,
+        ["tarefa", "horizonte", "modelo", "MAE_wm2", "RMSE_wm2", "nRMSE", "R2"],
+    ].copy()
+    tabela["nRMSE_percentual"] = 100.0 * pd.to_numeric(tabela.pop("nRMSE"))
+    tabela = tabela[
+        [
+            "tarefa",
+            "horizonte",
+            "modelo",
+            "MAE_wm2",
+            "RMSE_wm2",
+            "nRMSE_percentual",
+            "R2",
+        ]
+    ]
+    tabela["_ordem_modelo"] = tabela["modelo"].map(
+        {"TimesNet": 0, "DilatedRNN": 1}
     )
+    return _ordenar_tabela_tarefas(
+        tabela,
+        "horizonte",
+        "_ordem_modelo",
+    ).drop(columns="_ordem_modelo")
 
 
 _LATEX = {
@@ -1577,14 +1631,15 @@ def escapar_latex(valor: object) -> str:
     if isinstance(valor, (float, np.floating)):
         if not math.isfinite(float(valor)):
             return "NA"
-        return f"{float(valor):.4f}"
+        return f"{float(valor):.2f}"
     if isinstance(valor, (int, np.integer)) and not isinstance(valor, bool):
         return str(int(valor))
     texto_original = str(valor)
     texto = _CABECALHOS_ARTIGO.get(
         texto_original, _VALORES_ARTIGO.get(texto_original, texto_original)
     )
-    return "".join(_LATEX.get(caractere, caractere) for caractere in texto)
+    escapado = "".join(_LATEX.get(caractere, caractere) for caractere in texto)
+    return escapado.replace("W/m2", r"W/m$^2$")
 
 
 def _gravar_csv(quadro: pd.DataFrame, caminho: Path) -> None:
@@ -1597,18 +1652,21 @@ def _gravar_latex(
     *,
     legenda: str,
     rotulo: str,
+    largura_total: bool = False,
 ) -> None:
     alinhamento = "l" + "r" * max(0, len(quadro.columns) - 1)
     rotulo_seguro = rotulo.replace("_", "-")
     if not all(c.isalnum() or c in ":.-" for c in rotulo_seguro):
         raise ValueError(f"Rotulo LaTeX inseguro: {rotulo!r}.")
+    ambiente = "table*" if largura_total else "table"
+    largura = r"\textwidth" if largura_total else r"\linewidth"
     linhas = [
-        r"\begin{table}[htbp]",
+        f"\\begin{{{ambiente}}}[htbp]",
         r"\centering",
-        r"\small",
         f"\\caption{{{escapar_latex(legenda)}}}",
         f"\\label{{{rotulo_seguro}}}",
-        r"\resizebox{\linewidth}{!}{%",
+        r"\small",
+        f"\\resizebox{{{largura}}}{{!}}{{%",
         f"\\begin{{tabular}}{{{alinhamento}}}",
         r"\toprule",
         " & ".join(escapar_latex(c) for c in quadro.columns) + r" \\",
@@ -1617,16 +1675,21 @@ def _gravar_latex(
     for valores in quadro.itertuples(index=False, name=None):
         linhas.append(" & ".join(escapar_latex(v) for v in valores) + r" \\")
     linhas.extend(
-        [r"\bottomrule", r"\end{tabular}%", r"}", r"\end{table}", ""]
+        [r"\bottomrule", r"\end{tabular}%", r"}", f"\\end{{{ambiente}}}", ""]
     )
     caminho.write_text("\n".join(linhas), encoding="utf-8", newline="\n")
 
 
-def _gravar_caso_latex(quadro: pd.DataFrame, caminho: Path, *, legenda: str, rotulo: str) -> None:
+def _gravar_caso_latex(
+    quadro: pd.DataFrame,
+    caminho: Path,
+    *,
+    legenda: str,
+    rotulo: str,
+) -> None:
     registro = quadro.iloc[0]
     if registro.get("caso") == "caso_meteorologico_independente":
         preferidos = [
-            "caso",
             "localidade",
             "data_local",
             "precipitacao_corrigida_mm_dia",
@@ -1638,14 +1701,10 @@ def _gravar_caso_latex(quadro: pd.DataFrame, caminho: Path, *, legenda: str, rot
         ]
     else:
         preferidos = [
-            "caso",
-            "interpretacao_extremo",
             "tarefa",
-            "resolucao",
             "localidade",
             "origem",
             "horizonte",
-            "N_pontos",
             "MAE_timesnet_wm2",
             "MAE_dilatedrnn_wm2",
             "ganho_timesnet_vs_dilatedrnn_wm2",
@@ -1654,74 +1713,274 @@ def _gravar_caso_latex(quadro: pd.DataFrame, caminho: Path, *, legenda: str, rot
             "nebulosidade_media_percentual",
             "dias_com_condicao_adversa",
             "interpretacao_contexto",
-            "limitacao_sementes",
         ]
     campos = [
         campo
         for campo in preferidos
         if campo in quadro.columns and pd.notna(registro[campo])
     ]
-    vertical = pd.DataFrame(
-        {
-            "campo": [_CABECALHOS_ARTIGO.get(campo, campo) for campo in campos],
-            "valor": [registro[campo] for campo in campos],
-        }
-    )
-    _gravar_latex(vertical, caminho, legenda=legenda, rotulo=rotulo)
+    rotulo_seguro = rotulo.replace("_", "-")
+    linhas = [
+        r"\begin{table}[htbp]",
+        r"\centering",
+        r"\footnotesize",
+        f"\\caption{{{escapar_latex(legenda)}}}",
+        f"\\label{{{rotulo_seguro}}}",
+        r"\begin{tabular}{@{}p{0.38\linewidth}p{0.56\linewidth}@{}}",
+        r"\toprule",
+        r"\textbf{Field} & \textbf{Value} \\",
+        r"\midrule",
+    ]
+    for campo in campos:
+        cabecalho = _CABECALHOS_ARTIGO.get(campo, campo)
+        linhas.append(
+            f"{escapar_latex(cabecalho)} & {escapar_latex(registro[campo])} " + r"\\"
+        )
+    linhas.extend([r"\bottomrule", r"\end{tabular}", r"\end{table}", ""])
+    caminho.write_text("\n".join(linhas), encoding="utf-8", newline="\n")
 
 
 def _salvar_figura(figura: plt.Figure, base: Path) -> None:
+    metadados = {"Creator": "artefatos_artigo_unificado.py"}
     figura.savefig(
         base.with_suffix(".png"),
-        dpi=180,
+        dpi=360,
         bbox_inches="tight",
+        pad_inches=0.04,
+        facecolor="white",
         metadata={"Software": "artefatos_artigo_unificado.py"},
     )
     figura.savefig(
         base.with_suffix(".pdf"),
         bbox_inches="tight",
+        pad_inches=0.04,
+        facecolor="white",
         metadata={
-            "Creator": "artefatos_artigo_unificado.py",
+            **metadados,
             "CreationDate": None,
             "ModDate": None,
+        },
+    )
+    figura.savefig(
+        base.with_suffix(".svg"),
+        bbox_inches="tight",
+        pad_inches=0.04,
+        facecolor="white",
+        metadata={
+            **metadados,
+            "Description": "Vector source generated for the unified article.",
         },
     )
     plt.close(figura)
 
 
+_CORES_MODELOS = {
+    "Climatologia": "#7A7A7A",
+    "Persistencia": "#CC79A7",
+    "Sazonal ingenuo": "#E69F00",
+    "SazonalIngenuo": "#E69F00",
+    "XGBoost": "#009E73",
+    "LSTM": "#56B4E9",
+    "TimesNet": "#0072B2",
+    "DilatedRNN": "#D55E00",
+}
+_MARCADORES_MODELOS = {
+    "Climatologia": "D",
+    "Persistencia": "v",
+    "Sazonal ingenuo": "<",
+    "SazonalIngenuo": "<",
+    "XGBoost": "o",
+    "LSTM": "^",
+    "TimesNet": "s",
+    "DilatedRNN": "X",
+}
+_ORDEM_MODELOS = (
+    "Climatologia",
+    "Persistencia",
+    "Sazonal ingenuo",
+    "SazonalIngenuo",
+    "XGBoost",
+    "LSTM",
+    "TimesNet",
+    "DilatedRNN",
+)
+_ORDEM_TAREFAS_ARTIGO = {
+    "hourly_72_extension": 0,
+    "daily_30": 1,
+    "monthly_1": 2,
+    "monthly_6": 3,
+}
+_ESPECIFICACOES_TAREFAS_FIGURA = {
+    "hourly_72_extension": {
+        "titulo": "Hourly | 336 h context $\\rightarrow$ 72 h output",
+        "unidade": "h",
+    },
+    "daily_30": {
+        "titulo": "Daily | 365 d context $\\rightarrow$ 30 d output",
+        "unidade": "d",
+    },
+    "monthly_1": {
+        "titulo": "Monthly | 12 mo context $\\rightarrow$ 1 mo output",
+        "unidade": "mo",
+    },
+    "monthly_6": {
+        "titulo": "Monthly | 12 mo context $\\rightarrow$ 6 mo output",
+        "unidade": "mo",
+    },
+}
+_ROTULOS_PAINEIS = tuple("abcdefghijklmnopqrstuvwxyz")
+_ROTULOS_LOCAIS_CURTOS = {
+    "BMW San Luis Potosi": "BMW San Luis Potosí",
+    "BYD Camacari": "BYD Camaçari",
+    "Ford Rouge Electric Vehicle Center": "Ford Rouge EV Center",
+    "GM Factory Zero": "GM Factory Zero",
+    "Hyundai Metaplant Georgia": "Hyundai Metaplant",
+    "Lucid AMP 1 Casa Grande": "Lucid AMP-1",
+    "Rivian Normal": "Rivian Normal",
+    "Tesla Fremont Factory": "Tesla Fremont",
+    "Tesla Gigafactory Nevada": "Tesla Giga Nevada",
+    "Tesla Gigafactory Texas": "Tesla Giga Texas",
+}
+
+
+def _configurar_eixo_tarefa(
+    eixo: plt.Axes,
+    *,
+    tarefa: str,
+    horizontes: Iterable[object],
+    indice_painel: int,
+) -> None:
+    """Aplica títulos, ticks e tipografia legíveis no tamanho final do artigo."""
+
+    especificacao = _ESPECIFICACOES_TAREFAS_FIGURA.get(
+        tarefa,
+        {
+            "titulo": _VALORES_ARTIGO.get(tarefa, tarefa),
+            "unidade": "",
+        },
+    )
+    valores = sorted(
+        {
+            int(float(valor))
+            for valor in horizontes
+            if pd.notna(valor) and math.isfinite(float(valor))
+        }
+    )
+    painel = _ROTULOS_PAINEIS[indice_painel]
+    eixo.set_title(
+        f"({painel}) {especificacao['titulo']}",
+        loc="left",
+        fontsize=8.6,
+        fontweight="semibold",
+        pad=5,
+    )
+    unidade = str(especificacao["unidade"])
+    eixo.set_xlabel(
+        f"Forecast horizon ({unidade})" if unidade else "Forecast horizon",
+        fontsize=8.1,
+    )
+    if valores:
+        indices = np.linspace(0, len(valores) - 1, min(len(valores), 7), dtype=int)
+        ticks = [valores[indice] for indice in sorted(set(indices.tolist()))]
+        eixo.set_xticks(ticks)
+        if len(valores) == 1:
+            centro = float(valores[0])
+            eixo.set_xlim(centro - 0.5, centro + 0.5)
+        else:
+            eixo.margins(x=0.05)
+    eixo.grid(axis="y", color="#D7DCE2", linewidth=0.65, alpha=0.9)
+    eixo.set_axisbelow(True)
+    eixo.spines["top"].set_visible(False)
+    eixo.spines["right"].set_visible(False)
+    eixo.tick_params(labelsize=7.4, length=3)
+
+
+def _criar_grade_tarefas(tarefas: Sequence[str]) -> tuple[plt.Figure, np.ndarray]:
+    """Cria uma grade compacta para figuras largas com uma tarefa por painel."""
+
+    if not tarefas:
+        raise ValueError("A figura requer pelo menos uma tarefa.")
+    colunas = 1 if len(tarefas) == 1 else 2
+    linhas = math.ceil(len(tarefas) / colunas)
+    figura, eixos = plt.subplots(
+        linhas,
+        colunas,
+        figsize=(7.25, max(2.9, 2.45 * linhas)),
+        squeeze=False,
+    )
+    return figura, eixos.ravel()
+
 def _grafico_ranking(desempenho: pd.DataFrame, pasta: Path) -> None:
     desempenho = desempenho.loc[desempenho["tipo_horizonte"] == "cumulativo"].copy()
-    tarefas = list(dict.fromkeys(desempenho["tarefa"].astype(str)))
-    figura, eixos = plt.subplots(
-        len(tarefas), 1, figsize=(9.0, max(3.2, 3.0 * len(tarefas))), squeeze=False
+    tarefas = sorted(
+        dict.fromkeys(desempenho["tarefa"].astype(str)),
+        key=lambda tarefa: _ORDEM_TAREFAS_ARTIGO.get(
+            tarefa, len(_ORDEM_TAREFAS_ARTIGO)
+        ),
     )
-    for eixo, tarefa in zip(eixos[:, 0], tarefas, strict=True):
+    figura, eixos = _criar_grade_tarefas(tarefas)
+    linhas_legenda: dict[str, object] = {}
+    for indice_painel, (eixo, tarefa) in enumerate(zip(eixos, tarefas)):
         grupo = desempenho.loc[desempenho["tarefa"] == tarefa]
         for modelo, dados in grupo.groupby("modelo", sort=True):
-            eixo.plot(
+            modelo = str(modelo)
+            dados = dados.sort_values("horizonte")
+            destaque = modelo in MODELOS_COMPARADOS
+            linha = eixo.plot(
                 dados["horizonte"],
                 dados["posicao_MAE"],
-                marker="o",
-                linewidth=1.5,
-                label=_VALORES_ARTIGO.get(str(modelo), str(modelo)),
+                color=_CORES_MODELOS.get(modelo),
+                marker=_MARCADORES_MODELOS.get(modelo, "o"),
+                markersize=4.8 if destaque else 3.9,
+                markeredgewidth=0.7,
+                linewidth=1.8 if destaque else 1.05,
+                alpha=1.0 if destaque else 0.82,
+                zorder=3 if destaque else 2,
+                label=_VALORES_ARTIGO.get(modelo, modelo),
+            )[0]
+            linhas_legenda.setdefault(modelo, linha)
+        _configurar_eixo_tarefa(
+            eixo,
+            tarefa=tarefa,
+            horizontes=grupo["horizonte"],
+            indice_painel=indice_painel,
+        )
+        n_modelos = int(grupo["modelo"].nunique())
+        eixo.set_yticks(range(1, n_modelos + 1))
+        eixo.set_ylim(n_modelos + 0.35, 0.65)
+        eixo.set_ylabel("Macro-MAE rank (1 = best)", fontsize=8.2)
+        if "uma_semente" in " ".join(grupo["limitacao_sementes"].astype(str)):
+            eixo.text(
+                0.98,
+                0.06,
+                "one seed",
+                transform=eixo.transAxes,
+                ha="right",
+                va="bottom",
+                fontsize=7.2,
+                color="#444444",
+                bbox={
+                    "boxstyle": "round,pad=0.22",
+                    "facecolor": "white",
+                    "edgecolor": "#B8BEC6",
+                    "linewidth": 0.6,
+                },
             )
-        limitacao = (
-            " - single-seed extension"
-            if "uma_semente" in " ".join(grupo["limitacao_sementes"])
-            else ""
-        )
-        resolucao = _VALORES_ARTIGO.get(
-            str(grupo["resolucao"].iloc[0]), str(grupo["resolucao"].iloc[0])
-        )
-        tarefa_artigo = _VALORES_ARTIGO.get(str(tarefa), str(tarefa)).replace("--", "\N{EN DASH}")
-        eixo.set_title(f"{tarefa_artigo} ({resolucao}){limitacao}")
-        eixo.set_xlabel("Forecast horizon")
-        eixo.set_ylabel("MAE rank (1 = best)")
-        eixo.invert_yaxis()
-        eixo.grid(True, alpha=0.25)
-    eixos[0, 0].legend(ncol=4, fontsize=8, loc="best")
-    figura.suptitle("Model ranking by task and cumulative forecast horizon")
-    figura.tight_layout()
+    for eixo in eixos[len(tarefas) :]:
+        eixo.set_visible(False)
+    ordem = [modelo for modelo in _ORDEM_MODELOS if modelo in linhas_legenda]
+    figura.legend(
+        [linhas_legenda[modelo] for modelo in ordem],
+        [_VALORES_ARTIGO.get(modelo, modelo) for modelo in ordem],
+        ncol=4,
+        fontsize=7.5,
+        loc="upper center",
+        bbox_to_anchor=(0.5, 1.005),
+        frameon=False,
+        columnspacing=1.25,
+        handlelength=1.8,
+    )
+    figura.tight_layout(rect=(0.0, 0.0, 1.0, 0.875), h_pad=1.05, w_pad=0.9)
     _salvar_figura(figura, pasta / "ranking_por_tarefa")
 
 
@@ -1729,47 +1988,195 @@ def _grafico_variabilidade(variabilidade: pd.DataFrame, pasta: Path) -> None:
     variabilidade = variabilidade.loc[
         variabilidade["tipo_horizonte"] == "cumulativo"
     ].copy()
-    tarefas = list(dict.fromkeys(variabilidade["tarefa"].astype(str)))
-    figura, eixos = plt.subplots(
-        len(tarefas), 1, figsize=(9.0, max(3.2, 3.0 * len(tarefas))), squeeze=False
+    tarefas = sorted(
+        dict.fromkeys(variabilidade["tarefa"].astype(str)),
+        key=lambda tarefa: _ORDEM_TAREFAS_ARTIGO.get(
+            tarefa, len(_ORDEM_TAREFAS_ARTIGO)
+        ),
     )
-    for eixo, tarefa in zip(eixos[:, 0], tarefas, strict=True):
+    figura, eixos = _criar_grade_tarefas(tarefas)
+    linhas_legenda: dict[str, object] = {}
+    for indice_painel, (eixo, tarefa) in enumerate(zip(eixos, tarefas)):
         grupo = variabilidade.loc[variabilidade["tarefa"] == tarefa]
         for modelo, dados in grupo.groupby("modelo", sort=True):
+            modelo = str(modelo)
+            dados = dados.sort_values("horizonte")
             y = pd.to_numeric(dados["MAE_wm2_media"])
             desvio = pd.to_numeric(dados["MAE_wm2_desvio_padrao"], errors="coerce")
-            eixo.errorbar(
+            sem_desvio = desvio.isna().all()
+            linha = eixo.errorbar(
                 dados["horizonte"],
                 y,
-                yerr=desvio.fillna(0.0),
-                marker="o",
-                capsize=3,
-                linewidth=1.3,
-                label=_VALORES_ARTIGO.get(str(modelo), str(modelo)),
+                yerr=None if sem_desvio else desvio.to_numpy(dtype=float),
+                color=_CORES_MODELOS.get(modelo),
+                marker=_MARCADORES_MODELOS.get(modelo, "o"),
+                markerfacecolor="white",
+                markeredgewidth=0.9,
+                markersize=4.8,
+                capsize=0 if sem_desvio else 2.5,
+                elinewidth=0.9,
+                linewidth=1.5,
+                linestyle="-" if len(dados) > 1 else "none",
+                label=_VALORES_ARTIGO.get(modelo, modelo),
+                zorder=3,
             )
+            linhas_legenda.setdefault(modelo, linha)
+        _configurar_eixo_tarefa(
+            eixo,
+            tarefa=tarefa,
+            horizontes=grupo["horizonte"],
+            indice_painel=indice_painel,
+        )
         if (grupo["N_sementes"] == 1).all():
             eixo.text(
-                0.99,
                 0.02,
-                "Single seed: between-seed SD unavailable",
+                0.94,
+                "n = 1 | SD unavailable",
                 transform=eixo.transAxes,
-                ha="right",
-                va="bottom",
-                fontsize=8,
+                ha="left",
+                va="top",
+                fontsize=7.0,
+                color="#444444",
+                bbox={
+                    "boxstyle": "round,pad=0.22",
+                    "facecolor": "white",
+                    "edgecolor": "#B8BEC6",
+                    "linewidth": 0.6,
+                },
             )
-        resolucao = _VALORES_ARTIGO.get(
-            str(grupo["resolucao"].iloc[0]), str(grupo["resolucao"].iloc[0])
-        )
-        tarefa_artigo = _VALORES_ARTIGO.get(str(tarefa), str(tarefa)).replace("--", "\N{EN DASH}")
-        eixo.set_title(f"{tarefa_artigo} ({resolucao})")
-        eixo.set_xlabel("Forecast horizon")
-        eixo.set_ylabel("Macro MAE (W m$^{-2}$)")
-        eixo.grid(True, alpha=0.25)
-    eixos[0, 0].legend(ncol=4, fontsize=8, loc="best")
-    figura.suptitle("Between-seed variability (mean and standard deviation)")
-    figura.tight_layout()
+        eixo.set_ylabel("Macro MAE (W m$^{-2}$)", fontsize=8.2)
+        eixo.margins(y=0.12)
+    for eixo in eixos[len(tarefas) :]:
+        eixo.set_visible(False)
+    ordem = [modelo for modelo in _ORDEM_MODELOS if modelo in linhas_legenda]
+    figura.legend(
+        [linhas_legenda[modelo] for modelo in ordem],
+        [_VALORES_ARTIGO.get(modelo, modelo) for modelo in ordem],
+        ncol=4,
+        fontsize=7.6,
+        loc="upper center",
+        bbox_to_anchor=(0.5, 1.005),
+        frameon=False,
+        columnspacing=1.4,
+        handlelength=1.8,
+    )
+    figura.tight_layout(rect=(0.0, 0.0, 1.0, 0.89), h_pad=1.05, w_pad=0.9)
     _salvar_figura(figura, pasta / "variabilidade_por_semente")
 
+
+def _grafico_heterogeneidade_local(
+    comparacao_local: pd.DataFrame,
+    pasta: Path,
+) -> None:
+    """Mostra o contraste terminal TimesNet-DilatedRNN por local e tarefa."""
+
+    base = comparacao_local.loc[
+        comparacao_local["tipo_horizonte"] == "cumulativo"
+    ].copy()
+    terminais = base.groupby("tarefa")["horizonte"].transform("max")
+    base = base.loc[base["horizonte"] == terminais].copy()
+    if base.empty:
+        raise ArtefatoNaoPublicavelError(
+            "A comparacao por localidade nao possui horizontes cumulativos terminais."
+        )
+
+    tarefas = sorted(
+        dict.fromkeys(base["tarefa"].astype(str)),
+        key=lambda tarefa: _ORDEM_TAREFAS_ARTIGO.get(
+            tarefa, len(_ORDEM_TAREFAS_ARTIGO)
+        ),
+    )
+    locais = sorted(dict.fromkeys(base["localidade"].astype(str)))
+    matriz = (
+        base.pivot(
+            index="localidade",
+            columns="tarefa",
+            values="diferenca_MAE_timesnet_menos_dilatedrnn_wm2",
+        )
+        .reindex(index=locais, columns=tarefas)
+        .astype(float)
+    )
+    valores = matriz.to_numpy()
+    finitos = valores[np.isfinite(valores)]
+    limite = max(1.0, float(np.max(np.abs(finitos)))) if finitos.size else 1.0
+    mapa_cores = matplotlib.colors.LinearSegmentedColormap.from_list(
+        "timesnet_dilatedrnn",
+        ("#2166AC", "#F7F7F7", "#B2182B"),
+    )
+    normalizacao = matplotlib.colors.TwoSlopeNorm(
+        vmin=-limite,
+        vcenter=0.0,
+        vmax=limite,
+    )
+
+    altura = max(3.3, 0.28 * len(locais) + 1.35)
+    figura, eixo = plt.subplots(figsize=(7.25, altura))
+    imagem = eixo.imshow(
+        valores,
+        cmap=mapa_cores,
+        norm=normalizacao,
+        aspect="auto",
+        interpolation="nearest",
+    )
+    rotulos_tarefa = {
+        "hourly_72_extension": "Hourly\n72 h",
+        "daily_30": "Daily\n30 d",
+        "monthly_1": "Monthly\n1 mo",
+        "monthly_6": "Monthly\n6 mo",
+    }
+    eixo.set_xticks(range(len(tarefas)))
+    eixo.set_xticklabels(
+        [rotulos_tarefa.get(tarefa, _VALORES_ARTIGO.get(tarefa, tarefa)) for tarefa in tarefas],
+        fontsize=7.5,
+    )
+    eixo.xaxis.tick_top()
+    eixo.xaxis.set_label_position("top")
+    eixo.set_xlabel("Task and terminal cumulative horizon", fontsize=8.2, labelpad=7)
+    eixo.set_yticks(range(len(locais)))
+    eixo.set_yticklabels(
+        [_ROTULOS_LOCAIS_CURTOS.get(local, local) for local in locais],
+        fontsize=7.3,
+    )
+    eixo.tick_params(which="major", length=0)
+    eixo.set_xticks(np.arange(-0.5, len(tarefas), 1), minor=True)
+    eixo.set_yticks(np.arange(-0.5, len(locais), 1), minor=True)
+    eixo.grid(which="minor", color="white", linewidth=1.25)
+    eixo.tick_params(which="minor", bottom=False, left=False)
+
+    for linha in range(valores.shape[0]):
+        for coluna in range(valores.shape[1]):
+            valor = valores[linha, coluna]
+            if not np.isfinite(valor):
+                texto, cor = "NA", "#333333"
+            else:
+                texto = f"{valor:+.2f}"
+                cor = "white" if abs(float(valor)) > 0.58 * limite else "#202020"
+            eixo.text(
+                coluna,
+                linha,
+                texto,
+                ha="center",
+                va="center",
+                fontsize=7.2,
+                fontweight="semibold",
+                color=cor,
+            )
+
+    barra = figura.colorbar(
+        imagem,
+        ax=eixo,
+        orientation="horizontal",
+        fraction=0.075,
+        pad=0.13,
+        aspect=34,
+    )
+    barra.set_label(
+        "$\\Delta$MAE = TimesNet $-$ DilatedRNN (W m$^{-2}$)",
+        fontsize=8.0,
+    )
+    barra.ax.tick_params(labelsize=7.1, length=2.5)
+    figura.tight_layout(pad=0.35)
+    _salvar_figura(figura, pasta / "heterogeneidade_local_delta_mae")
 
 def _trajetoria_caso(
     caso: Mapping[str, object],
@@ -1805,34 +2212,157 @@ def _grafico_casos(
         raise ArtefatoNaoPublicavelError(
             "Exactly two globally selected model-contrast cases are required."
         )
-    figura, eixos = plt.subplots(2, 1, figsize=(10.0, 7.0), squeeze=False)
-    for eixo, (_, caso) in zip(eixos[:, 0], casos.iterrows(), strict=True):
+    ordem_casos = {"maior_ganho_timesnet": 0, "maior_deficit_timesnet": 1}
+    casos = (
+        casos.assign(_ordem=casos["caso"].map(ordem_casos))
+        .sort_values("_ordem")
+        .drop(columns="_ordem")
+    )
+    figura, eixos = plt.subplots(
+        1,
+        2,
+        figsize=(7.25, 3.85),
+        squeeze=False,
+        sharey=True,
+    )
+    valores_ghi: list[float] = []
+    for indice_painel, (eixo, (_, caso)) in enumerate(
+        zip(eixos[0], casos.iterrows(), strict=True)
+    ):
         trajetoria = _trajetoria_caso(caso, entradas, chunksize=chunksize)
         trajetoria = trajetoria.loc[
             trajetoria["passo"] <= int(caso["horizonte"])
         ]
+        for coluna_ghi in (
+            "ghi_real_wm2",
+            "previsao_timesnet_wm2",
+            "previsao_dilatedrnn_wm2",
+        ):
+            valores_ghi.extend(
+                pd.to_numeric(trajetoria[coluna_ghi], errors="coerce")
+                .dropna()
+                .astype(float)
+                .tolist()
+            )
         x = pd.to_datetime(trajetoria["data_hora_alvo_local"])
-        eixo.plot(x, trajetoria["ghi_real_wm2"], color="black", label="Observed")
-        eixo.plot(x, trajetoria["previsao_timesnet_wm2"], label="TimesNet")
-        eixo.plot(x, trajetoria["previsao_dilatedrnn_wm2"], label="DilatedRNN")
+        eixo.plot(
+            x,
+            trajetoria["ghi_real_wm2"],
+            color="#222222",
+            linewidth=1.8,
+            marker="o",
+            markersize=2.4,
+            markevery=3,
+            label="Observed",
+            zorder=4,
+        )
+        eixo.plot(
+            x,
+            trajetoria["previsao_timesnet_wm2"],
+            color=_CORES_MODELOS["TimesNet"],
+            linewidth=1.55,
+            marker=_MARCADORES_MODELOS["TimesNet"],
+            markersize=2.8,
+            markevery=3,
+            label="TimesNet",
+            zorder=3,
+        )
+        eixo.plot(
+            x,
+            trajetoria["previsao_dilatedrnn_wm2"],
+            color=_CORES_MODELOS["DilatedRNN"],
+            linewidth=1.55,
+            marker=_MARCADORES_MODELOS["DilatedRNN"],
+            markersize=3.0,
+            markevery=3,
+            label="DilatedRNN",
+            zorder=2,
+        )
         if bool(caso.get("contexto_meteorologico_disponivel", False)):
-            contexto = (
-                "post-hoc adverse NASA POWER context"
+            estado_contexto = (
+                "adverse"
                 if bool(caso.get("condicao_adversa_independente", False))
-                else "post-hoc non-adverse NASA POWER context"
+                else "not adverse"
+            )
+            contexto = (
+                f"Post-hoc: cloud {float(caso['nebulosidade_media_percentual']):.1f}% | "
+                f"rain {float(caso['precipitacao_total_mm']):.2f} mm | {estado_contexto}"
             )
         else:
-            contexto = "daily weather context not assigned"
-        nome_caso = _VALORES_ARTIGO.get(str(caso["caso"]), str(caso["caso"]))
-        eixo.set_title(
-            f"{nome_caso}: {caso['localidade']}, "
-            f"origin {caso['origem']}, horizon {int(caso['horizonte'])} - {contexto}"
+            contexto = "Daily post-hoc weather context unavailable"
+        ganho = float(caso["ganho_timesnet_vs_dilatedrnn_wm2"])
+        nome_caso = (
+            "Largest TimesNet gain"
+            if str(caso["caso"]) == "maior_ganho_timesnet"
+            else "Largest TimesNet deficit"
         )
-        eixo.set_ylabel("GHI (W m$^{-2}$)")
-        eixo.grid(True, alpha=0.25)
-    eixos[-1, 0].set_xlabel("Local target time")
-    eixos[0, 0].legend(ncol=4, fontsize=8, loc="best")
-    figura.tight_layout()
+        painel = _ROTULOS_PAINEIS[indice_painel]
+        local_curto = _ROTULOS_LOCAIS_CURTOS.get(
+            str(caso["localidade"]),
+            str(caso["localidade"]),
+        )
+        eixo.set_title(
+            f"({painel}) {nome_caso}\n{local_curto}",
+            loc="left",
+            fontsize=8.8,
+            fontweight="semibold",
+            pad=5,
+        )
+        resumo = (
+            f"MAE: TN {float(caso['MAE_timesnet_wm2']):.2f} | "
+            f"DRNN {float(caso['MAE_dilatedrnn_wm2']):.2f} W m$^{{-2}}$\n"
+            f"DRNN $-$ TN: {ganho:+.2f} W m$^{{-2}}$\n"
+            f"{contexto}"
+        )
+        anotacao = eixo.text(
+            0.015,
+            -0.36,
+            resumo,
+            transform=eixo.transAxes,
+            ha="left",
+            va="top",
+            fontsize=6.7,
+            linespacing=1.22,
+            clip_on=False,
+            bbox={
+                "boxstyle": "round,pad=0.28",
+                "facecolor": "#F8F9FA",
+                "edgecolor": "#B8BEC6",
+                "linewidth": 0.6,
+            },
+            zorder=8,
+        )
+        anotacao.set_in_layout(False)
+        eixo.set_ylabel("GHI (W m$^{-2}$)", fontsize=8.2)
+        eixo.set_xlabel("Local target time", fontsize=8.2)
+        localizador = mdates.AutoDateLocator(minticks=4, maxticks=7)
+        eixo.xaxis.set_major_locator(localizador)
+        eixo.xaxis.set_major_formatter(
+            mdates.ConciseDateFormatter(localizador, show_offset=False)
+        )
+        eixo.grid(axis="y", color="#D7DCE2", linewidth=0.65, alpha=0.9)
+        eixo.set_axisbelow(True)
+        eixo.spines["top"].set_visible(False)
+        eixo.spines["right"].set_visible(False)
+        eixo.tick_params(labelsize=7.4, length=3)
+    limite_superior = max(1.0, max(valores_ghi, default=1.0))
+    eixos[0, 0].set_ylim(
+        bottom=-0.02 * limite_superior,
+        top=1.08 * limite_superior,
+    )
+    alcas, rotulos = eixos[0, 0].get_legend_handles_labels()
+    figura.legend(
+        alcas,
+        rotulos,
+        ncol=3,
+        fontsize=7.8,
+        loc="upper center",
+        bbox_to_anchor=(0.5, 1.01),
+        frameon=False,
+        columnspacing=1.6,
+        handlelength=2.2,
+    )
+    figura.tight_layout(rect=(0.0, 0.29, 1.0, 0.89), w_pad=1.0)
     _salvar_figura(figura, pasta / "previsoes_casos_contrastantes")
 
 
@@ -1940,6 +2470,19 @@ def gerar_artefatos_artigo_unificado(
                 "Complete metrics and exact-lead results are provided in the CSV artifact."
             ),
             rotulo="tab:desempenho_macro_auditavel",
+            largura_total=True,
+        )
+        metricas_terminais = _tabela_metricas_terminais(desempenho)
+        _gravar_csv(metricas_terminais, temporaria / "metricas_terminais.csv")
+        _gravar_latex(
+            metricas_terminais,
+            temporaria / "metricas_terminais.tex",
+            legenda=(
+                "Terminal cumulative metrics for TimesNet and DilatedRNN. "
+                "MAE and RMSE are in W/m2; nRMSE is reported as a percentage."
+            ),
+            rotulo="tab:metricas_terminais",
+            largura_total=True,
         )
 
         _gravar_csv(
@@ -1952,7 +2495,6 @@ def gerar_artefatos_artigo_unificado(
             comparacao_resumo["tipo_horizonte"] == "cumulativo",
             [
                 "tarefa",
-                "resolucao",
                 "horizonte",
                 "N_localidades",
                 "diferenca_MAE_media_wm2",
@@ -1960,7 +2502,6 @@ def gerar_artefatos_artigo_unificado(
                 "vitorias_locais_timesnet",
                 "vitorias_locais_dilatedrnn",
                 "empates_locais",
-                "janelas_alvo_sobrepostas",
             ],
         ]
         _gravar_latex(
@@ -1971,6 +2512,7 @@ def gerar_artefatos_artigo_unificado(
                 "Overlapping target windows are not treated as independent observations."
             ),
             rotulo="tab:vitorias_timesnet_dilatedrnn",
+            largura_total=True,
         )
 
         _gravar_csv(variabilidade, temporaria / "variabilidade_sementes.csv")
@@ -1982,6 +2524,7 @@ def gerar_artefatos_artigo_unificado(
                 "Single-seed extensions are identified explicitly."
             ),
             rotulo="tab:variabilidade_sementes",
+            largura_total=True,
         )
         _gravar_csv(
             configuracao_treinamento,
@@ -2082,6 +2625,7 @@ def gerar_artefatos_artigo_unificado(
 
         _grafico_ranking(desempenho, temporaria)
         _grafico_variabilidade(variabilidade, temporaria)
+        _grafico_heterogeneidade_local(comparacao_local, temporaria)
         _grafico_casos(casos, entradas, temporaria, chunksize=chunksize)
 
         proveniencia = {

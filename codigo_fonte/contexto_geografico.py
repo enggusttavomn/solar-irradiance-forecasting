@@ -500,7 +500,7 @@ def gerar_mapa_contexto(
     caminho_pdf: str | Path = MAPA_PDF_PADRAO,
     dpi: int = 300,
 ) -> tuple[Path, Path]:
-    """Gera mapa original mundial, painel dos EUA e detalhe Ford/GM."""
+    """Gera mapa das Américas, painel dos EUA e detalhe Ford/GM."""
 
     if dpi < 72:
         raise ValueError("DPI deve ser pelo menos 72.")
@@ -513,7 +513,6 @@ def gerar_mapa_contexto(
     matplotlib.use("Agg", force=True)
     import matplotlib.pyplot as plt
     from matplotlib.colors import BoundaryNorm, ListedColormap
-    from matplotlib.lines import Line2D
     from matplotlib.patches import Patch
 
     cores = ["#dceef8"] + [
@@ -524,7 +523,7 @@ def gerar_mapa_contexto(
     norm = BoundaryNorm(np.arange(-0.5, 31.5, 1), cmap.N)
 
     tabela_ordenada = tabela.sort_values("ordem").copy()
-    fig = plt.figure(figsize=(16, 9))
+    fig = plt.figure(figsize=(10, 6.7))
     grade = fig.add_gridspec(
         2,
         2,
@@ -544,9 +543,9 @@ def gerar_mapa_contexto(
     def configurar(eixo, xlim, ylim, titulo):
         eixo.set_xlim(*xlim)
         eixo.set_ylim(*ylim)
-        eixo.set_title(titulo, loc="left", fontsize=11, fontweight="bold")
-        eixo.set_xlabel("Longitude (°)")
-        eixo.set_ylabel("Latitude (°)")
+        eixo.set_title(titulo, loc="left", fontsize=12, fontweight="bold")
+        eixo.set_xlabel("Longitude (°)", fontsize=10)
+        eixo.set_ylabel("Latitude (°)", fontsize=10)
         eixo.grid(
             color="white",
             alpha=0.55,
@@ -555,7 +554,7 @@ def gerar_mapa_contexto(
             zorder=1,
         )
 
-    configurar(ax_mundo, (-180, 180), (-60, 90), "(a) Global context")
+    configurar(ax_mundo, (-130, -30), (-35, 55), "(a) Americas context")
     configurar(
         ax_eua,
         (-126, -79),
@@ -589,7 +588,7 @@ def gerar_mapa_contexto(
             (longitude, latitude),
             ha="center",
             va="center",
-            fontsize=6.5,
+            fontsize=9,
             fontweight="bold",
             color="black",
             zorder=5,
@@ -626,7 +625,7 @@ def gerar_mapa_contexto(
             (longitude, latitude),
             xytext=(dx, dy),
             textcoords="offset points",
-            fontsize=7,
+            fontsize=9,
             fontweight="bold",
             arrowprops={"arrowstyle": "-", "lw": 0.5, "color": "#333333"},
             zorder=5,
@@ -638,15 +637,19 @@ def gerar_mapa_contexto(
         )
     ]
     rotulos_detroit = {
-        "GM Factory Zero": ("GM Factory Zero", (10, 8)),
-        "Ford Rouge Electric Vehicle Center": ("Ford Rouge EV Center", (10, -15)),
+        "GM Factory Zero": ("GM Factory Zero", (-8, 8), "right"),
+        "Ford Rouge Electric Vehicle Center": (
+            "Ford Rouge EV Center",
+            (10, -15),
+            "left",
+        ),
     }
     for _, registro in tabela_detroit.iterrows():
         nome = str(registro["localidade"])
         longitude = float(registro["longitude"])
         latitude = float(registro["latitude"])
         classe_id = int(registro["classe_id"])
-        rotulo, deslocamento = rotulos_detroit[nome]
+        rotulo, deslocamento, alinhamento_horizontal = rotulos_detroit[nome]
         ax_detroit.scatter(
             longitude,
             latitude,
@@ -661,7 +664,9 @@ def gerar_mapa_contexto(
             (longitude, latitude),
             xytext=deslocamento,
             textcoords="offset points",
-            fontsize=8,
+            fontsize=9,
+            ha=alinhamento_horizontal,
+            va="center",
             arrowprops={"arrowstyle": "-", "lw": 0.7, "color": "#333333"},
             zorder=5,
         )
@@ -673,70 +678,29 @@ def gerar_mapa_contexto(
         Patch(
             facecolor=classes[classe_id].cor_hex,
             edgecolor="black",
-            label=(
-                f"{classes[classe_id].codigo}: "
-                f"{classes[classe_id].descricao_fonte}"
-            ),
+            label=classes[classe_id].codigo,
         )
         for classe_id in classes_presentes
     ]
-    ax_mundo.legend(
-        handles=legenda_classes,
-        title="Climate classes at the study locations",
-        loc="lower left",
-        fontsize=7.2,
-        title_fontsize=8,
-        framealpha=0.95,
-    )
-
-    legenda_locais = [
-        Line2D(
-            [0],
-            [0],
-            marker="o",
-            linestyle="none",
-            markerfacecolor=classes[int(registro["classe_id"])].cor_hex,
-            markeredgecolor="black",
-            markersize=6.5,
-            label=(
-                f"{int(registro['ordem'])}. {registro['localidade']} "
-                f"({registro['classe_codigo']})"
-            ),
-        )
-        for _, registro in tabela_ordenada.iterrows()
-    ]
     fig.legend(
-        handles=legenda_locais,
+        handles=legenda_classes,
+        title="Köppen–Geiger classes at study sites",
         loc="lower center",
-        bbox_to_anchor=(0.5, 0.035),
-        ncol=2,
-        fontsize=7.4,
+        bbox_to_anchor=(0.5, 0.02),
+        ncol=len(legenda_classes),
+        fontsize=8.5,
+        title_fontsize=8.5,
+        columnspacing=1.0,
+        handlelength=1.4,
+        handletextpad=0.45,
+        borderaxespad=0.0,
         frameon=False,
-    )
-
-    fig.suptitle(
-        "Köppen–Geiger climate context of electric-vehicle manufacturing locations",
-        fontsize=15,
-        fontweight="bold",
-        y=0.975,
-    )
-    fig.text(
-        0.5,
-        0.012,
-        (
-            "Background: present Köppen–Geiger classification at 0.5°; "
-            "site classes and confidence sampled from the 1-km product. "
-            f"Source: Beck et al. (2018), doi:{FONTE_DOI}."
-        ),
-        ha="center",
-        fontsize=7.5,
-        color="#333333",
     )
     fig.subplots_adjust(
         left=0.055,
         right=0.98,
-        top=0.925,
-        bottom=0.235,
+        top=0.96,
+        bottom=0.14,
         wspace=0.16,
         hspace=0.24,
     )
