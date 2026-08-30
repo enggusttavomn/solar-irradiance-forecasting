@@ -1,25 +1,25 @@
 \begin{table*}[htbp]
 \centering
-\small
 \caption{Macro test MAE across independent seeds (mean and standard deviation). Single-seed extensions are identified explicitly.}
 \label{tab:variabilidade-sementes}
+\small
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lrrrrrr}
+\begin{tabular}{lrrrrr}
 \toprule
-Task & Resolution & Horizon & DilatedRNN & LSTM & TimesNet & XGBoost \\
+Task & Horizon & DilatedRNN & LSTM & TimesNet & XGBoost \\
 \midrule
-Daily 365--30 & Daily & 1 & 43.51 (SD 0.68) & 42.31 (SD 0.55) & 43.55 (SD 0.85) & 41.67 (SD 0.12) \\
-Daily 365--30 & Daily & 3 & 44.02 (SD 0.62) & 43.45 (SD 0.48) & 43.89 (SD 0.54) & 43.16 (SD 0.07) \\
-Daily 365--30 & Daily & 7 & 44.29 (SD 0.57) & 44.05 (SD 0.36) & 44.17 (SD 0.37) & 43.78 (SD 0.06) \\
-Daily 365--30 & Daily & 14 & 44.33 (SD 0.60) & 44.42 (SD 0.58) & 44.29 (SD 0.29) & 44.02 (SD 0.03) \\
-Daily 365--30 & Daily & 30 & 44.10 (SD 0.60) & 44.68 (SD 0.71) & 44.29 (SD 0.29) & 44.00 (SD 0.02) \\
-Hourly 336--72 & Hourly & 24 & 50.73 (one seed; SD unavailable) & 50.91 (one seed; SD unavailable) & 49.08 (one seed; SD unavailable) & 48.37 (one seed; SD unavailable) \\
-Hourly 336--72 & Hourly & 48 & 52.15 (one seed; SD unavailable) & 52.79 (one seed; SD unavailable) & 51.86 (one seed; SD unavailable) & 49.81 (one seed; SD unavailable) \\
-Hourly 336--72 & Hourly & 72 & 52.96 (one seed; SD unavailable) & 53.39 (one seed; SD unavailable) & 52.21 (one seed; SD unavailable) & 50.50 (one seed; SD unavailable) \\
-Monthly 12--1 & Monthly & 1 & 13.45 (SD 0.35) & 14.51 (SD 0.34) & 14.61 (SD 0.76) & 14.86 (SD 0.17) \\
-Monthly 12--6 & Monthly & 1 & 15.24 (SD 0.51) & 16.25 (SD 0.65) & 15.81 (SD 1.67) & 14.83 (SD 0.31) \\
-Monthly 12--6 & Monthly & 3 & 14.72 (SD 0.49) & 15.75 (SD 0.24) & 15.29 (SD 0.87) & 14.99 (SD 0.14) \\
-Monthly 12--6 & Monthly & 6 & 14.77 (SD 0.45) & 15.14 (SD 0.36) & 15.29 (SD 0.81) & 14.80 (SD 0.11) \\
+Hourly 336--72 & 24 & 50.73 (n=1) & 50.91 (n=1) & 49.08 (n=1) & 48.37 (n=1) \\
+Hourly 336--72 & 48 & 52.15 (n=1) & 52.79 (n=1) & 51.86 (n=1) & 49.81 (n=1) \\
+Hourly 336--72 & 72 & 52.96 (n=1) & 53.39 (n=1) & 52.21 (n=1) & 50.50 (n=1) \\
+Daily 365--30 & 1 & 43.51 (0.68) & 42.31 (0.55) & 43.55 (0.85) & 41.67 (0.12) \\
+Daily 365--30 & 3 & 44.02 (0.62) & 43.45 (0.48) & 43.89 (0.54) & 43.16 (0.07) \\
+Daily 365--30 & 7 & 44.29 (0.57) & 44.05 (0.36) & 44.17 (0.37) & 43.78 (0.06) \\
+Daily 365--30 & 14 & 44.33 (0.60) & 44.42 (0.58) & 44.29 (0.29) & 44.02 (0.03) \\
+Daily 365--30 & 30 & 44.10 (0.60) & 44.68 (0.71) & 44.29 (0.29) & 44.00 (0.02) \\
+Monthly 12--1 & 1 & 13.45 (0.35) & 14.51 (0.34) & 14.61 (0.76) & 14.86 (0.17) \\
+Monthly 12--6 & 1 & 15.24 (0.51) & 16.25 (0.65) & 15.81 (1.67) & 14.83 (0.31) \\
+Monthly 12--6 & 3 & 14.72 (0.49) & 15.75 (0.24) & 15.29 (0.87) & 14.99 (0.14) \\
+Monthly 12--6 & 6 & 14.77 (0.45) & 15.14 (0.36) & 15.29 (0.81) & 14.80 (0.11) \\
 \bottomrule
 \end{tabular}%
 }
