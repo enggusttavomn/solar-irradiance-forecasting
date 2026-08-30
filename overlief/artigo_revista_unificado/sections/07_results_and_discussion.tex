@@ -32,8 +32,9 @@ aggregation and operational horizon.
 \centering
 \includegraphics[width=\textwidth]{ranking_por_tarefa.png}
 \caption{Macro-MAE rank trajectories at the reported cumulative checkpoints.
-Rank 1 is best. Lines connect checkpoints only to guide the eye; ranks from
-different resolutions are not pooled into a single score.}
+Rank 1 is best. Panel titles state each input--output contract, and axis units
+follow its native resolution. Colors, markers, and line weight jointly identify
+models; connecting lines only guide the eye. Ranks are not pooled across tasks.}
 \label{fig:ranking_tasks}
 \end{figure*}
 
@@ -58,12 +59,22 @@ architecture ranking.
 
 \input{tables/comparacao_timesnet_dilatedrnn_resumo}
 
-Table~\ref{tab:terminal_location_comparison} retains the ten location-level
-terminal comparisons rather than reporting only aggregate wins. It exposes
-both the geographic heterogeneity and the occasions on which a task-level
-winner loses locally.
+Figure~\ref{fig:local_heterogeneity} retains the ten site-level terminal
+comparisons as signed MAE differences rather than reporting only aggregate
+wins. The mixed signs expose both geographic heterogeneity and the occasions
+on which a task-level winner loses locally.
 
-\input{tables/terminal_location_comparison}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.90\textwidth]{heterogeneidade_local_delta_mae.png}
+\caption{Site-level terminal cumulative contrast
+$\Delta\mathrm{MAE}=\mathrm{MAE}_{\mathrm{TimesNet}}-
+\mathrm{MAE}_{\mathrm{DilatedRNN}}$ in W/m$^2$. Annotated negative (blue) cells
+favor TimesNet; positive (red) cells favor DilatedRNN. Columns correspond to
+72~h, 30~d, 1~month, and 6~months. The comparison is descriptive because
+overlapping target windows are not treated as independent observations.}
+\label{fig:local_heterogeneity}
+\end{figure*}
 
 \subsection{Variability across seeds}
 
@@ -94,8 +105,9 @@ presented as stable architecture dominance.
 \centering
 \includegraphics[width=\textwidth]{variabilidade_por_semente.png}
 \caption{Mean seed-level macro-MAE with error bars spanning one standard
-deviation. The hourly extension is shown as a single observation and must not
-be interpreted as a variability estimate.}
+deviation. Marker shape and color jointly identify each model. The hourly
+extension is plotted as $n=1$ without an error bar and must not be interpreted
+as a variability estimate.}
 \label{fig:seed_variability}
 \end{figure*}
 
@@ -127,21 +139,18 @@ forecast from 31 March: 46.30 versus 109.90~W/m$^2$, a
 cloud amount and 0.80~mm precipitation. The strongest deficit occurred for
 Tesla Gigafactory Texas at the 24-hour forecast from 28 March: 150.82 versus
 73.92~W/m$^2$, a 76.90~W/m$^2$ TimesNet disadvantage, with no independently
-flagged adverse day. Both are hourly single-seed cases and illustrate why
-selected examples cannot replace the full aggregate evaluation.
-Tables~\ref{tab:caso-maior-ganho-timesnet} and
-\ref{tab:caso-maior-deficit-timesnet} retain the numerical audit trail, while
-Figure~\ref{fig:contrasting_cases} shows the corresponding forecast trajectories.
-
-\input{tables/caso_maior_ganho_timesnet}
-\input{tables/caso_maior_deficit_timesnet}
+flagged adverse day. Both are hourly single-seed cases and illustrate why selected examples cannot
+replace the full aggregate evaluation. Figure~\ref{fig:contrasting_cases}
+retains the model MAEs, signed advantage, independent weather annotation, and
+the corresponding forecast trajectories in one view.
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=0.94\textwidth]{previsoes_casos_contrastantes.png}
-\caption{Observed GHI and the two model forecasts for the globally selected
-largest TimesNet gain and deficit. Weather annotations were joined only after
-selection.}
+\includegraphics[width=\textwidth]{previsoes_casos_contrastantes.png}
+\caption{Observed GHI and model forecasts for the globally selected largest
+TimesNet gain and deficit. Panels use a shared GHI scale; line style, marker,
+and color jointly identify each series. MAEs and weather descriptors are
+annotated in-panel, and meteorology was joined only after case selection.}
 \label{fig:contrasting_cases}
 \end{figure*}
 

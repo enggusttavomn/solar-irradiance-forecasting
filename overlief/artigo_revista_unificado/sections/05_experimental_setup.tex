@@ -32,6 +32,11 @@ refit windows for exactly that number of epochs. XGBoost uses its frozen tree
 budget in separate adjustment and refit instances. Test forecasts are generated
 only by the refitted instances.
 
+Figure~\ref{fig:temporal_protocol} summarizes this selection--refit chronology
+and the four direct-output contracts that remain fixed during testing.
+
+\input{figures/temporal_protocol}
+
 Within each partition, forecasts follow the rolling-origin protocol of
 Section~\ref{sec:methodology}: the official hourly task advances one local-
 midnight origin per day, the daily task advances one origin per day, and the
