@@ -30,6 +30,15 @@ registra o estado final das entregas e as limitações que permanecem explícita
 - `../../resultados/artigo_revista_unificado/`: contexto geográfico,
   meteorológico e consolidações usadas no texto.
 
+## Ativos gráficos
+
+O manuscrito inclui PNGs com assinatura binária válida e um diagrama TikZ.
+Arquivos SVG podem ser mantidos como fontes vetoriais editáveis, mas devem ser
+convertidos para um formato compatível antes de serem incluídos pelo LaTeX.
+O sincronizador publica um PDF somente quando o arquivo começa com `%PDF-`.
+PDFs encapsulados pelo NASCA DRM são preservados localmente e omitidos
+explicitamente do espelho enviado ao Overleaf.
+
 ## Compilação
 
 Em uma instalação TeX com `latexmk`, execute a partir deste diretório:
