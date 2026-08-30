@@ -51,3 +51,6 @@ do projeto remoto na sincronizacao seguinte.
 
 O monitor aguarda alguns segundos para agrupar salvamentos consecutivos antes
 de criar uma nova versao no Overleaf.
+
+O GitHub e a fonte oficial: cada versao local e enviada primeiro ao repositorio
+e, em seguida, publicada automaticamente no Overleaf pela GitHub Action.
