@@ -86,14 +86,14 @@ overlapping target windows are not treated as independent observations.}
 
 \subsection{Variability across seeds}
 
-Daily and monthly estimates use five independent seeds. As shown in
-Table~\ref{tab:variabilidade-sementes}, the 30-day seed-level MAE was
+Daily and monthly estimates use five independent seeds. In the exact records
+retained in the Supplementary Material, the 30-day seed-level MAE was
 $44.29\pm0.29$~W/m$^2$ for TimesNet and $44.10\pm0.60$~W/m$^2$ for
 DilatedRNN. At one month it was $14.62\pm0.74$ versus
 $13.45\pm0.35$~W/m$^2$, respectively. The exploratory six-month values were
 $15.24\pm0.76$ and $14.77\pm0.45$~W/m$^2$. The hourly rows contain one
-seed and therefore do not estimate seed variability. Table~\ref{tab:variabilidade-sementes}
-and Figure~\ref{fig:seed_variability} summarize the mean and one standard
+seed and therefore do not estimate seed variability. Figure~\ref{fig:seed_variability}
+summarizes the mean and one standard
 deviation of seed-level metrics. These values need not equal
 Table~\ref{tab:desempenho-macro-auditavel}, which evaluates the arithmetic
 ensemble forecast rather than averaging the nonlinear seed-level metric.
@@ -106,8 +106,6 @@ seed-level ranges. At six months, the 0.09~W/m$^2$ terminal difference is again
 small relative to seed variability. These comparisons are descriptive rather
 than confidence intervals, but they prevent small changes in rank from being
 presented as stable architecture dominance.
-
-\input{tables/variabilidade_sementes}
 
 \begin{figure*}[!t]
 \centering
@@ -166,7 +164,4 @@ As an error-independent check, the predeclared meteorological rule selected
 Hyundai Metaplant Georgia on 5 August 2024, with 82.66~mm/day corrected
 precipitation and 99.47\% cloud amount. This case was selected without
 consulting either model's error and is descriptive rather than causal. Its
-complete context record is reported in
-Table~\ref{tab:caso-meteorologico-independente}.
-
-\input{tables/caso_meteorologico_independente}
+complete context record is retained in the Supplementary Material.

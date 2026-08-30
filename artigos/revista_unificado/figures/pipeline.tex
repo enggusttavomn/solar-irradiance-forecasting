@@ -1,108 +1,127 @@
-% Full-width TikZ overview shared by the Elsevier and IEEE entry points.
+% Compact end-to-end methodology overview shared by both journal entry points.
 
 \begin{figure*}[!t]
 \centering
 \begin{tikzpicture}[
-  font=\footnotesize,
-  stage/.style={
-    draw=#1!72!black,
-    fill=#1!6,
-    rounded corners=2pt,
-    line width=0.7pt,
-    align=left,
-    inner xsep=2.5mm,
-    inner ysep=2.8mm,
-    outer sep=0pt
-  },
-  flow arrow/.style={
-    -{Stealth[length=2.2mm,width=1.6mm]},
-    draw=black!68,
-    line width=0.8pt
-  },
-  external/.style={
-    draw=orange!78!black,
-    fill=orange!6,
-    densely dashed,
-    rounded corners=2pt,
-    line width=0.7pt,
-    align=left,
-    inner xsep=2.5mm,
-    inner ysep=2.2mm,
-    font=\scriptsize
-  },
-  posthoc/.style={
-    draw=black!55,
-    fill=black!3,
-    rounded corners=2pt,
-    line width=0.7pt,
-    align=center,
-    inner xsep=2.5mm,
-    inner ysep=2.2mm,
-    font=\scriptsize
-  }
+  node distance=2mm,
+  flow/.style={-{Stealth[length=1.9mm,width=1.35mm]},draw=black!62,line width=0.7pt},
+  band label/.style={rounded corners=2pt,text=white,font=\bfseries\large,
+    minimum width=7mm,minimum height=25mm,align=center,inner sep=1mm},
+  flow box/.style={rounded corners=2pt,line width=0.7pt,align=left,
+    minimum height=25mm,inner xsep=1.8mm,inner ysep=1.5mm,
+    font=\fontsize{7.5}{8.6}\selectfont},
+  a step/.style={flow box,draw=blue!68!black,fill=blue!5},
+  b step/.style={flow box,draw=orange!82!black,fill=orange!6},
+  c step/.style={flow box,draw=green!52!black,fill=green!6},
+  external/.style={flow box,draw=violet!75!black,fill=violet!5,densely dashed},
+  heading/.style={font=\fontsize{8.3}{9.2}\selectfont\bfseries}
 ]
 
-\node[stage=blue,text width=0.26\textwidth] (stage-a) {
-  {\large\bfseries A}\quad\textbf{Audit and task construction}\\[1.4mm]
-  \textbf{Matched input:} causal GHI and fixed site identity.\\[1.2mm]
-  {\scriptsize
-  \begin{tabular}{@{}l@{\quad}l@{}}
-    Hourly & $336\,\mathrm{h}\rightarrow72\,\mathrm{h}$ \\
-    Daily & $365\,\mathrm{d}\rightarrow30\,\mathrm{d}$ \\
-    Monthly & $12\,\mathrm{mo}\rightarrow1\,\mathrm{mo}$ \\
-    Monthly$^{\ast}$ & $12\,\mathrm{mo}\rightarrow6\,\mathrm{mo}$
-  \end{tabular}}\\[-0.2mm]
-  {\scriptsize $^{\ast}$Exploratory task.}\\[1.2mm]
-  Chronological cuts, partition-fitted scales, and origin-aligned direct
-  windows are identical across models within each task.
+% A — source audit and task construction.
+\node[band label,fill=blue!68!black] (a-label) {A};
+\node[a step,text width=0.155\textwidth,right=2mm of a-label] (sources) {
+  {\bfseries Forecasting sources}\\[0.8mm]
+  \textbf{10} factory-associated NSRDB cells\\
+  Brazil $\cdot$ Mexico $\cdot$ United States\\[0.6mm]
+  Two independent 2019--2024 archives
 };
-
-\node[stage=green,text width=0.30\textwidth,right=3mm of stage-a] (stage-b) {
-  {\large\bfseries B}\quad\textbf{Matched models and refit gate}\\[1.4mm]
-  \textbf{Deterministic benchmarks:} persistence, annual seasonal
-  na\"ive, and calendar climatology.\\[1.0mm]
-  \textbf{Learned models:} XGBoost, LSTM, TimesNet, and DilatedRNN.\\[1.0mm]
-  \textbf{Leakage control:} for neural models, 2023 validation selects the
-  epoch count only; the checkpoint is discarded before same-seed
-  reinitialization and fixed-epoch pre-2024 refit. XGBoost uses a separate
-  fixed-budget refit instance.
+\node[a step,text width=0.175\textwidth,right=2mm of sources] (audit) {
+  {\bfseries Audit and aggregation}\\[0.8mm]
+  native 30-min $\rightarrow$ hourly means\\
+  separate 60-min $\rightarrow$ civil-day means\\
+  daily means $\rightarrow$ civil-month means\\[0.6mm]
+  regular, unique, finite, nonnegative series
 };
-
-\node[stage=blue,text width=0.26\textwidth,right=3mm of stage-b] (stage-c) {
-  {\large\bfseries C}\quad\textbf{Frozen test and evidence}\\[1.4mm]
-  \textbf{2024 test:} rolling origins, direct horizon forecasts, fixed
-  parameters and refit scales, and no test-time updates.\\[1.0mm]
-  \textbf{Common processing:} inverse scaling, non-negativity, and the hourly
-  nighttime rule.\\[1.0mm]
-  \textbf{Reporting:} site metrics $\rightarrow$ equal-site macro-averages
-  $\rightarrow$ paired site differences.
+\node[a step,text width=0.165\textwidth,right=2mm of audit] (contract) {
+  {\bfseries Matched information}\\[0.8mm]
+  causal GHI history + site ID only\\
+  site-wise scales fitted before each cut\\
+  complete direct targets contained in partition
 };
-
-\draw[flow arrow] (stage-a.east) -- (stage-b.west);
-\draw[flow arrow] (stage-b.east) -- (stage-c.west);
-
-\node[external,text width=0.35\textwidth,below=5mm of stage-b] (external-data) {
-  \textbf{External context, outside the forecasting input:}
-  K\"oppen--Geiger class and NASA POWER cloud/precipitation fields
-  never enter model fitting, validation scoring, or forecast generation.
+\node[a step,text width=0.235\textwidth,right=2mm of contract] (tasks) {
+  {\bfseries Four frozen tasks}\\[0.8mm]
+  \begin{tabular}{@{}ll@{}}
+    Hourly & $336\,\mathrm{h}\rightarrow72\,\mathrm{h}$\\
+    Daily & $365\,\mathrm{d}\rightarrow30\,\mathrm{d}$\\
+    Monthly primary & $12\,\mathrm{mo}\rightarrow1\,\mathrm{mo}$\\
+    Monthly exploratory & $12\,\mathrm{mo}\rightarrow6\,\mathrm{mo}$
+  \end{tabular}
 };
+\draw[flow] (sources.east) -- (audit.west);
+\draw[flow] (audit.east) -- (contract.west);
+\draw[flow] (contract.east) -- (tasks.west);
 
-\node[posthoc,text width=0.23\textwidth,below=5mm of stage-c] (interpretation) {
-  \textbf{Post-hoc contextual interpretation only}\\
-  joined after forecasts and errors are fixed
+% B — matched development and explicit leakage barrier.
+\node[band label,fill=orange!82!black,below=3mm of a-label] (b-label) {B};
+\node[b step,text width=0.175\textwidth,right=2mm of b-label] (models) {
+  {\bfseries Matched models}\\[0.8mm]
+  \textbf{Deterministic:} persistence, annual seasonal na\"ive, climatology\\[0.5mm]
+  \textbf{Learned:} XGBoost, LSTM, TimesNet, DilatedRNN
 };
+\node[b step,text width=0.175\textwidth,right=2mm of models] (selection) {
+  {\bfseries Select on 2023}\\[0.8mm]
+  pre-2023 adjustment fit\\
+  validation chooses neural epoch count \textbf{only}\\
+  checkpoint is discarded
+};
+\node[b step,text width=0.205\textwidth,right=2mm of selection] (refit) {
+  {\bfseries Fresh pre-test refit}\\[0.8mm]
+  same-seed reinitialization\\
+  fixed selected epochs on pre-2024 windows\\
+  independent fixed-budget XGBoost fit
+};
+\node[b step,text width=0.18\textwidth,right=2mm of refit] (lock) {
+  {\bfseries Leakage barrier}\\[0.8mm]
+  lock refitted model + scaler\\
+  daily/monthly: five seeds\\
+  hourly extension: registered seed 42
+};
+\draw[flow] (models.east) -- (selection.west);
+\draw[flow] (selection.east) -- node[above,font=\scriptsize\bfseries,text=orange!82!black]
+  {discard + reset} (refit.west);
+\draw[flow] (refit.east) -- (lock.west);
 
-\draw[flow arrow] (stage-c.south) -- (interpretation.north);
-\draw[-{Stealth[length=2.0mm,width=1.5mm]},densely dashed,
-      draw=orange!78!black,line width=0.75pt]
-  (external-data.east) -- (interpretation.west);
+% C — frozen test, common processing, and evidence hierarchy.
+\node[band label,fill=green!52!black,below=3mm of b-label] (c-label) {C};
+\node[c step,text width=0.17\textwidth,right=2mm of c-label] (test) {
+  {\bfseries Frozen 2024 test}\\[0.8mm]
+  rolling origins and advancing causal context\\
+  complete direct horizons\\
+  no weight or scale updates
+};
+\node[c step,text width=0.17\textwidth,right=2mm of test] (physics) {
+  {\bfseries Common processing}\\[0.8mm]
+  inverse scale $\rightarrow$ nonnegative floor\\
+  hourly nighttime-zero rule\\
+  identical treatment within each task
+};
+\node[c step,text width=0.225\textwidth,right=2mm of physics] (evidence) {
+  {\bfseries Evidence hierarchy}\\[0.8mm]
+  site MAE/RMSE/nRMSE/$R^2$\\
+  cumulative prefix + exact lead\\
+  equal-site macro-average\\
+  paired $\Delta=$ TimesNet $-$ DilatedRNN
+};
+\node[external,text width=0.165\textwidth,right=2mm of evidence] (context) {
+  {\bfseries Post-hoc only}\\[0.8mm]
+  K\"oppen--Geiger + NASA POWER\\
+  joined after forecasts and errors are fixed\\
+  never model inputs
+};
+\draw[flow] (test.east) -- (physics.west);
+\draw[flow] (physics.east) -- (evidence.west);
+\draw[-{Stealth[length=1.9mm,width=1.35mm]},draw=violet!75!black,
+  densely dashed,line width=0.7pt] (context.west) -- (evidence.east);
+
+\draw[flow] (a-label.south) -- (b-label.north);
+\draw[flow] (b-label.south) -- (c-label.north);
 
 \end{tikzpicture}
-\caption{Unified multi-resolution pipeline. The four frozen task contracts are
-evaluated on matched origins across deterministic benchmarks and learned
-models. External climate and weather products are excluded from model inputs
-and enter only after forecasts and errors are fixed.
-Algorithms~\ref{alg:block_a}--\ref{alg:block_c} provide the corresponding
-pseudocode.}
+\caption{End-to-end matched forecasting design. (A) Independent NSRDB archives
+are audited and converted into four direct-output tasks using causal GHI and
+site identity only. (B) Matched models follow leakage-controlled selection and
+fresh pre-test refitting. (C) Frozen 2024 forecasts receive common physical
+post-processing before location-first aggregation and paired comparison;
+K\"oppen--Geiger and NASA POWER fields enter only after errors are fixed.}
 \label{fig:pipeline}
 \end{figure*}

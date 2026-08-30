@@ -23,9 +23,10 @@ registra o estado final das entregas e as limitações que permanecem explícita
 
 - `main.tex`: versão Elsevier usada como manuscrito principal;
 - `main_ieee.tex`: visualização alternativa que reutiliza as mesmas seções;
+- `supplementary_material.tex`: especificação de reprodutibilidade separada do artigo principal;
 - `references.bib`: base bibliográfica compartilhada;
 - `sections/`, `tables/`, `figures/` e `appendices/`: conteúdo modular do artigo;
-- `../../resultados/avaliacao_multirresolucao/`: artefatos completos das quatro
+- `../../resultados/avaliacao_multirresolucao_corrigida_v2/`: artefatos completos das quatro
   tarefas;
 - `../../resultados/artigo_revista_unificado/`: contexto geográfico,
   meteorológico e consolidações usadas no texto.
@@ -35,9 +36,6 @@ registra o estado final das entregas e as limitações que permanecem explícita
 O manuscrito inclui PNGs com assinatura binária válida e um diagrama TikZ.
 Arquivos SVG podem ser mantidos como fontes vetoriais editáveis, mas devem ser
 convertidos para um formato compatível antes de serem incluídos pelo LaTeX.
-O sincronizador publica um PDF somente quando o arquivo começa com `%PDF-`.
-PDFs encapsulados pelo NASCA DRM são preservados localmente e omitidos
-explicitamente do espelho enviado ao Overleaf.
 
 ## Compilação
 
@@ -46,20 +44,19 @@ Em uma instalação TeX com `latexmk`, execute a partir deste diretório:
 ```text
 latexmk -pdf main.tex
 latexmk -pdf main_ieee.tex
+latexmk -pdf supplementary_material.tex
 ```
 
-O PDF versionado foi gerado antes da última revisão textual. Neste ambiente
-local não há uma distribuição TeX instalada; o Overleaf deve ser usado para
-regenerar os PDFs finais.
+PDFs compilados não são versionados, pois podem ficar divergentes das fontes.
+Use uma instalação local de `latexmk` ou o Overleaf para gerar a versão final e
+publique o arquivo aprovado como artefato de release ou submissão.
 
 ## Atualização automática
 
-Esta pasta é a fonte oficial do projeto Overleaf. Alterações mescladas na
-branch `main` são publicadas pela GitHub Action; arquivos removidos daqui
-também são removidos do projeto remoto na sincronização seguinte.
+Esta pasta é a fonte oficial do projeto Overleaf. A GitHub Action publica as
+alterações da branch `main` e da branch de finalização explicitamente autorizada
+no workflow; arquivos removidos daqui também são removidos do projeto remoto.
 
-O monitor local aguarda alguns segundos para agrupar salvamentos consecutivos
-antes de enviar uma nova versão ao GitHub.
-
-O GitHub é a fonte oficial. Branches de trabalho não publicam no Overleaf até
-que suas alterações sejam revisadas e incorporadas à `main`.
+O monitor local agrupa salvamentos consecutivos, cria commits somente desta
+pasta na branch de trabalho e os envia ao GitHub. O GitHub permanece como fonte
+oficial e aciona a sincronização com o Overleaf.

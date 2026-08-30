@@ -1,0 +1,75 @@
+\section{Detailed Forecasting Algorithms}
+
+The three blocks below are the executable counterpart of the compact workflow
+in the main article. They are separated from the article only to satisfy its
+page budget; no procedural step has been removed.
+
+\renewcommand{\thealgorithm}{S\arabic{algorithm}}
+
+\begin{algorithm}[!t]
+\caption{Leakage-controlled data preparation}
+\label{alg:supp-block-a}
+\begin{algorithmic}[1]
+\Require Site series $\{y_{\ell,t}\}$; task $(r,c,h,\mathcal{H})$; fixed cuts
+\Ensure Aligned fit, validation, refit, and test windows
+\For{each site $\ell$}
+  \State parse, sort, and verify a complete nonnegative GHI series
+  \If{$r$ is monthly}
+    \State aggregate daily GHI by civil-month arithmetic mean
+  \EndIf
+  \State assign the fixed identifier $\ell$
+  \State fit $s_{\ell}^{\mathrm{sel}}$ using observations before 2023
+  \State fit $s_{\ell}^{\mathrm{refit}}$ using observations before 2024
+  \For{each declared partition $P$}
+    \State create $(c,h)$ direct windows whose complete targets lie in $P$
+    \State assert the expected origin count and chronological boundaries
+  \EndFor
+\EndFor
+\State concatenate sites and sort each partition by origin and site identifier
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!t]
+\caption{Validation, reinitialization, and direct forecasting}
+\label{alg:supp-block-b}
+\begin{algorithmic}[1]
+\Require Block-A partitions; models $\mathcal{M}$; frozen seeds and settings
+\Ensure Validation and retrospective-test forecasts on common origins
+\State compute causal deterministic baselines at every origin
+\For{each learned model $m\in\mathcal{M}$ and declared seed $s$}
+  \If{$m$ is a neural model}
+    \State initialize $m$ with seed $s$ and fit on the adjustment partition
+    \State select the epoch count by 2023 normalized MSE and early stopping
+    \State retain the corresponding 2023 forecast
+    \State reinitialize $m$ with seed $s$
+    \State refit on the pre-2024 partition for the selected fixed epoch count
+  \Else
+    \State fit fixed-configuration XGBoost on adjustment and pre-2024 windows
+  \EndIf
+  \State generate the complete direct horizon at every 2024 origin
+\EndFor
+\State retain seed-level forecasts and the daily/monthly five-seed mean
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!t]
+\caption{Post-processing, metrics, and contextual analysis}
+\label{alg:supp-block-c}
+\begin{algorithmic}[1]
+\Require Raw forecasts, targets, site metadata, and post-hoc context
+\Ensure Site-level, macro, horizon-wise, and contextual evidence
+\For{each model forecast}
+  \State invert the scale fitted for its evaluation cut
+  \State apply $\widehat y\leftarrow\max(\widehat y,0)$
+  \If{the task is hourly}
+    \State set $\widehat y=0$ wherever solar elevation is nonpositive
+  \EndIf
+\EndFor
+\For{each site and declared horizon}
+  \State compute metrics for the cumulative prefix and the exact lead
+\EndFor
+\State average site metrics with equal site weight
+\State form TimesNet--DilatedRNN differences paired by site
+\State attach climate and adverse-day labels only after errors are fixed
+\end{algorithmic}
+\end{algorithm}
