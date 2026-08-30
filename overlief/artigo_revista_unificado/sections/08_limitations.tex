@@ -1,7 +1,7 @@
-\section{Threats to Validity and Limitations}
+\subsection{Threats to Validity and Limitations}
 \label{sec:limitations}
 
-\subsection{Construct and data validity}
+\subsubsection{Construct and data validity}
 
 NSRDB GHI is a satellite-informed physical-model estimate
 \cite{sengupta2018}, not an on-site pyranometer record. Factory coordinates
@@ -20,7 +20,7 @@ location-specific behaviour and does not demonstrate transfer to an unseen
 factory. Fixed local offsets produce regular hourly grids but do not reproduce
 daylight-saving clock changes.
 
-\subsection{Temporal and statistical validity}
+\subsubsection{Temporal and statistical validity}
 
 All test evidence is retrospective and restricted to 2024. It does not measure
 prospective robustness under later satellite-product revisions, climate
@@ -35,7 +35,7 @@ weights, but it does not make the origins independent. The paired summaries
 accordingly use ten locations as descriptive units and do not attach an
 i.i.d. significance test to thousands of overlapping target points.
 
-\subsection{Model-comparison validity}
+\subsubsection{Model-comparison validity}
 
 TimesNet and DilatedRNN share inputs, origins, seeds, optimization limits, and
 post-processing in the daily and monthly tasks, but their parameterizations and
@@ -46,13 +46,27 @@ read-only comparator forecasts, whereas daily and monthly estimates use five
 seeds. Cross-resolution claims therefore concern protocol behaviour and are
 not interpreted as equal-precision estimates of random-seed variability.
 
+The neural parameter budgets also differ by task, as reported in
+Table~\ref{tab:model_capacity}. Equal optimization rules do not imply equal
+representational capacity, and the comparison cannot isolate whether a result
+comes from recurrence, periodic convolution, parameter count, or their
+interaction. Training and inference runtimes were not instrumented consistently
+in the completed runs, so no retrospective hardware-efficiency ranking is
+claimed.
+
 The zero floor imposes a defensible physical bound on all resolutions. The
 additional hourly nighttime mask uses deterministic solar geometry, but no
 common upper physical envelope is imposed. Consequently, implausibly high
 daytime extrapolations remain visible in the errors rather than being hidden by
 post-processing.
 
-\subsection{Contextual-data validity}
+Hourly metrics retain all target hours after the common nighttime mask. Exact
+nighttime zeros are part of the operational 72-hour trajectory, but they also
+make the all-hour error smaller than a daylight-only error would be. The
+reported hourly values must therefore be interpreted as full-trajectory
+metrics and not as estimates restricted to irradiance-producing hours.
+
+\subsubsection{Contextual-data validity}
 
 The K\"oppen--Geiger labels are categorical cells from the present nominal
 1-km map \cite{beck2018}; they do not resolve microclimates within a cell or

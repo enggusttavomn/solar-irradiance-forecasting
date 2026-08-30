@@ -1,0 +1,21 @@
+\begin{table*}[!t]
+\centering
+\caption{Trainable scalar parameters of the neural models under each direct
+forecasting task. Counts include biases and the ten-site embedding; fixed
+buffers are excluded.}
+\label{tab:model_capacity}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Task} & \textbf{Context--output} & \textbf{LSTM} &
+\textbf{TimesNet} & \textbf{DilatedRNN} \\
+\midrule
+Hourly & 336--72 & 7,512 & 27,009 & 3,096 \\
+Daily & 365--30 & 5,790 & 13,725 & 2,382 \\
+Monthly primary & 12--1 & 4,601 & 2,758 & 1,889 \\
+Monthly exploratory & 12--6 & 4,806 & 2,823 & 1,974 \\
+\bottomrule
+\end{tabular}
+\end{table*}

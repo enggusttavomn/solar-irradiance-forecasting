@@ -1,7 +1,7 @@
-\section{Data and Feature Engineering}
+\subsection{Data and Feature Engineering}
 \label{sec:data}
 
-\subsection{Forecasting data and spatial sampling}
+\subsubsection{Forecasting data and spatial sampling}
 
 The forecasting target is global horizontal irradiance (GHI), expressed as a
 mean irradiance in W/m$^2$ at each temporal resolution. The underlying product
@@ -66,7 +66,7 @@ selection, or forecasting. \\
 \end{tabular}
 \end{table}
 
-\subsection{Quality control and leakage control}
+\subsubsection{Quality control and leakage control}
 
 Each stored source is audited according to its schema before modelling.
 Timestamp and GHI fields are parsed, the records are sorted chronologically,
@@ -98,22 +98,22 @@ strictly before 1 January 2024. The same parameters transform the corresponding
 inputs and targets and invert the forecasts. Values outside the training range
 are not clipped, so genuine extrapolation remains observable.
 
-\subsection{Geographical and climatic context}
+\subsubsection{Geographical and climatic context}
 
 Table~\ref{tab:locations} reports the canonical factory coordinates and the
 present K\"oppen--Geiger class sampled at those coordinates. Classes and their
 confidence values come from the aligned 0.008333-degree (nominal 1-km) products
 of Beck et al. \cite{beck2018}. Sampling uses the raster cell containing each
 WGS84 point, without interpolation. The 0.5-degree product is used only as the
-background of the world map and never to assign a site's class.
+background of the Americas map and never to assign a site's class.
 
 \input{tables/locations}
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=\textwidth]{mapa_contexto_geografico.pdf}
+\includegraphics[width=\textwidth]{mapa_contexto_geografico.png}
 \caption{Geographical and climatic context of the ten factory-associated
-locations. The world panel uses the present 0.5-degree K\"oppen--Geiger raster
+locations. The Americas panel uses the present 0.5-degree K\"oppen--Geiger raster
 for visual context; site assignments and confidence values are sampled from
 the present nominal 1-km raster. The United States and Detroit insets separate
 spatially close labels. The map is descriptive and its climate fields are not
@@ -129,7 +129,7 @@ context artifact described in Appendix~\ref{app:hyperparameters}. They are
 descriptive attributes and do not alter the matched forecasting inputs in
 Eq.~\eqref{eq:matched_input}.
 
-\subsection{Independent post-hoc meteorological context}
+\subsubsection{Independent post-hoc meteorological context}
 
 Daily NASA POWER fields for 2024 provide an external context layer for error
 interpretation \cite{nasapowerdaily}. These are gridded estimates rather than

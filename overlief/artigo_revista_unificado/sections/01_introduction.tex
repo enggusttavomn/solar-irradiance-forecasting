@@ -68,15 +68,15 @@ not forecasts of factory load or photovoltaic power output.
 
 Cabral et al.\ \cite{cabral2026} investigated very-long-term GHI forecasting
 across 40 climatically diverse locations using a GHI-only GPT-Neo pipeline and
-a broad set of competitors. The present article extends that research line at
-the level of scope and experimental control, not by reusing its numerical
-results. It unifies two complementary source experiments: a compact TimesNet
-configured for direct hourly forecasting and a Dilated Recurrent Neural
-Network (DilatedRNN) configured for one-step monthly forecasting. Because the
-source experiments differ in resolution, context, horizon, forecast origins,
-competitors, and primary metrics, their reported errors constitute
-resolution-specific prior evidence rather than a valid head-to-head
-comparison.
+a broad set of competitors. The present article addresses a different
+question and does not reuse those numerical results. It consolidates and
+extends two protocol-specific investigations developed by the present authors:
+a compact TimesNet for direct hourly forecasting and a Dilated Recurrent
+Neural Network (DilatedRNN) for one-step monthly forecasting. Those preliminary
+protocols differed in resolution, context, horizon, origins, competitors, and
+primary metrics. Their reported errors are retained only as development
+lineage; the architecture comparison in this article is rebuilt on matched
+samples within every task.
 
 The research question is therefore: \emph{how should TimesNet and DilatedRNN
 be compared when the available information, temporal resolution, forecast
@@ -86,13 +86,15 @@ locations?} The article makes four contributions:
   \item it defines a common multi-resolution formulation that distinguishes
   hourly multi-step, genuinely daily, and one-step monthly forecasting;
   \item it specifies matched samples, chronological partitions, forecast
-  origins, post-processing, and baselines for the two architectures at every
-  shared task;
-  \item it reports location-level and unweighted macro-level evidence so that
-  average performance cannot conceal systematic local losses; and
-  \item it interprets geographic and climatic context descriptively, without
-  treating ten locations as evidence of a causal climate effect or inferring
-  rain from low GHI alone.
+  origins, direct outputs, post-processing, and transparent baselines for the
+  two architectures at every shared task;
+  \item it reports the complete benchmark before the focused architecture
+  comparison, retaining macro, location, horizon, and seed-level evidence so
+  that average performance cannot conceal local losses or strong simple
+  references; and
+  \item it selects favorable, unfavorable, geographic, and meteorological
+  cases by auditable rules, without treating ten locations as evidence of a
+  causal climate effect or inferring rain from low GHI alone.
 \end{enumerate}
 
 The remainder of the article is organized as follows.

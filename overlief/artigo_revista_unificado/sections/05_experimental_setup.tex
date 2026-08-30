@@ -1,4 +1,4 @@
-\section{Experimental Setup}
+\subsection{Experimental Setup}
 \label{sec:experiments}
 
 The executable study defines four frozen tasks rather than comparing errors
@@ -10,7 +10,7 @@ and are not pooled.
 
 \input{tables/study_design}
 
-\subsection{Common matched protocol}
+\subsubsection{Common matched protocol}
 
 The daily and monthly experiments contain three deterministic references
 (persistence, annual seasonal na\"ive, and calendar climatology) and four
@@ -39,7 +39,7 @@ monthly tasks advance one origin per civil month. Parameters remain fixed in
 the test partition while each context incorporates only observations that have
 become available before its first target.
 
-\subsection{Hourly protocol and DilatedRNN extension}
+\subsubsection{Hourly protocol and DilatedRNN extension}
 
 The official hourly task uses 336 past hours (14 days) and produces the next
 72 hours directly. The reported checkpoints are 24, 48, and 72 hours; they are
@@ -62,7 +62,7 @@ one-to-one merge, and the hashes of all official inputs are rechecked before
 the extension is marked complete. Thus the hourly extension does not silently
 retrain or overwrite an official comparator.
 
-\subsection{Daily protocol}
+\subsubsection{Daily protocol}
 
 The daily primary task uses 365 daily means to predict a 30-day vector. Metrics
 are retained at 1, 3, 7, 14, and 30 days. Adjustment origins extend from
@@ -73,7 +73,7 @@ are retained at 1, 3, 7, 14, and 30 days. Adjustment origins extend from
 1 January--2 December and contains 337 complete origins per site because 2024
 is a leap year.
 
-\subsection{Monthly primary and exploratory protocols}
+\subsubsection{Monthly primary and exploratory protocols}
 
 Civil-month means are calculated from the audited daily series. The primary
 monthly task uses 12 months to predict the next month. It has 36 adjustment
@@ -93,7 +93,7 @@ sets: lead 1 covers January--July, whereas lead 6 covers June--December. Its
 horizon profile therefore combines lead-time and seasonal effects and is not
 interpreted as an isolated degradation curve.
 
-\subsection{Frozen optimization settings}
+\subsubsection{Frozen optimization settings}
 
 Table~\ref{tab:hyperparameters} gives the compact configuration needed to
 interpret the main comparison. Appendix~\ref{app:hyperparameters} records the
@@ -101,3 +101,25 @@ full temporal boundaries, model settings, baseline definitions, artifact
 contract, and external-context integrity hashes.
 
 \input{tables/hyperparameters}
+
+\subsubsection{Model capacity and computational evidence}
+
+Following the capacity reporting used to interpret architecture comparisons,
+Table~\ref{tab:model_capacity} gives the exact number of trainable scalar
+parameters in each neural model. The counts are obtained from the frozen module
+dimensions, including biases and the ten-site embedding, rather than inferred
+from checkpoint file sizes. TimesNet has a task-dependent direct temporal
+projection, so its parameter count grows with both context and output length.
+Dilated recurrence changes the temporal connections without adding separate
+weights for each skipped position. XGBoost is instead constrained by 150 trees
+of maximum depth three and is not assigned an artificial neural-parameter
+equivalent.
+
+\input{tables/model_capacity}
+
+Training and inference times were not instrumented consistently in the
+completed runs. They are therefore not reconstructed from file timestamps,
+epoch counts, hardware assumptions, or checkpoint sizes. The comparison
+reports exact architectural capacity and the common one-thread execution
+policy, while treating measured runtime as unavailable evidence rather than a
+quantity to be estimated retrospectively.

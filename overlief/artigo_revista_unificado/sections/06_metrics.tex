@@ -1,4 +1,4 @@
-\section{Evaluation Metrics}
+\subsection{Evaluation Metrics}
 \label{sec:metrics}
 
 Let $y_i$ be a reference GHI value, $\widehat{y}_i$ its post-processed
@@ -7,7 +7,7 @@ same evaluation vector, and $n$ its number of target points. Each metric is
 computed first for one site, one model estimate, one partition, one declared
 horizon, and one horizon scope.
 
-\subsection{Mean absolute error}
+\subsubsection{Mean absolute error}
 
 \begin{equation}
  \mathrm{MAE}
@@ -20,7 +20,7 @@ makes the magnitude directly interpretable and less dominated by individual
 large deviations than a squared-error score \cite{hyndman2006}. Lower values
 are better.
 
-\subsection{Root mean squared error}
+\subsubsection{Root mean squared error}
 
 \begin{equation}
  \mathrm{RMSE}
@@ -33,7 +33,7 @@ weight. Reporting it alongside MAE reveals whether occasional large errors
 change the model ordering, a standard concern in deterministic solar-forecast
 verification \cite{yang2020verification}. Lower values are better.
 
-\subsection{Normalized root mean squared error}
+\subsubsection{Normalized root mean squared error}
 
 \begin{equation}
  \mathrm{nRMSE}
@@ -49,7 +49,7 @@ sites with different mean irradiance levels, but it inherits the instability
 of a small denominator \cite{voyant2022}. The value is therefore left undefined
 when $\bar{y}$ is numerically zero. Lower values are better.
 
-\subsection{Coefficient of determination}
+\subsubsection{Coefficient of determination}
 
 \begin{equation}
  R^2
@@ -65,7 +65,7 @@ than two targets or a constant reference vector and can be negative when the
 forecast is worse than that constant reference. Higher values are better;
 $R^2$ does not replace the scale-dependent errors.
 
-\subsection{Horizon scopes and spatial aggregation}
+\subsubsection{Horizon scopes and spatial aggregation}
 
 For a declared horizon $H$, the cumulative scope concatenates leads
 $1,\ldots,H$ over all valid origins, whereas the exact-lead scope retains only

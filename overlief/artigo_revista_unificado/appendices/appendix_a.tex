@@ -13,7 +13,7 @@ Table~\ref{tab:temporal_contract_complete} gives inclusive forecast-origin
 boundaries. The target cutoff is checked separately, so a multi-step window is
 retained only when every target lies on or before that date.
 
-\begin{table}[!t]
+\begin{table*}[!t]
 \centering
 \caption{Complete chronological partitions and expected origins per site.}
 \label{tab:temporal_contract_complete}
@@ -51,7 +51,7 @@ Monthly 12--6 & Adjustment & 2020-01-31--2022-07-31 & 2022-12-31 & 31 \\
  & Test & 2024-01-31--2024-07-31 & 2024-12-31 & 7 \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 The cutoff column records the calendar boundary enforced by the window
 constructor, not necessarily the last observed target timestamp. In particular,
@@ -104,7 +104,7 @@ Site representation & Learned embedding of width 8 in TimesNet, DilatedRNN,
 and LSTM; one-hot vector for XGBoost \\
 TimesNet & $d_{\mathrm{model}}=8$, $d_{\mathrm{ff}}=16$, one TimesBlock,
 top-$k=3$, two Inception kernels, dropout 0.1, direct linear temporal head;
-batch-shared FFT period selection and per-window standardization with
+sample-specific FFT period selection and per-window standardization with
 $\epsilon=10^{-5}$ \\
 DilatedRNN & Vanilla tanh-RNN cells with recurrent dilations $(1,2,4)$,
 16 units in each layer, dense width 16, dropout 0, direct output head \\
@@ -185,7 +185,7 @@ Beck present 1-km class raster & Site assignment; MD5
 \texttt{fe8f23532bfb5923\allowbreak{}1a072398f0d9a7cb} \\
 Beck present 1-km confidence raster & Assignment confidence; MD5
 \texttt{a87f331e406e4ef0\allowbreak{}2114e1350eb2dd01} \\
-Beck present 0.5-degree raster & World-map background only; MD5
+Beck present 0.5-degree raster & Americas-map background only; MD5
 \texttt{78d09475fa4b0dbb\allowbreak{}004b6178cba47b4a} \\
 Beck class legend & Codes, descriptions, and RGB colours; MD5
 \texttt{f0632ca1b3b475d3\allowbreak{}de5a143c4ee1928f} \\

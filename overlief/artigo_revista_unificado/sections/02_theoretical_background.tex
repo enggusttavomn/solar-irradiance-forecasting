@@ -90,51 +90,56 @@ TimesNet models one-dimensional sequences through a set of
 period-conditioned two-dimensional representations \cite{wu2023}. Let
 $\mathbf{X}\in\mathbb{R}^{B\times T\times C_x}$ be a batch processed by a
 TimesBlock, and let $F_{b,f,c}$ denote the temporal fast Fourier transform
-(FFT) of sample $b$ at frequency bin $f$ and channel $c$. In the implemented
-model, the spectrum used to select periods is averaged over both the batch and
-the channels,
+(FFT) of sample $b$ at frequency bin $f$ and channel $c$. For
+leakage-controlled inference, the implemented variant averages only over the
+channels of the same sample,
 \begin{equation}
-  \overline{A}_f
+  A_{b,f}
   =
-  \frac{1}{B C_x}
-  \sum_{b=1}^{B}\sum_{c=1}^{C_x}\left|F_{b,f,c}\right|.
+  \frac{1}{C_x}
+  \sum_{c=1}^{C_x}\left|F_{b,f,c}\right|.
   \label{eq:timesnet_frequency}
 \end{equation}
-The zero-frequency component is excluded, and the $k$ largest amplitudes
-select frequency indices $f_i$ and associated integer periods
+The zero-frequency component is excluded, and each sample independently uses
+its $k$ largest amplitudes to select frequency indices $f_{b,i}$ and integer
+periods
 \begin{equation}
-  \{f_1,\ldots,f_k\}
+  \{f_{b,1},\ldots,f_{b,k}\}
   =
   \operatorname*{arg\,top\text{-}k}_{1\leq f\leq\lfloor T/2\rfloor}
-  \overline{A}_f,
+  A_{b,f},
   \qquad
-  p_i=\left\lfloor\frac{T}{f_i}\right\rfloor .
+  p_{b,i}=\left\lfloor\frac{T}{f_{b,i}}\right\rfloor .
   \label{eq:timesnet_periods}
 \end{equation}
-The selected period set is consequently shared by the samples in a batch.
-The amplitude retained for aggregation remains sample-specific,
-$a_{b,i}=C_x^{-1}\sum_c |F_{b,f_i,c}|$.
+The retained aggregation amplitude is therefore
+$a_{b,i}=A_{b,f_{b,i}}$. This sample-specific selection ensures that changing
+other windows in a computational batch cannot change sample $b$'s periods.
 
-For each $p_i$, the sequence is zero-padded to
-$L_i=p_i\lceil T/p_i\rceil$ and reshaped so that one axis indexes position
-within a period and the other indexes successive periods. A two-dimensional
-Inception-style convolution then learns intraperiod and interperiod
-variations. If $\mathcal{G}_i$ is the processed tensor and
-$\mathcal{R}_i^{-1}$ restores chronological order, the period-specific
+For each $p_{b,i}$, the sequence is zero-padded to
+$L_{b,i}=p_{b,i}\lceil T/p_{b,i}\rceil$ and reshaped so that one axis indexes
+position within a period and the other indexes successive periods. A
+two-dimensional Inception-style convolution then learns intraperiod and
+interperiod variations. If $\mathcal{G}_{b,i}$ is the processed tensor and
+$\mathcal{R}_{b,i}^{-1}$ restores chronological order, the period-specific
 outputs are combined with sample-specific amplitude-derived weights
 \begin{equation}
+\begin{aligned}
   \alpha_{b,i}
-  =
+  &=
   \frac{\exp(a_{b,i})}
        {\sum_{j=1}^{k}\exp(a_{b,j})},
-  \qquad
+  \\
   \widetilde{\mathbf{X}}_b
-  =
+  &=
   \mathbf{X}_b
   +
   \sum_{i=1}^{k}
   \alpha_{b,i}
-  \left[\mathcal{R}_i^{-1}(\mathcal{G}_{b,i})\right]_{1:T}.
+  \left[
+    \mathcal{R}_{b,i}^{-1}(\mathcal{G}_{b,i})
+  \right]_{1:T}.
+\end{aligned}
   \label{eq:timesnet_aggregation}
 \end{equation}
 The residual connection preserves the original representation. Before value
@@ -145,10 +150,9 @@ causal window standardization is applied after the external site-wise min--max
 transformation described in Section~\ref{sec:data}. Stacked TimesBlocks and a
 task-specific projection produce the forecast. The two-dimensional tensors are
 temporal reorganizations, not geographic images; their axes express
-within-period position and recurrence across periods. Because period selection
-is batch-shared, batch composition and deterministic ordering form part of the
-implementation contract, whereas the aggregation weights remain specific to
-each sample.
+within-period position and recurrence across periods. Period selection and
+aggregation weights are both sample-specific; batch composition is therefore
+a computational detail rather than part of the forecast information set.
 TimesNet has also been combined with signal decomposition for week-ahead
 hourly solar forecasting \cite{zhao2024timesnet}, but decomposition is not an
 intrinsic component of the TimesNet architecture.

@@ -1,4 +1,4 @@
-\section{Methodology}
+\subsection{Methodology}
 \label{sec:methodology}
 
 The unified method is an origin-aligned, multi-resolution comparison rather
@@ -12,7 +12,7 @@ summarizes the three reproducible blocks; Algorithms~\ref{alg:block_a}--%
 
 \input{figures/pipeline}
 
-\subsection{Block A: data contract and temporal windows}
+\subsubsection{Block A: data contract and temporal windows}
 
 Block A establishes the information set before any model is fitted. It audits
 the regular series, applies the task resolution, assigns a stable site
@@ -51,7 +51,7 @@ and future calendar information are excluded. Holding the information set
 constant prevents a feature advantage from being attributed to an
 architecture.
 
-\subsection{Block B: matched model development}
+\subsubsection{Block B: matched model development}
 
 The deterministic references are persistence, annual seasonal na\"ive, and
 calendar climatology, with resolution-specific definitions. In the hourly
@@ -69,7 +69,9 @@ persistence and annual seasonal na\"ive forecasts.
 The learned comparison comprises XGBoost, a direct LSTM, TimesNet, and a direct
 DilatedRNN. These models share the scaled GHI sequence and site identifier;
 neural models encode the identifier with a learned embedding, whereas XGBoost
-uses a one-hot representation. A single global model is fitted across sites,
+uses a one-hot representation. TimesNet selects its Fourier periods separately
+for every input window; consequently, batch companions and later forecast
+origins cannot alter a sample's forward pass. A single global model is fitted across sites,
 which shares temporal structure while retaining site identity
 \cite{montero2021}. Every multi-step model produces the complete target vector
 in one forward pass, so no predicted GHI is recursively returned as input.
@@ -114,7 +116,7 @@ its timestamp, and no weights are updated during the test. The design is thus a
 retrospective walk-forward evaluation with fixed parameters, not a single
 forecast issued at the end of 2023 for every target in 2024.
 
-\subsection{Block C: physical consistency and evaluation}
+\subsubsection{Block C: physical consistency and evaluation}
 
 After inverse scaling, all forecasts receive the same non-negativity floor.
 Daily and monthly forecasts have no upper truncation. Hourly forecasts also use
