@@ -6,7 +6,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $raiz = Split-Path -Parent $PSScriptRoot
-$artigoRelativo = 'overlief/artigo_revista_unificado'
+$artigoRelativo = 'artigos/revista_unificado'
 
 function Invoke-GitRaiz {
     param([string[]]$Argumentos)
@@ -23,6 +23,10 @@ if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
 $branch = (& git -C $raiz branch --show-current).Trim()
 if ($LASTEXITCODE -ne 0 -or -not $branch) {
     throw 'O repositorio principal nao esta em uma branch.'
+}
+
+if ($branch -eq 'main' -and -not $Validar) {
+    throw 'O monitor nao cria commits automaticos na main. Trabalhe em uma branch e integre por pull request.'
 }
 
 if ($Validar) {

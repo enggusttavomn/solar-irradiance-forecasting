@@ -8,7 +8,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 $raiz = Split-Path -Parent $PSScriptRoot
-$origem = Join-Path $raiz "overlief\artigo_revista_unificado"
+$origem = Join-Path $raiz "artigos\revista_unificado"
 $pastaEspelhos = Join-Path ([IO.Path]::GetTempPath()) 'tcc-overleaf-sync'
 $espelho = Join-Path $pastaEspelhos $ProjectId
 $urlProjeto = "https://www.overleaf.com/project/$ProjectId"

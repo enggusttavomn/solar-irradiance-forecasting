@@ -1,0 +1,96 @@
+\documentclass[10pt,journal]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{multirow}
+\usepackage{xurl}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[hidelinks]{hyperref}
+
+\graphicspath{{figures/}}
+\emergencystretch=2em
+\title{Multi-Resolution Global Horizontal Irradiance Forecasting at Electric-Vehicle Manufacturing Locations: TimesNet and Dilated Recurrent Networks}
+\author{Gustavo de Melo Nascimento, Thales Wulfert Cabral, and Gustavo Fraidenraich%
+\thanks{The authors are with the School of Electrical and Computer Engineering,
+University of Campinas, Campinas, SP, Brazil. E-mails: g239679@dac.unicamp.br,
+t264377@dac.unicamp.br, and gfraiden@unicamp.br.}%
+\thanks{Corresponding author: Gustavo de Melo Nascimento.}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This study presents an origin-aligned multi-resolution evaluation of global
+horizontal irradiance (GHI) forecasting at ten locations associated with
+electric-vehicle factories. Hourly, daily, and monthly tasks share
+chronological splits, forecast origins, causal GHI inputs, physical
+post-processing, and location-first aggregation within each resolution.
+The complete benchmark includes three deterministic references, XGBoost,
+LSTM, TimesNet, and DilatedRNN. XGBoost achieved the lowest macro-MAE in the
+hourly and daily tasks (50.50~W/m$^2$ at 72 hours and 43.93~W/m$^2$ at
+30 days), whereas calendar climatology led the monthly tasks (12.57~W/m$^2$
+at one month and 13.03~W/m$^2$ over six months). In the focused architecture
+comparison, TimesNet and DilatedRNN respectively obtained 52.48 and
+52.96~W/m$^2$ at 72 hours, 44.08 and 43.85~W/m$^2$ at 30 days, 13.89
+and 13.01~W/m$^2$ at one month, and 14.46 and 14.37~W/m$^2$ at six
+months. TimesNet led at 24 and 72 hours and through 14 days in the daily
+comparison; DilatedRNN led marginally at 48 hours, at 30 days, and in the
+principal one-month task.
+Location-level wins sometimes reversed the macro-average ranking, so neither
+architecture was universally superior. Daily and monthly learned models use
+five-seed ensembles; the hourly extension uses the single registered seed 42.
+Claims remain descriptive because adjacent multi-step targets overlap, and
+meteorology is used only as independent post-hoc context.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Global horizontal irradiance, solar forecasting, TimesNet, DilatedRNN,
+multi-resolution forecasting.
+\end{IEEEkeywords}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/02_theoretical_background}
+
+\section{Unified Proposed Approach}
+\label{sec:proposed_approach}
+\input{sections/03_data_and_feature_engineering}
+\input{sections/04_methodology}
+\input{sections/05_experimental_setup}
+\input{sections/06_metrics}
+
+\input{sections/07_results_and_discussion}
+\input{sections/08_limitations}
+\input{sections/09_conclusion}
+
+\section*{Acknowledgments}
+The authors acknowledge financial support from FAPEMIG (grant OET-00243-26).
+
+\section*{Declaration of Competing Interest}
+The authors declare that they have no known competing financial interests or
+personal relationships that could have appeared to influence the work
+reported in this article.
+
+\section*{Data and Code Availability}
+The source code, experiment contracts, derived evaluation outputs, and
+integrity manifests used to construct the tables and figures are maintained at
+\url{https://github.com/enggusttavomn/TCC/tree/codex/finalizacao-artigo-unificado}.
+External NSRDB, K\"oppen--Geiger, and NASA POWER products remain subject to
+their respective providers' access and licensing conditions.
+
+\appendices
+\input{appendices/appendix_a}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

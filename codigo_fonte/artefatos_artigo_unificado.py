@@ -1771,6 +1771,13 @@ def _salvar_figura(figura: plt.Figure, base: Path) -> None:
             "Description": "Vector source generated for the unified article.",
         },
     )
+    caminho_svg = base.with_suffix(".svg")
+    conteudo_svg = caminho_svg.read_text(encoding="utf-8")
+    caminho_svg.write_text(
+        "\n".join(linha.rstrip() for linha in conteudo_svg.splitlines()) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     plt.close(figura)
 
 
@@ -2226,6 +2233,7 @@ def _grafico_casos(
         sharey=True,
     )
     valores_ghi: list[float] = []
+    resumos_casos: list[str] = []
     for indice_painel, (eixo, (_, caso)) in enumerate(
         zip(eixos[0], casos.iterrows(), strict=True)
     ):
@@ -2314,25 +2322,7 @@ def _grafico_casos(
             f"DRNN $-$ TN: {ganho:+.2f} W m$^{{-2}}$\n"
             f"{contexto}"
         )
-        anotacao = eixo.text(
-            0.015,
-            -0.36,
-            resumo,
-            transform=eixo.transAxes,
-            ha="left",
-            va="top",
-            fontsize=6.7,
-            linespacing=1.22,
-            clip_on=False,
-            bbox={
-                "boxstyle": "round,pad=0.28",
-                "facecolor": "#F8F9FA",
-                "edgecolor": "#B8BEC6",
-                "linewidth": 0.6,
-            },
-            zorder=8,
-        )
-        anotacao.set_in_layout(False)
+        resumos_casos.append(resumo)
         eixo.set_ylabel("GHI (W m$^{-2}$)", fontsize=8.2)
         eixo.set_xlabel("Local target time", fontsize=8.2)
         localizador = mdates.AutoDateLocator(minticks=4, maxticks=7)
@@ -2363,6 +2353,22 @@ def _grafico_casos(
         handlelength=2.2,
     )
     figura.tight_layout(rect=(0.0, 0.29, 1.0, 0.89), w_pad=1.0)
+    for posicao_x, resumo in zip((0.075, 0.56), resumos_casos, strict=True):
+        figura.text(
+            posicao_x,
+            0.045,
+            resumo,
+            ha="left",
+            va="bottom",
+            fontsize=6.7,
+            linespacing=1.22,
+            bbox={
+                "boxstyle": "round,pad=0.28",
+                "facecolor": "#F8F9FA",
+                "edgecolor": "#B8BEC6",
+                "linewidth": 0.6,
+            },
+        )
     _salvar_figura(figura, pasta / "previsoes_casos_contrastantes")
 
 

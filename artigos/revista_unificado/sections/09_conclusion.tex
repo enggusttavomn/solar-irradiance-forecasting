@@ -1,0 +1,43 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+This study completed a common, leakage-controlled evaluation of TimesNet and
+DilatedRNN across hourly, daily, and monthly GHI forecasting tasks at ten
+electric-vehicle manufacturing locations. The matched design fixes inputs,
+chronological partitions, forecast origins, post-processing, metrics, and
+location weights within each task, while retaining the different meanings of
+hourly, daily, and monthly targets.
+
+No architecture was universally superior. TimesNet had the lower macro-MAE at
+24 and 72 hours and through 14 days in the daily task, whereas DilatedRNN led
+marginally at 48 hours. DilatedRNN also led at 30 days, in the principal
+one-month task, and at the three- and six-month prefixes of the exploratory
+task. Terminal location wins favored DilatedRNN at
+six of ten hourly, daily, and one-month sites and seven of ten six-month sites,
+even when a few larger TimesNet gains reversed a macro average. XGBoost led the
+full benchmark set in the daily and hourly tasks, whereas calendar climatology
+led the monthly tasks; consequently, the neural comparison does not imply
+benchmark-wide dominance.
+
+Five-seed daily and monthly results support the observed ranking patterns, but
+the hourly extension has only the official seed 42 and provides no seed-level
+uncertainty estimate. Overlapping multi-step targets further restrict the
+paired evidence to descriptive site-level comparisons. The globally strongest
+TimesNet gain and deficit both occurred in 24-hour forecasts and had opposite
+weather contexts, reinforcing that post-hoc meteorology cannot be treated as a
+causal explanation.
+
+Several terminal architecture differences were small relative to the observed
+seed variability, and the neural models did not share equal parameter budgets.
+The evidence therefore supports resolution- and horizon-specific behaviour,
+not an intrinsic ranking of recurrence against periodic convolution. This
+interpretation is consistent with the stronger XGBoost and climatology results
+in their respective tasks.
+
+Future work should evaluate prospective years and unseen sites, repeat the
+hourly extension over multiple seeds, report daylight-only hourly metrics,
+instrument training and inference cost, and test whether causal exogenous
+inputs such as numerical weather prediction and cloud-motion forecasts improve
+on the strong tabular and climatological references. The released contracts,
+forecast-origin outputs, seed-level metrics, context manifests, and SHA-256
+artifact manifest provide the basis for those extensions.

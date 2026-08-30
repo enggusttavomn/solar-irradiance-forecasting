@@ -6,7 +6,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $raiz = Split-Path -Parent $PSScriptRoot
-$artigo = Join-Path $raiz 'overlief\artigo_revista_unificado'
+$artigo = Join-Path $raiz 'artigos\revista_unificado'
 $sincronizadorGithub = Join-Path $PSScriptRoot 'sincronizar_github_artigo.ps1'
 $pastaLog = Join-Path $env:LOCALAPPDATA 'TCC\OverleafSync'
 $arquivoLog = Join-Path $pastaLog 'monitor.log'

@@ -1,0 +1,22 @@
+\begin{table*}[htbp]
+\centering
+\caption{Terminal cumulative metrics for TimesNet and DilatedRNN. MAE and RMSE are in W/m$^2$; nRMSE is reported as a percentage.}
+\label{tab:metricas-terminais}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Task & Horizon & Model & MAE (W/m$^2$) & RMSE (W/m$^2$) & nRMSE (\%) & R-squared \\
+\midrule
+Hourly 336--72 & 72 & TimesNet & 52.48 & 101.17 & 50.41 & 0.87 \\
+Hourly 336--72 & 72 & DilatedRNN & 52.96 & 104.93 & 52.31 & 0.86 \\
+Daily 365--30 & 30 & TimesNet & 44.08 & 55.16 & 26.55 & 0.53 \\
+Daily 365--30 & 30 & DilatedRNN & 43.85 & 54.79 & 26.38 & 0.54 \\
+Monthly 12--1 & 1 & TimesNet & 13.89 & 17.49 & 8.51 & 0.88 \\
+Monthly 12--1 & 1 & DilatedRNN & 13.01 & 16.02 & 7.86 & 0.91 \\
+Monthly 12--6 & 6 & TimesNet & 14.46 & 18.24 & 7.77 & 0.85 \\
+Monthly 12--6 & 6 & DilatedRNN & 14.37 & 17.47 & 7.47 & 0.85 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

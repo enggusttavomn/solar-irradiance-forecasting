@@ -1,0 +1,106 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Pathways consistent with deep emissions reductions combine a rapid expansion
+of low-emission electricity with the electrification of end uses
+\cite{ipcc2022energy,irena2024weto}. Declining renewable-energy costs can
+reinforce this coupling \cite{luderer2022}, while scenario-based evidence
+indicates that the diffusion of solar photovoltaics may acquire substantial
+self-sustaining momentum before mid-century \cite{nijsse2023}. These
+system-level trends do not remove the operational difficulty created by the
+weather-dependent and diurnal nature of the solar resource. They instead make
+the temporal value of solar information increasingly important for planning,
+scheduling, and energy management.
+
+The industrial sector is a particularly demanding setting for this transition.
+Its heterogeneous processes require combinations of efficiency, material
+changes, low-carbon fuels, electrification, and low-emission electricity
+\cite{ipcc2022industry,rissman2020}. Direct electrification can reduce
+emissions from technically suitable industrial heat uses, but its potential
+depends on process temperature, infrastructure, and the carbon intensity of
+the electricity supply \cite{madeddu2020}. On-site and procured renewable
+electricity are therefore relevant options for manufacturing, rather than a
+universal substitute for all industrial energy inputs
+\cite{irena2014manufacturing,padmanathan2018}. Adoption also faces
+site-specific financial, regulatory, technical, and organizational barriers
+\cite{dhingra2023}.
+
+Regulatory drivers must likewise be stated with their jurisdiction and
+conditions. For example, Directive (EU) 2024/1275 establishes a phased
+framework for solar-energy installations on specified building categories
+when technically, economically, and functionally suitable
+\cite{eu2024epbd}. It does not apply to the Brazilian, Mexican, or United
+States locations examined here. Public corporate disclosures provide
+illustrative evidence of manufacturing-related renewable-energy adoption:
+Nestl\'e reports that its KitKat production lines in Ca\c{c}apava use
+predominantly solar electricity \cite{nestle2024biometano}; Mercedes-Benz
+describes rooftop photovoltaics and storage at Factory~56
+\cite{mercedesfactory56}; and Tesla and Ford report solar installations at
+selected manufacturing sites \cite{tesla2021impact,ford2023valencia}. These
+examples motivate the industrial context, but they are not evidence that
+photovoltaic systems are installed at any of the ten factory-associated
+coordinates used in this study.
+
+Solar forecasting spans distinct physical and operational regimes. Intra-hour
+forecasts can track cloud motion, hourly and day-ahead forecasts support
+short-term scheduling, and forecasts aggregated over days or months address
+progressively longer planning scales \cite{diagne2013,inman2013}. The terms
+short-term and long-term are consequently incomplete unless temporal
+resolution and forecast horizon are both reported
+\cite{antonanzas2016,yang2018}. A model that is effective for a direct
+72-hour sequence of hourly global horizontal irradiance (GHI) is not thereby
+established as effective for daily means or a one-step monthly target.
+Conversely, low error on an
+aggregated monthly series cannot be compared numerically with error on an
+hourly series without accounting for the different targets, sample sizes, and
+variability.
+
+This article studies GHI at ten geographic points associated with
+electric-vehicle manufacturing facilities. The points span different
+latitudes and atmospheric regimes and are used as a geographically meaningful
+test bed. The irradiance records are satellite-derived, model-based estimates
+from the National Solar Radiation Database (NSRDB) \cite{sengupta2018}; they
+are not measurements from factory sensors.
+No factory production, electricity consumption, photovoltaic capacity, or
+other proprietary operational data enter the analysis. Accordingly, the
+forecasts characterize the solar resource at the selected grid cells and are
+not forecasts of factory load or photovoltaic power output.
+
+Cabral et al.\ \cite{cabral2026} investigated very-long-term GHI forecasting
+across 40 climatically diverse locations using a GHI-only GPT-Neo pipeline and
+a broad set of competitors. The present article addresses a different
+question and does not reuse those numerical results. It consolidates and
+extends two protocol-specific investigations developed by the present authors:
+a compact TimesNet for direct hourly forecasting and a Dilated Recurrent
+Neural Network (DilatedRNN) for one-step monthly forecasting. Those preliminary
+protocols differed in resolution, context, horizon, origins, competitors, and
+primary metrics. Their reported errors are retained only as development
+lineage; the architecture comparison in this article is rebuilt on matched
+samples within every task.
+
+The research question is therefore: \emph{how should TimesNet and DilatedRNN
+be compared when the available information, temporal resolution, forecast
+horizon, chronological origins, and evaluation rules are controlled across
+locations?} The article makes four contributions:
+\begin{enumerate}
+  \item it defines a common multi-resolution formulation that distinguishes
+  hourly multi-step, genuinely daily, and one-step monthly forecasting;
+  \item it specifies matched samples, chronological partitions, forecast
+  origins, direct outputs, post-processing, and transparent baselines for the
+  two architectures at every shared task;
+  \item it reports the complete benchmark before the focused architecture
+  comparison, retaining macro, location, horizon, and seed-level evidence so
+  that average performance cannot conceal local losses or strong simple
+  references; and
+  \item it selects favorable, unfavorable, geographic, and meteorological
+  cases by auditable rules, without treating ten locations as evidence of a
+  causal climate effect or inferring rain from low GHI alone.
+\end{enumerate}
+
+The remainder of the article is organized as follows.
+Section~\ref{sec:related_work} critically reviews the forecasting literature
+and identifies the comparison gap. Section~\ref{sec:background} defines GHI,
+temporal aggregation, forecasting horizons, TimesNet, and DilatedRNN.
+Subsequent sections document the data and feature engineering, the common
+methodology, the experimental design, and the evaluation metrics before
+presenting the results, limitations, and conclusions.
