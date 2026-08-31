@@ -43,8 +43,8 @@
   \begin{tabular}{@{}ll@{}}
     Hourly & $336\,\mathrm{h}\rightarrow72\,\mathrm{h}$\\
     Daily & $365\,\mathrm{d}\rightarrow30\,\mathrm{d}$\\
-    Monthly primary & $12\,\mathrm{mo}\rightarrow1\,\mathrm{mo}$\\
-    Monthly exploratory & $12\,\mathrm{mo}\rightarrow6\,\mathrm{mo}$
+    Monthly (primary) & $12\,\mathrm{mo}\rightarrow1\,\mathrm{mo}$\\
+    Monthly (explor.) & $12\,\mathrm{mo}\rightarrow6\,\mathrm{mo}$
   \end{tabular}
 };
 \draw[flow] (sources.east) -- (audit.west);
@@ -77,8 +77,7 @@
   hourly extension: registered seed 42
 };
 \draw[flow] (models.east) -- (selection.west);
-\draw[flow] (selection.east) -- node[above,font=\scriptsize\bfseries,text=orange!82!black]
-  {discard + reset} (refit.west);
+\draw[flow] (selection.east) -- (refit.west);
 \draw[flow] (refit.east) -- (lock.west);
 
 % C — frozen test, common processing, and evidence hierarchy.
