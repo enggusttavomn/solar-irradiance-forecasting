@@ -60,3 +60,26 @@ no workflow; arquivos removidos daqui também são removidos do projeto remoto.
 O monitor local agrupa salvamentos consecutivos, cria commits somente desta
 pasta na branch de trabalho e os envia ao GitHub. O GitHub permanece como fonte
 oficial e aciona a sincronização com o Overleaf.
+## Revis?o dos resultados e pseudoc?digos (06/09/2026)
+
+A compara??o principal identifica o vencedor TimesNet/DilatedRNN por tarefa
+e horizonte. O benchmark completo permanece no suplemento, incluindo os
+modelos que superam as duas arquiteturas. Os n?meros s?o derivados de
+`../../resultados/avaliacao_multirresolucao_corrigida_v2/`; a consolida??o
+anterior auditada est? em
+`../../resultados/artigo_revista_unificado/artefatos_resultados_corrigidos_FINAL/`.
+
+- `sections/04_algorithms.tex`: tr?s pseudoc?digos conectados ao diagrama.
+- `tables/vencedores_por_horizonte.tex`: compara??o principal, com diferen?as
+  calculadas antes do arredondamento.
+- `figures/perfis_sete_dias.png`: tr?s perfis de sete dias, compostos por
+  previs?es de 24 horas emitidas diariamente.
+- `../../resultados/artigo_revista_unificado/auditoria_topico5_20260906/RELATORIO.md`:
+  auditoria independente das previs?es e m?tricas.
+- `../../resultados/artigo_revista_unificado/revisao_20260906/`:
+  CSVs e manifesto dos novos elementos de apresenta??o.
+
+Para reproduzir as tabelas e figuras focais a partir dos dados locais, execute
+na raiz `python scripts/gerar_comparacao_focal_artigo.py`. Esse comando usa
+previs?es salvas e n?o treina novamente os modelos. Os tr?s documentos foram
+compilados com Tectonic nesta revis?o.

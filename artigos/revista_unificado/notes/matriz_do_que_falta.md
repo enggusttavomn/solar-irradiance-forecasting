@@ -26,7 +26,7 @@
 | TimesNet e DilatedRNN multimensais | Concluído, exploratório | Saída direta de seis meses; sete origens de teste por local |
 
 Os artefatos completos estão em
-`../../../resultados/avaliacao_multirresolucao/`; as consolidações e os dados
+`../../../resultados/avaliacao_multirresolucao_corrigida_v2/`; as consolidações e os dados
 de contexto estão em `../../../resultados/artigo_revista_unificado/`.
 
 ## Conteúdo concluído
@@ -60,3 +60,15 @@ de contexto estão em `../../../resultados/artigo_revista_unificado/`.
 - Não afirmar chuva apenas porque a GHI observada foi baixa.
 - Não selecionar apenas fábricas ou métricas favoráveis ao método proposto.
 - Não preencher resultados ausentes por interpolação, estimativa ou texto hipotético.
+
+## Revis?o de 6 de setembro de 2026
+
+- Resultados conferidos independentemente a partir das previs?es salvas; relat?rio
+  em `../../../resultados/artigo_revista_unificado/auditoria_topico5_20260906/`.
+- Tabela principal de vencedores TimesNet/DilatedRNN por horizonte cumulativo.
+- Benchmark completo preservado na Tabela S1 e Figura S1 do suplemento.
+- Tr?s pseudoc?digos no corpo principal, conectados ao diagrama do m?todo.
+- Se??o 5.7 com perfis de sete dias em tr?s localidades, usando prefixos
+  di?rios de 24 horas, sem alegar previs?o direta de 168 horas.
+- A revis?o usa o artigo do Thales como refer?ncia de organiza??o e n?vel de
+  detalhe; resultados, figuras e procedimentos pertencem ao experimento atual.

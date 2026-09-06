@@ -65,16 +65,22 @@ transferidos automaticamente para o segundo.
 - Rotular chuva ou nebulosidade somente com confirmação meteorológica
   independente, nunca apenas por baixa GHI.
 
-## Estrutura proposta para o manuscrito unificado
+## Estrutura aplicada na revis?o de 6 de setembro de 2026
 
 1. Introduction
 2. Related Work
 3. Theoretical Background
-4. Data and Preprocessing
-5. Unified Methodology
-6. Experimental Design
-7. Evaluation Metrics
-8. Results and Discussion
-9. Threats to Validity and Limitations
-10. Conclusion
-11. Appendices and required declarations
+4. Unified Proposed Approach: dados, metodologia, tr?s pseudoc?digos,
+   desenho experimental e m?tricas.
+5. Results and Discussion: vencedores por tarefa, compara??o por local,
+   sementes, rela??o com o benchmark completo, casos contrastantes, contexto
+   clim?tico, perfis de sete dias (5.7) e limita??es.
+6. Conclusion
+
+O suplemento mant?m o benchmark completo, os algoritmos procedimentais
+complementares e os registros de reprodutibilidade. A inspira??o visual da
+Figura 6 de Cabral et al. foi adaptada para os contratos efetivamente
+executados: aqui os sete dias re?nem sete emiss?es di?rias com prefixo de
+24 horas, e n?o uma sa?da direta de cinco ou sete dias. Os tr?s algoritmos
+principais descrevem sele??o/refit e as implementa??es de TimesNet e
+DilatedRNN; n?o utilizam quantiza??o nem reprograma??o de LLM.
