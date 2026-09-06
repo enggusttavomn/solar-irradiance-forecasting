@@ -53,18 +53,22 @@ hours are not treated as complete.
 
 For a temporal resolution $\Delta$, let
 $\mathbf{X}_{\ell,t}\in\mathbb{R}^{C\times P}$ contain the $C$ observations
-and $P$ admissible variables available at forecast origin $t$. A deterministic
+and $P$ admissible variables observed strictly before target interval $t$.
+Throughout the article, the origin label $t$ identifies the first predicted
+interval; its value is unavailable to the forecaster. A deterministic
 multi-output forecaster is a mapping
 \begin{equation}
-  \widehat{\mathbf{y}}_{\ell,t+1:t+H}
+  \widehat{\mathbf{y}}_{\ell,t:t+H-1}
   =
   f_{\theta}\!\left(\mathbf{X}_{\ell,t},\mathbf{z}_{\ell}\right)
   \in\mathbb{R}^{H},
   \label{eq:forecast_map}
 \end{equation}
 where $\mathbf{z}_{\ell}$ denotes static location information when used,
-$C\Delta$ is the physical context span, and $H\Delta$ is the physical forecast
-horizon. Thus, 72 hourly outputs and three daily outputs have the same nominal
+$C$ is the context length, and $H$ is the number of predicted intervals.
+For fixed-duration hourly and daily intervals, the corresponding spans are
+$C\Delta$ and $H\Delta$; monthly spans follow civil months of unequal length.
+Thus, 72 hourly outputs and three daily outputs have the same nominal
 duration but different targets and information content. Likewise, predicting
 one monthly mean is a one-step monthly forecast, not a multi-month trajectory
 \cite{diagne2013,yang2018}.
@@ -90,9 +94,9 @@ TimesNet models one-dimensional sequences through a set of
 period-conditioned two-dimensional representations \cite{wu2023}. Let
 $\mathbf{X}\in\mathbb{R}^{B\times T\times C_x}$ be a batch processed by a
 TimesBlock, and let $F_{b,f,c}$ denote the temporal fast Fourier transform
-(FFT) of sample $b$ at frequency bin $f$ and channel $c$. For
-leakage-controlled inference, the implemented variant averages only over the
-channels of the same sample,
+(FFT) of sample $b$ at frequency bin $f$ and channel $c$. The compact variant
+evaluated here selects periods independently for each sample, averaging
+amplitudes only over that sample's channels,
 \begin{equation}
   A_{b,f}
   =
@@ -197,8 +201,9 @@ different inductive biases. TimesNet discovers dominant Fourier periods and
 applies two-dimensional convolutions; DilatedRNN fixes a hierarchy of sparse
 recurrent lags. Neither architecture, by itself, defines the context,
 forecasting strategy, horizon, or evaluation protocol. Those elements must be
-matched experimentally before performance differences can be attributed to
-the architectures.
+specified and matched before the implementations can be compared.
+Even then, unequal capacity and optimization responses limit attribution to
+any individual architectural mechanism.
 
 \subsection{Atmospheric variability and climate context}
 

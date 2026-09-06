@@ -31,7 +31,10 @@ Table~\ref{tab:variables} distinguishes model inputs from indexing and
 context-only fields. This separation is central to the matched comparison:
 TimesNet, DilatedRNN, LSTM, and XGBoost receive the same causal GHI history and
 the same site identifier. Calendar variables, coordinates, climate classes,
-and meteorological descriptors are not supplied as predictors.
+and meteorological descriptors are not supplied to these learned models.
+The deterministic calendar references use target calendar labels to retrieve
+historical seasonal values or fitted climatological means
+(Section~\ref{sec:methodology}).
 
 \begin{table}[!t]
 \centering
@@ -85,11 +88,15 @@ For a site $\ell$, the matched input at origin $t$ is
  \left(y_{\ell,t-c},\ldots,y_{\ell,t-1};\,\ell\right),
  \label{eq:matched_input}
 \end{equation}
-where $c$ is the task-specific context length and $\ell$ is the fixed site
-identifier. Every target vector starts at $t$, and window construction rejects
+where $c$ is the task-specific context length ($C$ in
+Eq.~\eqref{eq:forecast_map}) and $\ell$ is the fixed site identifier.
+Every target vector starts at $t$, and window construction rejects
 an origin if its complete target would cross the declared partition boundary.
 Consequently, no lag, normalization parameter, or target value is obtained
-from beyond the relevant cut.
+from beyond the relevant cut. Hourly and daily labels identify the beginning
+of the target interval. Monthly records use month-end labels to identify the
+civil month being forecast; these labels are not physical issuance times.
+The monthly information set contains only the preceding completed months.
 
 Min--max parameters are estimated separately for each site. Model selection
 uses scales fitted to observations strictly before 1 January 2023. After the
