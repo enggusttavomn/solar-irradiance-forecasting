@@ -3,7 +3,9 @@
 
 Let $y_i$ be a reference GHI value, $\widehat{y}_i$ its post-processed
 forecast, $e_i=y_i-\widehat{y}_i$, $\bar{y}$ the mean reference value in the
-same evaluation vector, and $n$ its number of target points. Each metric is
+same evaluation vector, and $n$ its number of origin--lead forecast pairs.
+A target timestamp can therefore occur more than once when it is predicted
+from different origins. Each metric is
 computed first for one site, one model estimate, one partition, one declared
 horizon, and one horizon scope.
 
@@ -72,23 +74,44 @@ $1,\ldots,H$ over all valid origins, whereas the exact-lead scope retains only
 lead $H$. The two scopes are identical at $H=1$. This distinction is applied at
 24, 48, and 72 hours; 1, 3, 7, 14, and 30 days; and, for the exploratory
 multi-month task, 1, 3, and 6 months. A horizon label therefore always denotes
-both a numerical lead and an explicitly named scope.
+both a numerical lead and an explicitly named scope. The main rankings use
+the cumulative scope.
 
-If $M_{\ell}$ is any valid site-level metric and $L=10$, the macro result is
+Hourly origins are fixed at local midnight, so exact leads 24, 48, and 72
+all select the 23:00 interval on their respective target days. In this test
+set these nighttime targets and post-processed forecasts are zero: exact-lead
+MAE and RMSE are zero for every model, while nRMSE and $R^2$ are undefined.
+They are retained as audit outputs and do not measure daytime forecast skill.
+
+Within each site, cumulative metrics weight origin--lead pairs equally,
+including repeated forecasts for a shared target timestamp. They therefore
+evaluate the issued forecast trajectories rather than one unique forecast
+per calendar time. Target periods inside an overlapping window can receive
+more contributions than periods near the test boundaries.
+
+Let $\mathcal{L}_{M}$ be the set of locations with a finite site-level value
+of metric $M$, and let $L_M=|\mathcal{L}_{M}|$. The macro result is
 \begin{equation}
  M_{\mathrm{macro}}
  =
- \frac{1}{L}\sum_{\ell=1}^{L}M_{\ell}.
+ \frac{1}{L_M}\sum_{\ell\in\mathcal{L}_{M}}M_{\ell},
+ \qquad L_M>0.
  \label{eq:macro_metric}
 \end{equation}
-Equal site weighting prevents a site with more valid target points from
-dominating the geographical summary. Macro-MAE is the predeclared primary
+Undefined site-level values are excluded from the corresponding mean; if
+none are finite, the macro value remains undefined. All ten sites contribute
+to the main cumulative results. Equal site weighting prevents a site with more
+valid forecast pairs from dominating the geographical summary.
+Macro-MAE is the predeclared primary
 metric at every resolution; MAE, RMSE, nRMSE, and $R^2$ are nevertheless
 retained together rather than selectively reported.
 
-For daily and monthly learned models, seed-level metrics quantify variability,
-whereas the TimesNet--DilatedRNN paired comparison uses the arithmetic
-five-seed ensemble forecast. The hourly extension compares the single
+For daily and monthly learned models, seed-level metrics describe variability
+across five fitted instances on the same test data. Their standard deviation
+measures sensitivity to the registered seeds; it is neither a forecast
+prediction interval nor a confidence interval for generalization error.
+The TimesNet--DilatedRNN paired comparison uses the post-processed five-seed
+ensemble forecast from Eq.~\eqref{eq:ensemble_forecast}. The hourly extension compares the single
 registered seed 42 for both models. For each site, metric, horizon, and scope,
 the pipeline stores
 \begin{equation}

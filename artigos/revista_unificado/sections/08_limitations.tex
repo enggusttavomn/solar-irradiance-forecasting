@@ -13,18 +13,23 @@ industrial framing therefore identifies geographically relevant forecasting
 sites; it does not establish plant-level energy savings.
 
 The matched input deliberately contains only causal GHI and site identity.
-This restriction isolates architectural effects, but it omits potentially
+This restriction controls predictor availability among learned models, but
+it omits potentially
 useful exogenous forecasts such as cloud motion, numerical weather prediction,
 aerosols, and temperature. A site embedding can also encode persistent
 location-specific behaviour and does not demonstrate transfer to an unseen
 factory. Fixed local offsets produce regular hourly grids but do not reproduce
-daylight-saving clock changes.
+daylight-saving clock changes. Moreover, the daily/monthly archive was
+retrieved independently of the hourly archive. The resolution comparison is
+therefore not a controlled reaggregation of one identical native record set.
 
 \subsubsection{Temporal and statistical validity}
 
 All test evidence is retrospective and restricted to 2024. It does not measure
 prospective robustness under later satellite-product revisions, climate
-nonstationarity, or new sites. The monthly primary task has only 48 pre-test
+nonstationarity, or new sites. The retrospective information set assumes
+that each completed historical aggregate is immediately available; product
+publication delays and operational data latency are not simulated. The monthly primary task has only 48 pre-test
 refit origins per site, and the exploratory six-month task has seven test
 origins per site. Its long output therefore cannot support the same empirical
 resolution as the hourly or daily tasks.
@@ -34,6 +39,8 @@ errors. Site-first aggregation avoids allowing that overlap to change spatial
 weights, but it does not make the origins independent. The paired summaries
 accordingly use ten locations as descriptive units and do not attach an
 i.i.d. significance test to thousands of overlapping target points.
+Nearby sites may also share weather and model errors, so the ten location
+summaries are not asserted to be independent statistical replicates.
 
 \subsubsection{Model-comparison validity}
 
@@ -45,6 +52,17 @@ the hourly extension adds DilatedRNN with the single official seed 42 to
 read-only comparator forecasts, whereas daily and monthly estimates use five
 seeds. Cross-resolution claims therefore concern protocol behaviour and are
 not interpreted as equal-precision estimates of random-seed variability.
+The reported TimesNet is a compact variant with sample-specific Fourier-period
+selection; the findings do not establish a ranking of every implementation
+bearing either architecture name.
+
+Neural epoch selection minimizes normalized validation MSE, whereas the main
+test ranking minimizes macro-MAE in W/m$^2$. These objectives weight errors
+differently, and equal selection rules do not establish each model's best
+achievable MAE. Calendar baselines also use explicit target calendar labels
+and historical lookups unavailable as features to the learned models. Their
+performance is a useful operational reference, but does not isolate
+architecture under identical feature representations.
 
 The neural parameter budgets also differ by task, as reported in
 Table~\ref{tab:model_capacity}. Equal optimization rules do not imply equal
@@ -62,9 +80,12 @@ post-processing.
 
 Hourly metrics retain all target hours after the common nighttime mask. Exact
 nighttime zeros are part of the operational 72-hour trajectory, but they also
-make the all-hour error smaller than a daylight-only error would be. The
+dilute the contribution of daylight errors to the all-hour average. The
 reported hourly values must therefore be interpreted as full-trajectory
-metrics and not as estimates restricted to irradiance-producing hours.
+metrics. In particular, exact leads 24, 48, and 72 sample only the nighttime
+23:00 intervals and cannot distinguish model skill in this experiment.
+Daylight-only evaluation and complete lead profiles are needed to assess
+the irradiance-producing hours separately.
 
 \subsubsection{Contextual-data validity}
 

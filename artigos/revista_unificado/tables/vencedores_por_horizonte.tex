@@ -1,0 +1,28 @@
+\begin{table*}[!t]
+\centering
+\caption{Focused architecture comparison: cumulative test macro-MAE in W/m$^2$. Bold marks the lower unrounded MAE within each row. $\Delta=\mathrm{MAE}_{\mathrm{TimesNet}}-\mathrm{MAE}_{\mathrm{DilatedRNN}}$ is computed before rounding. Hourly estimates use seed 42; daily and monthly estimates use five-seed ensembles. The complete reference-model benchmark is retained in Supplementary Table S1.}
+\label{tab:architecture_winners}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{llrrrl}
+\toprule
+Task & Cumulative horizon & TimesNet & DilatedRNN & $\Delta$ & Lower MAE \\
+\midrule
+Hourly & 24 h & \textbf{49.39} & 50.73 & -1.35 & TimesNet \\
+Hourly & 48 h & 52.16 & \textbf{52.15} & +0.02 & DilatedRNN \\
+Hourly & 72 h & \textbf{52.48} & 52.96 & -0.48 & TimesNet \\
+\addlinespace
+Daily & 1 d & \textbf{43.20} & 43.27 & -0.07 & TimesNet \\
+Daily & 3 d & \textbf{43.63} & 43.80 & -0.17 & TimesNet \\
+Daily & 7 d & \textbf{43.95} & 44.08 & -0.13 & TimesNet \\
+Daily & 14 d & \textbf{44.09} & 44.11 & -0.02 & TimesNet \\
+Daily & 30 d & 44.08 & \textbf{43.85} & +0.23 & DilatedRNN \\
+\addlinespace
+Monthly 12--1 & 1 mo & 13.89 & \textbf{13.01} & +0.89 & DilatedRNN \\
+\addlinespace
+Monthly 12--6 & 1 mo & \textbf{14.86} & 14.89 & -0.03 & TimesNet \\
+Monthly 12--6 & 3 mo & 14.49 & \textbf{14.33} & +0.16 & DilatedRNN \\
+Monthly 12--6 & 6 mo & 14.46 & \textbf{14.37} & +0.09 & DilatedRNN \\
+\bottomrule
+\end{tabular}
+\end{table*}

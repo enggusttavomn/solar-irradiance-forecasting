@@ -1,31 +1,34 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-This study compared TimesNet and DilatedRNN under common, leakage-controlled
-hourly, daily, and monthly GHI tasks at ten electric-vehicle manufacturing
-locations. Inputs, partitions, origins, post-processing, metrics, and location
-weights were matched within each task. No architecture was universally
-superior.
+This study compared TimesNet and DilatedRNN on matched hourly, daily, and
+monthly GHI tasks at ten factory-associated locations. Their causal GHI
+inputs, partitions, origins, post-processing, metrics, and location weights
+were controlled within each task. The results describe forecasts of the
+NSRDB solar resource, without quantifying factory demand or photovoltaic
+output.
 
-TimesNet had lower macro-MAE at 24 and 72 hours and through 14 days;
-DilatedRNN led at 48 hours, 30 days, the primary one-month task, and the
-three- and six-month exploratory prefixes. Terminal wins favored DilatedRNN at
-six of ten hourly, daily, and one-month sites and seven of ten six-month sites,
-although a few larger TimesNet gains sometimes reversed the macro average.
-XGBoost led the full hourly and daily benchmarks, whereas calendar climatology
-led the monthly tasks, so the neural comparison does not imply benchmark-wide
-dominance.
+For cumulative macro-MAE, TimesNet led the architecture comparison at 24 and
+72 hours and through 14 days; DilatedRNN led at 48 hours, 30 days, the primary
+one-month task, and the three- and six-month exploratory prefixes. Local
+win counts sometimes disagreed with the macro ranking. At the terminal
+horizons, DilatedRNN won six of ten hourly, daily, and one-month sites and
+seven of ten six-month sites.
 
-Daily and monthly five-seed results support these patterns, but several
-architecture differences were small relative to seed variability. The hourly
-extension has only seed 42, multi-step targets overlap, and parameter budgets
-differ. Evidence therefore supports resolution- and horizon-specific behaviour
-rather than an intrinsic architectural ranking. Opposite weather contexts for
-the strongest TimesNet gain and deficit likewise preclude a causal reading of
-post-hoc meteorology.
+The complete benchmark gives a more qualified outcome. XGBoost led all
+hourly checkpoints and daily checkpoints 1, 3, and 14; LSTM led at seven days,
+and DilatedRNN led at 30 days with 43.85~W/m$^2$, compared with
+43.93~W/m$^2$ for XGBoost. Calendar climatology led the monthly checkpoints.
+Thus, neither neural architecture was consistently best across tasks.
 
-Future work should cover prospective years and unseen sites, repeat the hourly
-extension across seeds, report daylight-only metrics and measured cost, and
-test causal weather inputs against the strong tabular and climatological
-references. Released contracts, origin-level forecasts, seed metrics, and
-integrity manifests support those extensions.
+Daily and monthly estimates use five-seed ensembles, and several differences
+are small relative to the observed seed variability. The single hourly seed,
+overlapping targets, one test year, and unequal parameter budgets limit
+generalization. Post-hoc weather cases provide context but do not explain
+model differences causally.
+
+Future evaluation should include prospective years and unseen sites,
+multiple hourly seeds, daylight-only metrics, measured computational cost,
+and weather forecasts available at issuance. The released contracts,
+origin-level predictions, and integrity manifests provide a basis for
+testing those extensions against the tabular and climatological references.
