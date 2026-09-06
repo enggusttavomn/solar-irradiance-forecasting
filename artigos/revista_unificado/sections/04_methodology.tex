@@ -23,10 +23,11 @@ before 2024.
 
 The resulting sample has the input defined in Eq.~\eqref{eq:matched_input}.
 A timestamp determines availability and alignment but is not presented as a
-feature. Likewise, latitude, longitude, climate class, NASA POWER variables,
-and future calendar information are excluded. Holding the information set
-constant prevents a feature advantage from being attributed to an
-architecture.
+feature for the learned models. Likewise, latitude, longitude, climate class,
+NASA POWER variables, and explicit calendar covariates are excluded from their
+inputs. Holding this information set constant controls feature availability
+in the learned-model comparison. Seasonal references additionally use known
+calendar labels, as specified below.
 
 \subsubsection{Block B: matched model development}
 
@@ -39,17 +40,20 @@ repeats the most recent daily or monthly aggregate throughout the output, and
 the annual baseline retrieves the same civil day or month one year earlier.
 Every annual reference is asserted to precede the forecast origin, with
 29 February mapped to 28 February. Daily and monthly climatology averages each
-calendar day or month using only values before the relevant cut. The official
-hourly artifact contains
-persistence and annual seasonal na\"ive forecasts.
+calendar day or month separately at each site, using only values before the
+relevant cut. The official hourly artifact contains persistence and annual
+seasonal na\"ive forecasts; it does not contain calendar climatology.
+These references use the same GHI archive, but their calendar lookup and
+pre-cut historical summaries are not restricted to the learned models'
+lag-vector representation.
 
 The learned comparison comprises XGBoost, a direct LSTM, TimesNet, and a direct
 DilatedRNN. These models share the scaled GHI sequence and site identifier;
 neural models encode the identifier with a learned embedding, whereas XGBoost
 uses a one-hot representation. TimesNet selects its Fourier periods separately
-for every input window; consequently, batch companions and later forecast
-origins cannot alter a sample's forward pass. A single global model is fitted across sites,
-which shares temporal structure while retaining site identity
+for every input window; consequently, other windows in an inference batch
+cannot alter its periods or forecast. Each learned model--seed instance is
+fitted globally across sites, sharing parameters while retaining site identity
 \cite{montero2021}. Every multi-step model produces the complete target vector
 in one forward pass, so no predicted GHI is recursively returned as input.
 
@@ -72,7 +76,21 @@ forecast issued at the end of 2023 for every target in 2024.
 
 \subsubsection{Block C: physical consistency and evaluation}
 
-After inverse scaling, all forecasts receive the same non-negativity floor.
+For daily and monthly learned models, the ensemble is the arithmetic mean
+of the five inverse-scaled forecasts before physical post-processing.
+If $\widetilde{y}^{(s)}$ is the unbounded forecast in W/m$^2$ from seed $s$,
+the reported ensemble forecast is
+\begin{equation}
+ \widehat{y}^{\mathrm{ens}}
+ =
+ \max\!\left(0,\frac{1}{5}\sum_{s=1}^{5}\widetilde{y}^{(s)}\right).
+ \label{eq:ensemble_forecast}
+\end{equation}
+Seed-level forecasts receive their own zero floor before their metrics are
+computed. Averaging forecasts and averaging their errors are distinct
+operations.
+
+All forecasts receive the same non-negativity floor after inverse scaling.
 Daily and monthly forecasts have no upper truncation. Hourly forecasts also use
 solar elevation computed at the centre of each hourly interval; predictions
 are set to zero when elevation is nonpositive, following the deterministic

@@ -78,13 +78,14 @@ primary metrics. Their reported errors are retained only as development
 lineage; the architecture comparison in this article is rebuilt on matched
 samples within every task.
 
-The research question is therefore: \emph{how should TimesNet and DilatedRNN
-be compared when the available information, temporal resolution, forecast
-horizon, chronological origins, and evaluation rules are controlled across
-locations?} The article makes four contributions:
+The research question is therefore: \emph{how does the relative forecast
+accuracy of TimesNet and DilatedRNN change with temporal resolution, horizon,
+and location when their inputs and evaluation protocol are matched?}
+The article makes four contributions:
 \begin{enumerate}
   \item it defines a common multi-resolution formulation that distinguishes
-  hourly multi-step, genuinely daily, and one-step monthly forecasting;
+  hourly multi-step, daily-mean multi-step, one-step monthly, and exploratory
+  six-month forecasting;
   \item it specifies matched samples, chronological partitions, forecast
   origins, direct outputs, post-processing, and transparent baselines for the
   two architectures at every shared task;
