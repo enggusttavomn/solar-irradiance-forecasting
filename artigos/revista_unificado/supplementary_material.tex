@@ -5,12 +5,16 @@
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{graphicx}
 \usepackage{microtype}
 \usepackage{xurl}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage[hidelinks]{hyperref}
 
+\graphicspath{{figures/}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
 \begin{document}
 
 \begin{frontmatter}
@@ -24,6 +28,25 @@ and Dilated Recurrent Networks''}
 University of Campinas, Campinas, SP, Brazil}
 \end{frontmatter}
 
+\section{Complete Reference-Model Benchmark}
+The main manuscript focuses on TimesNet and DilatedRNN. This section retains
+all evaluated models and cumulative checkpoints, including competitors that
+outperform the focal architectures. No model is excluded based on its score.
+\input{tables/desempenho_macro}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{ranking_por_tarefa.png}
+\caption{Complete macro-MAE rankings at cumulative checkpoints. Rank 1 is
+best; ranks are not pooled across tasks. Hourly climatology was not evaluated.}
+\label{fig:supp_ranking}
+\end{figure*}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{variabilidade_por_semente.png}
+\caption{Complete learned-model seed variability. Error bars show one sample
+standard deviation; hourly estimates use one seed and have no variability bar.}
+\label{fig:supp_seeds}
+\end{figure*}
 \input{appendices/supplementary_algorithms}
 
 \section{Supporting Design and Literature Tables}
