@@ -7,8 +7,12 @@ than a numerical pooling of the two source studies. TimesNet
 windows within each matched task. The DilatedRNN source study motivates the
 architecture, but its quantized forecasts and previously reported errors are not imported
 into the present continuous-regression protocol. Figure~\ref{fig:pipeline}
-summarizes the three reproducible blocks; detailed pseudocode is retained in
-the Supplementary Material.
+summarizes the three reproducible blocks.
+Algorithm~\ref{alg:matched-training} makes the data cuts, epoch selection,
+fresh refit, and hourly extension explicit.
+Algorithm~\ref{alg:direct-architectures} details the two architecture-specific
+forward passes implemented in this study. Additional data-audit and
+evaluation procedures are retained in the Supplementary Material.
 
 \input{figures/pipeline}
 
@@ -106,3 +110,5 @@ replicates. The NASA POWER join occurs only in the final interpretive layer,
 using the predeclared operational 1~mm/day and 80\% thresholds from
 Section~\ref{sec:data}; it cannot influence training, model selection, or the
 reported aggregate metrics.
+
+\input{sections/04_algorithms}
