@@ -26,14 +26,14 @@
   Two independent 2019--2024 archives
 };
 \node[a step,text width=0.175\textwidth,right=2mm of sources] (audit) {
-  {\bfseries Audit and aggregation}\\[0.8mm]
+  {\bfseries Audit (Alg.~\ref{alg:matched-training})}\\[0.8mm]
   native 30-min $\rightarrow$ hourly means\\
   separate 60-min $\rightarrow$ civil-day means\\
   daily means $\rightarrow$ civil-month means\\[0.6mm]
   regular, unique, finite, nonnegative series
 };
 \node[a step,text width=0.165\textwidth,right=2mm of audit] (contract) {
-  {\bfseries Matched information}\\[0.8mm]
+  {\bfseries Learned-model inputs}\\[0.8mm]
   causal GHI history + site ID only\\
   site-wise scales fitted before each cut\\
   complete direct targets contained in partition
@@ -55,7 +55,7 @@
 \node[band label,fill=orange!82!black,below=3mm of a-label] (b-label) {B};
 \node[b step,text width=0.175\textwidth,right=2mm of b-label] (models) {
   {\bfseries Matched models}\\[0.8mm]
-  \textbf{Deterministic:} persistence, annual seasonal na\"ive, climatology\\[0.5mm]
+  \textbf{Deterministic:} persistence, annual seasonal na\"ive, calendar climatology (daily/monthly)\\[0.5mm]
   \textbf{Learned:} XGBoost, LSTM, TimesNet, DilatedRNN
 };
 \node[b step,text width=0.175\textwidth,right=2mm of models] (selection) {
@@ -83,15 +83,15 @@
 % C — frozen test, common processing, and evidence hierarchy.
 \node[band label,fill=green!52!black,below=3mm of b-label] (c-label) {C};
 \node[c step,text width=0.17\textwidth,right=2mm of c-label] (test) {
-  {\bfseries Frozen 2024 test}\\[0.8mm]
+  {\bfseries Direct test (Algs.~\ref{alg:timesnet-direct}, \ref{alg:dilated-direct})}\\[0.8mm]
   rolling origins and advancing causal context\\
   complete direct horizons\\
   no weight or scale updates
 };
 \node[c step,text width=0.17\textwidth,right=2mm of test] (physics) {
   {\bfseries Common processing}\\[0.8mm]
-  inverse scale $\rightarrow$ nonnegative floor\\
-  hourly nighttime-zero rule\\
+  inverse scale; mean across seeds\\
+  zero floor; hourly nighttime-zero rule\\
   identical treatment within each task
 };
 \node[c step,text width=0.225\textwidth,right=2mm of physics] (evidence) {
@@ -117,9 +117,11 @@
 
 \end{tikzpicture}
 \caption{End-to-end matched forecasting design. (A) Independent NSRDB archives
-are audited and converted into four direct-output tasks using causal GHI and
-site identity only. (B) Matched models follow leakage-controlled selection and
-fresh pre-test refitting. (C) Frozen 2024 forecasts receive common physical
+are audited and converted into four direct-output tasks; learned models
+receive causal GHI and site identity. (B) Model selection and fresh pre-test
+refitting follow Algorithm~\ref{alg:matched-training}. (C) Direct test
+forecasts from Algorithms~\ref{alg:timesnet-direct} and
+\ref{alg:dilated-direct} receive common physical
 post-processing before location-first aggregation and paired comparison;
 K\"oppen--Geiger and NASA POWER fields enter only after errors are fixed.}
 \label{fig:pipeline}
