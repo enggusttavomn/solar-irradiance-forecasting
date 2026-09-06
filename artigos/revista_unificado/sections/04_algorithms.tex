@@ -79,8 +79,8 @@
 \Ensure $H$ predictions in the external site-normalized scale
   \State $\mathbf Z\gets\mathbf x$
   \For{each dilation $d\in(1,2,4)$}
+    \State Use shared tanh-RNN weights and zero initial states
     \State Process residue chains $\mathbf Z_{j,j+d,\ldots}$, $0\leq j<d$
-    \Statex \hspace{2\algorithmicindent}with a shared tanh RNN and zero initial states
     \State $\mathbf Z\gets$ all outputs reassembled in time order
   \EndFor
   \State $\mathbf v\gets[\mathbf Z_{\mathrm{last}};\mathrm{SiteEmbed}(\ell)]$
