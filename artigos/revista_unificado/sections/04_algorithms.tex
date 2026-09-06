@@ -26,10 +26,10 @@
     \State Discard weights; reinitialize with the same seed $s$
     \State Fit $S_R(\mathcal W_R)$ for exactly $E^\star$ epochs
   \Else
-    \State Fit separate fixed-budget XGBoost instances on $A$ and $R$
+    \State Fit fixed-budget XGBoost on $S_A(\mathcal W_A)$ and $S_R(\mathcal W_R)$
   \EndIf
   \State Forecast every $S_R(\mathcal W_T)$ context with fixed weights
-  \Statex \hspace{\algorithmicindent}(Algorithm~\ref{alg:direct-architectures} for TimesNet/DilatedRNN)
+  \Statex \hspace{\algorithmicindent}(Algorithms~\ref{alg:timesnet-direct} and \ref{alg:dilated-direct})
   \State Invert $S_R$; retain the unbounded seed forecast in W/m$^2$
 \EndFor
 \State For daily/monthly tasks, average raw forecasts across seeds
@@ -40,13 +40,12 @@
 \end{algorithm}
 
 \begin{algorithm}[!t]
-\caption{Direct TimesNet and DilatedRNN forward passes}
-\label{alg:direct-architectures}
+\caption{Direct forward pass of the compact TimesNet}
+\label{alg:timesnet-direct}
 \footnotesize
 \begin{algorithmic}[1]
-\Require Model $m$; fitted weights; scaled context $\mathbf x$; site $\ell$
+\Require Fitted TimesNet; scaled context $\mathbf x$; site $\ell$
 \Ensure $H$ predictions in the external site-normalized scale
-\If{$m=\mathrm{TimesNet}$}
   \State $\mu\gets\operatorname{mean}(\mathbf x)$;
   $\sigma\gets\sqrt{\operatorname{var}_{\mathrm{pop}}(\mathbf x)+10^{-5}}$
   \State $\mathbf u\gets(\mathbf x-\mu)/\sigma$
@@ -65,17 +64,27 @@
     \State $\alpha_i\gets\mathrm{softmax}_i(\mathrm{FFTAmplitude}(f_i))$
     \State $\mathbf Z\gets\mathrm{LayerNorm}(\mathbf Z+\sum_i\alpha_i\mathbf U_i)$
   \EndFor
-  \State Project the temporal axis $C\to H$, then channels to one
+  \State $\mathbf F\gets\mathrm{TemporalProject}_{C\to H}(\mathbf Z)$
+  \State $\widehat{\mathbf u}\gets\mathrm{ChannelProject}(\mathbf F)$
   \State \Return $\sigma\widehat{\mathbf u}+\mu$
-\Else \Comment{DilatedRNN}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!t]
+\caption{Direct forward pass of the DilatedRNN}
+\label{alg:dilated-direct}
+\footnotesize
+\begin{algorithmic}[1]
+\Require Fitted DilatedRNN; scaled context $\mathbf x$; site $\ell$
+\Ensure $H$ predictions in the external site-normalized scale
   \State $\mathbf Z\gets\mathbf x$
   \For{each dilation $d\in(1,2,4)$}
     \State Process residue chains $\mathbf Z_{j,j+d,\ldots}$, $0\leq j<d$
     \Statex \hspace{2\algorithmicindent}with a shared tanh RNN and zero initial states
-    \State Reassemble all outputs in their original time order
+    \State $\mathbf Z\gets$ all outputs reassembled in time order
   \EndFor
   \State $\mathbf v\gets[\mathbf Z_{\mathrm{last}};\mathrm{SiteEmbed}(\ell)]$
-  \State \Return $\mathrm{Linear}_{16\to H}(\mathrm{ReLU}(\mathrm{Linear}(\mathbf v)))$
-\EndIf
+  \State $\mathbf a\gets\mathrm{ReLU}(\mathrm{Linear}_{24\to16}(\mathbf v))$
+  \State \Return $\mathrm{Linear}_{16\to H}(\mathbf a)$
 \end{algorithmic}
 \end{algorithm}
