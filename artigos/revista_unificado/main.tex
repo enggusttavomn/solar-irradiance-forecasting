@@ -3,6 +3,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{graphicx}
@@ -34,27 +36,27 @@
 \cortext[cor1]{Corresponding author}
 
 \begin{abstract}
-This study presents an origin-aligned multi-resolution evaluation of global
-horizontal irradiance (GHI) forecasting at ten locations associated with
-electric-vehicle factories. Hourly, daily, and monthly tasks share
-chronological splits, forecast origins, causal GHI inputs, physical
-post-processing, and location-first aggregation within each resolution.
-The complete benchmark includes three deterministic references, XGBoost,
-LSTM, TimesNet, and DilatedRNN. XGBoost achieved the lowest macro-MAE in the
-hourly and daily tasks (50.50~W/m$^2$ at 72 hours and 43.93~W/m$^2$ at
-30 days), whereas calendar climatology led the monthly tasks (12.57~W/m$^2$
-at one month and 13.03~W/m$^2$ over six months). In the focused architecture
-comparison, TimesNet and DilatedRNN respectively obtained 52.48 and
-52.96~W/m$^2$ at 72 hours, 44.08 and 43.85~W/m$^2$ at 30 days, 13.89
-and 13.01~W/m$^2$ at one month, and 14.46 and 14.37~W/m$^2$ at six
-months. TimesNet led at 24 and 72 hours and through 14 days in the daily
-comparison; DilatedRNN led marginally at 48 hours, at 30 days, and in the
-principal one-month task.
-Location-level wins sometimes reversed the macro-average ranking, so neither
-architecture was universally superior. Daily and monthly learned models use
-five-seed ensembles; the hourly extension uses the single registered seed 42.
-Claims remain descriptive because adjacent multi-step targets overlap, and
-meteorology is used only as independent post-hoc context.
+This study compares TimesNet and dilated recurrent neural networks
+(DilatedRNN) for global horizontal irradiance (GHI) forecasting at ten
+locations associated with electric-vehicle factories. Four hourly, daily,
+and monthly tasks align causal GHI inputs, forecast origins, fitting cuts,
+post-processing, and equal-site-weighted evaluation within each task.
+At the terminal cumulative horizons, TimesNet achieved lower macro-MAE at
+72 hours (52.48 versus 52.96~W/m$^2$), while DilatedRNN led at
+30 days (43.85 versus 44.08~W/m$^2$), one month
+(13.01 versus 13.89~W/m$^2$), and the exploratory six-month horizon
+(14.37 versus 14.46~W/m$^2$). The one-month DilatedRNN reduction was
+6.38\% relative to TimesNet; shorter-prefix rankings varied with horizon.
+Daily and monthly results use five-seed ensembles, while the hourly
+comparison retains seed 42. Site-level wins sometimes disagree with the
+macro ranking, and several ensemble gaps are small relative to seed
+variability. The full reference-model benchmark is retained separately
+and shows that winning the focal comparison does not imply superiority
+over all evaluated models. Adapted procedural pseudocode and seven-day
+forecast profiles support reproducibility and interpretation.
+The evidence supports task-specific winners, with descriptive conclusions
+limited by overlapping multi-step targets and a single test year.
+Meteorology is used solely as independent post-hoc context.
 \end{abstract}
 
 \begin{keyword}
