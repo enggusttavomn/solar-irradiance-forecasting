@@ -46,9 +46,10 @@ verification \cite{yang2020verification}. Lower values are better.
  \label{eq:nrmse}
 \end{equation}
 The machine-readable artifacts store the dimensionless ratio; tables that use
-percent explicitly multiply it by 100. Normalization supports comparison among
-sites with different mean irradiance levels, but it inherits the instability
-of a small denominator \cite{voyant2022}. The value is therefore left undefined
+percent explicitly multiply it by 100. Mean normalization supports comparison
+among sites with different mean irradiance levels \cite{voyant2022}.
+From Eq.~\eqref{eq:nrmse}, a small denominator makes this ratio unstable.
+The value is therefore left undefined
 when $\bar{y}$ is numerically zero. Lower values are better.
 
 \subsubsection{Coefficient of determination}
@@ -62,7 +63,7 @@ when $\bar{y}$ is numerically zero. Lower values are better.
  \label{eq:r2}
 \end{equation}
 $R^2$ measures variation tracked relative to a constant predictor built from
-the evaluation mean \cite{yang2020verification}. It is undefined for fewer
+the evaluation mean, as defined in Eq.~\eqref{eq:r2}. It is undefined for fewer
 than two targets or a constant reference vector and can be negative when the
 forecast is worse than that constant reference. Higher values are better;
 $R^2$ does not replace the scale-dependent errors.
