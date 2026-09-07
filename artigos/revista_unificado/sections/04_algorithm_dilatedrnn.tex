@@ -1,0 +1,18 @@
+\begin{algorithm}[!htbp]
+\caption{Direct forward pass of the DilatedRNN}
+\label{alg:dilated-direct}
+\footnotesize
+\begin{algorithmic}[1]
+\Require Fitted DilatedRNN; scaled context $\mathbf x$; site $\ell$
+\Ensure $H$ predictions in the external site-normalized scale
+  \State $\mathbf Z\gets\mathbf x$
+  \For{each dilation $d\in(1,2,4)$}
+    \State Use this layer's tanh-RNN weights and zero initial states
+    \State Process residue chains $\mathbf Z_{j,j+d,\ldots}$, $0\leq j<d$
+    \State $\mathbf Z\gets$ all outputs reassembled in time order
+  \EndFor
+  \State $\mathbf v\gets[\mathbf Z_{\mathrm{last}};\mathrm{SiteEmbed}(\ell)]$
+  \State $\mathbf a\gets\mathrm{ReLU}(\mathrm{Linear}_{24\to16}(\mathbf v))$
+  \State \Return $\mathrm{Linear}_{16\to H}(\mathbf a)$
+\end{algorithmic}
+\end{algorithm}

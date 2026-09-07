@@ -70,6 +70,8 @@ partitions. The hourly extension is narrower: all official model forecasts are
 read without modification, and only DilatedRNN with seed 42 is added and
 aligned by site, origin, target timestamp, and lead.
 
+\input{sections/04_algorithm_protocol}
+
 All partitions are evaluated in rolling-origin form. Model parameters and the
 refit scale remain fixed throughout the 2024 test, but the causal context is
 advanced at every eligible origin and may include GHI observations from earlier
@@ -77,6 +79,28 @@ in 2024 once they have become historical. No test target enters a context before
 its timestamp, and no weights are updated during the test. The design is thus a
 retrospective walk-forward evaluation with fixed parameters, not a single
 forecast issued at the end of 2023 for every target in 2024.
+
+\FloatBarrier
+\subsubsection{Direct architecture implementations}
+
+Algorithm~\ref{alg:timesnet-direct} specifies the compact TimesNet forward
+pass used in the comparison. The site-scaled context is standardized within
+the current window, embedded with position and site identity, and processed
+using periods selected separately for that sample. After the TimesBlock,
+a direct temporal projection maps the context to the complete forecast
+horizon. The final step restores the external site-normalized scale; the
+common physical post-processing is applied later in Block C.
+
+\input{sections/04_algorithm_timesnet}
+
+Algorithm~\ref{alg:dilated-direct} specifies the alternative recurrent path.
+Each layer shares its tanh-RNN weights across residue chains with the same
+dilation, then reassembles the outputs in temporal order. The last state
+and the site embedding feed a direct output head. The explicit forward
+passes make clear which operations differ while both architectures retain
+the same context, site identity, target vector, and subsequent evaluation.
+
+\input{sections/04_algorithm_dilatedrnn}
 
 \subsubsection{Block C: physical consistency and evaluation}
 
@@ -110,5 +134,3 @@ replicates. The NASA POWER join occurs only in the final interpretive layer,
 using the predeclared operational 1~mm/day and 80\% thresholds from
 Section~\ref{sec:data}; it cannot influence training, model selection, or the
 reported aggregate metrics.
-
-\input{sections/04_algorithms}

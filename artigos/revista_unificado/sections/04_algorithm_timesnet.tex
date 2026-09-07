@@ -1,0 +1,30 @@
+\begin{algorithm}[!htbp]
+\caption{Direct forward pass of the compact TimesNet}
+\label{alg:timesnet-direct}
+\footnotesize
+\begin{algorithmic}[1]
+\Require Fitted TimesNet; scaled context $\mathbf x$; site $\ell$
+\Ensure $H$ predictions in the external site-normalized scale
+  \State $\mu\gets\operatorname{mean}(\mathbf x)$;
+  $\sigma\gets\sqrt{\operatorname{var}_{\mathrm{pop}}(\mathbf x)+10^{-5}}$
+  \State $\mathbf u\gets(\mathbf x-\mu)/\sigma$
+  \State $\mathbf Z\gets\mathrm{ValueEmbed}(\mathbf u)+\mathrm{PositionEmbed}$
+  \State $\mathbf Z\gets\mathbf Z+\mathrm{SiteEmbed}(\ell)$
+  \State Apply embedding dropout during training only
+  \For{each TimesBlock}
+    \State Compute FFT amplitudes separately for this sample
+    \State Select the top-$k$ nonzero frequencies $f_i$
+    \For{each selected $f_i$}
+      \State $p_i\gets\lfloor C/f_i\rfloor$
+      \State Pad and fold $\mathbf Z$ into cycles of length $p_i$
+      \State Apply the two-layer Inception convolution with GELU
+      \State Unfold and trim to $C$ steps, obtaining $\mathbf U_i$
+    \EndFor
+    \State $\alpha_i\gets\mathrm{softmax}_i(\mathrm{FFTAmplitude}(f_i))$
+    \State $\mathbf Z\gets\mathrm{LayerNorm}(\mathbf Z+\sum_i\alpha_i\mathbf U_i)$
+  \EndFor
+  \State $\mathbf F\gets\mathrm{TemporalProject}_{C\to H}(\mathbf Z)$
+  \State $\widehat{\mathbf u}\gets\mathrm{ChannelProject}(\mathbf F)$
+  \State \Return $\sigma\widehat{\mathbf u}+\mu$
+\end{algorithmic}
+\end{algorithm}
