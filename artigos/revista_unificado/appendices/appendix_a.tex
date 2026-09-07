@@ -137,6 +137,14 @@ evaluated at minute 30 of each interval.
 \FloatBarrier
 \subsection{Evaluation and artifact contract}
 
+The retained corrected archive is identified as
+\path{avaliacao_multirresolucao_corrigida_v2} under the project's
+\path{resultados/} directory. Its task directories are
+\path{hourly_72_extension}, \path{daily_30}, \path{monthly_1}, and
+\path{monthly_6}. This identifier specifies the source of the reported
+comparisons; it does not imply that the full forecast bundle is currently
+available in the public repository.
+
 For every declared horizon, the pipeline writes cumulative-prefix and
 exact-lead metrics. It stores raw and post-processed forecasts, metrics by site,
 equal-weight macro metrics, site-paired TimesNet--DilatedRNN differences,
