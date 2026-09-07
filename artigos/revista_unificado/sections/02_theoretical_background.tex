@@ -72,10 +72,11 @@ one monthly mean is a one-step monthly forecast, not a multi-month trajectory
 
 In a direct multi-output strategy, all $H$ values in
 \eqref{eq:forecast_map} are produced jointly. A recursive strategy instead
-feeds one-step predictions back as inputs, which can accumulate error as the
+feeds one-step predictions back as inputs and may accumulate error as the
 horizon increases \cite{guariso2020}. The forecasting strategy must therefore
-be held constant when comparing models. A local model estimates separate parameters for each
-location; a global model shares $\theta$ across locations and may condition on
+be held constant when comparing models. A local model estimates separate
+parameters for each location; a global model shares $\theta$ across locations
+and may condition on
 $\mathbf{z}_{\ell}$ \cite{montero2021}. Sharing can increase the effective
 training sample, but it does not guarantee equal local performance.
 
@@ -185,8 +186,8 @@ connect states at progressively coarser temporal separations. This schedule
 shortens recurrent paths between distant observations and represents
 dependencies at multiple temporal scales. The interleaved recurrent chains
 are recombined at their original time indices, preserving the intervening
-observations without downsampling. An output head maps the resulting states to one or
-several forecast steps.
+observations without downsampling. An output head maps the resulting states
+to one or several forecast steps.
 
 TimesNet and DilatedRNN encode multi-scale dependence through different
 inductive biases: TimesNet discovers dominant Fourier periods and applies
