@@ -23,17 +23,14 @@ The primary comparison uses macro-MAE, calculated by averaging site-level
 MAEs with equal weights. Complementary results include RMSE, nRMSE, and
 $R^2$ at cumulative horizons and exact leads.
 
-During model selection, neural networks are initialized under each seed,
-fitted to the initial training windows (the adjustment partition in the
-saved artifacts), and monitored on the 2023 validation windows using
-normalized MSE.
-Early stopping chooses an epoch count for each model--seed pair. The network is
-then discarded, reinitialized under the same seed, and fitted to the pre-2024
-refit windows for exactly that number of epochs. Thus, epoch selection
-minimizes validation MSE in site-normalized units, while the reported primary
-ranking uses test MAE in physical units. XGBoost uses a fixed tree
-budget in separate initial training and refit instances. Test forecasts are generated
-only by the refitted instances.
+For all neural models, the selection and fresh-refit procedure in
+Algorithm~\ref{alg:matched-training} uses early stopping on 2023
+site-normalized validation MSE. Initial training uses the adjustment
+partition recorded in the saved artifacts; the selected epoch count governs
+the same-seed refit on pre-2024 windows. This selection objective differs from
+the primary test ranking by macro-MAE in physical units. XGBoost uses
+separate initial-training and refit instances with a fixed tree budget.
+Only refitted instances generate test forecasts.
 
 Block B of Figure~\ref{fig:pipeline} summarizes this selection and refitting
 sequence.
