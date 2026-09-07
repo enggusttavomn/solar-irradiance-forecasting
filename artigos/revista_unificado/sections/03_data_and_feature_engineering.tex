@@ -104,7 +104,7 @@ are not clipped, so extrapolation beyond that range remains visible.
 
 Table~\ref{tab:locations} reports the canonical factory coordinates, the map
 identifier used in Figure~\ref{fig:geographic_context}, and the
-present K\"oppen--Geiger class sampled at those coordinates. Classes and their
+1980--2016 K\"oppen--Geiger class sampled at those coordinates. Classes and their
 confidence values come from the aligned 0.008333-degree (nominal 1-km) products
 of Beck et al. \cite{beck2018}. Sampling uses the raster cell containing each
 WGS84 point, without interpolation. The 0.5-degree product is used only as the
@@ -125,6 +125,8 @@ forecast-model inputs. Source: Beck et al. \cite{beck2018}.}
 \label{fig:geographic_context}
 \end{figure*}
 
+Class confidence is the percentage of Beck et al.'s 12 ensemble maps that
+assign the modal class to a cell \cite{beck2018}.
 Nine sites have a class confidence of 100\%. BMW San Luis Potos\'i is the
 exception: its BSh assignment has 50\% confidence and is therefore treated as
 uncertain in interpretation. The Supplementary Material documents the climate codes,
