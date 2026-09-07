@@ -66,7 +66,7 @@ de contexto estão em `../../../resultados/artigo_revista_unificado/`.
   em `../../../resultados/artigo_revista_unificado/auditoria_topico5_20260906/`.
 - Tabela principal de vencedores TimesNet/DilatedRNN por horizonte cumulativo.
 - Benchmark completo preservado na Tabela S1 e Figura S1 do suplemento.
-- Tr?s pseudocódigos no corpo principal, conectados ao diagrama do método.
+- Três pseudocódigos no corpo principal, conectados ao diagrama do método.
 - Seção 5.7 com perfis de sete dias em três localidades, usando prefixos
   diários de 24 horas, sem alegar previsão direta de 168 horas.
 - A revisão usa o artigo do Thales como referência de organização e nível de
