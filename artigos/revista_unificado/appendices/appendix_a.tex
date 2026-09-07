@@ -1,17 +1,18 @@
 \section{Reproducibility Specification}
 \label{app:hyperparameters}
 
-This appendix records the complete configuration needed to reconstruct the
-matched experiments without inferring values from narrative descriptions.
+This appendix specifies the configuration used to reproduce the matched
+experiments.
 The executable protocol binds task definitions, input and source-code hashes,
 software versions, model settings, and random seeds into a contract hash.
 Cached work is reused only when that complete hash matches.
 
-\subsection{Complete temporal contract}
+\subsection{Temporal partitions}
 
 Table~\ref{tab:temporal_contract_complete} gives inclusive forecast-origin
 boundaries. The target cutoff is checked separately, so a multi-step window is
-retained only when every target lies on or before that date.
+retained only when every target lies on or before that date. The initial
+training partition is labeled ``adjustment'' in the execution artifacts.
 
 \begin{table*}[!t]
 \centering
@@ -30,22 +31,22 @@ retained only when every target lies on or before that date.
 \textbf{Task} & \textbf{Partition} & \textbf{Origin range} &
 \textbf{Declared target cutoff} & \textbf{$N$} \\
 \midrule
-Hourly 336--72 & Adjustment & 2019-01-15--2022-12-29 & 2022-12-31 & 1,445 \\
+Hourly 336--72 & Initial training & 2019-01-15--2022-12-29 & 2022-12-31 & 1,445 \\
  & Validation & 2023-01-01--2023-12-29 & 2023-12-31 & 363 \\
  & Refit & 2019-01-15--2023-12-29 & 2023-12-31 & 1,810 \\
  & Test & 2024-01-01--2024-12-28 & 2024-12-31 & 363 \\
 \addlinespace
-Daily 365--30 & Adjustment & 2020-01-01--2022-12-02 & 2022-12-31 & 1,067 \\
+Daily 365--30 & Initial training & 2020-01-01--2022-12-02 & 2022-12-31 & 1,067 \\
  & Validation & 2023-01-01--2023-12-02 & 2023-12-31 & 336 \\
  & Refit & 2020-01-01--2023-12-02 & 2023-12-31 & 1,432 \\
  & Test & 2024-01-01--2024-12-02 & 2024-12-31 & 337 \\
 \addlinespace
-Monthly 12--1 & Adjustment & 2020-01-31--2022-12-31 & 2022-12-31 & 36 \\
+Monthly 12--1 & Initial training & 2020-01-31--2022-12-31 & 2022-12-31 & 36 \\
  & Validation & 2023-01-31--2023-12-31 & 2023-12-31 & 12 \\
  & Refit & 2020-01-31--2023-12-31 & 2023-12-31 & 48 \\
  & Test & 2024-01-31--2024-12-31 & 2024-12-31 & 12 \\
 \addlinespace
-Monthly 12--6 & Adjustment & 2020-01-31--2022-07-31 & 2022-12-31 & 31 \\
+Monthly 12--6 & Initial training & 2020-01-31--2022-07-31 & 2022-12-31 & 31 \\
  & Validation & 2023-01-31--2023-07-31 & 2023-12-31 & 7 \\
  & Refit & 2020-01-31--2023-07-31 & 2023-12-31 & 43 \\
  & Test & 2024-01-31--2024-07-31 & 2024-12-31 & 7 \\
@@ -66,24 +67,24 @@ Each scale is site-specific and records its observation count, minimum, maximum,
 and effective range.
 
 These partitions are rolling-origin evaluations. Parameters and scale values
-are frozen before the relevant evaluation year, while the context advances and
+are fixed before the relevant evaluation year, while the context advances and
 can contain earlier observations from that year after they become available.
 No parameter update occurs within validation or test.
 
 \FloatBarrier
-\subsection{Complete model and optimization settings}
+\subsection{Model and optimization settings}
 
 The common learned-model input is an array of shape
-(batch, context length) containing only scaled GHI, accompanied by one integer
-site identifier. The target is a continuous direct vector of the declared
-output length. No learned model receives latitude, longitude, clock variables,
+(batch, context length) containing only scaled GHI, with one integer site
+identifier per example. The target is a vector of continuous GHI values
+covering the declared forecast horizon. No learned model receives latitude, longitude, clock variables,
 solar elevation, climate, cloud, precipitation, or a previously predicted
-target. Table~\ref{tab:complete_hyperparameters} records the frozen model,
+target. Table~\ref{tab:complete_hyperparameters} records the fixed model,
 optimizer, seed, and ensemble settings.
 
 \begin{table}[!t]
 \centering
-\caption{Complete frozen learned-model settings.}
+\caption{Fixed settings for all learned models.}
 \label{tab:complete_hyperparameters}
 \footnotesize
 \setlength{\tabcolsep}{3pt}
@@ -115,27 +116,28 @@ XGBoost & Squared-error objective, 150 trees, depth 3, learning rate 0.05,
 subsample 0.8, column subsample 0.8, histogram tree method, one thread;
 multi-output-tree strategy when the output length exceeds one \\
 Refit rule & Fresh initialization under the same seed and exactly the epoch
-count selected on 2023; XGBoost is independently fitted with its fixed budget \\
+count selected using 2023 validation data; XGBoost is independently fitted with its fixed budget \\
 Ensemble & Arithmetic mean of five seed forecasts for daily/monthly learned
 models; no hourly ensemble \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Hourly daily-profile persistence repeats the last 24 observed local hours
-cyclically over the output, and its annual reference preserves the same local
-hour from the preceding year. For daily/monthly data, persistence repeats the
-last observed aggregate over the full output. For daily/monthly data, annual
-seasonal na\"ive uses the same civil day or month from the preceding year, with
-29 February mapped to 28 February when needed. Daily/monthly climatology is the
-fixed mean for the target calendar day or month using values before the
-relevant selection or test cut; a global pre-cut mean is the fallback for a
-missing calendar key. Baselines and learned forecasts receive a zero floor.
-Only hourly outputs additionally receive the nonpositive-solar-elevation mask,
-evaluated at minute 30 of each interval.
+Hourly daily-profile persistence repeats the last 24 observed hourly values
+cyclically over the forecast horizon. The annual seasonal na\"ive reference
+uses the value at the same local hour in the preceding year. For daily and
+monthly tasks, persistence repeats the last observed aggregate throughout
+the forecast horizon, whereas annual seasonal na\"ive uses the same civil
+day or month from the preceding year, with 29 February mapped to 28 February
+when needed. Daily and monthly climatology uses a fixed mean for the target
+calendar day or month, computed from observations before the relevant
+selection or test cutoff. A global mean computed before the cutoff is used
+when no observations match the calendar day or month. All baseline and learned
+forecasts are clipped to zero if negative. Hourly outputs are also set to zero
+when solar elevation is nonpositive, evaluated at minute 30 of each interval.
 
 \FloatBarrier
-\subsection{Evaluation and artifact contract}
+\subsection{Evaluation outputs and reproducibility records}
 
 The retained corrected archive is identified as
 \path{avaliacao_multirresolucao_corrigida_v2} under the project's
@@ -148,7 +150,7 @@ available in the public repository.
 For every declared horizon, the pipeline writes cumulative-prefix and
 exact-lead metrics. It stores raw and post-processed forecasts, metrics by site,
 equal-weight macro metrics, site-paired TimesNet--DilatedRNN differences,
-selected epoch counts, training histories, and the two sets of pre-cut scales.
+selected epoch counts, training histories, and the two sets of scales fitted before the respective cutoffs.
 Daily and monthly task directories additionally store variability across the
 five seeds. The principal machine-readable files across task directories are:
 \begin{itemize}
@@ -172,10 +174,10 @@ Smoke mode reduces sites, origins, seeds, epochs, and trees and is marked
 nonpublishable in every status artifact.
 
 \FloatBarrier
-\subsection{Geographical and meteorological provenance}
+\subsection{Geographic and meteorological provenance}
 
-The geographical CSV retains all factory-coordinate provenance, raster-cell
-row and column, cell-centre coordinates, sampling distance, class code and
+The geographic CSV retains all factory-coordinate provenance, raster-cell
+row and column, cell-center coordinates, sampling distance, class code and
 descriptions, confidence, source citation, file paths, and the MD5 values in
 Table~\ref{tab:context_hashes}. MD5 is used only as a reproducibility checksum,
 not as a security mechanism.
@@ -199,7 +201,7 @@ Beck present 1-km confidence raster & Assignment confidence; MD5
 \texttt{a87f331e406e4ef0\allowbreak{}2114e1350eb2dd01} \\
 Beck present 0.5-degree raster & Americas-map background only; MD5
 \texttt{78d09475fa4b0dbb\allowbreak{}004b6178cba47b4a} \\
-Beck class legend & Codes, descriptions, and RGB colours; MD5
+Beck class legend & Codes, descriptions, and RGB colors; MD5
 \texttt{f0632ca1b3b475d3\allowbreak{}de5a143c4ee1928f} \\
 \path{contexto_geografico.csv} & Auditable sampled table; SHA-256
 \texttt{80b6e003a326d614\allowbreak{}2df03766c15a5dbe\allowbreak{}%
@@ -212,11 +214,11 @@ SHA-256
 \end{tabular}
 \end{table}
 
-The climate source is the present nominal 1-km K\"oppen--Geiger product of
+The climate source is the present-day nominal 1-km K\"oppen--Geiger product of
 Beck et al. \cite{beck2018}. The meteorological artifact contains 3,660
 location--day rows in local solar time and is accompanied by a JSON manifest
 that records the NASA POWER query URL and SHA-256 of every cached response
-\cite{nasapowerdaily}. Its declared use is post-hoc error context, with rain at
-1~mm/day or more, very cloudy conditions at 80\% cloud amount or more, and the
-logical union as the adverse-day flag. The manifest explicitly records that
-these variables are not model inputs.
+\cite{nasapowerdaily}. These data are used only to contextualize forecast
+errors after evaluation. A day is classified as adverse if precipitation is
+at least 1~mm/day or cloud amount is at least 80\%. The manifest explicitly
+records that these variables are not model inputs.

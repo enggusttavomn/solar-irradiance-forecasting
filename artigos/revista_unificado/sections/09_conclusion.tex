@@ -1,25 +1,28 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-This study compared TimesNet and DilatedRNN on matched hourly, daily, and
-monthly GHI tasks at ten factory-associated locations. Their causal GHI
-inputs, partitions, origins, post-processing, metrics, and location weights
-were controlled within each task. The results describe forecasts of the
-NSRDB solar resource, without quantifying factory demand or photovoltaic
-output.
+The matched comparison shows that the relative performance of TimesNet and
+DilatedRNN depends on the GHI forecasting task. Across ten factory-associated
+locations, inputs available at the forecast origin, data partitions,
+forecast origins, post-processing, metrics, and location weights were
+controlled within each task. The results describe forecasts of the NSRDB solar resource, without
+quantifying factory demand or photovoltaic output.
 
-For cumulative macro-MAE, TimesNet led the architecture comparison at 24 and
-72 hours and through 14 days; DilatedRNN led at 48 hours, 30 days, the primary
-one-month task, and the three- and six-month exploratory prefixes. Local
-win counts sometimes disagreed with the macro ranking. At the terminal
-horizons, DilatedRNN won six of ten hourly, daily, and one-month sites and
-seven of ten six-month sites.
+For cumulative macro-MAE, TimesNet led at 24 and 72 hours and at the daily
+checkpoints up to 14 days. DilatedRNN led at 48 hours, 30 days, and in the
+primary one-month task. In the exploratory six-month task, TimesNet led at
+the one-month prefix, while DilatedRNN led at the three- and six-month
+prefixes. Local win counts sometimes disagreed with the macro ranking:
+DilatedRNN achieved lower terminal MAE at six of the ten sites in each of
+the hourly, daily, and primary one-month tasks, and at seven sites in the
+exploratory six-month task.
 
-The complete benchmark gives a more qualified outcome. XGBoost led all
-hourly checkpoints and daily checkpoints 1, 3, and 14; LSTM led at seven days,
-and DilatedRNN led at 30 days with 43.85~W/m$^2$, compared with
-43.93~W/m$^2$ for XGBoost. Calendar climatology led the monthly checkpoints.
-Thus, neither neural architecture was consistently best across tasks.
+The complete benchmark puts these architecture-specific advantages in
+perspective. XGBoost led all hourly checkpoints and the daily checkpoints
+at 1, 3, and 14 days; LSTM led at seven days, and DilatedRNN led at 30 days
+with 43.85~W/m$^2$, compared with 43.93~W/m$^2$ for XGBoost. Calendar
+climatology led the monthly checkpoints. Neither TimesNet nor DilatedRNN
+was consistently best across tasks.
 
 Daily and monthly estimates use five-seed ensembles, and several differences
 are small relative to the observed seed variability. The single hourly seed,
@@ -29,8 +32,8 @@ model differences causally.
 
 Future evaluation should include prospective years and unseen sites,
 multiple hourly seeds, daylight-only metrics, measured computational cost,
-and weather forecasts available at issuance. The retained contracts,
-origin-level predictions, and integrity manifests provide a basis for
-testing those extensions against the tabular and climatological references;
-public release of the corrected forecast bundle remains necessary for
-independent reconstruction of all reported metrics.
+and weather forecasts available at issuance. The matched protocol and
+origin-level predictions provide a basis for testing these extensions.
+Together, the task-level rankings, site-level differences, and reference
+benchmarks show why architecture choice must be evaluated for the intended
+forecasting task.

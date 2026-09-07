@@ -1,16 +1,14 @@
 \section{Theoretical Background}
 \label{sec:background}
 
-Whereas Section~\ref{sec:related_work} compares empirical studies, this section
-defines the physical target, the forecasting task, and the mechanisms of
-TimesNet and DilatedRNN. The distinction is important because neither an
-architecture name nor a nominal horizon uniquely specifies a forecasting
-experiment.
+Following the empirical review in Section~\ref{sec:related_work}, this
+section defines GHI, temporal aggregation, and forecast design before
+describing the mechanisms of TimesNet and DilatedRNN.
 
 \subsection{Global horizontal irradiance and temporal support}
 
 Global horizontal irradiance (GHI) is the instantaneous solar radiant flux
-received per unit area by a horizontal surface. For the sun above the horizon,
+received per unit area by a horizontal surface. When the Sun is above the horizon,
 \begin{equation}
   \mathrm{GHI}
   =
@@ -21,15 +19,14 @@ received per unit area by a horizontal surface. For the sun above the horizon,
 \end{equation}
 where DHI is diffuse horizontal irradiance, DNI is direct normal irradiance,
 and $\theta_z$ is the solar zenith angle \cite{duffie2013}. Irradiance is a
-power density, conventionally expressed in W/m$^2$; time-integrated irradiation
-is an energy density and is a different quantity.
+power density, conventionally expressed in W/m$^2$. Integrating irradiance
+over time yields irradiation, which is an energy density.
 
 The NSRDB product used in this study estimates the radiative components from
-satellite observations and physical models \cite{sengupta2018}. A value at the
-grid cell nearest a factory coordinate is consequently a model-based estimate
-for that location, not a reading from a sensor mounted at the factory. This
-distinction also precludes interpreting GHI directly as photovoltaic power,
-which would require information about module area, orientation, efficiency,
+satellite observations and physical models \cite{sengupta2018}. The study
+uses the model-based estimate at the grid cell nearest each factory
+coordinate. Converting GHI into photovoltaic power would additionally
+require information about module area, orientation, efficiency,
 temperature, losses, and plant operation.
 
 Let $y_{\ell,t}^{(1\mathrm{h})}$ be hourly mean GHI for location $\ell$. The
@@ -44,19 +41,19 @@ mean irradiance at a coarser temporal support $\Delta$ is
 \end{equation}
 where $\mathcal{I}_{\ell,\tau}^{(\Delta)}$ contains the valid hourly samples in
 interval $\tau$ and $N_{\ell,\tau}$ is their number. Equation
-\eqref{eq:temporal_aggregation} preserves W/m$^2$ and defines a daily or
-monthly mean; it is not an accumulated daily or monthly irradiation. Coverage
-requirements must be applied before aggregation so that intervals with missing
-hours are not treated as complete.
+\eqref{eq:temporal_aggregation} preserves the units of W/m$^2$ and defines a
+daily or monthly mean, rather than accumulated irradiation. Coverage
+requirements must be applied before aggregation so that intervals with
+missing hours are not treated as complete.
 
 \subsection{Forecast resolution, context, and horizon}
 
 For a temporal resolution $\Delta$, let
-$\mathbf{X}_{\ell,t}\in\mathbb{R}^{C\times P}$ contain the $C$ observations
-and $P$ admissible variables observed strictly before target interval $t$.
+$\mathbf{X}_{\ell,t}\in\mathbb{R}^{C\times P}$ contain $C$ observations of
+$P$ admissible variables, all observed strictly before target interval $t$.
 Throughout the article, the origin label $t$ identifies the first predicted
-interval; its value is unavailable to the forecaster. A deterministic
-multi-output forecaster is a mapping
+interval; the GHI value for that interval is unavailable when the forecast
+is issued. A deterministic multi-output forecaster is a mapping
 \begin{equation}
   \widehat{\mathbf{y}}_{\ell,t:t+H-1}
   =
@@ -67,7 +64,7 @@ multi-output forecaster is a mapping
 where $\mathbf{z}_{\ell}$ denotes static location information when used,
 $C$ is the context length, and $H$ is the number of predicted intervals.
 For fixed-duration hourly and daily intervals, the corresponding spans are
-$C\Delta$ and $H\Delta$; monthly spans follow civil months of unequal length.
+$C\Delta$ and $H\Delta$; monthly spans follow calendar months of unequal length.
 Thus, 72 hourly outputs and three daily outputs have the same nominal
 duration but different targets and information content. Likewise, predicting
 one monthly mean is a one-step monthly forecast, not a multi-month trajectory
@@ -75,18 +72,17 @@ one monthly mean is a one-step monthly forecast, not a multi-month trajectory
 
 In a direct multi-output strategy, all $H$ values in
 \eqref{eq:forecast_map} are produced jointly. A recursive strategy instead
-feeds one-step predictions back as inputs and can accumulate error with
-horizon \cite{guariso2020}. The strategy must therefore be held constant in a
-model comparison. A local model estimates separate parameters for each
+feeds one-step predictions back as inputs, which can accumulate error as the
+horizon increases \cite{guariso2020}. The forecasting strategy must therefore
+be held constant when comparing models. A local model estimates separate parameters for each
 location; a global model shares $\theta$ across locations and may condition on
 $\mathbf{z}_{\ell}$ \cite{montero2021}. Sharing can increase the effective
 training sample, but it does not guarantee equal local performance.
 
 Persistence, diurnal or seasonal naive forecasts, and simple autoregressive
-references expose how much skill is attributable to continuity and
-seasonality rather than architectural complexity. Their suitability depends
-on resolution and horizon, so more than one transparent reference may be
-needed \cite{voyant2022}.
+models provide baselines for assessing gains beyond continuity and
+seasonality. Their suitability depends on resolution and horizon, so
+evaluation may require more than one baseline \cite{voyant2022}.
 
 \subsection{TimesNet}
 
@@ -104,9 +100,8 @@ amplitudes only over that sample's channels,
   \sum_{c=1}^{C_x}\left|F_{b,f,c}\right|.
   \label{eq:timesnet_frequency}
 \end{equation}
-The zero-frequency component is excluded, and each sample independently uses
-its $k$ largest amplitudes to select frequency indices $f_{b,i}$ and integer
-periods
+After excluding the zero-frequency component, each sample uses its $k$
+largest amplitudes to select frequency indices $f_{b,i}$ and integer periods
 \begin{equation}
   \{f_{b,1},\ldots,f_{b,k}\}
   =
@@ -116,9 +111,8 @@ periods
   p_{b,i}=\left\lfloor\frac{T}{f_{b,i}}\right\rfloor .
   \label{eq:timesnet_periods}
 \end{equation}
-The retained aggregation amplitude is therefore
-$a_{b,i}=A_{b,f_{b,i}}$. This sample-specific selection ensures that changing
-other windows in a computational batch cannot change sample $b$'s periods.
+The selected amplitudes, $a_{b,i}=A_{b,f_{b,i}}$, determine the aggregation
+weights.
 
 For each $p_{b,i}$, the sequence is zero-padded to
 $L_{b,i}=p_{b,i}\lceil T/p_{b,i}\rceil$ and reshaped so that one axis indexes
@@ -126,7 +120,7 @@ position within a period and the other indexes successive periods. A
 two-dimensional Inception-style convolution then learns intraperiod and
 interperiod variations. If $\mathcal{G}_{b,i}$ is the processed tensor and
 $\mathcal{R}_{b,i}^{-1}$ restores chronological order, the period-specific
-outputs are combined with sample-specific amplitude-derived weights
+outputs are combined using weights derived from each sample's amplitudes
 \begin{equation}
 \begin{aligned}
   \alpha_{b,i}
@@ -147,19 +141,17 @@ outputs are combined with sample-specific amplitude-derived weights
   \label{eq:timesnet_aggregation}
 \end{equation}
 The residual connection preserves the original representation. Before value
-embedding, the implementation also standardizes each input window by its own
+embedding, the implementation standardizes each input window using its own
 temporal mean and population standard deviation, with $10^{-5}$ added to the
-variance, and reverses that transformation at the output. This internal,
-causal window standardization is applied after the external site-wise min--max
-transformation described in Section~\ref{sec:data}. Stacked TimesBlocks and a
-task-specific projection produce the forecast. The two-dimensional tensors are
-temporal reorganizations, not geographic images; their axes express
-within-period position and recurrence across periods. Period selection and
-aggregation weights are both sample-specific; batch composition is therefore
-a computational detail rather than part of the forecast information set.
+variance. It reverses this transformation at the output. This causal window
+standardization follows the external site-wise min--max transformation
+described in Section~\ref{sec:data}. Stacked TimesBlocks and a task-specific
+projection produce the forecast. Because period selection and aggregation
+weights are computed for each sample independently, changing other windows
+in the batch does not change the information used for that sample's forecast.
 TimesNet has also been combined with signal decomposition for week-ahead
-hourly solar forecasting \cite{zhao2024timesnet}, but decomposition is not an
-intrinsic component of the TimesNet architecture.
+hourly solar forecasting \cite{zhao2024timesnet}, although decomposition is
+not intrinsic to the architecture.
 
 \subsection{Dilated recurrent neural networks}
 
@@ -179,8 +171,8 @@ layer updates
   \label{eq:dilated_rnn}
 \end{equation}
 where $\phi_q$ can be an ordinary RNN, gated recurrent unit, or LSTM cell
-\cite{chang2017,hochreiter1997}. The recurrent edge from $t-1$ is replaced by the edge
-from $t-d_q$ in that layer; dilation is therefore not an additional residual
+\cite{chang2017,hochreiter1997}. In that layer, the recurrent connection from
+$t-1$ is replaced by one from $t-d_q$; dilation does not add a residual
 connection.
 
 With an integer base $M>1$, the standard exponentially increasing schedule is
@@ -190,20 +182,19 @@ With an integer base $M>1$, the standard exponentially increasing schedule is
 \end{equation}
 The first layer retains local recurrence when $d_1=1$, while higher layers
 connect states at progressively coarser temporal separations. This schedule
-shortens recurrent paths between distant observations and exposes multiple
-temporal scales. It does not discard or downsample the intervening
-observations: the interleaved recurrent chains are recombined at their
-original time indices. An output head maps the resulting states to one or
+shortens recurrent paths between distant observations and represents
+dependencies at multiple temporal scales. The interleaved recurrent chains
+are recombined at their original time indices, preserving the intervening
+observations without downsampling. An output head maps the resulting states to one or
 several forecast steps.
 
-TimesNet and DilatedRNN consequently encode multi-scale dependence through
-different inductive biases. TimesNet discovers dominant Fourier periods and
-applies two-dimensional convolutions; DilatedRNN fixes a hierarchy of sparse
-recurrent lags. Neither architecture, by itself, defines the context,
-forecasting strategy, horizon, or evaluation protocol. Those elements must be
-specified and matched before the implementations can be compared.
-Even then, unequal capacity and optimization responses limit attribution to
-any individual architectural mechanism.
+TimesNet and DilatedRNN encode multi-scale dependence through different
+inductive biases: TimesNet discovers dominant Fourier periods and applies
+two-dimensional convolutions, while DilatedRNN uses a fixed hierarchy of
+sparse recurrent lags. Comparing them requires a matched context,
+forecasting strategy, horizon, and evaluation protocol. Differences in
+capacity and response to optimization still limit attribution of performance
+to individual architectural mechanisms.
 
 \subsection{Atmospheric variability and climate context}
 
@@ -214,11 +205,11 @@ Cloud advection can create rapid GHI changes and photovoltaic power ramps
 variation but does not remove persistent cloudy regimes, synoptic variability,
 or seasonality.
 
-Low GHI alone is not evidence of precipitation: the value may reflect solar
-elevation, cloud optical properties, aerosols, or the temporal aggregation
-window. Descriptions such as rainy or cloudy therefore require an independent
-meteorological field with aligned time and location. Reanalysis products can
-provide such contextual fields, subject to their own spatial resolution and
+Low GHI alone does not establish precipitation because it can also reflect
+solar elevation, cloud optical properties, aerosols, or the aggregation
+window. Describing conditions as rainy or cloudy therefore requires
+independent meteorological data aligned in time and location. Reanalysis
+products can provide this context, subject to their spatial resolution and
 model uncertainty \cite{hersbach2020,copernicus2026era5}.
 
 K{\"o}ppen--Geiger classes summarize long-term temperature and precipitation
