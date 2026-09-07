@@ -14,7 +14,7 @@ boundaries. The target cutoff is checked separately, so a multi-step window is
 retained only when every target lies on or before that date. The initial
 training partition is labeled ``adjustment'' in the execution artifacts.
 
-\begin{table*}[!t]
+\begin{table}[!htbp]
 \centering
 \caption{Complete chronological partitions and expected origins per site.}
 \label{tab:temporal_contract_complete}
@@ -52,7 +52,7 @@ Monthly 12--6 & Initial training & 2020-01-31--2022-07-31 & 2022-12-31 & 31 \\
  & Test & 2024-01-31--2024-07-31 & 2024-12-31 & 7 \\
 \bottomrule
 \end{tabular}
-\end{table*}
+\end{table}
 
 The cutoff column records the calendar boundary enforced by the window
 constructor, not necessarily the last observed target timestamp. In particular,
@@ -71,7 +71,6 @@ are fixed before the relevant evaluation year, while the context advances and
 can contain earlier observations from that year after they become available.
 No parameter update occurs within validation or test.
 
-\FloatBarrier
 \subsection{Model and optimization settings}
 
 The common learned-model input is an array of shape
@@ -82,7 +81,7 @@ solar elevation, climate, cloud, precipitation, or a previously predicted
 target. Table~\ref{tab:complete_hyperparameters} records the fixed model,
 optimizer, seed, and ensemble settings.
 
-\begin{table}[!t]
+\begin{table}[!htbp]
 \centering
 \caption{Fixed settings for all learned models.}
 \label{tab:complete_hyperparameters}
@@ -136,7 +135,6 @@ when no observations match the calendar day or month. All baseline and learned
 forecasts are clipped to zero if negative. Hourly outputs are also set to zero
 when solar elevation is nonpositive, evaluated at minute 30 of each interval.
 
-\FloatBarrier
 \subsection{Evaluation outputs and reproducibility records}
 
 The retained corrected archive is identified as
@@ -173,7 +171,6 @@ joblib versions together with SHA-256 hashes of source code and input files.
 Smoke mode reduces sites, origins, seeds, epochs, and trees and is marked
 nonpublishable in every status artifact.
 
-\FloatBarrier
 \subsection{Geographic and meteorological provenance}
 
 The geographic CSV retains all factory-coordinate provenance, raster-cell
@@ -182,7 +179,7 @@ descriptions, confidence, source citation, file paths, and the MD5 values in
 Table~\ref{tab:context_hashes}. MD5 is used only as a reproducibility checksum,
 not as a security mechanism.
 
-\begin{table}[!t]
+\begin{table}[!htbp]
 \centering
 \caption{Integrity records for the external contextual layer.}
 \label{tab:context_hashes}
