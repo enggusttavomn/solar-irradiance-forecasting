@@ -38,8 +38,9 @@ benchmark in every setting.
 
 At very short horizons, cloud observations can carry information that is not
 contained in a univariate irradiance history. Chow et al.\ \cite{chow2011}
-derived cloud maps and motion vectors from 30-s total-sky images and evaluated
-cloud and irradiance nowcasts at a distributed test bed. Reviews of intra-hour
+derived cloud maps and motion vectors from 30-s total-sky images at a
+distributed test bed. Their quantitative evaluation concerned cloud
+conditions, while the derived GHI nowcasts were assessed qualitatively. Reviews of intra-hour
 methods distinguish such ground-imagery pipelines from satellite, numerical
 weather prediction, and time-series approaches \cite{chu2021,lin2023}. This
 literature also shows why performance during broken-cloud conditions cannot be
@@ -48,8 +49,9 @@ inferred from clear-sky or annual-average behavior.
 For hourly time series, hybrid networks commonly combine representation
 learning with recurrent dynamics. Huang et al.\ \cite{huang2021} used wavelet
 packet decomposition, convolution, long short-term memory (LSTM), and
-multilayer-perceptron branches with irradiance and meteorological inputs for
-1-h-ahead prediction at three United States sites. Guariso et al.\
+multilayer-perceptron branches with irradiance history and meteorological
+inputs, including next-hour temperature, relative-humidity, and wind-speed
+forecasts, for 1-h-ahead prediction at three United States sites. Guariso et al.\
 \cite{guariso2020} compared feed-forward and LSTM networks under recursive,
 horizon-specific, and multi-output strategies for horizons of up to 12~h,
 including persistence and clear-sky references and a transfer analysis across
@@ -61,7 +63,8 @@ The horizon can be extended while retaining hourly outputs. Cheng et al.\
 day-ahead to week-ahead irradiance prediction using recent irradiance and a
 small set of weather variables. Zhao et al.\ \cite{zhao2024timesnet} coupled
 improved complete ensemble empirical mode decomposition with adaptive noise
-(ICEEMDAN) to TimesNet for week-ahead hourly solar-irradiation forecasting.
+(ICEEMDAN) to TimesNet, combining the decomposed irradiation sequences with
+meteorological data for week-ahead hourly solar-irradiation forecasting.
 The latter establishes the relevance of TimesNet to solar forecasting, but its
 decomposition stage and week-ahead protocol do not isolate the effect of the
 TimesNet backbone or provide a matched comparison with a DilatedRNN.
