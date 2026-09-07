@@ -64,8 +64,8 @@ when $\bar{y}$ is numerically zero. Lower values are better.
 \end{equation}
 $R^2$ measures variation tracked relative to a constant predictor built from
 the evaluation mean, as defined in Eq.~\eqref{eq:r2}. It is undefined for fewer
-than two targets or a constant reference vector and can be negative when the
-forecast is worse than that constant reference. Higher values are better;
+than two targets or a numerically zero reference sum of squares and can be
+negative when the forecast is worse than the evaluation-mean predictor. Higher values are better;
 $R^2$ does not replace the scale-dependent errors.
 
 \subsubsection{Horizon scopes and spatial aggregation}
