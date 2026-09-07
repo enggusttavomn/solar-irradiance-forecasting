@@ -63,7 +63,7 @@ architecture ranking.
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=0.90\textwidth]{heterogeneidade_local_delta_mae.png}
+\includegraphics[width=0.90\textwidth]{heterogeneidade_local_delta_mae.pdf}
 \caption{Site-level terminal cumulative contrast
 $\Delta\mathrm{MAE}=\mathrm{MAE}_{\mathrm{TimesNet}}-
 \mathrm{MAE}_{\mathrm{DilatedRNN}}$ in W/m$^2$. Negative (blue) cells
@@ -90,8 +90,9 @@ The 0.23~W/m$^2$ terminal daily ensemble gap is smaller than either
 architecture's seed-level standard deviation; the six-month gap is only
 0.09~W/m$^2$. Comparing runs with the same seed, DilatedRNN had lower
 terminal MAE in three of five daily runs and four of five runs in each
-monthly task. The one-month advantage is thus more consistent across the
-retained initializations, but is not universal. Seed standard deviations
+monthly task. Both monthly advantages are thus more consistent across the
+retained initializations than the terminal daily advantage, but neither is
+universal. Seed standard deviations
 measure training variability on the same test year; they are neither
 confidence intervals nor estimates of uncertainty across future years.
 Comparing an ensemble gap with these deviations is descriptive, not a
@@ -99,7 +100,7 @@ significance test.
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=\textwidth]{variabilidade_arquiteturas.png}
+\includegraphics[width=\textwidth]{variabilidade_arquiteturas.pdf}
 \caption{TimesNet and DilatedRNN seed-level macro-MAE: means with error bars
 spanning one sample standard deviation. Color and marker shape identify
 each architecture. The hourly extension is shown as $n=1$ without an error
@@ -153,7 +154,7 @@ cross-resolution ranking or replace the complete aggregate evaluation.
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=\textwidth]{previsoes_casos_contrastantes.png}
+\includegraphics[width=\textwidth]{previsoes_casos_contrastantes.pdf}
 \caption{Reference GHI and forecasts for the globally selected largest
 TimesNet gain and deficit. Panels share a GHI scale. MAEs and descriptive
 weather records refer to the selected 24-hour windows; meteorology was
@@ -202,7 +203,7 @@ basis for declaring task-level winners.
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=\textwidth]{perfis_sete_dias.png}
+\includegraphics[width=\textwidth]{perfis_sete_dias.pdf}
 \caption{Seven-day hourly GHI profiles around the two error-selected cases
 and the error-independent NASA POWER event. Each curve joins seven
 24-hour forecast prefixes issued on successive local midnights; it is not

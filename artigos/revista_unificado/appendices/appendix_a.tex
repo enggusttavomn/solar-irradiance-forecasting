@@ -70,6 +70,7 @@ are frozen before the relevant evaluation year, while the context advances and
 can contain earlier observations from that year after they become available.
 No parameter update occurs within validation or test.
 
+\FloatBarrier
 \subsection{Complete model and optimization settings}
 
 The common learned-model input is an array of shape
@@ -77,7 +78,8 @@ The common learned-model input is an array of shape
 site identifier. The target is a continuous direct vector of the declared
 output length. No learned model receives latitude, longitude, clock variables,
 solar elevation, climate, cloud, precipitation, or a previously predicted
-target.
+target. Table~\ref{tab:complete_hyperparameters} records the frozen model,
+optimizer, seed, and ensemble settings.
 
 \begin{table}[!t]
 \centering
@@ -132,6 +134,7 @@ missing calendar key. Baselines and learned forecasts receive a zero floor.
 Only hourly outputs additionally receive the nonpositive-solar-elevation mask,
 evaluated at minute 30 of each interval.
 
+\FloatBarrier
 \subsection{Evaluation and artifact contract}
 
 For every declared horizon, the pipeline writes cumulative-prefix and
@@ -160,6 +163,7 @@ joblib versions together with SHA-256 hashes of source code and input files.
 Smoke mode reduces sites, origins, seeds, epochs, and trees and is marked
 nonpublishable in every status artifact.
 
+\FloatBarrier
 \subsection{Geographical and meteorological provenance}
 
 The geographical CSV retains all factory-coordinate provenance, raster-cell

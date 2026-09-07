@@ -10,6 +10,7 @@
 \usepackage{xurl}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
+\usepackage{placeins}
 \usepackage[hidelinks]{hyperref}
 
 \graphicspath{{figures/}}
@@ -32,34 +33,58 @@ University of Campinas, Campinas, SP, Brazil}
 The main manuscript focuses on TimesNet and DilatedRNN. This section retains
 all evaluated models and cumulative checkpoints, including competitors that
 outperform the focal architectures. No model is excluded based on its score.
+Table~\ref{tab:desempenho-macro-auditavel} reports the complete cumulative
+macro-MAE comparison, and Figure~\ref{fig:supp_ranking} displays its ranking
+trajectories. Figure~\ref{fig:supp_seeds} compares seed-level variability
+across all learned models.
 \input{tables/desempenho_macro}
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=\textwidth]{ranking_por_tarefa.png}
+\includegraphics[width=\textwidth]{ranking_por_tarefa.pdf}
 \caption{Complete macro-MAE rankings at cumulative checkpoints. Rank 1 is
 best; ranks are not pooled across tasks. Hourly climatology was not evaluated.}
 \label{fig:supp_ranking}
 \end{figure*}
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=\textwidth]{variabilidade_por_semente.png}
+\includegraphics[width=\textwidth]{variabilidade_por_semente.pdf}
 \caption{Complete learned-model seed variability. Error bars show one sample
 standard deviation; hourly estimates use one seed and have no variability bar.}
 \label{fig:supp_seeds}
 \end{figure*}
+\FloatBarrier
 \input{appendices/supplementary_algorithms}
 
+\FloatBarrier
 \section{Supporting Design and Literature Tables}
+Table~\ref{tab:study_design} summarizes the four task contracts and their
+origin counts. The literature overview in Table~\ref{tab:literature_review}
+is organized into short-horizon, multi-step, and longer-horizon studies
+(Tables~\ref{tab:literature_review_short},
+\ref{tab:literature_review_multistep}, and
+\ref{tab:literature_review_long}, respectively).
 \input{tables/study_design}
 \input{tables/literature_review}
 
+\FloatBarrier
 \appendix
+% elsarticle changes these formats in appendix mode; retain continuous S labels.
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
 \input{appendices/appendix_a}
 
+\FloatBarrier
 \section{Additional Result Tables}
+Table~\ref{tab:variabilidade-sementes} gives the cumulative seed-level
+macro-MAE means and sample standard deviations underlying the variability
+plots. Horizons are expressed in hours, days, or months according to the
+task label. Table~\ref{tab:caso-meteorologico-independente} records the
+independently selected adverse-weather example; its selection does not use
+either model's errors.
 \input{tables/variabilidade_sementes}
 \input{tables/caso_meteorologico_independente}
 
+\FloatBarrier
 \bibliographystyle{elsarticle-num}
 \bibliography{references}
 
