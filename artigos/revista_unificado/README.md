@@ -60,7 +60,7 @@ no workflow; arquivos removidos daqui também são removidos do projeto remoto.
 O monitor local agrupa salvamentos consecutivos, cria commits somente desta
 pasta na branch de trabalho e os envia ao GitHub. O GitHub permanece como fonte
 oficial e aciona a sincronização com o Overleaf.
-## Revisão dos resultados e pseudocódigos (06/09/2026)
+## Revisão dos resultados e pseudocódigos (07/09/2026)
 
 A comparação principal identifica o vencedor TimesNet/DilatedRNN por tarefa
 e horizonte. O benchmark completo permanece no suplemento, incluindo os
@@ -69,17 +69,25 @@ modelos que superam as duas arquiteturas. Os números são derivados de
 anterior auditada está em
 `../../resultados/artigo_revista_unificado/artefatos_resultados_corrigidos_FINAL/`.
 
-- `sections/04_algorithms.tex`: três pseudocódigos conectados ao diagrama.
+- `sections/04_algorithm_protocol.tex`: preparação, seleção e reajuste, após o protocolo comum.
+- `sections/04_algorithm_timesnet.tex` e `sections/04_algorithm_dilatedrnn.tex`:
+  arquiteturas diretas, junto às respectivas explicações na metodologia.
+- `sections/04_algorithms.tex`: arquivo de compatibilidade que reúne os três
+  pseudocódigos; a metodologia inclui cada algoritmo no local correspondente.
 - `tables/vencedores_por_horizonte.tex`: comparação principal, com diferenças
   calculadas antes do arredondamento.
 - `figures/perfis_sete_dias.png`: três perfis de sete dias, compostos por
   previsões de 24 horas emitidas diariamente.
 - `../../resultados/artigo_revista_unificado/auditoria_topico5_20260906/RELATORIO.md`:
   auditoria independente das previsões e métricas.
-- `../../resultados/artigo_revista_unificado/revisao_20260906/`:
+- `../../resultados/artigo_revista_unificado/revisao_20260907/`:
   CSVs e manifesto dos novos elementos de apresentação.
 
 Para reproduzir as tabelas e figuras focais a partir dos dados locais, execute
 na raiz `python scripts/gerar_comparacao_focal_artigo.py`. Esse comando usa
 previsões salvas e não treina novamente os modelos. Os três documentos foram
 compilados com Tectonic nesta revisão.
+
+A revisão de 07/09/2026 também ajusta a legibilidade das tabelas e dos perfis
+de sete dias, as chamadas e a numeração do suplemento, e a localização dos
+pseudocódigos. Essas alterações de apresentação preservam os valores auditados.
