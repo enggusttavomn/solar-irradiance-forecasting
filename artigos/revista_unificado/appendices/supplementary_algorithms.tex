@@ -15,7 +15,7 @@ Algorithm~\ref{alg:supp-block-c} records post-processing and evaluation.
 \label{alg:supp-block-a}
 \footnotesize
 \begin{algorithmic}[1]
-\Require Site series $\{y_{\ell,t}\}$; task $(r,c,h,\mathcal{H})$; fixed cuts
+\Require Site series $\{y_{\ell,t}\}$; task $(r,C,H)$; fixed cuts
 \Ensure Aligned fit, validation, refit, and test windows
 \For{each site $\ell$}
   \State parse, sort, and verify a complete nonnegative GHI series
@@ -26,7 +26,8 @@ Algorithm~\ref{alg:supp-block-c} records post-processing and evaluation.
   \State fit $s_{\ell}^{\mathrm{sel}}$ using observations before 2023
   \State fit $s_{\ell}^{\mathrm{refit}}$ using observations before 2024
   \For{each declared partition $P$}
-    \State create $(c,h)$ direct windows whose complete targets lie in $P$
+    \State form contexts $y_{\ell,t-C:t-1}$ with site ID $\ell$
+    \State retain only full targets $y_{\ell,t:t+H-1}$ lying in $P$
     \State assert the expected origin count and chronological boundaries
   \EndFor
 \EndFor
@@ -39,22 +40,36 @@ Algorithm~\ref{alg:supp-block-c} records post-processing and evaluation.
 \label{alg:supp-block-b}
 \footnotesize
 \begin{algorithmic}[1]
-\Require Block-A partitions; models $\mathcal{M}$; frozen seeds and settings
-\Ensure Validation and retrospective-test forecasts on common origins
-\State compute causal deterministic baselines at every origin
-\For{each learned model $m\in\mathcal{M}$ and declared seed $s$}
+\Require Block-A partitions; frozen seeds and model settings
+\Ensure Validation and test forecasts on common origins in W/m$^2$
+\If{hourly extension}
+  \State verify hashes and load the frozen official forecasts
+  \State $\mathcal M\gets\{\mathrm{DilatedRNN}\}$; $\mathcal S\gets\{42\}$
+\Else
+  \State compute causal deterministic baselines at every origin
+  \State $\mathcal M\gets\{\mathrm{XGBoost,LSTM,TimesNet,DilatedRNN}\}$
+  \State $\mathcal S\gets\{11,23,42,67,89\}$
+\EndIf
+\State scale fit/validation with $s_{\ell}^{\mathrm{sel}}$ and refit/test with $s_{\ell}^{\mathrm{refit}}$
+\For{each $(m,s)\in\mathcal M\times\mathcal S$}
   \If{$m$ is a neural model}
     \State initialize $m$ with seed $s$ and fit on the adjustment partition
-    \State select the epoch count by 2023 normalized MSE and early stopping
-    \State retain the corresponding 2023 forecast
+    \State select $E^\star$ by 2023 normalized MSE and early stopping
+    \State retain the validation forecast from the $E^\star$ checkpoint
     \State reinitialize $m$ with seed $s$
-    \State refit on the pre-2024 partition for the selected fixed epoch count
+    \State refit on the pre-2024 partition for exactly $E^\star$ epochs
   \Else
-    \State fit fixed-configuration XGBoost on adjustment and pre-2024 windows
+    \State use GHI lags plus a one-hot site ID as XGBoost inputs
+    \State use vector-leaf trees when $H>1$ and scalar trees otherwise
+    \State fit fixed-budget XGBoost on adjustment windows
+    \State retain its validation forecast; fit fresh XGBoost on refit windows
   \EndIf
-  \State generate the complete direct horizon at every 2024 origin
+  \State forecast all $H$ targets at every 2024 origin with fixed weights
+  \State invert $s_{\ell}^{\mathrm{sel}}$ for validation and $s_{\ell}^{\mathrm{refit}}$ for test
+  \State retain both unbounded seed forecasts in W/m$^2$
 \EndFor
-\State retain seed-level forecasts and the daily/monthly five-seed mean
+\State for daily/monthly learned models, average the five raw seed forecasts
+\State retain seed and ensemble forecasts separately, before the zero floor
 \end{algorithmic}
 \end{algorithm}
 
@@ -63,17 +78,16 @@ Algorithm~\ref{alg:supp-block-c} records post-processing and evaluation.
 \label{alg:supp-block-c}
 \footnotesize
 \begin{algorithmic}[1]
-\Require Forecasts with their scale domain; targets; site and context metadata
+\Require Block-B forecasts; targets; declared horizons; context metadata
 \Ensure Site-level, macro, horizon-wise, and contextual evidence
-\For{each model forecast}
-  \If{the forecast is in site-normalized units}
-    \State invert the scale fitted for its evaluation cut
-  \EndIf
-  \State apply $\widehat y\leftarrow\max(\widehat y,0)$
+\For{each newly computed seed, ensemble, or baseline forecast}
+  \State apply $\widehat y\leftarrow\max(\widehat y,0)$ in W/m$^2$
   \If{the task is hourly}
+    \State compute solar elevation at each hourly interval's midpoint
     \State set $\widehat y=0$ wherever solar elevation is nonpositive
   \EndIf
 \EndFor
+\State verify common site, origin, target timestamp, and lead keys
 \For{each site and declared horizon}
   \State compute metrics for the cumulative prefix and the exact lead
 \EndFor
