@@ -143,13 +143,32 @@ if ($ProjectId -notmatch '^[a-zA-Z0-9]+$') {
 
 Assert-EspelhoSeguro
 
-$pdfsNasca = @(
-    Test-AssetsPublicacao -Diretorio $origem -CaminhosIgnorados @('main.pdf')
-)
-foreach ($pdfNasca in $pdfsNasca) {
-    Write-Warning (
-        'PDF encapsulado por NASCA DRM sera ignorado na publicacao: ' + $pdfNasca
-    )
+$comandoPython = Get-Command python, python3 -ErrorAction SilentlyContinue | Select-Object -First 1
+$pythonPublicacao = if ($comandoPython) { $comandoPython.Source } else { $null }
+if (-not $pythonPublicacao) {
+    $instalacoesPython = Get-ItemProperty -Path @(
+        'HKCU:\Software\Python\PythonCore\*\InstallPath',
+        'HKLM:\Software\Python\PythonCore\*\InstallPath'
+    ) -ErrorAction SilentlyContinue
+    $pythonPublicacao = $instalacoesPython |
+        Where-Object { $_.ExecutablePath -and (Test-Path -LiteralPath $_.ExecutablePath -PathType Leaf) } |
+        Sort-Object ExecutablePath -Descending |
+        Select-Object -First 1 -ExpandProperty ExecutablePath
+}
+if (-not $pythonPublicacao) {
+    throw 'Python 3.10 ou superior e necessario para selecionar os fontes do artigo.'
+}
+$prefixoFontes = Join-Path ([IO.Path]::GetTempPath()) 'tcc-overleaf-fontes-'
+$fontesPublicacao = $prefixoFontes + [Guid]::NewGuid().ToString('N')
+
+try {
+& $pythonPublicacao (Join-Path $PSScriptRoot 'preparar_overleaf.py') --origem $origem --destino $fontesPublicacao
+if ($LASTEXITCODE -ne 0) {
+    throw 'Nao foi possivel preparar as dependencias do artigo e suplemento.'
+}
+$pdfsNasca = @(Test-AssetsPublicacao -Diretorio $fontesPublicacao)
+if ($pdfsNasca.Count -gt 0) {
+    throw ('Uma figura necessaria esta encapsulada por NASCA DRM: ' + ($pdfsNasca -join ', '))
 }
 
 if ($Validar) {
@@ -157,7 +176,7 @@ if ($Validar) {
     Write-Host ('Origem:   ' + $origem)
     Write-Host ('Espelho:  ' + $espelho)
     Write-Host ('Overleaf: ' + $urlProjeto)
-    Write-Host ('PDFs NASCA preservados localmente e ignorados: ' + $pdfsNasca.Count)
+    Write-Host 'Somente dependencias de main.tex e supplementary_material.tex serao publicadas.'
     exit 0
 }
 
@@ -183,14 +202,10 @@ else {
     Invoke-Git -Diretorio $espelho -Argumentos @('clean', '-fd')
 }
 
-$ignorados = @(
-    '*.aux', '*.bbl', '*.bcf', '*.blg', '*.fdb_latexmk', '*.fls',
-    '*.lof', '*.log', '*.lot', '*.out', '*.run.xml', '*.synctex.gz',
-    '*.toc', 'main.pdf'
-)
 $opcoes = @(
-    $origem, $espelho, '/MIR', '/XD', '.git', '/XF'
-) + $ignorados + @('/R:2', '/W:1', '/NFL', '/NDL', '/NJH', '/NJS', '/NP')
+    $fontesPublicacao, $espelho, '/MIR', '/XD', '.git',
+    '/R:2', '/W:1', '/NFL', '/NDL', '/NJH', '/NJS', '/NP'
+)
 
 & robocopy @opcoes
 $codigoRobocopy = $LASTEXITCODE
@@ -226,3 +241,15 @@ Invoke-Git -Diretorio $espelho -Argumentos @('push', 'origin', 'HEAD')
 
 Write-Host 'Artigo publicado no Overleaf.' -ForegroundColor Green
 Write-Host $urlProjeto
+
+}
+finally {
+    $fontesCompletas = [IO.Path]::GetFullPath($fontesPublicacao)
+    $prefixoCompleto = [IO.Path]::GetFullPath($prefixoFontes)
+    if (-not $fontesCompletas.StartsWith($prefixoCompleto, [StringComparison]::OrdinalIgnoreCase)) {
+        throw ('Diretorio temporario inseguro: ' + $fontesCompletas)
+    }
+    if (Test-Path -LiteralPath $fontesCompletas -PathType Container) {
+        Remove-Item -LiteralPath $fontesCompletas -Recurse -Force
+    }
+}

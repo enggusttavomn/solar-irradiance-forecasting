@@ -8,6 +8,7 @@ on:
     paths:
       - 'artigos/revista_unificado/**'
       - '.github/workflows/sincronizar-overleaf.yml'
+      - 'scripts/preparar_overleaf.py'
   workflow_dispatch:
 
 permissions:
@@ -50,23 +51,17 @@ jobs:
           export GIT_TERMINAL_PROMPT=0
           git clone "https://git.overleaf.com/$OVERLEAF_PROJECT_ID" "$RUNNER_TEMP/overleaf"
 
-      - name: Copiar somente os fontes do artigo
+      - name: Preparar somente as dependencias do artigo e suplemento
         shell: bash
         run: |
-          rsync -a --delete \
-            --exclude='.git/' \
-            --exclude='*.aux' \
-            --exclude='*.bbl' \
-            --exclude='*.bcf' \
-            --exclude='*.blg' \
-            --exclude='*.fdb_latexmk' \
-            --exclude='*.fls' \
-            --exclude='*.log' \
-            --exclude='*.out' \
-            --exclude='*.synctex.gz' \
-            --exclude='*.toc' \
-            --exclude='main.pdf' \
-            'artigos/revista_unificado/' \
+          python3 scripts/preparar_overleaf.py \
+            --destino "$RUNNER_TEMP/overleaf-fontes"
+
+      - name: Atualizar os fontes e retirar arquivos auxiliares antigos
+        shell: bash
+        run: |
+          rsync -a --delete --exclude='.git/' \
+            "$RUNNER_TEMP/overleaf-fontes/" \
             "$RUNNER_TEMP/overleaf/"
 
       - name: Publicar alteracoes
