@@ -26,7 +26,7 @@
     \State Discard weights; reinitialize with the same seed $s$
     \State Fit $S_R(\mathcal W_R)$ for exactly $E^\star$ epochs
   \Else
-    \State Fit XGBoost on $S_A(\mathcal W_A)$; retain validation forecasts
+    \State Fit fixed-budget XGBoost on $S_A(\mathcal W_A)$; retain validation forecasts
     \State Fit fresh XGBoost on $S_R(\mathcal W_R)$ with the same budget
   \EndIf
   \State Forecast every $S_R(\mathcal W_T)$ context with fixed weights
