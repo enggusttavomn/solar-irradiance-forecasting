@@ -76,9 +76,9 @@ Timestamp and GHI fields are parsed, the records are sorted chronologically,
 and the resulting index must be unique, monotonic, regular, and common across
 locations. Invalid timestamps, nonnumeric or non-finite GHI, negative GHI,
 duplicates, discontinuous grids, and an inconsistent stored site identity are
-rejected. Thus the daily loader repairs source row order by sorting rather than
-claiming to reject a merely unsorted input. Product and retrieval metadata are
-retained as provenance rather than supplied to the forecast models. Monthly
+rejected. Unsorted records are reordered before these checks. Product and
+retrieval metadata are retained as provenance rather than supplied to the
+forecast models. Monthly
 aggregation is performed only after the daily checks.
 
 For a site $\ell$, the matched input at origin $t$ is

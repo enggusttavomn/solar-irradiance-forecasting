@@ -124,9 +124,7 @@ equivalent.
 
 \input{tables/model_capacity}
 
-Training and inference times were not instrumented consistently in the
-completed runs. They are therefore not reconstructed from file timestamps,
-epoch counts, hardware assumptions, or checkpoint sizes. The comparison
-reports exact architectural capacity and the common one-thread execution
-policy, while treating measured runtime as unavailable evidence rather than a
-quantity to be estimated retrospectively.
+Training and inference times were not measured consistently across the
+completed runs. The computational comparison therefore reports parameter
+counts and the common one-thread policy; runtime comparisons remain for
+future evaluation.
