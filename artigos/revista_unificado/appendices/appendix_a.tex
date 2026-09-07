@@ -113,7 +113,8 @@ DilatedRNN & Vanilla tanh-RNN cells with recurrent dilations $(1,2,4)$,
 LSTM & One recurrent layer, hidden width 32, direct output head \\
 XGBoost & Squared-error objective, 150 trees, depth 3, learning rate 0.05,
 subsample 0.8, column subsample 0.8, histogram tree method, one thread;
-multi-output-tree strategy when the output length exceeds one \\
+multi-output-tree strategy when the output length exceeds one
+\cite{chen2016xgboost,xgboostmultioutput} \\
 Refit rule & Fresh initialization under the same seed and exactly the epoch
 count selected on 2023; XGBoost is independently fitted with its fixed budget \\
 Ensemble & Arithmetic mean of five seed forecasts for daily/monthly learned
