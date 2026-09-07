@@ -4,7 +4,7 @@
 \footnotesize
 \begin{algorithmic}[1]
 \Require Fitted DilatedRNN; site-scaled $\mathbf x\in\mathbb R^{C\times1}$; site $\ell$
-\Ensure $H$ predictions in the external site-normalized scale
+\Ensure $H$ predictions on the site-specific min--max scale
   \State $\mathbf Z\gets\mathbf x$
   \For{each dilation $d\in(1,2,4)$}
     \State Use this layer's shared 16-unit tanh-RNN

@@ -1,7 +1,7 @@
 \begin{table*}[!t]
 \centering
 \caption{Location-level MAE (W/m$^2$) at each task's terminal cumulative
-horizon. T: TimesNet; D: DilatedRNN; W: lower-MAE winner. Site names are
+horizon. T: TimesNet; D: DilatedRNN; W: model with lower MAE. Site names are
 shortened for layout only.}
 \label{tab:terminal_location_comparison}
 \scriptsize
@@ -11,12 +11,12 @@ shortened for layout only.}
 \begin{tabular}{lrrcrrcrrcrrc}
 \toprule
 & \multicolumn{3}{c}{Daily 30 d} & \multicolumn{3}{c}{Hourly 72 h} &
-\multicolumn{3}{c}{Monthly 1} & \multicolumn{3}{c}{Monthly 6} \\
+\multicolumn{3}{c}{Monthly 1 mo} & \multicolumn{3}{c}{Monthly 6 mo} \\
 \cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}\cmidrule(lr){11-13}
 Site & T & D & W & T & D & W & T & D & W & T & D & W \\
 \midrule
-BMW San Luis Potosi & 41.93 & 39.56 & D & 50.25 & 49.76 & D & 25.60 & 19.80 & D & 26.12 & 24.89 & D \\
-BYD Camacari & 42.74 & 43.41 & T & 55.67 & 53.77 & D & 14.55 & 14.81 & T & 10.29 & 13.77 & T \\
+BMW San Luis Potos\'i & 41.93 & 39.56 & D & 50.25 & 49.76 & D & 25.60 & 19.80 & D & 26.12 & 24.89 & D \\
+BYD Cama\c{c}ari & 42.74 & 43.41 & T & 55.67 & 53.77 & D & 14.55 & 14.81 & T & 10.29 & 13.77 & T \\
 Ford Rouge EV Center & 52.17 & 52.04 & D & 60.26 & 63.81 & T & 12.42 & 12.06 & D & 11.69 & 11.49 & D \\
 GM Factory Zero & 53.71 & 52.99 & D & 61.12 & 64.66 & T & 12.39 & 12.06 & D & 12.20 & 12.01 & D \\
 Hyundai Metaplant & 53.97 & 53.51 & D & 62.38 & 60.26 & D & 13.30 & 12.39 & D & 15.72 & 14.28 & D \\

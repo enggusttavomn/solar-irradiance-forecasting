@@ -1,7 +1,7 @@
 \begin{table}[htbp]
 \centering
 \footnotesize
-\caption{Largest global TimesNet gain relative to DilatedRNN}
+\caption{Largest observed TimesNet MAE reduction relative to DilatedRNN.}
 \label{tab:caso-maior-ganho-timesnet}
 \begin{tabular}{@{}p{0.38\linewidth}p{0.56\linewidth}@{}}
 \toprule
@@ -10,14 +10,14 @@
 Task & Hourly 336--72 \\
 Site & GM Factory Zero \\
 Forecast origin & 2024-03-31 05:00:00+00:00 \\
-Horizon & 24.00 \\
+Cumulative horizon & 24 h \\
 TimesNet MAE (W/m$^2$) & 45.43 \\
 DilatedRNN MAE (W/m$^2$) & 109.90 \\
 DilatedRNN MAE - TimesNet MAE (W/m$^2$) & 64.47 \\
 Weather context available & Yes \\
 Total precipitation (mm) & 0.80 \\
 Mean cloud amount (\%) & 99.64 \\
-Adverse-context days & 1.00 \\
+Days with adverse weather & 1 \\
 Interpretation & Post-hoc descriptive context only; no causal attribution. \\
 \bottomrule
 \end{tabular}

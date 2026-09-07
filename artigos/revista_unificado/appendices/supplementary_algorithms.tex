@@ -15,23 +15,23 @@ Algorithm~\ref{alg:supp-block-c} records post-processing and evaluation.
 \label{alg:supp-block-a}
 \footnotesize
 \begin{algorithmic}[1]
-\Require Site series $\{y_{\ell,t}\}$; task $(r,C,H)$; fixed cuts
-\Ensure Aligned fit, validation, refit, and test windows
+\Require Site series $\{y_{\ell,t}\}$; task $(r,C,H)$; fixed cutoffs
+\Ensure Aligned initial training, validation, refit, and test windows
 \For{each site $\ell$}
-  \State parse, sort, and verify a complete nonnegative GHI series
+  \State Parse, sort, and verify a complete nonnegative GHI series
   \If{$r$ is monthly}
-    \State aggregate daily GHI by civil-month arithmetic mean
+    \State Aggregate daily GHI by civil-month arithmetic mean
   \EndIf
-  \State assign the fixed identifier $\ell$
-  \State fit $s_{\ell}^{\mathrm{sel}}$ using observations before 2023
-  \State fit $s_{\ell}^{\mathrm{refit}}$ using observations before 2024
+  \State Assign the fixed identifier $\ell$
+  \State Fit $s_{\ell}^{\mathrm{sel}}$ using observations before 2023
+  \State Fit $s_{\ell}^{\mathrm{refit}}$ using observations before 2024
   \For{each declared partition $P$}
-    \State form contexts $y_{\ell,t-C:t-1}$ with site ID $\ell$
-    \State retain only full targets $y_{\ell,t:t+H-1}$ lying in $P$
-    \State assert the expected origin count and chronological boundaries
+    \State Form contexts $y_{\ell,t-C:t-1}$ with site ID $\ell$
+    \State Retain only full targets $y_{\ell,t:t+H-1}$ lying in $P$
+    \State Assert the expected origin count and chronological boundaries
   \EndFor
 \EndFor
-\State concatenate sites and sort each partition by origin and site identifier
+\State Concatenate sites and sort each partition by origin and site identifier
 \end{algorithmic}
 \end{algorithm}
 
@@ -40,28 +40,29 @@ Algorithm~\ref{alg:supp-block-c} records post-processing and evaluation.
 \label{alg:supp-block-b}
 \footnotesize
 \begin{algorithmic}[1]
-\Require Block-A partitions; frozen seeds and model settings
+\Require Block-A partitions; fixed seeds and model settings
 \Ensure Validation and test forecasts on common origins in W/m$^2$
 \If{hourly extension}
-  \State verify hashes and load the official TimesNet seed-42 forecasts
+  \State Verify hashes and load the official TimesNet seed-42 forecasts
   \State $\mathcal M\gets\{\mathrm{DilatedRNN}\}$; $\mathcal S\gets\{42\}$
 \Else
   \State $\mathcal M\gets\{\mathrm{TimesNet,DilatedRNN}\}$
   \State $\mathcal S\gets\{11,23,42,67,89\}$
 \EndIf
-\State scale fit/validation with $s_{\ell}^{\mathrm{sel}}$ and refit/test with $s_{\ell}^{\mathrm{refit}}$
+\State Scale initial training and validation with $s_{\ell}^{\mathrm{sel}}$
+\State Scale refit and test with $s_{\ell}^{\mathrm{refit}}$
 \For{each $(m,s)\in\mathcal M\times\mathcal S$}
-  \State initialize $m$ with seed $s$ and fit the adjustment partition using Adam
-  \State select $E^\star$ by 2023 normalized MSE and early stopping
-  \State retain the validation forecast from the $E^\star$ checkpoint
-  \State reinitialize $m$ with seed $s$
-  \State refit on the pre-2024 partition for exactly $E^\star$ epochs
-  \State forecast all $H$ targets at every 2024 origin with fixed weights
-  \State invert $s_{\ell}^{\mathrm{sel}}$ for validation and $s_{\ell}^{\mathrm{refit}}$ for test
-  \State retain both unbounded seed forecasts in W/m$^2$
+  \State Initialize $m$ with seed $s$ and fit on the initial training partition using Adam
+  \State Select $E^\star$ by early stopping on normalized 2023 validation MSE
+  \State Retain the validation forecast from the $E^\star$ checkpoint
+  \State Reinitialize $m$ with seed $s$
+  \State Refit on the pre-2024 partition for exactly $E^\star$ epochs
+  \State Forecast all $H$ targets at every 2024 origin with fixed weights
+  \State Invert $s_{\ell}^{\mathrm{sel}}$ for validation and $s_{\ell}^{\mathrm{refit}}$ for test
+  \State Retain unbounded validation and test forecasts for this seed in W/m$^2$
 \EndFor
-\State for daily/monthly models, average the five raw seed forecasts
-\State retain seed and ensemble forecasts separately, before the zero floor
+\State For daily/monthly models, average the five raw seed forecasts
+\State Retain seed and ensemble forecasts separately, before applying the zero floor
 \end{algorithmic}
 \end{algorithm}
 
@@ -73,18 +74,18 @@ Algorithm~\ref{alg:supp-block-c} records post-processing and evaluation.
 \Require Block-B forecasts; targets; declared horizons; context metadata
 \Ensure Site-level, macro, horizon-wise, and contextual evidence
 \For{each newly computed seed or ensemble forecast}
-  \State apply $\widehat y\leftarrow\max(\widehat y,0)$ in W/m$^2$
+  \State Apply $\widehat y\leftarrow\max(\widehat y,0)$ in W/m$^2$
   \If{the task is hourly}
-    \State compute solar elevation at each hourly interval's midpoint
-    \State set $\widehat y=0$ wherever solar elevation is nonpositive
+    \State Compute solar elevation at each hourly interval's midpoint
+    \State Set $\widehat y=0$ wherever solar elevation is nonpositive
   \EndIf
 \EndFor
-\State verify common site, origin, target timestamp, and lead keys
+\State Verify common site, origin, target timestamp, and lead keys
 \For{each site and declared horizon}
-  \State compute metrics for the cumulative prefix and the exact lead
+  \State Compute metrics for the cumulative prefix and the exact lead
 \EndFor
-\State average site metrics with equal site weight
-\State form TimesNet--DilatedRNN differences paired by site
-\State attach climate and adverse-day labels only after errors are fixed
+\State Average site metrics with equal weight for each site
+\State Form TimesNet--DilatedRNN differences paired by site
+\State Attach climate and adverse-day labels only after errors have been computed
 \end{algorithmic}
 \end{algorithm}

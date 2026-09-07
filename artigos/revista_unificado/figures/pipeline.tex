@@ -35,11 +35,11 @@
 \node[a step,text width=0.165\textwidth,right=2mm of audit] (contract) {
   {\bfseries Learned-model inputs}\\[0.8mm]
   causal GHI history + site ID only\\
-  site-wise scales fitted before each cut\\
+  site-wise scales fitted before each cutoff\\
   complete direct targets contained in partition
 };
 \node[a step,text width=0.235\textwidth,right=2mm of contract] (tasks) {
-  {\bfseries Four frozen tasks}\\[0.8mm]
+  {\bfseries Four forecasting tasks}\\[0.8mm]
   \begin{tabular}{@{}ll@{}}
     Hourly & $336\,\mathrm{h}\rightarrow72\,\mathrm{h}$\\
     Daily & $365\,\mathrm{d}\rightarrow30\,\mathrm{d}$\\
@@ -62,7 +62,7 @@
 };
 \node[b step,text width=0.175\textwidth,right=2mm of models] (selection) {
   {\bfseries Select on 2023}\\[0.8mm]
-  pre-2023 adjustment fit\\
+  pre-2023 initial training\\
   validation chooses neural epoch count \textbf{only}\\
   checkpoint is discarded
 };
@@ -75,7 +75,7 @@
   {\bfseries Leakage barrier}\\[0.8mm]
   lock refitted model + scaler\\
   daily/monthly: five seeds\\
-  hourly extension: registered seed 42
+  hourly extension: seed 42
 };
 \draw[flow] (models.east) -- (selection.west);
 \draw[flow] (selection.east) -- (refit.west);
@@ -105,7 +105,7 @@
 \node[external,text width=0.165\textwidth,right=2mm of evidence] (context) {
   {\bfseries Post-hoc only}\\[0.8mm]
   K\"oppen--Geiger + NASA POWER\\
-  joined after forecasts and errors are fixed\\
+  added after forecasts and errors are fixed\\
   never model inputs
 };
 \draw[flow] (test.east) -- (physics.west);

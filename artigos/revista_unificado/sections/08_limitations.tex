@@ -1,4 +1,4 @@
-\subsection{Threats to Validity and Limitations}
+\subsection{Threats to validity and limitations}
 \label{sec:limitations}
 
 \subsubsection{Construct and data validity}
@@ -12,16 +12,17 @@ demand, photovoltaic output, roof area, or operational constraints. The
 industrial framing therefore identifies geographically relevant forecasting
 sites; it does not establish plant-level energy savings.
 
-The matched input deliberately contains only causal GHI and site identity.
-This restriction controls predictor availability among learned models, but
-it omits potentially
-useful exogenous forecasts such as cloud motion, numerical weather prediction,
-aerosols, and temperature. A site embedding can also encode persistent
-location-specific behaviour and does not demonstrate transfer to an unseen
+The matched input contains only GHI available at the forecast origin and
+site identity. This restriction controls predictor availability among learned
+models, but excludes potentially useful weather information, such as cloud
+motion, numerical weather predictions, and forecasts of aerosols and
+temperature. A site embedding can also encode persistent
+location-specific behavior and does not demonstrate transfer to an unseen
 factory. Fixed local offsets produce regular hourly grids but do not reproduce
 daylight-saving clock changes. Moreover, the daily/monthly archive was
-retrieved independently of the hourly archive. The resolution comparison is
-therefore not a controlled reaggregation of one identical native record set.
+retrieved independently of the hourly archive. The comparison across resolutions
+therefore does not use controlled reaggregation of a single set of native
+records.
 
 \subsubsection{Temporal and statistical validity}
 
@@ -29,18 +30,19 @@ All test evidence is retrospective and restricted to 2024. It does not measure
 prospective robustness under later satellite-product revisions, climate
 nonstationarity, or new sites. The retrospective information set assumes
 that each completed historical aggregate is immediately available; product
-publication delays and operational data latency are not simulated. The monthly primary task has only 48 pre-test
-refit origins per site, and the exploratory six-month task has seven test
-origins per site. Its long output therefore cannot support the same empirical
-resolution as the hourly or daily tasks.
+publication delays and operational data latency are not simulated. The
+primary monthly task has only 48 pre-test refit origins per site, and the
+exploratory six-month task has seven test origins per site. These small
+samples limit the evidence available for fitting and evaluating monthly
+models relative to the hourly and daily tasks.
 
 Targets from adjacent multi-step origins overlap, creating strongly dependent
 errors. Site-first aggregation avoids allowing that overlap to change spatial
 weights, but it does not make the origins independent. The paired summaries
-accordingly use ten locations as descriptive units and do not attach an
-i.i.d. significance test to thousands of overlapping target points.
-Nearby sites may also share weather and model errors, so the ten location
-summaries are not asserted to be independent statistical replicates.
+therefore use ten locations as descriptive units, without applying an
+i.i.d. significance test to the overlapping target points. Nearby sites may
+also share weather and model errors, so their summaries cannot be assumed
+to be independent statistical replicates.
 
 \subsubsection{Model-comparison validity}
 
@@ -48,10 +50,10 @@ TimesNet and DilatedRNN share inputs, origins, seeds, optimization limits, and
 post-processing in the daily and monthly tasks, but their parameterizations and
 inductive biases are not identical. The frozen configuration is a controlled
 comparison rather than an exhaustive architecture-specific search. Moreover,
-the hourly extension adds DilatedRNN with the single official seed 42 to
-read-only comparator forecasts, whereas daily and monthly estimates use five
-seeds. Cross-resolution claims therefore concern protocol behaviour and are
-not interpreted as equal-precision estimates of random-seed variability.
+the hourly extension evaluates DilatedRNN using seed 42 against previously
+generated comparator forecasts, whereas daily and monthly estimates use five
+seeds. Comparisons across resolutions therefore reflect these protocol
+differences, and seed variability cannot be assessed for the hourly task.
 The reported TimesNet is a compact variant with sample-specific Fourier-period
 selection; the findings do not establish a ranking of every implementation
 bearing either architecture name.
@@ -68,15 +70,13 @@ The neural parameter budgets also differ by task, as reported in
 Table~\ref{tab:model_capacity}. Equal optimization rules do not imply equal
 representational capacity, and the comparison cannot isolate whether a result
 comes from recurrence, periodic convolution, parameter count, or their
-interaction. Training and inference runtimes were not instrumented consistently
-in the completed runs, so no retrospective hardware-efficiency ranking is
-claimed.
+interaction. Training and inference runtimes were not measured consistently
+across runs, so the results do not support a hardware-efficiency ranking.
 
-The zero floor imposes a defensible physical bound on all resolutions. The
+The zero floor enforces nonnegative predictions at all resolutions. The
 additional hourly nighttime mask uses deterministic solar geometry, but no
 common upper physical envelope is imposed. Consequently, implausibly high
-daytime extrapolations remain visible in the errors rather than being hidden by
-post-processing.
+daytime extrapolations remain reflected in the reported errors.
 
 Hourly metrics retain all target hours after the common nighttime mask. Exact
 nighttime zeros are part of the operational 72-hour trajectory, but they also
@@ -89,8 +89,8 @@ the irradiance-producing hours separately.
 
 \subsubsection{Contextual-data validity}
 
-The K\"oppen--Geiger labels are categorical cells from the present nominal
-1-km map \cite{beck2018}; they do not resolve microclimates within a cell or
+The K\"oppen--Geiger labels are climate classes extracted from cells of the
+present nominal 1-km map \cite{beck2018}; they do not resolve microclimates within a cell or
 conditions on a specific roof. Class boundaries are uncertain, as made explicit
 by the 50\% confidence of the BMW San Luis Potos\'i assignment. Climate labels
 are descriptive strata, not model inputs and not explanations of individual
@@ -100,5 +100,5 @@ NASA POWER is likewise a gridded, model-based external product rather than
 local rain-gauge or ceilometer evidence \cite{nasapowerdaily}. The 1~mm/day
 precipitation and 80\% cloud thresholds provide reproducible post-hoc tags, but
 thresholding cannot establish that weather caused a particular error.
-Weather-case observations therefore supplement the full aggregate evaluation;
-they do not replace it or determine which model is reported.
+These weather observations provide context for the selected cases, while
+model rankings are based on the full aggregate evaluation.

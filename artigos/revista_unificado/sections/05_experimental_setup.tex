@@ -1,13 +1,12 @@
 \subsection{Experimental Setup}
 \label{sec:experiments}
 
-The executable study defines the four frozen tasks in Band A of
-Figure~\ref{fig:pipeline} rather than comparing errors across unlike
-resolutions. Their complete contexts, outputs, evaluation horizons, and origin
-counts are retained in the Supplementary Material. Within a task, all models
-share sites, origins, targets, fitting cuts, and post-processing. Across tasks,
-MAE and RMSE retain W/m$^2$ units but refer to different temporal aggregates;
-they are not pooled.
+The four forecasting tasks appear in Block A of Figure~\ref{fig:pipeline}.
+The Supplementary Material summarizes their context lengths, outputs,
+evaluation horizons, and origin counts. Within each task, all models share
+sites, origins, targets, fitting cutoffs, and post-processing. MAE and RMSE
+are reported in W/m$^2$ at every resolution, but they describe different
+temporal aggregates and are interpreted separately across tasks.
 
 \subsubsection{Common matched protocol}
 
@@ -16,39 +15,40 @@ The daily and monthly experiments contain three deterministic references
 learned models (XGBoost, LSTM, TimesNet, and DilatedRNN). Every learned
 model receives only causal GHI and site identity. Neural models use the five
 seeds 11, 23, 42, 67, and 89, and XGBoost is likewise refitted under each of
-those seeds because row and column subsampling are stochastic; both seed-level
-forecasts and the arithmetic mean of every learned model are retained.
-Deterministic references are evaluated once. The primary model comparison uses
-macro-MAE after computing
-MAE separately at each site. RMSE, nRMSE, and $R^2$, as well as cumulative and
-exact-lead scopes, remain mandatory complementary outputs.
+those seeds because row and column subsampling are stochastic. For each
+learned model, we evaluate both individual-seed forecasts and their
+arithmetic-mean ensemble, applying the post-processing in
+Section~\ref{sec:methodology}. Deterministic baselines are evaluated once.
+The primary comparison uses macro-MAE, calculated by averaging site-level
+MAEs with equal weights. Complementary results include RMSE, nRMSE, and
+$R^2$ at cumulative horizons and exact leads.
 
-For selection, neural networks are initialized under each seed, fitted to the
-adjustment windows, and monitored on the 2023 windows using normalized MSE.
+During model selection, neural networks are initialized under each seed,
+fitted to the initial training windows (the adjustment partition in the
+saved artifacts), and monitored on the 2023 validation windows using
+normalized MSE.
 Early stopping chooses an epoch count for each model--seed pair. The network is
 then discarded, reinitialized under the same seed, and fitted to the pre-2024
 refit windows for exactly that number of epochs. Thus, epoch selection
 minimizes validation MSE in site-normalized units, while the reported primary
-ranking uses test MAE in physical units. XGBoost uses its frozen tree
-budget in separate adjustment and refit instances. Test forecasts are generated
+ranking uses test MAE in physical units. XGBoost uses a fixed tree
+budget in separate initial training and refit instances. Test forecasts are generated
 only by the refitted instances.
 
-Band B of Figure~\ref{fig:pipeline} summarizes this selection--refit chronology;
-Band A shows the four direct-output contracts that remain fixed during testing.
+Block B of Figure~\ref{fig:pipeline} summarizes this selection and refitting
+sequence.
 
-Within each partition, forecasts follow the rolling-origin protocol of
-Section~\ref{sec:methodology}: the official hourly task advances one local-
-midnight origin per day, the daily task advances one origin per day, and the
-monthly tasks advance one origin per civil month. Parameters remain fixed in
-the test partition while each context incorporates only observations that have
-become available before its first target.
+Forecasts follow the rolling-origin protocol in Section~\ref{sec:methodology}.
+Hourly forecasts are issued once per day at local midnight, daily forecasts
+advance one origin per day, and monthly forecasts advance one origin per
+civil month.
 
 \subsubsection{Hourly protocol and DilatedRNN extension}
 
 The official hourly task uses 336 past hours (14 days) and produces the next
 72 hours directly. The reported checkpoints are 24, 48, and 72 hours; they are
 prefixes and exact leads extracted from the same 72-hour output, not separately
-trained models. Adjustment origins run from 15 January 2019 through
+trained models. Initial training origins run from 15 January 2019 through
 29 December 2022 (1,445 per site), and validation origins run from
 1 January through 29 December 2023 (363 per site). The pre-test refit combines
 origins from 15 January 2019 through 29 December 2023 (1,810 per site). The
@@ -59,17 +59,16 @@ fixed local-time index; corresponding UTC timestamps can extend into
 
 The official artifact fixes seed 42 and contains persistence, annual seasonal
 na\"ive, XGBoost, LSTM, and TimesNet predictions. The extension trains only a
-direct DilatedRNN with seed 42 under the same 336-to-72 contract. Its forecasts
-are merged one-to-one with the read-only official artifact by site, forecast
-origin, target timestamp, and lead. Target equality is checked during the
-one-to-one merge, and the hashes of all official inputs are rechecked before
-the extension is marked complete. Thus the hourly extension does not silently
-retrain or overwrite an official comparator.
+direct DilatedRNN with seed 42 using the same 336-hour context and 72-hour
+output. Its forecasts are matched one-to-one with the existing predictions
+by site, origin, target timestamp, and lead. Target equality and input
+hashes are checked to ensure that the extension preserves the original
+data and comparator forecasts.
 
 \subsubsection{Daily protocol}
 
 The daily primary task uses 365 daily means to predict a 30-day vector. Metrics
-are retained at 1, 3, 7, 14, and 30 days. Adjustment origins extend from
+are evaluated at 1, 3, 7, 14, and 30 days. Initial training origins extend from
 1 January 2020 through 2 December 2022, with targets ending no later than
 31 December 2022 (1,067 origins per site). Validation uses
 1 January--2 December 2023 (336 origins), and refit uses
@@ -80,19 +79,19 @@ is a leap year.
 \subsubsection{Monthly primary and exploratory protocols}
 
 Civil-month means are calculated from the audited daily series. The primary
-monthly task uses 12 months to predict the next month. It has 36 adjustment
+monthly task uses 12 months to predict the next month. It has 36 initial training
 origins in 2020--2022, 12 validation origins in 2023, 48 refit origins in
 2020--2023, and 12 test origins in 2024, for every site.
 
 The exploratory monthly task uses the same 12-month context and directly
 predicts six months. Its declared checkpoints are months 1, 3, and 6.
 The final origin in each partition must fall no later than July so that all
-six targets remain inside its final year. Adjustment therefore contains
+six targets remain inside its final year. Initial training therefore contains
 31 consecutive monthly origins from January 2020 through July 2022, validation
 contains seven from January through July 2023, refit contains 43 from January
 2020 through July 2023, and test contains seven from January through July 2024.
-Earlier complete years in adjustment and refit retain all twelve origins.
-This task is explicitly labelled exploratory because each site contributes
+Earlier complete years in initial training and refit retain all twelve origins.
+This task is exploratory because each site contributes
 only seven test origins, each with a six-month output.
 
 For the six-month task, exact leads are evaluated on different target-month
@@ -100,27 +99,24 @@ sets: lead 1 covers January--July, whereas lead 6 covers June--December. Its
 horizon profile therefore combines lead-time and seasonal effects and is not
 interpreted as an isolated degradation curve.
 
-\subsubsection{Frozen optimization settings}
+\subsubsection{Fixed optimization settings}
 
 Table~\ref{tab:hyperparameters} gives the compact configuration needed to
 interpret the main comparison. The Supplementary Material records the
 full temporal boundaries, model settings, baseline definitions, artifact
-contract, and external-context integrity hashes.
+specifications, and integrity hashes for the contextual data.
 
 \input{tables/hyperparameters}
 
 \subsubsection{Model capacity and computational evidence}
 
-To make differences in model capacity explicit,
-Table~\ref{tab:model_capacity} gives the exact number of trainable scalar
-parameters in each neural model. The counts are obtained from the frozen module
-dimensions, including biases and the ten-site embedding, rather than inferred
-from checkpoint file sizes. TimesNet has a task-dependent direct temporal
+Table~\ref{tab:model_capacity} reports the number of trainable scalar
+parameters in each neural model, including biases and the ten-site embedding.
+The counts are calculated from the implemented module dimensions. TimesNet has a task-dependent direct temporal
 projection, so its parameter count grows with both context and output length.
 Dilated recurrence changes the temporal connections without adding separate
-weights for each skipped position. XGBoost is instead constrained by 150 trees
-of maximum depth three and is not assigned an artificial neural-parameter
-equivalent.
+weights for each skipped position. XGBoost uses 150 trees
+with a maximum depth of three; its capacity is described by those settings.
 
 \input{tables/model_capacity}
 

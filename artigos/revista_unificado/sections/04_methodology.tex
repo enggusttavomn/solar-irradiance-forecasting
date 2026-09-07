@@ -1,37 +1,28 @@
 \subsection{Methodology}
 \label{sec:methodology}
 
-The unified method is an origin-aligned, multi-resolution comparison rather
-than a numerical pooling of the two source studies. TimesNet
-\cite{wu2023} and DilatedRNN \cite{chang2017} are evaluated on identical
-windows within each matched task. The DilatedRNN source study motivates the
-architecture, but its quantized forecasts and previously reported errors are not imported
-into the present continuous-regression protocol. Figure~\ref{fig:pipeline}
-summarizes the three reproducible blocks.
-Algorithm~\ref{alg:matched-training} makes the data cuts, epoch selection,
-fresh refit, and hourly extension explicit.
-Algorithms~\ref{alg:timesnet-direct} and \ref{alg:dilated-direct} detail the
-TimesNet and DilatedRNN forward passes implemented in this study. Additional data-audit and
-evaluation procedures are retained in the Supplementary Material.
+The method compares TimesNet \cite{wu2023} and DilatedRNN \cite{chang2017}
+on identical windows and forecast origins within each temporal task.
+Both models perform continuous GHI regression; the quantized forecasts and
+errors from the preliminary DilatedRNN study are excluded.
+Figure~\ref{fig:pipeline} summarizes the three stages.
+Algorithm~\ref{alg:matched-training} specifies temporal cutoffs, epoch
+selection, refitting, and the hourly extension.
+Algorithms~\ref{alg:timesnet-direct} and \ref{alg:dilated-direct} describe
+the implemented forward passes. The Supplementary Material provides
+additional data checks and evaluation procedures.
 
 \input{figures/pipeline}
 
-\subsubsection{Block A: data contract and temporal windows}
+\subsubsection{Block A: data preparation and temporal windows}
 
-Block A establishes the information set before any model is fitted. It audits
-the regular series, applies the task resolution, assigns a stable site
-identifier, creates the chronological partitions, and fits two independent
-sets of site-wise min--max parameters. The selection scale contains only
-observations before 2023, whereas the refit scale contains only observations
-before 2024.
-
-The resulting sample has the input defined in Eq.~\eqref{eq:matched_input}.
-A timestamp determines availability and alignment but is not presented as a
-feature for the learned models. Likewise, latitude, longitude, climate class,
-NASA POWER variables, and explicit calendar covariates are excluded from their
-inputs. Holding this information set constant controls feature availability
-in the learned-model comparison. Seasonal references additionally use known
-calendar labels, as specified below.
+Block A checks the source series, constructs the required temporal
+aggregates, assigns a stable site identifier, and creates chronological
+partitions. It then fits site-wise min--max scales using observations before
+2023 for model selection and before 2024 for the final refit.
+The input is the historical GHI window and site identifier defined in
+Eq.~\eqref{eq:matched_input}. Keeping this information set constant gives
+both architectures access to the same predictors.
 
 \subsubsection{Block B: matched development of TimesNet and DilatedRNN}
 
@@ -49,24 +40,23 @@ For each architecture--seed pair, the 2023 validation windows select only the
 number of training epochs. The validation checkpoint is then discarded. The
 final instance is trained from a fresh initialization under the same seed on
 all declared pre-test windows for exactly the selected number of epochs.
-The hourly extension reuses the frozen official TimesNet forecasts and adds
+The hourly extension reuses the existing official TimesNet forecasts and adds
 only DilatedRNN with seed 42. The two forecasts are aligned by site, origin,
 target timestamp, and lead.
 
 Algorithm~\ref{alg:matched-training} describes this two-architecture protocol.
-The supplementary benchmark retains the additional reference models, their
+The supplementary benchmark reports the additional reference models, their
 configurations, and the resolution-specific definitions of persistence,
 annual seasonal naive, and calendar climatology.
 
 \input{sections/04_algorithm_protocol}
 
-All partitions are evaluated in rolling-origin form. Model parameters and the
-refit scale remain fixed throughout the 2024 test, but the causal context is
-advanced at every eligible origin and may include GHI observations from earlier
-in 2024 once they have become historical. No test target enters a context before
-its timestamp, and no weights are updated during the test. The design is thus a
-retrospective walk-forward evaluation with fixed parameters, not a single
-forecast issued at the end of 2023 for every target in 2024.
+Evaluation follows a rolling-origin protocol. At each eligible origin,
+the input window advances to include the latest historical observations,
+including earlier observations from 2024 during the test period.
+Model parameters and the refit scale remain fixed throughout that year.
+This retrospective walk-forward design evaluates successive forecasts
+using only the information available before each target interval.
 
 \FloatBarrier
 \subsubsection{Direct architecture implementations}
@@ -80,13 +70,13 @@ horizon. Sample-wise period selection, the site embedding, and this
 post-block temporal head are design choices of the evaluated compact
 adaptation of TimesNet \cite{wu2023}. The reported results characterize that
 implementation under the matched protocol. The final step restores the
-external site-normalized scale; the common physical post-processing is
-applied later in Block C.
+site-specific min--max scale. Block C then converts predictions to physical
+units and applies common post-processing.
 
 \input{sections/04_algorithm_timesnet}
 
 Algorithm~\ref{alg:dilated-direct} specifies the alternative recurrent path.
-Each layer shares its tanh-RNN weights across residue chains with the same
+Each layer shares its tanh-RNN weights across interleaved chains with the same
 dilation, then reassembles the outputs in temporal order. The last state
 and the site embedding feed a direct output head. The explicit forward
 passes make clear which operations differ while both architectures retain
@@ -112,17 +102,14 @@ operations.
 
 All forecasts receive the same non-negativity floor after inverse scaling.
 Daily and monthly forecasts have no upper truncation. Hourly forecasts also use
-solar elevation computed at the centre of each hourly interval; predictions
+solar elevation computed at the center of each hourly interval; predictions
 are set to zero when elevation is nonpositive, following the deterministic
-geometry implemented with \texttt{pvlib} \cite{anderson2023}. Solar elevation
-is therefore a post-processing constraint, not privileged predictive
-information.
+geometry implemented with \texttt{pvlib} \cite{anderson2023}. Solar elevation constrains
+the output without entering model fitting.
 
-The unit of the matched descriptive comparison is the location. For each
-metric and horizon scope, the pipeline retains the TimesNet--DilatedRNN
-difference, its mean and median across the ten sites, and the number of sites
-won by TimesNet. It does not treat overlapping forecast origins as independent
-replicates. The NASA POWER join occurs only in the final interpretive layer,
-using the predeclared operational 1~mm/day and 80\% thresholds from
-Section~\ref{sec:data}; it cannot influence training, model selection, or the
-reported aggregate metrics.
+The location is the unit of the descriptive comparison. For each metric
+and horizon scope, we report the TimesNet--DilatedRNN difference, its mean
+and median across the ten sites, and the number of sites won by TimesNet.
+The treatment of overlapping origins is defined in Section~\ref{sec:metrics}.
+NASA POWER data are added after evaluation, using the 1~mm/day and 80\%
+thresholds in Section~\ref{sec:data} to contextualize selected cases.

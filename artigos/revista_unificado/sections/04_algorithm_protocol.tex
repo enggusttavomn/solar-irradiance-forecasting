@@ -3,13 +3,14 @@
 \label{alg:matched-training}
 \footnotesize
 \begin{algorithmic}[1]
-\Require Task $(r,C,H)$; site archives; frozen cuts and settings
+\Require Task $(r,C,H)$; site archives; fixed cutoffs and settings
 \Ensure Origin-aligned TimesNet and DilatedRNN forecasts and metrics
 \State Load the archive for $r$; audit the common time grid and GHI
 \State For monthly tasks, average audited daily values by civil month
-\State Build $\mathcal W_A,\mathcal W_V,\mathcal W_R,\mathcal W_T$
+\State Build initial training (adjustment) windows $\mathcal W_A$
+\Statex \hspace{\algorithmicindent}and validation $\mathcal W_V$, refit $\mathcal W_R$, and test $\mathcal W_T$ windows
 \Statex \hspace{\algorithmicindent}with context $y_{t-C:t-1}$, targets $y_{t:t+H-1}$, and site ID
-\State Reject target windows crossing a cut; verify origin counts
+\State Reject target windows crossing a cutoff; verify origin counts
 \State Fit site scales $S_A$ before 2023 and $S_R$ before 2024
 \If{hourly extension}
   \State Verify hashes; load the official TimesNet seed-42 forecasts
@@ -33,6 +34,6 @@
 \State Post-process each new seed and ensemble forecast:
 \Statex \hspace{\algorithmicindent}apply the zero floor and, if hourly, the nighttime mask
 \State Verify common $(\ell,t,\mathrm{lead},\mathrm{target})$ keys
-\State Compute site metrics, then equal-site macro summaries
+\State Compute site metrics, then macro summaries with equal site weights
 \end{algorithmic}
 \end{algorithm}

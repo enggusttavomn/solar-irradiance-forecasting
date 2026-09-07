@@ -4,10 +4,9 @@
 Let $y_i$ be a reference GHI value, $\widehat{y}_i$ its post-processed
 forecast, $e_i=y_i-\widehat{y}_i$, $\bar{y}$ the mean reference value in the
 same evaluation vector, and $n$ its number of origin--lead forecast pairs.
-A target timestamp can therefore occur more than once when it is predicted
-from different origins. Each metric is
-computed first for one site, one model estimate, one partition, one declared
-horizon, and one horizon scope.
+A target timestamp can occur more than once when forecasts are issued from
+different origins. Metrics are first calculated separately by site, model
+estimate, partition, horizon, and horizon scope.
 
 \subsubsection{Mean absolute error}
 
@@ -17,10 +16,10 @@ horizon, and one horizon scope.
  \frac{1}{n}\sum_{i=1}^{n}\left|e_i\right|.
  \label{eq:mae}
 \end{equation}
-MAE is the primary error measure and remains in W/m$^2$. Its linear penalty
-makes the magnitude directly interpretable and less dominated by individual
-large deviations than a squared-error score \cite{hyndman2006}. Lower values
-are better.
+MAE is the primary error measure. Expressed in W/m$^2$, it directly describes
+the average magnitude of forecast errors. Its linear penalty gives large
+deviations less influence than a squared-error score \cite{hyndman2006}.
+Lower values indicate better performance.
 
 \subsubsection{Root mean squared error}
 
@@ -45,12 +44,11 @@ verification \cite{yang2020verification}. Lower values are better.
  \mathrm{nRMSE}_{\%}=100\,\mathrm{nRMSE}.
  \label{eq:nrmse}
 \end{equation}
-The machine-readable artifacts store the dimensionless ratio; tables that use
-percent explicitly multiply it by 100. Mean normalization supports comparison
-among sites with different mean irradiance levels \cite{voyant2022}.
-From Eq.~\eqref{eq:nrmse}, a small denominator makes this ratio unstable.
-The value is therefore left undefined
-when $\bar{y}$ is numerically zero. Lower values are better.
+The saved data store nRMSE as a dimensionless ratio; percentage values in
+tables multiply it by 100. Normalization by mean irradiance supports
+comparisons among sites \cite{voyant2022}, although a small denominator
+makes the ratio unstable. nRMSE is left undefined when $\bar{y}$ is
+numerically zero. Lower values indicate better performance.
 
 \subsubsection{Coefficient of determination}
 
@@ -65,8 +63,9 @@ when $\bar{y}$ is numerically zero. Lower values are better.
 $R^2$ measures variation tracked relative to a constant predictor built from
 the evaluation mean, as defined in Eq.~\eqref{eq:r2}. It is undefined for fewer
 than two targets or a numerically zero reference sum of squares and can be
-negative when the forecast is worse than the evaluation-mean predictor. Higher values are better;
-$R^2$ does not replace the scale-dependent errors.
+negative when the forecast is worse than the evaluation-mean predictor.
+Higher values are better. This measure complements the errors expressed
+in physical units.
 
 \subsubsection{Horizon scopes and spatial aggregation}
 
@@ -102,19 +101,18 @@ of metric $M$, and let $L_M=|\mathcal{L}_{M}|$. The macro result is
 Undefined site-level values are excluded from the corresponding mean; if
 none are finite, the macro value remains undefined. All ten sites contribute
 to the main cumulative results. Equal site weighting prevents a site with more
-valid forecast pairs from dominating the geographical summary.
-Macro-MAE is the predeclared primary
-metric at every resolution; MAE, RMSE, nRMSE, and $R^2$ are nevertheless
-retained together rather than selectively reported.
+valid forecast pairs from dominating the geographic summary.
+Macro-MAE is the predeclared primary metric at every resolution, with
+RMSE, nRMSE, and $R^2$ reported as complementary measures.
 
 For daily and monthly learned models, seed-level metrics describe variability
 across five fitted instances on the same test data. Their standard deviation
 measures sensitivity to the registered seeds; it is neither a forecast
 prediction interval nor a confidence interval for generalization error.
 The TimesNet--DilatedRNN paired comparison uses the post-processed five-seed
-ensemble forecast from Eq.~\eqref{eq:ensemble_forecast}. The hourly extension compares the single
-registered seed 42 for both models. For each site, metric, horizon, and scope,
-the pipeline stores
+ensemble forecast from Eq.~\eqref{eq:ensemble_forecast}. The hourly extension
+uses seed 42 for both models. For each site, metric, horizon, and scope,
+the paired difference is
 \begin{equation}
  \Delta_{\ell,M}
  =

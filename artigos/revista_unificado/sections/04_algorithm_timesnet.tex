@@ -4,7 +4,7 @@
 \footnotesize
 \begin{algorithmic}[1]
 \Require Fitted TimesNet of width $D$; site-scaled $\mathbf x\in\mathbb R^{C\times1}$; site $\ell$
-\Ensure $H$ predictions in the external site-normalized scale
+\Ensure $H$ predictions on the site-specific min--max scale
   \State $\mu\gets\operatorname{mean}(\mathbf x)$;
   $\sigma\gets\sqrt{\operatorname{var}_{\mathrm{pop}}(\mathbf x)+10^{-5}}$
   \State $\mathbf u\gets(\mathbf x-\mu)/\sigma$

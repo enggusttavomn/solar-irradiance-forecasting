@@ -32,26 +32,26 @@ t264377@dac.unicamp.br, and gfraiden@unicamp.br.}%
 \begin{abstract}
 This study compares TimesNet and dilated recurrent neural networks
 (DilatedRNN) for global horizontal irradiance (GHI) forecasting at ten
-locations associated with electric-vehicle factories. Four tasks spanning
-hourly, daily, and monthly resolutions align causal GHI inputs, forecast
-origins, fitting cuts,
-post-processing, and equal-site-weighted evaluation within each task.
-At the terminal cumulative horizons, TimesNet achieved lower macro-MAE at
+locations associated with electric-vehicle factories. Using model-based
+estimates from the National Solar Radiation Database (NSRDB), we evaluate
+four tasks: hourly forecasts up to 72 hours, daily-mean forecasts up to
+30 days, one-month forecasts, and exploratory forecasts up to six months.
+Within each task, the models share historical GHI inputs, site identifiers,
+forecast origins, temporal partitions, and post-processing. Performance is
+measured by mean absolute error averaged equally across sites (macro-MAE).
+Over the complete forecast horizons, TimesNet achieved lower macro-MAE at
 72 hours (52.48 versus 52.96~W/m$^2$), while DilatedRNN led at
 30 days (43.85 versus 44.08~W/m$^2$), one month
-(13.01 versus 13.89~W/m$^2$), and the exploratory six-month horizon
-(14.37 versus 14.46~W/m$^2$). The one-month DilatedRNN reduction was
-6.38\% relative to TimesNet; shorter-prefix rankings varied with horizon.
-Daily and monthly results use five-seed ensembles, while the hourly
-comparison retains seed 42. Site-level wins sometimes disagree with the
-macro ranking, and several ensemble gaps are small relative to seed
-variability. The full reference-model benchmark is retained separately
-and shows that winning the focal comparison does not imply superiority
-over all evaluated models. Implementation-specific pseudocode and seven-day
-forecast profiles support reproducibility and interpretation.
-The evidence supports task-specific winners, with descriptive conclusions
-limited by overlapping multi-step targets and a single test year.
-Meteorology is used solely as independent post-hoc context.
+(13.01 versus 13.89~W/m$^2$), and six months
+(14.37 versus 14.46~W/m$^2$). The one-month reduction relative to TimesNet
+was 6.38\%. Daily and monthly comparisons use five-seed ensembles; the
+hourly comparison uses seed 42. Rankings vary across horizons and locations,
+and several ensemble differences are small relative to variability across
+seeds. The full benchmark shows that other evaluated models outperform both
+architectures in several tasks. Independent meteorological data provide
+context for selected cases after evaluation. The findings support
+task-specific comparisons, with descriptive conclusions limited by
+overlapping forecast targets and a single test year.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -88,7 +88,7 @@ reported in this article.
 
 \section*{Data and Code Availability}
 Source code and protocol definitions are maintained at
-\url{https://github.com/enggusttavomn/solar-irradiance-forecasting}.
+\url{https://github.com/enggusttavomn/TCC}.
 The comparisons reported here use the corrected multi-resolution archive
 identified in the Supplementary Material. That full forecast bundle is not
 included in the current public repository snapshot; access to it is required

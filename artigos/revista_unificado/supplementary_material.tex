@@ -35,37 +35,39 @@ University of Campinas, Campinas, SP, Brazil}
 \end{frontmatter}
 
 \section{Complete Reference-Model Benchmark}
-This supplement reports all evaluated reference models and cumulative
-checkpoints alongside TimesNet and DilatedRNN.
-Table~\ref{tab:desempenho-macro-auditavel} reports the complete cumulative
-macro-MAE comparison, and Figure~\ref{fig:supp_ranking} displays its ranking
-trajectories. Figure~\ref{fig:supp_seeds} compares seed-level variability
-across all learned models.
+This supplement compares TimesNet and DilatedRNN with all evaluated reference
+models at each cumulative forecast horizon.
+Table~\ref{tab:desempenho-macro-auditavel} reports the complete macro-MAE
+comparison, and Figure~\ref{fig:supp_ranking} shows how model rankings vary
+across horizons. Figure~\ref{fig:supp_seeds} summarizes variability across
+random seeds for all learned models.
 \input{tables/desempenho_macro}
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=\textwidth]{ranking_por_tarefa.png}
-\caption{Complete macro-MAE rankings at cumulative checkpoints. Rank 1 is
-best; ranks are not pooled across tasks. Hourly climatology was not evaluated.}
+\caption{Macro-MAE rankings for all models at cumulative forecast horizons.
+Rank 1 indicates the lowest MAE within each task and horizon.
+Hourly climatology was not evaluated.}
 \label{fig:supp_ranking}
 \end{figure*}
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=\textwidth]{variabilidade_por_semente.png}
-\caption{Complete learned-model seed variability. Error bars show one sample
-standard deviation; hourly estimates use one seed and have no variability bar.}
+\caption{Variability across random seeds for all learned models. Error bars
+show one sample standard deviation; hourly results use one seed and therefore
+have no error bars.}
 \label{fig:supp_seeds}
 \end{figure*}
 \clearpage
 \input{appendices/supplementary_algorithms}
 
 \section{Supporting Design and Literature Tables}
-Table~\ref{tab:study_design} summarizes the four task contracts and their
-origin counts. The literature overview in Table~\ref{tab:literature_review}
-is organized into short-horizon, multi-step, and longer-horizon studies
-(Tables~\ref{tab:literature_review_short},
-\ref{tab:literature_review_multistep}, and
-\ref{tab:literature_review_long}, respectively).
+Table~\ref{tab:study_design} summarizes the four forecasting tasks and their
+origin counts. Tables~\ref{tab:literature_review_short},
+\ref{tab:literature_review_multistep}, and \ref{tab:literature_review_long}
+cover three groups of studies, respectively: intra-hour and short hourly
+forecasting; day-ahead and direct multi-step forecasting; and monthly,
+multi-climate, and very-long-horizon forecasting.
 \input{tables/study_design}
 \input{tables/literature_review}
 
@@ -76,12 +78,12 @@ is organized into short-horizon, multi-step, and longer-horizon studies
 \input{appendices/appendix_a}
 
 \section{Additional Result Tables}
-Table~\ref{tab:variabilidade-sementes} gives the cumulative seed-level
-macro-MAE means and sample standard deviations underlying the variability
-plots. Horizons are expressed in hours, days, or months according to the
-task label. Table~\ref{tab:caso-meteorologico-independente} records the
-independently selected adverse-weather example; its selection does not use
-either model's errors.
+Table~\ref{tab:variabilidade-sementes} reports the means and sample standard
+deviations of macro-MAE across seeds at each cumulative horizon, as shown in
+the variability plots. Horizons are expressed in hours, days, or months
+according to the task. Table~\ref{tab:caso-meteorologico-independente}
+describes the adverse-weather example selected independently of either
+model's errors.
 \input{tables/variabilidade_sementes}
 \input{tables/caso_meteorologico_independente}
 
