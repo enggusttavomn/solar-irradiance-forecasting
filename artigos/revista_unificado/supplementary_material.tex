@@ -13,6 +13,10 @@
 \usepackage{placeins}
 \usepackage[hidelinks]{hyperref}
 
+\makeatletter
+\let\ps@pprintTitle\ps@plain
+\makeatother
+
 \graphicspath{{figures/}}
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\thefigure}{S\arabic{figure}}
@@ -31,9 +35,8 @@ University of Campinas, Campinas, SP, Brazil}
 \end{frontmatter}
 
 \section{Complete Reference-Model Benchmark}
-The main manuscript focuses on TimesNet and DilatedRNN. This section retains
-all evaluated models and cumulative checkpoints, including competitors that
-outperform the focal architectures. No model is excluded based on its score.
+This supplement reports all evaluated reference models and cumulative
+checkpoints alongside TimesNet and DilatedRNN.
 Table~\ref{tab:desempenho-macro-auditavel} reports the complete cumulative
 macro-MAE comparison, and Figure~\ref{fig:supp_ranking} displays its ranking
 trajectories. Figure~\ref{fig:supp_seeds} compares seed-level variability

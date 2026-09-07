@@ -1,12 +1,9 @@
 \section{Related Work}
 \label{sec:related_work}
 
-This section reviews empirical solar-forecasting studies and positions the
-present comparison. Definitions of irradiance, temporal support, and the two
-neural architectures are intentionally reserved for
-Section~\ref{sec:background}; the purpose here is to compare what prior studies
-predicted, which information they used, how far ahead they forecast, and how
-they evaluated the forecasts.
+The following review compares solar-forecasting studies by target, inputs,
+horizon, and evaluation protocol. Section~\ref{sec:background} introduces the
+underlying physical and architectural concepts.
 
 \subsection{Forecasting scope and evaluation practice}
 
@@ -63,8 +60,8 @@ The horizon can be extended while retaining hourly outputs. Cheng et al.\
 day-ahead to week-ahead daytime irradiance prediction using recent irradiance and a
 small set of weather variables. Zhao et al.\ \cite{zhao2024timesnet} coupled
 improved complete ensemble empirical mode decomposition with adaptive noise
-(ICEEMDAN) to TimesNet, combining the decomposed irradiation sequences with
-meteorological data for week-ahead hourly solar-irradiation forecasting.
+(ICEEMDAN) to TimesNet, combining the decomposed solar-radiation sequences with
+meteorological data for week-ahead hourly solar-radiation forecasting.
 The latter establishes the relevance of TimesNet to solar forecasting, but its
 decomposition stage and week-ahead protocol do not isolate the effect of the
 TimesNet backbone or provide a matched comparison with a DilatedRNN.
@@ -104,7 +101,7 @@ targets, sites, horizons, inputs, and test protocols are not commensurate.
 Taken together, the reviewed studies supply strong architecture-specific and
 horizon-specific evidence, but none provides the exact matched comparison
 required here. The reviewed TimesNet solar application predicts week-ahead hourly
-irradiation after signal decomposition \cite{zhao2024timesnet}; monthly neural
+solar radiation after signal decomposition \cite{zhao2024timesnet}; monthly neural
 studies use different targets and architectures \cite{ozoegwu2019}; and the
 very-long-term cross-location study centers on a language-model backbone
 \cite{cabral2026}. Directly ordering their published errors would therefore
