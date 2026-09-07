@@ -95,8 +95,12 @@ pass used in the comparison. The site-scaled context is standardized within
 the current window, embedded with position and site identity, and processed
 using periods selected separately for that sample. After the TimesBlock,
 a direct temporal projection maps the context to the complete forecast
-horizon. The final step restores the external site-normalized scale; the
-common physical post-processing is applied later in Block C.
+horizon. Sample-wise period selection, the site embedding, and this
+post-block temporal head are design choices of the evaluated compact
+adaptation of TimesNet \cite{wu2023}. The reported results characterize that
+implementation under the matched protocol. The final step restores the
+external site-normalized scale; the common physical post-processing is
+applied later in Block C.
 
 \input{sections/04_algorithm_timesnet}
 

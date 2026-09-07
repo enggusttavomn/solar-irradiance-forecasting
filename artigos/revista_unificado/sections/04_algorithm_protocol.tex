@@ -8,7 +8,7 @@
 \State Load the archive for $r$; audit the common time grid and GHI
 \State For monthly tasks, average audited daily values by civil month
 \State Build $\mathcal W_A,\mathcal W_V,\mathcal W_R,\mathcal W_T$
-\Statex \hspace{\algorithmicindent}with context $y_{t-C:t-1}$ and targets $y_{t:t+H-1}$
+\Statex \hspace{\algorithmicindent}with context $y_{t-C:t-1}$, targets $y_{t:t+H-1}$, and site ID
 \State Reject target windows crossing a cut; verify origin counts
 \State Fit site scales $S_A$ before 2023 and $S_R$ before 2024
 \If{hourly extension}
@@ -22,17 +22,21 @@
   \If{$m$ is neural}
     \State Initialize with $s$; fit $S_A(\mathcal W_A)$ using Adam
     \State Select $E^\star$ by early stopping on $S_A(\mathcal W_V)$ MSE
+    \State Retain the validation forecasts from epoch $E^\star$
     \State Discard weights; reinitialize with the same seed $s$
     \State Fit $S_R(\mathcal W_R)$ for exactly $E^\star$ epochs
   \Else
-    \State Fit fixed-budget XGBoost on $S_A(\mathcal W_A)$ and $S_R(\mathcal W_R)$
+    \State Fit XGBoost on $S_A(\mathcal W_A)$; retain validation forecasts
+    \State Fit fresh XGBoost on $S_R(\mathcal W_R)$ with the same budget
   \EndIf
   \State Forecast every $S_R(\mathcal W_T)$ context with fixed weights
   \Statex \hspace{\algorithmicindent}(Algorithms~\ref{alg:timesnet-direct} and \ref{alg:dilated-direct})
-  \State Invert $S_R$; retain the unbounded seed forecast in W/m$^2$
+  \State Invert $S_A$ for validation and $S_R$ for test forecasts
+  \State Retain the unbounded seed forecasts in W/m$^2$
 \EndFor
 \State For daily/monthly tasks, average raw forecasts across seeds
-\State Apply the zero floor and, if hourly, the nighttime mask
+\State Post-process each new seed and ensemble forecast:
+\Statex \hspace{\algorithmicindent}apply the zero floor and, if hourly, the nighttime mask
 \State Verify common $(\ell,t,\mathrm{lead},\mathrm{target})$ keys
 \State Compute site metrics, then equal-site macro summaries
 \end{algorithmic}
