@@ -1,4 +1,4 @@
-\documentclass[final,5p,times,twocolumn]{elsarticle}
+\documentclass[final,3p,times]{elsarticle}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -42,23 +42,23 @@ comparison, and Figure~\ref{fig:supp_ranking} shows how model rankings vary
 across horizons. Figure~\ref{fig:supp_seeds} summarizes variability across
 random seeds for all learned models.
 \input{tables/desempenho_macro}
-\begin{figure*}[!t]
+\begin{figure}[!htbp]
 \centering
-\includegraphics[width=\textwidth]{ranking_por_tarefa.png}
+\includegraphics[width=0.80\textwidth]{ranking_por_tarefa.png}
 \caption{Macro-MAE rankings for all models at cumulative forecast horizons.
 Rank 1 indicates the lowest MAE within each task and horizon.
 Hourly climatology was not evaluated.}
 \label{fig:supp_ranking}
-\end{figure*}
-\begin{figure*}[!t]
+\end{figure}
+\begin{figure}[!htbp]
 \centering
-\includegraphics[width=\textwidth]{variabilidade_por_semente.png}
+\includegraphics[width=0.80\textwidth]{variabilidade_por_semente.png}
 \caption{Variability across random seeds for all learned models. Error bars
 show one sample standard deviation; hourly results use one seed and therefore
 have no error bars.}
 \label{fig:supp_seeds}
-\end{figure*}
-\clearpage
+\end{figure}
+\FloatBarrier
 \input{appendices/supplementary_algorithms}
 
 \section{Supporting Design and Literature Tables}
