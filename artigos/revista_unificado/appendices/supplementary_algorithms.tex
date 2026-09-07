@@ -60,10 +60,12 @@ Algorithm~\ref{alg:supp-block-c} records post-processing and evaluation.
 \caption{Post-processing, metrics, and contextual analysis}
 \label{alg:supp-block-c}
 \begin{algorithmic}[1]
-\Require Raw forecasts, targets, site metadata, and post-hoc context
+\Require Forecasts with their scale domain; targets; site and context metadata
 \Ensure Site-level, macro, horizon-wise, and contextual evidence
 \For{each model forecast}
-  \State invert the scale fitted for its evaluation cut
+  \If{the forecast is in site-normalized units}
+    \State invert the scale fitted for its evaluation cut
+  \EndIf
   \State apply $\widehat y\leftarrow\max(\widehat y,0)$
   \If{the task is hourly}
     \State set $\widehat y=0$ wherever solar elevation is nonpositive
