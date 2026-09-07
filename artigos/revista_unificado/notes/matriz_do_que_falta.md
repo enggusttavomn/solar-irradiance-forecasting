@@ -47,8 +47,7 @@ de contexto estão em `../../../resultados/artigo_revista_unificado/`.
 
 - substituir a descrição dos dois manuscritos-base por citações formais apenas
   quando houver metadados públicos de publicação ou submissão autorizados;
-- regenerar `main.pdf` e compilar `main_ieee.tex` em Overleaf ou em uma máquina
-  com distribuição TeX, pois o ambiente local atual não possui compilador;
+- recompilar os três documentos após as alterações finais e conferir os PDFs; o ambiente local dispõe de Tectonic, usado na revisão de setembro de 2026;
 - preencher, no momento da submissão, os campos editoriais dependentes do
   periódico escolhido (declaração de dados/código, financiamento, CRediT e
   conflitos de interesse) sem inferir informações dos autores.
@@ -61,14 +60,14 @@ de contexto estão em `../../../resultados/artigo_revista_unificado/`.
 - Não selecionar apenas fábricas ou métricas favoráveis ao método proposto.
 - Não preencher resultados ausentes por interpolação, estimativa ou texto hipotético.
 
-## Revis?o de 6 de setembro de 2026
+## Revisão de 6 de setembro de 2026
 
-- Resultados conferidos independentemente a partir das previs?es salvas; relat?rio
+- Resultados conferidos independentemente a partir das previsões salvas; relatório
   em `../../../resultados/artigo_revista_unificado/auditoria_topico5_20260906/`.
 - Tabela principal de vencedores TimesNet/DilatedRNN por horizonte cumulativo.
 - Benchmark completo preservado na Tabela S1 e Figura S1 do suplemento.
-- Tr?s pseudoc?digos no corpo principal, conectados ao diagrama do m?todo.
-- Se??o 5.7 com perfis de sete dias em tr?s localidades, usando prefixos
-  di?rios de 24 horas, sem alegar previs?o direta de 168 horas.
-- A revis?o usa o artigo do Thales como refer?ncia de organiza??o e n?vel de
+- Tr?s pseudocódigos no corpo principal, conectados ao diagrama do método.
+- Seção 5.7 com perfis de sete dias em três localidades, usando prefixos
+  diários de 24 horas, sem alegar previsão direta de 168 horas.
+- A revisão usa o artigo do Thales como referência de organização e nível de
   detalhe; resultados, figuras e procedimentos pertencem ao experimento atual.
