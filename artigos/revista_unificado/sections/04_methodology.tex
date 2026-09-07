@@ -51,8 +51,9 @@ These references use the same GHI archive, but their calendar lookup and
 pre-cut historical summaries are not restricted to the learned models'
 lag-vector representation.
 
-The learned comparison comprises XGBoost, a direct LSTM, TimesNet, and a direct
-DilatedRNN. These models share the scaled GHI sequence and site identifier;
+The learned comparison comprises XGBoost \cite{chen2016xgboost}, a direct LSTM
+\cite{hochreiter1997}, TimesNet, and a direct DilatedRNN. These models share
+the scaled GHI sequence and site identifier;
 neural models encode the identifier with a learned embedding, whereas XGBoost
 uses a one-hot representation. TimesNet selects its Fourier periods separately
 for every input window; consequently, other windows in an inference batch
@@ -66,7 +67,13 @@ the test fit. For neural models, 2023 selects only the number of epochs for each
 model--seed pair. The final instance is trained from a fresh initialization on
 all declared pre-test windows for exactly that number of epochs. XGBoost has a
 fixed tree budget and is independently fitted on the adjustment and refit
-partitions. The hourly extension is narrower: all official model forecasts are
+partitions. For output length greater than one, the implementation uses
+\texttt{multi\_output\_tree} with histogram-based training: each tree has a
+shared split structure and vector-valued leaves for the forecast leads
+\cite{xgboostmultioutput}. The one-month task uses a scalar-output regressor.
+This multi-output facility is a later library feature, distinct from the
+scalar-tree formulation in the original XGBoost paper.
+The hourly extension is narrower: all official model forecasts are
 read without modification, and only DilatedRNN with seed 42 is added and
 aligned by site, origin, target timestamp, and lead.
 
