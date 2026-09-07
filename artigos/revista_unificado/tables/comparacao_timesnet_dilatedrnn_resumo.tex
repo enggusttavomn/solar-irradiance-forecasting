@@ -1,26 +1,28 @@
 \begin{table*}[htbp]
 \centering
-\caption{Descriptive paired comparison of TimesNet and DilatedRNN across sites. Overlapping target windows are not treated as independent observations.}
+\caption{Descriptive site-paired cumulative comparison. $\Delta=\mathrm{MAE}_{\mathrm{TimesNet}}-\mathrm{MAE}_{\mathrm{DilatedRNN}}$ in W/m$^2$; negative values favor TimesNet (TN), positive values favor DilatedRNN (DR). Wins count sites, not forecast origins. Overlapping multi-step targets are not independent observations.}
 \label{tab:vitorias-timesnet-dilatedrnn}
 \small
-\resizebox{\textwidth}{!}{%
+\setlength{\tabcolsep}{5pt}
 \begin{tabular}{lrrrrrrr}
 \toprule
-Task & Horizon & Sites & Mean MAE difference (W/m$^2$) & Median MAE difference (W/m$^2$) & TimesNet site wins & DilatedRNN site wins & Ties \\
+Task & Horizon & Sites & Mean $\Delta$ & Median $\Delta$ & TN wins & DR wins & Ties \\
 \midrule
-Daily 365--30 & 1 & 10 & -0.07 & -0.04 & 5 & 5 & 0 \\
-Daily 365--30 & 3 & 10 & -0.17 & -0.15 & 5 & 5 & 0 \\
-Daily 365--30 & 7 & 10 & -0.13 & -0.23 & 6 & 4 & 0 \\
-Daily 365--30 & 14 & 10 & -0.02 & -0.09 & 6 & 4 & 0 \\
-Daily 365--30 & 30 & 10 & 0.23 & 0.09 & 4 & 6 & 0 \\
-Hourly 336--72 & 24 & 10 & -1.35 & -1.33 & 7 & 3 & 0 \\
-Hourly 336--72 & 48 & 10 & 0.02 & 0.62 & 4 & 6 & 0 \\
-Hourly 336--72 & 72 & 10 & -0.48 & 0.50 & 4 & 6 & 0 \\
-Monthly 12--1 & 1 & 10 & 0.89 & 0.35 & 4 & 6 & 0 \\
-Monthly 12--6 & 1 & 10 & -0.03 & 0.38 & 4 & 6 & 0 \\
-Monthly 12--6 & 3 & 10 & 0.16 & -0.08 & 6 & 4 & 0 \\
-Monthly 12--6 & 6 & 10 & 0.09 & 0.50 & 3 & 7 & 0 \\
+Hourly 336--72 & 24 h & 10 & -1.35 & -1.33 & 7 & 3 & 0 \\
+Hourly 336--72 & 48 h & 10 & 0.02 & 0.62 & 4 & 6 & 0 \\
+Hourly 336--72 & 72 h & 10 & -0.48 & 0.50 & 4 & 6 & 0 \\
+\addlinespace
+Daily 365--30 & 1 d & 10 & -0.07 & -0.04 & 5 & 5 & 0 \\
+Daily 365--30 & 3 d & 10 & -0.17 & -0.15 & 5 & 5 & 0 \\
+Daily 365--30 & 7 d & 10 & -0.13 & -0.23 & 6 & 4 & 0 \\
+Daily 365--30 & 14 d & 10 & -0.02 & -0.09 & 6 & 4 & 0 \\
+Daily 365--30 & 30 d & 10 & 0.23 & 0.09 & 4 & 6 & 0 \\
+\addlinespace
+Monthly 12--1 & 1 mo & 10 & 0.89 & 0.35 & 4 & 6 & 0 \\
+\addlinespace
+Monthly 12--6 & 1 mo & 10 & -0.03 & 0.38 & 4 & 6 & 0 \\
+Monthly 12--6 & 3 mo & 10 & 0.16 & -0.08 & 6 & 4 & 0 \\
+Monthly 12--6 & 6 mo & 10 & 0.09 & 0.50 & 3 & 7 & 0 \\
 \bottomrule
-\end{tabular}%
-}
+\end{tabular}
 \end{table*}

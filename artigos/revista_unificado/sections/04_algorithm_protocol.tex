@@ -1,0 +1,39 @@
+\begin{algorithm}[!htbp]
+\caption{Matched preparation, selection, and refit}
+\label{alg:matched-training}
+\footnotesize
+\begin{algorithmic}[1]
+\Require Task $(r,C,H)$; site archives; frozen cuts and settings
+\Ensure Origin-aligned forecasts and site-first metrics
+\State Load the archive for $r$; audit the common time grid and GHI
+\State For monthly tasks, average audited daily values by civil month
+\State Build $\mathcal W_A,\mathcal W_V,\mathcal W_R,\mathcal W_T$
+\Statex \hspace{\algorithmicindent}with context $y_{t-C:t-1}$ and targets $y_{t:t+H-1}$
+\State Reject target windows crossing a cut; verify origin counts
+\State Fit site scales $S_A$ before 2023 and $S_R$ before 2024
+\If{hourly extension}
+  \State Verify hashes; load the frozen official forecasts
+  \State $\mathcal M\gets\{\mathrm{DilatedRNN}\}$; $\mathcal S\gets\{42\}$
+\Else
+  \State $\mathcal M\gets\{\mathrm{XGBoost,LSTM,TimesNet,DilatedRNN}\}$
+  \State $\mathcal S\gets\{11,23,42,67,89\}$; evaluate causal baselines
+\EndIf
+\For{each $(m,s)\in\mathcal M\times\mathcal S$}
+  \If{$m$ is neural}
+    \State Initialize with $s$; fit $S_A(\mathcal W_A)$ using Adam
+    \State Select $E^\star$ by early stopping on $S_A(\mathcal W_V)$ MSE
+    \State Discard weights; reinitialize with the same seed $s$
+    \State Fit $S_R(\mathcal W_R)$ for exactly $E^\star$ epochs
+  \Else
+    \State Fit fixed-budget XGBoost on $S_A(\mathcal W_A)$ and $S_R(\mathcal W_R)$
+  \EndIf
+  \State Forecast every $S_R(\mathcal W_T)$ context with fixed weights
+  \Statex \hspace{\algorithmicindent}(Algorithms~\ref{alg:timesnet-direct} and \ref{alg:dilated-direct})
+  \State Invert $S_R$; retain the unbounded seed forecast in W/m$^2$
+\EndFor
+\State For daily/monthly tasks, average raw forecasts across seeds
+\State Apply the zero floor and, if hourly, the nighttime mask
+\State Verify common $(\ell,t,\mathrm{lead},\mathrm{target})$ keys
+\State Compute site metrics, then equal-site macro summaries
+\end{algorithmic}
+\end{algorithm}
