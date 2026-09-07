@@ -5,6 +5,7 @@
 \usepackage{amsmath,amssymb}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
+\usepackage{placeins}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{graphicx}
@@ -52,7 +53,7 @@ comparison retains seed 42. Site-level wins sometimes disagree with the
 macro ranking, and several ensemble gaps are small relative to seed
 variability. The full reference-model benchmark is retained separately
 and shows that winning the focal comparison does not imply superiority
-over all evaluated models. Adapted procedural pseudocode and seven-day
+over all evaluated models. Implementation-specific pseudocode and seven-day
 forecast profiles support reproducibility and interpretation.
 The evidence supports task-specific winners, with descriptive conclusions
 limited by overlapping multi-step targets and a single test year.
@@ -75,10 +76,13 @@ electric-vehicle factories
 \label{sec:proposed_approach}
 \input{sections/03_data_and_feature_engineering}
 \input{sections/04_methodology}
+\FloatBarrier
 \input{sections/05_experimental_setup}
 \input{sections/06_metrics}
 
+\FloatBarrier
 \input{sections/07_results_and_discussion}
+\FloatBarrier
 \input{sections/08_limitations}
 \input{sections/09_conclusion}
 
@@ -91,8 +95,12 @@ personal relationships that could have appeared to influence the work
 reported in this article.
 
 \section*{Data and Code Availability}
-Code, experiment contracts, derived outputs, and integrity manifests are
-available at \url{https://github.com/enggusttavomn/TCC}.
+Source code and protocol definitions are maintained at
+\url{https://github.com/enggusttavomn/solar-irradiance-forecasting}.
+The comparisons reported here use the corrected multi-resolution archive
+identified in the Supplementary Material. That full forecast bundle is not
+included in the current public repository snapshot; access to it is required
+to reproduce the reported metrics from individual predictions.
 External NSRDB, K\"oppen--Geiger, and NASA POWER products remain subject to
 their respective providers' access and licensing conditions.
 
