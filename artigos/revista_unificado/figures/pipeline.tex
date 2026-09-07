@@ -54,9 +54,11 @@
 % B — matched development and explicit leakage barrier.
 \node[band label,fill=orange!82!black,below=3mm of a-label] (b-label) {B};
 \node[b step,text width=0.175\textwidth,right=2mm of b-label] (models) {
-  {\bfseries Matched models}\\[0.8mm]
-  \textbf{Deterministic:} persistence, annual seasonal na\"ive, calendar climatology (daily/monthly)\\[0.5mm]
-  \textbf{Learned:} XGBoost, LSTM, TimesNet, DilatedRNN
+  {\bfseries Focal architectures}\\[0.8mm]
+  \textbf{TimesNet}\\
+  \textbf{DilatedRNN}\\[0.5mm]
+  same GHI history and site ID\\
+  direct continuous forecasts
 };
 \node[b step,text width=0.175\textwidth,right=2mm of models] (selection) {
   {\bfseries Select on 2023}\\[0.8mm]
@@ -67,8 +69,7 @@
 \node[b step,text width=0.205\textwidth,right=2mm of selection] (refit) {
   {\bfseries Fresh pre-test refit}\\[0.8mm]
   same-seed reinitialization\\
-  fixed selected epochs on pre-2024 windows\\
-  independent fixed-budget XGBoost fit
+  fixed selected epochs on pre-2024 windows
 };
 \node[b step,text width=0.18\textwidth,right=2mm of refit] (lock) {
   {\bfseries Leakage barrier}\\[0.8mm]
@@ -116,7 +117,7 @@
 \draw[flow] (b-label.south) -- (c-label.north);
 
 \end{tikzpicture}
-\caption{End-to-end matched forecasting design. (A) Independent NSRDB archives
+\caption{End-to-end matched forecasting design for TimesNet and DilatedRNN. (A) Independent NSRDB archives
 are audited and converted into four direct-output tasks; learned models
 receive causal GHI and site identity. (B) Model selection and fresh pre-test
 refitting follow Algorithm~\ref{alg:matched-training}. (C) Direct test

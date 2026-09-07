@@ -1,8 +1,8 @@
 \section{Detailed Forecasting Algorithms}
 
 The three blocks below provide additional preparation and evaluation details
-for the protocol and architecture pseudocode in the main article. They retain
-the full reference-model benchmark as well as the focused neural comparison.
+for the protocol and architecture pseudocode in the main article. They focus
+on the matched TimesNet--DilatedRNN comparison.
 Algorithm~\ref{alg:supp-block-a} defines data preparation,
 Algorithm~\ref{alg:supp-block-b} specifies selection and refitting, and
 Algorithm~\ref{alg:supp-block-c} records post-processing and evaluation.
@@ -36,39 +36,31 @@ Algorithm~\ref{alg:supp-block-c} records post-processing and evaluation.
 \end{algorithm}
 
 \begin{algorithm}[H]
-\caption{Validation, reinitialization, and direct forecasting}
+\caption{TimesNet--DilatedRNN selection and direct forecasting}
 \label{alg:supp-block-b}
 \footnotesize
 \begin{algorithmic}[1]
 \Require Block-A partitions; frozen seeds and model settings
 \Ensure Validation and test forecasts on common origins in W/m$^2$
 \If{hourly extension}
-  \State verify hashes and load the frozen official forecasts
+  \State verify hashes and load the official TimesNet seed-42 forecasts
   \State $\mathcal M\gets\{\mathrm{DilatedRNN}\}$; $\mathcal S\gets\{42\}$
 \Else
-  \State compute causal deterministic baselines at every origin
-  \State $\mathcal M\gets\{\mathrm{XGBoost,LSTM,TimesNet,DilatedRNN}\}$
+  \State $\mathcal M\gets\{\mathrm{TimesNet,DilatedRNN}\}$
   \State $\mathcal S\gets\{11,23,42,67,89\}$
 \EndIf
 \State scale fit/validation with $s_{\ell}^{\mathrm{sel}}$ and refit/test with $s_{\ell}^{\mathrm{refit}}$
 \For{each $(m,s)\in\mathcal M\times\mathcal S$}
-  \If{$m$ is a neural model}
-    \State initialize $m$ with seed $s$ and fit on the adjustment partition
-    \State select $E^\star$ by 2023 normalized MSE and early stopping
-    \State retain the validation forecast from the $E^\star$ checkpoint
-    \State reinitialize $m$ with seed $s$
-    \State refit on the pre-2024 partition for exactly $E^\star$ epochs
-  \Else
-    \State use GHI lags plus a one-hot site ID as XGBoost inputs
-    \State use vector-leaf trees when $H>1$ and scalar trees otherwise
-    \State fit fixed-budget XGBoost on adjustment windows
-    \State retain its validation forecast; fit fresh XGBoost on refit windows
-  \EndIf
+  \State initialize $m$ with seed $s$ and fit the adjustment partition using Adam
+  \State select $E^\star$ by 2023 normalized MSE and early stopping
+  \State retain the validation forecast from the $E^\star$ checkpoint
+  \State reinitialize $m$ with seed $s$
+  \State refit on the pre-2024 partition for exactly $E^\star$ epochs
   \State forecast all $H$ targets at every 2024 origin with fixed weights
   \State invert $s_{\ell}^{\mathrm{sel}}$ for validation and $s_{\ell}^{\mathrm{refit}}$ for test
   \State retain both unbounded seed forecasts in W/m$^2$
 \EndFor
-\State for daily/monthly learned models, average the five raw seed forecasts
+\State for daily/monthly models, average the five raw seed forecasts
 \State retain seed and ensemble forecasts separately, before the zero floor
 \end{algorithmic}
 \end{algorithm}
@@ -80,7 +72,7 @@ Algorithm~\ref{alg:supp-block-c} records post-processing and evaluation.
 \begin{algorithmic}[1]
 \Require Block-B forecasts; targets; declared horizons; context metadata
 \Ensure Site-level, macro, horizon-wise, and contextual evidence
-\For{each newly computed seed, ensemble, or baseline forecast}
+\For{each newly computed seed or ensemble forecast}
   \State apply $\widehat y\leftarrow\max(\widehat y,0)$ in W/m$^2$
   \If{the task is hourly}
     \State compute solar elevation at each hourly interval's midpoint
