@@ -1,6 +1,6 @@
 \begin{table*}[!t]
 \centering
-\caption{Representative observation-driven studies at intra-hour and short
+\caption{Representative forecasting studies at intra-hour and short
 hourly horizons. Designs are reported factually rather than ranked because
 their targets and test protocols differ.}
 \label{tab:literature_review}
@@ -17,7 +17,7 @@ Chow et al.\ \cite{chow2011} &
 GHI and cloud conditions at the UC San Diego test bed &
 30-s total-sky images, clear-sky library, cloud map, shadows, and motion vectors &
 Image-based physical nowcast &
-Up to 5~min; six pyranometers on four partly cloudy days \\
+Cloud nowcasts up to 5~min; six pyranometers on four partly cloudy days; qualitative GHI assessment \\
 
 Guariso et al.\ \cite{guariso2020} &
 Hourly GHI at an Italian station, with transfer to other sites &
@@ -27,7 +27,7 @@ Feed-forward and LSTM networks &
 
 Huang et al.\ \cite{huang2021} &
 Hourly irradiance at Denver, Clark, and Folsom &
-Irradiance, temperature, relative humidity, and wind speed; wavelet-packet decomposition &
+Irradiance history and meteorology, including next-hour temperature, humidity, and wind-speed forecasts; wavelet-packet decomposition &
 WPD--CNN--LSTM--MLP hybrid &
 1~h ahead; comparison with individual networks and climatology--persistence \\
 \bottomrule
@@ -61,7 +61,7 @@ Direct multi-step benchmark evaluated with several complementary metrics \\
 
 Zhao et al.\ \cite{zhao2024timesnet} &
 Hourly solar irradiation &
-ICEEMDAN decomposition of the original sequence before temporal modeling &
+ICEEMDAN-decomposed irradiation sequences combined with meteorological data &
 ICEEMDAN--TimesNet &
 Week-ahead multi-step prediction; comparison with alternative multi-step models \\
 \bottomrule
@@ -83,7 +83,7 @@ forecasting studies.}
 \midrule
 Ozoegwu \cite{ozoegwu2019} &
 Monthly-mean daily global solar radiation at selected locations &
-Radiation history, month number, and exogenous series according to formulation &
+Radiation history; lagged month numbers in NARX and current month number in the hybrid &
 NAR, NARX, and hybrid ANN &
 Monthly-scale forecasting; comparison among the three neural formulations \\
 
