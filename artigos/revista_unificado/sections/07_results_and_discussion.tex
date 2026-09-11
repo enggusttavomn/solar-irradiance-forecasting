@@ -1,55 +1,66 @@
 \section{Results and Discussion}
 \label{sec:results}
 
-\subsection{Primary architecture comparison}
+\subsection{Full-horizon comparison favors DilatedRNN}
 
-Table~\ref{tab:architecture_winners} identifies the lower-MAE architecture
-at every cumulative checkpoint. All values are test macro-MAEs with equal
-weight per site, computed from the same origins and targets within each task.
-Daily and monthly values evaluate the five-seed forecast ensemble; hourly
-values evaluate seed 42. A cumulative horizon includes all
-leads up to that checkpoint, rather than only the final lead.
+DilatedRNN achieved lower cumulative macro-MAE than TimesNet in three of
+the four tasks at their full output horizons. The clearest advantage was in
+the primary one-month task: 13.01 versus 13.89~W/m$^2$, a
+6.38\% reduction calculated from unrounded errors. DilatedRNN also led at
+30 days (43.85 versus 44.08~W/m$^2$) and in the exploratory six-month task
+(14.37 versus 14.46~W/m$^2$). TimesNet led the hourly task at
+72 hours, with 52.48 versus 52.96~W/m$^2$ for DilatedRNN.
 
-At the terminal horizons, TimesNet led the 72-hour task, with
-52.48 versus 52.96~W/m$^2$ for DilatedRNN. DilatedRNN led the 30-day task
-(43.85 versus 44.08~W/m$^2$), the primary one-month task
-(13.01 versus 13.89~W/m$^2$), and the exploratory six-month task
-(14.37 versus 14.46~W/m$^2$). The largest relative terminal reduction
-was DilatedRNN's one-month gain: 6.38\% relative to TimesNet, calculated from
-unrounded MAEs. These task-specific outcomes cannot be combined into an
-overall score because the targets, forecast origins, and aggregation scales
-differ across tasks.
+Table~\ref{tab:architecture_winners} reports these results and the lower-MAE
+architecture at every intermediate cumulative checkpoint. All values are
+test macro-MAEs with equal weight per site, computed from the same origins
+and targets within each task. Daily and monthly values evaluate the
+five-seed forecast ensemble; hourly values evaluate seed 42. A cumulative
+horizon includes all leads up to that checkpoint.
+
+The three full-horizon wins support a preference for DilatedRNN in the
+evaluated daily and monthly tasks, with one-month forecasting providing the
+largest relative separation. The smaller daily and six-month margins are
+interpreted together with the seed variability below. Counting task wins
+summarizes the observed outcomes; it does not combine errors across
+different targets, origins, or aggregation scales into an overall score.
 
 \input{tables/vencedores_por_horizonte}
 
 Table~\ref{tab:metricas-terminais} complements MAE with RMSE, nRMSE, and
-$R^2$. The terminal RMSE ordering agrees with the MAE ordering: at 72 hours,
-TimesNet obtained 101.17~W/m$^2$ versus 104.93~W/m$^2$ for DilatedRNN;
-DilatedRNN had the lower RMSE in the daily and monthly tasks. The
-comparison with the other evaluated models is reported in the Supplementary
+$R^2$. The terminal RMSE ordering agrees with the MAE ordering:
+DilatedRNN had lower RMSE in the daily and monthly tasks, while TimesNet
+obtained 101.17~W/m$^2$ at 72 hours versus 104.93~W/m$^2$ for
+DilatedRNN. The reference-model benchmark is reported in the Supplementary
 Material and discussed in Section~\ref{sec:reference_benchmark}.
 
 \input{tables/metricas_terminais}
 
 \subsection{Site-paired differences and horizon dependence}
 
-Table~\ref{tab:vitorias-timesnet-dilatedrnn} gives the site-paired comparison;
-a negative difference denotes lower TimesNet MAE. TimesNet led at 24 and
-72 hours by 1.35 and 0.48~W/m$^2$, respectively; DilatedRNN led at 48 hours
-by 0.02~W/m$^2$. Differences are calculated before rounding individual
-MAEs. TimesNet won seven sites at 24 hours and four at both 48 and 72 hours.
-Its 72-hour macro advantage therefore reflects the magnitude of local gains,
-even though DilatedRNN won more sites.
+Table~\ref{tab:vitorias-timesnet-dilatedrnn} examines whether the
+full-horizon preference for DilatedRNN extends across locations; a negative
+difference denotes lower TimesNet MAE. DilatedRNN led the primary
+one-month task by 0.89~W/m$^2$ and won six sites. At 30 days, it led by
+0.23~W/m$^2$ and also won six sites; in the exploratory six-month task,
+it led by 0.09~W/m$^2$ and won seven. The preference therefore appears at
+a majority of the locations in each of these full-horizon tasks, although
+local exceptions remain.
 
-In the daily task, TimesNet led by 0.07--0.17~W/m$^2$ through seven days and
-by 0.02~W/m$^2$ at 14 days. At 30 days, DilatedRNN led by
-0.23~W/m$^2$ and won six sites. DilatedRNN also led the primary one-month
-task by 0.89~W/m$^2$ and won six sites. In the exploratory six-month task,
-TimesNet led the one-month prefix by 0.03~W/m$^2$ despite winning only four
-sites. DilatedRNN led by 0.16 and 0.09~W/m$^2$ at three and six months,
-respectively, and won seven sites at the terminal horizon. At three months,
-TimesNet won six sites despite its higher macro-MAE. These reversals show
-why both the magnitude and the distribution of site-level errors matter.
+Horizon profiles qualify this result. TimesNet led the daily checkpoints
+through seven days by 0.07--0.17~W/m$^2$ and at 14 days by
+0.02~W/m$^2$. In the exploratory six-month task, TimesNet led the one-month
+prefix by 0.03~W/m$^2$ despite winning only four sites. DilatedRNN led at
+three months by 0.16~W/m$^2$, although TimesNet won six sites there.
+These reversals show that the magnitude and the distribution of local
+errors contribute differently to the macro ranking.
+
+In the hourly task, TimesNet led at 24 and 72 hours by 1.35 and
+0.48~W/m$^2$, respectively; DilatedRNN led at 48 hours by
+0.02~W/m$^2$. TimesNet won seven sites at 24 hours and four at both
+48 and 72 hours. Its 72-hour macro advantage reflects the magnitude of
+local gains, even though DilatedRNN won more sites. All differences are
+calculated before rounding individual MAEs.
 
 \input{tables/comparacao_timesnet_dilatedrnn_resumo}
 
@@ -104,7 +115,29 @@ bar. The full learned-model comparison is reported in the Supplementary Material
 \label{fig:seed_variability}
 \end{figure*}
 
-\subsection{Reference benchmark and relation to the source protocols}
+\subsection{Implications for architecture choice}
+\label{sec:architecture_choice}
+
+Among the two evaluated implementations, the results favor DilatedRNN for
+the daily and monthly full-horizon tasks. The one-month result provides
+the strongest basis for this choice: the 6.38\% ensemble MAE reduction
+coincides with lower error at six sites and in four of the five paired
+seed runs. The daily and six-month results broaden the observed pattern,
+but their small ensemble margins warrant a more tentative interpretation.
+TimesNet remains the lower-error choice for the complete 72-hour hourly
+trajectory under the single-seed protocol.
+
+Model size adds a second consideration to this comparison.
+Table~\ref{tab:model_capacity} shows that DilatedRNN uses fewer trainable
+parameters than TimesNet in all four configurations; in the one-month
+task, the counts are 1,889 and 2,758, respectively. Its monthly advantage
+therefore accompanies a smaller parameterization. These counts describe
+model size, while measured training and inference times would be needed
+to assess computational efficiency. The current evidence supports a
+choice between the tested implementations; the contributions of recurrence,
+normalization, and parameter budget would require separate ablations.
+
+\subsection{Reference benchmark and scope of the comparison}
 \label{sec:reference_benchmark}
 
 The full benchmark places the two-architecture comparison in context.
