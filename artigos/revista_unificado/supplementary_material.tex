@@ -18,13 +18,28 @@
 \makeatother
 
 \graphicspath{{figures/}}
+
+% Float placement: let floats share pages with running text instead of
+% forming dedicated float pages that leave the rest of the page blank.
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.7}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.85}
+\renewcommand{\dbltopfraction}{0.9}
+\renewcommand{\dblfloatpagefraction}{0.85}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\setcounter{dbltopnumber}{3}
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\thefigure}{S\arabic{figure}}
 \begin{document}
 \raggedbottom
 
 \begin{frontmatter}
-\title{Supplementary Material for ``Multi-Resolution Solar Irradiance Forecasting: A Comparative Study of TimesNet and DilatedRNN''}
+\title{Supplementary Material for\\
+``Multi-Resolution Solar Irradiance Forecasting:\\
+A Comparative Study of TimesNet and DilatedRNN''}
 \author[unicamp]{Gustavo de Melo Nascimento}
 \author[unicamp]{Thales Wulfert Cabral}
 \author[unicamp]{Gustavo Fraidenraich}

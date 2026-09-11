@@ -24,12 +24,26 @@
 \graphicspath{{figures/}}
 \emergencystretch=2em
 
+% Float placement: let floats share pages with running text instead of
+% forming dedicated float pages that leave the rest of the page blank.
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.7}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.85}
+\renewcommand{\dbltopfraction}{0.9}
+\renewcommand{\dblfloatpagefraction}{0.85}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\setcounter{dbltopnumber}{3}
+
 \begin{document}
 \raggedbottom
 
 \begin{frontmatter}
 
-\title{Multi-Resolution Solar Irradiance Forecasting: A Comparative Study of TimesNet and DilatedRNN}
+\title{Multi-Resolution Solar Irradiance Forecasting:\\
+A Comparative Study of TimesNet and DilatedRNN}
 
 \author[unicamp]{Gustavo de Melo Nascimento\corref{cor1}}
 \ead{g239679@dac.unicamp.br}
@@ -81,7 +95,6 @@ model comparison
 \label{sec:proposed_approach}
 \input{sections/03_data_and_feature_engineering}
 \input{sections/04_methodology}
-\FloatBarrier
 \input{sections/05_experimental_setup}
 \input{sections/06_metrics}
 
