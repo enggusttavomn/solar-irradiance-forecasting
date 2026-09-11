@@ -1,6 +1,11 @@
 \section{Introduction}
 \label{sec:introduction}
 
+Choosing a forecasting architecture for solar irradiance requires evidence
+across the temporal resolutions and horizons at which it will be used.
+This article compares TimesNet and DilatedRNN to identify a preferred
+implementation and the conditions that support that choice.
+
 Pathways consistent with deep emissions reductions combine a rapid expansion
 of low-emission electricity with the electrification of end uses
 \cite{ipcc2022energy,irena2024weto}. Declining renewable-energy costs support
@@ -65,25 +70,32 @@ The preliminary studies provide methodological background; their numerical
 results are excluded from the matched comparison. Cabral et al.'s numerical
 results are not reused.
 
-The research question is: \emph{how does the relative forecast accuracy of
-TimesNet and DilatedRNN change with temporal resolution, horizon, and
-location when their inputs and evaluation protocol are matched?}
+The research question is: \emph{which of TimesNet and DilatedRNN is better
+supported by a matched multi-resolution evaluation, and at which horizons
+and locations does the preference change?} The comparison uses the
+cumulative macro-MAE over each task's full output horizon to summarize
+task-level outcomes, alongside intermediate horizons, site-level
+differences, and seed variability. The four tasks span three resolutions;
+their win count is a descriptive summary rather than a pooled error score.
+
 The article makes four contributions:
 \begin{enumerate}
   \item it defines a common multi-resolution formulation that distinguishes
   hourly multi-step, daily-mean multi-step, one-step monthly, and exploratory
   six-month forecasting;
   \item it specifies matched samples, chronological partitions, forecast
-  origins, direct outputs, post-processing, and transparent baselines for
-  both architectures in each shared task;
-  \item it reports aggregate, per-location, per-horizon, and per-seed results,
-  with the complete benchmark in the Supplementary Material documenting
-  cases in which either architecture is outperformed by simple baselines; and
-  \item it selects favorable, unfavorable, geographic, and meteorological
-  cases using reproducible rules, with climate comparisons treated as
-  descriptive and weather conditions identified from independent
-  meteorological data.
+  origins, direct outputs, and post-processing for the two architectures;
+  \item it identifies DilatedRNN as the lower-macro-MAE architecture in
+  three of the four full-horizon tasks, with its largest relative advantage
+  in one-month forecasting, and examines this preference across sites and
+  seeds while retaining the hourly advantage of TimesNet; and
+  \item it combines horizon profiles, parameter counts, and reproducibly
+  selected forecast cases to characterize the scope of the model choice.
+  Climate and independent meteorological records provide descriptive
+  context for the cases.
 \end{enumerate}
+The complete reference-model benchmark is supplied in the Supplementary
+Material to place this two-architecture comparison in context.
 
 Section~\ref{sec:related_work} reviews the forecasting literature and
 identifies the comparison gap. Section~\ref{sec:background} defines GHI,
