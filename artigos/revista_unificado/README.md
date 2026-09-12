@@ -19,6 +19,22 @@ multirresolução executada com amostras, origens, entradas e pós-processamento
 compatíveis dentro de cada tarefa. A matriz em `notes/matriz_do_que_falta.md`
 registra o estado final das entregas e as limitações que permanecem explícitas.
 
+## Posicionamento do manuscrito (11/09/2026)
+
+T?tulo: **Multi-Resolution Solar Irradiance Forecasting: A Comparative Study of
+TimesNet and DilatedRNN**.
+
+A narrativa identifica a DilatedRNN como a arquitetura favorecida pelo menor
+macro-MAE cumulativo em tr?s das quatro tarefas no horizonte completo. O
+resultado mais forte ? o mensal de um passo: redu??o de 6,38% sobre TimesNet,
+vit?ria em seis de dez locais e em quatro de cinco compara??es por semente.
+A vantagem hor?ria da TimesNet, as pequenas margens di?ria e de seis meses,
+e o benchmark completo permanecem expl?citos. A contagem de tarefas ? uma
+s?ntese descritiva; n?o define um escore global ou superioridade estat?stica.
+Os resultados, as tabelas, os gr?ficos e o protocolo experimental foram
+preservados. Os t?tulos do suplemento e da visualiza??o IEEE acompanham a
+vers?o principal.
+
 ## Arquivos principais
 
 - `main.tex`: versão Elsevier usada como manuscrito principal;
