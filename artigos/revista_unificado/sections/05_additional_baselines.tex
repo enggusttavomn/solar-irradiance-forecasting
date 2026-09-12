@@ -1,0 +1,66 @@
+\subsubsection{Additional statistical, recurrent, and attention baselines}
+\label{sec:additional_baselines}
+
+The additional benchmark retains persistence, annual seasonal na\"ive,
+climatology where previously evaluated, XGBoost, and LSTM. It adds ARIMA,
+GRU, a full-attention Transformer encoder--decoder, and a compact Informer.
+All additions use the same ten sites, partitions, forecast-origin keys,
+targets, normalization, horizons, and physical post-processing. Original
+forecasts are read without alteration; equality of origin--lead keys and
+targets is verified before training and again during consolidation.
+
+The GRU \cite{cho2014gru} replaces the canonical LSTM cell while retaining
+a one-layer, 32-unit encoder, an eight-dimensional site embedding, and a
+linear direct-output head. The Transformer \cite{vaswani2017attention}
+uses complete multihead attention, two encoder layers, one decoder layer,
+model width 16, feed-forward width 32, two heads, ReLU, and dropout 0.1.
+Linear GHI projections and sinusoidal relative positions replace the
+original language-model input representation. A learned eight-dimensional
+site embedding is projected to the model width. The decoder receives the
+last half of the historical context followed by zeros for the entire
+forecast horizon; neither training nor inference supplies future targets
+or meteorological covariates.
+
+Informer \cite{zhou2021informer} uses the same compact widths and depth,
+but replaces encoder and causal decoder self-attention with ProbSparse
+attention (factor 5), inserts convolution--batch-normalization--ELU--pooling
+distillation between encoder layers, and produces the complete forecast
+in one decoder pass. Cross-attention remains complete. Evaluation uses
+fixed sampled-key indices independent of batch membership; training uses
+the registered random seed. At short sequence lengths, all queries can be
+selected, as implied by the capped ProbSparse rule. These are explicit
+GHI-only adaptations, not reproductions of the original papers' calendar
+embeddings, parameter budgets, or reported benchmark scores.
+
+All three added networks use Adam, learning rate $10^{-3}$, weight decay
+$10^{-5}$, and one CPU thread, matching the canonical optimization policy.
+Hourly and daily tasks use batches of 128, at most 30 selection epochs,
+and patience 5. Monthly tasks use batches of 32, at most 300 epochs, and
+patience 30. Early stopping minimizes normalized validation MSE in 2023.
+A freshly initialized model with the same seed is then refitted for the
+selected number of epochs on the pre-test training and validation data.
+Hourly runs use seed 42; daily and monthly runs use seeds 11, 23, 42, 67,
+and 89, with ensemble formation matching Eq.~\eqref{eq:ensemble_forecast}.
+
+ARIMA is fitted separately by site using statsmodels 0.14.6
+\cite{statsmodels2026arima}. The candidate $(p,d,q)$ orders are
+$(1,0,0)$, $(2,0,0)$, $(2,0,2)$, $(1,1,0)$, $(0,1,1)$, $(1,1,1)$, and
+$(2,1,2)$. Parameters are estimated from unique observations in the
+admissible training-target date span. The order minimizes the site's
+normalized validation MSE before physical post-processing. The selected
+order is refitted on the corresponding pre-2024 target span. At each
+origin, fixed parameters are applied to the same bounded historical window
+used by the neural predictors; the future vector is generated recursively
+without target feedback. Thus, the forecast targets are matched even
+though ARIMA and the neural direct-output heads generate them differently.
+
+Numerical convergence uses a uniform policy: L-BFGS with at most 200
+iterations, followed only upon nonconvergence by Powell with at most 2,000
+iterations for the same order and data. Optimizer choice does not use
+validation or test forecast errors. Nonconverged candidates are logged and
+excluded; no different forecasting model is silently substituted. This
+policy was introduced after a pre-2024 refit failed in the initial
+numerical run; that attempt is retained separately. ARIMA has no seed
+ensemble or artificial across-seed standard deviation. Architecture sizes
+and search procedures are not equalized, so this benchmark compares the
+declared configurations rather than proving an intrinsic family ranking.
