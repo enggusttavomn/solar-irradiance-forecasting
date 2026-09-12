@@ -21,6 +21,20 @@ the average magnitude of forecast errors. Its linear penalty gives large
 deviations less influence than a squared-error score \cite{hyndman2006}.
 Lower values indicate better performance.
 
+\subsubsection{Mean squared error}
+
+\begin{equation}
+ \mathrm{MSE}
+ =
+ \frac{1}{n}\sum_{i=1}^{n}e_i^2.
+ \label{eq:mse}
+\end{equation}
+MSE is expressed in (W/m$^2$)$^2$ and equals the square of the site-level
+RMSE. It is the same squared-error criterion that neural training minimizes
+in normalized units, here evaluated on post-processed forecasts in physical
+units. Because site-level values are averaged afterward, the macro-MSE
+generally differs from the square of the macro-RMSE. Lower values are better.
+
 \subsubsection{Root mean squared error}
 
 \begin{equation}
@@ -80,7 +94,7 @@ the cumulative scope.
 Hourly origins are fixed at local midnight, so exact leads 24, 48, and 72
 all select the 23:00 interval on their respective target days. In this test
 set these nighttime targets and post-processed forecasts are zero: exact-lead
-MAE and RMSE are zero for every model, while nRMSE and $R^2$ are undefined.
+MAE, MSE, and RMSE are zero for every model, while nRMSE and $R^2$ are undefined.
 They are retained as audit outputs and do not measure daytime forecast skill.
 
 Within each site, cumulative metrics weight origin--lead pairs equally,
@@ -103,7 +117,7 @@ none are finite, the macro value remains undefined. All ten sites contribute
 to the main cumulative results. Equal site weighting prevents a site with more
 valid forecast pairs from dominating the geographic summary.
 Macro-MAE is the predeclared primary metric at every resolution, with
-RMSE, nRMSE, and $R^2$ reported as complementary measures.
+MSE, RMSE, nRMSE, and $R^2$ reported as complementary measures.
 
 For daily and monthly learned models, seed-level metrics describe variability
 across five fitted instances on the same test data. Their standard deviation
@@ -119,7 +133,7 @@ the paired difference is
  M_{\ell,\mathrm{TimesNet}}-M_{\ell,\mathrm{DilatedRNN}}.
  \label{eq:paired_difference}
 \end{equation}
-A negative $\Delta_{\ell,M}$ is a TimesNet win for the three error metrics; a
+A negative $\Delta_{\ell,M}$ is a TimesNet win for the error metrics; a
 positive value is a win for $R^2$. Mean and median differences and the number
 of site wins are descriptive. Overlapping multi-step windows are not treated
 as independent observations for an i.i.d. significance test.
