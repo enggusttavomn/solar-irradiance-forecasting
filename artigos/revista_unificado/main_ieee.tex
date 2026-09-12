@@ -19,7 +19,21 @@
 
 \graphicspath{{figures/}}
 \emergencystretch=2em
-\title{Multi-Resolution Global Horizontal Irradiance Forecasting at Electric-Vehicle Manufacturing Locations: TimesNet and Dilated Recurrent Networks}
+
+% Float placement: let floats share pages with running text instead of
+% forming dedicated float pages that leave the rest of the page blank.
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.7}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.85}
+\renewcommand{\dbltopfraction}{0.9}
+\renewcommand{\dblfloatpagefraction}{0.85}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\setcounter{dbltopnumber}{3}
+\title{Multi-Resolution Solar Irradiance Forecasting:\\
+A Comparative Study of TimesNet and DilatedRNN}
 \author{Gustavo de Melo Nascimento, Thales Wulfert Cabral, and Gustavo Fraidenraich%
 \thanks{The authors are with the School of Electrical and Computer Engineering,
 University of Campinas, Campinas, SP, Brazil. E-mails: g239679@dac.unicamp.br,
@@ -31,43 +45,42 @@ t264377@dac.unicamp.br, and gfraiden@unicamp.br.}%
 
 \begin{abstract}
 This study compares TimesNet and dilated recurrent neural networks
-(DilatedRNN) for global horizontal irradiance (GHI) forecasting at ten
-locations associated with electric-vehicle factories. Using model-based
-estimates from the National Solar Radiation Database (NSRDB), we evaluate
-four tasks: hourly forecasts up to 72 hours, daily-mean forecasts up to
-30 days, one-month forecasts, and exploratory forecasts up to six months.
-Within each task, the models share historical GHI inputs, site identifiers,
-forecast origins, temporal partitions, and post-processing. Performance is
-measured by mean absolute error averaged equally across sites (macro-MAE).
-Over the complete forecast horizons, TimesNet achieved lower macro-MAE at
-72 hours (52.48 versus 52.96~W/m$^2$), while DilatedRNN led at
-30 days (43.85 versus 44.08~W/m$^2$), one month
+(DilatedRNN) to support model choice for global horizontal irradiance (GHI)
+forecasting across temporal resolutions. Model-based estimates from the
+National Solar Radiation Database (NSRDB) cover ten locations associated
+with electric-vehicle factories. Four tasks evaluate hourly forecasts up to
+72 hours, daily-mean forecasts up to 30 days, one-month forecasts, and
+exploratory forecasts up to six months. Within each task, both architectures
+share historical GHI inputs, site identifiers, forecast origins, temporal
+partitions, and post-processing. DilatedRNN achieved lower site-averaged
+mean absolute error (macro-MAE) at the full cumulative horizon in three
+of the four tasks: 30 days (43.85 versus 44.08~W/m$^2$), one month
 (13.01 versus 13.89~W/m$^2$), and six months
-(14.37 versus 14.46~W/m$^2$). The one-month reduction relative to TimesNet
-was 6.38\%. Daily and monthly comparisons use five-seed ensembles; the
-hourly comparison uses seed 42. Rankings vary across horizons and locations,
-and several ensemble differences are small relative to variability across
-seeds. The full benchmark shows that other evaluated models outperform both
-architectures in several tasks. Independent meteorological data provide
-context for selected cases after evaluation. The findings support
-task-specific comparisons, with descriptive conclusions limited by
-overlapping forecast targets and a single test year.
+(14.37 versus 14.46~W/m$^2$). Its largest relative reduction was
+6.38\% at one month, with lower MAE at six of ten sites and in four of five
+paired seed runs. TimesNet led at 72 hours
+(52.48 versus 52.96~W/m$^2$). Daily and monthly results use five-seed
+ensembles; hourly results use seed 42. These findings favor DilatedRNN
+among the two evaluated implementations for daily and monthly full-horizon
+forecasting, with the strongest evidence at one month. The daily and
+six-month ensemble margins are small, and task counts are descriptive.
+Reference-model benchmarks are provided in the Supplementary Material.
+Overlapping targets and a single test year limit generalization.
 \end{abstract}
 
 \begin{IEEEkeywords}
 Global horizontal irradiance, solar forecasting, TimesNet, DilatedRNN,
-multi-resolution forecasting.
+multi-resolution forecasting, model comparison.
 \end{IEEEkeywords}
 
 \input{sections/01_introduction}
 \input{sections/02_related_work}
 \input{sections/02_theoretical_background}
 
-\section{Unified Proposed Approach}
+\section{Experimental Framework for Architecture Comparison}
 \label{sec:proposed_approach}
 \input{sections/03_data_and_feature_engineering}
 \input{sections/04_methodology}
-\FloatBarrier
 \input{sections/05_experimental_setup}
 \input{sections/06_metrics}
 
