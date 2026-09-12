@@ -4,7 +4,10 @@
 Choosing a forecasting architecture for solar irradiance requires evidence
 across the temporal resolutions and horizons at which it will be used.
 This article compares TimesNet and DilatedRNN to identify a preferred
-implementation and the conditions that support that choice.
+implementation and the conditions that support that choice under a
+restricted information set: historical GHI is the only dynamic predictor.
+The comparison also asks whether a preference between these two networks
+translates into an advantage over simpler reference models.
 
 Pathways consistent with deep emissions reductions combine a rapid expansion
 of low-emission electricity with the electrification of end uses
@@ -70,9 +73,20 @@ The preliminary studies provide methodological background; their numerical
 results are excluded from the matched comparison. Cabral et al.'s numerical
 results are not reused.
 
-The research question is: \emph{which of TimesNet and DilatedRNN is better
-supported by a matched multi-resolution evaluation, and at which horizons
-and locations does the preference change?} The comparison uses the
+Univariate irradiance forecasting already has precedents
+\cite{guariso2020,cabral2026}, while solar TimesNet applications include
+image fusion, signal decomposition, and additional meteorological variables
+\cite{li2025timesnet,zhao2024timesnet,gong2024timesnet}. The motivation here
+is therefore reduced dependence on auxiliary meteorological observations
+or forecasts, not independence from the dataset or a first use of GHI-only
+inputs. Static site identifiers and hourly astronomical post-processing
+remain part of the pipeline; their use does not establish transfer to
+unseen locations.
+
+The research question is: \emph{under a shared historical-GHI information
+set, how does the preference between TimesNet and DilatedRNN change with
+temporal resolution and horizon, and how competitive are both against
+reference models?} The comparison uses the
 cumulative macro-MAE over each task's full output horizon to summarize
 task-level outcomes, alongside intermediate horizons, site-level
 differences, and seed variability. The four tasks span three resolutions;
@@ -85,10 +99,9 @@ The article makes four contributions:
   six-month forecasting;
   \item it specifies matched samples, chronological partitions, forecast
   origins, direct outputs, and post-processing for the two architectures;
-  \item it identifies DilatedRNN as the lower-macro-MAE architecture in
-  three of the four full-horizon tasks, with its largest relative advantage
-  in one-month forecasting, and examines this preference across sites and
-  seeds while retaining the hourly advantage of TimesNet; and
+  \item it quantifies changes in architectural preference across tasks,
+  sites, and seeds, while testing whether the preferred network also
+  improves on simpler reference models; and
   \item it combines horizon profiles, parameter counts, and reproducibly
   selected forecast cases to characterize the scope of the model choice.
   Climate and independent meteorological records provide descriptive

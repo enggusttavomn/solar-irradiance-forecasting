@@ -127,6 +127,10 @@ seasons and forecast horizons ranging from minutes to 24~h, using different
 input combinations and training-set lengths. Such designs describe
 performance variation across conditions, but causal attribution requires
 additional support from the study design.
+Multi-scale irradiance modeling has also been studied explicitly through
+time-varying functional representations \cite{shi2026multiscale}. Thus,
+neither multiple resolutions nor GHI-only inputs, taken individually,
+constitute an unexplored research category.
 
 The Supplementary Material summarizes these representative primary studies
 in three groups organized by forecast horizon and geographic or climate
@@ -136,9 +140,10 @@ targets, sites, horizons, inputs, and test protocols.
 
 \subsection{Research gap and positioning}
 
-The reviewed studies provide evidence for specific architectures and
-horizons, but do not establish how TimesNet and DilatedRNN compare under a
-common protocol across temporal resolutions. Zhao et al.'s TimesNet
+The sources examined provide evidence for specific architectures and
+horizons, but do not supply a matched TimesNet--DilatedRNN benchmark with
+the four task definitions used here. This is a bounded comparison gap,
+not an exhaustive claim that no related study exists. Zhao et al.'s TimesNet
 application predicts week-ahead hourly solar radiation after signal
 decomposition \cite{zhao2024timesnet}; monthly neural studies use different
 targets and architectures \cite{ozoegwu2019}; and the very-long-term
@@ -157,5 +162,8 @@ address the comparability limitations identified in solar-forecast
 verification and benchmarking research
 \cite{yang2020verification,voyant2022}.
 The resulting task-level, site-level, and seed-level evidence is used to
-identify the better-supported architecture and delimit the horizons over
-which that preference holds.
+delimit architectural preference and its practical relevance against the
+reference models. A lower error than the competing network is not sufficient
+to establish an advantage over persistence, seasonal references, or other
+learned methods. Nor does an association between aggregation and rankings
+isolate a causal effect of the architecture.

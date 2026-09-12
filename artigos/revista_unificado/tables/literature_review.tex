@@ -19,6 +19,12 @@ GHI and cloud conditions at the UC San Diego test bed &
 Image-based physical nowcast &
 Cloud nowcasts up to 5~min; six pyranometers on four partly cloudy days; qualitative GHI assessment \\
 
+Li et al.\ \cite{li2025timesnet} &
+Ultra-short-term GHI &
+Irradiance history and sky images; multimodal feature fusion &
+TimesNet and T2T-ViT &
+Six 10-min steps, up to 1~h; full split and site details not verified \\
+
 Guariso et al.\ \cite{guariso2020} &
 Hourly GHI at an Italian station, with transfer to other sites &
 Autoregressive irradiance windows; no decomposition &
@@ -64,6 +70,18 @@ Hourly solar radiation &
 ICEEMDAN-decomposed solar-radiation sequences combined with meteorological data &
 ICEEMDAN--TimesNet &
 Week-ahead multi-step prediction; comparison with alternative multi-step models \\
+
+Gong et al.\ \cite{gong2024timesnet} &
+Solar irradiance &
+Multiple weather parameters; individual variables not verified &
+TimesNet &
+Long-term in the title; numerical horizon, resolution, sites, and split pending full-text verification \\
+
+Smyl et al.\ \cite{smyl2026solar} &
+Normalized photovoltaic generation over 259 European regions &
+Generation history, calendar and cross-region context; no external meteorology &
+Any-quantile RNN with modified dilated cells &
+48~h at hourly resolution; probabilistic evaluation; preprint, not classical DilatedRNN or direct GHI \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -98,6 +116,12 @@ GHI at 40 locations spanning multiple climate classes &
 GHI-only enhanced pattern-recognition pipeline &
 GPT-Neo and contemporary neural competitors &
 Very-long-term multi-year prediction; location and aggregate errors plus computational assessment \\
+
+Shi et al.\ \cite{shi2026multiscale} &
+Multi-scale solar irradiance &
+Time-varying functional representation; full input inventory not verified &
+2DTFM &
+Multi-scale forecasting; full horizon and split details pending verification \\
 \bottomrule
 \end{tabular}
 \par\medskip
