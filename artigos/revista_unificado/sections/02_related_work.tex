@@ -52,7 +52,9 @@ variables, and next-hour forecasts of temperature, relative humidity, and
 wind speed. Guariso et al.\ \cite{guariso2020} compared feed-forward and LSTM
 networks using recursive, horizon-specific, and multi-output strategies for
 horizons of up to 12~h. Their evaluation included persistence and clear-sky
-baselines and an analysis of transfer across sites. These studies differ in
+baselines and transfer across sites without retraining, using a purely
+autoregressive input formulation. GHI-only forecasting and cross-site
+evaluation therefore already have direct precedents. These studies differ in
 both model complexity and how they generate future steps.
 
 Longer horizons can also retain hourly outputs. Cheng et al.\
@@ -66,6 +68,39 @@ week-ahead hourly forecasting. This application establishes the relevance
 of TimesNet to solar forecasting, but its decomposition stage and
 week-ahead protocol do not isolate the effect of the TimesNet backbone or
 provide a matched comparison with DilatedRNN.
+
+TimesNet has also been used in other solar configurations. Li et al.\
+\cite{li2025timesnet} combined irradiance history with sky images through
+TimesNet, T2T-ViT, and feature fusion for six 10-min forecast steps. Gong et
+al.\ \cite{gong2024timesnet} reported a TimesNet irradiance model with
+multiple weather parameters. The latter is cited as a documented precedent;
+its exact horizon, input list, and experimental split were not verified from
+full text and are not used to support numerical comparisons here. In an
+adjacent target domain, Yu et al.\ \cite{yu2025timesnet} modified TimesNet's
+feature extraction and loss for multi-step photovoltaic-power forecasting.
+These studies establish prior solar use of TimesNet, but their additional
+inputs or modified pipelines do not answer the present input-constrained
+backbone comparison. Photovoltaic power is not interchangeable with GHI.
+
+\subsection{Dilated recurrence and the scope of the architectural comparison}
+
+Chang et al.\ \cite{chang2017} introduced dilated recurrent connections for
+general sequence learning; their architecture paper is not itself a solar
+irradiance experiment. A directed search using variants of DilatedRNN,
+dilated RNN, and dilated recurrent neural network with irradiance, GHI, and
+photovoltaic forecasting did not confirm a classical-DilatedRNN experiment
+matching all four tasks studied here. This search result is not evidence of
+absence and does not justify a first-application claim.
+
+Relevant adjacent evidence already exists. Smyl et al.\
+\cite{smyl2026solar} describe any-quantile recurrent solar-power forecasting
+over 259 European regions at a 48-h horizon. Their preprint uses modified
+dilated recurrent cells, cross-region context, and calendar information to
+predict normalized photovoltaic generation. It is neither direct GHI
+forecasting nor the classical compact DilatedRNN evaluated here. Nevertheless,
+it rules out a broad claim that dilated recurrence is unexplored in solar
+forecasting. The contribution of the present article is empirical comparison,
+not the invention of either network family.
 
 \subsection{Coarser resolution, multiple locations, and climate context}
 
