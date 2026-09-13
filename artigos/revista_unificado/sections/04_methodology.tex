@@ -41,13 +41,14 @@ number of training epochs. The validation checkpoint is then discarded. The
 final instance is trained from a fresh initialization under the same seed on
 all declared pre-test windows for exactly the selected number of epochs.
 The hourly extension reuses the existing official TimesNet forecasts and adds
-only DilatedRNN with seed 42. The two forecasts are aligned by site, origin,
-target timestamp, and lead.
+DilatedRNN with seed 42. The forecasts are aligned by site, origin,
+target timestamp, and lead; the hourly reference-model additions follow the
+same alignment.
 
 Algorithm~\ref{alg:matched-training} describes this two-architecture protocol.
-The supplementary benchmark reports the additional reference models, their
-configurations, and the resolution-specific definitions of persistence,
-annual seasonal naive, and calendar climatology.
+Section~\ref{sec:additional_baselines} describes the reference models, and
+the Supplementary Material gives the resolution-specific definitions of
+persistence, annual seasonal na\"ive, and calendar climatology.
 
 \input{sections/04_algorithm_protocol}
 

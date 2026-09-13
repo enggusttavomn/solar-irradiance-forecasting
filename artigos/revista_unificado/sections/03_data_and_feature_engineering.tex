@@ -25,10 +25,12 @@ within each task. Observations from 2019 provide the initial context needed
 by tasks whose first forecast origin occurs in 2020.
 
 Table~\ref{tab:variables} distinguishes model inputs from indexing and
-contextual fields. TimesNet, DilatedRNN, LSTM, and XGBoost receive the same
-historical GHI sequence and site identifier. Calendar variables, coordinates,
-climate classes, and meteorological descriptors are excluded from their
-inputs. The deterministic seasonal and climatological baselines additionally
+contextual fields. All global learned models, including TimesNet and
+DilatedRNN, receive the same historical GHI sequence and site identifier;
+site-wise ARIMA models use only the GHI history of their own site. Calendar
+variables, coordinates, climate classes, and meteorological descriptors are
+excluded from these inputs. The deterministic seasonal and climatological
+references additionally
 use target calendar labels to retrieve historical values or fitted means,
 as specified in the Supplementary Material.
 
@@ -48,8 +50,8 @@ as specified in the Supplementary Material.
 \midrule
 Target and lagged input & GHI & Direct forecast target and causal history at
 the task resolution. \\
-Static model input & Site identifier & Embedding for neural models and one-hot
-encoding for XGBoost. \\
+Static model input & Site identifier & Learned embedding in neural models;
+one-hot encoding in gradient-boosted trees; not needed by site-wise ARIMA. \\
 Temporal index & Timestamp & Ordering, partition boundaries, forecast origins,
 and target alignment; not an additional covariate. \\
 Spatial index & Factory latitude/longitude & Selection of the NSRDB grid cell

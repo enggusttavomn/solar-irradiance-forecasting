@@ -73,9 +73,10 @@ No parameter update occurs within validation or test.
 
 \subsection{Model and optimization settings}
 
-The common learned-model input is an array of shape
+The common input of the global learned models is an array of shape
 (batch, context length) containing only scaled GHI, with one integer site
-identifier per example. The target is a vector of continuous GHI values
+identifier per example; site-wise ARIMA uses only the GHI history of its
+own site. The target is a vector of continuous GHI values
 covering the declared forecast horizon. No learned model receives latitude, longitude, clock variables,
 solar elevation, climate, cloud, precipitation, or a previously predicted
 target. Table~\ref{tab:complete_hyperparameters} records the fixed model,
@@ -94,30 +95,46 @@ optimizer, seed, and ensemble settings.
 \toprule
 \textbf{Item} & \textbf{Value} \\
 \midrule
-Seeds & 11, 23, 42, 67, 89 for daily/monthly; 42 for the official hourly
-protocol and its DilatedRNN extension \\
+Seeds & 11, 23, 42, 67, 89 for every daily/monthly stochastic learned
+model; 42 for every hourly learned model \\
 Neural objective & Mean squared error on site-wise min--max normalized GHI \\
 Optimizer & Adam; learning rate $10^{-3}$; weight decay $10^{-5}$ \\
 Batch/selection & Hourly and daily: batch 128, 30 epochs maximum, patience 5;
 monthly: batch 32, 300 epochs maximum, patience 30 \\
 Determinism & Python, NumPy, and PyTorch generators fixed; deterministic
-PyTorch algorithms requested; one PyTorch CPU thread \\
-Site representation & Learned embedding of width 8 in TimesNet, DilatedRNN,
-and LSTM; one-hot vector for XGBoost \\
+PyTorch algorithms requested; one PyTorch CPU thread, except the daily and
+hourly Transformer and Informer, which run on a GTX 1650 GPU whose attention
+backward pass is nondeterministic \\
+Site representation & Learned embedding of width 8 in all neural models;
+one-hot vector for XGBoost; separate site-wise ARIMA fits \\
 TimesNet & $d_{\mathrm{model}}=8$, $d_{\mathrm{ff}}=16$, one TimesBlock,
 top-$k=3$, two Inception kernels, dropout 0.1, direct linear temporal head;
 sample-specific FFT period selection and per-window standardization with
 $\epsilon=10^{-5}$ \\
 DilatedRNN & Vanilla tanh-RNN cells with recurrent dilations $(1,2,4)$,
 16 units in each layer, dense width 16, dropout 0, direct output head \\
-LSTM & One recurrent layer, hidden width 32, direct output head \\
+LSTM and GRU & One recurrent layer, hidden width 32, direct output head;
+the two differ only in the recurrent cell \\
+Transformer & Full multihead attention; two encoder layers and one decoder
+layer; $d_{\mathrm{model}}=16$, $d_{\mathrm{ff}}=32$, two heads, ReLU,
+dropout 0.1; sinusoidal positional encoding; decoder input is the last half
+of the context followed by zeros \\
+Informer & Transformer widths and depth; ProbSparse self-attention
+(factor 5), convolutional distillation between encoder layers, complete
+cross-attention, one-pass decoder \\
 XGBoost & Squared-error objective, 150 trees, depth 3, learning rate 0.05,
 subsample 0.8, column subsample 0.8, histogram tree method, one thread;
 multi-output-tree strategy when the output length exceeds one \\
+ARIMA & Site-wise nonseasonal orders $(1,0,0)$, $(2,0,0)$, $(2,0,2)$,
+$(1,1,0)$, $(0,1,1)$, $(1,1,1)$, $(2,1,2)$ selected by 2023 normalized
+validation MSE; L-BFGS (200 iterations), then Powell (2,000) only upon
+nonconvergence; recursive multi-step forecasts; statsmodels 0.14.6 \\
 Refit rule & Fresh initialization under the same seed and exactly the epoch
-count selected using 2023 validation data; XGBoost is independently fitted with its fixed budget \\
-Ensemble & Arithmetic mean of five seed forecasts for daily/monthly learned
-models; no hourly ensemble \\
+count selected using 2023 validation data; XGBoost is independently fitted
+with its fixed budget; the selected ARIMA order is refitted on the pre-2024
+span \\
+Ensemble & Arithmetic mean of five seed forecasts for daily/monthly
+stochastic learned models; no hourly ensemble \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -144,6 +161,15 @@ The retained corrected archive is identified as
 \path{monthly_6}. This identifier specifies the source of the reported
 comparisons; it does not imply that the full forecast bundle is currently
 available in the public repository.
+
+The reference-model extension is stored separately in
+\path{avaliacao_baselines_revisao_20260912}, with one directory per task and
+model. Each directory records a contract with SHA-256 hashes of its inputs
+and source code, a status file, forecast caches, refitted models, training
+histories or ARIMA order-selection logs, and an artifact manifest.
+Consolidation verifies these hashes, the equality of origin--lead keys and
+targets, and the unchanged metrics of the original models before evaluating
+all eleven models.
 
 For every declared horizon, the pipeline writes cumulative-prefix and
 exact-lead metrics. It stores raw and post-processed forecasts, metrics by site,

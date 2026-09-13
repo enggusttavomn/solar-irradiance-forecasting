@@ -6,41 +6,44 @@
   node distance=2mm,
   flow/.style={-{Stealth[length=1.9mm,width=1.35mm]},draw=black!62,line width=0.7pt},
   band label/.style={rounded corners=2pt,text=white,font=\bfseries\large,
-    minimum width=7mm,minimum height=25mm,align=center,inner sep=1mm},
+    minimum width=7mm,minimum height=27mm,align=center,inner sep=1mm},
   flow box/.style={rounded corners=2pt,line width=0.7pt,align=left,
-    minimum height=25mm,inner xsep=1.8mm,inner ysep=1.5mm,
+    minimum height=27mm,inner xsep=1.8mm,inner ysep=1.5mm,
     font=\fontsize{7.5}{8.6}\selectfont},
   a step/.style={flow box,draw=blue!68!black,fill=blue!5},
   b step/.style={flow box,draw=orange!82!black,fill=orange!6},
   c step/.style={flow box,draw=green!52!black,fill=green!6},
-  external/.style={flow box,draw=violet!75!black,fill=violet!5,densely dashed},
-  heading/.style={font=\fontsize{8.3}{9.2}\selectfont\bfseries}
+  external/.style={flow box,draw=violet!75!black,fill=violet!5,densely dashed}
 ]
 
 % A — source audit and task construction.
 \node[band label,fill=blue!68!black] (a-label) {A};
-\node[a step,text width=0.155\textwidth,right=2mm of a-label] (sources) {
+\node[a step,text width=0.15\textwidth,right=2mm of a-label] (sources) {
   {\bfseries Forecasting sources}\\[0.8mm]
-  \textbf{10} factory-associated NSRDB cells\\
-  Brazil $\cdot$ Mexico $\cdot$ United States\\[0.6mm]
-  Two independent 2019--2024 archives
+  \textbf{10} factory-associated\\
+  NSRDB grid cells\\
+  Brazil $\cdot$ Mexico $\cdot$ USA\\[0.6mm]
+  two independent\\
+  2019--2024 archives
 };
-\node[a step,text width=0.175\textwidth,right=2mm of sources] (audit) {
+\node[a step,text width=0.195\textwidth,right=2mm of sources] (audit) {
   {\bfseries Audit (Alg.~\ref{alg:matched-training})}\\[0.8mm]
-  native 30-min $\rightarrow$ hourly means\\
-  separate 60-min $\rightarrow$ civil-day means\\
-  daily means $\rightarrow$ civil-month means\\[0.6mm]
-  regular, unique, finite, nonnegative series
+  30-min native $\rightarrow$ hourly means\\
+  60-min $\rightarrow$ civil-day means\\
+  daily $\rightarrow$ civil-month means\\[0.6mm]
+  regular, unique, finite, $\geq 0$
 };
-\node[a step,text width=0.165\textwidth,right=2mm of audit] (contract) {
+\node[a step,text width=0.175\textwidth,right=2mm of audit] (contract) {
   {\bfseries Learned-model inputs}\\[0.8mm]
-  causal GHI history + site ID only\\
-  site-wise scales fitted before each cutoff\\
-  complete direct targets contained in partition
+  causal GHI + site ID only\\
+  site-wise scales fitted\\
+  before each cutoff\\
+  complete targets inside\\
+  each partition
 };
-\node[a step,text width=0.235\textwidth,right=2mm of contract] (tasks) {
+\node[a step,text width=0.215\textwidth,right=2mm of contract] (tasks) {
   {\bfseries Four forecasting tasks}\\[0.8mm]
-  \begin{tabular}{@{}ll@{}}
+  \begin{tabular}{@{}l@{\hspace{2mm}}l@{}}
     Hourly & $336\,\mathrm{h}\rightarrow72\,\mathrm{h}$\\
     Daily & $365\,\mathrm{d}\rightarrow30\,\mathrm{d}$\\
     Monthly (primary) & $12\,\mathrm{mo}\rightarrow1\,\mathrm{mo}$\\
@@ -51,31 +54,35 @@
 \draw[flow] (audit.east) -- (contract.west);
 \draw[flow] (contract.east) -- (tasks.west);
 
-% B — matched development and explicit leakage barrier.
+% B — every model under the same selection, refit, and leakage barrier.
 \node[band label,fill=orange!82!black,below=3mm of a-label] (b-label) {B};
-\node[b step,text width=0.175\textwidth,right=2mm of b-label] (models) {
-  {\bfseries Focal architectures}\\[0.8mm]
-  \textbf{TimesNet}\\
-  \textbf{DilatedRNN}\\[0.5mm]
-  same GHI history and site ID\\
-  direct continuous forecasts
+\node[b step,text width=0.215\textwidth,right=2mm of b-label] (models) {
+  {\bfseries Models under one protocol}\\[0.8mm]
+  \textbf{Focal:} TimesNet, DilatedRNN\\[0.4mm]
+  \textbf{References:} persistence,\\
+  seasonal na\"ive, climatology,\\
+  ARIMA, XGBoost, LSTM, GRU,\\
+  Transformer, Informer\\[0.4mm]
+  same GHI history and site ID
 };
-\node[b step,text width=0.175\textwidth,right=2mm of models] (selection) {
+\node[b step,text width=0.165\textwidth,right=2mm of models] (selection) {
   {\bfseries Select on 2023}\\[0.8mm]
   pre-2023 initial training\\
-  validation chooses neural epoch count \textbf{only}\\
-  checkpoint is discarded
+  validation fixes epochs\\
+  (ARIMA: order) \textbf{only}\\
+  checkpoint discarded
 };
-\node[b step,text width=0.205\textwidth,right=2mm of selection] (refit) {
+\node[b step,text width=0.17\textwidth,right=2mm of selection] (refit) {
   {\bfseries Fresh pre-test refit}\\[0.8mm]
   same-seed reinitialization\\
-  fixed selected epochs on pre-2024 windows
+  selected epochs on\\
+  pre-2024 windows
 };
-\node[b step,text width=0.18\textwidth,right=2mm of refit] (lock) {
+\node[b step,text width=0.185\textwidth,right=2mm of refit] (lock) {
   {\bfseries Leakage barrier}\\[0.8mm]
   lock refitted model + scaler\\
   daily/monthly: five seeds\\
-  hourly extension: seed 42
+  hourly: seed 42
 };
 \draw[flow] (models.east) -- (selection.west);
 \draw[flow] (selection.east) -- (refit.west);
@@ -85,27 +92,32 @@
 \node[band label,fill=green!52!black,below=3mm of b-label] (c-label) {C};
 \node[c step,text width=0.17\textwidth,right=2mm of c-label] (test) {
   {\bfseries Direct test (Algs.~\ref{alg:timesnet-direct}, \ref{alg:dilated-direct})}\\[0.8mm]
-  rolling origins and advancing causal context\\
+  rolling origins, advancing\\
+  causal context\\
   complete direct horizons\\
   no weight or scale updates
 };
 \node[c step,text width=0.17\textwidth,right=2mm of test] (physics) {
   {\bfseries Common processing}\\[0.8mm]
-  inverse scale; mean across seeds\\
-  zero floor; hourly nighttime-zero rule\\
-  identical treatment within each task
+  inverse scale; mean of seeds\\
+  zero floor; hourly\\
+  nighttime-zero rule\\
+  identical within each task
 };
 \node[c step,text width=0.225\textwidth,right=2mm of physics] (evidence) {
   {\bfseries Evidence hierarchy}\\[0.8mm]
-  site MAE/RMSE/nRMSE/$R^2$\\
+  site MAE/MSE/RMSE/nRMSE/$R^2$\\
   cumulative prefix + exact lead\\
   equal-site macro-average\\
-  paired $\Delta=$ TimesNet $-$ DilatedRNN
+  paired $\Delta=$ TimesNet $-$ DilatedRNN\\
+  ranks against the nine references
 };
-\node[external,text width=0.165\textwidth,right=2mm of evidence] (context) {
+\node[external,text width=0.17\textwidth,right=2mm of evidence] (context) {
   {\bfseries Post-hoc only}\\[0.8mm]
-  K\"oppen--Geiger + NASA POWER\\
-  added after forecasts and errors are fixed\\
+  K\"oppen--Geiger +\\
+  NASA POWER\\
+  added after forecasts and\\
+  errors are fixed\\
   never model inputs
 };
 \draw[flow] (test.east) -- (physics.west);
@@ -117,13 +129,15 @@
 \draw[flow] (b-label.south) -- (c-label.north);
 
 \end{tikzpicture}
-\caption{End-to-end matched forecasting design for TimesNet and DilatedRNN. (A) Independent NSRDB archives
+\caption{End-to-end matched forecasting design. (A) Independent NSRDB archives
 are audited and converted into four direct-output tasks; learned models
-receive causal GHI and site identity. (B) Model selection and fresh pre-test
-refitting follow Algorithm~\ref{alg:matched-training}. (C) Direct test
+receive only causal GHI and site identity. (B) TimesNet, DilatedRNN, and the
+learned references are selected on 2023 and refitted before the test
+(Algorithm~\ref{alg:matched-training} details the focal protocol); persistence,
+seasonal na\"ive, and climatology require no training. (C) Direct test
 forecasts from Algorithms~\ref{alg:timesnet-direct} and
-\ref{alg:dilated-direct} receive common physical
-post-processing before location-first aggregation and paired comparison;
+\ref{alg:dilated-direct} receive common physical post-processing before
+location-first aggregation, paired comparison, and benchmark ranking;
 K\"oppen--Geiger and NASA POWER fields enter only after errors are fixed.}
 \label{fig:pipeline}
 \end{figure*}

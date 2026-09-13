@@ -5,32 +5,35 @@ The four forecasting tasks appear in Block A of Figure~\ref{fig:pipeline}.
 The Supplementary Material summarizes their context lengths, outputs,
 evaluation horizons, and origin counts. Within each task, all models share
 sites, origins, targets, fitting cutoffs, and post-processing. MAE and RMSE
-are reported in W/m$^2$ at every resolution, but they describe different
-temporal aggregates and are interpreted separately across tasks.
+are reported in W/m$^2$ and MSE in (W/m$^2$)$^2$ at every resolution, but
+they describe different temporal aggregates and are interpreted separately
+across tasks.
 
 \subsubsection{Common matched protocol}
 
-The daily and monthly experiments contain three deterministic references
-(persistence, annual seasonal na\"ive, and calendar climatology) and four
-learned models (XGBoost, LSTM, TimesNet, and DilatedRNN). Every learned
-model receives only causal GHI and site identity. Neural models use the five
-seeds 11, 23, 42, 67, and 89, and XGBoost is likewise refitted under each of
-those seeds because row and column subsampling are stochastic. For each
-learned model, we evaluate both individual-seed forecasts and their
-arithmetic-mean ensemble, applying the post-processing in
-Section~\ref{sec:methodology}. Deterministic baselines are evaluated once.
-The primary comparison uses macro-MAE, calculated by averaging site-level
-MAEs with equal weights. Complementary results include RMSE, nRMSE, and
-$R^2$ at cumulative horizons and exact leads.
+Each task evaluates the two focal architectures against a common benchmark:
+three deterministic references (persistence, annual seasonal na\"ive, and,
+for the daily and monthly tasks, calendar climatology), site-wise ARIMA, and
+five global reference learners (XGBoost, LSTM, GRU, Transformer, and
+Informer), specified in Section~\ref{sec:additional_baselines}. Global
+learned models receive only causal GHI and site identity. In the daily and
+monthly tasks, every stochastic learned model is fitted under the five seeds
+11, 23, 42, 67, and 89. For each, we evaluate both individual-seed forecasts
+and their arithmetic-mean ensemble, applying the post-processing in
+Section~\ref{sec:methodology}. Deterministic references and ARIMA are
+evaluated once. The primary comparison uses macro-MAE, calculated by
+averaging site-level MAEs with equal weights. Complementary results include
+MSE, RMSE, nRMSE, and $R^2$ at cumulative horizons and exact leads.
 
 For all neural models, the selection and fresh-refit procedure in
 Algorithm~\ref{alg:matched-training} uses early stopping on 2023
-site-normalized validation MSE. Initial training uses the adjustment
-partition recorded in the saved artifacts; the selected epoch count governs
+site-normalized validation MSE. Initial training uses the pre-2023 windows
+(labeled ``adjustment'' in the saved artifacts); the selected epoch count governs
 the same-seed refit on pre-2024 windows. This selection objective differs from
-the primary test ranking by macro-MAE in physical units. XGBoost uses
-separate initial-training and refit instances with a fixed tree budget.
-Only refitted instances generate test forecasts.
+the primary test ranking by macro-MAE in physical units. Tree ensembles use
+separate initial-training and refit instances with a fixed tree budget, and
+ARIMA orders are selected on 2023 and refitted before the test. Only
+refitted instances generate test forecasts.
 
 Block B of Figure~\ref{fig:pipeline} summarizes this selection and refitting
 sequence.
@@ -40,7 +43,9 @@ Hourly forecasts are issued once per day at local midnight, daily forecasts
 advance one origin per day, and monthly forecasts advance one origin per
 civil month.
 
-\subsubsection{Hourly protocol and DilatedRNN extension}
+\input{sections/05_additional_baselines}
+
+\subsubsection{Hourly protocol and extensions}
 
 The official hourly task uses 336 past hours (14 days) and produces the next
 72 hours directly. The reported checkpoints are 24, 48, and 72 hours; they are
@@ -54,13 +59,13 @@ retrospective test contains 363 origins from 1 January through
 fixed local-time index; corresponding UTC timestamps can extend into
 31 December for western locations.
 
-The official artifact fixes seed 42 and contains persistence, annual seasonal
-na\"ive, XGBoost, LSTM, and TimesNet predictions. The extension trains only a
-direct DilatedRNN with seed 42 using the same 336-hour context and 72-hour
-output. Its forecasts are matched one-to-one with the existing predictions
-by site, origin, target timestamp, and lead. Target equality and input
-hashes are checked to ensure that the extension preserves the original
-data and comparator forecasts.
+All hourly learned models use seed 42. Persistence, annual seasonal
+na\"ive, XGBoost, LSTM, and TimesNet forecasts come from the official hourly
+run. DilatedRNN, ARIMA, GRU, Transformer, and Informer are added with the
+same 336-hour context and 72-hour output. Their forecasts are matched
+one-to-one with the existing predictions by site, origin, target timestamp,
+and lead. Target equality and input hashes are checked to ensure that the
+extensions preserve the original data and comparator forecasts.
 
 \subsubsection{Daily protocol}
 
@@ -112,12 +117,15 @@ parameters in each neural model, including biases and the ten-site embedding.
 The counts are calculated from the implemented module dimensions. TimesNet has a task-dependent direct temporal
 projection, so its parameter count grows with both context and output length.
 Dilated recurrence changes the temporal connections without adding separate
-weights for each skipped position. XGBoost uses 150 trees
-with a maximum depth of three; its capacity is described by those settings.
+weights for each skipped position. The Transformer and Informer project each
+time step to a single output, so their counts do not change across tasks.
+The capacities of the tree ensemble and ARIMA are described by their
+settings in Table~\ref{tab:hyperparameters}.
 
 \input{tables/model_capacity}
 
 Training and inference times were not measured consistently across the
-completed runs. The computational comparison therefore reports parameter
-counts and the common one-thread policy; runtime comparisons remain for
-future evaluation.
+completed runs, and the daily and hourly Transformer and Informer runs used
+a GPU while the other learned models used one CPU thread. The computational
+comparison therefore reports parameter counts only; runtime comparisons
+remain for future evaluation.

@@ -26,9 +26,10 @@ factory-associated locations represent NSRDB solar-resource grid cells,
 without quantifying factory demand or photovoltaic output. The
 single hourly seed, overlapping targets, one test year, small
 exploratory monthly sample, and unequal parameter budgets limit
-generalization. The preference is specific to TimesNet versus DilatedRNN;
-the complete reference-model benchmark in the Supplementary Material
-documents stronger alternatives in several tasks.
+generalization. The preference is specific to TimesNet versus DilatedRNN.
+In the complete reference benchmark, XGBoost led the hourly task,
+DilatedRNN led at 30 days, and calendar climatology led both monthly tasks,
+with Informer as the lowest-error learned model in both monthly tasks.
 
 The next step is to test whether DilatedRNN's monthly advantage persists
 across additional years and unseen sites, and to separate the effects of

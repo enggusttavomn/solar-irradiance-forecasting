@@ -29,7 +29,9 @@ questions \cite{hyndman2006}. Voyant et al.\ \cite{voyant2022} demonstrate
 that the appropriate naive baseline depends on temporal structure and
 horizon. Across multiple climates, their comparison of statistical baselines
 requiring no training cautions against using a single persistence rule as
-the sole benchmark in every setting.
+the sole benchmark in every setting. Classical statistical references also
+remain in use: Ayata et al.\ \cite{ayata2026arima} compared ARIMA, seasonal
+ARIMA, and exponential-smoothing models for global horizontal irradiation.
 
 \subsection{From intra-hour to week-ahead forecasting}
 
@@ -72,12 +74,16 @@ provide a matched comparison with DilatedRNN.
 TimesNet has also been used in other solar configurations. Li et al.\
 \cite{li2025timesnet} combined irradiance history with sky images through
 TimesNet, T2T-ViT, and feature fusion for six 10-min forecast steps. Gong et
-al.\ \cite{gong2024timesnet} reported a TimesNet irradiance model with
-multiple weather parameters. The latter is cited as a documented precedent;
-its exact horizon, input list, and experimental split were not verified from
-full text and are not used to support numerical comparisons here. In an
-adjacent target domain, Yu et al.\ \cite{yu2025timesnet} modified TimesNet's
-feature extraction and loss for multi-step photovoltaic-power forecasting.
+al.\ \cite{gong2024timesnet} used TimesNet for four-day-ahead GHI forecasting
+from hourly data combined with temperature, humidity, barometric pressure,
+wind speed, and cloud cover. Its sites and experimental split were not
+verified from the full text, so its reported errors are not compared
+numerically here. Informer variants have also been adapted to GHI
+prediction \cite{chen2026informer}. In an adjacent target domain, Yu et al.\
+\cite{yu2025timesnet} modified TimesNet's feature extraction and loss for
+multi-step photovoltaic-power forecasting, and a parallel TimesNet and
+AT-Informer-AT design has been proposed for short-term photovoltaic
+forecasting \cite{yu2026parallel}.
 These studies establish prior solar use of TimesNet, but their additional
 inputs or modified pipelines do not answer the present input-constrained
 backbone comparison. Photovoltaic power is not interchangeable with GHI.
@@ -86,11 +92,15 @@ backbone comparison. Photovoltaic power is not interchangeable with GHI.
 
 Chang et al.\ \cite{chang2017} introduced dilated recurrent connections for
 general sequence learning; their architecture paper is not itself a solar
-irradiance experiment. A directed search using variants of DilatedRNN,
-dilated RNN, and dilated recurrent neural network with irradiance, GHI, and
-photovoltaic forecasting did not confirm a classical-DilatedRNN experiment
-matching all four tasks studied here. This search result is not evidence of
-absence and does not justify a first-application claim.
+irradiance experiment. Directed searches in Google Scholar and in the
+Semantic Scholar citation graph combined DilatedRNN, dilated RNN, dilated
+recurrent neural network, and dilated LSTM or GRU with irradiance, GHI, and
+photovoltaic forecasting. They did not identify a classical-DilatedRNN
+experiment for direct GHI forecasting. Some matches apply dilation to
+convolutional rather than recurrent connections; one attention-based LSTM
+hybrid for short-term irradiance, for example, uses dilated convolutional
+layers \cite{molu2024hybrid}. These search results are not evidence of
+absence and do not justify a first-application claim.
 
 Relevant adjacent evidence already exists. Smyl et al.\
 \cite{smyl2026solar} describe any-quantile recurrent solar-power forecasting
@@ -104,9 +114,16 @@ not the invention of either network family.
 
 \subsection{Coarser resolution, multiple locations, and climate context}
 
-Coarser targets lead to a different learning problem. Ozoegwu
+Coarser targets lead to a different learning problem. At daily resolution,
+Umar et al.\ \cite{umar2026daily} forecast irradiance 1--15 days ahead at
+four sites with horizon-specific submodels and clear-sky cross-attention,
+comparing them with gradient-boosting and deep-learning references,
+including PatchTST. Ozoegwu
 \cite{ozoegwu2019} forecast monthly-mean daily global solar radiation with
 nonlinear autoregressive, exogenous-input, and hybrid neural formulations.
+Li et al.\ \cite{li2026monthly} predicted monthly GHI over China from
+climate-model hindcasts and reanalysis predictors, rather than from GHI
+history alone, using tree-based and linear learners.
 Jung et al.\ \cite{jung2020} examined recurrent modeling for long-term
 photovoltaic-power forecasting, whose target also depends on the conversion
 system. Cabral et al.\ \cite{cabral2026} evaluated a GHI-only GPT-Neo
@@ -130,7 +147,12 @@ additional support from the study design.
 Multi-scale irradiance modeling has also been studied explicitly through
 time-varying functional representations \cite{shi2026multiscale}. Thus,
 neither multiple resolutions nor GHI-only inputs, taken individually,
-constitute an unexplored research category.
+constitute an unexplored research category. Recent photovoltaic-power models
+instead fuse historical generation with numerical, satellite-derived, or
+AI-based weather forecasts at horizons from 4~h to 7~days
+\cite{zhang2026rethinking}. The GHI-only design studied here therefore
+represents a reduced-information scenario, not an accuracy-maximizing
+configuration.
 
 The Supplementary Material summarizes these representative primary studies
 in three groups organized by forecast horizon and geographic or climate
@@ -155,7 +177,9 @@ set, and evaluation protocol.
 The present study addresses this comparison through a common experimental
 design. At each resolution, TimesNet and DilatedRNN share the same samples,
 chronological forecast origins, admissible inputs, post-processing rules,
-baselines, and aggregation across locations. Evaluation distinguishes hourly
+and aggregation across locations. The reference models, from persistence
+and ARIMA to Informer, are evaluated on the same origins, targets, and
+post-processing. Evaluation distinguishes hourly
 multi-day forecasts from daily aggregates and treats the primary one-step
 monthly task separately from the exploratory six-month task. These choices
 address the comparability limitations identified in solar-forecast
