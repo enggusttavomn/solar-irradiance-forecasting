@@ -527,8 +527,8 @@ def gerar_mapa_contexto(
     grade = fig.add_gridspec(
         2,
         2,
-        width_ratios=(2.8, 1.2),
-        height_ratios=(1.18, 1.0),
+        width_ratios=(2.7, 1.3),
+        height_ratios=(1.0, 1.3),
     )
     ax_mundo = fig.add_subplot(grade[:, 0])
     ax_eua = fig.add_subplot(grade[0, 1])
@@ -559,7 +559,7 @@ def gerar_mapa_contexto(
         ax_eua,
         (-126, -79),
         (24, 47),
-        "(b) Contiguous United States",
+        "(b) United States",
     )
     configurar(
         ax_detroit,
@@ -696,13 +696,17 @@ def gerar_mapa_contexto(
         borderaxespad=0.0,
         frameon=False,
     )
+    # Mapas com aspecto igual encolhem dentro da celula: alinhar (b) ao topo e
+    # (c) a base do painel (a) evita um vazio solto entre os dois detalhes.
+    ax_eua.set_anchor("NW")
+    ax_detroit.set_anchor("SW")
     fig.subplots_adjust(
-        left=0.055,
-        right=0.98,
-        top=0.96,
+        left=0.075,
+        right=0.985,
+        top=0.955,
         bottom=0.14,
-        wspace=0.16,
-        hspace=0.24,
+        wspace=0.30,
+        hspace=0.30,
     )
 
     destino_png = Path(caminho_png)

@@ -408,6 +408,32 @@ def descobrir_pastas_tarefa(caminhos: Iterable[str | Path]) -> list[Path]:
     return [unicos[chave] for chave in sorted(unicos, key=str)]
 
 
+def _validar_sementes_estimativas(
+    grupo: pd.DataFrame,
+    *,
+    esperado: tuple[int, ...],
+    identificador: object,
+) -> tuple[int, ...]:
+    """Exige exatamente uma estimativa por semente, sem arredondar IDs."""
+
+    valores = pd.to_numeric(grupo["semente"], errors="coerce")
+    if (
+        valores.isna().any()
+        or (~np.isfinite(valores)).any()
+        or (valores % 1 != 0).any()
+    ):
+        raise ArtefatoNaoPublicavelError(
+            f"Identificadores de sementes invalidos em {identificador}."
+        )
+    sementes = tuple(sorted(valores.astype(int)))
+    if sementes != esperado:
+        raise ArtefatoNaoPublicavelError(
+            f"Sementes incompletas ou duplicadas em {identificador}: "
+            f"esperado {esperado}, recebido {sementes}."
+        )
+    return sementes
+
+
 def _selecionar_estimativas_publicacao(
     quadro: pd.DataFrame,
     entrada: EntradaValidada,
@@ -435,11 +461,14 @@ def _selecionar_estimativas_publicacao(
                 raise ArtefatoNaoPublicavelError(
                     f"Ensemble duplicado para {identificador} em {entrada.tarefa}."
                 )
-            efetivas = tuple(sorted(pd.to_numeric(sementes["semente"]).astype(int).unique()))
-            if modelo in MODELOS_APRENDIDOS and efetivas != SEMENTES_CANONICAS:
-                raise ArtefatoNaoPublicavelError(
-                    f"Ensemble {modelo}/{entrada.tarefa} sem as cinco sementes canonicas."
+            if modelo in MODELOS_APRENDIDOS:
+                efetivas = _validar_sementes_estimativas(
+                    sementes,
+                    esperado=SEMENTES_CANONICAS,
+                    identificador=identificador,
                 )
+            else:
+                efetivas = tuple(sorted(pd.to_numeric(sementes["semente"]).astype(int)))
             escolhida = ensemble.copy()
             escolhida["N_sementes"] = len(efetivas)
         elif not deterministica.empty:
@@ -451,13 +480,10 @@ def _selecionar_estimativas_publicacao(
             escolhida["N_sementes"] = pd.NA
         elif entrada.uma_semente and not sementes.empty:
             semente_esperada = int(entrada.status["semente"])
-            escolhida = sementes.loc[
-                pd.to_numeric(sementes["semente"]).astype(int) == semente_esperada
-            ].copy()
-            if len(escolhida) != 1:
-                raise ArtefatoNaoPublicavelError(
-                    f"Extensao horaria ambigua para {identificador}."
-                )
+            _validar_sementes_estimativas(
+                sementes, esperado=(semente_esperada,), identificador=identificador
+            )
+            escolhida = sementes.copy()
             escolhida["N_sementes"] = 1
         else:
             raise ArtefatoNaoPublicavelError(
@@ -627,12 +653,10 @@ def construir_variabilidade_sementes(
             & (macro["tipo_estimativa"] == "semente")
         ].copy()
         for valores, grupo in sementes.groupby(chaves, sort=True):
-            seeds = tuple(sorted(pd.to_numeric(grupo["semente"]).astype(int).unique()))
             esperado = (42,) if entrada.uma_semente else SEMENTES_CANONICAS
-            if seeds != esperado:
-                raise ArtefatoNaoPublicavelError(
-                    f"Conjunto de sementes incompleto em {valores}: {seeds}."
-                )
+            seeds = _validar_sementes_estimativas(
+                grupo, esperado=esperado, identificador=valores
+            )
             linha = dict(zip(chaves, valores, strict=True))
             linha["N_sementes"] = len(seeds)
             linha["sementes"] = ";".join(map(str, seeds))
@@ -1548,10 +1572,22 @@ def _tabela_desempenho_compacta(desempenho: pd.DataFrame) -> pd.DataFrame:
         .groupby(indice, as_index=False)["N_sementes"]
         .max()
     )
-    return _ordenar_tabela_tarefas(
+    tabela = _ordenar_tabela_tarefas(
         tabela.merge(sementes, on=indice, how="left"),
         "horizonte",
     )
+    unidades = {
+        "hourly_72_extension": "h",
+        "daily_30": "d",
+        "monthly_1": "month",
+        "monthly_6": "month",
+    }
+    tabela["horizonte"] = [
+        f"{int(horizonte)} {unidades[tarefa]}"
+        + ("s" if unidades[tarefa] == "month" and int(horizonte) != 1 else "")
+        for tarefa, horizonte in zip(tabela["tarefa"], tabela["horizonte"], strict=True)
+    ]
+    return tabela
 
 
 def _tabela_variabilidade_compacta(variabilidade: pd.DataFrame) -> pd.DataFrame:
@@ -1653,6 +1689,7 @@ def _gravar_latex(
     legenda: str,
     rotulo: str,
     largura_total: bool = False,
+    destacar_minimos_em: Sequence[str] = (),
 ) -> None:
     alinhamento = "l" + "r" * max(0, len(quadro.columns) - 1)
     rotulo_seguro = rotulo.replace("_", "-")
@@ -1672,12 +1709,40 @@ def _gravar_latex(
         " & ".join(escapar_latex(c) for c in quadro.columns) + r" \\",
         r"\midrule",
     ]
+    indices_destaque = [quadro.columns.get_loc(c) for c in destacar_minimos_em]
     for valores in quadro.itertuples(index=False, name=None):
-        linhas.append(" & ".join(escapar_latex(v) for v in valores) + r" \\")
+        candidatos = [float(valores[i]) for i in indices_destaque if pd.notna(valores[i])]
+        minimo = min(candidatos) if candidatos else None
+        celulas = [
+            r"\textbf{" + escapar_latex(valor) + "}"
+            if i in indices_destaque and pd.notna(valor) and float(valor) == minimo
+            else escapar_latex(valor)
+            for i, valor in enumerate(valores)
+        ]
+        linhas.append(" & ".join(celulas) + r" \\")
     linhas.extend(
         [r"\bottomrule", r"\end{tabular}%", r"}", f"\\end{{{ambiente}}}", ""]
     )
     caminho.write_text("\n".join(linhas), encoding="utf-8", newline="\n")
+
+
+def _gravar_desempenho_latex(desempenho: pd.DataFrame, caminho: Path) -> None:
+    tabela = _tabela_desempenho_compacta(desempenho)
+    modelos = [c for c in tabela.columns if c not in {"tarefa", "horizonte", "N_sementes"}]
+    _gravar_latex(
+        tabela,
+        caminho,
+        legenda=(
+            "Macro test MAE (W/m2) at cumulative horizons in native time units. "
+            "Bold marks the lowest unrounded MAE in each row. Seeds refer to learned "
+            "models; deterministic baselines use no random seed. "
+            "NA denotes hourly climatology, which was not evaluated. "
+            "Complete metrics and exact-lead results are available in the CSV artifact."
+        ),
+        rotulo="tab:desempenho_macro_auditavel",
+        largura_total=True,
+        destacar_minimos_em=modelos,
+    )
 
 
 def _gravar_caso_latex(
@@ -2173,9 +2238,9 @@ def _grafico_heterogeneidade_local(
         imagem,
         ax=eixo,
         orientation="horizontal",
-        fraction=0.075,
-        pad=0.13,
-        aspect=34,
+        fraction=0.06,
+        pad=0.045,
+        aspect=40,
     )
     barra.set_label(
         "$\\Delta$MAE = TimesNet $-$ DilatedRNN (W m$^{-2}$)",
@@ -2228,12 +2293,11 @@ def _grafico_casos(
     figura, eixos = plt.subplots(
         1,
         2,
-        figsize=(7.25, 3.85),
+        figsize=(7.25, 3.6),
         squeeze=False,
         sharey=True,
     )
     valores_ghi: list[float] = []
-    resumos_casos: list[str] = []
     for indice_painel, (eixo, (_, caso)) in enumerate(
         zip(eixos[0], casos.iterrows(), strict=True)
     ):
@@ -2322,7 +2386,25 @@ def _grafico_casos(
             f"DRNN $-$ TN: {ganho:+.2f} W m$^{{-2}}$\n"
             f"{contexto}"
         )
-        resumos_casos.append(resumo)
+        # Caixa ancorada abaixo do eixo: o tight_layout reserva so o espaco dela.
+        eixo.annotate(
+            resumo,
+            xy=(0.0, 0.0),
+            xycoords="axes fraction",
+            xytext=(0, -34),
+            textcoords="offset points",
+            ha="left",
+            va="top",
+            fontsize=6.7,
+            linespacing=1.22,
+            annotation_clip=False,
+            bbox={
+                "boxstyle": "round,pad=0.28",
+                "facecolor": "#F8F9FA",
+                "edgecolor": "#B8BEC6",
+                "linewidth": 0.6,
+            },
+        )
         eixo.set_ylabel("GHI (W m$^{-2}$)", fontsize=8.2)
         eixo.set_xlabel("Local target time", fontsize=8.2)
         localizador = mdates.AutoDateLocator(minticks=4, maxticks=7)
@@ -2347,28 +2429,12 @@ def _grafico_casos(
         ncol=3,
         fontsize=7.8,
         loc="upper center",
-        bbox_to_anchor=(0.5, 1.01),
+        bbox_to_anchor=(0.5, 0.995),
         frameon=False,
         columnspacing=1.6,
         handlelength=2.2,
     )
-    figura.tight_layout(rect=(0.0, 0.29, 1.0, 0.89), w_pad=1.0)
-    for posicao_x, resumo in zip((0.075, 0.56), resumos_casos, strict=True):
-        figura.text(
-            posicao_x,
-            0.045,
-            resumo,
-            ha="left",
-            va="bottom",
-            fontsize=6.7,
-            linespacing=1.22,
-            bbox={
-                "boxstyle": "round,pad=0.28",
-                "facecolor": "#F8F9FA",
-                "edgecolor": "#B8BEC6",
-                "linewidth": 0.6,
-            },
-        )
+    figura.tight_layout(rect=(0.0, 0.0, 1.0, 0.95), w_pad=1.0)
     _salvar_figura(figura, pasta / "previsoes_casos_contrastantes")
 
 
@@ -2467,17 +2533,7 @@ def gerar_artefatos_artigo_unificado(
     gerado_em = datetime.now(timezone.utc).isoformat()
     try:
         _gravar_csv(desempenho, temporaria / "desempenho_macro.csv")
-        desempenho_tex = _tabela_desempenho_compacta(desempenho)
-        _gravar_latex(
-            desempenho_tex,
-            temporaria / "desempenho_macro.tex",
-            legenda=(
-                "Macro test MAE by task and cumulative forecast horizon. "
-                "Complete metrics and exact-lead results are provided in the CSV artifact."
-            ),
-            rotulo="tab:desempenho_macro_auditavel",
-            largura_total=True,
-        )
+        _gravar_desempenho_latex(desempenho, temporaria / "desempenho_macro.tex")
         metricas_terminais = _tabela_metricas_terminais(desempenho)
         _gravar_csv(metricas_terminais, temporaria / "metricas_terminais.csv")
         _gravar_latex(
