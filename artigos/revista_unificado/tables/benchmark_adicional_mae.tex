@@ -1,0 +1,24 @@
+\begin{table}[!htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\caption{Complete terminal-horizon cumulative macro-MAE (W/m$^2$). Bold and underline mark the best and second-best unrounded values within each task. Hourly results use seed 42; other learned-model results use five-seed ensembles.}
+\label{tab:benchmark_adicional_mae}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Model & 72 h & 30 d & 1 mo & 6 mo \\
+\midrule
+Persistence & 58.11 & 60.28 & 35.09 & 91.89 \\
+Seasonal na\"ive & 65.90 & 58.78 & 16.94 & 18.00 \\
+Climatology & -- & 45.51 & \textbf{12.57} & \textbf{13.03} \\
+ARIMA & 134.65 & 50.69 & 16.26 & 19.17 \\
+XGBoost & \textbf{50.50} & 43.93 & 14.82 & 14.72 \\
+GRU & \underline{51.52} & 44.23 & 13.86 & 14.40 \\
+LSTM & 53.39 & 44.18 & 14.27 & 14.76 \\
+Transformer & 53.22 & \underline{43.88} & 13.12 & 14.43 \\
+Informer & 137.72 & 45.47 & \underline{12.85} & \underline{13.88} \\
+DilatedRNN & 52.96 & \textbf{43.85} & 13.01 & 14.37 \\
+TimesNet & 52.48 & 44.08 & 13.89 & 14.46 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -31,8 +31,8 @@ Table~\ref{tab:metricas-terminais} complements MAE with RMSE, nRMSE, and
 $R^2$. The terminal RMSE ordering agrees with the MAE ordering:
 DilatedRNN had lower RMSE in the daily and monthly tasks, while TimesNet
 obtained 101.17~W/m$^2$ at 72 hours versus 104.93~W/m$^2$ for
-DilatedRNN. The reference-model benchmark is reported in the Supplementary
-Material and discussed in Section~\ref{sec:reference_benchmark}.
+DilatedRNN. Section~\ref{sec:reference_benchmark} places both architectures
+in the complete reference-model benchmark.
 
 \input{tables/metricas_terminais}
 
@@ -111,7 +111,8 @@ not a significance test.
 \caption{TimesNet and DilatedRNN seed-level macro-MAE: means with error bars
 spanning one sample standard deviation. Color and marker shape identify
 each architecture. The hourly extension is shown as $n=1$ without an error
-bar. The full learned-model comparison is reported in the Supplementary Material.}
+bar. Supplementary Figure S2 extends this display to all seven stochastic
+learned models.}
 \label{fig:seed_variability}
 \end{figure*}
 
@@ -131,7 +132,9 @@ Model size adds a second consideration to this comparison.
 Table~\ref{tab:model_capacity} shows that DilatedRNN uses fewer trainable
 parameters than TimesNet in all four configurations; in the one-month
 task, the counts are 1,889 and 2,758, respectively. Its monthly advantage
-therefore accompanies a smaller parameterization. These counts describe
+therefore accompanies a smaller parameterization. DilatedRNN is also the
+smallest neural model in every task; at one month, the lower MAE of Informer
+uses 8,977 parameters, about 4.8 times as many. These counts describe
 model size, while measured training and inference times would be needed
 to assess computational efficiency. The current evidence supports a
 choice between the tested implementations; the contributions of recurrence,
@@ -140,16 +143,47 @@ normalization, and parameter budget would require separate ablations.
 \subsection{Reference benchmark and scope of the comparison}
 \label{sec:reference_benchmark}
 
-The full benchmark places the two-architecture comparison in context.
-Supplementary Table S1 and Figure S1 report every evaluated reference model
-and cumulative checkpoint. XGBoost had the lowest macro-MAE at all hourly
-checkpoints (50.50~W/m$^2$ at 72 hours) and at 1, 3, and 14 days.
-LSTM led at 7 days (43.69~W/m$^2$), and DilatedRNN led at 30 days
-(43.85~W/m$^2$), ahead of XGBoost (43.93~W/m$^2$).
-Calendar climatology led both monthly tasks, with 12.57~W/m$^2$ at one month
-and 13.03~W/m$^2$ over six months. Hourly climatology was not evaluated;
-its missing entries are not zero errors. Consequently, a win over the other
-focal architecture must not be read as a win over the entire benchmark.
+Table~\ref{tab:benchmark_adicional_mae} places the two architectures in the
+complete benchmark at the terminal horizon of each task. Supplementary
+Tables S1--S12 report MAE, MSE, RMSE, nRMSE, and $R^2$ at every cumulative
+checkpoint, and Supplementary Figure S1 shows the corresponding MAE ranks.
+No model led every task. XGBoost had the lowest macro-MAE at all hourly
+checkpoints (50.50~W/m$^2$ at 72 hours); GRU ranked second at 48 and
+72 hours (51.52~W/m$^2$ at 72 hours), and TimesNet at 24 hours. In the daily
+task, site-wise ARIMA led at 1 and 3 days (39.95 and 43.04~W/m$^2$), LSTM at
+7 days, and XGBoost at 14 days. DilatedRNN led at 30 days
+(43.85~W/m$^2$), although the Transformer and XGBoost were within
+0.1~W/m$^2$ (43.88 and 43.93~W/m$^2$). Calendar climatology led both monthly
+tasks, with 12.57~W/m$^2$ at one month and 13.03~W/m$^2$ over six months.
+Among learned models, Informer had the lowest monthly macro-MAE (12.85 and
+13.88~W/m$^2$), followed by DilatedRNN (13.01 and 14.37~W/m$^2$); at one
+month, DilatedRNN nevertheless had lower RMSE than Informer (16.02 versus
+16.20~W/m$^2$).
+
+\input{tables/benchmark_adicional_mae}
+
+Two reference configurations did not reproduce the hourly diurnal cycle.
+Averaged over test origins, the reference GHI profile spans about
+670~W/m$^2$ between night and midday on each forecast day, whereas the
+corresponding ARIMA and Informer profiles span only 195--401~W/m$^2$.
+Their 72-hour macro-MAEs (134.65 and 137.72~W/m$^2$) are therefore more than
+twice that of persistence (58.11~W/m$^2$). The ARIMA candidates contain no
+24-hour seasonal term, and their recursive forecasts are strongly damped
+from the first forecast day. Informer stopped after nine selection epochs
+with a normalized validation MSE of 0.064, compared with 0.010 for the
+Transformer after 30 epochs. A four-epoch CPU rerun of the same seed
+followed a similar trajectory (0.066), so the stall does not arise from the
+GPU execution. These hourly values evaluate the declared
+configurations under the common protocol, not the best achievable ARIMA or
+Informer. Site-wise ARIMA also did not surpass annual seasonal na\"ive over
+six months (19.17 versus 18.00~W/m$^2$). Hourly climatology was not
+evaluated; its missing entries are not zero errors.
+
+At the terminal horizons, DilatedRNN ranked first at 30 days, third in both
+monthly tasks, and fourth at 72 hours; TimesNet ranked third at 72 hours,
+fourth at 30 days, and sixth in both monthly tasks. Consequently, a win over
+the other focal architecture must not be read as a win over the entire
+benchmark.
 
 The source studies motivate the hourly TimesNet and monthly DilatedRNN
 tasks, but their original error values were obtained under different

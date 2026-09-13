@@ -19,6 +19,7 @@
 
 \graphicspath{{figures/}}
 \emergencystretch=2em
+\hyphenation{Dilated-RNN}
 
 % Float placement: let floats share pages with running text instead of
 % forming dedicated float pages that leave the rest of the page blank.
@@ -64,7 +65,8 @@ ensembles; hourly results use seed 42. These findings favor DilatedRNN
 among the two evaluated implementations for daily and monthly full-horizon
 forecasting, with the strongest evidence at one month. The daily and
 six-month ensemble margins are small, and task counts are descriptive.
-Reference-model benchmarks are provided in the Supplementary Material.
+Across a common benchmark of eleven models, XGBoost led at 72 hours,
+DilatedRNN at 30 days, and calendar climatology in both monthly tasks.
 Overlapping targets and a single test year limit generalization.
 \end{abstract}
 
@@ -101,7 +103,7 @@ reported in this article.
 
 \section*{Data and Code Availability}
 Source code and protocol definitions are maintained at
-\url{https://github.com/enggusttavomn/TCC}.
+\url{https://github.com/enggusttavomn/solar-irradiance-forecasting}.
 The comparisons reported here use the corrected multi-resolution archive
 identified in the Supplementary Material. That full forecast bundle is not
 included in the current public repository snapshot; access to it is required

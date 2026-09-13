@@ -18,6 +18,7 @@
 \makeatother
 
 \graphicspath{{figures/}}
+\hyphenation{Dilated-RNN}
 
 % Float placement: let floats share pages with running text instead of
 % forming dedicated float pages that leave the rest of the page blank.
@@ -50,25 +51,30 @@ University of Campinas, Campinas, SP, Brazil}
 \section{Complete Reference-Model Benchmark}
 This supplement compares TimesNet and DilatedRNN with all evaluated reference
 models at each cumulative forecast horizon.
-Table~\ref{tab:desempenho-macro-auditavel} reports the complete macro-MAE
-comparison, and Figure~\ref{fig:supp_ranking} shows how model rankings vary
-across horizons. Figure~\ref{fig:supp_seeds} summarizes variability across
-random seeds for all learned models.
-\input{tables/desempenho_macro}
+Tables~\ref{tab:baseline_hourly_72_extension_24}--\ref{tab:baseline_monthly_6_6}
+report MAE, MSE, RMSE, nRMSE, and $R^2$ for every task and checkpoint.
+Figure~\ref{fig:supp_ranking} summarizes the resulting macro-MAE ranks, and
+Figure~\ref{fig:supp_seeds} summarizes variability across random seeds for
+the seven stochastic learned models.
+\input{tables/benchmark_adicional_completo}
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.80\textwidth]{ranking_por_tarefa.png}
-\caption{Macro-MAE rankings for all models at cumulative forecast horizons.
-Rank 1 indicates the lowest MAE within each task and horizon.
-Hourly climatology was not evaluated.}
+\includegraphics[width=0.90\textwidth]{ranking_por_tarefa.png}
+\caption{Macro-MAE rank of each model at every cumulative forecast horizon.
+Rank 1 (darkest) indicates the lowest MAE within a task and horizon; tied
+models share the better rank. Hourly results use seed 42, and the other
+learned models use five-seed ensembles. Hourly climatology was not
+evaluated (n/a).}
 \label{fig:supp_ranking}
 \end{figure}
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.80\textwidth]{variabilidade_por_semente.png}
-\caption{Variability across random seeds for all learned models. Error bars
-show one sample standard deviation; hourly results use one seed and therefore
-have no error bars.}
+\includegraphics[width=0.90\textwidth]{variabilidade_por_semente.png}
+\caption{Seed-level macro-MAE of the seven stochastic learned models: means
+with error bars spanning one sample standard deviation. Markers are offset
+horizontally for legibility. Hourly runs use seed 42 only and have no error
+bars; the hourly Informer lies above the plotted range, so its markers sit
+above the dashed line with their values printed.}
 \label{fig:supp_seeds}
 \end{figure}
 \FloatBarrier
@@ -91,13 +97,13 @@ multi-climate, and very-long-horizon forecasting.
 \input{appendices/appendix_a}
 
 \section{Additional Result Tables}
-Table~\ref{tab:variabilidade-sementes} reports the means and sample standard
-deviations of macro-MAE across seeds at each cumulative horizon, as shown in
-the variability plots. Horizons are expressed in hours, days, or months
-according to the task. Table~\ref{tab:caso-meteorologico-independente}
+Table~\ref{tab:baseline_seeds} reports the mean and sample standard deviation
+of seed-level macro-MAE at the terminal horizon of each task for the seven
+stochastic learned models; Figure~\ref{fig:supp_seeds} shows all cumulative
+horizons. Table~\ref{tab:caso-meteorologico-independente}
 describes the adverse-weather example selected independently of either
 model's errors.
-\input{tables/variabilidade_sementes}
+\input{tables/benchmark_adicional_sementes}
 \input{tables/caso_meteorologico_independente}
 
 \FloatBarrier

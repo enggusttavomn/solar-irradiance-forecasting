@@ -1,6 +1,6 @@
 \begin{table}[!t]
 \centering
-\caption{Compact fixed configuration of the matched implementation.}
+\caption{Fixed configuration of the learned models.}
 \label{tab:hyperparameters}
 \footnotesize
 \setlength{\tabcolsep}{3pt}
@@ -18,16 +18,23 @@ weight decay $10^{-5}$ \\
 Batch size & 128 for hourly/daily; 32 for monthly \\
 Epoch selection & Hourly/daily: maximum 30, patience 5; monthly:
 maximum 300, patience 30 \\
-Seeds & Daily/monthly: 11, 23, 42, 67, 89; official hourly and
-DilatedRNN extension: 42 \\
+Seeds & Daily/monthly: 11, 23, 42, 67, 89 for every stochastic learned
+model; hourly: 42 \\
 TimesNet & $d_{\mathrm{model}}=8$, $d_{\mathrm{ff}}=16$, one TimesBlock,
 top-$k=3$, two kernels, dropout 0.1 \\
 DilatedRNN & Dilations $(1,2,4)$; 16 units/layer; dense width 16;
 dropout 0 \\
-LSTM & One layer; hidden width 32; direct output head \\
+LSTM / GRU & One layer; hidden width 32; direct output head \\
+Transformer & Two encoder layers, one decoder layer;
+$d_{\mathrm{model}}=16$, $d_{\mathrm{ff}}=32$, two heads; dropout 0.1 \\
+Informer & Transformer widths; ProbSparse attention (factor 5) and
+encoder distillation \\
 Site embedding & Width 8 for all neural models \\
 XGBoost & 150 trees; depth 3; learning rate 0.05; row and column
 subsampling 0.8; histogram tree method \\
+ARIMA & Site-wise; seven candidate $(p,d,q)$ orders selected on 2023 \\
+Hardware & One CPU thread; daily and hourly Transformer and Informer on
+a GTX 1650 GPU \\
 Post-processing & Zero floor for all tasks; hourly values also set to zero
 when solar elevation is nonpositive \\
 \bottomrule

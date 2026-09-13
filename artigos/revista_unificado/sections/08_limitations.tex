@@ -16,7 +16,9 @@ The matched input contains only GHI available at the forecast origin and
 site identity. This restriction controls predictor availability among learned
 models, but excludes potentially useful weather information, such as cloud
 motion, numerical weather predictions, and forecasts of aerosols and
-temperature. A site embedding can also encode persistent
+temperature. Recent photovoltaic-power models fuse such forecasts with
+historical generation \cite{zhang2026rethinking}, illustrating the kind of
+information this design excludes. A site embedding can also encode persistent
 location-specific behavior and does not demonstrate transfer to an unseen
 factory. Fixed local offsets produce regular hourly grids but do not reproduce
 daylight-saving clock changes. Moreover, the daily/monthly archive was
@@ -57,6 +59,20 @@ differences, and seed variability cannot be assessed for the hourly task.
 The reported TimesNet is a compact variant with sample-specific Fourier-period
 selection; the findings do not establish a ranking of every implementation
 bearing either architecture name.
+
+The reference models follow declared compact configurations rather than
+searches of equal effort. ARIMA is fitted separately for each site, whereas
+the neural and tree-based models are global and share parameters across
+sites, so its comparison also reflects this local--global difference.
+Under these settings, the hourly ARIMA and Informer did not reproduce the
+diurnal cycle, so their hourly errors do not represent tuned versions of
+either model family. The
+Transformer and Informer are GHI-only adaptations without the calendar
+embeddings and parameter budgets of their original publications. Their daily
+and hourly runs used a GPU with nondeterministic attention gradients, whereas
+the other learned models used one CPU thread. This hardware difference leaves
+the data, targets, and selection protocol unchanged, but it limits bitwise
+reproducibility of those runs.
 
 Neural epoch selection minimizes normalized validation MSE, whereas the main
 test ranking minimizes macro-MAE in W/m$^2$. These objectives weight errors

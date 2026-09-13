@@ -101,14 +101,16 @@ The article makes four contributions:
   origins, direct outputs, and post-processing for the two architectures;
   \item it quantifies changes in architectural preference across tasks,
   sites, and seeds, while testing whether the preferred network also
-  improves on simpler reference models; and
+  improves on statistical, tree-based, recurrent, and attention-based
+  reference models evaluated under the same protocol; and
   \item it combines horizon profiles, parameter counts, and reproducibly
   selected forecast cases to characterize the scope of the model choice.
   Climate and independent meteorological records provide descriptive
   context for the cases.
 \end{enumerate}
-The complete reference-model benchmark is supplied in the Supplementary
-Material to place this two-architecture comparison in context.
+A common benchmark of persistence, seasonal na\"ive, climatology, ARIMA,
+XGBoost, LSTM, GRU, Transformer, and Informer models places this
+two-architecture comparison in context.
 
 Section~\ref{sec:related_work} reviews the forecasting literature and
 identifies the comparison gap. Section~\ref{sec:background} defines GHI,
