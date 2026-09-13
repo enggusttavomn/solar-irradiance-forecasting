@@ -26,9 +26,20 @@ def test_fft_detecta_periodo_diario_sem_selecionar_frequencia_zero() -> None:
 
     periodos, amplitudes = fft_top_k_periods(x, top_k=1)
 
-    assert periodos.tolist() == [24]
+    assert periodos.tolist() == [[24], [24]]
     assert amplitudes.shape == (2, 1)
     assert torch.all(amplitudes > 0)
+
+
+def test_fft_seleciona_periodos_independentemente_por_amostra() -> None:
+    horas = torch.arange(336, dtype=torch.float32)
+    ciclo_diario = torch.sin(2.0 * math.pi * horas / 24.0)
+    ciclo_semanal = torch.sin(2.0 * math.pi * horas / 168.0)
+    x = torch.stack((ciclo_diario, ciclo_semanal)).unsqueeze(-1)
+
+    periodos, _ = fft_top_k_periods(x, top_k=1)
+
+    assert periodos.tolist() == [[24], [168]]
 
 
 def test_inception_usa_multiplos_kernels_e_preserva_a_grade() -> None:
@@ -84,6 +95,38 @@ def test_timesnet_padrao_projeta_336_horas_em_72_saidas() -> None:
     assert previsao.shape == (2, 72)
     assert torch.isfinite(previsao).all()
     assert modelo.projecao_temporal.weight.grad is not None
+
+
+def test_timesnet_preserva_previsao_ao_mudar_companheiros_do_lote() -> None:
+    torch.manual_seed(123)
+    horas = torch.arange(24, dtype=torch.float32)
+    ancora = torch.sin(2.0 * math.pi * horas / 6.0)
+    ancora = ancora + 0.2 * torch.sin(2.0 * math.pi * horas / 5.0)
+    companheiro_a = torch.sin(2.0 * math.pi * horas / 12.0)
+    companheiro_b = torch.sin(2.0 * math.pi * horas / 3.0)
+    lote_a = torch.stack((ancora, companheiro_a, companheiro_a, companheiro_a))
+    lote_b = torch.stack((ancora, companheiro_b, companheiro_b, companheiro_b))
+    ids = torch.zeros(4, dtype=torch.long)
+
+    modelo = TimesNetHorario(
+        seq_len=24,
+        pred_len=6,
+        d_model=2,
+        d_ff=4,
+        num_blocos=1,
+        top_k=2,
+        num_kernels=1,
+        num_localidades=1,
+        dropout=0.0,
+    ).eval()
+
+    with torch.no_grad():
+        previsao_a = modelo(lote_a, ids)[0]
+        previsao_b = modelo(lote_b, ids)[0]
+        previsao_isolada = modelo(ancora.unsqueeze(0), ids[:1])[0]
+
+    assert torch.allclose(previsao_a, previsao_b, rtol=1e-6, atol=1e-6)
+    assert torch.allclose(previsao_a, previsao_isolada, rtol=1e-6, atol=1e-6)
 
 
 def test_timesnet_aceita_canal_univariado_e_embedding_de_localidade() -> None:

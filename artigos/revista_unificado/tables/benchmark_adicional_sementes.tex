@@ -1,0 +1,20 @@
+\begin{table}[!htbp]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\caption{Terminal cumulative macro-MAE across individual seeds: mean $\pm$ sample standard deviation (W/m$^2$). These are seed-level errors, not the error of the ensemble forecast. Hourly runs have one seed and no standard deviation.}
+\label{tab:baseline_seeds}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Model & 72 h ($N=1$) & 30 d ($N=5$) & 1 mo ($N=5$) & 6 mo ($N=5$) \\
+\midrule
+XGBoost & 50.50 & $44.00\pm0.02$ & $14.86\pm0.17$ & $14.80\pm0.11$ \\
+GRU & 51.52 & $44.41\pm0.79$ & $14.05\pm0.12$ & $14.74\pm0.43$ \\
+LSTM & 53.39 & $44.68\pm0.71$ & $14.51\pm0.34$ & $15.14\pm0.36$ \\
+Transformer & 53.22 & $44.50\pm1.34$ & $14.44\pm0.45$ & $14.96\pm0.83$ \\
+Informer & 137.72 & $46.11\pm1.84$ & $13.71\pm1.03$ & $14.61\pm0.57$ \\
+DilatedRNN & 52.96 & $44.10\pm0.60$ & $13.45\pm0.35$ & $14.77\pm0.45$ \\
+TimesNet & 52.48 & $44.29\pm0.29$ & $14.62\pm0.74$ & $15.24\pm0.76$ \\
+\bottomrule
+\end{tabular}
+\end{table}

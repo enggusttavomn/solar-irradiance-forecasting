@@ -1,0 +1,41 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+DilatedRNN achieved lower cumulative macro-MAE than TimesNet at the full
+forecast horizon in three of the four evaluated tasks. Its largest
+relative advantage was in one-month forecasting, with
+13.01 versus 13.89~W/m$^2$ and a 6.38\% reduction. In that task,
+DilatedRNN also achieved lower MAE at six of the ten locations and in
+four of five paired seed runs. Together, these results favor DilatedRNN
+among the two implementations for the evaluated daily and monthly
+full-horizon forecasts, with the strongest evidence at one month.
+
+The 30-day and six-month ensemble advantages were
+0.23 and 0.09~W/m$^2$, respectively, providing smaller margins than the
+primary monthly result. TimesNet led the complete 72-hour hourly task
+with 52.48 versus 52.96~W/m$^2$, and several intermediate horizons
+also favored TimesNet. The three task wins are a descriptive synthesis
+across distinct forecasting problems, rather than a pooled performance
+score. DilatedRNN's lower parameter counts in all four configurations
+add a model-size consideration to the choice; computational efficiency
+was not measured.
+
+The comparison controls inputs, temporal partitions, forecast origins,
+post-processing, and site weights within each task. Its ten
+factory-associated locations represent NSRDB solar-resource grid cells,
+without quantifying factory demand or photovoltaic output. The
+single hourly seed, overlapping targets, one test year, small
+exploratory monthly sample, and unequal parameter budgets limit
+generalization. The preference is specific to TimesNet versus DilatedRNN.
+In the complete reference benchmark, XGBoost led the hourly task,
+DilatedRNN led at 30 days, and calendar climatology led both monthly tasks,
+with Informer as the lowest-error learned model in both monthly tasks.
+
+The next step is to test whether DilatedRNN's monthly advantage persists
+across additional years and unseen sites, and to separate the effects of
+architecture, normalization, and model size. Multiple hourly seeds,
+daylight-only metrics, measured computational costs, and weather forecasts
+available at issuance would further refine the choice.
+Under the present protocol, DilatedRNN is the favored candidate for
+daily and monthly full-horizon forecasting, while TimesNet retains the
+advantage for the full hourly trajectory.

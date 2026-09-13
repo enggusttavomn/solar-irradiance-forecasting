@@ -1,0 +1,128 @@
+\documentclass[final,5p,times,twocolumn]{elsarticle}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{placeins}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{multirow}
+\usepackage{xurl}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[hidelinks]{hyperref}
+
+\makeatletter
+\let\ps@pprintTitle\ps@plain
+\makeatother
+
+\graphicspath{{figures/}}
+\emergencystretch=2em
+\hyphenation{Dilated-RNN}
+
+% Float placement: let floats share pages with running text instead of
+% forming dedicated float pages that leave the rest of the page blank.
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.7}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.85}
+\renewcommand{\dbltopfraction}{0.9}
+\renewcommand{\dblfloatpagefraction}{0.85}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\setcounter{dbltopnumber}{3}
+
+\begin{document}
+\raggedbottom
+
+\begin{frontmatter}
+
+\title{Multi-Resolution Solar Irradiance Forecasting:\\
+A Comparative Study of TimesNet and DilatedRNN}
+
+\author[unicamp]{Gustavo de Melo Nascimento\corref{cor1}}
+\ead{g239679@dac.unicamp.br}
+\author[unicamp]{Thales Wulfert Cabral}
+\ead{t264377@dac.unicamp.br}
+\author[unicamp]{Gustavo Fraidenraich}
+\ead{gfraiden@unicamp.br}
+\address[unicamp]{School of Electrical and Computer Engineering, University of Campinas, Campinas, SP, Brazil}
+\cortext[cor1]{Corresponding author}
+
+\begin{abstract}
+This study compares TimesNet and dilated recurrent neural networks
+(DilatedRNN) to support model choice for global horizontal irradiance (GHI)
+forecasting across temporal resolutions. Model-based estimates from the
+National Solar Radiation Database (NSRDB) cover ten locations associated
+with electric-vehicle factories. Four tasks evaluate hourly forecasts up to
+72 hours, daily-mean forecasts up to 30 days, one-month forecasts, and
+exploratory forecasts up to six months. Within each task, both architectures
+share historical GHI inputs, site identifiers, forecast origins, temporal
+partitions, and post-processing. DilatedRNN achieved lower site-averaged
+mean absolute error (macro-MAE) at the full cumulative horizon in three
+of the four tasks: 30 days (43.85 versus 44.08~W/m$^2$), one month
+(13.01 versus 13.89~W/m$^2$), and six months
+(14.37 versus 14.46~W/m$^2$). Its largest relative reduction was
+6.38\% at one month, with lower MAE at six of ten sites and in four of five
+paired seed runs. TimesNet led at 72 hours
+(52.48 versus 52.96~W/m$^2$). Daily and monthly results use five-seed
+ensembles; hourly results use seed 42. These findings favor DilatedRNN
+among the two evaluated implementations for daily and monthly full-horizon
+forecasting, with the strongest evidence at one month. The daily and
+six-month ensemble margins are small, and task counts are descriptive.
+Across a common benchmark of eleven models, XGBoost led at 72 hours,
+DilatedRNN at 30 days, and calendar climatology in both monthly tasks.
+Overlapping targets and a single test year limit generalization.
+\end{abstract}
+
+\begin{keyword}
+global horizontal irradiance \sep solar forecasting \sep TimesNet \sep
+dilated recurrent neural network \sep multi-resolution forecasting \sep
+model comparison
+\end{keyword}
+
+\end{frontmatter}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/02_theoretical_background}
+
+\section{Experimental Framework for Architecture Comparison}
+\label{sec:proposed_approach}
+\input{sections/03_data_and_feature_engineering}
+\input{sections/04_methodology}
+\input{sections/05_experimental_setup}
+\input{sections/06_metrics}
+
+\input{sections/07_results_and_discussion}
+\input{sections/08_limitations}
+\input{sections/09_conclusion}
+
+\section*{Acknowledgments}
+The authors acknowledge financial support from FAPEMIG (grant OET-00243-26).
+
+\section*{Declaration of Competing Interest}
+The authors declare that they have no known competing financial interests or
+personal relationships that could have appeared to influence the work
+reported in this article.
+
+\section*{Data and Code Availability}
+Source code and protocol definitions are maintained at
+\url{https://github.com/enggusttavomn/solar-irradiance-forecasting}.
+The comparisons reported here use the corrected multi-resolution archive
+identified in the Supplementary Material. That full forecast bundle is not
+included in the current public repository snapshot; access to it is required
+to reproduce the reported metrics from individual predictions.
+External NSRDB, K\"oppen--Geiger, and NASA POWER products remain subject to
+their respective providers' access and licensing conditions.
+
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+
+\end{document}

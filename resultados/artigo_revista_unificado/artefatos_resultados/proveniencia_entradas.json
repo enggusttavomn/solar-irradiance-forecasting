@@ -1,0 +1,61 @@
+{
+  "contexto_nasa_power": {
+    "csv": "resultados/artigo_revista_unificado/contexto_meteorologico_2024.csv",
+    "manifesto": "resultados/artigo_revista_unificado/contexto_meteorologico_2024_manifesto.json",
+    "sha256_csv": "7fbf97076193f2467e0092cf6b0d2c9a00ea19c84f354b28f1736f5bba95f4b5",
+    "sha256_manifesto": "ebe7d2bb40b7c995e02a77ac320f71b36d4aae88e352b5216115479d4035c007",
+    "uso": "pos_hoc;fora_do_modelo"
+  },
+  "gerado_em_utc": "2026-08-28T18:11:09.830713+00:00",
+  "gerador": {
+    "arquivo": "codigo_fonte/artefatos_artigo_unificado.py",
+    "sha256": "5bed9f3ca7ab633a67e000ab32549f1fc8b4620d246c17f9fb796e85dd89c40a"
+  },
+  "inferencia_comparacao": "descritiva_pareada_por_localidade",
+  "medicoes_computacionais": "Runtime and trainable-parameter counts are omitted from article tables unless an explicit instrumented field is present.",
+  "ordenacao_desempenho": "MAE crescente por tarefa/tipo_horizonte/horizonte; empate por RMSE/modelo",
+  "selecao_casos": {
+    "alegacao_causal": false,
+    "meteorologia_usada_na_selecao_dos_extremos": false,
+    "unidade": "site_forecast_origin_cumulative_horizon"
+  },
+  "tarefas": [
+    {
+      "limitacao_sementes": "nenhuma;ensemble_de_cinco_sementes_para_modelos_aprendidos",
+      "pasta": "resultados/avaliacao_multirresolucao/daily_30",
+      "resolucao": "diaria",
+      "sha256_contrato": "181fcff9675489148118011e2dbfecc806a48fab70d089d71c5f9fa6d1d9578e",
+      "sha256_manifesto": "3d6fbdea7d5e5b57e54ee5143ab9a058324059174f75b5cf8a7ba4430f9a69aa",
+      "sha256_status": "28519c4599556e50a3ec11e8f9950a6224d4d33c074a67c37f8b5190ae8e8050",
+      "tarefa": "daily_30"
+    },
+    {
+      "limitacao_sementes": "extensao_horaria_com_uma_semente_seed_42;sem_variabilidade_entre_sementes",
+      "pasta": "resultados/avaliacao_multirresolucao/hourly_72_extension",
+      "resolucao": "horaria",
+      "sha256_contrato": "9e1706c86a2110e63453826f398743616abe698aa4f42a3a8f0e4d826e7583ad",
+      "sha256_manifesto": "48c5a59999fcb2a1acbf8c6ae7f8d694dd67f5fc3f84ad43a098eeebf2e5e78f",
+      "sha256_status": "2fbd6e4d151732fbd0c247f5c7b75b1f406ac6f64a4585fc4ac00abbea73c451",
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "limitacao_sementes": "nenhuma;ensemble_de_cinco_sementes_para_modelos_aprendidos",
+      "pasta": "resultados/avaliacao_multirresolucao/monthly_1",
+      "resolucao": "mensal",
+      "sha256_contrato": "5fe7e468868112238691a1029580e3dc32489f29759259cd094c8946e5e41d4f",
+      "sha256_manifesto": "dcea8625cf8130a6710bfbcfaea0a6b6b617214c3b5f08365459fe5154974a58",
+      "sha256_status": "358278108ac0aae99e18e09df5ee0ed3955e155a9c753d91a8f68caad600c0ff",
+      "tarefa": "monthly_1"
+    },
+    {
+      "limitacao_sementes": "nenhuma;ensemble_de_cinco_sementes_para_modelos_aprendidos",
+      "pasta": "resultados/avaliacao_multirresolucao/monthly_6",
+      "resolucao": "mensal",
+      "sha256_contrato": "9ffff78c55fcd712abfb03a28cc760a4559c8af5b426aa7449629166fcb7179b",
+      "sha256_manifesto": "5d4db5735d5d807116549112cecd5f4cd74ae63a048fcfac1ca27a1a36bf89bf",
+      "sha256_status": "14114243257c351a0222e1a93ab8949f7ef71badc27987d611780343e22f4cbd",
+      "tarefa": "monthly_6"
+    }
+  ],
+  "versao_esquema": 1
+}

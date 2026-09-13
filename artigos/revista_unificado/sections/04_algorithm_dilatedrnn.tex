@@ -1,0 +1,18 @@
+\begin{algorithm}[H]
+\caption{Direct forward pass of the DilatedRNN}
+\label{alg:dilated-direct}
+\footnotesize
+\begin{algorithmic}[1]
+\Require Fitted DilatedRNN; site-scaled $\mathbf x\in\mathbb R^{C\times1}$; site $\ell$
+\Ensure $H$ predictions on the site-specific min--max scale
+  \State $\mathbf Z\gets\mathbf x$
+  \For{each dilation $d\in(1,2,4)$}
+    \State Use this layer's shared 16-unit tanh-RNN
+    \State Process $\mathbf Z_{j,j+d,\ldots}$ from zero states, $0\leq j<d$
+    \State $\mathbf Z\gets$ outputs in time order, of shape $C\times16$
+  \EndFor
+  \State $\mathbf v\gets[\mathbf Z_{C-1};\mathrm{SiteEmbed}(\ell)]\in\mathbb R^{24}$
+  \State $\mathbf a\gets\mathrm{ReLU}(\mathrm{Linear}_{24\to16}(\mathbf v))$
+  \State \Return $\mathrm{Linear}_{16\to H}(\mathbf a)$
+\end{algorithmic}
+\end{algorithm}

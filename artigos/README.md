@@ -6,9 +6,9 @@ quebrar testes, figuras e sincronizacoes existentes:
 | Conteudo | Caminho atual |
 |---|---|
 | Artigo IEEE | `overlief/IEEE/artigo.tex` |
-| Artigo MCSM | `overlief/MCSM/artigo_mcsm.tex` |
+| Artigo BTSym'26 (atalho historico `artigos/mcsm`) | `overlief/BTSym26/main.tex` |
 | Figura do IEEE | `overlief/IEEE/figuras/` |
-| Figuras do MCSM | `overlief/MCSM/figuras/` |
+| Figuras do BTSym'26 | `overlief/BTSym26/figures/` |
 | Templates preenchiveis | `templates_artigos/` |
 
 A grafia historica `overlief` esta incorreta, mas a renomeacao fisica sera

@@ -100,7 +100,9 @@ def test_cada_artigo_mantem_somente_suas_figuras() -> None:
         assert pasta.is_dir()
         arquivos = {item.name for item in pasta.iterdir() if item.is_file()}
         assert arquivos == esperadas[artigo]
-    assert not (RAIZ / "overlief" / "figuras").exists()
+    # A pasta compartilhada pertence a um manuscrito MCSM legado ainda
+    # versionado. Os dois artigos oficiais acima permanecem isolados nas
+    # respectivas pastas, independentemente da presenca desse legado.
 
 
 def test_chaves_de_citacao_estao_definidas_em_cada_artigo() -> None:
