@@ -1,241 +1,236 @@
-# TCC — previsão mensal de GHI em dez localidades
+# Previsão multirresolução de irradiância solar (GHI)
 
-Este repositório avalia a previsão da média mensal de Irradiância Global
-Horizontal (GHI) em dez localidades associadas a fábricas de veículos
-elétricos. A fonte numérica atual dos artigos é exclusivamente:
+[![CI](https://github.com/enggusttavomn/TCC/actions/workflows/testes.yml/badge.svg)](https://github.com/enggusttavomn/TCC/actions/workflows/testes.yml)
+[![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Status: pesquisa acadêmica](https://img.shields.io/badge/status-pesquisa%20acad%C3%AAmica-5B5BD6)](#escopo-e-limitações)
 
-```text
-resultados/avaliacao_mensal_canonica/
-```
+Repositório de pesquisa para previsão de Irradiância Global Horizontal (GHI)
+em dez localidades associadas a fábricas de veículos elétricos. O projeto
+compara modelos de aprendizado de máquina e redes neurais em resoluções
+horária, diária e mensal, com protocolo temporal reproduzível e artefatos de
+auditoria.
 
-## Mapa de pastas
+**Repositório oficial:** <https://github.com/enggusttavomn/TCC><br>
+**Visibilidade:** público · **branch padrão:** `main`
 
-```text
-dados/          dados brutos e processados
-codigo_fonte/   coleta, preparacao, modelos, experimento e visualizacao
-scripts/        comandos curtos para executar as etapas
-resultados/     saidas oficiais e registros legados
-artigos/        indice para manuscritos, templates e figuras
-site/           panorama web e tabelas interativas
-documentacao/   guias e orientacoes de escrita
-testes/         verificacoes automatizadas
-```
+> Os dados da NSRDB são estimativas modeladas, não medições realizadas nas
+> fábricas. Os resultados são retrospectivos e não constituem uma previsão
+> solar operacional.
 
-Para entender cada modelo individualmente, comece em
-`codigo_fonte/modelos/README.md`. Para navegar visualmente por todo o projeto,
-gere `site/index.html` com `python site/gerar_site.py`.
+## Visão geral
 
-Os modulos historicos mantidos diretamente em `codigo_fonte/` e alguns
-executaveis da raiz fazem parte do manifesto da execucao canonica. Eles foram
-preservados para que a reorganizacao nao invalide a rastreabilidade dos
-resultados publicados.
+O estudo avalia quatro tarefas alinhadas por origem temporal:
 
-O status registrado em `status_execucao.json` é `concluido`. A pasta contém a
-execução completa, os modelos persistidos, as previsões por semente, as
-amostras probabilísticas, as métricas consolidadas, o manifesto do ambiente e
-os hashes SHA-256 dos arquivos usados.
+| Resolução | Horizonte | Papel no estudo |
+|---|---:|---|
+| Horária | até 72 h | extensão com uma semente (`42`) |
+| Diária | até 30 dias | avaliação principal com cinco sementes |
+| Mensal | 1 mês | avaliação principal com cinco sementes |
+| Mensal | até 6 meses | análise exploratória com cinco sementes |
 
-`resultados/avaliacao_mensal_corrigida/` documenta a rodada anterior baseada
-em Vizinhos Históricos Ponderados (VHP). Ela permanece no repositório apenas
-como **legado metodológico** e não deve fornecer números, tabelas, figuras ou
-conclusões aos manuscritos atuais.
+Os modelos comparados incluem TimesNet, DilatedRNN, LSTM, XGBoost,
+persistência, sazonal ingênuo e climatologia. O protocolo usa divisões
+temporais, ajuste sem acesso aos alvos de teste e métricas calculadas por
+localidade antes da agregação macro.
 
-## Escopo e protocolo canônico
+Os resultados apresentados, as ressalvas estatísticas e a proveniência estão no
+[manuscrito unificado](artigos/revista_unificado/README.md). A fonte atual é o
+arquivo local `resultados/avaliacao_multirresolucao_corrigida_v2/`, descrito no
+[índice de resultados](resultados/README.md). O pacote completo de previsões
+não integra o snapshot público; um clone do repositório, por si só, não permite
+recalcular as métricas do artigo a partir das previsões individuais. Não copie
+números de diretórios históricos para artigos ou apresentações.
 
-Os resultados constituem uma avaliação retrospectiva e exploratória, não uma
-previsão operacional. Em cada origem de 2024, o sistema prevê somente o mês
-seguinte, usando o histórico disponível até então e sem reajustar os modelos.
-Assim, não se trata de uma previsão recursiva dos doze meses de 2024 emitida em
-dezembro de 2023.
+## Comece por aqui
 
-| Item | Configuração registrada |
+| Objetivo | Caminho |
 |---|---|
-| Fonte | NLR/NSRDB, produto modelado GOES Aggregated PSM v4 |
-| Localidades | 10 séries relacionadas |
-| Dados preservados | médias diárias de GHI, 2.192 dias por localidade, de 2019 a 2024 |
-| Alvo | média mensal de GHI em W/m²; não é energia nem geração fotovoltaica |
-| Contexto | 12 meses; 2019 fornece o histórico inicial |
-| Treino final | 48 alvos por localidade, de jan./2020 a dez./2023 |
-| Teste | 12 origens por localidade, de jan. a dez./2024 |
-| Horizonte | um mês, em esquema *walk-forward*, com parâmetros fixos no teste |
-| Transformação | min–max por localidade, saturação e quantização uniforme em 128 níveis, ajustados sem usar alvos de teste |
-| Modelos aprendidos | XGBoost, MLP, RNN, LSTM, DilatedRNN, DeepAR e DeepNPTS |
-| Referências | persistência, sazonal ingênuo e climatologia mensal |
-| Ajuste | um modelo global por arquitetura e semente, compartilhado pelas dez séries |
-| Sementes | 11, 23, 42, 67 e 89 para os sete modelos aprendidos |
-| Probabilidade | 500 amostras por semente e origem para DeepAR e DeepNPTS; 2.500 valores na mistura final |
-| Métrica pontual principal | macro-MAE: média não ponderada dos MAEs das dez localidades |
-| Métricas probabilísticas | CRPS, PICP de 90% e MPIW |
+| Entender o desenho do estudo | [`artigos/revista_unificado/`](artigos/revista_unificado/) |
+| Explorar código por etapa | [`codigo_fonte/`](codigo_fonte/) |
+| Consultar dados e proveniência | [`dados/`](dados/) |
+| Conferir resultados oficiais | [`resultados/`](resultados/) |
+| Executar comandos usuais | [`scripts/COMANDOS.md`](scripts/COMANDOS.md) |
+| Rodar as avaliações completas | [`executaveis/`](executaveis/) |
+| Acompanhar treinamentos | [`relatorios/painel_treinamentos.html`](relatorios/painel_treinamentos.html) |
+| Consultar auditorias e revisões | [`relatorios/README.md`](relatorios/README.md) |
+| Ler a documentação complementar | [`documentacao/`](documentacao/) |
+| Escolher a pasta de um arquivo novo | [`documentacao/estrutura_do_projeto.md`](documentacao/estrutura_do_projeto.md) |
 
-Na seleção interna, transformações e complexidade são determinadas sem usar
-2024. Quando aplicável, o modelo é reinicializado e reajustado em todo o
-período pré-teste após essa seleção. As previsões pontuais dos modelos
-aprendidos são consolidadas entre as cinco sementes; em DeepAR e DeepNPTS, as
-amostras das sementes são reunidas e a mediana da mistura é usada como previsão
-pontual.
+## Estrutura do repositório
 
-Os CSVs diários preservados derivam de estimativas modeladas da NSRDB, e não de
-sensores instalados nas fábricas. A consulta de origem possui intervalo de 60
-minutos, mas as respostas horárias brutas não foram preservadas. Os pontos das
-fábricas são apenas referências geográficas; não há dados de carga, produção,
-geração fotovoltaica ou processo industrial.
+```text
+.
+├── artigos/              manuscritos, figuras e templates LaTeX
+├── codigo_fonte/         coleta, preparação, modelos e experimentos
+├── dados/                dados brutos, externos e processados
+├── documentacao/         guias, plano de trabalho, envios e referências
+├── executaveis/          scripts de linha de comando das avaliações
+├── output/               saídas temporárias locais e prévias
+├── relatorios/           painéis, auditorias e revisões datadas
+├── resultados/           resultados canônicos, manifestos e legados
+├── scripts/              automações e comandos agrupados por finalidade
+│   ├── apresentacoes/    geração e revisão de apresentações
+│   ├── auditoria/        verificações dos experimentos
+│   ├── coleta/           obtenção e preparação de insumos
+│   ├── operacao/         acompanhamento local dos treinamentos
+│   ├── relatorios/       geração de figuras e relatórios
+│   └── treinamento/      execução de buscas e treinamentos
+├── testes/               testes científicos e de operação
+│   └── operacao/         testes operacionais sem caminhos históricos fixos
+├── tests/                testes preservados por contratos de auditoria
+└── tmp/                  trabalho temporário e estado operacional local
+```
 
-## Implementação do DeepNPTS
+Na raiz ficam os arquivos que as ferramentas leem por convenção
+(`README.md`, `pyproject.toml`, `CITATION.cff`, os `requirements*.txt` e os
+arquivos de configuração ocultos), o atalho Windows
+`Abrir painel de progresso.cmd` e quatro executáveis:
+`treinar_todas_localidades.py`, `reavaliar_modelos_salvos.py`,
+`executar_avaliacao_mensal_canonica.py` e `gerar_figuras_avaliacao_canonica.py`.
+Esses quatro permanecem onde estão porque os manifestos de
+`resultados/avaliacao_mensal_corrigida/` e
+`resultados/avaliacao_mensal_canonica/` registram seu caminho e seu `sha256`
+como entradas dos resultados publicáveis; `testes/test_resultados_mensais_publicaveis.py`
+confere essa correspondência a cada execução da suíte.
 
-O experimento usa o estimador **DeepNPTS discreto do GluonTS 0.16.2**, treinado
-globalmente nas dez séries e com o RPS normalizado da implementação oficial. Ele não
-é o antigo VHP e não pondera vizinhos por uma fórmula manual de similaridade e
-recência.
+Os demais executáveis de linha de comando estão em
+[`executaveis/`](executaveis/). Os comandos do [catálogo](scripts/COMANDOS.md)
+oferecem uma navegação por finalidade e encaminham para as implementações
+existentes, preservadas nos caminhos registrados pelos manifestos.
 
-Foi necessária uma correção local, restrita ao registro dos embeddings
-categóricos no PyTorch. A lista já criada pelo estimador é registrada como
-`torch.nn.ModuleList`, para que seus parâmetros sejam otimizados, incluídos no
-`state_dict` e restaurados ao recarregar o preditor. A correção não modifica a
-arquitetura do DeepNPTS, sua função de avanço, sua distribuição discreta ou o
-RPS normalizado. A implementação está em
-`codigo_fonte/redes_deepnpts_registradas.py`, e o manifesto inclui seu hash.
+Para arquivos novos, use `codigo_fonte/` para lógica reutilizável e a subpasta
+adequada de `scripts/` para comandos e automações. Coloque evidências de experimentos em
+`resultados/`, auditorias e resumos em `relatorios/`, orientações em
+`documentacao/` e saídas descartáveis em `output/`. Os caminhos científicos
+existentes devem ser preservados: renomear um arquivo pode invalidar
+manifestos, hashes e retomadas. Consulte o
+[guia da estrutura](documentacao/estrutura_do_projeto.md) antes de reorganizar
+artefatos existentes.
 
-A quantização em 128 níveis é uma decisão do protocolo deste projeto, não um
-requisito geral do DeepNPTS.
+## Instalação
 
-## Ranking final
-
-Médias das métricas pontuais nas dez localidades, calculadas diretamente de
-`resultados/avaliacao_mensal_canonica/metricas_medias_modelos.csv`:
-
-| Pos. | Modelo | MAE (W/m²) | RMSE (W/m²) | R² médio | nRMSE (%) | DP do MAE entre sementes |
-|---:|---|---:|---:|---:|---:|---:|
-| 1 | Climatologia | 12,071 | 15,320 | 0,931 | 7,640 | 0,000 |
-| 2 | LSTM | 12,222 | 15,057 | 0,919 | 7,393 | 0,203 |
-| 3 | RNN | 12,554 | 15,591 | 0,910 | 7,701 | 0,493 |
-| 4 | DilatedRNN | 13,422 | 16,198 | 0,898 | 7,930 | 0,831 |
-| 5 | DeepAR | 14,182 | 17,936 | 0,892 | 8,779 | 0,900 |
-| 6 | XGBoost | 14,573 | 17,930 | 0,892 | 8,778 | 0,136 |
-| 7 | MLP | 16,059 | 19,769 | 0,875 | 9,697 | 0,456 |
-| 8 | Sazonal ingênuo | 16,943 | 21,373 | 0,829 | 10,376 | 0,000 |
-| 9 | DeepNPTS | 17,701 | 22,808 | 0,847 | 11,330 | 9,223 |
-| 10 | Persistência | 35,088 | 42,167 | 0,576 | 20,887 | 0,000 |
-
-A climatologia apresentou o menor macro-MAE. A diferença média do DeepNPTS em
-relação a ela foi de +5,630 W/m²; o IC95% pareado foi [3,762; 7,546] W/m² e o
-valor de Wilcoxon após correção de Holm foi 0,0176. Valores positivos nessa
-comparação favorecem a climatologia. O desvio de 9,223 W/m² entre sementes do
-DeepNPTS também evidencia instabilidade relevante nesta amostra curta. Esses
-resultados caracterizam a configuração e o recorte avaliados, e não uma
-inferioridade universal da arquitetura.
-
-Nos modelos probabilísticos, o DeepAR obteve CRPS médio de 10,830 W/m², PICP
-de 61,67% e MPIW de 35,496 W/m². O DeepNPTS obteve CRPS de 15,904 W/m², PICP
-de 90,83% e MPIW de 145,556 W/m². A cobertura próxima de 90% do DeepNPTS veio,
-portanto, acompanhada de intervalos muito mais largos.
-
-Por menor MAE local, a climatologia venceu em BMW San Luis Potosí, BYD
-Camaçari e Hyundai Georgia; a LSTM em Ford Rouge, GM Factory Zero, Rivian
-Normal e Tesla Nevada; o sazonal ingênuo em Lucid Casa Grande; a RNN em Tesla
-Fremont; e o DeepAR em Tesla Texas. O DeepNPTS não venceu nenhuma das dez
-localidades.
-
-## Reprodução
-
-Foi usado CPython 3.12.1. As versões completas estão em `requirements.txt` e
-no `manifesto_execucao.json`. Crie o ambiente e valide a suíte antes da rodada
-longa:
+O ambiente de referência usa **CPython 3.12**. A instalação completa inclui
+bibliotecas pesadas de aprendizado profundo e foi validada para CPU.
 
 ```bash
+git clone https://github.com/enggusttavomn/TCC.git
+cd TCC
 python -m venv .venv
+```
+
+Ative o ambiente:
+
+```bash
+# Linux/macOS
 source .venv/bin/activate
+
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+```
+
+Instale as dependências e valide o checkout:
+
+```bash
+python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 python -m pytest -q
 ```
 
-Reproduza a execução completa em uma pasta nova:
+Para executar somente a suíte usada na integração contínua, pode-se instalar o
+conjunto menor:
 
 ```bash
-python executar_avaliacao_mensal_canonica.py \
-  --confirmar-execucao-longa \
-  --modo completa \
-  --sementes 11,23,42,67,89 \
-  --saida resultados/avaliacao_mensal_canonica_reproducao
+python -m pip install -r requirements-test.txt
+python -m pytest -q
 ```
 
-Uma execução interrompida pode ser retomada apenas se o contrato de hashes e a
-configuração forem idênticos:
+## Uso
+
+Consulte a ajuda antes de iniciar avaliações longas:
 
 ```bash
-python executar_avaliacao_mensal_canonica.py \
-  --confirmar-execucao-longa \
-  --modo completa \
-  --sementes 11,23,42,67,89 \
-  --saida resultados/avaliacao_mensal_canonica_reproducao \
-  --retomar
+python executaveis/executar_avaliacao_multirresolucao.py --help
+python executar_avaliacao_mensal_canonica.py --help
+python executaveis/gerar_artefatos_artigo_unificado.py --help
 ```
 
-Não use o modo `smoke` como evidência científica. Ele verifica somente o fluxo
-de execução.
-
-Gere novamente as figuras a partir dos CSVs e das amostras canônicas:
+Os comandos agrupados devem ser chamados como módulos, a partir da raiz:
 
 ```bash
-python gerar_figuras_avaliacao_canonica.py \
-  --resultados resultados/avaliacao_mensal_canonica
+python -m scripts.treinamento.rodar_quantizacao_todos_modelos --help
+python -m scripts.auditoria.auditar_quantizacao_todos_modelos --help
+python -m scripts.operacao.painel_progresso_quantizacao --help
 ```
 
-As imagens usadas nos manuscritos são mantidas separadamente em
-`overlief/IEEE/figuras/` e `overlief/MCSM/figuras/`; a pasta compartilhada
-`overlief/figuras/` não é mais utilizada.
+Para consultar o painel HTML disponível no checkout, abra
+[`relatorios/painel_treinamentos.html`](relatorios/painel_treinamentos.html).
+No Windows, o atalho `Abrir painel de progresso.cmd` inicia o painel local de
+progresso; ele usa o ambiente Python local configurado em
+`scripts/abrir_painel_progresso.ps1`. Consulte
+[`relatorios/README.md`](relatorios/README.md) para distinguir os painéis e as
+evidências de cada execução.
 
-Os artigos são preenchidos diretamente a partir dos artefatos finais por
-`preencher_artigos_canonicos.py`; números não devem ser transcritos de pastas
-legadas.
+### Coleta opcional de dados
 
-## Artefatos de auditoria
+O repositório contém dados e artefatos de diferentes etapas do estudo, mas o
+pacote completo da avaliação atual do artigo unificado permanece local.
+Reproduzir suas métricas a partir das previsões individuais requer acesso ao
+arquivo `resultados/avaliacao_multirresolucao_corrigida_v2/` identificado no
+suplemento. Uma nova coleta não substitui o arquivo original, pois revisões
+dos produtos podem alterar os dados.
 
-| Caminho | Conteúdo |
-|---|---|
-| `resultados/avaliacao_mensal_canonica/status_execucao.json` | conclusão e modelo de menor macro-MAE |
-| `resultados/avaliacao_mensal_canonica/configuracao_execucao.json` | sementes e hiperparâmetros globais da rodada |
-| `resultados/avaliacao_mensal_canonica/manifesto_execucao.json` | ambiente, hardware, hashes e metadados do protocolo |
-| `resultados/avaliacao_mensal_canonica/auditoria_dados.csv` | cobertura e integridade das dez séries |
-| `resultados/avaliacao_mensal_canonica/metricas_medias_modelos.csv` | ranking e métricas pontuais macro |
-| `resultados/avaliacao_mensal_canonica/metricas_por_localidade.csv` | métricas consolidadas por localidade |
-| `resultados/avaliacao_mensal_canonica/metricas_por_localidade_seed.csv` | variabilidade por semente |
-| `resultados/avaliacao_mensal_canonica/comparacoes_mae_climatologia.csv` | diferenças pareadas, bootstrap, Wilcoxon e Holm |
-| `resultados/avaliacao_mensal_canonica/metricas_probabilisticas_*.csv` | CRPS e propriedades dos intervalos |
-| `resultados/avaliacao_mensal_canonica/amostras_probabilisticas.npz` | amostras de DeepAR e DeepNPTS |
-| `resultados/avaliacao_mensal_canonica/modelos/` | modelos e metadados persistidos por arquitetura e semente |
+Para uma nova coleta, copie `.env.example` para `.env`, configure
+`NREL_API_KEY` e `NREL_EMAIL` e mantenha o arquivo `.env` somente na máquina
+local.
 
-## Limitações
+## Reprodutibilidade e governança dos resultados
 
-- O histórico cobre somente seis anos, com quatro ciclos anuais entre os 48
-  alvos de treinamento de cada localidade.
-- O teste contém apenas 12 meses e a janela de 2024 já havia sido observada
-  durante o desenvolvimento; a análise não é confirmação prospectiva.
-- As dez localidades não constituem amostra aleatória de todos os climas e
-  podem apresentar dependência espacial.
-- A NSRDB é uma referência modelada; não há medições de solo nas fábricas nem
-  respostas horárias brutas preservadas no repositório.
-- Não foram usadas variáveis meteorológicas exógenas, e a média mensal oculta
-  extremos e variabilidade intradiária.
-- O DeepNPTS apresentou forte variabilidade entre sementes neste protocolo;
-  cinco sementes não eliminam a incerteza associada ao histórico curto.
-- A busca de hiperparâmetros foi limitada para reduzir o risco de ajuste à
-  pequena janela disponível.
+- `resultados/avaliacao_multirresolucao_corrigida_v2/` é a fonte atual local
+  das quatro tarefas do artigo unificado; o pacote completo não está versionado.
+- `resultados/avaliacao_multirresolucao/` preserva a avaliação multirresolução
+  anterior e não fornece os números do manuscrito atual.
+- `resultados/avaliacao_mensal_canonica/` preserva a avaliação mensal
+  canônica anterior e seus manifestos.
+- Outros diretórios de correção, legado, `smoke` ou `validacao` servem para
+  rastreabilidade e não são fonte automática de conclusões. A fonte atual deve
+  ser identificada explicitamente no manuscrito e no índice de resultados.
+- Configurações, sementes, hashes SHA-256 e status de execução acompanham os
+  artefatos científicos relevantes.
+- O modo `smoke` verifica apenas o fluxo de software; ele não produz evidência
+  científica publicável.
 
-## Estado dos fluxos anteriores
+## Qualidade de software
 
-As pastas abaixo são preservadas para rastreabilidade, mas não são fontes dos
-artigos atuais:
+A suíte automatizada cobre preparação dos dados, baselines, modelos, métricas,
+reprodutibilidade, geração de figuras, integridade dos manuscritos e contratos
+da estrutura pública. O comando padrão descobre `testes/` e `tests/`, incluindo
+os testes operacionais. Pull requests executam a CI em Python 3.12.
 
-- `resultados/avaliacao_mensal_corrigida/`: protocolo anterior com VHP, alvo
-  contínuo e três sementes;
-- `resultados/avaliacao_mensal_canonica_legado_sem_embeddings/`: primeira
-  execução do protocolo global em que os embeddings categóricos do DeepNPTS
-  não eram registrados corretamente pelo PyTorch;
-- `resultados/todas_localidades/`, `resultados/todas_localidades_mensal/` e
-  `resultados/experimentos_redes_avancadas/`: fluxos exploratórios anteriores;
-- figuras com sufixo `_ieee.png` nos artefatos legados: exportações da rodada
-  VHP, incompatíveis com os números canônicos atuais.
+Antes de contribuir, leia [`CONTRIBUTING.md`](.github/CONTRIBUTING.md). Falhas de
+segurança devem seguir [`SECURITY.md`](.github/SECURITY.md).
 
-O material atual dos manuscritos está em `overlief/IEEE/` e `overlief/MCSM/`.
-Antes de atualizar tabelas ou conclusões, confirme `status_execucao.json`, o
-manifesto, os testes e os CSVs da pasta canônica.
+## Escopo e limitações
+
+- As dez localidades não formam uma amostra aleatória de todos os climas.
+- A NSRDB fornece irradiância modelada; não há sensores de solo nas fábricas.
+- O repositório não contém dados de carga, produção industrial ou geração
+  fotovoltaica das empresas citadas.
+- Horizontes sobrepostos reduzem a independência entre observações; as
+  comparações devem ser interpretadas com essa ressalva.
+- A extensão horária usa uma única semente e não estima variabilidade entre
+  inicializações.
+- Resultados históricos descrevem o recorte avaliado e não estabelecem
+  superioridade universal de uma arquitetura.
+
+## Citação
+
+Use os metadados de [`CITATION.cff`](CITATION.cff). O GitHub também oferece a
+opção **Cite this repository** na página do projeto.
+
+## Licenciamento
+
+Este repositório ainda não declara uma licença de reutilização. A visibilidade
+pública permite consulta e colaboração pelo GitHub, mas não concede
+automaticamente permissão para redistribuir código, dados ou manuscritos.
+Consulte os autores antes de reutilizar o material até que um arquivo
+`LICENSE` seja definido.

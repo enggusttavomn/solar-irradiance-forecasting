@@ -1,0 +1,132 @@
+{
+  "aprovado": true,
+  "gerado_em_utc": "2026-09-24T01:31:32.823994+00:00",
+  "escopo": "Comparacao de controles concluidos, sem quantizacao, versus puro V1; nao e auditoria completa dos niveis quantizados.",
+  "criterio": "Igualdade exata das previsoes float lidas dos CSVs; macro-MAE por localidade em todo horizonte cumulativo.",
+  "controles": [
+    {
+      "tarefa": "monthly_1",
+      "controle_completo": true,
+      "fonte_original_no_contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_mensal_20260920\\monthly_1\\previsoes_teste.csv",
+      "previsoes_novas": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_mensal_20260923\\monthly_1\\variantes\\sem_quantizacao\\previsoes_teste.csv",
+      "sha256_previsoes_originais": "30e4f3fdad79a57a43a2742fc10638929453f4878e31f4ad08d9df80c6a04773",
+      "sha256_previsoes_novas": "bc7ccb71c3bd0105b68df9cefba08fdc39066c49e762aec66a7da466c6028f63",
+      "linhas": 120,
+      "localidades": 10,
+      "alvos_e_chaves_identicos": true,
+      "previsoes_exatamente_iguais": true,
+      "diferenca_maxima_absoluta_wm2": 0.0,
+      "diferencas_por_coluna_wm2": {
+        "previsao_bruta_timesnet_seed11_wm2": 0.0,
+        "previsao_pos_timesnet_seed11_wm2": 0.0,
+        "previsao_bruta_timesnet_seed23_wm2": 0.0,
+        "previsao_pos_timesnet_seed23_wm2": 0.0,
+        "previsao_bruta_timesnet_seed42_wm2": 0.0,
+        "previsao_pos_timesnet_seed42_wm2": 0.0,
+        "previsao_bruta_timesnet_seed67_wm2": 0.0,
+        "previsao_pos_timesnet_seed67_wm2": 0.0,
+        "previsao_bruta_timesnet_seed89_wm2": 0.0,
+        "previsao_pos_timesnet_seed89_wm2": 0.0,
+        "previsao_bruta_timesnet_ensemble_wm2": 0.0,
+        "previsao_pos_timesnet_ensemble_wm2": 0.0
+      },
+      "MAEs_por_estimativa_wm2": {
+        "previsao_pos_timesnet_seed11_wm2": {
+          "novo": 14.309490337172235,
+          "puro_v1": 14.309490337172235,
+          "diferenca": 0.0
+        },
+        "previsao_pos_timesnet_seed23_wm2": {
+          "novo": 16.052049601377185,
+          "puro_v1": 16.052049601377185,
+          "diferenca": 0.0
+        },
+        "previsao_pos_timesnet_seed42_wm2": {
+          "novo": 14.874740428833372,
+          "puro_v1": 14.874740428833372,
+          "diferenca": 0.0
+        },
+        "previsao_pos_timesnet_seed67_wm2": {
+          "novo": 14.662376361207336,
+          "puro_v1": 14.662376361207336,
+          "diferenca": 0.0
+        },
+        "previsao_pos_timesnet_seed89_wm2": {
+          "novo": 13.777333328889977,
+          "puro_v1": 13.777333328889977,
+          "diferenca": 0.0
+        },
+        "previsao_pos_timesnet_ensemble_wm2": {
+          "novo": 13.856143200094374,
+          "puro_v1": 13.856143200094374,
+          "diferenca": 0.0
+        }
+      }
+    },
+    {
+      "tarefa": "monthly_6",
+      "controle_completo": true,
+      "fonte_original_no_contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_mensal_20260920\\monthly_6\\previsoes_teste.csv",
+      "previsoes_novas": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_mensal_20260923\\monthly_6\\variantes\\sem_quantizacao\\previsoes_teste.csv",
+      "sha256_previsoes_originais": "b08ecd59e021cfeb68da81ef70e06ab2bb1c340408a4413bca9f75883c8bfda8",
+      "sha256_previsoes_novas": "1a7a14178b75e5e6c32eb8de30c001654b558181698c1fabecd256337cd3d840",
+      "linhas": 420,
+      "localidades": 10,
+      "alvos_e_chaves_identicos": true,
+      "previsoes_exatamente_iguais": true,
+      "diferenca_maxima_absoluta_wm2": 0.0,
+      "diferencas_por_coluna_wm2": {
+        "previsao_bruta_timesnet_seed11_wm2": 0.0,
+        "previsao_pos_timesnet_seed11_wm2": 0.0,
+        "previsao_bruta_timesnet_seed23_wm2": 0.0,
+        "previsao_pos_timesnet_seed23_wm2": 0.0,
+        "previsao_bruta_timesnet_seed42_wm2": 0.0,
+        "previsao_pos_timesnet_seed42_wm2": 0.0,
+        "previsao_bruta_timesnet_seed67_wm2": 0.0,
+        "previsao_pos_timesnet_seed67_wm2": 0.0,
+        "previsao_bruta_timesnet_seed89_wm2": 0.0,
+        "previsao_pos_timesnet_seed89_wm2": 0.0,
+        "previsao_bruta_timesnet_ensemble_wm2": 0.0,
+        "previsao_pos_timesnet_ensemble_wm2": 0.0
+      },
+      "MAEs_por_estimativa_wm2": {
+        "previsao_pos_timesnet_seed11_wm2": {
+          "novo": 13.457486860687098,
+          "puro_v1": 13.457486860687098,
+          "diferenca": 0.0
+        },
+        "previsao_pos_timesnet_seed23_wm2": {
+          "novo": 15.323470709545685,
+          "puro_v1": 15.323470709545685,
+          "diferenca": 0.0
+        },
+        "previsao_pos_timesnet_seed42_wm2": {
+          "novo": 16.071247059909034,
+          "puro_v1": 16.071247059909034,
+          "diferenca": 0.0
+        },
+        "previsao_pos_timesnet_seed67_wm2": {
+          "novo": 14.678076549688774,
+          "puro_v1": 14.678076549688774,
+          "diferenca": 0.0
+        },
+        "previsao_pos_timesnet_seed89_wm2": {
+          "novo": 14.843083499740686,
+          "puro_v1": 14.843083499740686,
+          "diferenca": 0.0
+        },
+        "previsao_pos_timesnet_ensemble_wm2": {
+          "novo": 14.197473385413323,
+          "puro_v1": 14.197473385413323,
+          "diferenca": 0.0
+        }
+      }
+    }
+  ],
+  "snapshot": {
+    "fonte": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_timesnet_20260923\\fontes_anteriores_sha256.json",
+    "arquivos": 337,
+    "preservados": 337,
+    "divergencias": []
+  }
+}

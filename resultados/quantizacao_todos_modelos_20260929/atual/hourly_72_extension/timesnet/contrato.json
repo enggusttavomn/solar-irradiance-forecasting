@@ -1,0 +1,223 @@
+{
+  "schema": 1,
+  "origem": "reutilizacao_de_experimento_completo_auditado",
+  "regime": "atual",
+  "tarefa": "hourly_72_extension",
+  "modelo": "TimesNet",
+  "modo": "completa",
+  "rotulo": "TimesNet pura otimizada",
+  "minmax": true,
+  "variantes": {
+    "sem_quantizacao": null,
+    "q64": 64,
+    "q128": 128,
+    "q256": 256
+  },
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\status_execucao.json": "7aa6730ab1be66afe739d454d23e3ba3ed0b874ea29698a466522b38e6658c3a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\selecao_congelada.json": "f2945b5ac6fc3028ed5467485a03fae4a0f2c30fca444a941860060a0b2af570",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\contrato_execucao.json": "47b2f0fbef044a2af99f443166914414ace1a99dc73f05aad35ab2ee78aa807c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_timesnet_20260923\\auditoria_quantizacao.json": "c7d8498047c85400b6a2b33cc92359d2bf42037a55259a0f3f656eb3016229e1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_timesnet_quatro_casos_20260927\\auditoria_quantizacao_resolucoes.json": "c7f9cf3618e66e64eb023b348cf177dba0aaf93b49d487bd5c5187bf8251b4bc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\sem_quantizacao\\previsoes_validacao.csv.gz": "324086ab6bed166cccfcf6c7f861e0332a37bfc3007002294f2a7ba37f409016",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\sem_quantizacao\\previsoes_teste.csv.gz": "a2ea2462788d9d81a698353c7d911672b0dfba7843955d0430f818225246e1d9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\sem_quantizacao\\diagnostico_selecao.json": "d50f7177d8e6467ffc7f765268f194026e29edb7ee07b5ca7a9abe45a5ee6789",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\sem_quantizacao\\diagnostico_refit.json": "f27a1c68b18824030e3604bf187affe296d0c527c23e3974974e4d7279dfd970",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\q64\\previsoes_validacao.csv.gz": "50102b08f3355ccac93ba4403adc8eee2c2125ae97e7d23a30751d07ff5e9df4",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\q64\\previsoes_teste.csv.gz": "0ca4771662cb4fb60f5749c9881f1a7cc7454431e0446981ac6afbff42b9a1cc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\q64\\diagnostico_selecao.json": "aa80fad7e6494cf33dc323fdf32ab75c0a30c026866aa6b65baddf94e699b482",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\q64\\diagnostico_refit.json": "a55f159e5d714361fe58bab27a69d9937d58ebb1861831e4a6da00f0fb9b367a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\q128\\previsoes_validacao.csv.gz": "cf6a9dd3beb6943091a18a946c831dc09897a65e88e280d5326aa96a95484c88",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\q128\\previsoes_teste.csv.gz": "46e1e1a7fcfcf6464a3831fb9a3f95612807ff60e7a4d1c24f087405f02ed03f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\q128\\diagnostico_selecao.json": "ae47d607c11e483710c44d1702945d627723b04d068fe32dfc8678df6af6c951",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\q128\\diagnostico_refit.json": "a172cac35f22780250f39077fe461f17bef5c3484b5f0c8ae4013ba36523a601",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\q256\\previsoes_validacao.csv.gz": "6f6025dc45926b67687529e6751a07db1a332368c7997caee6bdd429d1330560",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\q256\\previsoes_teste.csv.gz": "9691629fa00cdc547da5217cc2d783381c2f92c9f7e2a4a13dd4b840c5334cc9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\q256\\diagnostico_selecao.json": "1050376174fd030c419a3d324157f7dbef851f0e7c3f238a6df41bc96e725be6",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_resolucoes_20260927\\hourly_72_extension\\variantes\\q256\\diagnostico_refit.json": "81b041f3a07f4660f92886d8f0defee9162a2cee0c6f0ef92721857109567cc7"
+  },
+  "contrato_original": {
+    "candidato_base": {
+      "contexto": 336,
+      "dimensao": 16,
+      "lote": 64,
+      "nome": "mae_dim16_lr0003",
+      "perda": "mae",
+      "taxa": 0.0003
+    },
+    "codigo": {
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\consolidar_baselines_adicionais.py": "ade992e535169083230e315fcf395b6c78cec17ee0ef12df61636dee97ec5170",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_baselines_adicionais.py": "64a3d933ba5af151e88f9d368337b99bccfa89f18a7c552aa724a57dfc39ba81",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_horario_timesnet.py": "2cc59451b0fbcbedbf3068d2f1c45595ff84daf46e8318a88080df208e7bb8e9",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_resolucoes.py": "b019ea0a5eb9f9588d6fddcfe7023253e6d25fee8f0490f8ed5000ae8b7e3e24",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\otimizacao_timesnet_resolucoes.py": "22e21174db643997459398f2097c704daa26464fe309e260fe697794e4f0e983",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\quantizacao_timesnet.py": "1ec234c96206bd06a80a42ff23caef371dd2105c442ac7ab2663cfbaa730c3bd",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\timesnet_horario.py": "ad3859c1044fb132d0d521817f579f8308a478fdf322b749ff42c8d3893c95f2",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\treinamento_timesnet_otimizacao.py": "6b096408f2124877a16e342feb789b090f3bb592b10dc399af0004d97e5b42c9",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\treinamento_timesnet_quantizado_resolucoes.py": "1e1c30e4d5527e730a9c4bb6b51e4314185631b0f195631d2fa03832c18d1075",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\treinamento_timesnet_resolucoes.py": "0675a57b40c9ea963632cf101d583dee1ca5bb1a66f6efb62581b37d5cda55c2"
+    },
+    "configuracao": {
+      "batch_size_diario": 64,
+      "batch_size_mensal": 32,
+      "dilated_dilatacoes": [
+        1,
+        2,
+        4
+      ],
+      "dilated_dropout": 0.0,
+      "dilated_unidades": 16,
+      "dilated_unidades_densas": 16,
+      "embedding_localidade": 8,
+      "epocas_smoke": 1,
+      "limite_localidades_smoke": 2,
+      "limite_origens_smoke": 3,
+      "lstm_camadas": 1,
+      "lstm_ocultos": 32,
+      "max_epocas_diario": 30,
+      "max_epocas_mensal": 300,
+      "modo_execucao": "completa",
+      "paciencia_diario": 5,
+      "paciencia_mensal": 30,
+      "peso_decay": 1e-05,
+      "sementes": [
+        11,
+        23,
+        42,
+        67,
+        89
+      ],
+      "taxa_aprendizado": 0.0003,
+      "threads_torch": 1,
+      "timesnet_blocos": 1,
+      "timesnet_d_ff": 32,
+      "timesnet_d_model": 16,
+      "timesnet_dropout": 0.1,
+      "timesnet_kernels": 2,
+      "timesnet_top_k": 3,
+      "xgb_colsample": 0.8,
+      "xgb_estimadores": 150,
+      "xgb_estimadores_smoke": 2,
+      "xgb_n_jobs": 1,
+      "xgb_profundidade": 3,
+      "xgb_subsample": 0.8,
+      "xgb_taxa_aprendizado": 0.05
+    },
+    "criterio": "macro_MAE_fisico_ensemble_validacao_2023_horizonte_completo",
+    "dispositivo": "cuda",
+    "entradas": {
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2019.csv.gz": "596462fc1dceb631bd0a8017798614d324fef6d298d01913ffbc89908db04026",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2020.csv.gz": "817e26b2fd7a817d0d0da2457d71ebc8db5880090730f7239efb74ff47842014",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2021.csv.gz": "a9e321d0cf384ad345d47c28e7c8fd5cae201ee4aa16b05c6882c45133f968ce",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2022.csv.gz": "13daace788f068c16711ae6aff7a1420066a532b538ca889078b6a4e3760f27f",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2023.csv.gz": "e1f228817a16c6655128e7bbfce4668ea8e3ba0d28de535bc003fe64733353d0",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2024.csv.gz": "88430743a2b9e6f82e394f683cfdea4ad93324fe59756d17edcfbad6d9f8eac1"
+    },
+    "experimento": "minmax_quantizacao_entrada_resolucoes_v1",
+    "fontes_configuracao": {
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_resolucoes_20260922\\hourly_72_extension\\contrato_execucao.json": "b6ad29a50c0344934390e8638a1af1b22cb23213787bb3e8246848bf51d4e770",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_resolucoes_20260922\\hourly_72_extension\\manifesto_artefatos.json": "284bb1658ba18b53ed1aa5371bba44a46e761f22af00a2b9336c068a86509d58",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_resolucoes_20260922\\hourly_72_extension\\selecao_congelada.json": "3c5d4ce4b8acf9a48a91e18153a695c2db266f36b745991271038c8f33153453"
+    },
+    "limitacoes": [
+      "Dados 2019-2024; historico nao ampliado.",
+      "2024 previamente observado; avaliacao retrospectiva.",
+      "Horaria conserva uma semente; diaria conserva cinco.",
+      "Quantizacao combina arredondamento e saturacao; controle nao satura.",
+      "Hiperparametros fixados da busca anterior; selecao nova apenas de epocas e niveis."
+    ],
+    "minmax": true,
+    "modo": "completa",
+    "n_localidades": 10,
+    "numpy": "2.4.4",
+    "ordem_desempate": [
+      "sem_quantizacao",
+      "q64",
+      "q128",
+      "q256"
+    ],
+    "pandas": "3.0.3",
+    "python": "3.14.4",
+    "quantizacao": {
+      "alvos_quantizados": false,
+      "controle": "sem_quantizacao_e_sem_clip",
+      "formula": "rint(clip(x_minmax,0,1)*(N-1))/(N-1)",
+      "intervalo": [
+        0,
+        1
+      ],
+      "niveis": [
+        64,
+        128,
+        256
+      ],
+      "onde": "somente_entradas",
+      "pesos_quantizados": false
+    },
+    "sementes": [
+      42
+    ],
+    "sha256_contrato": "cf6b880dfa28122b4b1ff9646c78a0e1c66b823255add36194bccb75156d55b4",
+    "tarefa": {
+      "ajuste": {
+        "fim_alvo": "2022-12-31",
+        "fim_origem": "2022-12-29",
+        "inicio_origem": "2019-01-15",
+        "origens_esperadas_por_localidade": 1445
+      },
+      "exploratoria": false,
+      "frequencia": "h",
+      "horizontes": [
+        24,
+        48,
+        72
+      ],
+      "pred_len": 72,
+      "refit": {
+        "fim_alvo": "2023-12-31",
+        "fim_origem": "2023-12-29",
+        "inicio_origem": "2019-01-15",
+        "origens_esperadas_por_localidade": 1810
+      },
+      "resolucao": "horaria",
+      "seq_len": 336,
+      "slug": "hourly_72_extension",
+      "teste": {
+        "fim_alvo": "2024-12-31",
+        "fim_origem": "2024-12-28",
+        "inicio_origem": "2024-01-01",
+        "origens_esperadas_por_localidade": 363
+      },
+      "validacao": {
+        "fim_alvo": "2023-12-31",
+        "fim_origem": "2023-12-29",
+        "inicio_origem": "2023-01-01",
+        "origens_esperadas_por_localidade": 363
+      }
+    },
+    "torch": "2.12.0+cu126",
+    "variantes": [
+      {
+        "niveis": null,
+        "nome": "sem_quantizacao"
+      },
+      {
+        "niveis": 64,
+        "nome": "q64"
+      },
+      {
+        "niveis": 128,
+        "nome": "q128"
+      },
+      {
+        "niveis": 256,
+        "nome": "q256"
+      }
+    ],
+    "versao": 1,
+    "workers": 1
+  },
+  "gerador_sha256": "930c1a0c5452b281d84ed6fb982cdb9d3313e0b89db1981ac45253087b1c8499",
+  "calculadora_metricas_sha256": "cecc726f67ae03d85ca6da12acaa6e4fecff7b80f9d3309db889bf0a734aa495"
+}

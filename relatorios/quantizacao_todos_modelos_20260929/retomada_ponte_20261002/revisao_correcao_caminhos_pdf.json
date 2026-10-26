@@ -1,0 +1,26 @@
+{
+    "schema":  1,
+    "concluido_em_utc":  "2026-10-02T08:06:06.5859529Z",
+    "objeto":  "Infraestrutura PDF: caminho logico protegido e guardas de entrega",
+    "arquivos_sha256":  {
+                            "scripts/gerar_pdf_quantizacao_todos_modelos.py":  "3b5e3a6ab6c2ea8be46d665df4a24b6beb5e87dd2291ff081b4dea0bc30eb7bd",
+                            "scripts/entregar_pdf_quantizacao_todos_modelos.py":  "2d6a9d74a4e135200565699c249c4b13bb551ac711b6e1fa3aab1032b00b988e",
+                            "tests/test_caminhos_pdf_logicos.py":  "ac9a3f66dbc5a8c2cb4c6b8145457725a075f1bc6de27eee151413b06c6697cc"
+                        },
+    "teste":  {
+                  "comando":  ".venv-baselines-gpu-20260912/Scripts/python.exe -X utf8 -m unittest tests.test_caminhos_pdf_logicos -v",
+                  "executados":  14,
+                  "falhas":  0,
+                  "aprovados":  14,
+                  "segundos_reportados":  0.414
+              },
+    "escopo":  {
+                   "marker_executado":  false,
+                   "treinos_iniciados_ou_encerrados":  false,
+                   "pdf_gerado":  false,
+                   "manifesto_existente_modificado":  false,
+                   "motores_modificados":  false,
+                   "pdf_publicado":  false
+               },
+    "observacao":  "Entrega real pendente da revisao do root; testes de entrega usam mocks e nao criam PDFs"
+}

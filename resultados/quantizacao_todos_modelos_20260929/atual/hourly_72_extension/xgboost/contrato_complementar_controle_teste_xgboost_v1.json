@@ -1,0 +1,33 @@
+{
+  "congelamento_global_sha256": "83684e3bf0d155de88bba02228300608555772435fc505668864d6d0a95bdc08",
+  "contrato_original_sha256": "96508d2f35fa26f6a1af1a65f43729a0b9768968edd4f5ffdd760dc47aeab6b6",
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_xgboost_horario_controle_auditado_v1.py": "ce4b46cfaf9345bdeacb2279756087558d956a5fa1386a5821e81e8f47e8e28c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\diagnostico_xgboost_horario_v1\\controle_reexecutado_auditado_v1.json": "109392f6df3d7b3d00e4ee8a780ec54eb11adbe8377a0027d9963f481acea827",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\diagnostico_xgboost_horario_v1\\revisao_independente_v1.json": "f13a9cdb34d9445a2b347543b34956fc2d75e1178b807b9d531c3b5fbbb61b13"
+  },
+  "id": "xgboost_horario_controle_refit_auditado_v1",
+  "politica": {
+    "causa_divergencia_legada": "nao determinada",
+    "escopo": {
+      "fase": "refit",
+      "modelo": "XGBoost",
+      "particao": "teste",
+      "regime": "atual",
+      "tarefa": "hourly_72_extension",
+      "variante": "sem_quantizacao"
+    },
+    "id": "xgboost_horario_controle_refit_auditado_v1",
+    "metricas_usadas_como_criterio": false,
+    "parametros_alterados": false,
+    "referencia": "refit_novo_sem_quantizacao_repetido_bitexatamente",
+    "repeticao_integral_bitexata_obrigatoria": true,
+    "reproducao_legada_aprovada": false,
+    "selecao_alterada": false,
+    "tolerancia_replay_wm2": 1e-06,
+    "treinamento_alterado": false
+  },
+  "schema": 1,
+  "selecao_original_sha256": "5840376a433a6704379ee1cc89e3f47bf3f0dfeafd7ad7e7610e961040e9d9be",
+  "sha256_complemento": "2992a1641e42ac8ec7cb6c0fd9515747d3966473214d62060d3706e44257cd7c"
+}

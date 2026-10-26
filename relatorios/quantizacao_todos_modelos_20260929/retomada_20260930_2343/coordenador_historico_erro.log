@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenar_quantizacao_historica.py", line 212, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenar_quantizacao_historica.py", line 139, in main
+    coordenar(args)
+    ~~~~~~~~~^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenar_quantizacao_historica.py", line 159, in coordenar
+    trava_atual = aguardar_atual(args.status_atual, args.auditoria_atual, exe.registrar)
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenar_quantizacao_historica.py", line 98, in aguardar_atual
+    raise RuntimeError('Coordenacao atual falhou; historico nao sera iniciado.')
+RuntimeError: Coordenacao atual falhou; historico nao sera iniciado.

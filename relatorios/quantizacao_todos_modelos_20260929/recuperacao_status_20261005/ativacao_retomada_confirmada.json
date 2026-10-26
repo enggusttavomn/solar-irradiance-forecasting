@@ -1,0 +1,163 @@
+{
+  "ok": true,
+  "confirmado_em_utc": "2026-10-05T03:18:02.158379+00:00",
+  "coordenador": {
+    "pid": 7872,
+    "creation_time": "134356437859141023"
+  },
+  "runner": {
+    "pid": 23160,
+    "creation_time": "134356437910898585"
+  },
+  "observador": {
+    "pid": 28880,
+    "creation_time": "134356438320287780"
+  },
+  "heartbeats": {
+    "coordenador": "2026-10-05T03:18:00.684204+00:00",
+    "runner": "2026-10-05T03:17:59.636677+00:00",
+    "observador": "2026-10-05T03:17:44.266365+00:00"
+  },
+  "fase": "refit",
+  "jobs": [
+    {
+      "tarefa": "daily_30",
+      "modelo": "GRU",
+      "recurso": "gpu",
+      "pid": 25924,
+      "creation_time": "134356437930957795",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_gru.log",
+      "inicio": "2026-10-05T03:16:33.200918+00:00"
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "LSTM",
+      "recurso": "gpu",
+      "pid": 11780,
+      "creation_time": "134356437932089711",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_lstm.log",
+      "inicio": "2026-10-05T03:16:33.334855+00:00"
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "XGBoost",
+      "recurso": "cpu",
+      "pid": 10260,
+      "creation_time": "134356437933426281",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_xgboost.log",
+      "inicio": "2026-10-05T03:16:33.470742+00:00"
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "ARIMA",
+      "recurso": "cpu",
+      "pid": 27512,
+      "creation_time": "134356437934784920",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_arima.log",
+      "inicio": "2026-10-05T03:16:33.629866+00:00"
+    }
+  ],
+  "falhas_runner": [],
+  "prioridades_confirmadas": [
+    {
+      "pid": 7872,
+      "creation_time": "134356437859141023",
+      "classe_confirmada_no_handle": 32768
+    },
+    {
+      "pid": 27360,
+      "creation_time": "134356437901307289",
+      "classe_confirmada_no_handle": 32768
+    },
+    {
+      "pid": 15132,
+      "creation_time": "134356437902524901",
+      "classe_confirmada_no_handle": 32768
+    },
+    {
+      "pid": 23160,
+      "creation_time": "134356437910898585",
+      "classe_confirmada_no_handle": 32768
+    },
+    {
+      "pid": 25924,
+      "creation_time": "134356437930957795",
+      "classe_confirmada_no_handle": 32768
+    },
+    {
+      "pid": 11780,
+      "creation_time": "134356437932089711",
+      "classe_confirmada_no_handle": 32768
+    },
+    {
+      "pid": 10260,
+      "creation_time": "134356437933426281",
+      "classe_confirmada_no_handle": 32768
+    },
+    {
+      "pid": 27512,
+      "creation_time": "134356437934784920",
+      "classe_confirmada_no_handle": 32768
+    },
+    {
+      "pid": 16692,
+      "creation_time": "134356437932040884",
+      "classe_confirmada_no_handle": 32768
+    },
+    {
+      "pid": 23016,
+      "creation_time": "134356437941996649",
+      "classe_confirmada_no_handle": 32768
+    },
+    {
+      "pid": 28452,
+      "creation_time": "134356437933382619",
+      "classe_confirmada_no_handle": 32768
+    },
+    {
+      "pid": 27008,
+      "creation_time": "134356437943452229",
+      "classe_confirmada_no_handle": 32768
+    },
+    {
+      "pid": 27432,
+      "creation_time": "134356437934741229",
+      "classe_confirmada_no_handle": 32768
+    },
+    {
+      "pid": 29056,
+      "creation_time": "134356437945351573",
+      "classe_confirmada_no_handle": 32768
+    },
+    {
+      "pid": 20284,
+      "creation_time": "134356437936346652",
+      "classe_confirmada_no_handle": 32768
+    },
+    {
+      "pid": 21104,
+      "creation_time": "134356437947755635",
+      "classe_confirmada_no_handle": 32768
+    }
+  ],
+  "fontes_sha256_preservadas": {
+    "scripts/json_atomico.py": "69f0f78da16c53f8fc1e5c3ce73511b60e1d35e3c801cfc44534d750894769d1",
+    "scripts/rodar_quantizacao_todos_modelos.py": "a70cef6b3d1f0b920675402756e405172930894709c2e4c15c79996fbb239ba8",
+    "scripts/coordenar_quantizacao_historica.py": "1166e691d47d81a98cb87286eed302fa0b61d4acaed0c9029165431a7615fa2b",
+    "scripts/processos_quantizacao.py": "3f5409846652efbdfc893cf85ee8b51eee51905d1c9b4e9f497456c7f24e1468",
+    "scripts/priorizar_treinamentos.py": "7cd5604ecc23f133f909760724e981ffb92113972783aa0e9744ed8827e8a564",
+    "codigo_fonte/experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "codigo_fonte/experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "documentacao/tabela_resultados_ghi_2024.pdf": "155e58187c1da01d6030334d086933bf0f200d13cb02d60c0db76b28b7bac776",
+    "relatorios/painel_treinamentos.html": "eaa15609fa51827a10bc6c77d7be56052676642edd09b8f88bbf3b58931fd68e"
+  },
+  "selecao_global_sha_e_mtime_preservados": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\selecao_global_congelada.json",
+    "sha256": "c616673e7d334a6161872346980a1904f03d4a375433008811e287a839abfeb7",
+    "mtime_ns": 1791140953445254300
+  },
+  "cpu_workers": 2,
+  "gpu_workers": 2,
+  "recovery_started": true,
+  "limite": "Prioridade e tolerancia operacional; sem promessa de ganho ou prazo total."
+}

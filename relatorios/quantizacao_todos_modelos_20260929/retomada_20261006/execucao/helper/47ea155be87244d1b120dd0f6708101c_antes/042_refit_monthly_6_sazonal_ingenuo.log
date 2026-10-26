@@ -1,0 +1,24 @@
+
+Inicio 2026-10-05T09:17:43.699718+00:00
+monthly_6/Sazonal ingenuo/sem_quantizacao/refit inicio
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_quantizacao_estatisticos.py", line 280, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_quantizacao_estatisticos.py", line 276, in main
+    executar_fase(ctx, args.modelo, saida, args.fase)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_quantizacao_estatisticos.py", line 209, in executar_fase
+    bruto = q.previsoes_referencias(ctx, particao, niveis, modelos=[modelo])[modelo]
+            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\quantizacao_referencias.py", line 176, in previsoes_referencias
+    return {modelo: funcoes[modelo]() for modelo in modelos}
+                    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\quantizacao_referencias.py", line 173, in <lambda>
+    "Sazonal ingenuo": lambda: m.prever_sazonal_anual(entradas, series),
+                               ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_multirresolucao.py", line 611, in prever_sazonal_anual
+    raise ValueError(f"Referencia anual ausente em {serie.localidade}.")
+ValueError: Referencia anual ausente em BYD Camacari.

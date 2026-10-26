@@ -1,0 +1,2317 @@
+{
+  "ok": true,
+  "publicavel": true,
+  "concluido_em_utc": "2026-10-08T12:41:29.715357+00:00",
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\auditoria_historico_1998_2022\\metricas_auditadas.csv": "82d188c94b168c6414a37eb73b7edd8ef56f51181201add5cfa4c29167e0affb",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\auditoria_historico_1998_2022\\auditoria.json": "73264016a986720643046268ee78601d3007f824da8a3e4851560430958ed61b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\auditoria_historico_curto_pareado\\metricas_auditadas.csv": "cbe5576eafe03a1396b22d96ea8b74e6a22640a4ba3d37b6f1f8b3db04eae441",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\auditoria_historico_curto_pareado\\auditoria.json": "fa2cb6fa59feaa56cc4f2c5a7fb611e1b793bbb0b3ea7d1fb11e104fb1a9eb7b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\protocolo_historico_1998_2022.json": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\contrato_historico_pareado.json": "ee39d5fdf66ab356371eb415b1b15d84e2979c499e6654c9142f6a93ebbcfac0",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\protocolo_historico_curto_pareado.json": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_1998.csv.gz": "c9aec2446b7fb888085f36d0c5693f9936406131f1ba7f0be9af8727eab0d0e7",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_1999.csv.gz": "a678465d235fae26129395e71f54e62630280fce44db730680229bfefc323fc1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2000.csv.gz": "cad2fd560bf00327966ef507f5cd76e9b2e914c61258a8a3a6368ea31131490f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2001.csv.gz": "b7538ef8bd87e66b4117aff75c1f1592cb4c170281b7f6d6bb2b802bde914224",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2002.csv.gz": "ab9ca43cc777778d00f8273c8675420d839c600e1be6bb001f51547d3020db80",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2003.csv.gz": "2fdfdff61362f61ddf7a18fa5563ab38fa805c8ca43e3c2654fd987cba4d05a9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2004.csv.gz": "add1ff784db719582f134a3071e82e44eaa8e75a8b148d020199097e5fedde57",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2005.csv.gz": "a654c7e89faac637135f9372dfac8f303b1617835aa6e6d79444da28deb98634",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2006.csv.gz": "ee60a5523c3e1478652e78884ccdda94ecb58aaa58b89d1b17e0102b8bef797e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2007.csv.gz": "8423efd29516b13a7e0112c5790f584c8f25ea1b01b8048300c23466ea01b524",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2008.csv.gz": "20266d843e0d86fda160e0885a8e47340f2c068dee8cea8a41aec0c131a5da7b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2009.csv.gz": "3f8cc406bd97ba003ad62e0322cd20f33032e3861672c1a472a02b1d48c479e2",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2010.csv.gz": "2770b7d72d9cbc28e6458fe7d76f90fba245280e0f84ca57ba37acaab600612f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2011.csv.gz": "91f503e90ef2d258307a31523fb37083ef5e92a5932dfa6d66e1bd1962607423",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2012.csv.gz": "caf0b919f14f28070f159ffa970b4d0586b8b351bc70e385dcbf1c64e7414789",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2013.csv.gz": "2ab1ea2c75b92babf5820ed90d11b006e18e91093a5e5f3c6b1cef97a0b55ae9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2014.csv.gz": "738a54227306d17e0d61b0a8faaede291e7d1e2fe31fda7b72d3af7890b842a1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2015.csv.gz": "cfab410851f76dc248a4b892cb68c6db394e49f725a46fa48e96b904cfc0ce9e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2016.csv.gz": "24fa8ef7e66dc8a37e506fc18101a3d1a355620d502f0144111e50b551947b47",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2017.csv.gz": "ee9acaf0ac19d5984937cf5789e28764bba5eda2273e04d6ebe1caae92cb0f51",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2018.csv.gz": "e578599303f67b2caf90206309f319cd2795d357aa7836eebf38e449c3147636",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2019.csv.gz": "596462fc1dceb631bd0a8017798614d324fef6d298d01913ffbc89908db04026",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2020.csv.gz": "817e26b2fd7a817d0d0da2457d71ebc8db5880090730f7239efb74ff47842014",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2021.csv.gz": "a9e321d0cf384ad345d47c28e7c8fd5cae201ee4aa16b05c6882c45133f968ce",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2022.csv.gz": "13daace788f068c16711ae6aff7a1420066a532b538ca889078b6a4e3760f27f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_1998.npz": "93d04d6ee5d275bfff4d3e540cf7237ecba96485f383730dc0e00a2e31daef73",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_1999.npz": "4d288c5dd2a043eb3365a6f909fe7cbf2c4606ce6002dcfa2b87c24ec3b88774",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2000.npz": "0a7985a11e799597f0eadcbd1c914d294075b00a18c0c6993a70805600cc699a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2001.npz": "c9635a09ee9e1c77375d01e6c4e5a59ef4efce472c37466cce657666260fff25",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2002.npz": "aa51df398c99962eef98c936f3d83b08d58e1d40dfdeb74e234bf311d3e0ec00",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2003.npz": "58c0f080c150bddc19a608b0e6160b6e431674453ed02d31e443aa50d676ebdd",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2004.npz": "3fb20d29ff4f5e3ce3c730300437456d1c56c40d0912bd133f5f2ae7f2f6237d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2005.npz": "e2cb61f86838bcb792e84adcf2e2fcc94075bb92ca3650a89f784fc08b8f037e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2006.npz": "bab7266c9a3b11f4cb2531946ae9d04765bf644c38fcbdf66e28be8c71d740a9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2007.npz": "b84b9680eba9bdb1216f3d4671f24e08d82bc7b18b94b81f25710d105aaf1f88",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2008.npz": "4b8130ac7992b0b2bbb12c020a5ad0878b72e4d706f3455dcef90bcd509089af",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2009.npz": "44ecf2b3c9c7c653cdfbf1d2f25d072755082ec6ad2ce8d29291db7c378a7e24",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2010.npz": "bc6448ece0e243a87dfbcc62713753c58db29ef19329eddb85b02a5fea55942c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2011.npz": "6f34052cd2d3ce965ebf4bab0e8b7118c3c89f924bba4238c0403e728ccf7ba4",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2012.npz": "826b07401070ec6e418accca914d3c1904d2deb417511bac3cb0d7fae1ed15bb",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2013.npz": "e3db95ff3b5b11b7fff69df8a1f4f38bfa0a6f5bc7b2212b053c81547e7c2bc7",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2014.npz": "e4f5e453ca83bfbb1e02881dcba15b4204e57dd074f1edd8aebfce5dbee321a8",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2015.npz": "b6935b293aa434b56591b4789973d7ca78cb4425b261261b7d458904f9ca5d09",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2016.npz": "6b6c758b817148b36c8c497d1cdd8823bf376c22926b64f770f0e7a43c8d1d60",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2017.npz": "5674334f0fc6502647987a25e992998ce9d70b56e215fe3f8a6c61e789dc33b2",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2018.npz": "5fc78bd2099c537f1cee9e3293f2d42ed93c5ea8526660049162fa64741d623b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2019.npz": "bdc986cb68455733f6d1eeb4be6747bca8b4df6eb5c370dc67994cac5f046858",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2020.npz": "72beaf4ec8491b9035bbd31e60029dce034b81dbf284948dd88e19f414de7f3b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2021.npz": "5a8ea7f036ae6bb2daab6774d16f23f760f5545ef330f39ce002411c0f6e897a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2022.npz": "a1d84c5c5b5b170f7e7c5cb5ad3aaa121947c91f6df5da3976f569d3e13b3cae",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\tesla_fremont_factory.csv": "8ad410052877fd0224461a375f7b9b838667d6e4f0a26dcffde7325e419de922",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\tesla_gigafactory_nevada.csv": "67d0fcb754e2c45efcd7ed076ab180ddcef46c7f6541c8a5372cbf9c204f1c9b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\lucid_amp_1_casa_grande.csv": "f7893a782843ad9d147deacb5d0234dd62a281275cc78a4436c45e6804a392d1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\bmw_san_luis_potosi.csv": "701f6ba2ed0aead9cb7d81225d0433323490d48767cc43cc4b81d0dddbd19a32",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\tesla_gigafactory_texas.csv": "a39e25e787e70bb6bb403dd4ed1085cd832e6cf6cb6cdd8b6417316a4b147416",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\rivian_normal.csv": "37de662f8648f8a3fe7f90560028d2413a2fc2a13933e982d3cb8c05c54d8c7e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\ford_rouge_electric_vehicle_center.csv": "ca2b7a51e04b3908d3942951b05633a090e606ac608b3124687c0993b1f825ef",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\gm_factory_zero.csv": "a55cccbc74cb558757dec5c4884fb22dca1c9740cf10300856a9158ad6160e32",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\hyundai_metaplant_georgia.csv": "9209cd9cdd1563038879104ea5a8aefab6dc50724921c1990c6ecaa66c23c826",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\byd_camacari.csv": "a499c8b6d30017e993aab0ed4dadba65e3319ce666a3cf0ee39ef475cfd761b6",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\tesla_fremont_factory.csv": "b6d6ea97b76ecf9c6b5870aacae5de7afd00e2ed4ef9e1bf4c8a9b76a48861a1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\tesla_gigafactory_nevada.csv": "fe716d47bd9e715424c2ab7093170926c02a05ca44bcf02010a23164ba0ad188",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\lucid_amp_1_casa_grande.csv": "c5a4096fe3e7f96273e39d3567b587929f668fbfcac0ec07bec5752aa56e73cd",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\bmw_san_luis_potosi.csv": "827cb04033c7662ea883ffecaf1b373d77bc65ac45a437e1ab82b6b537dc65d9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\tesla_gigafactory_texas.csv": "52c3d4942a98a2ff18dd8d908cee70a72071ec6a165299e1ba847e8896e11fca",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\rivian_normal.csv": "f7441699ee4a2053fe6a7cbbf6993fd848bdc11a2806713df4b40442b228569e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\ford_rouge_electric_vehicle_center.csv": "ae46fa4c7be9c2ceaaf1a85877bf4dba5dc96e38b057ae88c8f24a64594d17a0",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\gm_factory_zero.csv": "cc37add3772aac892027851233ebc5e6d900539384835c4aa5cd171f4f7a38c5",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\hyundai_metaplant_georgia.csv": "48e922d43b4ecc5f721549391010fe95584cad5ff1509c1449723804f6f1a631",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\byd_camacari.csv": "af9d241397a8a23421c566cf8b36d595e248654fe94c2b7712d1390431da430f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\manifesto_historico.json": "5b1ccecc75c9f1960610b39fc71ba0265c9a1c6ccf8dd8ac113e4587ead62bfd",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\auditoria_historico_independente.json": "689f41fc2f6947b2e5a56c91c5f1ae69f1a729668f25059e011612371e7e1ebe",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\auditoria_agregacao_completa.json": "65813683ad469027388343431e093d6712b0ffc67f61b5e03a684ec8f27f2dea",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\cobertura_remota.json": "b60a7651b86050b8d5967db68291a39c741f9e3e5c1729f3242538eaad4652ab",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\status_coleta.json": "3961f01c29aa90a3d2ccb45a8f052d98284abe786568e973a78aabbed1d0135b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\ambiente_coleta.json": "b74c55df2ba32139af1e83be923eb607e73447a2bf66e9e7554871f598ad88a7",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\correcao_unidade_temporal_cache.json": "5e078ac7c6510fce01930285980df8ca4481554823f83f79365c3fa388bb2c94",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\auditoria_contextos_historicos_aprovada.json": "52d4e4ffb2f6005749755ab18444954cd09ebc410c5ad1d748a3146453e9d96f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\historico_nsrdb_expandido.py": "7ae92c70f45902b81658b4778a3a032318b2d9e4d6e9b79d1dbd7a99fb3a5b10",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\timesnet\\contrato_execucao.json": "efd872b1c5b602801d23d5aff117b29f4720d07a6f0bc694dfaeafd0fcd2091a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\timesnet\\selecao_congelada.json": "0cdc9246d09ef170aaa21ebfaf7a3294561ff890bdba040de857cc1bbf00650b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\xgboost\\contrato_execucao.json": "5e545835a7f0fd7556343b08032a86a16885f1ddbbf603e77d14289264b926f7",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\xgboost\\selecao_congelada.json": "de9aeeb71532a0634d80fd6a2d86923e417c83b378eca5b2cc71700c056f9175",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\lstm\\contrato_execucao.json": "1dc3d995ef2a9d2284110f64e98b64aa5d919f0cbb9a874c0330ddf2a303950c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\lstm\\selecao_congelada.json": "2fede94637b6db14cca22b96016a6a9a238ae319a8de03ad0e9b612feb51c909",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\dilatedrnn\\contrato_execucao.json": "bc990db2ce7c11e4a254bb2713313357b4bc39dd0bc6cc33da4cb3c134189204",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\dilatedrnn\\selecao_congelada.json": "4ee4cec7708c9d6839d8f15b848d3248c672e153fd34380628a13b9b78a5e6e7",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\gru\\contrato_execucao.json": "c4d5ba28fd02fa325fbf6eb59b5a03e373d8a202483e8b0271686ef0427b80b5",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\gru\\selecao_congelada.json": "bb067dd398d1400995925541f4fbac8a9f72be91d8b7decf4c2fa3318e0baf26",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\transformer\\contrato_execucao.json": "4effee602c0f21d10de815cab162637021b332289da3b9a5eaa8601d302b28c9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_atencao_deterministica_v1.py": "70d8c8213fea7cb86f3f64e3d28d9398e7a64ad39dccea57b8c6acc40ee66660",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\transformer\\selecao_congelada.json": "acc21912737802120d7e64cdf99d7ff7571a3c5e28b673fe239e7c6718dab778",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\informer\\contrato_execucao.json": "b22a1b359175481ac7e48dfa72ccf078439ecdb73666b9895b7875b76c49e930",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\informer\\selecao_congelada.json": "e73bc1e2390a5121507c39a034c983f4e64cee35cfcb1cfdc870e4451712c34b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\contrato_execucao.json": "0d73a361abeea873ad256fe6125c8926e8fabfb085fa071e91409e7f4fdb07cf",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\selecao_congelada.json": "cabed66322d142c0a4685f8b6eec94d92a692d18e7371ba511ec44df49b21e1a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\persistencia\\contrato_execucao.json": "37d32a6a917003549e9a7393048d71d2a1721ae4c59b90280b55cf6c711bdca3",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\persistencia\\selecao_congelada.json": "a014dd74765ebcf926704a27feee8363461b4cf46d8a826ec82cd9787e804e56",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\sazonal_ingenuo\\contrato_execucao.json": "4af72cddf99f1ccfcfef03538d3d423ff6a5443fc991ae4a020687a91e89c239",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\sazonal_ingenuo\\selecao_congelada.json": "5dd2058c0d064a72049f21a123690d3376ae03a71e375f1d43b0b63f7bed3519",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\climatologia\\contrato_execucao.json": "f7c8fe6991114453d1f0e2858b25594faf30d51e956e142981494d1d5f6539e8",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\climatologia\\selecao_congelada.json": "6c737d7fd58d5d173a5196907e9ce10f8dfdfb6e49e12e7f9cee923bbf6e7bfa",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\timesnet\\contrato_execucao.json": "08ba22890687fa882ddfc7dbdf6da2eacf63631081f19c17384ac88c1a52dc4d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\timesnet\\selecao_congelada.json": "c33bad3f98ed1c986700707127fd4327d7509298b209eb8ad0220946ec1ece4a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\contrato_execucao.json": "98dc00ad4edb1170de0c2f30c24c5a3bb22f08a4c01a6ec67c6a76094e88c533",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\selecao_congelada.json": "e714787e730c7242d6dd8845efe3da13360be6b1c6bf00d413b8d5497be93f42",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\contrato_execucao.json": "6b219df0a028e49cc6ea0ae1a146dd729dc129a1f8536c95e0eb680dcabd42ac",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\selecao_congelada.json": "4d7c9204749308f9edf304ca33c01ee23f365ba688dd9fa09036375a7bc2a689",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\contrato_execucao.json": "a758ba4a725329261a9586c5b8332de7493701937229bbd0cb0638b288892166",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\selecao_congelada.json": "a30b9602b3d17ac43d5a172e338d59d505f8d1785609080e76060edd4d0d17ab",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\contrato_execucao.json": "4e0dad82b4a1c8607aeaef84682dc475f060a693e90c4fae02f5b5a0666e2faf",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\selecao_congelada.json": "1a6ab05940ab900390cdb915a5386086dcb4b0dca7c397db145168e8aded70b9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\contrato_execucao.json": "30c0d1bf8147f0aeb975163819b296308568093e3e8669e19a1acfa38b095c55",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\selecao_congelada.json": "323797c8bc7edbb0e2337ef5d4d07025727afa76e3c177fc0384221463109676",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\informer\\contrato_execucao.json": "d56c81e818686dd46be26b0d3f9f47dfa8a2554dcf1f55ffcdbf67672ec5415d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\informer\\selecao_congelada.json": "533c891e529c35a33c436c2345025f84726da6a2391ca8f68c393af12fe13b96",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\arima\\contrato_execucao.json": "2befacb95fd58a24ec6db5b9758a108697d862b1888dfbfbd9134ee495e63da0",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\arima\\selecao_congelada.json": "14aabf10922eeb263a8eca98aebcef7b993db3f0645b7ae387e35711638a541a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\persistencia\\contrato_execucao.json": "771e9e08478558b742e2dd08ab68301e04eb387a4c2661ba63d7bb52f95c7539",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\persistencia\\selecao_congelada.json": "a122b4764e22ca7be47a1a19cf02c53788b85c0965b03b5a0740b61d23d5c4ad",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\sazonal_ingenuo\\contrato_execucao.json": "c5b61809a20cebc3af420bae6b03610ef7d66cae280c508e6566ed88d2cc2078",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\sazonal_ingenuo\\selecao_congelada.json": "c6ea7665e715df2c30cc4c711a972474363152957ef5fa427932ee746c5fd529",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\climatologia\\contrato_execucao.json": "b1d7df424abf3518b289e6e891d7f5f7c7f970146006472a89eb2cbb8dc4431d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\climatologia\\selecao_congelada.json": "0f5414c4984462d73c2bd91da3f99075a5a7b5a645ee6a9c6c1d8b6735f9e5b6",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\timesnet\\contrato_execucao.json": "0cdaf1ddd05c6bf15c6ced3e46a8219383f65fb56b252732387221db19fd39fe",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\timesnet\\selecao_congelada.json": "091c15a905b5ae7e6b7e8f93c87b87fb408cd752f5ceda5f21b81e9bcf753c5c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\xgboost\\contrato_execucao.json": "36318c05ebfc48914de29ce3761125f084bc15f99885d60ed3f4152d23f3c89a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\xgboost\\selecao_congelada.json": "474109dcf2d7daafdfcf6dabfcac149e4888eef32aca16fb5d9d897ca9779585",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\lstm\\contrato_execucao.json": "975fb7390086596a2d22d68fed871828e8850a1edb481e45b06a7faabf8d46b2",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\lstm\\selecao_congelada.json": "0f7c878d61f0d294d48452ed6df11e7292eac8e267692dbd625abcd2b882d7f3",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\contrato_execucao.json": "7a699ea77ab539401404d0969ce89b97f2256a482ce51324aeedd35e0615026f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\selecao_congelada.json": "17d0d8acb9e668b8e180aac58b2afdd462aba7eb1ca0f91e0e8278ba9b3940b1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\gru\\contrato_execucao.json": "b298227b5197b54093d2c3c1a4f7b715ab85380307df3c4b2f8e6497bc965f8f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\gru\\selecao_congelada.json": "1a3066e63b7ecfc23172ac4ec235bb422a40d805ff604b2559c4b8f97d727330",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\transformer\\contrato_execucao.json": "0b31ffeba7dff69323bd9155c997d2f77aa3d07c71e5e4e4464a4ee4c2421f98",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\transformer\\selecao_congelada.json": "b68c0ad228524b99cd59d94a8095430ecdab009d01cc1ca5662e9bed85bb92c4",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\informer\\contrato_execucao.json": "b52415c64d69106f0e0c20c89d0005b0749078bbb3d2bea17144d6844d735d53",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\informer\\selecao_congelada.json": "3c611621649b275285cf0db3c1680731a82f34ab4e7192d458594d9e098f3832",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\arima\\contrato_execucao.json": "f99e375ad58a4a1ca709cf46c90922dca883a2e1ead5f1d209109aa24819089e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\arima\\selecao_congelada.json": "957582f33a9d9271c436e0a629d01d8f18b498f1e1c72b453bce4686776603ad",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\persistencia\\contrato_execucao.json": "e89ac9fc4b16e10b5826073e036863b38e404d616e5b42e58927f12f710187a8",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\persistencia\\selecao_congelada.json": "9b199be94cd0fc2f5fe04d1e1f1b421c2dd43e94d34ac4333f6f505e5c028eff",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\sazonal_ingenuo\\contrato_execucao.json": "6a25f25c7c1abdc3b0f44f3604683214c48c8c28e5ee1a261d5fe488f1c65645",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\sazonal_ingenuo\\selecao_congelada.json": "170ce0f8c890d3a07625f334d5905e673907b3d357f7363294e81be07210dd0b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\climatologia\\contrato_execucao.json": "2cf5b82655e9fcef5d238648d3922e67132ba368e9ca9bece13b3aeeb05c8309",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\climatologia\\selecao_congelada.json": "6a02a4f5abdc70783db6e606c783230e887d6957b93526e2d62ff728216e80fb",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\timesnet\\contrato_execucao.json": "fe2c7da004fbecd2c969bb1620193e46e49164eea8ed6c9761b41b54925981e4",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\timesnet\\selecao_congelada.json": "54bd90671a93392cb713bc806d9b49bfd6ddd38264444a2524f695ab4d7f1392",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\xgboost\\contrato_execucao.json": "98b358fa9cb15b3b0784e0389618452dcb3cc0319573f7916c522b8e1deb6659",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\xgboost\\selecao_congelada.json": "fca67d4bcb769cc08f02bc158df19dd8465bddc63997ca16aaba8d20489f8dac",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\lstm\\contrato_execucao.json": "e86caf3b335e326115710ec2046f9e6221b5a964a579120d999d0695cba83b91",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\lstm\\selecao_congelada.json": "c0a76f429329f9643e0e84670a325201a35a7af2a95814630e6cd12fae1e6f1e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\dilatedrnn\\contrato_execucao.json": "dc8f314d51844344e884f1c5b7df4ea7a497dca1cc19823dccf5d50a6d75ae21",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\dilatedrnn\\selecao_congelada.json": "549099b2cbe1a232fc16d9eaa3609d6c891e3d4ac86d77e4a375b1df54e349b1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\gru\\contrato_execucao.json": "a743b38a69f33bb2f908cb886a25893eb328b644e8e17cfedd7278ea10d8d51d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\gru\\selecao_congelada.json": "b2630799bb2ed97f45694c98bf06a275a90dd6c695b48d2076172b6ca6afe0e3",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\transformer\\contrato_execucao.json": "bc9c1b635a869d36af27f5bd3dc1375321600ca4e4984ee6edfe9f6476666498",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\transformer\\selecao_congelada.json": "359f3ec461918526dd2f29bcf8fd5f0db0bc7402b2420c85dcb4e00882b427f1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\informer\\contrato_execucao.json": "33d8210361dbeed40f818549aac3e23c8268f984ff1f9fa666de84cba982e1ff",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\informer\\selecao_congelada.json": "d1ed996909b8cd291d0ff994fe7dfeccc1f7596401960267e46b74821805840b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\arima\\contrato_execucao.json": "7831c74615395ac750c74296710c92574c1c36da01244a20186700a54354f256",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\arima\\selecao_congelada.json": "6a9dd3e71aaa407363db393e4f7dd501e34cbf4a8b5f9ed7c31e04968b14460a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\persistencia\\contrato_execucao.json": "9bff53027641bc90cd2954762e77c9cbd495ac141d5163dbbe66db3dd2dfbfe9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\persistencia\\selecao_congelada.json": "31936c079ba347c12dfa5875e98595bcd94feb9df0b0b857116ad775fca404d3",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\sazonal_ingenuo\\contrato_execucao.json": "633328b05b260987724e35d912c761178d272ac3b701806c757c2aaaebe2443c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\sazonal_ingenuo\\selecao_congelada.json": "29d4347d748bd5a5a7b705c5539f06dc81f019459539ad78c2cd0842184a1407",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\climatologia\\contrato_execucao.json": "b6f856f257adb86ed1ec76ae7cc5ef33864b30688e876d28f141b0f492234d1c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\climatologia\\selecao_congelada.json": "50162da9c17166a26918541e5fa7d4a6ec27249345e3d6d9559ca2a027a30b93",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\timesnet\\contrato_execucao.json": "e736f8b273515a84f05ca4506423379dc2c28ae2d04776bb2c972f29a229517c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\timesnet\\selecao_congelada.json": "7ab41baf2c0871ef4d97d4cf6f14c256f2c1cc19c2f1964141228f1c72388d0e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\xgboost\\contrato_execucao.json": "fd352ae99f5f5055fda862a0a2b8ae661f5e94c7b8ea8a5380fe53ffefbd99c6",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\xgboost\\selecao_congelada.json": "780daddffebd449cc1840db960675a3c9bfdf093a9ddee9838c496f8f4511ddb",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\lstm\\contrato_execucao.json": "f84776bde0d8690e319dfceae0820c6c5fb9b50ebc5e0f9e3ff4471a341b793b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\lstm\\selecao_congelada.json": "b05dae467a19abe04981ac1e0771cbce6b8c950a7a351bb99678d6da033cd465",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\dilatedrnn\\contrato_execucao.json": "9c99f4566a772f23c514fa66e0e03a4f3eca72f346ae1cf06c145716d196e9c6",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\dilatedrnn\\selecao_congelada.json": "894849049f5d2f12940e4366f1a872c623a9e01e8099eccc8fa73b942d0e37a5",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\gru\\contrato_execucao.json": "3e8a35a3242296855bcbd43d057bc9d5de96bd2da2f46176b2dfbed43677e9fb",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\gru\\selecao_congelada.json": "8f539f0d1ec3ea8e97b05ad1cf898fbcfdf0da2cb73067f2d93e3cf0266d1571",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\transformer\\contrato_execucao.json": "03cee0e1cbf1e0c51366f110314c7ad8915cf3fe01b42eb574a057b1f4a96bfe",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\transformer\\selecao_congelada.json": "172586f0931e9bc6d30db44e753ec1dfb1b111c19864abcd4afa70ae28d1c462",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\informer\\contrato_execucao.json": "2576214f294b728f98891f11bf87253bda7c450edfd271ecff15cfa111195fa0",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\informer\\selecao_congelada.json": "444f1388a3322287f720e443afa30fb875714a9b35b20ecc57090ea4f363ba73",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\arima\\contrato_execucao.json": "63898204e85dd6e1ec349f5f721372391bda4ae6c49440ad5591843b53be8632",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\arima\\selecao_congelada.json": "9738db4e455e261b8847cd16d91622f2e250ece0b2d31a3cbf09fb8b8194b853",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\persistencia\\contrato_execucao.json": "f16f011820c9ff666431d949ef158e9b1926db72fcf334a7b9a684f5bd138116",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\persistencia\\selecao_congelada.json": "ec5d58da6052eb2a44f17cb076d9dda36d76608f8bf8733c84be7f7fef00ae43",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\sazonal_ingenuo\\contrato_execucao.json": "a5219c3ac5d2e5e4c9028f81e78908cca8f7ffa8d0fdef551223cd55c2fa6711",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\sazonal_ingenuo\\selecao_congelada.json": "9d0ffa48491e783f476cda08d071c0d1543fc14fd2255741fb6a93453ad5934d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\climatologia\\contrato_execucao.json": "9fab4230d65dd700107d940450fe22dc2ae36f536ed9f7783416988ec33b3bcd",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\climatologia\\selecao_congelada.json": "a786fdc0ada76dd0fd34b9cce1a6ebe284bac2fee1411574fc7bc60df71569d9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\timesnet\\contrato_execucao.json": "a5aeec0ea3be2f3eb549366afd9165adc2518a550a0a752e91d27511f93c0612",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\timesnet\\selecao_congelada.json": "fb6b777f6d448029c5b8694c17b71e3118cec2dcef86a56a30a484acd3cbd7f8",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\xgboost\\contrato_execucao.json": "0c21fafec3cc3209f6e922a9202ede6d43c8e6407f3f3657371bd940f252d697",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\xgboost\\selecao_congelada.json": "bdb37cf99c4b8286d38bf67a22d9d8eb98e9c0279af3b9646514ffef7bd094b0",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\lstm\\contrato_execucao.json": "367de2674f65509b02a85f53bdc5dd31c86b1c303afc634cf5757ca6be835d7c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\lstm\\selecao_congelada.json": "d2189e6baaf6e5a4cd5ea7c6848660fe5affb2aa22f786b33ab88dac5facdda5",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\dilatedrnn\\contrato_execucao.json": "f890e1f0f52967d39d4f87bfef41cafa7fd967ce8aa4e13a0963a8ed6d4d5a2e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\dilatedrnn\\selecao_congelada.json": "4bab8e4f7c5d88879c922679f1642de2256644a3cb5c3b388ebe6b1b5aac51bc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\gru\\contrato_execucao.json": "66b0814161cbcf7d41ce8f04b7c07e27aecede56d44fa02be3ed560c5780dfbc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\gru\\selecao_congelada.json": "35e747e8b8eee68b3e703b6d34bddbf9bf0d51f9131b3066a87a7195b3d939f8",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\transformer\\contrato_execucao.json": "256f0b0386805206edc0247120aee8d3422d5c0add878ef5760c599a3f39e2cc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\transformer\\selecao_congelada.json": "4453bb2ba7cc56c25d5452901ffef0a8194b22d6cc11aa25946367ff6b741947",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\informer\\contrato_execucao.json": "c8e513b111185bab0874df18e5c463a5b8fce8fbe4115942d1577d7689b59748",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\informer\\selecao_congelada.json": "97356756dab669716569aa1a92c84694aaac44c183e73aab7542b1913064f234",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\arima\\contrato_execucao.json": "ab76e90e7805b628fbaf2f83892b4170f715c201f409179c6dc03e0baafd5aa2",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\arima\\selecao_congelada.json": "d4bbc3447a38b6cdee48b584c890cced1ec0548d2436af746089aa8bcee2276f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\persistencia\\contrato_execucao.json": "4beee0c33f26bc56035e4b85ee3b36ac5506c11fc894932a8489c97f15bb75d1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\persistencia\\selecao_congelada.json": "989bcf44da826d2dbc2d77d662e7f4206794fdf337bef53ff269c2fc7709be00",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\sazonal_ingenuo\\contrato_execucao.json": "df8ee0461bb6711ca45489d8d9df2ea560c4bcd8c7f4d19d059a1546cd8d523e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\sazonal_ingenuo\\selecao_congelada.json": "76e55a4b40cf5203d130b0601ba88d1db1ff91b200ba177ef2defd9ee5fa7e15",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\climatologia\\contrato_execucao.json": "bb368a2880582bb33c42457102c72ad93c8c724d0414db24a42704a46fe62cc8",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\climatologia\\selecao_congelada.json": "f16e8e51581942a45fe0ead21a9d09a5a37ff312634d6fedd0870e587b92f215",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\timesnet\\contrato_execucao.json": "86c31438aa482c910bcf4f4aad87023354a48750648dc11b1d88b81b74a84043",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\timesnet\\selecao_congelada.json": "85f0ad9d21d7a08d78c476732e8033bd8a162b0c3d40ac69459256a806f0a437",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\xgboost\\contrato_execucao.json": "382e008a1de2e35c8252e03ea38a2c1708734a463af64f4f124010d695015a74",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\xgboost\\selecao_congelada.json": "bab11a2f10275a91fd9ef272969ebade2965e1c5ad784b50e2cc21f706689a3b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\lstm\\contrato_execucao.json": "e35c004c6513e6bafe5fde48fd00790cf2c50abb88cfe14f9dfe08f1d0276c7f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\lstm\\selecao_congelada.json": "b6f9be87dcd281146062f1fb43a3dcb6f9d8a62e21ee8c7dc574a3226efe0d79",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\dilatedrnn\\contrato_execucao.json": "a5353dd11c1787140fed7a5dddfd94924fbd90f753c9e345de03ec31955de3dc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\dilatedrnn\\selecao_congelada.json": "10a7ce1cf08c51d41180b68e1ea95ff87990ddfefe618831634126aba13dd6e0",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\gru\\contrato_execucao.json": "b07de356ed7c81181b5dc7be13e017e11c317f2fcdef849f1efb1892ce6cae56",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\gru\\selecao_congelada.json": "6b166facd8ac7291dfda658d6238853f3ae26841468b44e38bb677c420fcee52",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\transformer\\contrato_execucao.json": "853a419dc04bcbf9fc32f5326bb9adfeda90a907e8209adca61a3d93dab0c8ae",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\transformer\\selecao_congelada.json": "9a15d5c35ae3572e917c274f1c908e6b947c5b17a7324aad4b88a0014c7a8152",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\informer\\contrato_execucao.json": "2370c7ec011ef13fb7db229d60ba80481e276544d8cc83b686de0ce2d717e055",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\informer\\selecao_congelada.json": "49b70bae29c846c60feaa8472b0e908f1926faa8cff53de1395582ada64cdd50",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\arima\\contrato_execucao.json": "1092619c906e68226fa7962904050ace47574a77a47ae1526202926bfca155d9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\arima\\selecao_congelada.json": "0b94bdf61e01e24ad366bb12723fe677ad59023a615d361fde13ff8ebda4617d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\persistencia\\contrato_execucao.json": "a7491dd9fc27af7226f75cc419b5000312c31708c0e9b44494e5ea749807ed6f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\persistencia\\selecao_congelada.json": "2b74d1366bab83c519e841721e45c28ace132270f8e69ad4d21137df3ec9f73a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\sazonal_ingenuo\\contrato_execucao.json": "dfe4e8f2dd67687456161d5aa01bf01021e10d3d13b12fbc0d867b7b9929d9ee",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\sazonal_ingenuo\\selecao_congelada.json": "27ca117dd63cf8b3496befa38973af7df292c138690037a92ac84d672c6e3e35",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\climatologia\\contrato_execucao.json": "de7ebefe5d4b139ec6e296ea15aa216e4bae1dd778aad1495a89f03b2df80f6b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\climatologia\\selecao_congelada.json": "a344618a88fe81b09efc76332ba54b3219db7e05ed0bef19e2e8bbd0a42b772a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\timesnet\\contrato_execucao.json": "1d87f5b4abddef2cfff2722ebb863cd60afac6b06b11947367f4d7205342e61b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\timesnet\\selecao_congelada.json": "d820d561d39e69975abaab39977e72cf9af86b7dc6875dd294563a5711920efa",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\xgboost\\contrato_execucao.json": "11815a67f3687315b16e045f40993d710de860cb4680d9b20c3a13d09aeb676a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\xgboost\\selecao_congelada.json": "c0a88d0688674f33e29853ba0d1addd0f5e4fc5d2befc5547cedcb9284a67921",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\lstm\\contrato_execucao.json": "04a24ce899ecd3dd7a60e72ea8e141284b18681aaa86a630b751fc92b250f4f6",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\lstm\\selecao_congelada.json": "c133b843e446a3a3a9b08a35db521f1c4a533e551e52027f9e5b63657c7deb23",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\dilatedrnn\\contrato_execucao.json": "fceeec2f41a596c45b893a47594be31c5d90cafc9bb18428dd8545023183ee40",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\dilatedrnn\\selecao_congelada.json": "c1cdd1cdea51ebc444c01befd957679a2eb35fb8e390e1b1d4e6edde6581ed8d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\gru\\contrato_execucao.json": "d79a86b41a4a00d460d7fc8a2e74536c3766c9d9fa26a9ff4cf8cde10de581bd",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\gru\\selecao_congelada.json": "86f131aa6e2388a777bdc0e825c29a2214232f2f00c1dc1a7673c6be1837f024",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\transformer\\contrato_execucao.json": "14bfdee466a2415e7a62cd785624e779e6db7796635fab0a05b844ee00ea39ee",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\transformer\\selecao_congelada.json": "5ff1606e5433ff72c2d839fe3e9bd1d8f0ab76efd26fb59dd85457330ef6c132",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\informer\\contrato_execucao.json": "da0b05adb88cef66287a54eeb37f74fee3ace0c326f5263cce3c78b0b8febaba",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\informer\\selecao_congelada.json": "a189c4a61a86b2f9b15e0a28b053be3b0c3528eda58329f7be63c99a91adb448",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\arima\\contrato_execucao.json": "7dc80a8935f9765d56c49ff1e9b11108379c59bbb881deac41eb84cab9461dc7",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\arima\\selecao_congelada.json": "7e9a06fdd88a23bd8c92134e4031cf69393fdf13445fad259da2f08c92ce980b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\persistencia\\contrato_execucao.json": "88cb101013673d41086eec86c1d47bf70369e73cbf586c5fe1e087de863b4fae",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\persistencia\\selecao_congelada.json": "e2c9af1ed4c04720bc79d7d35637d3891ec6f03987bffd9134b6c89dd60fc1f2",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\sazonal_ingenuo\\contrato_execucao.json": "3cc4ce3610207e04bee2263c6b3c460b669eb33472f2f93e759d2a334025f544",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\sazonal_ingenuo\\selecao_congelada.json": "0de6f458c11ab57e1037dc165732c404bb5bf06e232e8c9a31157b3c29de9ffa",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\climatologia\\contrato_execucao.json": "6a236179c8fa39a2d1df9e08c4f960fc69e8e0fd11d4ba7d223cde20f08be7e0",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\climatologia\\selecao_congelada.json": "0319faaecb885a69fd2fa8b2ae33d7db400fd1751215d6a888f5a928504d9c8f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\timesnet\\sem_quantizacao\\previsoes_validacao.csv.gz": "0a70d23b72fbf64ea5fe1c6890fe851d4e07c91c998fa996168298f232c029cf",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\timesnet\\sem_quantizacao\\previsoes_validacao.csv.gz": "42dec60e2f79755642c8a1064403e3748eae636c726f6cb85343e34516cc5c71",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\timesnet\\sem_quantizacao\\previsoes_teste.csv.gz": "5f7c4da7c879a11ae9e7754ea8a150354b9115f4d8acff80c6a8a6ef7a71d49f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\timesnet\\sem_quantizacao\\previsoes_teste.csv.gz": "bb406b0c1aaa5b9cdfc39b4af89a02affd0f2b40bae8b03ad81342f2157e9944",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\timesnet\\sem_quantizacao\\previsoes_validacao.csv.gz": "b5f4bc09b211cd25f894334a1c2810b1c70e832aa6f12971d68dab4fc2858353",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\timesnet\\sem_quantizacao\\previsoes_validacao.csv.gz": "5e0a75ef76e54088ec4e27f69cf94575704628a390addd95d544bda9e44f10fe",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\timesnet\\sem_quantizacao\\previsoes_teste.csv.gz": "8752d9861fdb73418144035c4ccf6e067db1f5ac518b03defa4279ce4e3f933c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\timesnet\\sem_quantizacao\\previsoes_teste.csv.gz": "d941d57341555a1e24a79564c8c1ebdbf590e560ebd777140bdfa9cf0d52ca29",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\timesnet\\sem_quantizacao\\previsoes_validacao.csv.gz": "da2c520645c034af5d8e5878e2af67fd81d02dd5655bf81c3038d12e23c91f04",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\timesnet\\sem_quantizacao\\previsoes_validacao.csv.gz": "487a519f74204d4a5a4200617f0059b72033265fdd4618a00f6580ed693c99f1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\timesnet\\sem_quantizacao\\previsoes_teste.csv.gz": "33629063d108fb15499963ba6384a51402affa718c52ba30b8042c5f6a7b1574",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\timesnet\\sem_quantizacao\\previsoes_teste.csv.gz": "7c4f5e38e79144455a1df89770c08e1b51914537531449e710de44014bd3f00b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\timesnet\\sem_quantizacao\\previsoes_validacao.csv.gz": "ce60b545849249cad796013daca9135f5bb3d19f08f55f1abebdc533323fd683",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\timesnet\\sem_quantizacao\\previsoes_validacao.csv.gz": "77b89f108f0215001fcd650bb71dcbda99a3df6d429aec4fd5ea78b41dee590a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\timesnet\\sem_quantizacao\\previsoes_teste.csv.gz": "9b12c86af55a17e67c444b8b535b8c0e7dd77bf955a7bf596001a1a06a23c76a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\timesnet\\sem_quantizacao\\previsoes_teste.csv.gz": "90f6897c481cbee671ac75fc5f3688abc46097723e723dd1e6652388946357e7"
+  },
+  "integridade_historica": {
+    "ok": true,
+    "contrato_preparacao_dados": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\contrato_historico_pareado.json",
+    "sha256_arquivo_contrato_preparacao": "ee39d5fdf66ab356371eb415b1b15d84e2979c499e6654c9142f6a93ebbcfac0",
+    "sha256_contrato_preparacao": "37f8e925384b6cf903287f54c47fe77a286938738bc9b11fe9ece3353c6a45e8",
+    "quantidade_fontes_dados": 70,
+    "fontes_dados": [
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_1998.csv.gz",
+        "sha256_coleta": "c9aec2446b7fb888085f36d0c5693f9936406131f1ba7f0be9af8727eab0d0e7",
+        "sha256_fisico": "c9aec2446b7fb888085f36d0c5693f9936406131f1ba7f0be9af8727eab0d0e7",
+        "bytes": 378480
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_1999.csv.gz",
+        "sha256_coleta": "a678465d235fae26129395e71f54e62630280fce44db730680229bfefc323fc1",
+        "sha256_fisico": "a678465d235fae26129395e71f54e62630280fce44db730680229bfefc323fc1",
+        "bytes": 378064
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2000.csv.gz",
+        "sha256_coleta": "cad2fd560bf00327966ef507f5cd76e9b2e914c61258a8a3a6368ea31131490f",
+        "sha256_fisico": "cad2fd560bf00327966ef507f5cd76e9b2e914c61258a8a3a6368ea31131490f",
+        "bytes": 380007
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2001.csv.gz",
+        "sha256_coleta": "b7538ef8bd87e66b4117aff75c1f1592cb4c170281b7f6d6bb2b802bde914224",
+        "sha256_fisico": "b7538ef8bd87e66b4117aff75c1f1592cb4c170281b7f6d6bb2b802bde914224",
+        "bytes": 379034
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2002.csv.gz",
+        "sha256_coleta": "ab9ca43cc777778d00f8273c8675420d839c600e1be6bb001f51547d3020db80",
+        "sha256_fisico": "ab9ca43cc777778d00f8273c8675420d839c600e1be6bb001f51547d3020db80",
+        "bytes": 379074
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2003.csv.gz",
+        "sha256_coleta": "2fdfdff61362f61ddf7a18fa5563ab38fa805c8ca43e3c2654fd987cba4d05a9",
+        "sha256_fisico": "2fdfdff61362f61ddf7a18fa5563ab38fa805c8ca43e3c2654fd987cba4d05a9",
+        "bytes": 378989
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2004.csv.gz",
+        "sha256_coleta": "add1ff784db719582f134a3071e82e44eaa8e75a8b148d020199097e5fedde57",
+        "sha256_fisico": "add1ff784db719582f134a3071e82e44eaa8e75a8b148d020199097e5fedde57",
+        "bytes": 379716
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2005.csv.gz",
+        "sha256_coleta": "a654c7e89faac637135f9372dfac8f303b1617835aa6e6d79444da28deb98634",
+        "sha256_fisico": "a654c7e89faac637135f9372dfac8f303b1617835aa6e6d79444da28deb98634",
+        "bytes": 378707
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2006.csv.gz",
+        "sha256_coleta": "ee60a5523c3e1478652e78884ccdda94ecb58aaa58b89d1b17e0102b8bef797e",
+        "sha256_fisico": "ee60a5523c3e1478652e78884ccdda94ecb58aaa58b89d1b17e0102b8bef797e",
+        "bytes": 378544
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2007.csv.gz",
+        "sha256_coleta": "8423efd29516b13a7e0112c5790f584c8f25ea1b01b8048300c23466ea01b524",
+        "sha256_fisico": "8423efd29516b13a7e0112c5790f584c8f25ea1b01b8048300c23466ea01b524",
+        "bytes": 378714
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2008.csv.gz",
+        "sha256_coleta": "20266d843e0d86fda160e0885a8e47340f2c068dee8cea8a41aec0c131a5da7b",
+        "sha256_fisico": "20266d843e0d86fda160e0885a8e47340f2c068dee8cea8a41aec0c131a5da7b",
+        "bytes": 379540
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2009.csv.gz",
+        "sha256_coleta": "3f8cc406bd97ba003ad62e0322cd20f33032e3861672c1a472a02b1d48c479e2",
+        "sha256_fisico": "3f8cc406bd97ba003ad62e0322cd20f33032e3861672c1a472a02b1d48c479e2",
+        "bytes": 378413
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2010.csv.gz",
+        "sha256_coleta": "2770b7d72d9cbc28e6458fe7d76f90fba245280e0f84ca57ba37acaab600612f",
+        "sha256_fisico": "2770b7d72d9cbc28e6458fe7d76f90fba245280e0f84ca57ba37acaab600612f",
+        "bytes": 378397
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2011.csv.gz",
+        "sha256_coleta": "91f503e90ef2d258307a31523fb37083ef5e92a5932dfa6d66e1bd1962607423",
+        "sha256_fisico": "91f503e90ef2d258307a31523fb37083ef5e92a5932dfa6d66e1bd1962607423",
+        "bytes": 378315
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2012.csv.gz",
+        "sha256_coleta": "caf0b919f14f28070f159ffa970b4d0586b8b351bc70e385dcbf1c64e7414789",
+        "sha256_fisico": "caf0b919f14f28070f159ffa970b4d0586b8b351bc70e385dcbf1c64e7414789",
+        "bytes": 379178
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2013.csv.gz",
+        "sha256_coleta": "2ab1ea2c75b92babf5820ed90d11b006e18e91093a5e5f3c6b1cef97a0b55ae9",
+        "sha256_fisico": "2ab1ea2c75b92babf5820ed90d11b006e18e91093a5e5f3c6b1cef97a0b55ae9",
+        "bytes": 378815
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2014.csv.gz",
+        "sha256_coleta": "738a54227306d17e0d61b0a8faaede291e7d1e2fe31fda7b72d3af7890b842a1",
+        "sha256_fisico": "738a54227306d17e0d61b0a8faaede291e7d1e2fe31fda7b72d3af7890b842a1",
+        "bytes": 379635
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2015.csv.gz",
+        "sha256_coleta": "cfab410851f76dc248a4b892cb68c6db394e49f725a46fa48e96b904cfc0ce9e",
+        "sha256_fisico": "cfab410851f76dc248a4b892cb68c6db394e49f725a46fa48e96b904cfc0ce9e",
+        "bytes": 379601
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2016.csv.gz",
+        "sha256_coleta": "24fa8ef7e66dc8a37e506fc18101a3d1a355620d502f0144111e50b551947b47",
+        "sha256_fisico": "24fa8ef7e66dc8a37e506fc18101a3d1a355620d502f0144111e50b551947b47",
+        "bytes": 380231
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2017.csv.gz",
+        "sha256_coleta": "ee9acaf0ac19d5984937cf5789e28764bba5eda2273e04d6ebe1caae92cb0f51",
+        "sha256_fisico": "ee9acaf0ac19d5984937cf5789e28764bba5eda2273e04d6ebe1caae92cb0f51",
+        "bytes": 379035
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\nsrdb_ghi_horaria_2018.csv.gz",
+        "sha256_coleta": "e578599303f67b2caf90206309f319cd2795d357aa7836eebf38e449c3147636",
+        "sha256_fisico": "e578599303f67b2caf90206309f319cd2795d357aa7836eebf38e449c3147636",
+        "bytes": 380683
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2019.csv.gz",
+        "sha256_coleta": "596462fc1dceb631bd0a8017798614d324fef6d298d01913ffbc89908db04026",
+        "sha256_fisico": "596462fc1dceb631bd0a8017798614d324fef6d298d01913ffbc89908db04026",
+        "bytes": 379925
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2020.csv.gz",
+        "sha256_coleta": "817e26b2fd7a817d0d0da2457d71ebc8db5880090730f7239efb74ff47842014",
+        "sha256_fisico": "817e26b2fd7a817d0d0da2457d71ebc8db5880090730f7239efb74ff47842014",
+        "bytes": 380203
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2021.csv.gz",
+        "sha256_coleta": "a9e321d0cf384ad345d47c28e7c8fd5cae201ee4aa16b05c6882c45133f968ce",
+        "sha256_fisico": "a9e321d0cf384ad345d47c28e7c8fd5cae201ee4aa16b05c6882c45133f968ce",
+        "bytes": 380443
+      },
+      {
+        "grupo": "horario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2022.csv.gz",
+        "sha256_coleta": "13daace788f068c16711ae6aff7a1420066a532b538ca889078b6a4e3760f27f",
+        "sha256_fisico": "13daace788f068c16711ae6aff7a1420066a532b538ca889078b6a4e3760f27f",
+        "bytes": 379765
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_1998.npz",
+        "sha256_coleta": "93d04d6ee5d275bfff4d3e540cf7237ecba96485f383730dc0e00a2e31daef73",
+        "sha256_fisico": "93d04d6ee5d275bfff4d3e540cf7237ecba96485f383730dc0e00a2e31daef73",
+        "bytes": 275490
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_1999.npz",
+        "sha256_coleta": "4d288c5dd2a043eb3365a6f909fe7cbf2c4606ce6002dcfa2b87c24ec3b88774",
+        "sha256_fisico": "4d288c5dd2a043eb3365a6f909fe7cbf2c4606ce6002dcfa2b87c24ec3b88774",
+        "bytes": 275397
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2000.npz",
+        "sha256_coleta": "0a7985a11e799597f0eadcbd1c914d294075b00a18c0c6993a70805600cc699a",
+        "sha256_fisico": "0a7985a11e799597f0eadcbd1c914d294075b00a18c0c6993a70805600cc699a",
+        "bytes": 276032
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2001.npz",
+        "sha256_coleta": "c9635a09ee9e1c77375d01e6c4e5a59ef4efce472c37466cce657666260fff25",
+        "sha256_fisico": "c9635a09ee9e1c77375d01e6c4e5a59ef4efce472c37466cce657666260fff25",
+        "bytes": 275366
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2002.npz",
+        "sha256_coleta": "aa51df398c99962eef98c936f3d83b08d58e1d40dfdeb74e234bf311d3e0ec00",
+        "sha256_fisico": "aa51df398c99962eef98c936f3d83b08d58e1d40dfdeb74e234bf311d3e0ec00",
+        "bytes": 275320
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2003.npz",
+        "sha256_coleta": "58c0f080c150bddc19a608b0e6160b6e431674453ed02d31e443aa50d676ebdd",
+        "sha256_fisico": "58c0f080c150bddc19a608b0e6160b6e431674453ed02d31e443aa50d676ebdd",
+        "bytes": 275497
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2004.npz",
+        "sha256_coleta": "3fb20d29ff4f5e3ce3c730300437456d1c56c40d0912bd133f5f2ae7f2f6237d",
+        "sha256_fisico": "3fb20d29ff4f5e3ce3c730300437456d1c56c40d0912bd133f5f2ae7f2f6237d",
+        "bytes": 276531
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2005.npz",
+        "sha256_coleta": "e2cb61f86838bcb792e84adcf2e2fcc94075bb92ca3650a89f784fc08b8f037e",
+        "sha256_fisico": "e2cb61f86838bcb792e84adcf2e2fcc94075bb92ca3650a89f784fc08b8f037e",
+        "bytes": 275281
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2006.npz",
+        "sha256_coleta": "bab7266c9a3b11f4cb2531946ae9d04765bf644c38fcbdf66e28be8c71d740a9",
+        "sha256_fisico": "bab7266c9a3b11f4cb2531946ae9d04765bf644c38fcbdf66e28be8c71d740a9",
+        "bytes": 275626
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2007.npz",
+        "sha256_coleta": "b84b9680eba9bdb1216f3d4671f24e08d82bc7b18b94b81f25710d105aaf1f88",
+        "sha256_fisico": "b84b9680eba9bdb1216f3d4671f24e08d82bc7b18b94b81f25710d105aaf1f88",
+        "bytes": 275334
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2008.npz",
+        "sha256_coleta": "4b8130ac7992b0b2bbb12c020a5ad0878b72e4d706f3455dcef90bcd509089af",
+        "sha256_fisico": "4b8130ac7992b0b2bbb12c020a5ad0878b72e4d706f3455dcef90bcd509089af",
+        "bytes": 276466
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2009.npz",
+        "sha256_coleta": "44ecf2b3c9c7c653cdfbf1d2f25d072755082ec6ad2ce8d29291db7c378a7e24",
+        "sha256_fisico": "44ecf2b3c9c7c653cdfbf1d2f25d072755082ec6ad2ce8d29291db7c378a7e24",
+        "bytes": 275977
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2010.npz",
+        "sha256_coleta": "bc6448ece0e243a87dfbcc62713753c58db29ef19329eddb85b02a5fea55942c",
+        "sha256_fisico": "bc6448ece0e243a87dfbcc62713753c58db29ef19329eddb85b02a5fea55942c",
+        "bytes": 275356
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2011.npz",
+        "sha256_coleta": "6f34052cd2d3ce965ebf4bab0e8b7118c3c89f924bba4238c0403e728ccf7ba4",
+        "sha256_fisico": "6f34052cd2d3ce965ebf4bab0e8b7118c3c89f924bba4238c0403e728ccf7ba4",
+        "bytes": 275415
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2012.npz",
+        "sha256_coleta": "826b07401070ec6e418accca914d3c1904d2deb417511bac3cb0d7fae1ed15bb",
+        "sha256_fisico": "826b07401070ec6e418accca914d3c1904d2deb417511bac3cb0d7fae1ed15bb",
+        "bytes": 275785
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2013.npz",
+        "sha256_coleta": "e3db95ff3b5b11b7fff69df8a1f4f38bfa0a6f5bc7b2212b053c81547e7c2bc7",
+        "sha256_fisico": "e3db95ff3b5b11b7fff69df8a1f4f38bfa0a6f5bc7b2212b053c81547e7c2bc7",
+        "bytes": 275533
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2014.npz",
+        "sha256_coleta": "e4f5e453ca83bfbb1e02881dcba15b4204e57dd074f1edd8aebfce5dbee321a8",
+        "sha256_fisico": "e4f5e453ca83bfbb1e02881dcba15b4204e57dd074f1edd8aebfce5dbee321a8",
+        "bytes": 275373
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2015.npz",
+        "sha256_coleta": "b6935b293aa434b56591b4789973d7ca78cb4425b261261b7d458904f9ca5d09",
+        "sha256_fisico": "b6935b293aa434b56591b4789973d7ca78cb4425b261261b7d458904f9ca5d09",
+        "bytes": 275548
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2016.npz",
+        "sha256_coleta": "6b6c758b817148b36c8c497d1cdd8823bf376c22926b64f770f0e7a43c8d1d60",
+        "sha256_fisico": "6b6c758b817148b36c8c497d1cdd8823bf376c22926b64f770f0e7a43c8d1d60",
+        "bytes": 275902
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2017.npz",
+        "sha256_coleta": "5674334f0fc6502647987a25e992998ce9d70b56e215fe3f8a6c61e789dc33b2",
+        "sha256_fisico": "5674334f0fc6502647987a25e992998ce9d70b56e215fe3f8a6c61e789dc33b2",
+        "bytes": 275487
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2018.npz",
+        "sha256_coleta": "5fc78bd2099c537f1cee9e3293f2d42ed93c5ea8526660049162fa64741d623b",
+        "sha256_fisico": "5fc78bd2099c537f1cee9e3293f2d42ed93c5ea8526660049162fa64741d623b",
+        "bytes": 279740
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2019.npz",
+        "sha256_coleta": "bdc986cb68455733f6d1eeb4be6747bca8b4df6eb5c370dc67994cac5f046858",
+        "sha256_fisico": "bdc986cb68455733f6d1eeb4be6747bca8b4df6eb5c370dc67994cac5f046858",
+        "bytes": 279753
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2020.npz",
+        "sha256_coleta": "72beaf4ec8491b9035bbd31e60029dce034b81dbf284948dd88e19f414de7f3b",
+        "sha256_fisico": "72beaf4ec8491b9035bbd31e60029dce034b81dbf284948dd88e19f414de7f3b",
+        "bytes": 280357
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2021.npz",
+        "sha256_coleta": "5a8ea7f036ae6bb2daab6774d16f23f760f5545ef330f39ce002411c0f6e897a",
+        "sha256_fisico": "5a8ea7f036ae6bb2daab6774d16f23f760f5545ef330f39ce002411c0f6e897a",
+        "bytes": 280002
+      },
+      {
+        "grupo": "amostras_30min",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario_1998_2022\\amostras_30min\\nsrdb_ghi_30min_2022.npz",
+        "sha256_coleta": "a1d84c5c5b5b170f7e7c5cb5ad3aaa121947c91f6df5da3976f569d3e13b3cae",
+        "sha256_fisico": "a1d84c5c5b5b170f7e7c5cb5ad3aaa121947c91f6df5da3976f569d3e13b3cae",
+        "bytes": 279885
+      },
+      {
+        "grupo": "diario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\tesla_fremont_factory.csv",
+        "sha256_coleta": "8ad410052877fd0224461a375f7b9b838667d6e4f0a26dcffde7325e419de922",
+        "sha256_fisico": "8ad410052877fd0224461a375f7b9b838667d6e4f0a26dcffde7325e419de922",
+        "bytes": 5567147
+      },
+      {
+        "grupo": "diario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\tesla_gigafactory_nevada.csv",
+        "sha256_coleta": "67d0fcb754e2c45efcd7ed076ab180ddcef46c7f6541c8a5372cbf9c204f1c9b",
+        "sha256_fisico": "67d0fcb754e2c45efcd7ed076ab180ddcef46c7f6541c8a5372cbf9c204f1c9b",
+        "bytes": 5604464
+      },
+      {
+        "grupo": "diario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\lucid_amp_1_casa_grande.csv",
+        "sha256_coleta": "f7893a782843ad9d147deacb5d0234dd62a281275cc78a4436c45e6804a392d1",
+        "sha256_fisico": "f7893a782843ad9d147deacb5d0234dd62a281275cc78a4436c45e6804a392d1",
+        "bytes": 6444227
+      },
+      {
+        "grupo": "diario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\bmw_san_luis_potosi.csv",
+        "sha256_coleta": "701f6ba2ed0aead9cb7d81225d0433323490d48767cc43cc4b81d0dddbd19a32",
+        "sha256_fisico": "701f6ba2ed0aead9cb7d81225d0433323490d48767cc43cc4b81d0dddbd19a32",
+        "bytes": 6389021
+      },
+      {
+        "grupo": "diario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\tesla_gigafactory_texas.csv",
+        "sha256_coleta": "a39e25e787e70bb6bb403dd4ed1085cd832e6cf6cb6cdd8b6417316a4b147416",
+        "sha256_fisico": "a39e25e787e70bb6bb403dd4ed1085cd832e6cf6cb6cdd8b6417316a4b147416",
+        "bytes": 5476040
+      },
+      {
+        "grupo": "diario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\rivian_normal.csv",
+        "sha256_coleta": "37de662f8648f8a3fe7f90560028d2413a2fc2a13933e982d3cb8c05c54d8c7e",
+        "sha256_fisico": "37de662f8648f8a3fe7f90560028d2413a2fc2a13933e982d3cb8c05c54d8c7e",
+        "bytes": 5613164
+      },
+      {
+        "grupo": "diario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\ford_rouge_electric_vehicle_center.csv",
+        "sha256_coleta": "ca2b7a51e04b3908d3942951b05633a090e606ac608b3124687c0993b1f825ef",
+        "sha256_fisico": "ca2b7a51e04b3908d3942951b05633a090e606ac608b3124687c0993b1f825ef",
+        "bytes": 6078973
+      },
+      {
+        "grupo": "diario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\gm_factory_zero.csv",
+        "sha256_coleta": "a55cccbc74cb558757dec5c4884fb22dca1c9740cf10300856a9158ad6160e32",
+        "sha256_fisico": "a55cccbc74cb558757dec5c4884fb22dca1c9740cf10300856a9158ad6160e32",
+        "bytes": 5722759
+      },
+      {
+        "grupo": "diario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\hyundai_metaplant_georgia.csv",
+        "sha256_coleta": "9209cd9cdd1563038879104ea5a8aefab6dc50724921c1990c6ecaa66c23c826",
+        "sha256_fisico": "9209cd9cdd1563038879104ea5a8aefab6dc50724921c1990c6ecaa66c23c826",
+        "bytes": 5879042
+      },
+      {
+        "grupo": "diario",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\byd_camacari.csv",
+        "sha256_coleta": "a499c8b6d30017e993aab0ed4dadba65e3319ce666a3cf0ee39ef475cfd761b6",
+        "sha256_fisico": "a499c8b6d30017e993aab0ed4dadba65e3319ce666a3cf0ee39ef475cfd761b6",
+        "bytes": 6343993
+      },
+      {
+        "grupo": "mensal",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\tesla_fremont_factory.csv",
+        "sha256_coleta": "b6d6ea97b76ecf9c6b5870aacae5de7afd00e2ed4ef9e1bf4c8a9b76a48861a1",
+        "sha256_fisico": "b6d6ea97b76ecf9c6b5870aacae5de7afd00e2ed4ef9e1bf4c8a9b76a48861a1",
+        "bytes": 35183
+      },
+      {
+        "grupo": "mensal",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\tesla_gigafactory_nevada.csv",
+        "sha256_coleta": "fe716d47bd9e715424c2ab7093170926c02a05ca44bcf02010a23164ba0ad188",
+        "sha256_fisico": "fe716d47bd9e715424c2ab7093170926c02a05ca44bcf02010a23164ba0ad188",
+        "bytes": 36104
+      },
+      {
+        "grupo": "mensal",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\lucid_amp_1_casa_grande.csv",
+        "sha256_coleta": "c5a4096fe3e7f96273e39d3567b587929f668fbfcac0ec07bec5752aa56e73cd",
+        "sha256_fisico": "c5a4096fe3e7f96273e39d3567b587929f668fbfcac0ec07bec5752aa56e73cd",
+        "bytes": 35818
+      },
+      {
+        "grupo": "mensal",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\bmw_san_luis_potosi.csv",
+        "sha256_coleta": "827cb04033c7662ea883ffecaf1b373d77bc65ac45a437e1ab82b6b537dc65d9",
+        "sha256_fisico": "827cb04033c7662ea883ffecaf1b373d77bc65ac45a437e1ab82b6b537dc65d9",
+        "bytes": 34575
+      },
+      {
+        "grupo": "mensal",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\tesla_gigafactory_texas.csv",
+        "sha256_coleta": "52c3d4942a98a2ff18dd8d908cee70a72071ec6a165299e1ba847e8896e11fca",
+        "sha256_fisico": "52c3d4942a98a2ff18dd8d908cee70a72071ec6a165299e1ba847e8896e11fca",
+        "bytes": 35794
+      },
+      {
+        "grupo": "mensal",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\rivian_normal.csv",
+        "sha256_coleta": "f7441699ee4a2053fe6a7cbbf6993fd848bdc11a2806713df4b40442b228569e",
+        "sha256_fisico": "f7441699ee4a2053fe6a7cbbf6993fd848bdc11a2806713df4b40442b228569e",
+        "bytes": 32797
+      },
+      {
+        "grupo": "mensal",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\ford_rouge_electric_vehicle_center.csv",
+        "sha256_coleta": "ae46fa4c7be9c2ceaaf1a85877bf4dba5dc96e38b057ae88c8f24a64594d17a0",
+        "sha256_fisico": "ae46fa4c7be9c2ceaaf1a85877bf4dba5dc96e38b057ae88c8f24a64594d17a0",
+        "bytes": 39039
+      },
+      {
+        "grupo": "mensal",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\gm_factory_zero.csv",
+        "sha256_coleta": "cc37add3772aac892027851233ebc5e6d900539384835c4aa5cd171f4f7a38c5",
+        "sha256_fisico": "cc37add3772aac892027851233ebc5e6d900539384835c4aa5cd171f4f7a38c5",
+        "bytes": 33371
+      },
+      {
+        "grupo": "mensal",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\hyundai_metaplant_georgia.csv",
+        "sha256_coleta": "48e922d43b4ecc5f721549391010fe95584cad5ff1509c1449723804f6f1a631",
+        "sha256_fisico": "48e922d43b4ecc5f721549391010fe95584cad5ff1509c1449723804f6f1a631",
+        "bytes": 36747
+      },
+      {
+        "grupo": "mensal",
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_mensal_1998_2022\\byd_camacari.csv",
+        "sha256_coleta": "af9d241397a8a23421c566cf8b36d595e248654fe94c2b7712d1390431da430f",
+        "sha256_fisico": "af9d241397a8a23421c566cf8b36d595e248654fe94c2b7712d1390431da430f",
+        "bytes": 32878
+      }
+    ],
+    "protocolos": {
+      "historico_1998_2022": {
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\protocolo_historico_1998_2022.json",
+        "sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6"
+      },
+      "historico_curto_pareado": {
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\protocolo_historico_curto_pareado.json",
+        "sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f"
+      }
+    },
+    "contratos_treinamento": [
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "hourly_72_extension",
+        "modelo": "TimesNet",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\timesnet\\contrato_execucao.json",
+        "sha256_arquivo": "efd872b1c5b602801d23d5aff117b29f4720d07a6f0bc694dfaeafd0fcd2091a",
+        "sha256_contrato": "61f38735de0b491e7fa38553758f094d86e5fbef9dfd98991d4544db7c77f7f0",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "hourly_72_extension",
+        "modelo": "XGBoost",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\xgboost\\contrato_execucao.json",
+        "sha256_arquivo": "5e545835a7f0fd7556343b08032a86a16885f1ddbbf603e77d14289264b926f7",
+        "sha256_contrato": "28f6eb2ec4df5e93860a005bf32f8a541c01ea6a120d985fa1a2b0108c9551c3",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "hourly_72_extension",
+        "modelo": "LSTM",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\lstm\\contrato_execucao.json",
+        "sha256_arquivo": "1dc3d995ef2a9d2284110f64e98b64aa5d919f0cbb9a874c0330ddf2a303950c",
+        "sha256_contrato": "ef134cddfc30a1a3265aa3c9c54ec91b15aedca1f16459da87b77cbc17563f59",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "ba3497e7d639e886b702cccf2d8121aeb5ba289a42966a4d3e22209bcc355708",
+        "transformacao_protocolo": {
+          "tipo": "sobrescrita_cuda_autorizada_por_par",
+          "tarefa": "hourly_72_extension",
+          "modelo": "LSTM",
+          "campo": "dispositivos.LSTM",
+          "valor": "cuda",
+          "fonte": "CLI --dispositivo cuda aplica a mudanca em memoria somente ao par"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "hourly_72_extension",
+        "modelo": "DilatedRNN",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\dilatedrnn\\contrato_execucao.json",
+        "sha256_arquivo": "bc990db2ce7c11e4a254bb2713313357b4bc39dd0bc6cc33da4cb3c134189204",
+        "sha256_contrato": "7c05fc195283bd6bf76eda005b04b57999a863a671bf33a4f015c4eefb4c8afc",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "53a3ff6f734a6ca5b88f631e159b6c20db430088d5546f59910caac897f13531",
+        "transformacao_protocolo": {
+          "tipo": "sobrescrita_cuda_autorizada_por_par",
+          "tarefa": "hourly_72_extension",
+          "modelo": "DilatedRNN",
+          "campo": "dispositivos.DilatedRNN",
+          "valor": "cuda",
+          "fonte": "CLI --dispositivo cuda aplica a mudanca em memoria somente ao par"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "hourly_72_extension",
+        "modelo": "GRU",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\gru\\contrato_execucao.json",
+        "sha256_arquivo": "c4d5ba28fd02fa325fbf6eb59b5a03e373d8a202483e8b0271686ef0427b80b5",
+        "sha256_contrato": "08744c3d9f0bb3ef904648e3c66482dc6448626566f47273a53c8d0eb21d6d9b",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11656bbed0df6f4d682d9ba6ecd034b924db79cc5b6ca1e5c0fba261c0447a89",
+        "transformacao_protocolo": {
+          "tipo": "sobrescrita_cuda_autorizada_por_par",
+          "tarefa": "hourly_72_extension",
+          "modelo": "GRU",
+          "campo": "dispositivos.GRU",
+          "valor": "cuda",
+          "fonte": "CLI --dispositivo cuda aplica a mudanca em memoria somente ao par"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "hourly_72_extension",
+        "modelo": "Transformer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\transformer\\contrato_execucao.json",
+        "sha256_arquivo": "4effee602c0f21d10de815cab162637021b332289da3b9a5eaa8601d302b28c9",
+        "sha256_contrato": "73279ad9cb4401e5f1029df6e049bd2843cd2aaee964f3bfe34941db78532d51",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "hourly_72_extension",
+        "modelo": "Informer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\informer\\contrato_execucao.json",
+        "sha256_arquivo": "b22a1b359175481ac7e48dfa72ccf078439ecdb73666b9895b7875b76c49e930",
+        "sha256_contrato": "8d755399dfe02d3e09205082b18b52dee571aceb35392e284607e59d6e329f44",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "hourly_72_extension",
+        "modelo": "ARIMA",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\contrato_execucao.json",
+        "sha256_arquivo": "0d73a361abeea873ad256fe6125c8926e8fabfb085fa071e91409e7f4fdb07cf",
+        "sha256_contrato": "b505473a9fa6b0bf0fefcc3bd526f02171cdab268f6adbb053746aefae037f53",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "hourly_72_extension",
+        "modelo": "Persistencia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\persistencia\\contrato_execucao.json",
+        "sha256_arquivo": "37d32a6a917003549e9a7393048d71d2a1721ae4c59b90280b55cf6c711bdca3",
+        "sha256_contrato": "e6781e492172f19edf8162fe8112b2342b16b97a095dc78bb803ad73ed7d613c",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "hourly_72_extension",
+        "modelo": "Sazonal ingenuo",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\sazonal_ingenuo\\contrato_execucao.json",
+        "sha256_arquivo": "4af72cddf99f1ccfcfef03538d3d423ff6a5443fc991ae4a020687a91e89c239",
+        "sha256_contrato": "748904077903f30b418e1de7ed5c49b34e59d8ec701b423cddc518abc57776b3",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "hourly_72_extension",
+        "modelo": "Climatologia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\climatologia\\contrato_execucao.json",
+        "sha256_arquivo": "f7c8fe6991114453d1f0e2858b25594faf30d51e956e142981494d1d5f6539e8",
+        "sha256_contrato": "a1ebb41047275f3c3c615544c33ae49cecd272155857617a93fd0dad6e6bf38b",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "daily_30",
+        "modelo": "TimesNet",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\timesnet\\contrato_execucao.json",
+        "sha256_arquivo": "08ba22890687fa882ddfc7dbdf6da2eacf63631081f19c17384ac88c1a52dc4d",
+        "sha256_contrato": "1e8099d874ed2a48d621dff6e381a5d128831832aff4b00ef4b03738eb6a8860",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "daily_30",
+        "modelo": "XGBoost",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\contrato_execucao.json",
+        "sha256_arquivo": "98dc00ad4edb1170de0c2f30c24c5a3bb22f08a4c01a6ec67c6a76094e88c533",
+        "sha256_contrato": "7ca6ab4825ee3a00ab823e1d3e50d82358e900f465e7852518454b71b330567c",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "daily_30",
+        "modelo": "LSTM",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\contrato_execucao.json",
+        "sha256_arquivo": "6b219df0a028e49cc6ea0ae1a146dd729dc129a1f8536c95e0eb680dcabd42ac",
+        "sha256_contrato": "94550e2791c4c8f3fe37fa204ad240b0c0465f26bea83573d67e487750b6217e",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "ba3497e7d639e886b702cccf2d8121aeb5ba289a42966a4d3e22209bcc355708",
+        "transformacao_protocolo": {
+          "tipo": "sobrescrita_cuda_autorizada_por_par",
+          "tarefa": "daily_30",
+          "modelo": "LSTM",
+          "campo": "dispositivos.LSTM",
+          "valor": "cuda",
+          "fonte": "CLI --dispositivo cuda aplica a mudanca em memoria somente ao par"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "daily_30",
+        "modelo": "DilatedRNN",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\contrato_execucao.json",
+        "sha256_arquivo": "a758ba4a725329261a9586c5b8332de7493701937229bbd0cb0638b288892166",
+        "sha256_contrato": "d9ab8236107f68bfe33d084e906d2283ef63d3196098567a082654d3c2c8e497",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "53a3ff6f734a6ca5b88f631e159b6c20db430088d5546f59910caac897f13531",
+        "transformacao_protocolo": {
+          "tipo": "sobrescrita_cuda_autorizada_por_par",
+          "tarefa": "daily_30",
+          "modelo": "DilatedRNN",
+          "campo": "dispositivos.DilatedRNN",
+          "valor": "cuda",
+          "fonte": "CLI --dispositivo cuda aplica a mudanca em memoria somente ao par"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "daily_30",
+        "modelo": "GRU",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\contrato_execucao.json",
+        "sha256_arquivo": "4e0dad82b4a1c8607aeaef84682dc475f060a693e90c4fae02f5b5a0666e2faf",
+        "sha256_contrato": "4cae1380d521f39c78c40eff67d82460153a0631a49623e0d2ce58e961a14e47",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11656bbed0df6f4d682d9ba6ecd034b924db79cc5b6ca1e5c0fba261c0447a89",
+        "transformacao_protocolo": {
+          "tipo": "sobrescrita_cuda_autorizada_por_par",
+          "tarefa": "daily_30",
+          "modelo": "GRU",
+          "campo": "dispositivos.GRU",
+          "valor": "cuda",
+          "fonte": "CLI --dispositivo cuda aplica a mudanca em memoria somente ao par"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "daily_30",
+        "modelo": "Transformer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\contrato_execucao.json",
+        "sha256_arquivo": "30c0d1bf8147f0aeb975163819b296308568093e3e8669e19a1acfa38b095c55",
+        "sha256_contrato": "b88a0f93e6b3ae37c621e067278cdc265187a0049a28bc53c41597c3775ca128",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "daily_30",
+        "modelo": "Informer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\informer\\contrato_execucao.json",
+        "sha256_arquivo": "d56c81e818686dd46be26b0d3f9f47dfa8a2554dcf1f55ffcdbf67672ec5415d",
+        "sha256_contrato": "1f03242fd6b2e6637ef1ef1022fa8de2a556dedd24795c0b072c645e78d8abe2",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "daily_30",
+        "modelo": "ARIMA",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\arima\\contrato_execucao.json",
+        "sha256_arquivo": "2befacb95fd58a24ec6db5b9758a108697d862b1888dfbfbd9134ee495e63da0",
+        "sha256_contrato": "150094e89387ae6dc070e18392117dee223f58236e096e7d83dff88759bab6be",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "daily_30",
+        "modelo": "Persistencia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\persistencia\\contrato_execucao.json",
+        "sha256_arquivo": "771e9e08478558b742e2dd08ab68301e04eb387a4c2661ba63d7bb52f95c7539",
+        "sha256_contrato": "bbfafe9f784bdeb8eda7438d294ba489099a8356877fc7ddc0a611f790045bef",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "daily_30",
+        "modelo": "Sazonal ingenuo",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\sazonal_ingenuo\\contrato_execucao.json",
+        "sha256_arquivo": "c5b61809a20cebc3af420bae6b03610ef7d66cae280c508e6566ed88d2cc2078",
+        "sha256_contrato": "8946c92a6b778d312ce777484ec3203f9705bd19ec3002c5e3e8c819d5e4a8e3",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "daily_30",
+        "modelo": "Climatologia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\climatologia\\contrato_execucao.json",
+        "sha256_arquivo": "b1d7df424abf3518b289e6e891d7f5f7c7f970146006472a89eb2cbb8dc4431d",
+        "sha256_contrato": "994ed4930a7d2040b896ea1044274a6ffc3f06924d7dcbf9d1a9a6343d9af0ed",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_1",
+        "modelo": "TimesNet",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\timesnet\\contrato_execucao.json",
+        "sha256_arquivo": "0cdaf1ddd05c6bf15c6ced3e46a8219383f65fb56b252732387221db19fd39fe",
+        "sha256_contrato": "277b39f735438aab0dc7a11232f7972611ebcd7fdb435ecf189a300433ce90f4",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_1",
+        "modelo": "XGBoost",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\xgboost\\contrato_execucao.json",
+        "sha256_arquivo": "36318c05ebfc48914de29ce3761125f084bc15f99885d60ed3f4152d23f3c89a",
+        "sha256_contrato": "fbd29e8780be21ad71f5a3867eee92051c64305e893ca0bc4844c4f470762668",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_1",
+        "modelo": "LSTM",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\lstm\\contrato_execucao.json",
+        "sha256_arquivo": "975fb7390086596a2d22d68fed871828e8850a1edb481e45b06a7faabf8d46b2",
+        "sha256_contrato": "5e068fd8cb3199d19d0a4c52ed52b81c95eacf9eac8ac760f8113e5ea48cb0ae",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_1",
+        "modelo": "DilatedRNN",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\contrato_execucao.json",
+        "sha256_arquivo": "7a699ea77ab539401404d0969ce89b97f2256a482ce51324aeedd35e0615026f",
+        "sha256_contrato": "fa2bd208bc740200c111a0d633ea9447221f14ea88ba79efcf1d4ae94ebc3439",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_1",
+        "modelo": "GRU",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\gru\\contrato_execucao.json",
+        "sha256_arquivo": "b298227b5197b54093d2c3c1a4f7b715ab85380307df3c4b2f8e6497bc965f8f",
+        "sha256_contrato": "6172eaa03cee7fc380bedbfa2daa6f87686c477d76c90607c494365cbbbea278",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_1",
+        "modelo": "Transformer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\transformer\\contrato_execucao.json",
+        "sha256_arquivo": "0b31ffeba7dff69323bd9155c997d2f77aa3d07c71e5e4e4464a4ee4c2421f98",
+        "sha256_contrato": "7ad97424d0f987630148922ce3cbe82027a6ca5d17e0179fbc6952a7e89c60d8",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_1",
+        "modelo": "Informer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\informer\\contrato_execucao.json",
+        "sha256_arquivo": "b52415c64d69106f0e0c20c89d0005b0749078bbb3d2bea17144d6844d735d53",
+        "sha256_contrato": "6782507652029ba1996d4c684948108fb3c273d247d538c4313a6209e9f4dbae",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_1",
+        "modelo": "ARIMA",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\arima\\contrato_execucao.json",
+        "sha256_arquivo": "f99e375ad58a4a1ca709cf46c90922dca883a2e1ead5f1d209109aa24819089e",
+        "sha256_contrato": "28864c047685a4cd24504dff20653f608dd8613da65dae92df34c2293ea18762",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_1",
+        "modelo": "Persistencia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\persistencia\\contrato_execucao.json",
+        "sha256_arquivo": "e89ac9fc4b16e10b5826073e036863b38e404d616e5b42e58927f12f710187a8",
+        "sha256_contrato": "43e2dd8e1a684aebabee1c5f8bc09e1c5bdeec5403f470bcb12171056cac5d42",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_1",
+        "modelo": "Sazonal ingenuo",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\sazonal_ingenuo\\contrato_execucao.json",
+        "sha256_arquivo": "6a25f25c7c1abdc3b0f44f3604683214c48c8c28e5ee1a261d5fe488f1c65645",
+        "sha256_contrato": "1646d2d8eae251270e3a3423196321426fc3c355527b559f94e1bd31eef1ce41",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_1",
+        "modelo": "Climatologia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\climatologia\\contrato_execucao.json",
+        "sha256_arquivo": "2cf5b82655e9fcef5d238648d3922e67132ba368e9ca9bece13b3aeeb05c8309",
+        "sha256_contrato": "70e36e123c97e4ee244a59b47d4f4182aedf9c86e0d2d44f193965678125dcc9",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_6",
+        "modelo": "TimesNet",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\timesnet\\contrato_execucao.json",
+        "sha256_arquivo": "fe2c7da004fbecd2c969bb1620193e46e49164eea8ed6c9761b41b54925981e4",
+        "sha256_contrato": "197eefff05bcd0f6fe8338bbad3bcd6c41f237e6d40da4f7c40fd4ad351edc99",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_6",
+        "modelo": "XGBoost",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\xgboost\\contrato_execucao.json",
+        "sha256_arquivo": "98b358fa9cb15b3b0784e0389618452dcb3cc0319573f7916c522b8e1deb6659",
+        "sha256_contrato": "69ee7a1dab42007c969f907e3eced63a5d52767cddaf66c599dbd0a223902027",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_6",
+        "modelo": "LSTM",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\lstm\\contrato_execucao.json",
+        "sha256_arquivo": "e86caf3b335e326115710ec2046f9e6221b5a964a579120d999d0695cba83b91",
+        "sha256_contrato": "0c6777da900d30b5dc1aca531c3d1ea358a9f7af73b09489c7a23b591710b753",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_6",
+        "modelo": "DilatedRNN",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\dilatedrnn\\contrato_execucao.json",
+        "sha256_arquivo": "dc8f314d51844344e884f1c5b7df4ea7a497dca1cc19823dccf5d50a6d75ae21",
+        "sha256_contrato": "6aa8ba243e3bdc89f0b7e2021b389e8fc06527772eb291cb0bc2b7f253fd5f6f",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_6",
+        "modelo": "GRU",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\gru\\contrato_execucao.json",
+        "sha256_arquivo": "a743b38a69f33bb2f908cb886a25893eb328b644e8e17cfedd7278ea10d8d51d",
+        "sha256_contrato": "5321192ad3620992d78833290bcf11fff30c45dd9699b8608d0b0292a89eee0b",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_6",
+        "modelo": "Transformer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\transformer\\contrato_execucao.json",
+        "sha256_arquivo": "bc9c1b635a869d36af27f5bd3dc1375321600ca4e4984ee6edfe9f6476666498",
+        "sha256_contrato": "00e16b17349b7424732d9e3e83f9349d375cc6786954b9db2bcaac4c500213ef",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_6",
+        "modelo": "Informer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\informer\\contrato_execucao.json",
+        "sha256_arquivo": "33d8210361dbeed40f818549aac3e23c8268f984ff1f9fa666de84cba982e1ff",
+        "sha256_contrato": "665b2d393c5af0baca40193fd4561ff76edc5665694336f53d4e0dae2b41de91",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_6",
+        "modelo": "ARIMA",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\arima\\contrato_execucao.json",
+        "sha256_arquivo": "7831c74615395ac750c74296710c92574c1c36da01244a20186700a54354f256",
+        "sha256_contrato": "20878318a80c4e1e64161e27565e8e6cd4fa3b39c39e47b6d6efea63e36771f7",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_6",
+        "modelo": "Persistencia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\persistencia\\contrato_execucao.json",
+        "sha256_arquivo": "9bff53027641bc90cd2954762e77c9cbd495ac141d5163dbbe66db3dd2dfbfe9",
+        "sha256_contrato": "6878f4479cf227643826ee5dc503b479f6b10e7613d8b1e61c43162fe42e9a49",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_6",
+        "modelo": "Sazonal ingenuo",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\sazonal_ingenuo\\contrato_execucao.json",
+        "sha256_arquivo": "633328b05b260987724e35d912c761178d272ac3b701806c757c2aaaebe2443c",
+        "sha256_contrato": "cb5d81528ed13c4ddb6cfa120be7194aa9442e0ea0078976b84ce42e0eb25a4e",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "tarefa": "monthly_6",
+        "modelo": "Climatologia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\climatologia\\contrato_execucao.json",
+        "sha256_arquivo": "b6f856f257adb86ed1ec76ae7cc5ef33864b30688e876d28f141b0f492234d1c",
+        "sha256_contrato": "7bcf994f67a4974c5c05b73bdb961d08724dbd347446fb19078c64374e61ef77",
+        "protocolo_sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+        "protocolo_efetivo_sha256_canonico": "11c5d8a8a5a74fcc7a5dfcd0c1be0b94ca0f3fccf8e4db85c3c13fd66698c030",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "hourly_72_extension",
+        "modelo": "TimesNet",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\timesnet\\contrato_execucao.json",
+        "sha256_arquivo": "e736f8b273515a84f05ca4506423379dc2c28ae2d04776bb2c972f29a229517c",
+        "sha256_contrato": "9cd46305a8b9c2722e87b2d7031f18f344bfb87bb1506f12ffbf749165bec3de",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "hourly_72_extension",
+        "modelo": "XGBoost",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\xgboost\\contrato_execucao.json",
+        "sha256_arquivo": "fd352ae99f5f5055fda862a0a2b8ae661f5e94c7b8ea8a5380fe53ffefbd99c6",
+        "sha256_contrato": "9eff34a2d43b73b762a97ac15f4de569cb6c01f275298fe328b36294d2074062",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "hourly_72_extension",
+        "modelo": "LSTM",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\lstm\\contrato_execucao.json",
+        "sha256_arquivo": "f84776bde0d8690e319dfceae0820c6c5fb9b50ebc5e0f9e3ff4471a341b793b",
+        "sha256_contrato": "80424aa757ec3fb37f4bfd68aefa0b5010a02814d4f016ccf5afa2d15266e283",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "8a2450c012485aa16a8cafe017b810bb852417c6081228cd851c38bb47f43b07",
+        "transformacao_protocolo": {
+          "tipo": "sobrescrita_cuda_autorizada_por_par",
+          "tarefa": "hourly_72_extension",
+          "modelo": "LSTM",
+          "campo": "dispositivos.LSTM",
+          "valor": "cuda",
+          "fonte": "CLI --dispositivo cuda aplica a mudanca em memoria somente ao par"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "hourly_72_extension",
+        "modelo": "DilatedRNN",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\dilatedrnn\\contrato_execucao.json",
+        "sha256_arquivo": "9c99f4566a772f23c514fa66e0e03a4f3eca72f346ae1cf06c145716d196e9c6",
+        "sha256_contrato": "c23aea8962c4d52907bfb56d9069c0cf8ec8ab9cc7f403cc6be2b4bfeccaa7d3",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "4c16e8524800cf29047d46cb0079816443cb3f55daa85cfb0e13d95b98e27953",
+        "transformacao_protocolo": {
+          "tipo": "sobrescrita_cuda_autorizada_por_par",
+          "tarefa": "hourly_72_extension",
+          "modelo": "DilatedRNN",
+          "campo": "dispositivos.DilatedRNN",
+          "valor": "cuda",
+          "fonte": "CLI --dispositivo cuda aplica a mudanca em memoria somente ao par"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "hourly_72_extension",
+        "modelo": "GRU",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\gru\\contrato_execucao.json",
+        "sha256_arquivo": "3e8a35a3242296855bcbd43d057bc9d5de96bd2da2f46176b2dfbed43677e9fb",
+        "sha256_contrato": "f1c4e5b4571ba911f4d708007d93dd1711e3a8655769a77c33a5ccd40135fed4",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "b121f11e6708f81e585b7e189cb344585b152cfba40a0a6388e81e04885ddc2a",
+        "transformacao_protocolo": {
+          "tipo": "sobrescrita_cuda_autorizada_por_par",
+          "tarefa": "hourly_72_extension",
+          "modelo": "GRU",
+          "campo": "dispositivos.GRU",
+          "valor": "cuda",
+          "fonte": "CLI --dispositivo cuda aplica a mudanca em memoria somente ao par"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "hourly_72_extension",
+        "modelo": "Transformer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\transformer\\contrato_execucao.json",
+        "sha256_arquivo": "03cee0e1cbf1e0c51366f110314c7ad8915cf3fe01b42eb574a057b1f4a96bfe",
+        "sha256_contrato": "7763da51f00c312722ff5368ed8968b26b4e876c0d6904eb1a2171e74ec829f8",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "hourly_72_extension",
+        "modelo": "Informer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\informer\\contrato_execucao.json",
+        "sha256_arquivo": "2576214f294b728f98891f11bf87253bda7c450edfd271ecff15cfa111195fa0",
+        "sha256_contrato": "e6a6ae69c93fa4f66c0c6fd96e398b3802fc1368e050335b210e24aee3f3bef7",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "hourly_72_extension",
+        "modelo": "ARIMA",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\arima\\contrato_execucao.json",
+        "sha256_arquivo": "63898204e85dd6e1ec349f5f721372391bda4ae6c49440ad5591843b53be8632",
+        "sha256_contrato": "514d2682593d48d6f37e070ef6705056021a29f708ef82a2114a6234b1d7e84a",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "hourly_72_extension",
+        "modelo": "Persistencia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\persistencia\\contrato_execucao.json",
+        "sha256_arquivo": "f16f011820c9ff666431d949ef158e9b1926db72fcf334a7b9a684f5bd138116",
+        "sha256_contrato": "4a50f0767701427646539b0ef8a3346083a5bf317bc632377578a73e75be206d",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "hourly_72_extension",
+        "modelo": "Sazonal ingenuo",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\sazonal_ingenuo\\contrato_execucao.json",
+        "sha256_arquivo": "a5219c3ac5d2e5e4c9028f81e78908cca8f7ffa8d0fdef551223cd55c2fa6711",
+        "sha256_contrato": "a406430ad7fdc06f7778c1aa6e52f3e4011247ad755946f64ca7d27f38587bfe",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "hourly_72_extension",
+        "modelo": "Climatologia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\climatologia\\contrato_execucao.json",
+        "sha256_arquivo": "9fab4230d65dd700107d940450fe22dc2ae36f536ed9f7783416988ec33b3bcd",
+        "sha256_contrato": "20aa0ef4f90c426a325435793ff1698dc2eae6ceae5b030f9993ccc775d37e2e",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "horario",
+        "fontes_dados_usadas": 25,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "daily_30",
+        "modelo": "TimesNet",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\timesnet\\contrato_execucao.json",
+        "sha256_arquivo": "a5aeec0ea3be2f3eb549366afd9165adc2518a550a0a752e91d27511f93c0612",
+        "sha256_contrato": "eb72e3bd926725c2f4067b23f1dc0a4953c307c1f7b46fd836cc6a3b17cb05c8",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "daily_30",
+        "modelo": "XGBoost",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\xgboost\\contrato_execucao.json",
+        "sha256_arquivo": "0c21fafec3cc3209f6e922a9202ede6d43c8e6407f3f3657371bd940f252d697",
+        "sha256_contrato": "47c732d51402cd0c0500cd60462ed476941b25ccfdfc11c284b94d9694916363",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "daily_30",
+        "modelo": "LSTM",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\lstm\\contrato_execucao.json",
+        "sha256_arquivo": "367de2674f65509b02a85f53bdc5dd31c86b1c303afc634cf5757ca6be835d7c",
+        "sha256_contrato": "6982a365d68aa95c972ddb7831949c112376b48eb18f18739eba8440c0a04fd2",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "8a2450c012485aa16a8cafe017b810bb852417c6081228cd851c38bb47f43b07",
+        "transformacao_protocolo": {
+          "tipo": "sobrescrita_cuda_autorizada_por_par",
+          "tarefa": "daily_30",
+          "modelo": "LSTM",
+          "campo": "dispositivos.LSTM",
+          "valor": "cuda",
+          "fonte": "CLI --dispositivo cuda aplica a mudanca em memoria somente ao par"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "daily_30",
+        "modelo": "DilatedRNN",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\dilatedrnn\\contrato_execucao.json",
+        "sha256_arquivo": "f890e1f0f52967d39d4f87bfef41cafa7fd967ce8aa4e13a0963a8ed6d4d5a2e",
+        "sha256_contrato": "324cabcdde1c37e174a1b29a827010bdb6b68b37e4e6d3cc73828fe183bf8d9b",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "4c16e8524800cf29047d46cb0079816443cb3f55daa85cfb0e13d95b98e27953",
+        "transformacao_protocolo": {
+          "tipo": "sobrescrita_cuda_autorizada_por_par",
+          "tarefa": "daily_30",
+          "modelo": "DilatedRNN",
+          "campo": "dispositivos.DilatedRNN",
+          "valor": "cuda",
+          "fonte": "CLI --dispositivo cuda aplica a mudanca em memoria somente ao par"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "daily_30",
+        "modelo": "GRU",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\gru\\contrato_execucao.json",
+        "sha256_arquivo": "66b0814161cbcf7d41ce8f04b7c07e27aecede56d44fa02be3ed560c5780dfbc",
+        "sha256_contrato": "6fd8f08c67d112ea236bab0b1c2c9ed68a5557d1747251cfbcff4c7a38394ade",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "b121f11e6708f81e585b7e189cb344585b152cfba40a0a6388e81e04885ddc2a",
+        "transformacao_protocolo": {
+          "tipo": "sobrescrita_cuda_autorizada_por_par",
+          "tarefa": "daily_30",
+          "modelo": "GRU",
+          "campo": "dispositivos.GRU",
+          "valor": "cuda",
+          "fonte": "CLI --dispositivo cuda aplica a mudanca em memoria somente ao par"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "daily_30",
+        "modelo": "Transformer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\transformer\\contrato_execucao.json",
+        "sha256_arquivo": "256f0b0386805206edc0247120aee8d3422d5c0add878ef5760c599a3f39e2cc",
+        "sha256_contrato": "94827cd0cfa62063240cf58fa6d06e3b16e6470e327fcc8cb115030cc0d2104c",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "daily_30",
+        "modelo": "Informer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\informer\\contrato_execucao.json",
+        "sha256_arquivo": "c8e513b111185bab0874df18e5c463a5b8fce8fbe4115942d1577d7689b59748",
+        "sha256_contrato": "640dda77c119999b5c4ca5dce5ff19c41dc8217ceff6822dbd22d7d4a869432b",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "daily_30",
+        "modelo": "ARIMA",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\arima\\contrato_execucao.json",
+        "sha256_arquivo": "ab76e90e7805b628fbaf2f83892b4170f715c201f409179c6dc03e0baafd5aa2",
+        "sha256_contrato": "f5f46b93833c6ddbcfb6de31fa962f24d98275042235059395aebf02e8ea2c4d",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "daily_30",
+        "modelo": "Persistencia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\persistencia\\contrato_execucao.json",
+        "sha256_arquivo": "4beee0c33f26bc56035e4b85ee3b36ac5506c11fc894932a8489c97f15bb75d1",
+        "sha256_contrato": "b94a7388ca8ae6027d4e2c828d71fd3dfafa7b4901df8af1960e9402d855caa7",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "daily_30",
+        "modelo": "Sazonal ingenuo",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\sazonal_ingenuo\\contrato_execucao.json",
+        "sha256_arquivo": "df8ee0461bb6711ca45489d8d9df2ea560c4bcd8c7f4d19d059a1546cd8d523e",
+        "sha256_contrato": "73fee98747cfde8af5d2aba29fe2912fd15100e89916d9059b64da4865c095c0",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "daily_30",
+        "modelo": "Climatologia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\climatologia\\contrato_execucao.json",
+        "sha256_arquivo": "bb368a2880582bb33c42457102c72ad93c8c724d0414db24a42704a46fe62cc8",
+        "sha256_contrato": "931e993457a8444c48ee026b241d3d357ded692230cee243f67d46d38b779bb4",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_1",
+        "modelo": "TimesNet",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\timesnet\\contrato_execucao.json",
+        "sha256_arquivo": "86c31438aa482c910bcf4f4aad87023354a48750648dc11b1d88b81b74a84043",
+        "sha256_contrato": "f98047f8b8ffebbbacacee57d13ff35f4261494df4a1bb3d3131d057656d80b0",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_1",
+        "modelo": "XGBoost",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\xgboost\\contrato_execucao.json",
+        "sha256_arquivo": "382e008a1de2e35c8252e03ea38a2c1708734a463af64f4f124010d695015a74",
+        "sha256_contrato": "831c16d74fdaaa54cc48b2e6aac18cf07d9724fd4165b3a064c015ea81c01832",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_1",
+        "modelo": "LSTM",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\lstm\\contrato_execucao.json",
+        "sha256_arquivo": "e35c004c6513e6bafe5fde48fd00790cf2c50abb88cfe14f9dfe08f1d0276c7f",
+        "sha256_contrato": "0ee4632f465a4e3e6b72c88e7b63f2c691b50eecebf15fd56256a6314179d609",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_1",
+        "modelo": "DilatedRNN",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\dilatedrnn\\contrato_execucao.json",
+        "sha256_arquivo": "a5353dd11c1787140fed7a5dddfd94924fbd90f753c9e345de03ec31955de3dc",
+        "sha256_contrato": "3317d22712576f2dbfdda90633c2ad2aab3218bc7d097fde32a73bfe9a78a5db",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_1",
+        "modelo": "GRU",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\gru\\contrato_execucao.json",
+        "sha256_arquivo": "b07de356ed7c81181b5dc7be13e017e11c317f2fcdef849f1efb1892ce6cae56",
+        "sha256_contrato": "3074ec80c65deea731eab7fc4259a558aed823e9d9ff7b2bb567f01d4d20395d",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_1",
+        "modelo": "Transformer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\transformer\\contrato_execucao.json",
+        "sha256_arquivo": "853a419dc04bcbf9fc32f5326bb9adfeda90a907e8209adca61a3d93dab0c8ae",
+        "sha256_contrato": "c95ca7394b7cbfa8258f32f957e42afffe8c019c50af0be08d7155d7fdcfadf6",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_1",
+        "modelo": "Informer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\informer\\contrato_execucao.json",
+        "sha256_arquivo": "2370c7ec011ef13fb7db229d60ba80481e276544d8cc83b686de0ce2d717e055",
+        "sha256_contrato": "e3173dcd2e4a3e9109acc57253b31a851b2786ada978f958d18a40cdc51d80f5",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_1",
+        "modelo": "ARIMA",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\arima\\contrato_execucao.json",
+        "sha256_arquivo": "1092619c906e68226fa7962904050ace47574a77a47ae1526202926bfca155d9",
+        "sha256_contrato": "241fad15c5508ea7fc4cda51e549ce0f367e61502a513ab424b6f9afaaba71f2",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_1",
+        "modelo": "Persistencia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\persistencia\\contrato_execucao.json",
+        "sha256_arquivo": "a7491dd9fc27af7226f75cc419b5000312c31708c0e9b44494e5ea749807ed6f",
+        "sha256_contrato": "0f4be0d3abfe219d67022328ef7b42605fc77ad2003b0359d2909e68a736fb8d",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_1",
+        "modelo": "Sazonal ingenuo",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\sazonal_ingenuo\\contrato_execucao.json",
+        "sha256_arquivo": "dfe4e8f2dd67687456161d5aa01bf01021e10d3d13b12fbc0d867b7b9929d9ee",
+        "sha256_contrato": "00ccf090874b9959bd56522dcb17f8948e8c99873c3833a7bc4520b011a9ac4d",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_1",
+        "modelo": "Climatologia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\climatologia\\contrato_execucao.json",
+        "sha256_arquivo": "de7ebefe5d4b139ec6e296ea15aa216e4bae1dd778aad1495a89f03b2df80f6b",
+        "sha256_contrato": "6db0c188c48429afcbd20bffb0c5ceafb15db907919dc6735f9def261e690734",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_6",
+        "modelo": "TimesNet",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\timesnet\\contrato_execucao.json",
+        "sha256_arquivo": "1d87f5b4abddef2cfff2722ebb863cd60afac6b06b11947367f4d7205342e61b",
+        "sha256_contrato": "5dd745cfc4bc69e1f4c6785af92a27b6d2913af46e86aa820188f3ee140cb714",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_6",
+        "modelo": "XGBoost",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\xgboost\\contrato_execucao.json",
+        "sha256_arquivo": "11815a67f3687315b16e045f40993d710de860cb4680d9b20c3a13d09aeb676a",
+        "sha256_contrato": "69ac9f2f6b16fa1b47a507dc7306d69de292531679e4098d505f4df537153748",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_6",
+        "modelo": "LSTM",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\lstm\\contrato_execucao.json",
+        "sha256_arquivo": "04a24ce899ecd3dd7a60e72ea8e141284b18681aaa86a630b751fc92b250f4f6",
+        "sha256_contrato": "227282dc36809e12ca170a83a2fd910f069bccf9df92d3b91fa5d7c7c88da493",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_6",
+        "modelo": "DilatedRNN",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\dilatedrnn\\contrato_execucao.json",
+        "sha256_arquivo": "fceeec2f41a596c45b893a47594be31c5d90cafc9bb18428dd8545023183ee40",
+        "sha256_contrato": "9c3a0b3c11c5794ddaf9f859d1be4af31e327b79cb73806cf90852d435668b9f",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_6",
+        "modelo": "GRU",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\gru\\contrato_execucao.json",
+        "sha256_arquivo": "d79a86b41a4a00d460d7fc8a2e74536c3766c9d9fa26a9ff4cf8cde10de581bd",
+        "sha256_contrato": "d27b24dd1f42208f842c9e856c92fd7c2bde4bd7f4e8f9e24e43c078881b5aa2",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_6",
+        "modelo": "Transformer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\transformer\\contrato_execucao.json",
+        "sha256_arquivo": "14bfdee466a2415e7a62cd785624e779e6db7796635fab0a05b844ee00ea39ee",
+        "sha256_contrato": "71838ab9105c0c0cc981b4a6d8b4302acdf893cb3103ea6879450b31fd9e440b",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_6",
+        "modelo": "Informer",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\informer\\contrato_execucao.json",
+        "sha256_arquivo": "da0b05adb88cef66287a54eeb37f74fee3ace0c326f5263cce3c78b0b8febaba",
+        "sha256_contrato": "361490ebf266a8c0a758e0a44ac522dbd1733552ec9e1e2ba88860ef6699e6b5",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_6",
+        "modelo": "ARIMA",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\arima\\contrato_execucao.json",
+        "sha256_arquivo": "7dc80a8935f9765d56c49ff1e9b11108379c59bbb881deac41eb84cab9461dc7",
+        "sha256_contrato": "9ecdb9674bd4b1f719824653be8d07566f3394f4113d963ec288840e10de33cb",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_6",
+        "modelo": "Persistencia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\persistencia\\contrato_execucao.json",
+        "sha256_arquivo": "88cb101013673d41086eec86c1d47bf70369e73cbf586c5fe1e087de863b4fae",
+        "sha256_contrato": "ada9e1a1cf0324ef8423dfc877793bf6dbd440af7c14d4ae14e46157afad4ef8",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_6",
+        "modelo": "Sazonal ingenuo",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\sazonal_ingenuo\\contrato_execucao.json",
+        "sha256_arquivo": "3cc4ce3610207e04bee2263c6b3c460b669eb33472f2f93e759d2a334025f544",
+        "sha256_contrato": "5bef7de4819faf731ad289e9ba0ff8f0c9be37743614f5c6f1df12949ab5f79e",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "tarefa": "monthly_6",
+        "modelo": "Climatologia",
+        "contrato": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\climatologia\\contrato_execucao.json",
+        "sha256_arquivo": "6a236179c8fa39a2d1df9e08c4f960fc69e8e0fd11d4ba7d223cde20f08be7e0",
+        "sha256_contrato": "1964a52d533ce3649b29e6c1a5687ebdab6c0f070cf276c5f00e1ee535b5ca73",
+        "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+        "protocolo_efetivo_sha256_canonico": "c82d93862c51ca1f054de0d98d350ce980f16329f00c2436a969c91fefb2b6af",
+        "transformacao_protocolo": {
+          "tipo": "protocolo_cli_inalterado"
+        },
+        "grupo_dados_usado": "diario",
+        "fontes_dados_usadas": 10,
+        "entradas_conferidas_contra_coleta": true
+      }
+    ]
+  },
+  "resultados": [
+    {
+      "tarefa": "hourly_72_extension",
+      "particao": "validacao",
+      "linhas": 261360,
+      "observacoes_e_datas_iguais": true
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "particao": "teste",
+      "linhas": 984960,
+      "observacoes_e_datas_iguais": true
+    },
+    {
+      "tarefa": "daily_30",
+      "particao": "validacao",
+      "linhas": 100800,
+      "observacoes_e_datas_iguais": true
+    },
+    {
+      "tarefa": "daily_30",
+      "particao": "teste",
+      "linhas": 402600,
+      "observacoes_e_datas_iguais": true
+    },
+    {
+      "tarefa": "monthly_1",
+      "particao": "validacao",
+      "linhas": 120,
+      "observacoes_e_datas_iguais": true
+    },
+    {
+      "tarefa": "monthly_1",
+      "particao": "teste",
+      "linhas": 450,
+      "observacoes_e_datas_iguais": true
+    },
+    {
+      "tarefa": "monthly_6",
+      "particao": "validacao",
+      "linhas": 420,
+      "observacoes_e_datas_iguais": true
+    },
+    {
+      "tarefa": "monthly_6",
+      "particao": "teste",
+      "linhas": 2400,
+      "observacoes_e_datas_iguais": true
+    }
+  ],
+  "codigo_auditor_sha256": "8f5ad8581459455d6c5270aea64a4e6ca889190e077b22aa34377173e20f6d10",
+  "limite": "Comparacao retrospectiva; nao demonstra causa climatica"
+}

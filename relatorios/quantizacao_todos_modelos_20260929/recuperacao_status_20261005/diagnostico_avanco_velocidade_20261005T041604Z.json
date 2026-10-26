@@ -1,0 +1,922 @@
+{
+  "observado_em_utc": "2026-10-05T04:16:04.336475+00:00",
+  "readonly": true,
+  "amostra_a": {
+    "label": "a",
+    "utc": "2026-10-05T04:14:54.731027+00:00",
+    "monotonic": 25222.5746408,
+    "processes": {
+      "coordenador": {
+        "pid": 7872,
+        "creation_time": "134356437859141023",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 11.34375,
+        "ppid": 8584
+      },
+      "runner": {
+        "pid": 23160,
+        "creation_time": "134356437910898585",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 19.1875,
+        "ppid": 27360
+      },
+      "watcher": {
+        "pid": 28880,
+        "creation_time": "134356438320287780",
+        "alive": true,
+        "priority_class": 32,
+        "cpu_seconds": 45.78125,
+        "ppid": 25880
+      },
+      "job_daily_30_XGBoost": {
+        "pid": 10260,
+        "creation_time": "134356437933426281",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 1.09375,
+        "ppid": 23160
+      },
+      "job_daily_30_DilatedRNN": {
+        "pid": 26096,
+        "creation_time": "134356439555084171",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 1.125,
+        "ppid": 23160
+      },
+      "job_daily_30_Transformer": {
+        "pid": 12788,
+        "creation_time": "134356439556555522",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 1.03125,
+        "ppid": 23160
+      },
+      "job_hourly_72_extension_ARIMA": {
+        "pid": 26120,
+        "creation_time": "134356446353856309",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 1.234375,
+        "ppid": 23160
+      },
+      "child_27360": {
+        "pid": 27360,
+        "creation_time": "134356437901307289",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 0.953125,
+        "ppid": 7872
+      },
+      "child_29056": {
+        "pid": 29056,
+        "creation_time": "134356437945351573",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 3251.578125,
+        "ppid": 10260
+      },
+      "child_20964": {
+        "pid": 20964,
+        "creation_time": "134356446367742670",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 2486.953125,
+        "ppid": 26120
+      },
+      "child_15132": {
+        "pid": 15132,
+        "creation_time": "134356437902524901",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 0.125,
+        "ppid": 27360
+      },
+      "child_27432": {
+        "pid": 27432,
+        "creation_time": "134356437934741229",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 0.140625,
+        "ppid": 10260
+      },
+      "child_2408": {
+        "pid": 2408,
+        "creation_time": "134356439558113988",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 0.140625,
+        "ppid": 12788
+      },
+      "child_22792": {
+        "pid": 22792,
+        "creation_time": "134356439568713344",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 3155.125,
+        "ppid": 26096
+      },
+      "child_27224": {
+        "pid": 27224,
+        "creation_time": "134356446355670168",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 0.1875,
+        "ppid": 26120
+      },
+      "child_9016": {
+        "pid": 9016,
+        "creation_time": "134356439556519749",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 0.140625,
+        "ppid": 26096
+      },
+      "child_25948": {
+        "pid": 25948,
+        "creation_time": "134356439569823948",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 3131.0,
+        "ppid": 12788
+      }
+    },
+    "cpu_system_times": {
+      "idle": 27472.953125,
+      "kernel": 91494.546875,
+      "user": 84050.0625
+    },
+    "memory_available_gib": 5.553295135498047,
+    "memory_load_percent": 76,
+    "gpu": {
+      "csv": {
+        "returncode": 0,
+        "stdout": "98, 1307, 84, 1665, 39.55, P0\n",
+        "stderr": ""
+      },
+      "thermal": {
+        "returncode": 0,
+        "stdout": "\n==============NVSMI LOG==============\n\nTimestamp                                              : Mon Oct  5 01:15:09 2026\nDriver Version                                         : 595.97\nCUDA Version                                           : 13.2\n\nAttached GPUs                                          : 1\nGPU 00000000:01:00.0\n    Performance State                                  : P0\n    Clocks Event Reasons\n        Idle                                           : Not Active\n        Applications Clocks Setting                    : Not Active\n        SW Power Cap                                   : Active\n        HW Slowdown                                    : Not Active\n            HW Thermal Slowdown                        : Not Active\n            HW Power Brake Slowdown                    : Not Active\n        Sync Boost                                     : Not Active\n        SW Thermal Slowdown                            : Not Active\n        Display Clock Setting                          : Not Active\n    Clocks Event Reasons Counters\n        SW Power Capping                               : 875710178 us\n        Sync Boost                                     : 0 us\n        SW Thermal Slowdown                            : 0 us\n        HW Thermal Slowdown                            : 0 us\n        HW Power Braking                               : 0 us\n    Sparse Operation Mode                              : N/A\n\n",
+        "stderr": ""
+      }
+    },
+    "heartbeat_age_seconds": {
+      "coordenador": 7.771447,
+      "runner": 4.027071,
+      "watcher": 13.020272
+    },
+    "runner_stage": "refit",
+    "coordinator_stage": "fila_historico_1998_2022",
+    "watcher_stage": "ativa",
+    "watcher_bound": {
+      "pid": 7872,
+      "creation_time": "134356437859141023"
+    },
+    "watcher_errors": [],
+    "runner_failures": [],
+    "jobs": [
+      {
+        "tarefa": "daily_30",
+        "modelo": "XGBoost",
+        "recurso": "cpu",
+        "pid": 10260,
+        "creation_time": "134356437933426281",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_xgboost.log",
+        "inicio": "2026-10-05T03:16:33.470742+00:00"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "DilatedRNN",
+        "recurso": "gpu",
+        "pid": 26096,
+        "creation_time": "134356439555084171",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_dilatedrnn.log",
+        "inicio": "2026-10-05T03:19:15.646720+00:00"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "Transformer",
+        "recurso": "gpu",
+        "pid": 12788,
+        "creation_time": "134356439556555522",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_transformer.log",
+        "inicio": "2026-10-05T03:19:15.805654+00:00"
+      },
+      {
+        "tarefa": "hourly_72_extension",
+        "modelo": "ARIMA",
+        "recurso": "cpu",
+        "pid": 26120,
+        "creation_time": "134356446353856309",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_arima.log",
+        "inicio": "2026-10-05T03:30:35.560616+00:00"
+      }
+    ],
+    "completed_runner": [
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "ARIMA",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_arima.log",
+        "concluido_em_utc": "2026-10-05T03:18:19.758178+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "GRU",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_gru.log",
+        "concluido_em_utc": "2026-10-05T03:19:10.472457+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "LSTM",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_lstm.log",
+        "concluido_em_utc": "2026-10-05T03:19:10.479644+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "Persistencia",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_persistencia.log",
+        "concluido_em_utc": "2026-10-05T03:20:01.037273+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "Sazonal ingenuo",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_sazonal_ingenuo.log",
+        "concluido_em_utc": "2026-10-05T03:22:03.065271+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "Climatologia",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_climatologia.log",
+        "concluido_em_utc": "2026-10-05T03:24:31.547814+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "hourly_72_extension",
+        "modelo": "XGBoost",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_xgboost.log",
+        "concluido_em_utc": "2026-10-05T03:30:30.349506+00:00"
+      }
+    ],
+    "logs": [
+      {
+        "modelo": "XGBoost",
+        "tarefa": "daily_30",
+        "mtime_utc": "2026-10-05T04:04:14.292928+00:00",
+        "size": 1782,
+        "tail": [
+          "daily_30/XGBoost/q128/refit seed=42 fim epocas=0",
+          "daily_30/XGBoost/q128/refit seed=67 inicio",
+          "",
+          "Inicio 2026-10-05T03:16:33.340725+00:00",
+          "daily_30/XGBoost/q128/refit seed=67 inicio",
+          "daily_30/XGBoost/q128/refit seed=67 fim epocas=0",
+          "daily_30/XGBoost/q128/refit seed=89 inicio",
+          "daily_30/XGBoost/q128/refit seed=89 fim epocas=0",
+          "daily_30/XGBoost/q256/refit seed=11 inicio"
+        ]
+      },
+      {
+        "modelo": "DilatedRNN",
+        "tarefa": "daily_30",
+        "mtime_utc": "2026-10-05T04:01:22.504441+00:00",
+        "size": 2478,
+        "tail": [
+          "daily_30/DilatedRNN/q64/refit seed=11 fim epocas=7",
+          "daily_30/DilatedRNN/q64/refit seed=23 inicio",
+          "",
+          "Inicio 2026-10-05T03:19:15.506634+00:00",
+          "daily_30/DilatedRNN/q64/refit seed=23 inicio",
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Lib\\site-packages\\torch\\autograd\\graph.py:882: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\aten\\src\\ATen\\cuda\\CublasHandlePool.cpp:370.)",
+          "  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass",
+          "daily_30/DilatedRNN/q64/refit seed=23 fim epocas=10",
+          "daily_30/DilatedRNN/q64/refit seed=42 inicio"
+        ]
+      },
+      {
+        "modelo": "Transformer",
+        "tarefa": "daily_30",
+        "mtime_utc": "2026-10-05T04:11:13.723264+00:00",
+        "size": 2224,
+        "tail": [
+          "daily_30/Transformer/q256/refit seed=11 fim epocas=8",
+          "daily_30/Transformer/q256/refit seed=23 inicio",
+          "",
+          "Inicio 2026-10-05T03:19:15.653310+00:00",
+          "daily_30/Transformer/q256/refit seed=23 inicio",
+          "daily_30/Transformer/q256/refit seed=23 fim epocas=15",
+          "daily_30/Transformer/q256/refit seed=42 inicio",
+          "daily_30/Transformer/q256/refit seed=42 fim epocas=7",
+          "daily_30/Transformer/q256/refit seed=67 inicio"
+        ]
+      },
+      {
+        "modelo": "ARIMA",
+        "tarefa": "hourly_72_extension",
+        "mtime_utc": "2026-10-05T04:13:57.657254+00:00",
+        "size": 324,
+        "tail": [
+          "",
+          "Inicio 2026-10-05T01:51:03.760631+00:00",
+          "hourly_72_extension/ARIMA/sem_quantizacao/refit inicio",
+          "hourly_72_extension/ARIMA/sem_quantizacao/refit fim",
+          "hourly_72_extension/ARIMA/q64/refit inicio",
+          "",
+          "Inicio 2026-10-05T03:30:35.383118+00:00",
+          "hourly_72_extension/ARIMA/q64/refit inicio",
+          "hourly_72_extension/ARIMA/q64/refit fim"
+        ]
+      }
+    ]
+  },
+  "amostra_b": {
+    "label": "b",
+    "utc": "2026-10-05T04:15:28.748609+00:00",
+    "monotonic": 25250.625559,
+    "processes": {
+      "coordenador": {
+        "pid": 7872,
+        "creation_time": "134356437859141023",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 11.453125,
+        "ppid": 8584
+      },
+      "runner": {
+        "pid": 23160,
+        "creation_time": "134356437910898585",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 19.40625,
+        "ppid": 27360
+      },
+      "watcher": {
+        "pid": 28880,
+        "creation_time": "134356438320287780",
+        "alive": true,
+        "priority_class": 32,
+        "cpu_seconds": 46.28125,
+        "ppid": 25880
+      },
+      "job_daily_30_XGBoost": {
+        "pid": 10260,
+        "creation_time": "134356437933426281",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 1.09375,
+        "ppid": 23160
+      },
+      "job_daily_30_DilatedRNN": {
+        "pid": 26096,
+        "creation_time": "134356439555084171",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 1.125,
+        "ppid": 23160
+      },
+      "job_daily_30_Transformer": {
+        "pid": 12788,
+        "creation_time": "134356439556555522",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 1.03125,
+        "ppid": 23160
+      },
+      "job_hourly_72_extension_ARIMA": {
+        "pid": 26120,
+        "creation_time": "134356446353856309",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 1.234375,
+        "ppid": 23160
+      },
+      "child_27360": {
+        "pid": 27360,
+        "creation_time": "134356437901307289",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 0.953125,
+        "ppid": 7872
+      },
+      "child_29056": {
+        "pid": 29056,
+        "creation_time": "134356437945351573",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 3282.484375,
+        "ppid": 10260
+      },
+      "child_20964": {
+        "pid": 20964,
+        "creation_time": "134356446367742670",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 2517.5625,
+        "ppid": 26120
+      },
+      "child_15132": {
+        "pid": 15132,
+        "creation_time": "134356437902524901",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 0.125,
+        "ppid": 27360
+      },
+      "child_27432": {
+        "pid": 27432,
+        "creation_time": "134356437934741229",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 0.140625,
+        "ppid": 10260
+      },
+      "child_2408": {
+        "pid": 2408,
+        "creation_time": "134356439558113988",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 0.140625,
+        "ppid": 12788
+      },
+      "child_22792": {
+        "pid": 22792,
+        "creation_time": "134356439568713344",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 3186.53125,
+        "ppid": 26096
+      },
+      "child_27224": {
+        "pid": 27224,
+        "creation_time": "134356446355670168",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 0.1875,
+        "ppid": 26120
+      },
+      "child_9016": {
+        "pid": 9016,
+        "creation_time": "134356439556519749",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 0.140625,
+        "ppid": 26096
+      },
+      "child_25948": {
+        "pid": 25948,
+        "creation_time": "134356439569823948",
+        "alive": true,
+        "priority_class": 32768,
+        "cpu_seconds": 3162.84375,
+        "ppid": 12788
+      }
+    },
+    "cpu_system_times": {
+      "idle": 27472.953125,
+      "kernel": 91606.0625,
+      "user": 84163.3125
+    },
+    "memory_available_gib": 5.621242523193359,
+    "memory_load_percent": 76,
+    "gpu": {
+      "csv": {
+        "returncode": 0,
+        "stdout": "96, 1328, 84, 1695, 37.79, P0\n",
+        "stderr": ""
+      },
+      "thermal": {
+        "returncode": 0,
+        "stdout": "\n==============NVSMI LOG==============\n\nTimestamp                                              : Mon Oct  5 01:15:39 2026\nDriver Version                                         : 595.97\nCUDA Version                                           : 13.2\n\nAttached GPUs                                          : 1\nGPU 00000000:01:00.0\n    Performance State                                  : P0\n    Clocks Event Reasons\n        Idle                                           : Not Active\n        Applications Clocks Setting                    : Not Active\n        SW Power Cap                                   : Active\n        HW Slowdown                                    : Not Active\n            HW Thermal Slowdown                        : Not Active\n            HW Power Brake Slowdown                    : Not Active\n        Sync Boost                                     : Not Active\n        SW Thermal Slowdown                            : Not Active\n        Display Clock Setting                          : Not Active\n    Clocks Event Reasons Counters\n        SW Power Capping                               : 875710178 us\n        Sync Boost                                     : 0 us\n        SW Thermal Slowdown                            : 0 us\n        HW Thermal Slowdown                            : 0 us\n        HW Power Braking                               : 0 us\n    Sparse Operation Mode                              : N/A\n\n",
+        "stderr": ""
+      }
+    },
+    "heartbeat_age_seconds": {
+      "coordenador": 1.259518,
+      "runner": 0.384151,
+      "watcher": 15.767577
+    },
+    "runner_stage": "refit",
+    "coordinator_stage": "fila_historico_1998_2022",
+    "watcher_stage": "ativa",
+    "watcher_bound": {
+      "pid": 7872,
+      "creation_time": "134356437859141023"
+    },
+    "watcher_errors": [],
+    "runner_failures": [],
+    "jobs": [
+      {
+        "tarefa": "daily_30",
+        "modelo": "XGBoost",
+        "recurso": "cpu",
+        "pid": 10260,
+        "creation_time": "134356437933426281",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_xgboost.log",
+        "inicio": "2026-10-05T03:16:33.470742+00:00"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "DilatedRNN",
+        "recurso": "gpu",
+        "pid": 26096,
+        "creation_time": "134356439555084171",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_dilatedrnn.log",
+        "inicio": "2026-10-05T03:19:15.646720+00:00"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "Transformer",
+        "recurso": "gpu",
+        "pid": 12788,
+        "creation_time": "134356439556555522",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_transformer.log",
+        "inicio": "2026-10-05T03:19:15.805654+00:00"
+      },
+      {
+        "tarefa": "hourly_72_extension",
+        "modelo": "ARIMA",
+        "recurso": "cpu",
+        "pid": 26120,
+        "creation_time": "134356446353856309",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_arima.log",
+        "inicio": "2026-10-05T03:30:35.560616+00:00"
+      }
+    ],
+    "completed_runner": [
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "ARIMA",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_arima.log",
+        "concluido_em_utc": "2026-10-05T03:18:19.758178+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "GRU",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_gru.log",
+        "concluido_em_utc": "2026-10-05T03:19:10.472457+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "LSTM",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_lstm.log",
+        "concluido_em_utc": "2026-10-05T03:19:10.479644+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "Persistencia",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_persistencia.log",
+        "concluido_em_utc": "2026-10-05T03:20:01.037273+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "Sazonal ingenuo",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_sazonal_ingenuo.log",
+        "concluido_em_utc": "2026-10-05T03:22:03.065271+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "Climatologia",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_climatologia.log",
+        "concluido_em_utc": "2026-10-05T03:24:31.547814+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "hourly_72_extension",
+        "modelo": "XGBoost",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_xgboost.log",
+        "concluido_em_utc": "2026-10-05T03:30:30.349506+00:00"
+      }
+    ],
+    "logs": [
+      {
+        "modelo": "XGBoost",
+        "tarefa": "daily_30",
+        "mtime_utc": "2026-10-05T04:04:14.292928+00:00",
+        "size": 1782,
+        "tail": [
+          "daily_30/XGBoost/q128/refit seed=42 fim epocas=0",
+          "daily_30/XGBoost/q128/refit seed=67 inicio",
+          "",
+          "Inicio 2026-10-05T03:16:33.340725+00:00",
+          "daily_30/XGBoost/q128/refit seed=67 inicio",
+          "daily_30/XGBoost/q128/refit seed=67 fim epocas=0",
+          "daily_30/XGBoost/q128/refit seed=89 inicio",
+          "daily_30/XGBoost/q128/refit seed=89 fim epocas=0",
+          "daily_30/XGBoost/q256/refit seed=11 inicio"
+        ]
+      },
+      {
+        "modelo": "DilatedRNN",
+        "tarefa": "daily_30",
+        "mtime_utc": "2026-10-05T04:01:22.504441+00:00",
+        "size": 2478,
+        "tail": [
+          "daily_30/DilatedRNN/q64/refit seed=11 fim epocas=7",
+          "daily_30/DilatedRNN/q64/refit seed=23 inicio",
+          "",
+          "Inicio 2026-10-05T03:19:15.506634+00:00",
+          "daily_30/DilatedRNN/q64/refit seed=23 inicio",
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Lib\\site-packages\\torch\\autograd\\graph.py:882: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\aten\\src\\ATen\\cuda\\CublasHandlePool.cpp:370.)",
+          "  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass",
+          "daily_30/DilatedRNN/q64/refit seed=23 fim epocas=10",
+          "daily_30/DilatedRNN/q64/refit seed=42 inicio"
+        ]
+      },
+      {
+        "modelo": "Transformer",
+        "tarefa": "daily_30",
+        "mtime_utc": "2026-10-05T04:11:13.723264+00:00",
+        "size": 2224,
+        "tail": [
+          "daily_30/Transformer/q256/refit seed=11 fim epocas=8",
+          "daily_30/Transformer/q256/refit seed=23 inicio",
+          "",
+          "Inicio 2026-10-05T03:19:15.653310+00:00",
+          "daily_30/Transformer/q256/refit seed=23 inicio",
+          "daily_30/Transformer/q256/refit seed=23 fim epocas=15",
+          "daily_30/Transformer/q256/refit seed=42 inicio",
+          "daily_30/Transformer/q256/refit seed=42 fim epocas=7",
+          "daily_30/Transformer/q256/refit seed=67 inicio"
+        ]
+      },
+      {
+        "modelo": "ARIMA",
+        "tarefa": "hourly_72_extension",
+        "mtime_utc": "2026-10-05T04:15:06.811369+00:00",
+        "size": 369,
+        "tail": [
+          "Inicio 2026-10-05T01:51:03.760631+00:00",
+          "hourly_72_extension/ARIMA/sem_quantizacao/refit inicio",
+          "hourly_72_extension/ARIMA/sem_quantizacao/refit fim",
+          "hourly_72_extension/ARIMA/q64/refit inicio",
+          "",
+          "Inicio 2026-10-05T03:30:35.383118+00:00",
+          "hourly_72_extension/ARIMA/q64/refit inicio",
+          "hourly_72_extension/ARIMA/q64/refit fim",
+          "hourly_72_extension/ARIMA/q128/refit inicio"
+        ]
+      }
+    ]
+  },
+  "wall_seconds": 28.050918199998705,
+  "cpu_system_percent": 100.0,
+  "cpu_deltas": [
+    {
+      "name": "coordenador",
+      "pid": 7872,
+      "ppid": 8584,
+      "creation_time": "134356437859141023",
+      "cpu_delta_seconds": 0.109375,
+      "cores_equivalent": 0.003899159350869486,
+      "priority_class": 32768
+    },
+    {
+      "name": "runner",
+      "pid": 23160,
+      "ppid": 27360,
+      "creation_time": "134356437910898585",
+      "cpu_delta_seconds": 0.21875,
+      "cores_equivalent": 0.007798318701738972,
+      "priority_class": 32768
+    },
+    {
+      "name": "watcher",
+      "pid": 28880,
+      "ppid": 25880,
+      "creation_time": "134356438320287780",
+      "cpu_delta_seconds": 0.5,
+      "cores_equivalent": 0.01782472846111765,
+      "priority_class": 32
+    },
+    {
+      "name": "job_daily_30_XGBoost",
+      "pid": 10260,
+      "ppid": 23160,
+      "creation_time": "134356437933426281",
+      "cpu_delta_seconds": 0.0,
+      "cores_equivalent": 0.0,
+      "priority_class": 32768
+    },
+    {
+      "name": "job_daily_30_DilatedRNN",
+      "pid": 26096,
+      "ppid": 23160,
+      "creation_time": "134356439555084171",
+      "cpu_delta_seconds": 0.0,
+      "cores_equivalent": 0.0,
+      "priority_class": 32768
+    },
+    {
+      "name": "job_daily_30_Transformer",
+      "pid": 12788,
+      "ppid": 23160,
+      "creation_time": "134356439556555522",
+      "cpu_delta_seconds": 0.0,
+      "cores_equivalent": 0.0,
+      "priority_class": 32768
+    },
+    {
+      "name": "job_hourly_72_extension_ARIMA",
+      "pid": 26120,
+      "ppid": 23160,
+      "creation_time": "134356446353856309",
+      "cpu_delta_seconds": 0.0,
+      "cores_equivalent": 0.0,
+      "priority_class": 32768
+    },
+    {
+      "name": "child_27360",
+      "pid": 27360,
+      "ppid": 7872,
+      "creation_time": "134356437901307289",
+      "cpu_delta_seconds": 0.0,
+      "cores_equivalent": 0.0,
+      "priority_class": 32768
+    },
+    {
+      "name": "child_29056",
+      "pid": 29056,
+      "ppid": 10260,
+      "creation_time": "134356437945351573",
+      "cpu_delta_seconds": 30.90625,
+      "cores_equivalent": 1.1017910280028347,
+      "priority_class": 32768
+    },
+    {
+      "name": "child_20964",
+      "pid": 20964,
+      "ppid": 26120,
+      "creation_time": "134356446367742670",
+      "cpu_delta_seconds": 30.609375,
+      "cores_equivalent": 1.091207595479046,
+      "priority_class": 32768
+    },
+    {
+      "name": "child_15132",
+      "pid": 15132,
+      "ppid": 27360,
+      "creation_time": "134356437902524901",
+      "cpu_delta_seconds": 0.0,
+      "cores_equivalent": 0.0,
+      "priority_class": 32768
+    },
+    {
+      "name": "child_27432",
+      "pid": 27432,
+      "ppid": 10260,
+      "creation_time": "134356437934741229",
+      "cpu_delta_seconds": 0.0,
+      "cores_equivalent": 0.0,
+      "priority_class": 32768
+    },
+    {
+      "name": "child_2408",
+      "pid": 2408,
+      "ppid": 12788,
+      "creation_time": "134356439558113988",
+      "cpu_delta_seconds": 0.0,
+      "cores_equivalent": 0.0,
+      "priority_class": 32768
+    },
+    {
+      "name": "child_22792",
+      "pid": 22792,
+      "ppid": 26096,
+      "creation_time": "134356439568713344",
+      "cpu_delta_seconds": 31.40625,
+      "cores_equivalent": 1.1196157564639524,
+      "priority_class": 32768
+    },
+    {
+      "name": "child_27224",
+      "pid": 27224,
+      "ppid": 26120,
+      "creation_time": "134356446355670168",
+      "cpu_delta_seconds": 0.0,
+      "cores_equivalent": 0.0,
+      "priority_class": 32768
+    },
+    {
+      "name": "child_9016",
+      "pid": 9016,
+      "ppid": 26096,
+      "creation_time": "134356439556519749",
+      "cpu_delta_seconds": 0.0,
+      "cores_equivalent": 0.0,
+      "priority_class": 32768
+    },
+    {
+      "name": "child_25948",
+      "pid": 25948,
+      "ppid": 12788,
+      "creation_time": "134356439569823948",
+      "cpu_delta_seconds": 31.84375,
+      "cores_equivalent": 1.1352123938674303,
+      "priority_class": 32768
+    }
+  ],
+  "regimes": [
+    {
+      "regime": "atual",
+      "pairs_with_contract": 40,
+      "selections_frozen": 40,
+      "pairs_status_completed": 40,
+      "refit_metadata_count": 448
+    },
+    {
+      "regime": "historico_1998_2022",
+      "pairs_with_contract": 44,
+      "selections_frozen": 44,
+      "pairs_status_completed": 7,
+      "refit_metadata_count": 102
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "pairs_with_contract": 0,
+      "selections_frozen": 0,
+      "pairs_status_completed": 0,
+      "refit_metadata_count": 0
+    }
+  ],
+  "new_metadata_since_restart": [
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q128\\refit\\seed67.json",
+      "concluido_em_utc": "2026-10-05T03:40:40.273521+00:00",
+      "seed": 67,
+      "variante": "q128",
+      "epocas": 0,
+      "duracao_s": 1346.4387956000028
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q256\\refit\\seed23.json",
+      "concluido_em_utc": "2026-10-05T03:55:21.827180+00:00",
+      "seed": 23,
+      "variante": "q256",
+      "epocas": 15,
+      "duracao_s": 2020.2591630999996
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\q64\\refit\\seed23.json",
+      "concluido_em_utc": "2026-10-05T04:01:22.213985+00:00",
+      "seed": 23,
+      "variante": "q64",
+      "epocas": 10,
+      "duracao_s": 2452.655978300001
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q128\\refit\\seed89.json",
+      "concluido_em_utc": "2026-10-05T04:03:44.355707+00:00",
+      "seed": 89,
+      "variante": "q128",
+      "epocas": 0,
+      "duracao_s": 1383.822554800001
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q256\\refit\\seed42.json",
+      "concluido_em_utc": "2026-10-05T04:11:13.430802+00:00",
+      "seed": 42,
+      "variante": "q256",
+      "epocas": 7,
+      "duracao_s": 951.2596921000004
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\q64\\refit\\seed-1.json",
+      "concluido_em_utc": "2026-10-05T04:13:57.254888+00:00",
+      "seed": -1,
+      "variante": "q64",
+      "epocas": 0,
+      "duracao_s": 2439.5717114
+    }
+  ],
+  "completed_current_runner_count": 7,
+  "live_ok": true,
+  "no_failures": true,
+  "limits": "Contagem de metadata final nao valida NPZ/checkpoint nem constitui auditoria final; sem fit, replay, mutacao ou cambio de recursos. Utilizacao atual nao prova throughput futuro."
+}

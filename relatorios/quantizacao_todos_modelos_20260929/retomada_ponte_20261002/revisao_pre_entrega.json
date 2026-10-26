@@ -1,0 +1,79 @@
+{
+    "schema":  1,
+    "revisado_em_utc":  "2026-10-02T04:02:02.5621809Z",
+    "natureza":  "Revisao operacional READONLY de preparacao; nao substitui auditoria cientifica final com replay nem revisao visual do PDF",
+    "treinamentos":  {
+                         "atual":  {
+                                       "ultima_refit":  "hourly_72_extension/DilatedRNN",
+                                       "concluida_em_utc":  "2026-10-02T03:58:55.283117+00:00",
+                                       "refits":  44,
+                                       "selecoes":  44
+                                   },
+                         "historico_1998_2022":  {
+                                                     "selecoes":  0,
+                                                     "refits":  0
+                                                 },
+                         "historico_curto_pareado":  {
+                                                         "selecoes":  0,
+                                                         "refits":  0
+                                                     }
+                     },
+    "cadeias_inspecionadas":  [
+                                  "atual -\u003e fila integral cache -\u003e auditoria replay -\u003e marker -\u003e gerador PDF -\u003e resumo -\u003e renderizacao",
+                                  "historico -\u003e preflight -\u003e longo -\u003e auditoria -\u003e curto -\u003e auditoria -\u003e pareamento -\u003e PDF -\u003e resumo -\u003e renderizacao"
+                              ],
+    "sintaxe_compilada_sem_gravar_pycache":  [
+                                                 "scripts/coordenar_quantizacao_atual.py",
+                                                 "scripts/coordenacao_quantizacao.py",
+                                                 "scripts/auditar_quantizacao_todos_modelos.py",
+                                                 "scripts/gerar_pdf_quantizacao_todos_modelos.py",
+                                                 "scripts/coordenar_quantizacao_historica.py",
+                                                 "scripts/rodar_quantizacao_todos_modelos.py",
+                                                 "scripts/resumir_quantizacao_todos_modelos.py",
+                                                 "scripts/resumir_historicos_quantizacao.py",
+                                                 "scripts/auditar_pareamento_historicos.py",
+                                                 "codigo_fonte/experimento_xgboost_horario_controle_auditado_v1.py"
+                                             ],
+    "pacotes_encontrados":  [
+                                "pymupdf",
+                                "reportlab",
+                                "pandas",
+                                "numpy",
+                                "torch",
+                                "joblib",
+                                "statsmodels",
+                                "xgboost"
+                            ],
+    "marker_existe":  true,
+    "fontes_arial_existem":  true,
+    "xgboost_integracao":  {
+                               "hashes_suplementares_reverificados_no_gerador":  true,
+                               "nota_divergencia_legada_incluida":  true,
+                               "despacho":  "somente atual/hourly_72_extension/XGBoost/refit/completa",
+                               "suplemento_validado_no_auditor":  true,
+                               "validador_recebe":  "pasta unico argumento",
+                               "nenhum_replay_executado_nesta_revisao":  true
+                           },
+    "historico":  {
+                      "contrato_aprovado":  true,
+                      "preflight_do_coordenador_ainda_obrigatorio":  true,
+                      "hashes_70_arquivos_nao_recalculados_nesta_revisao":  true,
+                      "arquivos_verificados_existencia_tamanho":  70,
+                      "divergencias_existencia_tamanho":  [
+
+                                                          ]
+                  },
+    "motores_sha256":  {
+                           "multirresolucao":  "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+                           "concorrentes":  "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a"
+                       },
+    "adicionais_provaveis_erros_pipeline_encontrados":  [
+
+                                                        ],
+    "pendencias":  [
+                       "Correcao/reinicio da ponte depois do OpenProcess WinError 5, executados pelo root/guard reviewer",
+                       "Auditoria completa atual com replay",
+                       "Geracao/revisao visual/publicacao dos PDFs",
+                       "Treinamentos dos dois perfis historicos, auditorias e pareamento"
+                   ]
+}

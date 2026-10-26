@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "id": "sazonal_mensal_calendario_auditado_v1_testes_unitarios",
+  "registrado_em_utc": "2026-10-05T11:10:45Z",
+  "agente": "/root/cache_historico_outubro3",
+  "ok": true,
+  "comando": ".venv-baselines-gpu-20260912/Scripts/python.exe -X utf8 -u tmp/diagnostico_sazonal_mensal_unittest_20261005.py",
+  "sessao_exec": 44950,
+  "exit_code": 0,
+  "testes_executados": 20,
+  "duracao_interna_unittest_s": 9.686,
+  "trecho_saida_observado": "Ran 20 tests in 9.686s\n\nOK",
+  "somente_testes_sinteticos": true,
+  "fit_ou_refit_de_producao_executado_pelo_agente": false,
+  "metadados_ou_caches_de_producao_alterados_pelo_agente": false,
+  "prioridade_diagnostico": "AboveNormal apenas no proprio processo; restaurada em finally",
+  "fontes_sha256": {
+    "codigo_fonte/experimento_sazonal_mensal_controle_auditado_v1.py": "89bbc5dc25780bf22dff658314ab11f6c5e4a11830183c0a85a313be59162f13",
+    "tests/test_sazonal_mensal_controle_auditado_v1.py": "4171679918079783c7c580efc889aa550ddc4b105142d32b38626aed5eacd4f0"
+  },
+  "cobertura": [
+    "2021-02-28 referencia 2020-02-29; 2020-02-29 referencia 2019-02-28",
+    "regra diaria original e calendario da validacao e teste atuais preservados",
+    "horizontes mensais 1 e 6; quatro variantes; referencia independente indice menos12",
+    "validacao sintetica bitexata; alvos substituidos por NaN",
+    "causalidade preservada; mes realmente ausente continua rejeitado",
+    "escopo completo historico; contrato longo preservado; curto com fonte e politica",
+    "refit sem contrato/selecao bloqueado; metadados sem proveniencia rejeitados",
+    "complemento divergente nao sobrescrito; funcoes restauradas apos excecao"
+  ],
+  "nao_certifica": [
+    "paridade dos caches reais de selecao dos dois pares longos",
+    "revisao independente da evidencia de paridade",
+    "execucao ou aprovacao de refits reais com o calendario corrigido",
+    "publicacao de resultados historicos"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "alterado_em_utc": "2026-10-05T10:49:21.636978+00:00",
+  "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\painel_treinamentos.html",
+  "sha256_antes": "eaa15609fa51827a10bc6c77d7be56052676642edd09b8f88bbf3b58931fd68e",
+  "sha256_depois": "143d480aaa90727081aaf09cd06697d195b618b40463b7a352f328eb64ab029a",
+  "backup_manifesto": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\recuperacao_status_20261005\\html_anteriores\\manifesto_decimal_20261005T104907Z.json",
+  "mudanca": "Global percentage uses one pt-BR decimal; exact numeric percentage controls track width and ARIA. Existing phase/seed percentages, count semantics and warnings unchanged.",
+  "node_check": {
+    "comando": "node --check (full inline script via stdin)",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "http_observado": {
+    "/": {
+      "status": 200,
+      "bytes": 23322,
+      "sha256": "143d480aaa90727081aaf09cd06697d195b618b40463b7a352f328eb64ab029a"
+    },
+    "/api/status": {
+      "status": 200,
+      "bytes": 18616,
+      "sha256": "2a64a67cc03ad40e7e6afa9d648f236006c8960f62e3c9f2d27b26c2d4b232bd",
+      "app": "tcc-progresso-quantizacao-v1",
+      "gerado_em_utc": "2026-10-05T10:49:18.466473+00:00",
+      "regimes": [
+        {
+          "id": "atual",
+          "total": 44,
+          "selecao": 44,
+          "refit": 44
+        },
+        {
+          "id": "historico_1998_2022",
+          "total": 44,
+          "selecao": 44,
+          "refit": 24
+        },
+        {
+          "id": "historico_curto_pareado",
+          "total": 44,
+          "selecao": 0,
+          "refit": 0
+        }
+      ],
+      "global_done": 156,
+      "global_total": 264,
+      "global_percent_numeric": 59.09090909090909,
+      "global_percent_display": "59,1",
+      "foco": {
+        "regime": "historico_1998_2022",
+        "titulo": "Treinamento final",
+        "feito": 24,
+        "total": 44
+      }
+    }
+  },
+  "sem_alteracao_backend_cache_fontes_processos": true,
+  "sem_restart": true
+}

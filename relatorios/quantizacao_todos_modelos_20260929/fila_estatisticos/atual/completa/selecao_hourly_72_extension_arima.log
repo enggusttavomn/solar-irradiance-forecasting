@@ -1,0 +1,30 @@
+
+Inicio 2026-09-30T04:55:32.391547+00:00
+hourly_72_extension/ARIMA/sem_quantizacao/selecao inicio
+hourly_72_extension/ARIMA/sem_quantizacao/selecao fim
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_quantizacao_estatisticos.py", line 280, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_quantizacao_estatisticos.py", line 276, in main
+    executar_fase(ctx, args.modelo, saida, args.fase)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_quantizacao_estatisticos.py", line 232, in executar_fase
+    conferir_controle(ctx, modelo, particao, bruto, pasta)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_quantizacao_estatisticos.py", line 135, in conferir_controle
+    raise ValueError(f"Controle {modelo} nao reproduzido: {diferenca}")
+ValueError: Controle ARIMA nao reproduzido: 4.490431751946744e-05
+
+Inicio 2026-09-30T06:13:17.311759+00:00
+hourly_72_extension/ARIMA/q64/selecao inicio
+hourly_72_extension/ARIMA/q64/selecao fim
+hourly_72_extension/ARIMA/q128/selecao inicio
+hourly_72_extension/ARIMA/q128/selecao fim
+hourly_72_extension/ARIMA/q256/selecao inicio
+
+Inicio 2026-09-30T10:43:40.961391+00:00
+hourly_72_extension/ARIMA/q256/selecao inicio
+hourly_72_extension/ARIMA/q256/selecao fim

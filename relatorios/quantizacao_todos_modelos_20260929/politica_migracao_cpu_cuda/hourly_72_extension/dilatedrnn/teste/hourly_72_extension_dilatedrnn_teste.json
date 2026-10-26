@@ -1,0 +1,91 @@
+{
+  "arquivos_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\hourly_72_extension\\previsoes_teste.csv.gz": "bdd1eea4b7e257574c9d7337aefd059d53be698a4c918a985aa49b29fd27e54e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\dilatedrnn\\contrato_execucao.json": "b50bc5374c08d2579b67326ff4b0e8f372f3dc62085c85635ce4043180c615e3",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\dilatedrnn\\controle_teste_divergencia.json": "88f8839ed982d23642f9bbb14b0cd9adf5b4b3633dd66178c8a715f3b117d372",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\dilatedrnn\\sem_quantizacao\\refit\\seed42.npz": "8b2d40ddf3a4383b53acaa10f2128392f929d8b7609c03fab4287f02fe2b8c05"
+  },
+  "comparacao_metricas": [
+    {
+      "MAE_wm2_antigo": 50.73403276720437,
+      "MAE_wm2_novo": 53.49152820316755,
+      "MSE_w2m4_antigo": 10481.550721874835,
+      "MSE_w2m4_novo": 10322.3975158673,
+      "R2_antigo": 0.866510087263155,
+      "R2_novo": 0.8688241396692536,
+      "RMSE_wm2_antigo": 101.17738299817913,
+      "RMSE_wm2_novo": 100.44107264524558,
+      "delta_MAE_wm2": 2.757495435963179,
+      "horizonte": 24,
+      "modelo": "DilatedRNN",
+      "nRMSE_antigo": 0.5049277017271013,
+      "nRMSE_novo": 0.5008111081254294,
+      "particao": "teste",
+      "tarefa": "hourly_72_extension",
+      "variante_antigo": "controle_antigo",
+      "variante_novo": "controle_novo"
+    },
+    {
+      "MAE_wm2_antigo": 52.146529972433385,
+      "MAE_wm2_novo": 54.62168185130397,
+      "MSE_w2m4_antigo": 11006.84012070798,
+      "MSE_w2m4_novo": 10765.616030233057,
+      "R2_antigo": 0.8600706328588862,
+      "R2_novo": 0.8633536407839223,
+      "RMSE_wm2_antigo": 103.71306536218302,
+      "RMSE_wm2_novo": 102.57320628907323,
+      "delta_MAE_wm2": 2.4751518788705837,
+      "horizonte": 48,
+      "modelo": "DilatedRNN",
+      "nRMSE_antigo": 0.5173420009705831,
+      "nRMSE_novo": 0.5113238277165004,
+      "particao": "teste",
+      "tarefa": "hourly_72_extension",
+      "variante_antigo": "controle_antigo",
+      "variante_novo": "controle_novo"
+    },
+    {
+      "MAE_wm2_antigo": 52.957992923843335,
+      "MAE_wm2_novo": 55.672487781947304,
+      "MSE_w2m4_antigo": 11258.143797547076,
+      "MSE_w2m4_novo": 11048.984740663733,
+      "R2_antigo": 0.8571068199328191,
+      "R2_novo": 0.8600111875078278,
+      "RMSE_wm2_antigo": 104.92877033861905,
+      "RMSE_wm2_novo": 103.96747594258413,
+      "delta_MAE_wm2": 2.7144948581039685,
+      "horizonte": 72,
+      "modelo": "DilatedRNN",
+      "nRMSE_antigo": 0.5230565244634844,
+      "nRMSE_novo": 0.5178884188970543,
+      "particao": "teste",
+      "tarefa": "hourly_72_extension",
+      "variante_antigo": "controle_antigo",
+      "variante_novo": "controle_novo"
+    }
+  ],
+  "contrato_sha256": "eb82d40a1e2d7653ff3737b9b891b1a8b77c1e8ee8203e8fa8ed2aaf33f374c0",
+  "dispositivo_atual": "cuda",
+  "dispositivo_original": "cpu",
+  "epocas_novas": {
+    "42": 25
+  },
+  "evidencia_checkpoints_antigos": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\auditoria_controles_originais\\hourly_72_extension_dilatedrnn.json",
+    "checkpoints_disponiveis_reproduzidos": 1,
+    "compatibilidade_aproximada_aprovada": true,
+    "criterio": "Compatibilidade aproximada de CPs antigos: rtol=1e-6,atol=1e-4 W/m2, criterio autorizado antes de concluir a auditoria. Reporta tambem erro absoluto1e-6; nao chamar paridade aproximada de reproducao exata. CPs novos exigem1e-6 absoluto.",
+    "fases_sem_checkpoint_original": [
+      "selecao"
+    ],
+    "sha256": "ac18b80d530b5fe3358779aceed3b0818b7bb5d91713c21053e6af9078ad71de"
+  },
+  "fase": "refit",
+  "max_diferenca_por_seed_wm2": {
+    "42": 116.60492134094238
+  },
+  "modelo": "DilatedRNN",
+  "nao_emite_aceite": true,
+  "parecer": "A mudanca de dispositivo foi definida antes dos resultados, por desempenho computacional. Este parecer nao e aceite. Comparacoes de quantizacao devem usar o controle novo e as variantes no mesmo ambiente; nao atribuir diferencas entre controles antigos e novos a quantizacao. A validacao do checkpoint novo e do protocolo completo cabe ao auditor independente.",
+  "tarefa": "hourly_72_extension"
+}

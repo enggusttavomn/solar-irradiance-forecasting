@@ -1,0 +1,49 @@
+Traceback (most recent call last):
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\manter_aceleracao_na_tomada_v1.py", line 533, in main
+    ativo = supervisor.passo()
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\manter_aceleracao_na_tomada_v1.py", line 436, in passo
+    self.registrar(self.estado['etapa'], energia_ac=ac,
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                   bateria_observada=self.bateria_observada)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\manter_aceleracao_na_tomada_v1.py", line 243, in registrar
+    self.journal.gravar(novo)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\manter_aceleracao_na_tomada_v1.py", line 50, in gravar
+    salvar_json(dados, self.path, tentativas=1)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\json_atomico.py", line 30, in salvar_json
+    tmp.replace(path)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\gm.nascimento\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 1091, in replace
+    os.replace(self, target)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_continua_refit_20261007\\supervisor\\journal.json.97lml92r.tmp' -> 'C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_continua_refit_20261007\\supervisor\\journal.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\manter_aceleracao_na_tomada_v1.py", line 553, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\manter_aceleracao_na_tomada_v1.py", line 539, in main
+    supervisor.encerrar(motivo)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\manter_aceleracao_na_tomada_v1.py", line 476, in encerrar
+    self.registrar('BLOQUEADO' if self.falhou else 'ENCERRANDO', motivo=motivo)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\manter_aceleracao_na_tomada_v1.py", line 243, in registrar
+    self.journal.gravar(novo)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\manter_aceleracao_na_tomada_v1.py", line 50, in gravar
+    salvar_json(dados, self.path, tentativas=1)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\json_atomico.py", line 30, in salvar_json
+    tmp.replace(path)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\gm.nascimento\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 1091, in replace
+    os.replace(self, target)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_continua_refit_20261007\\supervisor\\journal.json.u60n4120.tmp' -> 'C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_continua_refit_20261007\\supervisor\\journal.json'

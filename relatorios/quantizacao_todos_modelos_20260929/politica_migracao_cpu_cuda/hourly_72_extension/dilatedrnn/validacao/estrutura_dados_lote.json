@@ -1,0 +1,125 @@
+{
+  "dados": {
+    "ajuste": {
+      "x_bruto": true,
+      "y_bruto": true,
+      "localidade_id": true,
+      "localidade": true,
+      "origem_utc": true,
+      "origem_local": true,
+      "x_normalizado_bitexato": true,
+      "y_normalizado_bitexato": true
+    },
+    "validacao": {
+      "x_bruto": true,
+      "y_bruto": true,
+      "localidade_id": true,
+      "localidade": true,
+      "origem_utc": true,
+      "origem_local": true,
+      "x_normalizado_bitexato": true,
+      "y_normalizado_bitexato": true
+    }
+  },
+  "configuracao_igual": true,
+  "codigo_loop_original_preservado": true,
+  "arquitetura_shapes": {
+    "camadas.0.rnn.weight_ih_l0": [
+      16,
+      1
+    ],
+    "camadas.0.rnn.weight_hh_l0": [
+      16,
+      16
+    ],
+    "camadas.0.rnn.bias_ih_l0": [
+      16
+    ],
+    "camadas.0.rnn.bias_hh_l0": [
+      16
+    ],
+    "camadas.1.rnn.weight_ih_l0": [
+      16,
+      16
+    ],
+    "camadas.1.rnn.weight_hh_l0": [
+      16,
+      16
+    ],
+    "camadas.1.rnn.bias_ih_l0": [
+      16
+    ],
+    "camadas.1.rnn.bias_hh_l0": [
+      16
+    ],
+    "camadas.2.rnn.weight_ih_l0": [
+      16,
+      16
+    ],
+    "camadas.2.rnn.weight_hh_l0": [
+      16,
+      16
+    ],
+    "camadas.2.rnn.bias_ih_l0": [
+      16
+    ],
+    "camadas.2.rnn.bias_hh_l0": [
+      16
+    ],
+    "embedding_localidade.weight": [
+      10,
+      8
+    ],
+    "cabeca.0.weight": [
+      16,
+      24
+    ],
+    "cabeca.0.bias": [
+      16
+    ],
+    "cabeca.3.weight": [
+      72,
+      16
+    ],
+    "cabeca.3.bias": [
+      72
+    ]
+  },
+  "lote_inicial": {
+    "seed": 42,
+    "batch_size": 128,
+    "estado_inicial_bitexato": true,
+    "parametros_apos_backward_inalterados": true,
+    "optimizer_step_executado": false,
+    "max_delta_previsao_normalizada": 8.195638656616211e-07,
+    "max_delta_gradientes": {
+      "camadas.0.rnn.weight_ih_l0": 6.984919309616089e-10,
+      "camadas.0.rnn.weight_hh_l0": 5.9371814131736755e-09,
+      "camadas.0.rnn.bias_ih_l0": 2.8812792152166367e-09,
+      "camadas.0.rnn.bias_hh_l0": 2.8230715543031693e-09,
+      "camadas.1.rnn.weight_ih_l0": 9.546056389808655e-09,
+      "camadas.1.rnn.weight_hh_l0": 2.0954757928848267e-08,
+      "camadas.1.rnn.bias_ih_l0": 7.450580596923828e-09,
+      "camadas.1.rnn.bias_hh_l0": 6.984919309616089e-09,
+      "camadas.2.rnn.weight_ih_l0": 3.4458935260772705e-08,
+      "camadas.2.rnn.weight_hh_l0": 1.6996636986732483e-08,
+      "camadas.2.rnn.bias_ih_l0": 6.984919309616089e-09,
+      "camadas.2.rnn.bias_hh_l0": 6.984919309616089e-09,
+      "embedding_localidade.weight": 1.3969838619232178e-09,
+      "cabeca.0.weight": 2.514570951461792e-08,
+      "cabeca.0.bias": 1.3969838619232178e-08,
+      "cabeca.3.weight": 8.149072527885437e-09,
+      "cabeca.3.bias": 5.587935447692871e-09
+    },
+    "mse_cpu": 0.16263894736766815,
+    "mse_gpu": 0.16263893246650696
+  },
+  "ambiente": {
+    "torch": "2.12.0+cu126",
+    "cuda": "12.6",
+    "cudnn": 91002,
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "deterministic_algorithms": true,
+    "deterministic_warn_only": true
+  }
+}

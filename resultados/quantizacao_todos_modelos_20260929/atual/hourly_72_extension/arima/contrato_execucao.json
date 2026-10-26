@@ -1,0 +1,271 @@
+{
+  "codigo": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\arima_checkpoint_compacto.py": "2d7b61b8da861ec4b355fde48df5c0aee369dd03a642e41f906e01f0788301a1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\climatologia_cache_localidade.py": "ce6a1937e92eab650451b706b8ee67043b2600a3ec6aaf9f48a8ed33248376a2",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_arima_horario_controle_auditado_v1.py": "c47ff1148d3dc31710ae667f3899da898530c977651cc00ba1d30a541170843d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_arima_robusto.py": "bdae795a673fcb1d075eae8539d1f1ddb909f587bf054ed8b91b40d912105c20",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_baselines_adicionais.py": "64a3d933ba5af151e88f9d368337b99bccfa89f18a7c552aa724a57dfc39ba81",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_horario_timesnet.py": "2cc59451b0fbcbedbf3068d2f1c45595ff84daf46e8318a88080df208e7bb8e9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_estatisticos.py": "d0117c2777fd6c436f2af0b926bef0ff98104e4817944622fb8e6b0f1e9e7e4e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\quantizacao_referencias.py": "532c984801780953de96deec7f54cebd207f66e4a06b62ce806cc030cc5c9ca9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\quantizacao_timesnet.py": "1ec234c96206bd06a80a42ff23caef371dd2105c442ac7ab2663cfbaa730c3bd"
+  },
+  "controle_reexecutado_auditado": {
+    "adaptador": "arima_horario_controle_auditado_v1",
+    "ajuste_importado_com_proveniencia": true,
+    "contrato_origem": "b593232c1219b723948a2ca373cc80f0500c86572c8b18cb3e62eeadd9f2c288",
+    "diferenca_historica_maxima_wm2": 4.490431751946744e-05,
+    "escopo": {
+      "fase": "selecao",
+      "modelo": "ARIMA",
+      "particao": "validacao",
+      "regime": "atual",
+      "tarefa": "hourly_72_extension",
+      "variante": "sem_quantizacao"
+    },
+    "historico_reproduzido": false,
+    "referencia": "ajuste_novo_sem_quantizacao_reproduzido",
+    "refit": "verificacao_historica_original_estrita",
+    "tolerancia_replay_wm2": 1e-06
+  },
+  "cuda": null,
+  "entradas": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2019.csv.gz": "596462fc1dceb631bd0a8017798614d324fef6d298d01913ffbc89908db04026",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2020.csv.gz": "817e26b2fd7a817d0d0da2457d71ebc8db5880090730f7239efb74ff47842014",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2021.csv.gz": "a9e321d0cf384ad345d47c28e7c8fd5cae201ee4aa16b05c6882c45133f968ce",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2022.csv.gz": "13daace788f068c16711ae6aff7a1420066a532b538ca889078b6a4e3760f27f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2023.csv.gz": "e1f228817a16c6655128e7bbfce4668ea8e3ba0d28de535bc003fe64733353d0",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2024.csv.gz": "88430743a2b9e6f82e394f683cfdea4ad93324fe59756d17edcfbad6d9f8eac1"
+  },
+  "limitacoes": [
+    "Avaliacao retrospectiva",
+    "Clipping nao isolado por controle separado",
+    "ARIMA quantiza serie endogena historica; referencias quantizam historico antes da regra"
+  ],
+  "modelo": "ARIMA",
+  "modo": "completa",
+  "pacotes": {
+    "numpy": "2.4.4",
+    "pandas": "3.0.3",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6"
+  },
+  "parametros": {
+    "configuracao": {
+      "batch_size_diario": 128,
+      "batch_size_mensal": 32,
+      "dilated_dilatacoes": [
+        1,
+        2,
+        4
+      ],
+      "dilated_dropout": 0.0,
+      "dilated_unidades": 16,
+      "dilated_unidades_densas": 16,
+      "embedding_localidade": 8,
+      "epocas_smoke": 1,
+      "limite_localidades_smoke": 2,
+      "limite_origens_smoke": 3,
+      "lstm_camadas": 1,
+      "lstm_ocultos": 32,
+      "max_epocas_diario": 30,
+      "max_epocas_mensal": 300,
+      "modo_execucao": "completa",
+      "paciencia_diario": 5,
+      "paciencia_mensal": 30,
+      "peso_decay": 1e-05,
+      "sementes": [
+        11,
+        23,
+        42,
+        67,
+        89
+      ],
+      "taxa_aprendizado": 0.001,
+      "threads_torch": 1,
+      "timesnet_blocos": 1,
+      "timesnet_d_ff": 16,
+      "timesnet_d_model": 8,
+      "timesnet_dropout": 0.1,
+      "timesnet_kernels": 2,
+      "timesnet_top_k": 3,
+      "xgb_colsample": 0.8,
+      "xgb_estimadores": 150,
+      "xgb_estimadores_smoke": 2,
+      "xgb_n_jobs": 1,
+      "xgb_profundidade": 3,
+      "xgb_subsample": 0.8,
+      "xgb_taxa_aprendizado": 0.05
+    },
+    "criterio_niveis": "macro_MAE_fisico_horizonte_completo",
+    "dispositivo": "cpu",
+    "fontes_configuracao": {
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_arima_robusto.py": "bdae795a673fcb1d075eae8539d1f1ddb909f587bf054ed8b91b40d912105c20",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\diagnostico_arima_horario\\controle_reexecutado_auditado_v1.json": "cc019d2d8dc4c6893532d9466f27c4fc2141b8e7751811c2271a6bbff0884b77",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\diagnostico_arima_horario\\diagnostico.json": "386987bffc45a135cd89184ec3b9672a2ee2eef529be582f3961f1a68e3daa19",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\diagnostico_arima_horario\\repeticoes.json": "826a566005a306a6d8fc91eec9077079162d569ea8679c0ae568b52d78ca5217",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\cache\\deterministica.npz": "0360286d2f284683f550a72005a5b792f214f4c3cc83dc72269e91319cda0e93",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\contrato.json": "87f3f358992eb041be9708ba7653ff326f3664e2f64462ca73cbc7b1ac33f122",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\selecao_arima.csv": "a70763d74a43aa333fb25a9da87dde4f8d870d12c99e7996782d106ab0926b23",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\diagnosticar_controle_arima_horario.py": "788c69f47b76e4420282f9a68febb6189bbd04d44a61bcbdafb1f8b466c603bc",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\preparar_controle_arima_horario_auditado.py": "d3d41c81330436cadcaf9816b812995e3a41904e8be8ff90a98aad473238a906",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\repetir_ajuste_diagnostico_arima.py": "f6c60fa7f7a263e57a6365a1540dc02d0736479243f204ffcfd0cf1abc62017a",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\contrato_execucao.json": "f64760adccf795e553fc6b253d8b401ce1b043e1374a5eb0611e88cdeccf1a08",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\clipping_selecao.json": "905eaead3cd34950bac7f8ed8f4861e5e35f2f6a61c30ff7cc8b0fddcf4ff511",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade0_selecao.joblib": "f053d5f1e4c5d7b650ff5ca724a74122f0254c18861c335d98f6a6f8a8413741",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade1_selecao.joblib": "cf8712c28f9a04a71ec952cd635f616b4ac8383b712123f8c53e45274bdef7e8",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade2_selecao.joblib": "6bf381c19befa2833d7ed15b09ef91b963429c0dc313ea8c92a107326266c516",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade3_selecao.joblib": "f0f618a2e5d5d0391010a39fed98e215378cc3947fa7964684ec7adc5ecd3bc3",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade4_selecao.joblib": "71046ec3e7397c6f0bf6c6b2ed5ba3951eeb62beb4a3a596607a98739565a27a",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade5_selecao.joblib": "efcfb93724e080e764d48b1216526f75c5cd707ad6d5cf7ae2dabfd19584e6a7",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade6_selecao.joblib": "578ffb0250e35deb16a590aeee9c764b74515768590e98d980cc9cf41426e5e8",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade7_selecao.joblib": "c7c2e4576c207774c74808f7751975918e210db2fb744caf4b464025ac481350",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade8_selecao.joblib": "95feb5021898006c479930a7c5c3ae05b0611fd32ef8bc3da76b4df262816580",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade9_selecao.joblib": "be57db383866f09f8dbe2c15544530fd40c3310394967d8bef5f9efb6b3f2ffa",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\selecao\\detalhes.json": "423947849074160694fd067937788652d89664998d5ab128b1b4030c01e18091",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\selecao\\seed-1.json": "0eef7ebefc1e745c4c9e75a7cefabd43af696db811c80d2f5b1444f3b5001908",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\selecao\\seed-1.npz": "ccaadc874c67573bbf060de8322a3939fe087d05ce056a52db3b59ecc4a12a14"
+    },
+    "max_epocas": 0,
+    "modelo": "ARIMA",
+    "ordens_arima": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        2
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        1,
+        2
+      ]
+    ],
+    "ordens_no_regime_atual": "ordens_historicas_selecionadas_em_2023",
+    "ordens_quantizadas": "mesma_ordem_do_controle_coeficientes_reajustados",
+    "sem_epocas": true,
+    "sementes": [
+      -1
+    ]
+  },
+  "protocolo": {
+    "fim_dados": "2024-12-31",
+    "inicio_dados": "2019-01-01",
+    "inicio_teste": "2024-01-01",
+    "inicio_validacao": "2023-01-01",
+    "pasta_diaria": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev",
+    "pasta_horaria": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario",
+    "regime": "atual"
+  },
+  "quantizacao": {
+    "alvos_metricas": "continuos_observados_sem_quantizacao",
+    "arima_checkpoint": "especificacao_parametros_covariancia_evidencia_fit_historico_hash_sem_estados_longos",
+    "arima_inferencia": "apply_refitFalse_na_mesma_janela_limitada",
+    "arima_numerico": [
+      [
+        "lbfgs",
+        200
+      ],
+      [
+        "powell",
+        2000
+      ]
+    ],
+    "arima_ordens": "controle_seleciona_validacao_MSE_normalizado_demais_niveis_fixam",
+    "arima_quantizacao": "serie_endogena_de_ajuste_e_contextos_filtragem",
+    "climatologia_diaria": "media_mes_dia_antes_corte",
+    "climatologia_horaria": "media_mes_dia_hora_local_antes_corte",
+    "climatologia_mensal": "media_mes_antes_corte",
+    "climatologia_quantizacao": "quantiza_historico_antes_media_saida_continua",
+    "controle": "identidade_minmax_inversa_valores_originais_sem_roundtrip",
+    "persistencia_diaria_mensal": "repete_ultima_observacao",
+    "persistencia_horaria": "repete_ultimas_24_horas",
+    "quantizacao": "minmax_treino_seguido_clip_0_1_rint_Nmenos1_so_historico",
+    "sazonal": "mesma_data_hora_ano_anterior_29fev_mapeado28fev_causal"
+  },
+  "schema": 1,
+  "serie_endogena_arima_quantizada": true,
+  "sha256_contrato": "032bcd73a6379d21b038ffcef8645421ebf5aab66dbe038781b75c68f109acb1",
+  "tarefa": {
+    "ajuste": {
+      "fim_alvo": "2022-12-31",
+      "fim_origem": "2022-12-29",
+      "inicio_origem": "2019-01-15",
+      "origens_esperadas_por_localidade": 1445
+    },
+    "exploratoria": false,
+    "frequencia": "h",
+    "horizontes": [
+      24,
+      48,
+      72
+    ],
+    "pred_len": 72,
+    "refit": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-29",
+      "inicio_origem": "2019-01-15",
+      "origens_esperadas_por_localidade": 1810
+    },
+    "resolucao": "horaria",
+    "seq_len": 336,
+    "slug": "hourly_72_extension",
+    "teste": {
+      "fim_alvo": "2024-12-31",
+      "fim_origem": "2024-12-28",
+      "inicio_origem": "2024-01-01",
+      "origens_esperadas_por_localidade": 363
+    },
+    "validacao": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-29",
+      "inicio_origem": "2023-01-01",
+      "origens_esperadas_por_localidade": 363
+    }
+  },
+  "targets_quantizados": false,
+  "variantes": [
+    {
+      "niveis": null,
+      "nome": "sem_quantizacao"
+    },
+    {
+      "niveis": 64,
+      "nome": "q64"
+    },
+    {
+      "niveis": 128,
+      "nome": "q128"
+    },
+    {
+      "niveis": 256,
+      "nome": "q256"
+    }
+  ]
+}

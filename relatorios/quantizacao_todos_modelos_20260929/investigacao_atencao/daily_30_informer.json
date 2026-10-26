@@ -1,0 +1,520 @@
+{
+  "ambiente_atual": {
+    "cublas_workspace_config": ":4096:8",
+    "cuda": "12.6",
+    "cudnn": 91002,
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "python": "3.14.4",
+    "torch": "2.12.0+cu126"
+  },
+  "ambiente_original": {
+    "cublas_workspace_config": ":4096:8",
+    "cuda": "12.6",
+    "cudnn": 91002,
+    "dispositivo": "cuda",
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "pacotes": {
+      "numpy": "2.4.4",
+      "pandas": "3.0.3",
+      "scipy": "1.17.1",
+      "statsmodels": "0.14.6",
+      "torch": "2.12.0+cu126"
+    },
+    "python": "3.14.4"
+  },
+  "comparacao_metricas": {
+    "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\metricas\\daily_30_informer_validacao.json",
+    "sha256": "f4abda41870a2c3607621df2a77a98c0dfe19f85f7170a62ef591241cb0c4cf0"
+  },
+  "configuracao_canonica_igual": true,
+  "dados": {
+    "refit": {
+      "ok": true,
+      "particoes": {
+        "refit": {
+          "igualdade_bitexata": {
+            "datas_alvo": true,
+            "ids": true,
+            "normalizacao_independente": true,
+            "origens": true,
+            "x_bruto": true,
+            "x_normalizado": true,
+            "y_bruto": true,
+            "y_normalizado": true
+          },
+          "x_normalizado": {
+            "dtype": "float32",
+            "sha256": "c9202bd51953159b0b59aa95936c3b358b365df85ea18e0567eab17a2b4efb3e",
+            "shape": [
+              14320,
+              365
+            ]
+          },
+          "y_normalizado": {
+            "dtype": "float32",
+            "sha256": "1b3d933557bb7f2f6897ed07ee71bacb53d0d0fa9953d4da9a88986b0b820222",
+            "shape": [
+              14320,
+              30
+            ]
+          }
+        },
+        "teste": {
+          "igualdade_bitexata": {
+            "datas_alvo": true,
+            "ids": true,
+            "normalizacao_independente": true,
+            "origens": true,
+            "x_bruto": true,
+            "x_normalizado": true,
+            "y_bruto": true,
+            "y_normalizado": true
+          },
+          "x_normalizado": {
+            "dtype": "float32",
+            "sha256": "0c8200a01b21c27b7dcd3ff71745cd5a3ff8af295395bfa3ba2808b8f7971095",
+            "shape": [
+              3370,
+              365
+            ]
+          },
+          "y_normalizado": {
+            "dtype": "float32",
+            "sha256": "35496a87420879dfe30c82ac599584dd7d51040e44d5e1ee07a66695160e7810",
+            "shape": [
+              3370,
+              30
+            ]
+          }
+        }
+      }
+    },
+    "selecao": {
+      "ok": true,
+      "particoes": {
+        "ajuste": {
+          "igualdade_bitexata": {
+            "datas_alvo": true,
+            "ids": true,
+            "normalizacao_independente": true,
+            "origens": true,
+            "x_bruto": true,
+            "x_normalizado": true,
+            "y_bruto": true,
+            "y_normalizado": true
+          },
+          "x_normalizado": {
+            "dtype": "float32",
+            "sha256": "d8536a3883c4ee5a219a9f4f69256ac985ce7534ad35c3e1c9c6a3ad91fa71a2",
+            "shape": [
+              10670,
+              365
+            ]
+          },
+          "y_normalizado": {
+            "dtype": "float32",
+            "sha256": "428cc3379f6fd0724adc4df00602a29ccc4fc7de697fc4bb658bba6af3fc8da7",
+            "shape": [
+              10670,
+              30
+            ]
+          }
+        },
+        "validacao": {
+          "igualdade_bitexata": {
+            "datas_alvo": true,
+            "ids": true,
+            "normalizacao_independente": true,
+            "origens": true,
+            "x_bruto": true,
+            "x_normalizado": true,
+            "y_bruto": true,
+            "y_normalizado": true
+          },
+          "x_normalizado": {
+            "dtype": "float32",
+            "sha256": "826df1ba2c9e31e2294f19efe496ca53e7801246643c75003cf2345febae92ef",
+            "shape": [
+              3360,
+              365
+            ]
+          },
+          "y_normalizado": {
+            "dtype": "float32",
+            "sha256": "3690c126645ea5796c153c3bbad32f9caa863e4665281f4291621aa5d1d5b10f",
+            "shape": [
+              3360,
+              30
+            ]
+          }
+        }
+      }
+    }
+  },
+  "divergencia_registrada": {
+    "alvos_primarios_bitexatos": true,
+    "aplicavel": true,
+    "aprovado": false,
+    "contrato_sha256": "b0719321497de8a132d948a3f672208756f1f7fd150539c2bb3df84f41d7ff6a",
+    "dispositivo": "cuda",
+    "dispositivo_original": "cuda",
+    "fonte": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\daily_30\\previsoes_validacao.csv.gz",
+    "fonte_alvos_primarios": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\previsoes_validacao.csv.gz",
+    "max_diferenca_por_seed": {
+      "11": 17.166780949213717,
+      "23": 23.40005904172091,
+      "42": 21.742005964465534,
+      "67": 13.395737032727794,
+      "89": 21.717612712071627
+    },
+    "novo_controle_por_dispositivo": false,
+    "reproducao_exata_exigida": true,
+    "sha256": "fc1a1d7c324d2b71607895de7b2500e2a05252ddd30f588fa7a2a45aea7553b4",
+    "sha256_alvos_primarios": "e3670b8917e6646a610f4dbcb2aa0eb51272ff6ac8180ca5164d1d3343de2d16",
+    "tolerancia": 1e-06
+  },
+  "fontes_codigo_originais": [
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_baselines_adicionais.py",
+      "exato": true,
+      "sha256": "64a3d933ba5af151e88f9d368337b99bccfa89f18a7c552aa724a57dfc39ba81",
+      "sha256_atual": "64a3d933ba5af151e88f9d368337b99bccfa89f18a7c552aa724a57dfc39ba81"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\modelos_baselines_adicionais.py",
+      "exato": true,
+      "sha256": "f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988",
+      "sha256_atual": "f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py",
+      "exato": false,
+      "sha256": "6bd687ead27d2d174a0e1beb7c69dcb29c4695549553f4cbf2142e159f8ba991",
+      "sha256_atual": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_horario_timesnet.py",
+      "exato": true,
+      "sha256": "2cc59451b0fbcbedbf3068d2f1c45595ff84daf46e8318a88080df208e7bb8e9",
+      "sha256_atual": "2cc59451b0fbcbedbf3068d2f1c45595ff84daf46e8318a88080df208e7bb8e9"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\dados_horarios_nsrdb.py",
+      "exato": true,
+      "sha256": "3bafea39ec15867e79a2ff1fc29492b1d72613c9650a8c1741ef0736682fad13",
+      "sha256_atual": "3bafea39ec15867e79a2ff1fc29492b1d72613c9650a8c1741ef0736682fad13"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_baselines_gpu.py",
+      "exato": true,
+      "sha256": "8dc245c5c0add2bf03e8b457b2f8a588f1d80706f3b422722fee4a9ae33fdda8",
+      "sha256_atual": "8dc245c5c0add2bf03e8b457b2f8a588f1d80706f3b422722fee4a9ae33fdda8"
+    }
+  ],
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\contrato.json": "4dadcc876249a248187b658abce0e35aa0c9c2bff471b322f3820ff9b83d77b3",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\contrato_execucao.json": "fd97e3ec81b622b5df49737b9061646d2b9a24e2d9e8f694f3e9e0e2daabd83c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\investigar_controles_atencao.py": "e088fc33116fb9437a6a8e755002cb3640accf6b2d68a901d56567e57510344f"
+  },
+  "lote_inicial": {
+    "avisos": [],
+    "backend_matematico_com_determinismo_estrito": {
+      "avisos": [],
+      "executou": true,
+      "max_gradiente_repetido": 0.0,
+      "max_saida_repetida": 0.0
+    },
+    "backend_original_com_determinismo_estrito_erro": null,
+    "batch_size": 128,
+    "estado_inicial_original_novo_exato": true,
+    "mesmo_lote_e_rng_reposto_em_cada_passagem": true,
+    "repeticoes_backend_original": [
+      {
+        "max_gradiente_normalizado": 7.450580596923828e-09,
+        "max_saida_normalizada": 0.0,
+        "repeticao": 1
+      },
+      {
+        "max_gradiente_normalizado": 7.450580596923828e-09,
+        "max_saida_normalizada": 0.0,
+        "repeticao": 2
+      },
+      {
+        "max_gradiente_normalizado": 7.450580596923828e-09,
+        "max_saida_normalizada": 0.0,
+        "repeticao": 3
+      }
+    ],
+    "seed": 11,
+    "sem_optimizer_step": true
+  },
+  "modelo": "Informer",
+  "nao_emite_aceite": true,
+  "parametros_iguais": {
+    "batch_size": true,
+    "lr": true,
+    "max_epocas": true,
+    "paciencia": true,
+    "sementes": true,
+    "weight_decay": true
+  },
+  "replays": [
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\cache\\seed11.npz",
+      "cache_sha256": "a311eaa825ec5a788e759529a765c8e79ab9ac5416a4e7c0c36866ebe5efad9c",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\modelos\\seed11_selecao.pt",
+      "checkpoint_sha256": "0646e50ff5732b46ab8a6faa068b54a89e2581f5224a5f9fa39ddb74b7f905b0",
+      "epocas": 9,
+      "estrito_1e_6": true,
+      "fase": "selecao",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 100800,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 11,
+      "tipo": "original"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed11.npz",
+      "cache_sha256": "5da3e4dfb83e5d7d2e0d88f8a8456016fcbec24e5dc002a223a7ae75c463bafd",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\modelos\\seed11_selecao.pt",
+      "checkpoint_sha256": "3bf4cfe89f09c94bcfc4ca348d1531f90b3515ba3f9f01a7c6c6499119959deb",
+      "epocas": 9,
+      "estrito_1e_6": true,
+      "fase": "selecao",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 100800,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 11,
+      "tipo": "novo"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\cache\\seed23.npz",
+      "cache_sha256": "07aa693d223cf10236a1dd161bafa72882fd12fcec5e45b39a2206439fe643b0",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\modelos\\seed23_selecao.pt",
+      "checkpoint_sha256": "f6a980a7c5f4e650ed9811b0d7b0554b1adcdd69ed53e0a9052ae7eafcea4e68",
+      "epocas": 12,
+      "estrito_1e_6": true,
+      "fase": "selecao",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 100800,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 23,
+      "tipo": "original"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed23.npz",
+      "cache_sha256": "1058de244cd7421e90415e3289292ca57e18ec8756e10daaa10d6862ccda0f13",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\modelos\\seed23_selecao.pt",
+      "checkpoint_sha256": "68fa8830ecbae3b22a57f4999cab669c297595d2613e961822c9930f41fea33d",
+      "epocas": 12,
+      "estrito_1e_6": true,
+      "fase": "selecao",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 100800,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 23,
+      "tipo": "novo"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\cache\\seed42.npz",
+      "cache_sha256": "09e3be1cf42c2d7cc08e1b12d24f1ff8687f9004a4d71c43dee968994b4a57b4",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\modelos\\seed42_selecao.pt",
+      "checkpoint_sha256": "bfcd45d068d498c4fd438df59f3d69e8589c5ac3a29d8da5ac5936d7a233ae5c",
+      "epocas": 7,
+      "estrito_1e_6": true,
+      "fase": "selecao",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 100800,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 42,
+      "tipo": "original"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed42.npz",
+      "cache_sha256": "df7b5dfc9b48f94c100acb408564032a25812a0a8c36cab44942d3e8db788f7a",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\modelos\\seed42_selecao.pt",
+      "checkpoint_sha256": "923344fd1209237ff38c277f2af47380adc96ea6f924dccd3196daf60ee6069d",
+      "epocas": 7,
+      "estrito_1e_6": true,
+      "fase": "selecao",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 100800,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 42,
+      "tipo": "novo"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\cache\\seed67.npz",
+      "cache_sha256": "cbd627433ed4371c69893e43787e1191fab57ba8ab60105bba1a4172d8ef847e",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\modelos\\seed67_selecao.pt",
+      "checkpoint_sha256": "b0ec79bd01c337abed88b2207a98ef3b85d2bc28a90476b62109ffcdf33ad76f",
+      "epocas": 18,
+      "estrito_1e_6": true,
+      "fase": "selecao",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 100800,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 67,
+      "tipo": "original"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed67.npz",
+      "cache_sha256": "dce611311e28eb6035b7cfe53a9f813ecfe79f90cc01fc07c27be867f4884b67",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\modelos\\seed67_selecao.pt",
+      "checkpoint_sha256": "976f880a2cbe84d9d05e1541e34d072cf65ee1ced18bfdc5dbc4944c41af3fb8",
+      "epocas": 18,
+      "estrito_1e_6": true,
+      "fase": "selecao",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 100800,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 67,
+      "tipo": "novo"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\cache\\seed89.npz",
+      "cache_sha256": "833b1c711e7692426c3b195abf0c207c93f03fb7fa57244fa73379808f67de25",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\modelos\\seed89_selecao.pt",
+      "checkpoint_sha256": "2e569360952603b2d39f1135b035a18250e1c64552835c75e1662233f2d60df1",
+      "epocas": 7,
+      "estrito_1e_6": true,
+      "fase": "selecao",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 100800,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 89,
+      "tipo": "original"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed89.npz",
+      "cache_sha256": "6f995f5b9d4ead571b408ef853fdecffc41fb4e594605200aead174af58ea09c",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\modelos\\seed89_selecao.pt",
+      "checkpoint_sha256": "a8dadf1e62eb1dd6cdece1e7e985ce073cc8be9aacc7962c52b7566567e86784",
+      "epocas": 7,
+      "estrito_1e_6": true,
+      "fase": "selecao",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 100800,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 89,
+      "tipo": "novo"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\cache\\seed11.npz",
+      "cache_sha256": "a311eaa825ec5a788e759529a765c8e79ab9ac5416a4e7c0c36866ebe5efad9c",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\modelos\\seed11_refit.pt",
+      "checkpoint_sha256": "8fed756b81f0fee165136d3ee93f5bc2f9c82b7e1e1d9ecd6b15d7e5de752283",
+      "epocas": 9,
+      "estrito_1e_6": true,
+      "fase": "refit",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 101100,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 11,
+      "tipo": "original"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\cache\\seed23.npz",
+      "cache_sha256": "07aa693d223cf10236a1dd161bafa72882fd12fcec5e45b39a2206439fe643b0",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\modelos\\seed23_refit.pt",
+      "checkpoint_sha256": "76e0874c374925caf474a30c8d5517d4c6d39be047fa06b848aff8330fa862af",
+      "epocas": 12,
+      "estrito_1e_6": true,
+      "fase": "refit",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 101100,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 23,
+      "tipo": "original"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\cache\\seed42.npz",
+      "cache_sha256": "09e3be1cf42c2d7cc08e1b12d24f1ff8687f9004a4d71c43dee968994b4a57b4",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\modelos\\seed42_refit.pt",
+      "checkpoint_sha256": "055b81cc36bd51ef21a1197659269d582f68b27b7119aed0e13549d3d6e4db84",
+      "epocas": 7,
+      "estrito_1e_6": true,
+      "fase": "refit",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 101100,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 42,
+      "tipo": "original"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\cache\\seed67.npz",
+      "cache_sha256": "cbd627433ed4371c69893e43787e1191fab57ba8ab60105bba1a4172d8ef847e",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\modelos\\seed67_refit.pt",
+      "checkpoint_sha256": "17a4abfb904e25f30001fbd3ee2649f85c984cb5e717b33ae63edc0ca5a80155",
+      "epocas": 18,
+      "estrito_1e_6": true,
+      "fase": "refit",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 101100,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 67,
+      "tipo": "original"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\cache\\seed89.npz",
+      "cache_sha256": "833b1c711e7692426c3b195abf0c207c93f03fb7fa57244fa73379808f67de25",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\informer\\modelos\\seed89_refit.pt",
+      "checkpoint_sha256": "2eac2b4a714fc5f8b1f27b1a394142ced56768201a68ea5db47be5076ce659ca",
+      "epocas": 7,
+      "estrito_1e_6": true,
+      "fase": "refit",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 101100,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 89,
+      "tipo": "original"
+    }
+  ],
+  "sem_treinamento": true,
+  "tarefa": "daily_30"
+}

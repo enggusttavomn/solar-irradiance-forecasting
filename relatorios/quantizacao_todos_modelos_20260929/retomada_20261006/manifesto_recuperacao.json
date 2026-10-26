@@ -1,0 +1,850 @@
+{
+  "versao": 1,
+  "aprovado": true,
+  "aprovado_em_utc": "2026-10-06T23:03:06.338474+00:00",
+  "cpu_workers": 2,
+  "gpu_workers": 2,
+  "antigos": {
+    "coordenador": {
+      "pid": 7872,
+      "creation_time": "134356437859141023"
+    },
+    "runner": {
+      "pid": 23160,
+      "creation_time": "134356437910898585"
+    }
+  },
+  "coord_status": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\status.json",
+  "runner_status": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\runner.json",
+  "global": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\selecao_global_congelada.json",
+  "global_mtime_ns": 1791140953445254300,
+  "comando": [
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "scripts.coordenar_quantizacao_historica",
+    "--cpu-workers",
+    "2",
+    "--gpu-workers",
+    "2"
+  ],
+  "hashes": [
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\retomar_historico_apos_calendario.py",
+      "sha256": "610255aaa2e252d13b6351bd0b701cc486379fb8d3892fa5d16c9e63a782c097",
+      "papel": "helper"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tests\\test_retomar_historico_apos_calendario.py",
+      "sha256": "d531f2cd388550ccc6294c3bc47d3bae630ebde6b2d2c7deb250b5ad4081c5ea",
+      "papel": "tests_helper"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\coordenar_quantizacao_historica.py",
+      "sha256": "1166e691d47d81a98cb87286eed302fa0b61d4acaed0c9029165431a7615fa2b",
+      "papel": "coordenador"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\rodar_quantizacao_todos_modelos.py",
+      "sha256": "410740936138e1552bab9b617b3b1a35741f6202a05116322a9d1346ebf3f84f",
+      "papel": "dispatcher"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\auditar_quantizacao_todos_modelos.py",
+      "sha256": "2a8a1e9c5f014dcd554494bf798dc60c55c4eeecbd9fd80700dfe39cc1595c43",
+      "papel": "replay"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_sazonal_mensal_controle_auditado_v1.py",
+      "sha256": "89bbc5dc25780bf22dff658314ab11f6c5e4a11830183c0a85a313be59162f13",
+      "papel": "adapter"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tests\\test_sazonal_mensal_controle_auditado_v1.py",
+      "sha256": "4171679918079783c7c580efc889aa550ddc4b105142d32b38626aed5eacd4f0",
+      "papel": "tests_adapter"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\json_atomico.py",
+      "sha256": "69f0f78da16c53f8fc1e5c3ce73511b60e1d35e3c801cfc44534d750894769d1",
+      "papel": "json"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\processos_quantizacao.py",
+      "sha256": "3f5409846652efbdfc893cf85ee8b51eee51905d1c9b4e9f497456c7f24e1468",
+      "papel": "processos"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_concorrentes.py",
+      "sha256": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+      "papel": "engine_quantizacao"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py",
+      "sha256": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+      "papel": "engine_multirresolucao"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_estatisticos.py",
+      "sha256": "d0117c2777fd6c436f2af0b926bef0ff98104e4817944622fb8e6b0f1e9e7e4e",
+      "papel": "engine_estatistico"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\selecao_global_congelada.json",
+      "sha256": "c616673e7d334a6161872346980a1904f03d4a375433008811e287a839abfeb7",
+      "papel": "global"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\selecao_congelada.json",
+      "sha256": "1a6ab05940ab900390cdb915a5386086dcb4b0dca7c397db145168e8aded70b9",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\contrato_execucao.json",
+      "sha256": "4e0dad82b4a1c8607aeaef84682dc475f060a693e90c4fae02f5b5a0666e2faf",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\selecao_congelada.json",
+      "sha256": "4d7c9204749308f9edf304ca33c01ee23f365ba688dd9fa09036375a7bc2a689",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\contrato_execucao.json",
+      "sha256": "6b219df0a028e49cc6ea0ae1a146dd729dc129a1f8536c95e0eb680dcabd42ac",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\selecao_congelada.json",
+      "sha256": "a30b9602b3d17ac43d5a172e338d59d505f8d1785609080e76060edd4d0d17ab",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\contrato_execucao.json",
+      "sha256": "a758ba4a725329261a9586c5b8332de7493701937229bbd0cb0638b288892166",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\selecao_congelada.json",
+      "sha256": "323797c8bc7edbb0e2337ef5d4d07025727afa76e3c177fc0384221463109676",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\contrato_execucao.json",
+      "sha256": "30c0d1bf8147f0aeb975163819b296308568093e3e8669e19a1acfa38b095c55",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\informer\\selecao_congelada.json",
+      "sha256": "533c891e529c35a33c436c2345025f84726da6a2391ca8f68c393af12fe13b96",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\informer\\contrato_execucao.json",
+      "sha256": "d56c81e818686dd46be26b0d3f9f47dfa8a2554dcf1f55ffcdbf67672ec5415d",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\selecao_congelada.json",
+      "sha256": "e714787e730c7242d6dd8845efe3da13360be6b1c6bf00d413b8d5497be93f42",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\contrato_execucao.json",
+      "sha256": "98dc00ad4edb1170de0c2f30c24c5a3bb22f08a4c01a6ec67c6a76094e88c533",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\arima\\selecao_congelada.json",
+      "sha256": "14aabf10922eeb263a8eca98aebcef7b993db3f0645b7ae387e35711638a541a",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\arima\\contrato_execucao.json",
+      "sha256": "2befacb95fd58a24ec6db5b9758a108697d862b1888dfbfbd9134ee495e63da0",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\persistencia\\selecao_congelada.json",
+      "sha256": "a122b4764e22ca7be47a1a19cf02c53788b85c0965b03b5a0740b61d23d5c4ad",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\persistencia\\contrato_execucao.json",
+      "sha256": "771e9e08478558b742e2dd08ab68301e04eb387a4c2661ba63d7bb52f95c7539",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\sazonal_ingenuo\\selecao_congelada.json",
+      "sha256": "c6ea7665e715df2c30cc4c711a972474363152957ef5fa427932ee746c5fd529",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\sazonal_ingenuo\\contrato_execucao.json",
+      "sha256": "c5b61809a20cebc3af420bae6b03610ef7d66cae280c508e6566ed88d2cc2078",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\climatologia\\selecao_congelada.json",
+      "sha256": "0f5414c4984462d73c2bd91da3f99075a5a7b5a645ee6a9c6c1d8b6735f9e5b6",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\climatologia\\contrato_execucao.json",
+      "sha256": "b1d7df424abf3518b289e6e891d7f5f7c7f970146006472a89eb2cbb8dc4431d",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\timesnet\\selecao_congelada.json",
+      "sha256": "c33bad3f98ed1c986700707127fd4327d7509298b209eb8ad0220946ec1ece4a",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\timesnet\\contrato_execucao.json",
+      "sha256": "08ba22890687fa882ddfc7dbdf6da2eacf63631081f19c17384ac88c1a52dc4d",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\gru\\selecao_congelada.json",
+      "sha256": "bb067dd398d1400995925541f4fbac8a9f72be91d8b7decf4c2fa3318e0baf26",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\gru\\contrato_execucao.json",
+      "sha256": "c4d5ba28fd02fa325fbf6eb59b5a03e373d8a202483e8b0271686ef0427b80b5",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\lstm\\selecao_congelada.json",
+      "sha256": "2fede94637b6db14cca22b96016a6a9a238ae319a8de03ad0e9b612feb51c909",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\lstm\\contrato_execucao.json",
+      "sha256": "1dc3d995ef2a9d2284110f64e98b64aa5d919f0cbb9a874c0330ddf2a303950c",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\dilatedrnn\\selecao_congelada.json",
+      "sha256": "4ee4cec7708c9d6839d8f15b848d3248c672e153fd34380628a13b9b78a5e6e7",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\dilatedrnn\\contrato_execucao.json",
+      "sha256": "bc990db2ce7c11e4a254bb2713313357b4bc39dd0bc6cc33da4cb3c134189204",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\transformer\\selecao_congelada.json",
+      "sha256": "acc21912737802120d7e64cdf99d7ff7571a3c5e28b673fe239e7c6718dab778",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\transformer\\contrato_execucao.json",
+      "sha256": "4effee602c0f21d10de815cab162637021b332289da3b9a5eaa8601d302b28c9",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\informer\\selecao_congelada.json",
+      "sha256": "e73bc1e2390a5121507c39a034c983f4e64cee35cfcb1cfdc870e4451712c34b",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\informer\\contrato_execucao.json",
+      "sha256": "b22a1b359175481ac7e48dfa72ccf078439ecdb73666b9895b7875b76c49e930",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\xgboost\\selecao_congelada.json",
+      "sha256": "de9aeeb71532a0634d80fd6a2d86923e417c83b378eca5b2cc71700c056f9175",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\xgboost\\contrato_execucao.json",
+      "sha256": "5e545835a7f0fd7556343b08032a86a16885f1ddbbf603e77d14289264b926f7",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\selecao_congelada.json",
+      "sha256": "cabed66322d142c0a4685f8b6eec94d92a692d18e7371ba511ec44df49b21e1a",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\contrato_execucao.json",
+      "sha256": "0d73a361abeea873ad256fe6125c8926e8fabfb085fa071e91409e7f4fdb07cf",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\persistencia\\selecao_congelada.json",
+      "sha256": "a014dd74765ebcf926704a27feee8363461b4cf46d8a826ec82cd9787e804e56",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\persistencia\\contrato_execucao.json",
+      "sha256": "37d32a6a917003549e9a7393048d71d2a1721ae4c59b90280b55cf6c711bdca3",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\sazonal_ingenuo\\selecao_congelada.json",
+      "sha256": "5dd2058c0d064a72049f21a123690d3376ae03a71e375f1d43b0b63f7bed3519",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\sazonal_ingenuo\\contrato_execucao.json",
+      "sha256": "4af72cddf99f1ccfcfef03538d3d423ff6a5443fc991ae4a020687a91e89c239",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\climatologia\\selecao_congelada.json",
+      "sha256": "6c737d7fd58d5d173a5196907e9ce10f8dfdfb6e49e12e7f9cee923bbf6e7bfa",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\climatologia\\contrato_execucao.json",
+      "sha256": "f7c8fe6991114453d1f0e2858b25594faf30d51e956e142981494d1d5f6539e8",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\timesnet\\selecao_congelada.json",
+      "sha256": "0cdc9246d09ef170aaa21ebfaf7a3294561ff890bdba040de857cc1bbf00650b",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\timesnet\\contrato_execucao.json",
+      "sha256": "efd872b1c5b602801d23d5aff117b29f4720d07a6f0bc694dfaeafd0fcd2091a",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\gru\\selecao_congelada.json",
+      "sha256": "b2630799bb2ed97f45694c98bf06a275a90dd6c695b48d2076172b6ca6afe0e3",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\gru\\contrato_execucao.json",
+      "sha256": "a743b38a69f33bb2f908cb886a25893eb328b644e8e17cfedd7278ea10d8d51d",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\lstm\\selecao_congelada.json",
+      "sha256": "c0a76f429329f9643e0e84670a325201a35a7af2a95814630e6cd12fae1e6f1e",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\lstm\\contrato_execucao.json",
+      "sha256": "e86caf3b335e326115710ec2046f9e6221b5a964a579120d999d0695cba83b91",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\dilatedrnn\\selecao_congelada.json",
+      "sha256": "549099b2cbe1a232fc16d9eaa3609d6c891e3d4ac86d77e4a375b1df54e349b1",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\dilatedrnn\\contrato_execucao.json",
+      "sha256": "dc8f314d51844344e884f1c5b7df4ea7a497dca1cc19823dccf5d50a6d75ae21",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\transformer\\selecao_congelada.json",
+      "sha256": "359f3ec461918526dd2f29bcf8fd5f0db0bc7402b2420c85dcb4e00882b427f1",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\transformer\\contrato_execucao.json",
+      "sha256": "bc9c1b635a869d36af27f5bd3dc1375321600ca4e4984ee6edfe9f6476666498",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\informer\\selecao_congelada.json",
+      "sha256": "d1ed996909b8cd291d0ff994fe7dfeccc1f7596401960267e46b74821805840b",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\informer\\contrato_execucao.json",
+      "sha256": "33d8210361dbeed40f818549aac3e23c8268f984ff1f9fa666de84cba982e1ff",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\xgboost\\selecao_congelada.json",
+      "sha256": "fca67d4bcb769cc08f02bc158df19dd8465bddc63997ca16aaba8d20489f8dac",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\xgboost\\contrato_execucao.json",
+      "sha256": "98b358fa9cb15b3b0784e0389618452dcb3cc0319573f7916c522b8e1deb6659",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\arima\\selecao_congelada.json",
+      "sha256": "6a9dd3e71aaa407363db393e4f7dd501e34cbf4a8b5f9ed7c31e04968b14460a",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\arima\\contrato_execucao.json",
+      "sha256": "7831c74615395ac750c74296710c92574c1c36da01244a20186700a54354f256",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\persistencia\\selecao_congelada.json",
+      "sha256": "31936c079ba347c12dfa5875e98595bcd94feb9df0b0b857116ad775fca404d3",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\persistencia\\contrato_execucao.json",
+      "sha256": "9bff53027641bc90cd2954762e77c9cbd495ac141d5163dbbe66db3dd2dfbfe9",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\sazonal_ingenuo\\selecao_congelada.json",
+      "sha256": "29d4347d748bd5a5a7b705c5539f06dc81f019459539ad78c2cd0842184a1407",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\sazonal_ingenuo\\contrato_execucao.json",
+      "sha256": "633328b05b260987724e35d912c761178d272ac3b701806c757c2aaaebe2443c",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\climatologia\\selecao_congelada.json",
+      "sha256": "50162da9c17166a26918541e5fa7d4a6ec27249345e3d6d9559ca2a027a30b93",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\climatologia\\contrato_execucao.json",
+      "sha256": "b6f856f257adb86ed1ec76ae7cc5ef33864b30688e876d28f141b0f492234d1c",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\timesnet\\selecao_congelada.json",
+      "sha256": "54bd90671a93392cb713bc806d9b49bfd6ddd38264444a2524f695ab4d7f1392",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\timesnet\\contrato_execucao.json",
+      "sha256": "fe2c7da004fbecd2c969bb1620193e46e49164eea8ed6c9761b41b54925981e4",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\gru\\selecao_congelada.json",
+      "sha256": "1a3066e63b7ecfc23172ac4ec235bb422a40d805ff604b2559c4b8f97d727330",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\gru\\contrato_execucao.json",
+      "sha256": "b298227b5197b54093d2c3c1a4f7b715ab85380307df3c4b2f8e6497bc965f8f",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\lstm\\selecao_congelada.json",
+      "sha256": "0f7c878d61f0d294d48452ed6df11e7292eac8e267692dbd625abcd2b882d7f3",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\lstm\\contrato_execucao.json",
+      "sha256": "975fb7390086596a2d22d68fed871828e8850a1edb481e45b06a7faabf8d46b2",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\selecao_congelada.json",
+      "sha256": "17d0d8acb9e668b8e180aac58b2afdd462aba7eb1ca0f91e0e8278ba9b3940b1",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\contrato_execucao.json",
+      "sha256": "7a699ea77ab539401404d0969ce89b97f2256a482ce51324aeedd35e0615026f",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\transformer\\selecao_congelada.json",
+      "sha256": "b68c0ad228524b99cd59d94a8095430ecdab009d01cc1ca5662e9bed85bb92c4",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\transformer\\contrato_execucao.json",
+      "sha256": "0b31ffeba7dff69323bd9155c997d2f77aa3d07c71e5e4e4464a4ee4c2421f98",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\informer\\selecao_congelada.json",
+      "sha256": "3c611621649b275285cf0db3c1680731a82f34ab4e7192d458594d9e098f3832",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\informer\\contrato_execucao.json",
+      "sha256": "b52415c64d69106f0e0c20c89d0005b0749078bbb3d2bea17144d6844d735d53",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\xgboost\\selecao_congelada.json",
+      "sha256": "474109dcf2d7daafdfcf6dabfcac149e4888eef32aca16fb5d9d897ca9779585",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\xgboost\\contrato_execucao.json",
+      "sha256": "36318c05ebfc48914de29ce3761125f084bc15f99885d60ed3f4152d23f3c89a",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\arima\\selecao_congelada.json",
+      "sha256": "957582f33a9d9271c436e0a629d01d8f18b498f1e1c72b453bce4686776603ad",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\arima\\contrato_execucao.json",
+      "sha256": "f99e375ad58a4a1ca709cf46c90922dca883a2e1ead5f1d209109aa24819089e",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\persistencia\\selecao_congelada.json",
+      "sha256": "9b199be94cd0fc2f5fe04d1e1f1b421c2dd43e94d34ac4333f6f505e5c028eff",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\persistencia\\contrato_execucao.json",
+      "sha256": "e89ac9fc4b16e10b5826073e036863b38e404d616e5b42e58927f12f710187a8",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\sazonal_ingenuo\\selecao_congelada.json",
+      "sha256": "170ce0f8c890d3a07625f334d5905e673907b3d357f7363294e81be07210dd0b",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\sazonal_ingenuo\\contrato_execucao.json",
+      "sha256": "6a25f25c7c1abdc3b0f44f3604683214c48c8c28e5ee1a261d5fe488f1c65645",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\climatologia\\selecao_congelada.json",
+      "sha256": "6a02a4f5abdc70783db6e606c783230e887d6957b93526e2d62ff728216e80fb",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\climatologia\\contrato_execucao.json",
+      "sha256": "2cf5b82655e9fcef5d238648d3922e67132ba368e9ca9bece13b3aeeb05c8309",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\timesnet\\selecao_congelada.json",
+      "sha256": "091c15a905b5ae7e6b7e8f93c87b87fb408cd752f5ceda5f21b81e9bcf753c5c",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\timesnet\\contrato_execucao.json",
+      "sha256": "0cdaf1ddd05c6bf15c6ced3e46a8219383f65fb56b252732387221db19fd39fe",
+      "papel": "global_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\correcao_sazonal_mensal_v1\\monthly_1\\revisao_independente.json",
+      "sha256": "701347cf24823f2a010ef8304de937f3fc362098ba60004468741bde0d86d597",
+      "papel": "aprovacao_sazonal"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\correcao_sazonal_mensal_v1\\monthly_1\\paridade_validacao.json",
+      "sha256": "256ae4d0bfd1153f5b9e3fce717112de2b408f454d4c11da6451add817287984",
+      "papel": "evidencia_sazonal"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\correcao_sazonal_mensal_v1\\monthly_6\\revisao_independente.json",
+      "sha256": "f815d99123ba88360d527c1416937b476522260b663a4049f2483b00f3f97b3e",
+      "papel": "aprovacao_sazonal"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\correcao_sazonal_mensal_v1\\monthly_6\\paridade_validacao.json",
+      "sha256": "f52daa2019691eb098c6c86d0deedf6ef1d3138bd9b0862dcdc455acbdcccbb7",
+      "papel": "evidencia_sazonal"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\refit\\seed11.npz",
+      "sha256": "4594afbb193817dd5d6b5f00031d7ccf3cd74d00da7e01bd04ae8b497db7ccc1",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\refit\\seed11.csv",
+      "sha256": "489c409679036bb5f54b9a0515ff96bf8b1e8e25e6f5920faed7ce72c61931d0",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\modelos\\seed11_refit.pt",
+      "sha256": "6dc6bcd56cd96067bc3139a099ebf3097904f1ef5655b452ad4bdfdd716b578b",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\refit\\seed11.json",
+      "sha256": "0f4b88babff5d60f449a7630abd09d784926d1c553236ca07c18f2cfcc1d88f2",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\refit\\seed23.npz",
+      "sha256": "dba3dfbb7617d1877f5346fdf26408484a2712cd62e6ec1083e7c3b93ce19850",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\refit\\seed23.csv",
+      "sha256": "fb20b20248ca3e198f07537cf4255271eeebdcf2f83c6e135c01f1b3d6d7ca85",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\modelos\\seed23_refit.pt",
+      "sha256": "61aa201d1094319b5d66d6b125c6de5f298dcf4ebdb7666318b9e4ded461c73b",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\refit\\seed23.json",
+      "sha256": "edc602d1ce297de59f5ee2db0a6677a75500faaa8697bc3a1ce1127287bde359",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\refit\\seed42.npz",
+      "sha256": "2ff97e4542b0338f226827db29e15bebbc6b2dbd697a508b20acaaccd169c5ec",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\refit\\seed42.csv",
+      "sha256": "e7427df361598197d018f719e2984584a59b84825eee70aeb131b346016ae7fa",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\modelos\\seed42_refit.pt",
+      "sha256": "11c3ef7bb212c088dd8dd5047b1a6b1c8e4ebb7899288de874fbcd0f8138bf77",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\refit\\seed42.json",
+      "sha256": "de3f7e13bb704a1416ac23eb2b7c03b74a4a28d15d76de6ef9afafe3484027c6",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\refit\\seed67.npz",
+      "sha256": "fb966cdb86798092facbe7e6a8e6016872f59fa18fade5b5cf80bdb44a105895",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\refit\\seed67.csv",
+      "sha256": "0a7a4a26efdb784d7e6e037739a16a7936eafaeca3c9d22af20b67fddb01e928",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\modelos\\seed67_refit.pt",
+      "sha256": "7743b06e4cc928026accd36ba71fb6e2445e8595274baab59a41700f2fe7fd0f",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\refit\\seed67.json",
+      "sha256": "26e9b09d38737555af9e7a3ee98b139e5a135b482da046aa6755ab6ff60855b6",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\refit\\seed89.npz",
+      "sha256": "f5b2053d346bbdecec796e6c9340acb120c57826a397ca614e4bd459b0312f10",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\refit\\seed89.csv",
+      "sha256": "8faec3dcf7c9216bd2b39ba17c4a01194377d2a30a1bd7cc1f3cba6c6f961fa0",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\modelos\\seed89_refit.pt",
+      "sha256": "cc07b7fb2151d0d0e269f5f97c507de4b922a9462023bfc0cf46219c62ae8d5c",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\sem_quantizacao\\refit\\seed89.json",
+      "sha256": "118ad80c03402e4355ac27967d1048054644f57ee29b4b8c2d19443e54128c48",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\q64\\refit\\seed11.npz",
+      "sha256": "c0cfb61af4351e08593f20f6277daed725a03770079ea4846e8a1189e24d5c27",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\q64\\refit\\seed11.csv",
+      "sha256": "49138d737aa1d047724d49c11807d0f7a2c94039da5158dbff6ea666765ea306",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\q64\\modelos\\seed11_refit.pt",
+      "sha256": "5c2eaccf836269e1c56e87ed764f7d2302d61add974b778ebc07fefa9aab1504",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\q64\\refit\\seed11.json",
+      "sha256": "5accd70be6d4ad0d6d98cc387dc008261ec2dbc503b662989628c517547052f9",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\q64\\refit\\seed23.npz",
+      "sha256": "576910916982410a4caa2acda656727515f91ef2edaa767f4a8ee5a28ab9b804",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\q64\\refit\\seed23.csv",
+      "sha256": "c5b7e25b9273694c5b28619ef89cce2ae3682144c3a97906317461c02a519102",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\q64\\modelos\\seed23_refit.pt",
+      "sha256": "f43c697004bc89d3e58e8446bf8f0fc81f50fcb463fcff358c08b3d27d8c36d5",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\q64\\refit\\seed23.json",
+      "sha256": "e01a270c2bbded9f388d5b83b2454c26bca90a4d3f6d46c65c0ab3452725c949",
+      "papel": "auditoria_tecnica_fonte"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\recuperacao_calendario_20261005\\auditoria_caches_dilatedrnn_monthly_1.json",
+      "sha256": "3a06e18b7f734b73f43392c5cd5c4c60d12a294b0d0865b4d9a05d6e19d2fc87",
+      "papel": "auditoria_tecnica"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\auditar_caches_dilated_monthly1_20261005.py",
+      "sha256": "1ac8d4984136979d38b090c80bfa4bda0fe61829fba659af2b72a20c84224426",
+      "papel": "outras_fontes_tecnicas"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_local_20261005_1715\\testes_helper.json",
+      "sha256": "eab1aef2fa0115105bd919ba113fa88ca2826aceb46f5d5a39d89a4cd505c850",
+      "papel": "test_receipt"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\correcao_sazonal_mensal_v1\\recibo_testes_unitarios_20261005T111045Z.json",
+      "sha256": "dec95a8c01a2816080f64bfd1c45a406dcfb8b283fc3a75c1eba851292829ab7",
+      "papel": "test_receipt"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\recuperacao_calendario_20261005\\testes_integracao_independentes_20261005T111209Z.json",
+      "sha256": "7df09dd118ffa71a849e69016d311a4d1e1c16c1d74a90bc7e53b3441ab89947",
+      "papel": "test_receipt"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_atencao_deterministica_v1.py",
+      "sha256": "70d8c8213fea7cb86f3f64e3d28d9398e7a64ad39dccea57b8c6acc40ee66660",
+      "papel": "fontes_adicionais"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_resolucoes.py",
+      "sha256": "b019ea0a5eb9f9588d6fddcfe7023253e6d25fee8f0490f8ed5000ae8b7e3e24",
+      "papel": "fontes_adicionais"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\quantizacao_referencias.py",
+      "sha256": "532c984801780953de96deec7f54cebd207f66e4a06b62ce806cc030cc5c9ca9",
+      "papel": "fontes_adicionais"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\coordenacao_quantizacao.py",
+      "sha256": "c80e01f0e7d2167ba964766b5a3701ab5c5a858443350bfa8407f8356279d16e",
+      "papel": "fontes_adicionais"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tests\\test_integracao_sazonal_mensal_controle_v1.py",
+      "sha256": "f4701242064448597174e644694c16abde64aad1886293dffd070aaf18c9b45d",
+      "papel": "fontes_adicionais"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\priorizar_treinamentos.py",
+      "sha256": "7cd5604ecc23f133f909760724e981ffb92113972783aa0e9744ed8827e8a564",
+      "papel": "fontes_adicionais"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\recuperar_fila_e_priorizar_20261005.py",
+      "sha256": "741ee68469ed2a8dfd197d39e84f470f49efb72209ced61efb13fa7680b303cc",
+      "papel": "fontes_adicionais"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\protocolo_historico_1998_2022.json",
+      "sha256": "edb58147b05c5fb6a767f7a80eaaedd57c0fdab768ac37c6683066f81308faf6",
+      "papel": "protocolo"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\protocolo_historico_curto_pareado.json",
+      "sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+      "papel": "protocolo"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\testes_reparo_watcher.json",
+      "sha256": "baee1116c4ba2b47a9841b888d8afaaf6b034d277f5d5344f6df19bc9c53b304",
+      "papel": "test_receipt"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\testes_reparo_watcher.log",
+      "sha256": "24c851f1294a9c6328ebeffd081782cd5ccad4dd6bf87172f56dff1f70116fa5",
+      "papel": "log_testes_novos"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\recuperar_cpu_em_paralelo_20261005.py",
+      "sha256": "836cacad78c1de92c8f4b272440e7318728ae1c81103044c2561666c6f78fabf",
+      "papel": "script_lote_cpu"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\recuperar_e_priorizar_apos_lote_20261005.py",
+      "sha256": "e31a3bbbd5307d7863be748f476b2497e0d246ca7430b3002502aecf2c4d2190",
+      "papel": "wrapper_apos_lote_cpu"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\reconciliar_aceleracao_local_20261005.py",
+      "sha256": "51971762ad57ccb459e19fa68e6eb3ad4f5065284f1c0bd02282ff3ed87f5642",
+      "papel": "reconciliacao_operacional"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\testes_snapshot_nt.json",
+      "sha256": "0c17e2f3ac41cbb5ceed5f5c87ab5833e93a8da7d7ab9a88c95fe460f9f1d722",
+      "papel": "test_receipt"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\testes_snapshot_nt.log",
+      "sha256": "4ee1034f8b545b691cbb4c4c7a9ad602e2dc3ccf573ea9049894605662b4533d",
+      "papel": "log_testes_20261006"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\retomar_sequencia_local_20261006.py",
+      "sha256": "14f211f6ba8a7ee08999ef274e480c945a5ccb34a67fd3cbbfb23f0469f42592",
+      "papel": "wrapper_retomada_20261006"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\preparar_retomada_local_20261006.py",
+      "sha256": "7103a22e298d9553a2ef8eb14a6df90a766d6f247df7612b8226840f136da3d0",
+      "papel": "reconciliacao_20261006"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\revisao_scripts_retomada.json",
+      "sha256": "d915a4ab07a20363d43f655ca05a626103ab125e21af7313b8ceedb950d3eb8d",
+      "papel": "revisao_retomada_20261006"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\lote_cpu\\recibo.json",
+      "sha256": "b9cf1f853b51717a8df27f1f2829ca5d270c26a80cd7a98c774ac4cabbf2b016",
+      "papel": "recibo_cpu_concluido"
+    }
+  ],
+  "locks": [
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\.execucao.lock",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_atual\\.execucao.lock",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\.execucao.lock",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_atencao\\atual\\completa\\.execucao.lock",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_aprendidos\\atual\\completa\\.execucao.lock"
+  ],
+  "parada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\parar_recuperacao",
+  "falhas_tecnicas_aprovadas": [
+    {
+      "fase": "refit",
+      "tarefa": "monthly_1",
+      "modelo": "DilatedRNN",
+      "returncode": 1,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_dilatedrnn.log",
+      "log_sha256": "9fafe397969de616bc8c920b3ffc33a2629e3aaca18e09d7f176758f4b0e1c99",
+      "auditoria_caches": {
+        "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\recuperacao_calendario_20261005\\auditoria_caches_dilatedrnn_monthly_1.json",
+        "sha256": "3a06e18b7f734b73f43392c5cd5c4c60d12a294b0d0865b4d9a05d6e19d2fc87"
+      }
+    }
+  ],
+  "justificativa": "Recuperar somente as falhas sazonais de calendario revisadas e o refit mensal1 DilatedRNN encerrado abruptamente, com 7 caches completos auditados; preservar trabalhos ativos e retomar apos saida natural.",
+  "manifesto_anterior_sha256": "0d7b59af822135884719e3059b3bd962f2fe0412473921e4b67828285b817d21",
+  "motivo_atualizacao": "Leitura Windows reparada e validada; todos os 44 refits longos salvos; continuar sequencia local com caches e gates oficiais.",
+  "autorizacao_retomada": "pedido explicito do usuario: retoma os treinamentos"
+}

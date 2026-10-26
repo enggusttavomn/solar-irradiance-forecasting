@@ -1,0 +1,62 @@
+{
+  "criterio": "menor_macro_MAE_fisico_do_ensemble_na_validacao_2023",
+  "selecao_concluida_antes_do_teste": true,
+  "tarefa": {
+    "ajuste": {
+      "fim_alvo": "2022-12-31",
+      "fim_origem": "2022-12-31",
+      "inicio_origem": "2020-01-31",
+      "origens_esperadas_por_localidade": 36
+    },
+    "exploratoria": false,
+    "frequencia": "ME",
+    "horizontes": [
+      1
+    ],
+    "pred_len": 1,
+    "refit": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-31",
+      "inicio_origem": "2020-01-31",
+      "origens_esperadas_por_localidade": 48
+    },
+    "resolucao": "mensal",
+    "seq_len": 12,
+    "slug": "monthly_1",
+    "teste": {
+      "fim_alvo": "2024-12-31",
+      "fim_origem": "2024-12-31",
+      "inicio_origem": "2024-01-31",
+      "origens_esperadas_por_localidade": 12
+    },
+    "validacao": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-31",
+      "inicio_origem": "2023-01-31",
+      "origens_esperadas_por_localidade": 12
+    }
+  },
+  "vencedor": {
+    "DP_MAE_sementes_wm2": 0.18840995019584797,
+    "MAE_validacao_ensemble_wm2": 14.711143142784774,
+    "MAE_validacao_media_sementes_wm2": 14.907832225099867,
+    "alvo": "anomalia",
+    "blocos": 1,
+    "d_ff": 16,
+    "d_model": 8,
+    "dropout": 0.1,
+    "epocas": {
+      "11": 3,
+      "23": 25,
+      "42": 7,
+      "67": 5,
+      "89": 23
+    },
+    "nome": "anomalia_mae_lr_0003",
+    "origens_ajuste_por_local": 36,
+    "origens_validacao_por_local": 12,
+    "perda": "mae",
+    "seq_len": 12,
+    "taxa_aprendizado": 0.0003
+  }
+}

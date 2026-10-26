@@ -1,0 +1,23 @@
+
+Inicio 2026-09-30T11:29:36.491045+00:00
+daily_30/Informer/sem_quantizacao/selecao seed=11 inicio
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_atencao_deterministica_v1.py", line 330, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_atencao_deterministica_v1.py", line 326, in main
+    base.main()
+    ~~~~~~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_quantizacao_concorrentes.py", line 597, in main
+    executar_fase(ctx, args.modelo, saida, args.fase)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_quantizacao_concorrentes.py", line 530, in executar_fase
+    rede, bruto, epoch, hist = treinar_seed(ctx, modelo, niveis, seed, fase, par, fixas)
+                               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_quantizacao_concorrentes.py", line 311, in treinar_seed
+    rede = nova_rede(ctx, modelo, seed, par)
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_atencao_deterministica_v1.py", line 180, in nova_rede
+    raise ValueError("Parametros de replay/treino diferentes do protocolo.")
+ValueError: Parametros de replay/treino diferentes do protocolo.

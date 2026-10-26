@@ -1,0 +1,82 @@
+{
+  "arquivos_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\hourly_72_extension\\previsoes_validacao.csv.gz": "a452e718453e563a13589039212c782d880cd9a99ee87c63266dfa155a071764",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\contrato_execucao.json": "cf1830d86eb8a235a6e2a5d6c2fcfbfba0a301092e647b2807faf723da1f4ca3",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\controle_validacao_divergencia.json": "792c16628c581c1639e5f0317ff5943392f5495449b53fdc0367b3415d775c84",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\sem_quantizacao\\selecao\\seed42.npz": "3a3520ccf466653891b42d2a04611e8571103a5dcc6d095d9776e2cf4c340e8a"
+  },
+  "comparacao_metricas": [
+    {
+      "MAE_wm2_antigo": 52.71481792480292,
+      "MAE_wm2_novo": 52.700390738542765,
+      "MSE_w2m4_antigo": 10482.333071319485,
+      "MSE_w2m4_novo": 10480.516363209124,
+      "R2_antigo": 0.8644959169890829,
+      "R2_novo": 0.8645148359530042,
+      "RMSE_wm2_antigo": 101.26543164853085,
+      "RMSE_wm2_novo": 101.25553145881275,
+      "delta_MAE_wm2": -0.014427186260157043,
+      "horizonte": 24,
+      "modelo": "Transformer",
+      "nRMSE_antigo": 0.5141186137900844,
+      "nRMSE_novo": 0.5140755063784637,
+      "particao": "validacao",
+      "tarefa": "hourly_72_extension",
+      "variante_antigo": "controle_antigo",
+      "variante_novo": "controle_novo"
+    },
+    {
+      "MAE_wm2_antigo": 54.02801395987998,
+      "MAE_wm2_novo": 54.02090897035904,
+      "MSE_w2m4_antigo": 10945.735173471225,
+      "MSE_w2m4_novo": 10945.401459970395,
+      "R2_antigo": 0.8585882788128465,
+      "R2_novo": 0.858589814117295,
+      "RMSE_wm2_antigo": 103.45917147805478,
+      "RMSE_wm2_novo": 103.4570205820374,
+      "delta_MAE_wm2": -0.007104989520939853,
+      "horizonte": 48,
+      "modelo": "Transformer",
+      "nRMSE_antigo": 0.5250964917731425,
+      "nRMSE_novo": 0.5250898444282944,
+      "particao": "validacao",
+      "tarefa": "hourly_72_extension",
+      "variante_antigo": "controle_antigo",
+      "variante_novo": "controle_novo"
+    },
+    {
+      "MAE_wm2_antigo": 54.44424997956814,
+      "MAE_wm2_novo": 54.43536473378059,
+      "MSE_w2m4_antigo": 11157.774485386875,
+      "MSE_w2m4_novo": 11158.068175490307,
+      "R2_antigo": 0.8559405504234976,
+      "R2_novo": 0.8559363433054568,
+      "RMSE_wm2_antigo": 104.45163000868035,
+      "RMSE_wm2_novo": 104.45287115058409,
+      "delta_MAE_wm2": -0.008885245787553231,
+      "horizonte": 72,
+      "modelo": "Transformer",
+      "nRMSE_antigo": 0.5299982075540627,
+      "nRMSE_novo": 0.5300053326984473,
+      "particao": "validacao",
+      "tarefa": "hourly_72_extension",
+      "variante_antigo": "controle_antigo",
+      "variante_novo": "controle_novo"
+    }
+  ],
+  "contrato_sha256": "03745a3ac15f7760133438e57f25bedbbb488c2ddf215ce3521e90d39ca32109",
+  "dispositivo_atual": "cuda",
+  "dispositivo_original": "cuda",
+  "epocas_novas": {
+    "42": 30
+  },
+  "evidencia_checkpoints_antigos": null,
+  "fase": "selecao",
+  "max_diferenca_por_seed_wm2": {
+    "42": 1.5230394154787064
+  },
+  "modelo": "Transformer",
+  "nao_emite_aceite": true,
+  "parecer": "O controle foi retreinado no dispositivo original; a divergencia exige investigar ambiente e determinismo. Este parecer nao e aceite. Comparacoes de quantizacao devem usar o controle novo e as variantes no mesmo ambiente; nao atribuir diferencas entre controles antigos e novos a quantizacao. A validacao do checkpoint novo e do protocolo completo cabe ao auditor independente.",
+  "tarefa": "hourly_72_extension"
+}

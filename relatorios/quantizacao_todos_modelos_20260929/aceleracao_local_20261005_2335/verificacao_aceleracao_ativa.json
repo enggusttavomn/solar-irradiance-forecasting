@@ -1,0 +1,1119 @@
+{
+  "versao": 1,
+  "verificado_em_utc": "2026-10-06T02:54:26.297002+00:00",
+  "manifesto_sha256": "0d7b59af822135884719e3059b3bd962f2fe0412473921e4b67828285b817d21",
+  "somente_leitura_treinamentos": true,
+  "erros": [],
+  "prioridade_processo_auditoria_AboveNormal": true,
+  "fontes_sha256_verificadas": 152,
+  "fontes_globais_preservadas": 88,
+  "lote_inicial": {
+    "versao": 1,
+    "manifesto_sha256": "0d7b59af822135884719e3059b3bd962f2fe0412473921e4b67828285b817d21",
+    "script_sha256": "836cacad78c1de92c8f4b272440e7318728ae1c81103044c2561666c6f78fabf",
+    "limite_cpu": 2,
+    "gpu_adicionais": 0,
+    "prioridade": "BelowNormal",
+    "iniciado_em_utc": "2026-10-06T02:51:00.370026+00:00",
+    "jobs": [
+      {
+        "tarefa": "monthly_1",
+        "modelo": "DilatedRNN",
+        "comando": [
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+          "-X",
+          "utf8",
+          "-m",
+          "codigo_fonte.experimento_quantizacao_concorrentes",
+          "--tarefa",
+          "monthly_1",
+          "--modelo",
+          "DilatedRNN",
+          "--regime",
+          "historico_1998_2022",
+          "--fase",
+          "refit",
+          "--saida",
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+          "--protocolo",
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\protocolo_historico_1998_2022.json"
+        ],
+        "pasta": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn",
+        "recurso": "cpu",
+        "cpu_verificado": true,
+        "evidencia_cpu": "dispositivo_cpu_no_contrato",
+        "etapa": "ATIVO",
+        "intent_em_utc": "2026-10-06T02:51:04.910021+00:00",
+        "stdout": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\lote_cpu\\monthly_1_dilatedrnn.saida.log",
+        "stderr": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\lote_cpu\\monthly_1_dilatedrnn.erro.log",
+        "identidade": {
+          "pid": 32452,
+          "creation_time": "134357286649723756"
+        },
+        "iniciado_em_utc": "2026-10-06T02:51:05.559986+00:00"
+      },
+      {
+        "tarefa": "monthly_6",
+        "modelo": "Sazonal ingenuo",
+        "comando": [
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+          "-X",
+          "utf8",
+          "-m",
+          "codigo_fonte.experimento_sazonal_mensal_controle_auditado_v1",
+          "--tarefa",
+          "monthly_6",
+          "--modelo",
+          "Sazonal ingenuo",
+          "--regime",
+          "historico_1998_2022",
+          "--fase",
+          "refit",
+          "--saida",
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+          "--protocolo",
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\protocolo_historico_1998_2022.json"
+        ],
+        "pasta": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\sazonal_ingenuo",
+        "recurso": "cpu",
+        "cpu_verificado": true,
+        "evidencia_cpu": "referencia_estatistica_mensal_motor_auditado",
+        "etapa": "CONCLUIDO",
+        "intent_em_utc": "2026-10-06T02:51:11.523649+00:00",
+        "stdout": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\lote_cpu\\monthly_6_sazonal_ingenuo.saida.log",
+        "stderr": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\lote_cpu\\monthly_6_sazonal_ingenuo.erro.log",
+        "identidade": {
+          "pid": 13536,
+          "creation_time": "134357286716055499"
+        },
+        "iniciado_em_utc": "2026-10-06T02:51:11.863980+00:00",
+        "returncode": 0,
+        "concluido_em_utc": "2026-10-06T02:54:21.986520+00:00"
+      }
+    ],
+    "etapa": "EXECUTANDO",
+    "logs_originais_sha256": {
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_sazonal_ingenuo.log": "aa739a8b2db67543cf10840ec95c8e522dd70bf4ec2f0632301d9ae1824ba2c5",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_dilatedrnn.log": "9fafe397969de616bc8c920b3ffc33a2629e3aaca18e09d7f176758f4b0e1c99",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_sazonal_ingenuo.log": "0cb0ec3130f055d2d3d25f02ca0bae8c9d0e97f5d6aac97f0790d8c36b88c9ac"
+    },
+    "antigos": {
+      "coordenador": {
+        "pid": 7872,
+        "creation_time": "134356437859141023"
+      },
+      "runner": {
+        "pid": 23160,
+        "creation_time": "134356437910898585"
+      }
+    },
+    "atualizado_em_utc": "2026-10-06T02:54:21.986912+00:00",
+    "erro": null,
+    "pendentes": [
+      {
+        "tarefa": "monthly_1",
+        "modelo": "Sazonal ingenuo"
+      }
+    ]
+  },
+  "launcher_lote": {
+    "pid": 28456,
+    "creation_time": "134357286562792245",
+    "mesma_instancia_viva": true,
+    "programa": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+    "prioridade": "Normal",
+    "cpu_acumulada_s": 1.140625,
+    "amostra_monotonica_s": 106774.0937341
+  },
+  "arvore_lote_primeira_amostra": [
+    {
+      "pid": 10208,
+      "creation_time": "134357286655874895",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Windows\\System32\\conhost.exe",
+      "prioridade": "BelowNormal",
+      "cpu_acumulada_s": 0.171875,
+      "amostra_monotonica_s": 106774.1166014
+    },
+    {
+      "pid": 16748,
+      "creation_time": "134357286563049251",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Windows\\System32\\conhost.exe",
+      "prioridade": "Normal",
+      "cpu_acumulada_s": 0.234375,
+      "amostra_monotonica_s": 106774.1173038
+    },
+    {
+      "pid": 27988,
+      "creation_time": "134357286712265784",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Users\\gm.nascimento\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "prioridade": "BelowNormal",
+      "cpu_acumulada_s": 68.234375,
+      "amostra_monotonica_s": 106774.1179633
+    },
+    {
+      "pid": 28456,
+      "creation_time": "134357286562792245",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+      "prioridade": "Normal",
+      "cpu_acumulada_s": 1.140625,
+      "amostra_monotonica_s": 106774.1186384
+    },
+    {
+      "pid": 29068,
+      "creation_time": "134357286577564548",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Users\\gm.nascimento\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "prioridade": "BelowNormal",
+      "cpu_acumulada_s": 8.234375,
+      "amostra_monotonica_s": 106774.119455
+    },
+    {
+      "pid": 32452,
+      "creation_time": "134357286649723756",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+      "prioridade": "BelowNormal",
+      "cpu_acumulada_s": 1.359375,
+      "amostra_monotonica_s": 106774.1201761
+    }
+  ],
+  "roots_originais": {
+    "coordenador": {
+      "pid": 7872,
+      "creation_time": "134356437859141023",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Users\\gm.nascimento\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "prioridade": "AboveNormal",
+      "cpu_acumulada_s": 119.90625,
+      "amostra_monotonica_s": 106774.1207254
+    },
+    "runner": {
+      "pid": 23160,
+      "creation_time": "134356437910898585",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Users\\gm.nascimento\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "prioridade": "AboveNormal",
+      "cpu_acumulada_s": 279.0,
+      "amostra_monotonica_s": 106774.121157
+    }
+  },
+  "runner_original_etapa": "refit",
+  "gpu_originais": [
+    {
+      "tarefa": "daily_30",
+      "modelo": "TimesNet",
+      "recurso": "gpu",
+      "pid": 40680,
+      "creation_time": "134357052384762200",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_timesnet.log",
+      "inicio": "2026-10-05T20:20:38.805925+00:00",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+      "prioridade": "AboveNormal",
+      "cpu_acumulada_s": 2.328125,
+      "amostra_monotonica_s": 106774.1271588
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Transformer",
+      "recurso": "gpu",
+      "pid": 33000,
+      "creation_time": "134357216516913377",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_transformer.log",
+      "inicio": "2026-10-06T00:54:11.858026+00:00",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+      "prioridade": "AboveNormal",
+      "cpu_acumulada_s": 1.4375,
+      "amostra_monotonica_s": 106774.127734
+    }
+  ],
+  "gpu_pendentes_originais": [
+    [
+      "hourly_72_extension",
+      "Informer"
+    ],
+    [
+      "hourly_72_extension",
+      "TimesNet"
+    ]
+  ],
+  "logs_originais": [
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_sazonal_ingenuo.log",
+      "sha256": "aa739a8b2db67543cf10840ec95c8e522dd70bf4ec2f0632301d9ae1824ba2c5",
+      "preservado": true
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_dilatedrnn.log",
+      "sha256": "9fafe397969de616bc8c920b3ffc33a2629e3aaca18e09d7f176758f4b0e1c99",
+      "preservado": true
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_sazonal_ingenuo.log",
+      "sha256": "0cb0ec3130f055d2d3d25f02ca0bae8c9d0e97f5d6aac97f0790d8c36b88c9ac",
+      "preservado": true
+    }
+  ],
+  "caches_originais_verificados": 7,
+  "artefatos_dos_caches_verificados": 28,
+  "lock_canonico": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomadas_apos_calendario\\7872_134356437859141023\\.observador.lock",
+    "ocupado": true,
+    "winerror": 32,
+    "consulta_sem_escrita": true
+  },
+  "journal_canonico": {
+    "versao": 1,
+    "manifesto_sha256": "0d7b59af822135884719e3059b3bd962f2fe0412473921e4b67828285b817d21",
+    "etapa": "WAITING",
+    "antigos": {
+      "coordenador": {
+        "pid": 7872,
+        "creation_time": "134356437859141023"
+      },
+      "runner": {
+        "pid": 23160,
+        "creation_time": "134356437910898585"
+      }
+    },
+    "conhecidos": [
+      {
+        "pid": 372,
+        "creation_time": "134356533792785532"
+      },
+      {
+        "pid": 1652,
+        "creation_time": "134356719194653765"
+      },
+      {
+        "pid": 2964,
+        "creation_time": "134356484788665740"
+      },
+      {
+        "pid": 4004,
+        "creation_time": "134357059156039088"
+      },
+      {
+        "pid": 5860,
+        "creation_time": "134356651448990709"
+      },
+      {
+        "pid": 6536,
+        "creation_time": "134356594921883970"
+      },
+      {
+        "pid": 6932,
+        "creation_time": "134357059788335592"
+      },
+      {
+        "pid": 7872,
+        "creation_time": "134356437859141023"
+      },
+      {
+        "pid": 7980,
+        "creation_time": "134356654181606288"
+      },
+      {
+        "pid": 9016,
+        "creation_time": "134356439556519749"
+      },
+      {
+        "pid": 10260,
+        "creation_time": "134356437933426281"
+      },
+      {
+        "pid": 10392,
+        "creation_time": "134356525446064244"
+      },
+      {
+        "pid": 11780,
+        "creation_time": "134356437932089711"
+      },
+      {
+        "pid": 12736,
+        "creation_time": "134357055689482135"
+      },
+      {
+        "pid": 12788,
+        "creation_time": "134356439556555522"
+      },
+      {
+        "pid": 13256,
+        "creation_time": "134356710842232178"
+      },
+      {
+        "pid": 14236,
+        "creation_time": "134356441281033222"
+      },
+      {
+        "pid": 15104,
+        "creation_time": "134356540100264309"
+      },
+      {
+        "pid": 15132,
+        "creation_time": "134356437902524901"
+      },
+      {
+        "pid": 16832,
+        "creation_time": "134356529189881922"
+      },
+      {
+        "pid": 19828,
+        "creation_time": "134356439047975438"
+      },
+      {
+        "pid": 19888,
+        "creation_time": "134356440060667200"
+      },
+      {
+        "pid": 20136,
+        "creation_time": "134357058469473123"
+      },
+      {
+        "pid": 21784,
+        "creation_time": "134356654637023510"
+      },
+      {
+        "pid": 22176,
+        "creation_time": "134356442765968334"
+      },
+      {
+        "pid": 22176,
+        "creation_time": "134356655144567414"
+      },
+      {
+        "pid": 22792,
+        "creation_time": "134356439568713344"
+      },
+      {
+        "pid": 23160,
+        "creation_time": "134356437910898585"
+      },
+      {
+        "pid": 24436,
+        "creation_time": "134357059784788883"
+      },
+      {
+        "pid": 24780,
+        "creation_time": "134356563532158657"
+      },
+      {
+        "pid": 25040,
+        "creation_time": "134356573248134391"
+      },
+      {
+        "pid": 25208,
+        "creation_time": "134356719227156204"
+      },
+      {
+        "pid": 25924,
+        "creation_time": "134356437930957795"
+      },
+      {
+        "pid": 26096,
+        "creation_time": "134356439555084171"
+      },
+      {
+        "pid": 26120,
+        "creation_time": "134356446353856309"
+      },
+      {
+        "pid": 26444,
+        "creation_time": "134356652714288449"
+      },
+      {
+        "pid": 27248,
+        "creation_time": "134356569961761498"
+      },
+      {
+        "pid": 27360,
+        "creation_time": "134356437901307289"
+      },
+      {
+        "pid": 27512,
+        "creation_time": "134356437934784920"
+      },
+      {
+        "pid": 27556,
+        "creation_time": "134357052388512795"
+      },
+      {
+        "pid": 27780,
+        "creation_time": "134356655600536254"
+      },
+      {
+        "pid": 28684,
+        "creation_time": "134356719191878122"
+      },
+      {
+        "pid": 29952,
+        "creation_time": "134356691739378226"
+      },
+      {
+        "pid": 30668,
+        "creation_time": "134356689908974795"
+      },
+      {
+        "pid": 30768,
+        "creation_time": "134357060415126551"
+      },
+      {
+        "pid": 32240,
+        "creation_time": "134356704954378289"
+      },
+      {
+        "pid": 34856,
+        "creation_time": "134357052426102855"
+      },
+      {
+        "pid": 35452,
+        "creation_time": "134357056804838618"
+      },
+      {
+        "pid": 35716,
+        "creation_time": "134357059814316843"
+      },
+      {
+        "pid": 36940,
+        "creation_time": "134357060446466902"
+      },
+      {
+        "pid": 40680,
+        "creation_time": "134357052384762200"
+      },
+      {
+        "pid": 40848,
+        "creation_time": "134357060419166043"
+      }
+    ],
+    "iniciado_em_utc": "2026-10-05T20:33:05.725804+00:00",
+    "tentativas_popen": 0,
+    "instancias_vivas": [
+      {
+        "pid": 7872,
+        "creation_time": "134356437859141023"
+      },
+      {
+        "pid": 34856,
+        "creation_time": "134357052426102855"
+      },
+      {
+        "pid": 25208,
+        "creation_time": "134356719227156204"
+      },
+      {
+        "pid": 9016,
+        "creation_time": "134356439556519749"
+      },
+      {
+        "pid": 1652,
+        "creation_time": "134356719194653765"
+      },
+      {
+        "pid": 36940,
+        "creation_time": "134357060446466902"
+      },
+      {
+        "pid": 40848,
+        "creation_time": "134357060419166043"
+      },
+      {
+        "pid": 28684,
+        "creation_time": "134356719191878122"
+      },
+      {
+        "pid": 26096,
+        "creation_time": "134356439555084171"
+      },
+      {
+        "pid": 15132,
+        "creation_time": "134356437902524901"
+      },
+      {
+        "pid": 30768,
+        "creation_time": "134357060415126551"
+      },
+      {
+        "pid": 23160,
+        "creation_time": "134356437910898585"
+      },
+      {
+        "pid": 40680,
+        "creation_time": "134357052384762200"
+      },
+      {
+        "pid": 22792,
+        "creation_time": "134356439568713344"
+      },
+      {
+        "pid": 27360,
+        "creation_time": "134356437901307289"
+      },
+      {
+        "pid": 27556,
+        "creation_time": "134357052388512795"
+      }
+    ],
+    "atualizado_em_utc": "2026-10-06T02:49:07.389472+00:00",
+    "reconciliacao": {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\reconciliacao_aprovada.json",
+      "sha256": "f72b33be40813f56908ac3dbf0b2c90229757a9c8dddb771f81aed802a23c3b5"
+    }
+  },
+  "snapshot_gpu_unico": {
+    "comando": [
+      "nvidia-smi",
+      "--query-gpu=index,name,utilization.gpu,utilization.memory,memory.used,memory.total,temperature.gpu,power.draw,power.limit",
+      "--format=csv,noheader,nounits"
+    ],
+    "returncode": 0,
+    "stdout": "0, NVIDIA GeForce GTX 1650 with Max-Q Design, 98, 40, 1253, 4096, 81, 38.99, [N/A]",
+    "stderr": ""
+  },
+  "refits_longos_status_individuais": {
+    "total": 44,
+    "concluidos": 38,
+    "pares": [
+      {
+        "tarefa": "daily_30",
+        "modelo": "GRU",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\status.json"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "LSTM",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\status.json"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "DilatedRNN",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\status.json"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "Transformer",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\status.json"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "Informer",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\informer\\status.json"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "XGBoost",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\status.json"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "ARIMA",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\arima\\status.json"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "Persistencia",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\persistencia\\status.json"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "Sazonal ingenuo",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\sazonal_ingenuo\\status.json"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "Climatologia",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\climatologia\\status.json"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "TimesNet",
+        "etapa": "refit",
+        "concluido": false,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\timesnet\\status.json"
+      },
+      {
+        "tarefa": "hourly_72_extension",
+        "modelo": "GRU",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\gru\\status.json"
+      },
+      {
+        "tarefa": "hourly_72_extension",
+        "modelo": "LSTM",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\lstm\\status.json"
+      },
+      {
+        "tarefa": "hourly_72_extension",
+        "modelo": "DilatedRNN",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\dilatedrnn\\status.json"
+      },
+      {
+        "tarefa": "hourly_72_extension",
+        "modelo": "Transformer",
+        "etapa": "refit",
+        "concluido": false,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\transformer\\status.json"
+      },
+      {
+        "tarefa": "hourly_72_extension",
+        "modelo": "Informer",
+        "etapa": "selecao_concluida",
+        "concluido": false,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\informer\\status.json"
+      },
+      {
+        "tarefa": "hourly_72_extension",
+        "modelo": "XGBoost",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\xgboost\\status.json"
+      },
+      {
+        "tarefa": "hourly_72_extension",
+        "modelo": "ARIMA",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\status.json"
+      },
+      {
+        "tarefa": "hourly_72_extension",
+        "modelo": "Persistencia",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\persistencia\\status.json"
+      },
+      {
+        "tarefa": "hourly_72_extension",
+        "modelo": "Sazonal ingenuo",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\sazonal_ingenuo\\status.json"
+      },
+      {
+        "tarefa": "hourly_72_extension",
+        "modelo": "Climatologia",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\climatologia\\status.json"
+      },
+      {
+        "tarefa": "hourly_72_extension",
+        "modelo": "TimesNet",
+        "etapa": "selecao_concluida",
+        "concluido": false,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\timesnet\\status.json"
+      },
+      {
+        "tarefa": "monthly_6",
+        "modelo": "GRU",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\gru\\status.json"
+      },
+      {
+        "tarefa": "monthly_6",
+        "modelo": "LSTM",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\lstm\\status.json"
+      },
+      {
+        "tarefa": "monthly_6",
+        "modelo": "DilatedRNN",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\dilatedrnn\\status.json"
+      },
+      {
+        "tarefa": "monthly_6",
+        "modelo": "Transformer",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\transformer\\status.json"
+      },
+      {
+        "tarefa": "monthly_6",
+        "modelo": "Informer",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\informer\\status.json"
+      },
+      {
+        "tarefa": "monthly_6",
+        "modelo": "XGBoost",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\xgboost\\status.json"
+      },
+      {
+        "tarefa": "monthly_6",
+        "modelo": "ARIMA",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\arima\\status.json"
+      },
+      {
+        "tarefa": "monthly_6",
+        "modelo": "Persistencia",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\persistencia\\status.json"
+      },
+      {
+        "tarefa": "monthly_6",
+        "modelo": "Sazonal ingenuo",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\sazonal_ingenuo\\status.json"
+      },
+      {
+        "tarefa": "monthly_6",
+        "modelo": "Climatologia",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\climatologia\\status.json"
+      },
+      {
+        "tarefa": "monthly_6",
+        "modelo": "TimesNet",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\timesnet\\status.json"
+      },
+      {
+        "tarefa": "monthly_1",
+        "modelo": "GRU",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\gru\\status.json"
+      },
+      {
+        "tarefa": "monthly_1",
+        "modelo": "LSTM",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\lstm\\status.json"
+      },
+      {
+        "tarefa": "monthly_1",
+        "modelo": "DilatedRNN",
+        "etapa": "refit",
+        "concluido": false,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn\\status.json"
+      },
+      {
+        "tarefa": "monthly_1",
+        "modelo": "Transformer",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\transformer\\status.json"
+      },
+      {
+        "tarefa": "monthly_1",
+        "modelo": "Informer",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\informer\\status.json"
+      },
+      {
+        "tarefa": "monthly_1",
+        "modelo": "XGBoost",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\xgboost\\status.json"
+      },
+      {
+        "tarefa": "monthly_1",
+        "modelo": "ARIMA",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\arima\\status.json"
+      },
+      {
+        "tarefa": "monthly_1",
+        "modelo": "Persistencia",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\persistencia\\status.json"
+      },
+      {
+        "tarefa": "monthly_1",
+        "modelo": "Sazonal ingenuo",
+        "etapa": "falhou",
+        "concluido": false,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\sazonal_ingenuo\\status.json"
+      },
+      {
+        "tarefa": "monthly_1",
+        "modelo": "Climatologia",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\climatologia\\status.json"
+      },
+      {
+        "tarefa": "monthly_1",
+        "modelo": "TimesNet",
+        "etapa": "concluida",
+        "concluido": true,
+        "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\timesnet\\status.json"
+      }
+    ]
+  },
+  "painel_local": {
+    "gerado_em_utc": "2026-10-06T02:54:30.033547+00:00",
+    "foco": {
+      "regime": "historico_1998_2022",
+      "titulo": "Treinamento final",
+      "feito": 38,
+      "total": 44
+    },
+    "regimes": [
+      {
+        "id": "atual",
+        "rotulo": "Base atual · 2019–2024",
+        "total": 44,
+        "selecao": 44,
+        "refit": 44,
+        "auditoria": true
+      },
+      {
+        "id": "historico_1998_2022",
+        "rotulo": "Histórico longo · 1998–2022",
+        "total": 44,
+        "selecao": 44,
+        "refit": 38,
+        "auditoria": false
+      },
+      {
+        "id": "historico_curto_pareado",
+        "rotulo": "Histórico curto · comparação pareada",
+        "total": 44,
+        "selecao": 0,
+        "refit": 0,
+        "auditoria": false
+      }
+    ],
+    "progresso_total_combinacoes_pct": 64.39393939393939,
+    "combinacoes_concluidas": 170,
+    "combinacoes_total": 264,
+    "nota": "Percentual por combinacoes, sem representar tempo restante."
+  },
+  "arvore_lote_segunda_amostra": [
+    {
+      "pid": 10208,
+      "creation_time": "134357286655874895",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Windows\\System32\\conhost.exe",
+      "prioridade": "BelowNormal",
+      "cpu_acumulada_s": 0.171875,
+      "amostra_monotonica_s": 106778.2128912,
+      "cpu_usada_intervalo_s": 0.0,
+      "intervalo_amostras_s": 4.096289799999795
+    },
+    {
+      "pid": 16748,
+      "creation_time": "134357286563049251",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Windows\\System32\\conhost.exe",
+      "prioridade": "Normal",
+      "cpu_acumulada_s": 0.234375,
+      "amostra_monotonica_s": 106778.2136628,
+      "cpu_usada_intervalo_s": 0.0,
+      "intervalo_amostras_s": 4.096359000002849
+    },
+    {
+      "pid": 27988,
+      "creation_time": "134357286712265784",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Users\\gm.nascimento\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "prioridade": "BelowNormal",
+      "cpu_acumulada_s": 69.421875,
+      "amostra_monotonica_s": 106778.2144996,
+      "cpu_usada_intervalo_s": 1.1875,
+      "intervalo_amostras_s": 4.0965362999995705
+    },
+    {
+      "pid": 28456,
+      "creation_time": "134357286562792245",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+      "prioridade": "Normal",
+      "cpu_acumulada_s": 1.140625,
+      "amostra_monotonica_s": 106778.2153405,
+      "cpu_usada_intervalo_s": 0.0,
+      "intervalo_amostras_s": 4.096702099996037
+    },
+    {
+      "pid": 29068,
+      "creation_time": "134357286577564548",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Users\\gm.nascimento\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "prioridade": "BelowNormal",
+      "cpu_acumulada_s": 9.3125,
+      "amostra_monotonica_s": 106778.2165024,
+      "cpu_usada_intervalo_s": 1.078125,
+      "intervalo_amostras_s": 4.097047400005977
+    },
+    {
+      "pid": 32452,
+      "creation_time": "134357286649723756",
+      "mesma_instancia_viva": true,
+      "programa": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+      "prioridade": "BelowNormal",
+      "cpu_acumulada_s": 1.359375,
+      "amostra_monotonica_s": 106778.217254,
+      "cpu_usada_intervalo_s": 0.0,
+      "intervalo_amostras_s": 4.097077900005388
+    }
+  ],
+  "lote_final": {
+    "versao": 1,
+    "manifesto_sha256": "0d7b59af822135884719e3059b3bd962f2fe0412473921e4b67828285b817d21",
+    "script_sha256": "836cacad78c1de92c8f4b272440e7318728ae1c81103044c2561666c6f78fabf",
+    "limite_cpu": 2,
+    "gpu_adicionais": 0,
+    "prioridade": "BelowNormal",
+    "iniciado_em_utc": "2026-10-06T02:51:00.370026+00:00",
+    "jobs": [
+      {
+        "tarefa": "monthly_1",
+        "modelo": "DilatedRNN",
+        "comando": [
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+          "-X",
+          "utf8",
+          "-m",
+          "codigo_fonte.experimento_quantizacao_concorrentes",
+          "--tarefa",
+          "monthly_1",
+          "--modelo",
+          "DilatedRNN",
+          "--regime",
+          "historico_1998_2022",
+          "--fase",
+          "refit",
+          "--saida",
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+          "--protocolo",
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\protocolo_historico_1998_2022.json"
+        ],
+        "pasta": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn",
+        "recurso": "cpu",
+        "cpu_verificado": true,
+        "evidencia_cpu": "dispositivo_cpu_no_contrato",
+        "etapa": "ATIVO",
+        "intent_em_utc": "2026-10-06T02:51:04.910021+00:00",
+        "stdout": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\lote_cpu\\monthly_1_dilatedrnn.saida.log",
+        "stderr": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\lote_cpu\\monthly_1_dilatedrnn.erro.log",
+        "identidade": {
+          "pid": 32452,
+          "creation_time": "134357286649723756"
+        },
+        "iniciado_em_utc": "2026-10-06T02:51:05.559986+00:00"
+      },
+      {
+        "tarefa": "monthly_6",
+        "modelo": "Sazonal ingenuo",
+        "comando": [
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+          "-X",
+          "utf8",
+          "-m",
+          "codigo_fonte.experimento_sazonal_mensal_controle_auditado_v1",
+          "--tarefa",
+          "monthly_6",
+          "--modelo",
+          "Sazonal ingenuo",
+          "--regime",
+          "historico_1998_2022",
+          "--fase",
+          "refit",
+          "--saida",
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+          "--protocolo",
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\protocolo_historico_1998_2022.json"
+        ],
+        "pasta": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\sazonal_ingenuo",
+        "recurso": "cpu",
+        "cpu_verificado": true,
+        "evidencia_cpu": "referencia_estatistica_mensal_motor_auditado",
+        "etapa": "CONCLUIDO",
+        "intent_em_utc": "2026-10-06T02:51:11.523649+00:00",
+        "stdout": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\lote_cpu\\monthly_6_sazonal_ingenuo.saida.log",
+        "stderr": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\lote_cpu\\monthly_6_sazonal_ingenuo.erro.log",
+        "identidade": {
+          "pid": 13536,
+          "creation_time": "134357286716055499"
+        },
+        "iniciado_em_utc": "2026-10-06T02:51:11.863980+00:00",
+        "returncode": 0,
+        "concluido_em_utc": "2026-10-06T02:54:21.986520+00:00"
+      }
+    ],
+    "etapa": "EXECUTANDO",
+    "logs_originais_sha256": {
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_sazonal_ingenuo.log": "aa739a8b2db67543cf10840ec95c8e522dd70bf4ec2f0632301d9ae1824ba2c5",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_dilatedrnn.log": "9fafe397969de616bc8c920b3ffc33a2629e3aaca18e09d7f176758f4b0e1c99",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_sazonal_ingenuo.log": "0cb0ec3130f055d2d3d25f02ca0bae8c9d0e97f5d6aac97f0790d8c36b88c9ac"
+    },
+    "antigos": {
+      "coordenador": {
+        "pid": 7872,
+        "creation_time": "134356437859141023"
+      },
+      "runner": {
+        "pid": 23160,
+        "creation_time": "134356437910898585"
+      }
+    },
+    "atualizado_em_utc": "2026-10-06T02:54:21.986912+00:00",
+    "erro": null,
+    "pendentes": [
+      {
+        "tarefa": "monthly_1",
+        "modelo": "Sazonal ingenuo"
+      }
+    ]
+  },
+  "auxiliares_sha256": {
+    "tmp/recuperar_cpu_em_paralelo_20261005.py": {
+      "sha256": "836cacad78c1de92c8f4b272440e7318728ae1c81103044c2561666c6f78fabf",
+      "preservado": true
+    },
+    "tmp/recuperar_e_priorizar_apos_lote_20261005.py": {
+      "sha256": "e31a3bbbd5307d7863be748f476b2497e0d246ca7430b3002502aecf2c4d2190",
+      "preservado": true
+    }
+  },
+  "aprovado": true
+}

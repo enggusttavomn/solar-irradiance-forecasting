@@ -1,0 +1,175 @@
+{
+  "codigo": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\dilated_rnn_direta.py": "5c2e93953d028f22340cbb57f78ef62bc41cbd81b97681e1cc1fe3d5469d94b3",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_baselines_adicionais.py": "64a3d933ba5af151e88f9d368337b99bccfa89f18a7c552aa724a57dfc39ba81",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_horario_timesnet.py": "2cc59451b0fbcbedbf3068d2f1c45595ff84daf46e8318a88080df208e7bb8e9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\modelos_baselines_adicionais.py": "f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\quantizacao_timesnet.py": "1ec234c96206bd06a80a42ff23caef371dd2105c442ac7ab2663cfbaa730c3bd",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\timesnet_horario.py": "ad3859c1044fb132d0d521817f579f8308a478fdf322b749ff42c8d3893c95f2",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\treinamento_timesnet_otimizacao.py": "6b096408f2124877a16e342feb789b090f3bb592b10dc399af0004d97e5b42c9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\treinamento_timesnet_quantizado_resolucoes.py": "1e1c30e4d5527e730a9c4bb6b51e4314185631b0f195631d2fa03832c18d1075",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\treinamento_timesnet_resolucoes.py": "0675a57b40c9ea963632cf101d583dee1ca5bb1a66f6efb62581b37d5cda55c2"
+  },
+  "controle": "minmax_sem_clip_sem_quantizacao",
+  "controle_gpu": "mudanca_device_ou_divergencia_exige_aceite_com_replay_original_e_paridade_loop_auditados",
+  "cuda": "12.6",
+  "entradas": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2019.csv.gz": "596462fc1dceb631bd0a8017798614d324fef6d298d01913ffbc89908db04026",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2020.csv.gz": "817e26b2fd7a817d0d0da2457d71ebc8db5880090730f7239efb74ff47842014",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2021.csv.gz": "a9e321d0cf384ad345d47c28e7c8fd5cae201ee4aa16b05c6882c45133f968ce",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2022.csv.gz": "13daace788f068c16711ae6aff7a1420066a532b538ca889078b6a4e3760f27f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2023.csv.gz": "e1f228817a16c6655128e7bbfce4668ea8e3ba0d28de535bc003fe64733353d0",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2024.csv.gz": "88430743a2b9e6f82e394f683cfdea4ad93324fe59756d17edcfbad6d9f8eac1"
+  },
+  "limitacoes": [
+    "Avaliacao retrospectiva",
+    "Clipping nao isolado por controle separado",
+    "Epocas e niveis usam a mesma validacao"
+  ],
+  "modelo": "GRU",
+  "modo": "completa",
+  "pacotes": {
+    "numpy": "2.4.4",
+    "pandas": "3.0.3",
+    "torch": "2.12.0+cu126",
+    "xgboost": "3.2.0"
+  },
+  "parametros": {
+    "batch_size": 128,
+    "configuracao": {
+      "batch_size_diario": 128,
+      "batch_size_mensal": 32,
+      "dilated_dilatacoes": [
+        1,
+        2,
+        4
+      ],
+      "dilated_dropout": 0.0,
+      "dilated_unidades": 16,
+      "dilated_unidades_densas": 16,
+      "embedding_localidade": 8,
+      "epocas_smoke": 1,
+      "limite_localidades_smoke": 2,
+      "limite_origens_smoke": 3,
+      "lstm_camadas": 1,
+      "lstm_ocultos": 32,
+      "max_epocas_diario": 30,
+      "max_epocas_mensal": 300,
+      "modo_execucao": "completa",
+      "paciencia_diario": 5,
+      "paciencia_mensal": 30,
+      "peso_decay": 1e-05,
+      "sementes": [
+        11,
+        23,
+        42,
+        67,
+        89
+      ],
+      "taxa_aprendizado": 0.001,
+      "threads_torch": 1,
+      "timesnet_blocos": 1,
+      "timesnet_d_ff": 16,
+      "timesnet_d_model": 8,
+      "timesnet_dropout": 0.1,
+      "timesnet_kernels": 2,
+      "timesnet_top_k": 3,
+      "xgb_colsample": 0.8,
+      "xgb_estimadores": 150,
+      "xgb_estimadores_smoke": 2,
+      "xgb_n_jobs": 1,
+      "xgb_profundidade": 3,
+      "xgb_subsample": 0.8,
+      "xgb_taxa_aprendizado": 0.05
+    },
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "dispositivo_original": "cpu",
+    "fontes_configuracao": {
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\gru\\contrato.json": "1b238a705e3f9f4f71e144fd216099ec23c8c3e9976edc297ef9aed2e850bfce",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\hourly_72_extension\\contrato_execucao.json": "b65ec5f915eac2cc4eac6289564423336e77baaefa6c08911b8a6cdd4e3fd691"
+    },
+    "max_epocas": 30,
+    "modelo": "GRU",
+    "novo_controle_por_dispositivo": true,
+    "paciencia": 5,
+    "perda": "mse",
+    "sementes": [
+      42
+    ]
+  },
+  "protocolo": {
+    "dispositivos": {
+      "GRU": "cuda"
+    },
+    "fim_dados": "2024-12-31",
+    "inicio_dados": "2019-01-01",
+    "inicio_teste": "2024-01-01",
+    "inicio_validacao": "2023-01-01",
+    "pasta_diaria": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev",
+    "pasta_horaria": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario",
+    "regime": "atual"
+  },
+  "quantizacao": "X_only_minmax_then_rint(clip(x,0,1)*(N-1))/(N-1)",
+  "schema": 1,
+  "sha256_contrato": "ffa61c001635e9157ee30358bc55a26e207ebe8f35f42a0f1c6d57eff2aaacb6",
+  "tarefa": {
+    "ajuste": {
+      "fim_alvo": "2022-12-31",
+      "fim_origem": "2022-12-29",
+      "inicio_origem": "2019-01-15",
+      "origens_esperadas_por_localidade": 1445
+    },
+    "exploratoria": false,
+    "frequencia": "h",
+    "horizontes": [
+      24,
+      48,
+      72
+    ],
+    "pred_len": 72,
+    "refit": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-29",
+      "inicio_origem": "2019-01-15",
+      "origens_esperadas_por_localidade": 1810
+    },
+    "resolucao": "horaria",
+    "seq_len": 336,
+    "slug": "hourly_72_extension",
+    "teste": {
+      "fim_alvo": "2024-12-31",
+      "fim_origem": "2024-12-28",
+      "inicio_origem": "2024-01-01",
+      "origens_esperadas_por_localidade": 363
+    },
+    "validacao": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-29",
+      "inicio_origem": "2023-01-01",
+      "origens_esperadas_por_localidade": 363
+    }
+  },
+  "targets_quantizados": false,
+  "variantes": [
+    {
+      "niveis": null,
+      "nome": "sem_quantizacao"
+    },
+    {
+      "niveis": 64,
+      "nome": "q64"
+    },
+    {
+      "niveis": 128,
+      "nome": "q128"
+    },
+    {
+      "niveis": 256,
+      "nome": "q256"
+    }
+  ]
+}

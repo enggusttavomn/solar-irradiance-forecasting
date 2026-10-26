@@ -1,0 +1,178 @@
+[
+  {
+    "tarefa": "daily_30",
+    "modelo": "transformer",
+    "dados_exatos": true,
+    "config_igual": true,
+    "replay_max": 0.0,
+    "eval_repetida_max": 0.0,
+    "rng_preservado": true,
+    "MAE_antigo": 44.46938149571535,
+    "MAE_novo": 44.467647319174084,
+    "delta": -0.0017341765412695054,
+    "epocas": [
+      [
+        "original",
+        11,
+        6
+      ],
+      [
+        "novo",
+        11,
+        6
+      ],
+      [
+        "original",
+        23,
+        30
+      ],
+      [
+        "novo",
+        23,
+        30
+      ],
+      [
+        "original",
+        42,
+        16
+      ],
+      [
+        "novo",
+        42,
+        16
+      ],
+      [
+        "original",
+        67,
+        30
+      ],
+      [
+        "novo",
+        67,
+        30
+      ],
+      [
+        "original",
+        89,
+        26
+      ],
+      [
+        "novo",
+        89,
+        26
+      ]
+    ]
+  },
+  {
+    "tarefa": "daily_30",
+    "modelo": "informer",
+    "dados_exatos": true,
+    "config_igual": true,
+    "replay_max": 0.0,
+    "eval_repetida_max": 0.0,
+    "rng_preservado": true,
+    "MAE_antigo": 45.244231249290706,
+    "MAE_novo": 45.242915155785546,
+    "delta": -0.0013160935051601541,
+    "epocas": [
+      [
+        "original",
+        11,
+        9
+      ],
+      [
+        "novo",
+        11,
+        9
+      ],
+      [
+        "original",
+        23,
+        12
+      ],
+      [
+        "novo",
+        23,
+        12
+      ],
+      [
+        "original",
+        42,
+        7
+      ],
+      [
+        "novo",
+        42,
+        7
+      ],
+      [
+        "original",
+        67,
+        18
+      ],
+      [
+        "novo",
+        67,
+        18
+      ],
+      [
+        "original",
+        89,
+        7
+      ],
+      [
+        "novo",
+        89,
+        7
+      ]
+    ]
+  },
+  {
+    "tarefa": "hourly_72_extension",
+    "modelo": "transformer",
+    "dados_exatos": true,
+    "config_igual": true,
+    "replay_max": 0.0,
+    "eval_repetida_max": 0.0,
+    "rng_preservado": true,
+    "MAE_antigo": 54.44424997956814,
+    "MAE_novo": 54.43536473378059,
+    "delta": -0.008885245787553231,
+    "epocas": [
+      [
+        "original",
+        42,
+        30
+      ],
+      [
+        "novo",
+        42,
+        30
+      ]
+    ]
+  },
+  {
+    "tarefa": "hourly_72_extension",
+    "modelo": "informer",
+    "dados_exatos": true,
+    "config_igual": true,
+    "replay_max": 0.0,
+    "eval_repetida_max": 0.0,
+    "rng_preservado": true,
+    "MAE_antigo": 131.06730038565917,
+    "MAE_novo": 131.0880215933173,
+    "delta": 0.02072120765814134,
+    "epocas": [
+      [
+        "original",
+        42,
+        4
+      ],
+      [
+        "novo",
+        42,
+        4
+      ]
+    ]
+  }
+]

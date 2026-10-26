@@ -1,0 +1,344 @@
+{
+  "checked_at_utc": "2026-09-07T15:54:54.725905+00:00",
+  "fetched_before_comparison": true,
+  "remote_ref": "origin/main",
+  "overleaf_remote_commit": "eb85629ae00bb09c5642a301b34a51ff750cc2ca",
+  "local_git_commit": "8f068d7327baf05d1d5f7898950c3d28f358e972",
+  "local_git_commit_after_check": "8f068d7327baf05d1d5f7898950c3d28f358e972",
+  "dependency_collector": "scripts.preparar_overleaf.coletar_dependencias",
+  "entrypoints": [
+    "main.tex",
+    "supplementary_material.tex"
+  ],
+  "required_files": 37,
+  "matched_files": 36,
+  "identical_bytes": 27,
+  "line_ending_only_differences": [
+    "appendices/appendix_a.tex",
+    "figures/pipeline.tex",
+    "references.bib",
+    "sections/02_related_work.tex",
+    "sections/02_theoretical_background.tex",
+    "sections/04_methodology.tex",
+    "sections/06_metrics.tex",
+    "tables/literature_review.tex",
+    "tables/vencedores_por_horizonte.tex"
+  ],
+  "mismatches": [
+    {
+      "file": "sections/01_introduction.tex",
+      "reason": "different_content"
+    }
+  ],
+  "local_snapshot_stable": true,
+  "changed_during_check": [],
+  "synchronized": false,
+  "comparison_policy": "Compare only required publication dependencies; binary files byte-for-byte; LaTeX, BibTeX, class, package and bibliography-style files permit CRLF/LF differences.",
+  "files": [
+    {
+      "file": "appendices/appendix_a.tex",
+      "local_sha256": "8e5e22a94b45b2bc5d2e5c8544367f7c1dc4acd908f01ff9f4a26777fd435ea5",
+      "remote_sha256": "c0c3fded218bc04d66d445b2c124b3cbb89fc483fccd69860c0932879a59d7a5",
+      "local_size": 11005,
+      "remote_size": 10783,
+      "status": "identical_after_crlf_normalization"
+    },
+    {
+      "file": "appendices/supplementary_algorithms.tex",
+      "local_sha256": "9b6b7b0d322b3b7fa35dd9560b1e31df67bbd099db26135ba8f59bf2ff8464cf",
+      "remote_sha256": "9b6b7b0d322b3b7fa35dd9560b1e31df67bbd099db26135ba8f59bf2ff8464cf",
+      "local_size": 3967,
+      "remote_size": 3967,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "figures/heterogeneidade_local_delta_mae.png",
+      "local_sha256": "71629427272b95dfc7800581a7cc55dc03e7831a394c18e9b5b5d30967cd1c4e",
+      "remote_sha256": "71629427272b95dfc7800581a7cc55dc03e7831a394c18e9b5b5d30967cd1c4e",
+      "local_size": 191598,
+      "remote_size": 191598,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "figures/mapa_contexto_geografico.png",
+      "local_sha256": "fa23d62c87a06120db7162f42147e4dc065c4004f42b4f9bc9f553b4f9ed740c",
+      "remote_sha256": "fa23d62c87a06120db7162f42147e4dc065c4004f42b4f9bc9f553b4f9ed740c",
+      "local_size": 298899,
+      "remote_size": 298899,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "figures/perfis_sete_dias.png",
+      "local_sha256": "a5df6e7046f7917d4034d2cb91480a37edccf09d5ffdf57141abbf85c451c491",
+      "remote_sha256": "a5df6e7046f7917d4034d2cb91480a37edccf09d5ffdf57141abbf85c451c491",
+      "local_size": 477945,
+      "remote_size": 477945,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "figures/pipeline.tex",
+      "local_sha256": "6fd28f5530bae65c871b55ec081422eb6049f7d726afa5d643b342f7c96eb275",
+      "remote_sha256": "28c4d87c558c4117d697c603ff209038eb7eecb6f96dcf04b14e68f9baedc7a2",
+      "local_size": 5711,
+      "remote_size": 5582,
+      "status": "identical_after_crlf_normalization"
+    },
+    {
+      "file": "figures/previsoes_casos_contrastantes.png",
+      "local_sha256": "793ef61785fcc9718171d706775ecf4d3aaec1aa0a0a063daa4b2c485bef431e",
+      "remote_sha256": "793ef61785fcc9718171d706775ecf4d3aaec1aa0a0a063daa4b2c485bef431e",
+      "local_size": 208846,
+      "remote_size": 208846,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "figures/ranking_por_tarefa.png",
+      "local_sha256": "c9f261176eb4bb541e8cb5cca6bf3b53e742b4923dfeff4e88948272d0964270",
+      "remote_sha256": "c9f261176eb4bb541e8cb5cca6bf3b53e742b4923dfeff4e88948272d0964270",
+      "local_size": 233548,
+      "remote_size": 233548,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "figures/variabilidade_arquiteturas.png",
+      "local_sha256": "9f3aed12b9f570f9c81c4c8598424df5159d9646be19e24b05cc50e4da8a1741",
+      "remote_sha256": "9f3aed12b9f570f9c81c4c8598424df5159d9646be19e24b05cc50e4da8a1741",
+      "local_size": 186588,
+      "remote_size": 186588,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "figures/variabilidade_por_semente.png",
+      "local_sha256": "225aa1186baae73776d4a70284c6b4ec16e392cd9764ef4b8e71505aa9e52294",
+      "remote_sha256": "225aa1186baae73776d4a70284c6b4ec16e392cd9764ef4b8e71505aa9e52294",
+      "local_size": 220649,
+      "remote_size": 220649,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "main.tex",
+      "local_sha256": "5a3f74ec7ed78a8be8282cbd9bfc07ab6f6f8aada097c616fbe5a89951f5751a",
+      "remote_sha256": "5a3f74ec7ed78a8be8282cbd9bfc07ab6f6f8aada097c616fbe5a89951f5751a",
+      "local_size": 4264,
+      "remote_size": 4264,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "references.bib",
+      "local_sha256": "9457d36a16c69d25852e6ebe27b4cb6add607ced6f0e3e9d1518c9eee8350968",
+      "remote_sha256": "c0b49d609260f906d503ca95e2cc620e369ab13459bde24c8a2f445b783bdf30",
+      "local_size": 23312,
+      "remote_size": 22795,
+      "status": "identical_after_crlf_normalization"
+    },
+    {
+      "file": "sections/01_introduction.tex",
+      "local_sha256": "33f27364a3f04354ba1c469d2c57d57045c8be6093d3e5b423ecb1f5e6013eef",
+      "remote_sha256": "732e53c4e283f7906e2a6173a5048619697c468276a219b1b2b19e2dcfa10a61",
+      "local_size": 5663,
+      "remote_size": 6509,
+      "status": "different_content"
+    },
+    {
+      "file": "sections/02_related_work.tex",
+      "local_sha256": "d7e31adeafd1ac95f3a8393d1a5c202b3242923292abd064694bbdccc39b0790",
+      "remote_sha256": "d27de83018ac10d09cd4ab6f96f3051ca7d481b497371751279679baffa2507d",
+      "local_size": 7578,
+      "remote_size": 7458,
+      "status": "identical_after_crlf_normalization"
+    },
+    {
+      "file": "sections/02_theoretical_background.tex",
+      "local_sha256": "3851468720d9c00380633b3bb1669d39b94f0f0df02ad73c7d4e39514183adde",
+      "remote_sha256": "fe3b2ad59f0ecf949b677c61d86966b64bcfbbe7ace160f28228353a2ed5b1ca",
+      "local_size": 10935,
+      "remote_size": 10706,
+      "status": "identical_after_crlf_normalization"
+    },
+    {
+      "file": "sections/03_data_and_feature_engineering.tex",
+      "local_sha256": "da44d2c21832149b9abe8c6243c3fa6d0b5dd40d1f24bb7420feb948261f77a7",
+      "remote_sha256": "da44d2c21832149b9abe8c6243c3fa6d0b5dd40d1f24bb7420feb948261f77a7",
+      "local_size": 8779,
+      "remote_size": 8779,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "sections/04_algorithm_dilatedrnn.tex",
+      "local_sha256": "4a55543395cece6585698ceb00a4dd017ebd49e9c686b6452013408a23f3adce",
+      "remote_sha256": "4a55543395cece6585698ceb00a4dd017ebd49e9c686b6452013408a23f3adce",
+      "local_size": 816,
+      "remote_size": 816,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "sections/04_algorithm_protocol.tex",
+      "local_sha256": "af78dd194e0fa96da5155925eb44936be584330e38fe5f12cb8793e6ff1ef9bd",
+      "remote_sha256": "af78dd194e0fa96da5155925eb44936be584330e38fe5f12cb8793e6ff1ef9bd",
+      "local_size": 2054,
+      "remote_size": 2054,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "sections/04_algorithm_timesnet.tex",
+      "local_sha256": "8095641b8303d83d0692a6a71d388f5151e8bce42b4cf84f1fb89f4fdaecae06",
+      "remote_sha256": "8095641b8303d83d0692a6a71d388f5151e8bce42b4cf84f1fb89f4fdaecae06",
+      "local_size": 1685,
+      "remote_size": 1685,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "sections/04_methodology.tex",
+      "local_sha256": "e582cef8359ccd828309323f3f342daff98552bae4880bd3a54a183c9cf56c66",
+      "remote_sha256": "cfadd9a4e97cd1db13d961a4a74154788df014c5a31d44e71cb8d8d046eb715e",
+      "local_size": 7026,
+      "remote_size": 6898,
+      "status": "identical_after_crlf_normalization"
+    },
+    {
+      "file": "sections/05_experimental_setup.tex",
+      "local_sha256": "941ec189d445ece6154172384e954dc6314d83abb8a5a1603934021b6ab090d8",
+      "remote_sha256": "941ec189d445ece6154172384e954dc6314d83abb8a5a1603934021b6ab090d8",
+      "local_size": 7216,
+      "remote_size": 7216,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "sections/06_metrics.tex",
+      "local_sha256": "4162d2a6419ba90f643a6f362baaa524bc2b92b2c1b2eab509139e87fcb62b7c",
+      "remote_sha256": "30300f705561c6169ca1db5b893c540425de76096d1759bec42d087f115cb670",
+      "local_size": 5642,
+      "remote_size": 5515,
+      "status": "identical_after_crlf_normalization"
+    },
+    {
+      "file": "sections/07_results_and_discussion.tex",
+      "local_sha256": "623d748bc561c7d96b94d375fb0a71b559086bf4ea4cd5aabb001e1de750298b",
+      "remote_sha256": "623d748bc561c7d96b94d375fb0a71b559086bf4ea4cd5aabb001e1de750298b",
+      "local_size": 11452,
+      "remote_size": 11452,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "sections/08_limitations.tex",
+      "local_sha256": "d809b1396ad6bfd27ef2d590541bd23371e3debf9e4636ad5c826524fe678000",
+      "remote_sha256": "d809b1396ad6bfd27ef2d590541bd23371e3debf9e4636ad5c826524fe678000",
+      "local_size": 6123,
+      "remote_size": 6123,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "sections/09_conclusion.tex",
+      "local_sha256": "a701d446ca7d7f271b7f8cd735f9c24b513b33abfb535134303caa7d8d24efbc",
+      "remote_sha256": "a701d446ca7d7f271b7f8cd735f9c24b513b33abfb535134303caa7d8d24efbc",
+      "local_size": 1999,
+      "remote_size": 1999,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "supplementary_material.tex",
+      "local_sha256": "0efc95d156a54c0d3df72856795b715c6ee39a1f7368c9c214dcf95fcdd15120",
+      "remote_sha256": "0efc95d156a54c0d3df72856795b715c6ee39a1f7368c9c214dcf95fcdd15120",
+      "local_size": 3357,
+      "remote_size": 3357,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "tables/caso_meteorologico_independente.tex",
+      "local_sha256": "116998d00292bc84e7fb86c5134c593447df2b5466a69e78e6857216d1416e88",
+      "remote_sha256": "116998d00292bc84e7fb86c5134c593447df2b5466a69e78e6857216d1416e88",
+      "local_size": 624,
+      "remote_size": 624,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "tables/comparacao_timesnet_dilatedrnn_resumo.tex",
+      "local_sha256": "a072d9e504d5475961df614f7a9c5a43845ae056ce0850dc144dfa99b041f825",
+      "remote_sha256": "a072d9e504d5475961df614f7a9c5a43845ae056ce0850dc144dfa99b041f825",
+      "local_size": 1359,
+      "remote_size": 1359,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "tables/desempenho_macro.tex",
+      "local_sha256": "5a99a8209e158ee552a32bbcec4928e4b864d86c08458bd6c0d5a69ec593f8ac",
+      "remote_sha256": "5a99a8209e158ee552a32bbcec4928e4b864d86c08458bd6c0d5a69ec593f8ac",
+      "local_size": 1798,
+      "remote_size": 1798,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "tables/hyperparameters.tex",
+      "local_sha256": "12b659718d6c6257f289aeafbadb32949170a8212b3cb541d54ee4059437de28",
+      "remote_sha256": "12b659718d6c6257f289aeafbadb32949170a8212b3cb541d54ee4059437de28",
+      "local_size": 1425,
+      "remote_size": 1425,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "tables/literature_review.tex",
+      "local_sha256": "7eb4f43e0be39c84bcf90908766e92e7a035e158103f064e5025cebb3985094a",
+      "remote_sha256": "8e86f2c451d18ac8dabb5585179e37c5024104a18ee78ccfdb76c54b12d81acc",
+      "local_size": 5157,
+      "remote_size": 5043,
+      "status": "identical_after_crlf_normalization"
+    },
+    {
+      "file": "tables/locations.tex",
+      "local_sha256": "f7bc53d2e3b44aa0329e5b77a6219781a728c3895d696925be57654f85a1417b",
+      "remote_sha256": "f7bc53d2e3b44aa0329e5b77a6219781a728c3895d696925be57654f85a1417b",
+      "local_size": 1846,
+      "remote_size": 1846,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "tables/metricas_terminais.tex",
+      "local_sha256": "ed8f9e82c82415742d60e0a3ece0b511dc9340208919551b7d487b42b2def7c0",
+      "remote_sha256": "ed8f9e82c82415742d60e0a3ece0b511dc9340208919551b7d487b42b2def7c0",
+      "local_size": 951,
+      "remote_size": 951,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "tables/model_capacity.tex",
+      "local_sha256": "0f6fb4d60c96ef672e0b5e6b737afcd11a84775efded752b2a486d48f6f50ed8",
+      "remote_sha256": "0f6fb4d60c96ef672e0b5e6b737afcd11a84775efded752b2a486d48f6f50ed8",
+      "local_size": 690,
+      "remote_size": 690,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "tables/study_design.tex",
+      "local_sha256": "b90fed9a7ff39cc6fa4a36361c75cebc71e5267477bb407e83400eb5a20f64ec",
+      "remote_sha256": "b90fed9a7ff39cc6fa4a36361c75cebc71e5267477bb407e83400eb5a20f64ec",
+      "local_size": 1283,
+      "remote_size": 1283,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "tables/variabilidade_sementes.tex",
+      "local_sha256": "e0666d94647d4dba3bf5fddcb6c355d64d383c859bcdacdfacd30c8585846fc2",
+      "remote_sha256": "e0666d94647d4dba3bf5fddcb6c355d64d383c859bcdacdfacd30c8585846fc2",
+      "local_size": 1344,
+      "remote_size": 1344,
+      "status": "identical_bytes"
+    },
+    {
+      "file": "tables/vencedores_por_horizonte.tex",
+      "local_sha256": "c46add59e66f317d6b3774886db903b725a6305dc859db6e3f102b6d3d3b07a1",
+      "remote_sha256": "e32b6227b1f56dfe68570ae58fe635bb855a82973a3f6c08d57e1f172ea4ec2e",
+      "local_size": 1487,
+      "remote_size": 1459,
+      "status": "identical_after_crlf_normalization"
+    }
+  ],
+  "focus_change_files": [
+    "appendices/appendix_a.tex",
+    "appendices/supplementary_algorithms.tex",
+    "figures/pipeline.tex",
+    "references.bib",
+    "sections/04_algorithm_protocol.tex",
+    "sections/04_methodology.tex"
+  ],
+  "focus_change_synchronized": true
+}

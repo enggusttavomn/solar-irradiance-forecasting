@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\tmp\recuperacao_20261001\finalizar_sequencia.py", line 225, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\tmp\recuperacao_20261001\finalizar_sequencia.py", line 161, in main
+    filas = {nome: conferir_fila(ler(path), nome)
+                   ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\tmp\recuperacao_20261001\finalizar_sequencia.py", line 64, in conferir_fila
+    ativos = arvore(estado)
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\processos_quantizacao.py", line 135, in processos_da_fila_ativos
+    atual = identidade(pid)
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\processos_quantizacao.py", line 75, in identidade
+    raise ctypes.WinError(ctypes.get_last_error())
+PermissionError: [WinError 5] Access is denied.

@@ -1,0 +1,38 @@
+{
+  "tipo": "validacao_somente_refit_orquestracao",
+  "agente": "/root/cache_historico_outubro3",
+  "inicio_utc": "2026-10-05T03:08:11.002810+00:00",
+  "fim_utc": "2026-10-05T03:08:35.413693+00:00",
+  "comando_equivalente": "python -X utf8 -m unittest discover -s tests -p test_*somente_refit.py -v",
+  "testes": 24,
+  "falhas": 0,
+  "erros": 0,
+  "pulados": 0,
+  "saida_real": "test_curto_com_global_valido_tambem_retoma_somente_refit (test_coordenacao_historica_somente_refit.ComandoHistoricoSomenteRefit.test_curto_com_global_valido_tambem_retoma_somente_refit) ... ok\ntest_curto_sem_global_mantem_selecao_e_refit_originais (test_coordenacao_historica_somente_refit.ComandoHistoricoSomenteRefit.test_curto_sem_global_mantem_selecao_e_refit_originais) ... ok\ntest_fonte_congelada_alterada_bloqueia_sem_recongelar (test_coordenacao_historica_somente_refit.ComandoHistoricoSomenteRefit.test_fonte_congelada_alterada_bloqueia_sem_recongelar) ... ok\ntest_fonte_obrigatoria_ausente_bloqueia (test_coordenacao_historica_somente_refit.ComandoHistoricoSomenteRefit.test_fonte_obrigatoria_ausente_bloqueia) ... ok\ntest_global_corrupto_propaga_erro_sem_fallback_ou_reescrita (test_coordenacao_historica_somente_refit.ComandoHistoricoSomenteRefit.test_global_corrupto_propaga_erro_sem_fallback_ou_reescrita) ... ok\ntest_global_nao_objeto_json_bloqueia_sem_reescrever (test_coordenacao_historica_somente_refit.ComandoHistoricoSomenteRefit.test_global_nao_objeto_json_bloqueia_sem_reescrever) ... ok\ntest_global_valido_44_pares_habilita_refit_sem_reescrever (test_coordenacao_historica_somente_refit.ComandoHistoricoSomenteRefit.test_global_valido_44_pares_habilita_refit_sem_reescrever) ... ok\ntest_regime_modo_pares_e_sha_divergentes_bloqueiam (test_coordenacao_historica_somente_refit.ComandoHistoricoSomenteRefit.test_regime_modo_pares_e_sha_divergentes_bloqueiam) ... ok\ntest_selecao_nao_congelada_bloqueia (test_coordenacao_historica_somente_refit.ComandoHistoricoSomenteRefit.test_selecao_nao_congelada_bloqueia) ... ok\ntest_contrato_alterado_apos_congelamento_bloqueia (test_runner_somente_refit.TestRunnerSomenteRefit.test_contrato_alterado_apos_congelamento_bloqueia) ... ok\ntest_dry_run_normal_preserva_plano_selecao_original (test_runner_somente_refit.TestRunnerSomenteRefit.test_dry_run_normal_preserva_plano_selecao_original) ... ok\ntest_dry_run_refit_mostra_somente_comandos_refit (test_runner_somente_refit.TestRunnerSomenteRefit.test_dry_run_refit_mostra_somente_comandos_refit) ... ok\ntest_dry_run_refit_sem_global_bloqueia_sem_criar (test_runner_somente_refit.TestRunnerSomenteRefit.test_dry_run_refit_sem_global_bloqueia_sem_criar) ... ok\ntest_dry_run_somente_selecao_nao_exige_global (test_runner_somente_refit.TestRunnerSomenteRefit.test_dry_run_somente_selecao_nao_exige_global) ... ok\ntest_fases_correspondem_as_flags (test_runner_somente_refit.TestRunnerSomenteRefit.test_fases_correspondem_as_flags) ... ok\ntest_flag_selecao_e_refit_sao_mutuamente_exclusivas (test_runner_somente_refit.TestRunnerSomenteRefit.test_flag_selecao_e_refit_sao_mutuamente_exclusivas) ... ok\ntest_global_divergente_bloqueia_sem_children (test_runner_somente_refit.TestRunnerSomenteRefit.test_global_divergente_bloqueia_sem_children) ... ok\ntest_global_json_corrompido_bloqueia_sem_children (test_runner_somente_refit.TestRunnerSomenteRefit.test_global_json_corrompido_bloqueia_sem_children) ... ok\ntest_global_nao_objeto_bloqueia_sem_children (test_runner_somente_refit.TestRunnerSomenteRefit.test_global_nao_objeto_bloqueia_sem_children) ... ok\ntest_global_que_desaparece_durante_gate_nao_e_recriado (test_runner_somente_refit.TestRunnerSomenteRefit.test_global_que_desaparece_durante_gate_nao_e_recriado) ... ok\ntest_global_valido_agenda_apenas_refit (test_runner_somente_refit.TestRunnerSomenteRefit.test_global_valido_agenda_apenas_refit) ... ok\ntest_global_valido_nao_e_reescrito (test_runner_somente_refit.TestRunnerSomenteRefit.test_global_valido_nao_e_reescrito) ... ok\ntest_selecao_alterada_apos_congelamento_bloqueia (test_runner_somente_refit.TestRunnerSomenteRefit.test_selecao_alterada_apos_congelamento_bloqueia) ... ok\ntest_sem_global_bloqueia_antes_de_qualquer_child (test_runner_somente_refit.TestRunnerSomenteRefit.test_sem_global_bloqueia_antes_de_qualquer_child) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 22.384s\n\nOK\n",
+  "sha_fontes_antes": {
+    "scripts\\rodar_quantizacao_todos_modelos.py": "a70cef6b3d1f0b920675402756e405172930894709c2e4c15c79996fbb239ba8",
+    "scripts\\coordenar_quantizacao_historica.py": "1166e691d47d81a98cb87286eed302fa0b61d4acaed0c9029165431a7615fa2b",
+    "tests\\test_runner_somente_refit.py": "9c6be357dfd71f6424a0829f420930e60cadfd8bdcb4bcf8b210cd1863df8e0f",
+    "tests\\test_coordenacao_historica_somente_refit.py": "0fff3123a22cc502d3d630d6dcf42067146f9a3f0ebbb09ff928395fadbc2f97"
+  },
+  "sha_fontes_depois": {
+    "scripts\\rodar_quantizacao_todos_modelos.py": "a70cef6b3d1f0b920675402756e405172930894709c2e4c15c79996fbb239ba8",
+    "scripts\\coordenar_quantizacao_historica.py": "1166e691d47d81a98cb87286eed302fa0b61d4acaed0c9029165431a7615fa2b",
+    "tests\\test_runner_somente_refit.py": "9c6be357dfd71f6424a0829f420930e60cadfd8bdcb4bcf8b210cd1863df8e0f",
+    "tests\\test_coordenacao_historica_somente_refit.py": "0fff3123a22cc502d3d630d6dcf42067146f9a3f0ebbb09ff928395fadbc2f97"
+  },
+  "gate_global_real_sem_launch": {
+    "ok": true,
+    "retorno": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\selecao_global_congelada.json",
+    "pares": 44,
+    "fontes": 88,
+    "regime": "historico_1998_2022",
+    "modo": "completa",
+    "sha256_antes": "c616673e7d334a6161872346980a1904f03d4a375433008811e287a839abfeb7",
+    "sha256_depois": "c616673e7d334a6161872346980a1904f03d4a375433008811e287a839abfeb7",
+    "mtime_ns_antes": 1791140953445254300,
+    "mtime_ns_depois": 1791140953445254300
+  },
+  "sem_fit_replay_launch": true,
+  "ok": true
+}

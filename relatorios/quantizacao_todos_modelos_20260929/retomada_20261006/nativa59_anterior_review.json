@@ -1,0 +1,32 @@
+{
+  "versao": 1,
+  "aprovado": true,
+  "aprovado_em_utc": "2026-10-06T22:52:26.796189+00:00",
+  "revisor": "/root/further_speed",
+  "tipo": "revisao_independente_por_leitura",
+  "escopo": "Backend NT, reutilizacao de PID, identidade por FILETIME e preservacao do grafo de parentesco.",
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\retomar_historico_apos_calendario.py": "a717db239283ff4c37fee7e65f887585d46350008d09c497d8b4690167653871",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tests\\test_retomar_historico_apos_calendario.py": "f2669895a4e72a75aa08acd332abefdfa7b2e2244554910c7342cdba271a2fca"
+  },
+  "bloqueadores": [],
+  "constatacoes": [
+    "Snapshot NT valida tamanho, offsets, ABI e status antes de retornar mapa; certifica o PID, PPID e FILETIME do proprio processo por consulta independente.",
+    "Duas instancias do mesmo PID somente sao resolvidas por match unico do FILETIME de handle vivo, com revalidacao de vida.",
+    "Identidade PID/FILETIME duplicada, erro de acesso, handle morto, nova reutilizacao ou certificacao inconclusiva continuam bloqueando a retomada.",
+    "Remover do mapa um PID comprovadamente morto preserva os registros de filhos que apontam para esse PPID; a guarda de orfaos continua bloquear PPID conhecido.",
+    "Observacao e confirmacao mantem handles retidos, ordem temporal pai/filho e nova leitura do mapa para revalidar cada aresta.",
+    "Journal, fontes, locks, preservacao dos logs e comando de retomada continuam submetidos as guardas existentes."
+  ],
+  "evidencia_testes_existente": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\testes_snapshot_nt.json",
+    "sha256": "9eedf5df91e300ceb02432d9fc7235a6561e6f8d41435cc77d4ef1de2a3b0e0f",
+    "testes_executados": 59,
+    "consultas_nativas_repetidas": 30,
+    "log_sha256": "a6c26c3d047983a01c3eec109015247aeb3694e2c783bddea21244597295d181"
+  },
+  "novos_testes_executados_nesta_revisao": 0,
+  "consultas_nativas_executadas_nesta_revisao": 0,
+  "processos_de_treino_lancados_ou_modificados": false,
+  "fontes_journal_pausa_prioridades_modificados": false
+}

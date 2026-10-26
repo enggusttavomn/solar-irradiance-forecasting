@@ -1,0 +1,329 @@
+{
+  "ok": false,
+  "registros": [
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "selecao",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_1\\previsoes_validacao.csv.gz": "b8f4cfc3603608146b8498e06a40d82747005200efade5a3b0850ddaab6820df"
+      },
+      "modelo": "Persistencia",
+      "recomputado": true,
+      "tarefa": "monthly_1",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "selecao",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_1\\previsoes_validacao.csv.gz": "b8f4cfc3603608146b8498e06a40d82747005200efade5a3b0850ddaab6820df"
+      },
+      "modelo": "Sazonal ingenuo",
+      "recomputado": true,
+      "tarefa": "monthly_1",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "selecao",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_1\\previsoes_validacao.csv.gz": "b8f4cfc3603608146b8498e06a40d82747005200efade5a3b0850ddaab6820df"
+      },
+      "modelo": "Climatologia",
+      "recomputado": true,
+      "tarefa": "monthly_1",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "escopo": "interface_chaves_alvos_e_cache; replay_independente_em_controles_referencias.json",
+      "fase": "selecao",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\cache\\deterministica.npz": "38578eeb53a8e50f01cd22943da6dd4b37a19c65ddea8a7beb5b7e5135b2d5cf",
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\chaves_validacao_2023.csv.gz": "6ec7926f4148ae778148ef6ff08437422e10aebcf96010c6ac991173cf773268"
+      },
+      "modelo": "ARIMA",
+      "recomputado": false,
+      "tarefa": "monthly_1",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_1\\previsoes_teste.csv.gz": "b9e7504f8f4296a32a5d2836f60f3bca8b188ad963b9c7bc029697eecbd93bd1"
+      },
+      "modelo": "Persistencia",
+      "recomputado": true,
+      "tarefa": "monthly_1",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_1\\previsoes_teste.csv.gz": "b9e7504f8f4296a32a5d2836f60f3bca8b188ad963b9c7bc029697eecbd93bd1"
+      },
+      "modelo": "Sazonal ingenuo",
+      "recomputado": true,
+      "tarefa": "monthly_1",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_1\\previsoes_teste.csv.gz": "b9e7504f8f4296a32a5d2836f60f3bca8b188ad963b9c7bc029697eecbd93bd1"
+      },
+      "modelo": "Climatologia",
+      "recomputado": true,
+      "tarefa": "monthly_1",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "escopo": "interface_chaves_alvos_e_cache; replay_independente_em_controles_referencias.json",
+      "fase": "refit",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\cache\\deterministica.npz": "38578eeb53a8e50f01cd22943da6dd4b37a19c65ddea8a7beb5b7e5135b2d5cf",
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\chaves_teste_2024.csv.gz": "8b82e2fc0bf60e5d857025293fe81051afec1de9736e3353b6c58889e34677f7"
+      },
+      "modelo": "ARIMA",
+      "recomputado": false,
+      "tarefa": "monthly_1",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "selecao",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_6\\previsoes_validacao.csv.gz": "c4fcfabdfc44530211ebd3c6a15318d91199575239be1f7c204b15c69d3a9ce2"
+      },
+      "modelo": "Persistencia",
+      "recomputado": true,
+      "tarefa": "monthly_6",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "selecao",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_6\\previsoes_validacao.csv.gz": "c4fcfabdfc44530211ebd3c6a15318d91199575239be1f7c204b15c69d3a9ce2"
+      },
+      "modelo": "Sazonal ingenuo",
+      "recomputado": true,
+      "tarefa": "monthly_6",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "selecao",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_6\\previsoes_validacao.csv.gz": "c4fcfabdfc44530211ebd3c6a15318d91199575239be1f7c204b15c69d3a9ce2"
+      },
+      "modelo": "Climatologia",
+      "recomputado": true,
+      "tarefa": "monthly_6",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "escopo": "interface_chaves_alvos_e_cache; replay_independente_em_controles_referencias.json",
+      "fase": "selecao",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\cache\\deterministica.npz": "9c7ee3b75a1ed2ae5a8d54408b33907b42c8fe926d7d9fe856c239a91a9685d5",
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\chaves_validacao_2023.csv.gz": "8de36155c428e61d28d873eba017a79ff65f146c8a55ff69d54f19add1983255"
+      },
+      "modelo": "ARIMA",
+      "recomputado": false,
+      "tarefa": "monthly_6",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_6\\previsoes_teste.csv.gz": "101e97946776bdd883c32ec1794ffa215b21a7639a318e6f7ddec6134240c2ff"
+      },
+      "modelo": "Persistencia",
+      "recomputado": true,
+      "tarefa": "monthly_6",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_6\\previsoes_teste.csv.gz": "101e97946776bdd883c32ec1794ffa215b21a7639a318e6f7ddec6134240c2ff"
+      },
+      "modelo": "Sazonal ingenuo",
+      "recomputado": true,
+      "tarefa": "monthly_6",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_6\\previsoes_teste.csv.gz": "101e97946776bdd883c32ec1794ffa215b21a7639a318e6f7ddec6134240c2ff"
+      },
+      "modelo": "Climatologia",
+      "recomputado": true,
+      "tarefa": "monthly_6",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "escopo": "interface_chaves_alvos_e_cache; replay_independente_em_controles_referencias.json",
+      "fase": "refit",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\cache\\deterministica.npz": "9c7ee3b75a1ed2ae5a8d54408b33907b42c8fe926d7d9fe856c239a91a9685d5",
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\chaves_teste_2024.csv.gz": "5c718f944207067f0f267f5ed0678216ae68856c22ceeb45545d56190862dfee"
+      },
+      "modelo": "ARIMA",
+      "recomputado": false,
+      "tarefa": "monthly_6",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "selecao",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\previsoes_validacao.csv.gz": "e3670b8917e6646a610f4dbcb2aa0eb51272ff6ac8180ca5164d1d3343de2d16"
+      },
+      "modelo": "Persistencia",
+      "recomputado": true,
+      "tarefa": "daily_30",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "selecao",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\previsoes_validacao.csv.gz": "e3670b8917e6646a610f4dbcb2aa0eb51272ff6ac8180ca5164d1d3343de2d16"
+      },
+      "modelo": "Sazonal ingenuo",
+      "recomputado": true,
+      "tarefa": "daily_30",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "selecao",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\previsoes_validacao.csv.gz": "e3670b8917e6646a610f4dbcb2aa0eb51272ff6ac8180ca5164d1d3343de2d16"
+      },
+      "modelo": "Climatologia",
+      "recomputado": true,
+      "tarefa": "daily_30",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "escopo": "interface_chaves_alvos_e_cache; replay_independente_em_controles_referencias.json",
+      "fase": "selecao",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\cache\\deterministica.npz": "e8a40d26b03e3deb6d421d0d0385c5d0621ef539987692133e081bde61547e63",
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\chaves_validacao_2023.csv.gz": "5d5cf0e87520a5494c59aa46abff15240425e980937f311b8f96242a76d23b2b"
+      },
+      "modelo": "ARIMA",
+      "recomputado": false,
+      "tarefa": "daily_30",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\previsoes_teste.csv.gz": "3b6576979909db28e612a2f77fbca7ee0fb0f9873e4d142c46b4c404bfb33318"
+      },
+      "modelo": "Persistencia",
+      "recomputado": true,
+      "tarefa": "daily_30",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\previsoes_teste.csv.gz": "3b6576979909db28e612a2f77fbca7ee0fb0f9873e4d142c46b4c404bfb33318"
+      },
+      "modelo": "Sazonal ingenuo",
+      "recomputado": true,
+      "tarefa": "daily_30",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\previsoes_teste.csv.gz": "3b6576979909db28e612a2f77fbca7ee0fb0f9873e4d142c46b4c404bfb33318"
+      },
+      "modelo": "Climatologia",
+      "recomputado": true,
+      "tarefa": "daily_30",
+      "tolerancia": 1e-06
+    },
+    {
+      "aplicavel": true,
+      "aprovado": true,
+      "diferenca_maxima": 0.0,
+      "escopo": "interface_chaves_alvos_e_cache; replay_independente_em_controles_referencias.json",
+      "fase": "refit",
+      "fontes": {
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\cache\\deterministica.npz": "e8a40d26b03e3deb6d421d0d0385c5d0621ef539987692133e081bde61547e63",
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\chaves_teste_2024.csv.gz": "bfa6b288aa096b8bc98f966b26124ebbebf34191dc6631a3e9f664044427d2a1"
+      },
+      "modelo": "ARIMA",
+      "recomputado": false,
+      "tarefa": "daily_30",
+      "tolerancia": 1e-06
+    }
+  ]
+}

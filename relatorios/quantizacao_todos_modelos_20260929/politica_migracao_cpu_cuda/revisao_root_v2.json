@@ -1,0 +1,17 @@
+{
+  "aprovado": true,
+  "politica_sha256": "13c8a9da43fde85160472e869f9eab108adb2ba9b5494fe6280e2cda9948521b",
+  "verificador_sha256": "5f3db44ec3aba52a0c10a9dff2d8c486d86930d162b492c7dd8fac1581b842b2",
+  "revisor": "Codex /root - revisao independente da implementacao pelo agente motor",
+  "revisado_em_utc": "2026-09-30T05:50:15.389795+00:00",
+  "justificativa": "Politica restrita aos seis pares atuais GRU/LSTM/DilatedRNN x horario/diario em CPU para CUDA. Mesmos dados, normalizacao, arquitetura, configuracao, sementes e codigo de treino; primeiro lote sem atualizacao de pesos e replay novo absoluto ate 1e-6 W/m2 obrigatorios. Metricas finais e epocas podem mudar com o backend e nao decidem aceite. Quantizacao sera comparada ao novo controle no mesmo dispositivo. Checkpoints antigos ausentes sao enumerados; replays antigos disponiveis usam os limites declarados de compatibilidade. Nao autoriza outra alteracao de algoritmo, tolerancias maiores ou aceitacao de erros tecnicos. Foram revisados o codigo, os31 testes aprovados e uma integracao real GRU diario com5 replays exatos. Aceite de cada caso continua condicionado a todas as verificacoes individuais, inclusive integridade das fontes.",
+  "evidencia_integracao": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\politica_migracao_cpu_cuda\\daily_30\\gru\\validacao\\verificacao.json",
+    "sha256": "b6c03f80e390ca60456e1a110e49acd8a512ac3cbb887f88fdee04e394b1c075"
+  },
+  "nao_equivale_a": [
+    "aceite irrestrito de cada modelo",
+    "evidencia de ganho de MAE",
+    "aprovacao visual de PDF"
+  ]
+}

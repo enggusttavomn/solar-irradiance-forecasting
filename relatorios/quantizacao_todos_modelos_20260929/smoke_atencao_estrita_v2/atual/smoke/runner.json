@@ -1,0 +1,116 @@
+{
+  "regime": "atual",
+  "modo": "smoke",
+  "etapa": "concluida",
+  "iniciado_em_utc": "2026-09-30T11:35:42.918353+00:00",
+  "atualizado_em_utc": "2026-09-30T11:46:16.739597+00:00",
+  "pid_runner": 35196,
+  "identidade_runner": {
+    "pid": 35196,
+    "creation_time": "134352417389921149"
+  },
+  "processos_historico": [
+    {
+      "pid": 39124,
+      "creation_time": "134352417429293493"
+    },
+    {
+      "pid": 44644,
+      "creation_time": "134352418361391352"
+    },
+    {
+      "pid": 6972,
+      "creation_time": "134352419237584934"
+    },
+    {
+      "pid": 48116,
+      "creation_time": "134352420109061542"
+    },
+    {
+      "pid": 28096,
+      "creation_time": "134352420876988374"
+    },
+    {
+      "pid": 45624,
+      "creation_time": "134352421588099597"
+    },
+    {
+      "pid": 33200,
+      "creation_time": "134352422298755114"
+    },
+    {
+      "pid": 25784,
+      "creation_time": "134352423058044205"
+    }
+  ],
+  "saida": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2",
+  "pendentes": [],
+  "concluidos": [
+    {
+      "fase": "selecao",
+      "tarefa": "daily_30",
+      "modelo": "Transformer",
+      "returncode": 0,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\smoke\\selecao_daily_30_transformer.log",
+      "concluido_em_utc": "2026-09-30T11:37:10.788258+00:00"
+    },
+    {
+      "fase": "selecao",
+      "tarefa": "daily_30",
+      "modelo": "Informer",
+      "returncode": 0,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\smoke\\selecao_daily_30_informer.log",
+      "concluido_em_utc": "2026-09-30T11:38:38.612386+00:00"
+    },
+    {
+      "fase": "selecao",
+      "tarefa": "hourly_72_extension",
+      "modelo": "Transformer",
+      "returncode": 0,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\smoke\\selecao_hourly_72_extension_transformer.log",
+      "concluido_em_utc": "2026-09-30T11:40:05.705121+00:00"
+    },
+    {
+      "fase": "selecao",
+      "tarefa": "hourly_72_extension",
+      "modelo": "Informer",
+      "returncode": 0,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\smoke\\selecao_hourly_72_extension_informer.log",
+      "concluido_em_utc": "2026-09-30T11:41:27.105090+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "daily_30",
+      "modelo": "Transformer",
+      "returncode": 0,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\smoke\\refit_daily_30_transformer.log",
+      "concluido_em_utc": "2026-09-30T11:42:33.764265+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "daily_30",
+      "modelo": "Informer",
+      "returncode": 0,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\smoke\\refit_daily_30_informer.log",
+      "concluido_em_utc": "2026-09-30T11:43:44.824792+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "hourly_72_extension",
+      "modelo": "Transformer",
+      "returncode": 0,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\smoke\\refit_hourly_72_extension_transformer.log",
+      "concluido_em_utc": "2026-09-30T11:45:00.749303+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "hourly_72_extension",
+      "modelo": "Informer",
+      "returncode": 0,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\smoke\\refit_hourly_72_extension_informer.log",
+      "concluido_em_utc": "2026-09-30T11:46:16.699284+00:00"
+    }
+  ],
+  "falhas": [],
+  "processos": []
+}

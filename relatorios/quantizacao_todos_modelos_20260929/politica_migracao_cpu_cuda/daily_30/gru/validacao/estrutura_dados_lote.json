@@ -1,0 +1,80 @@
+{
+  "dados": {
+    "ajuste": {
+      "x_bruto": true,
+      "y_bruto": true,
+      "localidade_id": true,
+      "localidade": true,
+      "origem": true,
+      "datas_alvo": true,
+      "x_normalizado_bitexato": true,
+      "y_normalizado_bitexato": true
+    },
+    "validacao": {
+      "x_bruto": true,
+      "y_bruto": true,
+      "localidade_id": true,
+      "localidade": true,
+      "origem": true,
+      "datas_alvo": true,
+      "x_normalizado_bitexato": true,
+      "y_normalizado_bitexato": true
+    }
+  },
+  "configuracao_igual": true,
+  "codigo_loop_original_preservado": true,
+  "arquitetura_shapes": {
+    "encoder.weight_ih_l0": [
+      96,
+      1
+    ],
+    "encoder.weight_hh_l0": [
+      96,
+      32
+    ],
+    "encoder.bias_ih_l0": [
+      96
+    ],
+    "encoder.bias_hh_l0": [
+      96
+    ],
+    "embedding_localidade.weight": [
+      10,
+      8
+    ],
+    "cabeca.weight": [
+      30,
+      40
+    ],
+    "cabeca.bias": [
+      30
+    ]
+  },
+  "lote_inicial": {
+    "seed": 11,
+    "batch_size": 128,
+    "estado_inicial_bitexato": true,
+    "parametros_apos_backward_inalterados": true,
+    "optimizer_step_executado": false,
+    "max_delta_previsao_normalizada": 6.258487701416016e-07,
+    "max_delta_gradientes": {
+      "encoder.weight_ih_l0": 1.1175870895385742e-08,
+      "encoder.weight_hh_l0": 1.862645149230957e-08,
+      "encoder.bias_ih_l0": 8.381903171539307e-09,
+      "encoder.bias_hh_l0": 9.313225746154785e-09,
+      "embedding_localidade.weight": 1.862645149230957e-09,
+      "cabeca.weight": 2.2351741790771484e-08,
+      "cabeca.bias": 1.4901161193847656e-08
+    },
+    "mse_cpu": 0.4819909632205963,
+    "mse_gpu": 0.4819909334182739
+  },
+  "ambiente": {
+    "torch": "2.12.0+cu126",
+    "cuda": "12.6",
+    "cudnn": 91002,
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "deterministic_algorithms": true,
+    "deterministic_warn_only": true
+  }
+}

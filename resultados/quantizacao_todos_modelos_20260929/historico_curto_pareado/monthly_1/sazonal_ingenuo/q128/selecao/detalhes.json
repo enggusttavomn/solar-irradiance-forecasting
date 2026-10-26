@@ -1,0 +1,61 @@
+{
+  "adaptacao_calendario_sazonal_mensal": {
+    "codigo_adaptador_sha256": "89bbc5dc25780bf22dff658314ab11f6c5e4a11830183c0a85a313be59162f13",
+    "contrato_sha256": "00ccf090874b9959bd56522dcb17f8948e8c99873c3833a7bc4520b011a9ac4d",
+    "id": "sazonal_mensal_calendario_auditado_v1",
+    "politica": {
+      "alvos_alterados": false,
+      "causalidade_original_preservada": true,
+      "id": "sazonal_mensal_calendario_auditado_v1",
+      "imputacao_ou_descarte_de_janelas": false,
+      "metricas_usadas_como_criterio": false,
+      "minmax_alterado": false,
+      "modelo": "Sazonal ingenuo",
+      "origens_alteradas": false,
+      "quantizacao_alterada": false,
+      "regimes": [
+        "historico_1998_2022",
+        "historico_curto_pareado"
+      ],
+      "regra_diaria_alterada": false,
+      "regra_horaria_alterada": false,
+      "regra_mensal": "mes_ano_anterior_fim_mes_canonico_Period_M_menos12",
+      "selecao_legada_alterada": false,
+      "tarefas": [
+        "monthly_1",
+        "monthly_6"
+      ]
+    },
+    "tipo": "contrato_nativo"
+  },
+  "corte_ajuste_exclusivo": "2018-04-01 00:00:00",
+  "modelo": "Sazonal ingenuo",
+  "niveis": 128,
+  "regra": {
+    "alvos_metricas": "continuos_observados_sem_quantizacao",
+    "arima_checkpoint": "especificacao_parametros_covariancia_evidencia_fit_historico_hash_sem_estados_longos",
+    "arima_inferencia": "apply_refitFalse_na_mesma_janela_limitada",
+    "arima_numerico": [
+      [
+        "lbfgs",
+        200
+      ],
+      [
+        "powell",
+        2000
+      ]
+    ],
+    "arima_ordens": "controle_seleciona_validacao_MSE_normalizado_demais_niveis_fixam",
+    "arima_quantizacao": "serie_endogena_de_ajuste_e_contextos_filtragem",
+    "climatologia_diaria": "media_mes_dia_antes_corte",
+    "climatologia_horaria": "media_mes_dia_hora_local_antes_corte",
+    "climatologia_mensal": "media_mes_antes_corte",
+    "climatologia_quantizacao": "quantiza_historico_antes_media_saida_continua",
+    "controle": "identidade_minmax_inversa_valores_originais_sem_roundtrip",
+    "persistencia_diaria_mensal": "repete_ultima_observacao",
+    "persistencia_horaria": "repete_ultimas_24_horas",
+    "quantizacao": "minmax_treino_seguido_clip_0_1_rint_Nmenos1_so_historico",
+    "sazonal": "mesma_data_hora_ano_anterior_29fev_mapeado28fev_causal"
+  },
+  "sem_epocas": true
+}

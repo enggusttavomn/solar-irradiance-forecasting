@@ -1,0 +1,300 @@
+{
+  "parametros_iguais": false,
+  "parametros_old": {
+    "objective": "reg:squarederror",
+    "base_score": null,
+    "booster": null,
+    "callbacks": null,
+    "colsample_bylevel": null,
+    "colsample_bynode": null,
+    "colsample_bytree": 0.8,
+    "device": null,
+    "early_stopping_rounds": null,
+    "enable_categorical": false,
+    "eval_metric": null,
+    "feature_types": null,
+    "feature_weights": null,
+    "gamma": null,
+    "grow_policy": null,
+    "importance_type": null,
+    "interaction_constraints": null,
+    "learning_rate": 0.05,
+    "max_bin": null,
+    "max_cat_threshold": null,
+    "max_cat_to_onehot": null,
+    "max_delta_step": null,
+    "max_depth": 3,
+    "max_leaves": null,
+    "min_child_weight": null,
+    "missing": NaN,
+    "monotone_constraints": null,
+    "multi_strategy": "multi_output_tree",
+    "n_estimators": 150,
+    "n_jobs": 1,
+    "num_parallel_tree": null,
+    "random_state": 42,
+    "reg_alpha": null,
+    "reg_lambda": null,
+    "sampling_method": null,
+    "scale_pos_weight": null,
+    "subsample": 0.8,
+    "tree_method": "hist",
+    "validate_parameters": null,
+    "verbosity": 0
+  },
+  "parametros_new": {
+    "objective": "reg:squarederror",
+    "base_score": null,
+    "booster": null,
+    "callbacks": null,
+    "colsample_bylevel": null,
+    "colsample_bynode": null,
+    "colsample_bytree": 0.8,
+    "device": null,
+    "early_stopping_rounds": null,
+    "enable_categorical": false,
+    "eval_metric": null,
+    "feature_types": null,
+    "feature_weights": null,
+    "gamma": null,
+    "grow_policy": null,
+    "importance_type": null,
+    "interaction_constraints": null,
+    "learning_rate": 0.05,
+    "max_bin": null,
+    "max_cat_threshold": null,
+    "max_cat_to_onehot": null,
+    "max_delta_step": null,
+    "max_depth": 3,
+    "max_leaves": null,
+    "min_child_weight": null,
+    "missing": NaN,
+    "monotone_constraints": null,
+    "multi_strategy": "multi_output_tree",
+    "n_estimators": 150,
+    "n_jobs": 1,
+    "num_parallel_tree": null,
+    "random_state": 42,
+    "reg_alpha": null,
+    "reg_lambda": null,
+    "sampling_method": null,
+    "scale_pos_weight": null,
+    "subsample": 0.8,
+    "tree_method": "hist",
+    "validate_parameters": null,
+    "verbosity": 0
+  },
+  "old_config": {
+    "learner": {
+      "generic_param": {
+        "device": "cpu",
+        "fail_on_invalid_gpu_id": "0",
+        "n_jobs": "1",
+        "nthread": "1",
+        "random_state": "42",
+        "seed": "42",
+        "seed_per_iteration": "0",
+        "validate_parameters": "1"
+      },
+      "gradient_booster": {
+        "gbtree_model_param": {
+          "num_parallel_tree": "1",
+          "num_trees": "150"
+        },
+        "gbtree_train_param": {
+          "process_type": "default",
+          "tree_method": "hist",
+          "updater": "grow_quantile_histmaker",
+          "updater_seq": "grow_quantile_histmaker"
+        },
+        "name": "gbtree",
+        "specified_updater": false,
+        "tree_train_param": {
+          "alpha": "0",
+          "colsample_bylevel": "1",
+          "colsample_bynode": "1",
+          "colsample_bytree": "0.800000012",
+          "eta": "0.0500000007",
+          "gamma": "0",
+          "grow_policy": "depthwise",
+          "interaction_constraints": "",
+          "lambda": "1",
+          "learning_rate": "0.0500000007",
+          "max_bin": "256",
+          "max_cat_threshold": "64",
+          "max_cat_to_onehot": "4",
+          "max_delta_step": "0",
+          "max_depth": "3",
+          "max_leaves": "0",
+          "min_child_weight": "1",
+          "min_split_loss": "0",
+          "monotone_constraints": "()",
+          "refresh_leaf": "1",
+          "reg_alpha": "0",
+          "reg_lambda": "1",
+          "sampling_method": "uniform",
+          "sparse_threshold": "0.20000000000000001",
+          "subsample": "0.800000012"
+        },
+        "updater": [
+          {
+            "hist_train_param": {
+              "debug_synchronize": "0",
+              "max_cached_hist_node": "18446744073709551615"
+            },
+            "name": "grow_quantile_histmaker"
+          }
+        ]
+      },
+      "learner_model_param": {
+        "base_score": "[0E0,0E0,0E0,0E0,3.7879963E-5,5.4168236E-3,4.5728154E-2,1.4313903E-1,2.807587E-1,4.1710907E-1,5.2940494E-1,6.0133696E-1,6.2377846E-1,5.987861E-1,5.2745295E-1,4.1653672E-1,2.800508E-1,1.4455517E-1,4.986163E-2,6.9163265E-3,1.2370182E-4,0E0,0E0,0E0,0E0,0E0,0E0,0E0,3.7879963E-5,5.4173567E-3,4.573105E-2,1.4314753E-1,2.8076816E-1,4.171433E-1,5.29475E-1,6.014311E-1,6.23881E-1,5.9888583E-1,5.275494E-1,4.166201E-1,2.8008533E-1,1.4456333E-1,4.9861528E-2,6.9163265E-3,1.2370182E-4,0E0,0E0,0E0,0E0,0E0,0E0,0E0,3.7879963E-5,5.417865E-3,4.573237E-2,1.4314811E-1,2.8076956E-1,4.171609E-1,5.295006E-1,6.0144824E-1,6.239023E-1,5.9890383E-1,5.275454E-1,4.1660756E-1,2.8007394E-1,1.4455685E-1,4.986089E-2,6.9163265E-3,1.2370182E-4,0E0,0E0,0E0]",
+        "boost_from_average": "1",
+        "num_class": "0",
+        "num_feature": "346",
+        "num_target": "72"
+      },
+      "learner_train_param": {
+        "booster": "gbtree",
+        "disable_default_eval_metric": "0",
+        "multi_strategy": "multi_output_tree",
+        "objective": "reg:squarederror"
+      },
+      "metrics": [
+        {
+          "name": "rmse"
+        }
+      ],
+      "objective": {
+        "name": "reg:squarederror",
+        "reg_loss_param": {
+          "scale_pos_weight": "1"
+        }
+      }
+    },
+    "version": [
+      3,
+      2,
+      0
+    ]
+  },
+  "new_config": {
+    "learner": {
+      "generic_param": {
+        "device": "cpu",
+        "fail_on_invalid_gpu_id": "0",
+        "n_jobs": "1",
+        "nthread": "1",
+        "random_state": "42",
+        "seed": "42",
+        "seed_per_iteration": "0",
+        "validate_parameters": "1"
+      },
+      "gradient_booster": {
+        "gbtree_model_param": {
+          "num_parallel_tree": "1",
+          "num_trees": "150"
+        },
+        "gbtree_train_param": {
+          "process_type": "default",
+          "tree_method": "hist",
+          "updater": "grow_quantile_histmaker",
+          "updater_seq": "grow_quantile_histmaker"
+        },
+        "name": "gbtree",
+        "specified_updater": false,
+        "tree_train_param": {
+          "alpha": "0",
+          "colsample_bylevel": "1",
+          "colsample_bynode": "1",
+          "colsample_bytree": "0.800000012",
+          "eta": "0.0500000007",
+          "gamma": "0",
+          "grow_policy": "depthwise",
+          "interaction_constraints": "",
+          "lambda": "1",
+          "learning_rate": "0.0500000007",
+          "max_bin": "256",
+          "max_cat_threshold": "64",
+          "max_cat_to_onehot": "4",
+          "max_delta_step": "0",
+          "max_depth": "3",
+          "max_leaves": "0",
+          "min_child_weight": "1",
+          "min_split_loss": "0",
+          "monotone_constraints": "()",
+          "refresh_leaf": "1",
+          "reg_alpha": "0",
+          "reg_lambda": "1",
+          "sampling_method": "uniform",
+          "sparse_threshold": "0.20000000000000001",
+          "subsample": "0.800000012"
+        },
+        "updater": [
+          {
+            "hist_train_param": {
+              "debug_synchronize": "0",
+              "max_cached_hist_node": "18446744073709551615"
+            },
+            "name": "grow_quantile_histmaker"
+          }
+        ]
+      },
+      "learner_model_param": {
+        "base_score": "[0E0,0E0,0E0,0E0,3.7879963E-5,5.4168236E-3,4.5728154E-2,1.4313903E-1,2.807587E-1,4.1710907E-1,5.2940494E-1,6.0133696E-1,6.2377846E-1,5.987861E-1,5.2745295E-1,4.1653672E-1,2.800508E-1,1.4455517E-1,4.986163E-2,6.9163265E-3,1.2370182E-4,0E0,0E0,0E0,0E0,0E0,0E0,0E0,3.7879963E-5,5.4173567E-3,4.573105E-2,1.4314753E-1,2.8076816E-1,4.171433E-1,5.29475E-1,6.014311E-1,6.23881E-1,5.9888583E-1,5.275494E-1,4.166201E-1,2.8008533E-1,1.4456333E-1,4.9861528E-2,6.9163265E-3,1.2370182E-4,0E0,0E0,0E0,0E0,0E0,0E0,0E0,3.7879963E-5,5.417865E-3,4.573237E-2,1.4314811E-1,2.8076956E-1,4.171609E-1,5.295006E-1,6.0144824E-1,6.239023E-1,5.9890383E-1,5.275454E-1,4.1660756E-1,2.8007394E-1,1.4455685E-1,4.986089E-2,6.9163265E-3,1.2370182E-4,0E0,0E0,0E0]",
+        "boost_from_average": "1",
+        "num_class": "0",
+        "num_feature": "346",
+        "num_target": "72"
+      },
+      "learner_train_param": {
+        "booster": "gbtree",
+        "disable_default_eval_metric": "0",
+        "multi_strategy": "multi_output_tree",
+        "objective": "reg:squarederror"
+      },
+      "metrics": [
+        {
+          "name": "rmse"
+        }
+      ],
+      "objective": {
+        "name": "reg:squarederror",
+        "reg_loss_param": {
+          "scale_pos_weight": "1"
+        }
+      }
+    },
+    "version": [
+      3,
+      2,
+      0
+    ]
+  },
+  "replay": {
+    "old_new_max": 97.88775587081909,
+    "old_cache_max": 2.2737367544323206e-13,
+    "new_cache_max": 0.0,
+    "shape": [
+      3630,
+      72
+    ]
+  },
+  "dados": {
+    "x_bruto": true,
+    "y_bruto": true,
+    "localidade_id": true,
+    "localidade": true,
+    "origem_utc": true,
+    "origem_local": true,
+    "shape_X": [
+      18100,
+      336
+    ],
+    "shape_Y": [
+      18100,
+      72
+    ]
+  },
+  "old_booster_sha": "47dfb4f0addd3d3fed1cab7c8eacc4c01302e0d7f1d4345b5f3cd5c8d709b632",
+  "new_booster_sha": "b0525aea2e84928a3553e8ed67d507d857030a183e5425c10f4fad90520dc58d"
+}

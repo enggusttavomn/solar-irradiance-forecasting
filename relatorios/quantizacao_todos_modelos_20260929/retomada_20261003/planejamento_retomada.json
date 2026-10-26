@@ -1,0 +1,63 @@
+{
+  "tipo": "parecer_readonly_e_patch_infraestrutura",
+  "agente": "planejar_retomada_historica3",
+  "nenhuma_fila_iniciada": true,
+  "nenhum_processo_encerrado": true,
+  "motores_cientificos_alterados": false,
+  "conclusao": "Retomar somente o coordenador historico; nao reiniciar a ponte antiga nem o coordenador atual.",
+  "fontes_lidas": [
+    "scripts/coordenar_quantizacao_historica.py",
+    "scripts/coordenacao_quantizacao.py",
+    "scripts/processos_quantizacao.py",
+    "scripts/rodar_quantizacao_todos_modelos.py",
+    "tmp/recuperacao_20261001/finalizar_sequencia.py",
+    "codigo_fonte/experimento_quantizacao_concorrentes.py",
+    "codigo_fonte/experimento_quantizacao_estatisticos.py",
+    "relatorios/quantizacao_todos_modelos_20260929/coordenacao_atual/status.json"
+  ],
+  "estado_atual_observado": {
+    "etapa": "pronto_para_revisao_visual",
+    "atualizado_em_utc": "2026-10-02T05:04:45.543222+00:00",
+    "auditoria_sha256": "b48b7fbefbd1b267c25c276dc6f6d10692603ac45969946d879f1b52cb5a43d5",
+    "paginas_pdf": 34,
+    "nota": "Publicacao foi realizada depois deste estado pelo fluxo de entrega; o coordenador historico usa a auditoria e esse gate, sem reeditar o PDF atual."
+  },
+  "problema_confirmado": {
+    "runner_historico": "Arquivo atual apresenta NUL e nao e JSON valido; o runner recria seu estado ao iniciar e nao depende desse arquivo para validar caches.",
+    "coordenacao_historica": "O main nao le seu status anterior. A retomada cria estado novo dentro do lock apos preservar o corrompido.",
+    "ponte": "finalizar_sequencia.py sempre relanca coordenar_quantizacao_atual antes do historico. Reinicia-la repetiria revalidacoes atuais e a geracao do PDF ja entregue."
+  },
+  "passos_root_em_ordem": [
+    "Preservar bytes e SHA dos estados corrompidos, ponte antiga, logs e checkpoints parciais antes de qualquer substituicao.",
+    "Confirmar processos pela identidade PID+FILETIME e respectivas arvores; bridge antiga, coordenadores e filas historicas devem estar inativos. Nunca usar somente PID antigo nem encerrar processo reutilizado.",
+    "Confirmar locks de bridge, coordenacao atual, coordenacao historica e filas historicas livres; nao excluir .execucao.lock. Se houver dono ativo, interromper retomada e investigar.",
+    "Confirmar contrato/selecoes/caches completos por hashes. Caches existentes completos devem ser reutilizados pelo motor; parciais sem recibo nao equivalem a conclusao e podem repetir a semente.",
+    "Revisar patch scripts/json_atomico.py e testes aprovados; preservar fonte antiga pelo mecanismo de revisao do root.",
+    "Lancar somente python -X utf8 -m scripts.coordenar_quantizacao_historica --cpu-workers 2 --gpu-workers 2, oculto, cwd raiz e logs novos da retomada20261003. Nao passar --somente-planejar nem --smoke nem filtros de modelos/tarefas.",
+    "Confirmar status novo com PID+FILETIME, heartbeat atual, preflight 70 arquivos aprovado e runner historico ativo, mantendo apenas uma arvore de execucao.",
+    "O coordenador segue: longo44 selecoes+refits -> replay/auditoria longa -> curto44 selecoes+refits -> replay/auditoria curta -> pareamento -> PDF historico separado e feedback -> pronto_para_revisao_visual.",
+    "Depois de pronto, revisar visualmente todas as paginas do PDF historico, validar manifesto/fontes/pareamento e so entao usar entrega controlada e atualizar feedback final."
+  ],
+  "guardas_do_coordenador": {
+    "lock_coordenacao_historica": "Adquirido pelo main antes da execucao; duplicatas falham sem treinar.",
+    "lock_coordenacao_atual": "Retido por aguardar_atual durante todo historico, apos confirmar gate pronto+sem arvore e auditoria publica completa44.",
+    "gate_atual": "Hash da auditoria e hash de metricas auditadas conferidos, sem rodar novamente selecoes/refits atuais nem alterar PDF atual.",
+    "preflight": "Verifica protocolos long/short por hashes fixos, auditoria dados aprovada, contrato interno e 70 arquivos distintos por tamanho+SHA, mais manifesto/auditorias/motor.",
+    "cache": "Selecao congelada valida contrato, fontes/configuracoes/entradas e arquivos por SHA; caches completos conferem contrato, variante, fase, seed, arquivosSHA, epochs congeladas quando refit. Divergencia falha, nunca adotar cache incompat?vel.",
+    "processos": "ProcessoProprio usa Windows JobObject com filhos contidos e cleanup restrito aos proprios processos criados.",
+    "publicacao": "Coordenador prepara PDF separado, sem publicar automaticamente ou aprovar revisao visual."
+  },
+  "durabilidade": {
+    "alterados": [
+      "scripts/json_atomico.py",
+      "tests/test_json_atomico.py"
+    ],
+    "mudanca": "flush e os.fsync do arquivo temporario antes de fechar e Path.replace; retries originais40x0.25s Win5/32/33 preservados e erros continuam propagados.",
+    "script_sha256": "18d529e716217621db283f15c518b03dc476d9fe66c3001a381802bb9820a4a3",
+    "teste_sha256": "063d89044d4866e049be4ec36bba50cae151e09d35874d073579b0a522b0ff07",
+    "validacao": "pytest tests/test_json_atomico.py -q: 9 passed in 0.63s",
+    "cobertura": "Ordem flush/fsync/replace, falha fsync preservando destino e limpando temporario, retries unicos apos fsync para5/32/33, limite e erro fora de escopo imediato.",
+    "limite": "Reduz risco de dados de estado ainda em buffers antes da troca; nao garante ausencia de corrupcao por energia/disco nem muda os escritores dos caches cientificos congelados."
+  },
+  "registrado_em_utc": "2026-10-03T13:57:09.901145+00:00"
+}

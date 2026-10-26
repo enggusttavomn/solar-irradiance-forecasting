@@ -1,0 +1,91 @@
+{
+  "arquivos_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\hourly_72_extension\\previsoes_teste.csv.gz": "bdd1eea4b7e257574c9d7337aefd059d53be698a4c918a985aa49b29fd27e54e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\lstm\\contrato_execucao.json": "814edae1b935f6e0ae65c61ef119604e9a7f0dbbb32fec7bc8e67ce14079923a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\lstm\\controle_teste_divergencia.json": "42e927ca3a3a792b5ae3fc53933031680ace92bd6b99a7e3228659be7b333ae2",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\lstm\\sem_quantizacao\\refit\\seed42.npz": "8edc1b3ac1e57160a1895addd1a0433b9114891af0d85eef84dda92053f70b34"
+  },
+  "comparacao_metricas": [
+    {
+      "MAE_wm2_antigo": 50.906162611473846,
+      "MAE_wm2_novo": 51.40727485084593,
+      "MSE_w2m4_antigo": 10253.350758287736,
+      "MSE_w2m4_novo": 10356.605840314332,
+      "R2_antigo": 0.8691003784833706,
+      "R2_novo": 0.8682215656562219,
+      "RMSE_wm2_antigo": 100.00905075806477,
+      "RMSE_wm2_novo": 100.55432162479477,
+      "delta_MAE_wm2": 0.5011122393720839,
+      "horizonte": 24,
+      "modelo": "LSTM",
+      "nRMSE_antigo": 0.4994941281705687,
+      "nRMSE_novo": 0.5015926671550412,
+      "particao": "teste",
+      "tarefa": "hourly_72_extension",
+      "variante_antigo": "controle_antigo",
+      "variante_novo": "controle_novo"
+    },
+    {
+      "MAE_wm2_antigo": 52.79429803989891,
+      "MAE_wm2_novo": 52.91492188583462,
+      "MSE_w2m4_antigo": 10860.91852533197,
+      "MSE_w2m4_novo": 11068.866043799004,
+      "R2_antigo": 0.8617705023849995,
+      "R2_novo": 0.8595758744916097,
+      "RMSE_wm2_antigo": 102.9995834219048,
+      "RMSE_wm2_novo": 103.98354678352061,
+      "delta_MAE_wm2": 0.12062384593571096,
+      "horizonte": 48,
+      "modelo": "LSTM",
+      "nRMSE_antigo": 0.5139418699562366,
+      "nRMSE_novo": 0.5182262057724211,
+      "particao": "teste",
+      "tarefa": "hourly_72_extension",
+      "variante_antigo": "controle_antigo",
+      "variante_novo": "controle_novo"
+    },
+    {
+      "MAE_wm2_antigo": 53.39171561106737,
+      "MAE_wm2_novo": 54.09466099661823,
+      "MSE_w2m4_antigo": 11203.351085168946,
+      "MSE_w2m4_novo": 11333.424479555692,
+      "R2_antigo": 0.8578288285204113,
+      "R2_novo": 0.8564819417812473,
+      "RMSE_wm2_antigo": 104.68423984454948,
+      "RMSE_wm2_novo": 105.28085743701065,
+      "delta_MAE_wm2": 0.7029453855508621,
+      "horizonte": 72,
+      "modelo": "LSTM",
+      "nRMSE_antigo": 0.5217285216794213,
+      "nRMSE_novo": 0.5242977871640333,
+      "particao": "teste",
+      "tarefa": "hourly_72_extension",
+      "variante_antigo": "controle_antigo",
+      "variante_novo": "controle_novo"
+    }
+  ],
+  "contrato_sha256": "a27eb61eaf3d6a5113912237a24a54cc46463086775a3fa6c636ea4f8c7ff17e",
+  "dispositivo_atual": "cuda",
+  "dispositivo_original": "cpu",
+  "epocas_novas": {
+    "42": 25
+  },
+  "evidencia_checkpoints_antigos": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\auditoria_controles_originais\\hourly_72_extension_lstm.json",
+    "checkpoints_disponiveis_reproduzidos": 1,
+    "compatibilidade_aproximada_aprovada": true,
+    "criterio": "Compatibilidade aproximada de CPs antigos: rtol=1e-6,atol=1e-4 W/m2, criterio autorizado antes de concluir a auditoria. Reporta tambem erro absoluto1e-6; nao chamar paridade aproximada de reproducao exata. CPs novos exigem1e-6 absoluto.",
+    "fases_sem_checkpoint_original": [
+      "selecao"
+    ],
+    "sha256": "702e32c101f76a6aea8d3a165be30f3e53b055e9bb7debd8958b7199d0fee4ce"
+  },
+  "fase": "refit",
+  "max_diferenca_por_seed_wm2": {
+    "42": 246.81771221756935
+  },
+  "modelo": "LSTM",
+  "nao_emite_aceite": true,
+  "parecer": "A mudanca de dispositivo foi definida antes dos resultados, por desempenho computacional. Este parecer nao e aceite. Comparacoes de quantizacao devem usar o controle novo e as variantes no mesmo ambiente; nao atribuir diferencas entre controles antigos e novos a quantizacao. A validacao do checkpoint novo e do protocolo completo cabe ao auditor independente.",
+  "tarefa": "hourly_72_extension"
+}

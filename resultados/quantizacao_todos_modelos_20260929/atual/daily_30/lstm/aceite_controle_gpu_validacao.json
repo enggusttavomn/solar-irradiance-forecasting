@@ -1,0 +1,22 @@
+{
+  "contrato_sha256": "5b6041e21770178e59c059387cb0aeeff950796ebe39d986b45f049289451999",
+  "fonte_sha256": "fc1a1d7c324d2b71607895de7b2500e2a05252ddd30f588fa7a2a45aea7553b4",
+  "relatorio_divergencia_sha256": "9f65fcf2d57872f22e4cd5026de07d8a4d7d8dbda198795ab29dd3e6b48e9923",
+  "replay_checkpoint_original_aprovado": true,
+  "arquitetura_e_loop_aprovados": true,
+  "justificativa": "Revisados arquitetura, configuracoes, loop e dados contra executor original: entradas/alvos normalizados bitexatos, mesmos shapes e fonte de treino com hash recuperado ao reverter somente caminho do wrapper. Lote inicial sem atualizacao de pesos apresenta pequenas diferencas CPU/CUDA; curvas posteriores divergem e duas sementes mudam epoca escolhida. Isto nao e reproducao exata do treino CPU nem efeito de quantizacao. O novo controle CUDA e aceito como referencia propria, mesma plataforma de todas as variantes, conforme decisao previa por desempenho. Cinco checkpoints novos reproduzem previsoes com diferenca zero sem consultar alvos. MAE validacao30dias mudou de45,60425 para45,49057; diferenca material registrada separadamente. CPs originais de refit disponiveis auditados; selecao original sem CP, limitação explicita.",
+  "auditoria_arquivos_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\pareceres_controles\\daily_30_lstm_investigacao_backend.json": "eff887608a418555fb666cdc32be4fe3251780be450a3354f31b04a296d218ce",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\pareceres_controles\\daily_30_lstm_curvas_cpu_gpu.csv": "5e908fcd1041ae34fee97f022bb55416bfc8a46c43afc98298a7cdf7cf841be3",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\pareceres_controles\\daily_30_lstm_validacao.json": "9f7b0a8c507b6108478c91057c9ebc7c29a076163ab5935399248428e1775f61",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\pareceres_controles\\daily_30_lstm_replay_novo_validacao.json": "d9351d9709b3682081ee2e6c8da295dc43445b19de7c26dcae359ea85c8815c5",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\auditoria_controles_originais\\daily_30_lstm.json": "31505a69a07029b687ea7bbd17ae65ddbb24e95f029b0634bd67ca30544ea96a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\testes_concorrentes.xml": "7145016814edcac01c2dec225a4db1a316111c75e5267117ad0bc2236998274a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\testes\\test_quantizacao_concorrentes.py": "ef01b95215672788361621d8e05983eef10025dc34ed83176292f5ae72c943b8"
+  },
+  "registrado_em_utc": "2026-09-30T04:06:41.742288+00:00",
+  "limite": "CPs antigos apenas nas fases disponiveis, com politica numerica registrada. A comparacao de quantizacao usa o novo controle CUDA. Nao comprova retreinamento bitexato CPU/CUDA.",
+  "fases_originais_sem_checkpoint": [
+    "selecao"
+  ]
+}

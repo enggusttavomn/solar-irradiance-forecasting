@@ -1,0 +1,189 @@
+{
+  "gerado_em_utc": "2026-09-23T04:56:59.735482+00:00",
+  "ok": true,
+  "escopo": "QA automatico; inspecao visual das quatro imagens deve ser registrada separadamente.",
+  "preservacao": {
+    "originais_exatas": 129,
+    "hora_dia_otimizadas_exatas": 8,
+    "unica_alteracao_de_rotulo_permitida": "TimesNet otimizada -> TimesNet (otimizada)",
+    "csv_anterior_sha256": "fe8a266d6d4185a0a954033b29a7568777d4977eac8bcf908c8f1dc21cd08e35",
+    "pdf_anterior_sha256": "4c9518718c56a25250fb139d3ce8ba1a90daaea12876e5c846659ef0025d94fb"
+  },
+  "metricas_novas_recalculadas": [
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 24,
+      "erro_maximo": 1.8189894035458565e-12
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 48,
+      "erro_maximo": 0.0
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "erro_maximo": 0.0
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 1,
+      "erro_maximo": 0.0
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 3,
+      "erro_maximo": 7.105427357601002e-15
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 7,
+      "erro_maximo": 0.0
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 14,
+      "erro_maximo": 4.547473508864641e-13
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "erro_maximo": 1.4210854715202004e-14
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "erro_maximo": 3.552713678800501e-15
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 1,
+      "erro_maximo": 3.552713678800501e-15
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 3,
+      "erro_maximo": 3.552713678800501e-15
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "erro_maximo": 1.1102230246251565e-16
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "task": "hourly_72_extension",
+      "rows": 33,
+      "new_rows": 3,
+      "metric_values_checked": 165,
+      "blue_rows": 3,
+      "text_within_page": true,
+      "numeric_columns_within_cells": true,
+      "all_cells_match_csv": true,
+      "rankings_match_unrounded_mae": true
+    },
+    {
+      "page": 2,
+      "task": "daily_30",
+      "rows": 60,
+      "new_rows": 5,
+      "metric_values_checked": 300,
+      "blue_rows": 5,
+      "text_within_page": true,
+      "numeric_columns_within_cells": true,
+      "all_cells_match_csv": true,
+      "rankings_match_unrounded_mae": true
+    },
+    {
+      "page": 3,
+      "task": "monthly_1",
+      "rows": 12,
+      "new_rows": 1,
+      "metric_values_checked": 60,
+      "blue_rows": 1,
+      "text_within_page": true,
+      "numeric_columns_within_cells": true,
+      "all_cells_match_csv": true,
+      "rankings_match_unrounded_mae": true
+    },
+    {
+      "page": 4,
+      "task": "monthly_6",
+      "rows": 36,
+      "new_rows": 3,
+      "metric_values_checked": 180,
+      "blue_rows": 3,
+      "text_within_page": true,
+      "numeric_columns_within_cells": true,
+      "all_cells_match_csv": true,
+      "rankings_match_unrounded_mae": true
+    }
+  ],
+  "row_count": 141,
+  "new_rows": 12,
+  "metric_values_checked": 705,
+  "renderer": "PyMuPDF, 160 dpi; Poppler nao disponivel no PATH",
+  "renderizacao": [
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\correcao_timesnet_pura_20260923\\renderizacao\\pagina_1.png",
+      "sha256": "a10b49c979de35c52efeb8bd3dbac9e527c4603d3b9a5bd460b35ea47415e516"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\correcao_timesnet_pura_20260923\\renderizacao\\pagina_2.png",
+      "sha256": "620cd47e6d8b7433371f8c03853614e148f326a502dfc749bc4888da0e97e75e"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\correcao_timesnet_pura_20260923\\renderizacao\\pagina_3.png",
+      "sha256": "5d1718b93a69ba7a5685d7ed8ebd9635f6880c047b7921a3c6eb02c95d21c491"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\correcao_timesnet_pura_20260923\\renderizacao\\pagina_4.png",
+      "sha256": "087f24bf060042efa8fae5e9f50445411a26720c3f8ce762ebc3187ee9fa1296"
+    }
+  ],
+  "pdf": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\pdfs\\timesnet_pura_20260923.pdf",
+  "pdf_sha256": "e8a2f47b67cd9f4b6fc69eee4ff12bd9eb54cbe93e684d327d6874308ec2103d",
+  "metricas_sha256": "15db8249e8179cb2c7b879477e8491289c6dc13a7176adc0459e4fb6ce91ae26",
+  "manifesto_sha256": "91b8572b28f25c0044f061cc313e06c76106da6a4f07b887c0f2112f0c55eb97",
+  "source_hashes_ok": true,
+  "fontes_verificadas": 22,
+  "ausencia_timesnet_hibrida": true,
+  "visual_inspection": "Quatro paginas renderizadas em 160 dpi inspecionadas; texto legivel, sem cortes ou sobreposicao; tabelas, notas e rodapes alinhados.",
+  "qa_automatico_preservado": {
+    "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\correcao_timesnet_pura_20260923\\qa_pdf_puro_automatico.json",
+    "sha256": "a6f15336c803c063261ef49d1f2f982a2bc53c1fe6e7762fd5fa808dae2c8ee6"
+  },
+  "inspecao_visual": {
+    "ok": true,
+    "registrada_em_utc": "2026-09-23T04:59:02.392212+00:00",
+    "paginas": [
+      {
+        "pagina": 1,
+        "revisor": "/root",
+        "origem": "Inspecao visual confirmada por mensagem do agente principal."
+      },
+      {
+        "pagina": 2,
+        "revisor": "/root",
+        "origem": "Inspecao visual confirmada por mensagem do agente principal."
+      },
+      {
+        "pagina": 3,
+        "revisor": "/root/auditoria_valores_pdf",
+        "origem": "PNG inspecionado diretamente; TimesNet pura descrita, linha azul e valores alinhados."
+      },
+      {
+        "pagina": 4,
+        "revisor": "/root/auditoria_valores_pdf",
+        "origem": "PNG inspecionado diretamente; tres horizontes mensais legiveis, sem sobreposicao ou cortes."
+      }
+    ]
+  },
+  "codigo_verificador": {
+    "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\correcao_timesnet_pura_20260923\\conferir_pdf_puro.py",
+    "sha256": "e8c0af4507ad06f55fcfeef292219d5f502f29df503084bd4a468564f9bbb5c1"
+  },
+  "ok_final": true
+}

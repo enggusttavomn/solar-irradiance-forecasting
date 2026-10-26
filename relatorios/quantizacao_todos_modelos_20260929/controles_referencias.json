@@ -1,0 +1,769 @@
+{
+  "concluido_em_utc": "2026-09-30T03:04:17.078811+00:00",
+  "fontes_sha256": {
+    "resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\cache\\deterministica.npz": "e8a40d26b03e3deb6d421d0d0385c5d0621ef539987692133e081bde61547e63",
+    "resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\modelos\\localidade0_refit.joblib": "b2d8322e06149e299be5ddf1cc2e702f4f94f47ee97efb1d6d56d37457426be9",
+    "resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\modelos\\localidade1_refit.joblib": "0b931bc14052c613bab2908b1407481a815857e92671c73c7b48a40ce1a58de5",
+    "resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\modelos\\localidade2_refit.joblib": "712adca6101fc2b2f9b9a218db02ea7fdd21fab62125145d9099cf26f5311dbd",
+    "resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\modelos\\localidade3_refit.joblib": "251f3ec56492821d307a14d949e344be458befcdc0382c3edddc5ee979e68cef",
+    "resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\modelos\\localidade4_refit.joblib": "739eaf369c0e4dfffb884e2c06b5be1bfb5bc7ac024589623087a87e7b79871c",
+    "resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\modelos\\localidade5_refit.joblib": "b81b53a5f30049407a25eecbacdffb4bcda698665cc4184e44ca8c3df27ae840",
+    "resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\modelos\\localidade6_refit.joblib": "b91c3e9a2a6c8fb6fb6bcc476a9585a9ee034fefd74f2e1d1c37e7a16fcfbdd0",
+    "resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\modelos\\localidade7_refit.joblib": "e9ec34f7164a281c09fc321eec0d121e4e3d46066367ffe9de0e3d65d87cc3b9",
+    "resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\modelos\\localidade8_refit.joblib": "6fd188565522be1168b08056af0f6ca726dcebfa25b9b7f3cf5f1225bb489c10",
+    "resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\modelos\\localidade9_refit.joblib": "7a8ecb62c130488e03c75f022f2907671d0d810147b63b3541ffde46ac82d079",
+    "resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\cache\\deterministica.npz": "0360286d2f284683f550a72005a5b792f214f4c3cc83dc72269e91319cda0e93",
+    "resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\modelos\\localidade0_refit.joblib": "3202e0b8d0d346051f40963a2546cd44bcd8ec2a44812c7e0611467328f32e8e",
+    "resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\modelos\\localidade1_refit.joblib": "477847378b6d9ae4ebc6c4537366a9e8c81b87dc8fd15e36303aac1aeb3371ae",
+    "resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\modelos\\localidade2_refit.joblib": "894f32572dcf481a492ed2f240640dfc8895124ef8edc0f90f787cabede09713",
+    "resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\modelos\\localidade3_refit.joblib": "3b9376b2e18a7ce3b6044e0f0a04f593e13154a0bf1437dbb9757609852c8a0f",
+    "resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\modelos\\localidade4_refit.joblib": "1949d343be2f036d004153f892eb8b6e1fcbfa072bac7f8883a31fe549635b16",
+    "resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\modelos\\localidade5_refit.joblib": "81129f508b248e49d36d35d1860958f7f1a00b0aeb3cbe7b4a5539d4061cf83d",
+    "resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\modelos\\localidade6_refit.joblib": "e246cc803741a0eb5fc478d0eea3f78db318736e4639b9001e7f7044e2368773",
+    "resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\modelos\\localidade7_refit.joblib": "3c1b3c247eaa85483b93312ffd1152c305c37dadd3440ca7a665a556d2cbe35f",
+    "resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\modelos\\localidade8_refit.joblib": "b2e69d565206f8d54d3216962b4922028aa4e0a6573e6141b5da54b201ccd18d",
+    "resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\modelos\\localidade9_refit.joblib": "44ba2d8e45915ad3239f0be6f4df5aef5f5f067cfe7f28d21d3b6b73ab99e27f",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\cache\\deterministica.npz": "38578eeb53a8e50f01cd22943da6dd4b37a19c65ddea8a7beb5b7e5135b2d5cf",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\modelos\\localidade0_refit.joblib": "4e634297c7713d316ee8d346b2b83cb2346610fee089af5f6303f9c59ca8dc03",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\modelos\\localidade1_refit.joblib": "c197e8095cb04fe535725983000c196dd9c5d44745dd43b67e075193bca9b854",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\modelos\\localidade2_refit.joblib": "17fdb197822f8e8b9d453ad4f4f6e217011e4cdd4f4a89d839e7821e1a2ae3b5",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\modelos\\localidade3_refit.joblib": "21a5362c4aaf75aa57036a5fa72ab8451327f1d6afe86473e628a6644b537444",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\modelos\\localidade4_refit.joblib": "843a508b19e75b9d1e1aab7e808dd544b02a99dbd1a638b5c4027443bcfb6dc5",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\modelos\\localidade5_refit.joblib": "c4c6855da33f8c5015b09ea08c5c5d530cbe0edb3d9c46a862cf85bf1a205793",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\modelos\\localidade6_refit.joblib": "5a0a6d09199c141e61eb30c4429f2c9f31d15b99f739e6c4358cec663dbc0501",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\modelos\\localidade7_refit.joblib": "b538e8111abb668cf6af9cfcbcbb4b36f2d160c1144167f92626b93916302592",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\modelos\\localidade8_refit.joblib": "d6aabc53b9d1e8c6fa7d77163721931ef1b134beea3732b5fb361f84e63d28c8",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\modelos\\localidade9_refit.joblib": "a996489ceadd22714a99da594195dc58a4d8ae9a9cb1092c3db75ccff49090d2",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\cache\\deterministica.npz": "9c7ee3b75a1ed2ae5a8d54408b33907b42c8fe926d7d9fe856c239a91a9685d5",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\modelos\\localidade0_refit.joblib": "4e634297c7713d316ee8d346b2b83cb2346610fee089af5f6303f9c59ca8dc03",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\modelos\\localidade1_refit.joblib": "c197e8095cb04fe535725983000c196dd9c5d44745dd43b67e075193bca9b854",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\modelos\\localidade2_refit.joblib": "17fdb197822f8e8b9d453ad4f4f6e217011e4cdd4f4a89d839e7821e1a2ae3b5",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\modelos\\localidade3_refit.joblib": "21a5362c4aaf75aa57036a5fa72ab8451327f1d6afe86473e628a6644b537444",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\modelos\\localidade4_refit.joblib": "843a508b19e75b9d1e1aab7e808dd544b02a99dbd1a638b5c4027443bcfb6dc5",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\modelos\\localidade5_refit.joblib": "c4c6855da33f8c5015b09ea08c5c5d530cbe0edb3d9c46a862cf85bf1a205793",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\modelos\\localidade6_refit.joblib": "5a0a6d09199c141e61eb30c4429f2c9f31d15b99f739e6c4358cec663dbc0501",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\modelos\\localidade7_refit.joblib": "b538e8111abb668cf6af9cfcbcbb4b36f2d160c1144167f92626b93916302592",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\modelos\\localidade8_refit.joblib": "d6aabc53b9d1e8c6fa7d77163721931ef1b134beea3732b5fb361f84e63d28c8",
+    "resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\modelos\\localidade9_refit.joblib": "a996489ceadd22714a99da594195dc58a4d8ae9a9cb1092c3db75ccff49090d2",
+    "resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\previsoes_teste.csv.gz": "3b6576979909db28e612a2f77fbca7ee0fb0f9873e4d142c46b4c404bfb33318",
+    "resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\previsoes_validacao.csv.gz": "e3670b8917e6646a610f4dbcb2aa0eb51272ff6ac8180ca5164d1d3343de2d16",
+    "resultados\\avaliacao_multirresolucao_corrigida_v2\\hourly_72_extension\\previsoes_teste.csv.gz": "850cc110a4bf4101b0c02c9d5815fd3916659c01f67e2cc150f16dddc74d69cc",
+    "resultados\\avaliacao_multirresolucao_corrigida_v2\\hourly_72_extension\\previsoes_validacao.csv.gz": "0e24b9162e53989682993c4b3856031c33ae40887597d47fd0c65d27825e14ab",
+    "resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_1\\previsoes_teste.csv.gz": "b9e7504f8f4296a32a5d2836f60f3bca8b188ad963b9c7bc029697eecbd93bd1",
+    "resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_1\\previsoes_validacao.csv.gz": "b8f4cfc3603608146b8498e06a40d82747005200efade5a3b0850ddaab6820df",
+    "resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_6\\previsoes_teste.csv.gz": "101e97946776bdd883c32ec1794ffa215b21a7639a318e6f7ddec6134240c2ff",
+    "resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_6\\previsoes_validacao.csv.gz": "c4fcfabdfc44530211ebd3c6a15318d91199575239be1f7c204b15c69d3a9ce2"
+  },
+  "ok": true,
+  "resultados": [
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "selecao",
+      "modelo": "Persistencia",
+      "n_valores": 120,
+      "ok": true,
+      "tarefa": "monthly_1",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "selecao",
+      "modelo": "Persistencia",
+      "n_valores": 120,
+      "ok": true,
+      "tarefa": "monthly_1",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "selecao",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 120,
+      "ok": true,
+      "tarefa": "monthly_1",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "selecao",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 120,
+      "ok": true,
+      "tarefa": "monthly_1",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "selecao",
+      "modelo": "Climatologia",
+      "n_valores": 120,
+      "ok": true,
+      "tarefa": "monthly_1",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "selecao",
+      "modelo": "Climatologia",
+      "n_valores": 120,
+      "ok": true,
+      "tarefa": "monthly_1",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 2.842170943040401e-14,
+      "fase": "refit",
+      "modelo": "Persistencia",
+      "n_valores": 120,
+      "ok": true,
+      "tarefa": "monthly_1",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 2.842170943040401e-14,
+      "fase": "refit",
+      "modelo": "Persistencia",
+      "n_valores": 120,
+      "ok": true,
+      "tarefa": "monthly_1",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "refit",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 120,
+      "ok": true,
+      "tarefa": "monthly_1",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "refit",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 120,
+      "ok": true,
+      "tarefa": "monthly_1",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "refit",
+      "modelo": "Climatologia",
+      "n_valores": 120,
+      "ok": true,
+      "tarefa": "monthly_1",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "refit",
+      "modelo": "Climatologia",
+      "n_valores": 120,
+      "ok": true,
+      "tarefa": "monthly_1",
+      "tipo": "pos"
+    },
+    {
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "modelo": "ARIMA",
+      "n_valores": 120,
+      "ok": true,
+      "ordens_controle": {
+        "BMW San Luis Potosi": [
+          2,
+          0,
+          2
+        ],
+        "BYD Camacari": [
+          2,
+          0,
+          2
+        ],
+        "Ford Rouge Electric Vehicle Center": [
+          2,
+          0,
+          2
+        ],
+        "GM Factory Zero": [
+          2,
+          1,
+          2
+        ],
+        "Hyundai Metaplant Georgia": [
+          2,
+          0,
+          2
+        ],
+        "Lucid AMP 1 Casa Grande": [
+          2,
+          0,
+          2
+        ],
+        "Rivian Normal": [
+          2,
+          0,
+          2
+        ],
+        "Tesla Fremont Factory": [
+          2,
+          1,
+          2
+        ],
+        "Tesla Gigafactory Nevada": [
+          2,
+          1,
+          2
+        ],
+        "Tesla Gigafactory Texas": [
+          2,
+          0,
+          2
+        ]
+      },
+      "tarefa": "monthly_1",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "selecao",
+      "modelo": "Persistencia",
+      "n_valores": 420,
+      "ok": true,
+      "tarefa": "monthly_6",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "selecao",
+      "modelo": "Persistencia",
+      "n_valores": 420,
+      "ok": true,
+      "tarefa": "monthly_6",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "selecao",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 420,
+      "ok": true,
+      "tarefa": "monthly_6",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "selecao",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 420,
+      "ok": true,
+      "tarefa": "monthly_6",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "selecao",
+      "modelo": "Climatologia",
+      "n_valores": 420,
+      "ok": true,
+      "tarefa": "monthly_6",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "selecao",
+      "modelo": "Climatologia",
+      "n_valores": 420,
+      "ok": true,
+      "tarefa": "monthly_6",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 2.842170943040401e-14,
+      "fase": "refit",
+      "modelo": "Persistencia",
+      "n_valores": 420,
+      "ok": true,
+      "tarefa": "monthly_6",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 2.842170943040401e-14,
+      "fase": "refit",
+      "modelo": "Persistencia",
+      "n_valores": 420,
+      "ok": true,
+      "tarefa": "monthly_6",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "refit",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 420,
+      "ok": true,
+      "tarefa": "monthly_6",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "refit",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 420,
+      "ok": true,
+      "tarefa": "monthly_6",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "refit",
+      "modelo": "Climatologia",
+      "n_valores": 420,
+      "ok": true,
+      "tarefa": "monthly_6",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "refit",
+      "modelo": "Climatologia",
+      "n_valores": 420,
+      "ok": true,
+      "tarefa": "monthly_6",
+      "tipo": "pos"
+    },
+    {
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "modelo": "ARIMA",
+      "n_valores": 420,
+      "ok": true,
+      "ordens_controle": {
+        "BMW San Luis Potosi": [
+          2,
+          0,
+          2
+        ],
+        "BYD Camacari": [
+          2,
+          0,
+          2
+        ],
+        "Ford Rouge Electric Vehicle Center": [
+          2,
+          0,
+          2
+        ],
+        "GM Factory Zero": [
+          2,
+          1,
+          2
+        ],
+        "Hyundai Metaplant Georgia": [
+          2,
+          0,
+          2
+        ],
+        "Lucid AMP 1 Casa Grande": [
+          2,
+          0,
+          2
+        ],
+        "Rivian Normal": [
+          2,
+          0,
+          2
+        ],
+        "Tesla Fremont Factory": [
+          2,
+          1,
+          2
+        ],
+        "Tesla Gigafactory Nevada": [
+          2,
+          1,
+          2
+        ],
+        "Tesla Gigafactory Texas": [
+          2,
+          0,
+          2
+        ]
+      },
+      "tarefa": "monthly_6",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 1.7763568394002505e-15,
+      "fase": "selecao",
+      "modelo": "Persistencia",
+      "n_valores": 100800,
+      "ok": true,
+      "tarefa": "daily_30",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 1.7763568394002505e-15,
+      "fase": "selecao",
+      "modelo": "Persistencia",
+      "n_valores": 100800,
+      "ok": true,
+      "tarefa": "daily_30",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 1.7763568394002505e-15,
+      "fase": "selecao",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 100800,
+      "ok": true,
+      "tarefa": "daily_30",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 1.7763568394002505e-15,
+      "fase": "selecao",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 100800,
+      "ok": true,
+      "tarefa": "daily_30",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "selecao",
+      "modelo": "Climatologia",
+      "n_valores": 100800,
+      "ok": true,
+      "tarefa": "daily_30",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "selecao",
+      "modelo": "Climatologia",
+      "n_valores": 100800,
+      "ok": true,
+      "tarefa": "daily_30",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 1.7763568394002505e-15,
+      "fase": "refit",
+      "modelo": "Persistencia",
+      "n_valores": 101100,
+      "ok": true,
+      "tarefa": "daily_30",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 1.7763568394002505e-15,
+      "fase": "refit",
+      "modelo": "Persistencia",
+      "n_valores": 101100,
+      "ok": true,
+      "tarefa": "daily_30",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 1.7763568394002505e-15,
+      "fase": "refit",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 101100,
+      "ok": true,
+      "tarefa": "daily_30",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 1.7763568394002505e-15,
+      "fase": "refit",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 101100,
+      "ok": true,
+      "tarefa": "daily_30",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "refit",
+      "modelo": "Climatologia",
+      "n_valores": 101100,
+      "ok": true,
+      "tarefa": "daily_30",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 5.684341886080802e-14,
+      "fase": "refit",
+      "modelo": "Climatologia",
+      "n_valores": 101100,
+      "ok": true,
+      "tarefa": "daily_30",
+      "tipo": "pos"
+    },
+    {
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "modelo": "ARIMA",
+      "n_valores": 101100,
+      "ok": true,
+      "ordens_controle": {
+        "BMW San Luis Potosi": [
+          2,
+          0,
+          2
+        ],
+        "BYD Camacari": [
+          2,
+          0,
+          2
+        ],
+        "Ford Rouge Electric Vehicle Center": [
+          2,
+          0,
+          2
+        ],
+        "GM Factory Zero": [
+          2,
+          0,
+          2
+        ],
+        "Hyundai Metaplant Georgia": [
+          2,
+          0,
+          2
+        ],
+        "Lucid AMP 1 Casa Grande": [
+          2,
+          0,
+          2
+        ],
+        "Rivian Normal": [
+          2,
+          0,
+          2
+        ],
+        "Tesla Fremont Factory": [
+          2,
+          0,
+          2
+        ],
+        "Tesla Gigafactory Nevada": [
+          2,
+          0,
+          2
+        ],
+        "Tesla Gigafactory Texas": [
+          2,
+          0,
+          2
+        ]
+      },
+      "tarefa": "daily_30",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 0.0,
+      "fase": "selecao",
+      "modelo": "Persistencia",
+      "n_valores": 261360,
+      "ok": true,
+      "tarefa": "hourly_72_extension",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 0.0,
+      "fase": "selecao",
+      "modelo": "Persistencia",
+      "n_valores": 261360,
+      "ok": true,
+      "tarefa": "hourly_72_extension",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 0.0,
+      "fase": "selecao",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 261360,
+      "ok": true,
+      "tarefa": "hourly_72_extension",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 0.0,
+      "fase": "selecao",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 261360,
+      "ok": true,
+      "tarefa": "hourly_72_extension",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": false,
+      "fase": "selecao",
+      "finito": true,
+      "modelo": "Climatologia",
+      "n_valores": 261360,
+      "nova_referencia": true,
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "modelo": "Persistencia",
+      "n_valores": 261360,
+      "ok": true,
+      "tarefa": "hourly_72_extension",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "modelo": "Persistencia",
+      "n_valores": 261360,
+      "ok": true,
+      "tarefa": "hourly_72_extension",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 261360,
+      "ok": true,
+      "tarefa": "hourly_72_extension",
+      "tipo": "bruta"
+    },
+    {
+      "controle_historico": true,
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "modelo": "Sazonal ingenuo",
+      "n_valores": 261360,
+      "ok": true,
+      "tarefa": "hourly_72_extension",
+      "tipo": "pos"
+    },
+    {
+      "controle_historico": false,
+      "fase": "refit",
+      "finito": true,
+      "modelo": "Climatologia",
+      "n_valores": 261360,
+      "nova_referencia": true,
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "diferenca_maxima": 0.0,
+      "fase": "refit",
+      "modelo": "ARIMA",
+      "n_valores": 261360,
+      "ok": true,
+      "ordens_controle": {
+        "BMW San Luis Potosi": [
+          2,
+          0,
+          0
+        ],
+        "BYD Camacari": [
+          2,
+          1,
+          2
+        ],
+        "Ford Rouge Electric Vehicle Center": [
+          2,
+          0,
+          2
+        ],
+        "GM Factory Zero": [
+          2,
+          1,
+          2
+        ],
+        "Hyundai Metaplant Georgia": [
+          2,
+          1,
+          2
+        ],
+        "Lucid AMP 1 Casa Grande": [
+          2,
+          1,
+          2
+        ],
+        "Rivian Normal": [
+          2,
+          1,
+          2
+        ],
+        "Tesla Fremont Factory": [
+          2,
+          1,
+          2
+        ],
+        "Tesla Gigafactory Nevada": [
+          2,
+          1,
+          2
+        ],
+        "Tesla Gigafactory Texas": [
+          2,
+          1,
+          2
+        ]
+      },
+      "tarefa": "hourly_72_extension",
+      "tipo": "bruta"
+    }
+  ],
+  "tarefas": [
+    "monthly_1",
+    "monthly_6",
+    "daily_30",
+    "hourly_72_extension"
+  ],
+  "tipo": "replay_sem_quantizacao_referencias_arima"
+}

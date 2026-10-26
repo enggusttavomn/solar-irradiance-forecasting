@@ -1,0 +1,356 @@
+{
+  "criado_em_utc": "2026-09-23T02:44:13.474648+00:00",
+  "tarefas": {
+    "hourly_72_extension": {
+      "selecao": {
+        "criterio": "macro_MAE_fisico_validacao_2023_apos_pos_processamento",
+        "limitacoes": [
+          "2024 ja observado motivou a busca; necessita confirmacao futura.",
+          "Janela menor preserva exatamente origens, alvos e exemplos de treino.",
+          "Grade limitada; nenhuma garantia de superar outras arquiteturas.",
+          "Horaria usa apenas semente42; diaria usa cinco sementes."
+        ],
+        "metodo": "TimesNet otimizada",
+        "selecao_concluida_antes_do_teste": true,
+        "sementes": [
+          42
+        ],
+        "tarefa": "hourly_72_extension",
+        "vencedor": {
+          "MAE_validacao_wm2": 48.94850718134734,
+          "contexto": 336,
+          "dimensao": 16,
+          "epocas": {
+            "42": 30
+          },
+          "lote": 64,
+          "nome": "mae_dim16_lr0003",
+          "perda": "mae",
+          "taxa": 0.0003
+        }
+      },
+      "status": {
+        "MAE_teste_wm2": 47.91446203884576,
+        "MAE_validacao_wm2": 48.94850718134734,
+        "candidato": "mae_dim16_lr0003",
+        "concluido_em_utc": "2026-09-23T02:39:05.317005+00:00",
+        "etapa": "concluida",
+        "modo": "completa",
+        "resultado_smoke_nao_publicavel": false,
+        "tarefa": "hourly_72_extension"
+      },
+      "coluna_previsao": "previsao_pos_timesnet_otimizada_wm2",
+      "nota_teto_epocas": "A TimesNet otimizada atingiu o teto de 30 épocas na seleção (semente 42); pode não ter convergido.",
+      "N_origens_por_local": 363
+    },
+    "daily_30": {
+      "selecao": {
+        "criterio": "macro_MAE_fisico_validacao_2023_apos_pos_processamento",
+        "limitacoes": [
+          "2024 ja observado motivou a busca; necessita confirmacao futura.",
+          "Janela menor preserva exatamente origens, alvos e exemplos de treino.",
+          "Grade limitada; nenhuma garantia de superar outras arquiteturas.",
+          "Horaria usa apenas semente42; diaria usa cinco sementes."
+        ],
+        "metodo": "TimesNet otimizada",
+        "selecao_concluida_antes_do_teste": true,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ],
+        "tarefa": "daily_30",
+        "vencedor": {
+          "MAE_validacao_wm2": 43.94697113114908,
+          "contexto": 365,
+          "dimensao": 8,
+          "epocas": {
+            "11": 7,
+            "23": 6,
+            "42": 7,
+            "67": 7,
+            "89": 7
+          },
+          "lote": 128,
+          "nome": "huber",
+          "perda": "huber",
+          "taxa": 0.001
+        }
+      },
+      "status": {
+        "MAE_teste_wm2": 42.17076886374178,
+        "MAE_validacao_wm2": 43.94697113114908,
+        "candidato": "huber",
+        "concluido_em_utc": "2026-09-23T02:31:24.297307+00:00",
+        "etapa": "concluida",
+        "modo": "completa",
+        "resultado_smoke_nao_publicavel": false,
+        "tarefa": "daily_30"
+      },
+      "coluna_previsao": "previsao_pos_timesnet_otimizada_wm2",
+      "nota_teto_epocas": "",
+      "N_origens_por_local": 337
+    },
+    "monthly_1": {
+      "selecao": {
+        "criterio": "menor_macro_MAE_fisico_do_ensemble_na_validacao_2023",
+        "selecao_concluida_antes_do_teste": true,
+        "tarefa": {
+          "ajuste": {
+            "fim_alvo": "2022-12-31",
+            "fim_origem": "2022-12-31",
+            "inicio_origem": "2020-01-31",
+            "origens_esperadas_por_localidade": 36
+          },
+          "exploratoria": false,
+          "frequencia": "ME",
+          "horizontes": [
+            1
+          ],
+          "pred_len": 1,
+          "refit": {
+            "fim_alvo": "2023-12-31",
+            "fim_origem": "2023-12-31",
+            "inicio_origem": "2020-01-31",
+            "origens_esperadas_por_localidade": 48
+          },
+          "resolucao": "mensal",
+          "seq_len": 12,
+          "slug": "monthly_1",
+          "teste": {
+            "fim_alvo": "2024-12-31",
+            "fim_origem": "2024-12-31",
+            "inicio_origem": "2024-01-31",
+            "origens_esperadas_por_localidade": 12
+          },
+          "validacao": {
+            "fim_alvo": "2023-12-31",
+            "fim_origem": "2023-12-31",
+            "inicio_origem": "2023-01-31",
+            "origens_esperadas_por_localidade": 12
+          }
+        },
+        "vencedor": {
+          "DP_MAE_sementes_wm2": 0.18840995019584797,
+          "MAE_validacao_ensemble_wm2": 14.711143142784774,
+          "MAE_validacao_media_sementes_wm2": 14.907832225099867,
+          "alvo": "anomalia",
+          "blocos": 1,
+          "d_ff": 16,
+          "d_model": 8,
+          "dropout": 0.1,
+          "epocas": {
+            "11": 3,
+            "23": 25,
+            "42": 7,
+            "67": 5,
+            "89": 23
+          },
+          "nome": "anomalia_mae_lr_0003",
+          "origens_ajuste_por_local": 36,
+          "origens_validacao_por_local": 12,
+          "perda": "mae",
+          "seq_len": 12,
+          "taxa_aprendizado": 0.0003
+        }
+      },
+      "status": {
+        "MAE_teste_wm2": 13.236257093299164,
+        "MAE_validacao_wm2": 14.711143142784774,
+        "atualizado_em_utc": "2026-09-21T01:45:10.691453+00:00",
+        "candidato": "anomalia_mae_lr_0003",
+        "etapa": "concluida",
+        "modo": "completa",
+        "tarefa": "monthly_1",
+        "teste_avaliado": true
+      },
+      "coluna_previsao": "previsao_pos_timesnet_ensemble_wm2",
+      "nota_teto_epocas": "",
+      "N_origens_por_local": 12
+    },
+    "monthly_6": {
+      "selecao": {
+        "criterio": "menor_macro_MAE_fisico_do_ensemble_na_validacao_2023",
+        "selecao_concluida_antes_do_teste": true,
+        "tarefa": {
+          "ajuste": {
+            "fim_alvo": "2022-12-31",
+            "fim_origem": "2022-07-31",
+            "inicio_origem": "2020-01-31",
+            "origens_esperadas_por_localidade": 31
+          },
+          "exploratoria": true,
+          "frequencia": "ME",
+          "horizontes": [
+            1,
+            3,
+            6
+          ],
+          "pred_len": 6,
+          "refit": {
+            "fim_alvo": "2023-12-31",
+            "fim_origem": "2023-07-31",
+            "inicio_origem": "2020-01-31",
+            "origens_esperadas_por_localidade": 43
+          },
+          "resolucao": "mensal",
+          "seq_len": 12,
+          "slug": "monthly_6",
+          "teste": {
+            "fim_alvo": "2024-12-31",
+            "fim_origem": "2024-07-31",
+            "inicio_origem": "2024-01-31",
+            "origens_esperadas_por_localidade": 7
+          },
+          "validacao": {
+            "fim_alvo": "2023-12-31",
+            "fim_origem": "2023-07-31",
+            "inicio_origem": "2023-01-31",
+            "origens_esperadas_por_localidade": 7
+          }
+        },
+        "vencedor": {
+          "DP_MAE_sementes_wm2": 0.0895449306842895,
+          "MAE_validacao_ensemble_wm2": 15.685734284979919,
+          "MAE_validacao_media_sementes_wm2": 15.790800015063411,
+          "alvo": "anomalia",
+          "blocos": 1,
+          "d_ff": 32,
+          "d_model": 16,
+          "dropout": 0.1,
+          "epocas": {
+            "11": 1,
+            "23": 1,
+            "42": 3,
+            "67": 2,
+            "89": 1
+          },
+          "nome": "anomalia_mae_dim16",
+          "origens_ajuste_por_local": 31,
+          "origens_validacao_por_local": 7,
+          "perda": "mae",
+          "seq_len": 12,
+          "taxa_aprendizado": 0.001
+        }
+      },
+      "status": {
+        "MAE_teste_wm2": 13.167131839566494,
+        "MAE_validacao_wm2": 15.685734284979919,
+        "atualizado_em_utc": "2026-09-21T02:09:51.647284+00:00",
+        "candidato": "anomalia_mae_dim16",
+        "etapa": "concluida",
+        "modo": "completa",
+        "tarefa": "monthly_6",
+        "teste_avaliado": true
+      },
+      "coluna_previsao": "previsao_pos_timesnet_ensemble_wm2",
+      "nota_teto_epocas": "",
+      "N_origens_por_local": 7
+    }
+  },
+  "agregacao": "Media de cada metrica por localidade; MSE calculado antes da media, independente do macro-RMSE.",
+  "fontes": [
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\metricas_macro.csv",
+      "sha256": "cb3b6b312a9997f8bbca13b50a3c80c8424ebb1c7fa18c052ad11aa42496d026"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\gerar_tabela_resultados_ghi_otimizada.py",
+      "sha256": "c03f6848a157614b8301d850329bfb8cc418505befafa720a55379a982276baa"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_resolucoes_20260922\\hourly_72_extension\\contrato_execucao.json",
+      "sha256": "b6ad29a50c0344934390e8638a1af1b22cb23213787bb3e8246848bf51d4e770"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_resolucoes_20260922\\hourly_72_extension\\status_execucao.json",
+      "sha256": "9d6384561a8916741361bc17f4ab0b91dffab5db998947666117b956a4c22f7f"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_resolucoes_20260922\\hourly_72_extension\\selecao_congelada.json",
+      "sha256": "3c5d4ce4b8acf9a48a91e18153a695c2db266f36b745991271038c8f33153453"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_resolucoes_20260922\\hourly_72_extension\\previsoes_teste.csv.gz",
+      "sha256": "7b09da91884c29d4f8282cd837f24c4ef35eb563f0719f781e876b09d84a3c5b"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\hourly_72_extension\\previsoes_teste.csv.gz",
+      "sha256": "bdd1eea4b7e257574c9d7337aefd059d53be698a4c918a985aa49b29fd27e54e"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_resolucoes_20260922\\daily_30\\contrato_execucao.json",
+      "sha256": "4ce9c37464d9fa5e72bf6c16313ffca5651a3ebc5d709e088c0d4d2be99ae0ca"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_resolucoes_20260922\\daily_30\\status_execucao.json",
+      "sha256": "1ae32cb86ec1d3bead825e3496394f387badd3a791c6b760479fbd671b5068c2"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_resolucoes_20260922\\daily_30\\selecao_congelada.json",
+      "sha256": "302573a5e21a5f8ace0ea0849cc72fa0ccea9d3a71df12a08a92363fdaa8cb50"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_resolucoes_20260922\\daily_30\\previsoes_teste.csv.gz",
+      "sha256": "6711b5d6ed1618342e3393596d46c2179d7da101c4aa685a0dad4a2282c909d3"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\daily_30\\previsoes_teste.csv.gz",
+      "sha256": "e41d19bc15e34653c4d7d5a3abfa8c245ac136d4ddfbecf923e08c01d30e0a68"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_mensal_v2_20260920\\monthly_1\\status_execucao.json",
+      "sha256": "ae1b5a177124c555a4d884548dca513a47af63a2a2d69e1fea71d86609e03f66"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_mensal_v2_20260920\\monthly_1\\selecao_congelada.json",
+      "sha256": "9917a3add289b0d60d02300fd592470614a02f9df9ab427a6f4e9d03dc8d2ce6"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_mensal_v2_20260920\\monthly_1\\previsoes_teste.csv",
+      "sha256": "d4af50373ec6e036319b48fff9ec6fa48de168d37fd2678d6c6b2c8caefc218b"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\monthly_1\\previsoes_teste.csv.gz",
+      "sha256": "37f8bcb4f1844ad661e35b932453863a8a6d0a48022bb316b3905520bd62aa70"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_mensal_v2_20260920\\monthly_6\\status_execucao.json",
+      "sha256": "b6045ce7bfb5b8476ffe6f8843f1a7f131578de5a700e413c50138caacfede0f"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_mensal_v2_20260920\\monthly_6\\selecao_congelada.json",
+      "sha256": "a59fb4be428ea10a0e2bacf809ec0d956d4fa0ad572e574ee6abaf6a95e1dd5f"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_mensal_v2_20260920\\monthly_6\\previsoes_teste.csv",
+      "sha256": "706fdd9f1d6816d96025b99d4873e67ab6eb72dbfb02716264109f4da8aa1576"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\monthly_6\\previsoes_teste.csv.gz",
+      "sha256": "a3c1c4093b1b0ed1479192a3ed3394fc7594cac267a3a52fbb45a30059fd0471"
+    }
+  ],
+  "pdf": {
+    "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\documentacao\\tabela_resultados_ghi_2024.pdf",
+    "sha256": "4c9518718c56a25250fb139d3ce8ba1a90daaea12876e5c846659ef0025d94fb"
+  },
+  "metricas": {
+    "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\tabela_resultados_ghi_20260922\\metricas_tabela.csv",
+    "sha256": "fe8a266d6d4185a0a954033b29a7568777d4977eac8bcf908c8f1dc21cd08e35"
+  },
+  "verificacao_visual": {
+    "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\tabela_resultados_ghi_20260922\\qa_pdf.json",
+    "sha256": "2b10b6e243dbc3c2aa79a7da10121c2f03511ed1d4a7034f01b167b8c078a661"
+  },
+  "auditoria_resultados": {
+    "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\otimizacao_timesnet_quatro_casos_20260922\\auditoria_resolucoes.json",
+    "sha256": "649deaa7802ee7ca7585406a186e82b643fc62f9960bb3f40121b525110e30fd"
+  },
+  "codigo_gerador": {
+    "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\gerar_tabela_resultados_ghi_otimizada.py",
+    "sha256": "c03f6848a157614b8301d850329bfb8cc418505befafa720a55379a982276baa"
+  }
+}

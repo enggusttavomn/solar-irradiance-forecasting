@@ -79,11 +79,6 @@ def test_site_possui_quatro_paginas_com_navegacao_horizontal() -> None:
 
 
 def test_indice_de_artigos_aponta_para_os_manuscritos_reais() -> None:
-    def resolver_atalho(caminho: Path) -> Path:
-        if caminho.is_dir():
-            return caminho
-        alvo = caminho.read_text(encoding="utf-8").strip()
-        return (caminho.parent / alvo).resolve()
-
-    assert (resolver_atalho(RAIZ / "artigos" / "ieee") / "artigo.tex").is_file()
-    assert (resolver_atalho(RAIZ / "artigos" / "mcsm") / "main.tex").is_file()
+    assert (RAIZ / "artigos" / "ieee" / "artigo.tex").is_file()
+    assert (RAIZ / "artigos" / "btsym26" / "main.tex").is_file()
+    assert (RAIZ / "artigos" / "revista_unificado" / "main.tex").is_file()

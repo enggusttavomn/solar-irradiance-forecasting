@@ -1,0 +1,1108 @@
+{
+  "gerado_em_utc": "2026-09-23T04:50:51.691191+00:00",
+  "sem_treinamento": true,
+  "dispositivo_inferencia": "cpu",
+  "torch": "2.12.0+cu126",
+  "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "fonte": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_mensal_20260920",
+  "canonico": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2",
+  "tarefas": [
+    {
+      "tarefa": "monthly_1",
+      "manifesto": {
+        "arquivos_verificados": 119,
+        "divergencias": []
+      },
+      "codigo": {
+        "experimento_multirresolucao.py": {
+          "contrato": "6bd687ead27d2d174a0e1beb7c69dcb29c4695549553f4cbf2142e159f8ba991",
+          "atual": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+          "confere_atualmente": false
+        },
+        "otimizacao_timesnet_mensal.py": {
+          "contrato": "d96c833bad9a6688d8bf353a0ef1ae370707c52dbff6e576e7f0cd194db35e1e",
+          "atual": "b39b37790ab70ce2588fe6dbf1d1216033b78c39ff1a7fe23e1f199caf27a71f",
+          "confere_atualmente": false
+        },
+        "timesnet_horario.py": {
+          "contrato": "ad3859c1044fb132d0d521817f579f8308a478fdf322b749ff42c8d3893c95f2",
+          "atual": "ad3859c1044fb132d0d521817f579f8308a478fdf322b749ff42c8d3893c95f2",
+          "confere_atualmente": true
+        },
+        "treinamento_timesnet_otimizacao.py": {
+          "contrato": "3a9d46487e6d63d4aa9d2cd3d40f358c67b16c71e7bdd3a3df712e0272a66310",
+          "atual": "6b096408f2124877a16e342feb789b090f3bb592b10dc399af0004d97e5b42c9",
+          "confere_atualmente": false
+        }
+      },
+      "entradas_integras": 10,
+      "vencedor": {
+        "DP_MAE_sementes_wm2": 0.7026077134686652,
+        "MAE_validacao_ensemble_wm2": 15.43694149265956,
+        "MAE_validacao_media_sementes_wm2": 16.119448827125023,
+        "blocos": 1,
+        "d_ff": 32,
+        "d_model": 16,
+        "dropout": 0.1,
+        "epocas": {
+          "11": 64,
+          "23": 45,
+          "42": 60,
+          "67": 65,
+          "89": 94
+        },
+        "nome": "mae_dim16_lr_0003",
+        "origens_ajuste_por_local": 36,
+        "origens_validacao_por_local": 12,
+        "perda": "mae",
+        "seq_len": 12,
+        "taxa_aprendizado": 0.0003
+      },
+      "candidatos_avaliados": 8,
+      "descartados": [
+        {
+          "candidato": "mae_contexto36",
+          "motivo": "Contexto 36: apenas 12 origens por local; minimo 18."
+        }
+      ],
+      "comparacao": {
+        "teste_timesnet": 13.856143200094376,
+        "teste_climatologia": 12.574705149332681,
+        "validacao_timesnet": 15.436941492659562,
+        "validacao_climatologia": 13.761379520098368,
+        "canonico_timesnet": 13.891527777048637,
+        "reducao_absoluta_wm2": 0.03538457695426089,
+        "reducao_percentual": 0.2547205571781869,
+        "validacao_canonico_timesnet": 15.89068987854887
+      },
+      "linhas_teste": 120,
+      "localidades": 10,
+      "origens_por_localidade": {
+        "BMW San Luis Potosi": 12,
+        "BYD Camacari": 12,
+        "Ford Rouge Electric Vehicle Center": 12,
+        "GM Factory Zero": 12,
+        "Hyundai Metaplant Georgia": 12,
+        "Lucid AMP 1 Casa Grande": 12,
+        "Rivian Normal": 12,
+        "Tesla Fremont Factory": 12,
+        "Tesla Gigafactory Nevada": 12,
+        "Tesla Gigafactory Texas": 12
+      },
+      "erro_maximo_ensemble_csv_wm2": 5.684341886080802e-14,
+      "checkpoints": [
+        {
+          "semente": 11,
+          "epocas_refit": 64,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 14.309490337172235
+        },
+        {
+          "semente": 23,
+          "epocas_refit": 45,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 16.05204960137719
+        },
+        {
+          "semente": 42,
+          "epocas_refit": 60,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 14.874740428833372
+        },
+        {
+          "semente": 67,
+          "epocas_refit": 65,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 14.662376361207336
+        },
+        {
+          "semente": 89,
+          "epocas_refit": 94,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 13.777333328889977
+        }
+      ],
+      "protocolo": {
+        "ajuste": {
+          "fim_alvo": "2022-12-31",
+          "fim_origem": "2022-12-31",
+          "inicio_origem": "2020-01-31",
+          "origens_esperadas_por_localidade": 36
+        },
+        "exploratoria": false,
+        "frequencia": "ME",
+        "horizontes": [
+          1
+        ],
+        "pred_len": 1,
+        "refit": {
+          "fim_alvo": "2023-12-31",
+          "fim_origem": "2023-12-31",
+          "inicio_origem": "2020-01-31",
+          "origens_esperadas_por_localidade": 48
+        },
+        "resolucao": "mensal",
+        "seq_len": 12,
+        "slug": "monthly_1",
+        "teste": {
+          "fim_alvo": "2024-12-31",
+          "fim_origem": "2024-12-31",
+          "inicio_origem": "2024-01-31",
+          "origens_esperadas_por_localidade": 12
+        },
+        "validacao": {
+          "fim_alvo": "2023-12-31",
+          "fim_origem": "2023-12-31",
+          "inicio_origem": "2023-01-31",
+          "origens_esperadas_por_localidade": 12
+        }
+      },
+      "limitacoes": [
+        "Busca dirigida motivada por resultados de 2024 ja observados; requer confirmacao futura.",
+        "Janelas maiores podem reduzir o numero de origens de treino; nao e ablacao isolada de contexto.",
+        "Mesmo ano de validacao seleciona epocas e hiperparametros; risco de sobreajuste a validacao.",
+        "Mensal de seis passos tem sete origens de teste sobrepostas por localidade."
+      ],
+      "fontes": {
+        "contrato_execucao.json": "38bd55d32ef8bb23a07fe31741d9f005a6fc2460a722ecdae1d6f6e42374f952",
+        "manifesto_artefatos.json": "0d93f9448badf0e044d90cdbb49396dbfae227e9d2ea5e31638f8929db3ad417",
+        "selecao_congelada.json": "bf7c73eb7aba650a088a45bd910101ed089a8d6376dbcda4f533bac3f5834ac3"
+      },
+      "auditoria_selecao_completa": {
+        "candidatos_declarados": 9,
+        "candidatos_recalculados": 8,
+        "caches_e_historicos_conferidos": 40,
+        "alvo_exclusivo": "bruto",
+        "janelas_treino_ate_2022": true,
+        "alvos_validacao_exclusivamente_2023": true,
+        "ranking": [
+          {
+            "nome": "mae_dim16_lr_0003",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 15.43694149265956,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 64,
+                "MAE_validacao_wm2": 16.117768179272062,
+                "historico_epocas": 94
+              },
+              {
+                "semente": 23,
+                "epocas": 45,
+                "MAE_validacao_wm2": 15.547412187667666,
+                "historico_epocas": 75
+              },
+              {
+                "semente": 42,
+                "epocas": 60,
+                "MAE_validacao_wm2": 16.57814615395506,
+                "historico_epocas": 90
+              },
+              {
+                "semente": 67,
+                "epocas": 65,
+                "MAE_validacao_wm2": 15.331268668677144,
+                "historico_epocas": 95
+              },
+              {
+                "semente": 89,
+                "epocas": 94,
+                "MAE_validacao_wm2": 17.022648946053184,
+                "historico_epocas": 124
+              }
+            ]
+          },
+          {
+            "nome": "mae_dim16",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 15.465134777588185,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 31,
+                "MAE_validacao_wm2": 16.009049477550438,
+                "historico_epocas": 61
+              },
+              {
+                "semente": 23,
+                "epocas": 15,
+                "MAE_validacao_wm2": 15.609032086266785,
+                "historico_epocas": 45
+              },
+              {
+                "semente": 42,
+                "epocas": 59,
+                "MAE_validacao_wm2": 16.31259430141624,
+                "historico_epocas": 89
+              },
+              {
+                "semente": 67,
+                "epocas": 25,
+                "MAE_validacao_wm2": 15.116512983680717,
+                "historico_epocas": 55
+              },
+              {
+                "semente": 89,
+                "epocas": 32,
+                "MAE_validacao_wm2": 16.83675216845089,
+                "historico_epocas": 62
+              }
+            ]
+          },
+          {
+            "nome": "huber",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 15.73542619632779,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 41,
+                "MAE_validacao_wm2": 17.06076840253283,
+                "historico_epocas": 71
+              },
+              {
+                "semente": 23,
+                "epocas": 57,
+                "MAE_validacao_wm2": 16.898522559105448,
+                "historico_epocas": 87
+              },
+              {
+                "semente": 42,
+                "epocas": 79,
+                "MAE_validacao_wm2": 15.870525149901628,
+                "historico_epocas": 109
+              },
+              {
+                "semente": 67,
+                "epocas": 38,
+                "MAE_validacao_wm2": 16.543571960586934,
+                "historico_epocas": 68
+              },
+              {
+                "semente": 89,
+                "epocas": 33,
+                "MAE_validacao_wm2": 15.495635480190902,
+                "historico_epocas": 63
+              }
+            ]
+          },
+          {
+            "nome": "referencia_mse",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 15.797822340598998,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 41,
+                "MAE_validacao_wm2": 16.920500548903078,
+                "historico_epocas": 71
+              },
+              {
+                "semente": 23,
+                "epocas": 52,
+                "MAE_validacao_wm2": 17.180462428546342,
+                "historico_epocas": 82
+              },
+              {
+                "semente": 42,
+                "epocas": 119,
+                "MAE_validacao_wm2": 15.847288706872627,
+                "historico_epocas": 149
+              },
+              {
+                "semente": 67,
+                "epocas": 39,
+                "MAE_validacao_wm2": 16.824840980033272,
+                "historico_epocas": 69
+              },
+              {
+                "semente": 89,
+                "epocas": 48,
+                "MAE_validacao_wm2": 16.003560669110293,
+                "historico_epocas": 78
+              }
+            ]
+          },
+          {
+            "nome": "mae",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 15.883221891714026,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 42,
+                "MAE_validacao_wm2": 17.20602142732662,
+                "historico_epocas": 72
+              },
+              {
+                "semente": 23,
+                "epocas": 100,
+                "MAE_validacao_wm2": 16.79615997982232,
+                "historico_epocas": 130
+              },
+              {
+                "semente": 42,
+                "epocas": 43,
+                "MAE_validacao_wm2": 16.376039811399693,
+                "historico_epocas": 73
+              },
+              {
+                "semente": 67,
+                "epocas": 53,
+                "MAE_validacao_wm2": 16.5920530490231,
+                "historico_epocas": 83
+              },
+              {
+                "semente": 89,
+                "epocas": 38,
+                "MAE_validacao_wm2": 15.410032356369646,
+                "historico_epocas": 68
+              }
+            ]
+          },
+          {
+            "nome": "mae_dois_blocos",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 15.915544451859088,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 10,
+                "MAE_validacao_wm2": 15.786003942212565,
+                "historico_epocas": 40
+              },
+              {
+                "semente": 23,
+                "epocas": 40,
+                "MAE_validacao_wm2": 16.047775462425477,
+                "historico_epocas": 70
+              },
+              {
+                "semente": 42,
+                "epocas": 16,
+                "MAE_validacao_wm2": 17.031659037704003,
+                "historico_epocas": 46
+              },
+              {
+                "semente": 67,
+                "epocas": 10,
+                "MAE_validacao_wm2": 17.58145691852445,
+                "historico_epocas": 40
+              },
+              {
+                "semente": 89,
+                "epocas": 16,
+                "MAE_validacao_wm2": 17.29400714624553,
+                "historico_epocas": 46
+              }
+            ]
+          },
+          {
+            "nome": "mae_lr_0003",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 15.931894643229256,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 138,
+                "MAE_validacao_wm2": 17.37134111858329,
+                "historico_epocas": 168
+              },
+              {
+                "semente": 23,
+                "epocas": 192,
+                "MAE_validacao_wm2": 16.932508081334216,
+                "historico_epocas": 222
+              },
+              {
+                "semente": 42,
+                "epocas": 146,
+                "MAE_validacao_wm2": 16.678117385100702,
+                "historico_epocas": 176
+              },
+              {
+                "semente": 67,
+                "epocas": 76,
+                "MAE_validacao_wm2": 16.392422467926643,
+                "historico_epocas": 106
+              },
+              {
+                "semente": 89,
+                "epocas": 88,
+                "MAE_validacao_wm2": 15.64893221616723,
+                "historico_epocas": 118
+              }
+            ]
+          },
+          {
+            "nome": "mae_contexto24",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 16.133025556126658,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 67,
+                "MAE_validacao_wm2": 17.958111008128697,
+                "historico_epocas": 97
+              },
+              {
+                "semente": 23,
+                "epocas": 16,
+                "MAE_validacao_wm2": 17.199837035385293,
+                "historico_epocas": 46
+              },
+              {
+                "semente": 42,
+                "epocas": 20,
+                "MAE_validacao_wm2": 17.384138850424808,
+                "historico_epocas": 50
+              },
+              {
+                "semente": 67,
+                "epocas": 19,
+                "MAE_validacao_wm2": 17.27558013809738,
+                "historico_epocas": 49
+              },
+              {
+                "semente": 89,
+                "epocas": 17,
+                "MAE_validacao_wm2": 16.452121047776252,
+                "historico_epocas": 47
+              }
+            ]
+          }
+        ]
+      },
+      "vence_canonico_na_validacao": true,
+      "manifesto_apos_auditoria": {
+        "arquivos_verificados": 119,
+        "divergencias": []
+      },
+      "manifesto_canonico": {
+        "arquivos_conferidos": 55,
+        "arquivos_integralmente_conformes": 54,
+        "divergencias": [
+          {
+            "arquivo": "contrato_execucao.json",
+            "bytes": 5453,
+            "sha256": "9260b2143e25d8d6e8d5c54a8e57c16d7e07df273f8e673927b026667b8566aa",
+            "sha256_atual": "7620bfe8ba5c6de7d17e7bce7ae2238d11f1e4068ea6373c293cd7736eb48e54",
+            "bytes_atuais": 5336,
+            "mtime_atual_utc": "2026-09-21T00:55:26.731579+00:00"
+          }
+        ],
+        "previsoes_e_checkpoints_conformes_manifesto": true
+      },
+      "sem_climatologia_inferencia": true
+    },
+    {
+      "tarefa": "monthly_6",
+      "manifesto": {
+        "arquivos_verificados": 119,
+        "divergencias": []
+      },
+      "codigo": {
+        "experimento_multirresolucao.py": {
+          "contrato": "6bd687ead27d2d174a0e1beb7c69dcb29c4695549553f4cbf2142e159f8ba991",
+          "atual": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+          "confere_atualmente": false
+        },
+        "otimizacao_timesnet_mensal.py": {
+          "contrato": "d96c833bad9a6688d8bf353a0ef1ae370707c52dbff6e576e7f0cd194db35e1e",
+          "atual": "b39b37790ab70ce2588fe6dbf1d1216033b78c39ff1a7fe23e1f199caf27a71f",
+          "confere_atualmente": false
+        },
+        "timesnet_horario.py": {
+          "contrato": "ad3859c1044fb132d0d521817f579f8308a478fdf322b749ff42c8d3893c95f2",
+          "atual": "ad3859c1044fb132d0d521817f579f8308a478fdf322b749ff42c8d3893c95f2",
+          "confere_atualmente": true
+        },
+        "treinamento_timesnet_otimizacao.py": {
+          "contrato": "3a9d46487e6d63d4aa9d2cd3d40f358c67b16c71e7bdd3a3df712e0272a66310",
+          "atual": "6b096408f2124877a16e342feb789b090f3bb592b10dc399af0004d97e5b42c9",
+          "confere_atualmente": false
+        }
+      },
+      "entradas_integras": 10,
+      "vencedor": {
+        "DP_MAE_sementes_wm2": 0.5983374844343967,
+        "MAE_validacao_ensemble_wm2": 17.053964393721962,
+        "MAE_validacao_media_sementes_wm2": 17.611215838500346,
+        "blocos": 1,
+        "d_ff": 16,
+        "d_model": 8,
+        "dropout": 0.1,
+        "epocas": {
+          "11": 77,
+          "23": 20,
+          "42": 30,
+          "67": 52,
+          "89": 36
+        },
+        "nome": "huber",
+        "origens_ajuste_por_local": 31,
+        "origens_validacao_por_local": 7,
+        "perda": "huber",
+        "seq_len": 12,
+        "taxa_aprendizado": 0.001
+      },
+      "candidatos_avaliados": 8,
+      "descartados": [
+        {
+          "candidato": "mae_contexto36",
+          "motivo": "Contexto 36: apenas 7 origens por local; minimo 18."
+        }
+      ],
+      "comparacao": {
+        "teste_timesnet": 14.197473385413323,
+        "teste_climatologia": 13.027173777988978,
+        "validacao_timesnet": 17.053964393721966,
+        "validacao_climatologia": 14.926674972261699,
+        "canonico_timesnet": 14.458229916631433,
+        "reducao_absoluta_wm2": 0.26075653121811015,
+        "reducao_percentual": 1.8035162860300038,
+        "validacao_canonico_timesnet": 17.272138696429536
+      },
+      "linhas_teste": 420,
+      "localidades": 10,
+      "origens_por_localidade": {
+        "BMW San Luis Potosi": 7,
+        "BYD Camacari": 7,
+        "Ford Rouge Electric Vehicle Center": 7,
+        "GM Factory Zero": 7,
+        "Hyundai Metaplant Georgia": 7,
+        "Lucid AMP 1 Casa Grande": 7,
+        "Rivian Normal": 7,
+        "Tesla Fremont Factory": 7,
+        "Tesla Gigafactory Nevada": 7,
+        "Tesla Gigafactory Texas": 7
+      },
+      "erro_maximo_ensemble_csv_wm2": 5.684341886080802e-14,
+      "checkpoints": [
+        {
+          "semente": 11,
+          "epocas_refit": 77,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 13.457486860687098
+        },
+        {
+          "semente": 23,
+          "epocas_refit": 20,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 15.323470709545685
+        },
+        {
+          "semente": 42,
+          "epocas_refit": 30,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 16.071247059909034
+        },
+        {
+          "semente": 67,
+          "epocas_refit": 52,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 14.678076549688774
+        },
+        {
+          "semente": 89,
+          "epocas_refit": 36,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 14.843083499740686
+        }
+      ],
+      "protocolo": {
+        "ajuste": {
+          "fim_alvo": "2022-12-31",
+          "fim_origem": "2022-07-31",
+          "inicio_origem": "2020-01-31",
+          "origens_esperadas_por_localidade": 31
+        },
+        "exploratoria": true,
+        "frequencia": "ME",
+        "horizontes": [
+          1,
+          3,
+          6
+        ],
+        "pred_len": 6,
+        "refit": {
+          "fim_alvo": "2023-12-31",
+          "fim_origem": "2023-07-31",
+          "inicio_origem": "2020-01-31",
+          "origens_esperadas_por_localidade": 43
+        },
+        "resolucao": "mensal",
+        "seq_len": 12,
+        "slug": "monthly_6",
+        "teste": {
+          "fim_alvo": "2024-12-31",
+          "fim_origem": "2024-07-31",
+          "inicio_origem": "2024-01-31",
+          "origens_esperadas_por_localidade": 7
+        },
+        "validacao": {
+          "fim_alvo": "2023-12-31",
+          "fim_origem": "2023-07-31",
+          "inicio_origem": "2023-01-31",
+          "origens_esperadas_por_localidade": 7
+        }
+      },
+      "limitacoes": [
+        "Busca dirigida motivada por resultados de 2024 ja observados; requer confirmacao futura.",
+        "Janelas maiores podem reduzir o numero de origens de treino; nao e ablacao isolada de contexto.",
+        "Mesmo ano de validacao seleciona epocas e hiperparametros; risco de sobreajuste a validacao.",
+        "Mensal de seis passos tem sete origens de teste sobrepostas por localidade."
+      ],
+      "fontes": {
+        "contrato_execucao.json": "2fa7ff666cc0b908a2d83ce7be3703393c7775ddcbdd175f7f2b3926ef00f72c",
+        "manifesto_artefatos.json": "7beadc8d82b63c09d3dc4a7717840ef42eeedcf39854cc06177493c8e9e80083",
+        "selecao_congelada.json": "386a61a035c4b78b149092432e523a9db66a8c3cea760454b09550235af92904"
+      },
+      "auditoria_selecao_completa": {
+        "candidatos_declarados": 9,
+        "candidatos_recalculados": 8,
+        "caches_e_historicos_conferidos": 40,
+        "alvo_exclusivo": "bruto",
+        "janelas_treino_ate_2022": true,
+        "alvos_validacao_exclusivamente_2023": true,
+        "ranking": [
+          {
+            "nome": "huber",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 17.053964393721962,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 77,
+                "MAE_validacao_wm2": 18.516034582922803,
+                "historico_epocas": 107
+              },
+              {
+                "semente": 23,
+                "epocas": 20,
+                "MAE_validacao_wm2": 16.945279458484148,
+                "historico_epocas": 50
+              },
+              {
+                "semente": 42,
+                "epocas": 30,
+                "MAE_validacao_wm2": 17.252367399846968,
+                "historico_epocas": 60
+              },
+              {
+                "semente": 67,
+                "epocas": 52,
+                "MAE_validacao_wm2": 17.541017027387056,
+                "historico_epocas": 82
+              },
+              {
+                "semente": 89,
+                "epocas": 36,
+                "MAE_validacao_wm2": 17.80138072386074,
+                "historico_epocas": 66
+              }
+            ]
+          },
+          {
+            "nome": "mae_lr_0003",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 17.201688550068017,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 197,
+                "MAE_validacao_wm2": 18.74326938457087,
+                "historico_epocas": 227
+              },
+              {
+                "semente": 23,
+                "epocas": 75,
+                "MAE_validacao_wm2": 17.070123352789345,
+                "historico_epocas": 105
+              },
+              {
+                "semente": 42,
+                "epocas": 81,
+                "MAE_validacao_wm2": 17.373536654925807,
+                "historico_epocas": 111
+              },
+              {
+                "semente": 67,
+                "epocas": 173,
+                "MAE_validacao_wm2": 17.81653574034319,
+                "historico_epocas": 203
+              },
+              {
+                "semente": 89,
+                "epocas": 101,
+                "MAE_validacao_wm2": 18.059409528658634,
+                "historico_epocas": 131
+              }
+            ]
+          },
+          {
+            "nome": "mae",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 17.237375067783432,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 78,
+                "MAE_validacao_wm2": 18.709920953873727,
+                "historico_epocas": 108
+              },
+              {
+                "semente": 23,
+                "epocas": 29,
+                "MAE_validacao_wm2": 16.939707971444328,
+                "historico_epocas": 59
+              },
+              {
+                "semente": 42,
+                "epocas": 38,
+                "MAE_validacao_wm2": 17.42915814667695,
+                "historico_epocas": 68
+              },
+              {
+                "semente": 67,
+                "epocas": 90,
+                "MAE_validacao_wm2": 17.5951358954244,
+                "historico_epocas": 120
+              },
+              {
+                "semente": 89,
+                "epocas": 27,
+                "MAE_validacao_wm2": 17.761995439756628,
+                "historico_epocas": 57
+              }
+            ]
+          },
+          {
+            "nome": "referencia_mse",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 17.258357469088214,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 90,
+                "MAE_validacao_wm2": 18.807876172954785,
+                "historico_epocas": 120
+              },
+              {
+                "semente": 23,
+                "epocas": 29,
+                "MAE_validacao_wm2": 17.07729921459939,
+                "historico_epocas": 59
+              },
+              {
+                "semente": 42,
+                "epocas": 38,
+                "MAE_validacao_wm2": 17.460991612438086,
+                "historico_epocas": 68
+              },
+              {
+                "semente": 67,
+                "epocas": 90,
+                "MAE_validacao_wm2": 17.62930075193297,
+                "historico_epocas": 120
+              },
+              {
+                "semente": 89,
+                "epocas": 36,
+                "MAE_validacao_wm2": 17.936822366723327,
+                "historico_epocas": 66
+              }
+            ]
+          },
+          {
+            "nome": "mae_dois_blocos",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 17.440910764767473,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 18,
+                "MAE_validacao_wm2": 17.83075323200354,
+                "historico_epocas": 48
+              },
+              {
+                "semente": 23,
+                "epocas": 27,
+                "MAE_validacao_wm2": 17.673705209937953,
+                "historico_epocas": 57
+              },
+              {
+                "semente": 42,
+                "epocas": 14,
+                "MAE_validacao_wm2": 18.18928445412832,
+                "historico_epocas": 44
+              },
+              {
+                "semente": 67,
+                "epocas": 31,
+                "MAE_validacao_wm2": 18.622787089021422,
+                "historico_epocas": 61
+              },
+              {
+                "semente": 89,
+                "epocas": 23,
+                "MAE_validacao_wm2": 17.377543262841556,
+                "historico_epocas": 53
+              }
+            ]
+          },
+          {
+            "nome": "mae_dim16",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 17.441822431909358,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 36,
+                "MAE_validacao_wm2": 18.002983098416205,
+                "historico_epocas": 66
+              },
+              {
+                "semente": 23,
+                "epocas": 22,
+                "MAE_validacao_wm2": 17.53362402223783,
+                "historico_epocas": 52
+              },
+              {
+                "semente": 42,
+                "epocas": 28,
+                "MAE_validacao_wm2": 17.59024471934624,
+                "historico_epocas": 58
+              },
+              {
+                "semente": 67,
+                "epocas": 32,
+                "MAE_validacao_wm2": 17.7322683918942,
+                "historico_epocas": 62
+              },
+              {
+                "semente": 89,
+                "epocas": 35,
+                "MAE_validacao_wm2": 18.374207058927748,
+                "historico_epocas": 65
+              }
+            ]
+          },
+          {
+            "nome": "mae_contexto24",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 17.44832016773244,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 28,
+                "MAE_validacao_wm2": 18.940494686942518,
+                "historico_epocas": 58
+              },
+              {
+                "semente": 23,
+                "epocas": 24,
+                "MAE_validacao_wm2": 18.45182773315849,
+                "historico_epocas": 54
+              },
+              {
+                "semente": 42,
+                "epocas": 20,
+                "MAE_validacao_wm2": 18.497382748609393,
+                "historico_epocas": 50
+              },
+              {
+                "semente": 67,
+                "epocas": 31,
+                "MAE_validacao_wm2": 18.412702695059266,
+                "historico_epocas": 61
+              },
+              {
+                "semente": 89,
+                "epocas": 31,
+                "MAE_validacao_wm2": 17.813153106065066,
+                "historico_epocas": 61
+              }
+            ]
+          },
+          {
+            "nome": "mae_dim16_lr_0003",
+            "alvo": "bruto",
+            "MAE_validacao_ensemble_wm2": 17.48400222261318,
+            "sementes": [
+              {
+                "semente": 11,
+                "epocas": 87,
+                "MAE_validacao_wm2": 18.043467279689914,
+                "historico_epocas": 117
+              },
+              {
+                "semente": 23,
+                "epocas": 61,
+                "MAE_validacao_wm2": 17.668706028828158,
+                "historico_epocas": 91
+              },
+              {
+                "semente": 42,
+                "epocas": 91,
+                "MAE_validacao_wm2": 17.711657752042164,
+                "historico_epocas": 121
+              },
+              {
+                "semente": 67,
+                "epocas": 103,
+                "MAE_validacao_wm2": 17.89469098942086,
+                "historico_epocas": 133
+              },
+              {
+                "semente": 89,
+                "epocas": 106,
+                "MAE_validacao_wm2": 18.318266931916575,
+                "historico_epocas": 136
+              }
+            ]
+          }
+        ]
+      },
+      "vence_canonico_na_validacao": true,
+      "manifesto_apos_auditoria": {
+        "arquivos_verificados": 119,
+        "divergencias": []
+      },
+      "manifesto_canonico": {
+        "arquivos_conferidos": 55,
+        "arquivos_integralmente_conformes": 54,
+        "divergencias": [
+          {
+            "arquivo": "contrato_execucao.json",
+            "bytes": 5470,
+            "sha256": "f483bb8d6fde6f54764603e4d7d4b7a46eb7fff098e9ee4f49a30f04fdd7c0ac",
+            "sha256_atual": "b06935d41444fc181beee23b3ab630644d9f1098d16368c5f3864bde621892e3",
+            "bytes_atuais": 5351,
+            "mtime_atual_utc": "2026-09-21T00:55:26.744224+00:00"
+          }
+        ],
+        "previsoes_e_checkpoints_conformes_manifesto": true
+      },
+      "sem_climatologia_inferencia": true
+    }
+  ],
+  "conclusao": "Busca V1 de TimesNet pura reutilizavel; previsoes reproduzidas e selecao por validacao conferida.",
+  "limite_proveniencia": "Os hashes atuais de modulos alterados podem divergir dos contratos historicos. A reproducao verifica pesos, entradas, escalas e saidas; nao reconstrui o treinamento nem comprova independentemente a ordem temporal original das gravacoes.",
+  "limite_checkpoint": "Checkpoints antigos nao incluem escalas; a reproducao depende das entradas originais verificadas por hash.",
+  "criterio_epocas_original": "MSE normalizado na validacao 2023",
+  "criterio_epocas_otimizado": "macro-MAE fisico na validacao 2023",
+  "limite_manifesto_canonico": "Os contratos de execucao canonicos divergem de seus manifestos historicos; a auditoria registra os hashes esperados e atuais. Previsoes e checkpoints canonicos permanecem conformes aos hashes dos manifestos. Nenhuma fonte foi alterada.",
+  "script_sha256": "1c0179315bc9ffd88d78907f0b21cf8c2963ddbe913d7099377f4e99f67f0726"
+}

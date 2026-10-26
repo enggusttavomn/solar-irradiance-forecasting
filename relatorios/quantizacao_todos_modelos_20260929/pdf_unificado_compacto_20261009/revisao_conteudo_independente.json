@@ -1,0 +1,47 @@
+{
+  "aprovado": true,
+  "escopo": "Conteudo, cobertura tabular, valores exibidos, escolhas, comparacao pareada e notas; leitura de cada celula e revisao visual realizadas separadamente pelo root.",
+  "pdf_path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\pdfs\\unificado_compacto_20261009\\rascunho_v1.pdf",
+  "pdf_sha256": "d961c231cddb3ba14b56b3dcb19789f060186492131a66fa4d25a44873365669",
+  "manifesto_sha256": "140e821180d384d1116bdc9b155fa3ce51da4536164f870f484e14efb993a0e9",
+  "paginas": 22,
+  "linhas_teste": 1584,
+  "paineis": 144,
+  "escolhas_por_regime": {
+    "atual": {
+      "q256": 10,
+      "sem_quantizacao": 10,
+      "q64": 11,
+      "q128": 13
+    },
+    "historico_1998_2022": {
+      "q128": 8,
+      "sem_quantizacao": 11,
+      "q64": 16,
+      "q256": 9
+    },
+    "historico_curto_pareado": {
+      "q256": 5,
+      "sem_quantizacao": 12,
+      "q128": 15,
+      "q64": 12
+    }
+  },
+  "comparacoes_pareadas": 176,
+  "conceitos_notas_extraidas": 65,
+  "fontes_sha256_verificadas": 11,
+  "originais_preservados_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\documentacao\\tabela_resultados_ghi_2024.pdf": "155e58187c1da01d6030334d086933bf0f200d13cb02d60c0db76b28b7bac776",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\documentacao\\tabela_resultados_ghi_1998_2022.pdf": "03890694608a7d07a039c8379f69898c30c81839352f83e3cf4a1f88c3f9605c"
+  },
+  "verificacoes": [
+    "1584 linhas correspondem exatamente aos manifestos originais e CSVs auditados, incluindo 5 metricas, delta percentual, modelo e asterisco.",
+    "144 paineis unicos com 11 modelos cada; 8 paineis em cada pagina 3-20.",
+    "132 escolhas identicas aos resultados dos tres arquivos de auditoria completos.",
+    "176 comparacoes pareadas unicas contra os CSVs, amostras de mesmo tamanho e delta longo-curto correto.",
+    "Dois originais e onze fontes pequenas preservados por SHA256.",
+    "Notas extraidas das duas paginas introdutorias cobrem conceitos metodologicos obrigatorios; cabecalhos das secoes confirmados por extracao normalizada."
+  ],
+  "fontes_cientificas_alteradas": false,
+  "replay_novo_executado": false
+}

@@ -1,0 +1,216 @@
+{
+  "verificado_em_utc": "2026-10-08T07:38:12.565650+00:00",
+  "verificado_em_brt": "2026-10-08T04:38:12.565687-03:00",
+  "checks_nativos": {
+    "coordenador": {
+      "pid": 29512,
+      "creation_time": "134358692355448701",
+      "vivo": true,
+      "prioridade": 128
+    },
+    "runner": {
+      "pid": 7880,
+      "creation_time": "134358692950612205",
+      "vivo": true,
+      "prioridade": 128
+    },
+    "guard": {
+      "pid": 33268,
+      "creation_time": "134359178687249314",
+      "vivo": true,
+      "prioridade": 32
+    },
+    "guard_launcher": {
+      "pid": 1628,
+      "creation_time": "134359178669627537",
+      "vivo": true,
+      "prioridade": 32
+    },
+    "supervisor": {
+      "pid": 30140,
+      "creation_time": "134359184967397237",
+      "vivo": true,
+      "prioridade": 32
+    },
+    "supervisor_launcher": {
+      "pid": 18736,
+      "creation_time": "134359184942736967",
+      "vivo": true,
+      "prioridade": 32
+    }
+  },
+  "ativo": [
+    {
+      "modelo": "DilatedRNN",
+      "tarefa": "daily_30",
+      "recurso": "gpu",
+      "pid": 19264,
+      "creation_time": "134358918607737083",
+      "prioridade": 128,
+      "descendentes": [
+        {
+          "pid": 32876,
+          "creation_time": "134358918610225405",
+          "prioridade": 128
+        },
+        {
+          "pid": 27756,
+          "creation_time": "134358918631067941",
+          "prioridade": 128
+        }
+      ]
+    },
+    {
+      "modelo": "DilatedRNN",
+      "tarefa": "hourly_72_extension",
+      "recurso": "gpu",
+      "pid": 16064,
+      "creation_time": "134359185189015784",
+      "prioridade": 128,
+      "descendentes": [
+        {
+          "pid": 36484,
+          "creation_time": "134359185192503955",
+          "prioridade": 128
+        },
+        {
+          "pid": 12740,
+          "creation_time": "134359185216272287",
+          "prioridade": 128
+        }
+      ]
+    },
+    {
+      "modelo": "TimesNet",
+      "tarefa": "monthly_1",
+      "recurso": "cpu",
+      "pid": 33632,
+      "creation_time": "134359185547919315",
+      "prioridade": 128,
+      "descendentes": [
+        {
+          "pid": 29384,
+          "creation_time": "134359185550177460",
+          "prioridade": 128
+        },
+        {
+          "pid": 5552,
+          "creation_time": "134359185566729543",
+          "prioridade": 128
+        }
+      ]
+    }
+  ],
+  "heartbeat_supervisor_utc": "2026-10-08T07:38:04.374996+00:00",
+  "heartbeat_idade_segundos": 7.2981,
+  "guard_estado": "ATIVA",
+  "guard_erros_mortos": [],
+  "supervisor_estado": "ADOTADO",
+  "tentativas_popen_guard_supervisor": 0,
+  "fontes_e_recibos_sha256": {
+    "scripts/manter_aceleracao_na_tomada_v3.py": "43f8379f13d7ba2323c0babf5c07cc83cde37fbab1f7e658e786b7427df01165",
+    "tests/test_manter_aceleracao_na_tomada_v3.py": "041b6735b4d899a23a53b415b420826c6f205e4b8d176ecc0182ef6c2ded5193",
+    "scripts/acelerar_cpu_local_temporariamente.py": "02b597a9a13e5f15a3f62c0b46b8d0da4766fa8778331fcada02e6ee2b706446",
+    "scripts/manter_aceleracao_na_tomada_v2.py": "637d578b104f7223b3dd6533e869f08cbe58ab4358e6780cbb9c24825072ce97",
+    "scripts/manter_aceleracao_na_tomada_v1.py": "de0a480933b1c6db5ca3c2db15baa6ad83967acbcaa60fd78fdd3bb80e1af943",
+    "scripts/coordenar_quantizacao_historica.py": "1166e691d47d81a98cb87286eed302fa0b61d4acaed0c9029165431a7615fa2b",
+    "relatorios/quantizacao_todos_modelos_20260929/retomada_20261007_auditoria/manifesto_retomada.json": "54433ab91daf50faed29f985046e8b4f4dad2af27035fa4b738d368e33e12810",
+    "relatorios/quantizacao_todos_modelos_20260929/retomada_reinicio_20261007_1314/manifesto_retomada.json": "9bd045a68da175b1dacddb1ddd806e3f739d52203f02ab477ad4802dd68b5aea",
+    "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/selecao_global_congelada.json": "1170e2de87d436cf6388903941a5f78f62a4d68e3bbc928d0180c87d7d680ef8"
+  },
+  "regimes": [
+    {
+      "id": "atual",
+      "total": 44,
+      "selecao": 44,
+      "refit": 44,
+      "auditoria": true
+    },
+    {
+      "id": "historico_1998_2022",
+      "total": 44,
+      "selecao": 44,
+      "refit": 44,
+      "auditoria": true
+    },
+    {
+      "id": "historico_curto_pareado",
+      "total": 44,
+      "selecao": 44,
+      "refit": 38,
+      "auditoria": false
+    }
+  ],
+  "concluidos": 258,
+  "total": 264,
+  "porcentagem": 97.72727272727273,
+  "falhas": [],
+  "alertas": [],
+  "panel_ativos": [
+    {
+      "regime": "historico_curto_pareado",
+      "modelo": "DilatedRNN",
+      "tarefa": "daily_30",
+      "caso": "Diário · até 30 dias",
+      "fase": "refit",
+      "inicio": "2026-10-08T00:11:01.015544+00:00",
+      "decorrido_s": 26830.935353,
+      "sementes_concluidas": 12,
+      "sementes_total": 20,
+      "atividade": "daily_30/DilatedRNN/q128/refit seed=42 inicio",
+      "estimativa": {
+        "status": "estimado",
+        "min_s": 4206.931924981514,
+        "max_s": 128579.95826300001,
+        "amostras": 8,
+        "restantes": 8,
+        "recalibrado": false,
+        "tipo": "faixa_heuristica"
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "modelo": "DilatedRNN",
+      "tarefa": "hourly_72_extension",
+      "caso": "Horário · até 72 h",
+      "fase": "refit",
+      "inicio": "2026-10-08T07:35:19.157210+00:00",
+      "decorrido_s": 172.793687,
+      "sementes_concluidas": 0,
+      "sementes_total": 4,
+      "atividade": "hourly_72_extension/DilatedRNN/sem_quantizacao/refit seed=42 inicio",
+      "estimativa": {
+        "status": "sem_base",
+        "min_s": null,
+        "max_s": null,
+        "amostras": 0,
+        "restantes": 4,
+        "recalibrado": false,
+        "tipo": "faixa_heuristica"
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "modelo": "TimesNet",
+      "tarefa": "monthly_1",
+      "caso": "Mensal · 1 mês",
+      "fase": "refit",
+      "inicio": "2026-10-08T07:35:55.012568+00:00",
+      "decorrido_s": 136.938329,
+      "sementes_concluidas": 1,
+      "sementes_total": 20,
+      "atividade": "monthly_1/TimesNet/sem_quantizacao/refit seed=23 inicio",
+      "estimativa": {
+        "status": "estimado",
+        "min_s": 823.3754135999794,
+        "max_s": 3346.7683433999177,
+        "amostras": 1,
+        "restantes": 19,
+        "recalibrado": false,
+        "tipo": "faixa_heuristica"
+      }
+    }
+  ],
+  "reinicios_treinamento": 0,
+  "auditoria_curto_e_pdf_pendentes": true
+}

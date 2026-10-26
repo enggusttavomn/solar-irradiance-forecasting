@@ -1,0 +1,234 @@
+[
+  {
+    "tarefa": "daily_30",
+    "modelo": "Transformer",
+    "reutilizado_auditado_anteriormente": false,
+    "vencedor_validacao": "q64",
+    "replays": [
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\transformer\\sem_quantizacao\\modelos\\seed11_selecao.pt",
+        "sha256": "9218ff8e381515ec1d664202a7891389d26237432c214acdbeb30c4393f14208",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\transformer\\q64\\modelos\\seed11_selecao.pt",
+        "sha256": "d7ddd683b647dc74134350e5ccf4648d9820b165d90a58d56d29103a5200dfe3",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\transformer\\q128\\modelos\\seed11_selecao.pt",
+        "sha256": "e6bef29ea4cc46c016587a17403b29091f60060dc9af5659b392a244bc94b2d0",
+        "diferenca_maxima": 2.842170943040401e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\transformer\\q256\\modelos\\seed11_selecao.pt",
+        "sha256": "2a63e8d63715fd5a42b38fc70a647983379d7f6efc0452066379375f08e15cac",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\transformer\\sem_quantizacao\\modelos\\seed11_refit.pt",
+        "sha256": "691e94bb36db2fe3694da8a7549525bc3a54ecdc68776d19fc8e9e2c2078fe27",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\transformer\\q64\\modelos\\seed11_refit.pt",
+        "sha256": "c7bb8586789287abfa9f1260fcd6276f3f65c9d11df0f433eed3144da06d5243",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\transformer\\q128\\modelos\\seed11_refit.pt",
+        "sha256": "7d28a81d35fa6d349d403241ca0e0fe9489d55ff4257fbad3e5380734637097b",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\transformer\\q256\\modelos\\seed11_refit.pt",
+        "sha256": "9fdbc0e36762ad04363550586e1ca9ca024da2a7bee851dfeb4e4261fc6416a1",
+        "diferenca_maxima": 2.842170943040401e-14,
+        "alvos_substituidos_por_nan": true
+      }
+    ],
+    "selecao_sha256": "1f69c1a62842687e37b86eca01938643c8d8da0f2e76396ec01cf3c9a9a636c3",
+    "ok": true
+  },
+  {
+    "tarefa": "daily_30",
+    "modelo": "Informer",
+    "reutilizado_auditado_anteriormente": false,
+    "vencedor_validacao": "sem_quantizacao",
+    "replays": [
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\informer\\sem_quantizacao\\modelos\\seed11_selecao.pt",
+        "sha256": "b97649727acf11c6a8e9d8ecf7d5ff4b75285a1267af241e01f378567d126b04",
+        "diferenca_maxima": 2.842170943040401e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\informer\\q64\\modelos\\seed11_selecao.pt",
+        "sha256": "e9ee53411059c2c2c56a422f8569167878861ada2631cefd9863888a6bae590a",
+        "diferenca_maxima": 2.842170943040401e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\informer\\q128\\modelos\\seed11_selecao.pt",
+        "sha256": "85abd58afa73dd886fd5e9ac41e6ac3af59e3938537711c847bbe002e6afdf5a",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\informer\\q256\\modelos\\seed11_selecao.pt",
+        "sha256": "d281763bbc8be27bfbcaaa859f8defa8869a1084dfafeb3ab62a3825f3cdc8bd",
+        "diferenca_maxima": 2.842170943040401e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\informer\\sem_quantizacao\\modelos\\seed11_refit.pt",
+        "sha256": "f7c16d5c25a265920dc32e637b1b277fdbd0eade7423e07f6b47b211bd349d21",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\informer\\q64\\modelos\\seed11_refit.pt",
+        "sha256": "586ada161d70a8534578c542eb9d7e30bef8b2e8c06146b3b5af1af921a3407b",
+        "diferenca_maxima": 2.842170943040401e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\informer\\q128\\modelos\\seed11_refit.pt",
+        "sha256": "58db04509479dcd5b6e3e94cddcaf1d904d03b83628bc5aefb817167985e73e7",
+        "diferenca_maxima": 2.842170943040401e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\daily_30\\informer\\q256\\modelos\\seed11_refit.pt",
+        "sha256": "7a7b015273f0eb81078d46d011999db414bfc902d0bf0fb948fd8704b6985b03",
+        "diferenca_maxima": 2.842170943040401e-14,
+        "alvos_substituidos_por_nan": true
+      }
+    ],
+    "selecao_sha256": "9a095ecbbde00d2de05ba4d91ca35d300807edbfbcd11973f6537d0fa44d4e2b",
+    "ok": true
+  },
+  {
+    "tarefa": "hourly_72_extension",
+    "modelo": "Transformer",
+    "reutilizado_auditado_anteriormente": false,
+    "vencedor_validacao": "q256",
+    "replays": [
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\transformer\\sem_quantizacao\\modelos\\seed42_selecao.pt",
+        "sha256": "69f99bb9869d79873a26b8601e8256e8b23fe6b31895c9e521b3c7e823ae0c8c",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\transformer\\q64\\modelos\\seed42_selecao.pt",
+        "sha256": "ecff4357c6b918826c047891ece90ebf8ff3a5979cf2506e297859dc7d509238",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\transformer\\q128\\modelos\\seed42_selecao.pt",
+        "sha256": "80112ef23e2cb72bf64e4af9a6fcd61b199b1a7cab164626c37f8e81af9053a3",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\transformer\\q256\\modelos\\seed42_selecao.pt",
+        "sha256": "58dbe0e3d47b02618d6a22355e29863e8184916120817b66cce25986e4a730f9",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\transformer\\sem_quantizacao\\modelos\\seed42_refit.pt",
+        "sha256": "fc9739284ca6a275f75f9ec77589ef23ccfe8f76591331e8514826383cf1c215",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\transformer\\q64\\modelos\\seed42_refit.pt",
+        "sha256": "b5ff8cc12e876c357dd774bdf99a362e0c40684b6cc31a02575ef4ca4534997b",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\transformer\\q128\\modelos\\seed42_refit.pt",
+        "sha256": "1e4af4cf98a899f400e1ce9c98ca0d744ad02efd6c625bc4e500ba92bb5c5f68",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\transformer\\q256\\modelos\\seed42_refit.pt",
+        "sha256": "a43517bcfb2099451d0f827605fddaa4680d7ec534fb3daf5a6224451884614e",
+        "diferenca_maxima": 5.684341886080802e-14,
+        "alvos_substituidos_por_nan": true
+      }
+    ],
+    "selecao_sha256": "259827a69f7c2ceba0428651d35027f768c52675aab646c366d31e8da3c65581",
+    "ok": true
+  },
+  {
+    "tarefa": "hourly_72_extension",
+    "modelo": "Informer",
+    "reutilizado_auditado_anteriormente": false,
+    "vencedor_validacao": "sem_quantizacao",
+    "replays": [
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\informer\\sem_quantizacao\\modelos\\seed42_selecao.pt",
+        "sha256": "e008c1d651323e05dbfe5761bff6aba39f11c6b24379c2ad1ce52184a02b2efd",
+        "diferenca_maxima": 2.2737367544323206e-13,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\informer\\q64\\modelos\\seed42_selecao.pt",
+        "sha256": "fe1dbbf1d82eb864026deb3361b8e5fda3d9225ec371791676771930b2ed1d66",
+        "diferenca_maxima": 2.2737367544323206e-13,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\informer\\q128\\modelos\\seed42_selecao.pt",
+        "sha256": "1575ec96fb13b5c9efef0cdc0a567cc8e991d5dae79e58f5f6837fc07ae6cd56",
+        "diferenca_maxima": 2.2737367544323206e-13,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\informer\\q256\\modelos\\seed42_selecao.pt",
+        "sha256": "ee09cc6dc635284b7fca85ee166a9f3749ed8ba44b1fdb53a19a5a5a58224904",
+        "diferenca_maxima": 2.2737367544323206e-13,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\informer\\sem_quantizacao\\modelos\\seed42_refit.pt",
+        "sha256": "75ccd8491831fc9ac1bee2613cf37e915c2c9549d8bbea5bd2d555cea2817200",
+        "diferenca_maxima": 2.2737367544323206e-13,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\informer\\q64\\modelos\\seed42_refit.pt",
+        "sha256": "d12fde3b828cc698d4a7c76df849862c01d66118b261bc3eea05123481a71f96",
+        "diferenca_maxima": 2.2737367544323206e-13,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\informer\\q128\\modelos\\seed42_refit.pt",
+        "sha256": "532e1cfd532e352809c09ad1ddc2faf95aff1142a3dc628bc0eaff0964fbee11",
+        "diferenca_maxima": 2.2737367544323206e-13,
+        "alvos_substituidos_por_nan": true
+      },
+      {
+        "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\atual\\hourly_72_extension\\informer\\q256\\modelos\\seed42_refit.pt",
+        "sha256": "b00f522b356db72fc89aa8cb347a0935e5e345ee4961bb2c1ac1749b5abfd7b1",
+        "diferenca_maxima": 2.2737367544323206e-13,
+        "alvos_substituidos_por_nan": true
+      }
+    ],
+    "selecao_sha256": "bd273120cd40e1f29ecd7b9c8a35f2c6e218bde91898c51e32f3b7a659749a79",
+    "ok": true
+  }
+]

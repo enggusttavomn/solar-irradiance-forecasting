@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "gravado_em_utc": "2026-10-04T22:58:20.914615+00:00",
+  "documento": "relatorios\\quantizacao_todos_modelos_20260929\\CONTINUACAO.md",
+  "sha256_antes": "2776f9c93da4f841f2c36fed961651b5bf97ffd48ea985f7b1daa222309c0456",
+  "sha256_depois": "b224ce8db43c967b6980fa1c219b63118ad0167d30c57513c8ac660c14033f77",
+  "backup": "relatorios\\quantizacao_todos_modelos_20260929\\otimizacao_operacional_20261004\\documentos_anteriores\\CONTINUACAO_antes_prioridade_20261004T225820Z.md",
+  "backup_sha256": "2776f9c93da4f841f2c36fed961651b5bf97ffd48ea985f7b1daa222309c0456",
+  "manifesto": "relatorios\\quantizacao_todos_modelos_20260929\\otimizacao_operacional_20261004\\documentos_anteriores\\manifesto.json",
+  "manifesto_sha256": "62d9e7eef4a71a407790a807790b10e2790e7b752c642323bb2f995eba1179c5",
+  "secoes_anteriores_preservadas_byte_a_byte": true,
+  "alteracao": "Somente insercao de dois paragrafos na secao mais recente, antes da sequencia pendente.",
+  "insercao": "Otimizacao operacional ativada em 04/10, 19h56 local: `scripts/priorizar_treinamentos.py` solicita prioridade de CPU AboveNormal somente para o coordenador historico identificado e seus descendentes confirmados por PID/FILETIME, parentesco e handles vivos. Passaram 20 testes unitarios com backend fake, seis cenarios independentes v2 e a integracao nativa com elevacao/restauracao de um processo descartavel. Confirmacao: `otimizacao_operacional_20261004/ativacao_prioridade_confirmada.json`; recibos unitario e independentes preservados no mesmo diretorio. Fontes congeladas, dados, sementes, epocas, plano de energia Balanced e os dois trabalhadores CPU e dois GPU foram mantidos. Nao houve reinicio da fila nem mudanca de niveis. O ganho de velocidade ainda nao foi medido.\r\n\r\nO observador encerra quando o coordenador termina e restaura somente as instancias que alterou, com a mesma identidade e ainda em AboveNormal, preservando prioridades superiores ou mudadas externamente. Para parar apenas esse observador, criar o arquivo `otimizacao_operacional_20261004/prioridade_coordenador_27596/parar_prioridade`; os treinos continuam. O mecanismo depende do observador ativo: um reinicio do computador nao executa seu finally.\r\n\r\n",
+  "evidencias": {
+    "ativacao_prioridade_confirmada.json": "82389999534cc73dd85fb9b0d17f6b38ad5aada78d26c2c963ba63058bc016a1",
+    "recibo_testes_unitarios_prioridade_20261004T225353Z.json": "1b2b03b70be91a8926ac98c12ff0fb555f289456ec8685898cb085e07311dc1f",
+    "revisao_independente_guards_prioridade_v2.json": "48471874738d0b32d55d5ab1bbaf3ebf8cd3c926a2dc73042316fda72aa36e08",
+    "revisao_independente_nativa_prioridade_v2.json": "3e1a6c3303af756ebd565ca80ce5b292fbb9ec28872120bc900ae694e6653f5a"
+  },
+  "outros_documentos_alterados": false,
+  "metricas_pdf_fontes_dados_fila_treinamentos_alterados": false,
+  "ganho_de_velocidade_medido": false
+}
