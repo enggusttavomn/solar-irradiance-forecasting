@@ -1,0 +1,24 @@
+{
+  "registrado_em_utc": "2026-09-24T01:28:25.048593+00:00",
+  "total_aprovados": 84,
+  "falhas": 0,
+  "execucoes": [
+    {
+      "comando": "python -m pytest testes/test_quantizacao_timesnet.py testes/test_experimento_quantizacao_timesnet.py -q",
+      "aprovados": 71,
+      "segundos": 30.11,
+      "exit_code": 0
+    },
+    {
+      "comando": "python -m pytest testes/test_gerar_pdf_quantizacao_timesnet.py -q",
+      "aprovados": 13,
+      "segundos": 2.56,
+      "exit_code": 0
+    }
+  ],
+  "fontes_sha256": {
+    "testes/test_quantizacao_timesnet.py": "f984bde6ce97b3b3e3d3d4ebe50317cf3aa12a9acc5da6425e5e189738c61c42",
+    "testes/test_experimento_quantizacao_timesnet.py": "7626685ac5561c0090d5983a7802dc66fe4a72b88a3290d5307f40dc861f8ff2",
+    "testes/test_gerar_pdf_quantizacao_timesnet.py": "21870972bf00fa886299826b1a32940ca06c4855b66794fe64eae956a1794e3a"
+  }
+}

@@ -1,0 +1,303 @@
+{
+  "gerado_em_utc": "2026-09-23T02:40:15.785765+00:00",
+  "fonte": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_resolucoes_20260922",
+  "sem_treinamento": true,
+  "reproducao_solicitada": true,
+  "torch": "2.12.0+cu126",
+  "tarefas": [
+    {
+      "tarefa": "hourly_72_extension",
+      "ok": true,
+      "hashes": {
+        "codigo": 8,
+        "entradas": 8
+      },
+      "manifesto": {
+        "arquivos_verificados": 23,
+        "divergencias": []
+      },
+      "vencedor": {
+        "MAE_validacao_wm2": 48.94850718134734,
+        "contexto": 336,
+        "dimensao": 16,
+        "epocas": {
+          "42": 30
+        },
+        "lote": 64,
+        "nome": "mae_dim16_lr0003",
+        "perda": "mae",
+        "taxa": 0.0003
+      },
+      "ranking_recalculado": [
+        {
+          "contexto": 336,
+          "dimensao": 16,
+          "lote": 64,
+          "nome": "mae_dim16_lr0003",
+          "perda": "mae",
+          "taxa": 0.0003,
+          "MAE_validacao_wm2": 48.94850718134734,
+          "epocas": {
+            "42": 30
+          }
+        },
+        {
+          "contexto": 336,
+          "dimensao": 8,
+          "lote": 128,
+          "nome": "mae",
+          "perda": "mae",
+          "taxa": 0.001,
+          "MAE_validacao_wm2": 49.01538157666367,
+          "epocas": {
+            "42": 26
+          }
+        },
+        {
+          "contexto": 168,
+          "dimensao": 8,
+          "lote": 128,
+          "nome": "mae_contexto_curto",
+          "perda": "mae",
+          "taxa": 0.001,
+          "MAE_validacao_wm2": 49.18398664625896,
+          "epocas": {
+            "42": 28
+          }
+        },
+        {
+          "contexto": 336,
+          "dimensao": 8,
+          "lote": 128,
+          "nome": "huber",
+          "perda": "huber",
+          "taxa": 0.001,
+          "MAE_validacao_wm2": 49.413538936494376,
+          "epocas": {
+            "42": 17
+          }
+        },
+        {
+          "nome": "referencia_original",
+          "MAE_validacao_wm2": 51.551045097112045,
+          "epocas": {},
+          "contexto": 336
+        }
+      ],
+      "particoes": {
+        "validacao_2023": {
+          "linhas": 261360,
+          "localidades": 10,
+          "MAE_wm2": 48.94850718134734,
+          "erro_maximo_ensemble_wm2": 2.2737367544323206e-13,
+          "erro_maximo_pos_processamento": 0.0,
+          "erros_metricas": {
+            "local": 3.637978807091713e-12,
+            "macro": 1.8189894035458565e-12
+          },
+          "metricas_macro": [
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 24,
+              "MAE_wm2": 46.73359496324035,
+              "MSE_w2m4": 9795.297292004869,
+              "RMSE_wm2": 97.52587544781736,
+              "nRMSE": 0.4964025611709529,
+              "R2": 0.8726185119735732
+            },
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 48,
+              "MAE_wm2": 48.226323779621495,
+              "MSE_w2m4": 10578.386187554865,
+              "RMSE_wm2": 101.3929410499832,
+              "nRMSE": 0.5155851014364952,
+              "R2": 0.8627622138948505
+            },
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 72,
+              "MAE_wm2": 48.94850718134734,
+              "MSE_w2m4": 10909.938630192499,
+              "RMSE_wm2": 102.99563593217424,
+              "nRMSE": 0.5234380514716819,
+              "R2": 0.8586678759585574
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 24,
+              "MAE_wm2": 0.0,
+              "MSE_w2m4": 0.0,
+              "RMSE_wm2": 0.0,
+              "nRMSE": NaN,
+              "R2": NaN
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 48,
+              "MAE_wm2": 0.0,
+              "MSE_w2m4": 0.0,
+              "RMSE_wm2": 0.0,
+              "nRMSE": NaN,
+              "R2": NaN
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 72,
+              "MAE_wm2": 0.0,
+              "MSE_w2m4": 0.0,
+              "RMSE_wm2": 0.0,
+              "nRMSE": NaN,
+              "R2": NaN
+            }
+          ]
+        },
+        "teste_2024": {
+          "linhas": 261360,
+          "localidades": 10,
+          "MAE_wm2": 47.91446203884576,
+          "erro_maximo_ensemble_wm2": 2.2737367544323206e-13,
+          "erro_maximo_pos_processamento": 0.0,
+          "erros_metricas": {
+            "local": 1.8189894035458565e-12,
+            "macro": 1.4210854715202004e-14
+          },
+          "metricas_macro": [
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 24,
+              "MAE_wm2": 45.61170909036604,
+              "MSE_w2m4": 9990.741717080844,
+              "RMSE_wm2": 98.46412761670874,
+              "nRMSE": 0.49236592914534477,
+              "R2": 0.8721142712502559
+            },
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 48,
+              "MAE_wm2": 47.19335875087099,
+              "MSE_w2m4": 10637.197706690527,
+              "RMSE_wm2": 101.65386544508235,
+              "nRMSE": 0.5075721824136733,
+              "R2": 0.8644506823826934
+            },
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 72,
+              "MAE_wm2": 47.914462038845755,
+              "MSE_w2m4": 10912.43609177721,
+              "RMSE_wm2": 102.9768571894808,
+              "nRMSE": 0.51374762901797,
+              "R2": 0.8612401462152558
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 24,
+              "MAE_wm2": 0.0,
+              "MSE_w2m4": 0.0,
+              "RMSE_wm2": 0.0,
+              "nRMSE": NaN,
+              "R2": NaN
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 48,
+              "MAE_wm2": 0.0,
+              "MSE_w2m4": 0.0,
+              "RMSE_wm2": 0.0,
+              "nRMSE": NaN,
+              "R2": NaN
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 72,
+              "MAE_wm2": 0.0,
+              "MSE_w2m4": 0.0,
+              "RMSE_wm2": 0.0,
+              "nRMSE": NaN,
+              "R2": NaN
+            }
+          ]
+        }
+      },
+      "checkpoints": {
+        "situacao": "reproduzidos",
+        "modelos": [
+          {
+            "semente": 42,
+            "epocas_refit": 30,
+            "MAE_teste_wm2": 47.91446203884576,
+            "erro_maximo_escalas_wm2": 0.0,
+            "dispositivo": "cuda",
+            "batch_size": 64,
+            "reproduzido": true,
+            "erro_maximo_reproducao_wm2": 0.0
+          }
+        ]
+      },
+      "cronologia_artefatos_coerente": true,
+      "nota_cronologia": "Timestamps e codigo sao coerentes; nao constituem prova historica independente de acesso aos dados.",
+      "limitacoes": [
+        "2024 ja observado motivou a busca; necessita confirmacao futura.",
+        "Janela menor preserva exatamente origens, alvos e exemplos de treino.",
+        "Grade limitada; nenhuma garantia de superar outras arquiteturas.",
+        "Horaria usa apenas semente42; diaria usa cinco sementes."
+      ],
+      "fontes": {
+        "contrato_execucao.json": "b6ad29a50c0344934390e8638a1af1b22cb23213787bb3e8246848bf51d4e770",
+        "manifesto_artefatos.json": "284bb1658ba18b53ed1aa5371bba44a46e761f22af00a2b9336c068a86509d58",
+        "selecao_congelada.json": "3c5d4ce4b8acf9a48a91e18153a695c2db266f36b745991271038c8f33153453"
+      }
+    }
+  ],
+  "mensal": {
+    "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\otimizacao_timesnet_20260922\\auditoria.json",
+    "sha256_relatorio": "fa9778fc6fe4f76af2857a58f12a5af2495fe9033455100d38c239485ed1f352",
+    "gerado_em_utc": "2026-09-22T10:26:45.507735+00:00",
+    "valores_sustentados_pelos_artefatos_preservados": true,
+    "reproducao_mensal_nao_reexecutada_nesta_auditoria": true,
+    "tarefas": [
+      {
+        "tarefa": "monthly_1",
+        "manifesto_atual": {
+          "arquivos_verificados": 167,
+          "divergencias": []
+        },
+        "MAE_teste_wm2": 13.236257093299164,
+        "metodo": "TimesNet + climatologia",
+        "checkpoints_reproduzidos_na_auditoria_anterior": 5,
+        "codigo_divergente_declarado": [
+          "otimizacao_timesnet_mensal.py"
+        ],
+        "limitacoes": [
+          "Busca dirigida motivada por resultados de 2024 ja observados; requer confirmacao futura.",
+          "Janelas maiores podem reduzir o numero de origens de treino; nao e ablacao isolada de contexto.",
+          "Mesmo ano de validacao seleciona epocas e hiperparametros; risco de sobreajuste a validacao.",
+          "Mensal de seis passos tem sete origens de teste sobrepostas por localidade.",
+          "Candidatos de anomalia preveem o desvio em relacao a climatologia; a previsao publicada soma de volta essa climatologia e so depois aplica o piso zero."
+        ]
+      },
+      {
+        "tarefa": "monthly_6",
+        "manifesto_atual": {
+          "arquivos_verificados": 167,
+          "divergencias": []
+        },
+        "MAE_teste_wm2": 13.167131839566494,
+        "metodo": "TimesNet + climatologia",
+        "checkpoints_reproduzidos_na_auditoria_anterior": 5,
+        "codigo_divergente_declarado": [
+          "otimizacao_timesnet_mensal.py"
+        ],
+        "limitacoes": [
+          "Busca dirigida motivada por resultados de 2024 ja observados; requer confirmacao futura.",
+          "Janelas maiores podem reduzir o numero de origens de treino; nao e ablacao isolada de contexto.",
+          "Mesmo ano de validacao seleciona epocas e hiperparametros; risco de sobreajuste a validacao.",
+          "Mensal de seis passos tem sete origens de teste sobrepostas por localidade.",
+          "Candidatos de anomalia preveem o desvio em relacao a climatologia; a previsao publicada soma de volta essa climatologia e so depois aplica o piso zero."
+        ]
+      }
+    ]
+  },
+  "ok": true
+}

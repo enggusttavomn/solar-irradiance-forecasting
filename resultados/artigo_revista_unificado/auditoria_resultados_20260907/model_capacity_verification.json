@@ -1,0 +1,90 @@
+{
+  "method": "Instantiate neural models under frozen default configuration; sum trainable scalar parameters; no training or inference.",
+  "checks": [
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "LSTM",
+      "calculated": 7512,
+      "published": 7512,
+      "passed": true
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "TimesNet",
+      "calculated": 27009,
+      "published": 27009,
+      "passed": true
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "DilatedRNN",
+      "calculated": 3096,
+      "published": 3096,
+      "passed": true
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "LSTM",
+      "calculated": 5790,
+      "published": 5790,
+      "passed": true
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "TimesNet",
+      "calculated": 13725,
+      "published": 13725,
+      "passed": true
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "DilatedRNN",
+      "calculated": 2382,
+      "published": 2382,
+      "passed": true
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "LSTM",
+      "calculated": 4601,
+      "published": 4601,
+      "passed": true
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "TimesNet",
+      "calculated": 2758,
+      "published": 2758,
+      "passed": true
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "DilatedRNN",
+      "calculated": 1889,
+      "published": 1889,
+      "passed": true
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "LSTM",
+      "calculated": 4806,
+      "published": 4806,
+      "passed": true
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "TimesNet",
+      "calculated": 2823,
+      "published": 2823,
+      "passed": true
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "DilatedRNN",
+      "calculated": 1974,
+      "published": 1974,
+      "passed": true
+    }
+  ],
+  "failed": 0
+}

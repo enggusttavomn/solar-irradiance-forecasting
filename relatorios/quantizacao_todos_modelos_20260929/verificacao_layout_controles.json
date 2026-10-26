@@ -1,0 +1,488 @@
+{
+  "casos": 48,
+  "escopo": "48 comparacoes de layout/alvos/colunas; usa previsoes historicas como controle e nao comprova novo treinamento",
+  "motor_sha256": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+  "ok": true,
+  "registros": [
+    {
+      "alvos_bitexatos": true,
+      "modelo": "XGBoost",
+      "n_linhas": 100800,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\daily_30\\xgboost\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "2031a8ab9fedc157d448abd481b5624ce145dfea01d2059cd977e95c8ebfeb5a",
+      "tarefa": "daily_30"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "LSTM",
+      "n_linhas": 100800,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\daily_30\\lstm\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "2031a8ab9fedc157d448abd481b5624ce145dfea01d2059cd977e95c8ebfeb5a",
+      "tarefa": "daily_30"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "DilatedRNN",
+      "n_linhas": 100800,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\daily_30\\dilatedrnn\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "2031a8ab9fedc157d448abd481b5624ce145dfea01d2059cd977e95c8ebfeb5a",
+      "tarefa": "daily_30"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "GRU",
+      "n_linhas": 100800,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\daily_30\\gru\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "2031a8ab9fedc157d448abd481b5624ce145dfea01d2059cd977e95c8ebfeb5a",
+      "tarefa": "daily_30"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Transformer",
+      "n_linhas": 100800,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\daily_30\\transformer\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "63cb1013d4b2de73f3fa2ade70abb217e970287cc7046fd2dc4b7adfe979bfef",
+      "tarefa": "daily_30"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Informer",
+      "n_linhas": 100800,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\daily_30\\informer\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "63cb1013d4b2de73f3fa2ade70abb217e970287cc7046fd2dc4b7adfe979bfef",
+      "tarefa": "daily_30"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "XGBoost",
+      "n_linhas": 101100,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\daily_30\\xgboost\\teste\\controle_teste.json",
+      "sha256_relatorio": "9cdc6c9c885f55cbbdb438e58a3c6c0dd3e852e05dc6910efd1b6a05f071e457",
+      "tarefa": "daily_30"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "LSTM",
+      "n_linhas": 101100,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\daily_30\\lstm\\teste\\controle_teste.json",
+      "sha256_relatorio": "9cdc6c9c885f55cbbdb438e58a3c6c0dd3e852e05dc6910efd1b6a05f071e457",
+      "tarefa": "daily_30"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "DilatedRNN",
+      "n_linhas": 101100,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\daily_30\\dilatedrnn\\teste\\controle_teste.json",
+      "sha256_relatorio": "9cdc6c9c885f55cbbdb438e58a3c6c0dd3e852e05dc6910efd1b6a05f071e457",
+      "tarefa": "daily_30"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "GRU",
+      "n_linhas": 101100,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\daily_30\\gru\\teste\\controle_teste.json",
+      "sha256_relatorio": "9cdc6c9c885f55cbbdb438e58a3c6c0dd3e852e05dc6910efd1b6a05f071e457",
+      "tarefa": "daily_30"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Transformer",
+      "n_linhas": 101100,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\daily_30\\transformer\\teste\\controle_teste.json",
+      "sha256_relatorio": "e66a0f24a4891d5063ce5764863b36e51cb6d33c9c56c92191e87bf9d03f0284",
+      "tarefa": "daily_30"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Informer",
+      "n_linhas": 101100,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\daily_30\\informer\\teste\\controle_teste.json",
+      "sha256_relatorio": "e66a0f24a4891d5063ce5764863b36e51cb6d33c9c56c92191e87bf9d03f0284",
+      "tarefa": "daily_30"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "XGBoost",
+      "n_linhas": 120,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_1\\xgboost\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "f93740238cdcf4bc60636e698730900cc7104c13be5ad12ad0e6cd0f27785dc0",
+      "tarefa": "monthly_1"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "LSTM",
+      "n_linhas": 120,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_1\\lstm\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "f93740238cdcf4bc60636e698730900cc7104c13be5ad12ad0e6cd0f27785dc0",
+      "tarefa": "monthly_1"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "DilatedRNN",
+      "n_linhas": 120,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_1\\dilatedrnn\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "f93740238cdcf4bc60636e698730900cc7104c13be5ad12ad0e6cd0f27785dc0",
+      "tarefa": "monthly_1"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "GRU",
+      "n_linhas": 120,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_1\\gru\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "f93740238cdcf4bc60636e698730900cc7104c13be5ad12ad0e6cd0f27785dc0",
+      "tarefa": "monthly_1"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Transformer",
+      "n_linhas": 120,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_1\\transformer\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "f93740238cdcf4bc60636e698730900cc7104c13be5ad12ad0e6cd0f27785dc0",
+      "tarefa": "monthly_1"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Informer",
+      "n_linhas": 120,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_1\\informer\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "f93740238cdcf4bc60636e698730900cc7104c13be5ad12ad0e6cd0f27785dc0",
+      "tarefa": "monthly_1"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "XGBoost",
+      "n_linhas": 120,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_1\\xgboost\\teste\\controle_teste.json",
+      "sha256_relatorio": "83b71fa556cd1d96cdf0261e900da78ca79ab557e2cf8c6508de6ad2e3753a87",
+      "tarefa": "monthly_1"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "LSTM",
+      "n_linhas": 120,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_1\\lstm\\teste\\controle_teste.json",
+      "sha256_relatorio": "83b71fa556cd1d96cdf0261e900da78ca79ab557e2cf8c6508de6ad2e3753a87",
+      "tarefa": "monthly_1"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "DilatedRNN",
+      "n_linhas": 120,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_1\\dilatedrnn\\teste\\controle_teste.json",
+      "sha256_relatorio": "83b71fa556cd1d96cdf0261e900da78ca79ab557e2cf8c6508de6ad2e3753a87",
+      "tarefa": "monthly_1"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "GRU",
+      "n_linhas": 120,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_1\\gru\\teste\\controle_teste.json",
+      "sha256_relatorio": "83b71fa556cd1d96cdf0261e900da78ca79ab557e2cf8c6508de6ad2e3753a87",
+      "tarefa": "monthly_1"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Transformer",
+      "n_linhas": 120,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_1\\transformer\\teste\\controle_teste.json",
+      "sha256_relatorio": "83b71fa556cd1d96cdf0261e900da78ca79ab557e2cf8c6508de6ad2e3753a87",
+      "tarefa": "monthly_1"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Informer",
+      "n_linhas": 120,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_1\\informer\\teste\\controle_teste.json",
+      "sha256_relatorio": "83b71fa556cd1d96cdf0261e900da78ca79ab557e2cf8c6508de6ad2e3753a87",
+      "tarefa": "monthly_1"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "XGBoost",
+      "n_linhas": 420,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_6\\xgboost\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "85ebe8ea9d271512d5ace98d4570852f996416dd725ffb70a1e147b58f4aec44",
+      "tarefa": "monthly_6"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "LSTM",
+      "n_linhas": 420,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_6\\lstm\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "85ebe8ea9d271512d5ace98d4570852f996416dd725ffb70a1e147b58f4aec44",
+      "tarefa": "monthly_6"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "DilatedRNN",
+      "n_linhas": 420,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_6\\dilatedrnn\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "85ebe8ea9d271512d5ace98d4570852f996416dd725ffb70a1e147b58f4aec44",
+      "tarefa": "monthly_6"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "GRU",
+      "n_linhas": 420,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_6\\gru\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "85ebe8ea9d271512d5ace98d4570852f996416dd725ffb70a1e147b58f4aec44",
+      "tarefa": "monthly_6"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Transformer",
+      "n_linhas": 420,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_6\\transformer\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "85ebe8ea9d271512d5ace98d4570852f996416dd725ffb70a1e147b58f4aec44",
+      "tarefa": "monthly_6"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Informer",
+      "n_linhas": 420,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_6\\informer\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "85ebe8ea9d271512d5ace98d4570852f996416dd725ffb70a1e147b58f4aec44",
+      "tarefa": "monthly_6"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "XGBoost",
+      "n_linhas": 420,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_6\\xgboost\\teste\\controle_teste.json",
+      "sha256_relatorio": "de94e2574d1d20c516d66360d35dcf2a2068832111beb610dd1cd262ae0316ac",
+      "tarefa": "monthly_6"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "LSTM",
+      "n_linhas": 420,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_6\\lstm\\teste\\controle_teste.json",
+      "sha256_relatorio": "de94e2574d1d20c516d66360d35dcf2a2068832111beb610dd1cd262ae0316ac",
+      "tarefa": "monthly_6"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "DilatedRNN",
+      "n_linhas": 420,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_6\\dilatedrnn\\teste\\controle_teste.json",
+      "sha256_relatorio": "de94e2574d1d20c516d66360d35dcf2a2068832111beb610dd1cd262ae0316ac",
+      "tarefa": "monthly_6"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "GRU",
+      "n_linhas": 420,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_6\\gru\\teste\\controle_teste.json",
+      "sha256_relatorio": "de94e2574d1d20c516d66360d35dcf2a2068832111beb610dd1cd262ae0316ac",
+      "tarefa": "monthly_6"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Transformer",
+      "n_linhas": 420,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_6\\transformer\\teste\\controle_teste.json",
+      "sha256_relatorio": "de94e2574d1d20c516d66360d35dcf2a2068832111beb610dd1cd262ae0316ac",
+      "tarefa": "monthly_6"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Informer",
+      "n_linhas": 420,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\monthly_6\\informer\\teste\\controle_teste.json",
+      "sha256_relatorio": "de94e2574d1d20c516d66360d35dcf2a2068832111beb610dd1cd262ae0316ac",
+      "tarefa": "monthly_6"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "XGBoost",
+      "n_linhas": 261360,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\hourly_72_extension\\xgboost\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "a3eabe377060a15ed7ffa240d0b2ce46c9e0784ed146b08445108e17280f8568",
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "LSTM",
+      "n_linhas": 261360,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\hourly_72_extension\\lstm\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "a3eabe377060a15ed7ffa240d0b2ce46c9e0784ed146b08445108e17280f8568",
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "DilatedRNN",
+      "n_linhas": 261360,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\hourly_72_extension\\dilatedrnn\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "a3eabe377060a15ed7ffa240d0b2ce46c9e0784ed146b08445108e17280f8568",
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "GRU",
+      "n_linhas": 261360,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\hourly_72_extension\\gru\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "a3eabe377060a15ed7ffa240d0b2ce46c9e0784ed146b08445108e17280f8568",
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Transformer",
+      "n_linhas": 261360,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\hourly_72_extension\\transformer\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "fa0c9a19af61bf38940a581f734e36caa9604b91a5e5804dc3ed3cfac530db5c",
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Informer",
+      "n_linhas": 261360,
+      "particao": "validacao",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\hourly_72_extension\\informer\\validacao\\controle_validacao.json",
+      "sha256_relatorio": "fa0c9a19af61bf38940a581f734e36caa9604b91a5e5804dc3ed3cfac530db5c",
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "XGBoost",
+      "n_linhas": 261360,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\hourly_72_extension\\xgboost\\teste\\controle_teste.json",
+      "sha256_relatorio": "8bea71e1b22cf47399dc867da1c2cc871c64f42060fff8baaf318b79a5ff0b00",
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "LSTM",
+      "n_linhas": 261360,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\hourly_72_extension\\lstm\\teste\\controle_teste.json",
+      "sha256_relatorio": "8bea71e1b22cf47399dc867da1c2cc871c64f42060fff8baaf318b79a5ff0b00",
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "DilatedRNN",
+      "n_linhas": 261360,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\hourly_72_extension\\dilatedrnn\\teste\\controle_teste.json",
+      "sha256_relatorio": "8bea71e1b22cf47399dc867da1c2cc871c64f42060fff8baaf318b79a5ff0b00",
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "GRU",
+      "n_linhas": 261360,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\hourly_72_extension\\gru\\teste\\controle_teste.json",
+      "sha256_relatorio": "8bea71e1b22cf47399dc867da1c2cc871c64f42060fff8baaf318b79a5ff0b00",
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Transformer",
+      "n_linhas": 261360,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\hourly_72_extension\\transformer\\teste\\controle_teste.json",
+      "sha256_relatorio": "4d2deb5396f7d8bfc34b13334b5bea6842d80f170c7eab1bee198936149a8c15",
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "alvos_bitexatos": true,
+      "modelo": "Informer",
+      "n_linhas": 261360,
+      "particao": "teste",
+      "previsoes_controle_diferenca": 0.0,
+      "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\layout_controles\\hourly_72_extension\\informer\\teste\\controle_teste.json",
+      "sha256_relatorio": "4d2deb5396f7d8bfc34b13334b5bea6842d80f170c7eab1bee198936149a8c15",
+      "tarefa": "hourly_72_extension"
+    }
+  ]
+}

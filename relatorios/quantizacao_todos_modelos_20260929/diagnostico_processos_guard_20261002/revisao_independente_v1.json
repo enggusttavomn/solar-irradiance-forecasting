@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "id": "revisao_independente_process_guard_winerror5_v1",
+  "aprovado": true,
+  "criado_em_utc": "2026-10-02T04:01:18.933207+00:00",
+  "revisor": "agente independente /root/avaliar_solucao_xgboost",
+  "escopo": "Identificacao readonly de processos Windows para impedir execucoes duplicadas; sem treino, encerramento ou retomada de processos.",
+  "guard": {
+    "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\processos_quantizacao.py",
+    "sha256": "3f5409846652efbdfc893cf85ee8b51eee51905d1c9b4e9f497456c7f24e1468"
+  },
+  "fontes_cientificas_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc"
+  },
+  "provas_reais": {
+    "processos_no_snapshot": 351,
+    "pid_proprio": 23128,
+    "identidade_primaria_propria": {
+      "pid": 23128,
+      "creation_time": "134353872752953309"
+    },
+    "identidade_snapshot_propria": {
+      "pid": 23128,
+      "creation_time": "134353872752953309"
+    },
+    "filetime_proprio_bitexato": true,
+    "pid_protegido": 4,
+    "openprocess_erro_real": 5,
+    "identidade_snapshot_protegida": {
+      "pid": 4,
+      "creation_time": "134353601371838389"
+    },
+    "identidade_fallback_protegida": {
+      "pid": 4,
+      "creation_time": "134353601371838389"
+    },
+    "fallback_filetime_exato": true,
+    "mesma_instancia_protegida_conservada": true,
+    "creation_time_distinto_rejeitado": true
+  },
+  "prova_falha_injetada": {
+    "openprocess_winerror": 5,
+    "snapshot_indeterminado": true,
+    "permission_error_original_propagado": true,
+    "retorno_none_ou_inativo": false
+  },
+  "revisao_estatica": [
+    "Fallback exclusivo de OpenProcess WinError5; outros erros continuam propagando.",
+    "Snapshot SystemProcessInformation validado por PID e FILETIME exatos do proprio processo, sem arredondamento.",
+    "Parser verifica ABI, limites, deslocamentos, duplicatas e termino; consulta possui limite de memoria e tentativas.",
+    "Ausencia somente pode ser inferida de snapshot integral validado; identidade indeterminada continua bloqueando a ponte.",
+    "A logica de descendentes, JobObject e encerramento de processos proprios permaneceu sem alteracoes."
+  ],
+  "limitacoes": [
+    "O PID responsavel pela falha original de 23:43 UTC nao foi registrado, e aquela ocorrencia nao foi reproduzida posteriormente.",
+    "A prova real com PID4 confirma o ramo de acesso negado; nao afirma que o PID4 causou a interrupcao original.",
+    "A identificacao continua baseada em PID mais horario de criacao; o snapshot e pontual e a ponte conserva locks e verificacoes posteriores.",
+    "Se a API NT ou seu layout nao puderem ser validados, a execucao deve permanecer bloqueada por erro, sem presumir que o processo encerrou.",
+    "Esta aprovacao abrange somente o guard de orquestracao; nao aprova conclusao dos treinamentos nem os resultados cientificos."
+  ],
+  "fontes_primarias": [
+    "https://learn.microsoft.com/en-us/windows/win32/api/winternl/nf-winternl-ntquerysysteminformation",
+    "https://openmp.llvm.org/doxygen/z__Windows__NT__util_8cpp_source.html"
+  ]
+}

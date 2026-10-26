@@ -1,0 +1,137 @@
+{
+  "observado_em_utc": "2026-10-05T03:01:41.329698+00:00",
+  "escopo": "Diagnostico somente leitura; sem start, kill, prioridade, energia, workers, codigo ou replay. Escrita apenas de novos receipts diagnosticos.",
+  "intervalo_amostrado_utc": [
+    "2026-10-05T02:59:03.227655+00:00",
+    "2026-10-05T02:59:21.611975+00:00"
+  ],
+  "wall_seconds": 18.38432610000018,
+  "expected_pids_found_a": [],
+  "expected_pids_found_b": [],
+  "fila_ativa_no_intervalo": false,
+  "causa_da_interrupcao": "nao determinada",
+  "boot_utc": "2026-10-04T21:14:53.5000000Z",
+  "heartbeat_utc": {
+    "coordenador": "2026-10-05T02:56:43.282397+00:00",
+    "runner": "2026-10-05T02:56:25.903244+00:00",
+    "prioridade": "2026-10-05T02:56:58.116974+00:00"
+  },
+  "watcher_etapa": "encerrada",
+  "watcher_motivo_fim": "Coordenador encerrou ou PID foi reutilizado.",
+  "concluidos_por_fase": {
+    "selecao": 44,
+    "refit": 7
+  },
+  "percentual_refit": 15.909090909090908,
+  "falhas_registradas": [
+    {
+      "tipo": "PermissionError",
+      "mensagem": "[WinError 5] Access is denied: 'C:\\\\Users\\\\gm.nascimento\\\\Documents\\\\Meus Projetos\\\\TCC\\\\relatorios\\\\quantizacao_todos_modelos_20260929\\\\fila_historica\\\\historico_1998_2022\\\\completa\\\\runner.json.cf5gexfj.tmp' -> 'C:\\\\Users\\\\gm.nascimento\\\\Documents\\\\Meus Projetos\\\\TCC\\\\relatorios\\\\quantizacao_todos_modelos_20260929\\\\fila_historica\\\\historico_1998_2022\\\\completa\\\\runner.json'",
+      "instante": "2026-10-05T02:56:25.903200+00:00"
+    }
+  ],
+  "cpu_system_percent": 66.80484693877551,
+  "gpu_amostras": [
+    {
+      "returncode": 0,
+      "stdout": "NVIDIA GeForce GTX 1650 with Max-Q Design, 24, 6, 671, 3265, 66, 480, 405, 8.80, P8\n",
+      "stderr": ""
+    },
+    {
+      "returncode": 0,
+      "stdout": "NVIDIA GeForce GTX 1650 with Max-Q Design, 34, 9, 675, 3261, 66, 645, 810, 11.77, P5\n",
+      "stderr": ""
+    }
+  ],
+  "gpu_thermal_atual_ativo": false,
+  "available_ram_gib": [
+    10.330364227294922,
+    10.31258773803711
+  ],
+  "commit_percent": [
+    40.17930228898385,
+    40.16858400240224
+  ],
+  "power_status": {
+    "ac_line_status": 1,
+    "battery_flag": 1,
+    "battery_percent": 100,
+    "battery_saver": 0,
+    "battery_seconds": 4294967295,
+    "battery_full_seconds": 4294967295
+  },
+  "parecer": "O 16% corresponde a 7/44 refits concluidos, mas a fila encerrou perto de 23:56 local. Os roots e launchers nao existem em duas amostras NT. Memoria/GPU ociosas atuais nao demonstram capacidade para mais workers durante fits; primeiro retomar com auditoria de cache e novas identidades, sem reduzir estudo. Quando ativa, comparar GPU/CPU durante fits antes de mudar 2CPU2GPU. Nao ha evidencia atual de gargalo termico.",
+  "logs_antes_da_parada": [
+    {
+      "tarefa": "daily_30",
+      "modelo": "XGBoost",
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_xgboost.log",
+      "size": 1507,
+      "mtime_utc": "2026-10-05T02:46:01.465368+00:00",
+      "tail": [
+        "daily_30/XGBoost/q64/refit seed=89 fim epocas=0",
+        "daily_30/XGBoost/q128/refit seed=11 inicio",
+        "daily_30/XGBoost/q128/refit seed=11 fim epocas=0",
+        "daily_30/XGBoost/q128/refit seed=23 inicio",
+        "daily_30/XGBoost/q128/refit seed=23 fim epocas=0",
+        "daily_30/XGBoost/q128/refit seed=42 inicio",
+        "daily_30/XGBoost/q128/refit seed=42 fim epocas=0",
+        "daily_30/XGBoost/q128/refit seed=67 inicio"
+      ]
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "DilatedRNN",
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_dilatedrnn.log",
+      "size": 1827,
+      "mtime_utc": "2026-10-05T02:21:05.077824+00:00",
+      "tail": [
+        "daily_30/DilatedRNN/sem_quantizacao/refit seed=42 fim epocas=13",
+        "daily_30/DilatedRNN/sem_quantizacao/refit seed=67 inicio",
+        "daily_30/DilatedRNN/sem_quantizacao/refit seed=67 fim epocas=7",
+        "daily_30/DilatedRNN/sem_quantizacao/refit seed=89 inicio",
+        "daily_30/DilatedRNN/sem_quantizacao/refit seed=89 fim epocas=14",
+        "daily_30/DilatedRNN/q64/refit seed=11 inicio",
+        "daily_30/DilatedRNN/q64/refit seed=11 fim epocas=7",
+        "daily_30/DilatedRNN/q64/refit seed=23 inicio"
+      ]
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Transformer",
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_transformer.log",
+      "size": 1928,
+      "mtime_utc": "2026-10-05T02:48:05.526752+00:00",
+      "tail": [
+        "daily_30/Transformer/q128/refit seed=42 fim epocas=7",
+        "daily_30/Transformer/q128/refit seed=67 inicio",
+        "daily_30/Transformer/q128/refit seed=67 fim epocas=5",
+        "daily_30/Transformer/q128/refit seed=89 inicio",
+        "daily_30/Transformer/q128/refit seed=89 fim epocas=5",
+        "daily_30/Transformer/q256/refit seed=11 inicio",
+        "daily_30/Transformer/q256/refit seed=11 fim epocas=8",
+        "daily_30/Transformer/q256/refit seed=23 inicio"
+      ]
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "ARIMA",
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_arima.log",
+      "size": 196,
+      "mtime_utc": "2026-10-05T02:42:43.542245+00:00",
+      "tail": [
+        "",
+        "Inicio 2026-10-05T01:51:03.760631+00:00",
+        "hourly_72_extension/ARIMA/sem_quantizacao/refit inicio",
+        "hourly_72_extension/ARIMA/sem_quantizacao/refit fim",
+        "hourly_72_extension/ARIMA/q64/refit inicio"
+      ]
+    }
+  ],
+  "evidencias": [
+    "snapshot_a_20261005T025906Z.json",
+    "snapshot_b_20261005T025924Z.json",
+    "comparacao_20261005T025924Z.json",
+    "eventos_20261005T0300UTC.json"
+  ]
+}

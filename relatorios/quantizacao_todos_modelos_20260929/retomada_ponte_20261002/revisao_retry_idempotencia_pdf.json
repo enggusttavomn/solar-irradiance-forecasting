@@ -1,0 +1,37 @@
+{
+    "schema":  1,
+    "concluido_em_utc":  "2026-10-02T08:15:18.1350225Z",
+    "objeto":  "Espera limitada por compartilhamento Windows e entrega idempotente do PDF",
+    "arquivos_sha256":  {
+                            "scripts/entregar_pdf_quantizacao_todos_modelos.py":  "7a57ededda6056b0a8c54082cbe6ad786c727c2646b97525a1a541cc773386fa",
+                            "tests/test_caminhos_pdf_logicos.py":  "1d8ec604c76119bb7ae02a9fbdaaf845571bfd876a2c61c222dfe6825e609690"
+                        },
+    "teste":  {
+                  "comando":  ".venv-baselines-gpu-20260912/Scripts/python.exe -X utf8 -m unittest tests.test_caminhos_pdf_logicos -v",
+                  "executados":  20,
+                  "falhas":  0,
+                  "aprovados":  20,
+                  "segundos_reportados":  0.554
+              },
+    "retry":  {
+                  "demais_erros_propagados":  true,
+                  "intervalo_segundos":  0.25,
+                  "espera_maxima_segundos":  10,
+                  "somente_winerror":  [
+                                           32,
+                                           33
+                                       ]
+              },
+    "idempotencia":  {
+                         "hash_final_e_registro_preservados":  true,
+                         "validacoes_fontes_visual_backup_preservadas":  true,
+                         "conteudo_destino_exato_sem_copia_ou_rename":  true
+                     },
+    "escopo":  {
+                   "publicacao_real_executada_pelo_agente":  false,
+                   "copy_rename_real_executado_pelo_agente":  false,
+                   "marker_executado":  false,
+                   "treinos_apps_ou_provedor_interrompidos":  false
+               },
+    "observacao":  "Movimento nativo e verificacao do PDF sao responsabilidade do root; nao foi determinada a causa exata do handle Windows em uso"
+}

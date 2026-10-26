@@ -1,0 +1,91 @@
+{
+  "observado_em_utc": "2026-10-05T20:34:39.799221+00:00",
+  "somente_este_computador": true,
+  "coordenador": {
+    "pid": 7872,
+    "creation_time": "134356437859141023"
+  },
+  "runner": {
+    "pid": 23160,
+    "creation_time": "134356437910898585"
+  },
+  "runner_heartbeat": "2026-10-05T20:34:38.477893+00:00",
+  "fase": "refit",
+  "concluidos_fila": 31,
+  "falhas_conhecidas": [
+    {
+      "fase": "refit",
+      "tarefa": "monthly_6",
+      "modelo": "Sazonal ingenuo",
+      "returncode": 1,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_sazonal_ingenuo.log",
+      "concluido_em_utc": "2026-10-05T09:18:29.385535+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_1",
+      "modelo": "DilatedRNN",
+      "returncode": 1,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_dilatedrnn.log",
+      "concluido_em_utc": "2026-10-05T11:05:13.606728+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_1",
+      "modelo": "Sazonal ingenuo",
+      "returncode": 1,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_sazonal_ingenuo.log",
+      "concluido_em_utc": "2026-10-05T20:32:53.411574+00:00"
+    }
+  ],
+  "jobs_ativos": [
+    {
+      "tarefa": "daily_30",
+      "modelo": "DilatedRNN",
+      "recurso": "gpu",
+      "pid": 26096,
+      "creation_time": "134356439555084171"
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Informer",
+      "recurso": "cpu",
+      "pid": 28684,
+      "creation_time": "134356719191878122"
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "TimesNet",
+      "recurso": "gpu",
+      "pid": 40680,
+      "creation_time": "134357052384762200"
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "TimesNet",
+      "recurso": "cpu",
+      "pid": 30768,
+      "creation_time": "134357060415126551"
+    }
+  ],
+  "workers_cpu": 2,
+  "workers_gpu": 2,
+  "prioridade": "AboveNormal",
+  "prioridade_observador": {
+    "pid": 37020,
+    "creation_time": "134357048564302663"
+  },
+  "progresso_artefatos": {
+    "historico_1998_2022": {
+      "selecoes": 44,
+      "refits": 31
+    },
+    "historico_curto_pareado": {
+      "selecoes": 0,
+      "refits": 0
+    }
+  },
+  "recuperacao_etapa": "WAITING",
+  "manifesto_recuperacao_sha256": "52e4f8d7e376d6218a06671534dd0565b1ccbd93957c535c071a79c9fda991e2",
+  "fontes_cientificas_alteradas": false
+}

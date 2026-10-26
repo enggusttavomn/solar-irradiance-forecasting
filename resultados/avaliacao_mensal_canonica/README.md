@@ -133,7 +133,7 @@ python gerar_figuras_avaliacao_canonica.py \
 
 Essas figuras mensais permanecem como artefatos desta execução. Os
 manuscritos atuais mantêm apenas suas imagens efetivamente usadas em
-`overlief/IEEE/figuras/` e `overlief/MCSM/figuras/`.
+`artigos/ieee/figuras/` e `artigos/mcsm/figuras/`.
 
 ## Limitações obrigatórias na interpretação
 

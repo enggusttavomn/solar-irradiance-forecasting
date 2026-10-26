@@ -1,0 +1,27 @@
+{
+  "criterio": "macro_MAE_fisico_validacao_2023_apos_pos_processamento",
+  "limitacoes": [
+    "2024 ja observado motivou a busca; necessita confirmacao futura.",
+    "Janela menor preserva exatamente origens, alvos e exemplos de treino.",
+    "Grade limitada; nenhuma garantia de superar outras arquiteturas.",
+    "Horaria usa apenas semente42; diaria usa cinco sementes."
+  ],
+  "metodo": "TimesNet otimizada",
+  "selecao_concluida_antes_do_teste": true,
+  "sementes": [
+    42
+  ],
+  "tarefa": "hourly_72_extension",
+  "vencedor": {
+    "MAE_validacao_wm2": 48.94850718134734,
+    "contexto": 336,
+    "dimensao": 16,
+    "epocas": {
+      "42": 30
+    },
+    "lote": 64,
+    "nome": "mae_dim16_lr0003",
+    "perda": "mae",
+    "taxa": 0.0003
+  }
+}

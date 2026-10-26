@@ -1,0 +1,301 @@
+{
+  "gerado_em_utc": "2026-09-23T04:55:19.486208+00:00",
+  "ok": true,
+  "sem_novo_treinamento": true,
+  "fontes": {
+    "horaria_diaria": {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\otimizacao_timesnet_quatro_casos_20260922\\auditoria_resolucoes.json",
+      "sha256": "649deaa7802ee7ca7585406a186e82b643fc62f9960bb3f40121b525110e30fd"
+    },
+    "mensal_pura": {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\correcao_timesnet_pura_20260923\\auditoria_mensal_v1_pura.json",
+      "sha256": "ea462b279cb864007c5fed1df60b04c821632afcbdff2bd60f2bfc31221a00c7"
+    },
+    "equivalencia_mensal": {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\correcao_timesnet_pura_20260923\\equivalencia_mensal_canonico_consolidado.json",
+      "sha256": "419fb29456e2de4575c09cee382c287898cffd5ac1ffd9c28d8f086fd118ba3a"
+    },
+    "comparacao": {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\correcao_timesnet_pura_20260923\\comparacao_final.json",
+      "sha256": "a2abd209eb6f2d6f89d3545c9401c990d4659a6d57b6e570b48a90c6e5c9dd10"
+    }
+  },
+  "escopo_reuso_auditoria_anterior": "Somente registros daily_30 e hourly_72_extension; mensal hibrido excluido.",
+  "tarefas": [
+    {
+      "tarefa": "daily_30",
+      "reproducao_previa": {
+        "situacao": "reproduzidos",
+        "modelos": [
+          {
+            "semente": 11,
+            "epocas_refit": 7,
+            "MAE_teste_wm2": 42.208312668400815,
+            "erro_maximo_escalas_wm2": 0.0,
+            "dispositivo": "cuda",
+            "batch_size": 128,
+            "reproduzido": true,
+            "erro_maximo_reproducao_wm2": 0.0
+          },
+          {
+            "semente": 23,
+            "epocas_refit": 6,
+            "MAE_teste_wm2": 42.58264271347688,
+            "erro_maximo_escalas_wm2": 0.0,
+            "dispositivo": "cuda",
+            "batch_size": 128,
+            "reproduzido": true,
+            "erro_maximo_reproducao_wm2": 0.0
+          },
+          {
+            "semente": 42,
+            "epocas_refit": 7,
+            "MAE_teste_wm2": 42.561677357468554,
+            "erro_maximo_escalas_wm2": 0.0,
+            "dispositivo": "cuda",
+            "batch_size": 128,
+            "reproduzido": true,
+            "erro_maximo_reproducao_wm2": 0.0
+          },
+          {
+            "semente": 67,
+            "epocas_refit": 7,
+            "MAE_teste_wm2": 42.48688183050565,
+            "erro_maximo_escalas_wm2": 0.0,
+            "dispositivo": "cuda",
+            "batch_size": 128,
+            "reproduzido": true,
+            "erro_maximo_reproducao_wm2": 0.0
+          },
+          {
+            "semente": 89,
+            "epocas_refit": 7,
+            "MAE_teste_wm2": 42.297640915562255,
+            "erro_maximo_escalas_wm2": 0.0,
+            "dispositivo": "cuda",
+            "batch_size": 128,
+            "reproduzido": true,
+            "erro_maximo_reproducao_wm2": 0.0
+          }
+        ]
+      },
+      "fonte_anterior_confere": true,
+      "arquivos_integros_apos_correcao": 67
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "reproducao_previa": {
+        "situacao": "reproduzidos",
+        "modelos": [
+          {
+            "semente": 42,
+            "epocas_refit": 30,
+            "MAE_teste_wm2": 47.91446203884576,
+            "erro_maximo_escalas_wm2": 0.0,
+            "dispositivo": "cuda",
+            "batch_size": 64,
+            "reproduzido": true,
+            "erro_maximo_reproducao_wm2": 0.0
+          }
+        ]
+      },
+      "fonte_anterior_confere": true,
+      "arquivos_integros_apos_correcao": 23
+    },
+    {
+      "tarefa": "monthly_1",
+      "reproducao_nesta_revisao": [
+        {
+          "semente": 11,
+          "epocas_refit": 64,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 14.309490337172235
+        },
+        {
+          "semente": 23,
+          "epocas_refit": 45,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 16.05204960137719
+        },
+        {
+          "semente": 42,
+          "epocas_refit": 60,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 14.874740428833372
+        },
+        {
+          "semente": 67,
+          "epocas_refit": 65,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 14.662376361207336
+        },
+        {
+          "semente": 89,
+          "epocas_refit": 94,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 13.777333328889977
+        }
+      ],
+      "sem_climatologia": true,
+      "arquivos_integros_apos_correcao": 119
+    },
+    {
+      "tarefa": "monthly_6",
+      "reproducao_nesta_revisao": [
+        {
+          "semente": 11,
+          "epocas_refit": 77,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 13.457486860687098
+        },
+        {
+          "semente": 23,
+          "epocas_refit": 20,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 15.323470709545685
+        },
+        {
+          "semente": 42,
+          "epocas_refit": 30,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 16.071247059909034
+        },
+        {
+          "semente": 67,
+          "epocas_refit": 52,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 14.678076549688774
+        },
+        {
+          "semente": 89,
+          "epocas_refit": 36,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 5.684341886080802e-14,
+          "MAE_teste_wm2": 14.843083499740686
+        }
+      ],
+      "sem_climatologia": true,
+      "arquivos_integros_apos_correcao": 119
+    }
+  ],
+  "testes": {
+    "passaram": 81,
+    "comando": "python -m pytest testes/test_otimizacao_timesnet_mensal.py testes/test_checkpoint_timesnet_otimizacao.py testes/test_lock_otimizacao_timesnet.py testes/test_gerar_tabela_resultados_ghi_otimizada.py -q"
+  },
+  "codigo_final": {
+    "codigo_fonte/otimizacao_timesnet_mensal.py": "5e57528915865be11af9b103513cb66d813d5c72a3839fb41cb042181058cf11",
+    "scripts/gerar_tabela_resultados_ghi_otimizada.py": "66ac196c2537dbb3790f545d167ca1be502805b133f81130ceca24a7d3eebe1f"
+  },
+  "limite_proveniencia_mensal": "Os hashes atuais de modulos alterados podem divergir dos contratos historicos. A reproducao verifica pesos, entradas, escalas e saidas; nao reconstrui o treinamento nem comprova independentemente a ordem temporal original das gravacoes.",
+  "limite_manifesto_canonico": "Os contratos de execucao canonicos divergem de seus manifestos historicos; a auditoria registra os hashes esperados e atuais. Previsoes e checkpoints canonicos permanecem conformes aos hashes dos manifestos. Nenhuma fonte foi alterada.",
+  "nota_codigo_atual": "O hash registrado na reproducao mensal antecede a ultima correcao dos metadados de _contrato; esse ajuste nao altera treino, inferencia ou artefatos. Os hashes finais ficam separados aqui."
+}

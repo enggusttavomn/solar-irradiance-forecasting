@@ -1,0 +1,48 @@
+{
+  "iniciado_em_utc": "2026-10-02T04:01:49.210901+00:00",
+  "pid": 6260,
+  "identidade_coordenador": {
+    "pid": 6260,
+    "creation_time": "134353873065674733"
+  },
+  "codigo_sha256": "24ea810f381cbe7437e76dd55d5df620522d3b956561c9c04560437e1f2abf06",
+  "publicado": false,
+  "revisao_visual_pendente": true,
+  "processos_historico": [
+    {
+      "pid": 28680,
+      "creation_time": "134353873221160428"
+    },
+    {
+      "pid": 20864,
+      "creation_time": "134353910973658302"
+    }
+  ],
+  "etapa": "interrompida",
+  "atualizado_em_utc": "2026-10-03T14:03:05.971661+00:00",
+  "filas_recuperacao": {
+    "RNN": {
+      "etapa": "concluida",
+      "pronta": true,
+      "processos_ativos": []
+    },
+    "XGBoost": {
+      "etapa": "concluida",
+      "pronta": true,
+      "processos_ativos": []
+    }
+  },
+  "pares_refit_pendentes": [],
+  "escopo_rnn_sha256": "8e3184269003e3f59f19deda099166aba240d2e0def2c3ebd207e8eed175e262",
+  "processo_filho": null,
+  "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\finalizacao_20261001\\coordenacao_historica.log",
+  "retorno": 0,
+  "retomada_direta_historica": {
+    "identidade_coordenador": {
+      "pid": 6480,
+      "creation_time": "134355095796354414"
+    },
+    "status": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\status.json"
+  },
+  "observacao_interrupcao": "A ponte anterior encerrou com a reinicialização do Windows de 02/10. Em 03/10 somente o coordenador histórico foi retomado, preservando a entrega atual; não relançar esta ponte."
+}

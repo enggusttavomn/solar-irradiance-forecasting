@@ -1,0 +1,915 @@
+{
+  "ok": false,
+  "atualizado_em_utc": "2026-09-30T05:09:27.596877+00:00",
+  "escopo": "monitoramento_selecao; auditoria_independente_ainda_obrigatoria",
+  "etapa": "erro",
+  "selecoes": 15,
+  "concluidos_runner": 15,
+  "falhas": [
+    {
+      "fase": "selecao",
+      "tarefa": "hourly_72_extension",
+      "modelo": "ARIMA",
+      "returncode": 1,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\fila_estatisticos\\atual\\completa\\selecao_hourly_72_extension_arima.log",
+      "concluido_em_utc": "2026-09-30T05:03:11.849032+00:00"
+    },
+    {
+      "tipo": "RuntimeError",
+      "mensagem": "1 execucoes falharam; outras selecoes foram preservadas. Consulte relatorios\\quantizacao_todos_modelos_20260929\\fila_estatisticos\\atual\\completa\\runner.json",
+      "instante": "2026-09-30T05:09:24.915168+00:00"
+    }
+  ],
+  "processos": [],
+  "registros": [
+    {
+      "tarefa": "daily_30",
+      "modelo": "Climatologia",
+      "selecao_congelada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\climatologia\\selecao_congelada.json",
+      "controle": {
+        "aplicavel": true,
+        "aprovado": true,
+        "diferenca_maxima": 0.0,
+        "fontes": {
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\previsoes_validacao.csv.gz": "e3670b8917e6646a610f4dbcb2aa0eb51272ff6ac8180ca5164d1d3343de2d16"
+        },
+        "tolerancia": 1e-06
+      },
+      "ranking": [
+        {
+          "MAE_validacao_wm2": 48.648002840697266,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 64,
+          "nome": "q64"
+        },
+        {
+          "MAE_validacao_wm2": 48.65650569930081,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": null,
+          "nome": "sem_quantizacao"
+        },
+        {
+          "MAE_validacao_wm2": 48.65749019952717,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 256,
+          "nome": "q256"
+        },
+        {
+          "MAE_validacao_wm2": 48.6603145465987,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 128,
+          "nome": "q128"
+        }
+      ],
+      "ordens_iguais_controle": null
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Persistencia",
+      "selecao_congelada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\persistencia\\selecao_congelada.json",
+      "controle": {
+        "aplicavel": true,
+        "aprovado": true,
+        "diferenca_maxima": 0.0,
+        "fontes": {
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\previsoes_validacao.csv.gz": "e3670b8917e6646a610f4dbcb2aa0eb51272ff6ac8180ca5164d1d3343de2d16"
+        },
+        "tolerancia": 1e-06
+      },
+      "ranking": [
+        {
+          "MAE_validacao_wm2": 61.374780516446094,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 128,
+          "nome": "q128"
+        },
+        {
+          "MAE_validacao_wm2": 61.375732122437356,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": null,
+          "nome": "sem_quantizacao"
+        },
+        {
+          "MAE_validacao_wm2": 61.37638079788608,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 256,
+          "nome": "q256"
+        },
+        {
+          "MAE_validacao_wm2": 61.443380281351075,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 64,
+          "nome": "q64"
+        }
+      ],
+      "ordens_iguais_controle": null
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Sazonal ingenuo",
+      "selecao_congelada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\sazonal_ingenuo\\selecao_congelada.json",
+      "controle": {
+        "aplicavel": true,
+        "aprovado": true,
+        "diferenca_maxima": 0.0,
+        "fontes": {
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\previsoes_validacao.csv.gz": "e3670b8917e6646a610f4dbcb2aa0eb51272ff6ac8180ca5164d1d3343de2d16"
+        },
+        "tolerancia": 1e-06
+      },
+      "ranking": [
+        {
+          "MAE_validacao_wm2": 58.3535823751849,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 64,
+          "nome": "q64"
+        },
+        {
+          "MAE_validacao_wm2": 58.38674817587175,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": null,
+          "nome": "sem_quantizacao"
+        },
+        {
+          "MAE_validacao_wm2": 58.392884083980334,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 256,
+          "nome": "q256"
+        },
+        {
+          "MAE_validacao_wm2": 58.40604353807091,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 128,
+          "nome": "q128"
+        }
+      ],
+      "ordens_iguais_controle": null
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "ARIMA",
+      "selecao_congelada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\arima\\selecao_congelada.json",
+      "controle": {
+        "aplicavel": true,
+        "aprovado": true,
+        "diferenca_maxima": 0.0,
+        "fontes": {
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\cache\\deterministica.npz": "e8a40d26b03e3deb6d421d0d0385c5d0621ef539987692133e081bde61547e63",
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\daily_30\\arima_robusto\\chaves_validacao_2023.csv.gz": "5d5cf0e87520a5494c59aa46abff15240425e980937f311b8f96242a76d23b2b"
+        },
+        "tolerancia": 1e-06
+      },
+      "ranking": [
+        {
+          "MAE_validacao_wm2": 51.93201953467288,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 256,
+          "nome": "q256"
+        },
+        {
+          "MAE_validacao_wm2": 52.00843121505744,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 128,
+          "nome": "q128"
+        },
+        {
+          "MAE_validacao_wm2": 52.014508801428406,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": null,
+          "nome": "sem_quantizacao"
+        },
+        {
+          "MAE_validacao_wm2": 52.015668239194625,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 64,
+          "nome": "q64"
+        }
+      ],
+      "ordens_iguais_controle": true,
+      "ordens_arima": {
+        "BYD Camacari": [
+          2,
+          0,
+          2
+        ],
+        "Tesla Gigafactory Nevada": [
+          2,
+          0,
+          2
+        ],
+        "Tesla Gigafactory Texas": [
+          2,
+          0,
+          2
+        ],
+        "Hyundai Metaplant Georgia": [
+          2,
+          0,
+          2
+        ],
+        "Rivian Normal": [
+          2,
+          0,
+          2
+        ],
+        "Tesla Fremont Factory": [
+          2,
+          0,
+          2
+        ],
+        "Lucid AMP 1 Casa Grande": [
+          2,
+          0,
+          2
+        ],
+        "GM Factory Zero": [
+          2,
+          0,
+          2
+        ],
+        "Ford Rouge Electric Vehicle Center": [
+          2,
+          0,
+          2
+        ],
+        "BMW San Luis Potosi": [
+          2,
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Climatologia",
+      "selecao_congelada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\climatologia\\selecao_congelada.json",
+      "controle": {
+        "aplicavel": false,
+        "motivo": "Climatologia horaria adicionada nesta etapa"
+      },
+      "ranking": [
+        {
+          "MAE_validacao_wm2": 55.92335523798592,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": null,
+          "nome": "sem_quantizacao"
+        },
+        {
+          "MAE_validacao_wm2": 55.92591980468967,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 256,
+          "nome": "q256"
+        },
+        {
+          "MAE_validacao_wm2": 55.92798376877106,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 128,
+          "nome": "q128"
+        },
+        {
+          "MAE_validacao_wm2": 55.96630022652503,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 64,
+          "nome": "q64"
+        }
+      ],
+      "ordens_iguais_controle": null
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Persistencia",
+      "selecao_congelada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\persistencia\\selecao_congelada.json",
+      "controle": {
+        "aplicavel": true,
+        "aprovado": true,
+        "diferenca_maxima": 0.0,
+        "fontes": {
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\hourly_72_extension\\previsoes_validacao.csv.gz": "0e24b9162e53989682993c4b3856031c33ae40887597d47fd0c65d27825e14ab"
+        },
+        "tolerancia": 1e-06
+      },
+      "ranking": [
+        {
+          "MAE_validacao_wm2": 59.48960055096419,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": null,
+          "nome": "sem_quantizacao"
+        },
+        {
+          "MAE_validacao_wm2": 59.499386001006314,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 256,
+          "nome": "q256"
+        },
+        {
+          "MAE_validacao_wm2": 59.537440676392556,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 128,
+          "nome": "q128"
+        },
+        {
+          "MAE_validacao_wm2": 59.65394278242333,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 64,
+          "nome": "q64"
+        }
+      ],
+      "ordens_iguais_controle": null
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Sazonal ingenuo",
+      "selecao_congelada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\sazonal_ingenuo\\selecao_congelada.json",
+      "controle": {
+        "aplicavel": true,
+        "aprovado": true,
+        "diferenca_maxima": 0.0,
+        "fontes": {
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\hourly_72_extension\\previsoes_validacao.csv.gz": "0e24b9162e53989682993c4b3856031c33ae40887597d47fd0c65d27825e14ab"
+        },
+        "tolerancia": 1e-06
+      },
+      "ranking": [
+        {
+          "MAE_validacao_wm2": 65.46876530456076,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": null,
+          "nome": "sem_quantizacao"
+        },
+        {
+          "MAE_validacao_wm2": 65.47976986710354,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 256,
+          "nome": "q256"
+        },
+        {
+          "MAE_validacao_wm2": 65.49769740751087,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 128,
+          "nome": "q128"
+        },
+        {
+          "MAE_validacao_wm2": 65.62286557138209,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 64,
+          "nome": "q64"
+        }
+      ],
+      "ordens_iguais_controle": null
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Climatologia",
+      "selecao_congelada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\monthly_6\\climatologia\\selecao_congelada.json",
+      "controle": {
+        "aplicavel": true,
+        "aprovado": true,
+        "diferenca_maxima": 0.0,
+        "fontes": {
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_6\\previsoes_validacao.csv.gz": "c4fcfabdfc44530211ebd3c6a15318d91199575239be1f7c204b15c69d3a9ce2"
+        },
+        "tolerancia": 1e-06
+      },
+      "ranking": [
+        {
+          "MAE_validacao_wm2": 14.911137531701447,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 128,
+          "nome": "q128"
+        },
+        {
+          "MAE_validacao_wm2": 14.919147195989751,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 256,
+          "nome": "q256"
+        },
+        {
+          "MAE_validacao_wm2": 14.926674972261702,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": null,
+          "nome": "sem_quantizacao"
+        },
+        {
+          "MAE_validacao_wm2": 15.027225413170536,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 64,
+          "nome": "q64"
+        }
+      ],
+      "ordens_iguais_controle": null
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Persistencia",
+      "selecao_congelada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\monthly_6\\persistencia\\selecao_congelada.json",
+      "controle": {
+        "aplicavel": true,
+        "aprovado": true,
+        "diferenca_maxima": 0.0,
+        "fontes": {
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_6\\previsoes_validacao.csv.gz": "c4fcfabdfc44530211ebd3c6a15318d91199575239be1f7c204b15c69d3a9ce2"
+        },
+        "tolerancia": 1e-06
+      },
+      "ranking": [
+        {
+          "MAE_validacao_wm2": 92.98903701875227,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 64,
+          "nome": "q64"
+        },
+        {
+          "MAE_validacao_wm2": 93.00224678878335,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 256,
+          "nome": "q256"
+        },
+        {
+          "MAE_validacao_wm2": 93.00391428634026,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 128,
+          "nome": "q128"
+        },
+        {
+          "MAE_validacao_wm2": 93.15805437905448,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": null,
+          "nome": "sem_quantizacao"
+        }
+      ],
+      "ordens_iguais_controle": null
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Sazonal ingenuo",
+      "selecao_congelada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\monthly_6\\sazonal_ingenuo\\selecao_congelada.json",
+      "controle": {
+        "aplicavel": true,
+        "aprovado": true,
+        "diferenca_maxima": 0.0,
+        "fontes": {
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_6\\previsoes_validacao.csv.gz": "c4fcfabdfc44530211ebd3c6a15318d91199575239be1f7c204b15c69d3a9ce2"
+        },
+        "tolerancia": 1e-06
+      },
+      "ranking": [
+        {
+          "MAE_validacao_wm2": 18.6330840765138,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 256,
+          "nome": "q256"
+        },
+        {
+          "MAE_validacao_wm2": 18.661260695684526,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": null,
+          "nome": "sem_quantizacao"
+        },
+        {
+          "MAE_validacao_wm2": 18.671118645113257,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 128,
+          "nome": "q128"
+        },
+        {
+          "MAE_validacao_wm2": 18.78572141650225,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 64,
+          "nome": "q64"
+        }
+      ],
+      "ordens_iguais_controle": null
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "ARIMA",
+      "selecao_congelada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\monthly_6\\arima\\selecao_congelada.json",
+      "controle": {
+        "aplicavel": true,
+        "aprovado": true,
+        "diferenca_maxima": 0.0,
+        "fontes": {
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\cache\\deterministica.npz": "9c7ee3b75a1ed2ae5a8d54408b33907b42c8fe926d7d9fe856c239a91a9685d5",
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\monthly_6\\arima_robusto\\chaves_validacao_2023.csv.gz": "8de36155c428e61d28d873eba017a79ff65f146c8a55ff69d54f19add1983255"
+        },
+        "tolerancia": 1e-06
+      },
+      "ranking": [
+        {
+          "MAE_validacao_wm2": 17.144504418118196,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 64,
+          "nome": "q64"
+        },
+        {
+          "MAE_validacao_wm2": 17.71530719766185,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": null,
+          "nome": "sem_quantizacao"
+        },
+        {
+          "MAE_validacao_wm2": 17.7703985251847,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 256,
+          "nome": "q256"
+        },
+        {
+          "MAE_validacao_wm2": 17.82141189681951,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 128,
+          "nome": "q128"
+        }
+      ],
+      "ordens_iguais_controle": true,
+      "ordens_arima": {
+        "BYD Camacari": [
+          2,
+          0,
+          2
+        ],
+        "Tesla Gigafactory Nevada": [
+          2,
+          1,
+          2
+        ],
+        "Tesla Gigafactory Texas": [
+          2,
+          0,
+          2
+        ],
+        "Hyundai Metaplant Georgia": [
+          2,
+          0,
+          2
+        ],
+        "Rivian Normal": [
+          2,
+          0,
+          2
+        ],
+        "Tesla Fremont Factory": [
+          2,
+          1,
+          2
+        ],
+        "Lucid AMP 1 Casa Grande": [
+          2,
+          0,
+          2
+        ],
+        "GM Factory Zero": [
+          2,
+          1,
+          2
+        ],
+        "Ford Rouge Electric Vehicle Center": [
+          2,
+          0,
+          2
+        ],
+        "BMW San Luis Potosi": [
+          2,
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Climatologia",
+      "selecao_congelada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\monthly_1\\climatologia\\selecao_congelada.json",
+      "controle": {
+        "aplicavel": true,
+        "aprovado": true,
+        "diferenca_maxima": 0.0,
+        "fontes": {
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_1\\previsoes_validacao.csv.gz": "b8f4cfc3603608146b8498e06a40d82747005200efade5a3b0850ddaab6820df"
+        },
+        "tolerancia": 1e-06
+      },
+      "ranking": [
+        {
+          "MAE_validacao_wm2": 13.745151949818247,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 256,
+          "nome": "q256"
+        },
+        {
+          "MAE_validacao_wm2": 13.746154654221382,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 128,
+          "nome": "q128"
+        },
+        {
+          "MAE_validacao_wm2": 13.761379520098368,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": null,
+          "nome": "sem_quantizacao"
+        },
+        {
+          "MAE_validacao_wm2": 13.873542080077362,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 64,
+          "nome": "q64"
+        }
+      ],
+      "ordens_iguais_controle": null
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Persistencia",
+      "selecao_congelada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\monthly_1\\persistencia\\selecao_congelada.json",
+      "controle": {
+        "aplicavel": true,
+        "aprovado": true,
+        "diferenca_maxima": 0.0,
+        "fontes": {
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_1\\previsoes_validacao.csv.gz": "b8f4cfc3603608146b8498e06a40d82747005200efade5a3b0850ddaab6820df"
+        },
+        "tolerancia": 1e-06
+      },
+      "ranking": [
+        {
+          "MAE_validacao_wm2": 36.12941459393771,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 256,
+          "nome": "q256"
+        },
+        {
+          "MAE_validacao_wm2": 36.13421449182012,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 128,
+          "nome": "q128"
+        },
+        {
+          "MAE_validacao_wm2": 36.20287822087606,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": null,
+          "nome": "sem_quantizacao"
+        },
+        {
+          "MAE_validacao_wm2": 36.233594392137285,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 64,
+          "nome": "q64"
+        }
+      ],
+      "ordens_iguais_controle": null
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Sazonal ingenuo",
+      "selecao_congelada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\monthly_1\\sazonal_ingenuo\\selecao_congelada.json",
+      "controle": {
+        "aplicavel": true,
+        "aprovado": true,
+        "diferenca_maxima": 0.0,
+        "fontes": {
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_1\\previsoes_validacao.csv.gz": "b8f4cfc3603608146b8498e06a40d82747005200efade5a3b0850ddaab6820df"
+        },
+        "tolerancia": 1e-06
+      },
+      "ranking": [
+        {
+          "MAE_validacao_wm2": 18.077917513955903,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 128,
+          "nome": "q128"
+        },
+        {
+          "MAE_validacao_wm2": 18.080735366621262,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 256,
+          "nome": "q256"
+        },
+        {
+          "MAE_validacao_wm2": 18.09513079325358,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": null,
+          "nome": "sem_quantizacao"
+        },
+        {
+          "MAE_validacao_wm2": 18.185968933696266,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 64,
+          "nome": "q64"
+        }
+      ],
+      "ordens_iguais_controle": null
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "ARIMA",
+      "selecao_congelada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\monthly_1\\arima\\selecao_congelada.json",
+      "controle": {
+        "aplicavel": true,
+        "aprovado": true,
+        "diferenca_maxima": 0.0,
+        "fontes": {
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\cache\\deterministica.npz": "38578eeb53a8e50f01cd22943da6dd4b37a19c65ddea8a7beb5b7e5135b2d5cf",
+          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\arima_robusto\\chaves_validacao_2023.csv.gz": "6ec7926f4148ae778148ef6ff08437422e10aebcf96010c6ac991173cf773268"
+        },
+        "tolerancia": 1e-06
+      },
+      "ranking": [
+        {
+          "MAE_validacao_wm2": 17.314364965481083,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 64,
+          "nome": "q64"
+        },
+        {
+          "MAE_validacao_wm2": 17.52937655062684,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 128,
+          "nome": "q128"
+        },
+        {
+          "MAE_validacao_wm2": 17.726985561175105,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": null,
+          "nome": "sem_quantizacao"
+        },
+        {
+          "MAE_validacao_wm2": 17.747218974928394,
+          "epocas": {
+            "-1": 0
+          },
+          "niveis": 256,
+          "nome": "q256"
+        }
+      ],
+      "ordens_iguais_controle": true,
+      "ordens_arima": {
+        "BYD Camacari": [
+          2,
+          0,
+          2
+        ],
+        "Tesla Gigafactory Nevada": [
+          2,
+          1,
+          2
+        ],
+        "Tesla Gigafactory Texas": [
+          2,
+          0,
+          2
+        ],
+        "Hyundai Metaplant Georgia": [
+          2,
+          0,
+          2
+        ],
+        "Rivian Normal": [
+          2,
+          0,
+          2
+        ],
+        "Tesla Fremont Factory": [
+          2,
+          1,
+          2
+        ],
+        "Lucid AMP 1 Casa Grande": [
+          2,
+          0,
+          2
+        ],
+        "GM Factory Zero": [
+          2,
+          1,
+          2
+        ],
+        "Ford Rouge Electric Vehicle Center": [
+          2,
+          0,
+          2
+        ],
+        "BMW San Luis Potosi": [
+          2,
+          0,
+          2
+        ]
+      }
+    }
+  ]
+}

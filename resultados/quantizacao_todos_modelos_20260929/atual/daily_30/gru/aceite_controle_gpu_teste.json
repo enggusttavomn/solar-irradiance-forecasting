@@ -1,0 +1,21 @@
+{
+  "contrato_sha256": "9592f37c97a6bbc724c503c43e053de95743e256825046d9bb59bb089dc8c5f7",
+  "fonte_sha256": "e41d19bc15e34653c4d7d5a3abfa8c245ac136d4ddfbecf923e08c01d30e0a68",
+  "relatorio_divergencia_sha256": "9615506a549a59a80f6d655a0c2b2fa31569e9f20280b3b7f00313eef0d7bfd2",
+  "replay_checkpoint_original_aprovado": true,
+  "arquitetura_e_loop_aprovados": true,
+  "justificativa": "Aplicacao da politica prospectiva revisada de seis migracoes CPU para CUDA. Dados, arquitetura, configuracao e normalizacao preservados; primeiro lote e replays verificados. Metricas e diferencas de treinamento sao descritivas, nao criterios de aceite. CPs antigos somente nas fases disponiveis, sob politica numerica declarada. A quantizacao e comparada ao novo controle no mesmo ambiente. Revisao: Politica restrita aos seis pares atuais GRU/LSTM/DilatedRNN x horario/diario em CPU para CUDA. Mesmos dados, normalizacao, arquitetura, configuracao, sementes e codigo de treino; primeiro lote sem atualizacao de pesos e replay novo absoluto ate 1e-6 W/m2 obrigatorios. Metricas finais e epocas podem mudar com o backend e nao decidem aceite. Quantizacao sera comparada ao novo controle no mesmo dispositivo. Checkpoints antigos ausentes sao enumerados; replays antigos disponiveis usam os limites declarados de compatibilidade. Nao autoriza outra alteracao de algoritmo, tolerancias maiores ou aceitacao de erros tecnicos. Foram revisados o codigo, os31 testes aprovados e uma integracao real GRU diario com5 replays exatos. Aceite de cada caso continua condicionado a todas as verificacoes individuais, inclusive integridade das fontes.",
+  "auditoria_arquivos_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\politica_migracao_cpu_cuda\\proposta_politica_v2.json": "13c8a9da43fde85160472e869f9eab108adb2ba9b5494fe6280e2cda9948521b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\politica_migracao_cpu_cuda\\revisao_root_v2.json": "592ae34613578e8c7bcdd19fbad2fbd3c90a181016a3df68a9ea18bf647ceda1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\politica_migracao_cpu_cuda\\daily_30\\gru\\teste\\verificacao.json": "c196fffa5ac7117d3f11036eeccd28cc11a5c1936916f3b4ef256a743ff30496",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\politica_migracao_cpu_cuda\\daily_30\\gru\\teste\\daily_30_gru_teste.json": "e187a066bc86c19970b6aef4997835f497759c8e129a1a4ddea943f79db04149",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\politica_migracao_cpu_cuda\\daily_30\\gru\\teste\\replay_novo.json": "6ddf6a258c7d8744a0e60bf993784ddc6dc882c13a7ce9363f9dee4e120a035b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\auditoria_controles_originais\\daily_30_gru.json": "265e5286c82e6ad31b269d4163dd7b25c23ff3332f6569d5fa69414d99630dcc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\testes_concorrentes.xml": "7145016814edcac01c2dec225a4db1a316111c75e5267117ad0bc2236998274a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\testes\\test_quantizacao_concorrentes.py": "ef01b95215672788361621d8e05983eef10025dc34ed83176292f5ae72c943b8"
+  },
+  "registrado_em_utc": "2026-10-01T22:23:49.274238+00:00",
+  "limite": "CPs antigos apenas nas fases disponiveis, com politica numerica registrada. A comparacao de quantizacao usa o novo controle CUDA. Nao comprova retreinamento bitexato CPU/CUDA.",
+  "fases_originais_sem_checkpoint": []
+}

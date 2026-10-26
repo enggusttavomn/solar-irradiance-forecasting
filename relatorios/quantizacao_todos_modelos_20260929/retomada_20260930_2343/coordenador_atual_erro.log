@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenar_quantizacao_atual.py", line 112, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenar_quantizacao_atual.py", line 34, in main
+    coordenar(args, rel)
+    ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenar_quantizacao_atual.py", line 75, in coordenar
+    pendentes = controles_solicitados(fila, SAIDA)
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenacao_quantizacao.py", line 50, in controles_solicitados
+    raise ValueError('Falha fora da politica de migracao CPU/CUDA.')
+ValueError: Falha fora da politica de migracao CPU/CUDA.

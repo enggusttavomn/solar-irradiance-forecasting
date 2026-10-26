@@ -1,0 +1,359 @@
+{
+  "gerado_em_utc": "2026-09-23T01:52:28.910958+00:00",
+  "escopo": "Auditoria parcial somente leitura de candidatos completos, sem treinamento ou inferencia GPU",
+  "tarefas": [
+    {
+      "tarefa": "daily_30",
+      "status_no_inicio": {
+        "etapa": "em_execucao",
+        "modo": "completa",
+        "tarefa": "daily_30"
+      },
+      "hashes_conferidos": {
+        "codigo": 8,
+        "entradas": 12
+      },
+      "contrato_sha256": "c7dc0610597df163a3a5c93cac1fa4f93db00e9c3bae103e93ebb88b4d069e60",
+      "alinhamento_canonico": true,
+      "erro_maximo_escala": 5.684341886080802e-14,
+      "MAE_validacao_referencia_wm2": 44.77097740022848,
+      "candidatos": [
+        {
+          "nome": "mae",
+          "MAE_validacao_ensemble_wm2": 44.07582515582802,
+          "presente_no_ranking_do_inicio": true,
+          "erro_maximo_mae_vs_ranking": 0.0,
+          "sementes": [
+            {
+              "semente": 11,
+              "epoca_selecionada": 5,
+              "epocas_executadas": 10,
+              "shape": [
+                3360,
+                30
+              ],
+              "MAE_validacao_wm2": 44.28702515123373,
+              "erro_maximo_mae_vs_historico": 0.0,
+              "sha256_npz": "46e25357e08cc348d1efffba3c13aae7a0845727f25238c98db0a1be920ca0b3",
+              "sha256_csv": "e3cdf19fea07b17e2edb8b2061820a2279477ecb32d8e16eb8d46aa16e593be4"
+            },
+            {
+              "semente": 23,
+              "epoca_selecionada": 6,
+              "epocas_executadas": 11,
+              "shape": [
+                3360,
+                30
+              ],
+              "MAE_validacao_wm2": 44.54552997680945,
+              "erro_maximo_mae_vs_historico": 0.0,
+              "sha256_npz": "a8632e095be88d24f9e49f18606a352690c75e50eac7101f7ebf775809b092c9",
+              "sha256_csv": "e752ff546118e205c187cd42d0ebe694ab2e3e7b98cb4dc92072b4e1d43cb520"
+            },
+            {
+              "semente": 42,
+              "epoca_selecionada": 7,
+              "epocas_executadas": 12,
+              "shape": [
+                3360,
+                30
+              ],
+              "MAE_validacao_wm2": 44.455907724664115,
+              "erro_maximo_mae_vs_historico": 7.105427357601002e-15,
+              "sha256_npz": "af2e29e42bf305f7a8e73af29143eb0ae02537778ba59e929438d900b0be3ab6",
+              "sha256_csv": "72e899b7c9ce6b71a6826defcf9b1d7e8d000a78b0fc28dedc9b44bc030079dd"
+            },
+            {
+              "semente": 67,
+              "epoca_selecionada": 7,
+              "epocas_executadas": 12,
+              "shape": [
+                3360,
+                30
+              ],
+              "MAE_validacao_wm2": 44.273412026017034,
+              "erro_maximo_mae_vs_historico": 7.105427357601002e-15,
+              "sha256_npz": "785fbf0d919f4226c41deb453d4f9f9a0d965377411c899b05c8b19336d19c5d",
+              "sha256_csv": "be80344f717e8059be22a177cda92bbed693d9450aa70b6c439e0635802f29ec"
+            },
+            {
+              "semente": 89,
+              "epoca_selecionada": 7,
+              "epocas_executadas": 12,
+              "shape": [
+                3360,
+                30
+              ],
+              "MAE_validacao_wm2": 44.238441885160384,
+              "erro_maximo_mae_vs_historico": 0.0,
+              "sha256_npz": "20aa193a8bc852b7e768ffb7dd660aa6f45a493a8e42dcf5fc158648c678b5d4",
+              "sha256_csv": "cf047698e133f582cd80c37be6ff68a9ff04b28d69dc616f4fc200dead15b8ad"
+            }
+          ]
+        },
+        {
+          "nome": "huber",
+          "MAE_validacao_ensemble_wm2": 43.94697113114908,
+          "presente_no_ranking_do_inicio": true,
+          "erro_maximo_mae_vs_ranking": 0.0,
+          "sementes": [
+            {
+              "semente": 11,
+              "epoca_selecionada": 7,
+              "epocas_executadas": 12,
+              "shape": [
+                3360,
+                30
+              ],
+              "MAE_validacao_wm2": 44.19371561758185,
+              "erro_maximo_mae_vs_historico": 0.0,
+              "sha256_npz": "c0e3652609c16d30997149d580970e36a42e6d1ecea2d57953525e0697696f32",
+              "sha256_csv": "00cd0d43e7fd9267f9dce66c162941c26e2c77850e79f8cdc02e4b5605c18a7a"
+            },
+            {
+              "semente": 23,
+              "epoca_selecionada": 6,
+              "epocas_executadas": 11,
+              "shape": [
+                3360,
+                30
+              ],
+              "MAE_validacao_wm2": 44.400762759290494,
+              "erro_maximo_mae_vs_historico": 0.0,
+              "sha256_npz": "635b3dd23de4326f18fd3a8de15ea3a638ec18c22ab086bbd36f7c45882b6fdc",
+              "sha256_csv": "8db6d8e599752156f6f8bad804edddb461df71d239656219a6ca366d20531625"
+            },
+            {
+              "semente": 42,
+              "epoca_selecionada": 7,
+              "epocas_executadas": 12,
+              "shape": [
+                3360,
+                30
+              ],
+              "MAE_validacao_wm2": 44.27820216981765,
+              "erro_maximo_mae_vs_historico": 0.0,
+              "sha256_npz": "f378a20fbac3f97eecb3ac355125018c2f121ff89bc9e16afd1c997274b3dc8e",
+              "sha256_csv": "03aa172add8bbd8acc25e919dc50508ba8b4ff65a4b25e48c5c3a014443af08a"
+            },
+            {
+              "semente": 67,
+              "epoca_selecionada": 7,
+              "epocas_executadas": 12,
+              "shape": [
+                3360,
+                30
+              ],
+              "MAE_validacao_wm2": 44.0889650896719,
+              "erro_maximo_mae_vs_historico": 0.0,
+              "sha256_npz": "8cde3462c6146c29d40d7df5ab7e7b5b995cc069f8c9c3778d2c8714d365c46b",
+              "sha256_csv": "9ee15fb3d1f91474ffcc05c055d876800620168181f629bc79ad2d1434731de9"
+            },
+            {
+              "semente": 89,
+              "epoca_selecionada": 7,
+              "epocas_executadas": 12,
+              "shape": [
+                3360,
+                30
+              ],
+              "MAE_validacao_wm2": 44.10555817429169,
+              "erro_maximo_mae_vs_historico": 0.0,
+              "sha256_npz": "556094393ff0ee060efbb90e26f757c1a4a8bc9e2a2946145714e7c0510c2fd1",
+              "sha256_csv": "ea4f8e2506fc3e590155a2a2aa552e250c3eeac9fe13abd6c47da6321bac722c"
+            }
+          ]
+        },
+        {
+          "nome": "mae_dim16_lr0003",
+          "MAE_validacao_ensemble_wm2": 43.976876095591834,
+          "presente_no_ranking_do_inicio": true,
+          "erro_maximo_mae_vs_ranking": 7.105427357601002e-15,
+          "sementes": [
+            {
+              "semente": 11,
+              "epoca_selecionada": 5,
+              "epocas_executadas": 10,
+              "shape": [
+                3360,
+                30
+              ],
+              "MAE_validacao_wm2": 44.052026096907966,
+              "erro_maximo_mae_vs_historico": 0.0,
+              "sha256_npz": "c196d7e053f5da6b6b6132545136f47b1e47c0aba3c236e520223f1afcb7d391",
+              "sha256_csv": "e6f4421fd1416b85dea513aa363c0a034621e1178c74404965614694c5adfe5b"
+            },
+            {
+              "semente": 23,
+              "epoca_selecionada": 3,
+              "epocas_executadas": 8,
+              "shape": [
+                3360,
+                30
+              ],
+              "MAE_validacao_wm2": 44.3067400090281,
+              "erro_maximo_mae_vs_historico": 0.0,
+              "sha256_npz": "95839a3faf3c879b4d7efc7ceb3cb71c01068e6e2f5cd80e694d0e3f58124c75",
+              "sha256_csv": "729fb4be57a55003de5a7a2ee8788f5c6aae02965f521656e27b3fc492bb3859"
+            },
+            {
+              "semente": 42,
+              "epoca_selecionada": 7,
+              "epocas_executadas": 12,
+              "shape": [
+                3360,
+                30
+              ],
+              "MAE_validacao_wm2": 44.30947734262831,
+              "erro_maximo_mae_vs_historico": 0.0,
+              "sha256_npz": "b6190ad0b64986d615a2376d06c02acdcf5eadf3a83346f732c19b381c701410",
+              "sha256_csv": "1a3708ac469f1851b6981c95498c73e7c5c3e7476a939ce182481c19742dd847"
+            },
+            {
+              "semente": 67,
+              "epoca_selecionada": 6,
+              "epocas_executadas": 11,
+              "shape": [
+                3360,
+                30
+              ],
+              "MAE_validacao_wm2": 44.422305392407324,
+              "erro_maximo_mae_vs_historico": 7.105427357601002e-15,
+              "sha256_npz": "a5188938ec585a5a95eb9f60b7dc36a2dca06c06ff2d74c981522df4b676d175",
+              "sha256_csv": "ad013286f14f722fcf6f2869b4d5b745fc6c098f6ed84df74d2bb95357c047bf"
+            },
+            {
+              "semente": 89,
+              "epoca_selecionada": 4,
+              "epocas_executadas": 9,
+              "shape": [
+                3360,
+                30
+              ],
+              "MAE_validacao_wm2": 44.0419229849548,
+              "erro_maximo_mae_vs_historico": 0.0,
+              "sha256_npz": "0372e68228fc3eb0abcc51ceed512cc6528f5689d75548082a211e6d765fba7c",
+              "sha256_csv": "246de73178ff1514d7d3562abc312455889c7b0bc7868b09c7938f75d1e79e6b"
+            }
+          ]
+        }
+      ],
+      "candidatos_completos_auditados": 3,
+      "caches_auditados": 15,
+      "inconsistencias": []
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "status_no_inicio": {
+        "etapa": "em_execucao",
+        "modo": "completa",
+        "tarefa": "hourly_72_extension"
+      },
+      "hashes_conferidos": {
+        "codigo": 8,
+        "entradas": 8
+      },
+      "contrato_sha256": "dafeb218dfc26f22796eb2a593beecc3a888347e21b6eb9abebf88e3ec0d2cec",
+      "alinhamento_canonico": true,
+      "erro_maximo_escala": 0.0,
+      "MAE_validacao_referencia_wm2": 51.551045097112045,
+      "candidatos": [
+        {
+          "nome": "mae",
+          "MAE_validacao_ensemble_wm2": 49.01538157666367,
+          "presente_no_ranking_do_inicio": true,
+          "erro_maximo_mae_vs_ranking": 0.0,
+          "sementes": [
+            {
+              "semente": 42,
+              "epoca_selecionada": 26,
+              "epocas_executadas": 30,
+              "shape": [
+                3630,
+                72
+              ],
+              "MAE_validacao_wm2": 49.01538157666367,
+              "erro_maximo_mae_vs_historico": 0.0,
+              "sha256_npz": "de20752cb279df1dabac2bed550eb49657e914d2d13236b91b685bb0525c25b5",
+              "sha256_csv": "f8aaceca9663e6b2e7b182aa499320214663de071091cde46625ee43c3777f0f"
+            }
+          ]
+        },
+        {
+          "nome": "huber",
+          "MAE_validacao_ensemble_wm2": 49.413538936494376,
+          "presente_no_ranking_do_inicio": true,
+          "erro_maximo_mae_vs_ranking": 0.0,
+          "sementes": [
+            {
+              "semente": 42,
+              "epoca_selecionada": 17,
+              "epocas_executadas": 22,
+              "shape": [
+                3630,
+                72
+              ],
+              "MAE_validacao_wm2": 49.413538936494376,
+              "erro_maximo_mae_vs_historico": 0.0,
+              "sha256_npz": "27a6fa86deaa439a9a1acb7bf8cf50b1152c64ffd07940a92bff5270d6efafd0",
+              "sha256_csv": "e4a03d15810e8c202cb1e66b85b5ab8d2a07c6eb22a2015026beb3bb21925233"
+            }
+          ]
+        }
+      ],
+      "candidatos_completos_auditados": 2,
+      "caches_auditados": 2,
+      "inconsistencias": []
+    }
+  ],
+  "mensal": {
+    "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\otimizacao_timesnet_20260922\\auditoria.json",
+    "sha256_relatorio": "fa9778fc6fe4f76af2857a58f12a5af2495fe9033455100d38c239485ed1f352",
+    "gerado_em_utc": "2026-09-22T10:26:45.507735+00:00",
+    "valores_sustentados_pelos_artefatos_preservados": true,
+    "reproducao_mensal_nao_reexecutada_nesta_auditoria": true,
+    "tarefas": [
+      {
+        "tarefa": "monthly_1",
+        "manifesto_atual": {
+          "arquivos_verificados": 167,
+          "divergencias": []
+        },
+        "MAE_teste_wm2": 13.236257093299164,
+        "metodo": "TimesNet + climatologia",
+        "checkpoints_reproduzidos_na_auditoria_anterior": 5,
+        "codigo_divergente_declarado": [
+          "otimizacao_timesnet_mensal.py"
+        ],
+        "limitacoes": [
+          "Busca dirigida motivada por resultados de 2024 ja observados; requer confirmacao futura.",
+          "Janelas maiores podem reduzir o numero de origens de treino; nao e ablacao isolada de contexto.",
+          "Mesmo ano de validacao seleciona epocas e hiperparametros; risco de sobreajuste a validacao.",
+          "Mensal de seis passos tem sete origens de teste sobrepostas por localidade.",
+          "Candidatos de anomalia preveem o desvio em relacao a climatologia; a previsao publicada soma de volta essa climatologia e so depois aplica o piso zero."
+        ]
+      },
+      {
+        "tarefa": "monthly_6",
+        "manifesto_atual": {
+          "arquivos_verificados": 167,
+          "divergencias": []
+        },
+        "MAE_teste_wm2": 13.167131839566494,
+        "metodo": "TimesNet + climatologia",
+        "checkpoints_reproduzidos_na_auditoria_anterior": 5,
+        "codigo_divergente_declarado": [
+          "otimizacao_timesnet_mensal.py"
+        ],
+        "limitacoes": [
+          "Busca dirigida motivada por resultados de 2024 ja observados; requer confirmacao futura.",
+          "Janelas maiores podem reduzir o numero de origens de treino; nao e ablacao isolada de contexto.",
+          "Mesmo ano de validacao seleciona epocas e hiperparametros; risco de sobreajuste a validacao.",
+          "Mensal de seis passos tem sete origens de teste sobrepostas por localidade.",
+          "Candidatos de anomalia preveem o desvio em relacao a climatologia; a previsao publicada soma de volta essa climatologia e so depois aplica o piso zero."
+        ]
+      }
+    ]
+  },
+  "ok_no_escopo_parcial": true
+}

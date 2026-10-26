@@ -1,0 +1,1720 @@
+{
+  "diagnosticos": [
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 0,
+      "fracao_alterados": 0.0,
+      "fracao_saturados": 0.0,
+      "localidade": "BYD Camacari",
+      "niveis": null,
+      "saturados": 0,
+      "total": 231,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 0,
+      "fracao_alterados": 0.0,
+      "fracao_saturados": 0.0,
+      "localidade": "Tesla Gigafactory Nevada",
+      "niveis": null,
+      "saturados": 0,
+      "total": 231,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 0,
+      "fracao_alterados": 0.0,
+      "fracao_saturados": 0.0,
+      "localidade": "Tesla Gigafactory Texas",
+      "niveis": null,
+      "saturados": 0,
+      "total": 231,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 0,
+      "fracao_alterados": 0.0,
+      "fracao_saturados": 0.0,
+      "localidade": "Hyundai Metaplant Georgia",
+      "niveis": null,
+      "saturados": 0,
+      "total": 231,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 0,
+      "fracao_alterados": 0.0,
+      "fracao_saturados": 0.0,
+      "localidade": "Rivian Normal",
+      "niveis": null,
+      "saturados": 0,
+      "total": 231,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 0,
+      "fracao_alterados": 0.0,
+      "fracao_saturados": 0.0,
+      "localidade": "Tesla Fremont Factory",
+      "niveis": null,
+      "saturados": 0,
+      "total": 231,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 0,
+      "fracao_alterados": 0.0,
+      "fracao_saturados": 0.0,
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "niveis": null,
+      "saturados": 0,
+      "total": 231,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 0,
+      "fracao_alterados": 0.0,
+      "fracao_saturados": 0.0,
+      "localidade": "GM Factory Zero",
+      "niveis": null,
+      "saturados": 0,
+      "total": 231,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 0,
+      "fracao_alterados": 0.0,
+      "fracao_saturados": 0.0,
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "niveis": null,
+      "saturados": 0,
+      "total": 231,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 0,
+      "fracao_alterados": 0.0,
+      "fracao_saturados": 0.0,
+      "localidade": "BMW San Luis Potosi",
+      "niveis": null,
+      "saturados": 0,
+      "total": 231,
+      "uso": "serie_ajuste_endogena"
+    }
+  ],
+  "niveis": null,
+  "ordens": {
+    "BMW San Luis Potosi": [
+      2,
+      0,
+      2
+    ],
+    "BYD Camacari": [
+      2,
+      1,
+      2
+    ],
+    "Ford Rouge Electric Vehicle Center": [
+      2,
+      1,
+      2
+    ],
+    "GM Factory Zero": [
+      2,
+      1,
+      2
+    ],
+    "Hyundai Metaplant Georgia": [
+      2,
+      0,
+      2
+    ],
+    "Lucid AMP 1 Casa Grande": [
+      2,
+      0,
+      2
+    ],
+    "Rivian Normal": [
+      2,
+      0,
+      2
+    ],
+    "Tesla Fremont Factory": [
+      2,
+      0,
+      2
+    ],
+    "Tesla Gigafactory Nevada": [
+      2,
+      0,
+      2
+    ],
+    "Tesla Gigafactory Texas": [
+      2,
+      1,
+      2
+    ]
+  },
+  "ordens_fixas_do_controle": false,
+  "registros": [
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BYD Camacari",
+      "localidade_id": 0,
+      "mse_validacao_normalizado": 0.016283442346820207,
+      "ordem": [
+        1,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 101.09122567024116,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BYD Camacari",
+      "localidade_id": 0,
+      "mse_validacao_normalizado": 0.010710919315150426,
+      "ordem": [
+        2,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 117.86718633257556,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BYD Camacari",
+      "localidade_id": 0,
+      "mse_validacao_normalizado": 0.019849015963890854,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 185.1635464843468,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BYD Camacari",
+      "localidade_id": 0,
+      "mse_validacao_normalizado": 0.014037801145906227,
+      "ordem": [
+        1,
+        1,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 90.90209984918951,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BYD Camacari",
+      "localidade_id": 0,
+      "mse_validacao_normalizado": 0.01451439651433753,
+      "ordem": [
+        0,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 90.00132365658635,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BYD Camacari",
+      "localidade_id": 0,
+      "mse_validacao_normalizado": 0.014170746738753454,
+      "ordem": [
+        1,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 91.32803050330239,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BYD Camacari",
+      "localidade_id": 0,
+      "mse_validacao_normalizado": 0.00871951748545127,
+      "ordem": [
+        2,
+        1,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "Non-invertible starting MA parameters found. Using zeros as starting parameters. | Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 152.19963764182225,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Nevada",
+      "localidade_id": 1,
+      "mse_validacao_normalizado": 0.028755556760799886,
+      "ordem": [
+        1,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 97.0535595241897,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Nevada",
+      "localidade_id": 1,
+      "mse_validacao_normalizado": 0.01799521243070717,
+      "ordem": [
+        2,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 222.52983626118078,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Nevada",
+      "localidade_id": 1,
+      "mse_validacao_normalizado": 0.0031528054359407066,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 361.36959349956624,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Nevada",
+      "localidade_id": 1,
+      "mse_validacao_normalizado": 0.025005323783169706,
+      "ordem": [
+        1,
+        1,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 158.2360747530215,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Nevada",
+      "localidade_id": 1,
+      "mse_validacao_normalizado": 0.031954917794089426,
+      "ordem": [
+        0,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 132.77028438392642,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Nevada",
+      "localidade_id": 1,
+      "mse_validacao_normalizado": 0.025628131158371117,
+      "ordem": [
+        1,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 158.5129579350266,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Nevada",
+      "localidade_id": 1,
+      "mse_validacao_normalizado": 0.0077816040597455186,
+      "ordem": [
+        2,
+        1,
+        2
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 308.0291429786395,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Texas",
+      "localidade_id": 2,
+      "mse_validacao_normalizado": 0.030844883229365506,
+      "ordem": [
+        1,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 93.11488424058844,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Texas",
+      "localidade_id": 2,
+      "mse_validacao_normalizado": 0.019070270148518035,
+      "ordem": [
+        2,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 133.1733912125998,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Texas",
+      "localidade_id": 2,
+      "mse_validacao_normalizado": 0.011469204680161132,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 240.86843326188074,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Texas",
+      "localidade_id": 2,
+      "mse_validacao_normalizado": 0.024885809655129033,
+      "ordem": [
+        1,
+        1,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 100.37881173247897,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Texas",
+      "localidade_id": 2,
+      "mse_validacao_normalizado": 0.02730038362583888,
+      "ordem": [
+        0,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 93.81710200791447,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Texas",
+      "localidade_id": 2,
+      "mse_validacao_normalizado": 0.02472683223499216,
+      "ordem": [
+        1,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 101.64657940877555,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Texas",
+      "localidade_id": 2,
+      "mse_validacao_normalizado": 0.009802136233949125,
+      "ordem": [
+        2,
+        1,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 192.0071050739905,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Hyundai Metaplant Georgia",
+      "localidade_id": 3,
+      "mse_validacao_normalizado": 0.032075889177727475,
+      "ordem": [
+        1,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 93.83266090199783,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Hyundai Metaplant Georgia",
+      "localidade_id": 3,
+      "mse_validacao_normalizado": 0.025299386268480217,
+      "ordem": [
+        2,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 139.5279650162731,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Hyundai Metaplant Georgia",
+      "localidade_id": 3,
+      "mse_validacao_normalizado": 0.006930549615872617,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 255.2619874144907,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Hyundai Metaplant Georgia",
+      "localidade_id": 3,
+      "mse_validacao_normalizado": 0.032354297455436394,
+      "ordem": [
+        1,
+        1,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 105.04054499622302,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Hyundai Metaplant Georgia",
+      "localidade_id": 3,
+      "mse_validacao_normalizado": 0.034621774028449036,
+      "ordem": [
+        0,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 97.86024108509349,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Hyundai Metaplant Georgia",
+      "localidade_id": 3,
+      "mse_validacao_normalizado": 0.03138956896337731,
+      "ordem": [
+        1,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 105.99283048158594,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Hyundai Metaplant Georgia",
+      "localidade_id": 3,
+      "mse_validacao_normalizado": 0.013201122005953803,
+      "ordem": [
+        2,
+        1,
+        2
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 205.0932209326637,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Rivian Normal",
+      "localidade_id": 4,
+      "mse_validacao_normalizado": 0.020914617525822087,
+      "ordem": [
+        1,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 105.28915380531447,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Rivian Normal",
+      "localidade_id": 4,
+      "mse_validacao_normalizado": 0.00314256235164513,
+      "ordem": [
+        2,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 195.81900532357116,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Rivian Normal",
+      "localidade_id": 4,
+      "mse_validacao_normalizado": 0.0008462544455250333,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 328.1006077548693,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Rivian Normal",
+      "localidade_id": 4,
+      "mse_validacao_normalizado": 0.008677479325509605,
+      "ordem": [
+        1,
+        1,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 146.78942427559764,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Rivian Normal",
+      "localidade_id": 4,
+      "mse_validacao_normalizado": 0.01335140818741951,
+      "ordem": [
+        0,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 125.72974181898869,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Rivian Normal",
+      "localidade_id": 4,
+      "mse_validacao_normalizado": 0.008919734313826451,
+      "ordem": [
+        1,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 147.16602637358358,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Rivian Normal",
+      "localidade_id": 4,
+      "mse_validacao_normalizado": 0.0011496639197655578,
+      "ordem": [
+        2,
+        1,
+        2
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 277.72915270953,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Fremont Factory",
+      "localidade_id": 5,
+      "mse_validacao_normalizado": 0.030189023437144847,
+      "ordem": [
+        1,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 82.65671402201679,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Fremont Factory",
+      "localidade_id": 5,
+      "mse_validacao_normalizado": 0.014025196939624665,
+      "ordem": [
+        2,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 204.04787424766238,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Fremont Factory",
+      "localidade_id": 5,
+      "mse_validacao_normalizado": 0.0017002600637488962,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 354.99418067665624,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Fremont Factory",
+      "localidade_id": 5,
+      "mse_validacao_normalizado": 0.022472007308455097,
+      "ordem": [
+        1,
+        1,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 142.35707246002224,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Fremont Factory",
+      "localidade_id": 5,
+      "mse_validacao_normalizado": 0.034606569085651996,
+      "ordem": [
+        0,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 118.32993015721958,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Fremont Factory",
+      "localidade_id": 5,
+      "mse_validacao_normalizado": 0.02297323151834127,
+      "ordem": [
+        1,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 142.53575676620818,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Fremont Factory",
+      "localidade_id": 5,
+      "mse_validacao_normalizado": 0.004891752758865405,
+      "ordem": [
+        2,
+        1,
+        2
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 296.7962553868474,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "localidade_id": 6,
+      "mse_validacao_normalizado": 0.028046507019526577,
+      "ordem": [
+        1,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 91.5522507968883,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "localidade_id": 6,
+      "mse_validacao_normalizado": 0.011439582985634697,
+      "ordem": [
+        2,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 215.9118301505691,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "localidade_id": 6,
+      "mse_validacao_normalizado": 0.004205466479615072,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "Non-invertible starting MA parameters found. Using zeros as starting parameters.",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 305.3839687001673,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "localidade_id": 6,
+      "mse_validacao_normalizado": 0.01886647950600527,
+      "ordem": [
+        1,
+        1,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 149.80951265697263,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "localidade_id": 6,
+      "mse_validacao_normalizado": 0.023199512507387665,
+      "ordem": [
+        0,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 132.98380692565527,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "localidade_id": 6,
+      "mse_validacao_normalizado": 0.01925398744044817,
+      "ordem": [
+        1,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 152.2998779411207,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "localidade_id": 6,
+      "mse_validacao_normalizado": 0.006142279578274123,
+      "ordem": [
+        2,
+        1,
+        2
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "Non-invertible starting MA parameters found. Using zeros as starting parameters.",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 282.64830292164254,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "GM Factory Zero",
+      "localidade_id": 7,
+      "mse_validacao_normalizado": 0.02376485890088507,
+      "ordem": [
+        1,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 89.24352678811742,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "GM Factory Zero",
+      "localidade_id": 7,
+      "mse_validacao_normalizado": 0.008769188010607774,
+      "ordem": [
+        2,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 213.5628599414242,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "GM Factory Zero",
+      "localidade_id": 7,
+      "mse_validacao_normalizado": 0.006358774265904408,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 337.5236025093668,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "GM Factory Zero",
+      "localidade_id": 7,
+      "mse_validacao_normalizado": 0.014079563089321352,
+      "ordem": [
+        1,
+        1,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 149.43156488924356,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "GM Factory Zero",
+      "localidade_id": 7,
+      "mse_validacao_normalizado": 0.01818689671459141,
+      "ordem": [
+        0,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 123.60487710440799,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "GM Factory Zero",
+      "localidade_id": 7,
+      "mse_validacao_normalizado": 0.014151201832320668,
+      "ordem": [
+        1,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 149.73052363374507,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "GM Factory Zero",
+      "localidade_id": 7,
+      "mse_validacao_normalizado": 0.004366185372238912,
+      "ordem": [
+        2,
+        1,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 289.93415813267836,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "localidade_id": 8,
+      "mse_validacao_normalizado": 0.022589806520545968,
+      "ordem": [
+        1,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 91.00167008781608,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "localidade_id": 8,
+      "mse_validacao_normalizado": 0.008114016063898435,
+      "ordem": [
+        2,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 207.13451345693073,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "localidade_id": 8,
+      "mse_validacao_normalizado": 0.005939711810606014,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 334.32171883226573,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "localidade_id": 8,
+      "mse_validacao_normalizado": 0.0130716258654259,
+      "ordem": [
+        1,
+        1,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 146.67145745902388,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "localidade_id": 8,
+      "mse_validacao_normalizado": 0.016907566669361274,
+      "ordem": [
+        0,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 122.33864370957994,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "localidade_id": 8,
+      "mse_validacao_normalizado": 0.01308913194732344,
+      "ordem": [
+        1,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 146.78507574069567,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "localidade_id": 8,
+      "mse_validacao_normalizado": 0.0038941124625763873,
+      "ordem": [
+        2,
+        1,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 282.7299852884835,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BMW San Luis Potosi",
+      "localidade_id": 9,
+      "mse_validacao_normalizado": 0.02091107594514933,
+      "ordem": [
+        1,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 86.86598246665466,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BMW San Luis Potosi",
+      "localidade_id": 9,
+      "mse_validacao_normalizado": 0.014861695982819452,
+      "ordem": [
+        2,
+        0,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 101.23453823469988,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BMW San Luis Potosi",
+      "localidade_id": 9,
+      "mse_validacao_normalizado": 0.005461887730484602,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 181.62708925319617,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BMW San Luis Potosi",
+      "localidade_id": 9,
+      "mse_validacao_normalizado": 0.020223149443487718,
+      "ordem": [
+        1,
+        1,
+        0
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 74.36327193739574,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BMW San Luis Potosi",
+      "localidade_id": 9,
+      "mse_validacao_normalizado": 0.02087405800000082,
+      "ordem": [
+        0,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 73.40612236326554,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BMW San Luis Potosi",
+      "localidade_id": 9,
+      "mse_validacao_normalizado": 0.02020868406091868,
+      "ordem": [
+        1,
+        1,
+        1
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 75.1567940909874,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BMW San Luis Potosi",
+      "localidade_id": 9,
+      "mse_validacao_normalizado": 0.009954501824639984,
+      "ordem": [
+        2,
+        1,
+        2
+      ],
+      "selecionada": false,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 143.2989702860225,
+          "otimizador": "lbfgs"
+        }
+      ]
+    }
+  ]
+}

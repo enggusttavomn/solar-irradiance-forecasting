@@ -1,19 +1,21 @@
-# Artigos e material de publicacao
+# Artigos e materiais de publicação
 
-Os manuscritos ainda permanecem nos caminhos usados pelo fluxo atual para nao
-quebrar testes, figuras e sincronizacoes existentes:
+Os manuscritos e seus ativos estão consolidados neste diretório. Cada artigo
+mantém suas próprias figuras e arquivos de compilação para evitar dependências
+implícitas entre submissões.
 
-| Conteudo | Caminho atual |
-|---|---|
-| Artigo IEEE | `overlief/IEEE/artigo.tex` |
-| Artigo BTSym'26 (atalho historico `artigos/mcsm`) | `overlief/BTSym26/main.tex` |
-| Figura do IEEE | `overlief/IEEE/figuras/` |
-| Figuras do BTSym'26 | `overlief/BTSym26/figures/` |
-| Templates preenchiveis | `templates_artigos/` |
+| Conteúdo | Entrada principal | Estado |
+|---|---|---|
+| Artigo de revista unificado | [`revista_unificado/main.tex`](revista_unificado/main.tex) | manuscrito principal |
+| Artigo IEEE | [`ieee/artigo.tex`](ieee/artigo.tex) | estudo horário de TimesNet |
+| Artigo BTSym'26 | [`btsym26/main.tex`](btsym26/main.tex) | estudo mensal de DilatedRNN |
+| Manuscrito MCSM | [`mcsm/artigo_ghi_iii_mcsm.tex`](mcsm/artigo_ghi_iii_mcsm.tex) | material histórico |
+| Templates parametrizados | [`templates/`](templates/) | fontes internas dos geradores |
 
-A grafia historica `overlief` esta incorreta, mas a renomeacao fisica sera
-feita somente depois de congelar ou atualizar todos os caminhos de publicacao.
-Este indice fornece desde ja uma entrada com nome correto e explicito.
+O fluxo automatizado com o Overleaf publica somente
+`artigos/revista_unificado/` e somente quando alterações chegam à branch
+`main`. Os demais manuscritos permanecem independentes.
 
-Cada pasta de manuscrito contém somente as figuras que ele realmente inclui;
-não há mais uma pasta compartilhada de imagens no pacote do Overleaf.
+Arquivos em `templates/` contêm marcadores e não são manuscritos prontos para
+submissão. Resultados e números devem ser regenerados a partir das pastas
+canônicas em `resultados/`, nunca copiados manualmente de execuções legadas.

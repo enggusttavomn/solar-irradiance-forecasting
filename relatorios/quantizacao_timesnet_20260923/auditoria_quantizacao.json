@@ -1,0 +1,1423 @@
+{
+  "aprovado": true,
+  "arquivos_historicos_preservados": 337,
+  "checkpoints_refit_reproduzidos": 40,
+  "checkpoints_selecao_reproduzidos": 40,
+  "congelamento_global_sha256": "c3bb0db233b0be9a6ec15ba929761020c4e4c33ee94e8e9a7ef997c888c334b0",
+  "dados_brutos_e_codigo_preservados": true,
+  "fontes_congeladas_verificadas": 206,
+  "gerado_em_utc": "2026-09-24T01:38:31.003515+00:00",
+  "interpretacao": "Comparacao retrospectiva; nivel escolhido somente pela validacao 2023; sem reselecao por 2024.",
+  "metricas_recalculadas_independentemente": [
+    "MAE_wm2",
+    "RMSE_wm2",
+    "nRMSE",
+    "R2"
+  ],
+  "pasta_experimento": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_timesnet_mensal_20260923",
+  "reproducao_reutilizada": {
+    "artefatos_m6_hashes_conferidos": 211,
+    "checkpoints_reutilizados": 40,
+    "fases": [
+      {
+        "checkpoints": 5,
+        "fase": "selecao",
+        "variante": "sem_quantizacao"
+      },
+      {
+        "checkpoints": 5,
+        "fase": "refit",
+        "variante": "sem_quantizacao"
+      },
+      {
+        "checkpoints": 5,
+        "fase": "selecao",
+        "variante": "q64"
+      },
+      {
+        "checkpoints": 5,
+        "fase": "refit",
+        "variante": "q64"
+      },
+      {
+        "checkpoints": 5,
+        "fase": "selecao",
+        "variante": "q128"
+      },
+      {
+        "checkpoints": 5,
+        "fase": "refit",
+        "variante": "q128"
+      },
+      {
+        "checkpoints": 5,
+        "fase": "selecao",
+        "variante": "q256"
+      },
+      {
+        "checkpoints": 5,
+        "fase": "refit",
+        "variante": "q256"
+      }
+    ],
+    "justificativa": "Reproducao scientifica anterior reutilizada somente apos conferir contrato, codigo, congelamento global, hashes e datas de todos artefatos monthly_6.",
+    "manifesto_monthly_6_sha256": "1c99aade30560aa1e2863fba7ba397efb457a11ee21f3733af5e797298b7cef1",
+    "nenhum_artefato_regravado_apos_parcial": true,
+    "relatorio_parcial": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_timesnet_20260923\\auditoria_parcial_monthly_6.json",
+    "sha256_relatorio_parcial": "2d4f9d8d6f924c11bd38d62905934c77aecd962ec4c53bd8708d26ac02945a9b"
+  },
+  "script_sha256": "7603f2ecb2dcf0cf4cb1af5ecb9428687f669566ea6785751149ceed04323c13",
+  "snapshot_historico": {
+    "alteracoes_autorizadas": [],
+    "arquivos_preservados": 337,
+    "arquivos_verificados": 337
+  },
+  "tarefas": [
+    {
+      "contrato_sha256": "2a4bce7255c50ee3024a736d01edc1b6ef6f6db4a28e187d95b5aebca6432bd7",
+      "manifesto_arquivos": 211,
+      "modo": "completa",
+      "tarefa": "monthly_1",
+      "variantes": [
+        {
+          "niveis": null,
+          "nome": "sem_quantizacao",
+          "refit": {
+            "MAE_ensemble_wm2": 13.856143200094374,
+            "checkpoints": [
+              {
+                "MAE_wm2": 14.309490337172235,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 69.24322029999894,
+                "epocas": 64,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 16.05204960137719,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 49.78544359999796,
+                "epocas": 45,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 14.874740428833372,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 55.662803999999596,
+                "epocas": 60,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 14.662376361207333,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 58.39558609999949,
+                "epocas": 65,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 13.77733332888998,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 83.82100260000152,
+                "epocas": 94,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 1.4210854715202004e-14,
+            "erro_maximo_metricas_macro": 3.552713678800501e-15,
+            "fase": "refit",
+            "linhas_previsao": 120,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 12,
+              "BYD Camacari": 12,
+              "Ford Rouge Electric Vehicle Center": 12,
+              "GM Factory Zero": 12,
+              "Hyundai Metaplant Georgia": 12,
+              "Lucid AMP 1 Casa Grande": 12,
+              "Rivian Normal": 12,
+              "Tesla Fremont Factory": 12,
+              "Tesla Gigafactory Nevada": 12,
+              "Tesla Gigafactory Texas": 12
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 15.43694149265956,
+            "checkpoints": [
+              {
+                "MAE_wm2": 16.117768179272066,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 134.563828499995,
+                "epocas": 64,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 15.547412187667664,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 106.32012859999668,
+                "epocas": 45,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 16.57814615395506,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 108.88359209999908,
+                "epocas": 60,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 15.331268668677144,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 107.0982856000046,
+                "epocas": 65,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 17.02264894605318,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 113.23436789999687,
+                "epocas": 94,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 1.7763568394002505e-14,
+            "erro_maximo_metricas_macro": 3.552713678800501e-15,
+            "fase": "selecao",
+            "linhas_previsao": 120,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 12,
+              "BYD Camacari": 12,
+              "Ford Rouge Electric Vehicle Center": 12,
+              "GM Factory Zero": 12,
+              "Hyundai Metaplant Georgia": 12,
+              "Lucid AMP 1 Casa Grande": 12,
+              "Rivian Normal": 12,
+              "Tesla Fremont Factory": 12,
+              "Tesla Gigafactory Nevada": 12,
+              "Tesla Gigafactory Texas": 12
+            }
+          }
+        },
+        {
+          "niveis": 64,
+          "nome": "q64",
+          "refit": {
+            "MAE_ensemble_wm2": 13.792217821446922,
+            "checkpoints": [
+              {
+                "MAE_wm2": 14.287487686956931,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 58.58769619999657,
+                "epocas": 64,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 15.95951972584264,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 41.458988899998076,
+                "epocas": 45,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 14.804837293162871,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 54.598083299999416,
+                "epocas": 60,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 14.237956023487135,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 78.13185969999904,
+                "epocas": 83,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 13.768764497529911,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 79.60076420000405,
+                "epocas": 94,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 1.4210854715202004e-14,
+            "erro_maximo_metricas_macro": 3.552713678800501e-15,
+            "fase": "refit",
+            "linhas_previsao": 120,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 12,
+              "BYD Camacari": 12,
+              "Ford Rouge Electric Vehicle Center": 12,
+              "GM Factory Zero": 12,
+              "Hyundai Metaplant Georgia": 12,
+              "Lucid AMP 1 Casa Grande": 12,
+              "Rivian Normal": 12,
+              "Tesla Fremont Factory": 12,
+              "Tesla Gigafactory Nevada": 12,
+              "Tesla Gigafactory Texas": 12
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 15.454309198384852,
+            "checkpoints": [
+              {
+                "MAE_wm2": 16.109788041360847,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 73.89618999999948,
+                "epocas": 64,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 15.540415696533369,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 59.45959059999586,
+                "epocas": 45,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 16.670855910557634,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 72.14481009999872,
+                "epocas": 60,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 15.254559245627306,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 94.00020740000036,
+                "epocas": 83,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 17.027246683328542,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 94.785644399999,
+                "epocas": 94,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.842170943040401e-14,
+            "erro_maximo_metricas_macro": 7.105427357601002e-15,
+            "fase": "selecao",
+            "linhas_previsao": 120,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 12,
+              "BYD Camacari": 12,
+              "Ford Rouge Electric Vehicle Center": 12,
+              "GM Factory Zero": 12,
+              "Hyundai Metaplant Georgia": 12,
+              "Lucid AMP 1 Casa Grande": 12,
+              "Rivian Normal": 12,
+              "Tesla Fremont Factory": 12,
+              "Tesla Gigafactory Nevada": 12,
+              "Tesla Gigafactory Texas": 12
+            }
+          }
+        },
+        {
+          "niveis": 128,
+          "nome": "q128",
+          "refit": {
+            "MAE_ensemble_wm2": 13.943551234422193,
+            "checkpoints": [
+              {
+                "MAE_wm2": 14.37051324886986,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 46.12953689999995,
+                "epocas": 64,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 16.054698759648826,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 30.994160300004296,
+                "epocas": 45,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 14.818489428100005,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 41.86010360000364,
+                "epocas": 60,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 14.448617886648469,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 50.28581800000393,
+                "epocas": 74,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 13.9371735080507,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 47.676575900004536,
+                "epocas": 66,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 1.7763568394002505e-14,
+            "erro_maximo_metricas_macro": 7.105427357601002e-15,
+            "fase": "refit",
+            "linhas_previsao": 120,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 12,
+              "BYD Camacari": 12,
+              "Ford Rouge Electric Vehicle Center": 12,
+              "GM Factory Zero": 12,
+              "Hyundai Metaplant Georgia": 12,
+              "Lucid AMP 1 Casa Grande": 12,
+              "Rivian Normal": 12,
+              "Tesla Fremont Factory": 12,
+              "Tesla Gigafactory Nevada": 12,
+              "Tesla Gigafactory Texas": 12
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 15.426880630610967,
+            "checkpoints": [
+              {
+                "MAE_wm2": 16.15694300636316,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 76.931891799999,
+                "epocas": 64,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 15.51287161335524,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 61.57585299999482,
+                "epocas": 45,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 16.537509049325642,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 70.83057270000427,
+                "epocas": 60,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 15.270496787262772,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 76.51660370000172,
+                "epocas": 74,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 16.938812606065756,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 57.93132520000654,
+                "epocas": 66,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.4868995751603507e-14,
+            "erro_maximo_metricas_macro": 3.552713678800501e-15,
+            "fase": "selecao",
+            "linhas_previsao": 120,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 12,
+              "BYD Camacari": 12,
+              "Ford Rouge Electric Vehicle Center": 12,
+              "GM Factory Zero": 12,
+              "Hyundai Metaplant Georgia": 12,
+              "Lucid AMP 1 Casa Grande": 12,
+              "Rivian Normal": 12,
+              "Tesla Fremont Factory": 12,
+              "Tesla Gigafactory Nevada": 12,
+              "Tesla Gigafactory Texas": 12
+            }
+          }
+        },
+        {
+          "niveis": 256,
+          "nome": "q256",
+          "refit": {
+            "MAE_ensemble_wm2": 13.921517606573264,
+            "checkpoints": [
+              {
+                "MAE_wm2": 14.352236184013075,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 47.98906540000462,
+                "epocas": 64,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 16.07801003187935,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 34.859273900001426,
+                "epocas": 45,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 14.96975057632665,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 41.10397279999597,
+                "epocas": 60,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 14.6916586053688,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 44.30782149999868,
+                "epocas": 65,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 13.93955639679622,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 42.05737339999905,
+                "epocas": 66,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 1.2434497875801753e-14,
+            "erro_maximo_metricas_macro": 3.552713678800501e-15,
+            "fase": "refit",
+            "linhas_previsao": 120,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 12,
+              "BYD Camacari": 12,
+              "Ford Rouge Electric Vehicle Center": 12,
+              "GM Factory Zero": 12,
+              "Hyundai Metaplant Georgia": 12,
+              "Lucid AMP 1 Casa Grande": 12,
+              "Rivian Normal": 12,
+              "Tesla Fremont Factory": 12,
+              "Tesla Gigafactory Nevada": 12,
+              "Tesla Gigafactory Texas": 12
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 15.395701031932543,
+            "checkpoints": [
+              {
+                "MAE_wm2": 16.06868963754828,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 72.60806520000187,
+                "epocas": 64,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 15.547139007528546,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 58.08563009999489,
+                "epocas": 45,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 16.53298260586167,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 72.35258469999826,
+                "epocas": 60,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 15.246543767746346,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 75.9827024000042,
+                "epocas": 65,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 16.9444640665566,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 64.1151910999979,
+                "epocas": 66,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 1.7763568394002505e-14,
+            "erro_maximo_metricas_macro": 3.552713678800501e-15,
+            "fase": "selecao",
+            "linhas_previsao": 120,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 12,
+              "BYD Camacari": 12,
+              "Ford Rouge Electric Vehicle Center": 12,
+              "GM Factory Zero": 12,
+              "Hyundai Metaplant Georgia": 12,
+              "Lucid AMP 1 Casa Grande": 12,
+              "Rivian Normal": 12,
+              "Tesla Fremont Factory": 12,
+              "Tesla Gigafactory Nevada": 12,
+              "Tesla Gigafactory Texas": 12
+            }
+          }
+        }
+      ],
+      "vencedor_validacao": "q256"
+    },
+    {
+      "contrato_sha256": "e2f8fb8a2b9853ab5455b63fce78757e023e03933b43c8a426a4a40f16174b35",
+      "manifesto_arquivos": 211,
+      "modo": "completa",
+      "tarefa": "monthly_6",
+      "variantes": [
+        {
+          "niveis": null,
+          "nome": "sem_quantizacao",
+          "refit": {
+            "MAE_ensemble_wm2": 14.197473385413323,
+            "checkpoints": [
+              {
+                "MAE_wm2": 13.457486860687098,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 65.88725249999698,
+                "epocas": 77,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 15.323470709545683,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 22.24497369999881,
+                "epocas": 20,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 16.071247059909034,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 22.766088399999717,
+                "epocas": 30,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 14.678076549688772,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 40.34748669999681,
+                "epocas": 52,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 14.843083499740686,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 25.746073300004355,
+                "epocas": 36,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 1.7763568394002505e-14,
+            "erro_maximo_metricas_macro": 5.329070518200751e-15,
+            "fase": "refit",
+            "linhas_previsao": 420,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 7,
+              "BYD Camacari": 7,
+              "Ford Rouge Electric Vehicle Center": 7,
+              "GM Factory Zero": 7,
+              "Hyundai Metaplant Georgia": 7,
+              "Lucid AMP 1 Casa Grande": 7,
+              "Rivian Normal": 7,
+              "Tesla Fremont Factory": 7,
+              "Tesla Gigafactory Nevada": 7,
+              "Tesla Gigafactory Texas": 7
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 17.053964393721966,
+            "checkpoints": [
+              {
+                "MAE_wm2": 18.5160345829228,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 109.32571100000496,
+                "epocas": 77,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 16.94527945848415,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 54.78330629999982,
+                "epocas": 20,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 17.252367399846968,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 60.06455850000202,
+                "epocas": 30,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 17.541017027387056,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 73.10265980000258,
+                "epocas": 52,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 17.801380723860735,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 59.72758049999538,
+                "epocas": 36,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.4868995751603507e-14,
+            "erro_maximo_metricas_macro": 7.105427357601002e-15,
+            "fase": "selecao",
+            "linhas_previsao": 420,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 7,
+              "BYD Camacari": 7,
+              "Ford Rouge Electric Vehicle Center": 7,
+              "GM Factory Zero": 7,
+              "Hyundai Metaplant Georgia": 7,
+              "Lucid AMP 1 Casa Grande": 7,
+              "Rivian Normal": 7,
+              "Tesla Fremont Factory": 7,
+              "Tesla Gigafactory Nevada": 7,
+              "Tesla Gigafactory Texas": 7
+            }
+          }
+        },
+        {
+          "niveis": 64,
+          "nome": "q64",
+          "refit": {
+            "MAE_ensemble_wm2": 14.076180756203632,
+            "checkpoints": [
+              {
+                "MAE_wm2": 13.32879782914242,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 55.694800600002054,
+                "epocas": 77,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 15.229005970532057,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 14.170894599999883,
+                "epocas": 20,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 15.9293502958228,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 21.986831399997754,
+                "epocas": 30,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 14.613831791552581,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 37.80919839999842,
+                "epocas": 52,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 14.756286664498338,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 24.26611689999845,
+                "epocas": 36,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.842170943040401e-14,
+            "erro_maximo_metricas_macro": 3.552713678800501e-15,
+            "fase": "refit",
+            "linhas_previsao": 420,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 7,
+              "BYD Camacari": 7,
+              "Ford Rouge Electric Vehicle Center": 7,
+              "GM Factory Zero": 7,
+              "Hyundai Metaplant Georgia": 7,
+              "Lucid AMP 1 Casa Grande": 7,
+              "Rivian Normal": 7,
+              "Tesla Fremont Factory": 7,
+              "Tesla Gigafactory Nevada": 7,
+              "Tesla Gigafactory Texas": 7
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 16.97981813293559,
+            "checkpoints": [
+              {
+                "MAE_wm2": 18.45535645588915,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 84.24328120000428,
+                "epocas": 77,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 16.885397817091295,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 41.54014260000258,
+                "epocas": 20,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 17.185959987960096,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 44.96077800000057,
+                "epocas": 30,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 17.495078232790885,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 49.67415990000154,
+                "epocas": 52,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 17.728477896831855,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 39.35744849999901,
+                "epocas": 36,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 3.552713678800501e-14,
+            "erro_maximo_metricas_macro": 7.105427357601002e-15,
+            "fase": "selecao",
+            "linhas_previsao": 420,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 7,
+              "BYD Camacari": 7,
+              "Ford Rouge Electric Vehicle Center": 7,
+              "GM Factory Zero": 7,
+              "Hyundai Metaplant Georgia": 7,
+              "Lucid AMP 1 Casa Grande": 7,
+              "Rivian Normal": 7,
+              "Tesla Fremont Factory": 7,
+              "Tesla Gigafactory Nevada": 7,
+              "Tesla Gigafactory Texas": 7
+            }
+          }
+        },
+        {
+          "niveis": 128,
+          "nome": "q128",
+          "refit": {
+            "MAE_ensemble_wm2": 14.217592467226467,
+            "checkpoints": [
+              {
+                "MAE_wm2": 13.46798667936124,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 55.19708510000055,
+                "epocas": 77,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 15.336088031724964,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 14.276936700000078,
+                "epocas": 20,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 16.081087184262707,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 22.66265839999687,
+                "epocas": 30,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 14.688075723368092,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 36.62234730000637,
+                "epocas": 52,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 14.856017335982964,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 24.966563400004816,
+                "epocas": 36,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.1316282072803006e-14,
+            "erro_maximo_metricas_macro": 7.105427357601002e-15,
+            "fase": "refit",
+            "linhas_previsao": 420,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 7,
+              "BYD Camacari": 7,
+              "Ford Rouge Electric Vehicle Center": 7,
+              "GM Factory Zero": 7,
+              "Hyundai Metaplant Georgia": 7,
+              "Lucid AMP 1 Casa Grande": 7,
+              "Rivian Normal": 7,
+              "Tesla Fremont Factory": 7,
+              "Tesla Gigafactory Nevada": 7,
+              "Tesla Gigafactory Texas": 7
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 16.972370502689937,
+            "checkpoints": [
+              {
+                "MAE_wm2": 18.41542627193062,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 60.71631229999912,
+                "epocas": 77,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 16.86965547215281,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 28.136717400004272,
+                "epocas": 20,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 17.186329029388055,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 34.38369569999486,
+                "epocas": 30,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 17.524748710198203,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 45.008793500004685,
+                "epocas": 52,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 17.747205506249774,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 36.3089398000011,
+                "epocas": 36,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.4868995751603507e-14,
+            "erro_maximo_metricas_macro": 7.105427357601002e-15,
+            "fase": "selecao",
+            "linhas_previsao": 420,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 7,
+              "BYD Camacari": 7,
+              "Ford Rouge Electric Vehicle Center": 7,
+              "GM Factory Zero": 7,
+              "Hyundai Metaplant Georgia": 7,
+              "Lucid AMP 1 Casa Grande": 7,
+              "Rivian Normal": 7,
+              "Tesla Fremont Factory": 7,
+              "Tesla Gigafactory Nevada": 7,
+              "Tesla Gigafactory Texas": 7
+            }
+          }
+        },
+        {
+          "niveis": 256,
+          "nome": "q256",
+          "refit": {
+            "MAE_ensemble_wm2": 14.205821144165762,
+            "checkpoints": [
+              {
+                "MAE_wm2": 13.469860525510915,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 59.69027349999669,
+                "epocas": 77,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 15.3227653543811,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 14.315781600002083,
+                "epocas": 20,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 16.08623033051466,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 24.522282899997663,
+                "epocas": 30,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 14.662003221779809,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 39.70830369999749,
+                "epocas": 52,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 14.844587533820993,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 25.43872199999896,
+                "epocas": 36,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.842170943040401e-14,
+            "erro_maximo_metricas_macro": 5.329070518200751e-15,
+            "fase": "refit",
+            "linhas_previsao": 420,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 7,
+              "BYD Camacari": 7,
+              "Ford Rouge Electric Vehicle Center": 7,
+              "GM Factory Zero": 7,
+              "Hyundai Metaplant Georgia": 7,
+              "Lucid AMP 1 Casa Grande": 7,
+              "Rivian Normal": 7,
+              "Tesla Fremont Factory": 7,
+              "Tesla Gigafactory Nevada": 7,
+              "Tesla Gigafactory Texas": 7
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 17.035038373754258,
+            "checkpoints": [
+              {
+                "MAE_wm2": 18.49387462238846,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 66.4844379999995,
+                "epocas": 77,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              },
+              {
+                "MAE_wm2": 16.917776857045382,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 30.04117309999856,
+                "epocas": 20,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 23
+              },
+              {
+                "MAE_wm2": 17.241996632773283,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 38.23266890000377,
+                "epocas": 30,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 42
+              },
+              {
+                "MAE_wm2": 17.531224271782968,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 45.21201390000351,
+                "epocas": 52,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 67
+              },
+              {
+                "MAE_wm2": 17.799057818294433,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 36.389978600003815,
+                "epocas": 36,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 89
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.842170943040401e-14,
+            "erro_maximo_metricas_macro": 7.105427357601002e-15,
+            "fase": "selecao",
+            "linhas_previsao": 420,
+            "localidades": 10,
+            "origens_por_localidade": {
+              "BMW San Luis Potosi": 7,
+              "BYD Camacari": 7,
+              "Ford Rouge Electric Vehicle Center": 7,
+              "GM Factory Zero": 7,
+              "Hyundai Metaplant Georgia": 7,
+              "Lucid AMP 1 Casa Grande": 7,
+              "Rivian Normal": 7,
+              "Tesla Fremont Factory": 7,
+              "Tesla Gigafactory Nevada": 7,
+              "Tesla Gigafactory Texas": 7
+            }
+          }
+        }
+      ],
+      "vencedor_validacao": "q128"
+    }
+  ]
+}

@@ -1,0 +1,409 @@
+{
+  "regime": "atual",
+  "auditoria": {
+    "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\auditoria_final_atual\\auditoria.json",
+    "sha256": "b48b7fbefbd1b267c25c276dc6f6d10692603ac45969946d879f1b52cb5a43d5"
+  },
+  "comparacoes": [
+    {
+      "tarefa": "daily_30",
+      "modelo": "ARIMA",
+      "escolhido": "q256",
+      "controle": 50.69031594551152,
+      "MAE": 50.681872736359374,
+      "delta": -0.008443209152147801,
+      "delta_percentual": -0.016656453988615202
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Climatologia",
+      "escolhido": "q64",
+      "controle": 45.51246925064223,
+      "MAE": 45.52649598305224,
+      "delta": 0.014026732410009402,
+      "delta_percentual": 0.030819537241019872
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "DilatedRNN",
+      "escolhido": "q256",
+      "controle": 44.06859551839465,
+      "MAE": 44.135296261848815,
+      "delta": 0.0667007434541631,
+      "delta_percentual": 0.151356635421525
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "GRU",
+      "escolhido": "q64",
+      "controle": 44.23087386044127,
+      "MAE": 44.23685562706833,
+      "delta": 0.00598176662705896,
+      "delta_percentual": 0.01352396212187177
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Informer",
+      "escolhido": "q64",
+      "controle": 45.46744876321793,
+      "MAE": 45.46025832169785,
+      "delta": -0.007190441520080526,
+      "delta_percentual": -0.015814482043024634
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "LSTM",
+      "escolhido": "sem_quantizacao",
+      "controle": 44.18417844043798,
+      "MAE": 44.18417844043798,
+      "delta": 0.0,
+      "delta_percentual": 0.0
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Persistencia",
+      "escolhido": "q128",
+      "controle": 60.27587746467365,
+      "MAE": 60.27871283143048,
+      "delta": 0.0028353667568339347,
+      "delta_percentual": 0.004703982548401191
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Sazonal ingenuo",
+      "escolhido": "q64",
+      "controle": 58.77648693405911,
+      "MAE": 58.84584646143187,
+      "delta": 0.06935952737276097,
+      "delta_percentual": 0.11800556819698137
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "TimesNet",
+      "escolhido": "q64",
+      "controle": 42.17076886374178,
+      "MAE": 42.16552612907109,
+      "delta": -0.00524273467068781,
+      "delta_percentual": -0.012432153389537764
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Transformer",
+      "escolhido": "q256",
+      "controle": 43.88073430279,
+      "MAE": 43.886935199784816,
+      "delta": 0.00620089699481241,
+      "delta_percentual": 0.014131251660522344
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "XGBoost",
+      "escolhido": "sem_quantizacao",
+      "controle": 43.93346827238738,
+      "MAE": 43.93346827238738,
+      "delta": 0.0,
+      "delta_percentual": 0.0
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "ARIMA",
+      "escolhido": "q128",
+      "controle": 134.65247622231155,
+      "MAE": 134.6937157369196,
+      "delta": 0.0412395146080371,
+      "delta_percentual": 0.030626629205058632
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Climatologia",
+      "escolhido": "sem_quantizacao",
+      "controle": 52.87305593816958,
+      "MAE": 52.87305593816958,
+      "delta": 0.0,
+      "delta_percentual": 0.0
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "DilatedRNN",
+      "escolhido": "sem_quantizacao",
+      "controle": 55.67248778194731,
+      "MAE": 55.67248778194731,
+      "delta": 0.0,
+      "delta_percentual": 0.0
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "GRU",
+      "escolhido": "q256",
+      "controle": 51.52463227993142,
+      "MAE": 51.52794904608832,
+      "delta": 0.0033167661568995754,
+      "delta_percentual": 0.0064372437223417876
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Informer",
+      "escolhido": "sem_quantizacao",
+      "controle": 137.6798450004447,
+      "MAE": 137.6798450004447,
+      "delta": 0.0,
+      "delta_percentual": 0.0
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "LSTM",
+      "escolhido": "q64",
+      "controle": 54.09466099661823,
+      "MAE": 53.52407363312925,
+      "delta": -0.5705873634889826,
+      "delta_percentual": -1.0547942310326215
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Persistencia",
+      "escolhido": "sem_quantizacao",
+      "controle": 58.10878481787572,
+      "MAE": 58.10878481787572,
+      "delta": 0.0,
+      "delta_percentual": 0.0
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Sazonal ingenuo",
+      "escolhido": "sem_quantizacao",
+      "controle": 65.89645316804408,
+      "MAE": 65.89645316804408,
+      "delta": 0.0,
+      "delta_percentual": 0.0
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "TimesNet",
+      "escolhido": "q256",
+      "controle": 47.91446203884576,
+      "MAE": 47.91786788380951,
+      "delta": 0.0034058449637441868,
+      "delta_percentual": 0.0071081774036886
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Transformer",
+      "escolhido": "sem_quantizacao",
+      "controle": 53.20606057784014,
+      "MAE": 53.20606057784014,
+      "delta": 0.0,
+      "delta_percentual": 0.0
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "XGBoost",
+      "escolhido": "sem_quantizacao",
+      "controle": 50.395546778495074,
+      "MAE": 50.395546778495074,
+      "delta": 0.0,
+      "delta_percentual": 0.0
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "ARIMA",
+      "escolhido": "q64",
+      "controle": 16.255500539864908,
+      "MAE": 16.2463212315594,
+      "delta": -0.009179308305508727,
+      "delta_percentual": -0.05646893667160502
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Climatologia",
+      "escolhido": "q256",
+      "controle": 12.57470514933268,
+      "MAE": 12.566816080875448,
+      "delta": -0.007889068457231474,
+      "delta_percentual": -0.06273760190432882
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "DilatedRNN",
+      "escolhido": "q128",
+      "controle": 13.005351582335312,
+      "MAE": 13.169361600871218,
+      "delta": 0.16401001853590635,
+      "delta_percentual": 1.2610963840352851
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "GRU",
+      "escolhido": "sem_quantizacao",
+      "controle": 13.864820333003896,
+      "MAE": 13.864820333003896,
+      "delta": 0.0,
+      "delta_percentual": 0.0
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Informer",
+      "escolhido": "q128",
+      "controle": 12.848129249249364,
+      "MAE": 12.7265696764498,
+      "delta": -0.12155957279956375,
+      "delta_percentual": -0.9461266340130079
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "LSTM",
+      "escolhido": "q128",
+      "controle": 14.271117238712112,
+      "MAE": 14.288273183476637,
+      "delta": 0.01715594476452509,
+      "delta_percentual": 0.1202144476676818
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Persistencia",
+      "escolhido": "q256",
+      "controle": 35.08767016728719,
+      "MAE": 35.05553064900633,
+      "delta": -0.032139518280864365,
+      "delta_percentual": -0.09159775535860047
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Sazonal ingenuo",
+      "escolhido": "q128",
+      "controle": 16.94283774693807,
+      "MAE": 17.000161572614,
+      "delta": 0.05732382567592964,
+      "delta_percentual": 0.33833662655648855
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "TimesNet",
+      "escolhido": "q256",
+      "controle": 13.856143200094374,
+      "MAE": 13.921517606573264,
+      "delta": 0.06537440647888992,
+      "delta_percentual": 0.4718081037041004
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Transformer",
+      "escolhido": "q128",
+      "controle": 13.119633028727668,
+      "MAE": 13.146652040564389,
+      "delta": 0.027019011836721063,
+      "delta_percentual": 0.2059433505309054
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "XGBoost",
+      "escolhido": "q64",
+      "controle": 14.817084869015758,
+      "MAE": 14.815416335442666,
+      "delta": -0.0016685335730919348,
+      "delta_percentual": -0.011260876129426996
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "ARIMA",
+      "escolhido": "q64",
+      "controle": 19.1673099758001,
+      "MAE": 18.663912009258357,
+      "delta": -0.5033979665417441,
+      "delta_percentual": -2.626336023037738
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Climatologia",
+      "escolhido": "q128",
+      "controle": 13.027173777988978,
+      "MAE": 13.03002312229689,
+      "delta": 0.002849344307913171,
+      "delta_percentual": 0.021872313645861473
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "DilatedRNN",
+      "escolhido": "q128",
+      "controle": 14.369222531189257,
+      "MAE": 14.352491564973665,
+      "delta": -0.01673096621559189,
+      "delta_percentual": -0.11643612714102192
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "GRU",
+      "escolhido": "q128",
+      "controle": 14.398817925133368,
+      "MAE": 14.40064450396975,
+      "delta": 0.001826578836380932,
+      "delta_percentual": 0.012685616596294403
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Informer",
+      "escolhido": "q128",
+      "controle": 13.88030430052568,
+      "MAE": 13.667870528923489,
+      "delta": -0.2124337716021909,
+      "delta_percentual": -1.5304691237507346
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "LSTM",
+      "escolhido": "q128",
+      "controle": 14.756546484240763,
+      "MAE": 14.762258865384492,
+      "delta": 0.005712381143728962,
+      "delta_percentual": 0.03871082674953447
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Persistencia",
+      "escolhido": "q64",
+      "controle": 91.8868172055199,
+      "MAE": 91.9732297729427,
+      "delta": 0.08641256742279779,
+      "delta_percentual": 0.0940423991719312
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Sazonal ingenuo",
+      "escolhido": "q256",
+      "controle": 18.001219495137533,
+      "MAE": 18.02863547948704,
+      "delta": 0.027415984349506317,
+      "delta_percentual": 0.15230070583224592
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "TimesNet",
+      "escolhido": "q128",
+      "controle": 14.197473385413325,
+      "MAE": 14.217592467226469,
+      "delta": 0.020119081813144035,
+      "delta_percentual": 0.14170888908877724
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Transformer",
+      "escolhido": "q64",
+      "controle": 14.430239381280796,
+      "MAE": 14.396546948646185,
+      "delta": -0.03369243263461108,
+      "delta_percentual": -0.2334849183328005
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "XGBoost",
+      "escolhido": "q256",
+      "controle": 14.722163486867757,
+      "MAE": 14.766305951611292,
+      "delta": 0.044142464743535115,
+      "delta_percentual": 0.2998368057990282
+    }
+  ],
+  "melhorias": 13,
+  "pioras": 21,
+  "empates": 0,
+  "controle_escolhido": 10
+}

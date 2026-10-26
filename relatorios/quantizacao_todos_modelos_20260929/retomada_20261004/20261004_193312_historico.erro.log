@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenar_quantizacao_historica.py", line 212, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenar_quantizacao_historica.py", line 139, in main
+    coordenar(args)
+    ~~~~~~~~~^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenar_quantizacao_historica.py", line 167, in coordenar
+    exe.executar(py + ['scripts.rodar_quantizacao_todos_modelos', '--regime', regime,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        '--saida', str(SAIDA), '--relatorios', str(REL / 'fila_historica'),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        '--protocolo', str(protocolos[regime].resolve()), '--cpu-workers', str(args.cpu_workers),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        '--gpu-workers', str(args.gpu_workers)], 'fila_' + regime)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenacao_quantizacao.py", line 140, in executar
+    raise RuntimeError(f'Falha {nome}; consultar {log}')
+RuntimeError: Falha fila_historico_1998_2022; consultar C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\relatorios\quantizacao_todos_modelos_20260929\coordenacao_historica\fila_historico_1998_2022.log

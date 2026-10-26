@@ -1,0 +1,59 @@
+{
+  "etapa": "LAUNCH_CONFIRMED",
+  "utc": "2026-10-08T00:40:06.207810+00:00",
+  "tentativas_popen": 1,
+  "comando": [
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "scripts.manter_aceleracao_na_tomada_v1",
+    "--source-sha256",
+    "de0a480933b1c6db5ca3c2db15baa6ad83967acbcaa60fd78fdd3bb80e1af943",
+    "--child-source-sha256",
+    "02b597a9a13e5f15a3f62c0b46b8d0da4766fa8778331fcada02e6ee2b706446",
+    "--recibo",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261007_auditoria\\manifesto_retomada.json",
+    "--recibo-sha256",
+    "54433ab91daf50faed29f985046e8b4f4dad2af27035fa4b738d368e33e12810",
+    "--root-recibo",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_reinicio_20261007_1314\\manifesto_retomada.json",
+    "--root-recibo-sha256",
+    "9bd045a68da175b1dacddb1ddd806e3f739d52203f02ab477ad4802dd68b5aea",
+    "--pid",
+    "29512",
+    "--creation-time",
+    "134358692355448701",
+    "--saida",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_continua_refit_20261007\\supervisor",
+    "--adotar",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_refit_curto_20261007\\controle",
+    "--adotar-pid",
+    "28740",
+    "--adotar-creation-time",
+    "134358915835221227",
+    "--adotar-launcher-pid",
+    "29804",
+    "--adotar-launcher-creation-time",
+    "134358915774722565"
+  ],
+  "fonte_sha256": "de0a480933b1c6db5ca3c2db15baa6ad83967acbcaa60fd78fdd3bb80e1af943",
+  "root": {
+    "pid": 29512,
+    "creation_time": "134358692355448701"
+  },
+  "guard_adotado": {
+    "pid": 28740,
+    "creation_time": "134358915835221227"
+  },
+  "launcher": {
+    "pid": 33276,
+    "creation_time": "134358936063081877"
+  },
+  "atualizado_em_utc": "2026-10-08T00:40:13.434633+00:00",
+  "observador": {
+    "pid": 11236,
+    "creation_time": "134358936087571493"
+  }
+}

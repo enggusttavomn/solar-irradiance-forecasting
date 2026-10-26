@@ -1,0 +1,71 @@
+{
+  "regime": "atual",
+  "modo": "completa",
+  "etapa": "selecao",
+  "iniciado_em_utc": "2026-09-30T10:45:07.588314+00:00",
+  "atualizado_em_utc": "2026-09-30T12:14:32.221293+00:00",
+  "pid_runner": 9956,
+  "identidade_runner": {
+    "pid": 9956,
+    "creation_time": "134352387060057303"
+  },
+  "processos_historico": [
+    {
+      "pid": 41508,
+      "creation_time": "134352387075960007"
+    },
+    {
+      "pid": 23004,
+      "creation_time": "134352387532944343"
+    },
+    {
+      "pid": 46372,
+      "creation_time": "134352388041667067"
+    }
+  ],
+  "saida": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+  "pendentes": [
+    [
+      "hourly_72_extension",
+      "GRU"
+    ],
+    [
+      "hourly_72_extension",
+      "LSTM"
+    ],
+    [
+      "hourly_72_extension",
+      "DilatedRNN"
+    ]
+  ],
+  "concluidos": [
+    {
+      "fase": "selecao",
+      "tarefa": "daily_30",
+      "modelo": "GRU",
+      "returncode": 0,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\fila_aprendidos\\atual\\completa\\selecao_daily_30_gru.log",
+      "concluido_em_utc": "2026-09-30T10:45:48.253112+00:00"
+    },
+    {
+      "fase": "selecao",
+      "tarefa": "daily_30",
+      "modelo": "LSTM",
+      "returncode": 0,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\fila_aprendidos\\atual\\completa\\selecao_daily_30_lstm.log",
+      "concluido_em_utc": "2026-09-30T10:46:39.072073+00:00"
+    }
+  ],
+  "falhas": [],
+  "processos": [
+    {
+      "tarefa": "daily_30",
+      "modelo": "DilatedRNN",
+      "recurso": "gpu",
+      "pid": 46372,
+      "creation_time": "134352388041667067",
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\fila_aprendidos\\atual\\completa\\selecao_daily_30_dilatedrnn.log",
+      "inicio": "2026-09-30T10:46:44.542482+00:00"
+    }
+  ]
+}

@@ -19,7 +19,7 @@ dados já validados. O `manifesto_horario.json` registra hashes SHA-256.
 Para reproduzir a coleta:
 
 ```bash
-python coletar_dados_horarios_nsrdb.py --inicio 2019 --fim 2024
+python executaveis/coletar_dados_horarios_nsrdb.py --inicio 2019 --fim 2024
 ```
 
 O coletor lê somente os blocos HDF5 correspondentes às dez localidades; os

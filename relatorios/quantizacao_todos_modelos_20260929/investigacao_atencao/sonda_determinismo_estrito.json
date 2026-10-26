@@ -1,0 +1,228 @@
+{
+  "codigo_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\modelos_baselines_adicionais.py": "f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\sondar_determinismo_atencao.py": "dc40d5148647329fbfd1fbdaa675f53f7482cb5a2dbbcf41210aa6ffb7734ef7"
+  },
+  "limite": "Paridade em um lote real repetido; nao comprova ainda reproducao do treinamento completo.",
+  "resultados": [
+    {
+      "backend": "automatico_estrito",
+      "bitexato_repeticoes": true,
+      "modelo": "Transformer",
+      "ok": true,
+      "repeticoes": [
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 0,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.4598999999871012
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 1,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.11727699998300523
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 2,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.10503599999356084
+        }
+      ],
+      "tarefa": "daily_30"
+    },
+    {
+      "backend": "math_estrito",
+      "bitexato_repeticoes": true,
+      "modelo": "Transformer",
+      "ok": true,
+      "repeticoes": [
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 0,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.2463805000006687
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 1,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.18188019999070093
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 2,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.16951740000513382
+        }
+      ],
+      "tarefa": "daily_30"
+    },
+    {
+      "backend": "automatico_estrito",
+      "bitexato_repeticoes": true,
+      "modelo": "Informer",
+      "ok": true,
+      "repeticoes": [
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 0,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.9964356000127736
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 1,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.12732309999410063
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 2,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.10460600000806153
+        }
+      ],
+      "tarefa": "daily_30"
+    },
+    {
+      "backend": "math_estrito",
+      "bitexato_repeticoes": true,
+      "modelo": "Informer",
+      "ok": true,
+      "repeticoes": [
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 0,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.11062270001275465
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 1,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.12836940001579933
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 2,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.11370090002310462
+        }
+      ],
+      "tarefa": "daily_30"
+    },
+    {
+      "backend": "automatico_estrito",
+      "bitexato_repeticoes": true,
+      "modelo": "Transformer",
+      "ok": true,
+      "repeticoes": [
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 0,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.38638509999145754
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 1,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.1092328000231646
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 2,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.10429479999584146
+        }
+      ],
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "backend": "math_estrito",
+      "bitexato_repeticoes": true,
+      "modelo": "Transformer",
+      "ok": true,
+      "repeticoes": [
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 0,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.19184390001464635
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 1,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.16699950001202524
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 2,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.166901799995685
+        }
+      ],
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "backend": "automatico_estrito",
+      "bitexato_repeticoes": true,
+      "modelo": "Informer",
+      "ok": true,
+      "repeticoes": [
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 0,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.1509373000008054
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 1,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.11363410000922158
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 2,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.10889919998589903
+        }
+      ],
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "backend": "math_estrito",
+      "bitexato_repeticoes": true,
+      "modelo": "Informer",
+      "ok": true,
+      "repeticoes": [
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 0,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.19463300000643358
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 1,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.12492370000109076
+        },
+        {
+          "gradiente_max_delta": 0.0,
+          "repeticao": 2,
+          "saida_max_delta": 0.0,
+          "segundos_lote": 0.19372449998627417
+        }
+      ],
+      "tarefa": "hourly_72_extension"
+    }
+  ],
+  "sem_optimizer_step": true
+}

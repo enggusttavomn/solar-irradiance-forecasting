@@ -1,0 +1,33 @@
+{
+  "experimento": "piloto_sintetico_256_janelas_diarias_uma_epoca",
+  "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+  "resultados": [
+    {
+      "aceleracao": 10.679086722311084,
+      "diferenca_max_previsao_treino_cpu_cuda": 3.7550926208496094e-05,
+      "modelo": "LSTM",
+      "segundos_por_epoca_256_janelas": {
+        "cpu": 10.826728300016839,
+        "cuda": 1.0138253000041004
+      }
+    },
+    {
+      "aceleracao": 23.028337513561386,
+      "diferenca_max_previsao_treino_cpu_cuda": 3.337860107421875e-05,
+      "modelo": "GRU",
+      "segundos_por_epoca_256_janelas": {
+        "cpu": 1.6460931999899913,
+        "cuda": 0.07148120002239011
+      }
+    },
+    {
+      "aceleracao": 3.147863473430392,
+      "diferenca_max_previsao_treino_cpu_cuda": 6.310641765594482e-05,
+      "modelo": "DilatedRNN",
+      "segundos_por_epoca_256_janelas": {
+        "cpu": 2.4456893999886233,
+        "cuda": 0.7769363000115845
+      }
+    }
+  ]
+}

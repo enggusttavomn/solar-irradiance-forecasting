@@ -1,0 +1,38 @@
+{
+  "ok": true,
+  "verificado_em_utc": "2026-10-04T22:33:09.654985+00:00",
+  "auditoria_cache": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261004\\auditoria_caches_readonly_20261004T223118Z.json",
+    "sha256": "91a3a71be19a3912497b5ca24ac24bcacf6a2441d94adc29f7608770baa6090c",
+    "selecoes": 44,
+    "refits": 6,
+    "sementes_integras": 574,
+    "falhas": []
+  },
+  "selecao_global": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\selecao_global_congelada.json",
+    "sha256": "c616673e7d334a6161872346980a1904f03d4a375433008811e287a839abfeb7",
+    "fontes_verificadas": 88,
+    "pares": 44
+  },
+  "arvores_antigas": {
+    "coordenacao_historica/status.json": [],
+    "fila_historica/historico_1998_2022/completa/runner.json": [],
+    "coordenacao_atual/status.json": [],
+    "finalizacao_20261001/status.json": []
+  },
+  "travas_livres": [
+    "coordenacao_historica",
+    "fila_historica/historico_1998_2022/completa",
+    "coordenacao_atual",
+    "finalizacao_20261001"
+  ],
+  "fontes_congeladas": {
+    "codigo_fonte/experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "codigo_fonte/experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "scripts/coordenar_quantizacao_historica.py": "3b865ca313e0d2e84cb11cc046de2b825716c02c618328da5ac576225b316a4e",
+    "scripts/json_atomico.py": "18d529e716217621db283f15c518b03dc476d9fe66c3001a381802bb9820a4a3"
+  },
+  "pdf_atual_sha256": "155e58187c1da01d6030334d086933bf0f200d13cb02d60c0db76b28b7bac776",
+  "observacao": "Retomar somente coordenador histórico; seleção global e etapas atuais não serão reconstruídas."
+}

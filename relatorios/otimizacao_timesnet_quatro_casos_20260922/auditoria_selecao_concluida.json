@@ -1,0 +1,419 @@
+{
+  "gerado_em_utc": "2026-09-23T02:25:13.400477+00:00",
+  "escopo": "Conferencia somente leitura das selecoes congeladas e todos os caches de candidatos; sem treinamento ou inferencia GPU; refit/teste nao auditados",
+  "tarefas": [
+    {
+      "tarefa": "daily_30",
+      "ok": true,
+      "status_no_inicio": {
+        "etapa": "em_execucao",
+        "modo": "completa",
+        "tarefa": "daily_30"
+      },
+      "hashes_conferidos": {
+        "codigo": 8,
+        "entradas": 12
+      },
+      "alinhamento_canonico": true,
+      "erro_maximo_escala_wm2": 5.684341886080802e-14,
+      "vencedor": {
+        "MAE_validacao_wm2": 43.94697113114908,
+        "contexto": 365,
+        "dimensao": 8,
+        "epocas": {
+          "11": 7,
+          "23": 6,
+          "42": 7,
+          "67": 7,
+          "89": 7
+        },
+        "lote": 128,
+        "nome": "huber",
+        "perda": "huber",
+        "taxa": 0.001
+      },
+      "ranking_recalculado": [
+        {
+          "contexto": 365,
+          "dimensao": 8,
+          "lote": 128,
+          "nome": "huber",
+          "perda": "huber",
+          "taxa": 0.001,
+          "MAE_validacao_wm2": 43.94697113114908,
+          "epocas": {
+            "11": 7,
+            "23": 6,
+            "42": 7,
+            "67": 7,
+            "89": 7
+          }
+        },
+        {
+          "contexto": 365,
+          "dimensao": 16,
+          "lote": 64,
+          "nome": "mae_dim16_lr0003",
+          "perda": "mae",
+          "taxa": 0.0003,
+          "MAE_validacao_wm2": 43.976876095591834,
+          "epocas": {
+            "11": 5,
+            "23": 3,
+            "42": 7,
+            "67": 6,
+            "89": 4
+          }
+        },
+        {
+          "contexto": 365,
+          "dimensao": 8,
+          "lote": 128,
+          "nome": "mae",
+          "perda": "mae",
+          "taxa": 0.001,
+          "MAE_validacao_wm2": 44.07582515582802,
+          "epocas": {
+            "11": 5,
+            "23": 6,
+            "42": 7,
+            "67": 7,
+            "89": 7
+          }
+        },
+        {
+          "nome": "referencia_original",
+          "MAE_validacao_wm2": 44.77097740022848,
+          "epocas": {},
+          "contexto": 365
+        },
+        {
+          "contexto": 182,
+          "dimensao": 8,
+          "lote": 128,
+          "nome": "mae_contexto_curto",
+          "perda": "mae",
+          "taxa": 0.001,
+          "MAE_validacao_wm2": 46.269358923289666,
+          "epocas": {
+            "11": 12,
+            "23": 28,
+            "42": 13,
+            "67": 8,
+            "89": 10
+          }
+        }
+      ],
+      "caches_auditados": 20,
+      "historicos": [
+        {
+          "candidato": "mae",
+          "semente": 11,
+          "epoca_selecionada": 5,
+          "epocas_executadas": 10
+        },
+        {
+          "candidato": "mae",
+          "semente": 23,
+          "epoca_selecionada": 6,
+          "epocas_executadas": 11
+        },
+        {
+          "candidato": "mae",
+          "semente": 42,
+          "epoca_selecionada": 7,
+          "epocas_executadas": 12
+        },
+        {
+          "candidato": "mae",
+          "semente": 67,
+          "epoca_selecionada": 7,
+          "epocas_executadas": 12
+        },
+        {
+          "candidato": "mae",
+          "semente": 89,
+          "epoca_selecionada": 7,
+          "epocas_executadas": 12
+        },
+        {
+          "candidato": "huber",
+          "semente": 11,
+          "epoca_selecionada": 7,
+          "epocas_executadas": 12
+        },
+        {
+          "candidato": "huber",
+          "semente": 23,
+          "epoca_selecionada": 6,
+          "epocas_executadas": 11
+        },
+        {
+          "candidato": "huber",
+          "semente": 42,
+          "epoca_selecionada": 7,
+          "epocas_executadas": 12
+        },
+        {
+          "candidato": "huber",
+          "semente": 67,
+          "epoca_selecionada": 7,
+          "epocas_executadas": 12
+        },
+        {
+          "candidato": "huber",
+          "semente": 89,
+          "epoca_selecionada": 7,
+          "epocas_executadas": 12
+        },
+        {
+          "candidato": "mae_dim16_lr0003",
+          "semente": 11,
+          "epoca_selecionada": 5,
+          "epocas_executadas": 10
+        },
+        {
+          "candidato": "mae_dim16_lr0003",
+          "semente": 23,
+          "epoca_selecionada": 3,
+          "epocas_executadas": 8
+        },
+        {
+          "candidato": "mae_dim16_lr0003",
+          "semente": 42,
+          "epoca_selecionada": 7,
+          "epocas_executadas": 12
+        },
+        {
+          "candidato": "mae_dim16_lr0003",
+          "semente": 67,
+          "epoca_selecionada": 6,
+          "epocas_executadas": 11
+        },
+        {
+          "candidato": "mae_dim16_lr0003",
+          "semente": 89,
+          "epoca_selecionada": 4,
+          "epocas_executadas": 9
+        },
+        {
+          "candidato": "mae_contexto_curto",
+          "semente": 11,
+          "epoca_selecionada": 12,
+          "epocas_executadas": 17
+        },
+        {
+          "candidato": "mae_contexto_curto",
+          "semente": 23,
+          "epoca_selecionada": 28,
+          "epocas_executadas": 30
+        },
+        {
+          "candidato": "mae_contexto_curto",
+          "semente": 42,
+          "epoca_selecionada": 13,
+          "epocas_executadas": 18
+        },
+        {
+          "candidato": "mae_contexto_curto",
+          "semente": 67,
+          "epoca_selecionada": 8,
+          "epocas_executadas": 13
+        },
+        {
+          "candidato": "mae_contexto_curto",
+          "semente": 89,
+          "epoca_selecionada": 10,
+          "epocas_executadas": 15
+        }
+      ],
+      "hashes_arquivos_estaveis": {
+        "contrato_execucao.json": "4ce9c37464d9fa5e72bf6c16313ffca5651a3ebc5d709e088c0d4d2be99ae0ca",
+        "selecao_congelada.json": "302573a5e21a5f8ace0ea0849cc72fa0ccea9d3a71df12a08a92363fdaa8cb50",
+        "ranking_validacao.csv": "478416a4c3a13e9f0d64463509e69462963524c709d94816ac912ea9f8d0e06a",
+        "escalas_selecao.csv": "e365d815355bdaee6c596613dbe1ca7414642a2233029626e90ac1ea58c683f5",
+        "candidatos/mae/seed11.npz": "46e25357e08cc348d1efffba3c13aae7a0845727f25238c98db0a1be920ca0b3",
+        "candidatos/mae/seed11.csv": "e3cdf19fea07b17e2edb8b2061820a2279477ecb32d8e16eb8d46aa16e593be4",
+        "candidatos/mae/seed23.npz": "a8632e095be88d24f9e49f18606a352690c75e50eac7101f7ebf775809b092c9",
+        "candidatos/mae/seed23.csv": "e752ff546118e205c187cd42d0ebe694ab2e3e7b98cb4dc92072b4e1d43cb520",
+        "candidatos/mae/seed42.npz": "af2e29e42bf305f7a8e73af29143eb0ae02537778ba59e929438d900b0be3ab6",
+        "candidatos/mae/seed42.csv": "72e899b7c9ce6b71a6826defcf9b1d7e8d000a78b0fc28dedc9b44bc030079dd",
+        "candidatos/mae/seed67.npz": "785fbf0d919f4226c41deb453d4f9f9a0d965377411c899b05c8b19336d19c5d",
+        "candidatos/mae/seed67.csv": "be80344f717e8059be22a177cda92bbed693d9450aa70b6c439e0635802f29ec",
+        "candidatos/mae/seed89.npz": "20aa193a8bc852b7e768ffb7dd660aa6f45a493a8e42dcf5fc158648c678b5d4",
+        "candidatos/mae/seed89.csv": "cf047698e133f582cd80c37be6ff68a9ff04b28d69dc616f4fc200dead15b8ad",
+        "candidatos/huber/seed11.npz": "c0e3652609c16d30997149d580970e36a42e6d1ecea2d57953525e0697696f32",
+        "candidatos/huber/seed11.csv": "00cd0d43e7fd9267f9dce66c162941c26e2c77850e79f8cdc02e4b5605c18a7a",
+        "candidatos/huber/seed23.npz": "635b3dd23de4326f18fd3a8de15ea3a638ec18c22ab086bbd36f7c45882b6fdc",
+        "candidatos/huber/seed23.csv": "8db6d8e599752156f6f8bad804edddb461df71d239656219a6ca366d20531625",
+        "candidatos/huber/seed42.npz": "f378a20fbac3f97eecb3ac355125018c2f121ff89bc9e16afd1c997274b3dc8e",
+        "candidatos/huber/seed42.csv": "03aa172add8bbd8acc25e919dc50508ba8b4ff65a4b25e48c5c3a014443af08a",
+        "candidatos/huber/seed67.npz": "8cde3462c6146c29d40d7df5ab7e7b5b995cc069f8c9c3778d2c8714d365c46b",
+        "candidatos/huber/seed67.csv": "9ee15fb3d1f91474ffcc05c055d876800620168181f629bc79ad2d1434731de9",
+        "candidatos/huber/seed89.npz": "556094393ff0ee060efbb90e26f757c1a4a8bc9e2a2946145714e7c0510c2fd1",
+        "candidatos/huber/seed89.csv": "ea4f8e2506fc3e590155a2a2aa552e250c3eeac9fe13abd6c47da6321bac722c",
+        "candidatos/mae_dim16_lr0003/seed11.npz": "c196d7e053f5da6b6b6132545136f47b1e47c0aba3c236e520223f1afcb7d391",
+        "candidatos/mae_dim16_lr0003/seed11.csv": "e6f4421fd1416b85dea513aa363c0a034621e1178c74404965614694c5adfe5b",
+        "candidatos/mae_dim16_lr0003/seed23.npz": "95839a3faf3c879b4d7efc7ceb3cb71c01068e6e2f5cd80e694d0e3f58124c75",
+        "candidatos/mae_dim16_lr0003/seed23.csv": "729fb4be57a55003de5a7a2ee8788f5c6aae02965f521656e27b3fc492bb3859",
+        "candidatos/mae_dim16_lr0003/seed42.npz": "b6190ad0b64986d615a2376d06c02acdcf5eadf3a83346f732c19b381c701410",
+        "candidatos/mae_dim16_lr0003/seed42.csv": "1a3708ac469f1851b6981c95498c73e7c5c3e7476a939ce182481c19742dd847",
+        "candidatos/mae_dim16_lr0003/seed67.npz": "a5188938ec585a5a95eb9f60b7dc36a2dca06c06ff2d74c981522df4b676d175",
+        "candidatos/mae_dim16_lr0003/seed67.csv": "ad013286f14f722fcf6f2869b4d5b745fc6c098f6ed84df74d2bb95357c047bf",
+        "candidatos/mae_dim16_lr0003/seed89.npz": "0372e68228fc3eb0abcc51ceed512cc6528f5689d75548082a211e6d765fba7c",
+        "candidatos/mae_dim16_lr0003/seed89.csv": "246de73178ff1514d7d3562abc312455889c7b0bc7868b09c7938f75d1e79e6b",
+        "candidatos/mae_contexto_curto/seed11.npz": "b8a072ffaac553271f5e7e89fb60c8ea23a3165eeb901b4efff8246f9b8880da",
+        "candidatos/mae_contexto_curto/seed11.csv": "b6a4ae38684d380e4ee7a5ea75587f81a6dfb6403d12b2d53ba4d152cba98dfc",
+        "candidatos/mae_contexto_curto/seed23.npz": "4a9023ebffbda6f40087f586b6ffdc688359cf33849aa7a644743f3b9d4adf43",
+        "candidatos/mae_contexto_curto/seed23.csv": "0f1e90f5a479e92702ce55312587480882bf9cecd410a3c3b689785f059f9fae",
+        "candidatos/mae_contexto_curto/seed42.npz": "65f9abdd2fa58e3bfbc382626d7f7ed35789a196e36dd6b528da0ff3b6cb695b",
+        "candidatos/mae_contexto_curto/seed42.csv": "b20a7ebd2f831a91e038fd7360e93c92f2d50cb2b7368b8c8a9a6ed096f9497a",
+        "candidatos/mae_contexto_curto/seed67.npz": "efacab31a78a6b540450ba7c9c115f04ef3654499cf95e498e11969ba353500d",
+        "candidatos/mae_contexto_curto/seed67.csv": "ff9f826c6f199570d7979def144df75dd9815bb927ac720497d7c723f43de5ff",
+        "candidatos/mae_contexto_curto/seed89.npz": "848f0d4849056d27e8735446426eeeecec34d6b977af41fb35e5a12b03cabbb1",
+        "candidatos/mae_contexto_curto/seed89.csv": "e4ab24974ede8d9a2aa1820a11b957041de7fd9113c014d2fcad01aaa16c9a3e"
+      },
+      "selecao_concluida_antes_do_teste": true,
+      "limitacoes": [
+        "2024 ja observado motivou a busca; necessita confirmacao futura.",
+        "Janela menor preserva exatamente origens, alvos e exemplos de treino.",
+        "Grade limitada; nenhuma garantia de superar outras arquiteturas.",
+        "Horaria usa apenas semente42; diaria usa cinco sementes."
+      ],
+      "inconsistencias": []
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "ok": true,
+      "status_no_inicio": {
+        "etapa": "em_execucao",
+        "modo": "completa",
+        "tarefa": "hourly_72_extension"
+      },
+      "hashes_conferidos": {
+        "codigo": 8,
+        "entradas": 8
+      },
+      "alinhamento_canonico": true,
+      "erro_maximo_escala_wm2": 0.0,
+      "vencedor": {
+        "MAE_validacao_wm2": 48.94850718134734,
+        "contexto": 336,
+        "dimensao": 16,
+        "epocas": {
+          "42": 30
+        },
+        "lote": 64,
+        "nome": "mae_dim16_lr0003",
+        "perda": "mae",
+        "taxa": 0.0003
+      },
+      "ranking_recalculado": [
+        {
+          "contexto": 336,
+          "dimensao": 16,
+          "lote": 64,
+          "nome": "mae_dim16_lr0003",
+          "perda": "mae",
+          "taxa": 0.0003,
+          "MAE_validacao_wm2": 48.94850718134734,
+          "epocas": {
+            "42": 30
+          }
+        },
+        {
+          "contexto": 336,
+          "dimensao": 8,
+          "lote": 128,
+          "nome": "mae",
+          "perda": "mae",
+          "taxa": 0.001,
+          "MAE_validacao_wm2": 49.01538157666367,
+          "epocas": {
+            "42": 26
+          }
+        },
+        {
+          "contexto": 168,
+          "dimensao": 8,
+          "lote": 128,
+          "nome": "mae_contexto_curto",
+          "perda": "mae",
+          "taxa": 0.001,
+          "MAE_validacao_wm2": 49.18398664625896,
+          "epocas": {
+            "42": 28
+          }
+        },
+        {
+          "contexto": 336,
+          "dimensao": 8,
+          "lote": 128,
+          "nome": "huber",
+          "perda": "huber",
+          "taxa": 0.001,
+          "MAE_validacao_wm2": 49.413538936494376,
+          "epocas": {
+            "42": 17
+          }
+        },
+        {
+          "nome": "referencia_original",
+          "MAE_validacao_wm2": 51.551045097112045,
+          "epocas": {},
+          "contexto": 336
+        }
+      ],
+      "caches_auditados": 4,
+      "historicos": [
+        {
+          "candidato": "mae",
+          "semente": 42,
+          "epoca_selecionada": 26,
+          "epocas_executadas": 30
+        },
+        {
+          "candidato": "huber",
+          "semente": 42,
+          "epoca_selecionada": 17,
+          "epocas_executadas": 22
+        },
+        {
+          "candidato": "mae_dim16_lr0003",
+          "semente": 42,
+          "epoca_selecionada": 30,
+          "epocas_executadas": 30
+        },
+        {
+          "candidato": "mae_contexto_curto",
+          "semente": 42,
+          "epoca_selecionada": 28,
+          "epocas_executadas": 30
+        }
+      ],
+      "hashes_arquivos_estaveis": {
+        "contrato_execucao.json": "b6ad29a50c0344934390e8638a1af1b22cb23213787bb3e8246848bf51d4e770",
+        "selecao_congelada.json": "3c5d4ce4b8acf9a48a91e18153a695c2db266f36b745991271038c8f33153453",
+        "ranking_validacao.csv": "e4b4cf35456d9f2df1507074f78105c9ce36555fde8164aa06ddf481a957a77f",
+        "escalas_selecao.csv": "9f345a9bcf20b5206120e9d8dc96a9cbfd3a7a3b708414ec22e6b3ba1fd276e9",
+        "candidatos/mae/seed42.npz": "de20752cb279df1dabac2bed550eb49657e914d2d13236b91b685bb0525c25b5",
+        "candidatos/mae/seed42.csv": "f8aaceca9663e6b2e7b182aa499320214663de071091cde46625ee43c3777f0f",
+        "candidatos/huber/seed42.npz": "27a6fa86deaa439a9a1acb7bf8cf50b1152c64ffd07940a92bff5270d6efafd0",
+        "candidatos/huber/seed42.csv": "e4a03d15810e8c202cb1e66b85b5ab8d2a07c6eb22a2015026beb3bb21925233",
+        "candidatos/mae_dim16_lr0003/seed42.npz": "472290d15d2a9383c2d87f07dbb06ce43b2f5f380e540517dfc2f9167d05fd9b",
+        "candidatos/mae_dim16_lr0003/seed42.csv": "75f920cf4d14511a62b43f9d54a5091d5cd642b40389ad094e77fb98239efd1f",
+        "candidatos/mae_contexto_curto/seed42.npz": "51c86c596d0a92ae105639a8d64954ecc28e744144479ace41b790513f0dfc09",
+        "candidatos/mae_contexto_curto/seed42.csv": "ce6a8977abcdbbc74e2d54b1b67d683a84ddae1d8f542e8b2a33ebfb64297526"
+      },
+      "selecao_concluida_antes_do_teste": true,
+      "limitacoes": [
+        "2024 ja observado motivou a busca; necessita confirmacao futura.",
+        "Janela menor preserva exatamente origens, alvos e exemplos de treino.",
+        "Grade limitada; nenhuma garantia de superar outras arquiteturas.",
+        "Horaria usa apenas semente42; diaria usa cinco sementes."
+      ],
+      "inconsistencias": []
+    }
+  ],
+  "ok_no_escopo_selecao": true
+}

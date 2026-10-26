@@ -1,0 +1,162 @@
+{
+  "ambiente_atual": {
+    "cuda": "12.6",
+    "cudnn": 91002,
+    "cudnn_allow_tf32": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "deterministic_algorithms": true,
+    "deterministic_warn_only": true,
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "matmul_allow_tf32": false,
+    "torch": "2.12.0+cu126"
+  },
+  "ambiente_original": {
+    "joblib": "1.5.3",
+    "numpy": "2.4.4",
+    "pandas": "3.0.3",
+    "python": "3.14.4",
+    "scikit-learn": "1.9.0",
+    "torch": "2.12.0",
+    "xgboost": "3.2.0"
+  },
+  "arquitetura_shapes_iguais_checkpoint_original_refit": {
+    "cabeca.bias": [
+      30
+    ],
+    "cabeca.weight": [
+      30,
+      40
+    ],
+    "embedding_localidade.weight": [
+      10,
+      8
+    ],
+    "encoder.bias_hh_l0": [
+      128
+    ],
+    "encoder.bias_ih_l0": [
+      128
+    ],
+    "encoder.weight_hh_l0": [
+      128,
+      32
+    ],
+    "encoder.weight_ih_l0": [
+      128,
+      1
+    ]
+  },
+  "configuracao_igual": true,
+  "contrato_sha256": "5b6041e21770178e59c059387cb0aeeff950796ebe39d986b45f049289451999",
+  "curvas": [
+    {
+      "delta_mse_validacao_primeira_epoca": 1.201175508086516e-07,
+      "epoca_cpu": 24,
+      "epoca_gpu": 18,
+      "epocas_executadas_cpu": 29,
+      "epocas_executadas_gpu": 23,
+      "max_delta_mse_validacao_absoluto": 0.0007054480673774829,
+      "primeira_epoca_delta_maior_1e_6": 10,
+      "seed": 11
+    },
+    {
+      "delta_mse_validacao_primeira_epoca": -4.67754545652177e-08,
+      "epoca_cpu": 29,
+      "epoca_gpu": 29,
+      "epocas_executadas_cpu": 30,
+      "epocas_executadas_gpu": 30,
+      "max_delta_mse_validacao_absoluto": 0.0003786365001920665,
+      "primeira_epoca_delta_maior_1e_6": 7,
+      "seed": 23
+    },
+    {
+      "delta_mse_validacao_primeira_epoca": 7.235814655087713e-08,
+      "epoca_cpu": 30,
+      "epoca_gpu": 30,
+      "epocas_executadas_cpu": 30,
+      "epocas_executadas_gpu": 30,
+      "max_delta_mse_validacao_absoluto": 0.0015954885407099655,
+      "primeira_epoca_delta_maior_1e_6": 6,
+      "seed": 42
+    },
+    {
+      "delta_mse_validacao_primeira_epoca": 8.749583410572193e-08,
+      "epoca_cpu": 19,
+      "epoca_gpu": 16,
+      "epocas_executadas_cpu": 24,
+      "epocas_executadas_gpu": 21,
+      "max_delta_mse_validacao_absoluto": 0.005439877964201426,
+      "primeira_epoca_delta_maior_1e_6": 5,
+      "seed": 67
+    },
+    {
+      "delta_mse_validacao_primeira_epoca": -2.187395852643048e-08,
+      "epoca_cpu": 27,
+      "epoca_gpu": 27,
+      "epocas_executadas_cpu": 30,
+      "epocas_executadas_gpu": 30,
+      "max_delta_mse_validacao_absoluto": 0.0013977426574343713,
+      "primeira_epoca_delta_maior_1e_6": 8,
+      "seed": 89
+    }
+  ],
+  "dados": {
+    "ajuste": {
+      "datas_alvo": true,
+      "localidade_id": true,
+      "origem": true,
+      "x_bruto": true,
+      "x_normalizado_bitexato": true,
+      "y_bruto": true,
+      "y_normalizado_bitexato": true
+    },
+    "validacao": {
+      "datas_alvo": true,
+      "localidade_id": true,
+      "origem": true,
+      "x_bruto": true,
+      "x_normalizado_bitexato": true,
+      "y_bruto": true,
+      "y_normalizado_bitexato": true
+    }
+  },
+  "diferenca_fonte_multirresolucao": {
+    "diferenca_restrita_ao_caminho_wrapper": true,
+    "hash_apos_restaurar_caminho_wrapper": "6bd687ead27d2d174a0e1beb7c69dcb29c4695549553f4cbf2142e159f8ba991",
+    "hash_original": "6bd687ead27d2d174a0e1beb7c69dcb29c4695549553f4cbf2142e159f8ba991"
+  },
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\pareceres_controles\\daily_30_lstm_curvas_cpu_gpu.csv": "5e908fcd1041ae34fee97f022bb55416bfc8a46c43afc98298a7cdf7cf841be3",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\pareceres_controles\\daily_30_lstm_replay_novo_validacao.json": "d9351d9709b3682081ee2e6c8da295dc43445b19de7c26dcae359ea85c8815c5",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\pareceres_controles\\daily_30_lstm_validacao.json": "9f7b0a8c507b6108478c91057c9ebc7c29a076163ab5935399248428e1775f61",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\contrato_execucao.json": "344edf1656d7ced7ae54f6aaf95dace2b835f850fef8174e219ff2f33c550853",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\epocas_selecionadas.csv": "6b63406e54dfd69a8b7edbc1a313efe1efaca39d7fe10c2f3bfb28b529a5f82a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\historico_treinamento.csv": "415b7c107ca2eebccd82db2579843ecdffe24c8643cda0857f5babe06dca8383",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\lstm\\contrato_execucao.json": "0682d3fe5cd5f68b6e764b37c18ec89d0d8d25ea177f4e52d8345d42fba5b3d1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\investigar_lstm_diario_gpu.py": "f45901d93baea6a9adc77a8debe683c6f2501af369f6632203ea1d6209b89011"
+  },
+  "interpretacao": "Mesmos dados, arquitetura e hiperparametros. As diferencas pequenas nas operacoes CPU/CUDA podem crescer na otimizacao recorrente e mudar a epoca selecionada. O experimento isolado de um lote demonstra diferencas de backend, mas nao prova que esse fator explica toda a divergencia final. Comparar quantizacao contra o novo controle no mesmo ambiente; nao chamar o controle GPU reproducao exata do antigo.",
+  "lote_inicial_sem_atualizacao": {
+    "estado_inicial_bitexato": true,
+    "max_delta_gradientes": {
+      "cabeca.bias": 1.862645149230957e-08,
+      "cabeca.weight": 3.818422555923462e-08,
+      "embedding_localidade.weight": 9.313225746154785e-10,
+      "encoder.bias_hh_l0": 1.2293457984924316e-07,
+      "encoder.bias_ih_l0": 1.2293457984924316e-07,
+      "encoder.weight_hh_l0": 1.0943040251731873e-08,
+      "encoder.weight_ih_l0": 8.381903171539307e-09
+    },
+    "max_delta_previsao_normalizada": 5.364418029785156e-07,
+    "mse_cpu": 0.4616585969924927,
+    "mse_gpu": 0.46165865659713745,
+    "seed": 11,
+    "tamanho": 128
+  },
+  "modelo": "LSTM",
+  "nao_emite_aceite": true,
+  "retreino_realizado": false,
+  "tarefa": "daily_30"
+}

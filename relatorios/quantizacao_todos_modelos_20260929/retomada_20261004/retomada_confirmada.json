@@ -1,0 +1,315 @@
+{
+  "ok": true,
+  "confirmado_em_utc": "2026-10-04T22:36:05.435965+00:00",
+  "launcher": {
+    "pid": 3788,
+    "iniciado_em_utc": "2026-10-04T22:33:12.2165795Z"
+  },
+  "comando": "python -X utf8 -m scripts.coordenar_quantizacao_historica --cpu-workers 2 --gpu-workers 2",
+  "coordenador": {
+    "iniciado_em_utc": "2026-10-04T22:33:22.297150+00:00",
+    "pid": 27596,
+    "identidade_coordenador": {
+      "pid": 27596,
+      "creation_time": "134356267950829772"
+    },
+    "publicado": false,
+    "revisao_visual_pendente": true,
+    "codigo_sha256": "3b865ca313e0d2e84cb11cc046de2b825716c02c618328da5ac576225b316a4e",
+    "etapa": "fila_historico_1998_2022",
+    "atualizado_em_utc": "2026-10-04T22:36:04.104657+00:00",
+    "etapa_atual": "pronto_para_revisao_visual",
+    "processos_ativos": [],
+    "auditoria_atual_sha256": "b48b7fbefbd1b267c25c276dc6f6d10692603ac45969946d879f1b52cb5a43d5",
+    "processos_historico": [
+      {
+        "pid": 18396,
+        "creation_time": "134356268032233328"
+      }
+    ],
+    "processo_filho": {
+      "pid": 18396,
+      "creation_time": "134356268032233328"
+    },
+    "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\fila_historico_1998_2022.log"
+  },
+  "runner": {
+    "regime": "historico_1998_2022",
+    "modo": "completa",
+    "etapa": "selecao",
+    "iniciado_em_utc": "2026-10-04T22:33:25.522240+00:00",
+    "atualizado_em_utc": "2026-10-04T22:36:03.482773+00:00",
+    "pid_runner": 26300,
+    "identidade_runner": {
+      "pid": 26300,
+      "creation_time": "134356268042391634"
+    },
+    "processos_historico": [
+      {
+        "pid": 26232,
+        "creation_time": "134356268055315382"
+      },
+      {
+        "pid": 23812,
+        "creation_time": "134356268056735714"
+      },
+      {
+        "pid": 27304,
+        "creation_time": "134356268058229588"
+      },
+      {
+        "pid": 23864,
+        "creation_time": "134356268059876958"
+      },
+      {
+        "pid": 2212,
+        "creation_time": "134356268866241370"
+      },
+      {
+        "pid": 26724,
+        "creation_time": "134356268867724866"
+      },
+      {
+        "pid": 28580,
+        "creation_time": "134356268869359001"
+      },
+      {
+        "pid": 5236,
+        "creation_time": "134356268921500002"
+      }
+    ],
+    "saida": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+    "pendentes": [
+      [
+        "daily_30",
+        "Informer"
+      ],
+      [
+        "daily_30",
+        "Climatologia"
+      ],
+      [
+        "daily_30",
+        "TimesNet"
+      ],
+      [
+        "hourly_72_extension",
+        "GRU"
+      ],
+      [
+        "hourly_72_extension",
+        "LSTM"
+      ],
+      [
+        "hourly_72_extension",
+        "DilatedRNN"
+      ],
+      [
+        "hourly_72_extension",
+        "Transformer"
+      ],
+      [
+        "hourly_72_extension",
+        "Informer"
+      ],
+      [
+        "hourly_72_extension",
+        "XGBoost"
+      ],
+      [
+        "hourly_72_extension",
+        "ARIMA"
+      ],
+      [
+        "hourly_72_extension",
+        "Persistencia"
+      ],
+      [
+        "hourly_72_extension",
+        "Sazonal ingenuo"
+      ],
+      [
+        "hourly_72_extension",
+        "Climatologia"
+      ],
+      [
+        "hourly_72_extension",
+        "TimesNet"
+      ],
+      [
+        "monthly_6",
+        "GRU"
+      ],
+      [
+        "monthly_6",
+        "LSTM"
+      ],
+      [
+        "monthly_6",
+        "DilatedRNN"
+      ],
+      [
+        "monthly_6",
+        "Transformer"
+      ],
+      [
+        "monthly_6",
+        "Informer"
+      ],
+      [
+        "monthly_6",
+        "XGBoost"
+      ],
+      [
+        "monthly_6",
+        "ARIMA"
+      ],
+      [
+        "monthly_6",
+        "Persistencia"
+      ],
+      [
+        "monthly_6",
+        "Sazonal ingenuo"
+      ],
+      [
+        "monthly_6",
+        "Climatologia"
+      ],
+      [
+        "monthly_6",
+        "TimesNet"
+      ],
+      [
+        "monthly_1",
+        "GRU"
+      ],
+      [
+        "monthly_1",
+        "LSTM"
+      ],
+      [
+        "monthly_1",
+        "DilatedRNN"
+      ],
+      [
+        "monthly_1",
+        "Transformer"
+      ],
+      [
+        "monthly_1",
+        "Informer"
+      ],
+      [
+        "monthly_1",
+        "XGBoost"
+      ],
+      [
+        "monthly_1",
+        "ARIMA"
+      ],
+      [
+        "monthly_1",
+        "Persistencia"
+      ],
+      [
+        "monthly_1",
+        "Sazonal ingenuo"
+      ],
+      [
+        "monthly_1",
+        "Climatologia"
+      ],
+      [
+        "monthly_1",
+        "TimesNet"
+      ]
+    ],
+    "concluidos": [
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "GRU",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_gru.log",
+        "concluido_em_utc": "2026-10-04T22:34:41.569652+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "LSTM",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_lstm.log",
+        "concluido_em_utc": "2026-10-04T22:34:41.579935+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "XGBoost",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_xgboost.log",
+        "concluido_em_utc": "2026-10-04T22:34:41.588461+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "ARIMA",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_arima.log",
+        "concluido_em_utc": "2026-10-04T22:34:47.110079+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "DilatedRNN",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_dilatedrnn.log",
+        "concluido_em_utc": "2026-10-04T22:36:03.457616+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "Persistencia",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_persistencia.log",
+        "concluido_em_utc": "2026-10-04T22:36:03.482053+00:00"
+      }
+    ],
+    "falhas": [],
+    "processos": [
+      {
+        "tarefa": "daily_30",
+        "modelo": "Transformer",
+        "recurso": "gpu",
+        "pid": 26724,
+        "creation_time": "134356268867724866",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_transformer.log",
+        "inicio": "2026-10-04T22:34:46.923935+00:00"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "Sazonal ingenuo",
+        "recurso": "cpu",
+        "pid": 5236,
+        "creation_time": "134356268921500002",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_sazonal_ingenuo.log",
+        "inicio": "2026-10-04T22:34:52.313675+00:00"
+      }
+    ]
+  },
+  "prelancamento_sha256": "122b7ab3a26f58175eec42ce56c61ca0c3c87575fc9be2d7a419d085c9173462",
+  "selecoes_salvas": 44,
+  "refits_salvos": 6,
+  "caches_finais_integros": 574,
+  "congelamento_global_sha256": "c616673e7d334a6161872346980a1904f03d4a375433008811e287a839abfeb7",
+  "congelamento_global_inalterado": true,
+  "preflight_70_fontes_aprovado": true,
+  "fase_da_retomada": "revalidacao dos caches completos, depois refits incompletos",
+  "contador_agregado": {
+    "concluidas": 138,
+    "previstas": 264,
+    "percentual": 52.27272727272727,
+    "nota": "Contagem de seleção/refit, sem ponderação de horas; auditorias e PDF histórico ainda pendentes."
+  },
+  "pdf_atual_sha256": "155e58187c1da01d6030334d086933bf0f200d13cb02d60c0db76b28b7bac776"
+}

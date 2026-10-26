@@ -1,0 +1,34 @@
+
+Inicio 2026-10-01T02:16:26.798342+00:00
+daily_30/DilatedRNN/sem_quantizacao/refit seed=11 inicio
+C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\.venv-baselines-gpu-20260912\Lib\site-packages\torch\autograd\graph.py:882: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\cuda\CublasHandlePool.cpp:370.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+daily_30/DilatedRNN/sem_quantizacao/refit seed=11 fim epocas=24
+daily_30/DilatedRNN/sem_quantizacao/refit seed=23 inicio
+daily_30/DilatedRNN/sem_quantizacao/refit seed=23 fim epocas=30
+daily_30/DilatedRNN/sem_quantizacao/refit seed=42 inicio
+daily_30/DilatedRNN/sem_quantizacao/refit seed=42 fim epocas=27
+daily_30/DilatedRNN/sem_quantizacao/refit seed=67 inicio
+daily_30/DilatedRNN/sem_quantizacao/refit seed=67 fim epocas=24
+daily_30/DilatedRNN/sem_quantizacao/refit seed=89 inicio
+daily_30/DilatedRNN/sem_quantizacao/refit seed=89 fim epocas=30
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_quantizacao_concorrentes.py", line 601, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_quantizacao_concorrentes.py", line 597, in main
+    executar_fase(ctx, args.modelo, saida, args.fase)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_quantizacao_concorrentes.py", line 553, in executar_fase
+    conferir_controle(ctx, modelo, part, brutas, par["sementes"], pasta)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_quantizacao_concorrentes.py", line 440, in conferir_controle
+    validar_aceite_gpu(aceite, contrato_hash, registro["sha256"], m.sha256_arquivo(divergencia))
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_quantizacao_concorrentes.py", line 367, in validar_aceite_gpu
+    raise ValueError(f"Controle GPU exige auditoria independente registrada em {caminho}")
+ValueError: Controle GPU exige auditoria independente registrada em C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\resultados\quantizacao_todos_modelos_20260929\atual\daily_30\dilatedrnn\aceite_controle_gpu_teste.json
+
+Inicio 2026-10-02T04:12:23.717803+00:00

@@ -1,0 +1,370 @@
+{
+  "versao": 1,
+  "verificado_em_utc": "2026-10-06T23:09:58.498602+00:00",
+  "manifesto_sha256": "7005730866b085363db2f177bf6a5e3da84b29e87ddcc9f03f75d1fa2c004358",
+  "somente_leitura_controles_e_processos": true,
+  "erros": [],
+  "aprovado": true,
+  "fontes_verificadas": 158,
+  "fontes_globais_preservadas": 88,
+  "artefatos_cache_preservados": 28,
+  "caches_originais_preservados": 7,
+  "journal": {
+    "etapa": "CONFIRMED",
+    "manifesto_sha256": "7005730866b085363db2f177bf6a5e3da84b29e87ddcc9f03f75d1fa2c004358",
+    "tentativas_popen": 1,
+    "launcher": {
+      "pid": 24264,
+      "creation_time": "134358014645755402"
+    },
+    "coordenador_novo": {
+      "pid": 13592,
+      "creation_time": "134358014655311522"
+    },
+    "confirmado_em_utc": "2026-10-06T23:04:39.679634+00:00"
+  },
+  "wrapper": {
+    "etapa": "CONFIRMED",
+    "utc": "2026-10-06T23:04:46.596523+00:00",
+    "manifesto_sha256": "7005730866b085363db2f177bf6a5e3da84b29e87ddcc9f03f75d1fa2c004358",
+    "wrapper_sha256": "14f211f6ba8a7ee08999ef274e480c945a5ccb34a67fd3cbbfb23f0469f42592",
+    "comando_helper": [
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "scripts.retomar_historico_apos_calendario",
+      "--manifesto",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\manifesto_recuperacao.json",
+      "--manifesto-sha256",
+      "7005730866b085363db2f177bf6a5e3da84b29e87ddcc9f03f75d1fa2c004358",
+      "--saida-localdir",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\execucao\\helper"
+    ],
+    "coordenador_novo": {
+      "pid": 13592,
+      "creation_time": "134358014655311522"
+    },
+    "comando_prioridade": [
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "scripts.priorizar_treinamentos",
+      "--pid",
+      "13592",
+      "--creation-time",
+      "134358014655311522",
+      "--saida",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\execucao\\prioridade_13592_134358014655311522"
+    ],
+    "pid_launcher_prioridade": 19724,
+    "atualizado_em_utc": "2026-10-06T23:04:46.667000+00:00"
+  },
+  "coordenador_primeira_amostra": {
+    "pid": 13592,
+    "creation_time": "134358014655311522",
+    "mesma_instancia_viva": true,
+    "programa": "C:\\Users\\gm.nascimento\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "prioridade": "AboveNormal",
+    "cpu_acumulada_s": 5.703125,
+    "amostra_monotonica_s": 179705.0976045
+  },
+  "ancestralidade_coordenador_launcher": [
+    {
+      "pid": 13592,
+      "creation_time": "134358014655311522"
+    },
+    {
+      "pid": 24264,
+      "creation_time": "134358014645755402"
+    }
+  ],
+  "codigo_coordenador_corresponde": true,
+  "coordenador_status": {
+    "iniciado_em_utc": "2026-10-06T23:04:29.277834+00:00",
+    "pid": 13592,
+    "identidade_coordenador": {
+      "pid": 13592,
+      "creation_time": "134358014655311522"
+    },
+    "publicado": false,
+    "revisao_visual_pendente": true,
+    "codigo_sha256": "1166e691d47d81a98cb87286eed302fa0b61d4acaed0c9029165431a7615fa2b",
+    "etapa": "fila_historico_1998_2022",
+    "atualizado_em_utc": "2026-10-06T23:09:53.259556+00:00",
+    "etapa_atual": "pronto_para_revisao_visual",
+    "processos_ativos": [],
+    "auditoria_atual_sha256": "b48b7fbefbd1b267c25c276dc6f6d10692603ac45969946d879f1b52cb5a43d5",
+    "processos_historico": [
+      {
+        "pid": 15708,
+        "creation_time": "134358014710782576"
+      }
+    ],
+    "processo_filho": {
+      "pid": 15708,
+      "creation_time": "134358014710782576"
+    },
+    "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\fila_historico_1998_2022.log"
+  },
+  "coordenador_heartbeat_s": 7.078225,
+  "antigos_vivos": [],
+  "observador_prioridade": {
+    "pid": 33008,
+    "creation_time": "134358014889269212",
+    "mesma_instancia_viva": true,
+    "programa": "C:\\Users\\gm.nascimento\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "prioridade": "Normal",
+    "cpu_acumulada_s": 6.0625,
+    "amostra_monotonica_s": 179705.1270756
+  },
+  "observador_registro": {
+    "coordenador": {
+      "pid": 13592,
+      "creation_time": "134358014655311522"
+    },
+    "observador": {
+      "pid": 33008,
+      "creation_time": "134358014889269212"
+    },
+    "etapa": "ativa",
+    "atualizado_em_utc": "2026-10-06T23:09:58.035255+00:00",
+    "ultimo_ciclo": {
+      "alterados": [
+        {
+          "pid": 42732,
+          "creation_time": "134358017955365695",
+          "anterior": 32,
+          "atual": 32768
+        },
+        {
+          "pid": 33688,
+          "creation_time": "134358017957243970",
+          "anterior": 32,
+          "atual": 32768
+        },
+        {
+          "pid": 40632,
+          "creation_time": "134358017974102883",
+          "anterior": 32,
+          "atual": 32768
+        }
+      ],
+      "erros": [],
+      "instancias_observadas": [
+        {
+          "pid": 13592,
+          "creation_time": "134358014655311522"
+        },
+        {
+          "pid": 15708,
+          "creation_time": "134358014710782576"
+        },
+        {
+          "pid": 43348,
+          "creation_time": "134358014712038214"
+        },
+        {
+          "pid": 26748,
+          "creation_time": "134358014720385382"
+        },
+        {
+          "pid": 39176,
+          "creation_time": "134358016429976175"
+        },
+        {
+          "pid": 43972,
+          "creation_time": "134358016990567080"
+        },
+        {
+          "pid": 44792,
+          "creation_time": "134358017551284939"
+        },
+        {
+          "pid": 42732,
+          "creation_time": "134358017955365695"
+        },
+        {
+          "pid": 36388,
+          "creation_time": "134358016431726031"
+        },
+        {
+          "pid": 36512,
+          "creation_time": "134358016448853563"
+        },
+        {
+          "pid": 27804,
+          "creation_time": "134358016992475414"
+        },
+        {
+          "pid": 32408,
+          "creation_time": "134358017553044325"
+        },
+        {
+          "pid": 43320,
+          "creation_time": "134358017566826260"
+        },
+        {
+          "pid": 33688,
+          "creation_time": "134358017957243970"
+        },
+        {
+          "pid": 40632,
+          "creation_time": "134358017974102883"
+        }
+      ]
+    },
+    "classe_solicitada": 32768
+  },
+  "observador_heartbeat_s": 2.31128,
+  "wrapper_stderr_vazio": true,
+  "observador_stderr_vazio": true,
+  "coordenadores_main_cli": [
+    {
+      "ProcessId": 24264,
+      "ParentProcessId": 24200,
+      "CommandLine": "\"C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe\" -X utf8 -m scripts.coordenar_quantizacao_historica --cpu-workers 2 --gpu-workers 2"
+    },
+    {
+      "ProcessId": 13592,
+      "ParentProcessId": 24264,
+      "CommandLine": "\"C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe\" -X utf8 -m scripts.coordenar_quantizacao_historica --cpu-workers 2 --gpu-workers 2"
+    }
+  ],
+  "duplicata_main": false,
+  "runner_longo": {
+    "pid": 26748,
+    "creation_time": "134358014720385382",
+    "mesma_instancia_viva": true,
+    "programa": "C:\\Users\\gm.nascimento\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "prioridade": "AboveNormal",
+    "cpu_acumulada_s": 5.28125,
+    "amostra_monotonica_s": 179710.36817
+  },
+  "runner_status_etapa": "refit",
+  "runner_heartbeat_s": 4.814013,
+  "runner_falhas": [],
+  "runner_ativo_cli_oficial": true,
+  "runner_cli": [
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "scripts.rodar_quantizacao_todos_modelos",
+    "--regime",
+    "historico_1998_2022",
+    "--saida",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+    "--relatorios",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica",
+    "--protocolo",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\protocolo_historico_1998_2022.json",
+    "--cpu-workers",
+    "2",
+    "--gpu-workers",
+    "2",
+    "--somente-refit"
+  ],
+  "runner_descende_coordenador": true,
+  "limites_workers": {
+    "cpu_ativos": 1,
+    "gpu_ativos": 2,
+    "cpu_limite": 2,
+    "gpu_limite": 2
+  },
+  "preparacao_aprovada": true,
+  "backups_preparacao": [
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\journal_bloqueado_anterior.json",
+      "preservado": true
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\manifesto_anterior.json",
+      "preservado": true
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\erro_wrapper_anterior.log",
+      "preservado": true
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\pedido_pausa_anterior.json",
+      "preservado": true
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\parar_recuperacao_anterior_0.txt",
+      "preservado": true
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\parar_recuperacao_anterior_1.txt",
+      "preservado": true
+    }
+  ],
+  "marcadores_parada_antigos": [
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_local_20261005_1715\\parar_recuperacao",
+      "presente": true,
+      "hash_preservado": true
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\parar_recuperacao",
+      "presente": true,
+      "hash_preservado": true
+    }
+  ],
+  "nova_parada_ausente": true,
+  "backups_duraveis_helper_contagem": 92,
+  "falhas_antigas_logs_preservados": [
+    {
+      "origem": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_dilatedrnn.log",
+      "copia": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\execucao\\helper\\47ea155be87244d1b120dd0f6708101c_antes\\026_refit_monthly_1_dilatedrnn.log",
+      "hash_preservado": true,
+      "hash_original_atual": "9fafe397969de616bc8c920b3ffc33a2629e3aaca18e09d7f176758f4b0e1c99"
+    },
+    {
+      "origem": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_sazonal_ingenuo.log",
+      "copia": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\execucao\\helper\\47ea155be87244d1b120dd0f6708101c_antes\\031_refit_monthly_1_sazonal_ingenuo.log",
+      "hash_preservado": true,
+      "hash_original_atual": "0cb0ec3130f055d2d3d25f02ca0bae8c9d0e97f5d6aac97f0790d8c36b88c9ac"
+    },
+    {
+      "origem": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_sazonal_ingenuo.log",
+      "copia": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\execucao\\helper\\47ea155be87244d1b120dd0f6708101c_antes\\042_refit_monthly_6_sazonal_ingenuo.log",
+      "hash_preservado": true,
+      "hash_original_atual": "aa739a8b2db67543cf10840ec95c8e522dd70bf4ec2f0632301d9ae1824ba2c5"
+    }
+  ],
+  "coordenador_segunda_amostra": {
+    "pid": 13592,
+    "creation_time": "134358014655311522",
+    "mesma_instancia_viva": true,
+    "programa": "C:\\Users\\gm.nascimento\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "prioridade": "AboveNormal",
+    "cpu_acumulada_s": 5.734375,
+    "amostra_monotonica_s": 179710.4516921
+  },
+  "cpu_coordenador_intervalo_s": 0.03125,
+  "intervalo_amostras_s": 5.354087599989725,
+  "coordenador_heartbeat_final_s": 2.39445,
+  "coordenador_etapa_final": "fila_historico_1998_2022",
+  "controles_aprovados": {
+    "manifesto158": true,
+    "global88": true,
+    "cache28": true,
+    "journal_confirmado_uma_tentativa": true,
+    "wrapper_confirmado": true,
+    "root_vivo_codigo": true,
+    "ancestry": true,
+    "sem_oldroots_duplicata": true,
+    "heartbeat": true,
+    "observer_ativo_sem_erros": true,
+    "prioridade_root_AboveNormal": true,
+    "runner_cli": true,
+    "runner_sem_falhas": true,
+    "paradas": true,
+    "provas_preparacao": true,
+    "logs3_preservados": true
+  }
+}

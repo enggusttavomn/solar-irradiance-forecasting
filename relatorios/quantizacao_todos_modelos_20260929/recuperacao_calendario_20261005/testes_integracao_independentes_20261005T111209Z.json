@@ -1,0 +1,62 @@
+{
+  "schema": "independent_calendar_integration_fake_tests_v1",
+  "created_utc": "2026-10-05T11:12:09.800199+00:00",
+  "ok": true,
+  "tests_passed": 37,
+  "runs": [
+    {
+      "modules": [
+        "tests.test_runner_somente_refit",
+        "tests.test_coordenacao_historica_somente_refit"
+      ],
+      "count": 24,
+      "duration_seconds_unittest": 272.097,
+      "summary": "Ran 24 tests in 272.097s; OK",
+      "exit_code": 0,
+      "exec_session": 12550
+    },
+    {
+      "modules": [
+        "tests.test_integracao_sazonal_mensal_controle_v1"
+      ],
+      "count": 13,
+      "duration_seconds_unittest": 16.326,
+      "summary": "Ran 13 tests in 16.326s; OK",
+      "exit_code": 0,
+      "exec_session": 91291
+    }
+  ],
+  "evidence_kind": "actual unittest stdout observed through exec/write_stdin, not reconstructed full log",
+  "source_hashes_after_execution": {
+    "scripts/rodar_quantizacao_todos_modelos.py": "410740936138e1552bab9b617b3b1a35741f6202a05116322a9d1346ebf3f84f",
+    "scripts/coordenar_quantizacao_historica.py": "1166e691d47d81a98cb87286eed302fa0b61d4acaed0c9029165431a7615fa2b",
+    "scripts/auditar_quantizacao_todos_modelos.py": "2a8a1e9c5f014dcd554494bf798dc60c55c4eeecbd9fd80700dfe39cc1595c43",
+    "scripts/gerar_pdf_quantizacao_todos_modelos.py": "3b5e3a6ab6c2ea8be46d665df4a24b6beb5e87dd2291ff081b4dea0bc30eb7bd",
+    "tests/test_runner_somente_refit.py": "9c6be357dfd71f6424a0829f420930e60cadfd8bdcb4bcf8b210cd1863df8e0f",
+    "tests/test_coordenacao_historica_somente_refit.py": "0fff3123a22cc502d3d630d6dcf42067146f9a3f0ebbb09ff928395fadbc2f97",
+    "tests/test_integracao_sazonal_mensal_controle_v1.py": "f4701242064448597174e644694c16abde64aad1886293dffd070aaf18c9b45d"
+  },
+  "scope": [
+    "dispatcher closed historical monthly Sazonal in both phases",
+    "neighboring dispatch behavior preserved",
+    "32 replay scenarios using fake modules and synthetic arrays",
+    "strict metadata/complement validation before inference",
+    "NaN targets and adapter restoration",
+    "native and legacy supplemental hash graph",
+    "PDF loader rejects post-audit tampering",
+    "out-of-scope and bad metadata rejected"
+  ],
+  "limits": [
+    "Fake integration checks do not establish parity with real historical caches",
+    "No real engine imported, fit/replay over datasets, checkpoint deserialization or training process launched",
+    "Source hashes recorded after execution; separate source stability guard remains root responsibility"
+  ],
+  "prior_attempt": {
+    "combined_34_capture_timeout_seconds": 180,
+    "certified_result": false,
+    "subsequent_direct_runs": true
+  },
+  "modified_sources_by_this_agent": [
+    "tests/test_integracao_sazonal_mensal_controle_v1.py"
+  ]
+}

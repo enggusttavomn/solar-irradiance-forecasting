@@ -1,0 +1,137 @@
+{
+  "codigo_adaptador_sha256": "89bbc5dc25780bf22dff658314ab11f6c5e4a11830183c0a85a313be59162f13",
+  "concluido_em_utc": "2026-10-05T11:08:12.574927+00:00",
+  "evidencias": [
+    {
+      "evidencia": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\correcao_sazonal_mensal_v1\\monthly_1\\paridade_validacao.json",
+      "sha256": "256ae4d0bfd1153f5b9e3fce717112de2b408f454d4c11da6451add817287984",
+      "tarefa": "monthly_1",
+      "variantes": [
+        {
+          "adaptado_bitexato": true,
+          "alvos_nan_bitexatos": true,
+          "cache_sha256": "b91ceb639eab863b001d2f19e6e52fe09eb176ad7e930caec184e578069c215e",
+          "dtype": "float64",
+          "legado_bitexato": true,
+          "niveis": null,
+          "previsao_bytes_sha256": "f8b96fdd7229bd8aac9db1b0d70fa9eb73e6d222361b3c883756462ed4c2bae6",
+          "shape": [
+            120,
+            1
+          ],
+          "variante": "sem_quantizacao"
+        },
+        {
+          "adaptado_bitexato": true,
+          "alvos_nan_bitexatos": true,
+          "cache_sha256": "53434078e632e4ed63fd53aca0adc0e1a2d46fc5f3a103c3b7c4449baa5c11bf",
+          "dtype": "float64",
+          "legado_bitexato": true,
+          "niveis": 64,
+          "previsao_bytes_sha256": "faf6977331fc461e5a9f6af1181a88a558ad903b5ee98ae9b7b1735e2b98f5df",
+          "shape": [
+            120,
+            1
+          ],
+          "variante": "q64"
+        },
+        {
+          "adaptado_bitexato": true,
+          "alvos_nan_bitexatos": true,
+          "cache_sha256": "31da2230a2ee17d26be7261805adcff0e677b7e89316965e44b7aaa0ffce4216",
+          "dtype": "float64",
+          "legado_bitexato": true,
+          "niveis": 128,
+          "previsao_bytes_sha256": "744ebca5f3df35db37dae8d427e96b93a484e4546683ce8d0719540745c7bdf3",
+          "shape": [
+            120,
+            1
+          ],
+          "variante": "q128"
+        },
+        {
+          "adaptado_bitexato": true,
+          "alvos_nan_bitexatos": true,
+          "cache_sha256": "a54c66cfcba272d7c7fd8c0a1a19599de464a58cbbfe63e9f6ddb97041c4a9ed",
+          "dtype": "float64",
+          "legado_bitexato": true,
+          "niveis": 256,
+          "previsao_bytes_sha256": "1a8f4398c49ef2ea22a5ba7409dcb79547a3990f5770c94363e70be5f4686530",
+          "shape": [
+            120,
+            1
+          ],
+          "variante": "q256"
+        }
+      ]
+    },
+    {
+      "evidencia": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\correcao_sazonal_mensal_v1\\monthly_6\\paridade_validacao.json",
+      "sha256": "f52daa2019691eb098c6c86d0deedf6ef1d3138bd9b0862dcdc455acbdcccbb7",
+      "tarefa": "monthly_6",
+      "variantes": [
+        {
+          "adaptado_bitexato": true,
+          "alvos_nan_bitexatos": true,
+          "cache_sha256": "675c229c2c91412b2fa91da16911ca108d80a3412b336b6e1bee8dbcee7bc585",
+          "dtype": "float64",
+          "legado_bitexato": true,
+          "niveis": null,
+          "previsao_bytes_sha256": "f7d3829e930b6c2441234edef3146d8b3fdbb934d9ef1dca12fc49d137f61231",
+          "shape": [
+            70,
+            6
+          ],
+          "variante": "sem_quantizacao"
+        },
+        {
+          "adaptado_bitexato": true,
+          "alvos_nan_bitexatos": true,
+          "cache_sha256": "e7e6d7a328a99a057504e3039cb3c70ceda921d67dc49029c8dc11754a8101ca",
+          "dtype": "float64",
+          "legado_bitexato": true,
+          "niveis": 64,
+          "previsao_bytes_sha256": "5f5b21d5ef1df80d59baffa4f60bfb33b247210271d65204c3b781167164c849",
+          "shape": [
+            70,
+            6
+          ],
+          "variante": "q64"
+        },
+        {
+          "adaptado_bitexato": true,
+          "alvos_nan_bitexatos": true,
+          "cache_sha256": "0779c09e89ab8b0cc152264215a54634b8f0b429eac628f8875c5bc55b822f45",
+          "dtype": "float64",
+          "legado_bitexato": true,
+          "niveis": 128,
+          "previsao_bytes_sha256": "bc3878d5fad508146b1b5cc5c26887485f41d83777f7f65bdf3c2964d4b7eca1",
+          "shape": [
+            70,
+            6
+          ],
+          "variante": "q128"
+        },
+        {
+          "adaptado_bitexato": true,
+          "alvos_nan_bitexatos": true,
+          "cache_sha256": "a8c10bf098550b291c269b07ed6518cba18ebb7a9c7722f2edd58988222fa872",
+          "dtype": "float64",
+          "legado_bitexato": true,
+          "niveis": 256,
+          "previsao_bytes_sha256": "aaa602a38fd77f7429eb0b07ef64bb80bd030b279864fecfe5d4e38573eeef72",
+          "shape": [
+            70,
+            6
+          ],
+          "variante": "q256"
+        }
+      ]
+    }
+  ],
+  "global_sha_e_mtime_preservados": true,
+  "metrica_test_usada_para_escolher_configuracao": false,
+  "ok": true,
+  "prioridade_temporaria_somente_proprio_diagnostico": true,
+  "sem_fit_refit_deserializacao_ou_alteracao_dos_caches": true
+}

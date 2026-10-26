@@ -1,0 +1,125 @@
+{
+  "observado_em_utc": "2026-10-03T13:51:09.820739+00:00",
+  "observador": "auditoria_retomada_outubro3",
+  "escopo": "somente leitura de estados/logs/processos; escrita somente deste relatorio",
+  "arquivos_corrompidos": [
+    {
+      "path": "relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\status.json",
+      "bytes": 971,
+      "nul_bytes": 971,
+      "todos_nulos": true,
+      "sha256": "a0037d6eb66141a23c5052584dad93f61dcf22797da8dc45341c63922d9ecc90",
+      "erro": "Expecting value: line 1 column 1 (char 0)",
+      "mtime_utc": "2026-10-02T13:06:06.756240+00:00"
+    },
+    {
+      "path": "relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\runner.json",
+      "bytes": 7710,
+      "nul_bytes": 7710,
+      "todos_nulos": true,
+      "sha256": "6fb415081246b99128538f58024c0bece4e67b5604ee3012edbb2087e5c92e1a",
+      "erro": "Expecting value: line 1 column 1 (char 0)",
+      "mtime_utc": "2026-10-02T13:06:07.397576+00:00"
+    }
+  ],
+  "checagens": {
+    "coordenacao_historica": 2,
+    "fila_historica": 1,
+    "finalizacao_20261001": 1,
+    "historico": 60,
+    "painel": 6
+  },
+  "ponte_estado": {
+    "iniciado_em_utc": "2026-10-02T04:01:49.210901+00:00",
+    "pid": 6260,
+    "identidade_coordenador": {
+      "pid": 6260,
+      "creation_time": "134353873065674733"
+    },
+    "codigo_sha256": "24ea810f381cbe7437e76dd55d5df620522d3b956561c9c04560437e1f2abf06",
+    "publicado": false,
+    "revisao_visual_pendente": true,
+    "processos_historico": [
+      {
+        "pid": 28680,
+        "creation_time": "134353873221160428"
+      },
+      {
+        "pid": 20864,
+        "creation_time": "134353910973658302"
+      }
+    ],
+    "etapa": "coordenacao_historica",
+    "atualizado_em_utc": "2026-10-02T13:06:02.766211+00:00",
+    "filas_recuperacao": {
+      "RNN": {
+        "etapa": "concluida",
+        "pronta": true,
+        "processos_ativos": []
+      },
+      "XGBoost": {
+        "etapa": "concluida",
+        "pronta": true,
+        "processos_ativos": []
+      }
+    },
+    "pares_refit_pendentes": [],
+    "escopo_rnn_sha256": "8e3184269003e3f59f19deda099166aba240d2e0def2c3ebd207e8eed175e262",
+    "processo_filho": {
+      "pid": 20864,
+      "creation_time": "134353910973658302"
+    },
+    "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\finalizacao_20261001\\coordenacao_historica.log",
+    "retorno": 0
+  },
+  "processos_ponte_ativos": [],
+  "identidades_pids_anteriores": {
+    "6260": null,
+    "28680": null,
+    "20864": null,
+    "11112": null,
+    "14960": null,
+    "10368": null,
+    "27296": null,
+    "24288": null,
+    "4232": null,
+    "20692": null,
+    "27212": null
+  },
+  "ultimas_etapas_log_sem_comprovacao_status": [
+    {
+      "tarefa": "daily_30",
+      "modelo": "DilatedRNN",
+      "fase": "selecao",
+      "variante": "q64",
+      "semente": 23
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Transformer",
+      "fase": "selecao",
+      "variante": "q128",
+      "semente": 42
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "XGBoost",
+      "fase": "selecao",
+      "variante": "q256",
+      "semente": 23
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "ARIMA",
+      "fase": "selecao",
+      "variante": "q256"
+    }
+  ],
+  "condicoes_retomada": [
+    "Preservar bytes corrompidos antes da substituicao natural dos estados.",
+    "Conferir integridade de contratos, selecoes e caches cientificos em auditoria independente.",
+    "Confirmar ausencia de execucoes historicas atuais e travas livres, sem remover arquivos de lock.",
+    "Iniciar apenas coordenador historico com mesmo protocolo e capacidade anteriormente usada; nao rerodar coordenador atual concluido.",
+    "Sementes completas so podem ser reaproveitadas apos validacao de seus hashes; a semente interrompida reinicia, pois nao ha estado do otimizador por epoca."
+  ]
+}
