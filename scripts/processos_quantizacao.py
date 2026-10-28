@@ -7,6 +7,7 @@ from ctypes import wintypes as w
 import json
 import os
 from pathlib import Path
+import signal
 import subprocess
 import time
 
@@ -148,15 +149,55 @@ def identidade_snapshot_windows(pid):
     return registro
 
 
+def _estatistica_posix(pid):
+    try:
+        fields = Path(f'/proc/{int(pid)}/stat').read_text().rsplit(') ', 1)[1].split()
+    except (FileNotFoundError, ProcessLookupError):
+        return None
+    return {'pid': int(pid), 'creation_time': fields[19], 'estado': fields[0], 'ppid': int(fields[1]),
+            'grupo': int(fields[2]), 'sessao': int(fields[3])}
+
+
+def _snapshot_posix():
+    resultado = {}
+    for path in Path('/proc').glob('[0-9]*/stat'):
+        registro = _estatistica_posix(int(path.parent.name))
+        if registro is not None:
+            resultado[registro['pid']] = registro
+    return resultado
+
+
+def _sinalizar_instancia_posix(registro, sinal):
+    abrir = getattr(os, 'pidfd_open', None)
+    enviar = getattr(signal, 'pidfd_send_signal', None)
+    if abrir is None or enviar is None:
+        raise OSError('Encerramento seguro exige suporte a pidfd no Linux.')
+    try:
+        descritor = abrir(registro['pid'])
+    except ProcessLookupError:
+        return
+    try:
+        atual = _estatistica_posix(registro['pid'])
+        if (atual is not None and atual['creation_time'] == registro['creation_time']
+                and atual['estado'] not in ('Z', 'X')):
+            # O descritor continua referindo-se a esta instancia mesmo que seu
+            # numero PID seja reutilizado entre a verificacao e o sinal.
+            try:
+                enviar(descritor, sinal)
+            except ProcessLookupError:
+                pass
+    finally:
+        os.close(descritor)
+
+
 def identidade(pid):
     '''Identifica uma instancia; PID reutilizado nao equivale ao processo original.'''
     pid = int(pid)
     if os.name != 'nt':
-        try:
-            fields = Path(f'/proc/{pid}/stat').read_text().split(') ', 1)[1].split()
-            return {'pid': pid, 'creation_time': fields[19]}
-        except FileNotFoundError:
+        registro = _estatistica_posix(pid)
+        if registro is None or registro['estado'] in ('Z', 'X'):
             return None
+        return {'pid': pid, 'creation_time': registro['creation_time']}
     handle = k.OpenProcess(0x1000 | 0x100000, False, pid)
     if not handle:
         codigo = ctypes.get_last_error()
@@ -283,12 +324,18 @@ class TravaDiretorio(AbstractContextManager):
 
 
 class ProcessoProprio:
-    '''Somente processos criados aqui podem ser encerrados; descendentes ficam no job.'''
+    '''Encerra apenas a arvore de instancias confirmadas; Windows usa um Job.'''
     def __init__(self, cmd, **kwargs):
         self.job = None
         self.processo = None
         if os.name != 'nt':
             self.processo = subprocess.Popen(cmd, start_new_session=True, **kwargs)
+            # /proc ainda identifica um lider que saiu, mas nao foi reaproveitado
+            # por poll/wait. Guarde a identidade antes de colher seu retorno.
+            registro = _estatistica_posix(self.processo.pid)
+            self._criacao_sessao_posix = registro['creation_time'] if registro else None
+            self._instancias_posix = {self.processo.pid: self._criacao_sessao_posix}
+            self._sessao_posix_encerrada = False
         else:
             self.job = k.CreateJobObjectW(None, None)
             if not self.job:
@@ -310,7 +357,9 @@ class ProcessoProprio:
                 k.CloseHandle(self.job)
                 self.job = None
                 raise
-        self.registro = identidade(self.processo.pid) or {'pid': self.processo.pid, 'creation_time': None}
+        self.registro = identidade(self.processo.pid) or {
+            'pid': self.processo.pid,
+            'creation_time': self._criacao_sessao_posix if os.name != 'nt' else None}
 
     def _retomar_thread_inicial(self):
         snapshot = k.CreateToolhelp32Snapshot(4, 0)
@@ -348,6 +397,45 @@ class ProcessoProprio:
     def returncode(self):
         return self.processo.returncode
 
+    def _membros_posix(self, _confirmar_vazio=True):
+        if self._sessao_posix_encerrada:
+            return []
+        if self._criacao_sessao_posix is None:
+            raise RuntimeError('Identidade da sessao propria nao foi confirmada.')
+        snapshot = _snapshot_posix()
+        proprios = {pid: snapshot[pid] for pid, criado in self._instancias_posix.items()
+                    if pid in snapshot and snapshot[pid]['creation_time'] == criado}
+        while True:
+            tamanho = len(proprios)
+            sessoes_ancoradas = {r['sessao'] for r in proprios.values()}
+            for pid, registro in snapshot.items():
+                if pid in proprios or registro['grupo'] <= 0:
+                    continue
+                pai = proprios.get(registro['ppid'])
+                filho_confirmado = (pai is not None and int(registro['creation_time'])
+                                    >= int(pai['creation_time']))
+                # Um PID+inicio proprio ainda presente (inclusive zombie) ancora
+                # a identidade da sessao. So o numero SID nao prova propriedade:
+                # ele pode ter sido reciclado entre consultas.
+                mesma_sessao_ancorada = (registro['sessao'] in sessoes_ancoradas
+                                        and int(registro['creation_time'])
+                                        >= int(self._criacao_sessao_posix))
+                if filho_confirmado or mesma_sessao_ancorada:
+                    proprios[pid] = registro
+            if len(proprios) == tamanho:
+                break
+        self._instancias_posix.update({pid: r['creation_time'] for pid, r in proprios.items()})
+        membros = [r for r in proprios.values() if r['estado'] not in ('Z', 'X')]
+        if not membros and proprios and _confirmar_vazio:
+            # A enumeracao de /proc pode anteceder o ultimo fork do lider. Ele
+            # agora esta zombie e ainda ancora a sessao: observe outra vez antes
+            # de declarar que nao deixou descendentes vivos.
+            return self._membros_posix(_confirmar_vazio=False)
+        if not membros:
+            # Depois de vazia, a sessao nunca volta a ser considerada nossa.
+            self._sessao_posix_encerrada = True
+        return membros
+
     def ativos(self):
         if os.name == 'nt':
             if self.job is None:
@@ -356,9 +444,25 @@ class ProcessoProprio:
             if not k.QueryInformationJobObject(self.job, 1, ctypes.byref(conta), ctypes.sizeof(conta), None):
                 raise ctypes.WinError(ctypes.get_last_error())
             return int(conta.active)
-        return len(processos_da_fila_ativos({'identidade_runner': self.registro}))
+        return len(self._membros_posix())
 
     def poll(self):
+        if os.name != 'nt':
+            if self.processo.returncode is None:
+                if not all(hasattr(os, nome) for nome in ('waitid', 'WNOWAIT')):
+                    raise OSError('Inspecao segura exige waitid/WNOWAIT no Linux.')
+                try:
+                    saida = os.waitid(os.P_PID, self.pid, os.WEXITED | os.WNOHANG | os.WNOWAIT)
+                except ChildProcessError as exc:
+                    raise RuntimeError('Lider proprio foi colhido fora de ProcessoProprio.') from exc
+                if saida is None:
+                    self._membros_posix()
+                    return None
+            # Descubra orfaos enquanto o lider, mesmo zombie, ainda ancora seu
+            # PID/SID. Popen.poll colhe o lider e pode liberar esses numeros.
+            membros = self._membros_posix()
+            retorno = self.processo.poll()
+            return retorno if retorno is not None and not membros else None
         retorno = self.processo.poll()
         return retorno if retorno is not None and self.ativos() == 0 else None
 
@@ -384,10 +488,19 @@ class ProcessoProprio:
                     raise RuntimeError('Arvore propria nao encerrou dentro de 30 segundos.')
                 k.CloseHandle(self.job)
                 self.job = None
-        elif self.ativos():
-            import signal
-            os.killpg(self.pid, signal.SIGKILL)
-            self.processo.wait(timeout=30)
+        else:
+            limite = time.monotonic() + 30
+            membros = self._membros_posix()
+            while membros:
+                # Primeiro os descendentes mais novos. O lider so e colhido
+                # depois da arvore vazia, conservando sua ancora de identidade.
+                for registro in sorted(membros, key=lambda r: int(r['creation_time']), reverse=True):
+                    _sinalizar_instancia_posix(registro, signal.SIGKILL)
+                if time.monotonic() >= limite:
+                    raise RuntimeError('Arvore propria nao encerrou dentro de 30 segundos.')
+                time.sleep(.05)
+                membros = self._membros_posix()
+            self.processo.wait(timeout=max(0, limite - time.monotonic()))
 
     def fechar(self):
         self.encerrar()
