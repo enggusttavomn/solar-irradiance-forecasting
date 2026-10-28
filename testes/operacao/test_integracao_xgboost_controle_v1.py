@@ -74,6 +74,39 @@ class Auditoria(TestCase):
   with self.assertRaisesRegex(ValueError,'controle complementar alterada'):
    pdf.carregar_auditoria(audit)
 
+class FontesPortateis(TestCase):
+ def test_preserva_arial_quando_o_par_esta_disponivel(self):
+  with TemporaryDirectory() as td:
+   pasta=Path(td)
+   fontes=(pasta/'arial.ttf',pasta/'arialbd.ttf')
+   for fonte in fontes: fonte.touch()
+   self.assertEqual(pdf.fontes_relatorio(pasta),fontes)
+   fontes[1].unlink()
+   self.assertEqual([p.name for p in pdf.fontes_relatorio(pasta)],['Vera.ttf','VeraBd.ttf'])
+ def test_sem_arial_usa_vera_real_com_glifos_portugueses(self):
+  from io import BytesIO
+  import reportlab
+  from reportlab.pdfbase import pdfmetrics
+  from reportlab.pdfbase.ttfonts import TTFont
+  from reportlab.pdfgen.canvas import Canvas
+  texto='Quantização — Horário, previsão, mês, ação e R² (W/m²).'
+  pacote=Path(reportlab.__file__).resolve().parent/'fonts'
+  with TemporaryDirectory() as td:
+   fontes=pdf.fontes_relatorio(Path(td)/'windows_ausente')
+   self.assertEqual(fontes,(pacote/'Vera.ttf',pacote/'VeraBd.ttf'))
+   memoria=BytesIO()
+   documento=Canvas(memoria)
+   for indice,fonte in enumerate(fontes):
+    nome=f'TesteVeraPortatil{indice}'
+    registrada=TTFont(nome,str(fonte))
+    self.assertTrue(all(registrada.face.charToGlyph.get(ord(c),0) for c in texto if not c.isspace()))
+    pdfmetrics.registerFont(registrada)
+    documento.setFont(nome,12)
+    documento.drawString(30,750-indice*24,texto)
+   documento.save()
+   self.assertTrue(memoria.getvalue().startswith(b'%PDF-'))
+   self.assertIn(b'/FontFile2',memoria.getvalue())
+
 class Narrativa(TestCase):
  def test_gerador_usa_auditoria_carregada_e_identifica_controle_novo(self):
   import pandas as pd

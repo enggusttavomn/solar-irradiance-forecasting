@@ -85,6 +85,19 @@ def validar_pareamento(path, auditorias):
     return par
 
 
+def fontes_relatorio(diretorio_windows=None):
+    """Prefere Arial e usa o par Vera distribuido pelo ReportLab como reserva."""
+    import reportlab
+
+    diretorio_windows = (Path(diretorio_windows) if diretorio_windows is not None
+                         else Path("C:/Windows/Fonts"))
+    arial = (diretorio_windows / "arial.ttf", diretorio_windows / "arialbd.ttf")
+    if all(fonte.is_file() for fonte in arial):
+        return arial
+    diretorio_pacote = Path(reportlab.__file__).resolve().parent / "fonts"
+    return diretorio_pacote / "Vera.ttf", diretorio_pacote / "VeraBd.ttf"
+
+
 def gerar(auditorias, saida, manifesto, pareamento=None):
     saida = caminho_pdf_logico(saida)
     from reportlab.lib import colors
@@ -107,10 +120,11 @@ def gerar(auditorias, saida, manifesto, pareamento=None):
         if pareamento is None:
             raise ValueError("PDF historico exige auditoria pareada das mesmas observacoes.")
         validar_pareamento(pareamento, auditorias)
-    fonte = Path("C:/Windows/Fonts/arial.ttf")
-    fonte_bold = Path("C:/Windows/Fonts/arialbd.ttf")
+    fonte, fonte_bold = fontes_relatorio()
     pdfmetrics.registerFont(TTFont("Relatorio", str(fonte)))
     pdfmetrics.registerFont(TTFont("RelatorioBold", str(fonte_bold)))
+    pdfmetrics.registerFontFamily("Relatorio", normal="Relatorio", bold="RelatorioBold",
+                                  italic="Relatorio", boldItalic="RelatorioBold")
     largura, altura = landscape(A4)
     margem = 34
     util = largura - 2 * margem
