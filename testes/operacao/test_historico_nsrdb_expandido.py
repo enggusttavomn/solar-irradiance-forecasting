@@ -70,4 +70,5 @@ def test_cache_temporal_preserva_instante_independente_da_precisao_pandas(unidad
     inteiro = serializar_tempo_ns(origem)
     assert inteiro[0] == 946684800000000000
     assert np.array_equal(np.diff(inteiro), [1800000000000, 1800000000000])
-    assert pd.to_datetime(inteiro, utc=True).equals(origem)
+    restaurado = pd.to_datetime(inteiro, unit="ns", utc=True)
+    assert restaurado.equals(origem.as_unit("ns"))
