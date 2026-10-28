@@ -14,10 +14,18 @@ concurrency:
 
 jobs:
   pytest:
-    name: Python 3.12 / pytest
-    runs-on: ubuntu-latest
+    name: ${{ matrix.os }} / Python 3.12 / pytest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 20
     steps:
+      - name: Habilitar caminhos longos no Windows
+        if: runner.os == 'Windows'
+        run: git config --global core.longpaths true
+
       - name: Baixar repositorio
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
@@ -37,5 +45,9 @@ jobs:
       - name: Executar suite
         env:
           MPLBACKEND: Agg
-          MPLCONFIGDIR: /tmp/matplotlib-cache
+          MPLCONFIGDIR: ${{ runner.temp }}/matplotlib-cache
+          OMP_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          PYTHONUTF8: "1"
         run: python -m pytest -q

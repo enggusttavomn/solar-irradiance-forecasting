@@ -1,5 +1,5 @@
 """Contratos temporais, reproducao e isolamento de quantizacao/targets."""
-from dataclasses import replace
+from dataclasses import asdict, replace
 import copy
 import json
 from pathlib import Path
@@ -12,6 +12,41 @@ import torch
 
 from codigo_fonte import experimento_quantizacao_concorrentes as x
 from codigo_fonte import experimento_multirresolucao as m
+
+
+@pytest.fixture
+def fontes_configuracao_sinteticas(tmp_path, monkeypatch):
+    """Contratos locais de teste, sem depender de resultados nao publicados."""
+    raiz_original = x.RAIZ
+    raiz = tmp_path / "projeto"
+    tarefa = m.TAREFAS_CANONICAS["monthly_1"]
+    configuracao = m.ConfiguracaoMultirresolucao(modo_execucao="smoke", sementes=(42,))
+
+    def gravar(relativo, contrato):
+        arquivo = raiz / relativo
+        arquivo.parent.mkdir(parents=True, exist_ok=True)
+        arquivo.write_text(json.dumps(contrato, ensure_ascii=False), encoding="utf-8")
+
+    gravar("resultados/avaliacao_multirresolucao_corrigida_v2/monthly_1/contrato_execucao.json",
+           m.construir_contrato(tarefa=tarefa, configuracao=configuracao, arquivos_entrada=()))
+    for modelo in ("GRU", "Transformer", "Informer"):
+        contrato = {"schema": 1, "modelo": modelo, "tarefa": asdict(tarefa),
+                    "configuracao_canonica": asdict(configuracao),
+                    "execucao": {"dispositivo": "cpu"}}
+        contrato["sha256_contrato"] = x.hash_obj(contrato)
+        gravar(f"resultados/avaliacao_baselines_revisao_20260912/monthly_1/{modelo.lower()}/contrato.json",
+               contrato)
+
+    # O contrato continua calculando hashes reais das fontes usadas na execucao.
+    for nome in ("dilated_rnn_direta.py", "timesnet_horario.py",
+                 "treinamento_timesnet_otimizacao.py", "treinamento_timesnet_quantizado_resolucoes.py",
+                 "treinamento_timesnet_resolucoes.py"):
+        relativo = Path("codigo_fonte") / nome
+        destino = raiz / relativo
+        destino.parent.mkdir(parents=True, exist_ok=True)
+        destino.write_bytes((raiz_original / relativo).read_bytes())
+    monkeypatch.setattr(x, "RAIZ", raiz)
+    return raiz
 
 
 def contexto_sintetico(fase="selecao"):
@@ -54,7 +89,7 @@ def test_mensal_historico_45_meses_teste():
 
 
 @pytest.mark.parametrize("modelo", x.MODELOS[:-1])
-def test_quantizacao_so_muda_x_treino_e_inferencia(modelo,monkeypatch):
+def test_quantizacao_so_muda_x_treino_e_inferencia(modelo,monkeypatch,fontes_configuracao_sinteticas):
     ctx=contexto_sintetico()
     par=x.parametros(ctx,modelo)
     par["dispositivo"]="cpu"
@@ -83,7 +118,7 @@ def test_quantizacao_so_muda_x_treino_e_inferencia(modelo,monkeypatch):
 
 
 @pytest.mark.parametrize("modelo", ["LSTM","DilatedRNN","GRU","Transformer","Informer"])
-def test_noquant_repete_loop_original(modelo):
+def test_noquant_repete_loop_original(modelo,fontes_configuracao_sinteticas):
     ctx=contexto_sintetico()
     par=x.parametros(ctx,modelo)
     par["dispositivo"]="cpu"
@@ -102,7 +137,7 @@ def test_noquant_repete_loop_original(modelo):
         torch.testing.assert_close(v,original.state_dict()[k],atol=0,rtol=0)
 
 
-def test_inferencia_independente_y(monkeypatch):
+def test_inferencia_independente_y(monkeypatch,fontes_configuracao_sinteticas):
     ctx=contexto_sintetico("refit")
     par=x.parametros(ctx,"GRU")
     _,p1,_,_=x.treinar_seed(ctx,"GRU",128,42,"refit",par,1)
@@ -160,7 +195,7 @@ def test_refit_nao_inicia_sem_congelamento(tmp_path,monkeypatch):
     with pytest.raises(FileNotFoundError):x.executar_fase(ctx,"GRU",tmp_path,"refit")
 
 
-def test_contrato_hash_muda_por_niveis_e_hardware():
+def test_contrato_hash_muda_por_niveis_e_hardware(fontes_configuracao_sinteticas):
     ctx=contexto_sintetico()
     a=x.construir_contrato(ctx,"GRU")
     ctx.config=replace(ctx.config,modo_execucao="completa")

@@ -31,7 +31,7 @@ class Encaminhamento(TestCase):
 
 class Auditoria(TestCase):
  def setUp(self):
-  self.temp=TemporaryDirectory(dir='tmp'); self.addCleanup(self.temp.cleanup)
+  self.temp=TemporaryDirectory(); self.addCleanup(self.temp.cleanup)
   self.pasta=Path(self.temp.name)
  def gravar(self,nome,dados):
   p=self.pasta/nome; p.write_text(json.dumps(dados),encoding='utf-8'); return p
@@ -93,7 +93,7 @@ class Narrativa(TestCase):
   def capturar(self,story,**kw):
    historias.extend(story)
    raise RuntimeError('fim da captura antes de escrever PDF')
-  with TemporaryDirectory(dir='tmp') as td:
+  with TemporaryDirectory() as td:
    path=Path(td)/'audit.json'; path.write_text('{}',encoding='utf-8')
    with mock.patch.object(pdf,'carregar_auditoria',return_value=(audit,frame)), mock.patch.object(SimpleDocTemplate,'build',capturar):
     with self.assertRaisesRegex(RuntimeError,'fim da captura'):

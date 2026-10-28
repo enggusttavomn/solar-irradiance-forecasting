@@ -15,7 +15,7 @@ from scripts import gerar_pdf_quantizacao_todos_modelos as gerador
 
 class _AmbientePDF(TestCase):
     def setUp(self):
-        self.temp = TemporaryDirectory(dir='tmp')
+        self.temp = TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.raiz = Path(self.temp.name).resolve()
         self.doc = self.raiz / 'documentacao'
