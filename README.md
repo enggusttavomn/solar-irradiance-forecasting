@@ -1,6 +1,6 @@
 # Previsão multirresolução de irradiância solar (GHI)
 
-[![CI](https://github.com/enggusttavomn/TCC/actions/workflows/testes.yml/badge.svg)](https://github.com/enggusttavomn/TCC/actions/workflows/testes.yml)
+[![CI](https://github.com/enggusttavomn/solar-irradiance-forecasting/actions/workflows/testes.yml/badge.svg)](https://github.com/enggusttavomn/solar-irradiance-forecasting/actions/workflows/testes.yml)
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Status: pesquisa acadêmica](https://img.shields.io/badge/status-pesquisa%20acad%C3%AAmica-5B5BD6)](#escopo-e-limitações)
 
@@ -10,7 +10,7 @@ compara modelos de aprendizado de máquina e redes neurais em resoluções
 horária, diária e mensal, com protocolo temporal reproduzível e artefatos de
 auditoria.
 
-**Repositório oficial:** <https://github.com/enggusttavomn/TCC><br>
+**Repositório oficial:** <https://github.com/enggusttavomn/solar-irradiance-forecasting><br>
 **Visibilidade:** público · **branch padrão:** `main`
 
 > Os dados da NSRDB são estimativas modeladas, não medições realizadas nas
@@ -113,8 +113,8 @@ O ambiente de referência usa **CPython 3.12**. A instalação completa inclui
 bibliotecas pesadas de aprendizado profundo e foi validada para CPU.
 
 ```bash
-git clone https://github.com/enggusttavomn/TCC.git
-cd TCC
+git clone https://github.com/enggusttavomn/solar-irradiance-forecasting.git
+cd solar-irradiance-forecasting
 python -m venv .venv
 ```
 

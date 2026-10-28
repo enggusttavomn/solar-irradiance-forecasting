@@ -155,6 +155,7 @@ class BackendFake:
 
 class TestManterAceleracaoNaTomada(unittest.TestCase):
     def setUp(self):
+        (m.RAIZ / 'tmp').mkdir(parents=True, exist_ok=True)
         self.tmp = TemporaryDirectory(prefix='supervisor-tomada-v2-', dir=m.RAIZ / 'tmp')
         self.addCleanup(self.limpar_tmp)
         self.raiz = Path(self.tmp.name).resolve()
