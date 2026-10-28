@@ -1,0 +1,146 @@
+{
+  "versao": 1,
+  "aprovado_para_reconciliacao": true,
+  "revisado_em_utc": "2026-10-06T22:50:08.407984+00:00",
+  "manifesto_atual": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\manifesto_recuperacao.json",
+  "manifesto_sha256": "0d7b59af822135884719e3059b3bd962f2fe0412473921e4b67828285b817d21",
+  "fontes_vinculadas": 152,
+  "fontes_divergentes": [
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\retomar_historico_apos_calendario.py",
+      "sha256": "26a25e2d94f64eb97e03dccd92caf68dc9a4b4263d3d08e10ef65e8d4f34de70",
+      "papel": "helper",
+      "sha256_atual": "a717db239283ff4c37fee7e65f887585d46350008d09c497d8b4690167653871"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tests\\test_retomar_historico_apos_calendario.py",
+      "sha256": "7dde56276fb0d905b351eb8a0ef87a4efc068bcd6d6ff1f9f260c587865b627e",
+      "papel": "tests_helper",
+      "sha256_atual": "f2669895a4e72a75aa08acd332abefdfa7b2e2244554910c7342cdba271a2fca"
+    }
+  ],
+  "fontes_demais_preservadas": 150,
+  "journal_canonico": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomadas_apos_calendario\\7872_134356437859141023\\journal.json",
+  "journal_sha256": "48d45a9066457dc7fb686311e36df34dda4556cc5107fc400aa8c13dbbe01ae4",
+  "journal_etapa": "BLOCKED",
+  "tentativas_popen": 0,
+  "lancamento_pode_ter_ocorrido": false,
+  "manifesto_e_journal_preservados": true,
+  "recibo_testes": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\testes_snapshot_nt.json",
+  "recibo_testes_sha256": "9eedf5df91e300ceb02432d9fc7235a6561e6f8d41435cc77d4ef1de2a3b0e0f",
+  "diagnostico_original": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\diagnostico_snapshot_original.json",
+  "diagnostico_original_sha256": "b69ab6052e0521c957d4fd3bcb97ed645fd701a1edc6758828f349eaf4014f58",
+  "toolhelp_abi": {
+    "size": 568,
+    "offsets": {
+      "size": 0,
+      "usage": 4,
+      "pid": 8,
+      "heap": 16,
+      "module": 24,
+      "threads": 28,
+      "ppid": 32,
+      "priority": 36,
+      "flags": 40,
+      "exe": 44
+    }
+  },
+  "toolhelp_amostras": 30,
+  "toolhelp_amostras_inconclusivas": 8,
+  "nt_original_amostras_inconclusivas": 8,
+  "duplicacoes_toolhelp_observadas": [
+    {
+      "pid": 32008,
+      "primeiro": {
+        "step": 41,
+        "ok": 1,
+        "size": 568,
+        "pid": 32008,
+        "ppid": 3288,
+        "exe": "ICDCMGR64.exe",
+        "repeated": false
+      },
+      "repetido": {
+        "step": 434,
+        "ok": 1,
+        "size": 568,
+        "pid": 32008,
+        "ppid": 13056,
+        "exe": "rg.exe",
+        "repeated": true
+      }
+    },
+    {
+      "pid": 32008,
+      "primeiro": {
+        "step": 41,
+        "ok": 1,
+        "size": 568,
+        "pid": 32008,
+        "ppid": 3288,
+        "exe": "ICDCMGR64.exe",
+        "repeated": false
+      },
+      "repetido": {
+        "step": 433,
+        "ok": 1,
+        "size": 568,
+        "pid": 32008,
+        "ppid": 13056,
+        "exe": "rg.exe",
+        "repeated": true
+      }
+    },
+    {
+      "pid": 32008,
+      "primeiro": {
+        "step": 41,
+        "ok": 1,
+        "size": 568,
+        "pid": 32008,
+        "ppid": 3288,
+        "exe": "ICDCMGR64.exe",
+        "repeated": false
+      },
+      "repetido": {
+        "step": 432,
+        "ok": 1,
+        "size": 568,
+        "pid": 32008,
+        "ppid": 13056,
+        "exe": "rg.exe",
+        "repeated": true
+      }
+    },
+    {
+      "pid": 32008,
+      "primeiro": {
+        "step": 41,
+        "ok": 1,
+        "size": 568,
+        "pid": 32008,
+        "ppid": 3288,
+        "exe": "ICDCMGR64.exe",
+        "repeated": false
+      },
+      "repetido": {
+        "step": 431,
+        "ok": 1,
+        "size": 568,
+        "pid": 32008,
+        "ppid": 13056,
+        "exe": "rg.exe",
+        "repeated": true
+      }
+    }
+  ],
+  "diagnostico_adicional_nt": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\diagnostico_reuso_pid_nt.json",
+  "causa_observada": "ABI Toolhelp correto; o mesmo PID aparece com executavel e PPID diferentes numa captura, e o parser NT legado tambem rejeita duplicacao de PID. Reciclagem durante enumeracao e a inferencia suportada; camada subjacente nao foi atribuida.",
+  "correcao": "Snapshot NT integral com ABI/PID/FILETIME/PPID proprio certificados. Grupos de PID com FILETIMEs diferentes exigem match unico com handle vivo. Mesmo PID+FILETIME repetido, acesso negado, buffer truncado, certificado invalido ou nova troca de instancia bloqueiam. PID realmente morto e removido somente depois de certificar snapshot inteiro; edges de filhos permanecem.",
+  "fontes_primarias": [
+    "https://learn.microsoft.com/windows/win32/api/winternl/nf-winternl-ntqueryinformationprocess",
+    "https://learn.microsoft.com/windows/win32/api/winternl/nf-winternl-ntquerysysteminformation"
+  ],
+  "limites_preservados": "Guardas de identidade, parentesco temporal, orfaos, travas, fontes congeladas e tentativa unica permanecem intactos.",
+  "ativacao": "Nenhuma ativacao feita. Root coordenara renovacao dos bindings e reconciliacao preservando journal BLOCKED."
+}

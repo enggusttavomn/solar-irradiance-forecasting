@@ -1,0 +1,400 @@
+{
+  "diagnosticos": [
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1096,
+      "fracao_alterados": 1.0,
+      "fracao_saturados": 0.0,
+      "localidade": "BYD Camacari",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1096,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1094,
+      "fracao_alterados": 0.9981751824817519,
+      "fracao_saturados": 0.0,
+      "localidade": "Tesla Gigafactory Nevada",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1096,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1094,
+      "fracao_alterados": 0.9981751824817519,
+      "fracao_saturados": 0.0,
+      "localidade": "Tesla Gigafactory Texas",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1096,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1096,
+      "fracao_alterados": 1.0,
+      "fracao_saturados": 0.0,
+      "localidade": "Hyundai Metaplant Georgia",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1096,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1095,
+      "fracao_alterados": 0.9990875912408759,
+      "fracao_saturados": 0.0,
+      "localidade": "Rivian Normal",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1096,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1094,
+      "fracao_alterados": 0.9981751824817519,
+      "fracao_saturados": 0.0,
+      "localidade": "Tesla Fremont Factory",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1096,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1095,
+      "fracao_alterados": 0.9990875912408759,
+      "fracao_saturados": 0.0,
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1096,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1094,
+      "fracao_alterados": 0.9981751824817519,
+      "fracao_saturados": 0.0,
+      "localidade": "GM Factory Zero",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1096,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1094,
+      "fracao_alterados": 0.9981751824817519,
+      "fracao_saturados": 0.0,
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1096,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1095,
+      "fracao_alterados": 0.9990875912408759,
+      "fracao_saturados": 0.0,
+      "localidade": "BMW San Luis Potosi",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1096,
+      "uso": "serie_ajuste_endogena"
+    }
+  ],
+  "niveis": 128,
+  "ordens": {
+    "BMW San Luis Potosi": [
+      2,
+      0,
+      2
+    ],
+    "BYD Camacari": [
+      2,
+      0,
+      2
+    ],
+    "Ford Rouge Electric Vehicle Center": [
+      2,
+      0,
+      2
+    ],
+    "GM Factory Zero": [
+      2,
+      0,
+      2
+    ],
+    "Hyundai Metaplant Georgia": [
+      2,
+      0,
+      2
+    ],
+    "Lucid AMP 1 Casa Grande": [
+      2,
+      0,
+      2
+    ],
+    "Rivian Normal": [
+      2,
+      0,
+      2
+    ],
+    "Tesla Fremont Factory": [
+      2,
+      0,
+      2
+    ],
+    "Tesla Gigafactory Nevada": [
+      2,
+      0,
+      2
+    ],
+    "Tesla Gigafactory Texas": [
+      2,
+      0,
+      2
+    ]
+  },
+  "ordens_fixas_do_controle": true,
+  "registros": [
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BYD Camacari",
+      "localidade_id": 0,
+      "mse_validacao_normalizado": 0.026537829035939823,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 450.6448995698023,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Nevada",
+      "localidade_id": 1,
+      "mse_validacao_normalizado": 0.025548650390177632,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 939.3416529947117,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Gigafactory Texas",
+      "localidade_id": 2,
+      "mse_validacao_normalizado": 0.03702614183127284,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 373.9491274363874,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Hyundai Metaplant Georgia",
+      "localidade_id": 3,
+      "mse_validacao_normalizado": 0.038276967059450384,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 382.68591048613354,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Rivian Normal",
+      "localidade_id": 4,
+      "mse_validacao_normalizado": 0.04183195772908815,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 306.2724169443753,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Tesla Fremont Factory",
+      "localidade_id": 5,
+      "mse_validacao_normalizado": 0.026007422085803773,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 996.5638921756963,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "localidade_id": 6,
+      "mse_validacao_normalizado": 0.017141291286524748,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 997.1867054056094,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "GM Factory Zero",
+      "localidade_id": 7,
+      "mse_validacao_normalizado": 0.044264017501735684,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 397.3478936138247,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "localidade_id": 8,
+      "mse_validacao_normalizado": 0.044417631291860334,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 393.5612880302117,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "convergiu": true,
+      "fase": "selecao",
+      "localidade": "BMW San Luis Potosi",
+      "localidade_id": 9,
+      "mse_validacao_normalizado": 0.030434604776253964,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "selecionada": true,
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 726.3160982206571,
+          "otimizador": "lbfgs"
+        }
+      ]
+    }
+  ]
+}

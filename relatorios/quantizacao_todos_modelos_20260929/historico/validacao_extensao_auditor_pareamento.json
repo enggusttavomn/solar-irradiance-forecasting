@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "data_utc": "2026-09-30T06:13:47.820651+00:00",
+  "comando_testes": ".venv-baselines-gpu-20260912/Scripts/python.exe -X utf8 -m pytest tests/test_auditar_pareamento_historicos.py -q",
+  "testes_passaram": 33,
+  "segundos_pytest": 642.38,
+  "resultado_observado": "33 passed in 642.38s (0:10:42)",
+  "codigo_sha256": {
+    "scripts/auditar_pareamento_historicos.py": "2bdcd68015d68f6521d0b60c8ea43c0e627a7823ff9def1c8b044e31f09024b8",
+    "tests/test_auditar_pareamento_historicos.py": "0117f43331c3e20dfb5cf92104369d0eaa32ec55713815c812cd05d7061bac1b",
+    "codigo_fonte/experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a"
+  },
+  "introspeccao_real": {
+    "arquivo": "relatorios\\quantizacao_todos_modelos_20260929\\historico\\introspeccao_entradas_contextos_reais.json",
+    "sha256": "6e9701dc1d8bbc02d5df1655156b070df01f496df9f7c4be70fbb155a36eeb5b",
+    "contextos": 4,
+    "ok": true
+  },
+  "motores_alterados": false,
+  "protocolos_cientificos_alterados_nesta_extensao": false,
+  "treinamentos_historicos_iniciados": false
+}

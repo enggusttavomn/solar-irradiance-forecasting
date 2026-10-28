@@ -1,0 +1,84 @@
+{
+    "schema":  1,
+    "observado_em_utc":  "2026-10-02T07:52:06.3204207Z",
+    "natureza":  "Conferencia READONLY de estados/recibos existentes; nenhum motor importado, fit, replay adicional ou processo iniciado/encerrado",
+    "contagens":  {
+                      "atual":  {
+                                    "selecao":  44,
+                                    "refit":  44
+                                },
+                      "historico_1998_2022":  {
+                                                  "selecao":  6,
+                                                  "refit":  0
+                                              },
+                      "historico_curto_pareado":  {
+                                                      "selecao":  0,
+                                                      "refit":  0
+                                                  }
+                  },
+    "auditoria_atual":  {
+                            "ok":  true,
+                            "linhas":  1056,
+                            "publicavel":  true,
+                            "pares":  44,
+                            "pares_novos":  40,
+                            "concluido_em_utc":  "2026-10-02T05:03:52.986784+00:00",
+                            "pares_reutilizados":  4,
+                            "replay":  true
+                        },
+    "pdf_atual_staged":  {
+                             "observacao":  "Manifesto registra caminho temporario NASCA Windows/pcdrm/drmtmp .nsc; root avisado para preservar acesso logico estavel e validar na entrega",
+                             "caminho_logico":  "relatorios/quantizacao_todos_modelos_20260929/pdf_atual/tabela_resultados_ghi_2024.pdf",
+                             "paginas":  34,
+                             "sha256_manifesto":  "155e58187c1da01d6030334d086933bf0f200d13cb02d60c0db76b28b7bac776",
+                             "manifesto_path_pdf":  "C:\\Windows\\pcdrm\\drmtmp\\C014120025452309292488491_1.nsc",
+                             "revisao_visual_pendente":  true
+                         },
+    "entrega":  {
+                    "pdf_historico_staged_existe":  false,
+                    "pdf_historico_documentacao_existe":  false,
+                    "revisao_visual_padrao_atual_existe":  false,
+                    "pdf_atual_documentacao_ainda_anterior":  true
+                },
+    "auditorias_historicas":  {
+                                  "longo_existe":  false,
+                                  "curto_existe":  false,
+                                  "pareamento_existe":  false
+                              },
+    "fila_historica":  {
+                           "falhas":  [
+
+                                      ],
+                           "ativos":  [
+                                          {
+                                              "recurso":  "cpu",
+                                              "tarefa":  "daily_30",
+                                              "log":  "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_xgboost.log",
+                                              "modelo":  "XGBoost"
+                                          },
+                                          {
+                                              "recurso":  "cpu",
+                                              "tarefa":  "hourly_72_extension",
+                                              "log":  "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_xgboost.log",
+                                              "modelo":  "XGBoost"
+                                          },
+                                          {
+                                              "recurso":  "gpu",
+                                              "tarefa":  "daily_30",
+                                              "log":  "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_dilatedrnn.log",
+                                              "modelo":  "DilatedRNN"
+                                          },
+                                          {
+                                              "recurso":  "gpu",
+                                              "tarefa":  "daily_30",
+                                              "log":  "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_transformer.log",
+                                              "modelo":  "Transformer"
+                                          }
+                                      ],
+                           "quantidade_jobs_concluidos":  6,
+                           "aviso_cublas":  "Aviso de inicializacao seguido por seed concluida; nao classificavel como falha",
+                           "etapa":  "selecao",
+                           "atualizado_em_utc":  "2026-10-02T07:52:05.023709+00:00",
+                           "caudas_sem_traceback":  true
+                       }
+}

@@ -1,0 +1,73 @@
+{
+  "regime": "atual",
+  "modo": "smoke",
+  "etapa": "erro",
+  "iniciado_em_utc": "2026-09-30T11:28:34.757512+00:00",
+  "atualizado_em_utc": "2026-09-30T11:33:20.549985+00:00",
+  "pid_runner": 16572,
+  "identidade_runner": {
+    "pid": 16572,
+    "creation_time": "134352413118417208"
+  },
+  "processos_historico": [
+    {
+      "pid": 30960,
+      "creation_time": "134352413147683590"
+    },
+    {
+      "pid": 5760,
+      "creation_time": "134352413764951317"
+    },
+    {
+      "pid": 972,
+      "creation_time": "134352414490522256"
+    },
+    {
+      "pid": 32604,
+      "creation_time": "134352415285618641"
+    }
+  ],
+  "saida": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v1",
+  "pendentes": [],
+  "concluidos": [],
+  "falhas": [
+    {
+      "fase": "selecao",
+      "tarefa": "daily_30",
+      "modelo": "Transformer",
+      "returncode": 1,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v1\\atual\\smoke\\selecao_daily_30_transformer.log",
+      "concluido_em_utc": "2026-09-30T11:29:31.370223+00:00"
+    },
+    {
+      "fase": "selecao",
+      "tarefa": "daily_30",
+      "modelo": "Informer",
+      "returncode": 1,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v1\\atual\\smoke\\selecao_daily_30_informer.log",
+      "concluido_em_utc": "2026-09-30T11:30:43.994984+00:00"
+    },
+    {
+      "fase": "selecao",
+      "tarefa": "hourly_72_extension",
+      "modelo": "Transformer",
+      "returncode": 1,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v1\\atual\\smoke\\selecao_hourly_72_extension_transformer.log",
+      "concluido_em_utc": "2026-09-30T11:32:03.431073+00:00"
+    },
+    {
+      "fase": "selecao",
+      "tarefa": "hourly_72_extension",
+      "modelo": "Informer",
+      "returncode": 1,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v1\\atual\\smoke\\selecao_hourly_72_extension_informer.log",
+      "concluido_em_utc": "2026-09-30T11:33:20.472733+00:00"
+    },
+    {
+      "tipo": "RuntimeError",
+      "mensagem": "4 execucoes falharam; outras selecoes foram preservadas. Consulte relatorios\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v1\\atual\\smoke\\runner.json",
+      "instante": "2026-09-30T11:33:20.549949+00:00"
+    }
+  ],
+  "processos": []
+}

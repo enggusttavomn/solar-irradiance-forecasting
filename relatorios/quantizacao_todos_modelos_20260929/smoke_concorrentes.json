@@ -1,0 +1,427 @@
+{
+  "casos": [
+    {
+      "device": "cpu",
+      "epocas": 0,
+      "modelo": "XGBoost",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        30
+      ],
+      "shape_validacao": [
+        6,
+        30
+      ],
+      "tarefa": "daily_30"
+    },
+    {
+      "device": "cuda",
+      "epocas": 1,
+      "modelo": "LSTM",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        30
+      ],
+      "shape_validacao": [
+        6,
+        30
+      ],
+      "tarefa": "daily_30"
+    },
+    {
+      "device": "cuda",
+      "epocas": 1,
+      "modelo": "DilatedRNN",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        30
+      ],
+      "shape_validacao": [
+        6,
+        30
+      ],
+      "tarefa": "daily_30"
+    },
+    {
+      "device": "cuda",
+      "epocas": 1,
+      "modelo": "GRU",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        30
+      ],
+      "shape_validacao": [
+        6,
+        30
+      ],
+      "tarefa": "daily_30"
+    },
+    {
+      "device": "cuda",
+      "epocas": 1,
+      "modelo": "Transformer",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        30
+      ],
+      "shape_validacao": [
+        6,
+        30
+      ],
+      "tarefa": "daily_30"
+    },
+    {
+      "device": "cuda",
+      "epocas": 1,
+      "modelo": "Informer",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        30
+      ],
+      "shape_validacao": [
+        6,
+        30
+      ],
+      "tarefa": "daily_30"
+    },
+    {
+      "device": "cuda",
+      "epocas": 1,
+      "modelo": "TimesNet",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        30
+      ],
+      "shape_validacao": [
+        6,
+        30
+      ],
+      "tarefa": "daily_30"
+    },
+    {
+      "device": "cpu",
+      "epocas": 0,
+      "modelo": "XGBoost",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        1
+      ],
+      "shape_validacao": [
+        6,
+        1
+      ],
+      "tarefa": "monthly_1"
+    },
+    {
+      "device": "cpu",
+      "epocas": 1,
+      "modelo": "LSTM",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        1
+      ],
+      "shape_validacao": [
+        6,
+        1
+      ],
+      "tarefa": "monthly_1"
+    },
+    {
+      "device": "cpu",
+      "epocas": 1,
+      "modelo": "DilatedRNN",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        1
+      ],
+      "shape_validacao": [
+        6,
+        1
+      ],
+      "tarefa": "monthly_1"
+    },
+    {
+      "device": "cpu",
+      "epocas": 1,
+      "modelo": "GRU",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        1
+      ],
+      "shape_validacao": [
+        6,
+        1
+      ],
+      "tarefa": "monthly_1"
+    },
+    {
+      "device": "cpu",
+      "epocas": 1,
+      "modelo": "Transformer",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        1
+      ],
+      "shape_validacao": [
+        6,
+        1
+      ],
+      "tarefa": "monthly_1"
+    },
+    {
+      "device": "cpu",
+      "epocas": 1,
+      "modelo": "Informer",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        1
+      ],
+      "shape_validacao": [
+        6,
+        1
+      ],
+      "tarefa": "monthly_1"
+    },
+    {
+      "device": "cpu",
+      "epocas": 1,
+      "modelo": "TimesNet",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        1
+      ],
+      "shape_validacao": [
+        6,
+        1
+      ],
+      "tarefa": "monthly_1"
+    },
+    {
+      "device": "cpu",
+      "epocas": 0,
+      "modelo": "XGBoost",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        6
+      ],
+      "shape_validacao": [
+        6,
+        6
+      ],
+      "tarefa": "monthly_6"
+    },
+    {
+      "device": "cpu",
+      "epocas": 1,
+      "modelo": "LSTM",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        6
+      ],
+      "shape_validacao": [
+        6,
+        6
+      ],
+      "tarefa": "monthly_6"
+    },
+    {
+      "device": "cpu",
+      "epocas": 1,
+      "modelo": "DilatedRNN",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        6
+      ],
+      "shape_validacao": [
+        6,
+        6
+      ],
+      "tarefa": "monthly_6"
+    },
+    {
+      "device": "cpu",
+      "epocas": 1,
+      "modelo": "GRU",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        6
+      ],
+      "shape_validacao": [
+        6,
+        6
+      ],
+      "tarefa": "monthly_6"
+    },
+    {
+      "device": "cpu",
+      "epocas": 1,
+      "modelo": "Transformer",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        6
+      ],
+      "shape_validacao": [
+        6,
+        6
+      ],
+      "tarefa": "monthly_6"
+    },
+    {
+      "device": "cpu",
+      "epocas": 1,
+      "modelo": "Informer",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        6
+      ],
+      "shape_validacao": [
+        6,
+        6
+      ],
+      "tarefa": "monthly_6"
+    },
+    {
+      "device": "cpu",
+      "epocas": 1,
+      "modelo": "TimesNet",
+      "seed": 11,
+      "shape_teste": [
+        6,
+        6
+      ],
+      "shape_validacao": [
+        6,
+        6
+      ],
+      "tarefa": "monthly_6"
+    },
+    {
+      "device": "cpu",
+      "epocas": 0,
+      "modelo": "XGBoost",
+      "seed": 42,
+      "shape_teste": [
+        6,
+        72
+      ],
+      "shape_validacao": [
+        6,
+        72
+      ],
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "device": "cuda",
+      "epocas": 1,
+      "modelo": "LSTM",
+      "seed": 42,
+      "shape_teste": [
+        6,
+        72
+      ],
+      "shape_validacao": [
+        6,
+        72
+      ],
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "device": "cuda",
+      "epocas": 1,
+      "modelo": "DilatedRNN",
+      "seed": 42,
+      "shape_teste": [
+        6,
+        72
+      ],
+      "shape_validacao": [
+        6,
+        72
+      ],
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "device": "cuda",
+      "epocas": 1,
+      "modelo": "GRU",
+      "seed": 42,
+      "shape_teste": [
+        6,
+        72
+      ],
+      "shape_validacao": [
+        6,
+        72
+      ],
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "device": "cuda",
+      "epocas": 1,
+      "modelo": "Transformer",
+      "seed": 42,
+      "shape_teste": [
+        6,
+        72
+      ],
+      "shape_validacao": [
+        6,
+        72
+      ],
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "device": "cuda",
+      "epocas": 1,
+      "modelo": "Informer",
+      "seed": 42,
+      "shape_teste": [
+        6,
+        72
+      ],
+      "shape_validacao": [
+        6,
+        72
+      ],
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "device": "cuda",
+      "epocas": 1,
+      "modelo": "TimesNet",
+      "seed": 42,
+      "shape_teste": [
+        6,
+        72
+      ],
+      "shape_validacao": [
+        6,
+        72
+      ],
+      "tarefa": "hourly_72_extension"
+    }
+  ],
+  "modo": "smoke",
+  "ok": true,
+  "resultado_publicavel": false
+}

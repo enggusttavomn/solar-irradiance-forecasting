@@ -1,0 +1,379 @@
+{
+  "diagnosticos": [
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 22811,
+      "fracao_alterados": 0.5245355040470935,
+      "fracao_saturados": 0.0,
+      "localidade": "BMW San Luis Potosi",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 43488,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 22618,
+      "fracao_alterados": 0.5200974981604121,
+      "fracao_saturados": 0.0,
+      "localidade": "BYD Camacari",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 43488,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 22750,
+      "fracao_alterados": 0.5231328182487123,
+      "fracao_saturados": 0.0,
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 43488,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 22743,
+      "fracao_alterados": 0.5229718543046358,
+      "fracao_saturados": 0.0,
+      "localidade": "GM Factory Zero",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 43488,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 22819,
+      "fracao_alterados": 0.5247194628403238,
+      "fracao_saturados": 0.0,
+      "localidade": "Hyundai Metaplant Georgia",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 43488,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 22797,
+      "fracao_alterados": 0.5242135761589404,
+      "fracao_saturados": 0.0,
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 43488,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 22779,
+      "fracao_alterados": 0.5237996688741722,
+      "fracao_saturados": 0.0,
+      "localidade": "Rivian Normal",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 43488,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 22800,
+      "fracao_alterados": 0.5242825607064018,
+      "fracao_saturados": 0.0,
+      "localidade": "Tesla Fremont Factory",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 43488,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 22770,
+      "fracao_alterados": 0.5235927152317881,
+      "fracao_saturados": 0.0,
+      "localidade": "Tesla Gigafactory Nevada",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 43488,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 22689,
+      "fracao_alterados": 0.5217301324503312,
+      "fracao_saturados": 0.0,
+      "localidade": "Tesla Gigafactory Texas",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 43488,
+      "uso": "serie_ajuste_endogena"
+    }
+  ],
+  "niveis": 128,
+  "ordens": {
+    "BMW San Luis Potosi": [
+      2,
+      0,
+      2
+    ],
+    "BYD Camacari": [
+      2,
+      0,
+      2
+    ],
+    "Ford Rouge Electric Vehicle Center": [
+      2,
+      0,
+      2
+    ],
+    "GM Factory Zero": [
+      2,
+      1,
+      2
+    ],
+    "Hyundai Metaplant Georgia": [
+      2,
+      0,
+      0
+    ],
+    "Lucid AMP 1 Casa Grande": [
+      2,
+      1,
+      2
+    ],
+    "Rivian Normal": [
+      2,
+      1,
+      2
+    ],
+    "Tesla Fremont Factory": [
+      2,
+      1,
+      2
+    ],
+    "Tesla Gigafactory Nevada": [
+      2,
+      0,
+      2
+    ],
+    "Tesla Gigafactory Texas": [
+      2,
+      0,
+      0
+    ]
+  },
+  "registros": [
+    {
+      "fase": "refit",
+      "localidade": "BMW San Luis Potosi",
+      "localidade_id": 0,
+      "n_refit": 43488,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 46750.256472796675,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "BYD Camacari",
+      "localidade_id": 1,
+      "n_refit": 43488,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 40930.795396937174,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "localidade_id": 2,
+      "n_refit": 43488,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 53084.0112616104,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "GM Factory Zero",
+      "localidade_id": 3,
+      "n_refit": 43488,
+      "ordem": [
+        2,
+        1,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 53782.67310418079,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "Hyundai Metaplant Georgia",
+      "localidade_id": 4,
+      "n_refit": 43488,
+      "ordem": [
+        2,
+        0,
+        0
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 48023.742619502285,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "localidade_id": 5,
+      "n_refit": 43488,
+      "ordem": [
+        2,
+        1,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 61260.08828703314,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "Rivian Normal",
+      "localidade_id": 6,
+      "n_refit": 43488,
+      "ordem": [
+        2,
+        1,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 54579.725311219794,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "Tesla Fremont Factory",
+      "localidade_id": 7,
+      "n_refit": 43488,
+      "ordem": [
+        2,
+        1,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 62201.04083387293,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "Tesla Gigafactory Nevada",
+      "localidade_id": 8,
+      "n_refit": 43488,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 54916.4998509702,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "Tesla Gigafactory Texas",
+      "localidade_id": 9,
+      "n_refit": 43488,
+      "ordem": [
+        2,
+        0,
+        0
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 49036.88798792663,
+          "otimizador": "lbfgs"
+        }
+      ]
+    }
+  ]
+}

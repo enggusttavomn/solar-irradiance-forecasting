@@ -1,0 +1,1105 @@
+{
+  "artefatos_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\transformer\\repeticao_1\\pesos.pt": "1f7d2aa3982cbf1605b883087e0d98768daa440f0e9cdb0326b4b9fbc9f04340",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\transformer\\repeticao_1\\previsoes.npz": "ec9282d1b3bbca8bd81f95773a7071ec21229fe28a876d085b206aba3acc6fd2"
+  },
+  "chamadas_fixar_semente_estrita": [
+    {
+      "args": [
+        42,
+        1
+      ],
+      "kwargs": {}
+    },
+    {
+      "args": [
+        42,
+        1
+      ],
+      "kwargs": {}
+    }
+  ],
+  "curvas": [
+    {
+      "epoca": 1,
+      "mse_treino_normalizado": 0.2536890022456646,
+      "mse_validacao_normalizado": 0.17086321777767605
+    },
+    {
+      "epoca": 2,
+      "mse_treino_normalizado": 0.1792827658355236,
+      "mse_validacao_normalizado": 0.12426359123653835
+    }
+  ],
+  "epoca_escolhida": 2,
+  "hashes_estado_retornado": {
+    "decoder.autoatencao.k.bias": {
+      "dtype": "float32",
+      "sha256": "a0f6f92a0107066cdd06fbc0279c7ec1eb330d6637c01a8dbd92632a67a4a3ac",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.autoatencao.k.weight": {
+      "dtype": "float32",
+      "sha256": "f073e8230934affe279b875545ac3ff65817907b8ce6d8bca76d1c25c75d3410",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.autoatencao.q.bias": {
+      "dtype": "float32",
+      "sha256": "d05e32ad3fe96c35da67705cb3470d4ab8c218e37e25215939e71f442c9e1d60",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.autoatencao.q.weight": {
+      "dtype": "float32",
+      "sha256": "5eb18aecaca28e296152345850e217b12b748d3bc091bcfb71d53634f4c920fe",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.autoatencao.saida.bias": {
+      "dtype": "float32",
+      "sha256": "2b996b54ae933f5310639915e0c43e1512fe35d04a78959dd28c78649059a5c8",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.autoatencao.saida.weight": {
+      "dtype": "float32",
+      "sha256": "7faa69b12a4934cd5c79bf7188bb9a18d7dbad43507b5c7406d901356f80d896",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.autoatencao.v.bias": {
+      "dtype": "float32",
+      "sha256": "f10158d7e5087d0b8e979d144dc0e7aa11627579ddf7fd4ccc922ca11e509ce9",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.autoatencao.v.weight": {
+      "dtype": "float32",
+      "sha256": "678b6a531ac0e28bc3fbdb1476f7f01add2376a9e74da4423ce93738bf398db8",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.cruzada.k.bias": {
+      "dtype": "float32",
+      "sha256": "68832df8a7f989ef3443c713eaf4266f47548139f0312a02152c4590c1e4d7a4",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.cruzada.k.weight": {
+      "dtype": "float32",
+      "sha256": "943b1eb09f900f116fb1f59266fe675848b923faae84e3230db371d4f7e38381",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.cruzada.q.bias": {
+      "dtype": "float32",
+      "sha256": "7f4fd0ae96e75042e2e83015bed3aa26f0c802bdf43c44c2de8d70ef02dbc1f3",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.cruzada.q.weight": {
+      "dtype": "float32",
+      "sha256": "6cf208bb21516497250191bb22931efc2842858dfaa6a734d8e0f73ea7dad997",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.cruzada.saida.bias": {
+      "dtype": "float32",
+      "sha256": "936f14779ae9041340894ef6ce76b4cd2f8ba6def117d6afc5771b276a0bdc4d",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.cruzada.saida.weight": {
+      "dtype": "float32",
+      "sha256": "2f88e71848d5a15016a75b1d9e237ce52d7834ceb15be8d628f89b809f5c96cc",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.cruzada.v.bias": {
+      "dtype": "float32",
+      "sha256": "0a043f3e85a80de65f5a968f08003618bc62ef754cd46595dd3ce1b6995dbb3c",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.cruzada.v.weight": {
+      "dtype": "float32",
+      "sha256": "c4f415e641200464527f78185ccfa5a1d60277171db46571cedca7c59230e3f6",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.ff.0.bias": {
+      "dtype": "float32",
+      "sha256": "489f729496b160ed95d1eb4d2f6c1fb8fda6727ef452f45e7120a106a67ae33d",
+      "shape": [
+        32
+      ]
+    },
+    "decoder.ff.0.weight": {
+      "dtype": "float32",
+      "sha256": "57104c1c09b80f894f6c73ee58ed367c5b1a6b054bd8b34eead8f300dece2d57",
+      "shape": [
+        32,
+        16
+      ]
+    },
+    "decoder.ff.3.bias": {
+      "dtype": "float32",
+      "sha256": "1bd37329340adc61e42ce8a9bedbf037eb04c15ffd0ee1eeeab4869cb4534522",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.ff.3.weight": {
+      "dtype": "float32",
+      "sha256": "5b14b0688347ba0711188f916a18e6551196e715be07662055cf90b1da69b82c",
+      "shape": [
+        16,
+        32
+      ]
+    },
+    "decoder.norm1.bias": {
+      "dtype": "float32",
+      "sha256": "607902000c855354064ed7de9e8022fbce2d3adbfd47c0caf57993403b4ad02a",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.norm1.weight": {
+      "dtype": "float32",
+      "sha256": "d5ee6d9471b26caea6f26a9acd12bedf08fc5d9e3e19fb87733e013758bdb8b2",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.norm2.bias": {
+      "dtype": "float32",
+      "sha256": "f94fd9195c030fad1a0b23ceefe6fb13e2d06f69090c8b40e2bba395c1089baa",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.norm2.weight": {
+      "dtype": "float32",
+      "sha256": "dafd79a00a547267cba7b948e6a3aa4bab54e4b118cc3b0fa7bfd4fa35203956",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.norm3.bias": {
+      "dtype": "float32",
+      "sha256": "9c61e5b6f4ea8d53263df55189360191288392814a570a70241a2a7a85d246ea",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.norm3.weight": {
+      "dtype": "float32",
+      "sha256": "ace18253eac14a45a1f245b89bfbc75af59d05fa3cf9dbe1c30ea4663c0d18eb",
+      "shape": [
+        16
+      ]
+    },
+    "embedding_localidade.weight": {
+      "dtype": "float32",
+      "sha256": "14f7c18ef3672492342e0ccc068fc1e29be80cd055d3c113ea277fe744c446e6",
+      "shape": [
+        10,
+        8
+      ]
+    },
+    "encoders.0.atencao.k.bias": {
+      "dtype": "float32",
+      "sha256": "6adc06c5eabc4f44b84581162884d1b5edae2dab2604d63a0fbd964b122efb28",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.atencao.k.weight": {
+      "dtype": "float32",
+      "sha256": "ba0ffaf9609251f58a1e6002b90303b53b7df0bca695de971b8591440c989154",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.0.atencao.q.bias": {
+      "dtype": "float32",
+      "sha256": "b3212bb81b53b180fa99ef1540bd031557bd76fd7b23385f221387d598504d98",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.atencao.q.weight": {
+      "dtype": "float32",
+      "sha256": "e10d32b1cd9d9701ab63644f49a954250add2d3a7ad172d98e135765c10df1f6",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.0.atencao.saida.bias": {
+      "dtype": "float32",
+      "sha256": "c128cb3f0e9fdfaabd20fa74013ced6806114e716d48544ae256cb9aac2391e0",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.atencao.saida.weight": {
+      "dtype": "float32",
+      "sha256": "93c5acb32ac8e2559fc4858ca184d80e132f4a150d07f9d81661bd006d5dcc08",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.0.atencao.v.bias": {
+      "dtype": "float32",
+      "sha256": "5c0559dd7d391e57c911514239c00ddbe7da3aa2519a1ee6acf6fd11d15479aa",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.atencao.v.weight": {
+      "dtype": "float32",
+      "sha256": "ea8b73e9d469483f6842e9605242c366792578fe9095afd8a716a84f291f2f9d",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.0.ff.0.bias": {
+      "dtype": "float32",
+      "sha256": "48d108d93173d3c9f2952b2db1954e0e1f56961379be5f6261342349c469bf00",
+      "shape": [
+        32
+      ]
+    },
+    "encoders.0.ff.0.weight": {
+      "dtype": "float32",
+      "sha256": "11c292686dd84629e25b3519c1f420b8003260fd82e522f757dc30ba293a2c80",
+      "shape": [
+        32,
+        16
+      ]
+    },
+    "encoders.0.ff.3.bias": {
+      "dtype": "float32",
+      "sha256": "a38ab217e16b9cb69b926f8e78d90ca2d3e5836e723fadec7a55ce73066ebcd1",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.ff.3.weight": {
+      "dtype": "float32",
+      "sha256": "3f46e8b6e0895f7c725adbb7e6614a5958abc4c81c9cc816ceb5597386dfbe30",
+      "shape": [
+        16,
+        32
+      ]
+    },
+    "encoders.0.norm1.bias": {
+      "dtype": "float32",
+      "sha256": "f85952581c5e45be4303b68446b35957b72c460116314a69ede301488264033d",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.norm1.weight": {
+      "dtype": "float32",
+      "sha256": "7db2e4458a6e9dd1f49579be768f0f10d2a950ec718aaa8a7090dfd772bf9a21",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.norm2.bias": {
+      "dtype": "float32",
+      "sha256": "fae4db4688e2e70f4559e5862739316670f0a08ea40798ec3863c6b37b64cbde",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.norm2.weight": {
+      "dtype": "float32",
+      "sha256": "2884da723835b843de4cf6f6a200732fff590953020a43cc30204e4e0e53e7bb",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.atencao.k.bias": {
+      "dtype": "float32",
+      "sha256": "fbbf5902717f25ff56c37f2bc5dbb721ed6c0ddd7e85979af809d34018ba7e51",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.atencao.k.weight": {
+      "dtype": "float32",
+      "sha256": "a8c6766b84a5d7f151fb2c6359fdf0c38f94ae50077332892f5694f8e3c9c267",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.1.atencao.q.bias": {
+      "dtype": "float32",
+      "sha256": "f97886d5b7911b776908917e5bc4e9aa9dc152813dfdd0ca0d62af8856335514",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.atencao.q.weight": {
+      "dtype": "float32",
+      "sha256": "c1cb36176be0bb1348f2b4b4a41d5ddc0510b3cb69c814be49161b710d4426a7",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.1.atencao.saida.bias": {
+      "dtype": "float32",
+      "sha256": "6a54ffb165c62cac00832d2d1e91af000cc55ede900a95b776d79d51e87a2828",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.atencao.saida.weight": {
+      "dtype": "float32",
+      "sha256": "78a58a9c2581fcce9309122a2a7a5608deaf09a7ffb2106522f174ccb0cf1dfb",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.1.atencao.v.bias": {
+      "dtype": "float32",
+      "sha256": "633d750c504f8ef4667f52b9aca08bac762be09d578b20a5e70442a10a53efaf",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.atencao.v.weight": {
+      "dtype": "float32",
+      "sha256": "9159247e064cf6297c4a3787ed87aed57e8f3cc26f84c2f219822294c6b233b2",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.1.ff.0.bias": {
+      "dtype": "float32",
+      "sha256": "758426aad387a129104c3e7a3f122c1cf437026a4e0e9febe57bf3814e6e3bcd",
+      "shape": [
+        32
+      ]
+    },
+    "encoders.1.ff.0.weight": {
+      "dtype": "float32",
+      "sha256": "e92e7c34bd2208759cd96dedbc683b5c33514d7d6b163b041215a1c2f05b415f",
+      "shape": [
+        32,
+        16
+      ]
+    },
+    "encoders.1.ff.3.bias": {
+      "dtype": "float32",
+      "sha256": "73fc7ec00bc5edbef0b842e3b580840e1d7a75d7b7f804f10f47187817d95c07",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.ff.3.weight": {
+      "dtype": "float32",
+      "sha256": "4205d1b6e58a2a321d8201447c64197802c2cb067ee2ab431755dc5a3a0827c3",
+      "shape": [
+        16,
+        32
+      ]
+    },
+    "encoders.1.norm1.bias": {
+      "dtype": "float32",
+      "sha256": "0ecdc092c2726f4664ee2d989fad5ea4ec66bdc9a5dfe49e07b40d250f1775ae",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.norm1.weight": {
+      "dtype": "float32",
+      "sha256": "b075a64439a2c2c92724961232a613c4befe5f6252af30646be0d05ba813d277",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.norm2.bias": {
+      "dtype": "float32",
+      "sha256": "cecebbf3d62220268c61ed2cb5f1d970356f4bc2e92f28d6abb0ba54c3630752",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.norm2.weight": {
+      "dtype": "float32",
+      "sha256": "dd41d7cd70724582e318a7b6634036ade2b2769159f9c027a58ea798a726fbfd",
+      "shape": [
+        16
+      ]
+    },
+    "norm_decoder.bias": {
+      "dtype": "float32",
+      "sha256": "c25538cd55bd5470c226b31c109bb5b257ab0996fbf7c0d46f35c203a40978ba",
+      "shape": [
+        16
+      ]
+    },
+    "norm_decoder.weight": {
+      "dtype": "float32",
+      "sha256": "3629fea0f902b19ea940c5640a0a77f1f4525f52dd1f575c1eb1c2bc580d1661",
+      "shape": [
+        16
+      ]
+    },
+    "norm_encoder.bias": {
+      "dtype": "float32",
+      "sha256": "860a9dd15d987b32813921ff3394b06a79c00c38ad14bbab7663f96fc1611fdd",
+      "shape": [
+        16
+      ]
+    },
+    "norm_encoder.weight": {
+      "dtype": "float32",
+      "sha256": "307f665684c56201fba2d3791d1180980480f3c82e5309e09b222804aed0b33d",
+      "shape": [
+        16
+      ]
+    },
+    "posicao": {
+      "dtype": "float32",
+      "sha256": "ec958e21c2364e45cb6601e5bea15b16ebb925c9b3c0c00fc31d6c1ed9131257",
+      "shape": [
+        408,
+        16
+      ]
+    },
+    "projecao_decoder.bias": {
+      "dtype": "float32",
+      "sha256": "72b83d3c37bdd99b8a23c927940d464907029c0daaa9aabb0c0328ee6a1b2d8e",
+      "shape": [
+        16
+      ]
+    },
+    "projecao_decoder.weight": {
+      "dtype": "float32",
+      "sha256": "27e6e955df67818fe1d45a434dbee854ead6dc0d7eb2ab83145e100ddb4407a9",
+      "shape": [
+        16,
+        1
+      ]
+    },
+    "projecao_encoder.bias": {
+      "dtype": "float32",
+      "sha256": "1ba15ffd9332b14bc07bc45ed57c5b76430df5cb01db80a655b9f2aa3592719a",
+      "shape": [
+        16
+      ]
+    },
+    "projecao_encoder.weight": {
+      "dtype": "float32",
+      "sha256": "b753eaf6f3049c69f9ab87726b95d7c713cdce2ae20fb499aac9bbcc3826c34d",
+      "shape": [
+        16,
+        1
+      ]
+    },
+    "projecao_localidade.bias": {
+      "dtype": "float32",
+      "sha256": "a54792df514831001310994f991032231df35bfab7aba508480cd9602c17f1b3",
+      "shape": [
+        16
+      ]
+    },
+    "projecao_localidade.weight": {
+      "dtype": "float32",
+      "sha256": "370eee6d23711871f41dacc9d20bd1b9c8bc6852cd4f910b0386630b7863b0e6",
+      "shape": [
+        16,
+        8
+      ]
+    },
+    "saida.bias": {
+      "dtype": "float32",
+      "sha256": "47d4890147b7a855a83bd627f1c71a1b4afdf985ecea5d52cc4bc5680fd8381a",
+      "shape": [
+        1
+      ]
+    },
+    "saida.weight": {
+      "dtype": "float32",
+      "sha256": "647d609d41a4580f09f2e0c50c531143afa4bd574a38aed037d948901688aee1",
+      "shape": [
+        1,
+        16
+      ]
+    }
+  },
+  "hashes_estado_ultima_atualizacao": {
+    "decoder.autoatencao.k.bias": {
+      "dtype": "float32",
+      "sha256": "a0f6f92a0107066cdd06fbc0279c7ec1eb330d6637c01a8dbd92632a67a4a3ac",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.autoatencao.k.weight": {
+      "dtype": "float32",
+      "sha256": "f073e8230934affe279b875545ac3ff65817907b8ce6d8bca76d1c25c75d3410",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.autoatencao.q.bias": {
+      "dtype": "float32",
+      "sha256": "d05e32ad3fe96c35da67705cb3470d4ab8c218e37e25215939e71f442c9e1d60",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.autoatencao.q.weight": {
+      "dtype": "float32",
+      "sha256": "5eb18aecaca28e296152345850e217b12b748d3bc091bcfb71d53634f4c920fe",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.autoatencao.saida.bias": {
+      "dtype": "float32",
+      "sha256": "2b996b54ae933f5310639915e0c43e1512fe35d04a78959dd28c78649059a5c8",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.autoatencao.saida.weight": {
+      "dtype": "float32",
+      "sha256": "7faa69b12a4934cd5c79bf7188bb9a18d7dbad43507b5c7406d901356f80d896",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.autoatencao.v.bias": {
+      "dtype": "float32",
+      "sha256": "f10158d7e5087d0b8e979d144dc0e7aa11627579ddf7fd4ccc922ca11e509ce9",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.autoatencao.v.weight": {
+      "dtype": "float32",
+      "sha256": "678b6a531ac0e28bc3fbdb1476f7f01add2376a9e74da4423ce93738bf398db8",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.cruzada.k.bias": {
+      "dtype": "float32",
+      "sha256": "68832df8a7f989ef3443c713eaf4266f47548139f0312a02152c4590c1e4d7a4",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.cruzada.k.weight": {
+      "dtype": "float32",
+      "sha256": "943b1eb09f900f116fb1f59266fe675848b923faae84e3230db371d4f7e38381",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.cruzada.q.bias": {
+      "dtype": "float32",
+      "sha256": "7f4fd0ae96e75042e2e83015bed3aa26f0c802bdf43c44c2de8d70ef02dbc1f3",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.cruzada.q.weight": {
+      "dtype": "float32",
+      "sha256": "6cf208bb21516497250191bb22931efc2842858dfaa6a734d8e0f73ea7dad997",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.cruzada.saida.bias": {
+      "dtype": "float32",
+      "sha256": "936f14779ae9041340894ef6ce76b4cd2f8ba6def117d6afc5771b276a0bdc4d",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.cruzada.saida.weight": {
+      "dtype": "float32",
+      "sha256": "2f88e71848d5a15016a75b1d9e237ce52d7834ceb15be8d628f89b809f5c96cc",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.cruzada.v.bias": {
+      "dtype": "float32",
+      "sha256": "0a043f3e85a80de65f5a968f08003618bc62ef754cd46595dd3ce1b6995dbb3c",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.cruzada.v.weight": {
+      "dtype": "float32",
+      "sha256": "c4f415e641200464527f78185ccfa5a1d60277171db46571cedca7c59230e3f6",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "decoder.ff.0.bias": {
+      "dtype": "float32",
+      "sha256": "489f729496b160ed95d1eb4d2f6c1fb8fda6727ef452f45e7120a106a67ae33d",
+      "shape": [
+        32
+      ]
+    },
+    "decoder.ff.0.weight": {
+      "dtype": "float32",
+      "sha256": "57104c1c09b80f894f6c73ee58ed367c5b1a6b054bd8b34eead8f300dece2d57",
+      "shape": [
+        32,
+        16
+      ]
+    },
+    "decoder.ff.3.bias": {
+      "dtype": "float32",
+      "sha256": "1bd37329340adc61e42ce8a9bedbf037eb04c15ffd0ee1eeeab4869cb4534522",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.ff.3.weight": {
+      "dtype": "float32",
+      "sha256": "5b14b0688347ba0711188f916a18e6551196e715be07662055cf90b1da69b82c",
+      "shape": [
+        16,
+        32
+      ]
+    },
+    "decoder.norm1.bias": {
+      "dtype": "float32",
+      "sha256": "607902000c855354064ed7de9e8022fbce2d3adbfd47c0caf57993403b4ad02a",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.norm1.weight": {
+      "dtype": "float32",
+      "sha256": "d5ee6d9471b26caea6f26a9acd12bedf08fc5d9e3e19fb87733e013758bdb8b2",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.norm2.bias": {
+      "dtype": "float32",
+      "sha256": "f94fd9195c030fad1a0b23ceefe6fb13e2d06f69090c8b40e2bba395c1089baa",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.norm2.weight": {
+      "dtype": "float32",
+      "sha256": "dafd79a00a547267cba7b948e6a3aa4bab54e4b118cc3b0fa7bfd4fa35203956",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.norm3.bias": {
+      "dtype": "float32",
+      "sha256": "9c61e5b6f4ea8d53263df55189360191288392814a570a70241a2a7a85d246ea",
+      "shape": [
+        16
+      ]
+    },
+    "decoder.norm3.weight": {
+      "dtype": "float32",
+      "sha256": "ace18253eac14a45a1f245b89bfbc75af59d05fa3cf9dbe1c30ea4663c0d18eb",
+      "shape": [
+        16
+      ]
+    },
+    "embedding_localidade.weight": {
+      "dtype": "float32",
+      "sha256": "14f7c18ef3672492342e0ccc068fc1e29be80cd055d3c113ea277fe744c446e6",
+      "shape": [
+        10,
+        8
+      ]
+    },
+    "encoders.0.atencao.k.bias": {
+      "dtype": "float32",
+      "sha256": "6adc06c5eabc4f44b84581162884d1b5edae2dab2604d63a0fbd964b122efb28",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.atencao.k.weight": {
+      "dtype": "float32",
+      "sha256": "ba0ffaf9609251f58a1e6002b90303b53b7df0bca695de971b8591440c989154",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.0.atencao.q.bias": {
+      "dtype": "float32",
+      "sha256": "b3212bb81b53b180fa99ef1540bd031557bd76fd7b23385f221387d598504d98",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.atencao.q.weight": {
+      "dtype": "float32",
+      "sha256": "e10d32b1cd9d9701ab63644f49a954250add2d3a7ad172d98e135765c10df1f6",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.0.atencao.saida.bias": {
+      "dtype": "float32",
+      "sha256": "c128cb3f0e9fdfaabd20fa74013ced6806114e716d48544ae256cb9aac2391e0",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.atencao.saida.weight": {
+      "dtype": "float32",
+      "sha256": "93c5acb32ac8e2559fc4858ca184d80e132f4a150d07f9d81661bd006d5dcc08",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.0.atencao.v.bias": {
+      "dtype": "float32",
+      "sha256": "5c0559dd7d391e57c911514239c00ddbe7da3aa2519a1ee6acf6fd11d15479aa",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.atencao.v.weight": {
+      "dtype": "float32",
+      "sha256": "ea8b73e9d469483f6842e9605242c366792578fe9095afd8a716a84f291f2f9d",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.0.ff.0.bias": {
+      "dtype": "float32",
+      "sha256": "48d108d93173d3c9f2952b2db1954e0e1f56961379be5f6261342349c469bf00",
+      "shape": [
+        32
+      ]
+    },
+    "encoders.0.ff.0.weight": {
+      "dtype": "float32",
+      "sha256": "11c292686dd84629e25b3519c1f420b8003260fd82e522f757dc30ba293a2c80",
+      "shape": [
+        32,
+        16
+      ]
+    },
+    "encoders.0.ff.3.bias": {
+      "dtype": "float32",
+      "sha256": "a38ab217e16b9cb69b926f8e78d90ca2d3e5836e723fadec7a55ce73066ebcd1",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.ff.3.weight": {
+      "dtype": "float32",
+      "sha256": "3f46e8b6e0895f7c725adbb7e6614a5958abc4c81c9cc816ceb5597386dfbe30",
+      "shape": [
+        16,
+        32
+      ]
+    },
+    "encoders.0.norm1.bias": {
+      "dtype": "float32",
+      "sha256": "f85952581c5e45be4303b68446b35957b72c460116314a69ede301488264033d",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.norm1.weight": {
+      "dtype": "float32",
+      "sha256": "7db2e4458a6e9dd1f49579be768f0f10d2a950ec718aaa8a7090dfd772bf9a21",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.norm2.bias": {
+      "dtype": "float32",
+      "sha256": "fae4db4688e2e70f4559e5862739316670f0a08ea40798ec3863c6b37b64cbde",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.0.norm2.weight": {
+      "dtype": "float32",
+      "sha256": "2884da723835b843de4cf6f6a200732fff590953020a43cc30204e4e0e53e7bb",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.atencao.k.bias": {
+      "dtype": "float32",
+      "sha256": "fbbf5902717f25ff56c37f2bc5dbb721ed6c0ddd7e85979af809d34018ba7e51",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.atencao.k.weight": {
+      "dtype": "float32",
+      "sha256": "a8c6766b84a5d7f151fb2c6359fdf0c38f94ae50077332892f5694f8e3c9c267",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.1.atencao.q.bias": {
+      "dtype": "float32",
+      "sha256": "f97886d5b7911b776908917e5bc4e9aa9dc152813dfdd0ca0d62af8856335514",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.atencao.q.weight": {
+      "dtype": "float32",
+      "sha256": "c1cb36176be0bb1348f2b4b4a41d5ddc0510b3cb69c814be49161b710d4426a7",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.1.atencao.saida.bias": {
+      "dtype": "float32",
+      "sha256": "6a54ffb165c62cac00832d2d1e91af000cc55ede900a95b776d79d51e87a2828",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.atencao.saida.weight": {
+      "dtype": "float32",
+      "sha256": "78a58a9c2581fcce9309122a2a7a5608deaf09a7ffb2106522f174ccb0cf1dfb",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.1.atencao.v.bias": {
+      "dtype": "float32",
+      "sha256": "633d750c504f8ef4667f52b9aca08bac762be09d578b20a5e70442a10a53efaf",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.atencao.v.weight": {
+      "dtype": "float32",
+      "sha256": "9159247e064cf6297c4a3787ed87aed57e8f3cc26f84c2f219822294c6b233b2",
+      "shape": [
+        16,
+        16
+      ]
+    },
+    "encoders.1.ff.0.bias": {
+      "dtype": "float32",
+      "sha256": "758426aad387a129104c3e7a3f122c1cf437026a4e0e9febe57bf3814e6e3bcd",
+      "shape": [
+        32
+      ]
+    },
+    "encoders.1.ff.0.weight": {
+      "dtype": "float32",
+      "sha256": "e92e7c34bd2208759cd96dedbc683b5c33514d7d6b163b041215a1c2f05b415f",
+      "shape": [
+        32,
+        16
+      ]
+    },
+    "encoders.1.ff.3.bias": {
+      "dtype": "float32",
+      "sha256": "73fc7ec00bc5edbef0b842e3b580840e1d7a75d7b7f804f10f47187817d95c07",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.ff.3.weight": {
+      "dtype": "float32",
+      "sha256": "4205d1b6e58a2a321d8201447c64197802c2cb067ee2ab431755dc5a3a0827c3",
+      "shape": [
+        16,
+        32
+      ]
+    },
+    "encoders.1.norm1.bias": {
+      "dtype": "float32",
+      "sha256": "0ecdc092c2726f4664ee2d989fad5ea4ec66bdc9a5dfe49e07b40d250f1775ae",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.norm1.weight": {
+      "dtype": "float32",
+      "sha256": "b075a64439a2c2c92724961232a613c4befe5f6252af30646be0d05ba813d277",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.norm2.bias": {
+      "dtype": "float32",
+      "sha256": "cecebbf3d62220268c61ed2cb5f1d970356f4bc2e92f28d6abb0ba54c3630752",
+      "shape": [
+        16
+      ]
+    },
+    "encoders.1.norm2.weight": {
+      "dtype": "float32",
+      "sha256": "dd41d7cd70724582e318a7b6634036ade2b2769159f9c027a58ea798a726fbfd",
+      "shape": [
+        16
+      ]
+    },
+    "norm_decoder.bias": {
+      "dtype": "float32",
+      "sha256": "c25538cd55bd5470c226b31c109bb5b257ab0996fbf7c0d46f35c203a40978ba",
+      "shape": [
+        16
+      ]
+    },
+    "norm_decoder.weight": {
+      "dtype": "float32",
+      "sha256": "3629fea0f902b19ea940c5640a0a77f1f4525f52dd1f575c1eb1c2bc580d1661",
+      "shape": [
+        16
+      ]
+    },
+    "norm_encoder.bias": {
+      "dtype": "float32",
+      "sha256": "860a9dd15d987b32813921ff3394b06a79c00c38ad14bbab7663f96fc1611fdd",
+      "shape": [
+        16
+      ]
+    },
+    "norm_encoder.weight": {
+      "dtype": "float32",
+      "sha256": "307f665684c56201fba2d3791d1180980480f3c82e5309e09b222804aed0b33d",
+      "shape": [
+        16
+      ]
+    },
+    "posicao": {
+      "dtype": "float32",
+      "sha256": "ec958e21c2364e45cb6601e5bea15b16ebb925c9b3c0c00fc31d6c1ed9131257",
+      "shape": [
+        408,
+        16
+      ]
+    },
+    "projecao_decoder.bias": {
+      "dtype": "float32",
+      "sha256": "72b83d3c37bdd99b8a23c927940d464907029c0daaa9aabb0c0328ee6a1b2d8e",
+      "shape": [
+        16
+      ]
+    },
+    "projecao_decoder.weight": {
+      "dtype": "float32",
+      "sha256": "27e6e955df67818fe1d45a434dbee854ead6dc0d7eb2ab83145e100ddb4407a9",
+      "shape": [
+        16,
+        1
+      ]
+    },
+    "projecao_encoder.bias": {
+      "dtype": "float32",
+      "sha256": "1ba15ffd9332b14bc07bc45ed57c5b76430df5cb01db80a655b9f2aa3592719a",
+      "shape": [
+        16
+      ]
+    },
+    "projecao_encoder.weight": {
+      "dtype": "float32",
+      "sha256": "b753eaf6f3049c69f9ab87726b95d7c713cdce2ae20fb499aac9bbcc3826c34d",
+      "shape": [
+        16,
+        1
+      ]
+    },
+    "projecao_localidade.bias": {
+      "dtype": "float32",
+      "sha256": "a54792df514831001310994f991032231df35bfab7aba508480cd9602c17f1b3",
+      "shape": [
+        16
+      ]
+    },
+    "projecao_localidade.weight": {
+      "dtype": "float32",
+      "sha256": "370eee6d23711871f41dacc9d20bd1b9c8bc6852cd4f910b0386630b7863b0e6",
+      "shape": [
+        16,
+        8
+      ]
+    },
+    "saida.bias": {
+      "dtype": "float32",
+      "sha256": "47d4890147b7a855a83bd627f1c71a1b4afdf985ecea5d52cc4bc5680fd8381a",
+      "shape": [
+        1
+      ]
+    },
+    "saida.weight": {
+      "dtype": "float32",
+      "sha256": "647d609d41a4580f09f2e0c50c531143afa4bd574a38aed037d948901688aee1",
+      "shape": [
+        1,
+        16
+      ]
+    }
+  },
+  "segundos": 1.927679899992654,
+  "updates": 8
+}

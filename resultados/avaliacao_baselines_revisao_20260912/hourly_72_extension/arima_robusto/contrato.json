@@ -1,0 +1,246 @@
+{
+  "arquivos_codigo": [
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_baselines_adicionais.py",
+      "sha256": "64a3d933ba5af151e88f9d368337b99bccfa89f18a7c552aa724a57dfc39ba81"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\modelos_baselines_adicionais.py",
+      "sha256": "f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py",
+      "sha256": "6bd687ead27d2d174a0e1beb7c69dcb29c4695549553f4cbf2142e159f8ba991"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_horario_timesnet.py",
+      "sha256": "2cc59451b0fbcbedbf3068d2f1c45595ff84daf46e8318a88080df208e7bb8e9"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\dados_horarios_nsrdb.py",
+      "sha256": "3bafea39ec15867e79a2ff1fc29492b1d72613c9650a8c1741ef0736682fad13"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_arima_robusto.py",
+      "sha256": "bdae795a673fcb1d075eae8539d1f1ddb909f587bf054ed8b91b40d912105c20"
+    }
+  ],
+  "arquivos_entrada": [
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2019.csv.gz",
+      "sha256": "596462fc1dceb631bd0a8017798614d324fef6d298d01913ffbc89908db04026"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2020.csv.gz",
+      "sha256": "817e26b2fd7a817d0d0da2457d71ebc8db5880090730f7239efb74ff47842014"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2021.csv.gz",
+      "sha256": "a9e321d0cf384ad345d47c28e7c8fd5cae201ee4aa16b05c6882c45133f968ce"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2022.csv.gz",
+      "sha256": "13daace788f068c16711ae6aff7a1420066a532b538ca889078b6a4e3760f27f"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2023.csv.gz",
+      "sha256": "e1f228817a16c6655128e7bbfce4668ea8e3ba0d28de535bc003fe64733353d0"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2024.csv.gz",
+      "sha256": "88430743a2b9e6f82e394f683cfdea4ad93324fe59756d17edcfbad6d9f8eac1"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\hourly_72_extension\\contrato_execucao.json",
+      "sha256": "d1ae6da90fca8733036dc561db96e7be5d77d707a9422c807d739efb661c4126"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\hourly_72_extension\\previsoes_validacao.csv.gz",
+      "sha256": "0e24b9162e53989682993c4b3856031c33ae40887597d47fd0c65d27825e14ab"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\hourly_72_extension\\previsoes_teste.csv.gz",
+      "sha256": "850cc110a4bf4101b0c02c9d5815fd3916659c01f67e2cc150f16dddc74d69cc"
+    }
+  ],
+  "configuracao_canonica": {
+    "batch_size_diario": 128,
+    "batch_size_mensal": 32,
+    "dilated_dilatacoes": [
+      1,
+      2,
+      4
+    ],
+    "dilated_dropout": 0.0,
+    "dilated_unidades": 16,
+    "dilated_unidades_densas": 16,
+    "embedding_localidade": 8,
+    "epocas_smoke": 1,
+    "limite_localidades_smoke": 2,
+    "limite_origens_smoke": 3,
+    "lstm_camadas": 1,
+    "lstm_ocultos": 32,
+    "max_epocas_diario": 30,
+    "max_epocas_mensal": 300,
+    "modo_execucao": "completa",
+    "paciencia_diario": 5,
+    "paciencia_mensal": 30,
+    "peso_decay": 1e-05,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ],
+    "taxa_aprendizado": 0.001,
+    "threads_torch": 1,
+    "timesnet_blocos": 1,
+    "timesnet_d_ff": 16,
+    "timesnet_d_model": 8,
+    "timesnet_dropout": 0.1,
+    "timesnet_kernels": 2,
+    "timesnet_top_k": 3,
+    "xgb_colsample": 0.8,
+    "xgb_estimadores": 150,
+    "xgb_estimadores_smoke": 2,
+    "xgb_n_jobs": 1,
+    "xgb_profundidade": 3,
+    "xgb_subsample": 0.8,
+    "xgb_taxa_aprendizado": 0.05
+  },
+  "pacotes": {
+    "numpy": "2.4.4",
+    "pandas": "3.0.3",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6",
+    "torch": "2.12.0"
+  },
+  "parametros": {
+    "activation": "relu",
+    "arima_context": "apply_fixed_parameters_to_same_bounded_input_window",
+    "arima_maxiter": 200,
+    "arima_numerical_retry_policy": [
+      [
+        "lbfgs",
+        200
+      ],
+      [
+        "powell",
+        2000
+      ]
+    ],
+    "arima_optimizer_selection": "first_converged_fit_no_validation_or_test_metric",
+    "arima_orders": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        2
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        1,
+        2
+      ]
+    ],
+    "arima_parameter_period": "union_of_training_target_dates_before_partition_cut",
+    "arima_refit": "selected_order_fit_training_and_validation_targets_only",
+    "arima_selection": "per_site_validation_MSE_normalized_before_postprocessing",
+    "arima_version": "numerical_retry_v2_all_sites_and_tasks",
+    "batch_size": 128,
+    "d_ff": 32,
+    "d_model": 16,
+    "decoder_future": "zeros_no_teacher_forcing",
+    "decoder_layers": 1,
+    "dropout": 0.1,
+    "embedding_localidade": 8,
+    "encoder_layers": 2,
+    "gru_hidden": 32,
+    "gru_layers": 1,
+    "heads": 2,
+    "informer_distill": true,
+    "informer_eval_sampling_seed": 0,
+    "informer_factor": 5,
+    "informer_mix": false,
+    "label_len": 168,
+    "loss_selecao_neural": "MSE_normalizado_2023",
+    "lr": 0.001,
+    "max_epocas": 30,
+    "modelo": "ARIMA",
+    "modo": "completa",
+    "paciencia": 5,
+    "posicao": "sinusoidal_relativa_sem_calendario",
+    "publication_warning": "compact_configurations_not_SOTA_reproduction",
+    "refit": "reinitialization_same_seed_fixed_selected_epochs",
+    "sementes": [
+      42
+    ],
+    "threads_torch": 1,
+    "weight_decay": 1e-05
+  },
+  "python": "3.14.4",
+  "schema": 1,
+  "sha256_contrato": "f847e1398a6962a6e859d0700b96175ff5e564c37dce15ba918e4b9d6df2e3da",
+  "tarefa": {
+    "ajuste": {
+      "fim_alvo": "2022-12-31",
+      "fim_origem": "2022-12-29",
+      "inicio_origem": "2019-01-15",
+      "origens_esperadas_por_localidade": 1445
+    },
+    "exploratoria": false,
+    "frequencia": "h",
+    "horizontes": [
+      24,
+      48,
+      72
+    ],
+    "pred_len": 72,
+    "refit": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-29",
+      "inicio_origem": "2019-01-15",
+      "origens_esperadas_por_localidade": 1810
+    },
+    "resolucao": "horaria",
+    "seq_len": 336,
+    "slug": "hourly_72_extension",
+    "teste": {
+      "fim_alvo": "2024-12-31",
+      "fim_origem": "2024-12-28",
+      "inicio_origem": "2024-01-01",
+      "origens_esperadas_por_localidade": 363
+    },
+    "validacao": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-29",
+      "inicio_origem": "2023-01-01",
+      "origens_esperadas_por_localidade": 363
+    }
+  }
+}

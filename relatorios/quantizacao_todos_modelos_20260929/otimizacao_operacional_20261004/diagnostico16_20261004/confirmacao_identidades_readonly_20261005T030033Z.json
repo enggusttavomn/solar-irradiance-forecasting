@@ -1,0 +1,1251 @@
+{
+  "observado_em_utc": "2026-10-05T03:00:33.044086+00:00",
+  "executor": {
+    "pid": 6256,
+    "creation_time": "134356428303137553"
+  },
+  "alvos": {
+    "27596": {
+      "nt": null,
+      "api_guard": null
+    },
+    "26300": {
+      "nt": null,
+      "api_guard": null
+    },
+    "27688": {
+      "nt": null,
+      "api_guard": null
+    },
+    "24216": {
+      "nt": null,
+      "api_guard": null
+    },
+    "26264": {
+      "nt": null,
+      "api_guard": null
+    },
+    "27172": {
+      "nt": null,
+      "api_guard": null
+    },
+    "26892": {
+      "nt": null,
+      "api_guard": null
+    }
+  },
+  "estados": {
+    "coordenador": {
+      "mtime_utc": "2026-10-05T02:56:43.288072+00:00",
+      "sha256": "c9cb5aec863ce12f33bc2fea2ca9779f4da104084c3bd1f5852163f67cb46962",
+      "json": {
+        "iniciado_em_utc": "2026-10-04T22:33:22.297150+00:00",
+        "pid": 27596,
+        "identidade_coordenador": {
+          "pid": 27596,
+          "creation_time": "134356267950829772"
+        },
+        "publicado": false,
+        "revisao_visual_pendente": true,
+        "codigo_sha256": "3b865ca313e0d2e84cb11cc046de2b825716c02c618328da5ac576225b316a4e",
+        "etapa": "erro",
+        "atualizado_em_utc": "2026-10-05T02:56:43.282397+00:00",
+        "etapa_atual": "pronto_para_revisao_visual",
+        "processos_ativos": [],
+        "auditoria_atual_sha256": "b48b7fbefbd1b267c25c276dc6f6d10692603ac45969946d879f1b52cb5a43d5",
+        "processos_historico": [
+          {
+            "pid": 18396,
+            "creation_time": "134356268032233328"
+          }
+        ],
+        "processo_filho": null,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\fila_historico_1998_2022.log",
+        "eventos": [
+          {
+            "etapa": "fila_historico_1998_2022",
+            "retorno": 1,
+            "fim_utc": "2026-10-05T02:56:43.262378+00:00",
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\fila_historico_1998_2022.log"
+          }
+        ],
+        "erro": "RuntimeError: Falha fila_historico_1998_2022; consultar C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\fila_historico_1998_2022.log"
+      }
+    },
+    "runner": {
+      "mtime_utc": "2026-10-05T02:56:25.912999+00:00",
+      "sha256": "0fe1bb021b12ef5be86affb70a45258b39a91153b3e00fcc0a4bd31b3177021f",
+      "json": {
+        "regime": "historico_1998_2022",
+        "modo": "completa",
+        "etapa": "erro",
+        "iniciado_em_utc": "2026-10-04T22:33:25.522240+00:00",
+        "atualizado_em_utc": "2026-10-05T02:56:25.903244+00:00",
+        "pid_runner": 26300,
+        "identidade_runner": {
+          "pid": 26300,
+          "creation_time": "134356268042391634"
+        },
+        "processos_historico": [
+          {
+            "pid": 26232,
+            "creation_time": "134356268055315382"
+          },
+          {
+            "pid": 23812,
+            "creation_time": "134356268056735714"
+          },
+          {
+            "pid": 27304,
+            "creation_time": "134356268058229588"
+          },
+          {
+            "pid": 23864,
+            "creation_time": "134356268059876958"
+          },
+          {
+            "pid": 2212,
+            "creation_time": "134356268866241370"
+          },
+          {
+            "pid": 26724,
+            "creation_time": "134356268867724866"
+          },
+          {
+            "pid": 28580,
+            "creation_time": "134356268869359001"
+          },
+          {
+            "pid": 5236,
+            "creation_time": "134356268921500002"
+          },
+          {
+            "pid": 17388,
+            "creation_time": "134356269685595983"
+          },
+          {
+            "pid": 6344,
+            "creation_time": "134356269688351575"
+          },
+          {
+            "pid": 15352,
+            "creation_time": "134356269743755394"
+          },
+          {
+            "pid": 23160,
+            "creation_time": "134356269902868375"
+          },
+          {
+            "pid": 26392,
+            "creation_time": "134356270569632724"
+          },
+          {
+            "pid": 25176,
+            "creation_time": "134356270624510019"
+          },
+          {
+            "pid": 17356,
+            "creation_time": "134356270676418848"
+          },
+          {
+            "pid": 28284,
+            "creation_time": "134356270828599488"
+          },
+          {
+            "pid": 27820,
+            "creation_time": "134356271332982081"
+          },
+          {
+            "pid": 26940,
+            "creation_time": "134356271334588330"
+          },
+          {
+            "pid": 12072,
+            "creation_time": "134356271386582563"
+          },
+          {
+            "pid": 23464,
+            "creation_time": "134356271589680940"
+          },
+          {
+            "pid": 21908,
+            "creation_time": "134356271992875798"
+          },
+          {
+            "pid": 28692,
+            "creation_time": "134356272044499950"
+          },
+          {
+            "pid": 4804,
+            "creation_time": "134356272146966672"
+          },
+          {
+            "pid": 27512,
+            "creation_time": "134356272248907742"
+          },
+          {
+            "pid": 17356,
+            "creation_time": "134356272350490983"
+          },
+          {
+            "pid": 21656,
+            "creation_time": "134356272552785848"
+          },
+          {
+            "pid": 29380,
+            "creation_time": "134356272656609149"
+          },
+          {
+            "pid": 7676,
+            "creation_time": "134356272859893703"
+          },
+          {
+            "pid": 29584,
+            "creation_time": "134356272963565481"
+          },
+          {
+            "pid": 29004,
+            "creation_time": "134356273115236466"
+          },
+          {
+            "pid": 24396,
+            "creation_time": "134356273216467487"
+          },
+          {
+            "pid": 29316,
+            "creation_time": "134356273367915447"
+          },
+          {
+            "pid": 18524,
+            "creation_time": "134356273469412124"
+          },
+          {
+            "pid": 13376,
+            "creation_time": "134356273671181901"
+          },
+          {
+            "pid": 27304,
+            "creation_time": "134356273722174366"
+          },
+          {
+            "pid": 15852,
+            "creation_time": "134356273923939001"
+          },
+          {
+            "pid": 10092,
+            "creation_time": "134356273974929065"
+          },
+          {
+            "pid": 9000,
+            "creation_time": "134356274176670085"
+          },
+          {
+            "pid": 23260,
+            "creation_time": "134356274227559387"
+          },
+          {
+            "pid": 25704,
+            "creation_time": "134356274429117669"
+          },
+          {
+            "pid": 28796,
+            "creation_time": "134356274480276485"
+          },
+          {
+            "pid": 13440,
+            "creation_time": "134356274732530350"
+          },
+          {
+            "pid": 28984,
+            "creation_time": "134356274733526186"
+          },
+          {
+            "pid": 25132,
+            "creation_time": "134356275035716650"
+          },
+          {
+            "pid": 20460,
+            "creation_time": "134356275241625402"
+          },
+          {
+            "pid": 1004,
+            "creation_time": "134356275242330563"
+          },
+          {
+            "pid": 24216,
+            "creation_time": "134356275243013623"
+          },
+          {
+            "pid": 29156,
+            "creation_time": "134356275243778346"
+          },
+          {
+            "pid": 16672,
+            "creation_time": "134356276300500084"
+          },
+          {
+            "pid": 26264,
+            "creation_time": "134356276756536687"
+          },
+          {
+            "pid": 27172,
+            "creation_time": "134356276808166153"
+          },
+          {
+            "pid": 2212,
+            "creation_time": "134356277262456398"
+          },
+          {
+            "pid": 24944,
+            "creation_time": "134356278676177277"
+          },
+          {
+            "pid": 8884,
+            "creation_time": "134356280457909738"
+          },
+          {
+            "pid": 26892,
+            "creation_time": "134356386639423162"
+          }
+        ],
+        "saida": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+        "pendentes": [],
+        "concluidos": [
+          {
+            "fase": "selecao",
+            "tarefa": "daily_30",
+            "modelo": "GRU",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_gru.log",
+            "concluido_em_utc": "2026-10-04T22:34:41.569652+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "daily_30",
+            "modelo": "LSTM",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_lstm.log",
+            "concluido_em_utc": "2026-10-04T22:34:41.579935+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "daily_30",
+            "modelo": "XGBoost",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_xgboost.log",
+            "concluido_em_utc": "2026-10-04T22:34:41.588461+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "daily_30",
+            "modelo": "ARIMA",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_arima.log",
+            "concluido_em_utc": "2026-10-04T22:34:47.110079+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "daily_30",
+            "modelo": "DilatedRNN",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_dilatedrnn.log",
+            "concluido_em_utc": "2026-10-04T22:36:03.457616+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "daily_30",
+            "modelo": "Persistencia",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_persistencia.log",
+            "concluido_em_utc": "2026-10-04T22:36:03.482053+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "daily_30",
+            "modelo": "Sazonal ingenuo",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_sazonal_ingenuo.log",
+            "concluido_em_utc": "2026-10-04T22:36:09.131983+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "daily_30",
+            "modelo": "Transformer",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_transformer.log",
+            "concluido_em_utc": "2026-10-04T22:36:25.233076+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "daily_30",
+            "modelo": "Climatologia",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_climatologia.log",
+            "concluido_em_utc": "2026-10-04T22:37:31.888722+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "daily_30",
+            "modelo": "Informer",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_informer.log",
+            "concluido_em_utc": "2026-10-04T22:37:37.313458+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "daily_30",
+            "modelo": "TimesNet",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_timesnet.log",
+            "concluido_em_utc": "2026-10-04T22:37:42.607100+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "hourly_72_extension",
+            "modelo": "XGBoost",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_xgboost.log",
+            "concluido_em_utc": "2026-10-04T22:37:57.828108+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "hourly_72_extension",
+            "modelo": "ARIMA",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_arima.log",
+            "concluido_em_utc": "2026-10-04T22:38:48.259542+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "hourly_72_extension",
+            "modelo": "GRU",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_gru.log",
+            "concluido_em_utc": "2026-10-04T22:38:48.266789+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "hourly_72_extension",
+            "modelo": "LSTM",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_lstm.log",
+            "concluido_em_utc": "2026-10-04T22:38:53.618268+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "hourly_72_extension",
+            "modelo": "Persistencia",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_persistencia.log",
+            "concluido_em_utc": "2026-10-04T22:39:13.940125+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "hourly_72_extension",
+            "modelo": "DilatedRNN",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_dilatedrnn.log",
+            "concluido_em_utc": "2026-10-04T22:39:54.256375+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "hourly_72_extension",
+            "modelo": "Sazonal ingenuo",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_sazonal_ingenuo.log",
+            "concluido_em_utc": "2026-10-04T22:39:59.416745+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "hourly_72_extension",
+            "modelo": "Transformer",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_transformer.log",
+            "concluido_em_utc": "2026-10-04T22:40:09.660183+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "hourly_72_extension",
+            "modelo": "Climatologia",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_climatologia.log",
+            "concluido_em_utc": "2026-10-04T22:40:19.860893+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_6",
+            "modelo": "GRU",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_gru.log",
+            "concluido_em_utc": "2026-10-04T22:40:30.026364+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_6",
+            "modelo": "LSTM",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_lstm.log",
+            "concluido_em_utc": "2026-10-04T22:40:50.220447+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_6",
+            "modelo": "DilatedRNN",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_dilatedrnn.log",
+            "concluido_em_utc": "2026-10-04T22:41:00.589905+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "hourly_72_extension",
+            "modelo": "Informer",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_informer.log",
+            "concluido_em_utc": "2026-10-04T22:41:10.864736+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "hourly_72_extension",
+            "modelo": "TimesNet",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_timesnet.log",
+            "concluido_em_utc": "2026-10-04T22:41:15.895604+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_6",
+            "modelo": "Transformer",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_transformer.log",
+            "concluido_em_utc": "2026-10-04T22:41:20.921794+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_6",
+            "modelo": "Informer",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_informer.log",
+            "concluido_em_utc": "2026-10-04T22:41:31.331621+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_6",
+            "modelo": "XGBoost",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_xgboost.log",
+            "concluido_em_utc": "2026-10-04T22:41:46.502750+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_6",
+            "modelo": "ARIMA",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_arima.log",
+            "concluido_em_utc": "2026-10-04T22:41:56.623691+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_6",
+            "modelo": "Persistencia",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_persistencia.log",
+            "concluido_em_utc": "2026-10-04T22:42:11.771249+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_6",
+            "modelo": "Sazonal ingenuo",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_sazonal_ingenuo.log",
+            "concluido_em_utc": "2026-10-04T22:42:21.921236+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_6",
+            "modelo": "Climatologia",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_climatologia.log",
+            "concluido_em_utc": "2026-10-04T22:42:42.095252+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_6",
+            "modelo": "TimesNet",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_timesnet.log",
+            "concluido_em_utc": "2026-10-04T22:42:47.200136+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_1",
+            "modelo": "GRU",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_gru.log",
+            "concluido_em_utc": "2026-10-04T22:43:07.370886+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_1",
+            "modelo": "LSTM",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_lstm.log",
+            "concluido_em_utc": "2026-10-04T22:43:12.470453+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_1",
+            "modelo": "DilatedRNN",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_dilatedrnn.log",
+            "concluido_em_utc": "2026-10-04T22:43:32.638874+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_1",
+            "modelo": "Transformer",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_transformer.log",
+            "concluido_em_utc": "2026-10-04T22:43:37.737971+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_1",
+            "modelo": "Informer",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_informer.log",
+            "concluido_em_utc": "2026-10-04T22:43:57.884648+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_1",
+            "modelo": "XGBoost",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_xgboost.log",
+            "concluido_em_utc": "2026-10-04T22:44:03.002831+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_1",
+            "modelo": "ARIMA",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_arima.log",
+            "concluido_em_utc": "2026-10-04T22:44:28.233041+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_1",
+            "modelo": "Persistencia",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_persistencia.log",
+            "concluido_em_utc": "2026-10-04T22:44:28.235502+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_1",
+            "modelo": "Sazonal ingenuo",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_sazonal_ingenuo.log",
+            "concluido_em_utc": "2026-10-04T22:44:58.543633+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_1",
+            "modelo": "Climatologia",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_climatologia.log",
+            "concluido_em_utc": "2026-10-04T22:44:58.548107+00:00"
+          },
+          {
+            "fase": "selecao",
+            "tarefa": "monthly_1",
+            "modelo": "TimesNet",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_timesnet.log",
+            "concluido_em_utc": "2026-10-04T22:45:23.737528+00:00"
+          },
+          {
+            "fase": "refit",
+            "tarefa": "daily_30",
+            "modelo": "ARIMA",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_arima.log",
+            "concluido_em_utc": "2026-10-04T22:47:05.015324+00:00"
+          },
+          {
+            "fase": "refit",
+            "tarefa": "daily_30",
+            "modelo": "LSTM",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_lstm.log",
+            "concluido_em_utc": "2026-10-04T22:47:50.604723+00:00"
+          },
+          {
+            "fase": "refit",
+            "tarefa": "daily_30",
+            "modelo": "GRU",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_gru.log",
+            "concluido_em_utc": "2026-10-04T22:47:55.782549+00:00"
+          },
+          {
+            "fase": "refit",
+            "tarefa": "daily_30",
+            "modelo": "Persistencia",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_persistencia.log",
+            "concluido_em_utc": "2026-10-04T22:48:41.168874+00:00"
+          },
+          {
+            "fase": "refit",
+            "tarefa": "daily_30",
+            "modelo": "Sazonal ingenuo",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_sazonal_ingenuo.log",
+            "concluido_em_utc": "2026-10-04T22:51:02.570360+00:00"
+          },
+          {
+            "fase": "refit",
+            "tarefa": "daily_30",
+            "modelo": "Climatologia",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_climatologia.log",
+            "concluido_em_utc": "2026-10-04T22:54:00.583545+00:00"
+          },
+          {
+            "fase": "refit",
+            "tarefa": "hourly_72_extension",
+            "modelo": "XGBoost",
+            "returncode": 0,
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_xgboost.log",
+            "concluido_em_utc": "2026-10-05T01:50:58.718230+00:00"
+          }
+        ],
+        "falhas": [
+          {
+            "tipo": "PermissionError",
+            "mensagem": "[WinError 5] Access is denied: 'C:\\\\Users\\\\gm.nascimento\\\\Documents\\\\Meus Projetos\\\\TCC\\\\relatorios\\\\quantizacao_todos_modelos_20260929\\\\fila_historica\\\\historico_1998_2022\\\\completa\\\\runner.json.cf5gexfj.tmp' -> 'C:\\\\Users\\\\gm.nascimento\\\\Documents\\\\Meus Projetos\\\\TCC\\\\relatorios\\\\quantizacao_todos_modelos_20260929\\\\fila_historica\\\\historico_1998_2022\\\\completa\\\\runner.json'",
+            "instante": "2026-10-05T02:56:25.903200+00:00"
+          }
+        ],
+        "processos": [
+          {
+            "tarefa": "daily_30",
+            "modelo": "XGBoost",
+            "recurso": "cpu",
+            "pid": 24216,
+            "creation_time": "134356275243013623",
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_xgboost.log",
+            "inicio": "2026-10-04T22:45:24.372053+00:00"
+          },
+          {
+            "tarefa": "daily_30",
+            "modelo": "DilatedRNN",
+            "recurso": "gpu",
+            "pid": 26264,
+            "creation_time": "134356276756536687",
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_dilatedrnn.log",
+            "inicio": "2026-10-04T22:47:55.775057+00:00"
+          },
+          {
+            "tarefa": "daily_30",
+            "modelo": "Transformer",
+            "recurso": "gpu",
+            "pid": 27172,
+            "creation_time": "134356276808166153",
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_transformer.log",
+            "inicio": "2026-10-04T22:48:00.937435+00:00"
+          },
+          {
+            "tarefa": "hourly_72_extension",
+            "modelo": "ARIMA",
+            "recurso": "cpu",
+            "pid": 26892,
+            "creation_time": "134356386639423162",
+            "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_arima.log",
+            "inicio": "2026-10-05T01:51:04.120574+00:00"
+          }
+        ]
+      }
+    },
+    "watcher": {
+      "mtime_utc": "2026-10-05T02:56:58.124041+00:00",
+      "sha256": "935b28b6f74a0c7efb3f6d5b86a39aac1a52d9a41f973dc4114e33f44d79b7be",
+      "json": {
+        "coordenador": {
+          "pid": 27596,
+          "creation_time": "134356267950829772"
+        },
+        "observador": {
+          "pid": 27688,
+          "creation_time": "134356281631455300"
+        },
+        "iniciado_em_utc": "2026-10-04T22:56:05.372200+00:00",
+        "classe_solicitada": 32768,
+        "intervalo_segundos": 30.0,
+        "eventos": [
+          {
+            "utc": "2026-10-04T22:56:05.786577+00:00",
+            "alterados": [
+              {
+                "pid": 27596,
+                "creation_time": "134356267950829772",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 18396,
+                "creation_time": "134356268032233328",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 26268,
+                "creation_time": "134356268033237357",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 26300,
+                "creation_time": "134356268042391634",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 24216,
+                "creation_time": "134356275243013623",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 26264,
+                "creation_time": "134356276756536687",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 27172,
+                "creation_time": "134356276808166153",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 8884,
+                "creation_time": "134356280457909738",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 28172,
+                "creation_time": "134356275243743116",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 26940,
+                "creation_time": "134356275251790472",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 22816,
+                "creation_time": "134356276757787566",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 27480,
+                "creation_time": "134356276767321431",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 19676,
+                "creation_time": "134356276809402396",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 22396,
+                "creation_time": "134356276818127370",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 12816,
+                "creation_time": "134356280464104896",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 3144,
+                "creation_time": "134356280483667338",
+                "anterior": 32,
+                "atual": 32768
+              }
+            ],
+            "erros": [],
+            "instancias_observadas": [
+              {
+                "pid": 27596,
+                "creation_time": "134356267950829772"
+              },
+              {
+                "pid": 18396,
+                "creation_time": "134356268032233328"
+              },
+              {
+                "pid": 26268,
+                "creation_time": "134356268033237357"
+              },
+              {
+                "pid": 26300,
+                "creation_time": "134356268042391634"
+              },
+              {
+                "pid": 24216,
+                "creation_time": "134356275243013623"
+              },
+              {
+                "pid": 26264,
+                "creation_time": "134356276756536687"
+              },
+              {
+                "pid": 27172,
+                "creation_time": "134356276808166153"
+              },
+              {
+                "pid": 8884,
+                "creation_time": "134356280457909738"
+              },
+              {
+                "pid": 28172,
+                "creation_time": "134356275243743116"
+              },
+              {
+                "pid": 26940,
+                "creation_time": "134356275251790472"
+              },
+              {
+                "pid": 22816,
+                "creation_time": "134356276757787566"
+              },
+              {
+                "pid": 27480,
+                "creation_time": "134356276767321431"
+              },
+              {
+                "pid": 19676,
+                "creation_time": "134356276809402396"
+              },
+              {
+                "pid": 22396,
+                "creation_time": "134356276818127370"
+              },
+              {
+                "pid": 12816,
+                "creation_time": "134356280464104896"
+              },
+              {
+                "pid": 3144,
+                "creation_time": "134356280483667338"
+              }
+            ]
+          },
+          {
+            "utc": "2026-10-05T01:51:14.814543+00:00",
+            "alterados": [
+              {
+                "pid": 26892,
+                "creation_time": "134356386639423162",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 26128,
+                "creation_time": "134356386641256992",
+                "anterior": 32,
+                "atual": 32768
+              },
+              {
+                "pid": 8968,
+                "creation_time": "134356386653831529",
+                "anterior": 32,
+                "atual": 32768
+              }
+            ],
+            "erros": [],
+            "instancias_observadas": [
+              {
+                "pid": 27596,
+                "creation_time": "134356267950829772"
+              },
+              {
+                "pid": 18396,
+                "creation_time": "134356268032233328"
+              },
+              {
+                "pid": 26268,
+                "creation_time": "134356268033237357"
+              },
+              {
+                "pid": 26300,
+                "creation_time": "134356268042391634"
+              },
+              {
+                "pid": 24216,
+                "creation_time": "134356275243013623"
+              },
+              {
+                "pid": 26264,
+                "creation_time": "134356276756536687"
+              },
+              {
+                "pid": 27172,
+                "creation_time": "134356276808166153"
+              },
+              {
+                "pid": 26892,
+                "creation_time": "134356386639423162"
+              },
+              {
+                "pid": 28172,
+                "creation_time": "134356275243743116"
+              },
+              {
+                "pid": 26940,
+                "creation_time": "134356275251790472"
+              },
+              {
+                "pid": 22816,
+                "creation_time": "134356276757787566"
+              },
+              {
+                "pid": 27480,
+                "creation_time": "134356276767321431"
+              },
+              {
+                "pid": 19676,
+                "creation_time": "134356276809402396"
+              },
+              {
+                "pid": 22396,
+                "creation_time": "134356276818127370"
+              },
+              {
+                "pid": 26128,
+                "creation_time": "134356386641256992"
+              },
+              {
+                "pid": 8968,
+                "creation_time": "134356386653831529"
+              }
+            ]
+          }
+        ],
+        "fontes_cientificas_modificadas": false,
+        "ultimo_ciclo": {
+          "alterados": [],
+          "erros": [],
+          "instancias_observadas": [
+            {
+              "pid": 27596,
+              "creation_time": "134356267950829772"
+            },
+            {
+              "pid": 18396,
+              "creation_time": "134356268032233328"
+            },
+            {
+              "pid": 26268,
+              "creation_time": "134356268033237357"
+            },
+            {
+              "pid": 26300,
+              "creation_time": "134356268042391634"
+            },
+            {
+              "pid": 24216,
+              "creation_time": "134356275243013623"
+            },
+            {
+              "pid": 26264,
+              "creation_time": "134356276756536687"
+            },
+            {
+              "pid": 27172,
+              "creation_time": "134356276808166153"
+            },
+            {
+              "pid": 26892,
+              "creation_time": "134356386639423162"
+            },
+            {
+              "pid": 28172,
+              "creation_time": "134356275243743116"
+            },
+            {
+              "pid": 26940,
+              "creation_time": "134356275251790472"
+            },
+            {
+              "pid": 22816,
+              "creation_time": "134356276757787566"
+            },
+            {
+              "pid": 27480,
+              "creation_time": "134356276767321431"
+            },
+            {
+              "pid": 19676,
+              "creation_time": "134356276809402396"
+            },
+            {
+              "pid": 22396,
+              "creation_time": "134356276818127370"
+            },
+            {
+              "pid": 26128,
+              "creation_time": "134356386641256992"
+            },
+            {
+              "pid": 8968,
+              "creation_time": "134356386653831529"
+            }
+          ]
+        },
+        "etapa": "encerrada",
+        "atualizado_em_utc": "2026-10-05T02:56:58.116974+00:00",
+        "total_instancias_alteradas": 19,
+        "motivo_fim": "Coordenador encerrou ou PID foi reutilizado.",
+        "restauracao": {
+          "restaurados": [],
+          "erros": [
+            {
+              "pid": 27596,
+              "creation_time": "134356267950829772",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 18396,
+              "creation_time": "134356268032233328",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 26268,
+              "creation_time": "134356268033237357",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 26300,
+              "creation_time": "134356268042391634",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 24216,
+              "creation_time": "134356275243013623",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 26264,
+              "creation_time": "134356276756536687",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 27172,
+              "creation_time": "134356276808166153",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 8884,
+              "creation_time": "134356280457909738",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 28172,
+              "creation_time": "134356275243743116",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 26940,
+              "creation_time": "134356275251790472",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 22816,
+              "creation_time": "134356276757787566",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 27480,
+              "creation_time": "134356276767321431",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 19676,
+              "creation_time": "134356276809402396",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 22396,
+              "creation_time": "134356276818127370",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 12816,
+              "creation_time": "134356280464104896",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 3144,
+              "creation_time": "134356280483667338",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 26892,
+              "creation_time": "134356386639423162",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 26128,
+              "creation_time": "134356386641256992",
+              "erro": "[WinError 87] The parameter is incorrect."
+            },
+            {
+              "pid": 8968,
+              "creation_time": "134356386653831529",
+              "erro": "[WinError 87] The parameter is incorrect."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "logs": {
+    "coordenacao_historica/fila_historico_1998_2022.log": {
+      "mtime_utc": "2026-10-05T02:56:34.525680+00:00",
+      "cauda": "\r\nInicio 2026-10-02T05:05:00.602533+00:00\r\nselecao: iniciado daily_30/GRU (gpu) pid=14960\r\nselecao: iniciado daily_30/LSTM (gpu) pid=10368\r\nselecao: iniciado daily_30/XGBoost (cpu) pid=27296\r\nselecao: iniciado daily_30/ARIMA (cpu) pid=24288\r\nselecao: finalizado daily_30/ARIMA retorno=0\r\nselecao: iniciado daily_30/Persistencia (cpu) pid=19256\r\nselecao: finalizado daily_30/Persistencia retorno=0\r\nselecao: iniciado daily_30/Sazonal ingenuo (cpu) pid=24940\r\nselecao: finalizado daily_30/Sazonal ingenuo retorno=0\r\nselecao: iniciado daily_30/Climatologia (cpu) pid=8676\r\nselecao: finalizado daily_30/Climatologia retorno=0\r\nselecao: iniciado hourly_72_extension/XGBoost (cpu) pid=13968\r\nselecao: finalizado daily_30/GRU retorno=0\r\nselecao: iniciado daily_30/DilatedRNN (gpu) pid=4232\r\nselecao: finalizado daily_30/LSTM retorno=0\r\nselecao: iniciado daily_30/Transformer (gpu) pid=20692\r\nselecao: finalizado hourly_72_extension/XGBoost retorno=0\r\nselecao: iniciado hourly_72_extension/ARIMA (cpu) pid=27212\r\n\r\nInicio 2026-10-03T13:59:54.269874+00:00\r\nselecao: iniciado daily_30/GRU (gpu) pid=9764\r\nselecao: iniciado daily_30/LSTM (gpu) pid=34856\r\nselecao: iniciado daily_30/XGBoost (cpu) pid=3756\r\nselecao: iniciado daily_30/ARIMA (cpu) pid=19996\r\nselecao: finalizado daily_30/GRU retorno=0\r\nselecao: finalizado daily_30/LSTM retorno=0\r\nselecao: iniciado daily_30/DilatedRNN (gpu) pid=15752\r\nselecao: iniciado daily_30/Transformer (gpu) pid=17248\r\nselecao: finalizado daily_30/ARIMA retorno=0\r\nselecao: iniciado daily_30/Persistencia (cpu) pid=13548\r\nselecao: finalizado daily_30/Persistencia retorno=0\r\nselecao: iniciado daily_30/Sazonal ingenuo (cpu) pid=28612\r\nselecao: finalizado daily_30/Sazonal ingenuo retorno=0\r\nselecao: iniciado daily_30/Climatologia (cpu) pid=28576\r\nselecao: finalizado daily_30/Climatologia retorno=0\r\nselecao: iniciado hourly_72_extension/XGBoost (cpu) pid=18696\r\nselecao: finalizado hourly_72_extension/XGBoost retorno=0\r\nselecao: iniciado hourly_72_extension/ARIMA (cpu) pid=25192\r\nselecao: finalizado hourly_72_extension/ARIMA retorno=0\r\nselecao: iniciado hourly_72_extension/Persistencia (cpu) pid=19552\r\nselecao: finalizado hourly_72_extension/Persistencia retorno=0\r\nselecao: iniciado hourly_72_extension/Sazonal ingenuo (cpu) pid=11320\r\nselecao: finalizado hourly_72_extension/Sazonal ingenuo retorno=0\r\nselecao: iniciado hourly_72_extension/Climatologia (cpu) pid=29628\r\nselecao: finalizado hourly_72_extension/Climatologia retorno=0\r\nselecao: iniciado monthly_6/GRU (cpu) pid=29652\r\nselecao: finalizado daily_30/XGBoost retorno=0\r\nselecao: iniciado monthly_6/LSTM (cpu) pid=28124\r\nselecao: finalizado monthly_6/LSTM retorno=0\r\nselecao: iniciado monthly_6/DilatedRNN (cpu) pid=32460\r\nselecao: finalizado monthly_6/GRU retorno=0\r\nselecao: iniciado monthly_6/Transformer (cpu) pid=26676\r\nselecao: finalizado daily_30/Transformer retorno=0\r\nselecao: iniciado daily_30/Informer (gpu) pid=14132\r\nselecao: finalizado monthly_6/DilatedRNN retorno=0\r\nselecao: iniciado monthly_6/Informer (cpu) pid=12680\r\nselecao: finalizado monthly_6/Transformer retorno=0\r\nselecao: iniciado monthly_6/XGBoost (cpu) pid=35444\r\nselecao: finalizado monthly_6/XGBoost retorno=0\r\nselecao: iniciado monthly_6/ARIMA (cpu) pid=32096\r\nselecao: finalizado monthly_6/ARIMA retorno=0\r\nselecao: iniciado monthly_6/Persistencia (cpu) pid=31124\r\nselecao: finalizado monthly_6/Persistencia retorno=0\r\nselecao: iniciado monthly_6/Sazonal ingenuo (cpu) pid=20728\r\nselecao: finalizado monthly_6/Sazonal ingenuo retorno=0\r\nselecao: iniciado monthly_6/Climatologia (cpu) pid=9904\r\nselecao: finalizado monthly_6/Climatologia retorno=0\r\nselecao: iniciado monthly_6/TimesNet (cpu) pid=33084\r\nselecao: finalizado monthly_6/Informer retorno=0\r\nselecao: iniciado monthly_1/GRU (cpu) pid=27628\r\nselecao: finalizado monthly_6/TimesNet retorno=0\r\nselecao: iniciado monthly_1/LSTM (cpu) pid=15168\r\nselecao: finalizado monthly_1/GRU retorno=0\r\nselecao: iniciado monthly_1/DilatedRNN (cpu) pid=29312\r\nselecao: finalizado monthly_1/LSTM retorno=0\r\nselecao: iniciado monthly_1/Transformer (cpu) pid=9888\r\nselecao: finalizado monthly_1/DilatedRNN retorno=0\r\nselecao: iniciado monthly_1/Informer (cpu) pid=27548\r\nselecao: finalizado monthly_1/Transformer retorno=0\r\nselecao: iniciado monthly_1/XGBoost (cpu) pid=10892\r\nselecao: finalizado monthly_1/XGBoost retorno=0\r\nselecao: iniciado monthly_1/ARIMA (cpu) pid=25156\r\nselecao: finalizado monthly_1/ARIMA retorno=0\r\nselecao: iniciado monthly_1/Persistencia (cpu) pid=30180\r\nselecao: finalizado monthly_1/Persistencia retorno=0\r\nselecao: iniciado monthly_1/Sazonal ingenuo (cpu) pid=28704\r\nselecao: finalizado monthly_1/Sazonal ingenuo retorno=0\r\nselecao: iniciado monthly_1/Climatologia (cpu) pid=9888\r\nselecao: finalizado monthly_1/Climatologia retorno=0\r\nselecao: iniciado monthly_1/TimesNet (cpu) pid=28024\r\nselecao: finalizado monthly_1/Informer retorno=0\r\nselecao: finalizado daily_30/Informer retorno=0\r\nselecao: iniciado daily_30/TimesNet (gpu) pid=25428\r\nselecao: finalizado monthly_1/TimesNet retorno=0\r\nselecao: finalizado daily_30/DilatedRNN retorno=0\r\nselecao: iniciado hourly_72_extension/GRU (gpu) pid=31280\r\nselecao: finalizado hourly_72_extension/GRU retorno=0\r\nselecao: iniciado hourly_72_extension/LSTM (gpu) pid=35848\r\nselecao: finalizado hourly_72_extension/LSTM retorno=0\r\nselecao: iniciado hourly_72_extension/DilatedRNN (gpu) pid=14732\r\nselecao: finalizado hourly_72_extension/DilatedRNN retorno=0\r\nselecao: iniciado hourly_72_extension/Transformer (gpu) pid=36332\r\nselecao: finalizado daily_30/TimesNet retorno=0\r\nselecao: iniciado hourly_72_extension/Informer (gpu) pid=34400\r\nselecao: finalizado hourly_72_extension/Transformer retorno=0\r\nselecao: iniciado hourly_72_extension/TimesNet (gpu) pid=36868\r\nselecao: finalizado hourly_72_extension/Informer retorno=0\r\nselecao: finalizado hourly_72_extension/TimesNet retorno=0\r\nrefit: iniciado daily_30/GRU (gpu) pid=35936\r\nrefit: iniciado daily_30/LSTM (gpu) pid=32032\r\nrefit: iniciado daily_30/XGBoost (cpu) pid=31864\r\nrefit: iniciado daily_30/ARIMA (cpu) pid=15616\r\nrefit: finalizado daily_30/ARIMA retorno=0\r\nrefit: iniciado daily_30/Persistencia (cpu) pid=29956\r\nrefit: finalizado daily_30/Persistencia retorno=0\r\nrefit: iniciado daily_30/Sazonal ingenuo (cpu) pid=30128\r\nrefit: finalizado daily_30/Sazonal ingenuo retorno=0\r\nrefit: iniciado daily_30/Climatologia (cpu) pid=27912\r\nrefit: finalizado daily_30/GRU retorno=0\r\nrefit: iniciado daily_30/DilatedRNN (gpu) pid=37792\r\nrefit: finalizado daily_30/Climatologia retorno=0\r\nrefit: iniciado hourly_72_extension/XGBoost (cpu) pid=19016\r\nrefit: finalizado daily_30/LSTM retorno=0\r\nrefit: iniciado daily_30/Transformer (gpu) pid=3848\r\nrefit: finalizado daily_30/XGBoost retorno=1073807364\r\nrefit: finalizado daily_30/DilatedRNN retorno=1073807364\r\nrefit: finalizado hourly_72_extension/XGBoost retorno=1073807364\r\nrefit: finalizado daily_30/Transformer retorno=1073807364\r\n\r\nInicio 2026-10-04T22:33:23.219144+00:00\r\nselecao: iniciado daily_30/GRU (gpu) pid=26232\r\nselecao: iniciado daily_30/LSTM (gpu) pid=23812\r\nselecao: iniciado daily_30/XGBoost (cpu) pid=27304\r\nselecao: iniciado daily_30/ARIMA (cpu) pid=23864\r\nselecao: finalizado daily_30/GRU retorno=0\r\nselecao: finalizado daily_30/LSTM retorno=0\r\nselecao: finalizado daily_30/XGBoost retorno=0\r\nselecao: iniciado daily_30/DilatedRNN (gpu) pid=2212\r\nselecao: iniciado daily_30/Transformer (gpu) pid=26724\r\nselecao: iniciado daily_30/Persistencia (cpu) pid=28580\r\nselecao: finalizado daily_30/ARIMA retorno=0\r\nselecao: iniciado daily_30/Sazonal ingenuo (cpu) pid=5236\r\nselecao: finalizado daily_30/DilatedRNN retorno=0\r\nselecao: finalizado daily_30/Persistencia retorno=0\r\nselecao: iniciado daily_30/Informer (gpu) pid=17388\r\nselecao: iniciado daily_30/Climatologia (cpu) pid=6344\r\nselecao: finalizado daily_30/Sazonal ingenuo retorno=0\r\nselecao: iniciado hourly_72_extension/XGBoost (cpu) pid=15352\r\nselecao: finalizado daily_30/Transformer retorno=0\r\nselecao: iniciado daily_30/TimesNet (gpu) pid=23160\r\nselecao: finalizado daily_30/Climatologia retorno=0\r\nselecao: iniciado hourly_72_extension/ARIMA (cpu) pid=26392\r\nselecao: finalizado daily_30/Informer retorno=0\r\nselecao: iniciado hourly_72_extension/GRU (gpu) pid=25176\r\nselecao: finalizado daily_30/TimesNet retorno=0\r\nselecao: iniciado hourly_72_extension/LSTM (gpu) pid=17356\r\nselecao: finalizado hourly_72_extension/XGBoost retorno=0\r\nselecao: iniciado hourly_72_extension/Persistencia (cpu) pid=28284\r\nselecao: finalizado hourly_72_extension/ARIMA retorno=0\r\nselecao: finalizado hourly_72_extension/GRU retorno=0\r\nselecao: iniciado hourly_72_extension/DilatedRNN (gpu) pid=27820\r\nselecao: iniciado hourly_72_extension/Sazonal ingenuo (cpu) pid=26940\r\nselecao: finalizado hourly_72_extension/LSTM retorno=0\r\nselecao: iniciado hourly_72_extension/Transformer (gpu) pid=12072\r\nselecao: finalizado hourly_72_extension/Persistencia retorno=0\r\nselecao: iniciado hourly_72_extension/Climatologia (cpu) pid=23464\r\nselecao: finalizado hourly_72_extension/DilatedRNN retorno=0\r\nselecao: iniciado hourly_72_extension/Informer (gpu) pid=21908\r\nselecao: finalizado hourly_72_extension/Sazonal ingenuo retorno=0\r\nselecao: iniciado monthly_6/GRU (cpu) pid=28692\r\nselecao: finalizado hourly_72_extension/Transformer retorno=0\r\nselecao: iniciado hourly_72_extension/TimesNet (gpu) pid=4804\r\nselecao: finalizado hourly_72_extension/Climatologia retorno=0\r\nselecao: iniciado monthly_6/LSTM (cpu) pid=27512\r\nselecao: finalizado monthly_6/GRU retorno=0\r\nselecao: iniciado monthly_6/DilatedRNN (cpu) pid=17356\r\nselecao: finalizado monthly_6/LSTM retorno=0\r\nselecao: iniciado monthly_6/Transformer (cpu) pid=21656\r\nselecao: finalizado monthly_6/DilatedRNN retorno=0\r\nselecao: iniciado monthly_6/Informer (cpu) pid=29380\r\nselecao: finalizado hourly_72_extension/Informer retorno=0\r\nselecao: finalizado hourly_72_extension/TimesNet retorno=0\r\nselecao: finalizado monthly_6/Transformer retorno=0\r\nselecao: iniciado monthly_6/XGBoost (cpu) pid=7676\r\nselecao: finalizado monthly_6/Informer retorno=0\r\nselecao: iniciado monthly_6/ARIMA (cpu) pid=29584\r\nselecao: finalizado monthly_6/XGBoost retorno=0\r\nselecao: iniciado monthly_6/Persistencia (cpu) pid=29004\r\nselecao: finalizado monthly_6/ARIMA retorno=0\r\nselecao: iniciado monthly_6/Sazonal ingenuo (cpu) pid=24396\r\nselecao: finalizado monthly_6/Persistencia retorno=0\r\nselecao: iniciado monthly_6/Climatologia (cpu) pid=29316\r\nselecao: finalizado monthly_6/Sazonal ingenuo retorno=0\r\nselecao: iniciado monthly_6/TimesNet (cpu) pid=18524\r\nselecao: finalizado monthly_6/Climatologia retorno=0\r\nselecao: iniciado monthly_1/GRU (cpu) pid=13376\r\nselecao: finalizado monthly_6/TimesNet retorno=0\r\nselecao: iniciado monthly_1/LSTM (cpu) pid=27304\r\nselecao: finalizado monthly_1/GRU retorno=0\r\nselecao: iniciado monthly_1/DilatedRNN (cpu) pid=15852\r\nselecao: finalizado monthly_1/LSTM retorno=0\r\nselecao: iniciado monthly_1/Transformer (cpu) pid=10092\r\nselecao: finalizado monthly_1/DilatedRNN retorno=0\r\nselecao: iniciado monthly_1/Informer (cpu) pid=9000\r\nselecao: finalizado monthly_1/Transformer retorno=0\r\nselecao: iniciado monthly_1/XGBoost (cpu) pid=23260\r\nselecao: finalizado monthly_1/Informer retorno=0\r\nselecao: iniciado monthly_1/ARIMA (cpu) pid=25704\r\nselecao: finalizado monthly_1/XGBoost retorno=0\r\nselecao: iniciado monthly_1/Persistencia (cpu) pid=28796\r\nselecao: finalizado monthly_1/ARIMA retorno=0\r\nselecao: finalizado monthly_1/Persistencia retorno=0\r\nselecao: iniciado monthly_1/Sazonal ingenuo (cpu) pid=13440\r\nselecao: iniciado monthly_1/Climatologia (cpu) pid=28984\r\nselecao: finalizado monthly_1/Sazonal ingenuo retorno=0\r\nselecao: finalizado monthly_1/Climatologia retorno=0\r\nselecao: iniciado monthly_1/TimesNet (cpu) pid=25132\r\nselecao: finalizado monthly_1/TimesNet retorno=0\r\nrefit: iniciado daily_30/GRU (gpu) pid=20460\r\nrefit: iniciado daily_30/LSTM (gpu) pid=1004\r\nrefit: iniciado daily_30/XGBoost (cpu) pid=24216\r\nrefit: iniciado daily_30/ARIMA (cpu) pid=29156\r\nrefit: finalizado daily_30/ARIMA retorno=0\r\nrefit: iniciado daily_30/Persistencia (cpu) pid=16672\r\nrefit: finalizado daily_30/LSTM retorno=0\r\nrefit: iniciado daily_30/DilatedRNN (gpu) pid=26264\r\nrefit: finalizado daily_30/GRU retorno=0\r\nrefit: iniciado daily_30/Transformer (gpu) pid=27172\r\nrefit: finalizado daily_30/Persistencia retorno=0\r\nrefit: iniciado daily_30/Sazonal ingenuo (cpu) pid=2212\r\nrefit: finalizado daily_30/Sazonal ingenuo retorno=0\r\nrefit: iniciado daily_30/Climatologia (cpu) pid=24944\r\nrefit: finalizado daily_30/Climatologia retorno=0\r\nrefit: iniciado hourly_72_extension/XGBoost (cpu) pid=8884\r\nrefit: finalizado hourly_72_extension/XGBoost retorno=0\r\nrefit: iniciado hourly_72_extension/ARIMA (cpu) pid=26892\r\nSuspensao normal restabelecida; checkpoints anteriores preservados.\r\nTraceback (most recent call last):\r\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\rodar_quantizacao_todos_modelos.py\", line 208, in <module>\r\n    main()\r\n    ~~~~^^\r\n  File \"C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\rodar_quantizacao_todos_modelos.py\", line 124, in main\r\n    executar_fila(args, rel, pares, todos_pares)\r\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\rodar_quantizacao_todos_modelos.py\", line 187, in executar_fila\r\n    registrar(fase, pendentes)\r\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\rodar_quantizacao_todos_modelos.py\", line 140, in registrar\r\n    salvar({\"regime\": args.regime, \"modo\": \"smoke\" if args.smoke else \"completa\",\r\n    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n            \"etapa\": fase, \"iniciado_em_utc\": inicio, \"atualizado_em_utc\": agora(),\r\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n    ...<3 lines>...\r\n            \"falhas\": falhas, \"processos\": [{k: j[k] for k in (\"tarefa\", \"modelo\", \"recurso\", \"pid\", \"creation_time\", \"log\", \"inicio\")}\r\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n                                             for j in executando]}, status_path)\r\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\rodar_quantizacao_todos_modelos.py\", line 31, in salvar\r\n    salvar_json(dados, path)\r\n    ~~~~~~~~~~~^^^^^^^^^^^^^\r\n  File \"C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\json_atomico.py\", line 30, in salvar_json\r\n    tmp.replace(path)\r\n    ~~~~~~~~~~~^^^^^^\r\n  File \"C:\\Users\\gm.nascimento\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\pathlib\\__init__.py\", line 1091, in replace\r\n    os.replace(self, target)\r\n    ~~~~~~~~~~^^^^^^^^^^^^^^\r\nPermissionError: [WinError 5] Access is denied: 'C:\\\\Users\\\\gm.nascimento\\\\Documents\\\\Meus Projetos\\\\TCC\\\\relatorios\\\\quantizacao_todos_modelos_20260929\\\\fila_historica\\\\historico_1998_2022\\\\completa\\\\runner.json.cf5gexfj.tmp' -> 'C:\\\\Users\\\\gm.nascimento\\\\Documents\\\\Meus Projetos\\\\TCC\\\\relatorios\\\\quantizacao_todos_modelos_20260929\\\\fila_historica\\\\historico_1998_2022\\\\completa\\\\runner.json'\r\n"
+    },
+    "fila_historica/historico_1998_2022/completa/refit_daily_30_xgboost.log": {
+      "mtime_utc": "2026-10-05T02:46:01.465368+00:00",
+      "cauda": "\r\nInicio 2026-10-04T19:09:13.644363+00:00\r\ndaily_30/XGBoost/sem_quantizacao/refit seed=11 inicio\r\ndaily_30/XGBoost/sem_quantizacao/refit seed=11 fim epocas=0\r\ndaily_30/XGBoost/sem_quantizacao/refit seed=23 inicio\r\ndaily_30/XGBoost/sem_quantizacao/refit seed=23 fim epocas=0\r\ndaily_30/XGBoost/sem_quantizacao/refit seed=42 inicio\r\ndaily_30/XGBoost/sem_quantizacao/refit seed=42 fim epocas=0\r\ndaily_30/XGBoost/sem_quantizacao/refit seed=67 inicio\r\n\r\nInicio 2026-10-04T22:45:24.300135+00:00\r\ndaily_30/XGBoost/sem_quantizacao/refit seed=67 inicio\r\ndaily_30/XGBoost/sem_quantizacao/refit seed=67 fim epocas=0\r\ndaily_30/XGBoost/sem_quantizacao/refit seed=89 inicio\r\ndaily_30/XGBoost/sem_quantizacao/refit seed=89 fim epocas=0\r\ndaily_30/XGBoost/q64/refit seed=11 inicio\r\ndaily_30/XGBoost/q64/refit seed=11 fim epocas=0\r\ndaily_30/XGBoost/q64/refit seed=23 inicio\r\ndaily_30/XGBoost/q64/refit seed=23 fim epocas=0\r\ndaily_30/XGBoost/q64/refit seed=42 inicio\r\ndaily_30/XGBoost/q64/refit seed=42 fim epocas=0\r\ndaily_30/XGBoost/q64/refit seed=67 inicio\r\ndaily_30/XGBoost/q64/refit seed=67 fim epocas=0\r\ndaily_30/XGBoost/q64/refit seed=89 inicio\r\ndaily_30/XGBoost/q64/refit seed=89 fim epocas=0\r\ndaily_30/XGBoost/q128/refit seed=11 inicio\r\ndaily_30/XGBoost/q128/refit seed=11 fim epocas=0\r\ndaily_30/XGBoost/q128/refit seed=23 inicio\r\ndaily_30/XGBoost/q128/refit seed=23 fim epocas=0\r\ndaily_30/XGBoost/q128/refit seed=42 inicio\r\ndaily_30/XGBoost/q128/refit seed=42 fim epocas=0\r\ndaily_30/XGBoost/q128/refit seed=67 inicio\r\n"
+    },
+    "fila_historica/historico_1998_2022/completa/refit_daily_30_dilatedrnn.log": {
+      "mtime_utc": "2026-10-05T02:21:05.077824+00:00",
+      "cauda": "\r\nInicio 2026-10-04T19:51:49.087386+00:00\r\ndaily_30/DilatedRNN/sem_quantizacao/refit seed=11 inicio\r\nC:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Lib\\site-packages\\torch\\autograd\\graph.py:882: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\aten\\src\\ATen\\cuda\\CublasHandlePool.cpp:370.)\r\n  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\r\ndaily_30/DilatedRNN/sem_quantizacao/refit seed=11 fim epocas=7\r\ndaily_30/DilatedRNN/sem_quantizacao/refit seed=23 inicio\r\n\r\nInicio 2026-10-04T22:47:55.650939+00:00\r\ndaily_30/DilatedRNN/sem_quantizacao/refit seed=23 inicio\r\nC:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Lib\\site-packages\\torch\\autograd\\graph.py:882: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at C:\\actions-runner\\_work\\pytorch\\pytorch\\aten\\src\\ATen\\cuda\\CublasHandlePool.cpp:370.)\r\n  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\r\ndaily_30/DilatedRNN/sem_quantizacao/refit seed=23 fim epocas=11\r\ndaily_30/DilatedRNN/sem_quantizacao/refit seed=42 inicio\r\ndaily_30/DilatedRNN/sem_quantizacao/refit seed=42 fim epocas=13\r\ndaily_30/DilatedRNN/sem_quantizacao/refit seed=67 inicio\r\ndaily_30/DilatedRNN/sem_quantizacao/refit seed=67 fim epocas=7\r\ndaily_30/DilatedRNN/sem_quantizacao/refit seed=89 inicio\r\ndaily_30/DilatedRNN/sem_quantizacao/refit seed=89 fim epocas=14\r\ndaily_30/DilatedRNN/q64/refit seed=11 inicio\r\ndaily_30/DilatedRNN/q64/refit seed=11 fim epocas=7\r\ndaily_30/DilatedRNN/q64/refit seed=23 inicio\r\n"
+    },
+    "fila_historica/historico_1998_2022/completa/refit_daily_30_transformer.log": {
+      "mtime_utc": "2026-10-05T02:48:05.526752+00:00",
+      "cauda": "\r\nInicio 2026-10-04T20:14:00.555263+00:00\r\ndaily_30/Transformer/sem_quantizacao/refit seed=11 inicio\r\ndaily_30/Transformer/sem_quantizacao/refit seed=11 fim epocas=8\r\ndaily_30/Transformer/sem_quantizacao/refit seed=23 inicio\r\ndaily_30/Transformer/sem_quantizacao/refit seed=23 fim epocas=15\r\ndaily_30/Transformer/sem_quantizacao/refit seed=42 inicio\r\n\r\nInicio 2026-10-04T22:48:00.814496+00:00\r\ndaily_30/Transformer/sem_quantizacao/refit seed=42 inicio\r\ndaily_30/Transformer/sem_quantizacao/refit seed=42 fim epocas=7\r\ndaily_30/Transformer/sem_quantizacao/refit seed=67 inicio\r\ndaily_30/Transformer/sem_quantizacao/refit seed=67 fim epocas=5\r\ndaily_30/Transformer/sem_quantizacao/refit seed=89 inicio\r\ndaily_30/Transformer/sem_quantizacao/refit seed=89 fim epocas=5\r\ndaily_30/Transformer/q64/refit seed=11 inicio\r\ndaily_30/Transformer/q64/refit seed=11 fim epocas=8\r\ndaily_30/Transformer/q64/refit seed=23 inicio\r\ndaily_30/Transformer/q64/refit seed=23 fim epocas=15\r\ndaily_30/Transformer/q64/refit seed=42 inicio\r\ndaily_30/Transformer/q64/refit seed=42 fim epocas=7\r\ndaily_30/Transformer/q64/refit seed=67 inicio\r\ndaily_30/Transformer/q64/refit seed=67 fim epocas=5\r\ndaily_30/Transformer/q64/refit seed=89 inicio\r\ndaily_30/Transformer/q64/refit seed=89 fim epocas=5\r\ndaily_30/Transformer/q128/refit seed=11 inicio\r\ndaily_30/Transformer/q128/refit seed=11 fim epocas=8\r\ndaily_30/Transformer/q128/refit seed=23 inicio\r\ndaily_30/Transformer/q128/refit seed=23 fim epocas=15\r\ndaily_30/Transformer/q128/refit seed=42 inicio\r\ndaily_30/Transformer/q128/refit seed=42 fim epocas=7\r\ndaily_30/Transformer/q128/refit seed=67 inicio\r\ndaily_30/Transformer/q128/refit seed=67 fim epocas=5\r\ndaily_30/Transformer/q128/refit seed=89 inicio\r\ndaily_30/Transformer/q128/refit seed=89 fim epocas=5\r\ndaily_30/Transformer/q256/refit seed=11 inicio\r\ndaily_30/Transformer/q256/refit seed=11 fim epocas=8\r\ndaily_30/Transformer/q256/refit seed=23 inicio\r\n"
+    },
+    "fila_historica/historico_1998_2022/completa/refit_hourly_72_extension_arima.log": {
+      "mtime_utc": "2026-10-05T02:42:43.542245+00:00",
+      "cauda": "\r\nInicio 2026-10-05T01:51:03.760631+00:00\r\nhourly_72_extension/ARIMA/sem_quantizacao/refit inicio\r\nhourly_72_extension/ARIMA/sem_quantizacao/refit fim\r\nhourly_72_extension/ARIMA/q64/refit inicio\r\n"
+    },
+    "otimizacao_operacional_20261004/20261004_195556_prioridade.erro.log": {
+      "mtime_utc": "2026-10-04T22:55:56.624835+00:00",
+      "cauda": ""
+    }
+  },
+  "sem_mutacao": true,
+  "nota": "SnapshotNT certificado pelo proprio processo econsultaAPI somenteleitura; nao atesta estado historico posterior ao instante desta coleta."
+}

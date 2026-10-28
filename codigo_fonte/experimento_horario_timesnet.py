@@ -36,6 +36,7 @@ import math
 import os
 import platform
 import random
+import time
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -1166,88 +1167,135 @@ def _treinar_e_prever_validacao(
     escalas: pd.DataFrame,
     series: Sequence[SerieLocalidade],
     configuracao: ConfiguracaoExperimentoHorario,
+    pasta_cache: Path | None = None,
+    retomar: bool = False,
 ) -> tuple[
     dict[str, np.ndarray],
     dict[str, int],
     list[dict[str, object]],
 ]:
-    """Ajusta em 2019--2022 e produz previsões de validação de 2023."""
+    """Ajusta em 2019--2022 e produz previsoes de validacao de 2023."""
 
     num_localidades = len(series)
     x_treino, y_treino = treino.normalizar(escalas)
     x_val, y_val = validacao.normalizar(escalas)
     previsoes = _previsoes_baselines(validacao, series)
     historico_total: list[dict[str, object]] = []
+    if pasta_cache is not None:
+        pasta_cache.mkdir(parents=True, exist_ok=True)
 
-    xgb = criar_xgboost_multioutput(configuracao)
-    xgb.fit(
-        _matriz_xgboost(x_treino, treino.localidade_id, num_localidades),
-        y_treino,
-    )
-    previsto_xgb = np.asarray(
-        xgb.predict(
-            _matriz_xgboost(x_val, validacao.localidade_id, num_localidades)
-        ),
-        dtype=float,
-    ).reshape(len(validacao.x_bruto), configuracao.pred_len)
-    previsoes["XGBoost"] = validacao.inverter(previsto_xgb, escalas)
-    del xgb
-    gc.collect()
+    cache_xgb = None if pasta_cache is None else pasta_cache / "xgboost.npz"
+    if retomar and cache_xgb is not None and cache_xgb.is_file():
+        print("[validacao] retomando XGBoost do cache", flush=True)
+        with np.load(cache_xgb, allow_pickle=False) as cache:
+            previsoes["XGBoost"] = np.asarray(cache["previsao"], dtype=float)
+    else:
+        print("[validacao] treinando XGBoost", flush=True)
+        xgb = criar_xgboost_multioutput(configuracao)
+        xgb.fit(
+            _matriz_xgboost(x_treino, treino.localidade_id, num_localidades),
+            y_treino,
+        )
+        previsto_xgb = np.asarray(
+            xgb.predict(
+                _matriz_xgboost(x_val, validacao.localidade_id, num_localidades)
+            ),
+            dtype=float,
+        ).reshape(len(validacao.x_bruto), configuracao.pred_len)
+        previsoes["XGBoost"] = validacao.inverter(previsto_xgb, escalas)
+        if cache_xgb is not None:
+            _salvar_npz(cache_xgb, previsao=previsoes["XGBoost"])
+        del xgb
+        gc.collect()
 
-    lstm = criar_lstm(configuracao, num_localidades)
-    lstm, epocas_lstm, historico = treinar_rede_direta(
-        lstm,
-        x_treino=x_treino,
-        y_treino=y_treino,
-        ids_treino=treino.localidade_id,
-        configuracao=configuracao,
-        x_validacao=x_val,
-        y_validacao=y_val,
-        ids_validacao=validacao.localidade_id,
-    )
-    previsoes["LSTM"] = validacao.inverter(
-        prever_rede_direta(
+    cache_lstm = None if pasta_cache is None else pasta_cache / "lstm.npz"
+    if retomar and cache_lstm is not None and cache_lstm.is_file():
+        print("[validacao] retomando LSTM do cache", flush=True)
+        with np.load(cache_lstm, allow_pickle=False) as cache:
+            previsoes["LSTM"] = np.asarray(cache["previsao"], dtype=float)
+            epocas_lstm = int(np.asarray(cache["epocas"]).item())
+            historico = json.loads(str(np.asarray(cache["historico_json"]).item()))
+    else:
+        print("[validacao] treinando LSTM", flush=True)
+        lstm = criar_lstm(configuracao, num_localidades)
+        lstm, epocas_lstm, historico = treinar_rede_direta(
             lstm,
-            x_val,
-            validacao.localidade_id,
-            batch_size=configuracao.batch_size,
-        ),
-        escalas,
-    )
+            x_treino=x_treino,
+            y_treino=y_treino,
+            ids_treino=treino.localidade_id,
+            configuracao=configuracao,
+            x_validacao=x_val,
+            y_validacao=y_val,
+            ids_validacao=validacao.localidade_id,
+        )
+        previsoes["LSTM"] = validacao.inverter(
+            prever_rede_direta(
+                lstm,
+                x_val,
+                validacao.localidade_id,
+                batch_size=configuracao.batch_size,
+            ),
+            escalas,
+        )
+        if cache_lstm is not None:
+            _salvar_npz(
+                cache_lstm,
+                previsao=previsoes["LSTM"],
+                epocas=np.asarray(epocas_lstm, dtype=np.int64),
+                historico_json=np.asarray(json.dumps(historico, ensure_ascii=False)),
+            )
+        del lstm
+        gc.collect()
     historico_total.extend(
         {"fase": "selecao_epocas", "Modelo": "LSTM", **linha}
         for linha in historico
     )
-    del lstm
-    gc.collect()
 
-    timesnet = criar_timesnet(configuracao, num_localidades)
-    timesnet, epocas_timesnet, historico = treinar_rede_direta(
-        timesnet,
-        x_treino=x_treino,
-        y_treino=y_treino,
-        ids_treino=treino.localidade_id,
-        configuracao=configuracao,
-        x_validacao=x_val,
-        y_validacao=y_val,
-        ids_validacao=validacao.localidade_id,
-    )
-    previsoes["TimesNet"] = validacao.inverter(
-        prever_rede_direta(
+    cache_timesnet = None if pasta_cache is None else pasta_cache / "timesnet.npz"
+    if retomar and cache_timesnet is not None and cache_timesnet.is_file():
+        print("[validacao] retomando TimesNet do cache", flush=True)
+        with np.load(cache_timesnet, allow_pickle=False) as cache:
+            previsoes["TimesNet"] = np.asarray(cache["previsao"], dtype=float)
+            epocas_timesnet = int(np.asarray(cache["epocas"]).item())
+            historico = json.loads(str(np.asarray(cache["historico_json"]).item()))
+    else:
+        print("[validacao] treinando TimesNet", flush=True)
+        timesnet = criar_timesnet(configuracao, num_localidades)
+        timesnet, epocas_timesnet, historico = treinar_rede_direta(
             timesnet,
-            x_val,
-            validacao.localidade_id,
-            batch_size=configuracao.batch_size,
-        ),
-        escalas,
-    )
+            x_treino=x_treino,
+            y_treino=y_treino,
+            ids_treino=treino.localidade_id,
+            configuracao=configuracao,
+            x_validacao=x_val,
+            y_validacao=y_val,
+            ids_validacao=validacao.localidade_id,
+        )
+        previsoes["TimesNet"] = validacao.inverter(
+            prever_rede_direta(
+                timesnet,
+                x_val,
+                validacao.localidade_id,
+                batch_size=configuracao.batch_size,
+            ),
+            escalas,
+        )
+        if cache_timesnet is not None:
+            _salvar_npz(
+                cache_timesnet,
+                previsao=previsoes["TimesNet"],
+                epocas=np.asarray(epocas_timesnet, dtype=np.int64),
+                historico_json=np.asarray(json.dumps(historico, ensure_ascii=False)),
+            )
+        del timesnet
+        gc.collect()
     historico_total.extend(
         {"fase": "selecao_epocas", "Modelo": "TimesNet", **linha}
         for linha in historico
     )
-    del timesnet, x_treino, y_treino, x_val, y_val
-    gc.collect()
 
+    del x_treino, y_treino, x_val, y_val
+    gc.collect()
     return (
         previsoes,
         {"LSTM": epocas_lstm, "TimesNet": epocas_timesnet},
@@ -1264,8 +1312,10 @@ def _treinar_e_prever_teste(
     configuracao: ConfiguracaoExperimentoHorario,
     epocas_selecionadas: Mapping[str, int],
     pasta_modelos: Path,
+    pasta_cache: Path | None = None,
+    retomar: bool = False,
 ) -> tuple[dict[str, np.ndarray], list[dict[str, object]]]:
-    """Refaz modelos do zero em 2019--2023 e infere 2024 sem reajuste."""
+    """Refaz modelos em 2019--2023 e permite retomada por modelo."""
 
     num_localidades = len(series)
     x_refit, y_refit = refit.normalizar(escalas)
@@ -1273,92 +1323,133 @@ def _treinar_e_prever_teste(
     previsoes = _previsoes_baselines(teste, series)
     historico_total: list[dict[str, object]] = []
     pasta_modelos.mkdir(parents=True, exist_ok=True)
+    if pasta_cache is not None:
+        pasta_cache.mkdir(parents=True, exist_ok=True)
 
-    xgb = criar_xgboost_multioutput(configuracao)
-    xgb.fit(
-        _matriz_xgboost(x_refit, refit.localidade_id, num_localidades),
-        y_refit,
-    )
-    previsto_xgb = np.asarray(
-        xgb.predict(
-            _matriz_xgboost(x_teste, teste.localidade_id, num_localidades)
-        ),
-        dtype=float,
-    ).reshape(len(teste.x_bruto), configuracao.pred_len)
-    previsoes["XGBoost"] = teste.inverter(previsto_xgb, escalas)
-    joblib.dump(xgb, pasta_modelos / "xgboost_multioutput_refit.joblib")
-    del xgb
-    gc.collect()
+    cache_xgb = None if pasta_cache is None else pasta_cache / "xgboost.npz"
+    if retomar and cache_xgb is not None and cache_xgb.is_file():
+        print("[refit] retomando XGBoost do cache", flush=True)
+        with np.load(cache_xgb, allow_pickle=False) as cache:
+            previsoes["XGBoost"] = np.asarray(cache["previsao"], dtype=float)
+    else:
+        print("[refit] treinando XGBoost", flush=True)
+        xgb = criar_xgboost_multioutput(configuracao)
+        xgb.fit(
+            _matriz_xgboost(x_refit, refit.localidade_id, num_localidades),
+            y_refit,
+        )
+        previsto_xgb = np.asarray(
+            xgb.predict(
+                _matriz_xgboost(x_teste, teste.localidade_id, num_localidades)
+            ),
+            dtype=float,
+        ).reshape(len(teste.x_bruto), configuracao.pred_len)
+        previsoes["XGBoost"] = teste.inverter(previsto_xgb, escalas)
+        joblib.dump(xgb, pasta_modelos / "xgboost_multioutput_refit.joblib")
+        if cache_xgb is not None:
+            _salvar_npz(cache_xgb, previsao=previsoes["XGBoost"])
+        del xgb
+        gc.collect()
 
-    lstm = criar_lstm(configuracao, num_localidades)
-    lstm, _, historico = treinar_rede_direta(
-        lstm,
-        x_treino=x_refit,
-        y_treino=y_refit,
-        ids_treino=refit.localidade_id,
-        configuracao=configuracao,
-        epocas_fixas=int(epocas_selecionadas["LSTM"]),
-    )
-    previsoes["LSTM"] = teste.inverter(
-        prever_rede_direta(
+    cache_lstm = None if pasta_cache is None else pasta_cache / "lstm.npz"
+    if retomar and cache_lstm is not None and cache_lstm.is_file():
+        print("[refit] retomando LSTM do cache", flush=True)
+        with np.load(cache_lstm, allow_pickle=False) as cache:
+            previsoes["LSTM"] = np.asarray(cache["previsao"], dtype=float)
+            historico = json.loads(str(np.asarray(cache["historico_json"]).item()))
+    else:
+        print("[refit] treinando LSTM", flush=True)
+        lstm = criar_lstm(configuracao, num_localidades)
+        lstm, _, historico = treinar_rede_direta(
             lstm,
-            x_teste,
-            teste.localidade_id,
-            batch_size=configuracao.batch_size,
-        ),
-        escalas,
-    )
+            x_treino=x_refit,
+            y_treino=y_refit,
+            ids_treino=refit.localidade_id,
+            configuracao=configuracao,
+            epocas_fixas=int(epocas_selecionadas["LSTM"]),
+        )
+        previsoes["LSTM"] = teste.inverter(
+            prever_rede_direta(
+                lstm,
+                x_teste,
+                teste.localidade_id,
+                batch_size=configuracao.batch_size,
+            ),
+            escalas,
+        )
+        torch.save(
+            {
+                "state_dict": lstm.state_dict(),
+                "classe": "LSTMEncoderDireto",
+                "epocas_refit": int(epocas_selecionadas["LSTM"]),
+                "configuracao": asdict(configuracao),
+            },
+            pasta_modelos / "lstm_encoder_direto_refit.pt",
+        )
+        if cache_lstm is not None:
+            _salvar_npz(
+                cache_lstm,
+                previsao=previsoes["LSTM"],
+                historico_json=np.asarray(json.dumps(historico, ensure_ascii=False)),
+            )
+        del lstm
+        gc.collect()
     historico_total.extend(
         {"fase": "refit_epocas_fixas", "Modelo": "LSTM", **linha}
         for linha in historico
     )
-    torch.save(
-        {
-            "state_dict": lstm.state_dict(),
-            "classe": "LSTMEncoderDireto",
-            "epocas_refit": int(epocas_selecionadas["LSTM"]),
-            "configuracao": asdict(configuracao),
-        },
-        pasta_modelos / "lstm_encoder_direto_refit.pt",
-    )
-    del lstm
-    gc.collect()
 
-    timesnet = criar_timesnet(configuracao, num_localidades)
-    timesnet, _, historico = treinar_rede_direta(
-        timesnet,
-        x_treino=x_refit,
-        y_treino=y_refit,
-        ids_treino=refit.localidade_id,
-        configuracao=configuracao,
-        epocas_fixas=int(epocas_selecionadas["TimesNet"]),
-    )
-    previsoes["TimesNet"] = teste.inverter(
-        prever_rede_direta(
+    cache_timesnet = None if pasta_cache is None else pasta_cache / "timesnet.npz"
+    if retomar and cache_timesnet is not None and cache_timesnet.is_file():
+        print("[refit] retomando TimesNet do cache", flush=True)
+        with np.load(cache_timesnet, allow_pickle=False) as cache:
+            previsoes["TimesNet"] = np.asarray(cache["previsao"], dtype=float)
+            historico = json.loads(str(np.asarray(cache["historico_json"]).item()))
+    else:
+        print("[refit] treinando TimesNet", flush=True)
+        timesnet = criar_timesnet(configuracao, num_localidades)
+        timesnet, _, historico = treinar_rede_direta(
             timesnet,
-            x_teste,
-            teste.localidade_id,
-            batch_size=configuracao.batch_size,
-        ),
-        escalas,
-    )
+            x_treino=x_refit,
+            y_treino=y_refit,
+            ids_treino=refit.localidade_id,
+            configuracao=configuracao,
+            epocas_fixas=int(epocas_selecionadas["TimesNet"]),
+        )
+        previsoes["TimesNet"] = teste.inverter(
+            prever_rede_direta(
+                timesnet,
+                x_teste,
+                teste.localidade_id,
+                batch_size=configuracao.batch_size,
+            ),
+            escalas,
+        )
+        torch.save(
+            {
+                "state_dict": timesnet.state_dict(),
+                "classe": "TimesNetHorario",
+                "epocas_refit": int(epocas_selecionadas["TimesNet"]),
+                "configuracao": asdict(configuracao),
+            },
+            pasta_modelos / "timesnet_refit.pt",
+        )
+        if cache_timesnet is not None:
+            _salvar_npz(
+                cache_timesnet,
+                previsao=previsoes["TimesNet"],
+                historico_json=np.asarray(json.dumps(historico, ensure_ascii=False)),
+            )
+        del timesnet
+        gc.collect()
     historico_total.extend(
         {"fase": "refit_epocas_fixas", "Modelo": "TimesNet", **linha}
         for linha in historico
     )
-    torch.save(
-        {
-            "state_dict": timesnet.state_dict(),
-            "classe": "TimesNetHorario",
-            "epocas_refit": int(epocas_selecionadas["TimesNet"]),
-            "configuracao": asdict(configuracao),
-        },
-        pasta_modelos / "timesnet_refit.pt",
-    )
-    del timesnet, x_refit, y_refit, x_teste
+
+    del x_refit, y_refit, x_teste
     gc.collect()
     return previsoes, historico_total
-
 
 def _protocolo_por_localidade(
     *,
@@ -1429,6 +1520,25 @@ def _protocolo_por_localidade(
     return pd.DataFrame(linhas)
 
 
+_ATRASOS_SUBSTITUICAO_WINDOWS_S = (0.10, 0.25, 0.50, 1.00, 2.00)
+_WINERRORS_BLOQUEIO_TRANSITORIO = {5, 32, 33}
+
+
+def _substituir_com_retry(temporario: Path, destino: Path) -> None:
+    """Promove um temporario, tolerando bloqueios breves do Windows."""
+
+    for tentativa in range(len(_ATRASOS_SUBSTITUICAO_WINDOWS_S) + 1):
+        try:
+            temporario.replace(destino)
+            return
+        except PermissionError as erro:
+            winerror = getattr(erro, "winerror", None)
+            ultima = tentativa == len(_ATRASOS_SUBSTITUICAO_WINDOWS_S)
+            if winerror not in _WINERRORS_BLOQUEIO_TRANSITORIO or ultima:
+                raise
+            time.sleep(_ATRASOS_SUBSTITUICAO_WINDOWS_S[tentativa])
+
+
 def _salvar_json(caminho: Path, conteudo: Mapping[str, object]) -> None:
     caminho.parent.mkdir(parents=True, exist_ok=True)
     temporario = caminho.with_suffix(caminho.suffix + ".tmp")
@@ -1436,7 +1546,7 @@ def _salvar_json(caminho: Path, conteudo: Mapping[str, object]) -> None:
         json.dumps(conteudo, ensure_ascii=False, indent=2, default=str) + "\n",
         encoding="utf-8",
     )
-    temporario.replace(caminho)
+    _substituir_com_retry(temporario, caminho)
 
 
 def _salvar_csv(quadro: pd.DataFrame, caminho: Path) -> None:
@@ -1450,7 +1560,17 @@ def _salvar_csv(quadro: pd.DataFrame, caminho: Path) -> None:
         )
     else:
         quadro.to_csv(temporario, index=False)
-    temporario.replace(caminho)
+    _substituir_com_retry(temporario, caminho)
+
+
+def _salvar_npz(caminho: Path, **matrizes: object) -> None:
+    """Grava um cache NumPy de forma atomica para retomada segura."""
+
+    caminho.parent.mkdir(parents=True, exist_ok=True)
+    temporario = caminho.with_suffix(caminho.suffix + ".tmp")
+    with temporario.open("wb") as arquivo:
+        np.savez_compressed(arquivo, **matrizes)
+    _substituir_com_retry(temporario, caminho)
 
 
 def _sha256(caminho: Path) -> str:
@@ -1807,17 +1927,32 @@ def executar_experimento(
     pasta_dados: Path | str = PASTA_HORARIA_PADRAO,
     dados: pd.DataFrame | None = None,
     sobrescrever: bool = False,
+    retomar: bool = False,
 ) -> dict[str, Path]:
     """Executa validação, refit, teste, métricas e persistência dos artefatos."""
 
     configuracao = configuracao or ConfiguracaoExperimentoHorario()
     saida = Path(pasta_saida)
-    if saida.exists() and any(saida.iterdir()) and not sobrescrever:
+    if sobrescrever and retomar:
+        raise ValueError("sobrescrever e retomar sao opcoes mutuamente exclusivas.")
+    # Canonicaliza tuplas como listas antes da comparação: o JSON existente
+    # sempre as desserializa como listas, embora ``asdict`` preserve tuplas.
+    configuracao_atual = json.loads(
+        json.dumps(asdict(configuracao), ensure_ascii=False, default=str)
+    )
+    caminho_configuracao = saida / "configuracao_execucao.json"
+    if saida.exists() and any(saida.iterdir()) and not (sobrescrever or retomar):
         raise FileExistsError(
-            f"{saida} já contém artefatos; use sobrescrever=True conscientemente."
+            f"{saida} já contém artefatos; use sobrescrever=True ou retomar=True."
         )
+    if retomar and caminho_configuracao.is_file():
+        configuracao_anterior = json.loads(caminho_configuracao.read_text(encoding="utf-8"))
+        if configuracao_anterior != configuracao_atual:
+            raise ValueError("A configuracao da retomada difere da execucao existente.")
+    elif retomar and saida.exists() and any(saida.iterdir()):
+        raise ValueError("A pasta de retomada nao possui configuracao verificavel.")
     saida.mkdir(parents=True, exist_ok=True)
-    _salvar_json(saida / "configuracao_execucao.json", asdict(configuracao))
+    _salvar_json(caminho_configuracao, configuracao_atual)
     _salvar_json(
         saida / "status_execucao.json",
         {
@@ -1907,6 +2042,8 @@ def executar_experimento(
         escalas=escalas_treino,
         series=series,
         configuracao=configuracao,
+        pasta_cache=saida / "cache" / "validacao",
+        retomar=retomar,
     )
     tabela_val = montar_tabela_previsoes(
         validacao, previsoes_val, series, configuracao
@@ -1926,6 +2063,8 @@ def executar_experimento(
         configuracao=configuracao,
         epocas_selecionadas=epocas,
         pasta_modelos=saida / "modelos",
+        pasta_cache=saida / "cache" / "refit",
+        retomar=retomar,
     )
     tabela_teste = montar_tabela_previsoes(
         teste, previsoes_teste, series, configuracao
@@ -2028,6 +2167,11 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--semente", type=int, default=42)
     parser.add_argument("--sobrescrever", action="store_true")
     parser.add_argument(
+        "--retomar",
+        action="store_true",
+        help="Retoma caches atomicos do mesmo diretorio e configuracao.",
+    )
+    parser.add_argument(
         "--confirmar-execucao-longa",
         action="store_true",
         help="Confirma explicitamente treinamento completo em CPU.",
@@ -2051,6 +2195,7 @@ def main(argv: Sequence[str] | None = None) -> None:
         configuracao,
         pasta_dados=argumentos.dados,
         sobrescrever=argumentos.sobrescrever,
+        retomar=argumentos.retomar,
     )
     print(f"Artefatos horários salvos em {artefatos['pasta_saida']}")
 

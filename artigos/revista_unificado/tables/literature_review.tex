@@ -1,0 +1,151 @@
+\begin{table}[!htbp]
+\centering
+\caption{Representative forecasting studies at intra-hour and short
+hourly horizons. The studies use different targets and test protocols, so
+their results are not directly ranked.}
+\label{tab:literature_review}
+\label{tab:literature_review_short}
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}p{0.11\linewidth}p{0.18\linewidth}p{0.22\linewidth}p{0.18\linewidth}p{0.25\linewidth}@{}}
+\toprule
+\textbf{Study} & \textbf{Target and scope} & \textbf{Inputs and processing} &
+\textbf{Predictor} & \textbf{Horizon and evaluation design} \\
+\midrule
+Chow et al.\ \cite{chow2011} &
+GHI and cloud conditions at the UC San Diego test bed &
+30-s total-sky images, clear-sky library, cloud map, shadows, and motion vectors &
+Image-based physical nowcast &
+Cloud nowcasts up to 5~min; six pyranometers on four partly cloudy days; qualitative GHI assessment \\
+
+Li et al.\ \cite{li2025timesnet} &
+Ultra-short-term GHI &
+Irradiance history and sky images; multimodal feature fusion &
+TimesNet and T2T-ViT &
+Six 10-min steps, up to 1~h; full split and site details not verified \\
+
+Guariso et al.\ \cite{guariso2020} &
+Hourly GHI at an Italian station, with transfer to other sites &
+Autoregressive irradiance windows; no decomposition &
+Feed-forward and LSTM networks &
+1--12~h; recursive, horizon-specific, and multi-output strategies; persistence and clear-sky references \\
+
+Huang et al.\ \cite{huang2021} &
+Hourly irradiance at Denver, Clark, and Folsom &
+Irradiance history and meteorology, including next-hour temperature, humidity, and wind-speed forecasts; wavelet-packet decomposition &
+WPD--CNN--LSTM--MLP hybrid &
+1~h ahead; comparison with individual networks and climatology--persistence \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+\centering
+\caption{Representative day-ahead and direct multi-step solar-forecasting
+studies.}
+\label{tab:literature_review_multistep}
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}p{0.11\linewidth}p{0.18\linewidth}p{0.22\linewidth}p{0.18\linewidth}p{0.25\linewidth}@{}}
+\toprule
+\textbf{Study} & \textbf{Target and scope} & \textbf{Inputs and processing} &
+\textbf{Predictor} & \textbf{Horizon and evaluation design} \\
+\midrule
+Cheng et al.\ \cite{cheng2021} &
+Daytime hourly irradiance in Taiwan under tropical and subtropical marine conditions &
+Previous days of irradiance and selected temperature, humidity, and rainfall observations or forecasts &
+One-dimensional CNN, LSTM, skip concatenation, and dense output &
+Day-ahead through 7~days ahead; limited-data deployment experiment \\
+
+Voyant et al.\ \cite{voyant2022} &
+Solar-radiation series from sites in multiple climates &
+Little or no training history; statistical structure of the target &
+Five na\"ive references (including a second-order autoregressive model) and their forecast combination &
+Direct multi-step benchmark evaluated with several complementary metrics \\
+
+Zhao et al.\ \cite{zhao2024timesnet} &
+Hourly solar radiation &
+ICEEMDAN-decomposed solar-radiation sequences combined with meteorological data &
+ICEEMDAN--TimesNet &
+Week-ahead multi-step prediction; comparison with alternative multi-step models \\
+
+Gong et al.\ \cite{gong2024timesnet} &
+Hourly GHI &
+GHI with temperature, humidity, barometric pressure, wind speed, and cloud cover &
+TimesNet &
+Four days ahead; comparison with three long-horizon models; sites and split not verified \\
+
+Smyl et al.\ \cite{smyl2026solar} &
+Normalized photovoltaic generation over 259 European regions &
+Generation history, calendar and cross-region context; no external meteorology &
+Any-quantile RNN with modified dilated cells &
+48~h at hourly resolution; probabilistic evaluation; preprint, not classical DilatedRNN or direct GHI \\
+
+Umar et al.\ \cite{umar2026daily} &
+Daily solar irradiance at Abu Dhabi, Aswan, Islamabad, and Longreach &
+Gaussian-weighted lag embeddings of historical atmospheric dynamics and future clear-sky potential &
+Fifteen horizon-specific submodels with clear-sky cross-attention and decorrelated bagging &
+1--15~days; comparison with gradient-boosting and deep-learning models, including PatchTST \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+\centering
+\caption{Representative monthly, multi-climate, and very-long-horizon
+forecasting studies.}
+\label{tab:literature_review_long}
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}p{0.11\linewidth}p{0.18\linewidth}p{0.22\linewidth}p{0.18\linewidth}p{0.25\linewidth}@{}}
+\toprule
+\textbf{Study} & \textbf{Target and scope} & \textbf{Inputs and processing} &
+\textbf{Predictor} & \textbf{Horizon and evaluation design} \\
+\midrule
+Ozoegwu \cite{ozoegwu2019} &
+Monthly-mean daily global solar radiation at selected locations &
+Radiation history; lagged month numbers in NARX and current month number in the hybrid &
+NAR, NARX, and hybrid ANN &
+Monthly-scale forecasting; comparison among the three neural formulations \\
+
+Zhu et al.\ \cite{zhu2024} &
+Solar irradiance in a photovoltaic-greenhouse setting &
+Multiple meteorological-factor combinations and training-set lengths &
+TimesNet, Informer, Transformer, and Pyraformer &
+Nine horizons from 10~min to 24~h; seasonal and full-climate analyses \\
+
+Cabral et al.\ \cite{cabral2026} &
+GHI at 40 locations spanning multiple climate classes &
+GHI-only enhanced pattern-recognition pipeline &
+GPT-Neo and contemporary neural competitors &
+Very-long-term multi-year prediction; location and aggregate errors plus computational assessment \\
+
+Li et al.\ \cite{li2026monthly} &
+Monthly GHI over China, with station-based validation &
+JMA/MRI-CPS3 climate-model hindcasts and ERA5 reanalysis; EOF-based predictor selection &
+Decision tree, random forest, gradient-boosted trees, naive Bayes, linear regression, and their ensemble mean &
+Monthly prediction; independent validation from February 2022 to January 2024 \\
+
+Shi et al.\ \cite{shi2026multiscale} &
+Multi-scale solar irradiance &
+Time-varying functional representation; full input inventory not verified &
+2DTFM &
+Multi-scale forecasting; full horizon and split details not verified \\
+\bottomrule
+\end{tabular}
+\par\medskip
+\begin{minipage}{0.96\linewidth}
+\scriptsize
+\textit{Abbreviations in Tables~\ref{tab:literature_review_short}--%
+\ref{tab:literature_review_long}:} ANN, artificial neural network; CNN,
+convolutional neural network; EOF, empirical orthogonal function; ERA5,
+fifth-generation ECMWF atmospheric reanalysis; GHI, global horizontal irradiance; ICEEMDAN,
+improved complete ensemble empirical mode decomposition with adaptive noise;
+LSTM, long short-term memory; MLP, multilayer perceptron; NAR, nonlinear
+autoregressive; NARX, nonlinear autoregressive with exogenous inputs; WPD,
+wavelet packet decomposition.
+\end{minipage}
+\end{table}

@@ -1,0 +1,17 @@
+{
+  "versao": 1,
+  "aprovado": true,
+  "revisor": "/root/failure_review",
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\retomar_apos_auditoria_20261007.py": "dc64ea990b213947113e128d560da3e84c0037b3fbdeca9545d5516fbb68d020",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\coordenar_quantizacao_historica_replay_isolado_v1.py": "e9b9b2e46e62b4f423bc3e69a764ba62c7fada45c26b252e9a53fc7321bc1a67",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\auditar_quantizacao_replay_isolado_v1.py": "3535c59fa0b16d14ea9957b94d8759dcd1a4c5dffcd41bd2e946bbd3f0f8c8f2"
+  },
+  "diagnostico_nativo": {"sessao": 55492, "exitcode": 0, "treino_executado": false, "rede_criada": false, "delta_inicial": {}, "delta_apos_timesnet": {"cudnn_deterministic": [false, true]}, "gate_inicial": "aprovado", "gate_apos_timesnet": "Politica numerica/ambiente/piloto diverge do contrato.", "gate_apos_restauracao": "aprovado", "delta_final": {}},
+  "checagens_isoladas": {"quantidade": 20, "sessoes": [17706, 45198], "exitcodes": [0, 0], "aprovadas": true},
+  "controles": ["44 refits returncode zero e selecao congelada preservados", "fila curta e todas as demais etapas delegadas ao coordenador original", "auditor original completo e replay obrigatorios", "restauracao cuDNN somente apos cada replay, inclusive excecoes", "ambiente inicialmente divergente continua recusado", "158 fontes anteriores e testes verificados por hashes", "evidencias preservadas antes de Popen", "identidades antigas vivas e orfaos Python bloqueiam", "FILETIME indeterminado bloqueia", "travas originais exclusivas verificadas", "journal novo canonico com uma unica tentativa antes de Popen", "paradas antiga vigente e nova respeitadas", "confirmacao por PID FILETIME ancestralidade e codigos original e complementar"],
+  "fontes_cientificas_alteradas": false,
+  "gates_cientificos_alterados": false,
+  "replay_completo_ainda_obrigatorio": true,
+  "producao_iniciada_pelo_revisor": false
+}

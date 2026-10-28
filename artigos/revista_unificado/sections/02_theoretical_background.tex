@@ -1,0 +1,221 @@
+\section{Theoretical Background}
+\label{sec:background}
+
+Following the empirical review in Section~\ref{sec:related_work}, this
+section defines GHI, temporal aggregation, and forecast design before
+describing the mechanisms of TimesNet and DilatedRNN.
+
+\subsection{Global horizontal irradiance and temporal support}
+
+Global horizontal irradiance (GHI) is the instantaneous solar radiant flux
+received per unit area by a horizontal surface. When the Sun is above the horizon,
+\begin{equation}
+  \mathrm{GHI}
+  =
+  \mathrm{DHI}
+  +
+  \mathrm{DNI}\cos(\theta_z),
+  \label{eq:ghi}
+\end{equation}
+where DHI is diffuse horizontal irradiance, DNI is direct normal irradiance,
+and $\theta_z$ is the solar zenith angle \cite{duffie2013}. Irradiance is a
+power density, conventionally expressed in W/m$^2$. Integrating irradiance
+over time yields irradiation, which is an energy density.
+
+The NSRDB product used in this study estimates the radiative components from
+satellite observations and physical models \cite{sengupta2018}. The study
+uses the model-based estimate at the grid cell nearest each factory
+coordinate. Converting GHI into photovoltaic power would additionally
+require information about module area, orientation, efficiency,
+temperature, losses, and plant operation.
+
+Let $y_{\ell,t}^{(1\mathrm{h})}$ be hourly mean GHI for location $\ell$. The
+mean irradiance at a coarser temporal support $\Delta$ is
+\begin{equation}
+  y_{\ell,\tau}^{(\Delta)}
+  =
+  \frac{1}{N_{\ell,\tau}}
+  \sum_{t\in\mathcal{I}_{\ell,\tau}^{(\Delta)}}
+  y_{\ell,t}^{(1\mathrm{h})},
+  \label{eq:temporal_aggregation}
+\end{equation}
+where $\mathcal{I}_{\ell,\tau}^{(\Delta)}$ contains the valid hourly samples in
+interval $\tau$ and $N_{\ell,\tau}$ is their number. Equation
+\eqref{eq:temporal_aggregation} preserves the units of W/m$^2$ and defines a
+daily or monthly mean, rather than accumulated irradiation. Coverage
+requirements must be applied before aggregation so that intervals with
+missing hours are not treated as complete.
+
+\subsection{Forecast resolution, context, and horizon}
+
+For a temporal resolution $\Delta$, let
+$\mathbf{X}_{\ell,t}\in\mathbb{R}^{C\times P}$ contain $C$ observations of
+$P$ admissible variables, all observed strictly before target interval $t$.
+Throughout the article, the origin label $t$ identifies the first predicted
+interval; the GHI value for that interval is unavailable when the forecast
+is issued. A deterministic multi-output forecaster is a mapping
+\begin{equation}
+  \widehat{\mathbf{y}}_{\ell,t:t+H-1}
+  =
+  f_{\theta}\!\left(\mathbf{X}_{\ell,t},\mathbf{z}_{\ell}\right)
+  \in\mathbb{R}^{H},
+  \label{eq:forecast_map}
+\end{equation}
+where $\mathbf{z}_{\ell}$ denotes static location information when used,
+$C$ is the context length, and $H$ is the number of predicted intervals.
+For fixed-duration hourly and daily intervals, the corresponding spans are
+$C\Delta$ and $H\Delta$; monthly spans follow calendar months of unequal length.
+Thus, 72 hourly outputs and three daily outputs have the same nominal
+duration but different targets and information content. Likewise, predicting
+one monthly mean is a one-step monthly forecast, not a multi-month trajectory
+\cite{diagne2013,yang2018}.
+
+In a direct multi-output strategy, all $H$ values in
+\eqref{eq:forecast_map} are produced jointly. A recursive strategy instead
+feeds one-step predictions back as inputs and may accumulate error as the
+horizon increases \cite{guariso2020}. The forecasting strategy must therefore
+be held constant when comparing models. A local model estimates separate
+parameters for each location; a global model shares $\theta$ across locations
+and may condition on
+$\mathbf{z}_{\ell}$ \cite{montero2021}. Sharing can increase the effective
+training sample, but it does not guarantee equal local performance.
+
+Persistence, diurnal or seasonal naive forecasts, and simple autoregressive
+models provide baselines for assessing gains beyond continuity and
+seasonality. Their suitability depends on resolution and horizon, so
+evaluation may require more than one baseline \cite{voyant2022}.
+
+\subsection{TimesNet}
+
+TimesNet models one-dimensional sequences through a set of
+period-conditioned two-dimensional representations \cite{wu2023}. Let
+$\mathbf{X}\in\mathbb{R}^{B\times T\times C_x}$ be a batch processed by a
+TimesBlock, and let $F_{b,f,c}$ denote the temporal fast Fourier transform
+(FFT) of sample $b$ at frequency bin $f$ and channel $c$. The compact variant
+evaluated here selects periods independently for each sample, averaging
+amplitudes only over that sample's channels,
+\begin{equation}
+  A_{b,f}
+  =
+  \frac{1}{C_x}
+  \sum_{c=1}^{C_x}\left|F_{b,f,c}\right|.
+  \label{eq:timesnet_frequency}
+\end{equation}
+After excluding the zero-frequency component, each sample uses its $k$
+largest amplitudes to select frequency indices $f_{b,i}$ and integer periods
+\begin{equation}
+  \{f_{b,1},\ldots,f_{b,k}\}
+  =
+  \operatorname*{arg\,top\text{-}k}_{1\leq f\leq\lfloor T/2\rfloor}
+  A_{b,f},
+  \qquad
+  p_{b,i}=\left\lfloor\frac{T}{f_{b,i}}\right\rfloor .
+  \label{eq:timesnet_periods}
+\end{equation}
+The selected amplitudes, $a_{b,i}=A_{b,f_{b,i}}$, determine the aggregation
+weights.
+
+For each $p_{b,i}$, the sequence is zero-padded to
+$L_{b,i}=p_{b,i}\lceil T/p_{b,i}\rceil$ and reshaped so that one axis indexes
+position within a period and the other indexes successive periods. A
+two-dimensional Inception-style convolution then learns intraperiod and
+interperiod variations. If $\mathcal{G}_{b,i}$ is the processed tensor and
+$\mathcal{R}_{b,i}^{-1}$ restores chronological order, the period-specific
+outputs are combined using weights derived from each sample's amplitudes
+\begin{equation}
+\begin{aligned}
+  \alpha_{b,i}
+  &=
+  \frac{\exp(a_{b,i})}
+       {\sum_{j=1}^{k}\exp(a_{b,j})},
+  \\
+  \widetilde{\mathbf{X}}_b
+  &=
+  \mathbf{X}_b
+  +
+  \sum_{i=1}^{k}
+  \alpha_{b,i}
+  \left[
+    \mathcal{R}_{b,i}^{-1}(\mathcal{G}_{b,i})
+  \right]_{1:T}.
+\end{aligned}
+  \label{eq:timesnet_aggregation}
+\end{equation}
+The residual connection preserves the original representation. Before value
+embedding, the implementation standardizes each input window using its own
+temporal mean and population standard deviation, with $10^{-5}$ added to the
+variance. It reverses this transformation at the output. This causal window
+standardization follows the external site-wise min--max transformation
+described in Section~\ref{sec:data}. Stacked TimesBlocks and a task-specific
+projection produce the forecast. Because period selection and aggregation
+weights are computed for each sample independently, changing other windows
+in the batch does not change the information used for that sample's forecast.
+TimesNet has also been combined with signal decomposition for week-ahead
+hourly solar forecasting \cite{zhao2024timesnet}, although decomposition is
+not intrinsic to the architecture.
+
+\subsection{Dilated recurrent neural networks}
+
+A DilatedRNN changes the recurrent connection pattern rather than reshaping the
+sequence \cite{chang2017}. Let $\mathbf{c}_{t}^{(q)}$ denote the recurrent
+state in layer $q$, and let $\mathbf{x}_{t}^{(q)}$ be the layer input, with
+$\mathbf{x}_{t}^{(1)}=\mathbf{x}_t$ and
+$\mathbf{x}_{t}^{(q)}=\mathbf{c}_{t}^{(q-1)}$ for $q>1$. A dilated recurrent
+layer updates
+\begin{equation}
+  \mathbf{c}_{t}^{(q)}
+  =
+  \phi_q\!\left(
+    \mathbf{x}_{t}^{(q)},
+    \mathbf{c}_{t-d_q}^{(q)}
+  \right),
+  \label{eq:dilated_rnn}
+\end{equation}
+where $\phi_q$ can be an ordinary RNN, gated recurrent unit, or LSTM cell
+\cite{chang2017,hochreiter1997}. In that layer, the recurrent connection from
+$t-1$ is replaced by one from $t-d_q$; dilation does not add a residual
+connection.
+
+With an integer base $M>1$, the standard exponentially increasing schedule is
+\begin{equation}
+  d_q=M^{q-1},\qquad q=1,\ldots,Q.
+  \label{eq:dilation_schedule}
+\end{equation}
+The first layer retains local recurrence when $d_1=1$, while higher layers
+connect states at progressively coarser temporal separations. This schedule
+shortens recurrent paths between distant observations and represents
+dependencies at multiple temporal scales. The interleaved recurrent chains
+are recombined at their original time indices, preserving the intervening
+observations without downsampling. An output head maps the resulting states
+to one or several forecast steps.
+
+TimesNet and DilatedRNN encode multi-scale dependence through different
+inductive biases: TimesNet discovers dominant Fourier periods and applies
+two-dimensional convolutions, while DilatedRNN uses a fixed hierarchy of
+sparse recurrent lags. Comparing them requires a matched context,
+forecasting strategy, horizon, and evaluation protocol. Differences in
+capacity and response to optimization still limit attribution of performance
+to individual architectural mechanisms.
+
+\subsection{Atmospheric variability and climate context}
+
+Solar geometry creates a deterministic diurnal envelope, whereas clouds and
+other atmospheric constituents modulate the irradiance reaching the surface.
+Cloud advection can create rapid GHI changes and photovoltaic power ramps
+\cite{chow2011,chen2020cloudramps}. Aggregation reduces some high-frequency
+variation but does not remove persistent cloudy regimes, synoptic variability,
+or seasonality.
+
+Low GHI alone does not establish precipitation because it can also reflect
+solar elevation, cloud optical properties, aerosols, or the aggregation
+window. Describing conditions as rainy or cloudy therefore requires
+independent meteorological data aligned in time and location. Reanalysis
+products can provide this context, subject to their spatial resolution and
+model uncertainty \cite{hersbach2020,copernicus2026era5}.
+
+K{\"o}ppen--Geiger classes summarize long-term temperature and precipitation
+regimes \cite{beck2018}. They are useful for describing the geographic
+diversity of the sampled locations, but they are not dynamic forecast inputs
+unless explicitly encoded. With ten sites, differences between classes are
+exploratory associations rather than causal estimates of climate effects on
+forecast error.

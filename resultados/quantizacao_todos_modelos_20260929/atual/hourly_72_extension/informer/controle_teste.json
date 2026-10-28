@@ -1,0 +1,27 @@
+{
+  "aplicavel": true,
+  "aprovado": true,
+  "comparacao_legada": {
+    "aplicavel": true,
+    "aprovado": false,
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\informer\\controle_teste_comparacao_legada.json",
+    "sha256": "7a9ef86b43e1b7155553f89e858014b959928ba53459f6f7af0c29080d055acd"
+  },
+  "contrato_sha256": "11d770dfa3dc4cd68d599f5ecf74bd01b66a8c30d1b48c49f349fba0e283c5c3",
+  "controle_legado_importado": false,
+  "dispositivo": "cuda",
+  "dispositivo_original": "cuda",
+  "evidencia_piloto": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treinamento_estrito.json",
+    "sha256": "c840693e4e9ac57d52f55ac5152c515e51a55dfa6765156e27d7ff86bedfa6bf"
+  },
+  "novo_controle_execucao_numerica": true,
+  "novo_controle_por_dispositivo": false,
+  "politica": "atencao_cuda_deterministica_v1",
+  "referencia": "controle_sem_quantizacao_treinado_sob_politica_estrita",
+  "replay_independente_obrigatorio": true,
+  "reproducao_exata_exigida": false,
+  "reproducao_legada_aprovada": false,
+  "significado_aprovado": "Baseline estrito finito; publicacao ainda exige replay independente.",
+  "tolerancia_replay_wm2": 1e-06
+}

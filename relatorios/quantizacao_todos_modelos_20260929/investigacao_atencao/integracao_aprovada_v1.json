@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "aprovado_para_execucao_completa": true,
+  "resultados_cientificos_finais": false,
+  "registrado_em_utc": "2026-09-30T11:50:21.571090+00:00",
+  "piloto_treinamento_repetido": "quatro pares, duas repeticoes, oito updates por repeticao, pesos e previsoes bitexatos",
+  "integracao_curta": {
+    "pares": 4,
+    "checkpoints_reproduzidos": 32,
+    "delta_maximo_wm2": 2.2737367544323206e-13
+  },
+  "testes_observados_na_sessao": {
+    "piloto": 15,
+    "adaptador_e_integracao_apos_correcao": 32,
+    "historicos": 39
+  },
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\smoke_atencao_estrita_v2\\auditoria.json": "941bbaa066c26ac92bd82bd981f08c6cf463a5b638ac5b3c937b689168a1727c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treinamento_estrito.json": "c840693e4e9ac57d52f55ac5152c515e51a55dfa6765156e27d7ff86bedfa6bf",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\preservacao_antes_adaptador_v1.json": "c91a84f25a3424f05778d45d6903b3a1ff318f3b3ddb760d0f6050bc1e8a78ae",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_atencao_deterministica_v1.py": "70d8c8213fea7cb86f3f64e3d28d9398e7a64ad39dccea57b8c6acc40ee66660",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\rodar_quantizacao_todos_modelos.py": "350234bd4c56c303ee1de7b9ff79d704e06a922a4836f651d46e940559ee5474",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\auditar_quantizacao_todos_modelos.py": "9507094363785397b2e92e00f92c6dcb0f89811dd35f6de0ec97f223238274d8",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\auditar_pareamento_historicos.py": "8f5ad8581459455d6c5270aea64a4e6ca889190e077b22aa34377173e20f6d10"
+  },
+  "limitacao": "Executar treinamentos completos e auditoria independente antes de gerar resultados finais. O piloto nao prova repetibilidade integral ou entre ambientes."
+}

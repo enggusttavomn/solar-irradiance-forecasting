@@ -1,0 +1,22 @@
+{
+  "description": "Derived display artifacts; no retraining; complete benchmarks preserved.",
+  "weekly_profile_rule": "seven days centered on each previously selected event; leads 1..24 from seven midnight origins",
+  "inputs": {
+    "resultados/artigo_revista_unificado/artefatos_resultados_corrigidos_FINAL/desempenho_macro.csv": "ce7860aea85e74024fa2fc1c28df851aecf48db6c0be772db3256b2e0fb333e7",
+    "resultados/artigo_revista_unificado/artefatos_resultados_corrigidos_FINAL/variabilidade_sementes.csv": "aa2b4b73d39be6662c632390de7b3b3b665dbf46bf3e927f988335eaa8694db1",
+    "resultados/avaliacao_multirresolucao_corrigida_v2/hourly_72_extension/previsoes_teste.csv.gz": "850cc110a4bf4101b0c02c9d5815fd3916659c01f67e2cc150f16dddc74d69cc",
+    "scripts/gerar_comparacao_focal_artigo.py": "8d4fa3b41c21ffb33a0abc4ff2b528da1da438762b90d1db8a7ba613e3b659b1"
+  },
+  "outputs": {
+    "metricas_perfis_sete_dias.csv": "594e9ae79562e6d4db81b2bedf71ff92067fae5ab6c61e1b878bd655aa67d7e2",
+    "perfis_sete_dias.csv": "4717421de8e1b35d4b919294c3d989c0149dc18269a8b894657ac6cd5a37e401",
+    "perfis_sete_dias.pdf": "a9406cf26f257d67d5c13a9c33157c70504192c508a31358a1b270db663f6c39",
+    "perfis_sete_dias.png": "2c224a59df7840415af03b3e50f8d441d58bcfbf00b2ba121a6f814e01244f9f",
+    "perfis_sete_dias.svg": "990bed81cefa41de6fad409bdb25207438a67291d641e227d2ac216e054d1b4a",
+    "variabilidade_por_semente.pdf": "eda9182ac44913434671d8e70ec299641d7517f6716d29d599bebc51bd036e4e",
+    "variabilidade_por_semente.png": "f7c55ef7c791261e4e286761dd002459671f708d145809cdb25cb91bc3157eb0",
+    "variabilidade_por_semente.svg": "a2dcca1aa90deba8c749439718a1ad8a2882897c407e39f33aea42212b0b0f9a",
+    "vencedores_por_horizonte.csv": "4577db3d9a1f61cae33cc472345bfad881f5fc7a63f577805bb9bbbc02d46afa",
+    "vencedores_por_horizonte.tex": "c46add59e66f317d6b3774886db903b725a6305dc859db6e3f102b6d3d3b07a1"
+  }
+}

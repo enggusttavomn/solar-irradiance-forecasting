@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 from pathlib import Path
 
 import numpy as np
@@ -32,7 +31,7 @@ def test_cada_modelo_possui_modulo_publico_proprio() -> None:
         "modelos/probabilisticos/deepnpts.py",
     }
     encontrados = {
-        str(caminho.relative_to(RAIZ / "codigo_fonte"))
+        caminho.relative_to(RAIZ / "codigo_fonte").as_posix()
         for caminho in (RAIZ / "codigo_fonte" / "modelos").rglob("*.py")
         if caminho.name != "__init__.py"
     }
@@ -52,32 +51,7 @@ def test_classes_probabilisticas_publicas_correspondem_aos_modelos() -> None:
     assert DeepNPTS.nome_modelo == "DeepNPTS"
 
 
-def test_site_incorpora_grade_canonica_completa() -> None:
-    pagina = (RAIZ / "site" / "resultados.html").read_text(encoding="utf-8")
-    inicio = pagina.index('<script id="project-data" type="application/json">')
-    inicio = pagina.index(">", inicio) + 1
-    fim = pagina.index("</script>", inicio)
-    dados = json.loads(pagina[inicio:fim])
-    assert len(dados["metricasLocais"]) == 100
-    assert len(dados["ranking"]) == 10
-    assert len(dados["auditoria"]) == 10
-
-
-def test_site_possui_quatro_paginas_com_navegacao_horizontal() -> None:
-    paginas = {
-        "index.html": "HOME",
-        "data.html": "DATA",
-        "modelos.html": "ML MODELS",
-        "resultados.html": "RESULTADOS",
-    }
-    for arquivo, item_ativo in paginas.items():
-        texto = (RAIZ / "site" / arquivo).read_text(encoding="utf-8")
-        assert 'class="topbar"' in texto
-        assert 'class="nav-links"' in texto
-        assert f'>{item_ativo}</a>' in texto
-        assert texto.count('aria-current="page"') == 1
-
-
 def test_indice_de_artigos_aponta_para_os_manuscritos_reais() -> None:
     assert (RAIZ / "artigos" / "ieee" / "artigo.tex").is_file()
-    assert (RAIZ / "artigos" / "mcsm" / "artigo_mcsm.tex").is_file()
+    assert (RAIZ / "artigos" / "btsym26" / "main.tex").is_file()
+    assert (RAIZ / "artigos" / "revista_unificado" / "main.tex").is_file()

@@ -1,0 +1,483 @@
+[
+  {
+    "tarefa": "daily_30",
+    "modelo": "gru",
+    "status": {
+      "atualizado_em_utc": "2026-09-12T22:50:48.055219+00:00",
+      "etapa": "concluida",
+      "execucoes": [
+        {
+          "epocas": 27,
+          "n_parametros": 4670,
+          "seed": 11,
+          "segundos": 2607.0202243000003
+        },
+        {
+          "epocas": 25,
+          "n_parametros": 4670,
+          "seed": 23,
+          "segundos": 2494.774044599999
+        },
+        {
+          "epocas": 26,
+          "n_parametros": 4670,
+          "seed": 42,
+          "segundos": 3023.9044562000017
+        },
+        {
+          "epocas": 28,
+          "n_parametros": 4670,
+          "seed": 67,
+          "segundos": 3055.5971071999993
+        },
+        {
+          "epocas": 22,
+          "n_parametros": 4670,
+          "seed": 89,
+          "segundos": 7597.8839004
+        }
+      ],
+      "modelo": "GRU",
+      "modo": "completa",
+      "pid": 32432,
+      "resultado_publicavel": true,
+      "tarefa": "daily_30"
+    }
+  },
+  {
+    "tarefa": "daily_30",
+    "modelo": "transformer",
+    "status": {
+      "atualizado_em_utc": "2026-09-13T00:17:53.998011+00:00",
+      "etapa": "concluida",
+      "execucoes": [
+        {
+          "epocas": 6,
+          "n_parametros": 8161,
+          "seed": 11,
+          "segundos": 355.89105930000005
+        },
+        {
+          "epocas": 30,
+          "n_parametros": 8161,
+          "seed": 23,
+          "segundos": 1417.8951165000035
+        },
+        {
+          "epocas": 16,
+          "n_parametros": 8161,
+          "seed": 42,
+          "segundos": 820.6831085000013
+        },
+        {
+          "epocas": 30,
+          "n_parametros": 8161,
+          "seed": 67,
+          "segundos": 798.7351282999953
+        },
+        {
+          "epocas": 26,
+          "n_parametros": 8161,
+          "seed": 89,
+          "segundos": 581.1472881000009
+        }
+      ],
+      "modelo": "Transformer",
+      "modo": "completa",
+      "pid": 23676,
+      "resultado_publicavel": true,
+      "tarefa": "daily_30"
+    }
+  },
+  {
+    "tarefa": "daily_30",
+    "modelo": "informer",
+    "status": {
+      "atualizado_em_utc": "2026-09-12T23:54:06.225066+00:00",
+      "etapa": "concluida",
+      "execucoes": [
+        {
+          "epocas": 9,
+          "n_parametros": 8977,
+          "seed": 11,
+          "segundos": 465.71524540000246
+        },
+        {
+          "epocas": 12,
+          "n_parametros": 8977,
+          "seed": 23,
+          "segundos": 614.3394913000011
+        },
+        {
+          "epocas": 7,
+          "n_parametros": 8977,
+          "seed": 42,
+          "segundos": 359.6902607000011
+        },
+        {
+          "epocas": 18,
+          "n_parametros": 8977,
+          "seed": 67,
+          "segundos": 738.2805510000035
+        },
+        {
+          "epocas": 7,
+          "n_parametros": 8977,
+          "seed": 89,
+          "segundos": 345.5080564999953
+        }
+      ],
+      "modelo": "Informer",
+      "modo": "completa",
+      "pid": 12624,
+      "resultado_publicavel": true,
+      "tarefa": "daily_30"
+    }
+  },
+  {
+    "tarefa": "hourly_72_extension",
+    "modelo": "gru",
+    "status": {
+      "atualizado_em_utc": "2026-09-13T00:21:39.034508+00:00",
+      "etapa": "concluida",
+      "execucoes": [
+        {
+          "epocas": 30,
+          "n_parametros": 6392,
+          "seed": 42,
+          "segundos": 5221.4412434000005
+        }
+      ],
+      "modelo": "GRU",
+      "modo": "completa",
+      "pid": 32432,
+      "resultado_publicavel": true,
+      "tarefa": "hourly_72_extension"
+    }
+  },
+  {
+    "tarefa": "hourly_72_extension",
+    "modelo": "transformer",
+    "status": {
+      "atualizado_em_utc": "2026-09-13T00:31:39.446553+00:00",
+      "etapa": "concluida",
+      "execucoes": [
+        {
+          "epocas": 30,
+          "n_parametros": 8161,
+          "seed": 42,
+          "segundos": 765.5063249000013
+        }
+      ],
+      "modelo": "Transformer",
+      "modo": "completa",
+      "pid": 23676,
+      "resultado_publicavel": true,
+      "tarefa": "hourly_72_extension"
+    }
+  },
+  {
+    "tarefa": "hourly_72_extension",
+    "modelo": "informer",
+    "status": {
+      "atualizado_em_utc": "2026-09-13T00:00:16.447816+00:00",
+      "etapa": "concluida",
+      "execucoes": [
+        {
+          "epocas": 4,
+          "n_parametros": 8977,
+          "seed": 42,
+          "segundos": 309.3380179999949
+        }
+      ],
+      "modelo": "Informer",
+      "modo": "completa",
+      "pid": 12624,
+      "resultado_publicavel": true,
+      "tarefa": "hourly_72_extension"
+    }
+  },
+  {
+    "tarefa": "monthly_1",
+    "modelo": "gru",
+    "status": {
+      "atualizado_em_utc": "2026-09-12T17:34:49.331379+00:00",
+      "etapa": "concluida",
+      "execucoes": [
+        {
+          "epocas": 38,
+          "n_parametros": 3481,
+          "seed": 11,
+          "segundos": 25.44665250000071
+        },
+        {
+          "epocas": 93,
+          "n_parametros": 3481,
+          "seed": 23,
+          "segundos": 42.902136799999425
+        },
+        {
+          "epocas": 57,
+          "n_parametros": 3481,
+          "seed": 42,
+          "segundos": 31.53158859999894
+        },
+        {
+          "epocas": 92,
+          "n_parametros": 3481,
+          "seed": 67,
+          "segundos": 46.050259099998584
+        },
+        {
+          "epocas": 124,
+          "n_parametros": 3481,
+          "seed": 89,
+          "segundos": 44.042841399999816
+        }
+      ],
+      "modelo": "GRU",
+      "modo": "completa",
+      "pid": 32432,
+      "resultado_publicavel": true,
+      "tarefa": "monthly_1"
+    }
+  },
+  {
+    "tarefa": "monthly_1",
+    "modelo": "transformer",
+    "status": {
+      "atualizado_em_utc": "2026-09-12T17:43:29.834346+00:00",
+      "etapa": "concluida",
+      "execucoes": [
+        {
+          "epocas": 114,
+          "n_parametros": 8161,
+          "seed": 11,
+          "segundos": 171.00811580000118
+        },
+        {
+          "epocas": 103,
+          "n_parametros": 8161,
+          "seed": 23,
+          "segundos": 158.2509270999999
+        },
+        {
+          "epocas": 56,
+          "n_parametros": 8161,
+          "seed": 42,
+          "segundos": 77.84790710000016
+        },
+        {
+          "epocas": 122,
+          "n_parametros": 8161,
+          "seed": 67,
+          "segundos": 150.34367070000008
+        },
+        {
+          "epocas": 113,
+          "n_parametros": 8161,
+          "seed": 89,
+          "segundos": 152.97074900000007
+        }
+      ],
+      "modelo": "Transformer",
+      "modo": "completa",
+      "pid": 37360,
+      "resultado_publicavel": true,
+      "tarefa": "monthly_1"
+    }
+  },
+  {
+    "tarefa": "monthly_1",
+    "modelo": "informer",
+    "status": {
+      "atualizado_em_utc": "2026-09-12T17:42:45.798189+00:00",
+      "etapa": "concluida",
+      "execucoes": [
+        {
+          "epocas": 134,
+          "n_parametros": 8977,
+          "seed": 11,
+          "segundos": 226.71289340000112
+        },
+        {
+          "epocas": 51,
+          "n_parametros": 8977,
+          "seed": 23,
+          "segundos": 109.32295630000044
+        },
+        {
+          "epocas": 82,
+          "n_parametros": 8977,
+          "seed": 42,
+          "segundos": 120.07498040000064
+        },
+        {
+          "epocas": 59,
+          "n_parametros": 8977,
+          "seed": 67,
+          "segundos": 99.55264729999908
+        },
+        {
+          "epocas": 64,
+          "n_parametros": 8977,
+          "seed": 89,
+          "segundos": 110.69105540000055
+        }
+      ],
+      "modelo": "Informer",
+      "modo": "completa",
+      "pid": 19564,
+      "resultado_publicavel": true,
+      "tarefa": "monthly_1"
+    }
+  },
+  {
+    "tarefa": "monthly_1",
+    "modelo": "arima",
+    "status": {
+      "erro": "RuntimeError: Refit ARIMA nao convergiu: BMW San Luis Potosi/(2, 0, 2)",
+      "etapa": "falhou",
+      "modelo": "ARIMA",
+      "modo": "completa",
+      "pid": 37504,
+      "resultado_publicavel": false,
+      "tarefa": "monthly_1"
+    }
+  },
+  {
+    "tarefa": "monthly_6",
+    "modelo": "gru",
+    "status": {
+      "atualizado_em_utc": "2026-09-12T17:37:26.955450+00:00",
+      "etapa": "concluida",
+      "execucoes": [
+        {
+          "epocas": 78,
+          "n_parametros": 3686,
+          "seed": 11,
+          "segundos": 33.19610400000056
+        },
+        {
+          "epocas": 65,
+          "n_parametros": 3686,
+          "seed": 23,
+          "segundos": 35.43378060000032
+        },
+        {
+          "epocas": 45,
+          "n_parametros": 3686,
+          "seed": 42,
+          "segundos": 27.47753019999982
+        },
+        {
+          "epocas": 86,
+          "n_parametros": 3686,
+          "seed": 67,
+          "segundos": 32.97130839999954
+        },
+        {
+          "epocas": 67,
+          "n_parametros": 3686,
+          "seed": 89,
+          "segundos": 26.42189689999941
+        }
+      ],
+      "modelo": "GRU",
+      "modo": "completa",
+      "pid": 32432,
+      "resultado_publicavel": true,
+      "tarefa": "monthly_6"
+    }
+  },
+  {
+    "tarefa": "monthly_6",
+    "modelo": "transformer",
+    "status": {
+      "atualizado_em_utc": "2026-09-12T18:05:09.021620+00:00",
+      "etapa": "concluida",
+      "execucoes": [
+        {
+          "epocas": 262,
+          "n_parametros": 8161,
+          "seed": 11,
+          "segundos": 290.7660426000002
+        },
+        {
+          "epocas": 167,
+          "n_parametros": 8161,
+          "seed": 23,
+          "segundos": 266.50755430000027
+        },
+        {
+          "epocas": 115,
+          "n_parametros": 8161,
+          "seed": 42,
+          "segundos": 187.36016799999925
+        },
+        {
+          "epocas": 256,
+          "n_parametros": 8161,
+          "seed": 67,
+          "segundos": 371.8234766000005
+        },
+        {
+          "epocas": 119,
+          "n_parametros": 8161,
+          "seed": 89,
+          "segundos": 180.8361976999986
+        }
+      ],
+      "modelo": "Transformer",
+      "modo": "completa",
+      "pid": 37360,
+      "resultado_publicavel": true,
+      "tarefa": "monthly_6"
+    }
+  },
+  {
+    "tarefa": "monthly_6",
+    "modelo": "informer",
+    "status": {
+      "atualizado_em_utc": "2026-09-12T17:58:43.911678+00:00",
+      "etapa": "concluida",
+      "execucoes": [
+        {
+          "epocas": 102,
+          "n_parametros": 8977,
+          "seed": 11,
+          "segundos": 137.95953100000042
+        },
+        {
+          "epocas": 59,
+          "n_parametros": 8977,
+          "seed": 23,
+          "segundos": 96.14713230000052
+        },
+        {
+          "epocas": 132,
+          "n_parametros": 8977,
+          "seed": 42,
+          "segundos": 195.13395309999942
+        },
+        {
+          "epocas": 106,
+          "n_parametros": 8977,
+          "seed": 67,
+          "segundos": 230.96922989999985
+        },
+        {
+          "epocas": 163,
+          "n_parametros": 8977,
+          "seed": 89,
+          "segundos": 295.47049199999856
+        }
+      ],
+      "modelo": "Informer",
+      "modo": "completa",
+      "pid": 19564,
+      "resultado_publicavel": true,
+      "tarefa": "monthly_6"
+    }
+  }
+]

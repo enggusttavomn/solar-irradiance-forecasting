@@ -1,0 +1,157 @@
+{
+  "observado_utc": "2026-10-04T22:30:23.457738+00:00",
+  "observador": "auditoria_retomada_outubro3",
+  "escopo": "Leitura de estados, processos e probes transitorios de locks em handles GENERIC_READ; nenhum arquivo existente escrito, nenhum processo alterado.",
+  "estados": [
+    {
+      "path": "relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\status.json",
+      "sha256": "2b8af455a465b8fdde0bafad3f29685694542ea8d4e23c0a058e0e82c595dbcd",
+      "etapa": "fila_historico_1998_2022",
+      "heartbeat": "2026-10-04T21:14:02.718256+00:00",
+      "identidade_registrada": {
+        "pid": 6480,
+        "creation_time": "134355095796354414"
+      },
+      "identidade_atual": {
+        "pid": 6480,
+        "creation_time": "134356221176391871"
+      },
+      "mesma_instancia": false,
+      "arvore_ativa": [],
+      "falhas": null,
+      "concluidos": 0,
+      "processos": null
+    },
+    {
+      "path": "relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\runner.json",
+      "sha256": "95ef0d62746eafbd5122cc3013518a096fc15245791f6fdbd1de70de60420670",
+      "etapa": "refit",
+      "heartbeat": "2026-10-04T21:14:08.183006+00:00",
+      "identidade_registrada": {
+        "pid": 27160,
+        "creation_time": "134355095966213380"
+      },
+      "identidade_atual": null,
+      "mesma_instancia": false,
+      "arvore_ativa": [],
+      "falhas": [
+        {
+          "fase": "refit",
+          "tarefa": "daily_30",
+          "modelo": "XGBoost",
+          "returncode": 1073807364,
+          "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_xgboost.log",
+          "concluido_em_utc": "2026-10-04T21:14:08.153880+00:00"
+        },
+        {
+          "fase": "refit",
+          "tarefa": "daily_30",
+          "modelo": "DilatedRNN",
+          "returncode": 1073807364,
+          "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_dilatedrnn.log",
+          "concluido_em_utc": "2026-10-04T21:14:08.163095+00:00"
+        },
+        {
+          "fase": "refit",
+          "tarefa": "hourly_72_extension",
+          "modelo": "XGBoost",
+          "returncode": 1073807364,
+          "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_xgboost.log",
+          "concluido_em_utc": "2026-10-04T21:14:08.171527+00:00"
+        },
+        {
+          "fase": "refit",
+          "tarefa": "daily_30",
+          "modelo": "Transformer",
+          "returncode": 1073807364,
+          "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_transformer.log",
+          "concluido_em_utc": "2026-10-04T21:14:08.181617+00:00"
+        }
+      ],
+      "concluidos": 50,
+      "processos": []
+    },
+    {
+      "path": "relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_atual\\status.json",
+      "sha256": "514d3e553158a0ea29ef2e32a4e27a1ed6f6b0cea8df30b8f600634ddb1758fc",
+      "etapa": "pronto_para_revisao_visual",
+      "heartbeat": "2026-10-02T05:04:45.543222+00:00",
+      "identidade_registrada": {
+        "pid": 22428,
+        "creation_time": "134353873231976989"
+      },
+      "identidade_atual": null,
+      "mesma_instancia": false,
+      "arvore_ativa": [],
+      "falhas": null,
+      "concluidos": 0,
+      "processos": null
+    },
+    {
+      "path": "relatorios\\quantizacao_todos_modelos_20260929\\finalizacao_20261001\\status.json",
+      "sha256": "44c12e140b3382245bd91906661836739587fd4557f8aa025be068e8088d94fd",
+      "etapa": "interrompida",
+      "heartbeat": "2026-10-03T14:03:05.971661+00:00",
+      "identidade_registrada": {
+        "pid": 6260,
+        "creation_time": "134353873065674733"
+      },
+      "identidade_atual": {
+        "pid": 6260,
+        "creation_time": "134356221174080121"
+      },
+      "mesma_instancia": false,
+      "arvore_ativa": [],
+      "falhas": null,
+      "concluidos": 0,
+      "processos": null
+    }
+  ],
+  "locks": [
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\.execucao.lock",
+      "observado_utc": "2026-10-04T22:30:23.653834+00:00",
+      "sha256_antes": "58554dc20f011b428b2400950867e9357e13712aaf5fa66c8749e9bca8801a1e",
+      "mtime_antes_ns": 1791035990277854100,
+      "lock_livre_no_instante": true,
+      "unlock_ok": true,
+      "sha256_depois": "58554dc20f011b428b2400950867e9357e13712aaf5fa66c8749e9bca8801a1e",
+      "mtime_depois_ns": 1791035990277854100,
+      "bytes_e_mtime_preservados": true
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\.execucao.lock",
+      "observado_utc": "2026-10-04T22:30:23.667977+00:00",
+      "sha256_antes": "6f1de1cc3fce20b877aca35d57fbd2ce7b1f01c20ae25b2c194762445b10db3e",
+      "mtime_antes_ns": 1791035999196291000,
+      "lock_livre_no_instante": true,
+      "unlock_ok": true,
+      "sha256_depois": "6f1de1cc3fce20b877aca35d57fbd2ce7b1f01c20ae25b2c194762445b10db3e",
+      "mtime_depois_ns": 1791035999196291000,
+      "bytes_e_mtime_preservados": true
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_atual\\.execucao.lock",
+      "observado_utc": "2026-10-04T22:30:23.680848+00:00",
+      "sha256_antes": "58554dc20f011b428b2400950867e9357e13712aaf5fa66c8749e9bca8801a1e",
+      "mtime_antes_ns": 1791035990622675500,
+      "lock_livre_no_instante": true,
+      "unlock_ok": true,
+      "sha256_depois": "58554dc20f011b428b2400950867e9357e13712aaf5fa66c8749e9bca8801a1e",
+      "mtime_depois_ns": 1791035990622675500,
+      "bytes_e_mtime_preservados": true
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\finalizacao_20261001\\.execucao.lock",
+      "observado_utc": "2026-10-04T22:30:23.692736+00:00",
+      "sha256_antes": "f949a423fce3c300d21bd48354e76c696d9db95e5301c8cb4d32b5fc2cc486c2",
+      "mtime_antes_ns": 1791035966382866100,
+      "lock_livre_no_instante": true,
+      "unlock_ok": true,
+      "sha256_depois": "f949a423fce3c300d21bd48354e76c696d9db95e5301c8cb4d32b5fc2cc486c2",
+      "mtime_depois_ns": 1791035966382866100,
+      "bytes_e_mtime_preservados": true
+    }
+  ],
+  "interpretacao": "Estados historicos obsoletos; arvores antigas encerradas. PID6480 atual nao e a instancia registrada. Reinicio confirmado por eventos em arquivo observacao_eventos_windows_readonly.json; causa especifica de hardware nao inferida."
+}

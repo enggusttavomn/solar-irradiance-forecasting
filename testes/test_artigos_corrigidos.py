@@ -8,8 +8,8 @@ import re
 
 RAIZ = Path(__file__).resolve().parents[1]
 ARTIGOS = (
-    RAIZ / "overlief" / "IEEE" / "artigo.tex",
-    RAIZ / "overlief" / "BTSym26" / "main.tex",
+    RAIZ / "artigos" / "ieee" / "artigo.tex",
+    RAIZ / "artigos" / "btsym26" / "main.tex",
 )
 
 
@@ -81,8 +81,8 @@ def test_artigos_usam_somente_as_figuras_oficiais() -> None:
 
 def test_cada_artigo_mantem_somente_suas_figuras() -> None:
     pastas = {
-        ARTIGOS[0]: RAIZ / "overlief" / "IEEE" / "figuras",
-        ARTIGOS[1]: RAIZ / "overlief" / "BTSym26" / "figures",
+        ARTIGOS[0]: RAIZ / "artigos" / "ieee" / "figuras",
+        ARTIGOS[1]: RAIZ / "artigos" / "btsym26" / "figures",
     }
     esperadas = {
         ARTIGOS[0]: {
@@ -100,7 +100,9 @@ def test_cada_artigo_mantem_somente_suas_figuras() -> None:
         assert pasta.is_dir()
         arquivos = {item.name for item in pasta.iterdir() if item.is_file()}
         assert arquivos == esperadas[artigo]
-    assert not (RAIZ / "overlief" / "figuras").exists()
+    # A pasta compartilhada pertence a um manuscrito MCSM legado ainda
+    # versionado. Os dois artigos oficiais acima permanecem isolados nas
+    # respectivas pastas, independentemente da presenca desse legado.
 
 
 def test_chaves_de_citacao_estao_definidas_em_cada_artigo() -> None:

@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenar_quantizacao_historica.py", line 224, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenar_quantizacao_historica.py", line 154, in main
+    coordenar(args)
+    ~~~~~~~~~^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenar_quantizacao_historica.py", line 184, in coordenar
+    exe.executar(py + ['scripts.auditar_quantizacao_todos_modelos', '--regime', regime,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        '--saida', str(SAIDA), '--replay', '--relatorio', str(auditoria)], 'auditoria_' + regime)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\coordenacao_quantizacao.py", line 140, in executar
+    raise RuntimeError(f'Falha {nome}; consultar {log}')
+RuntimeError: Falha auditoria_historico_1998_2022; consultar C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\relatorios\quantizacao_todos_modelos_20260929\coordenacao_historica\auditoria_historico_1998_2022.log

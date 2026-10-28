@@ -1,0 +1,30 @@
+
+Inicio 2026-10-06T23:27:26.691407+00:00
+Auditoria historico_1998_2022/hourly_72_extension/TimesNet
+Auditoria historico_1998_2022/hourly_72_extension/XGBoost
+Auditoria historico_1998_2022/hourly_72_extension/LSTM
+Auditoria historico_1998_2022/hourly_72_extension/DilatedRNN
+Auditoria historico_1998_2022/hourly_72_extension/GRU
+Auditoria historico_1998_2022/hourly_72_extension/Transformer
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\auditar_quantizacao_todos_modelos.py", line 351, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\auditar_quantizacao_todos_modelos.py", line 340, in main
+    resultado = auditar(args)
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\auditar_quantizacao_todos_modelos.py", line 300, in auditar
+    replay = replay_estatistico(ctx, pasta, modelo, variante, fase) if modelo in ESTATISTICOS else replay_aprendido(ctx, pasta, modelo, variante, fase, contrato)
+                                                                                                   ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\auditar_quantizacao_todos_modelos.py", line 117, in replay_aprendido
+    with estrito.ativar_adaptador(contrato=contrato):
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gm.nascimento\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_atencao_deterministica_v1.py", line 312, in ativar_adaptador
+    validar_contrato_adaptado(contrato)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\codigo_fonte\experimento_atencao_deterministica_v1.py", line 161, in validar_contrato_adaptado
+    raise ValueError("Politica numerica/ambiente/piloto diverge do contrato.")
+ValueError: Politica numerica/ambiente/piloto diverge do contrato.

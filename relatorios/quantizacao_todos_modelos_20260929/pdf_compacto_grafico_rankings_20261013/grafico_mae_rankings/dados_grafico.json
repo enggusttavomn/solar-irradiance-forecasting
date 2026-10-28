@@ -1,0 +1,372 @@
+{
+  "regime": "atual",
+  "tipo": "quatro rankings de pontos horizontais",
+  "pontos": [
+    {
+      "regime": "atual",
+      "tarefa": "hourly_72_extension",
+      "modelo": "TimesNet",
+      "modelo_exibido": "TimesNet",
+      "variante": "q256",
+      "horizonte": 72,
+      "MAE_wm2": 47.91786788380951,
+      "posicao": 1,
+      "menor_MAE_conjunto": true,
+      "posicao_x": 47.91786788380951,
+      "posicao_y": 0,
+      "cor": "#218A8A"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "hourly_72_extension",
+      "modelo": "XGBoost",
+      "modelo_exibido": "XGBoost",
+      "variante": "sem_quantizacao",
+      "horizonte": 72,
+      "MAE_wm2": 50.395546778495074,
+      "posicao": 2,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 50.395546778495074,
+      "posicao_y": 1,
+      "cor": "#728B9D"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "hourly_72_extension",
+      "modelo": "GRU",
+      "modelo_exibido": "GRU",
+      "variante": "q256",
+      "horizonte": 72,
+      "MAE_wm2": 51.52794904608832,
+      "posicao": 3,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 51.52794904608832,
+      "posicao_y": 2,
+      "cor": "#728B9D"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "hourly_72_extension",
+      "modelo": "Climatologia",
+      "modelo_exibido": "Climatologia",
+      "variante": "sem_quantizacao",
+      "horizonte": 72,
+      "MAE_wm2": 52.87305593816958,
+      "posicao": 4,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 52.87305593816958,
+      "posicao_y": 3,
+      "cor": "#728B9D"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "hourly_72_extension",
+      "modelo": "Transformer",
+      "modelo_exibido": "Transformer",
+      "variante": "sem_quantizacao",
+      "horizonte": 72,
+      "MAE_wm2": 53.20606057784014,
+      "posicao": 5,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 53.20606057784014,
+      "posicao_y": 4,
+      "cor": "#728B9D"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "daily_30",
+      "modelo": "TimesNet",
+      "modelo_exibido": "TimesNet",
+      "variante": "q64",
+      "horizonte": 30,
+      "MAE_wm2": 42.16552612907109,
+      "posicao": 1,
+      "menor_MAE_conjunto": true,
+      "posicao_x": 42.16552612907109,
+      "posicao_y": 0,
+      "cor": "#218A8A"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "daily_30",
+      "modelo": "Transformer",
+      "modelo_exibido": "Transformer",
+      "variante": "q256",
+      "horizonte": 30,
+      "MAE_wm2": 43.886935199784816,
+      "posicao": 2,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 43.886935199784816,
+      "posicao_y": 1,
+      "cor": "#728B9D"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "daily_30",
+      "modelo": "XGBoost",
+      "modelo_exibido": "XGBoost",
+      "variante": "sem_quantizacao",
+      "horizonte": 30,
+      "MAE_wm2": 43.93346827238738,
+      "posicao": 3,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 43.93346827238738,
+      "posicao_y": 2,
+      "cor": "#728B9D"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "daily_30",
+      "modelo": "DilatedRNN",
+      "modelo_exibido": "DilatedRNN",
+      "variante": "q256",
+      "horizonte": 30,
+      "MAE_wm2": 44.135296261848815,
+      "posicao": 4,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 44.135296261848815,
+      "posicao_y": 3,
+      "cor": "#728B9D"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "daily_30",
+      "modelo": "LSTM",
+      "modelo_exibido": "LSTM",
+      "variante": "sem_quantizacao",
+      "horizonte": 30,
+      "MAE_wm2": 44.18417844043798,
+      "posicao": 5,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 44.18417844043798,
+      "posicao_y": 4,
+      "cor": "#728B9D"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_1",
+      "modelo": "Climatologia",
+      "modelo_exibido": "Climatologia",
+      "variante": "q256",
+      "horizonte": 1,
+      "MAE_wm2": 12.566816080875448,
+      "posicao": 1,
+      "menor_MAE_conjunto": true,
+      "posicao_x": 12.566816080875448,
+      "posicao_y": 0,
+      "cor": "#218A8A"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_1",
+      "modelo": "Informer",
+      "modelo_exibido": "Informer",
+      "variante": "q128",
+      "horizonte": 1,
+      "MAE_wm2": 12.7265696764498,
+      "posicao": 2,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 12.7265696764498,
+      "posicao_y": 1,
+      "cor": "#728B9D"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_1",
+      "modelo": "Transformer",
+      "modelo_exibido": "Transformer",
+      "variante": "q128",
+      "horizonte": 1,
+      "MAE_wm2": 13.146652040564389,
+      "posicao": 3,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 13.146652040564389,
+      "posicao_y": 2,
+      "cor": "#728B9D"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_1",
+      "modelo": "DilatedRNN",
+      "modelo_exibido": "DilatedRNN",
+      "variante": "q128",
+      "horizonte": 1,
+      "MAE_wm2": 13.169361600871218,
+      "posicao": 4,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 13.169361600871218,
+      "posicao_y": 3,
+      "cor": "#728B9D"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_1",
+      "modelo": "GRU",
+      "modelo_exibido": "GRU",
+      "variante": "sem_quantizacao",
+      "horizonte": 1,
+      "MAE_wm2": 13.864820333003896,
+      "posicao": 5,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 13.864820333003896,
+      "posicao_y": 4,
+      "cor": "#728B9D"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_6",
+      "modelo": "Climatologia",
+      "modelo_exibido": "Climatologia",
+      "variante": "q128",
+      "horizonte": 6,
+      "MAE_wm2": 13.03002312229689,
+      "posicao": 1,
+      "menor_MAE_conjunto": true,
+      "posicao_x": 13.03002312229689,
+      "posicao_y": 0,
+      "cor": "#218A8A"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_6",
+      "modelo": "Informer",
+      "modelo_exibido": "Informer",
+      "variante": "q128",
+      "horizonte": 6,
+      "MAE_wm2": 13.667870528923489,
+      "posicao": 2,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 13.667870528923489,
+      "posicao_y": 1,
+      "cor": "#728B9D"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_6",
+      "modelo": "TimesNet",
+      "modelo_exibido": "TimesNet",
+      "variante": "q128",
+      "horizonte": 6,
+      "MAE_wm2": 14.217592467226469,
+      "posicao": 3,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 14.217592467226469,
+      "posicao_y": 2,
+      "cor": "#728B9D"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_6",
+      "modelo": "DilatedRNN",
+      "modelo_exibido": "DilatedRNN",
+      "variante": "q128",
+      "horizonte": 6,
+      "MAE_wm2": 14.352491564973665,
+      "posicao": 4,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 14.352491564973665,
+      "posicao_y": 3,
+      "cor": "#728B9D"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_6",
+      "modelo": "Transformer",
+      "modelo_exibido": "Transformer",
+      "variante": "q64",
+      "horizonte": 6,
+      "MAE_wm2": 14.396546948646185,
+      "posicao": 5,
+      "menor_MAE_conjunto": false,
+      "posicao_x": 14.396546948646185,
+      "posicao_y": 4,
+      "cor": "#728B9D"
+    }
+  ],
+  "paineis": [
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelos": [
+        "TimesNet",
+        "XGBoost",
+        "GRU",
+        "Climatologia",
+        "Transformer"
+      ],
+      "eixo_x": [
+        47.23040283358552,
+        53.893525628064125
+      ],
+      "escala_x": "linear; intervalo próprio",
+      "ordem_mae_crescente": true
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelos": [
+        "TimesNet",
+        "Transformer",
+        "XGBoost",
+        "DilatedRNN",
+        "LSTM"
+      ],
+      "eixo_x": [
+        41.903101328593394,
+        44.44660324091568
+      ],
+      "escala_x": "linear; intervalo próprio",
+      "ordem_mae_crescente": true
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelos": [
+        "Climatologia",
+        "Informer",
+        "Transformer",
+        "DilatedRNN",
+        "GRU"
+      ],
+      "eixo_x": [
+        12.39807552809875,
+        14.033560885780595
+      ],
+      "escala_x": "linear; intervalo próprio",
+      "ordem_mae_crescente": true
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelos": [
+        "Climatologia",
+        "Informer",
+        "TimesNet",
+        "DilatedRNN",
+        "Transformer"
+      ],
+      "eixo_x": [
+        12.852375024871483,
+        14.574195046071592
+      ],
+      "escala_x": "linear; intervalo próprio",
+      "ordem_mae_crescente": true
+    }
+  ],
+  "total_pontos": 20,
+  "menores_MAE_destacados": 4,
+  "criterio": "Cinco menores MAEs observados no teste por tarefa, com condição escolhida na validação.",
+  "interpretacao": "Escalas próprias mostram diferenças dentro de cada tarefa. Os onze modelos constam nas tabelas.",
+  "largura_pt": 785.8897637795277,
+  "altura_pt": 466.27559055118115,
+  "arquivos": {
+    "pdf": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\pdf_compacto_grafico_rankings_20261013\\grafico_mae_rankings\\mae_cinco_menores_por_tarefa.pdf",
+    "svg": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\pdf_compacto_grafico_rankings_20261013\\grafico_mae_rankings\\mae_cinco_menores_por_tarefa.svg",
+    "png": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\pdf_compacto_grafico_rankings_20261013\\grafico_mae_rankings\\mae_cinco_menores_por_tarefa.png"
+  },
+  "arquivos_sha256": {
+    "pdf": "431f4c60c3bbeb4286b4660053c586d584ab10b898880eb6e03074bca194885d",
+    "svg": "2ccffedd00b5a6dab8a0ffd0db9a0228f3aaef1a358bfc65f9838554268d2268",
+    "png": "1dcb83e2000a8beac6538bf7c4e9cf251c5e6cdc3c549670bc1caf703ebda1c1"
+  }
+}

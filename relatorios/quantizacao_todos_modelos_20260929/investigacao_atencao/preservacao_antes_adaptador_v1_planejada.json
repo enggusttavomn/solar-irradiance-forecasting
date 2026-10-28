@@ -1,0 +1,471 @@
+{
+  "iniciado_em_utc": "2026-09-30T11:35:27.474900+00:00",
+  "ok": false,
+  "operacao": "mover_preservando_conteudo",
+  "pares": [
+    {
+      "tarefa": "daily_30",
+      "modelo": "transformer",
+      "origem": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer",
+      "destino": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer",
+      "arquivos": [
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\contrato_execucao.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\contrato_execucao.json",
+          "bytes": 8405,
+          "sha256": "20935d4bb2fe8a255a2ebb0abf94143107f48d3189ed4e03aab947b69b9585b9"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\controle_validacao.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\controle_validacao.json",
+          "bytes": 1063,
+          "sha256": "d617ccded8bf375ae684abcdbbd9f1f32c0636aefa9f4e30f841ea2c65ccbb8a"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\controle_validacao_divergencia.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\controle_validacao_divergencia.json",
+          "bytes": 1063,
+          "sha256": "d617ccded8bf375ae684abcdbbd9f1f32c0636aefa9f4e30f841ea2c65ccbb8a"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\escalas_selecao.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\escalas_selecao.csv",
+          "bytes": 1385,
+          "sha256": "e365d815355bdaee6c596613dbe1ca7414642a2233029626e90ac1ea58c683f5"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\clipping_selecao.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\clipping_selecao.json",
+          "bytes": 426,
+          "sha256": "df5e09df314189e38f780725ec2f4a92b83e33cc0256563c3b398d2ca7d2c80e"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\modelos\\seed11_selecao.pt",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\modelos\\seed11_selecao.pt",
+          "bytes": 91123,
+          "sha256": "1f4d927703f5a27c4720bcb52be0916144a4df8414f76acc1a6f5542f6befbb7"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\modelos\\seed23_selecao.pt",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\modelos\\seed23_selecao.pt",
+          "bytes": 91123,
+          "sha256": "7fc58709e109bcd8f1ff04b9f1a87574a2fa773770f297f7beadd788d674f620"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\modelos\\seed42_selecao.pt",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\modelos\\seed42_selecao.pt",
+          "bytes": 91123,
+          "sha256": "8ac2a398227313d7f5f8695ddae4ae0c3e3706d517de1b8e51c94a7a3b298ed2"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\modelos\\seed67_selecao.pt",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\modelos\\seed67_selecao.pt",
+          "bytes": 91123,
+          "sha256": "d869a15e788129eb59fb3e41b1ab0761a68afe716e609144e0ead66bd050a5e1"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\modelos\\seed89_selecao.pt",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\modelos\\seed89_selecao.pt",
+          "bytes": 91123,
+          "sha256": "4cc2a62a0ba1b332d05df93019303157a643e93a7a9908d4ed4aba0895aebabc"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed11.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed11.csv",
+          "bytes": 536,
+          "sha256": "959cb681430c92e8fdc9a74182e70641354ccc3c97ae207e494cfcf3faac4afc"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed11.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed11.json",
+          "bytes": 1076,
+          "sha256": "106e26eb1db55fe0e97c3bd629dd64b3f652ce065b8e6e5d33ff53592ffaed0f"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed11.npz",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed11.npz",
+          "bytes": 740631,
+          "sha256": "740903e0beb989f0367475cffe8a952b7f83f4b88fd2c33c65f8034da613b733"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed23.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed23.csv",
+          "bytes": 1397,
+          "sha256": "384691c62de792b12c773ec8654b7d243c6bd8838b0c46b5b1fc1c60d2a91fac"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed23.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed23.json",
+          "bytes": 1077,
+          "sha256": "13a3bc145aee15e90bf3797bea62641ffd1654f351e8a5865ebd15c5a27c7df0"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed23.npz",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed23.npz",
+          "bytes": 737902,
+          "sha256": "3a05ce232a32e913a01067a7dbe111429ae365a4f7649375340fc00484ed1f3a"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed42.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed42.csv",
+          "bytes": 992,
+          "sha256": "38782275f4f87ac526c0d0f37e0d54a2afa324a7988d81df77d66ab464c5b487"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed42.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed42.json",
+          "bytes": 1075,
+          "sha256": "677193636232fa0d752a5bdcd3082e70c871fbefd9eb10b1a51789c2bb7be8d6"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed42.npz",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed42.npz",
+          "bytes": 739851,
+          "sha256": "76e307069ff9331bde23656a5887fb988608394eb465170a055018daadc08742"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed67.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed67.csv",
+          "bytes": 1409,
+          "sha256": "719f5da077b02745f07e5bad42b4666464df895bfbffc53bf116a68b5074e687"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed67.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed67.json",
+          "bytes": 1077,
+          "sha256": "1d99484891181dcd84d12d9b49ed4a3b3a537528f15f0f345bbd0bb8da523598"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed67.npz",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed67.npz",
+          "bytes": 741931,
+          "sha256": "bf65b5b19973b84ec65efcc6875468e9fec5f0f26534ded545b3eae3b9ec9e6b"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed89.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed89.csv",
+          "bytes": 1400,
+          "sha256": "861ae6799bab5bae2bdd699a2c2e68e30a4802c15915e34f742d0d206ed5a027"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed89.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed89.json",
+          "bytes": 1076,
+          "sha256": "1fd0418a19c870911ddfe0925156c22d24045137973641c2d1d5f7f10fc858dd"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed89.npz",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\sem_quantizacao\\selecao\\seed89.npz",
+          "bytes": 742184,
+          "sha256": "74c492a8da63e0a2cde09f858bf0222260a937a00fd47c3a769c3460c1b3d52a"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\status.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\transformer\\status.json",
+          "bytes": 196,
+          "sha256": "9c7f9b7a395e90660d9146b0ae67e206302af80767f36a1e8c2f20f6081239e1"
+        }
+      ]
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "informer",
+      "origem": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer",
+      "destino": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer",
+      "arquivos": [
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\contrato_execucao.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\contrato_execucao.json",
+          "bytes": 8396,
+          "sha256": "fd97e3ec81b622b5df49737b9061646d2b9a24e2d9e8f694f3e9e0e2daabd83c"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\controle_validacao.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\controle_validacao.json",
+          "bytes": 1059,
+          "sha256": "0800117a1e80e5c104beda2c8a4e079dc0377c7832995c7e1ca8730ddea4f7aa"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\controle_validacao_divergencia.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\controle_validacao_divergencia.json",
+          "bytes": 1059,
+          "sha256": "0800117a1e80e5c104beda2c8a4e079dc0377c7832995c7e1ca8730ddea4f7aa"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\escalas_selecao.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\escalas_selecao.csv",
+          "bytes": 1385,
+          "sha256": "e365d815355bdaee6c596613dbe1ca7414642a2233029626e90ac1ea58c683f5"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\clipping_selecao.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\clipping_selecao.json",
+          "bytes": 426,
+          "sha256": "df5e09df314189e38f780725ec2f4a92b83e33cc0256563c3b398d2ca7d2c80e"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\modelos\\seed11_selecao.pt",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\modelos\\seed11_selecao.pt",
+          "bytes": 97234,
+          "sha256": "3bf4cfe89f09c94bcfc4ca348d1531f90b3515ba3f9f01a7c6c6499119959deb"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\modelos\\seed23_selecao.pt",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\modelos\\seed23_selecao.pt",
+          "bytes": 97234,
+          "sha256": "68fa8830ecbae3b22a57f4999cab669c297595d2613e961822c9930f41fea33d"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\modelos\\seed42_selecao.pt",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\modelos\\seed42_selecao.pt",
+          "bytes": 97234,
+          "sha256": "923344fd1209237ff38c277f2af47380adc96ea6f924dccd3196daf60ee6069d"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\modelos\\seed67_selecao.pt",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\modelos\\seed67_selecao.pt",
+          "bytes": 97234,
+          "sha256": "976f880a2cbe84d9d05e1541e34d072cf65ee1ced18bfdc5dbc4944c41af3fb8"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\modelos\\seed89_selecao.pt",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\modelos\\seed89_selecao.pt",
+          "bytes": 97234,
+          "sha256": "a8dadf1e62eb1dd6cdece1e7e985ce073cc8be9aacc7962c52b7566567e86784"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed11.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\selecao\\seed11.csv",
+          "bytes": 682,
+          "sha256": "aac693a8dcaf2c8a068f3c7dc1308c3762b5eac9a6e1faa180e409c4f9994fb6"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed11.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\selecao\\seed11.json",
+          "bytes": 1067,
+          "sha256": "f32b6566415465afebb325a4b3424772f8b21e2cee1438eac8ebb3399ac7b585"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed11.npz",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\selecao\\seed11.npz",
+          "bytes": 738838,
+          "sha256": "5da3e4dfb83e5d7d2e0d88f8a8456016fcbec24e5dc002a223a7ae75c463bafd"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed23.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\selecao\\seed23.csv",
+          "bytes": 812,
+          "sha256": "b595e165579d689ca0bedcaeb100519a13f2f828dc70b43998ecdcd89b9fad24"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed23.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\selecao\\seed23.json",
+          "bytes": 1067,
+          "sha256": "cd892be1ec0b38fe0f17d0ea0867e9b30c7a7e38ceea4f3174c2ab4b03002720"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed23.npz",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\selecao\\seed23.npz",
+          "bytes": 738131,
+          "sha256": "1058de244cd7421e90415e3289292ca57e18ec8756e10daaa10d6862ccda0f13"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed42.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\selecao\\seed42.csv",
+          "bytes": 586,
+          "sha256": "4ac445ecdc8ac0cd9e6add0c702b79a64b6cfe4ccc6319c26a344f3cae97dd1b"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed42.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\selecao\\seed42.json",
+          "bytes": 1066,
+          "sha256": "bdf100c4594eeb40da06eb5820450582598011add11545cd80a9d6dfdc5e7fb4"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed42.npz",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\selecao\\seed42.npz",
+          "bytes": 738252,
+          "sha256": "df7b5dfc9b48f94c100acb408564032a25812a0a8c36cab44942d3e8db788f7a"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed67.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\selecao\\seed67.csv",
+          "bytes": 1085,
+          "sha256": "80bc74e1a47c89e479cdce131e65915e94b9dda709766ace1c3f66c1da7405fe"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed67.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\selecao\\seed67.json",
+          "bytes": 1068,
+          "sha256": "7a08e0f7a8cf1a4416e7fcaa0bdba2fce9b7089a4bf9b66302f839222a7cc0f9"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed67.npz",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\selecao\\seed67.npz",
+          "bytes": 734861,
+          "sha256": "dce611311e28eb6035b7cfe53a9f813ecfe79f90cc01fc07c27be867f4884b67"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed89.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\selecao\\seed89.csv",
+          "bytes": 591,
+          "sha256": "4d0ec866708d9d020ad78366a99fbea3151621708c01df2332a14c8c28b3211b"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed89.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\selecao\\seed89.json",
+          "bytes": 1066,
+          "sha256": "8e8395b0c2468cbda6236f5e853fffa6b35657dd2b402facdb026076ad087c0d"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\sem_quantizacao\\selecao\\seed89.npz",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\sem_quantizacao\\selecao\\seed89.npz",
+          "bytes": 739396,
+          "sha256": "6f995f5b9d4ead571b408ef853fdecffc41fb4e594605200aead174af58ea09c"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\status.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\daily_30\\informer\\status.json",
+          "bytes": 193,
+          "sha256": "5260002387d7005bba6c734eb245f6c40bf8c018be72d8c24d27eda734a6f3e0"
+        }
+      ]
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "transformer",
+      "origem": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer",
+      "destino": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\transformer",
+      "arquivos": [
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\contrato_execucao.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\transformer\\contrato_execucao.json",
+          "bytes": 7689,
+          "sha256": "cf1830d86eb8a235a6e2a5d6c2fcfbfba0a301092e647b2807faf723da1f4ca3"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\controle_validacao.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\transformer\\controle_validacao.json",
+          "bytes": 958,
+          "sha256": "792c16628c581c1639e5f0317ff5943392f5495449b53fdc0367b3415d775c84"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\controle_validacao_divergencia.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\transformer\\controle_validacao_divergencia.json",
+          "bytes": 958,
+          "sha256": "792c16628c581c1639e5f0317ff5943392f5495449b53fdc0367b3415d775c84"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\escalas_selecao.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\transformer\\escalas_selecao.csv",
+          "bytes": 1206,
+          "sha256": "9f345a9bcf20b5206120e9d8dc96a9cbfd3a7a3b708414ec22e6b3ba1fd276e9"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\sem_quantizacao\\clipping_selecao.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\transformer\\sem_quantizacao\\clipping_selecao.json",
+          "bytes": 427,
+          "sha256": "905eaead3cd34950bac7f8ed8f4861e5e35f2f6a61c30ff7cc8b0fddcf4ff511"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\sem_quantizacao\\modelos\\seed42_selecao.pt",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\transformer\\sem_quantizacao\\modelos\\seed42_selecao.pt",
+          "bytes": 92339,
+          "sha256": "7d28d9c53f11585d20992c67dc9fb02f2b23a7323d41c4275f40923d4c291aca"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\sem_quantizacao\\selecao\\seed42.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\transformer\\sem_quantizacao\\selecao\\seed42.csv",
+          "bytes": 1401,
+          "sha256": "7366e23b6600ea0296b834c5016e80580a14eb6886e4182eb68973f7a70ef301"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\sem_quantizacao\\selecao\\seed42.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\transformer\\sem_quantizacao\\selecao\\seed42.json",
+          "bytes": 1110,
+          "sha256": "0c9d6a6178c12193bbb69db5fc606aa76fb8637bae12a30a7f4c8cef603e1f77"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\sem_quantizacao\\selecao\\seed42.npz",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\transformer\\sem_quantizacao\\selecao\\seed42.npz",
+          "bytes": 1441982,
+          "sha256": "3a3520ccf466653891b42d2a04611e8571103a5dcc6d095d9776e2cf4c340e8a"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\status.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\transformer\\status.json",
+          "bytes": 207,
+          "sha256": "3e8a9d6cbe0127e08b4d2bdd5378bf7b3ae52bafc66b4614a867b7b976fcf45b"
+        }
+      ]
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "informer",
+      "origem": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\informer",
+      "destino": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\informer",
+      "arquivos": [
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\informer\\contrato_execucao.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\informer\\contrato_execucao.json",
+          "bytes": 7680,
+          "sha256": "672097c574ae5cbc89ce8f30c1b22ad008f408aefdf1f471ea3cc96458b6b65b"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\informer\\controle_validacao.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\informer\\controle_validacao.json",
+          "bytes": 957,
+          "sha256": "817087d7b8f13e106de90d8c887f6c118f1ad6e91bf6cc9c50db5935bcc9dc8b"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\informer\\controle_validacao_divergencia.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\informer\\controle_validacao_divergencia.json",
+          "bytes": 957,
+          "sha256": "817087d7b8f13e106de90d8c887f6c118f1ad6e91bf6cc9c50db5935bcc9dc8b"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\informer\\escalas_selecao.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\informer\\escalas_selecao.csv",
+          "bytes": 1206,
+          "sha256": "9f345a9bcf20b5206120e9d8dc96a9cbfd3a7a3b708414ec22e6b3ba1fd276e9"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\informer\\sem_quantizacao\\clipping_selecao.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\informer\\sem_quantizacao\\clipping_selecao.json",
+          "bytes": 427,
+          "sha256": "905eaead3cd34950bac7f8ed8f4861e5e35f2f6a61c30ff7cc8b0fddcf4ff511"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\informer\\sem_quantizacao\\modelos\\seed42_selecao.pt",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\informer\\sem_quantizacao\\modelos\\seed42_selecao.pt",
+          "bytes": 98386,
+          "sha256": "caf7b5fdc5d1b7fdfc7a5be300f5f9c369544652434746de95121050ec2703ed"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\informer\\sem_quantizacao\\selecao\\seed42.csv",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\informer\\sem_quantizacao\\selecao\\seed42.csv",
+          "bytes": 437,
+          "sha256": "47067b355217a7c40bd74560cc394da3e15fcf30128eb93f816f56011f2c2f3d"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\informer\\sem_quantizacao\\selecao\\seed42.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\informer\\sem_quantizacao\\selecao\\seed42.json",
+          "bytes": 1100,
+          "sha256": "343324eb87da0f328249b2a186d9ee0afe3b27a55fbc820e222c02468f32be0f"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\informer\\sem_quantizacao\\selecao\\seed42.npz",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\informer\\sem_quantizacao\\selecao\\seed42.npz",
+          "bytes": 1329978,
+          "sha256": "e54af265e1cc3ead017acd9e2a247d99da2c1a0bb88a717a481637150af47d72"
+        },
+        {
+          "origem_logica": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\informer\\status.json",
+          "arquivo_preservado": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_atencao_deterministica_v1\\hourly_72_extension\\informer\\status.json",
+          "bytes": 204,
+          "sha256": "3169f1422b69c0e6f85bd23a1c26a14a5c2b86a1305fcad999aa79d583716829"
+        }
+      ]
+    }
+  ]
+}

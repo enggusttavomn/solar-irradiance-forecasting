@@ -1,0 +1,448 @@
+{
+  "gerado_em_utc": "2026-09-22T10:26:45.507735+00:00",
+  "fonte": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_mensal_v2_20260920",
+  "canonico": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2",
+  "sem_treinamento": true,
+  "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "torch": "2.12.0+cu126",
+  "tarefas": [
+    {
+      "tarefa": "monthly_1",
+      "manifesto": {
+        "arquivos_verificados": 167,
+        "divergencias": []
+      },
+      "codigo": {
+        "experimento_multirresolucao.py": {
+          "contrato": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+          "atual": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+          "confere_atualmente": true
+        },
+        "otimizacao_timesnet_mensal.py": {
+          "contrato": "a0b2d21e00c782189a23bc67993e36cf8f0e4853c3ce4e5c24e93c2611ca0555",
+          "atual": "dd18b1832427dcae6a49e7336145c93133b6dc1babf432c6634005ac8fd15e12",
+          "confere_atualmente": false
+        },
+        "timesnet_horario.py": {
+          "contrato": "ad3859c1044fb132d0d521817f579f8308a478fdf322b749ff42c8d3893c95f2",
+          "atual": "ad3859c1044fb132d0d521817f579f8308a478fdf322b749ff42c8d3893c95f2",
+          "confere_atualmente": true
+        },
+        "treinamento_timesnet_otimizacao.py": {
+          "contrato": "6b096408f2124877a16e342feb789b090f3bb592b10dc399af0004d97e5b42c9",
+          "atual": "6b096408f2124877a16e342feb789b090f3bb592b10dc399af0004d97e5b42c9",
+          "confere_atualmente": true
+        }
+      },
+      "entradas_integras": 10,
+      "vencedor": {
+        "DP_MAE_sementes_wm2": 0.18840995019584797,
+        "MAE_validacao_ensemble_wm2": 14.711143142784774,
+        "MAE_validacao_media_sementes_wm2": 14.907832225099867,
+        "alvo": "anomalia",
+        "blocos": 1,
+        "d_ff": 16,
+        "d_model": 8,
+        "dropout": 0.1,
+        "epocas": {
+          "11": 3,
+          "23": 25,
+          "42": 7,
+          "67": 5,
+          "89": 23
+        },
+        "nome": "anomalia_mae_lr_0003",
+        "origens_ajuste_por_local": 36,
+        "origens_validacao_por_local": 12,
+        "perda": "mae",
+        "seq_len": 12,
+        "taxa_aprendizado": 0.0003
+      },
+      "candidatos_avaliados": 12,
+      "descartados": [
+        {
+          "candidato": "mae_contexto36",
+          "motivo": "Contexto 36: apenas 12 origens por local; minimo 18."
+        }
+      ],
+      "comparacao": {
+        "teste_timesnet": 13.236257093299164,
+        "teste_climatologia": 12.574705149332681,
+        "validacao_timesnet": 14.711143142784772,
+        "validacao_climatologia": 13.761379520098368,
+        "canonico_timesnet": 13.891527777048637,
+        "reducao_absoluta_wm2": 0.6552706837494728,
+        "reducao_percentual": 4.717052683234026
+      },
+      "linhas_teste": 120,
+      "localidades": 10,
+      "origens_por_localidade": {
+        "BMW San Luis Potosi": 12,
+        "BYD Camacari": 12,
+        "Ford Rouge Electric Vehicle Center": 12,
+        "GM Factory Zero": 12,
+        "Hyundai Metaplant Georgia": 12,
+        "Lucid AMP 1 Casa Grande": 12,
+        "Rivian Normal": 12,
+        "Tesla Fremont Factory": 12,
+        "Tesla Gigafactory Nevada": 12,
+        "Tesla Gigafactory Texas": 12
+      },
+      "erro_maximo_ensemble_csv_wm2": 5.684341886080802e-14,
+      "checkpoints": [
+        {
+          "semente": 11,
+          "epocas_refit": 3,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 7.105427357601002e-15,
+          "MAE_teste_wm2": 13.676041953170156
+        },
+        {
+          "semente": 23,
+          "epocas_refit": 25,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 7.105427357601002e-15,
+          "MAE_teste_wm2": 13.041720739351087
+        },
+        {
+          "semente": 42,
+          "epocas_refit": 7,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 7.105427357601002e-15,
+          "MAE_teste_wm2": 13.424114531320617
+        },
+        {
+          "semente": 67,
+          "epocas_refit": 5,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 7.105427357601002e-15,
+          "MAE_teste_wm2": 13.182372120227125
+        },
+        {
+          "semente": 89,
+          "epocas_refit": 23,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 2.842170943040401e-14,
+          "erro_maximo_escalas_wm2": 7.105427357601002e-15,
+          "MAE_teste_wm2": 13.38350000796664
+        }
+      ],
+      "protocolo": {
+        "ajuste": {
+          "fim_alvo": "2022-12-31",
+          "fim_origem": "2022-12-31",
+          "inicio_origem": "2020-01-31",
+          "origens_esperadas_por_localidade": 36
+        },
+        "exploratoria": false,
+        "frequencia": "ME",
+        "horizontes": [
+          1
+        ],
+        "pred_len": 1,
+        "refit": {
+          "fim_alvo": "2023-12-31",
+          "fim_origem": "2023-12-31",
+          "inicio_origem": "2020-01-31",
+          "origens_esperadas_por_localidade": 48
+        },
+        "resolucao": "mensal",
+        "seq_len": 12,
+        "slug": "monthly_1",
+        "teste": {
+          "fim_alvo": "2024-12-31",
+          "fim_origem": "2024-12-31",
+          "inicio_origem": "2024-01-31",
+          "origens_esperadas_por_localidade": 12
+        },
+        "validacao": {
+          "fim_alvo": "2023-12-31",
+          "fim_origem": "2023-12-31",
+          "inicio_origem": "2023-01-31",
+          "origens_esperadas_por_localidade": 12
+        }
+      },
+      "limitacoes": [
+        "Busca dirigida motivada por resultados de 2024 ja observados; requer confirmacao futura.",
+        "Janelas maiores podem reduzir o numero de origens de treino; nao e ablacao isolada de contexto.",
+        "Mesmo ano de validacao seleciona epocas e hiperparametros; risco de sobreajuste a validacao.",
+        "Mensal de seis passos tem sete origens de teste sobrepostas por localidade.",
+        "Candidatos de anomalia preveem o desvio em relacao a climatologia; a previsao publicada soma de volta essa climatologia e so depois aplica o piso zero."
+      ],
+      "fontes": {
+        "contrato_execucao.json": "a9b0c1762345cf3bf0f05fe07b44b8e5bf8c04d8c7e853d1904cf54f8142a990",
+        "manifesto_artefatos.json": "a487d1e8940a47611dea7b378e2993c3998fbce73729d70bf22609c42b833d4e",
+        "selecao_congelada.json": "9917a3add289b0d60d02300fd592470614a02f9df9ab427a6f4e9d03dc8d2ce6"
+      }
+    },
+    {
+      "tarefa": "monthly_6",
+      "manifesto": {
+        "arquivos_verificados": 167,
+        "divergencias": []
+      },
+      "codigo": {
+        "experimento_multirresolucao.py": {
+          "contrato": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+          "atual": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+          "confere_atualmente": true
+        },
+        "otimizacao_timesnet_mensal.py": {
+          "contrato": "a0b2d21e00c782189a23bc67993e36cf8f0e4853c3ce4e5c24e93c2611ca0555",
+          "atual": "dd18b1832427dcae6a49e7336145c93133b6dc1babf432c6634005ac8fd15e12",
+          "confere_atualmente": false
+        },
+        "timesnet_horario.py": {
+          "contrato": "ad3859c1044fb132d0d521817f579f8308a478fdf322b749ff42c8d3893c95f2",
+          "atual": "ad3859c1044fb132d0d521817f579f8308a478fdf322b749ff42c8d3893c95f2",
+          "confere_atualmente": true
+        },
+        "treinamento_timesnet_otimizacao.py": {
+          "contrato": "6b096408f2124877a16e342feb789b090f3bb592b10dc399af0004d97e5b42c9",
+          "atual": "6b096408f2124877a16e342feb789b090f3bb592b10dc399af0004d97e5b42c9",
+          "confere_atualmente": true
+        }
+      },
+      "entradas_integras": 10,
+      "vencedor": {
+        "DP_MAE_sementes_wm2": 0.0895449306842895,
+        "MAE_validacao_ensemble_wm2": 15.685734284979919,
+        "MAE_validacao_media_sementes_wm2": 15.790800015063411,
+        "alvo": "anomalia",
+        "blocos": 1,
+        "d_ff": 32,
+        "d_model": 16,
+        "dropout": 0.1,
+        "epocas": {
+          "11": 1,
+          "23": 1,
+          "42": 3,
+          "67": 2,
+          "89": 1
+        },
+        "nome": "anomalia_mae_dim16",
+        "origens_ajuste_por_local": 31,
+        "origens_validacao_por_local": 7,
+        "perda": "mae",
+        "seq_len": 12,
+        "taxa_aprendizado": 0.001
+      },
+      "candidatos_avaliados": 12,
+      "descartados": [
+        {
+          "candidato": "mae_contexto36",
+          "motivo": "Contexto 36: apenas 7 origens por local; minimo 18."
+        }
+      ],
+      "comparacao": {
+        "teste_timesnet": 13.167131839566494,
+        "teste_climatologia": 13.027173777988978,
+        "validacao_timesnet": 15.68573428497992,
+        "validacao_climatologia": 14.926674972261699,
+        "canonico_timesnet": 14.458229916631433,
+        "reducao_absoluta_wm2": 1.2910980770649392,
+        "reducao_percentual": 8.929848843943041
+      },
+      "linhas_teste": 420,
+      "localidades": 10,
+      "origens_por_localidade": {
+        "BMW San Luis Potosi": 7,
+        "BYD Camacari": 7,
+        "Ford Rouge Electric Vehicle Center": 7,
+        "GM Factory Zero": 7,
+        "Hyundai Metaplant Georgia": 7,
+        "Lucid AMP 1 Casa Grande": 7,
+        "Rivian Normal": 7,
+        "Tesla Fremont Factory": 7,
+        "Tesla Gigafactory Nevada": 7,
+        "Tesla Gigafactory Texas": 7
+      },
+      "erro_maximo_ensemble_csv_wm2": 8.526512829121202e-14,
+      "checkpoints": [
+        {
+          "semente": 11,
+          "epocas_refit": 1,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 7.105427357601002e-15,
+          "MAE_teste_wm2": 13.114947386626989
+        },
+        {
+          "semente": 23,
+          "epocas_refit": 1,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 7.105427357601002e-15,
+          "MAE_teste_wm2": 13.256693489707704
+        },
+        {
+          "semente": 42,
+          "epocas_refit": 3,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 7.105427357601002e-15,
+          "MAE_teste_wm2": 13.330527745614706
+        },
+        {
+          "semente": 67,
+          "epocas_refit": 2,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 7.105427357601002e-15,
+          "MAE_teste_wm2": 13.261855597321937
+        },
+        {
+          "semente": 89,
+          "epocas_refit": 1,
+          "campos": [
+            "state_dict",
+            "tarefa",
+            "configuracao",
+            "candidato",
+            "semente",
+            "epocas_refit"
+          ],
+          "preprocessamento_embutido": false,
+          "erro_maximo_npz_wm2": 0.0,
+          "erro_maximo_csv_wm2": 5.684341886080802e-14,
+          "erro_maximo_escalas_wm2": 7.105427357601002e-15,
+          "MAE_teste_wm2": 13.186441212523016
+        }
+      ],
+      "protocolo": {
+        "ajuste": {
+          "fim_alvo": "2022-12-31",
+          "fim_origem": "2022-07-31",
+          "inicio_origem": "2020-01-31",
+          "origens_esperadas_por_localidade": 31
+        },
+        "exploratoria": true,
+        "frequencia": "ME",
+        "horizontes": [
+          1,
+          3,
+          6
+        ],
+        "pred_len": 6,
+        "refit": {
+          "fim_alvo": "2023-12-31",
+          "fim_origem": "2023-07-31",
+          "inicio_origem": "2020-01-31",
+          "origens_esperadas_por_localidade": 43
+        },
+        "resolucao": "mensal",
+        "seq_len": 12,
+        "slug": "monthly_6",
+        "teste": {
+          "fim_alvo": "2024-12-31",
+          "fim_origem": "2024-07-31",
+          "inicio_origem": "2024-01-31",
+          "origens_esperadas_por_localidade": 7
+        },
+        "validacao": {
+          "fim_alvo": "2023-12-31",
+          "fim_origem": "2023-07-31",
+          "inicio_origem": "2023-01-31",
+          "origens_esperadas_por_localidade": 7
+        }
+      },
+      "limitacoes": [
+        "Busca dirigida motivada por resultados de 2024 ja observados; requer confirmacao futura.",
+        "Janelas maiores podem reduzir o numero de origens de treino; nao e ablacao isolada de contexto.",
+        "Mesmo ano de validacao seleciona epocas e hiperparametros; risco de sobreajuste a validacao.",
+        "Mensal de seis passos tem sete origens de teste sobrepostas por localidade.",
+        "Candidatos de anomalia preveem o desvio em relacao a climatologia; a previsao publicada soma de volta essa climatologia e so depois aplica o piso zero."
+      ],
+      "fontes": {
+        "contrato_execucao.json": "5aff8f679b05ef8b3c4d137f66ea16be5124f5c24c3d7e67fd4cd73640f16906",
+        "manifesto_artefatos.json": "960f8589591ba65429141e38c9af76571c094b70e359059313c6e9cea449f0b3",
+        "selecao_congelada.json": "a59fb4be428ea10a0e2bacf809ec0d956d4fa0ad572e574ee6abaf6a95e1dd5f"
+      }
+    }
+  ]
+}

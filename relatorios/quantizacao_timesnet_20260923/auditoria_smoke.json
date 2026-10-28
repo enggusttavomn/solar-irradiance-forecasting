@@ -1,0 +1,662 @@
+{
+  "aprovado": true,
+  "checkpoints_refit_reproduzidos": 8,
+  "checkpoints_selecao_reproduzidos": 8,
+  "congelamento_global_sha256": "879f26ea91127c9829feb3886ae7831b5a841536d7ae9fab34564e1bd36a4a9a",
+  "dados_brutos_e_codigo_preservados": true,
+  "fontes_congeladas_verificadas": 78,
+  "gerado_em_utc": "2026-09-24T01:13:10.284617+00:00",
+  "interpretacao": "Comparacao retrospectiva; nivel escolhido somente pela validacao 2023; sem reselecao por 2024.",
+  "metricas_recalculadas_independentemente": [
+    "MAE_wm2",
+    "RMSE_wm2",
+    "nRMSE",
+    "R2"
+  ],
+  "pasta_experimento": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_smoke_final_20260923",
+  "script_sha256": "be77da1105d9bcea6c825f29c2b53eb2f6f1ab9f01ab9b53bfa9b38450200708",
+  "tarefas": [
+    {
+      "contrato_sha256": "f5e21324f57eb0b16954d9c2da361423896cd9dea577c66fa8d51029fb8ce602",
+      "manifesto_arquivos": 83,
+      "modo": "smoke",
+      "tarefa": "monthly_1",
+      "variantes": [
+        {
+          "niveis": null,
+          "nome": "sem_quantizacao",
+          "refit": {
+            "MAE_ensemble_wm2": 91.65167812235904,
+            "checkpoints": [
+              {
+                "MAE_wm2": 91.65167812235904,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 7.391286999998556,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.220446049250313e-16,
+            "erro_maximo_metricas_macro": 5.551115123125783e-17,
+            "fase": "refit",
+            "linhas_previsao": 6,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 86.44595707735822,
+            "checkpoints": [
+              {
+                "MAE_wm2": 86.44595707735822,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 5.231343599996762,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 5.684341886080802e-14,
+            "erro_maximo_metricas_macro": 2.842170943040401e-14,
+            "fase": "selecao",
+            "linhas_previsao": 6,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          }
+        },
+        {
+          "niveis": 64,
+          "nome": "q64",
+          "refit": {
+            "MAE_ensemble_wm2": 91.67947036248833,
+            "checkpoints": [
+              {
+                "MAE_wm2": 91.67947036248833,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 0.20592710000346415,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 6.661338147750939e-16,
+            "erro_maximo_metricas_macro": 1.4210854715202004e-14,
+            "fase": "refit",
+            "linhas_previsao": 6,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 86.64563404738048,
+            "checkpoints": [
+              {
+                "MAE_wm2": 86.64563404738048,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 0.3508505999998306,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 5.551115123125783e-17,
+            "erro_maximo_metricas_macro": 1.4210854715202004e-14,
+            "fase": "selecao",
+            "linhas_previsao": 6,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          }
+        },
+        {
+          "niveis": 128,
+          "nome": "q128",
+          "refit": {
+            "MAE_ensemble_wm2": 91.65366855846788,
+            "checkpoints": [
+              {
+                "MAE_wm2": 91.65366855846788,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 0.20110900000145193,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.842170943040401e-14,
+            "erro_maximo_metricas_macro": 1.4210854715202004e-14,
+            "fase": "refit",
+            "linhas_previsao": 6,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 86.49043263919702,
+            "checkpoints": [
+              {
+                "MAE_wm2": 86.49043263919702,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 0.24541039999894565,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.842170943040401e-14,
+            "erro_maximo_metricas_macro": 1.1102230246251565e-16,
+            "fase": "selecao",
+            "linhas_previsao": 6,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          }
+        },
+        {
+          "niveis": 256,
+          "nome": "q256",
+          "refit": {
+            "MAE_ensemble_wm2": 91.71799003986106,
+            "checkpoints": [
+              {
+                "MAE_wm2": 91.71799003986106,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 0.18391169999813428,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.842170943040401e-14,
+            "erro_maximo_metricas_macro": 2.842170943040401e-14,
+            "fase": "refit",
+            "linhas_previsao": 6,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 86.44561876870776,
+            "checkpoints": [
+              {
+                "MAE_wm2": 86.44561876870776,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 0.22834190000139643,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 7.105427357601002e-15,
+            "erro_maximo_metricas_macro": 1.1102230246251565e-16,
+            "fase": "selecao",
+            "linhas_previsao": 6,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          }
+        }
+      ],
+      "vencedor_validacao": "q256"
+    },
+    {
+      "contrato_sha256": "01de4b7a949f5a7e69e366f0f33230c25e3a03950a9ab978b7309def1b1fa8a2",
+      "manifesto_arquivos": 83,
+      "modo": "smoke",
+      "tarefa": "monthly_6",
+      "variantes": [
+        {
+          "niveis": null,
+          "nome": "sem_quantizacao",
+          "refit": {
+            "MAE_ensemble_wm2": 69.84541072225085,
+            "checkpoints": [
+              {
+                "MAE_wm2": 69.84541072225085,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 11.195066299995233,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.1316282072803006e-14,
+            "erro_maximo_metricas_macro": 2.842170943040401e-14,
+            "fase": "refit",
+            "linhas_previsao": 36,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 65.01569711145272,
+            "checkpoints": [
+              {
+                "MAE_wm2": 65.01569711145272,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 6.082859900001495,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.842170943040401e-14,
+            "erro_maximo_metricas_macro": 1.4210854715202004e-14,
+            "fase": "selecao",
+            "linhas_previsao": 36,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          }
+        },
+        {
+          "niveis": 64,
+          "nome": "q64",
+          "refit": {
+            "MAE_ensemble_wm2": 69.85286922648255,
+            "checkpoints": [
+              {
+                "MAE_wm2": 69.85286922648255,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 0.283545199999935,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.842170943040401e-14,
+            "erro_maximo_metricas_macro": 1.4210854715202004e-14,
+            "fase": "refit",
+            "linhas_previsao": 36,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 64.96702418877558,
+            "checkpoints": [
+              {
+                "MAE_wm2": 64.96702418877558,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 0.176426400001219,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.842170943040401e-14,
+            "erro_maximo_metricas_macro": 1.4210854715202004e-14,
+            "fase": "selecao",
+            "linhas_previsao": 36,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          }
+        },
+        {
+          "niveis": 128,
+          "nome": "q128",
+          "refit": {
+            "MAE_ensemble_wm2": 69.86195294717737,
+            "checkpoints": [
+              {
+                "MAE_wm2": 69.86195294717737,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 0.27253100000234554,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.842170943040401e-14,
+            "erro_maximo_metricas_macro": 2.842170943040401e-14,
+            "fase": "refit",
+            "linhas_previsao": 36,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 64.99890118849478,
+            "checkpoints": [
+              {
+                "MAE_wm2": 64.99890118849478,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 0.17080020000139484,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 5.684341886080802e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.842170943040401e-14,
+            "erro_maximo_metricas_macro": 1.4210854715202004e-14,
+            "fase": "selecao",
+            "linhas_previsao": 36,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          }
+        },
+        {
+          "niveis": 256,
+          "nome": "q256",
+          "refit": {
+            "MAE_ensemble_wm2": 69.80665889776691,
+            "checkpoints": [
+              {
+                "MAE_wm2": 69.80665889776691,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 0.31385360000422224,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "refit": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "teste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 1.4210854715202004e-14,
+            "erro_maximo_metricas_macro": 1.4210854715202004e-14,
+            "fase": "refit",
+            "linhas_previsao": 36,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          },
+          "selecao": {
+            "MAE_ensemble_wm2": 64.97663111207389,
+            "checkpoints": [
+              {
+                "MAE_wm2": 64.97663111207389,
+                "checkpoint_reproduzido": true,
+                "duracao_s": 0.1749137000006158,
+                "epocas": 1,
+                "erro_maximo_csv_wm2": 2.842170943040401e-14,
+                "erro_maximo_replay_wm2": 0.0,
+                "semente": 11
+              }
+            ],
+            "controles_quantizacao": {
+              "ajuste": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              },
+              "validacao": {
+                "alvos_brutos_e_normalizados_identicos": true,
+                "diagnostico_confere": true,
+                "inferencia_independe_de_y": true,
+                "treino_inferencia_identicos": true
+              }
+            },
+            "erro_maximo_metricas_locais": 2.1316282072803006e-14,
+            "erro_maximo_metricas_macro": 1.4210854715202004e-14,
+            "fase": "selecao",
+            "linhas_previsao": 36,
+            "localidades": 2,
+            "origens_por_localidade": {
+              "BYD Camacari": 3,
+              "Tesla Gigafactory Nevada": 3
+            }
+          }
+        }
+      ],
+      "vencedor_validacao": "q64"
+    }
+  ]
+}

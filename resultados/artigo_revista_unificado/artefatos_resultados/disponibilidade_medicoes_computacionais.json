@@ -1,0 +1,42 @@
+{
+  "declaracao": "Runtime and trainable-parameter counts are omitted from article tables unless an explicit instrumented field is present.",
+  "fontes_inspecionadas": [
+    "resultados/avaliacao_multirresolucao/daily_30/epocas_selecionadas.csv",
+    "resultados/avaliacao_multirresolucao/daily_30/historico_treinamento.csv",
+    "resultados/avaliacao_multirresolucao/hourly_72_extension/epocas_selecionadas.csv",
+    "resultados/avaliacao_multirresolucao/hourly_72_extension/historico_treinamento.csv",
+    "resultados/avaliacao_multirresolucao/monthly_1/epocas_selecionadas.csv",
+    "resultados/avaliacao_multirresolucao/monthly_1/historico_treinamento.csv",
+    "resultados/avaliacao_multirresolucao/monthly_6/epocas_selecionadas.csv",
+    "resultados/avaliacao_multirresolucao/monthly_6/historico_treinamento.csv"
+  ],
+  "instrumentacao_computacional_disponivel": false,
+  "medicoes": {
+    "inference_runtime_seconds": {
+      "accepted_explicit_columns": [
+        "tempo_inferencia_s",
+        "duracao_inferencia_s"
+      ],
+      "available": false,
+      "policy": "not inferred from architecture, file size, epoch count, or timestamps"
+    },
+    "trainable_parameter_count": {
+      "accepted_explicit_columns": [
+        "N_parametros_treinaveis",
+        "parametros_treinaveis",
+        "numero_parametros"
+      ],
+      "available": false,
+      "policy": "not inferred from architecture, file size, epoch count, or timestamps"
+    },
+    "training_runtime_seconds": {
+      "accepted_explicit_columns": [
+        "tempo_treinamento_s",
+        "duracao_treinamento_s"
+      ],
+      "available": false,
+      "policy": "not inferred from architecture, file size, epoch count, or timestamps"
+    }
+  },
+  "versao": 1
+}

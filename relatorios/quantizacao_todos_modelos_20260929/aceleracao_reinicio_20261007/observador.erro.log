@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\acelerar_cpu_local_temporariamente.py", line 240, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\acelerar_cpu_local_temporariamente.py", line 210, in main
+    ultimo_ciclo=controller.ciclo(), epp_ac_efetivo=energia.ler(scheme))
+                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\priorizar_treinamentos.py", line 135, in ciclo
+    cadeias = self._arvore(resultado['erros'])
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\priorizar_treinamentos.py", line 112, in _arvore
+    mapa = self.backend.mapa()
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\acelerar_cpu_local_temporariamente.py", line 150, in mapa
+    return consulta.mapa()
+           ~~~~~~~~~~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\retomar_historico_apos_calendario.py", line 354, in mapa
+    atual = self.identificar(pid)  # WinError5 e outros erros continuam bloqueando.
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\retomar_historico_apos_calendario.py", line 307, in identificar
+    raise ctypes.WinError(error)
+PermissionError: [WinError 5] Access is denied.

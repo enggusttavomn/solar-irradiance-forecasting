@@ -1,0 +1,386 @@
+{
+  "diagnosticos": [
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1459,
+      "fracao_alterados": 0.998631074606434,
+      "fracao_saturados": 0.0,
+      "localidade": "BYD Camacari",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1461,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1459,
+      "fracao_alterados": 0.998631074606434,
+      "fracao_saturados": 0.0,
+      "localidade": "Tesla Gigafactory Nevada",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1461,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1460,
+      "fracao_alterados": 0.999315537303217,
+      "fracao_saturados": 0.0,
+      "localidade": "Tesla Gigafactory Texas",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1461,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1459,
+      "fracao_alterados": 0.998631074606434,
+      "fracao_saturados": 0.0,
+      "localidade": "Hyundai Metaplant Georgia",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1461,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1460,
+      "fracao_alterados": 0.999315537303217,
+      "fracao_saturados": 0.0,
+      "localidade": "Rivian Normal",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1461,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1459,
+      "fracao_alterados": 0.998631074606434,
+      "fracao_saturados": 0.0,
+      "localidade": "Tesla Fremont Factory",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1461,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1459,
+      "fracao_alterados": 0.998631074606434,
+      "fracao_saturados": 0.0,
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1461,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1459,
+      "fracao_alterados": 0.998631074606434,
+      "fracao_saturados": 0.0,
+      "localidade": "GM Factory Zero",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1461,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1459,
+      "fracao_alterados": 0.998631074606434,
+      "fracao_saturados": 0.0,
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1461,
+      "uso": "serie_ajuste_endogena"
+    },
+    {
+      "abaixo_zero": 0,
+      "acima_um": 0,
+      "alterados": 1459,
+      "fracao_alterados": 0.998631074606434,
+      "fracao_saturados": 0.0,
+      "localidade": "BMW San Luis Potosi",
+      "niveis": 128,
+      "saturados": 0,
+      "total": 1461,
+      "uso": "serie_ajuste_endogena"
+    }
+  ],
+  "niveis": 128,
+  "ordens": {
+    "BMW San Luis Potosi": [
+      2,
+      0,
+      2
+    ],
+    "BYD Camacari": [
+      1,
+      1,
+      1
+    ],
+    "Ford Rouge Electric Vehicle Center": [
+      2,
+      0,
+      2
+    ],
+    "GM Factory Zero": [
+      2,
+      0,
+      2
+    ],
+    "Hyundai Metaplant Georgia": [
+      2,
+      1,
+      2
+    ],
+    "Lucid AMP 1 Casa Grande": [
+      2,
+      0,
+      2
+    ],
+    "Rivian Normal": [
+      2,
+      0,
+      2
+    ],
+    "Tesla Fremont Factory": [
+      2,
+      0,
+      2
+    ],
+    "Tesla Gigafactory Nevada": [
+      2,
+      0,
+      2
+    ],
+    "Tesla Gigafactory Texas": [
+      1,
+      1,
+      1
+    ]
+  },
+  "registros": [
+    {
+      "fase": "refit",
+      "localidade": "BYD Camacari",
+      "localidade_id": 0,
+      "n_refit": 1461,
+      "ordem": [
+        1,
+        1,
+        1
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 674.1326032277602,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "Tesla Gigafactory Nevada",
+      "localidade_id": 1,
+      "n_refit": 1461,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "Maximum Likelihood optimization failed to converge. Check mle_retvals",
+          "convergiu": false,
+          "limite": 200,
+          "loglik": 1029.623471839767,
+          "otimizador": "lbfgs"
+        },
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 2000,
+          "loglik": 1029.6002456623496,
+          "otimizador": "powell"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "Tesla Gigafactory Texas",
+      "localidade_id": 2,
+      "n_refit": 1461,
+      "ordem": [
+        1,
+        1,
+        1
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 506.34482227911553,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "Hyundai Metaplant Georgia",
+      "localidade_id": 3,
+      "n_refit": 1461,
+      "ordem": [
+        2,
+        1,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 613.3663278187023,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "Rivian Normal",
+      "localidade_id": 4,
+      "n_refit": 1461,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 567.4539860520487,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "Tesla Fremont Factory",
+      "localidade_id": 5,
+      "n_refit": 1461,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 1075.239933936528,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "localidade_id": 6,
+      "n_refit": 1461,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 1247.2698933717122,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "GM Factory Zero",
+      "localidade_id": 7,
+      "n_refit": 1461,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 538.2997812445404,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "localidade_id": 8,
+      "n_refit": 1461,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 544.9727880695829,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "fase": "refit",
+      "localidade": "BMW San Luis Potosi",
+      "localidade_id": 9,
+      "n_refit": 1461,
+      "ordem": [
+        2,
+        0,
+        2
+      ],
+      "tentativas": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 821.2060735038456,
+          "otimizador": "lbfgs"
+        }
+      ]
+    }
+  ]
+}

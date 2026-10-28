@@ -1,0 +1,34 @@
+{
+  "versao": 1,
+  "revisado_em_utc": "2026-10-06T02:44:50.703551+00:00",
+  "aprovado_para_reconciliacao": true,
+  "manifesto_atual": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_local_20261005_1715\\manifesto_recuperacao.json",
+  "manifesto_sha256": "52e4f8d7e376d6218a06671534dd0565b1ccbd93957c535c071a79c9fda991e2",
+  "fontes_vinculadas": 147,
+  "fontes_divergentes": [
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\retomar_historico_apos_calendario.py",
+      "sha256": "9c4d244cb89d718fdbd4751718650cabda61b34a8b15e1bf4e103ca63fbd9971",
+      "papel": "helper",
+      "sha256_atual": "26a25e2d94f64eb97e03dccd92caf68dc9a4b4263d3d08e10ef65e8d4f34de70"
+    },
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tests\\test_retomar_historico_apos_calendario.py",
+      "sha256": "b6d58d1afe1143276909b9e1d033ab9354051c44ffa70fa62c28e291d3b6ef78",
+      "papel": "tests_helper",
+      "sha256_atual": "7dde56276fb0d905b351eb8a0ef87a4efc068bcd6d6ff1f9f260c587865b627e"
+    }
+  ],
+  "fontes_demais_preservadas": 145,
+  "journal_canonico": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomadas_apos_calendario\\7872_134356437859141023\\journal.json",
+  "journal_sha256": "1e0441759f679db8c36ee06aa32f09056974e71c72ed2e127442d00d558969b8",
+  "journal_etapa": "BLOCKED",
+  "tentativas_popen": 0,
+  "lancamento_pode_ter_ocorrido": false,
+  "manifesto_e_journal_preservados": true,
+  "recibo_testes": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\testes_reparo_watcher.json",
+  "recibo_testes_sha256": "baee1116c4ba2b47a9841b888d8afaaf6b034d277f5d5344f6df19bc9c53b304",
+  "correcao": "Tipo ctypes de PROCESSENTRY32 estavel; ate tres snapshots completos para PID duplicado. Cada snapshot parcial e descartado e fechado. Persistencia, falha de acesso, mapa vazio ou proprio PID ausente bloqueiam antes de Popen.",
+  "limites_preservados": "Identidades PID/FILETIME, vinculo SHA256 de fontes, locks originais, journal canonico e tentativa unica permanecem estritos.",
+  "ativacao": "Nenhum watcher relancado. Requer reconciliacao explicita do journal BLOCKED e novo binding de helper/testes/recibo antes da ativacao."
+}

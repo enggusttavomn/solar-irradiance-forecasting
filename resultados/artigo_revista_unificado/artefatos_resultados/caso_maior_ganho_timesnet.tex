@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Largest global TimesNet gain relative to DilatedRNN}
+\label{tab:caso-maior-ganho-timesnet}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lr}
+\toprule
+Field & Value \\
+\midrule
+Case & Largest TimesNet gain \\
+Contrast interpretation & Largest TimesNet gain \\
+Task & Hourly 336--72 \\
+Resolution & Hourly \\
+Site & GM Factory Zero \\
+Forecast origin & 2024-03-31 05:00:00+00:00 \\
+Horizon & 24.0000 \\
+Points & 24.0000 \\
+TimesNet MAE (W/m2) & 46.2965 \\
+DilatedRNN MAE (W/m2) & 109.9023 \\
+TimesNet gain (W/m2) & 63.6057 \\
+Weather context available & Yes \\
+Total precipitation (mm) & 0.8000 \\
+Mean cloud amount (\%) & 99.6400 \\
+Adverse-context days & 1.0000 \\
+Interpretation & Post-hoc descriptive context only; no causal attribution. \\
+Seed limitation & Hourly extension uses seed 42 only; seed variability unavailable \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

@@ -1,0 +1,63 @@
+{
+  "observado_em_utc": "2026-10-04T22:54:07.847597+00:00",
+  "revisor": "auditoria_retomada_outubro3",
+  "fonte_sha256": "7cd5604ecc23f133f909760724e981ffb92113972783aa0e9744ed8827e8a564",
+  "integracao_nativa": {
+    "instancia_propria": {
+      "pid": 736,
+      "creation_time": "134356280419935358"
+    },
+    "antes": 32,
+    "ciclo": {
+      "alterados": [
+        {
+          "pid": 736,
+          "creation_time": "134356280419935358",
+          "anterior": 32,
+          "atual": 32768
+        }
+      ],
+      "erros": [],
+      "instancias_observadas": [
+        {
+          "pid": 736,
+          "creation_time": "134356280419935358"
+        }
+      ]
+    },
+    "durante": 32768,
+    "restauracao": {
+      "restaurados": [
+        {
+          "pid": 736,
+          "creation_time": "134356280419935358",
+          "atual": 32
+        }
+      ],
+      "erros": []
+    },
+    "depois": 32,
+    "filetime_incorreto_bloqueado": true,
+    "restauracao_final": {
+      "restaurados": [],
+      "erros": []
+    },
+    "returncode_child_proprio": 0
+  },
+  "fontes_antes": {
+    "scripts/priorizar_treinamentos.py": "7cd5604ecc23f133f909760724e981ffb92113972783aa0e9744ed8827e8a564",
+    "codigo_fonte/experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "codigo_fonte/experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "scripts/rodar_quantizacao_todos_modelos.py": "c0394d4aba1d1fc0e8dbe312faa1e6dc7cec4dc82c2d2599fcf2fb6f9fb1a251"
+  },
+  "fontes_depois": {
+    "scripts/priorizar_treinamentos.py": "7cd5604ecc23f133f909760724e981ffb92113972783aa0e9744ed8827e8a564",
+    "codigo_fonte/experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "codigo_fonte/experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "scripts/rodar_quantizacao_todos_modelos.py": "c0394d4aba1d1fc0e8dbe312faa1e6dc7cec4dc82c2d2599fcf2fb6f9fb1a251"
+  },
+  "ok": true,
+  "erro": null,
+  "escopo": "Somente child descartavel DETACHED_PROCESS criado pelo proprio revisor; nenhuma prioridade de processo da fila alterada.",
+  "parecer_estatico": "FILETIME no mesmo handle; todos os ancestrais mantidos abertos; PPID de cada edge reconsultado; liveness refeito antes de Set; ledger apos sucesso e antes do readback; restaura somente mesmas instancias ainda em AboveNormal."
+}

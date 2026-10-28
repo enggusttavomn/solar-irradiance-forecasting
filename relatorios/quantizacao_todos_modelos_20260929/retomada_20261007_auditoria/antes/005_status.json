@@ -1,0 +1,43 @@
+{
+  "iniciado_em_utc": "2026-10-06T23:04:29.277834+00:00",
+  "pid": 13592,
+  "identidade_coordenador": {
+    "pid": 13592,
+    "creation_time": "134358014655311522"
+  },
+  "publicado": false,
+  "revisao_visual_pendente": true,
+  "codigo_sha256": "1166e691d47d81a98cb87286eed302fa0b61d4acaed0c9029165431a7615fa2b",
+  "etapa": "erro",
+  "atualizado_em_utc": "2026-10-06T23:41:28.115901+00:00",
+  "etapa_atual": "pronto_para_revisao_visual",
+  "processos_ativos": [],
+  "auditoria_atual_sha256": "b48b7fbefbd1b267c25c276dc6f6d10692603ac45969946d879f1b52cb5a43d5",
+  "processos_historico": [
+    {
+      "pid": 15708,
+      "creation_time": "134358014710782576"
+    },
+    {
+      "pid": 8652,
+      "creation_time": "134358028466950778"
+    }
+  ],
+  "processo_filho": null,
+  "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\auditoria_historico_1998_2022.log",
+  "eventos": [
+    {
+      "etapa": "fila_historico_1998_2022",
+      "retorno": 0,
+      "fim_utc": "2026-10-06T23:27:26.673532+00:00",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\fila_historico_1998_2022.log"
+    },
+    {
+      "etapa": "auditoria_historico_1998_2022",
+      "retorno": 1,
+      "fim_utc": "2026-10-06T23:41:28.099920+00:00",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\auditoria_historico_1998_2022.log"
+    }
+  ],
+  "erro": "RuntimeError: Falha auditoria_historico_1998_2022; consultar C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\auditoria_historico_1998_2022.log"
+}

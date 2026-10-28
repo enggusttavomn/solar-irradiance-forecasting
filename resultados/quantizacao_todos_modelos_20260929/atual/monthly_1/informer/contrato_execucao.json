@@ -1,0 +1,178 @@
+{
+  "codigo": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\dilated_rnn_direta.py": "5c2e93953d028f22340cbb57f78ef62bc41cbd81b97681e1cc1fe3d5469d94b3",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_baselines_adicionais.py": "64a3d933ba5af151e88f9d368337b99bccfa89f18a7c552aa724a57dfc39ba81",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_horario_timesnet.py": "2cc59451b0fbcbedbf3068d2f1c45595ff84daf46e8318a88080df208e7bb8e9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\modelos_baselines_adicionais.py": "f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\quantizacao_timesnet.py": "1ec234c96206bd06a80a42ff23caef371dd2105c442ac7ab2663cfbaa730c3bd",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\timesnet_horario.py": "ad3859c1044fb132d0d521817f579f8308a478fdf322b749ff42c8d3893c95f2",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\treinamento_timesnet_otimizacao.py": "6b096408f2124877a16e342feb789b090f3bb592b10dc399af0004d97e5b42c9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\treinamento_timesnet_quantizado_resolucoes.py": "1e1c30e4d5527e730a9c4bb6b51e4314185631b0f195631d2fa03832c18d1075",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\treinamento_timesnet_resolucoes.py": "0675a57b40c9ea963632cf101d583dee1ca5bb1a66f6efb62581b37d5cda55c2"
+  },
+  "controle": "minmax_sem_clip_sem_quantizacao",
+  "controle_gpu": "mudanca_device_ou_divergencia_exige_aceite_com_replay_original_e_paridade_loop_auditados",
+  "cuda": null,
+  "entradas": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\bmw_san_luis_potosi.csv": "d98ec7e97bf68864fda836f1948a863d296badae2dd1aa34e225425d1344b1f5",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\byd_camacari.csv": "8347f0b81babcf58456e14568c875e9df7ca6aba792e8865cff5e5df1afde783",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\ford_rouge_electric_vehicle_center.csv": "d490600c96bf0348ad6c74d08b5f8c700a64dd643b9e886464ed6e165475011e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\gm_factory_zero.csv": "be2a8b340938686a582a9beed1dcf8fcef11a4655a6a2678dd6f78fd2de6e572",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\hyundai_metaplant_georgia.csv": "f5e3e825469277e654957e2d4b7e149c1e55232acaf288c4380ffa906188abf7",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\lucid_amp_1_casa_grande.csv": "78f6690b63a1ea378be8abf178e725376aca8a2e71135ba0cda73b53d433b94f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\rivian_normal.csv": "133ad89c6e7ac30c890cec033f8c1c4914c01362920b49a0c0fd540a9ec9520d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\tesla_fremont_factory.csv": "1c6401e77938057f6dfc14c58dbf70ce098dde92ac46da55e0c9c9c279945453",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\tesla_gigafactory_nevada.csv": "d40616d7151007f2e917c8c90b2f411260126f506ebd2d770024d90a12f8500c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\tesla_gigafactory_texas.csv": "55d80fcfcce0be92c28338ed16a6c13b906741a482cbfa01453897c9aa06bd8d"
+  },
+  "limitacoes": [
+    "Avaliacao retrospectiva",
+    "Clipping nao isolado por controle separado",
+    "Epocas e niveis usam a mesma validacao"
+  ],
+  "modelo": "Informer",
+  "modo": "completa",
+  "pacotes": {
+    "numpy": "2.4.4",
+    "pandas": "3.0.3",
+    "torch": "2.12.0+cu126",
+    "xgboost": "3.2.0"
+  },
+  "parametros": {
+    "batch_size": 32,
+    "configuracao": {
+      "batch_size_diario": 128,
+      "batch_size_mensal": 32,
+      "dilated_dilatacoes": [
+        1,
+        2,
+        4
+      ],
+      "dilated_dropout": 0.0,
+      "dilated_unidades": 16,
+      "dilated_unidades_densas": 16,
+      "embedding_localidade": 8,
+      "epocas_smoke": 1,
+      "limite_localidades_smoke": 2,
+      "limite_origens_smoke": 3,
+      "lstm_camadas": 1,
+      "lstm_ocultos": 32,
+      "max_epocas_diario": 30,
+      "max_epocas_mensal": 300,
+      "modo_execucao": "completa",
+      "paciencia_diario": 5,
+      "paciencia_mensal": 30,
+      "peso_decay": 1e-05,
+      "sementes": [
+        11,
+        23,
+        42,
+        67,
+        89
+      ],
+      "taxa_aprendizado": 0.001,
+      "threads_torch": 1,
+      "timesnet_blocos": 1,
+      "timesnet_d_ff": 16,
+      "timesnet_d_model": 8,
+      "timesnet_dropout": 0.1,
+      "timesnet_kernels": 2,
+      "timesnet_top_k": 3,
+      "xgb_colsample": 0.8,
+      "xgb_estimadores": 150,
+      "xgb_estimadores_smoke": 2,
+      "xgb_n_jobs": 1,
+      "xgb_profundidade": 3,
+      "xgb_subsample": 0.8,
+      "xgb_taxa_aprendizado": 0.05
+    },
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "dispositivo_original": "cpu",
+    "fontes_configuracao": {
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\monthly_1\\informer\\contrato.json": "1a76b555a7ab75de10c82281dbfcfb131faa480fefce14aef6ea8f78e5079deb",
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\monthly_1\\contrato_execucao.json": "7620bfe8ba5c6de7d17e7bce7ae2238d11f1e4068ea6373c293cd7736eb48e54"
+    },
+    "max_epocas": 300,
+    "modelo": "Informer",
+    "novo_controle_por_dispositivo": false,
+    "paciencia": 30,
+    "perda": "mse",
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  "protocolo": {
+    "fim_dados": "2024-12-31",
+    "inicio_dados": "2019-01-01",
+    "inicio_teste": "2024-01-01",
+    "inicio_validacao": "2023-01-01",
+    "pasta_diaria": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev",
+    "pasta_horaria": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario",
+    "regime": "atual"
+  },
+  "quantizacao": "X_only_minmax_then_rint(clip(x,0,1)*(N-1))/(N-1)",
+  "schema": 1,
+  "sha256_contrato": "9d173d2814657b7d55e740e5562c3d11ae67cdcfed298d1835ce9493d4b8e18a",
+  "tarefa": {
+    "ajuste": {
+      "fim_alvo": "2022-12-31",
+      "fim_origem": "2022-12-31",
+      "inicio_origem": "2020-01-31",
+      "origens_esperadas_por_localidade": 36
+    },
+    "exploratoria": false,
+    "frequencia": "ME",
+    "horizontes": [
+      1
+    ],
+    "pred_len": 1,
+    "refit": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-31",
+      "inicio_origem": "2020-01-31",
+      "origens_esperadas_por_localidade": 48
+    },
+    "resolucao": "mensal",
+    "seq_len": 12,
+    "slug": "monthly_1",
+    "teste": {
+      "fim_alvo": "2024-12-31",
+      "fim_origem": "2024-12-31",
+      "inicio_origem": "2024-01-31",
+      "origens_esperadas_por_localidade": 12
+    },
+    "validacao": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-31",
+      "inicio_origem": "2023-01-31",
+      "origens_esperadas_por_localidade": 12
+    }
+  },
+  "targets_quantizados": false,
+  "variantes": [
+    {
+      "niveis": null,
+      "nome": "sem_quantizacao"
+    },
+    {
+      "niveis": 64,
+      "nome": "q64"
+    },
+    {
+      "niveis": 128,
+      "nome": "q128"
+    },
+    {
+      "niveis": 256,
+      "nome": "q256"
+    }
+  ]
+}

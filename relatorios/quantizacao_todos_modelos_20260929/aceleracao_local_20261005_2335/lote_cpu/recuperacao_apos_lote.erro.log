@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\tmp\recuperar_e_priorizar_apos_lote_20261005.py", line 103, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\tmp\recuperar_e_priorizar_apos_lote_20261005.py", line 70, in main
+    raise Bloqueio(f'Helper encerrou com {result.returncode}; consultar journal canonico.')
+scripts.retomar_historico_apos_calendario.Bloqueio: Helper encerrou com 1; consultar journal canonico.

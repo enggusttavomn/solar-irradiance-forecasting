@@ -23,7 +23,7 @@ import pandas as pd
 
 RAIZ = Path(__file__).resolve().parents[2]
 RESULTADOS = RAIZ / "resultados" / "avaliacao_mensal_corrigida"
-PASTA_FIGURAS = RAIZ / "overlief" / "figuras"
+PASTA_FIGURAS = RAIZ / "artigos" / "mcsm" / "figuras"
 
 COR_CLIMA = "#2666A8"
 COR_VHP = "#A33D2B"

@@ -1,0 +1,1959 @@
+{
+  "method": "Independent NumPy recalculation from gzip prediction CSVs; no experiment or artifact-generator imports.",
+  "tolerance": 1e-08,
+  "checks": [
+    {
+      "check": "daily_30/validacao_2023: unique forecast keys",
+      "passed": true
+    },
+    {
+      "check": "daily_30/validacao_2023: target year",
+      "passed": true
+    },
+    {
+      "check": "daily_30/validacao_2023: sites",
+      "passed": true
+    },
+    {
+      "check": "daily_30/validacao_2023: complete lead sequence",
+      "passed": true
+    },
+    {
+      "check": "daily_30/validacao_2023: contracted origin count",
+      "passed": true,
+      "detail": {
+        "BMW San Luis Potosi": 336,
+        "BYD Camacari": 336,
+        "Ford Rouge Electric Vehicle Center": 336,
+        "GM Factory Zero": 336,
+        "Hyundai Metaplant Georgia": 336,
+        "Lucid AMP 1 Casa Grande": 336,
+        "Rivian Normal": 336,
+        "Tesla Fremont Factory": 336,
+        "Tesla Gigafactory Nevada": 336,
+        "Tesla Gigafactory Texas": 336
+      }
+    },
+    {
+      "check": "daily_30/validacao_2023: finite forecasts/targets",
+      "passed": true
+    },
+    {
+      "check": "daily_30/validacao_2023: nonnegative postprocessed forecasts",
+      "passed": true
+    },
+    {
+      "check": "daily_30/validacao_2023: five-seed xgboost ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.7053025658242404e-13
+      }
+    },
+    {
+      "check": "daily_30/validacao_2023: five-seed lstm ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.7053025658242404e-13
+      }
+    },
+    {
+      "check": "daily_30/validacao_2023: five-seed timesnet ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.7053025658242404e-13
+      }
+    },
+    {
+      "check": "daily_30/validacao_2023: five-seed dilatedrnn ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.7053025658242404e-13
+      }
+    },
+    {
+      "check": "daily_30/teste_2024: unique forecast keys",
+      "passed": true
+    },
+    {
+      "check": "daily_30/teste_2024: target year",
+      "passed": true
+    },
+    {
+      "check": "daily_30/teste_2024: sites",
+      "passed": true
+    },
+    {
+      "check": "daily_30/teste_2024: complete lead sequence",
+      "passed": true
+    },
+    {
+      "check": "daily_30/teste_2024: contracted origin count",
+      "passed": true,
+      "detail": {
+        "BMW San Luis Potosi": 337,
+        "BYD Camacari": 337,
+        "Ford Rouge Electric Vehicle Center": 337,
+        "GM Factory Zero": 337,
+        "Hyundai Metaplant Georgia": 337,
+        "Lucid AMP 1 Casa Grande": 337,
+        "Rivian Normal": 337,
+        "Tesla Fremont Factory": 337,
+        "Tesla Gigafactory Nevada": 337,
+        "Tesla Gigafactory Texas": 337
+      }
+    },
+    {
+      "check": "daily_30/teste_2024: finite forecasts/targets",
+      "passed": true
+    },
+    {
+      "check": "daily_30/teste_2024: nonnegative postprocessed forecasts",
+      "passed": true
+    },
+    {
+      "check": "daily_30/teste_2024: five-seed xgboost ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.7053025658242404e-13
+      }
+    },
+    {
+      "check": "daily_30/teste_2024: five-seed lstm ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.7053025658242404e-13
+      }
+    },
+    {
+      "check": "daily_30/teste_2024: five-seed timesnet ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.7053025658242404e-13
+      }
+    },
+    {
+      "check": "daily_30/teste_2024: five-seed dilatedrnn ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.7053025658242404e-13
+      }
+    },
+    {
+      "check": "daily_30: saved site metrics: unique keys",
+      "passed": true
+    },
+    {
+      "check": "daily_30: saved site metrics: matching keys",
+      "passed": true,
+      "detail": {
+        "calculated_rows": 5400,
+        "saved_rows": 5400
+      }
+    },
+    {
+      "check": "daily_30: saved site metrics: MAE_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 2.1316282072803006e-14
+      }
+    },
+    {
+      "check": "daily_30: saved site metrics: RMSE_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.4210854715202004e-14
+      }
+    },
+    {
+      "check": "daily_30: saved site metrics: nRMSE",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.6653345369377348e-16
+      }
+    },
+    {
+      "check": "daily_30: saved site metrics: R2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 3.0531133177191805e-16
+      }
+    },
+    {
+      "check": "daily_30: saved site metrics: N_origens",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "daily_30: saved site metrics: N_pontos",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "monthly_1/validacao_2023: unique forecast keys",
+      "passed": true
+    },
+    {
+      "check": "monthly_1/validacao_2023: target year",
+      "passed": true
+    },
+    {
+      "check": "monthly_1/validacao_2023: sites",
+      "passed": true
+    },
+    {
+      "check": "monthly_1/validacao_2023: complete lead sequence",
+      "passed": true
+    },
+    {
+      "check": "monthly_1/validacao_2023: contracted origin count",
+      "passed": true,
+      "detail": {
+        "BMW San Luis Potosi": 12,
+        "BYD Camacari": 12,
+        "Ford Rouge Electric Vehicle Center": 12,
+        "GM Factory Zero": 12,
+        "Hyundai Metaplant Georgia": 12,
+        "Lucid AMP 1 Casa Grande": 12,
+        "Rivian Normal": 12,
+        "Tesla Fremont Factory": 12,
+        "Tesla Gigafactory Nevada": 12,
+        "Tesla Gigafactory Texas": 12
+      }
+    },
+    {
+      "check": "monthly_1/validacao_2023: finite forecasts/targets",
+      "passed": true
+    },
+    {
+      "check": "monthly_1/validacao_2023: nonnegative postprocessed forecasts",
+      "passed": true
+    },
+    {
+      "check": "monthly_1/validacao_2023: five-seed xgboost ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_1/validacao_2023: five-seed lstm ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_1/validacao_2023: five-seed timesnet ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_1/validacao_2023: five-seed dilatedrnn ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_1/teste_2024: unique forecast keys",
+      "passed": true
+    },
+    {
+      "check": "monthly_1/teste_2024: target year",
+      "passed": true
+    },
+    {
+      "check": "monthly_1/teste_2024: sites",
+      "passed": true
+    },
+    {
+      "check": "monthly_1/teste_2024: complete lead sequence",
+      "passed": true
+    },
+    {
+      "check": "monthly_1/teste_2024: contracted origin count",
+      "passed": true,
+      "detail": {
+        "BMW San Luis Potosi": 12,
+        "BYD Camacari": 12,
+        "Ford Rouge Electric Vehicle Center": 12,
+        "GM Factory Zero": 12,
+        "Hyundai Metaplant Georgia": 12,
+        "Lucid AMP 1 Casa Grande": 12,
+        "Rivian Normal": 12,
+        "Tesla Fremont Factory": 12,
+        "Tesla Gigafactory Nevada": 12,
+        "Tesla Gigafactory Texas": 12
+      }
+    },
+    {
+      "check": "monthly_1/teste_2024: finite forecasts/targets",
+      "passed": true
+    },
+    {
+      "check": "monthly_1/teste_2024: nonnegative postprocessed forecasts",
+      "passed": true
+    },
+    {
+      "check": "monthly_1/teste_2024: five-seed xgboost ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_1/teste_2024: five-seed lstm ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_1/teste_2024: five-seed timesnet ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_1/teste_2024: five-seed dilatedrnn ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_1: saved site metrics: unique keys",
+      "passed": true
+    },
+    {
+      "check": "monthly_1: saved site metrics: matching keys",
+      "passed": true,
+      "detail": {
+        "calculated_rows": 1080,
+        "saved_rows": 1080
+      }
+    },
+    {
+      "check": "monthly_1: saved site metrics: MAE_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.9539925233402755e-14
+      }
+    },
+    {
+      "check": "monthly_1: saved site metrics: RMSE_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 2.1316282072803006e-14
+      }
+    },
+    {
+      "check": "monthly_1: saved site metrics: nRMSE",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.5265566588595902e-16
+      }
+    },
+    {
+      "check": "monthly_1: saved site metrics: R2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.551115123125783e-16
+      }
+    },
+    {
+      "check": "monthly_1: saved site metrics: N_origens",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "monthly_1: saved site metrics: N_pontos",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "monthly_6/validacao_2023: unique forecast keys",
+      "passed": true
+    },
+    {
+      "check": "monthly_6/validacao_2023: target year",
+      "passed": true
+    },
+    {
+      "check": "monthly_6/validacao_2023: sites",
+      "passed": true
+    },
+    {
+      "check": "monthly_6/validacao_2023: complete lead sequence",
+      "passed": true
+    },
+    {
+      "check": "monthly_6/validacao_2023: contracted origin count",
+      "passed": true,
+      "detail": {
+        "BMW San Luis Potosi": 7,
+        "BYD Camacari": 7,
+        "Ford Rouge Electric Vehicle Center": 7,
+        "GM Factory Zero": 7,
+        "Hyundai Metaplant Georgia": 7,
+        "Lucid AMP 1 Casa Grande": 7,
+        "Rivian Normal": 7,
+        "Tesla Fremont Factory": 7,
+        "Tesla Gigafactory Nevada": 7,
+        "Tesla Gigafactory Texas": 7
+      }
+    },
+    {
+      "check": "monthly_6/validacao_2023: finite forecasts/targets",
+      "passed": true
+    },
+    {
+      "check": "monthly_6/validacao_2023: nonnegative postprocessed forecasts",
+      "passed": true
+    },
+    {
+      "check": "monthly_6/validacao_2023: five-seed xgboost ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_6/validacao_2023: five-seed lstm ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_6/validacao_2023: five-seed timesnet ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_6/validacao_2023: five-seed dilatedrnn ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_6/teste_2024: unique forecast keys",
+      "passed": true
+    },
+    {
+      "check": "monthly_6/teste_2024: target year",
+      "passed": true
+    },
+    {
+      "check": "monthly_6/teste_2024: sites",
+      "passed": true
+    },
+    {
+      "check": "monthly_6/teste_2024: complete lead sequence",
+      "passed": true
+    },
+    {
+      "check": "monthly_6/teste_2024: contracted origin count",
+      "passed": true,
+      "detail": {
+        "BMW San Luis Potosi": 7,
+        "BYD Camacari": 7,
+        "Ford Rouge Electric Vehicle Center": 7,
+        "GM Factory Zero": 7,
+        "Hyundai Metaplant Georgia": 7,
+        "Lucid AMP 1 Casa Grande": 7,
+        "Rivian Normal": 7,
+        "Tesla Fremont Factory": 7,
+        "Tesla Gigafactory Nevada": 7,
+        "Tesla Gigafactory Texas": 7
+      }
+    },
+    {
+      "check": "monthly_6/teste_2024: finite forecasts/targets",
+      "passed": true
+    },
+    {
+      "check": "monthly_6/teste_2024: nonnegative postprocessed forecasts",
+      "passed": true
+    },
+    {
+      "check": "monthly_6/teste_2024: five-seed xgboost ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_6/teste_2024: five-seed lstm ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_6/teste_2024: five-seed timesnet ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_6/teste_2024: five-seed dilatedrnn ensemble",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "monthly_6: saved site metrics: unique keys",
+      "passed": true
+    },
+    {
+      "check": "monthly_6: saved site metrics: matching keys",
+      "passed": true,
+      "detail": {
+        "calculated_rows": 3240,
+        "saved_rows": 3240
+      }
+    },
+    {
+      "check": "monthly_6: saved site metrics: MAE_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 3.552713678800501e-14
+      }
+    },
+    {
+      "check": "monthly_6: saved site metrics: RMSE_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 3.197442310920451e-14
+      }
+    },
+    {
+      "check": "monthly_6: saved site metrics: nRMSE",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 2.220446049250313e-16
+      }
+    },
+    {
+      "check": "monthly_6: saved site metrics: R2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.5987211554602254e-14
+      }
+    },
+    {
+      "check": "monthly_6: saved site metrics: N_origens",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "monthly_6: saved site metrics: N_pontos",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "hourly_72_extension/validacao_2023: unique forecast keys",
+      "passed": true
+    },
+    {
+      "check": "hourly_72_extension/validacao_2023: target year",
+      "passed": true
+    },
+    {
+      "check": "hourly_72_extension/validacao_2023: sites",
+      "passed": true
+    },
+    {
+      "check": "hourly_72_extension/validacao_2023: complete lead sequence",
+      "passed": true
+    },
+    {
+      "check": "hourly_72_extension/validacao_2023: contracted origin count",
+      "passed": true,
+      "detail": {
+        "BMW San Luis Potosi": 363,
+        "BYD Camacari": 363,
+        "Ford Rouge Electric Vehicle Center": 363,
+        "GM Factory Zero": 363,
+        "Hyundai Metaplant Georgia": 363,
+        "Lucid AMP 1 Casa Grande": 363,
+        "Rivian Normal": 363,
+        "Tesla Fremont Factory": 363,
+        "Tesla Gigafactory Nevada": 363,
+        "Tesla Gigafactory Texas": 363
+      }
+    },
+    {
+      "check": "hourly_72_extension/validacao_2023: finite forecasts/targets",
+      "passed": true
+    },
+    {
+      "check": "hourly_72_extension/validacao_2023: nonnegative postprocessed forecasts",
+      "passed": true
+    },
+    {
+      "check": "hourly_72_extension/teste_2024: unique forecast keys",
+      "passed": true
+    },
+    {
+      "check": "hourly_72_extension/teste_2024: target year",
+      "passed": true
+    },
+    {
+      "check": "hourly_72_extension/teste_2024: sites",
+      "passed": true
+    },
+    {
+      "check": "hourly_72_extension/teste_2024: complete lead sequence",
+      "passed": true
+    },
+    {
+      "check": "hourly_72_extension/teste_2024: contracted origin count",
+      "passed": true,
+      "detail": {
+        "BMW San Luis Potosi": 363,
+        "BYD Camacari": 363,
+        "Ford Rouge Electric Vehicle Center": 363,
+        "GM Factory Zero": 363,
+        "Hyundai Metaplant Georgia": 363,
+        "Lucid AMP 1 Casa Grande": 363,
+        "Rivian Normal": 363,
+        "Tesla Fremont Factory": 363,
+        "Tesla Gigafactory Nevada": 363,
+        "Tesla Gigafactory Texas": 363
+      }
+    },
+    {
+      "check": "hourly_72_extension/teste_2024: finite forecasts/targets",
+      "passed": true
+    },
+    {
+      "check": "hourly_72_extension/teste_2024: nonnegative postprocessed forecasts",
+      "passed": true
+    },
+    {
+      "check": "hourly_72_extension: saved site metrics: unique keys",
+      "passed": true
+    },
+    {
+      "check": "hourly_72_extension: saved site metrics: matching keys",
+      "passed": true,
+      "detail": {
+        "calculated_rows": 720,
+        "saved_rows": 720
+      }
+    },
+    {
+      "check": "hourly_72_extension: saved site metrics: MAE_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 7.105427357601002e-15
+      }
+    },
+    {
+      "check": "hourly_72_extension: saved site metrics: RMSE_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 2.842170943040401e-14
+      }
+    },
+    {
+      "check": "hourly_72_extension: saved site metrics: nRMSE",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 2.220446049250313e-16
+      }
+    },
+    {
+      "check": "hourly_72_extension: saved site metrics: R2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.1102230246251565e-16
+      }
+    },
+    {
+      "check": "hourly_72_extension: saved site metrics: N_origens",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "hourly_72_extension: saved site metrics: N_pontos",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "All saved macro metrics: unique keys",
+      "passed": true
+    },
+    {
+      "check": "All saved macro metrics: matching keys",
+      "passed": true,
+      "detail": {
+        "calculated_rows": 1044,
+        "saved_rows": 1044
+      }
+    },
+    {
+      "check": "All saved macro metrics: MAE_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.4210854715202004e-14
+      }
+    },
+    {
+      "check": "All saved macro metrics: RMSE_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 2.842170943040401e-14
+      }
+    },
+    {
+      "check": "All saved macro metrics: nRMSE",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.249000902703301e-16
+      }
+    },
+    {
+      "check": "All saved macro metrics: R2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.7763568394002505e-15
+      }
+    },
+    {
+      "check": "All saved macro metrics: N_localidades",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "All saved macro metrics: N_origens",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "All saved macro metrics: N_pontos",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article full benchmark: unique keys",
+      "passed": true
+    },
+    {
+      "check": "Article full benchmark: matching keys",
+      "passed": true,
+      "detail": {
+        "calculated_rows": 162,
+        "saved_rows": 162
+      }
+    },
+    {
+      "check": "Article full benchmark: MAE_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.4210854715202004e-14
+      }
+    },
+    {
+      "check": "Article full benchmark: RMSE_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.4210854715202004e-14
+      }
+    },
+    {
+      "check": "Article full benchmark: nRMSE",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.1102230246251565e-16
+      }
+    },
+    {
+      "check": "Article full benchmark: R2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.3322676295501878e-15
+      }
+    },
+    {
+      "check": "Article full benchmark: N_localidades",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article full benchmark: N_origens",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article full benchmark: N_pontos",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article ranking positions: unique keys",
+      "passed": true
+    },
+    {
+      "check": "Article ranking positions: matching keys",
+      "passed": true,
+      "detail": {
+        "calculated_rows": 162,
+        "saved_rows": 162
+      }
+    },
+    {
+      "check": "Article ranking positions: posicao_MAE",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article paired comparisons: unique keys",
+      "passed": true
+    },
+    {
+      "check": "Article paired comparisons: matching keys",
+      "passed": true,
+      "detail": {
+        "calculated_rows": 24,
+        "saved_rows": 24
+      }
+    },
+    {
+      "check": "Article paired comparisons: N_localidades",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article paired comparisons: diferenca_MAE_media_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.218048215738236e-15
+      }
+    },
+    {
+      "check": "Article paired comparisons: diferenca_MAE_mediana_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.5154544286133387e-14
+      }
+    },
+    {
+      "check": "Article paired comparisons: vitorias_locais_timesnet",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article paired comparisons: vitorias_locais_dilatedrnn",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article paired comparisons: empates_locais",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article seed variability: unique keys",
+      "passed": true
+    },
+    {
+      "check": "Article seed variability: matching keys",
+      "passed": true,
+      "detail": {
+        "calculated_rows": 96,
+        "saved_rows": 96
+      }
+    },
+    {
+      "check": "Article seed variability: N_sementes",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article seed variability: MAE_wm2_media",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.4210854715202004e-14
+      }
+    },
+    {
+      "check": "Article seed variability: MAE_wm2_desvio_padrao",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 4.440892098500626e-15
+      }
+    },
+    {
+      "check": "Article seed variability: MAE_wm2_minimo",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 7.105427357601002e-15
+      }
+    },
+    {
+      "check": "Article seed variability: MAE_wm2_maximo",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.4210854715202004e-14
+      }
+    },
+    {
+      "check": "Article seed variability: RMSE_wm2_media",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.4210854715202004e-14
+      }
+    },
+    {
+      "check": "Article seed variability: RMSE_wm2_desvio_padrao",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.1486592766991635e-15
+      }
+    },
+    {
+      "check": "Article seed variability: RMSE_wm2_minimo",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.4210854715202004e-14
+      }
+    },
+    {
+      "check": "Article seed variability: RMSE_wm2_maximo",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.4210854715202004e-14
+      }
+    },
+    {
+      "check": "Article seed variability: nRMSE_media",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.5265566588595902e-16
+      }
+    },
+    {
+      "check": "Article seed variability: nRMSE_desvio_padrao",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.1319070680748666e-16
+      }
+    },
+    {
+      "check": "Article seed variability: nRMSE_minimo",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 9.71445146547012e-17
+      }
+    },
+    {
+      "check": "Article seed variability: nRMSE_maximo",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 9.71445146547012e-17
+      }
+    },
+    {
+      "check": "Article seed variability: R2_media",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 2.220446049250313e-16
+      }
+    },
+    {
+      "check": "Article seed variability: R2_desvio_padrao",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 1.700029006457271e-16
+      }
+    },
+    {
+      "check": "Article seed variability: R2_minimo",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 2.220446049250313e-16
+      }
+    },
+    {
+      "check": "Article seed variability: R2_maximo",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 2.220446049250313e-16
+      }
+    },
+    {
+      "check": "Article origin/horizon cases: unique keys",
+      "passed": true
+    },
+    {
+      "check": "Article origin/horizon cases: matching keys",
+      "passed": true,
+      "detail": {
+        "calculated_rows": 28070,
+        "saved_rows": 28070
+      }
+    },
+    {
+      "check": "Article origin/horizon cases: MAE_timesnet_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 2.842170943040401e-14
+      }
+    },
+    {
+      "check": "Article origin/horizon cases: MAE_dilatedrnn_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 5.684341886080802e-14
+      }
+    },
+    {
+      "check": "Article origin/horizon cases: ganho_timesnet_vs_dilatedrnn_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 7.105427357601002e-15
+      }
+    },
+    {
+      "check": "Article case universe count",
+      "passed": true,
+      "detail": 28070
+    },
+    {
+      "check": "Global selected maior_ganho_timesnet: unique keys",
+      "passed": true
+    },
+    {
+      "check": "Global selected maior_ganho_timesnet: matching keys",
+      "passed": true,
+      "detail": {
+        "calculated_rows": 1,
+        "saved_rows": 1
+      }
+    },
+    {
+      "check": "Global selected maior_ganho_timesnet: MAE_timesnet_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Global selected maior_ganho_timesnet: MAE_dilatedrnn_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Global selected maior_ganho_timesnet: ganho_timesnet_vs_dilatedrnn_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Global selected maior_deficit_timesnet: unique keys",
+      "passed": true
+    },
+    {
+      "check": "Global selected maior_deficit_timesnet: matching keys",
+      "passed": true,
+      "detail": {
+        "calculated_rows": 1,
+        "saved_rows": 1
+      }
+    },
+    {
+      "check": "Global selected maior_deficit_timesnet: MAE_timesnet_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Global selected maior_deficit_timesnet: MAE_dilatedrnn_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Global selected maior_deficit_timesnet: ganho_timesnet_vs_dilatedrnn_wm2",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Weather maior_ganho_timesnet: count",
+      "passed": true
+    },
+    {
+      "check": "Weather maior_ganho_timesnet: precipitation",
+      "passed": true
+    },
+    {
+      "check": "Weather maior_ganho_timesnet: cloud",
+      "passed": true
+    },
+    {
+      "check": "Weather maior_ganho_timesnet: adverse days",
+      "passed": true
+    },
+    {
+      "check": "Weather maior_deficit_timesnet: count",
+      "passed": true
+    },
+    {
+      "check": "Weather maior_deficit_timesnet: precipitation",
+      "passed": true
+    },
+    {
+      "check": "Weather maior_deficit_timesnet: cloud",
+      "passed": true
+    },
+    {
+      "check": "Weather maior_deficit_timesnet: adverse days",
+      "passed": true
+    },
+    {
+      "check": "Independent maximum-rainfall example: unique keys",
+      "passed": true
+    },
+    {
+      "check": "Independent maximum-rainfall example: matching keys",
+      "passed": true,
+      "detail": {
+        "calculated_rows": 1,
+        "saved_rows": 1
+      }
+    },
+    {
+      "check": "Independent maximum-rainfall example: precipitacao_corrigida_mm_dia",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Independent maximum-rainfall example: nebulosidade_percentual",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Artifact SHA-256: caso_maior_deficit_timesnet.csv",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: caso_maior_deficit_timesnet.tex",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: caso_maior_ganho_timesnet.csv",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: caso_maior_ganho_timesnet.tex",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: caso_meteorologico_independente.csv",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: caso_meteorologico_independente.tex",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: comparacao_timesnet_dilatedrnn_por_localidade.csv",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: comparacao_timesnet_dilatedrnn_resumo.csv",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: comparacao_timesnet_dilatedrnn_resumo.tex",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: configuracao_treinamento.csv",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: configuracao_treinamento.tex",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: contrastes_por_origem_horizonte.csv",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: desempenho_macro.csv",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: desempenho_macro.tex",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: disponibilidade_medicoes_computacionais.json",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: heterogeneidade_local_delta_mae.pdf",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: heterogeneidade_local_delta_mae.png",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: heterogeneidade_local_delta_mae.svg",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: metricas_terminais.csv",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: metricas_terminais.tex",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: previsoes_casos_contrastantes.pdf",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: previsoes_casos_contrastantes.png",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: previsoes_casos_contrastantes.svg",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: proveniencia_entradas.json",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: ranking_por_tarefa.pdf",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: ranking_por_tarefa.png",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: ranking_por_tarefa.svg",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: regra_selecao_casos.json",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: variabilidade_por_semente.pdf",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: variabilidade_por_semente.png",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: variabilidade_por_semente.svg",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: variabilidade_sementes.csv",
+      "passed": true
+    },
+    {
+      "check": "Artifact SHA-256: variabilidade_sementes.tex",
+      "passed": true
+    },
+    {
+      "check": "Source canonical contract SHA-256: daily_30",
+      "passed": true
+    },
+    {
+      "check": "Source SHA-256: daily_30/manifesto_artefatos.json",
+      "passed": true
+    },
+    {
+      "check": "Source SHA-256: daily_30/status_execucao.json",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: daily_30/metricas_macro.csv",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: daily_30/metricas_por_localidade.csv",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: daily_30/previsoes_teste.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: daily_30/previsoes_validacao.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "Source canonical contract SHA-256: hourly_72_extension",
+      "passed": true
+    },
+    {
+      "check": "Source SHA-256: hourly_72_extension/manifesto_artefatos.json",
+      "passed": true
+    },
+    {
+      "check": "Source SHA-256: hourly_72_extension/status_execucao.json",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: hourly_72_extension/metricas_macro.csv",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: hourly_72_extension/metricas_por_localidade.csv",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: hourly_72_extension/previsoes_teste.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: hourly_72_extension/previsoes_validacao.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "Source canonical contract SHA-256: monthly_1",
+      "passed": true
+    },
+    {
+      "check": "Source SHA-256: monthly_1/manifesto_artefatos.json",
+      "passed": true
+    },
+    {
+      "check": "Source SHA-256: monthly_1/status_execucao.json",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: monthly_1/metricas_macro.csv",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: monthly_1/metricas_por_localidade.csv",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: monthly_1/previsoes_teste.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: monthly_1/previsoes_validacao.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "Source canonical contract SHA-256: monthly_6",
+      "passed": true
+    },
+    {
+      "check": "Source SHA-256: monthly_6/manifesto_artefatos.json",
+      "passed": true
+    },
+    {
+      "check": "Source SHA-256: monthly_6/status_execucao.json",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: monthly_6/metricas_macro.csv",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: monthly_6/metricas_por_localidade.csv",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: monthly_6/previsoes_teste.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "Audited input SHA-256: monthly_6/previsoes_validacao.csv.gz",
+      "passed": true
+    },
+    {
+      "check": "Article copied table: caso_maior_deficit_timesnet.tex",
+      "passed": true
+    },
+    {
+      "check": "Article copied table: caso_maior_ganho_timesnet.tex",
+      "passed": true
+    },
+    {
+      "check": "Article copied table: caso_meteorologico_independente.tex",
+      "passed": true
+    },
+    {
+      "check": "Article table numerical cells preserved: comparacao_timesnet_dilatedrnn_resumo.tex",
+      "passed": true
+    },
+    {
+      "check": "Article copied table: configuracao_treinamento.tex",
+      "passed": true
+    },
+    {
+      "check": "Macro LaTeX column labels/order: artigos\\revista_unificado\\tables\\desempenho_macro.tex",
+      "passed": true
+    },
+    {
+      "check": "Macro LaTeX column labels/order: resultados\\artigo_revista_unificado\\artefatos_resultados_corrigidos_FINAL\\desempenho_macro.tex",
+      "passed": true
+    },
+    {
+      "check": "Article macro LaTeX numerical equivalence: unique keys",
+      "passed": true
+    },
+    {
+      "check": "Article macro LaTeX numerical equivalence: matching keys",
+      "passed": true,
+      "detail": {
+        "calculated_rows": 12,
+        "saved_rows": 12
+      }
+    },
+    {
+      "check": "Article macro LaTeX numerical equivalence: Climatology",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article macro LaTeX numerical equivalence: DilatedRNN",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article macro LaTeX numerical equivalence: LSTM",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article macro LaTeX numerical equivalence: Persistence",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article macro LaTeX numerical equivalence: Seasonal naive",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article macro LaTeX numerical equivalence: TimesNet",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article macro LaTeX numerical equivalence: XGBoost",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article macro LaTeX numerical equivalence: Seeds",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Article table numerical cells preserved: metricas_terminais.tex",
+      "passed": true
+    },
+    {
+      "check": "Article copied table: variabilidade_sementes.tex",
+      "passed": true
+    },
+    {
+      "check": "Focused architecture LaTeX column labels/order",
+      "passed": true
+    },
+    {
+      "check": "Focused architecture LaTeX vs recalculated forecasts: unique keys",
+      "passed": true
+    },
+    {
+      "check": "Focused architecture LaTeX vs recalculated forecasts: matching keys",
+      "passed": true,
+      "detail": {
+        "calculated_rows": 12,
+        "saved_rows": 12
+      }
+    },
+    {
+      "check": "Focused architecture LaTeX vs recalculated forecasts: TimesNet",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Focused architecture LaTeX vs recalculated forecasts: DilatedRNN",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Focused architecture LaTeX vs recalculated forecasts: delta",
+      "passed": true,
+      "detail": {
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "Focused architecture LaTeX winner labels",
+      "passed": true
+    },
+    {
+      "check": "Focused architecture LaTeX highlights correct winner",
+      "passed": true
+    }
+  ],
+  "tasks": {
+    "daily_30": {
+      "validacao_2023": {
+        "prediction_rows": 100800,
+        "sites": 10,
+        "origins_per_site": {
+          "BMW San Luis Potosi": 336,
+          "BYD Camacari": 336,
+          "Ford Rouge Electric Vehicle Center": 336,
+          "GM Factory Zero": 336,
+          "Hyundai Metaplant Georgia": 336,
+          "Lucid AMP 1 Casa Grande": 336,
+          "Rivian Normal": 336,
+          "Tesla Fremont Factory": 336,
+          "Tesla Gigafactory Nevada": 336,
+          "Tesla Gigafactory Texas": 336
+        },
+        "first_target": "2023-01-01 00:00:00",
+        "last_target": "2023-12-31 00:00:00"
+      },
+      "teste_2024": {
+        "prediction_rows": 101100,
+        "sites": 10,
+        "origins_per_site": {
+          "BMW San Luis Potosi": 337,
+          "BYD Camacari": 337,
+          "Ford Rouge Electric Vehicle Center": 337,
+          "GM Factory Zero": 337,
+          "Hyundai Metaplant Georgia": 337,
+          "Lucid AMP 1 Casa Grande": 337,
+          "Rivian Normal": 337,
+          "Tesla Fremont Factory": 337,
+          "Tesla Gigafactory Nevada": 337,
+          "Tesla Gigafactory Texas": 337
+        },
+        "first_target": "2024-01-01 00:00:00",
+        "last_target": "2024-12-31 00:00:00"
+      }
+    },
+    "monthly_1": {
+      "validacao_2023": {
+        "prediction_rows": 120,
+        "sites": 10,
+        "origins_per_site": {
+          "BMW San Luis Potosi": 12,
+          "BYD Camacari": 12,
+          "Ford Rouge Electric Vehicle Center": 12,
+          "GM Factory Zero": 12,
+          "Hyundai Metaplant Georgia": 12,
+          "Lucid AMP 1 Casa Grande": 12,
+          "Rivian Normal": 12,
+          "Tesla Fremont Factory": 12,
+          "Tesla Gigafactory Nevada": 12,
+          "Tesla Gigafactory Texas": 12
+        },
+        "first_target": "2023-01-31 00:00:00",
+        "last_target": "2023-12-31 00:00:00"
+      },
+      "teste_2024": {
+        "prediction_rows": 120,
+        "sites": 10,
+        "origins_per_site": {
+          "BMW San Luis Potosi": 12,
+          "BYD Camacari": 12,
+          "Ford Rouge Electric Vehicle Center": 12,
+          "GM Factory Zero": 12,
+          "Hyundai Metaplant Georgia": 12,
+          "Lucid AMP 1 Casa Grande": 12,
+          "Rivian Normal": 12,
+          "Tesla Fremont Factory": 12,
+          "Tesla Gigafactory Nevada": 12,
+          "Tesla Gigafactory Texas": 12
+        },
+        "first_target": "2024-01-31 00:00:00",
+        "last_target": "2024-12-31 00:00:00"
+      }
+    },
+    "monthly_6": {
+      "validacao_2023": {
+        "prediction_rows": 420,
+        "sites": 10,
+        "origins_per_site": {
+          "BMW San Luis Potosi": 7,
+          "BYD Camacari": 7,
+          "Ford Rouge Electric Vehicle Center": 7,
+          "GM Factory Zero": 7,
+          "Hyundai Metaplant Georgia": 7,
+          "Lucid AMP 1 Casa Grande": 7,
+          "Rivian Normal": 7,
+          "Tesla Fremont Factory": 7,
+          "Tesla Gigafactory Nevada": 7,
+          "Tesla Gigafactory Texas": 7
+        },
+        "first_target": "2023-01-31 00:00:00",
+        "last_target": "2023-12-31 00:00:00"
+      },
+      "teste_2024": {
+        "prediction_rows": 420,
+        "sites": 10,
+        "origins_per_site": {
+          "BMW San Luis Potosi": 7,
+          "BYD Camacari": 7,
+          "Ford Rouge Electric Vehicle Center": 7,
+          "GM Factory Zero": 7,
+          "Hyundai Metaplant Georgia": 7,
+          "Lucid AMP 1 Casa Grande": 7,
+          "Rivian Normal": 7,
+          "Tesla Fremont Factory": 7,
+          "Tesla Gigafactory Nevada": 7,
+          "Tesla Gigafactory Texas": 7
+        },
+        "first_target": "2024-01-31 00:00:00",
+        "last_target": "2024-12-31 00:00:00"
+      }
+    },
+    "hourly_72_extension": {
+      "validacao_2023": {
+        "prediction_rows": 261360,
+        "sites": 10,
+        "origins_per_site": {
+          "BMW San Luis Potosi": 363,
+          "BYD Camacari": 363,
+          "Ford Rouge Electric Vehicle Center": 363,
+          "GM Factory Zero": 363,
+          "Hyundai Metaplant Georgia": 363,
+          "Lucid AMP 1 Casa Grande": 363,
+          "Rivian Normal": 363,
+          "Tesla Fremont Factory": 363,
+          "Tesla Gigafactory Nevada": 363,
+          "Tesla Gigafactory Texas": 363
+        },
+        "first_target": "2023-01-01 00:00:00",
+        "last_target": "2023-12-31 23:00:00"
+      },
+      "teste_2024": {
+        "prediction_rows": 261360,
+        "sites": 10,
+        "origins_per_site": {
+          "BMW San Luis Potosi": 363,
+          "BYD Camacari": 363,
+          "Ford Rouge Electric Vehicle Center": 363,
+          "GM Factory Zero": 363,
+          "Hyundai Metaplant Georgia": 363,
+          "Lucid AMP 1 Casa Grande": 363,
+          "Rivian Normal": 363,
+          "Tesla Fremont Factory": 363,
+          "Tesla Gigafactory Nevada": 363,
+          "Tesla Gigafactory Texas": 363
+        },
+        "first_target": "2024-01-01 00:00:00",
+        "last_target": "2024-12-30 23:00:00"
+      }
+    }
+  },
+  "terminal_seed_statistics": [
+    {
+      "tarefa": "daily_30",
+      "tipo_horizonte": "cumulativo",
+      "horizonte": 30,
+      "modelo": "DilatedRNN",
+      "N_sementes": 5,
+      "MAE_wm2_media": 44.099824579627565,
+      "MAE_wm2_desvio_padrao": 0.6003357385160031,
+      "MAE_wm2_minimo": 43.490540364301175,
+      "MAE_wm2_maximo": 44.91261111949244,
+      "RMSE_wm2_media": 55.20543726141922,
+      "RMSE_wm2_desvio_padrao": 0.36127854633869744,
+      "RMSE_wm2_minimo": 54.64189054450924,
+      "RMSE_wm2_maximo": 55.5786178785295,
+      "nRMSE_media": 0.2657347732801657,
+      "nRMSE_desvio_padrao": 0.001684667419805496,
+      "nRMSE_minimo": 0.26311222565647985,
+      "nRMSE_maximo": 0.26746932411146135,
+      "R2_media": 0.5341763992901385,
+      "R2_desvio_padrao": 0.006205877183927835,
+      "R2_minimo": 0.5285886854327857,
+      "R2_maximo": 0.5444958495938133
+    },
+    {
+      "tarefa": "daily_30",
+      "tipo_horizonte": "cumulativo",
+      "horizonte": 30,
+      "modelo": "TimesNet",
+      "N_sementes": 5,
+      "MAE_wm2_media": 44.287484140606715,
+      "MAE_wm2_desvio_padrao": 0.2912830561469546,
+      "MAE_wm2_minimo": 43.976265714744144,
+      "MAE_wm2_maximo": 44.67647284558418,
+      "RMSE_wm2_media": 55.49017814428784,
+      "RMSE_wm2_desvio_padrao": 0.1945933697531449,
+      "RMSE_wm2_minimo": 55.28336038009568,
+      "RMSE_wm2_maximo": 55.78713333830914,
+      "nRMSE_media": 0.2670126128589024,
+      "nRMSE_desvio_padrao": 0.000961247577562947,
+      "nRMSE_minimo": 0.2660737859353078,
+      "nRMSE_maximo": 0.26850825532009126,
+      "R2_media": 0.5257192139476212,
+      "R2_desvio_padrao": 0.0033621952166062916,
+      "R2_minimo": 0.520344898281494,
+      "R2_maximo": 0.5291103299831229
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "tipo_horizonte": "cumulativo",
+      "horizonte": 72,
+      "modelo": "DilatedRNN",
+      "N_sementes": 1,
+      "MAE_wm2_media": 52.957992923843335,
+      "MAE_wm2_desvio_padrao": NaN,
+      "MAE_wm2_minimo": 52.957992923843335,
+      "MAE_wm2_maximo": 52.957992923843335,
+      "RMSE_wm2_media": 104.92877033861905,
+      "RMSE_wm2_desvio_padrao": NaN,
+      "RMSE_wm2_minimo": 104.92877033861905,
+      "RMSE_wm2_maximo": 104.92877033861905,
+      "nRMSE_media": 0.5230565244634844,
+      "nRMSE_desvio_padrao": NaN,
+      "nRMSE_minimo": 0.5230565244634844,
+      "nRMSE_maximo": 0.5230565244634844,
+      "R2_media": 0.8571068199328191,
+      "R2_desvio_padrao": NaN,
+      "R2_minimo": 0.8571068199328191,
+      "R2_maximo": 0.8571068199328191
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "tipo_horizonte": "cumulativo",
+      "horizonte": 72,
+      "modelo": "TimesNet",
+      "N_sementes": 1,
+      "MAE_wm2_media": 52.47968132552912,
+      "MAE_wm2_desvio_padrao": NaN,
+      "MAE_wm2_minimo": 52.47968132552912,
+      "MAE_wm2_maximo": 52.47968132552912,
+      "RMSE_wm2_media": 101.1669172852294,
+      "RMSE_wm2_desvio_padrao": NaN,
+      "RMSE_wm2_minimo": 101.1669172852294,
+      "RMSE_wm2_maximo": 101.1669172852294,
+      "nRMSE_media": 0.5040732526731022,
+      "nRMSE_desvio_padrao": NaN,
+      "nRMSE_minimo": 0.5040732526731022,
+      "nRMSE_maximo": 0.5040732526731022,
+      "R2_media": 0.866999855374319,
+      "R2_desvio_padrao": NaN,
+      "R2_minimo": 0.866999855374319,
+      "R2_maximo": 0.866999855374319
+    },
+    {
+      "tarefa": "monthly_1",
+      "tipo_horizonte": "cumulativo",
+      "horizonte": 1,
+      "modelo": "DilatedRNN",
+      "N_sementes": 5,
+      "MAE_wm2_media": 13.447427648031143,
+      "MAE_wm2_desvio_padrao": 0.3484204145121339,
+      "MAE_wm2_minimo": 13.107334422177658,
+      "MAE_wm2_maximo": 13.84995140842284,
+      "RMSE_wm2_media": 16.541147793720665,
+      "RMSE_wm2_desvio_padrao": 0.47769961929047555,
+      "RMSE_wm2_minimo": 16.059793256825575,
+      "RMSE_wm2_maximo": 17.106059466620327,
+      "nRMSE_media": 0.0811453349475343,
+      "nRMSE_desvio_padrao": 0.002257538354662893,
+      "nRMSE_minimo": 0.07857068515406213,
+      "nRMSE_maximo": 0.08358887485043624,
+      "R2_media": 0.9041164661933789,
+      "R2_desvio_padrao": 0.0075194552721945,
+      "R2_minimo": 0.8943894623849417,
+      "R2_maximo": 0.9109148348951198
+    },
+    {
+      "tarefa": "monthly_1",
+      "tipo_horizonte": "cumulativo",
+      "horizonte": 1,
+      "modelo": "TimesNet",
+      "N_sementes": 5,
+      "MAE_wm2_media": 14.617381699089123,
+      "MAE_wm2_desvio_padrao": 0.7407531417670767,
+      "MAE_wm2_minimo": 13.816799365483188,
+      "MAE_wm2_maximo": 15.494231711334777,
+      "RMSE_wm2_media": 18.23164025251966,
+      "RMSE_wm2_desvio_padrao": 0.7276821947536788,
+      "RMSE_wm2_minimo": 17.373439311430925,
+      "RMSE_wm2_maximo": 19.028142471076887,
+      "nRMSE_media": 0.088824763662304,
+      "nRMSE_desvio_padrao": 0.0036731397102535506,
+      "nRMSE_minimo": 0.08495214888135216,
+      "nRMSE_maximo": 0.09352751435618703,
+      "R2_media": 0.8752016711391791,
+      "R2_desvio_padrao": 0.007198821977919048,
+      "R2_minimo": 0.865403819444311,
+      "R2_maximo": 0.8850328003261503
+    },
+    {
+      "tarefa": "monthly_6",
+      "tipo_horizonte": "cumulativo",
+      "horizonte": 6,
+      "modelo": "DilatedRNN",
+      "N_sementes": 5,
+      "MAE_wm2_media": 14.769003687542043,
+      "MAE_wm2_desvio_padrao": 0.4511724394746913,
+      "MAE_wm2_minimo": 14.151849284472181,
+      "MAE_wm2_maximo": 15.291000660654257,
+      "RMSE_wm2_media": 18.04459837810708,
+      "RMSE_wm2_desvio_padrao": 0.39166718345413815,
+      "RMSE_wm2_minimo": 17.64848229159838,
+      "RMSE_wm2_maximo": 18.549870468334266,
+      "nRMSE_media": 0.07710237233416338,
+      "nRMSE_desvio_padrao": 0.001724176187166569,
+      "nRMSE_minimo": 0.07525746674470991,
+      "nRMSE_maximo": 0.07916079061057757,
+      "R2_media": 0.847974229322195,
+      "R2_desvio_padrao": 0.002677888198547442,
+      "R2_minimo": 0.8445764068284992,
+      "R2_maximo": 0.8507446031143757
+    },
+    {
+      "tarefa": "monthly_6",
+      "tipo_horizonte": "cumulativo",
+      "horizonte": 6,
+      "modelo": "TimesNet",
+      "N_sementes": 5,
+      "MAE_wm2_media": 15.236388092799482,
+      "MAE_wm2_desvio_padrao": 0.7643507933058934,
+      "MAE_wm2_minimo": 13.918359290309946,
+      "MAE_wm2_maximo": 15.879072647909023,
+      "RMSE_wm2_media": 19.078515729763858,
+      "RMSE_wm2_desvio_padrao": 0.9109420172603608,
+      "RMSE_wm2_minimo": 17.48259948166288,
+      "RMSE_wm2_maximo": 19.73643574168516,
+      "nRMSE_media": 0.08126746569752923,
+      "nRMSE_desvio_padrao": 0.003949048344108452,
+      "nRMSE_minimo": 0.07455743598478373,
+      "nRMSE_maximo": 0.08479940099063951,
+      "R2_media": 0.8390431943805756,
+      "R2_desvio_padrao": 0.011067377581797466,
+      "R2_minimo": 0.8299244691142631,
+      "R2_maximo": 0.8575374108108204
+    }
+  ],
+  "maior_ganho_timesnet": {
+    "localidade": "GM Factory Zero",
+    "origem": "2024-03-31 05:00:00+00:00",
+    "MAE_timesnet_wm2": 45.42902323572587,
+    "MAE_dilatedrnn_wm2": 109.90227086655796,
+    "tarefa": "hourly_72_extension",
+    "horizonte": 24,
+    "ganho_timesnet_vs_dilatedrnn_wm2": 64.47324763083208
+  },
+  "maior_deficit_timesnet": {
+    "localidade": "Tesla Gigafactory Texas",
+    "origem": "2024-03-28 06:00:00+00:00",
+    "MAE_timesnet_wm2": 150.01612245167294,
+    "MAE_dilatedrnn_wm2": 73.91524097882211,
+    "tarefa": "hourly_72_extension",
+    "horizonte": 24,
+    "ganho_timesnet_vs_dilatedrnn_wm2": -76.10088147285083
+  },
+  "hourly_exact_lead_caveat": "Exact leads 24, 48 and 72 are nighttime targets under the retained daily-origin hourly protocol: all models have MAE=RMSE=0 after night masking; nRMSE and R2 are undefined. Architecture comparisons must use the reported cumulative scopes.",
+  "article_latex_validation": {
+    "macro_table": "All task/horizon keys, model column labels/order, seven MAEs and seed counts match the archived table numerically; bold markup and native-unit labels are permitted.",
+    "focused_architecture_table": "All twelve cumulative rows independently match recalculated TimesNet/DilatedRNN macro-MAE, differences rounded only after subtraction, winner names and bold highlights."
+  },
+  "local_metric_rows_recalculated": 10440,
+  "macro_metric_rows_recalculated": 1044,
+  "source_prediction_rows": 725700,
+  "passed": 276,
+  "failed": 0
+}

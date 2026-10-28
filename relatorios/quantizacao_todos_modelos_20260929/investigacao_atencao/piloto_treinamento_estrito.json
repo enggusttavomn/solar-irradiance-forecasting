@@ -1,0 +1,133 @@
+{
+  "ambiente": {
+    "cublas_workspace_config": ":4096:8",
+    "cuda": "12.6",
+    "cudnn": 91002,
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "pacotes": {
+      "numpy": "2.4.4",
+      "pandas": "3.0.3",
+      "torch": "2.12.0+cu126"
+    },
+    "python": "3.14.4",
+    "torch": "2.12.0+cu126"
+  },
+  "aprovado": true,
+  "concorrencia": {
+    "execucao_concorrente_autorizada_com_limite_1GiB": true,
+    "fila_existente_alterada_ou_interrompida": false,
+    "fila_rnn_gpu_ativa_informada_pelo_root": true,
+    "processo_piloto": 22448
+  },
+  "erro": null,
+  "evidencia_completa": {
+    "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\resultado.json",
+    "sha256": "ed88081da5e6bd233812cba36dacfa10126ca193c2aaf97af5f85b0f91b47f1d"
+  },
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\modelos_baselines_adicionais.py": "f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\informer\\comparacao.json": "e9f355ecc4c36ccf81420ecf0f3f37ddff2e424f2fb5fc2f41987681c662469b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\informer\\contrato_piloto.json": "4d5ab3bf9accd09cf714f92c2e5fef66cd77d99445b7c2096224f99bb39c1202",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\informer\\repeticao_1\\metadados.json": "f40912102572ec43ef8e1b3b14115a4379ddc5f9812656521ac8f1dfec37300f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\informer\\repeticao_1\\pesos.pt": "2266f9b210e9cf8d04c4db7dd7e27a66d6bc4ff2ffad0fe1becd5fd4ed7f6ab0",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\informer\\repeticao_1\\previsoes.npz": "f18674d2163d5277855a9ae742871780104b72d055023e14b79afce67393f732",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\informer\\repeticao_2\\metadados.json": "447c0d735a08533584b3b719b97c43625ebeca4efc3e2147452ca86f9e357ae6",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\informer\\repeticao_2\\pesos.pt": "604867007e4a2bebd7385d0a9562a6f1d5f44d32e08c5789600c0cbb9453bb67",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\informer\\repeticao_2\\previsoes.npz": "f18674d2163d5277855a9ae742871780104b72d055023e14b79afce67393f732",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\transformer\\comparacao.json": "e9f355ecc4c36ccf81420ecf0f3f37ddff2e424f2fb5fc2f41987681c662469b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\transformer\\contrato_piloto.json": "a6465c15632db0316ad564549bd1eb9691bfc08fb1ba3a1a42455b6272185919",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\transformer\\repeticao_1\\metadados.json": "d2c87104fe0e76a3e80fdd6e02620f7f41d616146e4770913102c3a911df4efd",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\transformer\\repeticao_1\\pesos.pt": "9401e6c28623fb0b489a1319e6d62448fd98e3ee23decc77b37644f28aee8d03",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\transformer\\repeticao_1\\previsoes.npz": "a8a3b5d4f178949f0426280c4d65a6a7c04941c4cc538555578bd9f2c6f899aa",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\transformer\\repeticao_2\\metadados.json": "b4adf9008cf1613770422e2d08efffa668a19222291fc9fc698a7e89db246f31",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\transformer\\repeticao_2\\pesos.pt": "cc2e51508f519730565fcae91301e749944482289a8315f88f479d96dbf11327",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\daily_30\\transformer\\repeticao_2\\previsoes.npz": "a8a3b5d4f178949f0426280c4d65a6a7c04941c4cc538555578bd9f2c6f899aa",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\informer\\comparacao.json": "e9f355ecc4c36ccf81420ecf0f3f37ddff2e424f2fb5fc2f41987681c662469b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\informer\\contrato_piloto.json": "3797b55b6e32271931918bc61c6069e855932e7a4827a1ebd1a15acf12b69f53",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\informer\\repeticao_1\\metadados.json": "22fbcc9ec700a6efd83049f71c9988b955884f203f2f690da3021180a7c2e26a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\informer\\repeticao_1\\pesos.pt": "f416b95c03061827880f3db5c4a725a5dc9330eddad8d9b1d80296c361da332e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\informer\\repeticao_1\\previsoes.npz": "ca7be6d969d06ba021871ba773d2d8b23a57a4113d531eac46787a2fef424011",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\informer\\repeticao_2\\metadados.json": "c80cbcfe922a97c0a8441647c3e36ffd01bdd210e0b6c61db9927cb0a8cbe90c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\informer\\repeticao_2\\pesos.pt": "1ded7b59f831759c3e51a54b0962350d83609ee5ad579470050a805fc846ef94",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\informer\\repeticao_2\\previsoes.npz": "ca7be6d969d06ba021871ba773d2d8b23a57a4113d531eac46787a2fef424011",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\transformer\\comparacao.json": "e9f355ecc4c36ccf81420ecf0f3f37ddff2e424f2fb5fc2f41987681c662469b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\transformer\\contrato_piloto.json": "f057262418f860a466febcfd0fcbf0ce199073a519b28ea2f7d182ac42a4db2d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\transformer\\repeticao_1\\metadados.json": "fa9c12f097e43526678b39b648fc8974a791935e69bdb30782bbc36638573278",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\transformer\\repeticao_1\\pesos.pt": "1f7d2aa3982cbf1605b883087e0d98768daa440f0e9cdb0326b4b9fbc9f04340",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\transformer\\repeticao_1\\previsoes.npz": "ec9282d1b3bbca8bd81f95773a7071ec21229fe28a876d085b206aba3acc6fd2",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\transformer\\repeticao_2\\metadados.json": "fed6b54bab16bdafc4386b08f17db21a6730963fdbab04a149e4f3d343d0df26",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\transformer\\repeticao_2\\pesos.pt": "0d62fa7926d8d0e8a06ceccef1f12f5e05a03c0d6ffae9619df859d9fd330f66",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\hourly_72_extension\\transformer\\repeticao_2\\previsoes.npz": "ec9282d1b3bbca8bd81f95773a7071ec21229fe28a876d085b206aba3acc6fd2",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\piloto_treino_estrito_v1\\resultado.json": "ed88081da5e6bd233812cba36dacfa10126ca193c2aaf97af5f85b0f91b47f1d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\piloto_treinamento_atencao_estrito.py": "5616de3090ff6aa80ba73e8534c5335eb8db84285c9e00537833867cb0d413e3"
+  },
+  "limitacao": "Nao substitui treino completo nem garante todos os dados/epocas de uma execucao completa.",
+  "memoria": {
+    "fracao_allocator": 0.25001907494163067,
+    "limite_allocator_bytes": 1073741824,
+    "memoria_livre_inicial_bytes": 3454795776,
+    "memoria_total_bytes": 4294639616,
+    "memoria_usada_global_inicial_bytes": 839843840,
+    "observacao": "Limite do allocator PyTorch; contexto CUDA/bibliotecas possuem overhead externo.",
+    "pico_allocator_alocado_bytes": 269306880,
+    "pico_allocator_reservado_bytes": 301989888,
+    "sem_fallback_de_batch_dispositivo_ou_dados": true
+  },
+  "ok": true,
+  "pares": [
+    {
+      "aprovado": true,
+      "curvas_bitexatas": true,
+      "epocas_escolhidas_iguais": true,
+      "modelo": "Transformer",
+      "optimizer_steps_por_repeticao": 8,
+      "pesos_finais_bitexatos": true,
+      "pesos_retornados_bitexatos": true,
+      "previsoes_bitexatas": true,
+      "repeticoes": 2,
+      "tarefa": "daily_30"
+    },
+    {
+      "aprovado": true,
+      "curvas_bitexatas": true,
+      "epocas_escolhidas_iguais": true,
+      "modelo": "Informer",
+      "optimizer_steps_por_repeticao": 8,
+      "pesos_finais_bitexatos": true,
+      "pesos_retornados_bitexatos": true,
+      "previsoes_bitexatas": true,
+      "repeticoes": 2,
+      "tarefa": "daily_30"
+    },
+    {
+      "aprovado": true,
+      "curvas_bitexatas": true,
+      "epocas_escolhidas_iguais": true,
+      "modelo": "Transformer",
+      "optimizer_steps_por_repeticao": 8,
+      "pesos_finais_bitexatos": true,
+      "pesos_retornados_bitexatos": true,
+      "previsoes_bitexatas": true,
+      "repeticoes": 2,
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "aprovado": true,
+      "curvas_bitexatas": true,
+      "epocas_escolhidas_iguais": true,
+      "modelo": "Informer",
+      "optimizer_steps_por_repeticao": 8,
+      "pesos_finais_bitexatos": true,
+      "pesos_retornados_bitexatos": true,
+      "previsoes_bitexatas": true,
+      "repeticoes": 2,
+      "tarefa": "hourly_72_extension"
+    }
+  ],
+  "politica": "atencao_cuda_deterministica_v1",
+  "politica_numerica": "SDPA automatico existente; deterministic_algorithms=True,warn_only=False apos cada fixar_semente",
+  "resultado_publicavel": false,
+  "schema": 1
+}

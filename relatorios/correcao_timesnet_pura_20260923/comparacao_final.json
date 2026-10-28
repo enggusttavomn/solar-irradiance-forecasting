@@ -1,0 +1,160 @@
+{
+  "sem_novo_treinamento": true,
+  "fonte_mensal": "resultados/busca_timesnet_mensal_20260920",
+  "fonte_horaria_diaria": "resultados/busca_timesnet_resolucoes_20260922",
+  "tarefas": [
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "TimesNet pura",
+      "metricas_original": {
+        "MAE_wm2": 52.47968132552912,
+        "MSE_w2m4": 10491.148105399863,
+        "RMSE_wm2": 101.1669172852294,
+        "nRMSE": 0.5040732526731022,
+        "R2": 0.866999855374319
+      },
+      "metricas_otimizada": {
+        "MAE_wm2": 47.91446203884576,
+        "MSE_w2m4": 10912.436091777208,
+        "RMSE_wm2": 102.97685718948082,
+        "nRMSE": 0.5137476290179699,
+        "R2": 0.8612401462152558
+      },
+      "reducao_MAE_percentual": 8.699022500471196,
+      "vencedor": {
+        "MAE_validacao_wm2": 48.94850718134734,
+        "contexto": 336,
+        "dimensao": 16,
+        "epocas": {
+          "42": 30
+        },
+        "lote": 64,
+        "nome": "mae_dim16_lr0003",
+        "perda": "mae",
+        "taxa": 0.0003
+      }
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "TimesNet pura",
+      "metricas_original": {
+        "MAE_wm2": 44.07760736799506,
+        "MSE_w2m4": 3143.3841947415563,
+        "RMSE_wm2": 55.16011878791603,
+        "nRMSE": 0.2654703367998448,
+        "R2": 0.530890191615768
+      },
+      "metricas_otimizada": {
+        "MAE_wm2": 42.17076886374178,
+        "MSE_w2m4": 3247.6458703765106,
+        "RMSE_wm2": 56.01718622075127,
+        "nRMSE": 0.26978730616700913,
+        "R2": 0.5164840068469643
+      },
+      "reducao_MAE_percentual": 4.3260934930824835,
+      "vencedor": {
+        "MAE_validacao_wm2": 43.94697113114908,
+        "contexto": 365,
+        "dimensao": 8,
+        "epocas": {
+          "11": 7,
+          "23": 6,
+          "42": 7,
+          "67": 7,
+          "89": 7
+        },
+        "lote": 128,
+        "nome": "huber",
+        "perda": "huber",
+        "taxa": 0.001
+      }
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "TimesNet pura",
+      "metricas_original": {
+        "MAE_wm2": 13.89152777704864,
+        "MSE_w2m4": 337.09997384804035,
+        "RMSE_wm2": 17.486544055258918,
+        "nRMSE": 0.0851403731606253,
+        "R2": 0.8815878464473806
+      },
+      "metricas_otimizada": {
+        "MAE_wm2": 13.856143200094374,
+        "MSE_w2m4": 343.39045160057054,
+        "RMSE_wm2": 17.709605982925865,
+        "nRMSE": 0.086626412084543,
+        "R2": 0.8802767500862905
+      },
+      "reducao_MAE_percentual": 0.2547205571782252,
+      "vencedor": {
+        "DP_MAE_sementes_wm2": 0.7026077134686652,
+        "MAE_validacao_ensemble_wm2": 15.43694149265956,
+        "MAE_validacao_media_sementes_wm2": 16.119448827125023,
+        "blocos": 1,
+        "d_ff": 32,
+        "d_model": 16,
+        "dropout": 0.1,
+        "epocas": {
+          "11": 64,
+          "23": 45,
+          "42": 60,
+          "67": 65,
+          "89": 94
+        },
+        "nome": "mae_dim16_lr_0003",
+        "origens_ajuste_por_local": 36,
+        "origens_validacao_por_local": 12,
+        "perda": "mae",
+        "seq_len": 12,
+        "taxa_aprendizado": 0.0003
+      }
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "TimesNet pura",
+      "metricas_original": {
+        "MAE_wm2": 14.458229916631431,
+        "MSE_w2m4": 357.66503730969964,
+        "RMSE_wm2": 18.242083434344902,
+        "nRMSE": 0.0777140421426522,
+        "R2": 0.849619038760653
+      },
+      "metricas_otimizada": {
+        "MAE_wm2": 14.197473385413323,
+        "MSE_w2m4": 353.5979108756119,
+        "RMSE_wm2": 18.112001128018978,
+        "nRMSE": 0.07720926033367395,
+        "R2": 0.8501870600814774
+      },
+      "reducao_MAE_percentual": 1.8035162860299918,
+      "vencedor": {
+        "DP_MAE_sementes_wm2": 0.5983374844343967,
+        "MAE_validacao_ensemble_wm2": 17.053964393721962,
+        "MAE_validacao_media_sementes_wm2": 17.611215838500346,
+        "blocos": 1,
+        "d_ff": 16,
+        "d_model": 8,
+        "dropout": 0.1,
+        "epocas": {
+          "11": 77,
+          "23": 20,
+          "42": 30,
+          "67": 52,
+          "89": 36
+        },
+        "nome": "huber",
+        "origens_ajuste_por_local": 31,
+        "origens_validacao_por_local": 7,
+        "perda": "huber",
+        "seq_len": 12,
+        "taxa_aprendizado": 0.001
+      }
+    }
+  ],
+  "avaliacao": "retrospectiva_2024_selecao_2023"
+}

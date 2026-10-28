@@ -215,11 +215,25 @@ def test_retomada_exige_contrato_exato(tmp_path: Path) -> None:
         validar_ou_criar_contrato(saida, divergente, retomar=True)
 
 
+@pytest.mark.parametrize(
+    "bloquear_substituicao",
+    [
+        pytest.param(False, id="gravacao_normal"),
+        pytest.param(
+            True,
+            id="fallback_windows",
+            marks=pytest.mark.skipif(
+                multires.os.name != "nt", reason="Fallback atomico nativo do Windows."
+            ),
+        ),
+    ],
+)
 def test_todas_gravacoes_atomicas_usam_retry_e_fallback_windows(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
+    bloquear_substituicao: bool,
 ) -> None:
-    """Simula WinError 32 em todo os.replace e exercita ambos os fallbacks."""
+    """Valida gravacoes normais e, no Windows, fallbacks apos WinError 32."""
 
     existente = tmp_path / "existente.json"
     salvar_json_atomico({"versao": 1}, existente)
@@ -232,8 +246,9 @@ def test_todas_gravacoes_atomicas_usam_retry_e_fallback_windows(
         erro.winerror = 32  # type: ignore[attr-defined]
         raise erro
 
-    monkeypatch.setattr(multires, "ATRASOS_SUBSTITUICAO_ATOMICA_S", (0.0, 0.0))
-    monkeypatch.setattr(multires.os, "replace", bloqueado)
+    if bloquear_substituicao:
+        monkeypatch.setattr(multires, "ATRASOS_SUBSTITUICAO_ATOMICA_S", (0.0, 0.0))
+        monkeypatch.setattr(multires.os, "replace", bloqueado)
     salvar_json_atomico({"versao": 2}, existente)
     quadro = pd.DataFrame({"a": [1, 2]})
     caminho_csv = tmp_path / "quadro.csv"
@@ -250,7 +265,8 @@ def test_todas_gravacoes_atomicas_usam_retry_e_fallback_windows(
         np.testing.assert_array_equal(conteudo["x"], [1, 2, 3])
     assert torch.load(caminho_torch, weights_only=True)["x"].item() == 4
     assert multires.joblib.load(caminho_joblib) == {"chave": [5, 6]}
-    assert chamadas >= 10
+    if bloquear_substituicao:
+        assert chamadas >= 10
     assert not list(tmp_path.rglob(".*.tmp"))
 
 

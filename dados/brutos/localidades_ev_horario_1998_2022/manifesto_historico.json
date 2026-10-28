@@ -1,0 +1,1106 @@
+{
+  "versao_esquema": 1,
+  "inicio_em_utc": "2026-09-30T02:52:54.488278+00:00",
+  "produto": "GOES Aggregated PSM v4",
+  "versao": "4.0.0",
+  "anos_objetivo": [
+    1998,
+    1999,
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "arquivos": {
+    "1998": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 283115520,
+      "cache_misses": 540,
+      "ano": 1998,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1142.5,
+      "inicio_utc": "1998-01-01T00:00:00+00:00",
+      "fim_utc": "1998-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 158.96130269998685,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_1998.csv.gz",
+      "sha256": "c9aec2446b7fb888085f36d0c5693f9936406131f1ba7f0be9af8727eab0d0e7",
+      "bytes": 378480,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_1998.npz",
+        "sha256": "93d04d6ee5d275bfff4d3e540cf7237ecba96485f383730dc0e00a2e31daef73",
+        "bytes": 275490,
+        "reproduz_horario": true
+      }
+    },
+    "1999": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 193994716,
+      "cache_misses": 203,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_1999.npz",
+        "sha256": "4d288c5dd2a043eb3365a6f909fe7cbf2c4606ce6002dcfa2b87c24ec3b88774",
+        "bytes": 275397,
+        "reproduz_horario": true
+      },
+      "ano": 1999,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1126.0,
+      "inicio_utc": "1999-01-01T00:00:00+00:00",
+      "fim_utc": "1999-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 79.90952660000767,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_1999.csv.gz",
+      "sha256": "a678465d235fae26129395e71f54e62630280fce44db730680229bfefc323fc1",
+      "bytes": 378064
+    },
+    "2019": {
+      "ano": 2019,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1124.5,
+      "inicio_utc": "2019-01-01T00:00:00+00:00",
+      "fim_utc": "2019-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "origem": "referencia_original_sem_copia",
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2019.npz",
+        "sha256": "bdc986cb68455733f6d1eeb4be6747bca8b4df6eb5c370dc67994cac5f046858",
+        "bytes": 279753,
+        "reproduz_horario": true
+      },
+      "arquivo": "dados/brutos/localidades_ev_horario/nsrdb_ghi_horaria_2019.csv.gz",
+      "sha256": "596462fc1dceb631bd0a8017798614d324fef6d298d01913ffbc89908db04026",
+      "bytes": 379925
+    },
+    "2000": {
+      "ghi_shape_remoto": [
+        17568,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17568,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 194127644,
+      "cache_misses": 205,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2000.npz",
+        "sha256": "0a7985a11e799597f0eadcbd1c914d294075b00a18c0c6993a70805600cc699a",
+        "bytes": 276032,
+        "reproduz_horario": true
+      },
+      "ano": 2000,
+      "horas_por_localidade": 8784,
+      "localidades": 10,
+      "linhas": 87840,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1112.0,
+      "inicio_utc": "2000-01-01T00:00:00+00:00",
+      "fim_utc": "2000-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 76.39628439999069,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2000.csv.gz",
+      "sha256": "cad2fd560bf00327966ef507f5cd76e9b2e914c61258a8a3a6368ea31131490f",
+      "bytes": 380007
+    },
+    "2001": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 194126444,
+      "cache_misses": 205,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2001.npz",
+        "sha256": "c9635a09ee9e1c77375d01e6c4e5a59ef4efce472c37466cce657666260fff25",
+        "bytes": 275366,
+        "reproduz_horario": true
+      },
+      "ano": 2001,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1107.0,
+      "inicio_utc": "2001-01-01T00:00:00+00:00",
+      "fim_utc": "2001-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 77.27390800000285,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2001.csv.gz",
+      "sha256": "b7538ef8bd87e66b4117aff75c1f1592cb4c170281b7f6d6bb2b802bde914224",
+      "bytes": 379034
+    },
+    "2002": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 193994620,
+      "cache_misses": 203,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2002.npz",
+        "sha256": "aa51df398c99962eef98c936f3d83b08d58e1d40dfdeb74e234bf311d3e0ec00",
+        "bytes": 275320,
+        "reproduz_horario": true
+      },
+      "ano": 2002,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1105.5,
+      "inicio_utc": "2002-01-01T00:00:00+00:00",
+      "fim_utc": "2002-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 77.51722619999782,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2002.csv.gz",
+      "sha256": "ab9ca43cc777778d00f8273c8675420d839c600e1be6bb001f51547d3020db80",
+      "bytes": 379074
+    },
+    "2003": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 194060396,
+      "cache_misses": 204,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2003.npz",
+        "sha256": "58c0f080c150bddc19a608b0e6160b6e431674453ed02d31e443aa50d676ebdd",
+        "bytes": 275497,
+        "reproduz_horario": true
+      },
+      "ano": 2003,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1113.5,
+      "inicio_utc": "2003-01-01T00:00:00+00:00",
+      "fim_utc": "2003-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 76.05619609999121,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2003.csv.gz",
+      "sha256": "2fdfdff61362f61ddf7a18fa5563ab38fa805c8ca43e3c2654fd987cba4d05a9",
+      "bytes": 378989
+    },
+    "2004": {
+      "ghi_shape_remoto": [
+        17568,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17568,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 194127644,
+      "cache_misses": 205,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2004.npz",
+        "sha256": "3fb20d29ff4f5e3ce3c730300437456d1c56c40d0912bd133f5f2ae7f2f6237d",
+        "bytes": 276531,
+        "reproduz_horario": true
+      },
+      "ano": 2004,
+      "horas_por_localidade": 8784,
+      "localidades": 10,
+      "linhas": 87840,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1117.0,
+      "inicio_utc": "2004-01-01T00:00:00+00:00",
+      "fim_utc": "2004-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 84.15176020000945,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2004.csv.gz",
+      "sha256": "add1ff784db719582f134a3071e82e44eaa8e75a8b148d020199097e5fedde57",
+      "bytes": 379716
+    },
+    "2005": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 194060580,
+      "cache_misses": 204,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2005.npz",
+        "sha256": "e2cb61f86838bcb792e84adcf2e2fcc94075bb92ca3650a89f784fc08b8f037e",
+        "bytes": 275281,
+        "reproduz_horario": true
+      },
+      "ano": 2005,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1110.0,
+      "inicio_utc": "2005-01-01T00:00:00+00:00",
+      "fim_utc": "2005-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 75.65786589999334,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2005.csv.gz",
+      "sha256": "a654c7e89faac637135f9372dfac8f303b1617835aa6e6d79444da28deb98634",
+      "bytes": 378707
+    },
+    "2006": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 194060396,
+      "cache_misses": 204,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2006.npz",
+        "sha256": "bab7266c9a3b11f4cb2531946ae9d04765bf644c38fcbdf66e28be8c71d740a9",
+        "bytes": 275626,
+        "reproduz_horario": true
+      },
+      "ano": 2006,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1098.0,
+      "inicio_utc": "2006-01-01T00:00:00+00:00",
+      "fim_utc": "2006-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 75.15328830000362,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2006.csv.gz",
+      "sha256": "ee60a5523c3e1478652e78884ccdda94ecb58aaa58b89d1b17e0102b8bef797e",
+      "bytes": 378544
+    },
+    "2007": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 194126444,
+      "cache_misses": 205,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2007.npz",
+        "sha256": "b84b9680eba9bdb1216f3d4671f24e08d82bc7b18b94b81f25710d105aaf1f88",
+        "bytes": 275334,
+        "reproduz_horario": true
+      },
+      "ano": 2007,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1110.5,
+      "inicio_utc": "2007-01-01T00:00:00+00:00",
+      "fim_utc": "2007-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 75.67351970000891,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2007.csv.gz",
+      "sha256": "8423efd29516b13a7e0112c5790f584c8f25ea1b01b8048300c23466ea01b524",
+      "bytes": 378714
+    },
+    "2008": {
+      "ghi_shape_remoto": [
+        17568,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17568,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 194061780,
+      "cache_misses": 204,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2008.npz",
+        "sha256": "4b8130ac7992b0b2bbb12c020a5ad0878b72e4d706f3455dcef90bcd509089af",
+        "bytes": 276466,
+        "reproduz_horario": true
+      },
+      "ano": 2008,
+      "horas_por_localidade": 8784,
+      "localidades": 10,
+      "linhas": 87840,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1120.0,
+      "inicio_utc": "2008-01-01T00:00:00+00:00",
+      "fim_utc": "2008-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 84.74962240000605,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2008.csv.gz",
+      "sha256": "20266d843e0d86fda160e0885a8e47340f2c068dee8cea8a41aec0c131a5da7b",
+      "bytes": 379540
+    },
+    "2009": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 194060580,
+      "cache_misses": 204,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2009.npz",
+        "sha256": "44ecf2b3c9c7c653cdfbf1d2f25d072755082ec6ad2ce8d29291db7c378a7e24",
+        "bytes": 275977,
+        "reproduz_horario": true
+      },
+      "ano": 2009,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1132.5,
+      "inicio_utc": "2009-01-01T00:00:00+00:00",
+      "fim_utc": "2009-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 75.86449819998234,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2009.csv.gz",
+      "sha256": "3f8cc406bd97ba003ad62e0322cd20f33032e3861672c1a472a02b1d48c479e2",
+      "bytes": 378413
+    },
+    "2010": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 193994716,
+      "cache_misses": 203,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2010.npz",
+        "sha256": "bc6448ece0e243a87dfbcc62713753c58db29ef19329eddb85b02a5fea55942c",
+        "bytes": 275356,
+        "reproduz_horario": true
+      },
+      "ano": 2010,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1137.5,
+      "inicio_utc": "2010-01-01T00:00:00+00:00",
+      "fim_utc": "2010-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 81.1710097999894,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2010.csv.gz",
+      "sha256": "2770b7d72d9cbc28e6458fe7d76f90fba245280e0f84ca57ba37acaab600612f",
+      "bytes": 378397
+    },
+    "2011": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 193994532,
+      "cache_misses": 203,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2011.npz",
+        "sha256": "6f34052cd2d3ce965ebf4bab0e8b7118c3c89f924bba4238c0403e728ccf7ba4",
+        "bytes": 275415,
+        "reproduz_horario": true
+      },
+      "ano": 2011,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1127.5,
+      "inicio_utc": "2011-01-01T00:00:00+00:00",
+      "fim_utc": "2011-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 92.24831890000496,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2011.csv.gz",
+      "sha256": "91f503e90ef2d258307a31523fb37083ef5e92a5932dfa6d66e1bd1962607423",
+      "bytes": 378315
+    },
+    "2012": {
+      "ghi_shape_remoto": [
+        17568,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17568,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 194061780,
+      "cache_misses": 204,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2012.npz",
+        "sha256": "826b07401070ec6e418accca914d3c1904d2deb417511bac3cb0d7fae1ed15bb",
+        "bytes": 275785,
+        "reproduz_horario": true
+      },
+      "ano": 2012,
+      "horas_por_localidade": 8784,
+      "localidades": 10,
+      "linhas": 87840,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1114.0,
+      "inicio_utc": "2012-01-01T00:00:00+00:00",
+      "fim_utc": "2012-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 72.95397339999909,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2012.csv.gz",
+      "sha256": "caf0b919f14f28070f159ffa970b4d0586b8b351bc70e385dcbf1c64e7414789",
+      "bytes": 379178
+    },
+    "2013": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 194060580,
+      "cache_misses": 204,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2013.npz",
+        "sha256": "e3db95ff3b5b11b7fff69df8a1f4f38bfa0a6f5bc7b2212b053c81547e7c2bc7",
+        "bytes": 275533,
+        "reproduz_horario": true
+      },
+      "ano": 2013,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1147.5,
+      "inicio_utc": "2013-01-01T00:00:00+00:00",
+      "fim_utc": "2013-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 72.25158539999393,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2013.csv.gz",
+      "sha256": "2ab1ea2c75b92babf5820ed90d11b006e18e91093a5e5f3c6b1cef97a0b55ae9",
+      "bytes": 378815
+    },
+    "2014": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 193994532,
+      "cache_misses": 203,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2014.npz",
+        "sha256": "e4f5e453ca83bfbb1e02881dcba15b4204e57dd074f1edd8aebfce5dbee321a8",
+        "bytes": 275373,
+        "reproduz_horario": true
+      },
+      "ano": 2014,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1102.0,
+      "inicio_utc": "2014-01-01T00:00:00+00:00",
+      "fim_utc": "2014-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 70.08243099998799,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2014.csv.gz",
+      "sha256": "738a54227306d17e0d61b0a8faaede291e7d1e2fe31fda7b72d3af7890b842a1",
+      "bytes": 379635
+    },
+    "2015": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 194126444,
+      "cache_misses": 205,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2015.npz",
+        "sha256": "b6935b293aa434b56591b4789973d7ca78cb4425b261261b7d458904f9ca5d09",
+        "bytes": 275548,
+        "reproduz_horario": true
+      },
+      "ano": 2015,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1086.5,
+      "inicio_utc": "2015-01-01T00:00:00+00:00",
+      "fim_utc": "2015-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 75.02511669998057,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2015.csv.gz",
+      "sha256": "cfab410851f76dc248a4b892cb68c6db394e49f725a46fa48e96b904cfc0ce9e",
+      "bytes": 379601
+    },
+    "2016": {
+      "ghi_shape_remoto": [
+        17568,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17568,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 193995916,
+      "cache_misses": 203,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2016.npz",
+        "sha256": "6b6c758b817148b36c8c497d1cdd8823bf376c22926b64f770f0e7a43c8d1d60",
+        "bytes": 275902,
+        "reproduz_horario": true
+      },
+      "ano": 2016,
+      "horas_por_localidade": 8784,
+      "localidades": 10,
+      "linhas": 87840,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1105.0,
+      "inicio_utc": "2016-01-01T00:00:00+00:00",
+      "fim_utc": "2016-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 78.33932650001952,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2016.csv.gz",
+      "sha256": "24fa8ef7e66dc8a37e506fc18101a3d1a355620d502f0144111e50b551947b47",
+      "bytes": 380231
+    },
+    "2017": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 194126252,
+      "cache_misses": 205,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2017.npz",
+        "sha256": "5674334f0fc6502647987a25e992998ce9d70b56e215fe3f8a6c61e789dc33b2",
+        "bytes": 275487,
+        "reproduz_horario": true
+      },
+      "ano": 2017,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1144.5,
+      "inicio_utc": "2017-01-01T00:00:00+00:00",
+      "fim_utc": "2017-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 80.70340410000063,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2017.csv.gz",
+      "sha256": "ee9acaf0ac19d5984937cf5789e28764bba5eda2273e04d6ebe1caae92cb0f51",
+      "bytes": 379035
+    },
+    "2018": {
+      "ghi_shape_remoto": [
+        17520,
+        2018267
+      ],
+      "ghi_chunks": [
+        2000,
+        500
+      ],
+      "ghi_dtype": "uint16",
+      "ghi_scale_factor": 1.0,
+      "amostras_30min_por_localidade": 17520,
+      "grade_geografica_validada": true,
+      "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+      "bytes_blocos_requisitados": 193994716,
+      "cache_misses": 203,
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2018.npz",
+        "sha256": "5fc78bd2099c537f1cee9e3293f2d42ed93c5ea8526660049162fa64741d623b",
+        "bytes": 279740,
+        "reproduz_horario": true
+      },
+      "ano": 2018,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1102.5,
+      "inicio_utc": "2018-01-01T00:00:00+00:00",
+      "fim_utc": "2018-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "segundos_extracao_validacao": 75.29630519999773,
+      "origem": "extracao_range_hdf5",
+      "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/nsrdb_ghi_horaria_2018.csv.gz",
+      "sha256": "e578599303f67b2caf90206309f319cd2795d357aa7836eebf38e449c3147636",
+      "bytes": 380683
+    },
+    "2020": {
+      "ano": 2020,
+      "horas_por_localidade": 8784,
+      "localidades": 10,
+      "linhas": 87840,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1128.0,
+      "inicio_utc": "2020-01-01T00:00:00+00:00",
+      "fim_utc": "2020-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "origem": "referencia_original_sem_copia",
+      "extracao_amostras_30min": {
+        "ghi_shape_remoto": [
+          17568,
+          2018267
+        ],
+        "ghi_chunks": [
+          2000,
+          500
+        ],
+        "ghi_dtype": "uint16",
+        "ghi_scale_factor": 1.0,
+        "amostras_30min_por_localidade": 17568,
+        "grade_geografica_validada": true,
+        "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+        "bytes_blocos_requisitados": 194127636,
+        "cache_misses": 205,
+        "amostras_30min": {
+          "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2020.npz",
+          "sha256": "72beaf4ec8491b9035bbd31e60029dce034b81dbf284948dd88e19f414de7f3b",
+          "bytes": 280357
+        },
+        "ano": 2020,
+        "horas_por_localidade": 8784,
+        "localidades": 10,
+        "linhas": 87840,
+        "ghi_min_wm2": 0.0,
+        "ghi_max_wm2": 1128.0,
+        "inicio_utc": "2020-01-01T00:00:00+00:00",
+        "fim_utc": "2020-12-31T23:00:00+00:00",
+        "grade_continua": true,
+        "sem_imputacao": true,
+        "segundos_extracao_validacao": 75.70993370001088
+      },
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2020.npz",
+        "sha256": "72beaf4ec8491b9035bbd31e60029dce034b81dbf284948dd88e19f414de7f3b",
+        "bytes": 280357,
+        "reproduz_horario": true
+      },
+      "arquivo": "dados/brutos/localidades_ev_horario/nsrdb_ghi_horaria_2020.csv.gz",
+      "sha256": "817e26b2fd7a817d0d0da2457d71ebc8db5880090730f7239efb74ff47842014",
+      "bytes": 380203
+    },
+    "2021": {
+      "ano": 2021,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1136.5,
+      "inicio_utc": "2021-01-01T00:00:00+00:00",
+      "fim_utc": "2021-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "origem": "referencia_original_sem_copia",
+      "extracao_amostras_30min": {
+        "ghi_shape_remoto": [
+          17520,
+          2018267
+        ],
+        "ghi_chunks": [
+          2000,
+          500
+        ],
+        "ghi_dtype": "uint16",
+        "ghi_scale_factor": 1.0,
+        "amostras_30min_por_localidade": 17520,
+        "grade_geografica_validada": true,
+        "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+        "bytes_blocos_requisitados": 194126436,
+        "cache_misses": 205,
+        "amostras_30min": {
+          "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2021.npz",
+          "sha256": "5a8ea7f036ae6bb2daab6774d16f23f760f5545ef330f39ce002411c0f6e897a",
+          "bytes": 280002
+        },
+        "ano": 2021,
+        "horas_por_localidade": 8760,
+        "localidades": 10,
+        "linhas": 87600,
+        "ghi_min_wm2": 0.0,
+        "ghi_max_wm2": 1136.5,
+        "inicio_utc": "2021-01-01T00:00:00+00:00",
+        "fim_utc": "2021-12-31T23:00:00+00:00",
+        "grade_continua": true,
+        "sem_imputacao": true,
+        "segundos_extracao_validacao": 73.75176210000063
+      },
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2021.npz",
+        "sha256": "5a8ea7f036ae6bb2daab6774d16f23f760f5545ef330f39ce002411c0f6e897a",
+        "bytes": 280002,
+        "reproduz_horario": true
+      },
+      "arquivo": "dados/brutos/localidades_ev_horario/nsrdb_ghi_horaria_2021.csv.gz",
+      "sha256": "a9e321d0cf384ad345d47c28e7c8fd5cae201ee4aa16b05c6882c45133f968ce",
+      "bytes": 380443
+    },
+    "2022": {
+      "ano": 2022,
+      "horas_por_localidade": 8760,
+      "localidades": 10,
+      "linhas": 87600,
+      "ghi_min_wm2": 0.0,
+      "ghi_max_wm2": 1107.5,
+      "inicio_utc": "2022-01-01T00:00:00+00:00",
+      "fim_utc": "2022-12-31T23:00:00+00:00",
+      "grade_continua": true,
+      "sem_imputacao": true,
+      "origem": "referencia_original_sem_copia",
+      "extracao_amostras_30min": {
+        "ghi_shape_remoto": [
+          17520,
+          2018267
+        ],
+        "ghi_chunks": [
+          2000,
+          500
+        ],
+        "ghi_dtype": "uint16",
+        "ghi_scale_factor": 1.0,
+        "amostras_30min_por_localidade": 17520,
+        "grade_geografica_validada": true,
+        "leitura": "HTTP Range com cache em memoria; sem arquivo HDF5 anual local",
+        "bytes_blocos_requisitados": 194071036,
+        "cache_misses": 205,
+        "amostras_30min": {
+          "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2022.npz",
+          "sha256": "a1d84c5c5b5b170f7e7c5cb5ad3aaa121947c91f6df5da3976f569d3e13b3cae",
+          "bytes": 279885
+        },
+        "ano": 2022,
+        "horas_por_localidade": 8760,
+        "localidades": 10,
+        "linhas": 87600,
+        "ghi_min_wm2": 0.0,
+        "ghi_max_wm2": 1107.5,
+        "inicio_utc": "2022-01-01T00:00:00+00:00",
+        "fim_utc": "2022-12-31T23:00:00+00:00",
+        "grade_continua": true,
+        "sem_imputacao": true,
+        "segundos_extracao_validacao": 72.4351398999861
+      },
+      "amostras_30min": {
+        "arquivo": "dados/brutos/localidades_ev_horario_1998_2022/amostras_30min/nsrdb_ghi_30min_2022.npz",
+        "sha256": "a1d84c5c5b5b170f7e7c5cb5ad3aaa121947c91f6df5da3976f569d3e13b3cae",
+        "bytes": 279885,
+        "reproduz_horario": true
+      },
+      "arquivo": "dados/brutos/localidades_ev_horario/nsrdb_ghi_horaria_2022.csv.gz",
+      "sha256": "13daace788f068c16711ae6aff7a1420066a532b538ca889078b6a4e3760f27f",
+      "bytes": 379765
+    }
+  },
+  "registro": [
+    {
+      "localidade": "Tesla Fremont Factory",
+      "site_id_nsrdb": 144390,
+      "lat_grade_nsrdb": 37.49,
+      "lon_grade_nsrdb": -121.94,
+      "timezone_nsrdb": -8,
+      "arquivo_diario": "tesla_fremont_factory.csv"
+    },
+    {
+      "localidade": "Tesla Gigafactory Nevada",
+      "site_id_nsrdb": 184510,
+      "lat_grade_nsrdb": 39.53,
+      "lon_grade_nsrdb": -119.42,
+      "timezone_nsrdb": -8,
+      "arquivo_diario": "tesla_gigafactory_nevada.csv"
+    },
+    {
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "site_id_nsrdb": 329823,
+      "lat_grade_nsrdb": 32.85,
+      "lon_grade_nsrdb": -111.78,
+      "timezone_nsrdb": -7,
+      "arquivo_diario": "lucid_amp_1_casa_grande.csv"
+    },
+    {
+      "localidade": "BMW San Luis Potosi",
+      "site_id_nsrdb": 593265,
+      "lat_grade_nsrdb": 21.97,
+      "lon_grade_nsrdb": -100.86,
+      "timezone_nsrdb": -6,
+      "arquivo_diario": "bmw_san_luis_potosi.csv"
+    },
+    {
+      "localidade": "Tesla Gigafactory Texas",
+      "site_id_nsrdb": 681461,
+      "lat_grade_nsrdb": 30.21,
+      "lon_grade_nsrdb": -97.62,
+      "timezone_nsrdb": -6,
+      "arquivo_diario": "tesla_gigafactory_texas.csv"
+    },
+    {
+      "localidade": "Rivian Normal",
+      "site_id_nsrdb": 871382,
+      "lat_grade_nsrdb": 40.49,
+      "lon_grade_nsrdb": -89.06,
+      "timezone_nsrdb": -6,
+      "arquivo_diario": "rivian_normal.csv"
+    },
+    {
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "site_id_nsrdb": 995809,
+      "lat_grade_nsrdb": 42.29,
+      "lon_grade_nsrdb": -83.18,
+      "timezone_nsrdb": -5,
+      "arquivo_diario": "ford_rouge_electric_vehicle_center.csv"
+    },
+    {
+      "localidade": "GM Factory Zero",
+      "site_id_nsrdb": 998284,
+      "lat_grade_nsrdb": 42.37,
+      "lon_grade_nsrdb": -83.06,
+      "timezone_nsrdb": -5,
+      "arquivo_diario": "gm_factory_zero.csv"
+    },
+    {
+      "localidade": "Hyundai Metaplant Georgia",
+      "site_id_nsrdb": 1031588,
+      "lat_grade_nsrdb": 32.17,
+      "lon_grade_nsrdb": -81.46,
+      "timezone_nsrdb": -5,
+      "arquivo_diario": "hyundai_metaplant_georgia.csv"
+    },
+    {
+      "localidade": "BYD Camacari",
+      "site_id_nsrdb": 2000061,
+      "lat_grade_nsrdb": -12.67,
+      "lon_grade_nsrdb": -38.3,
+      "timezone_nsrdb": -3,
+      "arquivo_diario": "byd_camacari.csv"
+    }
+  ],
+  "documentacao_oficial": "https://developer.nlr.gov/docs/solar/nsrdb/nsrdb-GOES-aggregated-v4-0-0-download/",
+  "sem_imputacao": true,
+  "atualizado_em_utc": "2026-09-30T03:46:36.476602+00:00",
+  "completo": true
+}

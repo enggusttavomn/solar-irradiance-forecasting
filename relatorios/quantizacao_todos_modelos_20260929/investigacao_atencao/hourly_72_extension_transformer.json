@@ -1,0 +1,308 @@
+{
+  "ambiente_atual": {
+    "cublas_workspace_config": ":4096:8",
+    "cuda": "12.6",
+    "cudnn": 91002,
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "python": "3.14.4",
+    "torch": "2.12.0+cu126"
+  },
+  "ambiente_original": {
+    "cublas_workspace_config": ":4096:8",
+    "cuda": "12.6",
+    "cudnn": 91002,
+    "dispositivo": "cuda",
+    "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+    "pacotes": {
+      "numpy": "2.4.4",
+      "pandas": "3.0.3",
+      "scipy": "1.17.1",
+      "statsmodels": "0.14.6",
+      "torch": "2.12.0+cu126"
+    },
+    "python": "3.14.4"
+  },
+  "comparacao_metricas": {
+    "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\investigacao_atencao\\metricas\\hourly_72_extension_transformer_validacao.json",
+    "sha256": "6b087d89fb14c0e8d9b5c5e68e30991d064e5ee66a5edeb364e24ea4e8ab95f3"
+  },
+  "configuracao_canonica_igual": true,
+  "dados": {
+    "refit": {
+      "ok": true,
+      "particoes": {
+        "refit": {
+          "igualdade_bitexata": {
+            "ids": true,
+            "normalizacao_independente": true,
+            "origens": true,
+            "x_bruto": true,
+            "x_normalizado": true,
+            "y_bruto": true,
+            "y_normalizado": true
+          },
+          "x_normalizado": {
+            "dtype": "float32",
+            "sha256": "543570c5b05b046de0b74a1a8982b0451f664c8bd0d69c86618fbdc4db878491",
+            "shape": [
+              18100,
+              336
+            ]
+          },
+          "y_normalizado": {
+            "dtype": "float32",
+            "sha256": "80f7a8ecbb736b6238e9831d3d7c2ed4b3704b86e1a56f41cca7dae594c37701",
+            "shape": [
+              18100,
+              72
+            ]
+          }
+        },
+        "teste": {
+          "igualdade_bitexata": {
+            "ids": true,
+            "normalizacao_independente": true,
+            "origens": true,
+            "x_bruto": true,
+            "x_normalizado": true,
+            "y_bruto": true,
+            "y_normalizado": true
+          },
+          "x_normalizado": {
+            "dtype": "float32",
+            "sha256": "247e5bac89e72e057f38be63899fb78f87ce4aaeeb750d9854f603791f34d9b7",
+            "shape": [
+              3630,
+              336
+            ]
+          },
+          "y_normalizado": {
+            "dtype": "float32",
+            "sha256": "1f5769a2ee27898fee5923ed3fbd81e280610852aebfb07f7cf90e6df54fcce4",
+            "shape": [
+              3630,
+              72
+            ]
+          }
+        }
+      }
+    },
+    "selecao": {
+      "ok": true,
+      "particoes": {
+        "ajuste": {
+          "igualdade_bitexata": {
+            "ids": true,
+            "normalizacao_independente": true,
+            "origens": true,
+            "x_bruto": true,
+            "x_normalizado": true,
+            "y_bruto": true,
+            "y_normalizado": true
+          },
+          "x_normalizado": {
+            "dtype": "float32",
+            "sha256": "14dcba8b1886af574c1c262a889875212ff5604da20f2bf45b223a4aaf990f4f",
+            "shape": [
+              14450,
+              336
+            ]
+          },
+          "y_normalizado": {
+            "dtype": "float32",
+            "sha256": "d25599c1f9eaee226d48ffbf39f582fc9a87c65484a75708376a07addbcf78f5",
+            "shape": [
+              14450,
+              72
+            ]
+          }
+        },
+        "validacao": {
+          "igualdade_bitexata": {
+            "ids": true,
+            "normalizacao_independente": true,
+            "origens": true,
+            "x_bruto": true,
+            "x_normalizado": true,
+            "y_bruto": true,
+            "y_normalizado": true
+          },
+          "x_normalizado": {
+            "dtype": "float32",
+            "sha256": "3d709804f616e9ffe17c96dd0d1393d1e618ae7f5045bdb361a30ec1c3c864a2",
+            "shape": [
+              3630,
+              336
+            ]
+          },
+          "y_normalizado": {
+            "dtype": "float32",
+            "sha256": "32054163f591cf7bacb2524b25e84aebfdf607a7200f021c0db4d3a4083e4726",
+            "shape": [
+              3630,
+              72
+            ]
+          }
+        }
+      }
+    }
+  },
+  "divergencia_registrada": {
+    "alvos_primarios_bitexatos": true,
+    "aplicavel": true,
+    "aprovado": false,
+    "contrato_sha256": "03745a3ac15f7760133438e57f25bedbbb488c2ddf215ce3521e90d39ca32109",
+    "dispositivo": "cuda",
+    "dispositivo_original": "cuda",
+    "fonte": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\hourly_72_extension\\previsoes_validacao.csv.gz",
+    "fonte_alvos_primarios": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\hourly_72_extension\\previsoes_validacao.csv.gz",
+    "max_diferenca_por_seed": {
+      "42": 1.5230394154787064
+    },
+    "novo_controle_por_dispositivo": false,
+    "reproducao_exata_exigida": true,
+    "sha256": "a452e718453e563a13589039212c782d880cd9a99ee87c63266dfa155a071764",
+    "sha256_alvos_primarios": "0e24b9162e53989682993c4b3856031c33ae40887597d47fd0c65d27825e14ab",
+    "tolerancia": 1e-06
+  },
+  "fontes_codigo_originais": [
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_baselines_adicionais.py",
+      "exato": true,
+      "sha256": "64a3d933ba5af151e88f9d368337b99bccfa89f18a7c552aa724a57dfc39ba81",
+      "sha256_atual": "64a3d933ba5af151e88f9d368337b99bccfa89f18a7c552aa724a57dfc39ba81"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\modelos_baselines_adicionais.py",
+      "exato": true,
+      "sha256": "f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988",
+      "sha256_atual": "f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py",
+      "exato": false,
+      "sha256": "6bd687ead27d2d174a0e1beb7c69dcb29c4695549553f4cbf2142e159f8ba991",
+      "sha256_atual": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_horario_timesnet.py",
+      "exato": true,
+      "sha256": "2cc59451b0fbcbedbf3068d2f1c45595ff84daf46e8318a88080df208e7bb8e9",
+      "sha256_atual": "2cc59451b0fbcbedbf3068d2f1c45595ff84daf46e8318a88080df208e7bb8e9"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\dados_horarios_nsrdb.py",
+      "exato": true,
+      "sha256": "3bafea39ec15867e79a2ff1fc29492b1d72613c9650a8c1741ef0736682fad13",
+      "sha256_atual": "3bafea39ec15867e79a2ff1fc29492b1d72613c9650a8c1741ef0736682fad13"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_baselines_gpu.py",
+      "exato": true,
+      "sha256": "8dc245c5c0add2bf03e8b457b2f8a588f1d80706f3b422722fee4a9ae33fdda8",
+      "sha256_atual": "8dc245c5c0add2bf03e8b457b2f8a588f1d80706f3b422722fee4a9ae33fdda8"
+    }
+  ],
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\transformer\\contrato.json": "93dcc6ec7e690bfe423581c0d9847379f74f98241b963b8a141e1e6492ecf5a5",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\contrato_execucao.json": "cf1830d86eb8a235a6e2a5d6c2fcfbfba0a301092e647b2807faf723da1f4ca3",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\investigar_controles_atencao.py": "e088fc33116fb9437a6a8e755002cb3640accf6b2d68a901d56567e57510344f"
+  },
+  "lote_inicial": {
+    "avisos": [],
+    "backend_matematico_com_determinismo_estrito": {
+      "avisos": [],
+      "executou": true,
+      "max_gradiente_repetido": 0.0,
+      "max_saida_repetida": 0.0
+    },
+    "backend_original_com_determinismo_estrito_erro": null,
+    "batch_size": 128,
+    "estado_inicial_original_novo_exato": true,
+    "mesmo_lote_e_rng_reposto_em_cada_passagem": true,
+    "repeticoes_backend_original": [
+      {
+        "max_gradiente_normalizado": 7.450580596923828e-09,
+        "max_saida_normalizada": 0.0,
+        "repeticao": 1
+      },
+      {
+        "max_gradiente_normalizado": 7.450580596923828e-09,
+        "max_saida_normalizada": 0.0,
+        "repeticao": 2
+      },
+      {
+        "max_gradiente_normalizado": 7.450580596923828e-09,
+        "max_saida_normalizada": 0.0,
+        "repeticao": 3
+      }
+    ],
+    "seed": 42,
+    "sem_optimizer_step": true
+  },
+  "modelo": "Transformer",
+  "nao_emite_aceite": true,
+  "parametros_iguais": {
+    "batch_size": true,
+    "lr": true,
+    "max_epocas": true,
+    "paciencia": true,
+    "sementes": true,
+    "weight_decay": true
+  },
+  "replays": [
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\transformer\\cache\\seed42.npz",
+      "cache_sha256": "5c3166d254f27e6e87db71e0a25418965832b4b291df9def97dcea47d381dd47",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\transformer\\modelos\\seed42_selecao.pt",
+      "checkpoint_sha256": "8084e4230fdab5307732a257863de4d87d8095a36efe789f6254dd47fc5175dd",
+      "epocas": 30,
+      "estrito_1e_6": true,
+      "fase": "selecao",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 261360,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 42,
+      "tipo": "original"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\sem_quantizacao\\selecao\\seed42.npz",
+      "cache_sha256": "3a3520ccf466653891b42d2a04611e8571103a5dcc6d095d9776e2cf4c340e8a",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\sem_quantizacao\\modelos\\seed42_selecao.pt",
+      "checkpoint_sha256": "7d28d9c53f11585d20992c67dc9fb02f2b23a7323d41c4275f40923d4c291aca",
+      "epocas": 30,
+      "estrito_1e_6": true,
+      "fase": "selecao",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 261360,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 42,
+      "tipo": "novo"
+    },
+    {
+      "alvos_nan": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\transformer\\cache\\seed42.npz",
+      "cache_sha256": "5c3166d254f27e6e87db71e0a25418965832b4b291df9def97dcea47d381dd47",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\transformer\\modelos\\seed42_refit.pt",
+      "checkpoint_sha256": "97ef8cde70bfa813f758ae98d889cf04b3043a93d919bd405bcb3d414c5c23e9",
+      "epocas": 30,
+      "estrito_1e_6": true,
+      "fase": "refit",
+      "max_repeticao_sem_reset_rng_wm2": 0.0,
+      "max_replay_wm2": 0.0,
+      "n_previsoes": 261360,
+      "rng_cuda_global_inalterado_eval": true,
+      "seed": 42,
+      "tipo": "original"
+    }
+  ],
+  "sem_treinamento": true,
+  "tarefa": "hourly_72_extension"
+}

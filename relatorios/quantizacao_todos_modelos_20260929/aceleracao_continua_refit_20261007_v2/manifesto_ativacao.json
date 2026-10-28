@@ -1,0 +1,31 @@
+{
+  "utc": "2026-10-08T00:52:23.910526+00:00",
+  "autorizacao": "Acelerar treinamentos somente neste computador; fechar aplicativos exceto Chrome.",
+  "revisao": {
+    "agente": "supervisor_safety_review",
+    "resultado": "APROVADO FINAL",
+    "fonte_sha256": "637d578b104f7223b3dd6533e869f08cbe58ab4358e6780cbb9c24825072ce97"
+  },
+  "testes": {
+    "casos": 35,
+    "resultado": "OK",
+    "exit_code": 0,
+    "segundos": 48.136,
+    "arquivo": "tests/test_manter_aceleracao_na_tomada_v2.py",
+    "sha256": "f20a500d4bf56fa8cae35d648eab35c03c09305c3906205c1de7c87fd12097e5",
+    "tipo": "Fakes; atomic JSON writer real; nenhum Popen operacional",
+    "comando": ".venv-baselines-gpu-20260912/Scripts/python.exe -B -X utf8 -m unittest discover -s tests -p test_manter_aceleracao_na_tomada_v2.py -v"
+  },
+  "guard_adotado": {
+    "pid": 19756,
+    "creation_time": "134358939281070853"
+  },
+  "root": {
+    "pid": 29512,
+    "creation_time": "134358692355448701"
+  },
+  "worker_cpu": 2,
+  "worker_gpu": 2,
+  "correcao": "Retry limitado do mesmo replace/payload para Windows5/32/33; nenhuma repeticao de Popen. V1/journal/claims preservados.",
+  "verificacao_ativa": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_continua_refit_20261007_v2\\verificacao_ativa.json"
+}

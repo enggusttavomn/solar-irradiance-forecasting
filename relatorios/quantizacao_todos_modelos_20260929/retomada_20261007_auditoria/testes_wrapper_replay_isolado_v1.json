@@ -1,0 +1,33 @@
+{
+  "versao": 1,
+  "aprovado": true,
+  "exitcode": 0,
+  "testes_executados": 13,
+  "falhas": 0,
+  "erros": 0,
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\auditar_quantizacao_replay_isolado_v1.py": "3535c59fa0b16d14ea9957b94d8759dcd1a4c5dffcd41bd2e946bbd3f0f8c8f2",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tests\\test_auditar_quantizacao_replay_isolado_v1.py": "b639adc053c2ea7d20ec4a0159bbd2ae6ef8f4e4539ed8ae86692fa2d2b2b6d7"
+  },
+  "fontes_originais_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\auditar_quantizacao_todos_modelos.py": "2a8a1e9c5f014dcd554494bf798dc60c55c4eeecbd9fd80700dfe39cc1595c43",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\coordenar_quantizacao_historica.py": "1166e691d47d81a98cb87286eed302fa0b61d4acaed0c9029165431a7615fa2b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_atencao_deterministica_v1.py": "70d8c8213fea7cb86f3f64e3d28d9398e7a64ad39dccea57b8c6acc40ee66660"
+  },
+  "fontes_originais_inalteradas": true,
+  "fontes_novas_estaveis": true,
+  "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261007_auditoria\\testes_wrapper_replay_isolado_v1.log",
+  "log_sha256": "0b12c1b3ede70f6e4edb5c3ee596eb61672c431a60cb48ffbf0a4b80aecf531a",
+  "concluido_em_utc": "2026-10-07T05:59:05.822664+00:00",
+  "revisor": "/root/recovery_review",
+  "escopo": "Testes isolados com backend falso. Sem torch, CUDA, treino, replay real, mutacao de contratos/fontes originais ou lancamento de coordenador.",
+  "id_wrapper": "auditoria_replay_isolado_v1",
+  "regimes_permitidos": [
+    "historico_1998_2022",
+    "historico_curto_pareado"
+  ],
+  "restauracao_restrita_a": [
+    "cudnn.benchmark",
+    "cudnn.deterministic"
+  ]
+}

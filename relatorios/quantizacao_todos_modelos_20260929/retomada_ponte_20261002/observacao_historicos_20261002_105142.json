@@ -1,0 +1,69 @@
+{
+    "schema":  1,
+    "contagens_conferidas_em_utc":  "2026-10-02T10:50:31.2659331Z",
+    "registrado_em_utc":  "2026-10-02T10:51:42.4159107Z",
+    "natureza":  "Conferencia READONLY de estados e caudas; nenhum motor importado, replay ou fit executado, processo/treino/arquivo de documentacao modificado",
+    "contagens":  {
+                      "historico_curto_pareado":  {
+                                                      "selecao":  0,
+                                                      "refit":  0
+                                                  },
+                      "historico_1998_2022":  {
+                                                  "selecao":  7,
+                                                  "refit":  0
+                                              }
+                  },
+    "coordenador":  {
+                        "atualizado_em_utc":  "2026-10-02T10:51:41.825069+00:00",
+                        "etapa":  "fila_historico_1998_2022",
+                        "erro":  null
+                    },
+    "fila_longa":  {
+                       "falhas":  [
+
+                                  ],
+                       "atualizado_em_utc":  "2026-10-02T10:51:38.389906+00:00",
+                       "ativos":  [
+                                      {
+                                          "recurso":  "cpu",
+                                          "tarefa":  "daily_30",
+                                          "log":  "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_xgboost.log",
+                                          "modelo":  "XGBoost"
+                                      },
+                                      {
+                                          "recurso":  "gpu",
+                                          "tarefa":  "daily_30",
+                                          "log":  "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_dilatedrnn.log",
+                                          "modelo":  "DilatedRNN"
+                                      },
+                                      {
+                                          "recurso":  "gpu",
+                                          "tarefa":  "daily_30",
+                                          "log":  "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_transformer.log",
+                                          "modelo":  "Transformer"
+                                      },
+                                      {
+                                          "recurso":  "cpu",
+                                          "tarefa":  "hourly_72_extension",
+                                          "log":  "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_arima.log",
+                                          "modelo":  "ARIMA"
+                                      }
+                                  ],
+                       "etapa":  "selecao"
+                   },
+    "caudas":  {
+                   "diario_transformer":  "q64 seed67 iniciado",
+                   "diario_dilatedrnn":  "controle seed89 iniciado",
+                   "traceback_observado":  false,
+                   "diario_xgboost":  "q128 seed67 iniciado",
+                   "horario_arima":  "controle concluido; q64 iniciado"
+               },
+    "artefatos":  {
+                      "auditoria_curta_existe":  false,
+                      "pdf_hist_documentacao_existe":  false,
+                      "pareamento_existe":  false,
+                      "pdf_hist_staged_existe":  false,
+                      "auditoria_longa_existe":  false
+                  },
+    "base_atual":  "Nao tocada; entrega anterior informada pelo root"
+}

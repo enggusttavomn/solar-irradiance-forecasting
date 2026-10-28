@@ -1,0 +1,209 @@
+{
+  "ambiente_antigo_workspace": {
+    "ambiente_2_6_disponivel": false,
+    "configuracoes_encontradas": {
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\pyvenv.cfg": "3f1c63b536cfe8b8a1e9ecde3b5e3e68e196effa196233a06abe96113c2d7407"
+    },
+    "inspecao": "rg --files -uuu -g pyvenv.cfg: somente .venv-baselines-gpu-20260912; Python3.14.4/Torch2.12.0+cu126"
+  },
+  "ambiente_original": {
+    "joblib": "1.5.3",
+    "numpy": "2.4.4",
+    "pandas": "3.0.3",
+    "python": "3.14.4",
+    "scikit-learn": "1.9.0",
+    "torch": "2.12.0",
+    "xgboost": "3.2.0"
+  },
+  "ambiente_replay": {
+    "dispositivo": "cpu",
+    "python": "3.14.4",
+    "torch": "2.12.0+cu126"
+  },
+  "aprovado": true,
+  "ausencias": [
+    {
+      "arquivo_ausente": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\modelos\\lstm_seed11_selecao.pt",
+      "fase": "selecao",
+      "modelo": "LSTM",
+      "seed": 11,
+      "tarefa": "daily_30"
+    },
+    {
+      "arquivo_ausente": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\modelos\\lstm_seed23_selecao.pt",
+      "fase": "selecao",
+      "modelo": "LSTM",
+      "seed": 23,
+      "tarefa": "daily_30"
+    },
+    {
+      "arquivo_ausente": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\modelos\\lstm_seed42_selecao.pt",
+      "fase": "selecao",
+      "modelo": "LSTM",
+      "seed": 42,
+      "tarefa": "daily_30"
+    },
+    {
+      "arquivo_ausente": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\modelos\\lstm_seed67_selecao.pt",
+      "fase": "selecao",
+      "modelo": "LSTM",
+      "seed": 67,
+      "tarefa": "daily_30"
+    },
+    {
+      "arquivo_ausente": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\modelos\\lstm_seed89_selecao.pt",
+      "fase": "selecao",
+      "modelo": "LSTM",
+      "seed": 89,
+      "tarefa": "daily_30"
+    }
+  ],
+  "checkpoints_reproduzidos": 5,
+  "codigo_auditoria_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_horario_timesnet.py": "2cc59451b0fbcbedbf3068d2f1c45595ff84daf46e8318a88080df208e7bb8e9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\modelos_baselines_adicionais.py": "f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\auditar_controles_originais_concorrentes.py": "ca19cc1901b879eb091b75884bf58912a3c3dd36e2003bfd6e3c6438e501638e"
+  },
+  "evidencia_complementar_loop": {
+    "escopo": "test_noquant_repete_loop_original para cinco redes; paridade CPU exata em dados sinteticos",
+    "sha256": "ef01b95215672788361621d8e05983eef10025dc34ed83176292f5ae72c943b8",
+    "testes": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\testes\\test_quantizacao_concorrentes.py"
+  },
+  "fases_sem_checkpoint_original": [
+    "selecao"
+  ],
+  "fonte_ambiente_original": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\contrato_execucao.json",
+    "sha256": "344edf1656d7ced7ae54f6aaf95dace2b835f850fef8174e219ff2f33c550853"
+  },
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\bmw_san_luis_potosi.csv": "d98ec7e97bf68864fda836f1948a863d296badae2dd1aa34e225425d1344b1f5",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\byd_camacari.csv": "8347f0b81babcf58456e14568c875e9df7ca6aba792e8865cff5e5df1afde783",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\ford_rouge_electric_vehicle_center.csv": "d490600c96bf0348ad6c74d08b5f8c700a64dd643b9e886464ed6e165475011e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\gm_factory_zero.csv": "be2a8b340938686a582a9beed1dcf8fcef11a4655a6a2678dd6f78fd2de6e572",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\hyundai_metaplant_georgia.csv": "f5e3e825469277e654957e2d4b7e149c1e55232acaf288c4380ffa906188abf7",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\lucid_amp_1_casa_grande.csv": "78f6690b63a1ea378be8abf178e725376aca8a2e71135ba0cda73b53d433b94f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\rivian_normal.csv": "133ad89c6e7ac30c890cec033f8c1c4914c01362920b49a0c0fd540a9ec9520d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\tesla_fremont_factory.csv": "1c6401e77938057f6dfc14c58dbf70ce098dde92ac46da55e0c9c9c279945453",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\tesla_gigafactory_nevada.csv": "d40616d7151007f2e917c8c90b2f411260126f506ebd2d770024d90a12f8500c",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev\\tesla_gigafactory_texas.csv": "55d80fcfcce0be92c28338ed16a6c13b906741a482cbfa01453897c9aa06bd8d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\daily_30\\previsoes_teste.csv.gz": "e41d19bc15e34653c4d7d5a3abfa8c245ac136d4ddfbecf923e08c01d30e0a68",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\modelos\\lstm_seed11_refit.pt": "b22a546ae826172eccac089ec379fc0959d9acae1aac21e14d3a12ac29f390d1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\modelos\\lstm_seed23_refit.pt": "c410188b8e9aedd00c44a06fc1fe0a19320e10762896b29f6602467ff3231c96",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\modelos\\lstm_seed42_refit.pt": "d62a450d1f05056902a9723abd9aac8e04af007afff766d0c4e7f0f364d72d48",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\modelos\\lstm_seed67_refit.pt": "b56550f42cf54c95f03f18d8afe70d2eab5f726a5a682a9ea8bca65708d2493b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\modelos\\lstm_seed89_refit.pt": "51616d0418437e78763275406221838da4a0036fa664372acc3946f113a8cb98"
+  },
+  "limites": "Replay apenas dos checkpoints listados. Nao comprova replay das fases ausentes nem reproducao exata de retreinamento CUDA.",
+  "modelo": "LSTM",
+  "politica_numerica": "Compatibilidade aproximada de CPs antigos: rtol=1e-6,atol=1e-4 W/m2, criterio autorizado antes de concluir a auditoria. Reporta tambem erro absoluto1e-6; nao chamar paridade aproximada de reproducao exata. CPs novos exigem1e-6 absoluto.",
+  "relatorio_testes_loop": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\testes_concorrentes.xml",
+    "sha256": "7145016814edcac01c2dec225a4db1a316111c75e5267117ad0bc2236998274a"
+  },
+  "resultados": [
+    {
+      "aprovado": true,
+      "atol_compatibilidade_wm2": 0.0001,
+      "batch_size": 128,
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\modelos\\lstm_seed11_refit.pt",
+      "checkpoint_sha256": "b22a546ae826172eccac089ec379fc0959d9acae1aac21e14d3a12ac29f390d1",
+      "dispositivo": "cpu",
+      "fase": "refit",
+      "max_diferenca_wm2": 5.684341886080802e-14,
+      "max_razao_limite_tolerancia": 2.0286871293785934e-10,
+      "modelo": "LSTM",
+      "paridade_numerica_aproximada_aprovada": true,
+      "previsoes_originais": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\daily_30\\previsoes_teste.csv.gz",
+      "previsoes_originais_sha256": "e41d19bc15e34653c4d7d5a3abfa8c245ac136d4ddfbecf923e08c01d30e0a68",
+      "quantidade_previsoes": 101100,
+      "reproducao_absoluta_1e_6_aprovada": true,
+      "rtol_compatibilidade": 1e-06,
+      "seed": 11,
+      "tarefa": "daily_30"
+    },
+    {
+      "aprovado": true,
+      "atol_compatibilidade_wm2": 0.0001,
+      "batch_size": 128,
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\modelos\\lstm_seed23_refit.pt",
+      "checkpoint_sha256": "c410188b8e9aedd00c44a06fc1fe0a19320e10762896b29f6602467ff3231c96",
+      "dispositivo": "cpu",
+      "fase": "refit",
+      "max_diferenca_wm2": 5.684341886080802e-14,
+      "max_razao_limite_tolerancia": 2.0257534114168542e-10,
+      "modelo": "LSTM",
+      "paridade_numerica_aproximada_aprovada": true,
+      "previsoes_originais": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\daily_30\\previsoes_teste.csv.gz",
+      "previsoes_originais_sha256": "e41d19bc15e34653c4d7d5a3abfa8c245ac136d4ddfbecf923e08c01d30e0a68",
+      "quantidade_previsoes": 101100,
+      "reproducao_absoluta_1e_6_aprovada": true,
+      "rtol_compatibilidade": 1e-06,
+      "seed": 23,
+      "tarefa": "daily_30"
+    },
+    {
+      "aprovado": true,
+      "atol_compatibilidade_wm2": 0.0001,
+      "batch_size": 128,
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\modelos\\lstm_seed42_refit.pt",
+      "checkpoint_sha256": "d62a450d1f05056902a9723abd9aac8e04af007afff766d0c4e7f0f364d72d48",
+      "dispositivo": "cpu",
+      "fase": "refit",
+      "max_diferenca_wm2": 5.684341886080802e-14,
+      "max_razao_limite_tolerancia": 2.029003831043741e-10,
+      "modelo": "LSTM",
+      "paridade_numerica_aproximada_aprovada": true,
+      "previsoes_originais": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\daily_30\\previsoes_teste.csv.gz",
+      "previsoes_originais_sha256": "e41d19bc15e34653c4d7d5a3abfa8c245ac136d4ddfbecf923e08c01d30e0a68",
+      "quantidade_previsoes": 101100,
+      "reproducao_absoluta_1e_6_aprovada": true,
+      "rtol_compatibilidade": 1e-06,
+      "seed": 42,
+      "tarefa": "daily_30"
+    },
+    {
+      "aprovado": true,
+      "atol_compatibilidade_wm2": 0.0001,
+      "batch_size": 128,
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\modelos\\lstm_seed67_refit.pt",
+      "checkpoint_sha256": "b56550f42cf54c95f03f18d8afe70d2eab5f726a5a682a9ea8bca65708d2493b",
+      "dispositivo": "cpu",
+      "fase": "refit",
+      "max_diferenca_wm2": 5.684341886080802e-14,
+      "max_razao_limite_tolerancia": 2.0264110948409572e-10,
+      "modelo": "LSTM",
+      "paridade_numerica_aproximada_aprovada": true,
+      "previsoes_originais": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\daily_30\\previsoes_teste.csv.gz",
+      "previsoes_originais_sha256": "e41d19bc15e34653c4d7d5a3abfa8c245ac136d4ddfbecf923e08c01d30e0a68",
+      "quantidade_previsoes": 101100,
+      "reproducao_absoluta_1e_6_aprovada": true,
+      "rtol_compatibilidade": 1e-06,
+      "seed": 67,
+      "tarefa": "daily_30"
+    },
+    {
+      "aprovado": true,
+      "atol_compatibilidade_wm2": 0.0001,
+      "batch_size": 128,
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\daily_30\\modelos\\lstm_seed89_refit.pt",
+      "checkpoint_sha256": "51616d0418437e78763275406221838da4a0036fa664372acc3946f113a8cb98",
+      "dispositivo": "cpu",
+      "fase": "refit",
+      "max_diferenca_wm2": 5.684341886080802e-14,
+      "max_razao_limite_tolerancia": 2.0276694982841692e-10,
+      "modelo": "LSTM",
+      "paridade_numerica_aproximada_aprovada": true,
+      "previsoes_originais": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\daily_30\\previsoes_teste.csv.gz",
+      "previsoes_originais_sha256": "e41d19bc15e34653c4d7d5a3abfa8c245ac136d4ddfbecf923e08c01d30e0a68",
+      "quantidade_previsoes": 101100,
+      "reproducao_absoluta_1e_6_aprovada": true,
+      "rtol_compatibilidade": 1e-06,
+      "seed": 89,
+      "tarefa": "daily_30"
+    }
+  ],
+  "tarefa": "daily_30"
+}

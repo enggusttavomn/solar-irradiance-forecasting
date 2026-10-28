@@ -14,8 +14,8 @@ from pptx.util import Inches, Pt
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TEMPLATE = ROOT / ".backup_apresentacao" / "2026_SiDi Automation_Ai.pptx"
-OUTPUT = ROOT / "00_APRESENTACAO" / "apresentacao_modelos_machine_learning.pptx"
+TEMPLATE = ROOT / "apresentacao" / "modelos" / "2026_SiDi Automation_Ai.pptx"
+OUTPUT = ROOT / "apresentacao" / "apresentacao_modelos_machine_learning.pptx"
 
 W, H = 10.0, 5.625
 FONT = "Arial"

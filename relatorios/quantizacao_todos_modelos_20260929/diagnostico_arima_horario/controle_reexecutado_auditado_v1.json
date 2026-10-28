@@ -1,0 +1,135 @@
+{
+  "comparacao_historica": {
+    "bit_a_bit": false,
+    "delta_maximo": 4.490431751946744e-05,
+    "diferentes": 52272,
+    "dtype_a": "float64",
+    "dtype_b": "float64",
+    "shape_a": [
+      3630,
+      72
+    ],
+    "shape_b": [
+      3630,
+      72
+    ]
+  },
+  "concluido_em_utc": "2026-09-30T05:54:42.336925+00:00",
+  "controle_historico_reproduzido": false,
+  "criterio": "novo_controle_mesmo_algoritmo_repetido_duas_vezes_e_replay_de_10_checkpoints",
+  "escopo": {
+    "fase": "selecao",
+    "modelo": "ARIMA",
+    "particao": "validacao",
+    "regime": "atual",
+    "tarefa": "hourly_72_extension",
+    "variante": "sem_quantizacao"
+  },
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_arima_robusto.py": "bdae795a673fcb1d075eae8539d1f1ddb909f587bf054ed8b91b40d912105c20",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\diagnostico_arima_horario\\diagnostico.json": "386987bffc45a135cd89184ec3b9672a2ee2eef529be582f3961f1a68e3daa19",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\diagnostico_arima_horario\\repeticoes.json": "826a566005a306a6d8fc91eec9077079162d569ea8679c0ae568b52d78ca5217",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\cache\\deterministica.npz": "0360286d2f284683f550a72005a5b792f214f4c3cc83dc72269e91319cda0e93",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\contrato.json": "87f3f358992eb041be9708ba7653ff326f3664e2f64462ca73cbc7b1ac33f122",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\selecao_arima.csv": "a70763d74a43aa333fb25a9da87dde4f8d870d12c99e7996782d106ab0926b23",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\diagnosticar_controle_arima_horario.py": "788c69f47b76e4420282f9a68febb6189bbd04d44a61bcbdafb1f8b466c603bc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\preparar_controle_arima_horario_auditado.py": "d3d41c81330436cadcaf9816b812995e3a41904e8be8ff90a98aad473238a906",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\repetir_ajuste_diagnostico_arima.py": "f6c60fa7f7a263e57a6365a1540dc02d0736479243f204ffcfd0cf1abc62017a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\contrato_execucao.json": "f64760adccf795e553fc6b253d8b401ce1b043e1374a5eb0611e88cdeccf1a08",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\clipping_selecao.json": "905eaead3cd34950bac7f8ed8f4861e5e35f2f6a61c30ff7cc8b0fddcf4ff511",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade0_selecao.joblib": "f053d5f1e4c5d7b650ff5ca724a74122f0254c18861c335d98f6a6f8a8413741",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade1_selecao.joblib": "cf8712c28f9a04a71ec952cd635f616b4ac8383b712123f8c53e45274bdef7e8",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade2_selecao.joblib": "6bf381c19befa2833d7ed15b09ef91b963429c0dc313ea8c92a107326266c516",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade3_selecao.joblib": "f0f618a2e5d5d0391010a39fed98e215378cc3947fa7964684ec7adc5ecd3bc3",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade4_selecao.joblib": "71046ec3e7397c6f0bf6c6b2ed5ba3951eeb62beb4a3a596607a98739565a27a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade5_selecao.joblib": "efcfb93724e080e764d48b1216526f75c5cd707ad6d5cf7ae2dabfd19584e6a7",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade6_selecao.joblib": "578ffb0250e35deb16a590aeee9c764b74515768590e98d980cc9cf41426e5e8",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade7_selecao.joblib": "c7c2e4576c207774c74808f7751975918e210db2fb744caf4b464025ac481350",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade8_selecao.joblib": "95feb5021898006c479930a7c5c3ae05b0611fd32ef8bc3da76b4df262816580",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\modelos\\localidade9_selecao.joblib": "be57db383866f09f8dbe2c15544530fd40c3310394967d8bef5f9efb6b3f2ffa",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\selecao\\detalhes.json": "423947849074160694fd067937788652d89664998d5ab128b1b4030c01e18091",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\selecao\\seed-1.json": "0eef7ebefc1e745c4c9e75a7cefabd43af696db811c80d2f5b1444f3b5001908",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima\\sem_quantizacao\\selecao\\seed-1.npz": "ccaadc874c67573bbf060de8322a3939fe087d05ce056a52db3b59ecc4a12a14"
+  },
+  "hash_contrato_anterior": "b593232c1219b723948a2ca373cc80f0500c86572c8b18cb3e62eeadd9f2c288",
+  "id": "arima_horario_novo_controle_v1",
+  "mae_macro_historico": 133.60473633198367,
+  "mae_macro_novo": 133.60473611939113,
+  "ok": true,
+  "origem_arquivada": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\antes_novo_controle_arima_horario_v1\\arima",
+  "origem_logica_anterior": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\arima",
+  "replays": [
+    {
+      "bit_a_bit": true,
+      "delta_maximo": 0.0,
+      "localidade": "BMW San Luis Potosi",
+      "localidade_id": 0,
+      "previsoes": 26136
+    },
+    {
+      "bit_a_bit": true,
+      "delta_maximo": 0.0,
+      "localidade": "BYD Camacari",
+      "localidade_id": 1,
+      "previsoes": 26136
+    },
+    {
+      "bit_a_bit": true,
+      "delta_maximo": 0.0,
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "localidade_id": 2,
+      "previsoes": 26136
+    },
+    {
+      "bit_a_bit": true,
+      "delta_maximo": 0.0,
+      "localidade": "GM Factory Zero",
+      "localidade_id": 3,
+      "previsoes": 26136
+    },
+    {
+      "bit_a_bit": true,
+      "delta_maximo": 0.0,
+      "localidade": "Hyundai Metaplant Georgia",
+      "localidade_id": 4,
+      "previsoes": 26136
+    },
+    {
+      "bit_a_bit": true,
+      "delta_maximo": 0.0,
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "localidade_id": 5,
+      "previsoes": 26136
+    },
+    {
+      "bit_a_bit": true,
+      "delta_maximo": 0.0,
+      "localidade": "Rivian Normal",
+      "localidade_id": 6,
+      "previsoes": 26136
+    },
+    {
+      "bit_a_bit": true,
+      "delta_maximo": 0.0,
+      "localidade": "Tesla Fremont Factory",
+      "localidade_id": 7,
+      "previsoes": 26136
+    },
+    {
+      "bit_a_bit": true,
+      "delta_maximo": 0.0,
+      "localidade": "Tesla Gigafactory Nevada",
+      "localidade_id": 8,
+      "previsoes": 26136
+    },
+    {
+      "bit_a_bit": true,
+      "delta_maximo": 0.0,
+      "localidade": "Tesla Gigafactory Texas",
+      "localidade_id": 9,
+      "previsoes": 26136
+    }
+  ],
+  "schema": 1,
+  "tolerancia_replay": 1e-06
+}

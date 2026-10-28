@@ -1,0 +1,274 @@
+\section{Results and Discussion}
+\label{sec:results}
+
+\subsection{Full-horizon comparison favors DilatedRNN}
+
+DilatedRNN achieved lower cumulative macro-MAE than TimesNet in three of
+the four tasks at their full output horizons. The clearest advantage was in
+the primary one-month task: 13.01 versus 13.89~W/m$^2$, a
+6.38\% reduction calculated from unrounded errors. DilatedRNN also led at
+30 days (43.85 versus 44.08~W/m$^2$) and in the exploratory six-month task
+(14.37 versus 14.46~W/m$^2$). TimesNet led the hourly task at
+72 hours, with 52.48 versus 52.96~W/m$^2$ for DilatedRNN.
+
+Table~\ref{tab:architecture_winners} reports these results and the lower-MAE
+architecture at every intermediate cumulative checkpoint. All values are
+test macro-MAEs with equal weight per site, computed from the same origins
+and targets within each task. Daily and monthly values evaluate the
+five-seed forecast ensemble; hourly values evaluate seed 42. A cumulative
+horizon includes all leads up to that checkpoint.
+
+The three full-horizon wins support a preference for DilatedRNN in the
+evaluated daily and monthly tasks, with one-month forecasting providing the
+largest relative separation. The smaller daily and six-month margins are
+interpreted together with the seed variability below. Counting task wins
+summarizes the observed outcomes; it does not combine errors across
+different targets, origins, or aggregation scales into an overall score.
+
+\input{tables/vencedores_por_horizonte}
+
+Table~\ref{tab:metricas-terminais} complements MAE with RMSE, nRMSE, and
+$R^2$. The terminal RMSE ordering agrees with the MAE ordering:
+DilatedRNN had lower RMSE in the daily and monthly tasks, while TimesNet
+obtained 101.17~W/m$^2$ at 72 hours versus 104.93~W/m$^2$ for
+DilatedRNN. Section~\ref{sec:reference_benchmark} places both architectures
+in the complete reference-model benchmark.
+
+\input{tables/metricas_terminais}
+
+\subsection{Site-paired differences and horizon dependence}
+
+Table~\ref{tab:vitorias-timesnet-dilatedrnn} examines whether the
+full-horizon preference for DilatedRNN extends across locations; a negative
+difference denotes lower TimesNet MAE. DilatedRNN led the primary
+one-month task by 0.89~W/m$^2$ and won six sites. At 30 days, it led by
+0.23~W/m$^2$ and also won six sites; in the exploratory six-month task,
+it led by 0.09~W/m$^2$ and won seven. The preference therefore appears at
+a majority of the locations in each of these full-horizon tasks, although
+local exceptions remain.
+
+Horizon profiles qualify this result. TimesNet led the daily checkpoints
+through seven days by 0.07--0.17~W/m$^2$ and at 14 days by
+0.02~W/m$^2$. In the exploratory six-month task, TimesNet led the one-month
+prefix by 0.03~W/m$^2$ despite winning only four sites. DilatedRNN led at
+three months by 0.16~W/m$^2$, although TimesNet won six sites there.
+These reversals show that the magnitude and the distribution of local
+errors contribute differently to the macro ranking.
+
+In the hourly task, TimesNet led at 24 and 72 hours by 1.35 and
+0.48~W/m$^2$, respectively; DilatedRNN led at 48 hours by
+0.02~W/m$^2$. TimesNet won seven sites at 24 hours and four at both
+48 and 72 hours. Its 72-hour macro advantage reflects the magnitude of
+local gains, even though DilatedRNN won more sites. All differences are
+calculated before rounding individual MAEs.
+
+\input{tables/comparacao_timesnet_dilatedrnn_resumo}
+
+Figure~\ref{fig:local_heterogeneity} shows the terminal contrasts at all ten
+sites. The mixed signs identify locations where the task-level winner has
+higher MAE, highlighting the geographic variation behind the macro ranking.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.90\textwidth]{heterogeneidade_local_delta_mae.png}
+\caption{Site-level terminal cumulative contrast
+$\Delta\mathrm{MAE}=\mathrm{MAE}_{\mathrm{TimesNet}}-
+\mathrm{MAE}_{\mathrm{DilatedRNN}}$ in W/m$^2$. Negative (blue) cells
+favor TimesNet; positive (red) cells favor DilatedRNN. Columns correspond to
+72~h, 30~d, 1~month, and 6~months. Comparisons are descriptive; overlapping
+multi-step target windows are not treated as independent observations.}
+\label{fig:local_heterogeneity}
+\end{figure*}
+
+\subsection{Variability across seeds}
+
+Daily and monthly learned models use five random seeds.
+The 30-day seed-level macro-MAE was $44.29\pm0.29$~W/m$^2$ for TimesNet
+and $44.10\pm0.60$~W/m$^2$ for DilatedRNN. At one month it was
+$14.62\pm0.74$ versus $13.45\pm0.35$~W/m$^2$, respectively; at six months,
+$15.24\pm0.76$ versus $14.77\pm0.45$~W/m$^2$.
+Figure~\ref{fig:seed_variability} reports the means and sample standard
+deviations of the MAEs computed for individual seed runs. These means need
+not equal the ensemble MAEs in Table~\ref{tab:architecture_winners}, which
+evaluate the post-processed forecast defined in Eq.~\eqref{eq:ensemble_forecast}:
+the five forecasts are averaged in physical units before the zero floor is
+applied. The hourly estimate uses one seed and cannot quantify seed variability.
+
+The 0.23~W/m$^2$ terminal daily ensemble gap is smaller than either
+architecture's seed-level standard deviation; the six-month gap is only
+0.09~W/m$^2$. In comparisons of runs using the same seed, DilatedRNN had
+lower terminal MAE in three of five daily runs and four of five runs in each
+monthly task. Its monthly advantages were therefore more consistent across
+the evaluated seeds than its terminal daily advantage. Seed standard
+deviations measure training variability on the same test year; they are
+neither confidence intervals nor estimates of uncertainty across future
+years. Comparing an ensemble gap with these deviations is descriptive,
+not a significance test.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{variabilidade_arquiteturas.png}
+\caption{TimesNet and DilatedRNN seed-level macro-MAE: means with error bars
+spanning one sample standard deviation. Color and marker shape identify
+each architecture. The hourly extension is shown as $n=1$ without an error
+bar. Supplementary Figure S2 extends this display to all seven stochastic
+learned models.}
+\label{fig:seed_variability}
+\end{figure*}
+
+\subsection{Implications for architecture choice}
+\label{sec:architecture_choice}
+
+Among the two evaluated implementations, the results favor DilatedRNN for
+the daily and monthly full-horizon tasks. The one-month result provides
+the strongest basis for this choice: the 6.38\% ensemble MAE reduction
+coincides with lower error at six sites and in four of the five paired
+seed runs. The daily and six-month results broaden the observed pattern,
+but their small ensemble margins warrant a more tentative interpretation.
+TimesNet remains the lower-error choice for the complete 72-hour hourly
+trajectory under the single-seed protocol.
+
+Model size adds a second consideration to this comparison.
+Table~\ref{tab:model_capacity} shows that DilatedRNN uses fewer trainable
+parameters than TimesNet in all four configurations; in the one-month
+task, the counts are 1,889 and 2,758, respectively. Its monthly advantage
+therefore accompanies a smaller parameterization. DilatedRNN is also the
+smallest neural model in every task; at one month, the lower MAE of Informer
+uses 8,977 parameters, about 4.8 times as many. These counts describe
+model size, while measured training and inference times would be needed
+to assess computational efficiency. The current evidence supports a
+choice between the tested implementations; the contributions of recurrence,
+normalization, and parameter budget would require separate ablations.
+
+\subsection{Reference benchmark and scope of the comparison}
+\label{sec:reference_benchmark}
+
+Table~\ref{tab:benchmark_adicional_mae} places the two architectures in the
+complete benchmark at the terminal horizon of each task. Supplementary
+Tables S1--S12 report MAE, MSE, RMSE, nRMSE, and $R^2$ at every cumulative
+checkpoint, and Supplementary Figure S1 shows the corresponding MAE ranks.
+No model led every task. XGBoost had the lowest macro-MAE at all hourly
+checkpoints (50.50~W/m$^2$ at 72 hours); GRU ranked second at 48 and
+72 hours (51.52~W/m$^2$ at 72 hours), and TimesNet at 24 hours. In the daily
+task, site-wise ARIMA led at 1 and 3 days (39.95 and 43.04~W/m$^2$), LSTM at
+7 days, and XGBoost at 14 days. DilatedRNN led at 30 days
+(43.85~W/m$^2$), although the Transformer and XGBoost were within
+0.1~W/m$^2$ (43.88 and 43.93~W/m$^2$). Calendar climatology led both monthly
+tasks, with 12.57~W/m$^2$ at one month and 13.03~W/m$^2$ over six months.
+Among learned models, Informer had the lowest monthly macro-MAE (12.85 and
+13.88~W/m$^2$), followed by DilatedRNN (13.01 and 14.37~W/m$^2$); at one
+month, DilatedRNN nevertheless had lower RMSE than Informer (16.02 versus
+16.20~W/m$^2$).
+
+\input{tables/benchmark_adicional_mae}
+
+Two reference configurations did not reproduce the hourly diurnal cycle.
+Averaged over test origins, the reference GHI profile spans about
+670~W/m$^2$ between night and midday on each forecast day, whereas the
+corresponding ARIMA and Informer profiles span only 195--400~W/m$^2$.
+Their 72-hour macro-MAEs (134.65 and 137.72~W/m$^2$) are therefore more than
+twice that of persistence (58.11~W/m$^2$). The ARIMA candidates contain no
+24-hour seasonal term, and their recursive forecasts are strongly damped
+from the first forecast day. Informer stopped after nine selection epochs
+with a normalized validation MSE of 0.064, compared with 0.010 for the
+Transformer after 30 epochs. A four-epoch CPU rerun of the same seed
+followed a similar trajectory (0.066), so the stall does not arise from the
+GPU execution. These hourly values evaluate the declared
+configurations under the common protocol, not the best achievable ARIMA or
+Informer. Site-wise ARIMA also did not surpass annual seasonal na\"ive over
+six months (19.17 versus 18.00~W/m$^2$). Hourly climatology was not
+evaluated; its missing entries are not zero errors.
+
+At the terminal horizons, DilatedRNN ranked first at 30 days, third in both
+monthly tasks, and fourth at 72 hours; TimesNet ranked third at 72 hours,
+fourth at 30 days, and sixth in both monthly tasks. Consequently, a win over
+the other focal architecture must not be read as a win over the entire
+benchmark.
+
+The source studies motivate the hourly TimesNet and monthly DilatedRNN
+tasks, but their original error values were obtained under different
+protocols. Here, architecture rankings use predictions with matched inputs,
+origins, post-processing, aggregation, and metrics within each task.
+
+\subsection{Favorable and unfavorable cases}
+
+The global case-selection rule identifies the maximum and minimum, over all
+available sites, origins, and declared cumulative horizons, of
+$\mathrm{MAE}_{\mathrm{DilatedRNN}}-\mathrm{MAE}_{\mathrm{TimesNet}}$.
+Figure~\ref{fig:contrasting_cases} plots both selected forecasts.
+Weather data were added after the error extremes had been selected. The
+largest TimesNet gain occurred at GM Factory Zero for the 24-hour forecast beginning on
+31 March 2024 in fixed local time: TimesNet and DilatedRNN obtained
+45.43 and 109.90~W/m$^2$, respectively, a 64.47~W/m$^2$ advantage.
+NASA POWER provided post-hoc context of 99.64\% mean cloud amount and
+0.80~mm daily precipitation.
+
+The largest deficit occurred at Tesla Gigafactory Texas for the 24-hour
+forecast beginning on 28 March 2024: 150.02 versus 73.92~W/m$^2$, a
+76.10~W/m$^2$ TimesNet disadvantage. NASA POWER reported 0.06~mm daily
+precipitation and 2.14\% cloud amount; neither adverse-day threshold was
+exceeded. An absent flag does not establish the absence of subdaily weather
+variability. Both cases use the single hourly seed. Selection based on raw
+MAE contrasts across resolutions can favor tasks with larger absolute error
+scales, so these extremes cannot establish a cross-resolution ranking.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{previsoes_casos_contrastantes.png}
+\caption{Reference GHI and forecasts for the globally selected largest
+TimesNet gain and deficit. Panels share a GHI scale. MAEs and descriptive
+weather records refer to the selected 24-hour windows; weather data were
+added only after case selection.}
+\label{fig:contrasting_cases}
+\end{figure*}
+
+\subsection{Geographic and meteorological context}
+
+Figure~\ref{fig:geographic_context} locates the ten sites within their
+K\"oppen--Geiger climate zones. Sites within a country can occupy distinct
+regimes, while nearby sites may share correlated weather. With only ten
+purposively selected locations, differences between zones cannot establish
+a causal climatic effect.
+
+To complement this geographic context, the meteorological selection rule
+identified an event at Hyundai Metaplant Georgia on 5 August 2024, with
+82.66~mm/day corrected precipitation and 99.47\% cloud amount. The event
+was selected independently of model errors. Its weather record is reported
+in the Supplementary Material, and the following subsection examines the
+forecast profiles around this event and the two error-selected cases.
+
+\subsection{Multi-day irradiance profiles}
+\label{sec:multiday_profiles}
+
+Figure~\ref{fig:seven_day_profiles} extends the two error-selected cases
+and the independent weather case to seven calendar days each: the event
+date, three preceding days, and three following days. This fixed extension
+rule does not optimize the displayed week using model errors. Each panel
+contains 168 unique hourly targets and seven successive midnight forecast
+origins. Only leads 1--24 of each 72-hour model output are retained; the
+context advances daily while the fitted parameters remain fixed. The figure
+therefore shows seven daily forecasts, not one 168-hour forecast.
+
+Across these seven-day displays, TimesNet and DilatedRNN respectively
+obtained MAEs of 99.73 and 115.07~W/m$^2$ at GM Factory Zero,
+91.90 and 89.19~W/m$^2$ at Tesla Gigafactory Texas, and
+109.42 and 122.98~W/m$^2$ at Hyundai Metaplant Georgia. These local
+window errors are distinct from the single-event errors and the annual
+macro-MAEs. The additional days reveal underprediction of some high-GHI
+peaks and overprediction of low-GHI daytime periods by both architectures.
+At the independently selected Georgia event, both forecasts exceed much
+of the reference daytime profile. These trajectories show the difficulty
+both GHI-only models face in following the observed daytime variation.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{perfis_sete_dias.png}
+\caption{Seven-day hourly GHI profiles around the two error-selected cases
+and the error-independent NASA POWER event. Each curve joins seven
+24-hour forecast prefixes issued on successive local midnights; it is not
+a single seven-day forecast. Shading marks the original selected day.
+MAEs use all 168 displayed targets per site, including nighttime; all
+forecasts use seed 42 and the common hourly post-processing.
+Dates follow the fixed local-time index, and all panels share a GHI scale.}
+\label{fig:seven_day_profiles}
+\end{figure*}

@@ -1,0 +1,312 @@
+{
+  "registrado_em_utc": "2026-10-03T14:03:05.999427+00:00",
+  "ok": true,
+  "launcher": {
+    "pid": 32296,
+    "iniciado_em_local": "2026-10-03T10:59:33.3770919-03:00"
+  },
+  "comando": ".venv-baselines-gpu-20260912/Scripts/python.exe -X utf8 -m scripts.coordenar_quantizacao_historica --cpu-workers 2 --gpu-workers 2",
+  "coordenador": {
+    "iniciado_em_utc": "2026-10-03T13:59:50.278226+00:00",
+    "pid": 6480,
+    "identidade_coordenador": {
+      "pid": 6480,
+      "creation_time": "134355095796354414"
+    },
+    "publicado": false,
+    "revisao_visual_pendente": true,
+    "codigo_sha256": "3b865ca313e0d2e84cb11cc046de2b825716c02c618328da5ac576225b316a4e",
+    "etapa": "fila_historico_1998_2022",
+    "atualizado_em_utc": "2026-10-03T14:03:05.572608+00:00",
+    "etapa_atual": "pronto_para_revisao_visual",
+    "processos_ativos": [],
+    "auditoria_atual_sha256": "b48b7fbefbd1b267c25c276dc6f6d10692603ac45969946d879f1b52cb5a43d5",
+    "processos_historico": [
+      {
+        "pid": 8952,
+        "creation_time": "134355095942728597"
+      }
+    ],
+    "processo_filho": {
+      "pid": 8952,
+      "creation_time": "134355095942728597"
+    },
+    "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\fila_historico_1998_2022.log"
+  },
+  "runner": {
+    "regime": "historico_1998_2022",
+    "modo": "completa",
+    "etapa": "selecao",
+    "iniciado_em_utc": "2026-10-03T13:59:59.198093+00:00",
+    "atualizado_em_utc": "2026-10-03T14:03:04.101763+00:00",
+    "pid_runner": 27160,
+    "identidade_runner": {
+      "pid": 27160,
+      "creation_time": "134355095966213380"
+    },
+    "processos_historico": [
+      {
+        "pid": 9764,
+        "creation_time": "134355095992181410"
+      },
+      {
+        "pid": 34856,
+        "creation_time": "134355095994324299"
+      },
+      {
+        "pid": 3756,
+        "creation_time": "134355095996632857"
+      },
+      {
+        "pid": 19996,
+        "creation_time": "134355095999129353"
+      },
+      {
+        "pid": 15752,
+        "creation_time": "134355097122498506"
+      },
+      {
+        "pid": 17248,
+        "creation_time": "134355097124948074"
+      },
+      {
+        "pid": 13548,
+        "creation_time": "134355097229337278"
+      }
+    ],
+    "saida": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+    "pendentes": [
+      [
+        "daily_30",
+        "Informer"
+      ],
+      [
+        "daily_30",
+        "Sazonal ingenuo"
+      ],
+      [
+        "daily_30",
+        "Climatologia"
+      ],
+      [
+        "daily_30",
+        "TimesNet"
+      ],
+      [
+        "hourly_72_extension",
+        "GRU"
+      ],
+      [
+        "hourly_72_extension",
+        "LSTM"
+      ],
+      [
+        "hourly_72_extension",
+        "DilatedRNN"
+      ],
+      [
+        "hourly_72_extension",
+        "Transformer"
+      ],
+      [
+        "hourly_72_extension",
+        "Informer"
+      ],
+      [
+        "hourly_72_extension",
+        "XGBoost"
+      ],
+      [
+        "hourly_72_extension",
+        "ARIMA"
+      ],
+      [
+        "hourly_72_extension",
+        "Persistencia"
+      ],
+      [
+        "hourly_72_extension",
+        "Sazonal ingenuo"
+      ],
+      [
+        "hourly_72_extension",
+        "Climatologia"
+      ],
+      [
+        "hourly_72_extension",
+        "TimesNet"
+      ],
+      [
+        "monthly_6",
+        "GRU"
+      ],
+      [
+        "monthly_6",
+        "LSTM"
+      ],
+      [
+        "monthly_6",
+        "DilatedRNN"
+      ],
+      [
+        "monthly_6",
+        "Transformer"
+      ],
+      [
+        "monthly_6",
+        "Informer"
+      ],
+      [
+        "monthly_6",
+        "XGBoost"
+      ],
+      [
+        "monthly_6",
+        "ARIMA"
+      ],
+      [
+        "monthly_6",
+        "Persistencia"
+      ],
+      [
+        "monthly_6",
+        "Sazonal ingenuo"
+      ],
+      [
+        "monthly_6",
+        "Climatologia"
+      ],
+      [
+        "monthly_6",
+        "TimesNet"
+      ],
+      [
+        "monthly_1",
+        "GRU"
+      ],
+      [
+        "monthly_1",
+        "LSTM"
+      ],
+      [
+        "monthly_1",
+        "DilatedRNN"
+      ],
+      [
+        "monthly_1",
+        "Transformer"
+      ],
+      [
+        "monthly_1",
+        "Informer"
+      ],
+      [
+        "monthly_1",
+        "XGBoost"
+      ],
+      [
+        "monthly_1",
+        "ARIMA"
+      ],
+      [
+        "monthly_1",
+        "Persistencia"
+      ],
+      [
+        "monthly_1",
+        "Sazonal ingenuo"
+      ],
+      [
+        "monthly_1",
+        "Climatologia"
+      ],
+      [
+        "monthly_1",
+        "TimesNet"
+      ]
+    ],
+    "concluidos": [
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "GRU",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_gru.log",
+        "concluido_em_utc": "2026-10-03T14:01:47.134047+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "LSTM",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_lstm.log",
+        "concluido_em_utc": "2026-10-03T14:01:47.148805+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "ARIMA",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_arima.log",
+        "concluido_em_utc": "2026-10-03T14:01:57.881898+00:00"
+      }
+    ],
+    "falhas": [],
+    "processos": [
+      {
+        "tarefa": "daily_30",
+        "modelo": "XGBoost",
+        "recurso": "cpu",
+        "pid": 3756,
+        "creation_time": "134355095996632857",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_xgboost.log",
+        "inicio": "2026-10-03T13:59:59.898874+00:00"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "DilatedRNN",
+        "recurso": "gpu",
+        "pid": 15752,
+        "creation_time": "134355097122498506",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_dilatedrnn.log",
+        "inicio": "2026-10-03T14:01:52.475976+00:00"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "Transformer",
+        "recurso": "gpu",
+        "pid": 17248,
+        "creation_time": "134355097124948074",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_transformer.log",
+        "inicio": "2026-10-03T14:01:52.797009+00:00"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "Persistencia",
+        "recurso": "cpu",
+        "pid": 13548,
+        "creation_time": "134355097229337278",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_persistencia.log",
+        "inicio": "2026-10-03T14:02:03.192358+00:00"
+      }
+    ]
+  },
+  "preflight": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\preflight_historico_1998_2022.json",
+    "sha256": "5944e93dbb45b74c5c07d83919e7029a5fdbce4d454b9372c898cd87b59c40ef",
+    "arquivos_coleta_verificados": 70,
+    "aprovado": true
+  },
+  "json_atomico_sha256": "18d529e716217621db283f15c518b03dc476d9fe66c3001a381802bb9820a4a3",
+  "cache_auditado": {
+    "caches_finais": 97,
+    "selecoes_congeladas": 7,
+    "checkpoints_parciais_preservados": 8
+  },
+  "pdf_atual_preservado": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\documentacao\\tabela_resultados_ghi_2024.pdf",
+    "sha256": "155e58187c1da01d6030334d086933bf0f200d13cb02d60c0db76b28b7bac776",
+    "paginas": 34
+  },
+  "observacao": "Retomada histórica ativa; estudo completo e PDF histórico continuam pendentes."
+}

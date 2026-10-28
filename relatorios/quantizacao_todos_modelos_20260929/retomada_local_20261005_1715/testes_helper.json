@@ -1,0 +1,24 @@
+{
+    "versao":  1,
+    "aprovado":  true,
+    "exitcode":  0,
+    "testes_executados":  42,
+    "comando":  [
+                    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+                    "-X",
+                    "utf8",
+                    "-c",
+                    "import ctypes, sys, runpy; from ctypes import wintypes as w; k=ctypes.WinDLL(\u0027kernel32\u0027,use_last_error=True); k.GetCurrentProcess.restype=w.HANDLE; k.SetPriorityClass.argtypes=[w.HANDLE,w.DWORD]; k.SetPriorityClass.restype=w.BOOL; ok=k.SetPriorityClass(k.GetCurrentProcess(),0x8000); assert ok, ctypes.WinError(ctypes.get_last_error()); sys.argv=[\u0027unittest\u0027,\u0027tests.test_retomar_historico_apos_calendario\u0027,\u0027-v\u0027]; runpy.run_module(\u0027unittest\u0027,run_name=\u0027__main__\u0027)"
+                ],
+    "modulo_unittest":  "tests.test_retomar_historico_apos_calendario",
+    "prioridade_proprio_interprete":  "AboveNormal",
+    "concluido_em_utc":  "2026-10-05T20:31:04.5582664Z",
+    "fontes_sha256":  {
+                          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\retomar_historico_apos_calendario.py":  "9c4d244cb89d718fdbd4751718650cabda61b34a8b15e1bf4e103ca63fbd9971",
+                          "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tests\\test_retomar_historico_apos_calendario.py":  "b6d58d1afe1143276909b9e1d033ab9354051c44ffa70fa62c28e291d3b6ef78"
+                      },
+    "log":  "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_local_20261005_1715\\testes_helper.log",
+    "log_sha256":  "0211945eac18d1fe77b8d4397b5f2a9ec66143ad009d04d48a3ef96fb3fbe0e4",
+    "escopo":  "Somente fixtures isoladas; nenhum treinamento real iniciado.",
+    "motivo_nova_execucao":  "Correção de layout ctypes estável após falha real em probe nativo aninhado."
+}

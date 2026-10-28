@@ -1,0 +1,993 @@
+{
+  "comparacao_global": {
+    "bit_a_bit": false,
+    "delta_maximo": 4.490431751946744e-05,
+    "diferentes": 52272,
+    "dtype_a": "float64",
+    "dtype_b": "float64",
+    "shape_a": [
+      3630,
+      72
+    ],
+    "shape_b": [
+      3630,
+      72
+    ]
+  },
+  "concluido_em_utc": "2026-09-30T05:35:26.264687+00:00",
+  "dados": {
+    "escalas": {
+      "bit_a_bit": true,
+      "delta_maximo": 0.0,
+      "diferentes": 0,
+      "dtype_a": "float64",
+      "dtype_b": "float64",
+      "shape_a": [
+        10,
+        6
+      ],
+      "shape_b": [
+        10,
+        6
+      ]
+    },
+    "ids": {
+      "bit_a_bit": true,
+      "delta_maximo": 0.0,
+      "diferentes": 0,
+      "dtype_a": "int64",
+      "dtype_b": "int64",
+      "shape_a": [
+        3630
+      ],
+      "shape_b": [
+        3630
+      ]
+    },
+    "origens_locais_iguais": true,
+    "x_bruto": {
+      "bit_a_bit": true,
+      "delta_maximo": 0.0,
+      "diferentes": 0,
+      "dtype_a": "float32",
+      "dtype_b": "float32",
+      "shape_a": [
+        3630,
+        336
+      ],
+      "shape_b": [
+        3630,
+        336
+      ]
+    },
+    "x_normalizado": {
+      "bit_a_bit": true,
+      "delta_maximo": 0.0,
+      "diferentes": 0,
+      "dtype_a": "float32",
+      "dtype_b": "float32",
+      "shape_a": [
+        3630,
+        336
+      ],
+      "shape_b": [
+        3630,
+        336
+      ]
+    },
+    "y_bruto": {
+      "bit_a_bit": true,
+      "delta_maximo": 0.0,
+      "diferentes": 0,
+      "dtype_a": "float32",
+      "dtype_b": "float32",
+      "shape_a": [
+        3630,
+        72
+      ],
+      "shape_b": [
+        3630,
+        72
+      ]
+    }
+  },
+  "fontes": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\cache\\deterministica.npz": "0360286d2f284683f550a72005a5b792f214f4c3cc83dc72269e91319cda0e93",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\contrato.json": "87f3f358992eb041be9708ba7653ff326f3664e2f64462ca73cbc7b1ac33f122",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\arima_robusto\\selecao_arima.csv": "a70763d74a43aa333fb25a9da87dde4f8d870d12c99e7996782d106ab0926b23",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\arima\\contrato_execucao.json": "f64760adccf795e553fc6b253d8b401ce1b043e1374a5eb0611e88cdeccf1a08",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\arima\\sem_quantizacao\\selecao\\seed-1.npz": "ccaadc874c67573bbf060de8322a3939fe087d05ce056a52db3b59ecc4a12a14",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\diagnosticar_controle_arima_horario.py": "788c69f47b76e4420282f9a68febb6189bbd04d44a61bcbdafb1f8b466c603bc"
+  },
+  "localidades": [
+    {
+      "historico_checkpoint": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "historico_fit": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "localidade": "BMW San Luis Potosi",
+      "localidade_id": 0,
+      "loglik_novo": 41681.82912047104,
+      "loglik_original": 41681.82912047104,
+      "mle_retvals_novo": {
+        "converged": true,
+        "fcalls": 25,
+        "fopt": -1.2002369592395485,
+        "gopt": [
+          5.620028886704695e-05,
+          -3.2404079419522156e-06,
+          2.139379784424218e-05,
+          0.0019562143238623744
+        ],
+        "iterations": 1,
+        "warnflag": 0
+      },
+      "mse_validacao_original": 0.08339870333195692,
+      "ordem_nova": [
+        2,
+        0,
+        0
+      ],
+      "ordem_original": [
+        2,
+        0,
+        0
+      ],
+      "params_novos": [
+        0.2235645627515437,
+        1.6128613367139666,
+        -0.7275503186168519,
+        0.005308488230323441
+      ],
+      "previsoes_vs_original": {
+        "bit_a_bit": false,
+        "delta_maximo": 3.751665644813329e-12,
+        "diferentes": 26136,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          363,
+          72
+        ],
+        "shape_b": [
+          363,
+          72
+        ]
+      },
+      "tentativas_originais": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 41681.82912047104,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "historico_checkpoint": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "historico_fit": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "localidade": "BYD Camacari",
+      "localidade_id": 1,
+      "loglik_novo": 36611.07319331559,
+      "loglik_original": 36611.07319331559,
+      "mle_retvals_novo": {
+        "converged": true,
+        "fcalls": 378,
+        "fopt": -1.054223485179555,
+        "gopt": [
+          -9.808154288684227e-07,
+          -5.557776461237124e-07,
+          -3.1086244690681236e-08,
+          7.345013486266992e-07,
+          -5.738742814289659e-05
+        ],
+        "iterations": 53,
+        "warnflag": 0
+      },
+      "mse_validacao_original": 0.06197591717545922,
+      "ordem_nova": [
+        2,
+        1,
+        2
+      ],
+      "ordem_original": [
+        2,
+        1,
+        2
+      ],
+      "params_novos": [
+        1.8789916408192262,
+        -0.9539879204828047,
+        -1.8565983304952927,
+        0.8626743174381892,
+        0.00710718053439223
+      ],
+      "previsoes_vs_original": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          363,
+          72
+        ],
+        "shape_b": [
+          363,
+          72
+        ]
+      },
+      "tentativas_originais": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 36611.07319331559,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "historico_checkpoint": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "historico_fit": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "localidade_id": 2,
+      "loglik_novo": 46179.20845685812,
+      "loglik_original": 46179.20845653276,
+      "mle_retvals_novo": {
+        "converged": true,
+        "fcalls": 273,
+        "fopt": -1.3297399348323578,
+        "gopt": [
+          -5.268008251841099e-07,
+          0.00011189977833152531,
+          7.793017342498948e-05,
+          -2.287969813605727e-06,
+          -2.4443025381524803e-05,
+          0.0009792678667967425
+        ],
+        "iterations": 33,
+        "warnflag": 0
+      },
+      "mse_validacao_original": 0.05324424709789834,
+      "ordem_nova": [
+        2,
+        0,
+        2
+      ],
+      "ordem_original": [
+        2,
+        0,
+        2
+      ],
+      "params_novos": [
+        0.1561269644996293,
+        1.7634070391152268,
+        -0.8423501318198509,
+        -0.3862441136102441,
+        -0.08238301105298253,
+        0.004096824099633557
+      ],
+      "previsoes_vs_original": {
+        "bit_a_bit": false,
+        "delta_maximo": 4.490431751946744e-05,
+        "diferentes": 26136,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          363,
+          72
+        ],
+        "shape_b": [
+          363,
+          72
+        ]
+      },
+      "tentativas_originais": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 46179.20845653276,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "historico_checkpoint": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "historico_fit": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "localidade": "GM Factory Zero",
+      "localidade_id": 3,
+      "loglik_novo": 46542.40647249486,
+      "loglik_original": 46542.40647249486,
+      "mle_retvals_novo": {
+        "converged": true,
+        "fcalls": 516,
+        "fopt": -1.3401982974111628,
+        "gopt": [
+          4.4677594956672857e-07,
+          5.904854383193166e-06,
+          -8.76188011067344e-08,
+          -1.3750467431413023e-05,
+          0.0006051061873793132
+        ],
+        "iterations": 67,
+        "warnflag": 0
+      },
+      "mse_validacao_original": 0.04983384195840382,
+      "ordem_nova": [
+        2,
+        1,
+        2
+      ],
+      "ordem_original": [
+        2,
+        1,
+        2
+      ],
+      "params_novos": [
+        1.7691649857551628,
+        -0.8608272367562952,
+        -1.4716315569811993,
+        0.47392762446849745,
+        0.004011435363661142
+      ],
+      "previsoes_vs_original": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          363,
+          72
+        ],
+        "shape_b": [
+          363,
+          72
+        ]
+      },
+      "tentativas_originais": [
+        {
+          "avisos": "Non-invertible starting MA parameters found. Using zeros as starting parameters. | Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 46542.40647249486,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "historico_checkpoint": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "historico_fit": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "localidade": "Hyundai Metaplant Georgia",
+      "localidade_id": 4,
+      "loglik_novo": 43814.46721217228,
+      "loglik_original": 43814.46721217228,
+      "mle_retvals_novo": {
+        "converged": true,
+        "fcalls": 432,
+        "fopt": -1.261646717696737,
+        "gopt": [
+          1.074207389699279e-06,
+          2.681188604452188e-07,
+          4.785061236315576e-08,
+          -1.5185852575412629e-06,
+          -4.783082818706397e-05
+        ],
+        "iterations": 59,
+        "warnflag": 0
+      },
+      "mse_validacao_original": 0.06716311021274504,
+      "ordem_nova": [
+        2,
+        1,
+        2
+      ],
+      "ordem_original": [
+        2,
+        1,
+        2
+      ],
+      "params_novos": [
+        1.749887447501552,
+        -0.8510590382988583,
+        -1.3638905689947245,
+        0.3658184953601839,
+        0.004693659066559205
+      ],
+      "previsoes_vs_original": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          363,
+          72
+        ],
+        "shape_b": [
+          363,
+          72
+        ]
+      },
+      "tentativas_originais": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 43814.46721217228,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "historico_checkpoint": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "historico_fit": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "localidade_id": 5,
+      "loglik_novo": 52821.64276711996,
+      "loglik_original": 52821.64276711996,
+      "mle_retvals_novo": {
+        "converged": true,
+        "fcalls": 312,
+        "fopt": -1.5210102155931802,
+        "gopt": [
+          -1.4414736071349733e-05,
+          5.873523889438449e-06,
+          1.6708856521241165e-07,
+          -1.5360068772457952e-05,
+          -1.4425083350029257e-05
+        ],
+        "iterations": 44,
+        "warnflag": 0
+      },
+      "mse_validacao_original": 0.08183347886848005,
+      "ordem_nova": [
+        2,
+        1,
+        2
+      ],
+      "ordem_original": [
+        2,
+        1,
+        2
+      ],
+      "params_novos": [
+        1.755581780531106,
+        -0.8609679662847666,
+        -1.082341219226021,
+        0.08499497147426123,
+        0.002793806418412729
+      ],
+      "previsoes_vs_original": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          363,
+          72
+        ],
+        "shape_b": [
+          363,
+          72
+        ]
+      },
+      "tentativas_originais": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 52821.64276711996,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "historico_checkpoint": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "historico_fit": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "localidade": "Rivian Normal",
+      "localidade_id": 6,
+      "loglik_novo": 46412.74118530804,
+      "loglik_original": 46412.74118530804,
+      "mle_retvals_novo": {
+        "converged": true,
+        "fcalls": 366,
+        "fopt": -1.3364645584343482,
+        "gopt": [
+          3.541151816198856e-05,
+          -2.075291050105126e-05,
+          -3.2485125701761893e-07,
+          4.133628994647283e-05,
+          8.809402096691206e-05
+        ],
+        "iterations": 49,
+        "warnflag": 0
+      },
+      "mse_validacao_original": 0.055919674011112884,
+      "ordem_nova": [
+        2,
+        1,
+        2
+      ],
+      "ordem_original": [
+        2,
+        1,
+        2
+      ],
+      "params_novos": [
+        1.7550484641003594,
+        -0.8497187736013442,
+        -1.40599759988446,
+        0.40835189241769965,
+        0.004041365506482075
+      ],
+      "previsoes_vs_original": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          363,
+          72
+        ],
+        "shape_b": [
+          363,
+          72
+        ]
+      },
+      "tentativas_originais": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 46412.74118530804,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "historico_checkpoint": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "historico_fit": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "localidade": "Tesla Fremont Factory",
+      "localidade_id": 7,
+      "loglik_novo": 52807.03224118038,
+      "loglik_original": 52807.03224118038,
+      "mle_retvals_novo": {
+        "converged": true,
+        "fcalls": 348,
+        "fopt": -1.5205895024527867,
+        "gopt": [
+          -1.935340776513894e-07,
+          2.7584601269655925e-07,
+          -1.8363088827995275e-08,
+          -8.730571821050691e-07,
+          -1.8778112398359716e-05
+        ],
+        "iterations": 49,
+        "warnflag": 0
+      },
+      "mse_validacao_original": 0.07479164168663564,
+      "ordem_nova": [
+        2,
+        1,
+        2
+      ],
+      "ordem_original": [
+        2,
+        1,
+        2
+      ],
+      "params_novos": [
+        1.7589793961912201,
+        -0.861718771283317,
+        -1.118477745381359,
+        0.12159766188133143,
+        0.0027961891771308505
+      ],
+      "previsoes_vs_original": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          363,
+          72
+        ],
+        "shape_b": [
+          363,
+          72
+        ]
+      },
+      "tentativas_originais": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 52807.03224118038,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "historico_checkpoint": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "historico_fit": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "localidade": "Tesla Gigafactory Nevada",
+      "localidade_id": 8,
+      "loglik_novo": 48780.79136467986,
+      "loglik_original": 48780.79136467986,
+      "mle_retvals_novo": {
+        "converged": true,
+        "fcalls": 282,
+        "fopt": -1.4046530570340896,
+        "gopt": [
+          5.967515370702599e-06,
+          -2.6051605317263555e-06,
+          -0.0001716505382341506,
+          2.194593395896697e-05,
+          -0.00010062735089630097
+        ],
+        "iterations": 39,
+        "warnflag": 0
+      },
+      "mse_validacao_original": 0.06784178294880916,
+      "ordem_nova": [
+        2,
+        1,
+        2
+      ],
+      "ordem_original": [
+        2,
+        1,
+        2
+      ],
+      "params_novos": [
+        1.7651642923129338,
+        -0.8653840600991973,
+        -1.2689180230650632,
+        0.2707015817934586,
+        0.0035259349603501515
+      ],
+      "previsoes_vs_original": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          363,
+          72
+        ],
+        "shape_b": [
+          363,
+          72
+        ]
+      },
+      "tentativas_originais": [
+        {
+          "avisos": "",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 48780.79136467986,
+          "otimizador": "lbfgs"
+        }
+      ]
+    },
+    {
+      "historico_checkpoint": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "historico_fit": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          34728
+        ],
+        "shape_b": [
+          34728
+        ]
+      },
+      "localidade": "Tesla Gigafactory Texas",
+      "localidade_id": 9,
+      "loglik_novo": 44893.948245132844,
+      "loglik_original": 44893.948245132844,
+      "mle_retvals_novo": {
+        "converged": true,
+        "fcalls": 480,
+        "fopt": -1.2927305990881377,
+        "gopt": [
+          -5.574474215527376e-06,
+          1.223565693201123e-05,
+          -7.260858581323403e-09,
+          -8.56057447150814e-06,
+          0.00034533511605885426
+        ],
+        "iterations": 59,
+        "warnflag": 0
+      },
+      "mse_validacao_original": 0.07301399799184148,
+      "ordem_nova": [
+        2,
+        1,
+        2
+      ],
+      "ordem_original": [
+        2,
+        1,
+        2
+      ],
+      "params_novos": [
+        1.748281129529602,
+        -0.8498765544438442,
+        -1.3155203815403742,
+        0.31769115026848843,
+        0.0044108369384228165
+      ],
+      "previsoes_vs_original": {
+        "bit_a_bit": true,
+        "delta_maximo": 0.0,
+        "diferentes": 0,
+        "dtype_a": "float64",
+        "dtype_b": "float64",
+        "shape_a": [
+          363,
+          72
+        ],
+        "shape_b": [
+          363,
+          72
+        ]
+      },
+      "tentativas_originais": [
+        {
+          "avisos": "Non-invertible starting MA parameters found. Using zeros as starting parameters.",
+          "convergiu": true,
+          "limite": 200,
+          "loglik": 44893.948245132844,
+          "otimizador": "lbfgs"
+        }
+      ]
+    }
+  ],
+  "mae_macro_novo": 133.60473611939113,
+  "mae_macro_original": 133.60473633198367,
+  "pacotes_atual": {
+    "numpy": "2.4.4",
+    "pandas": "3.0.3",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6"
+  },
+  "sem_novos_ajustes": true
+}

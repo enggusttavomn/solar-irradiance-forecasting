@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "id": "diagnostico_xgboost_hourly_refit_v1",
+  "registrado_em_utc": "2026-10-01T22:45:39.611816+00:00",
+  "estado": "aguardando_repeticao_integral_e_revisao_independente",
+  "controle_legado_reproduzido": false,
+  "causa_divergencia_legada": "nao determinada",
+  "parametros_efetivos_iguais_tratando_NaN_ausente": true,
+  "observacao_comparacao_dict_python": "NaN != NaN; flag bruta parametros_iguais=false no replay inicial resulta somente do parametro missing=NaN.",
+  "config_booster_igual": true,
+  "replay_checkpoint": {
+    "old_new_max": 97.88775587081909,
+    "old_cache_max": 2.2737367544323206e-13,
+    "new_cache_max": 0.0,
+    "shape": [
+      3630,
+      72
+    ]
+  },
+  "janelas_recriadas_via_construtor_legacy_iguais": {
+    "x_bruto": true,
+    "y_bruto": true,
+    "localidade_id": true,
+    "localidade": true,
+    "origem_utc": true,
+    "origem_local": true,
+    "shape_X": [
+      18100,
+      336
+    ],
+    "shape_Y": [
+      18100,
+      72
+    ]
+  },
+  "limite_prova_dados_legacy": "Matrizes do treino antigo nao preservadas; igualdade da reconstituicao nao prova igualdade criptografica das matrizes usadas no treino antigo.",
+  "primeira_arvore_divergente": 0,
+  "hessiana_raiz_legacy": 1042848.0,
+  "hessiana_raiz_nova": 1042632.0,
+  "linhas_amostradas_primeira_arvore_legacy": 14484.0,
+  "linhas_amostradas_primeira_arvore_nova": 14481.0,
+  "piloto_curto": [
+    {
+      "label": "m_primeiro",
+      "duracao_s": 12.600967200000014,
+      "old_tree0_exata": false,
+      "new_tree0_exata": true,
+      "sum_hessian_root": 1042632.0
+    },
+    {
+      "label": "m_repeticao",
+      "duracao_s": 7.671633099999781,
+      "old_tree0_exata": false,
+      "new_tree0_exata": true,
+      "sum_hessian_root": 1042632.0
+    },
+    {
+      "label": "h_sequencial",
+      "duracao_s": 9.59590450000087,
+      "old_tree0_exata": false,
+      "new_tree0_exata": true,
+      "sum_hessian_root": 1042632.0
+    },
+    {
+      "label": "m_repeticao2",
+      "duracao_s": 9.101440299999922,
+      "old_tree0_exata": false,
+      "new_tree0_exata": true,
+      "sum_hessian_root": 1042632.0
+    }
+  ],
+  "solucao_proposta": "Controle interno novo com repeticao integral e revisao independente; preservar controles antigos e selecao; mesmas variantes, parametros e dados via motor congelado.",
+  "metricas_usadas_como_criterio": false,
+  "fontes": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\diagnostico_xgboost_horario_v1\\replay_checkpoint.json": "0db110944ce47b8ac4afb7567cd5bbc9f050dc7b1806d5e7390b29176caa97f2",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\diagnostico_xgboost_horario_v1\\old_booster.json": "47dfb4f0addd3d3fed1cab7c8eacc4c01302e0d7f1d4345b5f3cd5c8d709b632",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\diagnostico_xgboost_horario_v1\\new_booster.json": "b0525aea2e84928a3553e8ed67d507d857030a183e5425c10f4fad90520dc58d",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\diagnostico_xgboost_horario_v1\\piloto_estado_rng.json": "366db8ab5996770139c2d7a31138d0fc8c0528f2be891d5576f873508e26991b"
+  },
+  "referencias_tecnicas": [
+    {
+      "url": "https://github.com/dmlc/xgboost/blob/v3.2.0/src/learner.cc",
+      "uso": "Configuracao inicial define a semente interna. Nao determina a causa desta divergencia."
+    },
+    {
+      "url": "https://github.com/dmlc/xgboost/blob/v3.2.0/src/tree/hist/sampler.cc",
+      "uso": "Amostragem de linhas de treinamento usa RNG interno e numero de threads. Nao prova qual estado mudou no treino antigo."
+    }
+  ]
+}

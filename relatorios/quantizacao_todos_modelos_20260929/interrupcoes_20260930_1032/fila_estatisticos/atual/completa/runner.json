@@ -1,0 +1,39 @@
+{
+  "regime": "atual",
+  "modo": "completa",
+  "etapa": "erro",
+  "iniciado_em_utc": "2026-09-30T06:13:17.304442+00:00",
+  "atualizado_em_utc": "2026-09-30T06:43:58.554030+00:00",
+  "pid_runner": 21364,
+  "identidade_runner": {
+    "pid": 21364,
+    "creation_time": "134352223949412906"
+  },
+  "processos_historico": [
+    {
+      "pid": 33088,
+      "creation_time": "134352223973164044"
+    }
+  ],
+  "saida": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+  "pendentes": [],
+  "concluidos": [],
+  "falhas": [
+    {
+      "tipo": "PermissionError",
+      "mensagem": "[WinError 5] Access is denied: 'C:\\\\Users\\\\gm.nascimento\\\\Documents\\\\Meus Projetos\\\\TCC\\\\relatorios\\\\quantizacao_todos_modelos_20260929\\\\fila_estatisticos\\\\atual\\\\completa\\\\runner.json.29a8nnxd.tmp' -> 'relatorios\\\\quantizacao_todos_modelos_20260929\\\\fila_estatisticos\\\\atual\\\\completa\\\\runner.json'",
+      "instante": "2026-09-30T06:43:58.553967+00:00"
+    }
+  ],
+  "processos": [
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "ARIMA",
+      "recurso": "cpu",
+      "pid": 33088,
+      "creation_time": "134352223973164044",
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\fila_estatisticos\\atual\\completa\\selecao_hourly_72_extension_arima.log",
+      "inicio": "2026-09-30T06:13:17.613483+00:00"
+    }
+  ]
+}

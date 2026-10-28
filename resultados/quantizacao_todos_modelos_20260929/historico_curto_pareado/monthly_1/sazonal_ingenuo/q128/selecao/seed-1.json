@@ -1,0 +1,46 @@
+{
+  "adaptacao_calendario_sazonal_mensal": {
+    "codigo_adaptador_sha256": "89bbc5dc25780bf22dff658314ab11f6c5e4a11830183c0a85a313be59162f13",
+    "contrato_sha256": "00ccf090874b9959bd56522dcb17f8948e8c99873c3833a7bc4520b011a9ac4d",
+    "id": "sazonal_mensal_calendario_auditado_v1",
+    "politica": {
+      "alvos_alterados": false,
+      "causalidade_original_preservada": true,
+      "id": "sazonal_mensal_calendario_auditado_v1",
+      "imputacao_ou_descarte_de_janelas": false,
+      "metricas_usadas_como_criterio": false,
+      "minmax_alterado": false,
+      "modelo": "Sazonal ingenuo",
+      "origens_alteradas": false,
+      "quantizacao_alterada": false,
+      "regimes": [
+        "historico_1998_2022",
+        "historico_curto_pareado"
+      ],
+      "regra_diaria_alterada": false,
+      "regra_horaria_alterada": false,
+      "regra_mensal": "mes_ano_anterior_fim_mes_canonico_Period_M_menos12",
+      "selecao_legada_alterada": false,
+      "tarefas": [
+        "monthly_1",
+        "monthly_6"
+      ]
+    },
+    "tipo": "contrato_nativo"
+  },
+  "arquivos_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_sazonal_mensal_controle_auditado_v1.py": "89bbc5dc25780bf22dff658314ab11f6c5e4a11830183c0a85a313be59162f13",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\sazonal_ingenuo\\q128\\clipping_selecao.json": "d51f5dd341f47eab1e0455c4c69c962a5fe80dfdfaff72dae77f14adbd3d58c7",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\sazonal_ingenuo\\q128\\modelos\\referencia_selecao.joblib": "154d6e2b727dbcda223d05665dfb2fb1d4e267a53d85a0c97ab10e0234c7ea49",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\sazonal_ingenuo\\q128\\selecao\\detalhes.json": "6ee75a3bb07111036b144672d9505bb50d82ffb1b7be28e378c1d80072030541",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\sazonal_ingenuo\\q128\\selecao\\seed-1.npz": "5de7567d4e344a16dd38ffdb69d1ea5a5aa37d464059c78265f1430d4971200d"
+  },
+  "concluido_em_utc": "2026-10-07T14:42:56.620495+00:00",
+  "contrato_sha256": "00ccf090874b9959bd56522dcb17f8948e8c99873c3833a7bc4520b011a9ac4d",
+  "duracao_s": 0.7456326000001354,
+  "epocas": 0,
+  "fase": "selecao",
+  "niveis": 128,
+  "seed": -1,
+  "variante": "q128"
+}

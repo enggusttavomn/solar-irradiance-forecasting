@@ -1,0 +1,29 @@
+{
+  "description": "Derived display artifacts; no retraining; complete benchmarks preserved.",
+  "weekly_profile_rule": "seven days centered on each previously selected event; leads 1..24 from seven midnight origins",
+  "inputs": {
+    "resultados/artigo_revista_unificado/artefatos_resultados_corrigidos_FINAL/desempenho_macro.csv": "ce7860aea85e74024fa2fc1c28df851aecf48db6c0be772db3256b2e0fb333e7",
+    "resultados/artigo_revista_unificado/artefatos_resultados_corrigidos_FINAL/variabilidade_sementes.csv": "aa2b4b73d39be6662c632390de7b3b3b665dbf46bf3e927f988335eaa8694db1",
+    "resultados/avaliacao_multirresolucao_corrigida_v2/hourly_72_extension/previsoes_teste.csv.gz": "850cc110a4bf4101b0c02c9d5815fd3916659c01f67e2cc150f16dddc74d69cc",
+    "scripts/gerar_comparacao_focal_artigo.py": "d6245834a21b27570678a784111f2e2d85c6980e172b5eecb1a10ec0ebbf436e",
+    "resultados/artigo_revista_unificado/artefatos_resultados_corrigidos_FINAL/metricas_terminais.tex": "8440c312ae14ded2dfc950c9c9c23708dd2196f2c18dc7523d639bc9d8dc0738",
+    "resultados/artigo_revista_unificado/artefatos_resultados_corrigidos_FINAL/comparacao_timesnet_dilatedrnn_resumo.tex": "d84e3052decd1783b03a3cb40d9b0726a90ed9c8e893e4e45f184e863aa5576c",
+    "codigo_fonte/artefatos_artigo_unificado.py": "d2aa6cec3f8ab2c9076ed0f239c4c6d0f8fc54c3d3704653079bdd774d2599ad"
+  },
+  "outputs": {
+    "comparacao_timesnet_dilatedrnn_resumo.tex": "a072d9e504d5475961df614f7a9c5a43845ae056ce0850dc144dfa99b041f825",
+    "metricas_perfis_sete_dias.csv": "594e9ae79562e6d4db81b2bedf71ff92067fae5ab6c61e1b878bd655aa67d7e2",
+    "metricas_terminais.tex": "ed8f9e82c82415742d60e0a3ece0b511dc9340208919551b7d487b42b2def7c0",
+    "perfis_sete_dias.csv": "4717421de8e1b35d4b919294c3d989c0149dc18269a8b894657ac6cd5a37e401",
+    "perfis_sete_dias.pdf": "1eca10fc8e9de227f94fe0565fd1e729790d8a37cef9b5cc1b5164ae61af41da",
+    "perfis_sete_dias.png": "a5df6e7046f7917d4034d2cb91480a37edccf09d5ffdf57141abbf85c451c491",
+    "perfis_sete_dias.svg": "039da72196cd06423fef72ea6d374c7b70e213fe088c7ca924c0fe60afaac65d",
+    "variabilidade_por_semente.pdf": "a4df76be4baa08dc641e69980a113fdae876519fdc39b49cfdb989dd1e1c28de",
+    "variabilidade_por_semente.png": "9f3aed12b9f570f9c81c4c8598424df5159d9646be19e24b05cc50e4da8a1741",
+    "variabilidade_por_semente.svg": "9224d15edafe52268467da908550cb8e49fc4f5a96f5aa3f2e6f466d461b0c3a",
+    "vencedores_por_horizonte.csv": "4577db3d9a1f61cae33cc472345bfad881f5fc7a63f577805bb9bbbc02d46afa",
+    "vencedores_por_horizonte.tex": "c46add59e66f317d6b3774886db903b725a6305dc859db6e3f102b6d3d3b07a1",
+    "verificacao_tabelas.json": "7c193d8c87b1903bba8807e588776b020f8a2b412ee3738a189c3bdc69b13d39"
+  },
+  "independent_verification": "verificacao_tabelas.json is an independent audit record retained and hashed when present; this generator does not regenerate it."
+}

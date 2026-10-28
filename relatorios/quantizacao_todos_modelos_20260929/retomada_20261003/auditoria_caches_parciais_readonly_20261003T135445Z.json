@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "auditado_em_utc": "2026-10-03T13:54:45.699685+00:00",
+  "auditoria_principal": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261003\\auditoria_caches_readonly_20261003T135303Z.json",
+  "auditoria_principal_sha256": "298e98f5321dc9802c5e4c6005e5b92cc0d572841cd8aa10a68c3f1f5165e084",
+  "caches_finais_com_metadados_conferidos": 97,
+  "caches_finais_integros": 97,
+  "selecoes_congeladas_integras": 7,
+  "variantes_com_checkpoints_parciais_sem_manifesto": 1,
+  "checkpoints_parciais": [
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\q256\\modelos\\localidade0_selecao.joblib",
+      "bytes": 713743,
+      "sha256": "eee20d8b4dd006cd9aaff9368379701c330303f627968be5f042de19de48bd59",
+      "mtime_utc": "2026-10-02T11:56:16.677282+00:00",
+      "estado": "checkpoint parcial sem manifesto final de seed; não foi desserializado/reexecutado"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\q256\\modelos\\localidade1_selecao.joblib",
+      "bytes": 713951,
+      "sha256": "5500a13b369bf198e87afda24c8b94fd2f83ae45bc0ae99be5881be2f30dbef5",
+      "mtime_utc": "2026-10-02T12:04:19.621921+00:00",
+      "estado": "checkpoint parcial sem manifesto final de seed; não foi desserializado/reexecutado"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\q256\\modelos\\localidade2_selecao.joblib",
+      "bytes": 713951,
+      "sha256": "dd8eeccd1324f69526c32f99bfc7f6ad1c5d0a12471aed7475ae89dcc3ed737c",
+      "mtime_utc": "2026-10-02T12:10:47.828614+00:00",
+      "estado": "checkpoint parcial sem manifesto final de seed; não foi desserializado/reexecutado"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\q256\\modelos\\localidade3_selecao.joblib",
+      "bytes": 713951,
+      "sha256": "544a15192dde79220f586c3bc1ab66014b32de2a6230811679a6381a5f138ad2",
+      "mtime_utc": "2026-10-02T12:15:24.502707+00:00",
+      "estado": "checkpoint parcial sem manifesto final de seed; não foi desserializado/reexecutado"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\q256\\modelos\\localidade4_selecao.joblib",
+      "bytes": 713743,
+      "sha256": "78cf476748587602879cf187c9a0e114143f4327471700bdcd030477bb48a94c",
+      "mtime_utc": "2026-10-02T12:16:18.942209+00:00",
+      "estado": "checkpoint parcial sem manifesto final de seed; não foi desserializado/reexecutado"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\q256\\modelos\\localidade5_selecao.joblib",
+      "bytes": 713823,
+      "sha256": "70d38018ce0a3f75b94cb2cbca601a763c0d37152967c467867a597954b62a1a",
+      "mtime_utc": "2026-10-02T12:21:14.033772+00:00",
+      "estado": "checkpoint parcial sem manifesto final de seed; não foi desserializado/reexecutado"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\q256\\modelos\\localidade6_selecao.joblib",
+      "bytes": 713823,
+      "sha256": "7f0823df87ae95dd4c0f8499d59334ad39999eb78250e5f3482f3f02dcf06aa0",
+      "mtime_utc": "2026-10-02T12:26:54.266698+00:00",
+      "estado": "checkpoint parcial sem manifesto final de seed; não foi desserializado/reexecutado"
+    },
+    {
+      "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\q256\\modelos\\localidade7_selecao.joblib",
+      "bytes": 713823,
+      "sha256": "549b47fd4c50673eff98aa59f7918fbd6d6abfd43dc868d0101fbd45afc2ac7e",
+      "mtime_utc": "2026-10-02T12:32:26.188724+00:00",
+      "estado": "checkpoint parcial sem manifesto final de seed; não foi desserializado/reexecutado"
+    }
+  ],
+  "esclarecimento": "O número0sementes_incompletas do relatório principal inclui apenas NPZ/CSV/CP neural/XGB semmetadados. Estecomplemento detecta8CPs porlocalidade ARIMA da varianteq256 semNPZ/metadados finais. Nãoháfalha nos97cachesfinais.",
+  "politica_retomada_ARIMA": "quantizacao_referencias.py:215-273 sempre ajusta todas as localidades; não lê CP parcial existente. Sem mudança de motor, q256 será repetido inteiro. Os três caches finais anteriores são reaproveitados pelo motor após SHA.",
+  "limites": "Hashes dos8CPs são fotografia de preservação, não prova de validade, pois não existe manifesto anterior; CPs não foram desserializados."
+}

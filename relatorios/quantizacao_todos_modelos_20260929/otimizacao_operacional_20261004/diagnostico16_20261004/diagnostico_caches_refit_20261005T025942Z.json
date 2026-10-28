@@ -1,0 +1,3990 @@
+{
+  "observado_em_utc": "2026-10-05T02:59:42.328810+00:00",
+  "observado_em_sao_paulo": "2026-10-04T23:59:42.328810-03:00",
+  "nota_fuso": "Sao Paulo UTC-03:00; subtrair tres horas. Observacao apos02:55UTC05/10 corresponde23:55local04/10.",
+  "agente": "/root/cache_historico_outubro3",
+  "tipo": "diagnostico_leve_sem_motores_sem_replay",
+  "regimes": [
+    {
+      "regime": "atual",
+      "selecao": 44,
+      "refit": 44,
+      "total_pares": 44
+    },
+    {
+      "regime": "historico_1998_2022",
+      "selecao": 44,
+      "refit": 7,
+      "total_pares": 44
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "selecao": 0,
+      "refit": 0,
+      "total_pares": 44
+    }
+  ],
+  "percentual_fase_refit_longo": 15.909090909090908,
+  "percentual_global_etapas_treinamento": 52.65151515151515,
+  "unidades_global_concluidas": 139,
+  "unidades_global_total": 264,
+  "cache_refit_longo_total_validado_levemente": 96,
+  "baseline": {
+    "observacao_utc": "2026-10-04T22:31:18Z",
+    "pares_refit": 6,
+    "caches_refit": 62,
+    "arquivo": "retomada_20261004/auditoria_caches_readonly_20261004T223118Z.json"
+  },
+  "delta_cache_refit_desde_baseline": 34,
+  "conclusoes_metadata_posteriores_baseline": 34,
+  "pares": {
+    "daily_30/arima": {
+      "concluidas": 4,
+      "total": 4,
+      "registros": [
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\arima\\sem_quantizacao\\refit\\seed-1.json",
+          "sha256_metadata": "5db050dece0d080e27ee8e7a98497f0a5d48b3d4dd8da059d6cdeba5351d5332",
+          "variante": "sem_quantizacao",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 441.8380973000021,
+          "concluido_em_utc": "2026-10-04T19:17:22.414254+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\arima\\q64\\refit\\seed-1.json",
+          "sha256_metadata": "335fbb4c03aa093bd8f7eef7d7440090e7549153ed4830c409003ae9fb2555d4",
+          "variante": "q64",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 448.85813999999664,
+          "concluido_em_utc": "2026-10-04T19:25:06.703333+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\arima\\q128\\refit\\seed-1.json",
+          "sha256_metadata": "3ed70731d6da4b6f1ae3d0954351273860e76aa66bbfada25223caa3ea7d8be0",
+          "variante": "q128",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 469.4593331000069,
+          "concluido_em_utc": "2026-10-04T19:33:11.275740+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\arima\\q256\\refit\\seed-1.json",
+          "sha256_metadata": "45daa8cf020ac4bf81f68db4cf26d292a4abbddd497054280c7d7ae8f5b9716a",
+          "variante": "q256",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 448.56107070000144,
+          "concluido_em_utc": "2026-10-04T19:40:54.377266+00:00"
+        }
+      ],
+      "pendentes": [],
+      "contrato_sha256_bytes": "2befacb95fd58a24ec6db5b9758a108697d862b1888dfbfbd9134ee495e63da0"
+    },
+    "daily_30/climatologia": {
+      "concluidas": 4,
+      "total": 4,
+      "registros": [
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\climatologia\\sem_quantizacao\\refit\\seed-1.json",
+          "sha256_metadata": "89289cdb1e927e364226ebd677d6da57890a4838f0ef5e16369a76a9f170b91c",
+          "variante": "sem_quantizacao",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 30.96143310001935,
+          "concluido_em_utc": "2026-10-04T19:52:29.807408+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\climatologia\\q64\\refit\\seed-1.json",
+          "sha256_metadata": "5beaf64ac7c90dd35fb2b38ec0ef0f2e737ecd031ad943601776048939159c3b",
+          "variante": "q64",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 27.191541900014272,
+          "concluido_em_utc": "2026-10-04T19:53:13.923613+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\climatologia\\q128\\refit\\seed-1.json",
+          "sha256_metadata": "b8e7929fcde8c2e78bbb3efd9ccfedb7c0c9c71d2a15064180d0fec531a037fd",
+          "variante": "q128",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 27.22631209998508,
+          "concluido_em_utc": "2026-10-04T19:53:58.260874+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\climatologia\\q256\\refit\\seed-1.json",
+          "sha256_metadata": "eafd5f6577b344230accf6bc45f6a00fa5d0c3ea075bd1cf3770a66c5baa314c",
+          "variante": "q256",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 28.11449440001161,
+          "concluido_em_utc": "2026-10-04T19:54:42.327667+00:00"
+        }
+      ],
+      "pendentes": [],
+      "contrato_sha256_bytes": "b1d7df424abf3518b289e6e891d7f5f7c7f970146006472a89eb2cbb8dc4431d"
+    },
+    "daily_30/dilatedrnn": {
+      "concluidas": 6,
+      "total": 20,
+      "registros": [
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\sem_quantizacao\\refit\\seed11.json",
+          "sha256_metadata": "69d9fd7f1b32462232952b3b8a441aa044a82ce436dfbff5e5311a63addb7fe9",
+          "variante": "sem_quantizacao",
+          "seed": 11,
+          "epocas": 7,
+          "duracao_s": 1783.7852983000048,
+          "concluido_em_utc": "2026-10-04T20:22:40.403867+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\sem_quantizacao\\refit\\seed23.json",
+          "sha256_metadata": "a8d6a5aa7033c968fbd10b345cfec9d9350ef26fae2209433517dc5faebdb968",
+          "variante": "sem_quantizacao",
+          "seed": 23,
+          "epocas": 11,
+          "duracao_s": 2719.0473717999994,
+          "concluido_em_utc": "2026-10-04T23:33:56.914342+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\sem_quantizacao\\refit\\seed42.json",
+          "sha256_metadata": "c07fa30e58246eb5941cc5deb47b2d717bd8e798320d13a5a14c5cd6de078807",
+          "variante": "sem_quantizacao",
+          "seed": 42,
+          "epocas": 13,
+          "duracao_s": 3156.2827328999992,
+          "concluido_em_utc": "2026-10-05T00:26:33.501091+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\sem_quantizacao\\refit\\seed67.json",
+          "sha256_metadata": "4527dc3be61ce1008ee6bdc352411a527fd09ee1f629f4bd34c998cb30805d09",
+          "variante": "sem_quantizacao",
+          "seed": 67,
+          "epocas": 7,
+          "duracao_s": 1706.2696622999993,
+          "concluido_em_utc": "2026-10-05T00:55:00.098577+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\sem_quantizacao\\refit\\seed89.json",
+          "sha256_metadata": "2018ee0aa75e24a5e1f01e04cf91d481e506d2bb64f443fda9829252ee53a8aa",
+          "variante": "sem_quantizacao",
+          "seed": 89,
+          "epocas": 14,
+          "duracao_s": 3415.7616580000013,
+          "concluido_em_utc": "2026-10-05T01:51:56.182725+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\q64\\refit\\seed11.json",
+          "sha256_metadata": "fb4e0315b166a822a92eac055ede5d3b8f919aab538cfffc17d65d4ab62ea138",
+          "variante": "q64",
+          "seed": 11,
+          "epocas": 7,
+          "duracao_s": 1718.3261983999982,
+          "concluido_em_utc": "2026-10-05T02:21:04.750249+00:00"
+        }
+      ],
+      "pendentes": [
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "a758ba4a725329261a9586c5b8332de7493701937229bbd0cb0638b288892166"
+    },
+    "daily_30/gru": {
+      "concluidas": 20,
+      "total": 20,
+      "registros": [
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\sem_quantizacao\\refit\\seed11.json",
+          "sha256_metadata": "5538cfdb437667e4d59801d6816dd55d4dc921be9d8677996d05ce3e0bd12afa",
+          "variante": "sem_quantizacao",
+          "seed": 11,
+          "epocas": 4,
+          "duracao_s": 66.79151070001535,
+          "concluido_em_utc": "2026-10-04T19:11:04.073549+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\sem_quantizacao\\refit\\seed23.json",
+          "sha256_metadata": "f89ff31f582baf1fb653d00cb11318b1ca83c12f98e03cea1601004ba3c60779",
+          "variante": "sem_quantizacao",
+          "seed": 23,
+          "epocas": 13,
+          "duracao_s": 190.52476299999398,
+          "concluido_em_utc": "2026-10-04T19:14:14.905854+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\sem_quantizacao\\refit\\seed42.json",
+          "sha256_metadata": "f5c750c4c76a37e66ec7fcd0878da11920415c7451772cc1ec86be200a376581",
+          "variante": "sem_quantizacao",
+          "seed": 42,
+          "epocas": 12,
+          "duracao_s": 176.34465230000205,
+          "concluido_em_utc": "2026-10-04T19:17:11.580983+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\sem_quantizacao\\refit\\seed67.json",
+          "sha256_metadata": "540f6085f78a17e14c87cffe63b90dfe20913dac0ddb462ecca700be05e65805",
+          "variante": "sem_quantizacao",
+          "seed": 67,
+          "epocas": 5,
+          "duracao_s": 73.66807009998593,
+          "concluido_em_utc": "2026-10-04T19:18:25.575117+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\sem_quantizacao\\refit\\seed89.json",
+          "sha256_metadata": "f7faf2118e67581d8bc254628c2c05e53ffa2c788cbc43320613b63d36cfb086",
+          "variante": "sem_quantizacao",
+          "seed": 89,
+          "epocas": 6,
+          "duracao_s": 89.75599609999335,
+          "concluido_em_utc": "2026-10-04T19:19:55.651713+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\q64\\refit\\seed11.json",
+          "sha256_metadata": "7baab73d8b7289934f7d3c365646458978aba5d2310ad9d7be6c0310ffee4f02",
+          "variante": "q64",
+          "seed": 11,
+          "epocas": 4,
+          "duracao_s": 60.922255699988455,
+          "concluido_em_utc": "2026-10-04T19:21:27.008598+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\q64\\refit\\seed23.json",
+          "sha256_metadata": "9049cd15e431513c3507c3cec490380803b86d3f8b23548a8aacf25ea645f9a2",
+          "variante": "q64",
+          "seed": 23,
+          "epocas": 13,
+          "duracao_s": 190.62512499999139,
+          "concluido_em_utc": "2026-10-04T19:24:37.950939+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\q64\\refit\\seed42.json",
+          "sha256_metadata": "6d06d4448819ebbc5170249fc8531dca16c645815f1a38a15a7bea4be5be98c1",
+          "variante": "q64",
+          "seed": 42,
+          "epocas": 12,
+          "duracao_s": 167.30167869999423,
+          "concluido_em_utc": "2026-10-04T19:27:25.580920+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\q64\\refit\\seed67.json",
+          "sha256_metadata": "d215b9a771efb924d203eaaf658a08a1bc4670b89c5d20e9f68acfa4388ff060",
+          "variante": "q64",
+          "seed": 67,
+          "epocas": 5,
+          "duracao_s": 75.30921619999572,
+          "concluido_em_utc": "2026-10-04T19:28:41.240046+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\q64\\refit\\seed89.json",
+          "sha256_metadata": "bf250410781407dc0bc7b85c9314c3c29fd4e7162dfbf8bfe9a737f74a001e55",
+          "variante": "q64",
+          "seed": 89,
+          "epocas": 6,
+          "duracao_s": 90.04485389997717,
+          "concluido_em_utc": "2026-10-04T19:30:11.609647+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\q128\\refit\\seed11.json",
+          "sha256_metadata": "3aa3477e673ef34cb762f8b337fed255a84fc3c60cf4464b2a93c97d44b69015",
+          "variante": "q128",
+          "seed": 11,
+          "epocas": 4,
+          "duracao_s": 60.026138899993384,
+          "concluido_em_utc": "2026-10-04T19:31:41.165226+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\q128\\refit\\seed23.json",
+          "sha256_metadata": "e111425dc0d9275216fd8782286d4a973c08ec957c0571f5bbca32f757af8ca5",
+          "variante": "q128",
+          "seed": 23,
+          "epocas": 13,
+          "duracao_s": 190.43242709999322,
+          "concluido_em_utc": "2026-10-04T19:34:51.908150+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\q128\\refit\\seed42.json",
+          "sha256_metadata": "7e8f855f5ed88c810fe64aeab2caab2bcfb949f5522a14d9341f4240ac82df7a",
+          "variante": "q128",
+          "seed": 42,
+          "epocas": 12,
+          "duracao_s": 178.3325052,
+          "concluido_em_utc": "2026-10-04T19:37:50.558708+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\q128\\refit\\seed67.json",
+          "sha256_metadata": "fb35b15219999aad88ae54756240cdc7afb5e86793a42e440fe13f08862f0e09",
+          "variante": "q128",
+          "seed": 67,
+          "epocas": 5,
+          "duracao_s": 74.3799740000104,
+          "concluido_em_utc": "2026-10-04T19:39:05.256151+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\q128\\refit\\seed89.json",
+          "sha256_metadata": "f15611a764b1ad673b340357f509465f85df7b52582bd6ac5419ceb470e051a6",
+          "variante": "q128",
+          "seed": 89,
+          "epocas": 6,
+          "duracao_s": 81.39257409999846,
+          "concluido_em_utc": "2026-10-04T19:40:26.978727+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\q256\\refit\\seed11.json",
+          "sha256_metadata": "a7062c0e3be18c4fedad68d569c956e0d9d32e58932a181aa14f86e893af88b8",
+          "variante": "q256",
+          "seed": 11,
+          "epocas": 4,
+          "duracao_s": 61.83138950000284,
+          "concluido_em_utc": "2026-10-04T19:41:58.045722+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\q256\\refit\\seed23.json",
+          "sha256_metadata": "cd07fdf5e634307dd730d98cdfd0d02e28bbf94a6c83b89098f33f58506fa9be",
+          "variante": "q256",
+          "seed": 23,
+          "epocas": 13,
+          "duracao_s": 191.5739383000182,
+          "concluido_em_utc": "2026-10-04T19:45:09.951333+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\q256\\refit\\seed42.json",
+          "sha256_metadata": "6365b70b1524c4b1f7be4b3f5f0c4f80bedbc337511471271dc9beb72caed720",
+          "variante": "q256",
+          "seed": 42,
+          "epocas": 12,
+          "duracao_s": 187.20786779999617,
+          "concluido_em_utc": "2026-10-04T19:48:17.478134+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\q256\\refit\\seed67.json",
+          "sha256_metadata": "f92de62c6749f02b5b17f98945d9ccc970ac57988ab9bf0dcb87cd212a385164",
+          "variante": "q256",
+          "seed": 67,
+          "epocas": 5,
+          "duracao_s": 76.84357140000793,
+          "concluido_em_utc": "2026-10-04T19:49:34.698828+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\gru\\q256\\refit\\seed89.json",
+          "sha256_metadata": "78827ea24827e2e72543947315970b118bd75d6ad37ccd595f985ffbf2ecc57b",
+          "variante": "q256",
+          "seed": 89,
+          "epocas": 6,
+          "duracao_s": 91.37481690000277,
+          "concluido_em_utc": "2026-10-04T19:51:06.436273+00:00"
+        }
+      ],
+      "pendentes": [],
+      "contrato_sha256_bytes": "4e0dad82b4a1c8607aeaef84682dc475f060a693e90c4fae02f5b5a0666e2faf"
+    },
+    "daily_30/informer": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "d56c81e818686dd46be26b0d3f9f47dfa8a2554dcf1f55ffcdbf67672ec5415d"
+    },
+    "daily_30/lstm": {
+      "concluidas": 20,
+      "total": 20,
+      "registros": [
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\sem_quantizacao\\refit\\seed11.json",
+          "sha256_metadata": "cc5d44fadd12f489f1ebe9077d63e18560dc6389c6ecf8adb4663b7f683b6629",
+          "variante": "sem_quantizacao",
+          "seed": 11,
+          "epocas": 19,
+          "duracao_s": 292.28991380002117,
+          "concluido_em_utc": "2026-10-04T19:14:49.710049+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\sem_quantizacao\\refit\\seed23.json",
+          "sha256_metadata": "d9a1dc9cf8d337a7edbcf3c511f71031e7767f0fbde122e605975416586f9910",
+          "variante": "sem_quantizacao",
+          "seed": 23,
+          "epocas": 12,
+          "duracao_s": 183.3132314000104,
+          "concluido_em_utc": "2026-10-04T19:17:53.326093+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\sem_quantizacao\\refit\\seed42.json",
+          "sha256_metadata": "f870ce013f9b38894e4f81b081770f3db058562e668391051cebddf190b5a19e",
+          "variante": "sem_quantizacao",
+          "seed": 42,
+          "epocas": 7,
+          "duracao_s": 107.44684790002066,
+          "concluido_em_utc": "2026-10-04T19:19:41.093688+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\sem_quantizacao\\refit\\seed67.json",
+          "sha256_metadata": "946a682723fad4a91cd8fd2546de291080cac1a86b89e06de3cde888f0661ef7",
+          "variante": "sem_quantizacao",
+          "seed": 67,
+          "epocas": 12,
+          "duracao_s": 170.353025599994,
+          "concluido_em_utc": "2026-10-04T19:22:31.853927+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\sem_quantizacao\\refit\\seed89.json",
+          "sha256_metadata": "5f1c65e1effbd07749b1dd9ed3e37403ffb472f09fd1d97eb130b1e6584f59ee",
+          "variante": "sem_quantizacao",
+          "seed": 89,
+          "epocas": 14,
+          "duracao_s": 215.0532869999879,
+          "concluido_em_utc": "2026-10-04T19:26:07.235431+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\q64\\refit\\seed11.json",
+          "sha256_metadata": "cf93f5e960c7821c73db79e70ee234ba17b159f5d9e5cfcf964bf0972aecc3bc",
+          "variante": "q64",
+          "seed": 11,
+          "epocas": 19,
+          "duracao_s": 274.5775296000065,
+          "concluido_em_utc": "2026-10-04T19:31:12.352394+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\q64\\refit\\seed23.json",
+          "sha256_metadata": "4c55d5a442da87a6b8ece4c893e635a054006da39978216816dda69f1d3f70bd",
+          "variante": "q64",
+          "seed": 23,
+          "epocas": 7,
+          "duracao_s": 106.95810079999501,
+          "concluido_em_utc": "2026-10-04T19:32:59.682430+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\q64\\refit\\seed42.json",
+          "sha256_metadata": "142b385c107c57908bd4d2ee92448dd56b8d83e2888ba59e95438c4a630f8cc1",
+          "variante": "q64",
+          "seed": 42,
+          "epocas": 8,
+          "duracao_s": 122.34288620000007,
+          "concluido_em_utc": "2026-10-04T19:35:02.394188+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\q64\\refit\\seed67.json",
+          "sha256_metadata": "a8343881527e4ca6cc8258ae86b73d6b506e1aeacfb11ac80becab0e0463423b",
+          "variante": "q64",
+          "seed": 67,
+          "epocas": 12,
+          "duracao_s": 184.2788475000125,
+          "concluido_em_utc": "2026-10-04T19:38:07.120741+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\q64\\refit\\seed89.json",
+          "sha256_metadata": "33380754a425c413c37ae02a8a9e3b12cf56fbf8cda2a3a0a9a7e700d21c4502",
+          "variante": "q64",
+          "seed": 89,
+          "epocas": 8,
+          "duracao_s": 122.09567040001275,
+          "concluido_em_utc": "2026-10-04T19:40:09.583918+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\q128\\refit\\seed11.json",
+          "sha256_metadata": "c9f642910a701c9bd9a57a25215fbf76023f004df8c687137c15db52eedee87f",
+          "variante": "q128",
+          "seed": 11,
+          "epocas": 19,
+          "duracao_s": 281.01100430000224,
+          "concluido_em_utc": "2026-10-04T19:45:20.049251+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\q128\\refit\\seed23.json",
+          "sha256_metadata": "11e2ad3075dfa1d9e8cee5c6f30c8edbfc562be137e900c1b2ee785f06a87e5d",
+          "variante": "q128",
+          "seed": 23,
+          "epocas": 12,
+          "duracao_s": 199.96064760000445,
+          "concluido_em_utc": "2026-10-04T19:48:40.384684+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\q128\\refit\\seed42.json",
+          "sha256_metadata": "b3a07f017bde74f7a6916ee2e3a0182241da7a52dff5c6825a31e9d04399746f",
+          "variante": "q128",
+          "seed": 42,
+          "epocas": 8,
+          "duracao_s": 130.1331436999899,
+          "concluido_em_utc": "2026-10-04T19:50:50.940607+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\q128\\refit\\seed67.json",
+          "sha256_metadata": "bc59438f9e331ec9387c347c6d15a57eaeca8fb39fa6d3abf9818f329642929c",
+          "variante": "q128",
+          "seed": 67,
+          "epocas": 15,
+          "duracao_s": 193.61387729999842,
+          "concluido_em_utc": "2026-10-04T19:54:04.912508+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\q128\\refit\\seed89.json",
+          "sha256_metadata": "c23bc1b8fbb090224d44b6bf4c9669e259aeb3963161e12d830e4125c75744fa",
+          "variante": "q128",
+          "seed": 89,
+          "epocas": 14,
+          "duracao_s": 213.06544080001186,
+          "concluido_em_utc": "2026-10-04T19:57:38.326064+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\q256\\refit\\seed11.json",
+          "sha256_metadata": "aeb031a7eb6b2a0a3e6c45a65d9554d54d6190a26d82a4b5b60b34dcc67aaf3c",
+          "variante": "q256",
+          "seed": 11,
+          "epocas": 11,
+          "duracao_s": 163.56739620000008,
+          "concluido_em_utc": "2026-10-04T20:00:54.809153+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\q256\\refit\\seed23.json",
+          "sha256_metadata": "bcfac9508f1b4574d6f02e761078e390e62a3d87b0af03ceaa69b43bfbfbb314",
+          "variante": "q256",
+          "seed": 23,
+          "epocas": 12,
+          "duracao_s": 177.6259414999804,
+          "concluido_em_utc": "2026-10-04T20:03:52.790868+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\q256\\refit\\seed42.json",
+          "sha256_metadata": "a3ce05a0feebe658bae8bfec61b43f81925eca3c3a94286785c22b62100d2be8",
+          "variante": "q256",
+          "seed": 42,
+          "epocas": 8,
+          "duracao_s": 120.48248539998895,
+          "concluido_em_utc": "2026-10-04T20:05:53.648619+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\q256\\refit\\seed67.json",
+          "sha256_metadata": "dc2a7581e03e42e09481d9840f066aad747869ff48fd76623764b0067f91575d",
+          "variante": "q256",
+          "seed": 67,
+          "epocas": 15,
+          "duracao_s": 221.54241630001343,
+          "concluido_em_utc": "2026-10-04T20:09:35.559500+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\q256\\refit\\seed89.json",
+          "sha256_metadata": "4560d716225ccd4326f31be8778dcf78ced756a064adc48a56dbf933b5488bce",
+          "variante": "q256",
+          "seed": 89,
+          "epocas": 15,
+          "duracao_s": 221.10537520001526,
+          "concluido_em_utc": "2026-10-04T20:13:17.018057+00:00"
+        }
+      ],
+      "pendentes": [],
+      "contrato_sha256_bytes": "6b219df0a028e49cc6ea0ae1a146dd729dc129a1f8536c95e0eb680dcabd42ac"
+    },
+    "daily_30/persistencia": {
+      "concluidas": 4,
+      "total": 4,
+      "registros": [
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\persistencia\\sem_quantizacao\\refit\\seed-1.json",
+          "sha256_metadata": "b763d2ede9a474338180b32eb299eea1cbc052881cc7d4062ef8ba5e49209929",
+          "variante": "sem_quantizacao",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 0.9698667000047863,
+          "concluido_em_utc": "2026-10-04T19:42:26.795008+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\persistencia\\q64\\refit\\seed-1.json",
+          "sha256_metadata": "83e3f81f8968d8a811f7de18152e1184e9d95f7925a03c01159b979a6cda7a79",
+          "variante": "q64",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 2.147453100013081,
+          "concluido_em_utc": "2026-10-04T19:42:41.003614+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\persistencia\\q128\\refit\\seed-1.json",
+          "sha256_metadata": "e3d35c9c07c333a8f0d51cb408ceb77b1c506a3ee3ce947a9c9126b5c71be753",
+          "variante": "q128",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 2.095454599999357,
+          "concluido_em_utc": "2026-10-04T19:42:55.154761+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\persistencia\\q256\\refit\\seed-1.json",
+          "sha256_metadata": "1b501120fdd42a395d1fdbc866bfa076d87a8af5d290810845bfa48fb894e20d",
+          "variante": "q256",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 2.1578797999827657,
+          "concluido_em_utc": "2026-10-04T19:43:09.552610+00:00"
+        }
+      ],
+      "pendentes": [],
+      "contrato_sha256_bytes": "771e9e08478558b742e2dd08ab68301e04eb387a4c2661ba63d7bb52f95c7539"
+    },
+    "daily_30/sazonal_ingenuo": {
+      "concluidas": 4,
+      "total": 4,
+      "registros": [
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\sazonal_ingenuo\\sem_quantizacao\\refit\\seed-1.json",
+          "sha256_metadata": "63278299a828a7d15079fb3a41f8b6a703b85bfacbc7b7c378749f5e5b81f9e5",
+          "variante": "sem_quantizacao",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 59.49223040000652,
+          "concluido_em_utc": "2026-10-04T19:45:27.402765+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\sazonal_ingenuo\\q64\\refit\\seed-1.json",
+          "sha256_metadata": "d57fe7b068a28d46ea875bf3d5c3ac4f119765fbcfa917823a4c48ea57392950",
+          "variante": "q64",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 93.08925389999058,
+          "concluido_em_utc": "2026-10-04T19:47:19.869079+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\sazonal_ingenuo\\q128\\refit\\seed-1.json",
+          "sha256_metadata": "daf05d6ba7f17d2634cf67084e824901a446eee9dbae9735fcffa54f61d9ea53",
+          "variante": "q128",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 78.91682780001429,
+          "concluido_em_utc": "2026-10-04T19:48:55.434467+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\sazonal_ingenuo\\q256\\refit\\seed-1.json",
+          "sha256_metadata": "87118886280009bca7c60449436e4cbbc7bb307ae617fccf81e72409cdead551",
+          "variante": "q256",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 71.59841659999802,
+          "concluido_em_utc": "2026-10-04T19:50:22.003462+00:00"
+        }
+      ],
+      "pendentes": [],
+      "contrato_sha256_bytes": "c5b61809a20cebc3af420bae6b03610ef7d66cae280c508e6566ed88d2cc2078"
+    },
+    "daily_30/timesnet": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "08ba22890687fa882ddfc7dbdf6da2eacf63631081f19c17384ac88c1a52dc4d"
+    },
+    "daily_30/transformer": {
+      "concluidas": 16,
+      "total": 20,
+      "registros": [
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\sem_quantizacao\\refit\\seed11.json",
+          "sha256_metadata": "494b2964148dbfeef784685042f0f25f686449fb81ef4375326060e3df65d85c",
+          "variante": "sem_quantizacao",
+          "seed": 11,
+          "epocas": 8,
+          "duracao_s": 1035.2808527000016,
+          "concluido_em_utc": "2026-10-04T20:32:33.793252+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\sem_quantizacao\\refit\\seed23.json",
+          "sha256_metadata": "3b6740e6835e6383169ae6bb479d85a23be72ac321b38e2c971df32c41c8c732",
+          "variante": "sem_quantizacao",
+          "seed": 23,
+          "epocas": 15,
+          "duracao_s": 1918.1074663999898,
+          "concluido_em_utc": "2026-10-04T21:04:32.294085+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\sem_quantizacao\\refit\\seed42.json",
+          "sha256_metadata": "877de9464af308028d94d60fb00e6b0e879a4c1f2a85bbc2fd7f320c9caeaafc",
+          "variante": "sem_quantizacao",
+          "seed": 42,
+          "epocas": 7,
+          "duracao_s": 912.4047124000008,
+          "concluido_em_utc": "2026-10-04T23:04:04.858641+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\sem_quantizacao\\refit\\seed67.json",
+          "sha256_metadata": "d4f722cc7814e5124bb5d068692d7e8d321eee6e31d63156ed9ad0eff039f606",
+          "variante": "sem_quantizacao",
+          "seed": 67,
+          "epocas": 5,
+          "duracao_s": 687.4887082999994,
+          "concluido_em_utc": "2026-10-04T23:15:32.700727+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\sem_quantizacao\\refit\\seed89.json",
+          "sha256_metadata": "102826d3245c2ebf51498d0f7681faa84e69f58936f10d4e06a09025007db2d6",
+          "variante": "sem_quantizacao",
+          "seed": 89,
+          "epocas": 5,
+          "duracao_s": 689.4643226999997,
+          "concluido_em_utc": "2026-10-04T23:27:02.477468+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q64\\refit\\seed11.json",
+          "sha256_metadata": "b6553a90ba4147a2fbb01dd47c9dd921d69c8809d64e80c9fe79e7fef0112858",
+          "variante": "q64",
+          "seed": 11,
+          "epocas": 8,
+          "duracao_s": 1095.4275335000002,
+          "concluido_em_utc": "2026-10-04T23:45:49.187015+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q64\\refit\\seed23.json",
+          "sha256_metadata": "9e87645fb6c0a4edc2158144b7e1cae5a5801c2ff67db453c1ee640ed84077dc",
+          "variante": "q64",
+          "seed": 23,
+          "epocas": 15,
+          "duracao_s": 2047.2709085000006,
+          "concluido_em_utc": "2026-10-05T00:19:56.769060+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q64\\refit\\seed42.json",
+          "sha256_metadata": "e7faf84aff671f8f18f20b05a30af56d5feba77e329a018e29168fd366401454",
+          "variante": "q64",
+          "seed": 42,
+          "epocas": 7,
+          "duracao_s": 958.6010726999993,
+          "concluido_em_utc": "2026-10-05T00:35:55.711548+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q64\\refit\\seed67.json",
+          "sha256_metadata": "294f1e2a48aed4b5d8a53d90773753fb08e12da8701557d12bd2e4f8c92732fb",
+          "variante": "q64",
+          "seed": 67,
+          "epocas": 5,
+          "duracao_s": 686.5169251999996,
+          "concluido_em_utc": "2026-10-05T00:47:22.527592+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q64\\refit\\seed89.json",
+          "sha256_metadata": "4ad4259e042b54119cb638bb7a38921020c6f664cc1135d2a013bd1fe622d7cc",
+          "variante": "q64",
+          "seed": 89,
+          "epocas": 5,
+          "duracao_s": 683.0194255999995,
+          "concluido_em_utc": "2026-10-05T00:58:45.862287+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q128\\refit\\seed11.json",
+          "sha256_metadata": "25f0c524e00425463dbcf556aad4fbff44d89a5de9f4ab1150bedb4b583c60a0",
+          "variante": "q128",
+          "seed": 11,
+          "epocas": 8,
+          "duracao_s": 1091.1191514999991,
+          "concluido_em_utc": "2026-10-05T01:17:29.650074+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q128\\refit\\seed23.json",
+          "sha256_metadata": "4d993c95c29a43f1ac32231f2bfc810122a854456da2b92093a3f653e57ea558",
+          "variante": "q128",
+          "seed": 23,
+          "epocas": 15,
+          "duracao_s": 2034.1637775999989,
+          "concluido_em_utc": "2026-10-05T01:51:24.124652+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q128\\refit\\seed42.json",
+          "sha256_metadata": "8ade6fa9717c1303b272a9c4d4c634508e8951e78a659446724d621d79d861b2",
+          "variante": "q128",
+          "seed": 42,
+          "epocas": 7,
+          "duracao_s": 918.2031588999998,
+          "concluido_em_utc": "2026-10-05T02:06:42.868932+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q128\\refit\\seed67.json",
+          "sha256_metadata": "2548f55caa2e29c49ee8c5ecc906c5dd826f79933e2ce4355e79203467dd6649",
+          "variante": "q128",
+          "seed": 67,
+          "epocas": 5,
+          "duracao_s": 681.8481809000004,
+          "concluido_em_utc": "2026-10-05T02:18:05.025006+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q128\\refit\\seed89.json",
+          "sha256_metadata": "9c02b32ffdd95ff7537d5bb8d8860fbd3ba1d1842707d10959cf0e2407d2bdcf",
+          "variante": "q128",
+          "seed": 89,
+          "epocas": 5,
+          "duracao_s": 679.8290468999985,
+          "concluido_em_utc": "2026-10-05T02:29:25.157814+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q256\\refit\\seed11.json",
+          "sha256_metadata": "5c6621db6e052a6edcf0a4ec97357de189d6f3dcfe1c4629ae307cfdebf05f72",
+          "variante": "q256",
+          "seed": 11,
+          "epocas": 8,
+          "duracao_s": 1087.6772829000001,
+          "concluido_em_utc": "2026-10-05T02:48:05.204474+00:00"
+        }
+      ],
+      "pendentes": [
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "30c0d1bf8147f0aeb975163819b296308568093e3e8669e19a1acfa38b095c55"
+    },
+    "daily_30/xgboost": {
+      "concluidas": 13,
+      "total": 20,
+      "registros": [
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\sem_quantizacao\\refit\\seed11.json",
+          "sha256_metadata": "c8632b95fc52d2395ddf60a3b15dd4b94509a8176c49c552d3f736ae81d93208",
+          "variante": "sem_quantizacao",
+          "seed": 11,
+          "epocas": 0,
+          "duracao_s": 1982.9476305999851,
+          "concluido_em_utc": "2026-10-04T19:43:00.862731+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\sem_quantizacao\\refit\\seed23.json",
+          "sha256_metadata": "d31f6b3e2e065b53b034aed19ff1f3ec0bb0358dc2d01f553b7626edb20bf06b",
+          "variante": "sem_quantizacao",
+          "seed": 23,
+          "epocas": 0,
+          "duracao_s": 2300.3202856999997,
+          "concluido_em_utc": "2026-10-04T20:21:21.439084+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\sem_quantizacao\\refit\\seed42.json",
+          "sha256_metadata": "efa4c254165886d4a3bdb7f4aa071a7a030336b768ec044193e84a855eb47e8b",
+          "variante": "sem_quantizacao",
+          "seed": 42,
+          "epocas": 0,
+          "duracao_s": 2694.8751754999976,
+          "concluido_em_utc": "2026-10-04T21:06:16.617662+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\sem_quantizacao\\refit\\seed67.json",
+          "sha256_metadata": "982719f1473cbde75be68524ea93d8a3c6beefd039d25dcbdeffe83f296a5d86",
+          "variante": "sem_quantizacao",
+          "seed": 67,
+          "epocas": 0,
+          "duracao_s": 2149.6425669,
+          "concluido_em_utc": "2026-10-04T23:21:57.346264+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\sem_quantizacao\\refit\\seed89.json",
+          "sha256_metadata": "f49ba3202b4b3b418bfce23fd66d7756fa93a1a0a8af5329472807d3002f942f",
+          "variante": "sem_quantizacao",
+          "seed": 89,
+          "epocas": 0,
+          "duracao_s": 2095.1289911000003,
+          "concluido_em_utc": "2026-10-04T23:56:52.752846+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q64\\refit\\seed11.json",
+          "sha256_metadata": "8443572580a9747d4475d27e8a28b667ac06b87ee478ae1df40b6365deefa5e6",
+          "variante": "q64",
+          "seed": 11,
+          "epocas": 0,
+          "duracao_s": 1179.9429724000001,
+          "concluido_em_utc": "2026-10-05T00:17:02.795243+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q64\\refit\\seed23.json",
+          "sha256_metadata": "ea219b53e3df49293e257332e8c3cfd37d06da6c56decefa2a849e37235e127d",
+          "variante": "q64",
+          "seed": 23,
+          "epocas": 0,
+          "duracao_s": 1181.1801930000001,
+          "concluido_em_utc": "2026-10-05T00:36:44.230380+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q64\\refit\\seed42.json",
+          "sha256_metadata": "94e45820d968eee4ae9a0139128fd9c201c81b3c178d5a5521c7cdf636619cfa",
+          "variante": "q64",
+          "seed": 42,
+          "epocas": 0,
+          "duracao_s": 1183.4743053000002,
+          "concluido_em_utc": "2026-10-05T00:56:27.975025+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q64\\refit\\seed67.json",
+          "sha256_metadata": "6ddf9353de30a7cf4dfcce22fec30a056116fff81c1af20de92bbcf8d076e362",
+          "variante": "q64",
+          "seed": 67,
+          "epocas": 0,
+          "duracao_s": 1180.9189715000011,
+          "concluido_em_utc": "2026-10-05T01:16:09.172529+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q64\\refit\\seed89.json",
+          "sha256_metadata": "4e70d7ab7f77a9ee8758c9825a42a01bcd6d09153229ce5eb49119c706c33ccf",
+          "variante": "q64",
+          "seed": 89,
+          "epocas": 0,
+          "duracao_s": 1184.537629800001,
+          "concluido_em_utc": "2026-10-05T01:35:54.019461+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q128\\refit\\seed11.json",
+          "sha256_metadata": "16a264c59ea63a7df957882b95ae4fada6199cc9e4cb267e2578c19893b1af5c",
+          "variante": "q128",
+          "seed": 11,
+          "epocas": 0,
+          "duracao_s": 1388.1083629999976,
+          "concluido_em_utc": "2026-10-05T01:59:32.334450+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q128\\refit\\seed23.json",
+          "sha256_metadata": "b143ce8c855246f8a4d55619cdee101499bb7086a4e272f117a0d67daf1971aa",
+          "variante": "q128",
+          "seed": 23,
+          "epocas": 0,
+          "duracao_s": 1406.0483091000024,
+          "concluido_em_utc": "2026-10-05T02:22:58.659827+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q128\\refit\\seed42.json",
+          "sha256_metadata": "edacb66417e2301545f19c253ac6e9b15c09aec3339ce02fc9263a28b74f378f",
+          "variante": "q128",
+          "seed": 42,
+          "epocas": 0,
+          "duracao_s": 1382.257164499999,
+          "concluido_em_utc": "2026-10-05T02:46:01.200877+00:00"
+        }
+      ],
+      "pendentes": [
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "98dc00ad4edb1170de0c2f30c24c5a3bb22f08a4c01a6ec67c6a76094e88c533"
+    },
+    "hourly_72_extension/arima": {
+      "concluidas": 1,
+      "total": 4,
+      "registros": [
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\sem_quantizacao\\refit\\seed-1.json",
+          "sha256_metadata": "87d7388156e617c6af4921055cf6fbfa9dd6dd008dfb4c972c384c581faa2316",
+          "variante": "sem_quantizacao",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 2901.381284400002,
+          "concluido_em_utc": "2026-10-05T02:41:36.316749+00:00"
+        }
+      ],
+      "pendentes": [
+        {
+          "variante": "q64",
+          "seed": -1
+        },
+        {
+          "variante": "q128",
+          "seed": -1
+        },
+        {
+          "variante": "q256",
+          "seed": -1
+        }
+      ],
+      "contrato_sha256_bytes": "0d73a361abeea873ad256fe6125c8926e8fabfb085fa071e91409e7f4fdb07cf"
+    },
+    "hourly_72_extension/climatologia": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": -1
+        },
+        {
+          "variante": "q64",
+          "seed": -1
+        },
+        {
+          "variante": "q128",
+          "seed": -1
+        },
+        {
+          "variante": "q256",
+          "seed": -1
+        }
+      ],
+      "contrato_sha256_bytes": "f7c8fe6991114453d1f0e2858b25594faf30d51e956e142981494d1d5f6539e8"
+    },
+    "hourly_72_extension/dilatedrnn": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        }
+      ],
+      "contrato_sha256_bytes": "bc990db2ce7c11e4a254bb2713313357b4bc39dd0bc6cc33da4cb3c134189204"
+    },
+    "hourly_72_extension/gru": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        }
+      ],
+      "contrato_sha256_bytes": "c4d5ba28fd02fa325fbf6eb59b5a03e373d8a202483e8b0271686ef0427b80b5"
+    },
+    "hourly_72_extension/informer": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        }
+      ],
+      "contrato_sha256_bytes": "b22a1b359175481ac7e48dfa72ccf078439ecdb73666b9895b7875b76c49e930"
+    },
+    "hourly_72_extension/lstm": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        }
+      ],
+      "contrato_sha256_bytes": "1dc3d995ef2a9d2284110f64e98b64aa5d919f0cbb9a874c0330ddf2a303950c"
+    },
+    "hourly_72_extension/persistencia": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": -1
+        },
+        {
+          "variante": "q64",
+          "seed": -1
+        },
+        {
+          "variante": "q128",
+          "seed": -1
+        },
+        {
+          "variante": "q256",
+          "seed": -1
+        }
+      ],
+      "contrato_sha256_bytes": "37d32a6a917003549e9a7393048d71d2a1721ae4c59b90280b55cf6c711bdca3"
+    },
+    "hourly_72_extension/sazonal_ingenuo": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": -1
+        },
+        {
+          "variante": "q64",
+          "seed": -1
+        },
+        {
+          "variante": "q128",
+          "seed": -1
+        },
+        {
+          "variante": "q256",
+          "seed": -1
+        }
+      ],
+      "contrato_sha256_bytes": "4af72cddf99f1ccfcfef03538d3d423ff6a5443fc991ae4a020687a91e89c239"
+    },
+    "hourly_72_extension/timesnet": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        }
+      ],
+      "contrato_sha256_bytes": "efd872b1c5b602801d23d5aff117b29f4720d07a6f0bc694dfaeafd0fcd2091a"
+    },
+    "hourly_72_extension/transformer": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        }
+      ],
+      "contrato_sha256_bytes": "4effee602c0f21d10de815cab162637021b332289da3b9a5eaa8601d302b28c9"
+    },
+    "hourly_72_extension/xgboost": {
+      "concluidas": 4,
+      "total": 4,
+      "registros": [
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\xgboost\\sem_quantizacao\\refit\\seed42.json",
+          "sha256_metadata": "b96d10084abee2d6f406a52415bb23e8ae94ecba553556ce82495834bd0b0e07",
+          "variante": "sem_quantizacao",
+          "seed": 42,
+          "epocas": 0,
+          "duracao_s": 4122.5377181,
+          "concluido_em_utc": "2026-10-05T00:04:43.112131+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\xgboost\\q64\\refit\\seed42.json",
+          "sha256_metadata": "3420d0eed2a9d8fdf4d53c2fb60be283952df85d9460d8286d72828958c3ce28",
+          "variante": "q64",
+          "seed": 42,
+          "epocas": 0,
+          "duracao_s": 1762.1094883000005,
+          "concluido_em_utc": "2026-10-05T00:35:09.394654+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\xgboost\\q128\\refit\\seed42.json",
+          "sha256_metadata": "871e6a3d8027ac0bb7d89c482ca5e7c04edf526d8d680f3e71756b61c64e0d24",
+          "variante": "q128",
+          "seed": 42,
+          "epocas": 0,
+          "duracao_s": 1985.1286113000006,
+          "concluido_em_utc": "2026-10-05T01:09:18.996348+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\xgboost\\q256\\refit\\seed42.json",
+          "sha256_metadata": "156c70d728e913c9735ef6ff56dec0e64484bc423765a29fe4a468bba11d48c0",
+          "variante": "q256",
+          "seed": 42,
+          "epocas": 0,
+          "duracao_s": 2365.4763261999997,
+          "concluido_em_utc": "2026-10-05T01:49:48.989722+00:00"
+        }
+      ],
+      "pendentes": [],
+      "contrato_sha256_bytes": "5e545835a7f0fd7556343b08032a86a16885f1ddbbf603e77d14289264b926f7"
+    },
+    "monthly_1/arima": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": -1
+        },
+        {
+          "variante": "q64",
+          "seed": -1
+        },
+        {
+          "variante": "q128",
+          "seed": -1
+        },
+        {
+          "variante": "q256",
+          "seed": -1
+        }
+      ],
+      "contrato_sha256_bytes": "f99e375ad58a4a1ca709cf46c90922dca883a2e1ead5f1d209109aa24819089e"
+    },
+    "monthly_1/climatologia": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": -1
+        },
+        {
+          "variante": "q64",
+          "seed": -1
+        },
+        {
+          "variante": "q128",
+          "seed": -1
+        },
+        {
+          "variante": "q256",
+          "seed": -1
+        }
+      ],
+      "contrato_sha256_bytes": "2cf5b82655e9fcef5d238648d3922e67132ba368e9ca9bece13b3aeeb05c8309"
+    },
+    "monthly_1/dilatedrnn": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "7a699ea77ab539401404d0969ce89b97f2256a482ce51324aeedd35e0615026f"
+    },
+    "monthly_1/gru": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "b298227b5197b54093d2c3c1a4f7b715ab85380307df3c4b2f8e6497bc965f8f"
+    },
+    "monthly_1/informer": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "b52415c64d69106f0e0c20c89d0005b0749078bbb3d2bea17144d6844d735d53"
+    },
+    "monthly_1/lstm": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "975fb7390086596a2d22d68fed871828e8850a1edb481e45b06a7faabf8d46b2"
+    },
+    "monthly_1/persistencia": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": -1
+        },
+        {
+          "variante": "q64",
+          "seed": -1
+        },
+        {
+          "variante": "q128",
+          "seed": -1
+        },
+        {
+          "variante": "q256",
+          "seed": -1
+        }
+      ],
+      "contrato_sha256_bytes": "e89ac9fc4b16e10b5826073e036863b38e404d616e5b42e58927f12f710187a8"
+    },
+    "monthly_1/sazonal_ingenuo": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": -1
+        },
+        {
+          "variante": "q64",
+          "seed": -1
+        },
+        {
+          "variante": "q128",
+          "seed": -1
+        },
+        {
+          "variante": "q256",
+          "seed": -1
+        }
+      ],
+      "contrato_sha256_bytes": "6a25f25c7c1abdc3b0f44f3604683214c48c8c28e5ee1a261d5fe488f1c65645"
+    },
+    "monthly_1/timesnet": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "0cdaf1ddd05c6bf15c6ced3e46a8219383f65fb56b252732387221db19fd39fe"
+    },
+    "monthly_1/transformer": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "0b31ffeba7dff69323bd9155c997d2f77aa3d07c71e5e4e4464a4ee4c2421f98"
+    },
+    "monthly_1/xgboost": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "36318c05ebfc48914de29ce3761125f084bc15f99885d60ed3f4152d23f3c89a"
+    },
+    "monthly_6/arima": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": -1
+        },
+        {
+          "variante": "q64",
+          "seed": -1
+        },
+        {
+          "variante": "q128",
+          "seed": -1
+        },
+        {
+          "variante": "q256",
+          "seed": -1
+        }
+      ],
+      "contrato_sha256_bytes": "7831c74615395ac750c74296710c92574c1c36da01244a20186700a54354f256"
+    },
+    "monthly_6/climatologia": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": -1
+        },
+        {
+          "variante": "q64",
+          "seed": -1
+        },
+        {
+          "variante": "q128",
+          "seed": -1
+        },
+        {
+          "variante": "q256",
+          "seed": -1
+        }
+      ],
+      "contrato_sha256_bytes": "b6f856f257adb86ed1ec76ae7cc5ef33864b30688e876d28f141b0f492234d1c"
+    },
+    "monthly_6/dilatedrnn": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "dc8f314d51844344e884f1c5b7df4ea7a497dca1cc19823dccf5d50a6d75ae21"
+    },
+    "monthly_6/gru": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "a743b38a69f33bb2f908cb886a25893eb328b644e8e17cfedd7278ea10d8d51d"
+    },
+    "monthly_6/informer": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "33d8210361dbeed40f818549aac3e23c8268f984ff1f9fa666de84cba982e1ff"
+    },
+    "monthly_6/lstm": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "e86caf3b335e326115710ec2046f9e6221b5a964a579120d999d0695cba83b91"
+    },
+    "monthly_6/persistencia": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": -1
+        },
+        {
+          "variante": "q64",
+          "seed": -1
+        },
+        {
+          "variante": "q128",
+          "seed": -1
+        },
+        {
+          "variante": "q256",
+          "seed": -1
+        }
+      ],
+      "contrato_sha256_bytes": "9bff53027641bc90cd2954762e77c9cbd495ac141d5163dbbe66db3dd2dfbfe9"
+    },
+    "monthly_6/sazonal_ingenuo": {
+      "concluidas": 0,
+      "total": 4,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": -1
+        },
+        {
+          "variante": "q64",
+          "seed": -1
+        },
+        {
+          "variante": "q128",
+          "seed": -1
+        },
+        {
+          "variante": "q256",
+          "seed": -1
+        }
+      ],
+      "contrato_sha256_bytes": "633328b05b260987724e35d912c761178d272ac3b701806c757c2aaaebe2443c"
+    },
+    "monthly_6/timesnet": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "fe2c7da004fbecd2c969bb1620193e46e49164eea8ed6c9761b41b54925981e4"
+    },
+    "monthly_6/transformer": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "bc9c1b635a869d36af27f5bd3dc1375321600ca4e4984ee6edfe9f6476666498"
+    },
+    "monthly_6/xgboost": {
+      "concluidas": 0,
+      "total": 20,
+      "registros": [],
+      "pendentes": [
+        {
+          "variante": "sem_quantizacao",
+          "seed": 11
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 23
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 42
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 67
+        },
+        {
+          "variante": "sem_quantizacao",
+          "seed": 89
+        },
+        {
+          "variante": "q64",
+          "seed": 11
+        },
+        {
+          "variante": "q64",
+          "seed": 23
+        },
+        {
+          "variante": "q64",
+          "seed": 42
+        },
+        {
+          "variante": "q64",
+          "seed": 67
+        },
+        {
+          "variante": "q64",
+          "seed": 89
+        },
+        {
+          "variante": "q128",
+          "seed": 11
+        },
+        {
+          "variante": "q128",
+          "seed": 23
+        },
+        {
+          "variante": "q128",
+          "seed": 42
+        },
+        {
+          "variante": "q128",
+          "seed": 67
+        },
+        {
+          "variante": "q128",
+          "seed": 89
+        },
+        {
+          "variante": "q256",
+          "seed": 11
+        },
+        {
+          "variante": "q256",
+          "seed": 23
+        },
+        {
+          "variante": "q256",
+          "seed": 42
+        },
+        {
+          "variante": "q256",
+          "seed": 67
+        },
+        {
+          "variante": "q256",
+          "seed": 89
+        }
+      ],
+      "contrato_sha256_bytes": "98b358fa9cb15b3b0784e0389618452dcb3cc0319573f7916c522b8e1deb6659"
+    }
+  },
+  "jobs_ativos_runner": [
+    {
+      "tarefa": "daily_30",
+      "modelo": "XGBoost",
+      "recurso": "cpu",
+      "pid": 24216,
+      "creation_time": "134356275243013623",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_xgboost.log",
+      "inicio": "2026-10-04T22:45:24.372053+00:00",
+      "repeticoes_concluidas": 13,
+      "repeticoes_total": 20,
+      "ultima_atividade_log": "daily_30/XGBoost/q128/refit seed=67 inicio",
+      "proxima_repeticao_pendente": {
+        "variante": "q128",
+        "seed": 67
+      },
+      "ultima_conclusao_utc": "2026-10-05T02:46:01.200877+00:00",
+      "recentes_median_minutos": 19.73343279250001,
+      "recentes_min_minutos": 19.66571620666667,
+      "recentes_max_minutos": 23.43413848500004,
+      "eta_somente_este_modelo_na_fase": {
+        "status": "estimado",
+        "min_s": 4716.8220321690005,
+        "max_s": 13942.379312550025,
+        "amostras": 8,
+        "restantes": 7,
+        "recalibrado": false,
+        "tipo": "faixa_heuristica"
+      },
+      "recentes_registros": [
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q64\\refit\\seed11.json",
+          "sha256_metadata": "8443572580a9747d4475d27e8a28b667ac06b87ee478ae1df40b6365deefa5e6",
+          "variante": "q64",
+          "seed": 11,
+          "epocas": 0,
+          "duracao_s": 1179.9429724000001,
+          "concluido_em_utc": "2026-10-05T00:17:02.795243+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q64\\refit\\seed23.json",
+          "sha256_metadata": "ea219b53e3df49293e257332e8c3cfd37d06da6c56decefa2a849e37235e127d",
+          "variante": "q64",
+          "seed": 23,
+          "epocas": 0,
+          "duracao_s": 1181.1801930000001,
+          "concluido_em_utc": "2026-10-05T00:36:44.230380+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q64\\refit\\seed42.json",
+          "sha256_metadata": "94e45820d968eee4ae9a0139128fd9c201c81b3c178d5a5521c7cdf636619cfa",
+          "variante": "q64",
+          "seed": 42,
+          "epocas": 0,
+          "duracao_s": 1183.4743053000002,
+          "concluido_em_utc": "2026-10-05T00:56:27.975025+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q64\\refit\\seed67.json",
+          "sha256_metadata": "6ddf9353de30a7cf4dfcce22fec30a056116fff81c1af20de92bbcf8d076e362",
+          "variante": "q64",
+          "seed": 67,
+          "epocas": 0,
+          "duracao_s": 1180.9189715000011,
+          "concluido_em_utc": "2026-10-05T01:16:09.172529+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q64\\refit\\seed89.json",
+          "sha256_metadata": "4e70d7ab7f77a9ee8758c9825a42a01bcd6d09153229ce5eb49119c706c33ccf",
+          "variante": "q64",
+          "seed": 89,
+          "epocas": 0,
+          "duracao_s": 1184.537629800001,
+          "concluido_em_utc": "2026-10-05T01:35:54.019461+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q128\\refit\\seed11.json",
+          "sha256_metadata": "16a264c59ea63a7df957882b95ae4fada6199cc9e4cb267e2578c19893b1af5c",
+          "variante": "q128",
+          "seed": 11,
+          "epocas": 0,
+          "duracao_s": 1388.1083629999976,
+          "concluido_em_utc": "2026-10-05T01:59:32.334450+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q128\\refit\\seed23.json",
+          "sha256_metadata": "b143ce8c855246f8a4d55619cdee101499bb7086a4e272f117a0d67daf1971aa",
+          "variante": "q128",
+          "seed": 23,
+          "epocas": 0,
+          "duracao_s": 1406.0483091000024,
+          "concluido_em_utc": "2026-10-05T02:22:58.659827+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\xgboost\\q128\\refit\\seed42.json",
+          "sha256_metadata": "edacb66417e2301545f19c253ac6e9b15c09aec3339ce02fc9263a28b74f378f",
+          "variante": "q128",
+          "seed": 42,
+          "epocas": 0,
+          "duracao_s": 1382.257164499999,
+          "concluido_em_utc": "2026-10-05T02:46:01.200877+00:00"
+        }
+      ]
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "DilatedRNN",
+      "recurso": "gpu",
+      "pid": 26264,
+      "creation_time": "134356276756536687",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_dilatedrnn.log",
+      "inicio": "2026-10-04T22:47:55.775057+00:00",
+      "repeticoes_concluidas": 6,
+      "repeticoes_total": 20,
+      "ultima_atividade_log": "daily_30/DilatedRNN/q64/refit seed=23 inicio",
+      "proxima_repeticao_pendente": {
+        "variante": "q64",
+        "seed": 23
+      },
+      "ultima_conclusao_utc": "2026-10-05T02:21:04.750249+00:00",
+      "recentes_median_minutos": 37.5236055841667,
+      "recentes_min_minutos": 28.437827704999986,
+      "recentes_max_minutos": 56.929360966666685,
+      "eta_somente_este_modelo_na_fase": {
+        "status": "estimado",
+        "min_s": 14584.339938509245,
+        "max_s": 69413.41625700003,
+        "amostras": 6,
+        "restantes": 14,
+        "recalibrado": false,
+        "tipo": "faixa_heuristica"
+      },
+      "recentes_registros": [
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\sem_quantizacao\\refit\\seed11.json",
+          "sha256_metadata": "69d9fd7f1b32462232952b3b8a441aa044a82ce436dfbff5e5311a63addb7fe9",
+          "variante": "sem_quantizacao",
+          "seed": 11,
+          "epocas": 7,
+          "duracao_s": 1783.7852983000048,
+          "concluido_em_utc": "2026-10-04T20:22:40.403867+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\sem_quantizacao\\refit\\seed23.json",
+          "sha256_metadata": "a8d6a5aa7033c968fbd10b345cfec9d9350ef26fae2209433517dc5faebdb968",
+          "variante": "sem_quantizacao",
+          "seed": 23,
+          "epocas": 11,
+          "duracao_s": 2719.0473717999994,
+          "concluido_em_utc": "2026-10-04T23:33:56.914342+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\sem_quantizacao\\refit\\seed42.json",
+          "sha256_metadata": "c07fa30e58246eb5941cc5deb47b2d717bd8e798320d13a5a14c5cd6de078807",
+          "variante": "sem_quantizacao",
+          "seed": 42,
+          "epocas": 13,
+          "duracao_s": 3156.2827328999992,
+          "concluido_em_utc": "2026-10-05T00:26:33.501091+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\sem_quantizacao\\refit\\seed67.json",
+          "sha256_metadata": "4527dc3be61ce1008ee6bdc352411a527fd09ee1f629f4bd34c998cb30805d09",
+          "variante": "sem_quantizacao",
+          "seed": 67,
+          "epocas": 7,
+          "duracao_s": 1706.2696622999993,
+          "concluido_em_utc": "2026-10-05T00:55:00.098577+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\sem_quantizacao\\refit\\seed89.json",
+          "sha256_metadata": "2018ee0aa75e24a5e1f01e04cf91d481e506d2bb64f443fda9829252ee53a8aa",
+          "variante": "sem_quantizacao",
+          "seed": 89,
+          "epocas": 14,
+          "duracao_s": 3415.7616580000013,
+          "concluido_em_utc": "2026-10-05T01:51:56.182725+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\dilatedrnn\\q64\\refit\\seed11.json",
+          "sha256_metadata": "fb4e0315b166a822a92eac055ede5d3b8f919aab538cfffc17d65d4ab62ea138",
+          "variante": "q64",
+          "seed": 11,
+          "epocas": 7,
+          "duracao_s": 1718.3261983999982,
+          "concluido_em_utc": "2026-10-05T02:21:04.750249+00:00"
+        }
+      ]
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Transformer",
+      "recurso": "gpu",
+      "pid": 27172,
+      "creation_time": "134356276808166153",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_transformer.log",
+      "inicio": "2026-10-04T22:48:00.937435+00:00",
+      "repeticoes_concluidas": 16,
+      "repeticoes_total": 20,
+      "ultima_atividade_log": "daily_30/Transformer/q256/refit seed=23 inicio",
+      "proxima_repeticao_pendente": {
+        "variante": "q256",
+        "seed": 23
+      },
+      "ultima_conclusao_utc": "2026-10-05T02:48:05.204474+00:00",
+      "recentes_median_minutos": 13.372667367499995,
+      "recentes_min_minutos": 11.330484114999974,
+      "recentes_max_minutos": 33.90272962666665,
+      "eta_somente_este_modelo_na_fase": {
+        "status": "estimado",
+        "min_s": 1391.949973527747,
+        "max_s": 11507.858329599992,
+        "amostras": 8,
+        "restantes": 4,
+        "recalibrado": false,
+        "tipo": "faixa_heuristica"
+      },
+      "recentes_registros": [
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q64\\refit\\seed67.json",
+          "sha256_metadata": "294f1e2a48aed4b5d8a53d90773753fb08e12da8701557d12bd2e4f8c92732fb",
+          "variante": "q64",
+          "seed": 67,
+          "epocas": 5,
+          "duracao_s": 686.5169251999996,
+          "concluido_em_utc": "2026-10-05T00:47:22.527592+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q64\\refit\\seed89.json",
+          "sha256_metadata": "4ad4259e042b54119cb638bb7a38921020c6f664cc1135d2a013bd1fe622d7cc",
+          "variante": "q64",
+          "seed": 89,
+          "epocas": 5,
+          "duracao_s": 683.0194255999995,
+          "concluido_em_utc": "2026-10-05T00:58:45.862287+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q128\\refit\\seed11.json",
+          "sha256_metadata": "25f0c524e00425463dbcf556aad4fbff44d89a5de9f4ab1150bedb4b583c60a0",
+          "variante": "q128",
+          "seed": 11,
+          "epocas": 8,
+          "duracao_s": 1091.1191514999991,
+          "concluido_em_utc": "2026-10-05T01:17:29.650074+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q128\\refit\\seed23.json",
+          "sha256_metadata": "4d993c95c29a43f1ac32231f2bfc810122a854456da2b92093a3f653e57ea558",
+          "variante": "q128",
+          "seed": 23,
+          "epocas": 15,
+          "duracao_s": 2034.1637775999989,
+          "concluido_em_utc": "2026-10-05T01:51:24.124652+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q128\\refit\\seed42.json",
+          "sha256_metadata": "8ade6fa9717c1303b272a9c4d4c634508e8951e78a659446724d621d79d861b2",
+          "variante": "q128",
+          "seed": 42,
+          "epocas": 7,
+          "duracao_s": 918.2031588999998,
+          "concluido_em_utc": "2026-10-05T02:06:42.868932+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q128\\refit\\seed67.json",
+          "sha256_metadata": "2548f55caa2e29c49ee8c5ecc906c5dd826f79933e2ce4355e79203467dd6649",
+          "variante": "q128",
+          "seed": 67,
+          "epocas": 5,
+          "duracao_s": 681.8481809000004,
+          "concluido_em_utc": "2026-10-05T02:18:05.025006+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q128\\refit\\seed89.json",
+          "sha256_metadata": "9c02b32ffdd95ff7537d5bb8d8860fbd3ba1d1842707d10959cf0e2407d2bdcf",
+          "variante": "q128",
+          "seed": 89,
+          "epocas": 5,
+          "duracao_s": 679.8290468999985,
+          "concluido_em_utc": "2026-10-05T02:29:25.157814+00:00"
+        },
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\q256\\refit\\seed11.json",
+          "sha256_metadata": "5c6621db6e052a6edcf0a4ec97357de189d6f3dcfe1c4629ae307cfdebf05f72",
+          "variante": "q256",
+          "seed": 11,
+          "epocas": 8,
+          "duracao_s": 1087.6772829000001,
+          "concluido_em_utc": "2026-10-05T02:48:05.204474+00:00"
+        }
+      ]
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "ARIMA",
+      "recurso": "cpu",
+      "pid": 26892,
+      "creation_time": "134356386639423162",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_arima.log",
+      "inicio": "2026-10-05T01:51:04.120574+00:00",
+      "repeticoes_concluidas": 1,
+      "repeticoes_total": 4,
+      "ultima_atividade_log": "hourly_72_extension/ARIMA/q64/refit inicio",
+      "proxima_repeticao_pendente": {
+        "variante": "q64",
+        "seed": -1
+      },
+      "ultima_conclusao_utc": "2026-10-05T02:41:36.316749+00:00",
+      "recentes_median_minutos": 48.356354740000036,
+      "recentes_min_minutos": 48.356354740000036,
+      "recentes_max_minutos": 48.356354740000036,
+      "eta_somente_este_modelo_na_fase": {
+        "status": "estimado",
+        "min_s": 3266.0598656000034,
+        "max_s": 16322.275645400014,
+        "amostras": 1,
+        "restantes": 3,
+        "recalibrado": false,
+        "tipo": "faixa_heuristica"
+      },
+      "recentes_registros": [
+        {
+          "arquivo": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\arima\\sem_quantizacao\\refit\\seed-1.json",
+          "sha256_metadata": "87d7388156e617c6af4921055cf6fbfa9dd6dd008dfb4c972c384c581faa2316",
+          "variante": "sem_quantizacao",
+          "seed": -1,
+          "epocas": 0,
+          "duracao_s": 2901.381284400002,
+          "concluido_em_utc": "2026-10-05T02:41:36.316749+00:00"
+        }
+      ]
+    }
+  ],
+  "runner_snapshot": {
+    "regime": "historico_1998_2022",
+    "modo": "completa",
+    "etapa": "erro",
+    "iniciado_em_utc": "2026-10-04T22:33:25.522240+00:00",
+    "atualizado_em_utc": "2026-10-05T02:56:25.903244+00:00",
+    "pid_runner": 26300,
+    "identidade_runner": {
+      "pid": 26300,
+      "creation_time": "134356268042391634"
+    },
+    "processos_historico": [
+      {
+        "pid": 26232,
+        "creation_time": "134356268055315382"
+      },
+      {
+        "pid": 23812,
+        "creation_time": "134356268056735714"
+      },
+      {
+        "pid": 27304,
+        "creation_time": "134356268058229588"
+      },
+      {
+        "pid": 23864,
+        "creation_time": "134356268059876958"
+      },
+      {
+        "pid": 2212,
+        "creation_time": "134356268866241370"
+      },
+      {
+        "pid": 26724,
+        "creation_time": "134356268867724866"
+      },
+      {
+        "pid": 28580,
+        "creation_time": "134356268869359001"
+      },
+      {
+        "pid": 5236,
+        "creation_time": "134356268921500002"
+      },
+      {
+        "pid": 17388,
+        "creation_time": "134356269685595983"
+      },
+      {
+        "pid": 6344,
+        "creation_time": "134356269688351575"
+      },
+      {
+        "pid": 15352,
+        "creation_time": "134356269743755394"
+      },
+      {
+        "pid": 23160,
+        "creation_time": "134356269902868375"
+      },
+      {
+        "pid": 26392,
+        "creation_time": "134356270569632724"
+      },
+      {
+        "pid": 25176,
+        "creation_time": "134356270624510019"
+      },
+      {
+        "pid": 17356,
+        "creation_time": "134356270676418848"
+      },
+      {
+        "pid": 28284,
+        "creation_time": "134356270828599488"
+      },
+      {
+        "pid": 27820,
+        "creation_time": "134356271332982081"
+      },
+      {
+        "pid": 26940,
+        "creation_time": "134356271334588330"
+      },
+      {
+        "pid": 12072,
+        "creation_time": "134356271386582563"
+      },
+      {
+        "pid": 23464,
+        "creation_time": "134356271589680940"
+      },
+      {
+        "pid": 21908,
+        "creation_time": "134356271992875798"
+      },
+      {
+        "pid": 28692,
+        "creation_time": "134356272044499950"
+      },
+      {
+        "pid": 4804,
+        "creation_time": "134356272146966672"
+      },
+      {
+        "pid": 27512,
+        "creation_time": "134356272248907742"
+      },
+      {
+        "pid": 17356,
+        "creation_time": "134356272350490983"
+      },
+      {
+        "pid": 21656,
+        "creation_time": "134356272552785848"
+      },
+      {
+        "pid": 29380,
+        "creation_time": "134356272656609149"
+      },
+      {
+        "pid": 7676,
+        "creation_time": "134356272859893703"
+      },
+      {
+        "pid": 29584,
+        "creation_time": "134356272963565481"
+      },
+      {
+        "pid": 29004,
+        "creation_time": "134356273115236466"
+      },
+      {
+        "pid": 24396,
+        "creation_time": "134356273216467487"
+      },
+      {
+        "pid": 29316,
+        "creation_time": "134356273367915447"
+      },
+      {
+        "pid": 18524,
+        "creation_time": "134356273469412124"
+      },
+      {
+        "pid": 13376,
+        "creation_time": "134356273671181901"
+      },
+      {
+        "pid": 27304,
+        "creation_time": "134356273722174366"
+      },
+      {
+        "pid": 15852,
+        "creation_time": "134356273923939001"
+      },
+      {
+        "pid": 10092,
+        "creation_time": "134356273974929065"
+      },
+      {
+        "pid": 9000,
+        "creation_time": "134356274176670085"
+      },
+      {
+        "pid": 23260,
+        "creation_time": "134356274227559387"
+      },
+      {
+        "pid": 25704,
+        "creation_time": "134356274429117669"
+      },
+      {
+        "pid": 28796,
+        "creation_time": "134356274480276485"
+      },
+      {
+        "pid": 13440,
+        "creation_time": "134356274732530350"
+      },
+      {
+        "pid": 28984,
+        "creation_time": "134356274733526186"
+      },
+      {
+        "pid": 25132,
+        "creation_time": "134356275035716650"
+      },
+      {
+        "pid": 20460,
+        "creation_time": "134356275241625402"
+      },
+      {
+        "pid": 1004,
+        "creation_time": "134356275242330563"
+      },
+      {
+        "pid": 24216,
+        "creation_time": "134356275243013623"
+      },
+      {
+        "pid": 29156,
+        "creation_time": "134356275243778346"
+      },
+      {
+        "pid": 16672,
+        "creation_time": "134356276300500084"
+      },
+      {
+        "pid": 26264,
+        "creation_time": "134356276756536687"
+      },
+      {
+        "pid": 27172,
+        "creation_time": "134356276808166153"
+      },
+      {
+        "pid": 2212,
+        "creation_time": "134356277262456398"
+      },
+      {
+        "pid": 24944,
+        "creation_time": "134356278676177277"
+      },
+      {
+        "pid": 8884,
+        "creation_time": "134356280457909738"
+      },
+      {
+        "pid": 26892,
+        "creation_time": "134356386639423162"
+      }
+    ],
+    "saida": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+    "pendentes": [],
+    "concluidos": [
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "GRU",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_gru.log",
+        "concluido_em_utc": "2026-10-04T22:34:41.569652+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "LSTM",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_lstm.log",
+        "concluido_em_utc": "2026-10-04T22:34:41.579935+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "XGBoost",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_xgboost.log",
+        "concluido_em_utc": "2026-10-04T22:34:41.588461+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "ARIMA",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_arima.log",
+        "concluido_em_utc": "2026-10-04T22:34:47.110079+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "DilatedRNN",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_dilatedrnn.log",
+        "concluido_em_utc": "2026-10-04T22:36:03.457616+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "Persistencia",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_persistencia.log",
+        "concluido_em_utc": "2026-10-04T22:36:03.482053+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "Sazonal ingenuo",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_sazonal_ingenuo.log",
+        "concluido_em_utc": "2026-10-04T22:36:09.131983+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "Transformer",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_transformer.log",
+        "concluido_em_utc": "2026-10-04T22:36:25.233076+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "Climatologia",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_climatologia.log",
+        "concluido_em_utc": "2026-10-04T22:37:31.888722+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "Informer",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_informer.log",
+        "concluido_em_utc": "2026-10-04T22:37:37.313458+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "daily_30",
+        "modelo": "TimesNet",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_daily_30_timesnet.log",
+        "concluido_em_utc": "2026-10-04T22:37:42.607100+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "hourly_72_extension",
+        "modelo": "XGBoost",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_xgboost.log",
+        "concluido_em_utc": "2026-10-04T22:37:57.828108+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "hourly_72_extension",
+        "modelo": "ARIMA",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_arima.log",
+        "concluido_em_utc": "2026-10-04T22:38:48.259542+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "hourly_72_extension",
+        "modelo": "GRU",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_gru.log",
+        "concluido_em_utc": "2026-10-04T22:38:48.266789+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "hourly_72_extension",
+        "modelo": "LSTM",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_lstm.log",
+        "concluido_em_utc": "2026-10-04T22:38:53.618268+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "hourly_72_extension",
+        "modelo": "Persistencia",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_persistencia.log",
+        "concluido_em_utc": "2026-10-04T22:39:13.940125+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "hourly_72_extension",
+        "modelo": "DilatedRNN",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_dilatedrnn.log",
+        "concluido_em_utc": "2026-10-04T22:39:54.256375+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "hourly_72_extension",
+        "modelo": "Sazonal ingenuo",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_sazonal_ingenuo.log",
+        "concluido_em_utc": "2026-10-04T22:39:59.416745+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "hourly_72_extension",
+        "modelo": "Transformer",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_transformer.log",
+        "concluido_em_utc": "2026-10-04T22:40:09.660183+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "hourly_72_extension",
+        "modelo": "Climatologia",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_climatologia.log",
+        "concluido_em_utc": "2026-10-04T22:40:19.860893+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_6",
+        "modelo": "GRU",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_gru.log",
+        "concluido_em_utc": "2026-10-04T22:40:30.026364+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_6",
+        "modelo": "LSTM",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_lstm.log",
+        "concluido_em_utc": "2026-10-04T22:40:50.220447+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_6",
+        "modelo": "DilatedRNN",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_dilatedrnn.log",
+        "concluido_em_utc": "2026-10-04T22:41:00.589905+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "hourly_72_extension",
+        "modelo": "Informer",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_informer.log",
+        "concluido_em_utc": "2026-10-04T22:41:10.864736+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "hourly_72_extension",
+        "modelo": "TimesNet",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_hourly_72_extension_timesnet.log",
+        "concluido_em_utc": "2026-10-04T22:41:15.895604+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_6",
+        "modelo": "Transformer",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_transformer.log",
+        "concluido_em_utc": "2026-10-04T22:41:20.921794+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_6",
+        "modelo": "Informer",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_informer.log",
+        "concluido_em_utc": "2026-10-04T22:41:31.331621+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_6",
+        "modelo": "XGBoost",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_xgboost.log",
+        "concluido_em_utc": "2026-10-04T22:41:46.502750+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_6",
+        "modelo": "ARIMA",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_arima.log",
+        "concluido_em_utc": "2026-10-04T22:41:56.623691+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_6",
+        "modelo": "Persistencia",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_persistencia.log",
+        "concluido_em_utc": "2026-10-04T22:42:11.771249+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_6",
+        "modelo": "Sazonal ingenuo",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_sazonal_ingenuo.log",
+        "concluido_em_utc": "2026-10-04T22:42:21.921236+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_6",
+        "modelo": "Climatologia",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_climatologia.log",
+        "concluido_em_utc": "2026-10-04T22:42:42.095252+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_6",
+        "modelo": "TimesNet",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_6_timesnet.log",
+        "concluido_em_utc": "2026-10-04T22:42:47.200136+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_1",
+        "modelo": "GRU",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_gru.log",
+        "concluido_em_utc": "2026-10-04T22:43:07.370886+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_1",
+        "modelo": "LSTM",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_lstm.log",
+        "concluido_em_utc": "2026-10-04T22:43:12.470453+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_1",
+        "modelo": "DilatedRNN",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_dilatedrnn.log",
+        "concluido_em_utc": "2026-10-04T22:43:32.638874+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_1",
+        "modelo": "Transformer",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_transformer.log",
+        "concluido_em_utc": "2026-10-04T22:43:37.737971+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_1",
+        "modelo": "Informer",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_informer.log",
+        "concluido_em_utc": "2026-10-04T22:43:57.884648+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_1",
+        "modelo": "XGBoost",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_xgboost.log",
+        "concluido_em_utc": "2026-10-04T22:44:03.002831+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_1",
+        "modelo": "ARIMA",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_arima.log",
+        "concluido_em_utc": "2026-10-04T22:44:28.233041+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_1",
+        "modelo": "Persistencia",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_persistencia.log",
+        "concluido_em_utc": "2026-10-04T22:44:28.235502+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_1",
+        "modelo": "Sazonal ingenuo",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_sazonal_ingenuo.log",
+        "concluido_em_utc": "2026-10-04T22:44:58.543633+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_1",
+        "modelo": "Climatologia",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_climatologia.log",
+        "concluido_em_utc": "2026-10-04T22:44:58.548107+00:00"
+      },
+      {
+        "fase": "selecao",
+        "tarefa": "monthly_1",
+        "modelo": "TimesNet",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_timesnet.log",
+        "concluido_em_utc": "2026-10-04T22:45:23.737528+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "ARIMA",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_arima.log",
+        "concluido_em_utc": "2026-10-04T22:47:05.015324+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "LSTM",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_lstm.log",
+        "concluido_em_utc": "2026-10-04T22:47:50.604723+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "GRU",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_gru.log",
+        "concluido_em_utc": "2026-10-04T22:47:55.782549+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "Persistencia",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_persistencia.log",
+        "concluido_em_utc": "2026-10-04T22:48:41.168874+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "Sazonal ingenuo",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_sazonal_ingenuo.log",
+        "concluido_em_utc": "2026-10-04T22:51:02.570360+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "daily_30",
+        "modelo": "Climatologia",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_climatologia.log",
+        "concluido_em_utc": "2026-10-04T22:54:00.583545+00:00"
+      },
+      {
+        "fase": "refit",
+        "tarefa": "hourly_72_extension",
+        "modelo": "XGBoost",
+        "returncode": 0,
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_xgboost.log",
+        "concluido_em_utc": "2026-10-05T01:50:58.718230+00:00"
+      }
+    ],
+    "falhas": [
+      {
+        "tipo": "PermissionError",
+        "mensagem": "[WinError 5] Access is denied: 'C:\\\\Users\\\\gm.nascimento\\\\Documents\\\\Meus Projetos\\\\TCC\\\\relatorios\\\\quantizacao_todos_modelos_20260929\\\\fila_historica\\\\historico_1998_2022\\\\completa\\\\runner.json.cf5gexfj.tmp' -> 'C:\\\\Users\\\\gm.nascimento\\\\Documents\\\\Meus Projetos\\\\TCC\\\\relatorios\\\\quantizacao_todos_modelos_20260929\\\\fila_historica\\\\historico_1998_2022\\\\completa\\\\runner.json'",
+        "instante": "2026-10-05T02:56:25.903200+00:00"
+      }
+    ],
+    "processos": [
+      {
+        "tarefa": "daily_30",
+        "modelo": "XGBoost",
+        "recurso": "cpu",
+        "pid": 24216,
+        "creation_time": "134356275243013623",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_xgboost.log",
+        "inicio": "2026-10-04T22:45:24.372053+00:00"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "DilatedRNN",
+        "recurso": "gpu",
+        "pid": 26264,
+        "creation_time": "134356276756536687",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_dilatedrnn.log",
+        "inicio": "2026-10-04T22:47:55.775057+00:00"
+      },
+      {
+        "tarefa": "daily_30",
+        "modelo": "Transformer",
+        "recurso": "gpu",
+        "pid": 27172,
+        "creation_time": "134356276808166153",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_transformer.log",
+        "inicio": "2026-10-04T22:48:00.937435+00:00"
+      },
+      {
+        "tarefa": "hourly_72_extension",
+        "modelo": "ARIMA",
+        "recurso": "cpu",
+        "pid": 26892,
+        "creation_time": "134356386639423162",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_arima.log",
+        "inicio": "2026-10-05T01:51:04.120574+00:00"
+      }
+    ]
+  },
+  "runner_sha256_snapshot": "0fe1bb021b12ef5be86affb70a45258b39a91153b3e00fcc0a4bd31b3177021f",
+  "coordenador_snapshot": {
+    "iniciado_em_utc": "2026-10-04T22:33:22.297150+00:00",
+    "pid": 27596,
+    "identidade_coordenador": {
+      "pid": 27596,
+      "creation_time": "134356267950829772"
+    },
+    "publicado": false,
+    "revisao_visual_pendente": true,
+    "codigo_sha256": "3b865ca313e0d2e84cb11cc046de2b825716c02c618328da5ac576225b316a4e",
+    "etapa": "erro",
+    "atualizado_em_utc": "2026-10-05T02:56:43.282397+00:00",
+    "etapa_atual": "pronto_para_revisao_visual",
+    "processos_ativos": [],
+    "auditoria_atual_sha256": "b48b7fbefbd1b267c25c276dc6f6d10692603ac45969946d879f1b52cb5a43d5",
+    "processos_historico": [
+      {
+        "pid": 18396,
+        "creation_time": "134356268032233328"
+      }
+    ],
+    "processo_filho": null,
+    "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\fila_historico_1998_2022.log",
+    "eventos": [
+      {
+        "etapa": "fila_historico_1998_2022",
+        "retorno": 1,
+        "fim_utc": "2026-10-05T02:56:43.262378+00:00",
+        "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\fila_historico_1998_2022.log"
+      }
+    ],
+    "erro": "RuntimeError: Falha fila_historico_1998_2022; consultar C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\fila_historico_1998_2022.log"
+  },
+  "coordenador_sha256_snapshot": "c9cb5aec863ce12f33bc2fea2ca9779f4da104084c3bd1f5852163f67cb46962",
+  "erros_leitura": [],
+  "criterio_caches": "Mesmo criterio leve do painel: fase/refit, variante, seed, contrato SHA no metadata, concluido_em_utc e NPZ presente. Somente SHA dos JSON; sem abrir NPZ/CP nem conferir hashes de seus bytes. Nao e auditoria cientifica final.",
+  "interpretacao": "16% arredonda7/44 pares completos na fase refit longa. Pares em andamento podem salvar varias repeticoes sem subir essa barra. Total53% representa139/264 etapas treino com pesos iguais, nao horas, auditorias ou PDF.",
+  "limites_eta": "ETAs somente locais por modelo/caso/fase/contrato, ultimas oito duracoes compat?veis e margem heuristica; nao somar para prometer prazo global. Nao mede ganho de AboveNormal.",
+  "mudancas": "Nenhuma alteracao em estado, processos, caches, fontes, configuracoes ou documentos. Apenas este novo artefato diagnostico."
+}

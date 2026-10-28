@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Recorded training configuration and selected epochs. Runtime and trainable-parameter counts are reported only when explicitly instrumented.}
+\label{tab:configuracao-treinamento}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+Task & Model & Execution seeds & Selected epochs & Declared hyperparameters \\
+\midrule
+Daily 365--30 & DilatedRNN & 11;23;42;67;89 & min=23; median=24; max=30 & \{"batch\_size\_diario":128,"dilated\_dilatacoes":[1,2,4],"dilated\_dropout":0.0,"dilated\_unidades":16,"dilated\_unidades\_densas":16,"max\_epocas\_diario":30,"paciencia\_diario":5,"peso\_decay":1e-05,"taxa\_aprendizado":0.001\} \\
+Daily 365--30 & LSTM & 11;23;42;67;89 & min=19; median=27; max=30 & \{"batch\_size\_diario":128,"lstm\_camadas":1,"lstm\_ocultos":32,"max\_epocas\_diario":30,"paciencia\_diario":5,"peso\_decay":1e-05,"taxa\_aprendizado":0.001\} \\
+Daily 365--30 & TimesNet & 11;23;42;67;89 & min=3; median=4; max=5 & \{"batch\_size\_diario":128,"max\_epocas\_diario":30,"paciencia\_diario":5,"peso\_decay":1e-05,"taxa\_aprendizado":0.001,"timesnet\_blocos":1,"timesnet\_d\_ff":16,"timesnet\_d\_model":8,"timesnet\_dropout":0.1,"timesnet\_kernels":2,"timesnet\_top\_k":3\} \\
+Daily 365--30 & XGBoost & 11;23;42;67;89 & Not applicable; tree count is a hyperparameter & \{"batch\_size\_diario":128,"max\_epocas\_diario":30,"paciencia\_diario":5,"peso\_decay":1e-05,"taxa\_aprendizado":0.001,"xgb\_colsample":0.8,"xgb\_estimadores":150,"xgb\_estimadores\_smoke":2,"xgb\_n\_jobs":1,"xgb\_profundidade":3,"xgb\_subsample":0.8,"xgb\_taxa\_aprendizado":0.05\} \\
+Hourly 336--72 & DilatedRNN & 42 & min=14; median=14; max=14 & \{"batch\_size":128,"dilatacoes":[1,2,4],"dropout":0.0,"embedding\_localidade":8,"max\_epocas":30,"paciencia":5,"taxa\_aprendizado":0.001,"unidades\_densas":16,"unidades\_por\_camada":16\} \\
+Hourly 336--72 & LSTM & 42 & Not recorded in this task artifact & \{"batch\_size":128,"max\_epocas":30,"paciencia":5,"taxa\_aprendizado":0.001\} \\
+Hourly 336--72 & TimesNet & 42 & Not recorded in this task artifact & \{"batch\_size":128,"max\_epocas":30,"paciencia":5,"taxa\_aprendizado":0.001\} \\
+Hourly 336--72 & XGBoost & 42 & Not applicable; tree count is a hyperparameter & \{"batch\_size":128,"max\_epocas":30,"paciencia":5,"taxa\_aprendizado":0.001\} \\
+Monthly 12--1 & DilatedRNN & 11;23;42;67;89 & min=37; median=58; max=91 & \{"batch\_size\_mensal":32,"dilated\_dilatacoes":[1,2,4],"dilated\_dropout":0.0,"dilated\_unidades":16,"dilated\_unidades\_densas":16,"max\_epocas\_mensal":300,"paciencia\_mensal":30,"peso\_decay":1e-05,"taxa\_aprendizado":0.001\} \\
+Monthly 12--1 & LSTM & 11;23;42;67;89 & min=60; median=92; max=100 & \{"batch\_size\_mensal":32,"lstm\_camadas":1,"lstm\_ocultos":32,"max\_epocas\_mensal":300,"paciencia\_mensal":30,"peso\_decay":1e-05,"taxa\_aprendizado":0.001\} \\
+Monthly 12--1 & TimesNet & 11;23;42;67;89 & min=34; median=46; max=76 & \{"batch\_size\_mensal":32,"max\_epocas\_mensal":300,"paciencia\_mensal":30,"peso\_decay":1e-05,"taxa\_aprendizado":0.001,"timesnet\_blocos":1,"timesnet\_d\_ff":16,"timesnet\_d\_model":8,"timesnet\_dropout":0.1,"timesnet\_kernels":2,"timesnet\_top\_k":3\} \\
+Monthly 12--1 & XGBoost & 11;23;42;67;89 & Not applicable; tree count is a hyperparameter & \{"batch\_size\_mensal":32,"max\_epocas\_mensal":300,"paciencia\_mensal":30,"peso\_decay":1e-05,"taxa\_aprendizado":0.001,"xgb\_colsample":0.8,"xgb\_estimadores":150,"xgb\_estimadores\_smoke":2,"xgb\_n\_jobs":1,"xgb\_profundidade":3,"xgb\_subsample":0.8,"xgb\_taxa\_aprendizado":0.05\} \\
+Monthly 12--6 & DilatedRNN & 11;23;42;67;89 & min=48; median=74; max=105 & \{"batch\_size\_mensal":32,"dilated\_dilatacoes":[1,2,4],"dilated\_dropout":0.0,"dilated\_unidades":16,"dilated\_unidades\_densas":16,"max\_epocas\_mensal":300,"paciencia\_mensal":30,"peso\_decay":1e-05,"taxa\_aprendizado":0.001\} \\
+Monthly 12--6 & LSTM & 11;23;42;67;89 & min=55; median=86; max=133 & \{"batch\_size\_mensal":32,"lstm\_camadas":1,"lstm\_ocultos":32,"max\_epocas\_mensal":300,"paciencia\_mensal":30,"peso\_decay":1e-05,"taxa\_aprendizado":0.001\} \\
+Monthly 12--6 & TimesNet & 11;23;42;67;89 & min=25; median=38; max=109 & \{"batch\_size\_mensal":32,"max\_epocas\_mensal":300,"paciencia\_mensal":30,"peso\_decay":1e-05,"taxa\_aprendizado":0.001,"timesnet\_blocos":1,"timesnet\_d\_ff":16,"timesnet\_d\_model":8,"timesnet\_dropout":0.1,"timesnet\_kernels":2,"timesnet\_top\_k":3\} \\
+Monthly 12--6 & XGBoost & 11;23;42;67;89 & Not applicable; tree count is a hyperparameter & \{"batch\_size\_mensal":32,"max\_epocas\_mensal":300,"paciencia\_mensal":30,"peso\_decay":1e-05,"taxa\_aprendizado":0.001,"xgb\_colsample":0.8,"xgb\_estimadores":150,"xgb\_estimadores\_smoke":2,"xgb\_n\_jobs":1,"xgb\_profundidade":3,"xgb\_subsample":0.8,"xgb\_taxa\_aprendizado":0.05\} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

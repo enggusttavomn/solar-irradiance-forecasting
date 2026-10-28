@@ -1,0 +1,31 @@
+\begin{algorithm}[H]
+\caption{Direct forward pass of the compact TimesNet}
+\label{alg:timesnet-direct}
+\footnotesize
+\begin{algorithmic}[1]
+\Require Fitted TimesNet of width $D$; site-scaled $\mathbf x\in\mathbb R^{C\times1}$; site $\ell$
+\Ensure $H$ predictions on the site-specific min--max scale
+  \State $\mu\gets\operatorname{mean}(\mathbf x)$;
+  $\sigma\gets\sqrt{\operatorname{var}_{\mathrm{pop}}(\mathbf x)+10^{-5}}$
+  \State $\mathbf u\gets(\mathbf x-\mu)/\sigma$
+  \State $\mathbf Z\gets\mathrm{ValueEmbed}(\mathbf u)+\mathrm{PositionEmbed}$
+  \State $\mathbf Z\gets\mathbf Z+\mathrm{SiteEmbed}(\ell)$
+  \State Apply embedding dropout during training only
+  \For{each TimesBlock}
+    \State $a_f\gets D^{-1}\sum_{q=1}^{D}|\operatorname{rFFT}_t(\mathbf Z)_{f,q}|$
+    \State Select the top-$k$ indices $f_i\in\{1,\ldots,\lfloor C/2\rfloor\}$ by $a_f$
+    \For{each selected $f_i$}
+      \State $p_i\gets\lfloor C/f_i\rfloor$; $L_i\gets\lceil C/p_i\rceil p_i$
+      \State Zero-pad to $L_i$ steps; fold into $L_i/p_i$ cycles
+      \State Apply two Inception banks with GELU between them
+      \Statex \hspace{\algorithmicindent}(mean of the $1\times1$ and $3\times3$ convolution outputs)
+      \State Unfold and trim to $C$ steps, obtaining $\mathbf U_i$
+    \EndFor
+    \State $\alpha_i\gets\exp(a_{f_i})/\sum_{j=1}^{k}\exp(a_{f_j})$
+    \State $\mathbf Z\gets\mathrm{LayerNorm}(\mathbf Z+\sum_i\alpha_i\mathbf U_i)$
+  \EndFor
+  \State $\mathbf F\gets\mathrm{TemporalProject}_{C\to H}(\mathbf Z)\in\mathbb R^{H\times D}$
+  \State $\widehat{\mathbf u}\gets\mathrm{ChannelProject}(\mathbf F)$
+  \State \Return $\sigma\widehat{\mathbf u}+\mu$
+\end{algorithmic}
+\end{algorithm}

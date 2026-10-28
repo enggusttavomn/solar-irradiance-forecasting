@@ -1,0 +1,130 @@
+{
+  "observado_em_utc": "2026-10-04T22:55:39.150345+00:00",
+  "fonte_sha256": "7cd5604ecc23f133f909760724e981ffb92113972783aa0e9744ed8827e8a564",
+  "fonte_harness_preservada": "\nfrom contextlib import contextmanager\nfrom scripts.priorizar_treinamentos import ABOVE_NORMAL,HIGH,NORMAL,Controlador,Instancia\nclass Fake:\n def __init__(self):\n  self.ids={100:Instancia(100,'1000')};self.parents={100:0};self.classes={100:NORMAL};self.oldmap=None;self.sets=[];self.failset=False;self.failread=False;self.pendingread=False;self.handles=[]\n def identidade(self,pid): return self.ids.get(pid)\n def mapa(self):\n  if self.oldmap is not None:\n   result=self.oldmap;self.oldmap=None;return dict(result)\n  return dict(self.parents)\n @contextmanager\n def abrir(self,inst):\n  if self.ids.get(inst.pid)!=inst: raise ProcessLookupError('identity mismatch')\n  self.handles.append(inst)\n  try: yield inst\n  finally: self.handles.remove(inst)\n def vivo(self,h): return h in self.handles and self.ids.get(h.pid)==h\n def prioridade(self,h):\n  if self.pendingread:\n   self.pendingread=False;raise OSError('readback failure')\n  return self.classes[h.pid]\n def definir(self,h,v):\n  if self.failset: raise OSError('Set API failed')\n  assert self.vivo(h),(h,self.handles)\n  self.classes[h.pid]=v;self.sets.append((h,v))\n  if self.failread:\n   self.failread=False;self.pendingread=True\nresults=[]\ndef record(name,expected,observed):\n item={'cenario':name,'esperado':expected,'observado':observed,'passou':expected==observed};results.append(item)\n if not item['passou']: raise AssertionError(item)\nroot=Instancia(100,'1000')\nexternal=[]\nfor root_class in (NORMAL,ABOVE_NORMAL):\n b=Fake();b.classes[100]=root_class;b.ids[200]=Instancia(200,'3000');b.classes[200]=NORMAL;b.parents[200]=999;b.oldmap={100:0,200:100};c=Controlador(root,b);r=c.ciclo()\n external.append({'root_initial':root_class,'external_mutations':sum(i.pid==200 for i,_ in b.sets),'external_error':any(x['pid']==200 for x in r['erros']),'external_journaled':any(i.pid==200 for i in c.alterados),'external_class':b.classes[200],'root_mutations':sum(i.pid==100 for i,_ in b.sets)})\nrecord('stale_snapshot_external_reused_pid',\n [{'root_initial':NORMAL,'external_mutations':0,'external_error':True,'external_journaled':False,'external_class':NORMAL,'root_mutations':1},{'root_initial':ABOVE_NORMAL,'external_mutations':0,'external_error':True,'external_journaled':False,'external_class':NORMAL,'root_mutations':0}],external)\nb=Fake();b.ids[100]=Instancia(100,'4000');c=Controlador(root,b);blocked=False\ntry:c.ciclo()\nexcept RuntimeError:blocked=True\nrecord('root_pid_reused',{'blocked':True,'sets':0},{'blocked':blocked,'sets':len(b.sets)})\nb=Fake();b.failset=True;c=Controlador(root,b);r=c.ciclo()\nrecord('failed_set_not_journaled',{'sets':0,'ledger':0,'error':True,'class':NORMAL},{'sets':len(b.sets),'ledger':len(c.alterados),'error':bool(r['erros']),'class':b.classes[100]})\nb=Fake();b.failread=True;c=Controlador(root,b);r=c.ciclo();original=c.alterados.get(root);prior=b.classes[100];restored=c.restaurar()\nrecord('successful_set_failed_readback_is_restorable',{'original':NORMAL,'prior':ABOVE_NORMAL,'error':True,'after':NORMAL,'restore_errors':[]},{'original':original,'prior':prior,'error':bool(r['erros']),'after':b.classes[100],'restore_errors':restored['erros']})\nb=Fake();c=Controlador(root,b);c.ciclo();b.classes[100]=HIGH;n=len(b.sets);r=c.restaurar()\nrecord('external_class_change_preserved',{'class':HIGH,'new_sets':0,'restored':[]},{'class':b.classes[100],'new_sets':len(b.sets)-n,'restored':r['restaurados']})\nb=Fake();c=Controlador(root,b);c.ciclo();b.ids[200]=Instancia(200,'2000');b.parents[200]=100;b.classes[200]=NORMAL;r=c.ciclo();during=b.classes[200];ledger=len(c.alterados);restored=c.restaurar()\nrecord('future_child_next_cycle',{'during':ABOVE_NORMAL,'ledger':2,'root_after':NORMAL,'child_after':NORMAL,'cycle_errors':[],'restore_errors':[]},{'during':during,'ledger':ledger,'root_after':b.classes[100],'child_after':b.classes[200],'cycle_errors':r['erros'],'restore_errors':restored['erros']})\n",
+  "resultados": [
+    {
+      "cenario": "stale_snapshot_external_reused_pid",
+      "esperado": [
+        {
+          "root_initial": 32,
+          "external_mutations": 0,
+          "external_error": true,
+          "external_journaled": false,
+          "external_class": 32,
+          "root_mutations": 1
+        },
+        {
+          "root_initial": 32768,
+          "external_mutations": 0,
+          "external_error": true,
+          "external_journaled": false,
+          "external_class": 32,
+          "root_mutations": 0
+        }
+      ],
+      "observado": [
+        {
+          "root_initial": 32,
+          "external_mutations": 0,
+          "external_error": true,
+          "external_journaled": false,
+          "external_class": 32,
+          "root_mutations": 1
+        },
+        {
+          "root_initial": 32768,
+          "external_mutations": 0,
+          "external_error": true,
+          "external_journaled": false,
+          "external_class": 32,
+          "root_mutations": 0
+        }
+      ],
+      "passou": true
+    },
+    {
+      "cenario": "root_pid_reused",
+      "esperado": {
+        "blocked": true,
+        "sets": 0
+      },
+      "observado": {
+        "blocked": true,
+        "sets": 0
+      },
+      "passou": true
+    },
+    {
+      "cenario": "failed_set_not_journaled",
+      "esperado": {
+        "sets": 0,
+        "ledger": 0,
+        "error": true,
+        "class": 32
+      },
+      "observado": {
+        "sets": 0,
+        "ledger": 0,
+        "error": true,
+        "class": 32
+      },
+      "passou": true
+    },
+    {
+      "cenario": "successful_set_failed_readback_is_restorable",
+      "esperado": {
+        "original": 32,
+        "prior": 32768,
+        "error": true,
+        "after": 32,
+        "restore_errors": []
+      },
+      "observado": {
+        "original": 32,
+        "prior": 32768,
+        "error": true,
+        "after": 32,
+        "restore_errors": []
+      },
+      "passou": true
+    },
+    {
+      "cenario": "external_class_change_preserved",
+      "esperado": {
+        "class": 128,
+        "new_sets": 0,
+        "restored": []
+      },
+      "observado": {
+        "class": 128,
+        "new_sets": 0,
+        "restored": []
+      },
+      "passou": true
+    },
+    {
+      "cenario": "future_child_next_cycle",
+      "esperado": {
+        "during": 32768,
+        "ledger": 2,
+        "root_after": 32,
+        "child_after": 32,
+        "cycle_errors": [],
+        "restore_errors": []
+      },
+      "observado": {
+        "during": 32768,
+        "ledger": 2,
+        "root_after": 32,
+        "child_after": 32,
+        "cycle_errors": [],
+        "restore_errors": []
+      },
+      "passou": true
+    }
+  ],
+  "erro": null,
+  "ok": true,
+  "nota_harness_efemero": "A primeira fonte efemera nao foi preservada; falhou em stdin:54 sem valores. Nao e possivel atribuir retroativamente qual assert falhou. Estes seis cenarios independentes sao completos e preservados. No segundo harness nativo, a assercao de apenas uma instancia era excessiva: CREATE_NO_WINDOW criou descendente console; o helper priorizou corretamente a arvore descartavel e o finally restaurou. Native DETACHED_PROCESS repetido passou e ficou registrado em v2."
+}
