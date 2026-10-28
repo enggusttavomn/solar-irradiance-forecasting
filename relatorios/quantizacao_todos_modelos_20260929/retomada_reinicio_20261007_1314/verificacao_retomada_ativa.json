@@ -1,0 +1,105 @@
+{
+  "aprovado": true,
+  "utc": "2026-10-07T17:58:00.397318+00:00",
+  "manifesto_sha256": "9bd045a68da175b1dacddb1ddd806e3f739d52203f02ab477ad4802dd68b5aea",
+  "coordenador": {
+    "pid": 29512,
+    "creation_time": "134358692355448701"
+  },
+  "runner": {
+    "pid": 7880,
+    "creation_time": "134358692950612205"
+  },
+  "observador": {
+    "pid": 16124,
+    "creation_time": "134358693537867067"
+  },
+  "native_identidades_coord_runner_vivas_confirmadas_utc": "2026-10-07T17:56:29.161453+00:00",
+  "heartbeat": "2026-10-07T17:57:47.138339+00:00",
+  "revalidacoes_fila": 8,
+  "ativos": [
+    {
+      "tarefa": "daily_30",
+      "modelo": "DilatedRNN",
+      "recurso": "gpu",
+      "pid": 10740,
+      "creation_time": "134358693727772444",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_curto_pareado\\completa\\selecao_daily_30_dilatedrnn.log",
+      "inicio": "2026-10-07T17:56:12.921005+00:00"
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "XGBoost",
+      "recurso": "cpu",
+      "pid": 4328,
+      "creation_time": "134358694299790872",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_curto_pareado\\completa\\selecao_hourly_72_extension_xgboost.log",
+      "inicio": "2026-10-07T17:57:10.142751+00:00"
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Informer",
+      "recurso": "gpu",
+      "pid": 24384,
+      "creation_time": "134358694563255848",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_curto_pareado\\completa\\selecao_daily_30_informer.log",
+      "inicio": "2026-10-07T17:57:36.498820+00:00"
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "ARIMA",
+      "recurso": "cpu",
+      "pid": 372,
+      "creation_time": "134358694669647100",
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_curto_pareado\\completa\\selecao_hourly_72_extension_arima.log",
+      "inicio": "2026-10-07T17:57:47.138198+00:00"
+    }
+  ],
+  "falhas": [],
+  "regimes": [
+    {
+      "id": "atual",
+      "total": 44,
+      "selecao": 44,
+      "refit": 44,
+      "auditoria": true
+    },
+    {
+      "id": "historico_1998_2022",
+      "total": 44,
+      "selecao": 44,
+      "refit": 44,
+      "auditoria": true
+    },
+    {
+      "id": "historico_curto_pareado",
+      "total": 44,
+      "selecao": 39,
+      "refit": 0,
+      "auditoria": false
+    }
+  ],
+  "etapas_feitas": 215,
+  "etapas_total": 264,
+  "porcentagem": 81.44,
+  "painel": "http://127.0.0.1:8767",
+  "painel_http": 200,
+  "painel_foco": {
+    "regime": "historico_curto_pareado",
+    "titulo": "Escolha das configurações",
+    "feito": 39,
+    "total": 44
+  },
+  "prioridade": "High",
+  "epp_ac": 0,
+  "diagnostico_windows": {
+    "suspensao_botao_ou_tampa_local": "13:05:53",
+    "desligamento_inesperado_local": "13:08:53",
+    "boot_local": "13:09:30",
+    "reinicio_menu_iniciar_local": "13:13:28",
+    "boot_atual_local": "13:14:09",
+    "bugcheck_code": 0,
+    "causa_exata_indeterminada": true
+  },
+  "fontes_cientificas_alteradas": false
+}

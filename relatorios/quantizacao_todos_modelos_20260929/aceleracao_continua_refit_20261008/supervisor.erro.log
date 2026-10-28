@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\manter_aceleracao_na_tomada_v3.py", line 570, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\manter_aceleracao_na_tomada_v3.py", line 550, in main
+    ativo = supervisor.passo()
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\manter_aceleracao_na_tomada_v3.py", line 441, in passo
+    s = self.estado_child()
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\manter_aceleracao_na_tomada_v3.py", line 292, in estado_child
+    raise Bloqueio('Guard informou erro em instancia viva ou indeterminada.')
+scripts.retomar_historico_apos_calendario.Bloqueio: Guard informou erro em instancia viva ou indeterminada.

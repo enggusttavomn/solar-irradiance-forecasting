@@ -1,0 +1,120 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Choosing a forecasting architecture for solar irradiance requires evidence
+across the temporal resolutions and horizons at which it will be used.
+This article compares TimesNet and DilatedRNN to identify a preferred
+implementation and the conditions that support that choice under a
+restricted information set: historical GHI is the only dynamic predictor.
+The comparison also asks whether a preference between these two networks
+translates into an advantage over simpler reference models.
+
+Pathways consistent with deep emissions reductions combine a rapid expansion
+of low-emission electricity with the electrification of end uses
+\cite{ipcc2022energy,irena2024weto}. Declining renewable-energy costs support
+this transition \cite{luderer2022}, while scenario-based evidence suggests
+that solar photovoltaics may develop substantial self-sustaining growth
+before mid-century \cite{nijsse2023}. As deployment grows, the
+weather-dependent and diurnal variability of solar energy makes forecasts
+across different time horizons increasingly important for planning,
+scheduling, and energy management.
+
+Industrial decarbonization requires combinations of energy efficiency,
+material changes, low-carbon fuels, electrification, and low-emission
+electricity \cite{ipcc2022industry,rissman2020}. Direct electrification can
+reduce emissions from suitable industrial heat uses, but its potential
+depends on process temperature, infrastructure, and the carbon intensity of
+the electricity supply \cite{madeddu2020}. On-site and procured renewable
+electricity can therefore support manufacturing alongside other energy
+options \cite{irena2014manufacturing,padmanathan2018}, although adoption
+faces site-specific financial, regulatory, technical, and organizational
+barriers \cite{dhingra2023}.
+
+Policy and corporate disclosures illustrate this industrial context. In the
+European Union, Directive (EU) 2024/1275 establishes a phased framework for
+solar installations on specified building categories when technically,
+economically, and functionally suitable \cite{eu2024epbd}; it does not apply
+to the Brazilian, Mexican, or United States locations examined here.
+Nestl\'e reports that its KitKat production lines in Ca\c{c}apava use
+predominantly solar electricity \cite{nestle2024biometano}; Mercedes-Benz
+describes rooftop photovoltaics and storage at Factory~56
+\cite{mercedesfactory56}; and Tesla and Ford report solar installations at
+selected manufacturing sites \cite{tesla2021impact,ford2023valencia}.
+
+Solar forecasting serves different operational needs. Intra-hour forecasts
+can track cloud motion, hourly and day-ahead forecasts support short-term
+scheduling, and daily or monthly aggregates inform longer-term planning
+\cite{diagne2013,inman2013}. Both temporal resolution and forecast horizon
+must therefore accompany terms such as short-term and long-term
+\cite{antonanzas2016,yang2018}. Accuracy for a direct 72-hour sequence of
+hourly global horizontal irradiance (GHI) does not establish accuracy for
+daily means or a one-step monthly target. Likewise, comparing errors across
+hourly and monthly series requires accounting for differences in targets,
+sample sizes, and variability.
+
+This article studies GHI at ten geographic points associated with
+electric-vehicle manufacturing facilities. The points span different
+latitudes and atmospheric regimes, providing a geographically diverse test
+bed. Their selection does not establish whether photovoltaic systems are
+installed at those facilities. The irradiance records are satellite-derived,
+model-based estimates from the National Solar Radiation Database (NSRDB)
+\cite{sengupta2018}, with no factory sensor measurements or proprietary
+operational data. The forecasts thus characterize the solar resource at the
+selected grid cells, rather than factory load or photovoltaic power output.
+
+Cabral et al.\ \cite{cabral2026} evaluated very-long-term GHI forecasting at
+40 climatically diverse locations using a GHI-only GPT-Neo pipeline and a
+broad set of competitors. Here, the focus is on comparing architectures
+across temporal resolutions. Building on the present authors' preliminary studies of
+a compact TimesNet for direct hourly forecasting and a dilated recurrent
+neural network (DilatedRNN) for one-step monthly forecasting, this article
+evaluates both architectures on matched samples within each task.
+The preliminary studies provide methodological background; their numerical
+results are excluded from the matched comparison. Cabral et al.'s numerical
+results are not reused.
+
+Univariate irradiance forecasting already has precedents
+\cite{guariso2020,cabral2026}, while solar TimesNet applications include
+image fusion, signal decomposition, and additional meteorological variables
+\cite{li2025timesnet,zhao2024timesnet,gong2024timesnet}. The motivation here
+is therefore reduced dependence on auxiliary meteorological observations
+or forecasts, not independence from the dataset or a first use of GHI-only
+inputs. Static site identifiers and hourly astronomical post-processing
+remain part of the pipeline; their use does not establish transfer to
+unseen locations.
+
+The research question is: \emph{under a shared historical-GHI information
+set, how does the preference between TimesNet and DilatedRNN change with
+temporal resolution and horizon, and how competitive are both against
+reference models?} The comparison uses the
+cumulative macro-MAE over each task's full output horizon to summarize
+task-level outcomes, alongside intermediate horizons, site-level
+differences, and seed variability. The four tasks span three resolutions;
+their win count is a descriptive summary rather than a pooled error score.
+
+The article makes four contributions:
+\begin{enumerate}
+  \item it defines a common multi-resolution formulation that distinguishes
+  hourly multi-step, daily-mean multi-step, one-step monthly, and exploratory
+  six-month forecasting;
+  \item it specifies matched samples, chronological partitions, forecast
+  origins, direct outputs, and post-processing for the two architectures;
+  \item it quantifies changes in architectural preference across tasks,
+  sites, and seeds, while testing whether the preferred network also
+  improves on statistical, tree-based, recurrent, and attention-based
+  reference models evaluated under the same protocol; and
+  \item it combines horizon profiles, parameter counts, and reproducibly
+  selected forecast cases to characterize the scope of the model choice.
+  Climate and independent meteorological records provide descriptive
+  context for the cases.
+\end{enumerate}
+A common benchmark of persistence, seasonal na\"ive, climatology, ARIMA,
+XGBoost, LSTM, GRU, Transformer, and Informer models places this
+two-architecture comparison in context.
+
+Section~\ref{sec:related_work} reviews the forecasting literature and
+identifies the comparison gap. Section~\ref{sec:background} defines GHI,
+temporal aggregation, forecasting horizons, TimesNet, and DilatedRNN.
+The following sections describe the data and feature engineering, common
+methodology, experimental design, and evaluation metrics, followed by the
+results, limitations, and conclusions.

@@ -1,0 +1,40 @@
+{
+  "etapa": "CONFIRMED",
+  "utc": "2026-10-06T23:04:46.596523+00:00",
+  "manifesto_sha256": "7005730866b085363db2f177bf6a5e3da84b29e87ddcc9f03f75d1fa2c004358",
+  "wrapper_sha256": "14f211f6ba8a7ee08999ef274e480c945a5ccb34a67fd3cbbfb23f0469f42592",
+  "comando_helper": [
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "scripts.retomar_historico_apos_calendario",
+    "--manifesto",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\manifesto_recuperacao.json",
+    "--manifesto-sha256",
+    "7005730866b085363db2f177bf6a5e3da84b29e87ddcc9f03f75d1fa2c004358",
+    "--saida-localdir",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\execucao\\helper"
+  ],
+  "coordenador_novo": {
+    "pid": 13592,
+    "creation_time": "134358014655311522"
+  },
+  "comando_prioridade": [
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "scripts.priorizar_treinamentos",
+    "--pid",
+    "13592",
+    "--creation-time",
+    "134358014655311522",
+    "--saida",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\execucao\\prioridade_13592_134358014655311522"
+  ],
+  "pid_launcher_prioridade": 19724,
+  "atualizado_em_utc": "2026-10-06T23:04:46.667000+00:00"
+}

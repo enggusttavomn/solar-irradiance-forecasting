@@ -1,0 +1,28 @@
+{
+  "tipo": "recibo_unitario_backend_fake_prioridade",
+  "agente": "/root/cache_historico_outubro3",
+  "inicio_utc": "2026-10-04T22:53:52.843867+00:00",
+  "fim_utc": "2026-10-04T22:53:53.104662+00:00",
+  "identidade_executor": {
+    "pid": 28096,
+    "creation_time": "134356280245428915"
+  },
+  "interpretador": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+  "invocacao": "python -X utf8 - (wrapper via stdin com unittest discover)",
+  "comando_focado_equivalente": "python -X utf8 -m unittest discover -s tests -p test_priorizar_treinamentos.py -v",
+  "testes_executados": 20,
+  "falhas": 0,
+  "erros": 0,
+  "pulados": 0,
+  "ok": true,
+  "sha_antes": {
+    "fonte": "7cd5604ecc23f133f909760724e981ffb92113972783aa0e9744ed8827e8a564",
+    "teste": "daf1790423713cf5c7878a29a1019bb192e94236abc1c8eefe5f59e68ae6bebe"
+  },
+  "sha_depois": {
+    "fonte": "7cd5604ecc23f133f909760724e981ffb92113972783aa0e9744ed8827e8a564",
+    "teste": "daf1790423713cf5c7878a29a1019bb192e94236abc1c8eefe5f59e68ae6bebe"
+  },
+  "saida_real_unittest": "test_alvo_encerra_ao_ler_prioridade_e_impede_set (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_alvo_encerra_ao_ler_prioridade_e_impede_set) ... ok\ntest_alvo_encerra_apos_abrir_e_impede_set (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_alvo_encerra_apos_abrir_e_impede_set) ... ok\ntest_arvore_mantem_cadeia_aberta_e_nao_altera_outras_arvores (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_arvore_mantem_cadeia_aberta_e_nao_altera_outras_arvores) ... ok\ntest_classes_superiores_preservadas_e_inferiores_elevadas (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_classes_superiores_preservadas_e_inferiores_elevadas) ... ok\ntest_falha_em_um_alvo_nao_impede_outro (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_falha_em_um_alvo_nao_impede_outro) ... ok\ntest_filetime_igual_ao_pai_permite_filho (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_filetime_igual_ao_pai_permite_filho) ... ok\ntest_filho_anterior_ao_pai_e_seu_descendente_sao_ignorados (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_filho_anterior_ao_pai_e_seu_descendente_sao_ignorados) ... ok\ntest_filho_reutilizado_antes_de_abrir_nao_recebe_prioridade (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_filho_reutilizado_antes_de_abrir_nao_recebe_prioridade) ... ok\ntest_novo_filho_e_priorizado_no_proximo_ciclo (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_novo_filho_e_priorizado_no_proximo_ciclo) ... ok\ntest_pai_encerra_ao_ler_prioridade_e_impede_set_no_filho (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_pai_encerra_ao_ler_prioridade_e_impede_set_no_filho) ... ok\ntest_pai_reutilizado_durante_transacao_rejeita_neto (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_pai_reutilizado_durante_transacao_rejeita_neto) ... ok\ntest_parentesco_de_ancestral_tambem_e_revalidado (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_parentesco_de_ancestral_tambem_e_revalidado) ... ok\ntest_raiz_encerrada_aborta_sem_mutacao (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_raiz_encerrada_aborta_sem_mutacao) ... ok\ntest_readback_falhou_depois_de_set_preserva_original_para_restore (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_readback_falhou_depois_de_set_preserva_original_para_restore) ... ok\ntest_restore_apos_raiz_encerrar_recupera_filho_identificado (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_restore_apos_raiz_encerrar_recupera_filho_identificado) ... ok\ntest_restore_repetido_nao_altera_classes_ja_restauradas (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_restore_repetido_nao_altera_classes_ja_restauradas) ... ok\ntest_restore_so_mesma_instancia_alterada_e_ainda_above_normal (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_restore_so_mesma_instancia_alterada_e_ainda_above_normal) ... ok\ntest_reuso_de_pid_da_raiz_aborta_sem_mutacao (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_reuso_de_pid_da_raiz_aborta_sem_mutacao) ... ok\ntest_set_falhou_nao_e_registrado_para_restauracao (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_set_falhou_nao_e_registrado_para_restauracao) ... ok\ntest_snapshot_antigo_identidade_nova_externa_e_rejeitada (test_priorizar_treinamentos.TestPriorizarTreinamentos.test_snapshot_antigo_identidade_nova_externa_e_rejeitada) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.023s\n\nOK\n",
+  "limites": "Testes usam somente backend fake. Consulta Win32 foi somente a identidade do proprio executor; nenhuma prioridade real ou motor de treinamento foi alterado. Este recibo e uma nova execucao cronometrada, nao reconstrucao do horario da execucao anterior."
+}

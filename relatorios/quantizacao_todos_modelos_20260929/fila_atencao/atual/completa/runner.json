@@ -1,0 +1,68 @@
+{
+  "regime": "atual",
+  "modo": "completa",
+  "etapa": "selecao_concluida",
+  "iniciado_em_utc": "2026-09-30T23:45:11.454456+00:00",
+  "atualizado_em_utc": "2026-10-01T01:57:41.512856+00:00",
+  "pid_runner": 26644,
+  "identidade_runner": {
+    "pid": 26644,
+    "creation_time": "134352855093307500"
+  },
+  "processos_historico": [
+    {
+      "pid": 24336,
+      "creation_time": "134352855114657400"
+    },
+    {
+      "pid": 11340,
+      "creation_time": "134352856073257824"
+    },
+    {
+      "pid": 27416,
+      "creation_time": "134352879615177075"
+    },
+    {
+      "pid": 31200,
+      "creation_time": "134352928383744422"
+    }
+  ],
+  "saida": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+  "pendentes": [],
+  "concluidos": [
+    {
+      "fase": "selecao",
+      "tarefa": "daily_30",
+      "modelo": "Transformer",
+      "returncode": 0,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\fila_atencao\\atual\\completa\\selecao_daily_30_transformer.log",
+      "concluido_em_utc": "2026-09-30T23:46:42.284042+00:00"
+    },
+    {
+      "fase": "selecao",
+      "tarefa": "daily_30",
+      "modelo": "Informer",
+      "returncode": 0,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\fila_atencao\\atual\\completa\\selecao_daily_30_informer.log",
+      "concluido_em_utc": "2026-10-01T00:25:56.489812+00:00"
+    },
+    {
+      "fase": "selecao",
+      "tarefa": "hourly_72_extension",
+      "modelo": "Transformer",
+      "returncode": 0,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\fila_atencao\\atual\\completa\\selecao_hourly_72_extension_transformer.log",
+      "concluido_em_utc": "2026-10-01T01:47:13.322425+00:00"
+    },
+    {
+      "fase": "selecao",
+      "tarefa": "hourly_72_extension",
+      "modelo": "Informer",
+      "returncode": 0,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\fila_atencao\\atual\\completa\\selecao_hourly_72_extension_informer.log",
+      "concluido_em_utc": "2026-10-01T01:57:41.491891+00:00"
+    }
+  ],
+  "falhas": [],
+  "processos": []
+}

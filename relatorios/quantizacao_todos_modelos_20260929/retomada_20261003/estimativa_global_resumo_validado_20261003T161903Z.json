@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "confirmado_em_sao_paulo": "2026-10-03T13:19:03.722815-03:00",
+  "cenario_fonte": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261003\\estimativa_global_cenario_20261003T161700Z.json",
+  "cenario_sha256": "0508dff1d83ca3b050758b85a35d4af264e87778d6596974aca08b44a4d82d8e",
+  "timesnet_confirmacao": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261003\\tempos_timesnet_originais_readonly_20261003.json",
+  "timesnet_confirmacao_sha256": "135619c040922bfe24cebae9b34099c902947e934b5facaf5f810b992516076a",
+  "timesnet_config_device": "Revisao independente estaticamente reconstruiu4configs porAST+vencedor,zero diferenças com originais;CUDAhour/day,CPUmensal;128medicoes reais duracao_s+epocasCSV; mesmosloopsengine283-304. A nota pendente no arquivo anterior esta resolvida por esta evidencia.",
+  "contagem": {
+    "regimes": {
+      "atual": {
+        "selecoes": 44,
+        "refits": 44,
+        "total_unidades_concluidas": 88
+      },
+      "historico_1998_2022": {
+        "selecoes": 12,
+        "refits": 0,
+        "total_unidades_concluidas": 12
+      },
+      "historico_curto_pareado": {
+        "selecoes": 0,
+        "refits": 0,
+        "total_unidades_concluidas": 0
+      }
+    },
+    "concluidas": 100,
+    "previstas": 264,
+    "percentual": 37.878787878787875,
+    "nota": "3bases*44pares*2fases; contagem não ponderada por tempo e sem auditoria/PDF. Caches parciais não somam um par concluído."
+  },
+  "compute_restante_horas_corridas": {
+    "favoravel": 55.126866625172866,
+    "central": 69.79704586348889,
+    "conservador": 169.921741338347
+  },
+  "comunicacao_curta": "Aproximadamente38% das unidades de selecao/refit concluídas. Projecao exploratoria de cerca70horas de treinamento restante, com cenarios55-170horas; computadorligado e pipeline2CPU+2workersCUDA. Auditorias,pareamento e revisao/entregaPDF ficam fora por falta de tempos medidos comparaveis. Nao e promessa de entrega em70horas.",
+  "cuidado_caches": "Foto dos tempos16:10UTC e contagem16:17UTC: XGBdiario terminou entre as leituras. O cenario anterior contou uma seedCPUextra; a fase continua dominada pelaGPU, portanto removeressa seednao alteraria o total corrido do escalonamento assumido. Não recomputar/tratar caches duplicados como tarefas reais a executar.",
+  "natureza": "Cenarios de carga extrapolados, nao ETA observada, intervalo estatistico ou limite garantido. Modelos/casos/devices equivalentes; origens+epocasCSV; quatrofases sequenciais. Taxas passadas nao provam throughput futuro e maxepocas com multiplicador1.5nao protege de todos imprevistos.",
+  "limite_para_tudo_pronto": "Sem numero auditavel em horas para auditorias/pareamento/PDF/QA futuros. A entrega completa deve ser maior que compute,cujos cenarios játêmincerteza; nao acrescentar reserva arbitraria como se medida."
+}

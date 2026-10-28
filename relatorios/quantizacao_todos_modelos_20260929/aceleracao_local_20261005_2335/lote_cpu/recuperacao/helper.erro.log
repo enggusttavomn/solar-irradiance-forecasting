@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\retomar_historico_apos_calendario.py", line 674, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\retomar_historico_apos_calendario.py", line 661, in main
+    while not r.ciclo():
+              ~~~~~~~^^
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\retomar_historico_apos_calendario.py", line 641, in ciclo
+    vivos = self.observar()
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\retomar_historico_apos_calendario.py", line 472, in observar
+    mapa = self.backend.mapa()
+  File "C:\Users\gm.nascimento\Documents\Meus Projetos\TCC\scripts\retomar_historico_apos_calendario.py", line 325, in mapa
+    raise Bloqueio('Snapshot com PID duplicado em tres consultas; estado indeterminado.') from None
+Bloqueio: Snapshot com PID duplicado em tres consultas; estado indeterminado.

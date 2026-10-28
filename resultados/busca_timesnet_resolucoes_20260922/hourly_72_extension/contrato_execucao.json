@@ -1,0 +1,157 @@
+{
+  "candidatos": [
+    {
+      "contexto": 336,
+      "dimensao": 8,
+      "lote": 128,
+      "nome": "mae",
+      "perda": "mae",
+      "taxa": 0.001
+    },
+    {
+      "contexto": 336,
+      "dimensao": 8,
+      "lote": 128,
+      "nome": "huber",
+      "perda": "huber",
+      "taxa": 0.001
+    },
+    {
+      "contexto": 336,
+      "dimensao": 16,
+      "lote": 64,
+      "nome": "mae_dim16_lr0003",
+      "perda": "mae",
+      "taxa": 0.0003
+    },
+    {
+      "contexto": 168,
+      "dimensao": 8,
+      "lote": 128,
+      "nome": "mae_contexto_curto",
+      "perda": "mae",
+      "taxa": 0.001
+    }
+  ],
+  "codigo": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\consolidar_baselines_adicionais.py": "ade992e535169083230e315fcf395b6c78cec17ee0ef12df61636dee97ec5170",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_baselines_adicionais.py": "64a3d933ba5af151e88f9d368337b99bccfa89f18a7c552aa724a57dfc39ba81",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_horario_timesnet.py": "2cc59451b0fbcbedbf3068d2f1c45595ff84daf46e8318a88080df208e7bb8e9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\otimizacao_timesnet_resolucoes.py": "22e21174db643997459398f2097c704daa26464fe309e260fe697794e4f0e983",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\timesnet_horario.py": "ad3859c1044fb132d0d521817f579f8308a478fdf322b749ff42c8d3893c95f2",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\treinamento_timesnet_otimizacao.py": "6b096408f2124877a16e342feb789b090f3bb592b10dc399af0004d97e5b42c9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\treinamento_timesnet_resolucoes.py": "0675a57b40c9ea963632cf101d583dee1ca5bb1a66f6efb62581b37d5cda55c2"
+  },
+  "configuracao": {
+    "batch_size_diario": 128,
+    "batch_size_mensal": 32,
+    "dilated_dilatacoes": [
+      1,
+      2,
+      4
+    ],
+    "dilated_dropout": 0.0,
+    "dilated_unidades": 16,
+    "dilated_unidades_densas": 16,
+    "embedding_localidade": 8,
+    "epocas_smoke": 1,
+    "limite_localidades_smoke": 2,
+    "limite_origens_smoke": 3,
+    "lstm_camadas": 1,
+    "lstm_ocultos": 32,
+    "max_epocas_diario": 30,
+    "max_epocas_mensal": 300,
+    "modo_execucao": "completa",
+    "paciencia_diario": 5,
+    "paciencia_mensal": 30,
+    "peso_decay": 1e-05,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ],
+    "taxa_aprendizado": 0.001,
+    "threads_torch": 1,
+    "timesnet_blocos": 1,
+    "timesnet_d_ff": 16,
+    "timesnet_d_model": 8,
+    "timesnet_dropout": 0.1,
+    "timesnet_kernels": 2,
+    "timesnet_top_k": 3,
+    "xgb_colsample": 0.8,
+    "xgb_estimadores": 150,
+    "xgb_estimadores_smoke": 2,
+    "xgb_n_jobs": 1,
+    "xgb_profundidade": 3,
+    "xgb_subsample": 0.8,
+    "xgb_taxa_aprendizado": 0.05
+  },
+  "criterio": "macro_MAE_fisico_validacao_2023_apos_pos_processamento",
+  "dispositivo": "cuda",
+  "entradas": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2019.csv.gz": "596462fc1dceb631bd0a8017798614d324fef6d298d01913ffbc89908db04026",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2020.csv.gz": "817e26b2fd7a817d0d0da2457d71ebc8db5880090730f7239efb74ff47842014",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2021.csv.gz": "a9e321d0cf384ad345d47c28e7c8fd5cae201ee4aa16b05c6882c45133f968ce",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2022.csv.gz": "13daace788f068c16711ae6aff7a1420066a532b538ca889078b6a4e3760f27f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2023.csv.gz": "e1f228817a16c6655128e7bbfce4668ea8e3ba0d28de535bc003fe64733353d0",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2024.csv.gz": "88430743a2b9e6f82e394f683cfdea4ad93324fe59756d17edcfbad6d9f8eac1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\hourly_72_extension\\previsoes_teste.csv.gz": "850cc110a4bf4101b0c02c9d5815fd3916659c01f67e2cc150f16dddc74d69cc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_multirresolucao_corrigida_v2\\hourly_72_extension\\previsoes_validacao.csv.gz": "0e24b9162e53989682993c4b3856031c33ae40887597d47fd0c65d27825e14ab"
+  },
+  "limitacoes": [
+    "2024 ja observado motivou a busca; necessita confirmacao futura.",
+    "Janela menor preserva exatamente origens, alvos e exemplos de treino.",
+    "Grade limitada; nenhuma garantia de superar outras arquiteturas.",
+    "Horaria usa apenas semente42; diaria usa cinco sementes."
+  ],
+  "numpy": "2.4.4",
+  "pandas": "3.0.3",
+  "python": "3.14.4",
+  "referencia": "TimesNet canonica elegivel pela previsao de validacao ja salva",
+  "sementes": [
+    42
+  ],
+  "sha256_contrato": "dafeb218dfc26f22796eb2a593beecc3a888347e21b6eb9abebf88e3ec0d2cec",
+  "tarefa": {
+    "ajuste": {
+      "fim_alvo": "2022-12-31",
+      "fim_origem": "2022-12-29",
+      "inicio_origem": "2019-01-15",
+      "origens_esperadas_por_localidade": 1445
+    },
+    "exploratoria": false,
+    "frequencia": "h",
+    "horizontes": [
+      24,
+      48,
+      72
+    ],
+    "pred_len": 72,
+    "refit": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-29",
+      "inicio_origem": "2019-01-15",
+      "origens_esperadas_por_localidade": 1810
+    },
+    "resolucao": "horaria",
+    "seq_len": 336,
+    "slug": "hourly_72_extension",
+    "teste": {
+      "fim_alvo": "2024-12-31",
+      "fim_origem": "2024-12-28",
+      "inicio_origem": "2024-01-01",
+      "origens_esperadas_por_localidade": 363
+    },
+    "validacao": {
+      "fim_alvo": "2023-12-31",
+      "fim_origem": "2023-12-29",
+      "inicio_origem": "2023-01-01",
+      "origens_esperadas_por_localidade": 363
+    }
+  },
+  "torch": "2.12.0+cu126",
+  "versao": 1
+}

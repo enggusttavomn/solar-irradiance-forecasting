@@ -1,0 +1,63 @@
+{
+  "iniciado_em_utc": "2026-10-07T14:10:21.764216+00:00",
+  "pid": 16232,
+  "identidade_coordenador": {
+    "pid": 16232,
+    "creation_time": "134358558043402203"
+  },
+  "publicado": false,
+  "revisao_visual_pendente": true,
+  "codigo_sha256": "1166e691d47d81a98cb87286eed302fa0b61d4acaed0c9029165431a7615fa2b",
+  "retomada_apos_reinicio": {
+    "id": "retomada_historico_apos_reinicio_v1",
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\coordenar_historico_apos_reinicio_v1.py",
+    "sha256": "d09fe6101961ed37ae9f8f4dba30a81b068d401738e44d150a9bc378437522bb",
+    "recibo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_reinicio_20261007\\manifesto_retomada.json",
+    "recibo_sha256": "ae032cd7a551ade9764f021dd5800acb7c1945c558b78a66ba590f5dbbd3e805",
+    "coordenador_anterior": {
+      "pid": 34664,
+      "creation_time": "134358267649957069"
+    }
+  },
+  "coordenador_complementar": {
+    "id": "coordenacao_historica_replay_isolado_v1",
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\coordenar_quantizacao_historica_replay_isolado_v1.py",
+    "sha256": "e9b9b2e46e62b4f423bc3e69a764ba62c7fada45c26b252e9a53fc7321bc1a67",
+    "recibo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261007_auditoria\\manifesto_retomada.json",
+    "recibo_sha256": "54433ab91daf50faed29f985046e8b4f4dad2af27035fa4b738d368e33e12810"
+  },
+  "etapa": "fila_historico_curto_pareado",
+  "atualizado_em_utc": "2026-10-07T16:09:33.066842+00:00",
+  "etapa_atual": "pronto_para_revisao_visual",
+  "processos_ativos": [],
+  "auditoria_atual_sha256": "b48b7fbefbd1b267c25c276dc6f6d10692603ac45969946d879f1b52cb5a43d5",
+  "eventos": [
+    {
+      "etapa": "fila_historico_1998_2022",
+      "retorno": 0,
+      "fim_utc": "2026-10-07T14:10:32.091832+00:00",
+      "refits_concluidos_reaproveitados": 44,
+      "runner_sha256": "8586b978f9abfbdb9e70e4ab4ca57ee2e4ee5218863569547815afafcc8348df"
+    },
+    {
+      "etapa": "auditoria_historico_1998_2022",
+      "retorno": 0,
+      "fim_utc": "2026-10-07T14:10:47.776304+00:00",
+      "auditoria_completa_reaproveitada": true,
+      "auditoria_sha256": "73264016a986720643046268ee78601d3007f824da8a3e4851560430958ed61b"
+    }
+  ],
+  "processo_filho": {
+    "pid": 27532,
+    "creation_time": "134358558551176743"
+  },
+  "refits_concluidos_reaproveitados": 44,
+  "auditoria_longa_reaproveitada": true,
+  "processos_historico": [
+    {
+      "pid": 27532,
+      "creation_time": "134358558551176743"
+    }
+  ],
+  "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\fila_historico_curto_pareado.log"
+}

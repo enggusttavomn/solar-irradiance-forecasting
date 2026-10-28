@@ -1,0 +1,131 @@
+\subsection{Experimental Setup}
+\label{sec:experiments}
+
+The four forecasting tasks appear in Block A of Figure~\ref{fig:pipeline}.
+The Supplementary Material summarizes their context lengths, outputs,
+evaluation horizons, and origin counts. Within each task, all models share
+sites, origins, targets, fitting cutoffs, and post-processing. MAE and RMSE
+are reported in W/m$^2$ and MSE in (W/m$^2$)$^2$ at every resolution, but
+they describe different temporal aggregates and are interpreted separately
+across tasks.
+
+\subsubsection{Common matched protocol}
+
+Each task evaluates the two focal architectures against a common benchmark:
+three deterministic references (persistence, annual seasonal na\"ive, and,
+for the daily and monthly tasks, calendar climatology), site-wise ARIMA, and
+five global reference learners (XGBoost, LSTM, GRU, Transformer, and
+Informer), specified in Section~\ref{sec:additional_baselines}. Global
+learned models receive only causal GHI and site identity. In the daily and
+monthly tasks, every stochastic learned model is fitted under the five seeds
+11, 23, 42, 67, and 89. For each, we evaluate both individual-seed forecasts
+and their arithmetic-mean ensemble, applying the post-processing in
+Section~\ref{sec:methodology}. Deterministic references and ARIMA are
+evaluated once. The primary comparison uses macro-MAE, calculated by
+averaging site-level MAEs with equal weights. Complementary results include
+MSE, RMSE, nRMSE, and $R^2$ at cumulative horizons and exact leads.
+
+For all neural models, the selection and fresh-refit procedure in
+Algorithm~\ref{alg:matched-training} uses early stopping on 2023
+site-normalized validation MSE. Initial training uses the pre-2023 windows
+(labeled ``adjustment'' in the saved artifacts); the selected epoch count governs
+the same-seed refit on pre-2024 windows. This selection objective differs from
+the primary test ranking by macro-MAE in physical units. Tree ensembles use
+separate initial-training and refit instances with a fixed tree budget, and
+ARIMA orders are selected on 2023 and refitted before the test. Only
+refitted instances generate test forecasts.
+
+Block B of Figure~\ref{fig:pipeline} summarizes this selection and refitting
+sequence.
+
+Forecasts follow the rolling-origin protocol in Section~\ref{sec:methodology}.
+Hourly forecasts are issued once per day at local midnight, daily forecasts
+advance one origin per day, and monthly forecasts advance one origin per
+civil month.
+
+\input{sections/05_additional_baselines}
+
+\subsubsection{Hourly protocol and extensions}
+
+The official hourly task uses 336 past hours (14 days) and produces the next
+72 hours directly. The reported checkpoints are 24, 48, and 72 hours; they are
+prefixes and exact leads extracted from the same 72-hour output, not separately
+trained models. Initial training origins run from 15 January 2019 through
+29 December 2022 (1,445 per site), and validation origins run from
+1 January through 29 December 2023 (363 per site). The pre-test refit combines
+origins from 15 January 2019 through 29 December 2023 (1,810 per site). The
+retrospective test contains 363 origins from 1 January through
+28 December 2024. The last 72-hour window ends at 23:00 on 30 December in the
+fixed local-time index; corresponding UTC timestamps can extend into
+31 December for western locations.
+
+All hourly learned models use seed 42. Persistence, annual seasonal
+na\"ive, XGBoost, LSTM, and TimesNet forecasts come from the official hourly
+run. DilatedRNN, ARIMA, GRU, Transformer, and Informer are added with the
+same 336-hour context and 72-hour output. Their forecasts are matched
+one-to-one with the existing predictions by site, origin, target timestamp,
+and lead. Target equality and input hashes are checked to ensure that the
+extensions preserve the original data and comparator forecasts.
+
+\subsubsection{Daily protocol}
+
+The daily primary task uses 365 daily means to predict a 30-day vector. Metrics
+are evaluated at 1, 3, 7, 14, and 30 days. Initial training origins extend from
+1 January 2020 through 2 December 2022, with targets ending no later than
+31 December 2022 (1,067 origins per site). Validation uses
+1 January--2 December 2023 (336 origins), and refit uses
+1 January 2020--2 December 2023 (1,432 origins). The 2024 test uses
+1 January--2 December and contains 337 complete origins per site because 2024
+is a leap year.
+
+\subsubsection{Monthly primary and exploratory protocols}
+
+Civil-month means are calculated from the audited daily series. The primary
+monthly task uses 12 months to predict the next month. It has 36 initial training
+origins in 2020--2022, 12 validation origins in 2023, 48 refit origins in
+2020--2023, and 12 test origins in 2024, for every site.
+
+The exploratory monthly task uses the same 12-month context and directly
+predicts six months. Its declared checkpoints are months 1, 3, and 6.
+The final origin in each partition must fall no later than July so that all
+six targets remain inside its final year. Initial training therefore contains
+31 consecutive monthly origins from January 2020 through July 2022, validation
+contains seven from January through July 2023, refit contains 43 from January
+2020 through July 2023, and test contains seven from January through July 2024.
+Earlier complete years in initial training and refit retain all twelve origins.
+This task is exploratory because each site contributes
+only seven test origins, each with a six-month output.
+
+For the six-month task, exact leads are evaluated on different target-month
+sets: lead 1 covers January--July, whereas lead 6 covers June--December. Its
+horizon profile therefore combines lead-time and seasonal effects and is not
+interpreted as an isolated degradation curve.
+
+\subsubsection{Fixed optimization settings}
+
+Table~\ref{tab:hyperparameters} gives the compact configuration needed to
+interpret the main comparison. The Supplementary Material records the
+full temporal boundaries, model settings, baseline definitions, artifact
+specifications, and integrity hashes for the contextual data.
+
+\input{tables/hyperparameters}
+
+\subsubsection{Model capacity and computational evidence}
+
+Table~\ref{tab:model_capacity} reports the number of trainable scalar
+parameters in each neural model, including biases and the ten-site embedding.
+The counts are calculated from the implemented module dimensions. TimesNet has a task-dependent direct temporal
+projection, so its parameter count grows with both context and output length.
+Dilated recurrence changes the temporal connections without adding separate
+weights for each skipped position. The Transformer and Informer project each
+time step to a single output, so their counts do not change across tasks.
+The capacities of the tree ensemble and ARIMA are described by their
+settings in Table~\ref{tab:hyperparameters}.
+
+\input{tables/model_capacity}
+
+Training and inference times were not measured consistently across the
+completed runs, and the daily and hourly Transformer and Informer runs used
+a GPU while the other learned models used one CPU thread. The computational
+comparison therefore reports parameter counts only; runtime comparisons
+remain for future evaluation.

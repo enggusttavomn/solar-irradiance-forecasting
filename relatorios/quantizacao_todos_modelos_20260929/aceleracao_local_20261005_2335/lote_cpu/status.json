@@ -1,0 +1,150 @@
+{
+  "versao": 1,
+  "manifesto_sha256": "0d7b59af822135884719e3059b3bd962f2fe0412473921e4b67828285b817d21",
+  "script_sha256": "836cacad78c1de92c8f4b272440e7318728ae1c81103044c2561666c6f78fabf",
+  "limite_cpu": 2,
+  "gpu_adicionais": 0,
+  "prioridade": "BelowNormal",
+  "iniciado_em_utc": "2026-10-06T02:51:00.370026+00:00",
+  "jobs": [
+    {
+      "tarefa": "monthly_1",
+      "modelo": "DilatedRNN",
+      "comando": [
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "codigo_fonte.experimento_quantizacao_concorrentes",
+        "--tarefa",
+        "monthly_1",
+        "--modelo",
+        "DilatedRNN",
+        "--regime",
+        "historico_1998_2022",
+        "--fase",
+        "refit",
+        "--saida",
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+        "--protocolo",
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\protocolo_historico_1998_2022.json"
+      ],
+      "pasta": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\dilatedrnn",
+      "recurso": "cpu",
+      "cpu_verificado": true,
+      "evidencia_cpu": "dispositivo_cpu_no_contrato",
+      "etapa": "CONCLUIDO",
+      "intent_em_utc": "2026-10-06T02:51:04.910021+00:00",
+      "stdout": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\lote_cpu\\monthly_1_dilatedrnn.saida.log",
+      "stderr": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\lote_cpu\\monthly_1_dilatedrnn.erro.log",
+      "identidade": {
+        "pid": 32452,
+        "creation_time": "134357286649723756"
+      },
+      "iniciado_em_utc": "2026-10-06T02:51:05.559986+00:00",
+      "returncode": 0,
+      "concluido_em_utc": "2026-10-06T03:33:41.051644+00:00"
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Sazonal ingenuo",
+      "comando": [
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "codigo_fonte.experimento_sazonal_mensal_controle_auditado_v1",
+        "--tarefa",
+        "monthly_6",
+        "--modelo",
+        "Sazonal ingenuo",
+        "--regime",
+        "historico_1998_2022",
+        "--fase",
+        "refit",
+        "--saida",
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+        "--protocolo",
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\protocolo_historico_1998_2022.json"
+      ],
+      "pasta": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\sazonal_ingenuo",
+      "recurso": "cpu",
+      "cpu_verificado": true,
+      "evidencia_cpu": "referencia_estatistica_mensal_motor_auditado",
+      "etapa": "CONCLUIDO",
+      "intent_em_utc": "2026-10-06T02:51:11.523649+00:00",
+      "stdout": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\lote_cpu\\monthly_6_sazonal_ingenuo.saida.log",
+      "stderr": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\lote_cpu\\monthly_6_sazonal_ingenuo.erro.log",
+      "identidade": {
+        "pid": 13536,
+        "creation_time": "134357286716055499"
+      },
+      "iniciado_em_utc": "2026-10-06T02:51:11.863980+00:00",
+      "returncode": 0,
+      "concluido_em_utc": "2026-10-06T02:54:21.986520+00:00"
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Sazonal ingenuo",
+      "comando": [
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "codigo_fonte.experimento_sazonal_mensal_controle_auditado_v1",
+        "--tarefa",
+        "monthly_1",
+        "--modelo",
+        "Sazonal ingenuo",
+        "--regime",
+        "historico_1998_2022",
+        "--fase",
+        "refit",
+        "--saida",
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+        "--protocolo",
+        "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\historico\\protocolo_historico_1998_2022.json"
+      ],
+      "pasta": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\sazonal_ingenuo",
+      "recurso": "cpu",
+      "cpu_verificado": true,
+      "evidencia_cpu": "referencia_estatistica_mensal_motor_auditado",
+      "etapa": "CONCLUIDO",
+      "intent_em_utc": "2026-10-06T02:54:32.285596+00:00",
+      "stdout": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\lote_cpu\\monthly_1_sazonal_ingenuo.saida.log",
+      "stderr": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_local_20261005_2335\\lote_cpu\\monthly_1_sazonal_ingenuo.erro.log",
+      "identidade": {
+        "pid": 3820,
+        "creation_time": "134357288723481124"
+      },
+      "iniciado_em_utc": "2026-10-06T02:54:32.727511+00:00",
+      "returncode": 0,
+      "concluido_em_utc": "2026-10-06T02:56:20.664753+00:00"
+    }
+  ],
+  "etapa": "CONCLUIDO",
+  "logs_originais_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_sazonal_ingenuo.log": "aa739a8b2db67543cf10840ec95c8e522dd70bf4ec2f0632301d9ae1824ba2c5",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_dilatedrnn.log": "9fafe397969de616bc8c920b3ffc33a2629e3aaca18e09d7f176758f4b0e1c99",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_sazonal_ingenuo.log": "0cb0ec3130f055d2d3d25f02ca0bae8c9d0e97f5d6aac97f0790d8c36b88c9ac"
+  },
+  "antigos": {
+    "coordenador": {
+      "pid": 7872,
+      "creation_time": "134356437859141023"
+    },
+    "runner": {
+      "pid": 23160,
+      "creation_time": "134356437910898585"
+    }
+  },
+  "atualizado_em_utc": "2026-10-06T03:33:41.051960+00:00",
+  "erro": null,
+  "pendentes": [],
+  "concluido_em_utc": "2026-10-06T03:33:42.277955+00:00",
+  "fontes_revalidadas": 152,
+  "fontes_globais_preservadas": 88,
+  "artefatos_cache_preservados": 28,
+  "caches_originais_preservados": 7,
+  "logs_originais_preservados": true
+}

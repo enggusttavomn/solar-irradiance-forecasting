@@ -1,0 +1,83 @@
+{
+  "checkpoints": [
+    {
+      "alvos_substituidos_por_nan": true,
+      "aprovado": true,
+      "batch_size": 128,
+      "cache": "resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\lstm\\sem_quantizacao\\selecao\\seed11.npz",
+      "cache_sha256": "ca88dd003ea7980858c2115229d0275f6a1fc6b73edf8210f7a1a319d9a2228e",
+      "checkpoint": "resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\lstm\\sem_quantizacao\\modelos\\seed11_selecao.pt",
+      "checkpoint_sha256": "e421b78a701c785bbbb629d3521789c1985882246545a3dbd2da83db2fe2231d",
+      "dispositivo": "cuda",
+      "epocas": 18,
+      "max_diferenca_wm2": 0.0,
+      "seed": 11
+    },
+    {
+      "alvos_substituidos_por_nan": true,
+      "aprovado": true,
+      "batch_size": 128,
+      "cache": "resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\lstm\\sem_quantizacao\\selecao\\seed23.npz",
+      "cache_sha256": "c198931dcffde683104023a209111ab1904fb5fd7d47a38d0bb103d9b1f2f435",
+      "checkpoint": "resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\lstm\\sem_quantizacao\\modelos\\seed23_selecao.pt",
+      "checkpoint_sha256": "051e9a04ef51ee356c4a8f5901993595dee2535626d875c0de1014189539bc0c",
+      "dispositivo": "cuda",
+      "epocas": 29,
+      "max_diferenca_wm2": 0.0,
+      "seed": 23
+    },
+    {
+      "alvos_substituidos_por_nan": true,
+      "aprovado": true,
+      "batch_size": 128,
+      "cache": "resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\lstm\\sem_quantizacao\\selecao\\seed42.npz",
+      "cache_sha256": "090c53890f71a792718d4a22fa7d1ee30cc834e5ca2696347edfcbc2ff62a440",
+      "checkpoint": "resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\lstm\\sem_quantizacao\\modelos\\seed42_selecao.pt",
+      "checkpoint_sha256": "5dbe583e2b3edd8c05074bc0d9fc8b269e58a3fe0c9d43ba0396b0787657c5cf",
+      "dispositivo": "cuda",
+      "epocas": 30,
+      "max_diferenca_wm2": 0.0,
+      "seed": 42
+    },
+    {
+      "alvos_substituidos_por_nan": true,
+      "aprovado": true,
+      "batch_size": 128,
+      "cache": "resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\lstm\\sem_quantizacao\\selecao\\seed67.npz",
+      "cache_sha256": "d21ce52353e7192ce4183186e7106976138c1253240bbb737790fd8d2b3ed46f",
+      "checkpoint": "resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\lstm\\sem_quantizacao\\modelos\\seed67_selecao.pt",
+      "checkpoint_sha256": "3884926fc2f6bde19ccb0dbff7bfa4250ef6122cab51f016597dd71348f115b6",
+      "dispositivo": "cuda",
+      "epocas": 16,
+      "max_diferenca_wm2": 0.0,
+      "seed": 67
+    },
+    {
+      "alvos_substituidos_por_nan": true,
+      "aprovado": true,
+      "batch_size": 128,
+      "cache": "resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\lstm\\sem_quantizacao\\selecao\\seed89.npz",
+      "cache_sha256": "36a6c5aecb2c90a284b6464523a04b488e434ba42b0a8806a3b0d1b84116243b",
+      "checkpoint": "resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\lstm\\sem_quantizacao\\modelos\\seed89_selecao.pt",
+      "checkpoint_sha256": "e756d6cd0bb96c22ded9caad6dd93cd69d5ac47fd66c98031824f5f6027a887e",
+      "dispositivo": "cuda",
+      "epocas": 27,
+      "max_diferenca_wm2": 0.0,
+      "seed": 89
+    }
+  ],
+  "codigo_auditoria_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\modelos_baselines_adicionais.py": "f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\auditar_controle_gpu_parcial.py": "1418a2588d982a4085fd743516d7b56f60357730d7443a118f45d054fc7e5798"
+  },
+  "contrato_sha256": "5b6041e21770178e59c059387cb0aeeff950796ebe39d986b45f049289451999",
+  "fase": "selecao",
+  "modelo": "LSTM",
+  "nao_emite_aceite": true,
+  "normalizacao_e_inversao_independentes": true,
+  "ok": true,
+  "tarefa": "daily_30",
+  "tolerancia_absoluta_wm2": 1e-06
+}

@@ -1,0 +1,120 @@
+{
+  "observado_utc": "2026-10-04T22:44:00.695065+00:00",
+  "observador": "auditoria_retomada_outubro3",
+  "somente_leitura": true,
+  "estados": [
+    {
+      "path": "relatorios\\quantizacao_todos_modelos_20260929\\coordenacao_historica\\status.json",
+      "sha256": "ddd1e8e46af0db56613ce1299dcdea220d47b0aafe929dcd45ba6edc8af3bb69",
+      "etapa": "fila_historico_1998_2022",
+      "heartbeat": "2026-10-04T22:43:56.225352+00:00",
+      "identidade": {
+        "pid": 27596,
+        "creation_time": "134356267950829772"
+      },
+      "falhas": null,
+      "concluidos_registros": 0,
+      "jobs": null
+    },
+    {
+      "path": "relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\runner.json",
+      "sha256": "2756a82d05e78b9e9b1b4e57c78204d74e68504d4f99cb9beee0ced77309b0fe",
+      "etapa": "selecao",
+      "heartbeat": "2026-10-04T22:43:57.884965+00:00",
+      "identidade": {
+        "pid": 26300,
+        "creation_time": "134356268042391634"
+      },
+      "falhas": [],
+      "concluidos_registros": 38,
+      "jobs": [
+        {
+          "tarefa": "monthly_1",
+          "modelo": "XGBoost",
+          "recurso": "cpu",
+          "pid": 23260,
+          "creation_time": "134356274227559387",
+          "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\selecao_monthly_1_xgboost.log",
+          "inicio": "2026-10-04T22:43:42.834202+00:00"
+        }
+      ]
+    }
+  ],
+  "prioridades_win32": [
+    {
+      "registrado": {
+        "pid": 27596,
+        "creation_time": "134356267950829772"
+      },
+      "creation_time_handle": "134356267950829772",
+      "mesma_instancia_handle": true,
+      "classe": 32,
+      "nome_classe": "Normal"
+    },
+    {
+      "registrado": {
+        "pid": 18396,
+        "creation_time": "134356268032233328"
+      },
+      "creation_time_handle": "134356268032233328",
+      "mesma_instancia_handle": true,
+      "classe": 32,
+      "nome_classe": "Normal"
+    },
+    {
+      "registrado": {
+        "pid": 26300,
+        "creation_time": "134356268042391634"
+      },
+      "creation_time_handle": "134356268042391634",
+      "mesma_instancia_handle": true,
+      "classe": 32,
+      "nome_classe": "Normal"
+    },
+    {
+      "registrado": {
+        "pid": 23260,
+        "creation_time": "134356274227559387"
+      },
+      "creation_time_handle": "134356274227559387",
+      "mesma_instancia_handle": true,
+      "classe": 32,
+      "nome_classe": "Normal"
+    },
+    {
+      "registrado": {
+        "pid": 6740,
+        "creation_time": "134356274233317535"
+      },
+      "creation_time_handle": "134356274233317535",
+      "mesma_instancia_handle": true,
+      "classe": 32,
+      "nome_classe": "Normal"
+    },
+    {
+      "registrado": {
+        "pid": 19464,
+        "creation_time": "134356274228363474"
+      },
+      "creation_time_handle": "134356274228363474",
+      "mesma_instancia_handle": true,
+      "classe": 32,
+      "nome_classe": "Normal"
+    },
+    {
+      "registrado": {
+        "pid": 26268,
+        "creation_time": "134356268033237357"
+      },
+      "creation_time_handle": "134356268033237357",
+      "mesma_instancia_handle": true,
+      "classe": 32,
+      "nome_classe": "Normal"
+    }
+  ],
+  "fontes_preservadas": {
+    "codigo_fonte/experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "codigo_fonte/experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "scripts/rodar_quantizacao_todos_modelos.py": "c0394d4aba1d1fc0e8dbe312faa1e6dc7cec4dc82c2d2599fcf2fb6f9fb1a251"
+  }
+}

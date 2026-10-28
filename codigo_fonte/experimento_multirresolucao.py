@@ -2611,7 +2611,7 @@ def executar_avaliacao_multirresolucao(
         if pasta_saida is not None
         else PASTA_RESULTADOS / "avaliacao_multirresolucao"
     )
-    wrapper = Path(__file__).resolve().parents[1] / "executar_avaliacao_multirresolucao.py"
+    wrapper = Path(__file__).resolve().parents[1] / "executaveis/executar_avaliacao_multirresolucao.py"
     extras = (wrapper,) if wrapper.is_file() else ()
     precisa_diario = any(nome in TAREFAS_CANONICAS for nome in selecionadas)
     if precisa_diario:

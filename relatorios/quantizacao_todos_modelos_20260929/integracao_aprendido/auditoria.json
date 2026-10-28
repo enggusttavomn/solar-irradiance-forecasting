@@ -1,0 +1,76 @@
+{
+  "ok": true,
+  "modo": "smoke",
+  "regime": "atual",
+  "escopo_completo": false,
+  "replay_novo_executado": true,
+  "publicavel": false,
+  "concluido_em_utc": "2026-09-30T03:59:20.974909+00:00",
+  "resultados": [
+    {
+      "tarefa": "monthly_1",
+      "modelo": "GRU",
+      "reutilizado_auditado_anteriormente": false,
+      "vencedor_validacao": "q64",
+      "replays": [
+        {
+          "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_integracao_aprendido\\atual\\monthly_1\\gru\\sem_quantizacao\\modelos\\seed11_selecao.pt",
+          "sha256": "bda317b4fed7570ed4b820e842232b1c183c8e74ce860236d757ab8267f3e1e7",
+          "diferenca_maxima": 2.842170943040401e-14,
+          "alvos_substituidos_por_nan": true
+        },
+        {
+          "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_integracao_aprendido\\atual\\monthly_1\\gru\\q64\\modelos\\seed11_selecao.pt",
+          "sha256": "0210ea21360d2b873bbdfe96baa75188097a9fab550074a5ce04fb9ccc72c98e",
+          "diferenca_maxima": 2.842170943040401e-14,
+          "alvos_substituidos_por_nan": true
+        },
+        {
+          "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_integracao_aprendido\\atual\\monthly_1\\gru\\q128\\modelos\\seed11_selecao.pt",
+          "sha256": "e0f48cf9a24c7a9e7b0859ff2611b7b551af12d7cb579349d2e33ec67e059f86",
+          "diferenca_maxima": 2.842170943040401e-14,
+          "alvos_substituidos_por_nan": true
+        },
+        {
+          "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_integracao_aprendido\\atual\\monthly_1\\gru\\q256\\modelos\\seed11_selecao.pt",
+          "sha256": "e0e8fb5d6376fac5f7e6f00475d45059d18ac89ff93b79a9f8aa7e96111f9961",
+          "diferenca_maxima": 2.842170943040401e-14,
+          "alvos_substituidos_por_nan": true
+        },
+        {
+          "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_integracao_aprendido\\atual\\monthly_1\\gru\\sem_quantizacao\\modelos\\seed11_refit.pt",
+          "sha256": "e7162250348a8a378d7e55885920dbb373ceea7a3d7ed6094736b94c4cef6f68",
+          "diferenca_maxima": 2.842170943040401e-14,
+          "alvos_substituidos_por_nan": true
+        },
+        {
+          "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_integracao_aprendido\\atual\\monthly_1\\gru\\q64\\modelos\\seed11_refit.pt",
+          "sha256": "3d8c451af00de1cea9363c54c2f3f95c3a9beb0791d5d9820a0bd8390f741e44",
+          "diferenca_maxima": 2.842170943040401e-14,
+          "alvos_substituidos_por_nan": true
+        },
+        {
+          "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_integracao_aprendido\\atual\\monthly_1\\gru\\q128\\modelos\\seed11_refit.pt",
+          "sha256": "41b4131da9bf84215d883f9800cf4b0f9e53e784233a352ca94a54a5e2a0bf1d",
+          "diferenca_maxima": 0.0,
+          "alvos_substituidos_por_nan": true
+        },
+        {
+          "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\quantizacao_todos_modelos_20260929\\smoke_integracao_aprendido\\atual\\monthly_1\\gru\\q256\\modelos\\seed11_refit.pt",
+          "sha256": "a2a83f1ce5a9da25ab758590444a2d1aca70db0a489fc5f9e7cb14ec9fbb9af9",
+          "diferenca_maxima": 2.842170943040401e-14,
+          "alvos_substituidos_por_nan": true
+        }
+      ],
+      "selecao_sha256": "07c48828c1b55904211537cc42a656b6474eba49b4514e7e5c8b6d4143e726e3",
+      "ok": true
+    }
+  ],
+  "metricas": {
+    "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\integracao_aprendido\\metricas_auditadas.csv",
+    "sha256": "6becf4f43356e209bb0bdd3b0d36a78a8e3fffd00335c020a695e168ca8f2529"
+  },
+  "pares_verificados": 1,
+  "metricas_macro_linhas": 8,
+  "codigo_auditor_sha256": "81c91bca8874ea755d1a5315eb15b004f8ab208d93accb29264ec32c2b1a6a55"
+}

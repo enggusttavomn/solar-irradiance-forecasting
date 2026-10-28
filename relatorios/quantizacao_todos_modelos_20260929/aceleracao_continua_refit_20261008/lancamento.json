@@ -1,0 +1,75 @@
+{
+  "utc": "2026-10-08T07:34:54.124589+00:00",
+  "fonte_sha256": "43f8379f13d7ba2323c0babf5c07cc83cde37fbab1f7e658e786b7427df01165",
+  "testes_sha256": "041b6735b4d899a23a53b415b420826c6f205e4b8d176ecc0182ef6c2ded5193",
+  "testes": {
+    "passaram": 39,
+    "segundos": 27.43,
+    "exit_code": 0
+  },
+  "revisao_estatica": "aprovada",
+  "coordenador": {
+    "pid": 29512,
+    "creation_time": "134358692355448701"
+  },
+  "guard_adotado": {
+    "pid": 33268,
+    "creation_time": "134359178687249314"
+  },
+  "launcher_guard": {
+    "pid": 1628,
+    "creation_time": "134359178669627537"
+  },
+  "workers_cpu": 2,
+  "workers_gpu": 2,
+  "reinicios_treinamento": 0,
+  "fontes_cientificas_alteradas": false,
+  "etapa": "LAUNCH_CONFIRMED",
+  "tentativas_popen": 1,
+  "comando": [
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "scripts.manter_aceleracao_na_tomada_v3",
+    "--source-sha256",
+    "43f8379f13d7ba2323c0babf5c07cc83cde37fbab1f7e658e786b7427df01165",
+    "--child-source-sha256",
+    "02b597a9a13e5f15a3f62c0b46b8d0da4766fa8778331fcada02e6ee2b706446",
+    "--recibo",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261007_auditoria\\manifesto_retomada.json",
+    "--recibo-sha256",
+    "54433ab91daf50faed29f985046e8b4f4dad2af27035fa4b738d368e33e12810",
+    "--root-recibo",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_reinicio_20261007_1314\\manifesto_retomada.json",
+    "--root-recibo-sha256",
+    "9bd045a68da175b1dacddb1ddd806e3f739d52203f02ab477ad4802dd68b5aea",
+    "--pid",
+    "29512",
+    "--creation-time",
+    "134358692355448701",
+    "--saida",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_continua_refit_20261008\\supervisor",
+    "--adotar",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_refit_curto_20261008\\controle",
+    "--adotar-pid",
+    "33268",
+    "--adotar-creation-time",
+    "134359178687249314",
+    "--adotar-launcher-pid",
+    "1628",
+    "--adotar-launcher-creation-time",
+    "134359178669627537"
+  ],
+  "launcher": {
+    "pid": 18736,
+    "creation_time": "134359184942736967"
+  },
+  "atualizado_em_utc": "2026-10-08T07:35:00.510224+00:00",
+  "observador": {
+    "pid": 30140,
+    "creation_time": "134359184967397237"
+  },
+  "estado_supervisor": "ADOTADO"
+}

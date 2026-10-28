@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "tarefa": "monthly_6",
+  "regime": "historico_curto_pareado",
+  "fase": "selecao",
+  "modelo_contexto": "XGBoost",
+  "treinamento_iniciado": false,
+  "rede_criada": false,
+  "quantidade_ctx_entradas": 10,
+  "grupo_coleta_efetivo": "diario",
+  "ctx_entradas_exatamente_esperadas": true,
+  "contrato_entradas_exatamente_ctx": true,
+  "ctx_entradas": [
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\bmw_san_luis_potosi.csv",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\byd_camacari.csv",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\ford_rouge_electric_vehicle_center.csv",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\gm_factory_zero.csv",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\hyundai_metaplant_georgia.csv",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\lucid_amp_1_casa_grande.csv",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\rivian_normal.csv",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\tesla_fremont_factory.csv",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\tesla_gigafactory_nevada.csv",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\tesla_gigafactory_texas.csv"
+  ],
+  "contrato_entradas": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\bmw_san_luis_potosi.csv": "701f6ba2ed0aead9cb7d81225d0433323490d48767cc43cc4b81d0dddbd19a32",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\byd_camacari.csv": "a499c8b6d30017e993aab0ed4dadba65e3319ce666a3cf0ee39ef475cfd761b6",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\ford_rouge_electric_vehicle_center.csv": "ca2b7a51e04b3908d3942951b05633a090e606ac608b3124687c0993b1f825ef",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\gm_factory_zero.csv": "a55cccbc74cb558757dec5c4884fb22dca1c9740cf10300856a9158ad6160e32",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\hyundai_metaplant_georgia.csv": "9209cd9cdd1563038879104ea5a8aefab6dc50724921c1990c6ecaa66c23c826",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\lucid_amp_1_casa_grande.csv": "f7893a782843ad9d147deacb5d0234dd62a281275cc78a4436c45e6804a392d1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\rivian_normal.csv": "37de662f8648f8a3fe7f90560028d2413a2fc2a13933e982d3cb8c05c54d8c7e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\tesla_fremont_factory.csv": "8ad410052877fd0224461a375f7b9b838667d6e4f0a26dcffde7325e419de922",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\tesla_gigafactory_nevada.csv": "67d0fcb754e2c45efcd7ed076ab180ddcef46c7f6541c8a5372cbf9c204f1c9b",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_1998_2022\\tesla_gigafactory_texas.csv": "a39e25e787e70bb6bb403dd4ed1085cd832e6cf6cb6cdd8b6417316a4b147416"
+  },
+  "protocolo_sha256": "3fa36401531985272142165c7ae1837197c55dfc8a7c0fc9d573a0e1e8f6e09f",
+  "contrato_coleta_sha256": "ee39d5fdf66ab356371eb415b1b15d84e2979c499e6654c9142f6a93ebbcfac0",
+  "motor_sha256": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+  "janelas_seq_len": 12,
+  "observacao": "Mensais agregam os dez CSVs diarios em memoria; horario registra 25 CSVs anuais mais contrato, manifesto, auditoria e carregador."
+}

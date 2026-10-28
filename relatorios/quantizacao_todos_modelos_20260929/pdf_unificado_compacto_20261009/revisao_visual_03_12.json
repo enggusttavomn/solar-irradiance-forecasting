@@ -1,0 +1,42 @@
+{
+  "aprovado": true,
+  "pdf_sha256": "d961c231cddb3ba14b56b3dcb19789f060186492131a66fa4d25a44873365669",
+  "pdf": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\pdfs\\unificado_compacto_20261009\\rascunho_v1.pdf",
+  "paginas_verificadas": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "verificado_em_utc": "2026-10-09T10:51:26.480775+00:00",
+  "revisor": "compact_visual_review",
+  "escopo": "Revisao visual independente de dez paginas, sem validar novamente o conteudo numerico cientifico.",
+  "renderizacao": {
+    "ferramenta": "PyMuPDF",
+    "dpi_paginas": 144,
+    "resolucao_px": [
+      1684,
+      1191
+    ],
+    "imagens": "tmp/pdfs/unificado_compacto_20261009/paginas_visual_03_12",
+    "dpi_recortes_confirmatorios": 288
+  },
+  "achados": [
+    "As paginas 3 a 12 foram todas inspecionadas em imagens completas, em resolucao original.",
+    "Os 80 paineis apresentam 11 modelos, titulos com caso, nivel e horizonte, seis metricas e identificacao das escolhas da validacao por asterisco e negrito.",
+    "Fonte de 7,7 pt e linhas de 9,6 pt geram tabelas compactas e legiveis; leitura digital pode ser ampliada sem perda, pois o texto e vetorial.",
+    "Cabecalhos, alternancia de linhas, unidades, notas e numeros de pagina aparecem completos, sem cortes reais, colisoes ou sobreposicoes.",
+    "Na visualizacao inicial de algumas paginas completas, aparentes concatenacoes ou cortes foram investigados. Bboxes do PDF e recortes ampliados a 288 dpi confirmaram que eram artefatos de percepcao/exibicao, e nao defeitos do arquivo.",
+    "A geometria de 5.280 separacoes entre grupos de colunas em 880 linhas foi conferida; o menor espaco horizontal foi de 12,889 pt, sem sobreposicao.",
+    "Exemplo na pagina 4: MAE 47,9044 termina em x143,99 pt; MSE 10 918,91 inicia em x172,74 pt, com intervalo de 28,75 pt.",
+    "Recortes confirmatorios crop_005_top_left_288dpi.png e crop_008_top_right_288dpi.png mostram nomes, algarismos, sinal dos deltas e cabecalhos separados corretamente.",
+    "Nenhum PDF original, rascunho ou gerador foi alterado por esta revisao."
+  ],
+  "defeitos_pendentes": []
+}

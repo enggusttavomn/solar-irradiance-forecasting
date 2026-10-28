@@ -81,7 +81,7 @@ def test_execucao_parcial_e_smoke_sao_rejeitadas(tmp_path) -> None:
 def test_figuras_canonicas_e_exportacao_png(tmp_path) -> None:
     execucao = tmp_path / "completa"
     _criar_execucao_minima(execucao)
-    exportacao = tmp_path / "overlief" / "figuras"
+    exportacao = tmp_path / "artigos" / "figuras"
 
     artefatos = gerar(execucao, exportacao)
 

@@ -1,0 +1,32 @@
+{
+  "corte_ajuste_exclusivo": "2023-01-01 00:00:00",
+  "modelo": "Persistencia",
+  "niveis": 128,
+  "regra": {
+    "alvos_metricas": "continuos_observados_sem_quantizacao",
+    "arima_checkpoint": "especificacao_parametros_covariancia_evidencia_fit_historico_hash_sem_estados_longos",
+    "arima_inferencia": "apply_refitFalse_na_mesma_janela_limitada",
+    "arima_numerico": [
+      [
+        "lbfgs",
+        200
+      ],
+      [
+        "powell",
+        2000
+      ]
+    ],
+    "arima_ordens": "controle_seleciona_validacao_MSE_normalizado_demais_niveis_fixam",
+    "arima_quantizacao": "serie_endogena_de_ajuste_e_contextos_filtragem",
+    "climatologia_diaria": "media_mes_dia_antes_corte",
+    "climatologia_horaria": "media_mes_dia_hora_local_antes_corte",
+    "climatologia_mensal": "media_mes_antes_corte",
+    "climatologia_quantizacao": "quantiza_historico_antes_media_saida_continua",
+    "controle": "identidade_minmax_inversa_valores_originais_sem_roundtrip",
+    "persistencia_diaria_mensal": "repete_ultima_observacao",
+    "persistencia_horaria": "repete_ultimas_24_horas",
+    "quantizacao": "minmax_treino_seguido_clip_0_1_rint_Nmenos1_so_historico",
+    "sazonal": "mesma_data_hora_ano_anterior_29fev_mapeado28fev_causal"
+  },
+  "sem_epocas": true
+}

@@ -1,0 +1,391 @@
+{
+  "ok": true,
+  "regime": "historico_curto_pareado",
+  "tarefa": "hourly_72_extension",
+  "fase": "selecao",
+  "grupo": "TimesNet",
+  "modelos": [
+    "TimesNet"
+  ],
+  "seq_len": 336,
+  "seq_len_otimizado_esperado": 336,
+  "pred_len": 72,
+  "motor_sha256": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+  "protocolo_sha256": "cee240dc3d2e490978a5c50f42d9a4da8fc0114dcb1940985e8b37fa9069e3bf",
+  "treinamento_iniciado": false,
+  "escalas_recalculadas_train_only": true,
+  "contextos_anteriores_ao_inicio": false,
+  "series": [
+    {
+      "localidade": "BMW San Luis Potosi",
+      "inicio_real": "2014-04-01 00:00:00",
+      "fim_real": "2019-03-31 23:00:00",
+      "n_observacoes_escala": 35064,
+      "corte_exclusivo": "2018-04-01 00:00:00"
+    },
+    {
+      "localidade": "BYD Camacari",
+      "inicio_real": "2014-04-01 00:00:00",
+      "fim_real": "2019-03-31 23:00:00",
+      "n_observacoes_escala": 35064,
+      "corte_exclusivo": "2018-04-01 00:00:00"
+    },
+    {
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "inicio_real": "2014-04-01 00:00:00",
+      "fim_real": "2019-03-31 23:00:00",
+      "n_observacoes_escala": 35064,
+      "corte_exclusivo": "2018-04-01 00:00:00"
+    },
+    {
+      "localidade": "GM Factory Zero",
+      "inicio_real": "2014-04-01 00:00:00",
+      "fim_real": "2019-03-31 23:00:00",
+      "n_observacoes_escala": 35064,
+      "corte_exclusivo": "2018-04-01 00:00:00"
+    },
+    {
+      "localidade": "Hyundai Metaplant Georgia",
+      "inicio_real": "2014-04-01 00:00:00",
+      "fim_real": "2019-03-31 23:00:00",
+      "n_observacoes_escala": 35064,
+      "corte_exclusivo": "2018-04-01 00:00:00"
+    },
+    {
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "inicio_real": "2014-04-01 00:00:00",
+      "fim_real": "2019-03-31 23:00:00",
+      "n_observacoes_escala": 35064,
+      "corte_exclusivo": "2018-04-01 00:00:00"
+    },
+    {
+      "localidade": "Rivian Normal",
+      "inicio_real": "2014-04-01 00:00:00",
+      "fim_real": "2019-03-31 23:00:00",
+      "n_observacoes_escala": 35064,
+      "corte_exclusivo": "2018-04-01 00:00:00"
+    },
+    {
+      "localidade": "Tesla Fremont Factory",
+      "inicio_real": "2014-04-01 00:00:00",
+      "fim_real": "2019-03-31 23:00:00",
+      "n_observacoes_escala": 35064,
+      "corte_exclusivo": "2018-04-01 00:00:00"
+    },
+    {
+      "localidade": "Tesla Gigafactory Nevada",
+      "inicio_real": "2014-04-01 00:00:00",
+      "fim_real": "2019-03-31 23:00:00",
+      "n_observacoes_escala": 35064,
+      "corte_exclusivo": "2018-04-01 00:00:00"
+    },
+    {
+      "localidade": "Tesla Gigafactory Texas",
+      "inicio_real": "2014-04-01 00:00:00",
+      "fim_real": "2019-03-31 23:00:00",
+      "n_observacoes_escala": 35064,
+      "corte_exclusivo": "2018-04-01 00:00:00"
+    }
+  ],
+  "particoes": {
+    "ajuste": {
+      "n": 14450,
+      "origens_por_localidade": {
+        "BMW San Luis Potosi": 1445,
+        "BYD Camacari": 1445,
+        "Ford Rouge Electric Vehicle Center": 1445,
+        "GM Factory Zero": 1445,
+        "Hyundai Metaplant Georgia": 1445,
+        "Lucid AMP 1 Casa Grande": 1445,
+        "Rivian Normal": 1445,
+        "Tesla Fremont Factory": 1445,
+        "Tesla Gigafactory Nevada": 1445,
+        "Tesla Gigafactory Texas": 1445
+      },
+      "origens_declaradas_por_localidade": 1445,
+      "chaves_sha256": "fc6690ef30cdb87e7912f92e174c85a322e00d340bd2b7bb15a62693b6b7131b",
+      "x_bruto_sha256": "bace72068e77c2482602d8f44ebac15ef0a152a29a18b9fa251e7b41d3858c09",
+      "y_bruto_sha256": "e292bfebc1976423cc4d65dadd1b90d94cab9d680ce6ab6af888dc1d6e0ece44",
+      "cobertura": [
+        {
+          "localidade": "BMW San Luis Potosi",
+          "origem_inicial": "2014-04-15 00:00:00",
+          "origem_final": "2018-03-29 00:00:00",
+          "primeiro_contexto": "2014-04-01 00:00:00",
+          "ultimo_alvo": "2018-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "BYD Camacari",
+          "origem_inicial": "2014-04-15 00:00:00",
+          "origem_final": "2018-03-29 00:00:00",
+          "primeiro_contexto": "2014-04-01 00:00:00",
+          "ultimo_alvo": "2018-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "Ford Rouge Electric Vehicle Center",
+          "origem_inicial": "2014-04-15 00:00:00",
+          "origem_final": "2018-03-29 00:00:00",
+          "primeiro_contexto": "2014-04-01 00:00:00",
+          "ultimo_alvo": "2018-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "GM Factory Zero",
+          "origem_inicial": "2014-04-15 00:00:00",
+          "origem_final": "2018-03-29 00:00:00",
+          "primeiro_contexto": "2014-04-01 00:00:00",
+          "ultimo_alvo": "2018-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "Hyundai Metaplant Georgia",
+          "origem_inicial": "2014-04-15 00:00:00",
+          "origem_final": "2018-03-29 00:00:00",
+          "primeiro_contexto": "2014-04-01 00:00:00",
+          "ultimo_alvo": "2018-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "Lucid AMP 1 Casa Grande",
+          "origem_inicial": "2014-04-15 00:00:00",
+          "origem_final": "2018-03-29 00:00:00",
+          "primeiro_contexto": "2014-04-01 00:00:00",
+          "ultimo_alvo": "2018-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "Rivian Normal",
+          "origem_inicial": "2014-04-15 00:00:00",
+          "origem_final": "2018-03-29 00:00:00",
+          "primeiro_contexto": "2014-04-01 00:00:00",
+          "ultimo_alvo": "2018-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "Tesla Fremont Factory",
+          "origem_inicial": "2014-04-15 00:00:00",
+          "origem_final": "2018-03-29 00:00:00",
+          "primeiro_contexto": "2014-04-01 00:00:00",
+          "ultimo_alvo": "2018-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "Tesla Gigafactory Nevada",
+          "origem_inicial": "2014-04-15 00:00:00",
+          "origem_final": "2018-03-29 00:00:00",
+          "primeiro_contexto": "2014-04-01 00:00:00",
+          "ultimo_alvo": "2018-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "Tesla Gigafactory Texas",
+          "origem_inicial": "2014-04-15 00:00:00",
+          "origem_final": "2018-03-29 00:00:00",
+          "primeiro_contexto": "2014-04-01 00:00:00",
+          "ultimo_alvo": "2018-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        }
+      ],
+      "horizontes": [
+        24,
+        48,
+        72
+      ],
+      "alvos_e_contextos_reconstruidos_da_fonte": true
+    },
+    "validacao": {
+      "n": 3630,
+      "origens_por_localidade": {
+        "BMW San Luis Potosi": 363,
+        "BYD Camacari": 363,
+        "Ford Rouge Electric Vehicle Center": 363,
+        "GM Factory Zero": 363,
+        "Hyundai Metaplant Georgia": 363,
+        "Lucid AMP 1 Casa Grande": 363,
+        "Rivian Normal": 363,
+        "Tesla Fremont Factory": 363,
+        "Tesla Gigafactory Nevada": 363,
+        "Tesla Gigafactory Texas": 363
+      },
+      "origens_declaradas_por_localidade": 363,
+      "chaves_sha256": "3b17316b0621750aa00ecf541ab38989593a63eeb281a318337c40820c167b04",
+      "x_bruto_sha256": "964a04ff557ca294b7518d1b580b9858ff271be3fbe6080880d0a9c6710396f9",
+      "y_bruto_sha256": "9656e65d44977602fbb24aea6e21d65f188bf0c2e7dfc11844eae0fcd3aaac4e",
+      "cobertura": [
+        {
+          "localidade": "BMW San Luis Potosi",
+          "origem_inicial": "2018-04-01 00:00:00",
+          "origem_final": "2019-03-29 00:00:00",
+          "primeiro_contexto": "2018-03-18 00:00:00",
+          "ultimo_alvo": "2019-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "BYD Camacari",
+          "origem_inicial": "2018-04-01 00:00:00",
+          "origem_final": "2019-03-29 00:00:00",
+          "primeiro_contexto": "2018-03-18 00:00:00",
+          "ultimo_alvo": "2019-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "Ford Rouge Electric Vehicle Center",
+          "origem_inicial": "2018-04-01 00:00:00",
+          "origem_final": "2019-03-29 00:00:00",
+          "primeiro_contexto": "2018-03-18 00:00:00",
+          "ultimo_alvo": "2019-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "GM Factory Zero",
+          "origem_inicial": "2018-04-01 00:00:00",
+          "origem_final": "2019-03-29 00:00:00",
+          "primeiro_contexto": "2018-03-18 00:00:00",
+          "ultimo_alvo": "2019-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "Hyundai Metaplant Georgia",
+          "origem_inicial": "2018-04-01 00:00:00",
+          "origem_final": "2019-03-29 00:00:00",
+          "primeiro_contexto": "2018-03-18 00:00:00",
+          "ultimo_alvo": "2019-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "Lucid AMP 1 Casa Grande",
+          "origem_inicial": "2018-04-01 00:00:00",
+          "origem_final": "2019-03-29 00:00:00",
+          "primeiro_contexto": "2018-03-18 00:00:00",
+          "ultimo_alvo": "2019-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "Rivian Normal",
+          "origem_inicial": "2018-04-01 00:00:00",
+          "origem_final": "2019-03-29 00:00:00",
+          "primeiro_contexto": "2018-03-18 00:00:00",
+          "ultimo_alvo": "2019-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "Tesla Fremont Factory",
+          "origem_inicial": "2018-04-01 00:00:00",
+          "origem_final": "2019-03-29 00:00:00",
+          "primeiro_contexto": "2018-03-18 00:00:00",
+          "ultimo_alvo": "2019-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "Tesla Gigafactory Nevada",
+          "origem_inicial": "2018-04-01 00:00:00",
+          "origem_final": "2019-03-29 00:00:00",
+          "primeiro_contexto": "2018-03-18 00:00:00",
+          "ultimo_alvo": "2019-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        },
+        {
+          "localidade": "Tesla Gigafactory Texas",
+          "origem_inicial": "2018-04-01 00:00:00",
+          "origem_final": "2019-03-29 00:00:00",
+          "primeiro_contexto": "2018-03-18 00:00:00",
+          "ultimo_alvo": "2019-03-31 23:00:00",
+          "ultima_observacao_disponivel": "2019-03-31 23:00:00"
+        }
+      ],
+      "horizontes": [
+        24,
+        48,
+        72
+      ],
+      "alvos_e_contextos_reconstruidos_da_fonte": true
+    }
+  },
+  "parametros_modelos": {
+    "TimesNet": {
+      "sementes": [
+        42
+      ],
+      "dispositivo": "cuda",
+      "perda": "mae",
+      "batch_size": 64,
+      "max_epocas": 30
+    }
+  },
+  "erros": [],
+  "avisos": [
+    {
+      "tipo": "metadado_inicio_escala_nominal",
+      "localidade": "BMW San Luis Potosi",
+      "declarado": "2014-01-01T00:00:00",
+      "primeira_observacao_real": "2014-04-01 00:00:00",
+      "escala_recalculada_somente_com_dados_do_perfil": true
+    },
+    {
+      "tipo": "metadado_inicio_escala_nominal",
+      "localidade": "BYD Camacari",
+      "declarado": "2014-01-01T00:00:00",
+      "primeira_observacao_real": "2014-04-01 00:00:00",
+      "escala_recalculada_somente_com_dados_do_perfil": true
+    },
+    {
+      "tipo": "metadado_inicio_escala_nominal",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "declarado": "2014-01-01T00:00:00",
+      "primeira_observacao_real": "2014-04-01 00:00:00",
+      "escala_recalculada_somente_com_dados_do_perfil": true
+    },
+    {
+      "tipo": "metadado_inicio_escala_nominal",
+      "localidade": "GM Factory Zero",
+      "declarado": "2014-01-01T00:00:00",
+      "primeira_observacao_real": "2014-04-01 00:00:00",
+      "escala_recalculada_somente_com_dados_do_perfil": true
+    },
+    {
+      "tipo": "metadado_inicio_escala_nominal",
+      "localidade": "Hyundai Metaplant Georgia",
+      "declarado": "2014-01-01T00:00:00",
+      "primeira_observacao_real": "2014-04-01 00:00:00",
+      "escala_recalculada_somente_com_dados_do_perfil": true
+    },
+    {
+      "tipo": "metadado_inicio_escala_nominal",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "declarado": "2014-01-01T00:00:00",
+      "primeira_observacao_real": "2014-04-01 00:00:00",
+      "escala_recalculada_somente_com_dados_do_perfil": true
+    },
+    {
+      "tipo": "metadado_inicio_escala_nominal",
+      "localidade": "Rivian Normal",
+      "declarado": "2014-01-01T00:00:00",
+      "primeira_observacao_real": "2014-04-01 00:00:00",
+      "escala_recalculada_somente_com_dados_do_perfil": true
+    },
+    {
+      "tipo": "metadado_inicio_escala_nominal",
+      "localidade": "Tesla Fremont Factory",
+      "declarado": "2014-01-01T00:00:00",
+      "primeira_observacao_real": "2014-04-01 00:00:00",
+      "escala_recalculada_somente_com_dados_do_perfil": true
+    },
+    {
+      "tipo": "metadado_inicio_escala_nominal",
+      "localidade": "Tesla Gigafactory Nevada",
+      "declarado": "2014-01-01T00:00:00",
+      "primeira_observacao_real": "2014-04-01 00:00:00",
+      "escala_recalculada_somente_com_dados_do_perfil": true
+    },
+    {
+      "tipo": "metadado_inicio_escala_nominal",
+      "localidade": "Tesla Gigafactory Texas",
+      "declarado": "2014-01-01T00:00:00",
+      "primeira_observacao_real": "2014-04-01 00:00:00",
+      "escala_recalculada_somente_com_dados_do_perfil": true
+    }
+  ],
+  "segundos": 22.706544099986786
+}

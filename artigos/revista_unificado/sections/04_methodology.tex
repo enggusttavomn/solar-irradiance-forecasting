@@ -1,0 +1,116 @@
+\subsection{Methodology}
+\label{sec:methodology}
+
+The method compares TimesNet \cite{wu2023} and DilatedRNN \cite{chang2017}
+on identical windows and forecast origins within each temporal task.
+Both models perform continuous GHI regression; the quantized forecasts and
+errors from the preliminary DilatedRNN study are excluded.
+Figure~\ref{fig:pipeline} summarizes the three stages.
+Algorithm~\ref{alg:matched-training} specifies temporal cutoffs, epoch
+selection, refitting, and the hourly extension.
+Algorithms~\ref{alg:timesnet-direct} and \ref{alg:dilated-direct} describe
+the implemented forward passes. The Supplementary Material provides
+additional data checks and evaluation procedures.
+
+\input{figures/pipeline}
+
+\subsubsection{Block A: data preparation and temporal windows}
+
+Block A checks the source series, constructs the required temporal
+aggregates, assigns a stable site identifier, and creates chronological
+partitions. It then fits site-wise min--max scales using observations before
+2023 for model selection and before 2024 for the final refit.
+The input is the historical GHI window and site identifier defined in
+Eq.~\eqref{eq:matched_input}. Keeping this information set constant gives
+both architectures access to the same predictors.
+
+\subsubsection{Block B: matched development of TimesNet and DilatedRNN}
+
+The focal comparison evaluates TimesNet \cite{wu2023} and a direct
+DilatedRNN \cite{chang2017}. Both architectures receive the same scaled GHI
+sequence and site identifier, encoded through a learned embedding. TimesNet
+selects its Fourier periods separately for every input window; other windows
+in an inference batch cannot alter its periods or forecast. Each
+architecture--seed instance is fitted globally across sites, sharing
+parameters while retaining site identity \cite{montero2021}. Both models
+produce the complete target vector in one forward pass, without returning
+predicted GHI recursively as input.
+
+For each architecture--seed pair, the 2023 validation windows select only the
+number of training epochs. The validation checkpoint is then discarded. The
+final instance is trained from a fresh initialization under the same seed on
+all declared pre-test windows for exactly the selected number of epochs.
+The hourly extension reuses the existing official TimesNet forecasts and adds
+DilatedRNN with seed 42. The forecasts are aligned by site, origin,
+target timestamp, and lead; the hourly reference-model additions follow the
+same alignment.
+
+Algorithm~\ref{alg:matched-training} describes this two-architecture protocol.
+Section~\ref{sec:additional_baselines} describes the reference models, and
+the Supplementary Material gives the resolution-specific definitions of
+persistence, annual seasonal na\"ive, and calendar climatology.
+
+\input{sections/04_algorithm_protocol}
+
+Evaluation follows a rolling-origin protocol. At each eligible origin,
+the input window advances to include the latest historical observations,
+including earlier observations from 2024 during the test period.
+Model parameters and the refit scale remain fixed throughout that year.
+This retrospective walk-forward design evaluates successive forecasts
+using only the information available before each target interval.
+
+\subsubsection{Direct architecture implementations}
+
+Algorithm~\ref{alg:timesnet-direct} specifies the compact TimesNet forward
+pass used in the comparison. The site-scaled context is standardized within
+the current window, embedded with position and site identity, and processed
+using periods selected separately for that sample. After the TimesBlock,
+a direct temporal projection maps the context to the complete forecast
+horizon. Sample-wise period selection, the site embedding, and this
+post-block temporal head are design choices of the evaluated compact
+adaptation of TimesNet \cite{wu2023}. The reported results characterize that
+implementation under the matched protocol. The final step reverses the
+within-window standardization, returning predictions in site-normalized units.
+Block C then converts predictions to physical units and applies common
+post-processing.
+
+\input{sections/04_algorithm_timesnet}
+
+Algorithm~\ref{alg:dilated-direct} specifies the alternative recurrent path.
+Each layer shares its tanh-RNN weights across interleaved chains with the same
+dilation, then reassembles the outputs in temporal order. The last state
+and the site embedding feed a direct output head. The explicit forward
+passes make clear which operations differ while both architectures retain
+the same context, site identity, target vector, and subsequent evaluation.
+
+\input{sections/04_algorithm_dilatedrnn}
+
+\subsubsection{Block C: physical consistency and evaluation}
+
+For daily and monthly learned models, the ensemble is the arithmetic mean
+of the five inverse-scaled forecasts before physical post-processing.
+If $\widetilde{y}^{(s)}$ is the unbounded forecast in W/m$^2$ from seed $s$,
+the reported ensemble forecast is
+\begin{equation}
+ \widehat{y}^{\mathrm{ens}}
+ =
+ \max\!\left(0,\frac{1}{5}\sum_{s=1}^{5}\widetilde{y}^{(s)}\right).
+ \label{eq:ensemble_forecast}
+\end{equation}
+Seed-level forecasts receive their own zero floor before their metrics are
+computed. Averaging forecasts and averaging their errors are distinct
+operations.
+
+All forecasts receive the same non-negativity floor after inverse scaling.
+Daily and monthly forecasts have no upper truncation. Hourly forecasts also use
+solar elevation computed at the center of each hourly interval; predictions
+are set to zero when elevation is nonpositive, following the deterministic
+geometry implemented with \texttt{pvlib} \cite{anderson2023}. Solar elevation constrains
+the output without entering model fitting.
+
+The location is the unit of the descriptive comparison. For each metric
+and horizon scope, we report the TimesNet--DilatedRNN difference, its mean
+and median across the ten sites, and the number of sites won by TimesNet.
+The treatment of overlapping origins is defined in Section~\ref{sec:metrics}.
+NASA POWER data are added after evaluation, using the 1~mm/day and 80\%
+thresholds in Section~\ref{sec:data} to contextualize selected cases.

@@ -1,0 +1,113 @@
+\documentclass[final,3p,times]{elsarticle}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{placeins}
+\usepackage[hidelinks]{hyperref}
+
+\makeatletter
+\let\ps@pprintTitle\ps@plain
+\makeatother
+
+\graphicspath{{figures/}}
+\hyphenation{Dilated-RNN}
+
+% Float placement: let floats share pages with running text instead of
+% forming dedicated float pages that leave the rest of the page blank.
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.7}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.85}
+\renewcommand{\dbltopfraction}{0.9}
+\renewcommand{\dblfloatpagefraction}{0.85}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\setcounter{dbltopnumber}{3}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\begin{document}
+\raggedbottom
+
+\begin{frontmatter}
+\title{Supplementary Material for\\
+``Multi-Resolution Solar Irradiance Forecasting:\\
+A Comparative Study of TimesNet and DilatedRNN''}
+\author[unicamp]{Gustavo de Melo Nascimento}
+\author[unicamp]{Thales Wulfert Cabral}
+\author[unicamp]{Gustavo Fraidenraich}
+\address[unicamp]{School of Electrical and Computer Engineering,
+University of Campinas, Campinas, SP, Brazil}
+\end{frontmatter}
+
+\section{Complete Reference-Model Benchmark}
+This supplement compares TimesNet and DilatedRNN with all evaluated reference
+models at each cumulative forecast horizon.
+Tables~\ref{tab:baseline_hourly_72_extension_24}--\ref{tab:baseline_monthly_6_6}
+report MAE, MSE, RMSE, nRMSE, and $R^2$ for every task and checkpoint.
+Figure~\ref{fig:supp_ranking} summarizes the resulting macro-MAE ranks, and
+Figure~\ref{fig:supp_seeds} summarizes variability across random seeds for
+the seven stochastic learned models.
+\input{tables/benchmark_adicional_completo}
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.90\textwidth]{ranking_por_tarefa.png}
+\caption{Macro-MAE rank of each model at every cumulative forecast horizon.
+Rank 1 (darkest) indicates the lowest MAE within a task and horizon; tied
+models share the better rank. Hourly results use seed 42, and the other
+learned models use five-seed ensembles. Hourly climatology was not
+evaluated (n/a).}
+\label{fig:supp_ranking}
+\end{figure}
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.90\textwidth]{variabilidade_por_semente.png}
+\caption{Seed-level macro-MAE of the seven stochastic learned models: means
+with error bars spanning one sample standard deviation. Markers are offset
+horizontally for legibility. Hourly runs use seed 42 only and have no error
+bars; the hourly Informer lies above the plotted range, so its markers sit
+above the dashed line with their values printed.}
+\label{fig:supp_seeds}
+\end{figure}
+\FloatBarrier
+\input{appendices/supplementary_algorithms}
+
+\section{Supporting Design and Literature Tables}
+Table~\ref{tab:study_design} summarizes the four forecasting tasks and their
+origin counts. Tables~\ref{tab:literature_review_short},
+\ref{tab:literature_review_multistep}, and \ref{tab:literature_review_long}
+cover three groups of studies, respectively: intra-hour and short hourly
+forecasting; day-ahead and direct multi-step forecasting; and monthly,
+multi-climate, and very-long-horizon forecasting.
+\input{tables/study_design}
+\input{tables/literature_review}
+
+\appendix
+% elsarticle changes these formats in appendix mode; retain continuous S labels.
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\input{appendices/appendix_a}
+
+\section{Additional Result Tables}
+Table~\ref{tab:baseline_seeds} reports the mean and sample standard deviation
+of seed-level macro-MAE at the terminal horizon of each task for the seven
+stochastic learned models; Figure~\ref{fig:supp_seeds} shows all cumulative
+horizons. Table~\ref{tab:caso-meteorologico-independente}
+describes the adverse-weather example selected independently of either
+model's errors.
+\input{tables/benchmark_adicional_sementes}
+\input{tables/caso_meteorologico_independente}
+
+\FloatBarrier
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,17 @@
+{
+  "data_local": "2026-09-22",
+  "fonte": "resultados/busca_timesnet_mensal_v2_20260920",
+  "metodo": "Leitura e calculo SHA-256 independente via Python, antes das correcoes de persistencia de preprocessamento e retomada realizadas nesta sessao.",
+  "tarefas": ["monthly_1", "monthly_6"],
+  "codigo_atual_conferia_com_contrato_antes_das_correcoes": true,
+  "codigo_sha256_verificado": {
+    "experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "otimizacao_timesnet_mensal.py": "a0b2d21e00c782189a23bc67993e36cf8f0e4853c3ce4e5c24e93c2611ca0555",
+    "timesnet_horario.py": "ad3859c1044fb132d0d521817f579f8308a478fdf322b749ff42c8d3893c95f2",
+    "treinamento_timesnet_otimizacao.py": "6b096408f2124877a16e342feb789b090f3bb592b10dc399af0004d97e5b42c9"
+  },
+  "artefatos_por_tarefa": 167,
+  "artefatos_com_hash_e_tamanho_conferidos_por_tarefa": 167,
+  "entradas_sha256_conferidas_por_tarefa": 10,
+  "observacao": "Evidencia historica desta sessao; nao afirma igualdade do codigo depois das correcoes. O script de auditoria registra separadamente os hashes atuais."
+}

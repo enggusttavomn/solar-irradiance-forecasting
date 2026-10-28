@@ -1,0 +1,89 @@
+{
+  "arquivos_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\hourly_72_extension\\previsoes_teste.csv.gz": "bdd1eea4b7e257574c9d7337aefd059d53be698a4c918a985aa49b29fd27e54e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\gru\\contrato_execucao.json": "f2ab39da39c6396baa64625a610402f95474d591d6509b7cd1254b74e6e8aff6",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\gru\\controle_teste_divergencia.json": "eb3da655d74fe5eb1fbafa9daef140ee494c2b77fef4fca891bd73004632bece",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\gru\\sem_quantizacao\\refit\\seed42.npz": "68eb8a845e2d0f9a99c522237dec07a0e42b1e2c7b88123c16ca2eb788266214"
+  },
+  "comparacao_metricas": [
+    {
+      "MAE_wm2_antigo": 49.97335953873687,
+      "MAE_wm2_novo": 49.97335728748018,
+      "MSE_w2m4_antigo": 9715.59899786445,
+      "MSE_w2m4_novo": 9715.599697493783,
+      "R2_antigo": 0.8759413260847593,
+      "R2_novo": 0.8759413194532557,
+      "RMSE_wm2_antigo": 97.2369371765736,
+      "RMSE_wm2_novo": 97.23694179315011,
+      "delta_MAE_wm2": -2.251256695728898e-06,
+      "horizonte": 24,
+      "modelo": "GRU",
+      "nRMSE_antigo": 0.4857340323600269,
+      "nRMSE_novo": 0.48573405154934246,
+      "particao": "teste",
+      "tarefa": "hourly_72_extension",
+      "variante_antigo": "controle_antigo",
+      "variante_novo": "controle_novo"
+    },
+    {
+      "MAE_wm2_antigo": 50.97485181869713,
+      "MAE_wm2_novo": 50.97485668912962,
+      "MSE_w2m4_antigo": 10155.510531306327,
+      "MSE_w2m4_novo": 10155.51180319212,
+      "R2_antigo": 0.8707841268786852,
+      "R2_novo": 0.8707841113857295,
+      "RMSE_wm2_antigo": 99.43858790902542,
+      "RMSE_wm2_novo": 99.43859516269893,
+      "delta_MAE_wm2": 4.87043249108865e-06,
+      "horizonte": 48,
+      "modelo": "GRU",
+      "nRMSE_antigo": 0.4961890115301942,
+      "nRMSE_novo": 0.4961890462147096,
+      "particao": "teste",
+      "tarefa": "hourly_72_extension",
+      "variante_antigo": "controle_antigo",
+      "variante_novo": "controle_novo"
+    },
+    {
+      "MAE_wm2_antigo": 51.52462481319924,
+      "MAE_wm2_novo": 51.52463227993142,
+      "MSE_w2m4_antigo": 10354.91950601913,
+      "MSE_w2m4_novo": 10354.920801797516,
+      "R2_antigo": 0.8685033217786536,
+      "R2_novo": 0.8685033037135959,
+      "RMSE_wm2_antigo": 100.43375801434324,
+      "RMSE_wm2_novo": 100.43376473473454,
+      "delta_MAE_wm2": 7.466732178329494e-06,
+      "horizonte": 72,
+      "modelo": "GRU",
+      "nRMSE_antigo": 0.5007678682120713,
+      "nRMSE_novo": 0.5007679036656654,
+      "particao": "teste",
+      "tarefa": "hourly_72_extension",
+      "variante_antigo": "controle_antigo",
+      "variante_novo": "controle_novo"
+    }
+  ],
+  "contrato_sha256": "ffa61c001635e9157ee30358bc55a26e207ebe8f35f42a0f1c6d57eff2aaacb6",
+  "dispositivo_atual": "cuda",
+  "dispositivo_original": "cpu",
+  "epocas_novas": {
+    "42": 30
+  },
+  "evidencia_checkpoints_antigos": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\auditoria_controles_originais\\hourly_72_extension_gru.json",
+    "checkpoints_disponiveis_reproduzidos": 2,
+    "compatibilidade_aproximada_aprovada": true,
+    "criterio": "Compatibilidade aproximada de CPs antigos: rtol=1e-6,atol=1e-4 W/m2, criterio autorizado antes de concluir a auditoria. Reporta tambem erro absoluto1e-6; nao chamar paridade aproximada de reproducao exata. CPs novos exigem1e-6 absoluto.",
+    "fases_sem_checkpoint_original": [],
+    "sha256": "930c4acfd828e7e1b8cc87f3a82a1b79103b54572420d9afb59f17aff359891f"
+  },
+  "fase": "refit",
+  "max_diferenca_por_seed_wm2": {
+    "42": 0.004499852657318115
+  },
+  "modelo": "GRU",
+  "nao_emite_aceite": true,
+  "parecer": "A mudanca de dispositivo foi definida antes dos resultados, por desempenho computacional. Este parecer nao e aceite. Comparacoes de quantizacao devem usar o controle novo e as variantes no mesmo ambiente; nao atribuir diferencas entre controles antigos e novos a quantizacao. A validacao do checkpoint novo e do protocolo completo cabe ao auditor independente.",
+  "tarefa": "hourly_72_extension"
+}

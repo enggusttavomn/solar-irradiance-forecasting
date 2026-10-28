@@ -1,0 +1,61 @@
+{
+  "versao": 2,
+  "aprovado": true,
+  "aprovado_em_utc": "2026-10-06T23:04:15.663584+00:00",
+  "revisor": "/root/further_speed",
+  "tipo": "revisao_independente_por_leitura",
+  "escopo": "Backend NT, identidade por PID/FILETIME/PPID e extensao restrita de vivo() para WinError 5 sem handle.",
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\retomar_historico_apos_calendario.py": "610255aaa2e252d13b6351bd0b701cc486379fb8d3892fa5d16c9e63a782c097",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tests\\test_retomar_historico_apos_calendario.py": "d531f2cd388550ccc6294c3bc47d3bae630ebde6b2d2c7deb250b5ad4081c5ea"
+  },
+  "bloqueadores": [],
+  "constatacoes": [
+    "Snapshot NT valida tamanho, offsets, ABI e status antes de retornar mapa; certifica o PID, PPID e FILETIME do proprio processo por consulta independente.",
+    "Duas instancias do mesmo PID somente sao resolvidas por match unico do FILETIME de handle vivo, com revalidacao de vida.",
+    "Identidade PID/FILETIME duplicada, erro de acesso, handle morto, nova reutilizacao ou certificacao inconclusiva continuam bloqueando a retomada.",
+    "Remover do mapa um PID comprovadamente morto preserva os registros de filhos que apontam para esse PPID; a guarda de orfaos continua bloquear PPID conhecido.",
+    "Observacao e confirmacao mantem handles retidos, ordem temporal pai/filho e nova leitura do mapa para revalidar cada aresta.",
+    "Journal, fontes, locks, preservacao dos logs e comando de retomada continuam submetidos as guardas existentes.",
+    "A extensao de vivo() so e acionada sem handle retido e apos identificar() falhar com WinError 5; outros erros continuam propagados.",
+    "Snapshot NT integral e certificado sem o PID antigo confirma False; registro unico com FILETIME positivo diferente confirma False; mesmo FILETIME retorna True conservadoramente.",
+    "PID ambiguo, FILETIME zero, snapshot truncado ou certificacao inconclusiva continuam bloqueando; identificar(), mapa() e verificacao de handles retidos mantem comportamento anterior.",
+    "A regra corresponde ao fallback ja existente em processos_quantizacao.identidade_snapshot_windows() e ao uso de identidade exata em mesma_instancia().",
+    "Comparacao AST da fonte preservada confirma que a unica mudanca funcional desde a revisao de 59 testes e Windows.vivo()."
+  ],
+  "evidencia_testes_existente": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\testes_snapshot_nt.json",
+    "sha256": "0c17e2f3ac41cbb5ceed5f5c87ab5833e93a8da7d7ab9a88c95fe460f9f1d722",
+    "testes_executados": 68,
+    "consultas_nativas_repetidas": 30,
+    "log_sha256": "4ee1034f8b545b691cbb4c4c7a9ad602e2dc3ccf573ea9049894605662b4533d"
+  },
+  "novos_testes_executados_nesta_revisao": 0,
+  "consultas_nativas_executadas_nesta_revisao": 0,
+  "processos_de_treino_lancados_ou_modificados": false,
+  "fontes_journal_pausa_prioridades_modificados": false,
+  "revisao_anterior": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261006\\nativa59_anterior_review.json",
+    "sha256": "ff3edba5a9de5284349ab76810a720f482eab9db9b8ab420e31790eac6d3ac7f",
+    "testes_executados": 59
+  },
+  "alteracao_funcional_restrita_ast": "Windows.vivo",
+  "guard_vivo_win5_real": {
+    "identidade_antiga": {
+      "pid": 2964,
+      "creation_time": "134356484788665740"
+    },
+    "identificar_winerror": 5,
+    "instancia_antiga_viva": false,
+    "snapshot_nt_certificado_registros_atual": []
+  },
+  "referencia_regra_nt": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\processos_quantizacao.py",
+    "sha256": "3f5409846652efbdfc893cf85ee8b51eee51905d1c9b4e9f497456c7f24e1468",
+    "funcoes": [
+      "identidade",
+      "identidade_snapshot_windows",
+      "mesma_instancia"
+    ]
+  }
+}

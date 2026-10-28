@@ -1,0 +1,18 @@
+{
+  "contrato_sha256": "9592f37c97a6bbc724c503c43e053de95743e256825046d9bb59bb089dc8c5f7",
+  "fonte_sha256": "fc1a1d7c324d2b71607895de7b2500e2a05252ddd30f588fa7a2a45aea7553b4",
+  "relatorio_divergencia_sha256": "274722cf4438c233ee35f5020b7508f86b1d901e5ad00acee876ba9db322cb82",
+  "replay_checkpoint_original_aprovado": true,
+  "arquitetura_e_loop_aprovados": true,
+  "justificativa": "Arquitetura, configuracoes e loop revisados contra as funcoes originais; teste de paridade CPU aprovado. Os dez checkpoints anteriores do GRU diario foram reproduzidos exatamente. Os cinco novos checkpoints CUDA reproduzem suas previsoes com diferenca zero, sem acesso aos alvos. A troca de dispositivo foi definida antes dos resultados para viabilizar o custo; a comparacao de quantizacao usara o controle novo no mesmo dispositivo. Na validacao de 30 dias, a diferenca entre controles e 0,00002687 W/m2 e nao sera contabilizada como efeito da quantizacao.",
+  "auditoria_arquivos_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\pareceres_controles\\daily_30_gru_validacao.json": "eb51151640cd6162e483c1baf02b944b65d42711a5816993015506f1dcb363d4",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\pareceres_controles\\daily_30_gru_replay_novo_validacao.json": "5808a3eb49ecb7fc867aa8d3b37a24a0d46a0fa60c9a5eb0a8aef690129853fb",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\auditoria_controles_originais\\daily_30_gru.json": "265e5286c82e6ad31b269d4163dd7b25c23ff3332f6569d5fa69414d99630dcc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\testes_concorrentes.xml": "7145016814edcac01c2dec225a4db1a316111c75e5267117ad0bc2236998274a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\testes\\test_quantizacao_concorrentes.py": "ef01b95215672788361621d8e05983eef10025dc34ed83176292f5ae72c943b8"
+  },
+  "registrado_em_utc": "2026-09-30T03:52:44.441708+00:00",
+  "limite": "CPs antigos apenas nas fases disponiveis, com politica numerica registrada. A comparacao de quantizacao usa o novo controle CUDA. Nao comprova retreinamento bitexato CPU/CUDA.",
+  "fases_originais_sem_checkpoint": []
+}

@@ -1,0 +1,68 @@
+{
+  "iniciado_em_utc": "2026-09-30T14:16:09.355223+00:00",
+  "pid": 33732,
+  "identidade_coordenador": {
+    "pid": 33732,
+    "creation_time": "134352513622273057"
+  },
+  "publicado": false,
+  "historico_iniciado": false,
+  "codigo_sha256": "9552137ac0887732fc8be6d2f8a4f933e96cb5002f86defd714006ffe6924e0b",
+  "politica": {
+    "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\politica_migracao_cpu_cuda\\proposta_politica_v2.json",
+    "sha256": "13c8a9da43fde85160472e869f9eab108adb2ba9b5494fe6280e2cda9948521b"
+  },
+  "revisao": {
+    "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\politica_migracao_cpu_cuda\\revisao_root_v2.json",
+    "sha256": "592ae34613578e8c7bcdd19fbad2fbd3c90a181016a3df68a9ea18bf647ceda1"
+  },
+  "etapa": "erro",
+  "atualizado_em_utc": "2026-09-30T17:37:38.297686+00:00",
+  "filas": [
+    {
+      "path": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_aprendidos\\atual\\completa\\runner.json",
+      "etapa": "selecao",
+      "processos_ativos": [
+        {
+          "pid": 19504,
+          "creation_time": "134352512825858149"
+        },
+        {
+          "pid": 33548,
+          "creation_time": "134352513860678335"
+        },
+        {
+          "pid": 30864,
+          "creation_time": "134352513893309502"
+        },
+        {
+          "pid": 20656,
+          "creation_time": "134352513866411099"
+        }
+      ]
+    },
+    {
+      "path": "relatorios\\quantizacao_todos_modelos_20260929\\fila_atencao\\atual\\completa\\runner.json",
+      "etapa": "selecao",
+      "processos_ativos": [
+        {
+          "pid": 25616,
+          "creation_time": "134352512970438375"
+        },
+        {
+          "pid": 37208,
+          "creation_time": "134352598717735054"
+        },
+        {
+          "pid": 36476,
+          "creation_time": "134352598736150844"
+        },
+        {
+          "pid": 27112,
+          "creation_time": "134352598721057867"
+        }
+      ]
+    }
+  ],
+  "erro": "RuntimeError: Fila sem atualizacao por dez minutos; nao retomar automaticamente."
+}

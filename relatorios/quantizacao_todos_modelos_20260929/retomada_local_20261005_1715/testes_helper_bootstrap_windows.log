@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import ctypes, sys, runpy; from ctypes import wintypes as w; k=ctypes.WinDLL(kernel32,use_last_error=True); k.GetCurrentProcess.restype=w.HANDLE; k.SetPriorityClass.argtypes=[w.HANDLE,w.DWORD]; k.SetPriorityClass.restype=w.BOOL; ok=k.SetPriorityClass(k.GetCurrentProcess(),0x8000); assert ok, ctypes.WinError(ctypes.get_last_error()); sys.argv=[unittest,tests.test_retomar_historico_apos_calendario,-v]; runpy.run_module(unittest,run_name=__main__)
+                                                                                 ^^^^^^^^
+NameError: name 'kernel32' is not defined

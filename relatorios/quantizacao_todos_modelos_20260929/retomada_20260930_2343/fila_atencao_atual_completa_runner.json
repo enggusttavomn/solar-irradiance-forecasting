@@ -1,0 +1,55 @@
+{
+  "regime": "atual",
+  "modo": "completa",
+  "etapa": "selecao",
+  "iniciado_em_utc": "2026-09-30T14:15:01.532422+00:00",
+  "atualizado_em_utc": "2026-09-30T17:58:37.281086+00:00",
+  "pid_runner": 25616,
+  "identidade_runner": {
+    "pid": 25616,
+    "creation_time": "134352512970438375"
+  },
+  "processos_historico": [
+    {
+      "pid": 35140,
+      "creation_time": "134352513015403712"
+    },
+    {
+      "pid": 37208,
+      "creation_time": "134352598717735054"
+    }
+  ],
+  "saida": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+  "pendentes": [
+    [
+      "hourly_72_extension",
+      "Transformer"
+    ],
+    [
+      "hourly_72_extension",
+      "Informer"
+    ]
+  ],
+  "concluidos": [
+    {
+      "fase": "selecao",
+      "tarefa": "daily_30",
+      "modelo": "Transformer",
+      "returncode": 0,
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\fila_atencao\\atual\\completa\\selecao_daily_30_transformer.log",
+      "concluido_em_utc": "2026-09-30T16:37:46.738506+00:00"
+    }
+  ],
+  "falhas": [],
+  "processos": [
+    {
+      "tarefa": "daily_30",
+      "modelo": "Informer",
+      "recurso": "gpu",
+      "pid": 37208,
+      "creation_time": "134352598717735054",
+      "log": "relatorios\\quantizacao_todos_modelos_20260929\\fila_atencao\\atual\\completa\\selecao_daily_30_informer.log",
+      "inicio": "2026-09-30T16:37:52.091076+00:00"
+    }
+  ]
+}

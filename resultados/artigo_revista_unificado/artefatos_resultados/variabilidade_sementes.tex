@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Macro test MAE across independent seeds (mean and standard deviation). Single-seed extensions are identified explicitly.}
+\label{tab:variabilidade-sementes}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Task & Resolution & Horizon & DilatedRNN & LSTM & TimesNet & XGBoost \\
+\midrule
+Daily 365--30 & Daily & 1 & 43.51 (SD 0.68) & 42.31 (SD 0.55) & 43.55 (SD 0.85) & 41.67 (SD 0.12) \\
+Daily 365--30 & Daily & 3 & 44.02 (SD 0.62) & 43.45 (SD 0.48) & 43.89 (SD 0.54) & 43.16 (SD 0.07) \\
+Daily 365--30 & Daily & 7 & 44.29 (SD 0.57) & 44.05 (SD 0.36) & 44.17 (SD 0.37) & 43.78 (SD 0.06) \\
+Daily 365--30 & Daily & 14 & 44.33 (SD 0.60) & 44.42 (SD 0.58) & 44.29 (SD 0.29) & 44.02 (SD 0.03) \\
+Daily 365--30 & Daily & 30 & 44.10 (SD 0.60) & 44.68 (SD 0.71) & 44.29 (SD 0.29) & 44.00 (SD 0.02) \\
+Hourly 336--72 & Hourly & 24 & 50.73 (one seed; SD unavailable) & 50.91 (one seed; SD unavailable) & 49.08 (one seed; SD unavailable) & 48.37 (one seed; SD unavailable) \\
+Hourly 336--72 & Hourly & 48 & 52.15 (one seed; SD unavailable) & 52.79 (one seed; SD unavailable) & 51.86 (one seed; SD unavailable) & 49.81 (one seed; SD unavailable) \\
+Hourly 336--72 & Hourly & 72 & 52.96 (one seed; SD unavailable) & 53.39 (one seed; SD unavailable) & 52.21 (one seed; SD unavailable) & 50.50 (one seed; SD unavailable) \\
+Monthly 12--1 & Monthly & 1 & 13.45 (SD 0.35) & 14.51 (SD 0.34) & 14.61 (SD 0.76) & 14.86 (SD 0.17) \\
+Monthly 12--6 & Monthly & 1 & 15.24 (SD 0.51) & 16.25 (SD 0.65) & 15.81 (SD 1.67) & 14.83 (SD 0.31) \\
+Monthly 12--6 & Monthly & 3 & 14.72 (SD 0.49) & 15.75 (SD 0.24) & 15.29 (SD 0.87) & 14.99 (SD 0.14) \\
+Monthly 12--6 & Monthly & 6 & 14.77 (SD 0.45) & 15.14 (SD 0.36) & 15.29 (SD 0.81) & 14.80 (SD 0.11) \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

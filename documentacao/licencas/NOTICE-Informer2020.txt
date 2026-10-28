@@ -1,0 +1,16 @@
+Referencia da implementacao compacta Informer
+===========================================
+
+Projeto original: https://github.com/zhouhaoyi/Informer2020
+Artigo: Zhou et al., Informer: Beyond Efficient Transformer for Long Sequence
+Time-Series Forecasting, AAAI 2021, DOI 10.1609/aaai.v35i12.17325.
+Licenca do projeto consultado: Apache License 2.0 (texto na mesma pasta).
+
+codigo_fonte/modelos_baselines_adicionais.py reimplementa a formulacao e usa
+o codigo publico como referencia de verificacao de ProbSparse, distilacao
+e decoder. Nao e uma copia dos hiperparametros ou do experimento original.
+
+Adaptacoes: entrada historica GHI, projecoes lineares, identidade estatica de
+localidade, dimensoes compactas, ausencia de embeddings de calendario,
+mix=False e amostragem deterministica durante a avaliacao. Os detalhes e
+testes estao no modulo e em testes/test_baselines_adicionais.py.

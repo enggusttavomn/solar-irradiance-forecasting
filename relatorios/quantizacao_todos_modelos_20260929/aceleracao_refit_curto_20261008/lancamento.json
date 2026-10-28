@@ -1,0 +1,54 @@
+{
+  "etapa": "LAUNCH_CONFIRMED",
+  "utc": "2026-10-08T07:24:26.873163+00:00",
+  "tentativas_popen": 1,
+  "coordenador": {
+    "pid": 29512,
+    "creation_time": "134358692355448701"
+  },
+  "comando": [
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "scripts.acelerar_cpu_local_temporariamente",
+    "--recibo",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\retomada_20261007_auditoria\\manifesto_retomada.json",
+    "--recibo-sha256",
+    "54433ab91daf50faed29f985046e8b4f4dad2af27035fa4b738d368e33e12810",
+    "--saida",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\aceleracao_refit_curto_20261008\\controle",
+    "--source-sha256",
+    "02b597a9a13e5f15a3f62c0b46b8d0da4766fa8778331fcada02e6ee2b706446",
+    "--pid",
+    "29512",
+    "--creation-time",
+    "134358692355448701"
+  ],
+  "fonte_sha256": "02b597a9a13e5f15a3f62c0b46b8d0da4766fa8778331fcada02e6ee2b706446",
+  "instancias_anteriores_confirmadas_mortas": {
+    "supervisor": {
+      "pid": 24492,
+      "creation_time": "134358943479707192"
+    },
+    "supervisor_shim": {
+      "pid": 33392,
+      "creation_time": "134358943441062547"
+    },
+    "guard": {
+      "pid": 19756,
+      "creation_time": "134358939281070853"
+    },
+    "guard_shim": {
+      "pid": 32444,
+      "creation_time": "134358939261295733"
+    }
+  },
+  "motivo": "Reativacao operacional autorizada apos parada de boost por alvo de prioridade antigo ja encerrado; treinamentos nao reiniciados.",
+  "launcher": {
+    "pid": 1628,
+    "creation_time": "134359178669627537"
+  },
+  "atualizado_em_utc": "2026-10-08T07:24:27.026837+00:00"
+}

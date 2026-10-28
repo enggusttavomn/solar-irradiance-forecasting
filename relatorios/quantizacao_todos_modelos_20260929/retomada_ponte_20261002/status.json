@@ -1,0 +1,63 @@
+{
+  "iniciado_em_utc": "2026-10-01T22:59:36.162418+00:00",
+  "pid": 14308,
+  "identidade_coordenador": {
+    "pid": 14308,
+    "creation_time": "134353691704237190"
+  },
+  "codigo_sha256": "24ea810f381cbe7437e76dd55d5df620522d3b956561c9c04560437e1f2abf06",
+  "publicado": false,
+  "revisao_visual_pendente": true,
+  "processos_historico": [],
+  "etapa": "erro",
+  "atualizado_em_utc": "2026-10-01T23:43:00.292390+00:00",
+  "filas_recuperacao": {
+    "RNN": {
+      "etapa": "refit",
+      "pronta": false,
+      "processos_ativos": [
+        {
+          "pid": 21452,
+          "creation_time": "134353669234762616"
+        },
+        {
+          "pid": 9148,
+          "creation_time": "134353693538646276"
+        },
+        {
+          "pid": 20028,
+          "creation_time": "134353693553248030"
+        },
+        {
+          "pid": 19396,
+          "creation_time": "134353693540452275"
+        }
+      ]
+    },
+    "XGBoost": {
+      "etapa": "concluida",
+      "pronta": true,
+      "processos_ativos": []
+    }
+  },
+  "pares_refit_pendentes": [
+    {
+      "par": "daily_30/DilatedRNN",
+      "motivo": "refit"
+    },
+    {
+      "par": "hourly_72_extension/GRU",
+      "motivo": "refit"
+    },
+    {
+      "par": "hourly_72_extension/LSTM",
+      "motivo": "refit"
+    },
+    {
+      "par": "hourly_72_extension/DilatedRNN",
+      "motivo": "refit"
+    }
+  ],
+  "escopo_rnn_sha256": "8e3184269003e3f59f19deda099166aba240d2e0def2c3ebd207e8eed175e262",
+  "erro": "PermissionError: [WinError 5] Access is denied."
+}

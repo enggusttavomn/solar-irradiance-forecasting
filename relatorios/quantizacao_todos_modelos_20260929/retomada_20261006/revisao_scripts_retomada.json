@@ -1,0 +1,38 @@
+{
+  "versao": 1,
+  "aprovado": true,
+  "revisor": "/root/recovery_review",
+  "verificado_em_utc": "2026-10-06T22:48:36.736817+00:00",
+  "escopo": "Revisao estatica independente dos dois scripts de preparacao e retomada, com AST e SHA256. Nao executa preparacao, wrapper nem auditoria nativa do helper.",
+  "wrapper_sha256": "14f211f6ba8a7ee08999ef274e480c945a5ccb34a67fd3cbbfb23f0469f42592",
+  "preparacao_sha256": "7103a22e298d9553a2ef8eb14a6df90a766d6f247df7612b8226840f136da3d0",
+  "manifesto_anterior_sha256": "0d7b59af822135884719e3059b3bd962f2fe0412473921e4b67828285b817d21",
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\preparar_retomada_local_20261006.py": "7103a22e298d9553a2ef8eb14a6df90a766d6f247df7612b8226840f136da3d0",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\tmp\\retomar_sequencia_local_20261006.py": "14f211f6ba8a7ee08999ef274e480c945a5ccb34a67fd3cbbfb23f0469f42592"
+  },
+  "ast_ambos_valida": true,
+  "preparacao_e_wrapper_executados": false,
+  "auditoria_nativa_realizada": false,
+  "journal_operacional_alterado_por_esta_revisao": false,
+  "verificacoes": {
+    "parecer_exige_hashes_obrigatorios_dos_scripts_e_manifesto_anterior": true,
+    "candidato_manifesto_validado_em_memoria_antes_da_gravacao": true,
+    "manifesto_gravado_apos_gates_e_backups_e_revalidado_antes_WAITING": true,
+    "precheck_journal_somente_leitura_sem_Popen": true,
+    "journal_canonico_BLOCKED_zero_tentativas_sem_launcher_token_exigido": true,
+    "fontes_antigas_conservadas_exceto_helper_e_testes_atualizados": true,
+    "backups_exclusivos_com_sha_e_fsync": true,
+    "identidades_conhecidas_preservadas_por_PID_e_FILETIME": true,
+    "marcadores_de_pausa_antigos_preservados": true,
+    "saida_wrapper_exclusiva_e_HASH_CLI_vinculado_ao_manifesto": true,
+    "coordenador_unico_controlado_pelo_journal_e_lock_canonicos_do_helper": true,
+    "prioridade_somente_apos_CONFIRMED_e_instancia_viva_com_codigo_confirmado": true,
+    "logs_originais_mutaveis_nao_adicionados_aos_hashes_novos": true
+  },
+  "condicoes_de_execucao": "A preparacao ainda exige recibo aprovado de pelo menos 49 testes do helper/testes finais, hashes e log exatos, identidades ausentes, falhas esperadas, fontes, 44 status concluidos, orfaos e travas aprovados em runtime. Este parecer nao substitui esses gates.",
+  "ajustes_verificados": [
+    "Gravacao do manifesto movida para depois dos gates e backups.",
+    "Hashes wrapper/preparacao/manifesto anterior do parecer tornados obrigatorios."
+  ]
+}

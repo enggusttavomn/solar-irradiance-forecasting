@@ -1,0 +1,104 @@
+{
+  "ambiente_antigo_workspace": {
+    "ambiente_2_6_disponivel": false,
+    "configuracoes_encontradas": {
+      "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\.venv-baselines-gpu-20260912\\pyvenv.cfg": "3f1c63b536cfe8b8a1e9ecde3b5e3e68e196effa196233a06abe96113c2d7407"
+    },
+    "inspecao": "rg --files -uuu -g pyvenv.cfg: somente .venv-baselines-gpu-20260912; Python3.14.4/Torch2.12.0+cu126"
+  },
+  "ambiente_original": {
+    "numpy": "2.4.4",
+    "pandas": "3.0.3",
+    "python": "3.14.4",
+    "scipy": "1.17.1",
+    "statsmodels": "0.14.6",
+    "torch": "2.12.0"
+  },
+  "ambiente_replay": {
+    "dispositivo": "cpu",
+    "python": "3.14.4",
+    "torch": "2.12.0+cu126"
+  },
+  "aprovado": true,
+  "ausencias": [],
+  "checkpoints_reproduzidos": 2,
+  "codigo_auditoria_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_horario_timesnet.py": "2cc59451b0fbcbedbf3068d2f1c45595ff84daf46e8318a88080df208e7bb8e9",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\modelos_baselines_adicionais.py": "f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\auditar_controles_originais_concorrentes.py": "ca19cc1901b879eb091b75884bf58912a3c3dd36e2003bfd6e3c6438e501638e"
+  },
+  "evidencia_complementar_loop": {
+    "escopo": "test_noquant_repete_loop_original para cinco redes; paridade CPU exata em dados sinteticos",
+    "sha256": "ef01b95215672788361621d8e05983eef10025dc34ed83176292f5ae72c943b8",
+    "testes": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\testes\\test_quantizacao_concorrentes.py"
+  },
+  "fases_sem_checkpoint_original": [],
+  "fonte_ambiente_original": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\gru\\contrato.json",
+    "sha256": "1b238a705e3f9f4f71e144fd216099ec23c8c3e9976edc297ef9aed2e850bfce"
+  },
+  "fontes_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2019.csv.gz": "596462fc1dceb631bd0a8017798614d324fef6d298d01913ffbc89908db04026",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2020.csv.gz": "817e26b2fd7a817d0d0da2457d71ebc8db5880090730f7239efb74ff47842014",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2021.csv.gz": "a9e321d0cf384ad345d47c28e7c8fd5cae201ee4aa16b05c6882c45133f968ce",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2022.csv.gz": "13daace788f068c16711ae6aff7a1420066a532b538ca889078b6a4e3760f27f",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2023.csv.gz": "e1f228817a16c6655128e7bbfce4668ea8e3ba0d28de535bc003fe64733353d0",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\dados\\brutos\\localidades_ev_horario\\nsrdb_ghi_horaria_2024.csv.gz": "88430743a2b9e6f82e394f683cfdea4ad93324fe59756d17edcfbad6d9f8eac1",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\hourly_72_extension\\previsoes_teste.csv.gz": "bdd1eea4b7e257574c9d7337aefd059d53be698a4c918a985aa49b29fd27e54e",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\hourly_72_extension\\previsoes_validacao.csv.gz": "a452e718453e563a13589039212c782d880cd9a99ee87c63266dfa155a071764",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\gru\\modelos\\seed42_refit.pt": "102d2b0f38b74854bf5f176ff5e92847d3c833a66e0ab363165c0f16fdf4ff63",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\gru\\modelos\\seed42_selecao.pt": "b433cb5a6084fb7cb73920411b5fd0ab77f2ecdd6b0c41578ac7e6b36fb2e0a7"
+  },
+  "limites": "Replay apenas dos checkpoints listados. Nao comprova replay das fases ausentes nem reproducao exata de retreinamento CUDA.",
+  "modelo": "GRU",
+  "politica_numerica": "Compatibilidade aproximada de CPs antigos: rtol=1e-6,atol=1e-4 W/m2, criterio autorizado antes de concluir a auditoria. Reporta tambem erro absoluto1e-6; nao chamar paridade aproximada de reproducao exata. CPs novos exigem1e-6 absoluto.",
+  "relatorio_testes_loop": {
+    "arquivo": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\testes_concorrentes.xml",
+    "sha256": "7145016814edcac01c2dec225a4db1a316111c75e5267117ad0bc2236998274a"
+  },
+  "resultados": [
+    {
+      "aprovado": true,
+      "atol_compatibilidade_wm2": 0.0001,
+      "batch_size": 128,
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\gru\\modelos\\seed42_selecao.pt",
+      "checkpoint_sha256": "b433cb5a6084fb7cb73920411b5fd0ab77f2ecdd6b0c41578ac7e6b36fb2e0a7",
+      "dispositivo": "cpu",
+      "fase": "selecao",
+      "max_diferenca_wm2": 0.0,
+      "max_razao_limite_tolerancia": 0.0,
+      "modelo": "GRU",
+      "paridade_numerica_aproximada_aprovada": true,
+      "previsoes_originais": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\hourly_72_extension\\previsoes_validacao.csv.gz",
+      "previsoes_originais_sha256": "a452e718453e563a13589039212c782d880cd9a99ee87c63266dfa155a071764",
+      "quantidade_previsoes": 261360,
+      "reproducao_absoluta_1e_6_aprovada": true,
+      "rtol_compatibilidade": 1e-06,
+      "seed": 42,
+      "tarefa": "hourly_72_extension"
+    },
+    {
+      "aprovado": true,
+      "atol_compatibilidade_wm2": 0.0001,
+      "batch_size": 128,
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\hourly_72_extension\\gru\\modelos\\seed42_refit.pt",
+      "checkpoint_sha256": "102d2b0f38b74854bf5f176ff5e92847d3c833a66e0ab363165c0f16fdf4ff63",
+      "dispositivo": "cpu",
+      "fase": "refit",
+      "max_diferenca_wm2": 0.0,
+      "max_razao_limite_tolerancia": 0.0,
+      "modelo": "GRU",
+      "paridade_numerica_aproximada_aprovada": true,
+      "previsoes_originais": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\avaliacao_baselines_revisao_20260912\\consolidado\\hourly_72_extension\\previsoes_teste.csv.gz",
+      "previsoes_originais_sha256": "bdd1eea4b7e257574c9d7337aefd059d53be698a4c918a985aa49b29fd27e54e",
+      "quantidade_previsoes": 261360,
+      "reproducao_absoluta_1e_6_aprovada": true,
+      "rtol_compatibilidade": 1e-06,
+      "seed": 42,
+      "tarefa": "hourly_72_extension"
+    }
+  ],
+  "tarefa": "hourly_72_extension"
+}

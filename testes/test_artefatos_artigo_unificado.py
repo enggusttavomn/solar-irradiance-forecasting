@@ -8,6 +8,7 @@ import pandas as pd
 import pytest
 
 import codigo_fonte.artefatos_artigo_unificado as artefatos
+from codigo_fonte.artefatos_fragmentados import preparar_manifesto_fragmentado
 from codigo_fonte.artefatos_artigo_unificado import (
     ArtefatoNaoPublicavelError,
     gerar_artefatos_artigo_unificado,
@@ -17,6 +18,39 @@ from codigo_fonte.artefatos_artigo_unificado import (
 
 SEMENTES = (11, 23, 42, 67, 89)
 LOCAIS = ("Factory & North", "Factory South")
+
+
+def _assert_png_valido_e_horizontal(caminho: Path) -> None:
+    with caminho.open('rb') as arquivo:
+        cabecalho = arquivo.read(24)
+
+    assinatura_png = bytes((0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A))
+    assert cabecalho.startswith(assinatura_png)
+    assert cabecalho[12:16] == b'IHDR'
+    largura = int.from_bytes(cabecalho[16:20], byteorder='big')
+    altura = int.from_bytes(cabecalho[20:24], byteorder='big')
+    assert largura >= 1_000
+    assert altura >= 400
+    assert 1.2 <= largura / altura <= 4.0
+
+
+def _assert_svg_valido(caminho: Path) -> None:
+    conteudo = caminho.read_text(encoding='utf-8-sig').lstrip()
+
+    assert conteudo.startswith(('<?xml', '<svg'))
+    assert '<svg' in conteudo[:2_048]
+
+
+def test_grade_de_quatro_tarefas_e_larga_e_usa_dois_por_dois() -> None:
+    figura, eixos = artefatos._criar_grade_tarefas(
+        ("daily_30", "hourly_72_extension", "monthly_1", "monthly_6")
+    )
+    try:
+        largura, altura = figura.get_size_inches()
+        assert eixos.shape == (4,)
+        assert largura > altura
+    finally:
+        artefatos.plt.close(figura)
 
 
 def test_latex_contem_tabular_na_largura_da_coluna_e_fecha_balanceado(
@@ -45,6 +79,22 @@ def test_latex_contem_tabular_na_largura_da_coluna_e_fecha_balanceado(
     assert latex.index(r"\resizebox{\linewidth}{!}{%") < latex.index(
         r"\begin{tabular}"
     )
+
+
+def test_caminho_portatil_remove_prefixo_da_maquina() -> None:
+    caminho = artefatos.RAIZ_PROJETO / "codigo_fonte" / "artefatos_artigo_unificado.py"
+
+    assert artefatos.caminho_portatil(caminho) == (
+        "codigo_fonte/artefatos_artigo_unificado.py"
+    )
+
+
+def test_json_auditavel_permanece_lf_em_todas_as_plataformas() -> None:
+    atributos = (Path(__file__).resolve().parents[1] / ".gitattributes").read_text(
+        encoding="utf-8"
+    )
+
+    assert "*.json text eol=lf" in atributos.splitlines()
 
 
 def test_promocao_atomica_repete_winerrors_transitorios(
@@ -587,6 +637,27 @@ def _criar_contexto(raiz: Path) -> tuple[Path, Path]:
     return csv, manifesto
 
 
+def test_materializa_previsoes_fragmentadas_sem_alterar_bytes(tmp_path: Path) -> None:
+    tarefa = _criar_tarefa_diaria(tmp_path / "entradas")
+    nomes = ("previsoes_validacao.csv.gz", "previsoes_teste.csv.gz")
+    originais = {nome: (tarefa / nome).read_bytes() for nome in nomes}
+
+    manifesto = preparar_manifesto_fragmentado(
+        tarefa,
+        nomes,
+        tamanho_parte=257,
+    )
+    assert {item["arquivo"] for item in manifesto["arquivos_fragmentados"]} == set(
+        nomes
+    )
+    for nome in nomes:
+        (tarefa / nome).unlink()
+
+    artefatos.validar_pasta_tarefa(tarefa)
+
+    assert {nome: (tarefa / nome).read_bytes() for nome in nomes} == originais
+
+
 def test_gera_pacote_auditavel_e_casos_por_contexto_independente(tmp_path: Path) -> None:
     tarefa = _criar_tarefa_diaria(tmp_path / "entradas")
     contexto, manifesto_contexto = _criar_contexto(tmp_path)
@@ -602,8 +673,16 @@ def test_gera_pacote_auditavel_e_casos_por_contexto_independente(tmp_path: Path)
 
     assert resumo["tarefas"] == ["daily_30"]
     esperados = {
+        'ranking_por_tarefa.svg',
+        'variabilidade_por_semente.svg',
+        'previsoes_casos_contrastantes.svg',
+        'heterogeneidade_local_delta_mae.png',
+        'heterogeneidade_local_delta_mae.pdf',
+        'heterogeneidade_local_delta_mae.svg',
         "desempenho_macro.csv",
         "desempenho_macro.tex",
+        "metricas_terminais.csv",
+        "metricas_terminais.tex",
         "comparacao_timesnet_dilatedrnn_resumo.csv",
         "comparacao_timesnet_dilatedrnn_resumo.tex",
         "contrastes_por_origem_horizonte.csv",
@@ -626,6 +705,23 @@ def test_gera_pacote_auditavel_e_casos_por_contexto_independente(tmp_path: Path)
     }
     nomes_gerados = {p.name for p in saida.iterdir()}
     assert esperados <= nomes_gerados
+    heatmap = saida / 'heterogeneidade_local_delta_mae.png'
+    assert heatmap.is_file()
+
+    for nome_png in (
+        'ranking_por_tarefa.png',
+        'variabilidade_por_semente.png',
+        'previsoes_casos_contrastantes.png',
+        'heterogeneidade_local_delta_mae.png',
+    ):
+        _assert_png_valido_e_horizontal(saida / nome_png)
+    for nome_svg in (
+        'ranking_por_tarefa.svg',
+        'variabilidade_por_semente.svg',
+        'previsoes_casos_contrastantes.svg',
+        'heterogeneidade_local_delta_mae.svg',
+    ):
+        _assert_svg_valido(saida / nome_svg)
     assert "comparacao_timesnet_dilatedrnn_por_localidade.tex" not in nomes_gerados
     assert "epocas_parametros_tempos.csv" not in nomes_gerados
     assert "epocas_parametros_tempos.tex" not in nomes_gerados
@@ -670,10 +766,13 @@ def test_gera_pacote_auditavel_e_casos_por_contexto_independente(tmp_path: Path)
     latex_desempenho = (saida / "desempenho_macro.tex").read_text(encoding="utf-8")
     assert "Macro test MAE" in latex_desempenho
     assert "Task" in latex_desempenho
-    assert "Resolution" in latex_desempenho
+    assert "Resolution" not in latex_desempenho
     assert "Desempenho" not in latex_desempenho
     assert "Horizonte" not in latex_desempenho
-    assert latex_desempenho.count(r" \") == 2
+    assert latex_desempenho.count(r" \\") == 2
+    latex_metricas = (saida / "metricas_terminais.tex").read_text(encoding="utf-8")
+    assert "RMSE (W/m$^2$)" in latex_metricas
+    assert "nRMSE (\\%)" in latex_metricas
     assert "Factory \\& North" in (saida / "caso_maior_ganho_timesnet.tex").read_text(
         encoding="utf-8"
     )
@@ -774,3 +873,118 @@ def test_aceita_extensao_horaria_e_declara_limitacao_de_uma_semente(
         )
     )
     assert disponibilidade["instrumentacao_computacional_disponivel"] is False
+
+
+@pytest.mark.parametrize("construtor", [
+    artefatos.construir_desempenho_macro,
+    artefatos.construir_variabilidade_sementes,
+])
+@pytest.mark.parametrize("problema", ["duplicada", "fracionaria"])
+def test_recusa_sementes_que_distorceriam_estatisticas(
+    tmp_path: Path, construtor, problema: str
+) -> None:
+    tarefa = _criar_tarefa_diaria(tmp_path / "entradas")
+    caminho = tarefa / "metricas_macro.csv"
+    macro = pd.read_csv(caminho)
+    indice = macro.index[
+        (macro["modelo"] == "TimesNet") & (macro["semente"] == 11)
+    ][0]
+    if problema == "duplicada":
+        duplicata = macro.loc[[indice]].assign(MAE_wm2=1000.0)
+        macro = pd.concat([macro, duplicata], ignore_index=True)
+    else:
+        macro.loc[indice, "semente"] = 11.5
+    macro.to_csv(caminho, index=False)
+    _manifestar_tarefa(tarefa)
+    entrada = artefatos.validar_pasta_tarefa(tarefa)
+
+    with pytest.raises(ArtefatoNaoPublicavelError, match="[Ss]ementes"):
+        construtor([entrada])
+
+
+def test_variabilidade_usa_desvio_amostral_das_cinco_sementes(tmp_path: Path) -> None:
+    tarefa = _criar_tarefa_diaria(tmp_path / "entradas")
+    entrada = artefatos.validar_pasta_tarefa(tarefa)
+    variabilidade = artefatos.construir_variabilidade_sementes([entrada])
+    linha = variabilidade.loc[variabilidade["modelo"] == "TimesNet"].iloc[0]
+
+    assert linha["N_sementes"] == 5
+    assert linha["MAE_wm2_media"] == pytest.approx(10.0)
+    assert linha["MAE_wm2_desvio_padrao"] == pytest.approx(0.025 ** 0.5)
+    assert linha["MAE_wm2_minimo"] == pytest.approx(9.8)
+    assert linha["MAE_wm2_maximo"] == pytest.approx(10.2)
+
+
+def test_tabela_macro_destaca_minimo_antes_de_arredondar_e_informa_unidades(
+    tmp_path: Path,
+) -> None:
+    linhas = []
+    for tarefa, horizonte in (
+        ("hourly_72_extension", 24),
+        ("daily_30", 3),
+        ("monthly_1", 1),
+        ("monthly_6", 6),
+    ):
+        for modelo, mae in (("TimesNet", 10.004), ("DilatedRNN", 10.003)):
+            linhas.append({
+                "tarefa": tarefa,
+                "horizonte": horizonte,
+                "tipo_horizonte": "cumulativo",
+                "modelo": modelo,
+                "tipo_estimativa": "semente" if tarefa == "hourly_72_extension" else "ensemble",
+                "N_sementes": 1 if tarefa == "hourly_72_extension" else 5,
+                "MAE_wm2": mae,
+            })
+        if tarefa != "hourly_72_extension":
+            linhas.append({**linhas[-1], "modelo": "Climatologia",
+                           "tipo_estimativa": "deterministica", "N_sementes": pd.NA,
+                           "MAE_wm2": 12.0})
+    caminho = tmp_path / "desempenho.tex"
+    artefatos._gravar_desempenho_latex(pd.DataFrame(linhas), caminho)
+    latex = caminho.read_text(encoding="utf-8")
+
+    assert "MAE (W/m$^2$)" in latex
+    assert "lowest unrounded MAE" in latex
+    assert "Seeds refer to learned models" in latex
+    assert "NA denotes hourly climatology" in latex
+    for horizonte in ("24 h", "3 d", "1 month", "6 months"):
+        assert f" & {horizonte} & " in latex
+    assert latex.count(r"\textbf{10.00}") == 4
+    assert latex.count(r" & 10.00 & ") == 4
+    assert " & NA & " in latex
+
+
+def test_latex_destaca_todos_os_empates_exatos_sem_destacar_na(tmp_path: Path) -> None:
+    caminho = tmp_path / "empates.tex"
+    artefatos._gravar_latex(
+        pd.DataFrame([{"horizonte": 1, "A": 2.0, "B": 2.0, "C": pd.NA}]),
+        caminho,
+        legenda="Empate",
+        rotulo="tab:empate",
+        destacar_minimos_em=["A", "B", "C"],
+    )
+    latex = caminho.read_text(encoding="utf-8")
+    assert latex.count(r"\textbf{2.00}") == 2
+    assert r"\textbf{1}" not in latex
+    assert r"\textbf{NA}" not in latex
+
+
+def test_cli_padrao_usa_resultado_corrigido_e_pasta_nova(monkeypatch: pytest.MonkeyPatch) -> None:
+    import gerar_artefatos_artigo_unificado as cli
+
+    chamadas = []
+    def gerar_simulado(**argumentos):
+        chamadas.append(argumentos)
+        return {"pasta_saida": str(argumentos["pasta_saida"]), "tarefas": [],
+                "artefatos_manifestados": 0, "limitacoes": []}
+    monkeypatch.setattr(cli, "gerar_artefatos_artigo_unificado", gerar_simulado)
+
+    assert cli.main([]) == 0
+    assert chamadas[0]["pastas_tarefas"] == [
+        Path("resultados/avaliacao_multirresolucao_corrigida_v2")
+    ]
+    saida = chamadas[0]["pasta_saida"]
+    assert saida.parent == Path("resultados/artigo_revista_unificado")
+    assert saida.name.startswith("artefatos_resultados_corrigidos_")
+    assert saida.name != "artefatos_resultados_corrigidos_FINAL"
+    assert not saida.exists()

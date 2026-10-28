@@ -1,0 +1,435 @@
+{
+  "gerado_em_utc": "2026-09-23T02:32:29.740852+00:00",
+  "fonte": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\busca_timesnet_resolucoes_20260922",
+  "sem_treinamento": true,
+  "reproducao_solicitada": true,
+  "torch": "2.12.0+cu126",
+  "tarefas": [
+    {
+      "tarefa": "daily_30",
+      "ok": true,
+      "hashes": {
+        "codigo": 8,
+        "entradas": 12
+      },
+      "manifesto": {
+        "arquivos_verificados": 67,
+        "divergencias": []
+      },
+      "vencedor": {
+        "MAE_validacao_wm2": 43.94697113114908,
+        "contexto": 365,
+        "dimensao": 8,
+        "epocas": {
+          "11": 7,
+          "23": 6,
+          "42": 7,
+          "67": 7,
+          "89": 7
+        },
+        "lote": 128,
+        "nome": "huber",
+        "perda": "huber",
+        "taxa": 0.001
+      },
+      "ranking_recalculado": [
+        {
+          "contexto": 365,
+          "dimensao": 8,
+          "lote": 128,
+          "nome": "huber",
+          "perda": "huber",
+          "taxa": 0.001,
+          "MAE_validacao_wm2": 43.94697113114908,
+          "epocas": {
+            "11": 7,
+            "23": 6,
+            "42": 7,
+            "67": 7,
+            "89": 7
+          }
+        },
+        {
+          "contexto": 365,
+          "dimensao": 16,
+          "lote": 64,
+          "nome": "mae_dim16_lr0003",
+          "perda": "mae",
+          "taxa": 0.0003,
+          "MAE_validacao_wm2": 43.976876095591834,
+          "epocas": {
+            "11": 5,
+            "23": 3,
+            "42": 7,
+            "67": 6,
+            "89": 4
+          }
+        },
+        {
+          "contexto": 365,
+          "dimensao": 8,
+          "lote": 128,
+          "nome": "mae",
+          "perda": "mae",
+          "taxa": 0.001,
+          "MAE_validacao_wm2": 44.07582515582802,
+          "epocas": {
+            "11": 5,
+            "23": 6,
+            "42": 7,
+            "67": 7,
+            "89": 7
+          }
+        },
+        {
+          "nome": "referencia_original",
+          "MAE_validacao_wm2": 44.77097740022848,
+          "epocas": {},
+          "contexto": 365
+        },
+        {
+          "contexto": 182,
+          "dimensao": 8,
+          "lote": 128,
+          "nome": "mae_contexto_curto",
+          "perda": "mae",
+          "taxa": 0.001,
+          "MAE_validacao_wm2": 46.269358923289666,
+          "epocas": {
+            "11": 12,
+            "23": 28,
+            "42": 13,
+            "67": 8,
+            "89": 10
+          }
+        }
+      ],
+      "particoes": {
+        "validacao_2023": {
+          "linhas": 100800,
+          "localidades": 10,
+          "MAE_wm2": 43.94697113114908,
+          "erro_maximo_ensemble_wm2": 5.684341886080802e-14,
+          "erro_maximo_pos_processamento": 0.0,
+          "erros_metricas": {
+            "local": 1.8189894035458565e-12,
+            "macro": 4.547473508864641e-13
+          },
+          "metricas_macro": [
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 1,
+              "MAE_wm2": 42.177271901388785,
+              "MSE_w2m4": 3250.4316360070434,
+              "RMSE_wm2": 56.00234625534805,
+              "nRMSE": 0.27506535842470475,
+              "R2": 0.5605489493614036
+            },
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 3,
+              "MAE_wm2": 42.89673621562369,
+              "MSE_w2m4": 3347.516665919764,
+              "RMSE_wm2": 56.83385771035106,
+              "nRMSE": 0.27904467825689727,
+              "R2": 0.5482874414134903
+            },
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 7,
+              "MAE_wm2": 43.34002631419412,
+              "MSE_w2m4": 3426.3437574601603,
+              "RMSE_wm2": 57.52201097671328,
+              "nRMSE": 0.28209695576792704,
+              "R2": 0.5385138908011005
+            },
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 14,
+              "MAE_wm2": 43.665225524497615,
+              "MSE_w2m4": 3490.609405590917,
+              "RMSE_wm2": 58.076549849470084,
+              "nRMSE": 0.28455006663657506,
+              "R2": 0.5309391055381958
+            },
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 30,
+              "MAE_wm2": 43.94697113114908,
+              "MSE_w2m4": 3544.5084208388566,
+              "RMSE_wm2": 58.548107954225124,
+              "nRMSE": 0.28686186003926384,
+              "R2": 0.5274534872447652
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 1,
+              "MAE_wm2": 42.177271901388785,
+              "MSE_w2m4": 3250.4316360070434,
+              "RMSE_wm2": 56.00234625534805,
+              "nRMSE": 0.27506535842470475,
+              "R2": 0.5605489493614036
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 3,
+              "MAE_wm2": 43.30480262069812,
+              "MSE_w2m4": 3426.1616722410263,
+              "RMSE_wm2": 57.494519373785025,
+              "nRMSE": 0.2821942786465062,
+              "R2": 0.5388712966551753
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 7,
+              "MAE_wm2": 43.782173494319245,
+              "MSE_w2m4": 3508.999358239807,
+              "RMSE_wm2": 58.24479973542348,
+              "nRMSE": 0.2852055269475975,
+              "R2": 0.52727941624792
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 14,
+              "MAE_wm2": 44.15935013126794,
+              "MSE_w2m4": 3597.9980731875376,
+              "RMSE_wm2": 58.98107938928911,
+              "nRMSE": 0.28853583863520865,
+              "R2": 0.5185778453434745
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 30,
+              "MAE_wm2": 44.18721548954822,
+              "MSE_w2m4": 3629.8518458079316,
+              "RMSE_wm2": 59.293656121340085,
+              "nRMSE": 0.2910360695236331,
+              "R2": 0.5244133625935531
+            }
+          ]
+        },
+        "teste_2024": {
+          "linhas": 101100,
+          "localidades": 10,
+          "MAE_wm2": 42.17076886374178,
+          "erro_maximo_ensemble_wm2": 5.684341886080802e-14,
+          "erro_maximo_pos_processamento": 0.0,
+          "erros_metricas": {
+            "local": 1.8189894035458565e-12,
+            "macro": 4.547473508864641e-13
+          },
+          "metricas_macro": [
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 1,
+              "MAE_wm2": 41.12970367895914,
+              "MSE_w2m4": 3097.762282052188,
+              "RMSE_wm2": 54.759981763069085,
+              "nRMSE": 0.26421941039452546,
+              "R2": 0.543645097429947
+            },
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 3,
+              "MAE_wm2": 41.85062631158736,
+              "MSE_w2m4": 3200.105177329379,
+              "RMSE_wm2": 55.6647657080036,
+              "nRMSE": 0.26833320331350385,
+              "R2": 0.5252187333647499
+            },
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 7,
+              "MAE_wm2": 42.164079241852,
+              "MSE_w2m4": 3235.387243869986,
+              "RMSE_wm2": 55.97058406069609,
+              "nRMSE": 0.26957256945870495,
+              "R2": 0.5181562818038863
+            },
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 14,
+              "MAE_wm2": 42.30908921222489,
+              "MSE_w2m4": 3248.746989703107,
+              "RMSE_wm2": 56.05176987971303,
+              "nRMSE": 0.2698085122295183,
+              "R2": 0.515257591374406
+            },
+            {
+              "tipo_horizonte": "cumulativo",
+              "horizonte": 30,
+              "MAE_wm2": 42.170768863741785,
+              "MSE_w2m4": 3247.6458703765106,
+              "RMSE_wm2": 56.01718622075127,
+              "nRMSE": 0.2697873061670091,
+              "R2": 0.5164840068469643
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 1,
+              "MAE_wm2": 41.12970367895914,
+              "MSE_w2m4": 3097.762282052188,
+              "RMSE_wm2": 54.759981763069085,
+              "nRMSE": 0.26421941039452546,
+              "R2": 0.543645097429947
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 3,
+              "MAE_wm2": 42.268136006492554,
+              "MSE_w2m4": 3266.0856993494826,
+              "RMSE_wm2": 56.24566183962959,
+              "nRMSE": 0.27091863766948,
+              "R2": 0.5120524105626066
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 7,
+              "MAE_wm2": 42.47063973017711,
+              "MSE_w2m4": 3281.795787782208,
+              "RMSE_wm2": 56.34565314674789,
+              "nRMSE": 0.2711951900731223,
+              "R2": 0.5117767518585629
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 14,
+              "MAE_wm2": 42.35165819481287,
+              "MSE_w2m4": 3253.277469771252,
+              "RMSE_wm2": 56.020346503363655,
+              "nRMSE": 0.26954516450106814,
+              "R2": 0.5126070164154712
+            },
+            {
+              "tipo_horizonte": "lead_exato",
+              "horizonte": 30,
+              "MAE_wm2": 41.94082659479009,
+              "MSE_w2m4": 3217.3518085764326,
+              "RMSE_wm2": 55.732573978354516,
+              "nRMSE": 0.26865293799906426,
+              "R2": 0.5252329128254336
+            }
+          ]
+        }
+      },
+      "checkpoints": {
+        "situacao": "reproduzidos",
+        "modelos": [
+          {
+            "semente": 11,
+            "epocas_refit": 7,
+            "MAE_teste_wm2": 42.208312668400815,
+            "erro_maximo_escalas_wm2": 0.0,
+            "dispositivo": "cuda",
+            "batch_size": 128,
+            "reproduzido": true,
+            "erro_maximo_reproducao_wm2": 0.0
+          },
+          {
+            "semente": 23,
+            "epocas_refit": 6,
+            "MAE_teste_wm2": 42.58264271347688,
+            "erro_maximo_escalas_wm2": 0.0,
+            "dispositivo": "cuda",
+            "batch_size": 128,
+            "reproduzido": true,
+            "erro_maximo_reproducao_wm2": 0.0
+          },
+          {
+            "semente": 42,
+            "epocas_refit": 7,
+            "MAE_teste_wm2": 42.561677357468554,
+            "erro_maximo_escalas_wm2": 0.0,
+            "dispositivo": "cuda",
+            "batch_size": 128,
+            "reproduzido": true,
+            "erro_maximo_reproducao_wm2": 0.0
+          },
+          {
+            "semente": 67,
+            "epocas_refit": 7,
+            "MAE_teste_wm2": 42.48688183050565,
+            "erro_maximo_escalas_wm2": 0.0,
+            "dispositivo": "cuda",
+            "batch_size": 128,
+            "reproduzido": true,
+            "erro_maximo_reproducao_wm2": 0.0
+          },
+          {
+            "semente": 89,
+            "epocas_refit": 7,
+            "MAE_teste_wm2": 42.297640915562255,
+            "erro_maximo_escalas_wm2": 0.0,
+            "dispositivo": "cuda",
+            "batch_size": 128,
+            "reproduzido": true,
+            "erro_maximo_reproducao_wm2": 0.0
+          }
+        ]
+      },
+      "cronologia_artefatos_coerente": true,
+      "nota_cronologia": "Timestamps e codigo sao coerentes; nao constituem prova historica independente de acesso aos dados.",
+      "limitacoes": [
+        "2024 ja observado motivou a busca; necessita confirmacao futura.",
+        "Janela menor preserva exatamente origens, alvos e exemplos de treino.",
+        "Grade limitada; nenhuma garantia de superar outras arquiteturas.",
+        "Horaria usa apenas semente42; diaria usa cinco sementes."
+      ],
+      "fontes": {
+        "contrato_execucao.json": "4ce9c37464d9fa5e72bf6c16313ffca5651a3ebc5d709e088c0d4d2be99ae0ca",
+        "manifesto_artefatos.json": "522c5c59accb498f012441d70a0bb49f46e59fa4b466a4890a581f63f456ac1b",
+        "selecao_congelada.json": "302573a5e21a5f8ace0ea0849cc72fa0ccea9d3a71df12a08a92363fdaa8cb50"
+      }
+    }
+  ],
+  "mensal": {
+    "relatorio": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\otimizacao_timesnet_20260922\\auditoria.json",
+    "sha256_relatorio": "fa9778fc6fe4f76af2857a58f12a5af2495fe9033455100d38c239485ed1f352",
+    "gerado_em_utc": "2026-09-22T10:26:45.507735+00:00",
+    "valores_sustentados_pelos_artefatos_preservados": true,
+    "reproducao_mensal_nao_reexecutada_nesta_auditoria": true,
+    "tarefas": [
+      {
+        "tarefa": "monthly_1",
+        "manifesto_atual": {
+          "arquivos_verificados": 167,
+          "divergencias": []
+        },
+        "MAE_teste_wm2": 13.236257093299164,
+        "metodo": "TimesNet + climatologia",
+        "checkpoints_reproduzidos_na_auditoria_anterior": 5,
+        "codigo_divergente_declarado": [
+          "otimizacao_timesnet_mensal.py"
+        ],
+        "limitacoes": [
+          "Busca dirigida motivada por resultados de 2024 ja observados; requer confirmacao futura.",
+          "Janelas maiores podem reduzir o numero de origens de treino; nao e ablacao isolada de contexto.",
+          "Mesmo ano de validacao seleciona epocas e hiperparametros; risco de sobreajuste a validacao.",
+          "Mensal de seis passos tem sete origens de teste sobrepostas por localidade.",
+          "Candidatos de anomalia preveem o desvio em relacao a climatologia; a previsao publicada soma de volta essa climatologia e so depois aplica o piso zero."
+        ]
+      },
+      {
+        "tarefa": "monthly_6",
+        "manifesto_atual": {
+          "arquivos_verificados": 167,
+          "divergencias": []
+        },
+        "MAE_teste_wm2": 13.167131839566494,
+        "metodo": "TimesNet + climatologia",
+        "checkpoints_reproduzidos_na_auditoria_anterior": 5,
+        "codigo_divergente_declarado": [
+          "otimizacao_timesnet_mensal.py"
+        ],
+        "limitacoes": [
+          "Busca dirigida motivada por resultados de 2024 ja observados; requer confirmacao futura.",
+          "Janelas maiores podem reduzir o numero de origens de treino; nao e ablacao isolada de contexto.",
+          "Mesmo ano de validacao seleciona epocas e hiperparametros; risco de sobreajuste a validacao.",
+          "Mensal de seis passos tem sete origens de teste sobrepostas por localidade.",
+          "Candidatos de anomalia preveem o desvio em relacao a climatologia; a previsao publicada soma de volta essa climatologia e so depois aplica o piso zero."
+        ]
+      }
+    ]
+  },
+  "ok": true
+}

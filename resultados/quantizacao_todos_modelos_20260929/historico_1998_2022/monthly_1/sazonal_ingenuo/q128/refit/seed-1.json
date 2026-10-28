@@ -1,0 +1,49 @@
+{
+  "adaptacao_calendario_sazonal_mensal": {
+    "codigo_adaptador_sha256": "89bbc5dc25780bf22dff658314ab11f6c5e4a11830183c0a85a313be59162f13",
+    "contrato_complementar_arquivo_sha256": "bf98eebabc1fa0bb6cbab23f8ca1949dd72a7c6a84a676fe35cf0bb8757142d7",
+    "contrato_complementar_sha256": "47331adc217a3316e25245bda499ed8422d458f40d9538c8072c1711f1819d47",
+    "contrato_sha256": "1646d2d8eae251270e3a3423196321426fc3c355527b559f94e1bd31eef1ce41",
+    "id": "sazonal_mensal_calendario_auditado_v1",
+    "politica": {
+      "alvos_alterados": false,
+      "causalidade_original_preservada": true,
+      "id": "sazonal_mensal_calendario_auditado_v1",
+      "imputacao_ou_descarte_de_janelas": false,
+      "metricas_usadas_como_criterio": false,
+      "minmax_alterado": false,
+      "modelo": "Sazonal ingenuo",
+      "origens_alteradas": false,
+      "quantizacao_alterada": false,
+      "regimes": [
+        "historico_1998_2022",
+        "historico_curto_pareado"
+      ],
+      "regra_diaria_alterada": false,
+      "regra_horaria_alterada": false,
+      "regra_mensal": "mes_ano_anterior_fim_mes_canonico_Period_M_menos12",
+      "selecao_legada_alterada": false,
+      "tarefas": [
+        "monthly_1",
+        "monthly_6"
+      ]
+    },
+    "tipo": "complemento_legado"
+  },
+  "arquivos_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_sazonal_mensal_controle_auditado_v1.py": "89bbc5dc25780bf22dff658314ab11f6c5e4a11830183c0a85a313be59162f13",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\sazonal_ingenuo\\contrato_complementar_sazonal_mensal_v1.json": "bf98eebabc1fa0bb6cbab23f8ca1949dd72a7c6a84a676fe35cf0bb8757142d7",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\sazonal_ingenuo\\q128\\clipping_refit.json": "6ac13197038dbd823b99fe60466ecc491e92c7a8a940d766d2d3bfa90e854356",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\sazonal_ingenuo\\q128\\modelos\\referencia_refit.joblib": "766147434e0bc26ed819bba827abb9a6db924dac664beda85290e3f171414d17",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\sazonal_ingenuo\\q128\\refit\\detalhes.json": "7f46b0e14b6ca098f3a6406fdd2328f637f57227b398061e0f9a874a25376950",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\sazonal_ingenuo\\q128\\refit\\seed-1.npz": "ed1ad300b72ec6578d460cbe5619ba382fb62b4af783412a5c5bdead01c41dd7"
+  },
+  "concluido_em_utc": "2026-10-06T02:55:58.043642+00:00",
+  "contrato_sha256": "1646d2d8eae251270e3a3423196321426fc3c355527b559f94e1bd31eef1ce41",
+  "duracao_s": 2.313701699997182,
+  "epocas": 0,
+  "fase": "refit",
+  "niveis": 128,
+  "seed": -1,
+  "variante": "q128"
+}

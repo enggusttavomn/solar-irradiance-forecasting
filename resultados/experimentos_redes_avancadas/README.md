@@ -24,7 +24,7 @@ trilha histórica. As antigas tabelas
 pipeline anterior e não constituem comparação válida com os resultados
 corrigidos.
 
-O script `experimentos_redes_avancadas.py` agora:
+O script `executaveis/experimentos_redes_avancadas.py` agora:
 
 - bloqueia a execução sem `--aceitar-experimento-legado`;
 - usa o nome `VizinhosHistoricos_aprox` para novas saídas;
@@ -37,7 +37,7 @@ Mesmo uma nova execução continua proibida como fonte de publicação. A flag
 serve apenas para evitar execução acidental:
 
 ```bash
-python experimentos_redes_avancadas.py \
+python executaveis/experimentos_redes_avancadas.py \
   --aceitar-experimento-legado \
   --frequencia mensal
 ```

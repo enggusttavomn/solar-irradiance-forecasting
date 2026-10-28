@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Treinamentos GHI · Progresso</title>
+<style>
+:root{color-scheme:light;--bg:#f3f5f4;--paper:#fff;--ink:#19312d;--muted:#5e716c;--green:#148263;--line:#dce5e0;--amber:#83530c;--red:#a53232}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Segoe UI",Arial,sans-serif}
+main{max-width:1160px;margin:0 auto;padding:30px 28px 48px}
+header{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:28px}
+.brand{display:flex;gap:12px;align-items:center}.mark{width:42px;height:42px;background:var(--ink);color:white;display:grid;place-items:center;border-radius:13px;font-weight:750;letter-spacing:-1px}
+.brand strong{display:block;font-size:15px}.brand small{display:block;color:var(--muted);font-size:12px}
+.controls{display:flex;gap:12px;align-items:center}button,select{font:inherit;border:1px solid var(--line);border-radius:9px;padding:9px 13px;background:#fff;color:var(--ink);cursor:pointer}button:hover{background:#eaf2ee}button:disabled{cursor:wait;opacity:.55}
+button:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #3bbaa2;outline-offset:3px}
+.pill{display:inline-flex;align-items:center;gap:7px;border-radius:30px;font-size:12px;font-weight:650;padding:6px 11px;background:#e3f2eb;color:#155943;white-space:nowrap}
+.dot{width:7px;height:7px;border-radius:50%;background:currentColor}.warn{background:#fff1d8;color:var(--amber)}.error{background:#fee8e7;color:var(--red)}
+.eyebrow{font-size:11px;font-weight:750;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
+h1{font-size:30px;line-height:1.2;letter-spacing:-.7px;margin:7px 0 9px}p{margin:0}h2{font-size:18px;margin:0;letter-spacing:-.25px}h3{font-size:15px;line-height:1.4;margin:0}
+.intro{color:var(--muted);margin-bottom:24px}.hero{background:#183d34;color:#fff;border-radius:19px;padding:26px 30px;display:grid;grid-template-columns:1fr 170px;gap:25px}
+.hero .eyebrow{color:#b6d8c9}.hero h2{font-size:23px;margin:7px 0 3px}.hero .sub{color:#c4dacf}
+.percent{text-align:right;font-size:66px;font-weight:650;line-height:1;letter-spacing:-3px;font-variant-numeric:tabular-nums}.percent span{font-size:26px;font-weight:450;letter-spacing:0}
+.hero .track{grid-column:1/-1;background:#31564b;margin-top:-4px;height:12px}.hero .fill{background:#8ee0bb}
+.hero .foot{grid-column:1/-1;display:flex;justify-content:space-between;gap:15px;color:#d0e5da;font-size:12px;margin-top:-12px}
+.phase-focus{margin-top:16px;display:grid;grid-template-columns:1fr auto;gap:12px 20px}.phase-focus h2{margin-top:5px}.phase-focus .phase-percent{font-size:32px;font-weight:650;align-self:center;font-variant-numeric:tabular-nums}.phase-focus .track,.phase-focus .fine{grid-column:1/-1}.phase-focus .fine{margin-top:0}
+.track{height:8px;background:#e8eeeb;border-radius:10px;overflow:hidden}.fill{height:100%;width:0;background:var(--green);transition:width .5s ease;border-radius:inherit}
+.section-title{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:27px 0 13px}.section-title small{color:var(--muted);font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card.active{border-top:3px solid var(--green);padding-top:18px}.card-head{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;margin-bottom:22px}.step{font-size:11px;font-weight:700;background:#edf2ef;border-radius:6px;padding:3px 7px;flex-shrink:0;color:var(--muted)}
+.bar-label{display:flex;justify-content:space-between;gap:10px;font-size:12px;margin:17px 0 6px}.bar-label strong{font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.audit{font-size:12px;color:var(--muted);margin-top:19px;border-top:1px solid var(--line);padding-top:12px}.good{color:var(--green)}.fine{font-size:12px;color:var(--muted);margin-top:10px}
+.jobs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.job{border-left:3px solid var(--green)}.job .pill{font-size:11px}.job-heading{display:flex;justify-content:space-between;gap:12px;align-items:start}.job h3{font-size:18px}.job p{font-size:12px;color:var(--muted);margin-top:4px}
+.activity{font-size:13px;margin:17px 0 12px;word-break:break-word}.job-meta{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--muted);margin-top:10px}
+.estimates{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:16px}.estimate-value{font-size:22px;line-height:1.3;font-weight:650;margin:8px 0 5px;letter-spacing:-.3px}.estimate-text{font-size:12px;color:var(--muted);line-height:1.6}.job-eta{background:#eff7f2;padding:12px 14px;margin-top:15px;border-radius:8px;font-size:12px}.job-eta strong{display:block;font-size:15px;margin:3px 0;color:var(--ink)}.offline .job-eta{background:#eff1f0}
+.empty{padding:22px;border:1px dashed #b9cac1;border-radius:12px;color:var(--muted);font-size:13px}
+.deliveries{display:grid;grid-template-columns:1fr 1fr;gap:15px}.delivery{display:flex;justify-content:space-between;gap:12px;align-items:center}.delivery small{display:block;font-size:12px;color:var(--muted);margin-top:4px}.delivery .pill{white-space:normal;justify-content:center;max-width:170px}
+.alert{padding:15px 18px;border:1px solid #e3bb70;border-radius:12px;background:#fff7e6;color:#795312;margin-bottom:18px;font-size:13px}.alert.error{color:var(--red);border-color:#e5b5b0;background:#fff0ee}
+.alert[hidden]{display:none}.alert p+p{margin-top:5px}
+details{background:white;border:1px solid var(--line);border-radius:14px;margin-top:26px;overflow:hidden}summary{cursor:pointer;font-weight:650;padding:17px 20px}.table-wrap{padding:0 20px 20px;overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:12px;min-width:610px;margin-top:14px}th{text-align:left;color:var(--muted);font-weight:650;font-size:11px}th,td{padding:10px 9px;border-bottom:1px solid #e9eeeb}td:first-child{font-weight:600}.cell{display:inline-block;padding:3px 7px;border-radius:5px;background:#f0f3f1;color:#697971;white-space:nowrap}.cell.done{background:#e4f3eb;color:#186242}.cell.selected{background:#eaf1fa;color:#315d82}.cell.running{background:#fff0d3;color:#835610}
+footer{font-size:12px;color:var(--muted);margin-top:22px;line-height:1.7}footer p+p{margin-top:5px}.offline .hero{background:#53635e}.offline .hero .fill{background:#becbc5}
+@media(max-width:800px){main{padding:22px 18px}.grid,.estimates{grid-template-columns:1fr}.hero{padding:23px;grid-template-columns:1fr 130px}.percent{font-size:54px}.jobs,.deliveries{grid-template-columns:1fr}.card-head{margin-bottom:10px}.controls{gap:7px}header .brand small{display:none}h1{font-size:26px}}
+@media(max-width:460px){header{align-items:flex-start}.controls{flex-direction:column;align-items:flex-end}.hero{grid-template-columns:1fr;gap:15px}.percent{text-align:left;font-size:48px}.hero .foot{flex-direction:column;gap:2px;margin-top:0}.section-title{align-items:flex-start;flex-direction:column}.delivery{align-items:flex-start}.brand strong{max-width:110px}.intro{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.fill{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="brand"><div class="mark" aria-hidden="true">GHI</div><div><strong>Previsão de irradiância</strong><small>Experimentos de quantização · TCC</small></div></div>
+  <div class="controls"><span class="pill" id="connection" role="status"><i class="dot"></i>Conectando</span><button id="refresh" type="button">Atualizar agora</button></div>
+</header>
+<div class="eyebrow">Acompanhamento dos experimentos</div>
+<h1>Acompanhe seus treinamentos.</h1>
+<p class="intro">11 modelos · 4 casos · min-max mantido · sem quantização, 64, 128 e 256 níveis</p>
+<div id="offline" class="alert error" role="alert" hidden>O painel perdeu a conexão. Os números abaixo são da última leitura, não são atualizações ao vivo. Isso não confirma que os treinos pararam. Para reabrir o monitor após reiniciar o computador, execute <strong>scripts/abrir_painel_progresso.ps1</strong>.</div>
+<div id="alerts" class="alert" role="status" hidden></div>
+<section class="hero" aria-labelledby="global-title">
+  <div><div class="eyebrow">Seleção + treinamento final</div><h2 id="global-title">Progresso geral dos treinamentos</h2><p class="sub" id="global-count">A primeira leitura pode levar alguns segundos.</p></div>
+  <div class="percent" id="percent">—</div>
+  <div class="track" id="hero-track" role="progressbar" aria-label="Progresso geral dos treinamentos" aria-valuemin="0" aria-valuemax="100"><div class="fill" id="hero-fill"></div></div>
+  <div class="foot"><span id="focus-note">Etapas concluídas, não percentual de horas. Auditorias e PDFs são acompanhados separadamente.</span><span id="active-count"></span></div>
+</section>
+<section class="card phase-focus" aria-labelledby="focus-title">
+  <div><div class="eyebrow" id="focus-regime">Lendo a etapa atual</div><h2 id="focus-title">Carregando progresso…</h2><p class="fine" id="focus-count">A primeira leitura pode levar alguns segundos.</p></div>
+  <div class="phase-percent" id="phase-percent">—</div>
+  <div class="track" id="phase-track" role="progressbar" aria-label="Progresso da etapa atual" aria-valuemin="0" aria-valuemax="100"><div class="fill" id="phase-fill"></div></div>
+  <p class="fine">Esta barra conta combinações completas nesta fase. As repetições dos modelos em andamento aparecem abaixo.</p>
+</section>
+
+<section class="estimates" aria-label="Estimativas de tempo">
+  <article class="card"><div class="eyebrow">Estimativa da etapa atual</div><div class="estimate-value" id="eta-stage">Calculando…</div><p class="estimate-text" id="eta-stage-note">Lendo as durações dos treinos concluídos.</p></article>
+  <article class="card"><div class="eyebrow">Entrega final dos PDFs</div><div class="estimate-value" id="eta-total">Ainda sem prazo confiável</div><p class="estimate-text" id="eta-total-note">Os treinamentos finais, os históricos e a revisão dos PDFs ainda não têm medições suficientes. A estimativa ao lado cobre somente a etapa indicada.</p></article>
+</section>
+
+<div class="section-title"><h2>Etapas do estudo</h2><small>44 combinações em cada base: 11 modelos × 4 casos</small></div>
+<section class="grid" id="regimes" aria-label="Progresso por base"></section>
+<p class="fine">Os treinamentos finais da base atual incluem as quatro execuções da TimesNet já concluídas e reaproveitadas.</p>
+
+<div class="section-title"><h2>Executando agora</h2><small id="updated">Aguardando a primeira leitura</small></div>
+<section class="jobs" id="jobs" aria-label="Treinamentos ativos"><div class="empty">Consultando as filas…</div></section>
+
+<div class="section-title"><h2>Entrega dos PDFs</h2><small>Geração, revisão e entrega são etapas distintas</small></div>
+<section class="deliveries" id="deliveries"></section>
+
+<details><summary>Ver situação de cada modelo</summary>
+<div class="table-wrap">
+<label for="regime-select">Base </label>
+<select id="regime-select"></select>
+<p class="fine">“Seleção pronta” significa que as configurações foram escolhidas. “Treino final pronto” ainda depende da auditoria do conjunto.</p>
+<table id="models"><thead></thead><tbody></tbody></table>
+</div></details>
+<footer>
+<p>As faixas de tempo usam as últimas repetições da mesma configuração e fase, com margem para variação. Podem mudar conforme as épocas e a carga do computador. São aproximações; não incluem pausas, próximas etapas nem auditorias.</p>
+<p id="note">Percentuais baseados em tarefas concluídas; não representam uma estimativa de tempo restante.</p>
+<p>Atualização automática a cada 10 segundos. A barra avança quando uma combinação termina; as repetições do modelo em execução aparecem acima. Fechar esta aba não interrompe os treinamentos.</p>
+<p>Se aparecer “PDF gerado · revisão pendente”, volte à conversa para a conferência visual e a entrega final. O painel apenas acompanha os registros e não inicia nem altera treinamentos.</p>
+</footer>
+</main>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const esc = value => String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]));
+let state = null, timer = null, loading = false;
+const pct = (a,b) => b ? Math.round(100*a/b) : 0;
+function progress(label,value,total){
+  const p=pct(value,total);
+  return '<div class="bar-label"><span>'+esc(label)+'</span><strong>'+value+' / '+total+' · '+p+'%</strong></div><div class="track" role="progressbar" aria-label="'+esc(label)+'" aria-valuemin="0" aria-valuemax="'+total+'" aria-valuenow="'+value+'"><div class="fill" style="width:'+p+'%"></div></div>';
+}
+function duration(seconds){
+  if(seconds==null)return "—";
+  const minutes=Math.floor(seconds/60);
+  return minutes<1?"menos de 1 min":minutes<60?minutes+" min":Math.floor(minutes/60)+" h "+minutes%60+" min";
+}
+function approximate(seconds){
+  if(!Number.isFinite(seconds))return "—";
+  const minutes=Math.max(1,Math.round(seconds/300)*5);
+  if(minutes<60)return minutes+" min";
+  if(minutes<1440)return Math.floor(minutes/60)+" h"+(minutes%60?" "+minutes%60+" min":"");
+  const hours=Math.round(minutes/60);
+  return Math.floor(hours/24)+" d"+(hours%24?" "+hours%24+" h":"");
+}
+function interval(e){
+  const a=approximate(e.min_s), b=approximate(e.max_s);
+  return a===b?"cerca de "+b:a+" a "+b;
+}
+function endWindow(e,now){
+  if(e.min_s==null||e.max_s==null)return "";
+  const start=new Date(now), a=new Date(start.getTime()+e.min_s*1000), b=new Date(start.getTime()+e.max_s*1000);
+  const format=t=>t.toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"});
+  return "Término aproximado: "+format(a)+" a "+format(b)+".";
+}
+function etaJob(j,now){
+  const e=j.estimativa||{status:"sem_base"};
+  if(j.fase==="verificacao_controle")return '<div class="job-eta">Auditoria do controle<strong>Verificando os resultados salvos</strong>Esta conferência não possui estimativa baseada nas durações de treinamento.</div>';
+  if(e.status==="finalizando")return '<div class="job-eta">Repetições concluídas<strong>Conferindo e salvando os resultados</strong>O encerramento desta execução ainda está em andamento.</div>';
+  if(e.min_s==null||e.max_s==null)return '<div class="job-eta">Tempo restante deste modelo<strong>Medindo as primeiras repetições</strong>A previsão aparece quando houver duração registrada nesta fase.</div>';
+  return '<div class="job-eta">Tempo restante deste modelo<strong>'+esc(interval(e))+'</strong>'+esc(endWindow(e,now))+'<br>Base: '+e.amostras+' repetições concluídas.'+(e.recalibrado?' O treino atual está mais lento; faixa recalculada.':'')+'</div>';
+}
+function renderEstimates(s){
+  const e=s.estimativa||{status:"sem_base"};
+  let value="Medindo as primeiras execuções", note="Acompanhe abaixo a estimativa de cada modelo em execução.";
+  if(e.status==="suspensa"){value="Previsão suspensa";note="Há um aviso nas filas. A estimativa será atualizada quando a execução estiver confirmada.";}
+  else if(e.status==="concluido"){value="Concluída";note="Treinos e auditorias concluídos, com registros de entrega dos PDFs.";}
+  else if(e.min_s!=null&&e.max_s!=null){
+    value=(e.status==="parcial"?"Parte medida: ":"")+interval(e);
+    note=e.status==="parcial"?"Cobre "+e.medidos+" de "+e.pendentes+" combinações restantes. As demais ainda não têm medição; esta faixa NÃO é o prazo da etapa inteira.":"Cobre as "+e.pendentes+" combinações restantes, considerando as duas filas em paralelo. "+endWindow(e,s.gerado_em_utc);
+  }
+  $("eta-stage").textContent=value;$("eta-stage-note").textContent=note;
+  $("eta-total").textContent=s.concluido?"PDFs entregues":"Ainda sem prazo confiável";
+  if(s.concluido)$("eta-total-note").textContent="Os dois PDFs têm registros de entrega e os três conjuntos passaram pela auditoria.";
+}
+function activity(line){
+  const m=line.match(/\/(sem_quantizacao|q64|q128|q256)\/(selecao|refit) seed=(\d+) (inicio|fim)(?: epocas=(\d+))?/);
+  if(!m)return line;
+  const level=m[1]==="sem_quantizacao"?"Sem quantização":m[1].slice(1)+" níveis";
+  return level+" · semente "+m[3]+(m[4]==="inicio"?" em execução":" concluída"+(m[5]?" · "+m[5]+" épocas":""));
+}
+function renderTable(){
+  if(!state)return;
+  const group=state.regimes.find(g=>g.id===$("regime-select").value)||state.regimes[0];
+  $("models").querySelector("thead").innerHTML="<tr><th>Modelo</th>"+Object.values(state.tarefas).map(t=>"<th>"+esc(t)+"</th>").join("")+"</tr>";
+  $("models").querySelector("tbody").innerHTML=state.modelos.map(model=>{
+    return "<tr><td>"+esc(model)+"</td>"+Object.keys(state.tarefas).map(task=>{
+      const pair=group.pares.find(p=>p.tarefa===task&&p.modelo===model);
+      const active=state.ativos.some(a=>a.regime===group.id&&a.tarefa===task&&a.modelo===model);
+      let text="Aguardando", cls="";
+      if(pair.refit){text="Treino final pronto";cls="done";}
+      else if(active){text="Em execução";cls="running";}
+      else if(pair.selecao){text="Seleção pronta";cls="selected";}
+      return '<td><span class="cell '+cls+'">'+text+"</span></td>";
+    }).join("")+"</tr>";
+  }).join("");
+}
+function render(s){
+  state=s;renderEstimates(s);
+  document.body.classList.remove("offline");$("offline").hidden=true;
+  const warnings=s.alertas.length>0;
+  $("connection").className="pill"+(warnings?" warn":"");
+  $("connection").innerHTML='<i class="dot"></i>'+(warnings?"Atenção às filas":s.concluido?"Entrega concluída":"Monitor conectado");
+  $("alerts").hidden=!warnings;
+  $("alerts").innerHTML=s.alertas.map(t=>"<p>"+esc(t)+"</p>").join("");
+  const f=s.foco, group=s.regimes.find(g=>g.id===f.regime), quantified=f.total!=null;
+  $("focus-regime").textContent=group?group.rotulo:"Etapa de entrega";
+  $("focus-title").textContent=f.titulo;
+  $("focus-count").textContent=quantified?f.feito+" de "+f.total+" combinações concluídas":s.concluido?"Os dois PDFs têm registros de entrega.":"Esta etapa não possui percentual por treinamento.";
+  const globalDone=s.regimes.reduce((sum,g)=>sum+g.selecao+g.refit,0);
+  const globalTotal=s.regimes.reduce((sum,g)=>sum+2*g.total,0);
+  const globalPercent=pct(globalDone,globalTotal);
+  $("global-count").textContent=globalDone+" de "+globalTotal+" etapas de treinamento concluídas nas três bases.";
+  $("percent").innerHTML=globalPercent+'<span>%</span>';
+  $("hero-fill").style.width=globalPercent+"%";
+  $("hero-track").setAttribute("aria-valuenow",globalPercent);
+  $("phase-percent").textContent=quantified?pct(f.feito,f.total)+"%":"—";
+  $("phase-fill").style.width=quantified?pct(f.feito,f.total)+"%":"0%";
+  $("phase-track").hidden=!quantified;
+  if(quantified)$("phase-track").setAttribute("aria-valuenow",pct(f.feito,f.total));
+  else $("phase-track").removeAttribute("aria-valuenow");
+  $("active-count").textContent=s.ativos.length+" treinamento"+(s.ativos.length===1?"":"s")+" ativo"+(s.ativos.length===1?"":"s");
+  $("focus-note").textContent="Etapas concluídas, não percentual de horas. Auditorias e PDFs são acompanhados separadamente.";
+  document.title=(s.concluido?"PDFs entregues":globalPercent+"% dos treinamentos")+" · Treinamentos GHI";
+  $("regimes").innerHTML=s.regimes.map((g,i)=>'<article class="card '+(g.id===f.regime?"active":"")+'"><div class="card-head"><h3>'+esc(g.rotulo)+'</h3><span class="step">0'+(i+1)+'</span></div>'+progress("Escolha das configurações",g.selecao,g.total)+progress("Treinamento final",g.refit,g.total)+'<div class="audit '+(g.auditoria?"good":"")+'">'+(g.auditoria?"✓ Auditoria aprovada":"○ Auditoria do conjunto pendente")+"</div></article>").join("");
+  $("jobs").innerHTML=s.ativos.length?s.ativos.map(j=>'<article class="card job"><div class="job-heading"><div><h3>'+esc(j.modelo)+'</h3><p>'+esc(j.caso)+'</p></div><span class="pill">'+(j.fase==="refit"?"Treino final":j.fase==="verificacao_controle"?"Verificação do controle":"Seleção")+'</span></div><div class="activity">'+esc(activity(j.atividade))+'</div>'+(j.sementes_total?progress("Repetições salvas nesta fase",j.sementes_concluidas,j.sementes_total):j.fase==="verificacao_controle"?'<p>Auditoria dos checkpoints, dados e configuração do controle.</p>':'<p>O progresso deste modelo é registrado ao concluir cada nível.</p>')+'<div class="job-meta"><span>'+esc(s.regimes.find(g=>g.id===j.regime)?.rotulo||j.regime)+'</span><span>Execução há '+duration(j.decorrido_s)+'</span></div></article>').join(""):'<div class="empty">'+(warnings?"Consulte o aviso acima: não foi confirmado treinamento ativo.":"Nenhum treinamento ativo nesta leitura. Os coordenadores podem estar conferindo arquivos, preparando a próxima fase ou aguardando revisão.")+"</div>";
+  $("updated").textContent="Leitura em "+new Date(s.gerado_em_utc).toLocaleTimeString("pt-BR");
+  $("jobs").querySelectorAll(".job").forEach((card,i)=>card.insertAdjacentHTML("beforeend",etaJob(s.ativos[i],s.gerado_em_utc)));
+  $("deliveries").innerHTML=s.entregas.map(e=>{
+    const label=e.etapa==="entregue"?"PDF entregue":e.etapa==="revisao_pendente"?"PDF gerado · revisão pendente":"Aguardando resultados";
+    return '<article class="card delivery"><div><h3>'+esc(e.nome)+'</h3><small>'+esc(e.arquivo)+'</small></div><span class="pill '+(e.etapa==="entregue"?"": "warn")+'">'+label+"</span></article>";
+  }).join("");
+  if(!$("regime-select").options.length)$("regime-select").innerHTML=s.regimes.map(g=>'<option value="'+esc(g.id)+'">'+esc(g.rotulo)+"</option>").join("");
+  $("note").textContent=s.nota;renderTable();
+}
+async function refresh(){
+  if(loading)return;
+  loading=true;clearTimeout(timer);$("refresh").disabled=true;
+  const controller=new AbortController(), timeout=setTimeout(()=>controller.abort(),15000);
+  try{
+    const response=await fetch("/api/status",{cache:"no-store",signal:controller.signal});
+    if(!response.ok)throw new Error("HTTP "+response.status);
+    const s=await response.json();if(s.app!=="tcc-progresso-quantizacao-v1")throw new Error("Servidor inesperado");
+    render(s);
+  }catch(error){
+    document.body.classList.add("offline");$("offline").hidden=false;
+    $("connection").className="pill error";$("connection").innerHTML='<i class="dot"></i>Sem conexão';
+    document.title="Sem conexão · Treinamentos GHI";
+  }finally{
+    clearTimeout(timeout);loading=false;$("refresh").disabled=false;timer=setTimeout(refresh,10000);
+  }
+}
+$("refresh").addEventListener("click",refresh);
+$("regime-select").addEventListener("change",renderTable);
+document.addEventListener("visibilitychange",()=>{if(!document.hidden)refresh();});
+refresh();
+</script>
+</body>
+</html>

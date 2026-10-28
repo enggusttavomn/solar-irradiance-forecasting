@@ -1,0 +1,1132 @@
+{
+  "app": "tcc-progresso-quantizacao-v1",
+  "interface_versao": 2,
+  "gerado_em_utc": "2026-09-30T17:00:22.477819+00:00",
+  "intervalo_s": 10,
+  "foco": {
+    "regime": "atual",
+    "titulo": "Escolha das configurações",
+    "feito": 37,
+    "total": 44
+  },
+  "regimes": [
+    {
+      "id": "atual",
+      "rotulo": "Base atual · 2019–2024",
+      "total": 44,
+      "selecao": 37,
+      "refit": 4,
+      "auditoria": false,
+      "pares": [
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "TimesNet",
+          "selecao": true,
+          "refit": true,
+          "reutilizado": true
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "XGBoost",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "LSTM",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "DilatedRNN",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "GRU",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "Transformer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "Informer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "ARIMA",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "Persistencia",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "Sazonal ingenuo",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "Climatologia",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "TimesNet",
+          "selecao": true,
+          "refit": true,
+          "reutilizado": true
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "XGBoost",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "LSTM",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "DilatedRNN",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "GRU",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "Transformer",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "Informer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "ARIMA",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "Persistencia",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "Sazonal ingenuo",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "Climatologia",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "TimesNet",
+          "selecao": true,
+          "refit": true,
+          "reutilizado": true
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "XGBoost",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "LSTM",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "DilatedRNN",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "GRU",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "Transformer",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "Informer",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "ARIMA",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "Persistencia",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "Sazonal ingenuo",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "Climatologia",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "TimesNet",
+          "selecao": true,
+          "refit": true,
+          "reutilizado": true
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "XGBoost",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "LSTM",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "DilatedRNN",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "GRU",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "Transformer",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "Informer",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "ARIMA",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "Persistencia",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "Sazonal ingenuo",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "Climatologia",
+          "selecao": true,
+          "refit": false,
+          "reutilizado": false
+        }
+      ]
+    },
+    {
+      "id": "historico_1998_2022",
+      "rotulo": "Histórico longo · 1998–2022",
+      "total": 44,
+      "selecao": 0,
+      "refit": 0,
+      "auditoria": false,
+      "pares": [
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "TimesNet",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "XGBoost",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "LSTM",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "DilatedRNN",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "GRU",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "Transformer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "Informer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "ARIMA",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "Persistencia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "Sazonal ingenuo",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "Climatologia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "TimesNet",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "XGBoost",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "LSTM",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "DilatedRNN",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "GRU",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "Transformer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "Informer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "ARIMA",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "Persistencia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "Sazonal ingenuo",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "Climatologia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "TimesNet",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "XGBoost",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "LSTM",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "DilatedRNN",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "GRU",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "Transformer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "Informer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "ARIMA",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "Persistencia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "Sazonal ingenuo",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "Climatologia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "TimesNet",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "XGBoost",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "LSTM",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "DilatedRNN",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "GRU",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "Transformer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "Informer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "ARIMA",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "Persistencia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "Sazonal ingenuo",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "Climatologia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        }
+      ]
+    },
+    {
+      "id": "historico_curto_pareado",
+      "rotulo": "Histórico curto · comparação pareada",
+      "total": 44,
+      "selecao": 0,
+      "refit": 0,
+      "auditoria": false,
+      "pares": [
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "TimesNet",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "XGBoost",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "LSTM",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "DilatedRNN",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "GRU",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "Transformer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "Informer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "ARIMA",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "Persistencia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "Sazonal ingenuo",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "hourly_72_extension",
+          "modelo": "Climatologia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "TimesNet",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "XGBoost",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "LSTM",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "DilatedRNN",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "GRU",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "Transformer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "Informer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "ARIMA",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "Persistencia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "Sazonal ingenuo",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "daily_30",
+          "modelo": "Climatologia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "TimesNet",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "XGBoost",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "LSTM",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "DilatedRNN",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "GRU",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "Transformer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "Informer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "ARIMA",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "Persistencia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "Sazonal ingenuo",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_1",
+          "modelo": "Climatologia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "TimesNet",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "XGBoost",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "LSTM",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "DilatedRNN",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "GRU",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "Transformer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "Informer",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "ARIMA",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "Persistencia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "Sazonal ingenuo",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        },
+        {
+          "tarefa": "monthly_6",
+          "modelo": "Climatologia",
+          "selecao": false,
+          "refit": false,
+          "reutilizado": false
+        }
+      ]
+    }
+  ],
+  "tarefas": {
+    "hourly_72_extension": "Horário · até 72 h",
+    "daily_30": "Diário · até 30 dias",
+    "monthly_1": "Mensal · 1 mês",
+    "monthly_6": "Mensal · 6 meses"
+  },
+  "modelos": [
+    "TimesNet",
+    "XGBoost",
+    "LSTM",
+    "DilatedRNN",
+    "GRU",
+    "Transformer",
+    "Informer",
+    "ARIMA",
+    "Persistencia",
+    "Sazonal ingenuo",
+    "Climatologia"
+  ],
+  "ativos": [
+    {
+      "regime": "atual",
+      "modelo": "DilatedRNN",
+      "tarefa": "daily_30",
+      "caso": "Diário · até 30 dias",
+      "fase": "selecao",
+      "inicio": "2026-09-30T14:16:26.543887+00:00",
+      "decorrido_s": 9835.933932,
+      "sementes_concluidas": 17,
+      "sementes_total": 20,
+      "atividade": "daily_30/DilatedRNN/q256/selecao seed=42 inicio",
+      "estimativa": {
+        "status": "estimado",
+        "min_s": 1517.368682854999,
+        "max_s": 5213.495722699994,
+        "amostras": 8,
+        "restantes": 3,
+        "recalibrado": false,
+        "tipo": "faixa_heuristica"
+      }
+    },
+    {
+      "regime": "atual",
+      "modelo": "Informer",
+      "tarefa": "daily_30",
+      "caso": "Diário · até 30 dias",
+      "fase": "selecao",
+      "inicio": "2026-09-30T16:37:52.091076+00:00",
+      "decorrido_s": 1350.386743,
+      "sementes_concluidas": 4,
+      "sementes_total": 20,
+      "atividade": "daily_30/Informer/sem_quantizacao/selecao seed=89 inicio",
+      "estimativa": {
+        "status": "estimado",
+        "min_s": 2090.6023365599963,
+        "max_s": 11727.110147600017,
+        "amostras": 4,
+        "restantes": 16,
+        "recalibrado": false,
+        "tipo": "faixa_heuristica"
+      }
+    }
+  ],
+  "filas": [
+    {
+      "arquivo": "fila_aprendidos/atual/completa/runner.json",
+      "etapa": "selecao",
+      "situacao": "ativo",
+      "atualizado_em_utc": "2026-09-30T17:00:17.848309+00:00",
+      "estimativa": {
+        "pares": [
+          [
+            "daily_30",
+            "DilatedRNN"
+          ],
+          [
+            "hourly_72_extension",
+            "DilatedRNN"
+          ],
+          [
+            "hourly_72_extension",
+            "GRU"
+          ],
+          [
+            "hourly_72_extension",
+            "LSTM"
+          ]
+        ],
+        "medidos": 4,
+        "pendentes": 4,
+        "min_s": 3784.7865541550136,
+        "max_s": 14283.167207900053
+      }
+    },
+    {
+      "arquivo": "fila_atencao/atual/completa/runner.json",
+      "etapa": "selecao",
+      "situacao": "ativo",
+      "atualizado_em_utc": "2026-09-30T17:00:19.175314+00:00",
+      "estimativa": {
+        "pares": [
+          [
+            "daily_30",
+            "Informer"
+          ],
+          [
+            "hourly_72_extension",
+            "Informer"
+          ],
+          [
+            "hourly_72_extension",
+            "Transformer"
+          ]
+        ],
+        "medidos": 1,
+        "pendentes": 3,
+        "min_s": 2090.6023365599963,
+        "max_s": 11727.110147600017
+      }
+    },
+    {
+      "arquivo": "fila_estatisticos/atual/completa/runner.json",
+      "etapa": "selecao_concluida",
+      "situacao": "selecao_concluida",
+      "atualizado_em_utc": "2026-09-30T10:55:27.481519+00:00"
+    }
+  ],
+  "coordenadores": [
+    {
+      "id": "atual",
+      "etapa": "aguardando_filas_iniciais",
+      "situacao": "ativo",
+      "atualizado_em_utc": "2026-09-30T17:00:07.822101+00:00"
+    },
+    {
+      "id": "historica",
+      "etapa": "aguardando_coordenacao_atual",
+      "situacao": "ativo",
+      "atualizado_em_utc": "2026-09-30T17:00:16.003225+00:00"
+    }
+  ],
+  "alertas": [],
+  "estimativa": {
+    "status": "parcial",
+    "min_s": 3784.7865541550136,
+    "max_s": 14283.167207900053,
+    "medidos": 5,
+    "pendentes": 7,
+    "escopo": "etapa_atual"
+  },
+  "entregas": [
+    {
+      "nome": "Base atual",
+      "arquivo": "tabela_resultados_ghi_2024.pdf",
+      "etapa": "aguardando"
+    },
+    {
+      "nome": "Históricos comparados",
+      "arquivo": "tabela_resultados_ghi_1998_2022.pdf",
+      "etapa": "aguardando"
+    }
+  ],
+  "concluido": false,
+  "nota": "Percentuais por combinações modelo/caso concluídas; não representam tempo restante. Cada combinação inclui sem quantização, 64, 128 e 256 níveis. O painel lê os registros; as auditorias científicas são executadas separadamente."
+}

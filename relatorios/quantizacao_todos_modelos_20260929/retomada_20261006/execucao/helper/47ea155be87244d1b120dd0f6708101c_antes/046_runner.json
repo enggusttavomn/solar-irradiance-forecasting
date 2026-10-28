@@ -1,0 +1,554 @@
+{
+  "regime": "historico_1998_2022",
+  "modo": "completa",
+  "etapa": "erro",
+  "iniciado_em_utc": "2026-10-05T03:16:32.506001+00:00",
+  "atualizado_em_utc": "2026-10-06T09:07:33.043022+00:00",
+  "pid_runner": 23160,
+  "identidade_runner": {
+    "pid": 23160,
+    "creation_time": "134356437910898585"
+  },
+  "processos_historico": [
+    {
+      "pid": 25924,
+      "creation_time": "134356437930957795"
+    },
+    {
+      "pid": 11780,
+      "creation_time": "134356437932089711"
+    },
+    {
+      "pid": 10260,
+      "creation_time": "134356437933426281"
+    },
+    {
+      "pid": 27512,
+      "creation_time": "134356437934784920"
+    },
+    {
+      "pid": 19828,
+      "creation_time": "134356439047975438"
+    },
+    {
+      "pid": 26096,
+      "creation_time": "134356439555084171"
+    },
+    {
+      "pid": 12788,
+      "creation_time": "134356439556555522"
+    },
+    {
+      "pid": 19888,
+      "creation_time": "134356440060667200"
+    },
+    {
+      "pid": 14236,
+      "creation_time": "134356441281033222"
+    },
+    {
+      "pid": 22176,
+      "creation_time": "134356442765968334"
+    },
+    {
+      "pid": 26120,
+      "creation_time": "134356446353856309"
+    },
+    {
+      "pid": 2964,
+      "creation_time": "134356484788665740"
+    },
+    {
+      "pid": 10392,
+      "creation_time": "134356525446064244"
+    },
+    {
+      "pid": 16832,
+      "creation_time": "134356529189881922"
+    },
+    {
+      "pid": 372,
+      "creation_time": "134356533792785532"
+    },
+    {
+      "pid": 15104,
+      "creation_time": "134356540100264309"
+    },
+    {
+      "pid": 24780,
+      "creation_time": "134356563532158657"
+    },
+    {
+      "pid": 27248,
+      "creation_time": "134356569961761498"
+    },
+    {
+      "pid": 25040,
+      "creation_time": "134356573248134391"
+    },
+    {
+      "pid": 6536,
+      "creation_time": "134356594921883970"
+    },
+    {
+      "pid": 5860,
+      "creation_time": "134356651448990709"
+    },
+    {
+      "pid": 26444,
+      "creation_time": "134356652714288449"
+    },
+    {
+      "pid": 7980,
+      "creation_time": "134356654181606288"
+    },
+    {
+      "pid": 21784,
+      "creation_time": "134356654637023510"
+    },
+    {
+      "pid": 22176,
+      "creation_time": "134356655144567414"
+    },
+    {
+      "pid": 27780,
+      "creation_time": "134356655600536254"
+    },
+    {
+      "pid": 30668,
+      "creation_time": "134356689908974795"
+    },
+    {
+      "pid": 29952,
+      "creation_time": "134356691739378226"
+    },
+    {
+      "pid": 32240,
+      "creation_time": "134356704954378289"
+    },
+    {
+      "pid": 13256,
+      "creation_time": "134356710842232178"
+    },
+    {
+      "pid": 28684,
+      "creation_time": "134356719191878122"
+    },
+    {
+      "pid": 40680,
+      "creation_time": "134357052384762200"
+    },
+    {
+      "pid": 12736,
+      "creation_time": "134357055689482135"
+    },
+    {
+      "pid": 35452,
+      "creation_time": "134357056804838618"
+    },
+    {
+      "pid": 20136,
+      "creation_time": "134357058469473123"
+    },
+    {
+      "pid": 4004,
+      "creation_time": "134357059156039088"
+    },
+    {
+      "pid": 24436,
+      "creation_time": "134357059784788883"
+    },
+    {
+      "pid": 30768,
+      "creation_time": "134357060415126551"
+    },
+    {
+      "pid": 12788,
+      "creation_time": "134357103581164695"
+    },
+    {
+      "pid": 31124,
+      "creation_time": "134357113593064100"
+    },
+    {
+      "pid": 3012,
+      "creation_time": "134357125698066065"
+    },
+    {
+      "pid": 33000,
+      "creation_time": "134357216516913377"
+    },
+    {
+      "pid": 4688,
+      "creation_time": "134357289869669839"
+    },
+    {
+      "pid": 31496,
+      "creation_time": "134357330153059427"
+    }
+  ],
+  "saida": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929",
+  "pendentes": [],
+  "concluidos": [
+    {
+      "fase": "refit",
+      "tarefa": "daily_30",
+      "modelo": "ARIMA",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_arima.log",
+      "concluido_em_utc": "2026-10-05T03:18:19.758178+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "daily_30",
+      "modelo": "GRU",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_gru.log",
+      "concluido_em_utc": "2026-10-05T03:19:10.472457+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "daily_30",
+      "modelo": "LSTM",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_lstm.log",
+      "concluido_em_utc": "2026-10-05T03:19:10.479644+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "daily_30",
+      "modelo": "Persistencia",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_persistencia.log",
+      "concluido_em_utc": "2026-10-05T03:20:01.037273+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "daily_30",
+      "modelo": "Sazonal ingenuo",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_sazonal_ingenuo.log",
+      "concluido_em_utc": "2026-10-05T03:22:03.065271+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "daily_30",
+      "modelo": "Climatologia",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_climatologia.log",
+      "concluido_em_utc": "2026-10-05T03:24:31.547814+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "hourly_72_extension",
+      "modelo": "XGBoost",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_xgboost.log",
+      "concluido_em_utc": "2026-10-05T03:30:30.349506+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "daily_30",
+      "modelo": "Transformer",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_transformer.log",
+      "concluido_em_utc": "2026-10-05T04:34:33.826510+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "hourly_72_extension",
+      "modelo": "ARIMA",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_arima.log",
+      "concluido_em_utc": "2026-10-05T05:42:19.482995+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "hourly_72_extension",
+      "modelo": "Persistencia",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_persistencia.log",
+      "concluido_em_utc": "2026-10-05T05:48:33.945942+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "hourly_72_extension",
+      "modelo": "Sazonal ingenuo",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_sazonal_ingenuo.log",
+      "concluido_em_utc": "2026-10-05T05:56:14.242072+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "hourly_72_extension",
+      "modelo": "Climatologia",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_climatologia.log",
+      "concluido_em_utc": "2026-10-05T06:06:44.978217+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_6",
+      "modelo": "GRU",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_gru.log",
+      "concluido_em_utc": "2026-10-05T06:45:48.166266+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "daily_30",
+      "modelo": "XGBoost",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_xgboost.log",
+      "concluido_em_utc": "2026-10-05T06:56:31.138800+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_6",
+      "modelo": "LSTM",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_lstm.log",
+      "concluido_em_utc": "2026-10-05T07:01:59.731195+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_6",
+      "modelo": "DilatedRNN",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_dilatedrnn.log",
+      "concluido_em_utc": "2026-10-05T07:38:07.146890+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_6",
+      "modelo": "Transformer",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_transformer.log",
+      "concluido_em_utc": "2026-10-05T09:12:19.789624+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_6",
+      "modelo": "XGBoost",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_xgboost.log",
+      "concluido_em_utc": "2026-10-05T09:14:26.389288+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_6",
+      "modelo": "ARIMA",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_arima.log",
+      "concluido_em_utc": "2026-10-05T09:16:53.123197+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_6",
+      "modelo": "Persistencia",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_persistencia.log",
+      "concluido_em_utc": "2026-10-05T09:17:38.659874+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_6",
+      "modelo": "Climatologia",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_climatologia.log",
+      "concluido_em_utc": "2026-10-05T09:19:15.013128+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_6",
+      "modelo": "Informer",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_informer.log",
+      "concluido_em_utc": "2026-10-05T10:16:25.558799+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_6",
+      "modelo": "TimesNet",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_timesnet.log",
+      "concluido_em_utc": "2026-10-05T10:19:28.869413+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_1",
+      "modelo": "LSTM",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_lstm.log",
+      "concluido_em_utc": "2026-10-05T10:41:30.376014+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_1",
+      "modelo": "GRU",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_gru.log",
+      "concluido_em_utc": "2026-10-05T10:51:18.876285+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "daily_30",
+      "modelo": "Informer",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_informer.log",
+      "concluido_em_utc": "2026-10-05T20:20:33.293515+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_1",
+      "modelo": "Transformer",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_transformer.log",
+      "concluido_em_utc": "2026-10-05T20:26:03.869374+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_1",
+      "modelo": "XGBoost",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_xgboost.log",
+      "concluido_em_utc": "2026-10-05T20:27:55.395921+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_1",
+      "modelo": "ARIMA",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_arima.log",
+      "concluido_em_utc": "2026-10-05T20:30:41.879939+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_1",
+      "modelo": "Persistencia",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_persistencia.log",
+      "concluido_em_utc": "2026-10-05T20:31:50.497726+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_1",
+      "modelo": "Climatologia",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_climatologia.log",
+      "concluido_em_utc": "2026-10-05T20:33:56.168391+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_1",
+      "modelo": "Informer",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_informer.log",
+      "concluido_em_utc": "2026-10-05T20:48:07.292352+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "daily_30",
+      "modelo": "DilatedRNN",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_dilatedrnn.log",
+      "concluido_em_utc": "2026-10-05T21:45:53.077869+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "hourly_72_extension",
+      "modelo": "GRU",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_gru.log",
+      "concluido_em_utc": "2026-10-05T22:02:34.263966+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "hourly_72_extension",
+      "modelo": "LSTM",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_lstm.log",
+      "concluido_em_utc": "2026-10-05T22:22:44.364306+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_1",
+      "modelo": "TimesNet",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_timesnet.log",
+      "concluido_em_utc": "2026-10-06T00:34:34.654949+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "hourly_72_extension",
+      "modelo": "DilatedRNN",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_dilatedrnn.log",
+      "concluido_em_utc": "2026-10-06T00:54:06.651873+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "daily_30",
+      "modelo": "TimesNet",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_daily_30_timesnet.log",
+      "concluido_em_utc": "2026-10-06T02:56:21.931640+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "hourly_72_extension",
+      "modelo": "Transformer",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_transformer.log",
+      "concluido_em_utc": "2026-10-06T04:03:30.256540+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "hourly_72_extension",
+      "modelo": "Informer",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_informer.log",
+      "concluido_em_utc": "2026-10-06T04:46:43.954178+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "hourly_72_extension",
+      "modelo": "TimesNet",
+      "returncode": 0,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_hourly_72_extension_timesnet.log",
+      "concluido_em_utc": "2026-10-06T09:07:33.031344+00:00"
+    }
+  ],
+  "falhas": [
+    {
+      "fase": "refit",
+      "tarefa": "monthly_6",
+      "modelo": "Sazonal ingenuo",
+      "returncode": 1,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_6_sazonal_ingenuo.log",
+      "concluido_em_utc": "2026-10-05T09:18:29.385535+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_1",
+      "modelo": "DilatedRNN",
+      "returncode": 1,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_dilatedrnn.log",
+      "concluido_em_utc": "2026-10-05T11:05:13.606728+00:00"
+    },
+    {
+      "fase": "refit",
+      "tarefa": "monthly_1",
+      "modelo": "Sazonal ingenuo",
+      "returncode": 1,
+      "log": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\refit_monthly_1_sazonal_ingenuo.log",
+      "concluido_em_utc": "2026-10-05T20:32:53.411574+00:00"
+    },
+    {
+      "tipo": "RuntimeError",
+      "mensagem": "3 execucoes falharam; outras selecoes foram preservadas. Consulte C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\relatorios\\quantizacao_todos_modelos_20260929\\fila_historica\\historico_1998_2022\\completa\\runner.json",
+      "instante": "2026-10-06T09:07:33.043007+00:00"
+    }
+  ],
+  "processos": []
+}

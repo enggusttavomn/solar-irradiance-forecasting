@@ -1,7 +1,7 @@
 r"""TimesNet compacto para previsao horaria multistep de GHI.
 
 O nucleo do TimesNet transforma variacoes temporais 1D em variacoes 2D:
-as frequencias dominantes de cada lote sao obtidas por FFT, cada periodo
+as frequencias dominantes de cada amostra sao obtidas por FFT, cada periodo
 selecionado define uma grade ``(ciclos, periodo)`` e convolucoes Inception 2D
 extraem variacoes intra e interperiodos. As representacoes resultantes sao
 ponderadas, por amostra, pelas amplitudes espectrais e recebem uma conexao
@@ -48,9 +48,9 @@ def fft_top_k_periods(x: Tensor, top_k: int) -> tuple[Tensor, Tensor]:
             nunca participa da selecao.
 
     Returns:
-        Um par ``(periodos, amplitudes)``. ``periodos`` tem forma ``(top_k,)``
-        e tipo inteiro; ``amplitudes`` tem forma ``(lote, top_k)`` e conserva
-        o gradiente usado na agregacao adaptativa das representacoes.
+        Um par ``(periodos, amplitudes)``, ambos com forma ``(lote, top_k)``.
+        ``periodos`` possui tipo inteiro; ``amplitudes`` conserva o gradiente
+        usado na agregacao adaptativa das representacoes.
 
     Notes:
         Como no TimesNet original, o periodo discreto associado ao indice
@@ -80,11 +80,17 @@ def fft_top_k_periods(x: Tensor, top_k: int) -> tuple[Tensor, Tensor]:
             "top_k excede a quantidade de frequencias nao nulas disponiveis."
         )
 
-    amplitude_global = amplitudes.mean(dim=(0, 2))
-    indices = torch.topk(amplitude_global[1:], k=top_k).indices + 1
+    # A selecao e individual: nenhuma amostra pode alterar os periodos usados
+    # por outra amostra do lote (condicao necessaria para inferencia causal).
+    amplitudes_por_amostra = amplitudes.mean(dim=2)
+    indices = torch.topk(
+        amplitudes_por_amostra[:, 1:],
+        k=top_k,
+        dim=1,
+    ).indices + 1
     periodos = torch.div(x.shape[1], indices, rounding_mode="floor")
-    amplitudes_por_amostra = amplitudes.mean(dim=2).index_select(1, indices)
-    return periodos, amplitudes_por_amostra
+    amplitudes_selecionadas = torch.gather(amplitudes_por_amostra, 1, indices)
+    return periodos, amplitudes_selecionadas
 
 
 # Nome em portugues para uso nos demais modulos do projeto.
@@ -208,6 +214,34 @@ class TimesBlock(nn.Module):
         )
         return serie[:, :comprimento, :]
 
+    def _representacoes_individuais(self, x: Tensor, periodos: Tensor) -> Tensor:
+        """Processa os periodos de cada amostra sem repetir convolucoes iguais."""
+
+        por_rank = [torch.zeros_like(x) for _ in range(self.top_k)]
+        for periodo_tensor in torch.unique(periodos, sorted=True):
+            ocorrencias = torch.nonzero(
+                periodos == periodo_tensor,
+                as_tuple=False,
+            )
+            indices_amostras = torch.unique(ocorrencias[:, 0], sorted=True)
+            processadas = self._representacao_bidimensional(
+                x.index_select(0, indices_amostras),
+                int(periodo_tensor.item()),
+            )
+            for rank_tensor in torch.unique(ocorrencias[:, 1], sorted=True):
+                rank = int(rank_tensor.item())
+                indices_rank = ocorrencias[
+                    ocorrencias[:, 1] == rank_tensor,
+                    0,
+                ]
+                posicoes = torch.searchsorted(indices_amostras, indices_rank)
+                por_rank[rank] = por_rank[rank].index_copy(
+                    0,
+                    indices_rank,
+                    processadas.index_select(0, posicoes),
+                )
+        return torch.stack(por_rank, dim=-1)
+
     def forward(self, x: Tensor) -> Tensor:
         """Extrai e agrega as ``top_k`` representacoes periodicas de ``x``."""
 
@@ -223,14 +257,10 @@ class TimesBlock(nn.Module):
             )
 
         periodos, amplitudes = fft_top_k_periods(x, self.top_k)
-        representacoes = [
-            self._representacao_bidimensional(x, int(periodo.item()))
-            for periodo in periodos
-        ]
-        empilhadas = torch.stack(representacoes, dim=-1)
+        empilhadas = self._representacoes_individuais(x, periodos)
 
-        # Cada amostra pondera os mesmos periodos globais com suas proprias
-        # amplitudes. Softmax evita escalas arbitrarias e soma exatamente um.
+        # Cada amostra seleciona e pondera seus proprios periodos. Softmax evita
+        # escalas arbitrarias e soma exatamente um.
         pesos = torch.softmax(amplitudes, dim=1)[:, None, None, :]
         agregado = torch.sum(empilhadas * pesos, dim=-1)
         return x + agregado

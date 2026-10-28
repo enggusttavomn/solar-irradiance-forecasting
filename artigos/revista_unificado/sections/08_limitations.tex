@@ -1,0 +1,120 @@
+\subsection{Threats to validity and limitations}
+\label{sec:limitations}
+
+\subsubsection{Construct and data validity}
+
+NSRDB GHI is a satellite-informed physical-model estimate
+\cite{sengupta2018}, not an on-site pyranometer record. Factory coordinates
+select product grid cells, so neither the target nor its error quantifies the
+irradiance at a particular roof surface. The purposive set of ten
+factory-associated locations is also not a sample of factory electricity
+demand, photovoltaic output, roof area, or operational constraints. The
+industrial framing therefore identifies geographically relevant forecasting
+sites; it does not establish plant-level energy savings.
+
+The matched input contains only GHI available at the forecast origin and
+site identity. This restriction controls predictor availability among learned
+models, but excludes potentially useful weather information, such as cloud
+motion, numerical weather predictions, and forecasts of aerosols and
+temperature. Recent photovoltaic-power models fuse such forecasts with
+historical generation \cite{zhang2026rethinking}, illustrating the kind of
+information this design excludes. A site embedding can also encode persistent
+location-specific behavior and does not demonstrate transfer to an unseen
+factory. Fixed local offsets produce regular hourly grids but do not reproduce
+daylight-saving clock changes. Moreover, the daily/monthly archive was
+retrieved independently of the hourly archive. The comparison across resolutions
+therefore does not use controlled reaggregation of a single set of native
+records.
+
+\subsubsection{Temporal and statistical validity}
+
+All test evidence is retrospective and restricted to 2024. It does not measure
+prospective robustness under later satellite-product revisions, climate
+nonstationarity, or new sites. The retrospective information set assumes
+that each completed historical aggregate is immediately available; product
+publication delays and operational data latency are not simulated. The
+primary monthly task has only 48 pre-test refit origins per site, and the
+exploratory six-month task has seven test origins per site. These small
+samples limit the evidence available for fitting and evaluating monthly
+models relative to the hourly and daily tasks.
+
+Targets from adjacent multi-step origins overlap, creating strongly dependent
+errors. Site-first aggregation avoids allowing that overlap to change spatial
+weights, but it does not make the origins independent. The paired summaries
+therefore use ten locations as descriptive units, without applying an
+i.i.d. significance test to the overlapping target points. Nearby sites may
+also share weather and model errors, so their summaries cannot be assumed
+to be independent statistical replicates.
+
+\subsubsection{Model-comparison validity}
+
+TimesNet and DilatedRNN share inputs, origins, seeds, optimization limits, and
+post-processing in the daily and monthly tasks, but their parameterizations and
+inductive biases are not identical. The frozen configuration is a controlled
+comparison rather than an exhaustive architecture-specific search. Moreover,
+the hourly extension evaluates DilatedRNN using seed 42 against previously
+generated comparator forecasts, whereas daily and monthly estimates use five
+seeds. Comparisons across resolutions therefore reflect these protocol
+differences, and seed variability cannot be assessed for the hourly task.
+The reported TimesNet is a compact variant with sample-specific Fourier-period
+selection; the findings do not establish a ranking of every implementation
+bearing either architecture name.
+
+The reference models follow declared compact configurations rather than
+searches of equal effort. ARIMA is fitted separately for each site, whereas
+the neural and tree-based models are global and share parameters across
+sites, so its comparison also reflects this local--global difference.
+Under these settings, the hourly ARIMA and Informer did not reproduce the
+diurnal cycle, so their hourly errors do not represent tuned versions of
+either model family. The
+Transformer and Informer are GHI-only adaptations without the calendar
+embeddings and parameter budgets of their original publications. Their daily
+and hourly runs used a GPU with nondeterministic attention gradients, whereas
+the other learned models used one CPU thread. This hardware difference leaves
+the data, targets, and selection protocol unchanged, but it limits bitwise
+reproducibility of those runs.
+
+Neural epoch selection minimizes normalized validation MSE, whereas the main
+test ranking minimizes macro-MAE in W/m$^2$. These objectives weight errors
+differently, and equal selection rules do not establish each model's best
+achievable MAE. Calendar baselines also use explicit target calendar labels
+and historical lookups unavailable as features to the learned models. Their
+performance is a useful operational reference, but does not isolate
+architecture under identical feature representations.
+
+The neural parameter budgets also differ by task, as reported in
+Table~\ref{tab:model_capacity}. Equal optimization rules do not imply equal
+representational capacity, and the comparison cannot isolate whether a result
+comes from recurrence, periodic convolution, parameter count, or their
+interaction. Training and inference runtimes were not measured consistently
+across runs, so the results do not support a hardware-efficiency ranking.
+
+The zero floor enforces nonnegative predictions at all resolutions. The
+additional hourly nighttime mask uses deterministic solar geometry, but no
+common upper physical envelope is imposed. Consequently, implausibly high
+daytime extrapolations remain reflected in the reported errors.
+
+Hourly metrics retain all target hours after the common nighttime mask. Exact
+nighttime zeros are part of the operational 72-hour trajectory, but they also
+dilute the contribution of daylight errors to the all-hour average. The
+reported hourly values must therefore be interpreted as full-trajectory
+metrics. In particular, exact leads 24, 48, and 72 sample only the nighttime
+23:00 intervals and cannot distinguish model skill in this experiment.
+Daylight-only evaluation and complete lead profiles are needed to assess
+the irradiance-producing hours separately.
+
+\subsubsection{Contextual-data validity}
+
+The K\"oppen--Geiger labels are climate classes extracted from cells of the
+present nominal 1-km map \cite{beck2018}; they do not resolve microclimates within a cell or
+conditions on a specific roof. Class boundaries are uncertain, as made explicit
+by the 50\% confidence of the BMW San Luis Potos\'i assignment. Climate labels
+are descriptive strata, not model inputs and not explanations of individual
+forecast errors.
+
+NASA POWER is likewise a gridded, model-based external product rather than
+local rain-gauge or ceilometer evidence \cite{nasapowerdaily}. The 1~mm/day
+precipitation and 80\% cloud thresholds provide reproducible post-hoc tags, but
+thresholding cannot establish that weather caused a particular error.
+These weather observations provide context for the selected cases, while
+model rankings are based on the full aggregate evaluation.

@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
+import codigo_fonte.experimento_horario_timesnet as experimento_horario
 from codigo_fonte.experimento_horario_timesnet import (
     ConfiguracaoExperimentoHorario,
     JanelasHorarias,
@@ -23,6 +24,37 @@ from codigo_fonte.experimento_horario_timesnet import (
     prever_persistencia_diaria,
     prever_sazonal_ingenuo_anual,
 )
+
+
+def test_substituicao_atomica_repete_bloqueio_transitorio_windows(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    origem = tmp_path / "cache.npz.tmp"
+    destino = tmp_path / "cache.npz"
+    origem.write_bytes(b"cache-valido")
+    replace_real = Path.replace
+    tentativas = 0
+    esperas: list[float] = []
+
+    def replace_com_bloqueio(self: Path, target: Path) -> Path:
+        nonlocal tentativas
+        tentativas += 1
+        if tentativas == 1:
+            erro = PermissionError("bloqueio transitorio simulado")
+            erro.winerror = 32
+            raise erro
+        return replace_real(self, target)
+
+    monkeypatch.setattr(Path, "replace", replace_com_bloqueio)
+    monkeypatch.setattr(experimento_horario.time, "sleep", esperas.append)
+
+    experimento_horario._substituir_com_retry(origem, destino)
+
+    assert tentativas == 2
+    assert esperas == [0.10]
+    assert destino.read_bytes() == b"cache-valido"
+    assert not origem.exists()
 
 
 def _dados_sinteticos(
@@ -277,3 +309,15 @@ def test_smoke_executa_cinco_modelos_e_gera_artefatos(tmp_path: Path) -> None:
         artefatos["figura_comparacao_rmse"].name
         == "comparacao_rmse_modelos.png"
     )
+
+    caches = sorted((tmp_path / "saida" / "cache").rglob("*.npz"))
+    assert len(caches) == 6
+    previsoes_antes = previsoes.copy()
+    artefatos_retomados = executar_experimento(
+        tmp_path / "saida",
+        configuracao,
+        dados=dados,
+        retomar=True,
+    )
+    previsoes_depois = pd.read_csv(artefatos_retomados["previsoes_teste"])
+    pd.testing.assert_frame_equal(previsoes_antes, previsoes_depois)

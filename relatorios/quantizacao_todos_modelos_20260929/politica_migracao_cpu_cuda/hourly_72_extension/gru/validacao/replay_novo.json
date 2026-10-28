@@ -1,0 +1,31 @@
+{
+  "checkpoints": [
+    {
+      "alvos_substituidos_por_nan": true,
+      "aprovado": true,
+      "batch_size": 128,
+      "cache": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\gru\\sem_quantizacao\\selecao\\seed42.npz",
+      "cache_sha256": "5d46aca5d2df685ff5b424e7669bee9f6b1c541588adadebbaa65242c3855ccc",
+      "checkpoint": "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\gru\\sem_quantizacao\\modelos\\seed42_selecao.pt",
+      "checkpoint_sha256": "af00ee77a8dfeb912034cd96ffed2923e7e6cf03e9e41e6804e03f5dfc9903d0",
+      "dispositivo": "cuda",
+      "epocas": 30,
+      "max_diferenca_wm2": 0.0,
+      "seed": 42
+    }
+  ],
+  "codigo_auditoria_sha256": {
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_multirresolucao.py": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\experimento_quantizacao_concorrentes.py": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\codigo_fonte\\modelos_baselines_adicionais.py": "f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988",
+    "C:\\Users\\gm.nascimento\\Documents\\Meus Projetos\\TCC\\scripts\\auditar_controle_gpu_parcial.py": "1418a2588d982a4085fd743516d7b56f60357730d7443a118f45d054fc7e5798"
+  },
+  "contrato_sha256": "ffa61c001635e9157ee30358bc55a26e207ebe8f35f42a0f1c6d57eff2aaacb6",
+  "fase": "selecao",
+  "modelo": "GRU",
+  "nao_emite_aceite": true,
+  "normalizacao_e_inversao_independentes": true,
+  "ok": true,
+  "tarefa": "hourly_72_extension",
+  "tolerancia_absoluta_wm2": 1e-06
+}
