@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 import torch
 
-from scripts import piloto_treinamento_atencao_estrito as p
+from codigo_fonte.analises_e_relatorios import piloto_treinamento_atencao_estrito as p
 
 
 def test_plano_nao_executa_treinamento(monkeypatch,capsys):

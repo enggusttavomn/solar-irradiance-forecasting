@@ -1,8 +1,8 @@
-﻿from pathlib import Path
+from pathlib import Path
 
 import pytest
 
-from scripts.preparar_overleaf import ExportacaoOverleafError, preparar_overleaf
+from codigo_fonte.publicacoes.preparar_overleaf import ExportacaoOverleafError, preparar_overleaf
 
 
 def write(root: Path, relative: str, text: str = "") -> Path:

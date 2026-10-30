@@ -1,0 +1,53 @@
+QA final v3 - paginas 25 a 36 - revisao somente leitura dos documentos
+
+Inspecao individual dos doze PNGs render-v3/page-25.png a page-36.png com view_image(detail=original), resolucao integral 1414x2000. Todas as paginas aprovadas.
+
+Pagina 25: Figura 11 com quatro paineis, eixos, legendas e fonte legiveis; subseccao seguinte inicia com texto e continua normalmente.
+Pagina 26: Tabela 8 inteira, conteudo alinhado e Fonte junto da tabela; sem linhas cortadas.
+Pagina 27: Figura 12 e seus quatro paineis legiveis; Fonte e paragrafo que anuncia Figura 13 preservados.
+Pagina 28: Figura 13 com tres perfis de sete dias legivel; anotacoes, legenda e Fonte completas; texto posterior sem sobreposicao.
+Pagina 29: Discussao e limitacoes com fluxo continuo, sem corte ou sobreposicao.
+Pagina 30: Conclusao completa e legivel; espaco final aceitavel antes da mudanca de secao.
+Pagina 31: Referencias 1 a 14 completas e legiveis, sem item cortado no limite da pagina.
+Pagina 32: Tabelas 9 e 10 completas. A nota Fonte da Tabela 10 permanece na mesma pagina, imediatamente apos a ultima linha; ressalva da v2 corrigida.
+Pagina 33: Tabelas 11 e 12 completas com respectivas fontes; margem inferior aceitavel na transicao ao Apendice B.
+Pagina 34: Apendice B inicia bem; Tabela 13 e Fonte juntas; Tabela 14 continua na pagina seguinte sem partir linhas.
+Pagina 35: Continuacao da Tabela 14 com cabecalho repetido; Fonte junta. Tabela 15 inteira, notas e texto final completos.
+Pagina 36: Apendice C completo; hashes e caminhos legiveis; texto final dentro das margens.
+
+Sumario final: 36 paginas, 37 entradas, 37 correspondencias e nenhuma divergencia, confirmado em toc_final.json.
+
+Invariantes recalculados contra antes_compactacao.docx:
+{
+  "paragrafos_identicos_fora_sumario": true,
+  "N_paragrafos": 1192,
+  "entradas_TOC_excluidas": [
+    37,
+    37
+  ],
+  "contagens_antes_depois": [
+    {
+      "tabelas": 15,
+      "figuras_inline": 13,
+      "equacoes_nativas": 7
+    },
+    {
+      "tabelas": 15,
+      "figuras_inline": 13,
+      "equacoes_nativas": 7
+    }
+  ],
+  "tabelas_celula_a_celula_identicas": true,
+  "equacoes_arvore_e_atributos_identicos": true,
+  "inventario_pacote_identico": true,
+  "partes_alteradas": [
+    "word/document.xml",
+    "word/styles.xml"
+  ],
+  "demais_partes_identicas": true,
+  "geometria_preservada": true,
+  "docx_sha256": "9b43283794a72ba46c3532256cb1d37b3701b59c914c5cf7996c3b08f628eda9",
+  "pdf_sha256": "d835d0c3f9b13e7bb69a19871759d09e89715f114fdfeee7c0bb828f3967fb12"
+}
+
+Conclusao: aprovado para entrega quanto as paginas 25-36 e aos invariantes acima. Nenhum DOCX ou PDF foi alterado por esta revisao; somente este registro de QA foi escrito.

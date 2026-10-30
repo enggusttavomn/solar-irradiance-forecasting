@@ -43,69 +43,53 @@ números de diretórios históricos para artigos ou apresentações.
 
 ## Comece por aqui
 
+Abra o [mapa do projeto](MAPA_DO_PROJETO.md) ou o
+[panorama visual](resultados/relatorios/panorama_projeto_ghi.html).
+
 | Objetivo | Caminho |
 |---|---|
-| Entender o desenho do estudo | [`artigos/revista_unificado/`](artigos/revista_unificado/) |
-| Explorar código por etapa | [`codigo_fonte/`](codigo_fonte/) |
-| Consultar dados e proveniência | [`dados/`](dados/) |
-| Conferir resultados oficiais | [`resultados/`](resultados/) |
-| Executar comandos usuais | [`scripts/COMANDOS.md`](scripts/COMANDOS.md) |
-| Rodar as avaliações completas | [`executaveis/`](executaveis/) |
-| Acompanhar treinamentos | [`relatorios/painel_treinamentos.html`](relatorios/painel_treinamentos.html) |
-| Consultar auditorias e revisões | [`relatorios/README.md`](relatorios/README.md) |
-| Ler a documentação complementar | [`documentacao/`](documentacao/) |
-| Escolher a pasta de um arquivo novo | [`documentacao/estrutura_do_projeto.md`](documentacao/estrutura_do_projeto.md) |
+| Ler o manuscrito principal | [`artigos/revista_unificado/`](artigos/revista_unificado/) |
+| Encontrar código ou executar uma tarefa | [`codigo_fonte/`](codigo_fonte/) e [catálogo de comandos](codigo_fonte/COMANDOS.md) |
+| Consultar dados de entrada | [`dados/`](dados/) |
+| Conferir experimentos, métricas e modelos treinados | [`resultados/`](resultados/) |
+| Ler análises ou consultar painéis | [`resultados/relatorios/`](resultados/relatorios/) |
+| Abrir PDFs exportados | [`resultados/pdf/`](resultados/pdf/) |
+| Consultar instruções e materiais do TCC | [`documentacao/`](documentacao/) |
+| Entender onde salvar um arquivo | [Guia da estrutura](documentacao/estrutura_do_projeto.md) |
 
 ## Estrutura do repositório
 
 ```text
 .
-├── artigos/              manuscritos, figuras e templates LaTeX
-├── codigo_fonte/         coleta, preparação, modelos e experimentos
-├── dados/                dados brutos, externos e processados
-├── documentacao/         guias, plano de trabalho, envios e referências
-├── executaveis/          scripts de linha de comando das avaliações
-├── output/               saídas temporárias locais e prévias
-├── relatorios/           painéis, auditorias e revisões datadas
-├── resultados/           resultados canônicos, manifestos e legados
-├── scripts/              automações e comandos agrupados por finalidade
-│   ├── apresentacoes/    geração e revisão de apresentações
-│   ├── auditoria/        verificações dos experimentos
-│   ├── coleta/           obtenção e preparação de insumos
-│   ├── operacao/         acompanhamento local dos treinamentos
-│   ├── relatorios/       geração de figuras e relatórios
-│   └── treinamento/      execução de buscas e treinamentos
-├── testes/               testes científicos e de operação
-│   └── operacao/         testes operacionais sem caminhos históricos fixos
-├── tests/                testes preservados por contratos de auditoria
-└── tmp/                  trabalho temporário e estado operacional local
+├── codigo_fonte/                 todo o código e os comandos por tarefa
+│   ├── coleta_e_preparacao/      coleta, limpeza e montagem de bases
+│   ├── modelos/                 implementações dos modelos de previsão
+│   ├── experimentos/            treinamento, avaliação, otimização e quantização
+│   ├── analises_e_relatorios/   métricas, auditorias, gráficos e PDFs
+│   ├── acompanhamento/         filas, processos, painéis e retomadas
+│   ├── publicacoes/            artigos, apresentações e sincronização
+│   └── utilitarios/            configurações e funções comuns
+├── dados/                        entradas brutas, externas e preparadas
+├── resultados/                   tudo o que as execuções produzem
+│   ├── <experimento>/           previsões, métricas e manifestos
+│   ├── modelos/                 modelos treinados preservados
+│   ├── relatorios/              análises, auditorias e painéis
+│   └── pdf/                     PDFs exportados
+├── artigos/                      manuscritos, figuras e templates LaTeX
+├── documentacao/                 guias, plano, referências e entregas
+├── testes/                       testes científicos e operacionais
+└── tmp/                          trabalho provisório e recuperação local
 ```
 
-Na raiz ficam os arquivos que as ferramentas leem por convenção
-(`README.md`, `pyproject.toml`, `CITATION.cff`, os `requirements*.txt` e os
-arquivos de configuração ocultos), o atalho Windows
-`Abrir painel de progresso.cmd` e quatro executáveis:
-`treinar_todas_localidades.py`, `reavaliar_modelos_salvos.py`,
-`executar_avaliacao_mensal_canonica.py` e `gerar_figuras_avaliacao_canonica.py`.
-Esses quatro permanecem onde estão porque os manifestos de
-`resultados/avaliacao_mensal_corrigida/` e
-`resultados/avaliacao_mensal_canonica/` registram seu caminho e seu `sha256`
-como entradas dos resultados publicáveis; `testes/test_resultados_mensais_publicaveis.py`
-confere essa correspondência a cada execução da suíte.
+O código da mesma tarefa fica junto em `codigo_fonte/`, incluindo funções e
+comandos. Arquivos gerados ficam em `resultados/`. Instruções e protocolos
+ficam em `documentacao/`; materiais de publicação ficam em `artigos/`.
+Configurações, dependências, metadados e o atalho do painel permanecem na raiz.
 
-Os demais executáveis de linha de comando estão em
-[`executaveis/`](executaveis/). Os comandos do [catálogo](scripts/COMANDOS.md)
-oferecem uma navegação por finalidade e encaminham para as implementações
-existentes, preservadas nos caminhos registrados pelos manifestos.
-
-Para arquivos novos, use `codigo_fonte/` para lógica reutilizável e a subpasta
-adequada de `scripts/` para comandos e automações. Coloque evidências de experimentos em
-`resultados/`, auditorias e resumos em `relatorios/`, orientações em
-`documentacao/` e saídas descartáveis em `output/`. Os caminhos científicos
-existentes devem ser preservados: renomear um arquivo pode invalidar
-manifestos, hashes e retomadas. Consulte o
-[guia da estrutura](documentacao/estrutura_do_projeto.md) antes de reorganizar
-artefatos existentes.
+A [reorganização](documentacao/organizacao/reorganizacao_codigo_20261027.json)
+registra os caminhos anteriores. Um ZIP preserva as fontes originais usadas
+pelas auditorias históricas, sem manter implementações duplicadas na árvore
+ativa. Os manifestos anteriores continuam registrando a execução da época.
 
 ## Instalação
 
@@ -146,29 +130,25 @@ python -m pytest -q
 
 ## Uso
 
-Consulte a ajuda antes de iniciar avaliações longas:
+Execute os módulos a partir da raiz. Consulte a ajuda antes de iniciar
+avaliações longas:
 
 ```bash
-python executaveis/executar_avaliacao_multirresolucao.py --help
-python executar_avaliacao_mensal_canonica.py --help
-python executaveis/gerar_artefatos_artigo_unificado.py --help
+python -m codigo_fonte.experimentos.experimento_multirresolucao --help
+python -m codigo_fonte.experimentos.experimento_mensal_canonico --help
+python -m codigo_fonte.publicacoes.gerar_artefatos_artigo_unificado --help
+python -m codigo_fonte.experimentos.rodar_quantizacao_todos_modelos --help
+python -m codigo_fonte.analises_e_relatorios.auditar_quantizacao_todos_modelos --help
+python -m codigo_fonte.acompanhamento.painel_progresso_quantizacao --help
 ```
 
-Os comandos agrupados devem ser chamados como módulos, a partir da raiz:
-
-```bash
-python -m scripts.treinamento.rodar_quantizacao_todos_modelos --help
-python -m scripts.auditoria.auditar_quantizacao_todos_modelos --help
-python -m scripts.operacao.painel_progresso_quantizacao --help
-```
-
-Para consultar o painel HTML disponível no checkout, abra
-[`relatorios/painel_treinamentos.html`](relatorios/painel_treinamentos.html).
-No Windows, o atalho `Abrir painel de progresso.cmd` inicia o painel local de
-progresso; ele usa o ambiente Python local configurado em
-`scripts/abrir_painel_progresso.ps1`. Consulte
-[`relatorios/README.md`](relatorios/README.md) para distinguir os painéis e as
-evidências de cada execução.
+O [catálogo](codigo_fonte/COMANDOS.md) reúne os demais comandos.
+No Windows, o atalho `Abrir painel de progresso.cmd` inicia o painel local.
+Sua implementação está em `codigo_fonte/acompanhamento/abrir_painel_progresso.ps1`.
+A interface está em
+[`resultados/relatorios/painel_treinamentos.html`](resultados/relatorios/painel_treinamentos.html).
+Consulte o [índice de relatórios](resultados/relatorios/README.md) para distinguir
+os painéis e as evidências de cada execução.
 
 ### Coleta opcional de dados
 
@@ -203,7 +183,7 @@ local.
 
 A suíte automatizada cobre preparação dos dados, baselines, modelos, métricas,
 reprodutibilidade, geração de figuras, integridade dos manuscritos e contratos
-da estrutura pública. O comando padrão descobre `testes/` e `tests/`, incluindo
+da estrutura pública. O comando padrão descobre todos os testes em `testes/`, incluindo
 os testes operacionais. Pull requests executam a CI em Python 3.12.
 
 Antes de contribuir, leia [`CONTRIBUTING.md`](.github/CONTRIBUTING.md). Falhas de

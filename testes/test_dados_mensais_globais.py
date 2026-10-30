@@ -6,13 +6,9 @@ import numpy as np
 import pandas as pd
 import pytest
 
-import codigo_fonte.dados_mensais_globais as dados_globais
-from codigo_fonte.dados_mensais_globais import (
-    auditar_arquivos_diarios,
-    carregar_base_mensal_global,
-    matrizes_keras,
-)
-from codigo_fonte.modelos_tabulares_globais import prever_baselines_mensais
+import codigo_fonte.coleta_e_preparacao.base_mensal as dados_globais
+from codigo_fonte.coleta_e_preparacao.base_mensal import auditar_arquivos_diarios, carregar_base_mensal_global, matrizes_keras
+from codigo_fonte.modelos.tabulares.modelos_tabulares_globais import prever_baselines_mensais
 
 
 def test_base_global_tem_48_alvos_de_treino_e_12_de_teste_por_localidade() -> None:

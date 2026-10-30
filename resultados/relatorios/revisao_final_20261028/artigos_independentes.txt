@@ -1,0 +1,39 @@
+REVISÃO DOS MANUSCRITOS IEEE, BTSYM E MCSM — 28/10/2026
+
+Escopo: leitura integral dos três arquivos TEX; leitura textual dos PDFs IEEE (5 páginas) e BTSym (10 páginas); inspeção visual de todas as páginas em folhas de contato e das tabelas principais ampliadas; recálculos a partir dos CSVs existentes. Nenhum manuscrito ou resultado científico foi alterado e nenhum treinamento foi executado. Referências externas estão sob a revisão paralela do outro revisor.
+
+PARECER
+Os resultados citados nos três manuscritos têm origem identificável e os números conferidos são consistentes com seus respectivos experimentos. IEEE e BTSym têm PDFs coerentes com as versões TEX nos trechos substantivos conferidos. Isso não torna os recortes de comparação completos: há comparadores já executados com desempenho superior aos modelos destacados e que não aparecem nos artigos. MCSM corresponde a um experimento histórico distinto; seus números não são os da avaliação mensal canônica atual.
+
+ACHADOS E RECOMENDAÇÕES
+
+1. PRIORIDADE ALTA DE DISCUSSÃO CIENTÍFICA: conjunto restrito de comparadores no BTSym.
+Fonte: artigos/btsym26/main.tex:44, 58, 178, 191-195, 281; resultados/avaliacao_mensal_canonica/metricas_medias_modelos.csv:2-5.
+O artigo diz corretamente que a DilatedRNN ocupa a primeira posição entre CINCO métodos comparados (MAE 13,42224878). A mesma execução contém Climatologia (12,07130924), LSTM (12,22205942) e RNN (12,55437458), todos melhores e ausentes do recorte. O manuscrito atual restringe explicitamente a conclusão ao conjunto dos cinco métodos, portanto não há erro aritmético nem se pode inferir intenção enganosa. Ainda assim, a ausência de uma climatologia mensal forte enfraquece a alegação de competitividade e merece explicação. Recomenda-se incluir ao menos a Climatologia na tabela ou um parágrafo explícito com os valores dos métodos excluídos; idealmente apresentar o benchmark completo no suplemento. Não generalizar a primeira posição para todos os modelos desenvolvidos no projeto.
+
+2. PRIORIDADE MÉDIA DE DISCUSSÃO CIENTÍFICA: comparador tabular mais forte ausente no IEEE.
+Fonte: artigos/ieee/artigo.tex:42-44, 100-110, 427, 462-489, 646-654; artigos/ieee/README.md:32-35; codigo_fonte/publicacoes/atualizar_artigo_ieee_timesnet.py:33-42.
+O escopo declarado compara TimesNet, LSTM e duas referências. Os CSVs da mesma execução também contêm XGBoost, melhor que TimesNet no RMSE dos três prefixos: 24 h = 96,045669 contra 97,207977; 48 h = 98,230112 contra 100,255445; 72 h = 99,217489 contra 101,041187 W/m². O texto não afirma que TimesNet é melhor que XGBoost, e a exclusão é explicitamente editorial no README/código. Recomenda-se informar esse resultado na discussão/limitações, justificar o recorte e evitar chamar TimesNet de melhor modelo do experimento amplo. Ampliar a tabela com XGBoost fortaleceria o artigo sem exigir novo treinamento.
+
+3. PRIORIDADE MÉDIA DE RASTREABILIDADE: README canônico mensal identifica os artigos errados.
+Fonte: resultados/avaliacao_mensal_canonica/README.md:3-5. O texto chama a pasta de fonte numérica atual dos artigos IEEE e MCSM. O IEEE atual é horário e usa resultados/avaliacao_horaria_timesnet; o MCSM preservado descreve o estudo legado local com aproximação por vizinhos. A avaliação mensal canônica é fonte do BTSym e de antecedentes do projeto. Atualizar esse índice para evitar ler resultados de outro experimento como se fossem do manuscrito aberto. O guia documentacao/guia_dos_artigos.md também é legado, já identificado pelo revisor principal.
+
+4. PRIORIDADE BAIXA DE RASTREABILIDADE: caminhos quebrados na nota de citações BTSym.
+Fonte: artigos/btsym26/CITATION_VERIFICATION.md:40-42. Os caminhos codigo_fonte/dados_mensais_globais.py e codigo_fonte/modelos_neurais_globais.py não existem após a reorganização. Os equivalentes atuais são codigo_fonte/coleta_e_preparacao/base_mensal.py e codigo_fonte/modelos/recorrentes/modelos_neurais_globais.py. Atualizar somente os apontadores documentais; não alterar retrospectivamente hashes históricos.
+
+5. MCSM: resultado histórico válido; nomenclatura deve ser tratada com cautela.
+Fonte: artigos/mcsm/artigo_ghi_iii_mcsm.tex:85, 104, 128-152, 185-191, 205, 224-226.
+Os sete conjuntos de métricas conferem quando se juntam resultados/todas_localidades_mensal/metricas_geral.csv (XGBoost, MLP, RNN, LSTM) e as linhas mensais de resultados/experimentos_redes_avancadas/metricas_experimentos_todas.csv (DilatedRNN, DeepAR_exp, DeepNPTS_aprox). O MAE da aproximação é 12,95710146, RMSE 16,392182 e R² 0,915725; os cinco vencedores locais e reduções de 12,50%/10,07% contra RNN conferem. Isso NÃO contradiz o DeepNPTS canônico posterior de MAE 17,700882: são algoritmos/protocolos distintos. O algoritmo é um suavizador por distância e recência, hoje chamado VizinhosHistoricosApproxRegressor (codigo_fonte/experimentos/experimentos_redes_avancadas.py:213-262), cujo comentário diz que não implementa DeepNPTS. O artigo já explicita que não reproduz a arquitetura, mas usar 'aproximação do DeepNPTS' no título ainda pode causar confusão. Para uma nova circulação, preferir 'método de vizinhos históricos ponderados' e explicar a inspiração; preservar a versão histórica como arquivo. Não reescrever seus números como se fossem os da avaliação global atual. Não há PDF MCSM na pasta para inspeção visual nesta revisão.
+
+VERIFICAÇÕES APROVADAS
+
+IEEE: tabela macro dos quatro métodos, épocas LSTM=22/TimesNet=14, RMSE 72 h 104,684240/101,041187 e redução de 3,48% conferidos nos artefatos canônicos. O renderizador de blocos AUTO devolve TEX exatamente igual ao atual. Figura temporal publicada é idêntica em bytes à canônica. A verificação --verificar acusa diferença na figura comparacao_rmse_modelos.png, mas a imagem regenerada tem pixels RGBA, dimensões (2905x1103), DPI e metadados exatamente iguais: diferença apenas na codificação/compressão PNG. Esse retorno não é evidência de figura cientificamente desatualizada. Corrigir futuramente a verificação para comparar imagem decodificada ou geração byte-estável. Não recomprimir a figura só para satisfazer o teste.
+
+BTSym: métricas macro/local e épocas por semente conferidas; todas as contagens da Tabela 4 recalculadas: DeepAR 66/54, MLP 75/45, sazonal 63/57, persistência 97/23 (vitórias/derrotas). Diferenças médias 0,759637; 2,637172; 3,520590; 21,665423 W/m². Erros >30 W/m²: DilatedRNN 8, DeepAR 14, MLP 15, sazonal 23, persistência 58. Ranking local, vantagem em seis localidades contra DeepAR, mediana 3,30%, limites locais 7,45–20,92, limites de MAE entre sementes 13,22–15,18 e erros mensais de Camaçari conferem. A limitação de teste retrospectivo que informou o desenvolvimento está explícita tanto no resumo quanto nas limitações; não caracterizar esse teste como evidência prospectiva intocada.
+
+Citações internas: nenhuma chave cite/citep sem bibitem nos três arquivos TEX. Não foram encontrados marcadores de referência indefinida nas páginas conferidas. A conferência de metadados externos e do suporte das citações depende do parecer paralelo de referências.
+
+Apresentação: não foram observados recortes, sobreposições ou tabelas truncadas nos PDFs IEEE/BTSym. Tabelas e diagrama IEEE e tabelas BTSym usam fontes pequenas; se houver espaço editorial, aumentar legibilidade. Isso é melhoria editorial, não erro de resultado.
+
+ARQUIVOS DE EVIDÊNCIA TEMPORÁRIOS
+ieee_pdf.txt, btsym26_pdf.txt, ieee_contact.png, btsym_contact.png, páginas individuais ieee_p*.png e btsym_p*.png, comparacao_ieee_regenerada.png, evidencias_artigos_independentes.json.

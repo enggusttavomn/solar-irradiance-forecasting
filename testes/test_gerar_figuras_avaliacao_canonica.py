@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from gerar_figuras_avaliacao_canonica import gerar, validar_execucao_concluida
+from codigo_fonte.analises_e_relatorios.gerar_figuras_avaliacao_canonica import gerar, validar_execucao_concluida
 
 
 def _criar_execucao_minima(pasta, *, modo: str = "completa") -> None:

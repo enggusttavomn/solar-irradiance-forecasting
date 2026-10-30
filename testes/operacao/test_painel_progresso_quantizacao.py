@@ -2,7 +2,7 @@
 from datetime import datetime, timedelta, timezone
 import json
 import pytest
-from scripts import painel_progresso_quantizacao as p
+from codigo_fonte.acompanhamento import painel_progresso_quantizacao as p
 
 AGORA = datetime(2026, 9, 30, 15, 0, tzinfo=timezone.utc)
 

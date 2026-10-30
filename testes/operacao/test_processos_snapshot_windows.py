@@ -3,7 +3,7 @@ import ctypes
 import os
 from types import SimpleNamespace
 import pytest
-from scripts import processos_quantizacao as p
+from codigo_fonte.acompanhamento import processos_quantizacao as p
 
 pytestmark = pytest.mark.skipif(os.name != 'nt', reason='ABI Windows')
 

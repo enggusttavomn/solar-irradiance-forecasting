@@ -2,8 +2,8 @@
 
 import numpy as np
 
-from codigo_fonte.dados_mensais_globais import BaseMensalGlobal
-from codigo_fonte.modelos_tabulares_globais import prever_baselines_mensais
+from codigo_fonte.coleta_e_preparacao.base_mensal import BaseMensalGlobal
+from codigo_fonte.modelos.tabulares.modelos_tabulares_globais import prever_baselines_mensais
 
 
 def prever(base: BaseMensalGlobal) -> np.ndarray:

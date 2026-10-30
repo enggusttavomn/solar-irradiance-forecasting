@@ -5,7 +5,7 @@ from types import SimpleNamespace
 pytest.importorskip("torch")
 pytest.importorskip("statsmodels")
 
-from codigo_fonte import experimento_arima_robusto as ar
+from codigo_fonte.experimentos import experimento_arima_robusto as ar
 
 
 @pytest.mark.parametrize("primeiro_converge,esperados", [(True, ["lbfgs"]), (False, ["lbfgs", "powell"])])

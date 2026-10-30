@@ -1,47 +1,37 @@
-# Código-fonte
+# Código do projeto
 
-O código está organizado pelo fluxo científico. Execute os pontos de entrada a
-partir da raiz do repositório para que caminhos relativos e manifestos sejam
-resolvidos de forma consistente.
+Esta é a única área para programas e comandos. Os arquivos ficam juntos pela
+tarefa que realizam, sem separar implementações em outras pastas da raiz.
 
-## Camadas principais
-
-| Caminho | Responsabilidade |
+| Pasta | O que faz |
 |---|---|
-| `coleta/` | cliente da NSRDB e cadastro das dez localidades |
-| `preparacao/` | validação, limpeza, agregação e construção da base mensal |
-| `modelos/` | interface pública dos modelos mensais por família |
-| `experimento/` | métricas, avaliação temporal e reprodutibilidade mensal |
-| `visualizacao/` | geração das figuras do fluxo mensal |
+| [`coleta_e_preparacao/`](coleta_e_preparacao/) | consulta fontes, limpa dados e monta as bases |
+| [`modelos/`](modelos/) | implementa os modelos de previsão, separados por família |
+| [`experimentos/`](experimentos/) | treina, avalia, otimiza e quantiza os modelos |
+| [`analises_e_relatorios/`](analises_e_relatorios/) | calcula métricas, audita e gera gráficos e PDFs |
+| [`acompanhamento/`](acompanhamento/) | acompanha filas, processos, painéis e retomadas |
+| [`publicacoes/`](publicacoes/) | prepara artigos e apresentações e sincroniza publicações |
+| [`utilitarios/`](utilitarios/) | reúne configuração e funções usadas em várias áreas |
 
-## Avaliação multirresolução
+Consulte o [catálogo de comandos](COMANDOS.md) e execute os módulos a partir
+da raiz do repositório:
 
-Os módulos abaixo implementam o estudo mais recente:
+```bash
+python -m codigo_fonte.experimentos.experimento_multirresolucao --help
+python -m codigo_fonte.acompanhamento.painel_progresso_quantizacao --help
+```
 
-- `experimento_multirresolucao.py`: orquestra tarefas horárias, diárias e
-  mensais com contratos e retomada;
-- `experimento_horario_timesnet.py`: avaliação horária oficial;
-- `timesnet_horario.py`: arquitetura TimesNet e componentes temporais;
-- `dilated_rnn_direta.py`: previsão direta com recorrência dilatada;
-- `contexto_geografico.py` e `contexto_meteorologico.py`: contexto independente
-  das localidades;
-- `artefatos_artigo_unificado.py`: tabelas, figuras e manifestos do manuscrito.
+Exemplos de implementação:
 
-## Busca de hiperparâmetros mensais da TimesNet
+- `coleta_e_preparacao/base_mensal.py`: prepara a base mensal das localidades.
+- `modelos/timesnet_horario.py`: implementa os componentes da TimesNet.
+- `experimentos/experimento_multirresolucao.py`: coordena as tarefas horária, diária e mensais.
+- `analises_e_relatorios/metricas.py`: calcula e salva métricas de avaliação.
+- `publicacoes/artefatos_artigo_unificado.py`: prepara os artefatos do manuscrito.
 
-A busca é separada da avaliação canônica e grava sempre em pasta nova:
+Arquivos produzidos ficam em [`../resultados/`](../resultados/), inclusive
+PDFs e relatórios. Entradas ficam em [`../dados/`](../dados/) e instruções em
+[`../documentacao/`](../documentacao/).
 
-- `treinamento_timesnet_otimizacao.py`: treina um candidato com perda MSE, MAE
-  ou Huber e escolhe a época pelo MAE físico em W/m² da validação;
-- `otimizacao_timesnet_mensal.py`: percorre os candidatos, congela a seleção em
-  2023 sem usar os alvos de 2024 na sele??o e, sob `--avaliar-teste`, refaz apenas
-  o vencedor.
-
-Os resultados canônicos em `resultados/` não são alterados: a execução recusa
-qualquer saída dentro das pastas oficiais.
-
-Os executáveis da raiz são pontos de entrada e implementações históricas cujos
-caminhos constam em manifestos já produzidos. Não os mova sem atualizar o
-contrato de reprodutibilidade e os testes correspondentes.
-
-Para uma visão por modelo, consulte [`modelos/README.md`](modelos/README.md).
+As fontes anteriores à reorganização estão preservadas em um ZIP identificado
+no [registro de migração](../documentacao/organizacao/reorganizacao_codigo_20261027.json).

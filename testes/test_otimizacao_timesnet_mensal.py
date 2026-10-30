@@ -12,14 +12,8 @@ import pytest
 import torch
 from torch import nn
 
-import codigo_fonte.otimizacao_timesnet_mensal as otim
-from codigo_fonte.experimento_multirresolucao import (
-    ConfiguracaoMultirresolucao,
-    JanelasDiretas,
-    PASTA_RESULTADOS,
-    SerieResolucao,
-    TAREFAS_CANONICAS,
-)
+import codigo_fonte.experimentos.otimizacao_timesnet_mensal as otim
+from codigo_fonte.experimentos.experimento_multirresolucao import ConfiguracaoMultirresolucao, JanelasDiretas, PASTA_RESULTADOS, SerieResolucao, TAREFAS_CANONICAS
 
 # Deslocamento fisico aplicado pela previsao falsa na primeira semente; a segunda
 # recebe o simetrico dividido por tres, de modo que o ensemble nunca coincide com
@@ -473,7 +467,7 @@ def test_contrato_descreve_somente_preprocessamento_dos_candidatos(series, alvo)
 
 def test_novo_contrato_puro_aceito_na_comparacao_principal(series):
     from dataclasses import asdict
-    from scripts.gerar_tabela_resultados_ghi_otimizada import validar_mensal_pura
+    from codigo_fonte.analises_e_relatorios.gerar_tabela_resultados_ghi_otimizada import validar_mensal_pura
     cfg = ConfiguracaoMultirresolucao()
     candidatos = otim.candidatos_padrao()
     contrato = otim._contrato(series, candidatos, cfg, "monthly_1", 18, "2020-01-31")

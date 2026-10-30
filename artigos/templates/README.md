@@ -1,14 +1,14 @@
 # Templates parametrizados
 
 Os arquivos desta pasta são fontes internas de
-`executaveis/preencher_artigos_canonicos.py`. Eles contêm marcadores `@@...@@` de forma
+`codigo_fonte/publicacoes/preencher_artigos_canonicos.py`. Eles contêm marcadores `@@...@@` de forma
 intencional e não devem ser compilados nem enviados diretamente ao Overleaf.
 
 O gerador pertence ao fluxo mensal histórico. Para validá-lo sem sobrescrever
 os manuscritos atuais, escreva as saídas em uma pasta temporária:
 
 ```bash
-python executaveis/preencher_artigos_canonicos.py \
+python -m codigo_fonte.publicacoes.preencher_artigos_canonicos \
   --resultados resultados/avaliacao_mensal_canonica \
   --ieee-rascunho artigos/templates/IEEE/artigo_compacto_canonico.tex \
   --ieee-saida resultados/rascunhos_artigos/artigo_ieee.tex \

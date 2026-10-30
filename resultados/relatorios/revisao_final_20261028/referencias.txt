@@ -1,0 +1,256 @@
+AUDITORIA DE REFERENCIAS E ARTIGOS-BASE — 28/10/2026
+Somente leitura dos documentos; nenhum manuscrito foi alterado.
+
+1. CONCLUSAO DO RECORTE
+
+Nao confirmei erro material nas identidades bibliograficas centrais nem uso dos
+resultados de Cabral et al. como se fossem resultados proprios no relatorio
+revisado ou nos manuscritos principais examinados. Ha um problema confirmado
+de rastreabilidade na nota de verificacao do BTSym e ressalvas metodologicas
+importantes dentro do proprio artigo externo de Cabral. Estas ressalvas nao
+demonstram um erro nos experimentos deste projeto.
+
+2. INVENTARIO DOS PDFS LOCAIS
+
+article_thales.pdf, 14 paginas:
+Titulo: Can large language models predict solar irradiance in the long term?
+Autores: Thales W. Cabral; Gustavo Fraidenraich; Miriam A. M. Capretz.
+Solar Energy 317 (2026), artigo 114964.
+DOI: 10.1016/j.solener.2026.114964.
+Primeira pagina: recebido 27/01/2026; revisado 11/05/2026; aceito 26/07/2026.
+Editora confirma volume 317, outubro de 2026, titulo, DOI e autores:
+https://www.sciencedirect.com/science/article/pii/S0038092X26006535
+Protocolo principal: 40 localidades; GHI NSRDB; serie mensal; entrada 60 meses;
+previsao direta de 60 meses; quantizacao em 128 niveis; GPT-Neo e concorrentes.
+Tabela 9, p.11: GPT-Neo MAE=9.4225 W/m2, RMSE=11.8149 W/m2, R2=0.7787.
+PatchTFT apresenta melhores JSD e OVC que GPT-Neo, portanto nao ha superioridade
+de GPT-Neo em todas as metricas. Nao encontrei essa extrapolacao nos documentos
+proprios examinados.
+Caso adicional da Tabela 13, p.12: entrada 120 horas e saida 120 horas. Apesar do
+rotulo "daily prediction", a resolucao e horaria, com horizonte de cinco dias.
+
+artigo1.pdf, 5 paginas:
+Titulo: Autoencoders Beat PCA for Low-Dimension DGA-based Fault Diagnosis of
+Power Transformers.
+Autores na primeira pagina: Thales W. Cabral; Eduardo R. de Lima;
+Jose Candido S. Santos Filho; Luis Geraldo P. Meloni.
+SBrT 2024, Belem, 1–4/10/2024.
+DOI confirmado pelo organizador: 10.14209/sbrt.2024.1571036788.
+https://biblioteca.sbrt.org.br/articles/4714
+Escopo: classificacao de falhas de transformadores ELETRICOS usando gases
+dissolvidos no oleo, autoencoders e reducao de dimensionalidade; nao e o modelo
+Transformer de atencao nem previsao de GHI.
+Conclusao p.5: no caso de uma dimensao, a combinacao AE2/k-NN atinge 92.77% de
+acuracia com Adam, 90.68% de F1 com Adafactor e Jaccard 0.8652 com Adam.
+Nao localizei citacao desse artigo nem uso de seus resultados em revista_unificado,
+ieee, btsym26 ou relatorio revisado.
+
+artigo2.pdf, 5 paginas:
+Titulo: Application of Neighborhood Component Analysis for Enhancing Load
+Recognition in Home Energy Management Systems.
+Autores na primeira pagina: Thales W. Cabral; Fernando B. Neto;
+Eduardo R. de Lima; Gustavo Fraidenraich; Luis Geraldo P. Meloni.
+O organizador apresenta Fernando Bauer; corresponde ao autor identificado na
+nota de afiliacao do proprio PDF. Nao tratar a abreviatura do cabecalho como
+evidencia de uma sexta pessoa.
+SBrT 2024, Belem, 1–4/10/2024.
+DOI confirmado pelo organizador: 10.14209/sbrt.2024.1571032518.
+https://biblioteca.sbrt.org.br/articles/4614
+Escopo: reconhecimento/classificacao de aparelhos em HEMS, NCA com SVM,
+k-NN e XGBoost; nao e previsao de GHI.
+Resumo/conclusao: NCA-SVM acuracia=96.60%, F1=96.49%, Kappa=0.9404.
+Nao localizei citacao desse artigo nem uso de seus resultados nos documentos-alvo.
+
+article_btsym26_duplicado.pdf, 10 paginas:
+Titulo: Evaluating a DilatedRNN for Monthly Global Horizontal Irradiance
+Forecasting at Locations Associated with Electric Vehicle Factories.
+Autores: Gustavo de Melo Nascimento; Thales Wulfert Cabral;
+Gustavo Fraidenraich. Manuscrito BTSym'26; nenhum DOI demonstrado no PDF.
+Nao presumir aceite ou publicacao por possuir nome de evento nos metadados.
+Texto extraido identico ao de artigos/btsym26/main.pdf, embora SHA256 binario
+seja diferente. Portanto nao e um estudo externo independente.
+Resumo p.1: dez locais, uma etapa mensal, cinco sementes, DilatedRNN
+MAE=13.42, RMSE=16.20, R2=0.898; lidera quatro locais e cinco metodos no ranking
+declarado. O manuscrito declara previamente o carater retrospectivo da janela.
+
+Modelo-20Plano-20de-20Trabalho-2.pdf_0651.pdf, 6 paginas:
+Plano de trabalho do proprio aluno, nao artigo revisado por pares. Primeira
+pagina declara disciplina EA018, RA239679, tema e cronograma de 2026.
+Nao usar este documento como validacao de resultados finais ou como publicacao.
+
+3. COMPARACAO COM OS DOCUMENTOS DO PROJETO
+
+Relatorio_Final_GHI_Transformer_Informer_LSTM_Revisado.pdf:
+- p.19, "Relacao com os artigos do projeto": identifica corretamente Cabral,
+  Fraidenraich e Capretz, GPT-Neo, NSRDB e previsao mensal de longo prazo.
+  Explicita que diferencas de localidades, horizonte, processamento e modelo
+  impedem comparacao direta de erros. Nao apresenta os numeros externos como
+  evidencia de Transformer/Informer/LSTM sob quantizacao.
+- p.31, referencia [12]: autores, titulo, volume317, numero114964, ano2026 e DOI
+  conferem com o PDF e a editora.
+- p.31, referencia [14]: o arquivo realmente existe em
+  documentacao/entregas_aos_orientadores/envio_orientadores_20260907/
+  Artigo_Gustavo_Nascimento.pdf; tem 19 paginas e titulo/autoria correspondentes.
+  A classificacao como manuscrito encaminhado aos orientadores e adequada.
+
+artigos/ieee/artigo.tex:
+- linhas105–106: Cabral et al. em 40 localidades e horizonte de cinco anos:
+  confirmado por Tabela6/Algoritmo5 do PDF externo, p.10.
+- linhas716–720: referencia bibliografica de Cabral correta.
+
+artigos/revista_unificado:
+- references.bib:444–451: entrada cabral2026 correta.
+- sections/01_introduction.tex:65–75: identifica GHI-only, GPT-Neo e 40 locais;
+  distingue o caso horario de cinco dias da agregacao diaria e exclui a
+  comparacao numerica direta com resultados do projeto.
+- sections/02_related_work.tex:129–135 e173–175: interpretacao limitada e correta.
+- tables/literature_review.tex:120–125: escopo condiz com fonte externa.
+- Nenhuma chave citada pelos arquivos .tex desse diretorio faltou no .bib
+  na verificacao automatica por regex; isso nao valida cada afirmacao cientifica.
+
+BTSym:
+- main.tex:56 e307–312: Jung et al. e corretamente tratado como geracao PV
+  mensal/multiplos locais e nao como experimento equivalente de GHI.
+  Fonte primaria confirma modelo integrado, 164 plantas e mensal:
+  https://www.sciencedirect.com/science/article/pii/S095965261934346X
+
+4. ERRO CONFIRMADO NO REPOSITORIO (BAIXA GRAVIDADE)
+
+artigos/btsym26/CITATION_VERIFICATION.md:41–42 aponta para:
+  ../../codigo_fonte/dados_mensais_globais.py
+  ../../codigo_fonte/modelos_neurais_globais.py
+Ambos os caminhos nao existem atualmente. O modulo de redes esta em
+codigo_fonte/modelos/recorrentes/modelos_neurais_globais.py. A preparacao mensal
+atual esta em codigo_fonte/coleta_e_preparacao/base_mensal.py e precisa ser
+confirmada como substituto completo da referencia antiga antes de editar a nota.
+Impacto: leitor nao consegue seguir os links locais da evidencia de arquitetura;
+isto nao prova erro nas metricas ou no algoritmo. Correcao recomendada:
+atualizar caminhos e ancorar a nota na versao/commit correspondente ao manuscrito.
+
+5. RESSALVAS NO PROPRIO ARTIGO DE CABRAL, NAO RESULTADOS DESTE PROJETO
+
+5.1 Incompatibilidade matematica nas metricas locais publicadas.
+Fonte: article_thales.pdf p.7 eqs.(2)–(3), p.10 Tabelas7–8, p.12 Tabela14.
+Pelas equacoes do artigo, para o mesmo vetor observado e mesmas amostras,
+RMSE^2/(1-R2) deve ser a mesma variancia (com divisor N) para todos os modelos.
+Reno Tabela8:
+  Smart Persistence: RMSE21.4389, R2=.9393 -> variancia implicita7572.0994.
+  SARIMA: RMSE9.2924, R2=.9391 -> variancia implicita1417.8768.
+Manaus Tabela14:
+  Smart Persistence: RMSE170.5703, R2=.0847 -> variancia implicita31786.5478.
+  Persistence: RMSE41.2415, R2=-.5688 -> variancia implicita1084.1798.
+Os valores da p.10 foram tambem conferidos visualmente no render.
+Isso nao pode ser explicado por arredondamento. Pode haver erro de transcricao,
+vetores/mascaras diferentes ou criterio nao descrito. Sem dados/previsoes/code do
+estudo externo, nao se pode dizer qual coluna e incorreta. Classificar como
+inconsistencia da comparacao externa / pendencia com autores, nao como fraude,
+nem como defeito do relatorio de TCC. Nao importar os R2 como validacao numerica.
+
+5.2 Normalizacao e divisao cronologica insuficientemente especificadas.
+Fonte: article_thales.pdf p.7 Algoritmo3 calcula min/max na serie quantizada inteira;
+Algoritmo4 so depois divide a serie normalizada. P.10 Algoritmo5 tambem recebe a
+serie ja normalizada. Essa descricao, literalmente executada, permite informacao
+do periodo de teste na transformacao. A fonte nao demonstra ajuste exclusivo no
+treino. Nao e prova do que ocorreu no codigo nao disponibilizado, e nao deve ser
+usada para acusar vazamento nos experimentos proprios. Os documentos proprios
+declaram seus limites pre-teste separadamente.
+
+5.3 Datas do historico externo ambiguas.
+P.8 diz 20 anos, 1998–2018; p.10 usa240amostras. Vinte e um anos civis completos
+de1998 a2018 incluiriam252meses. E necessario conhecer os limites exatos; nao
+presumir que o estudo usou todos os anos inclusivos. Nao afeta a identificacao
+correta do horizonte de60meses.
+
+6. CHECAGENS PRIMARIAS ADICIONAIS SEM ERRO CONFIRMADO
+
+Smyl, Pelka e Dudek (2026), arXiv2602.05660v1, submetido5/02/2026:
+https://arxiv.org/abs/2602.05660
+https://arxiv.org/html/2602.05660v1
+O full text confirma259regioes europeias, horizonte48h, ausencia de meteorologia
+externa e celulas recorrentes dilatadas modificadas (sec3.1,4.3).
+Condiz com related_work.tex:106–114 e literature_review.tex:80–85.
+O .bib o classifica como preprint, sem presume-lo revisado por pares.
+
+Li et al. (2026), mensal China:
+https://link.springer.com/article/10.1007/s00704-026-06060-x
+Editora confirma autores, titulo, v157 art120, publicado5/02/2026, JMA/MRI-CPS3,
+ERA5, EOF e validacao independente fev2022–jan2024. Condiz com a tabela propria.
+O artigo informa erros em MJ/m2; nao sao comparaveis diretamente com W/m2 do TCC.
+
+Shi et al. (2026):
+https://www.sciencedirect.com/science/article/pii/S0893608025013243
+Editora confirma titulo2D Time-varying functional modeling framework for
+multi-scale solar irradiance forecasting, autores e DOI10.1016/j.neunet.2025.108443,
+v196 art108443,2026. A tabela propria explicitamente nao inventa horizonte/split.
+
+Li et al. (2025), TimesNet/T2T-ViT:
+https://www.sciencedirect.com/science/article/abs/pii/S0960148124022602
+Editora confirma titulo, DOI10.1016/j.renene.2024.122192, v240 art122192,
+ano2025 e combinacao imagens+historico de irradiancia. Nao auditei o split ou
+as seis etapas de10min no texto integral; isso permanece pendente.
+
+Zhang et al. (2026), Cross-Unet:
+https://www.nature.com/articles/s41467-026-73817-3
+Editora confirma quatro autores, v17 art7613, ano2026, DOI e alvo PV, multiplas
+fontes de previsao e horizontes4h–7dias. Distincao do projeto GHI-only e apropriada.
+
+Umar et al. (2026):
+https://www.sciencedirect.com/science/article/pii/S2590174526003442
+Editora confirma titulo, CSI-DECOB-Ensemble, DOI, v30 art101861 e ano2026.
+Detalhes de quatro sitios e15submodelos nao foram revalidados integralmente
+nesta auditoria; permanecem pendentes se exigida verificacao exaustiva.
+
+7. LIMITES E PENDENCIAS
+
+Nao auditei experimentalmente papers externos nem confirmei todas as dezenas de
+referencias do .bib. Algumas paginas ScienceDirect retornam403 na abertura;
+foram usados o PDF local e os trechos primarios indexados da propria editora.
+Gong2024(IEEE) apresentou verificacao de robo; a tabela propria ja declara
+que locais e split nao foram verificados. Nao transformar esse limite em um
+erro confirmado.
+Os screenshots article_reference(1...3) nao foram analisados como artigos
+independentes. Nenhum DOI/publicacao do manuscrito BTSym foi inferido.
+Nao se verificou autoria/plagio por comparacao textual exaustiva; a apropriada
+atribuicao observada nao e um laudo de originalidade completo.
+
+8. CHECAGEM FINAL SOLICITADA PELO REVISOR PRINCIPAL
+
+Referencia [2] do relatorio, NLR/GOES Aggregated PSMv4: CORRETA.
+Fonte primaria exata:
+https://developer.nlr.gov/docs/solar/nsrdb/nsrdb-GOES-aggregated-v4-0-0-download/
+Descricao da pagina: PSMv4.0.0;1998em diante; GOES east/west; grade4km;
+resolucao temporal nativa30min. Tabela de parametros, linha interval:
+permite30ou60min. Parametro wkt usa a celula mais proxima para um ponto.
+Portanto 30min no produto/arquivos e possibilidade de download60min sao
+compativeis. Nao confundir com GOES Conus(2km/5min) ou FullDisc(2km/10min).
+O portal usa o nome NLR/National Laboratory of the Rockies; nao ha erro em
+usar developer.nlr.gov na referencia atual.
+O exemplo CSV da documentacao contem vento e5min, mas a propria pagina avisa
+que exemplos podem nao refletir o produto especifico. A descricao e a tabela
+de parametros sao as evidencias corretas para4km/30/60min.
+
+Referencia [5] Informer: CORRETA.
+https://ojs.aaai.org/index.php/AAAI/article/view/17325
+HaoyiZhou; ShanghangZhang; JieqiPeng; ShuaiZhang; JianxinLi; HuiXiong;
+WancaiZhang. Proceedings of the AAAI Conference on Artificial Intelligence,
+35(12),11106–11115; publicado18/05/2021; DOI10.1609/aaai.v35i12.17325.
+Resumo da editora confirma ProbSparse com O(LlogL), distilling e decoder em
+uma passagem. A cautela do relatorio p.18, de nao transformar complexidade
+assintotica em ganho de velocidade medido no projeto, e apropriada.
+
+Referencia [11] pvlib: CORRETA.
+https://joss.theoj.org/papers/10.21105/joss.05994
+Anderson,K.S.; Hansen,C.W.; Holmgren,W.F.; Jensen,A.R.; Mikofski,M.A.;
+Driesse,A. pvlib python:2023project update. JOSS8(92),5994,2023;
+publicado22/12/2023. DOI10.21105/joss.05994.
+Autores e metadados do relatorio e .bib conferem com o BibTeX da editora.
+
+Referencia [9] Yang et al.: CORRETA.
+https://www.sciencedirect.com/science/article/pii/S0038092X20303947
+Titulo Verification of deterministic solar forecasts; Solar Energy210,
+20–37,2020; DOI10.1016/j.solener.2020.04.019. Editora confirma titulo,
+autores e descricao de padronizacao/verificacao de previsoes deterministicas.
+Texto dos autores em repositorio universitario:
+https://escholarship.org/uc/item/6w14r65n
+Constitui fundamento metodologico; nao e evidencia experimental de que as
+implementacoes proprias estao corretas. O relatorio nao lhe atribui esse papel.

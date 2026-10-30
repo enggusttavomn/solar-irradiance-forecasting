@@ -6,16 +6,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from codigo_fonte.avaliacao import (
-    calcular_metricas_probabilisticas,
-    crps_empirico,
-    comparar_mae_com_referencia,
-    calcular_metricas,
-    desnormalizar_ghi,
-    resumir_metricas_por_modelo,
-    salvar_metricas,
-    salvar_previsoes,
-)
+from codigo_fonte.analises_e_relatorios.metricas import calcular_metricas_probabilisticas, crps_empirico, comparar_mae_com_referencia, calcular_metricas, desnormalizar_ghi, resumir_metricas_por_modelo, salvar_metricas, salvar_previsoes
 
 
 def test_metricas_conferem_com_calculo_manual() -> None:

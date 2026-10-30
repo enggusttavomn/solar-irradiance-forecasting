@@ -17,13 +17,13 @@ Os ganhos mensais são pequenos. A climatologia isolada ainda tem menor MAE nos 
 
 A busca prioriza MAE; isso não implica melhorar todas as métricas. No diário, o RMSE aumenta de 55,16 para 56,02 W/m², e o MSE de 3143,38 para 3247,65 (W/m²)². O PDF apresenta as demais métricas e os horizontes intermediários.
 
-Os valores sem arredondamento estão em [metricas_tabela.csv](../relatorios/tabela_resultados_ghi_pura_20260923/metricas_tabela.csv). A [comparação consolidada](../relatorios/correcao_timesnet_pura_20260923/comparacao_final.json) registra os quatro horizontes completos.
+Os valores sem arredondamento estão em [metricas_tabela.csv](../resultados/relatorios/tabela_resultados_ghi_pura_20260923/metricas_tabela.csv). A [comparação consolidada](../resultados/relatorios/correcao_timesnet_pura_20260923/comparacao_final.json) registra os quatro horizontes completos.
 
 ## O que foi corrigido
 
 Foram mantidos os ajustes já concluídos para os casos horário e diário. Para os dois mensais, foram recuperados os experimentos da busca exclusivamente com TimesNet (`busca_timesnet_mensal_20260920`), com seleção pela validação de 2023. As previsões e os checkpoints foram novamente conferidos; não foi necessário retreinar os modelos para corrigir a comparação.
 
-A grade mensal padrão agora contém somente candidatos que preveem diretamente o GHI. O gerador do PDF rejeita uma busca mensal com alvo residual ou combinação com climatologia. Os artefatos da busca híbrida V2 foram preservados como histórico, sem entrar nos novos resultados principais. A versão anterior do PDF e dos documentos está em [antes_correcao](../relatorios/correcao_timesnet_pura_20260923/antes_correcao/).
+A grade mensal padrão agora contém somente candidatos que preveem diretamente o GHI. O gerador do PDF rejeita uma busca mensal com alvo residual ou combinação com climatologia. Os artefatos da busca híbrida V2 foram preservados como histórico, sem entrar nos novos resultados principais. A versão anterior do PDF e dos documentos está em [antes_correcao](../resultados/relatorios/correcao_timesnet_pura_20260923/antes_correcao/).
 
 ## Configurações selecionadas
 
@@ -55,12 +55,12 @@ A otimização foi motivada por resultados de 2024 já observados. Embora a sele
 Executar na raiz do projeto com `.venv-baselines-gpu-20260912/Scripts/python.exe`:
 
 ```powershell
-python relatorios/correcao_timesnet_pura_20260923/auditar_mensal_v1_pura.py
-python -m scripts.gerar_tabela_resultados_ghi_otimizada --somente-validar
-python -m scripts.gerar_tabela_resultados_ghi_otimizada
+python resultados/relatorios/correcao_timesnet_pura_20260923/auditar_mensal_v1_pura.py
+python -m codigo_fonte.analises_e_relatorios.gerar_tabela_resultados_ghi_otimizada --somente-validar
+python -m codigo_fonte.analises_e_relatorios.gerar_tabela_resultados_ghi_otimizada
 ```
 
-Fontes: `resultados/busca_timesnet_resolucoes_20260922` para horário/diário e `resultados/busca_timesnet_mensal_20260920` para os mensais puros. A auditoria de horário/diário está em `relatorios/otimizacao_timesnet_quatro_casos_20260922/auditoria_resolucoes.json`; a referência mensal híbrida contida nesse relatório antigo não foi reutilizada nesta revisão. A nova auditoria mensal está em [auditoria_mensal_v1_pura.json](../relatorios/correcao_timesnet_pura_20260923/auditoria_mensal_v1_pura.json).
+Fontes: `resultados/busca_timesnet_resolucoes_20260922` para horário/diário e `resultados/busca_timesnet_mensal_20260920` para os mensais puros. A auditoria de horário/diário está em `resultados/relatorios/otimizacao_timesnet_quatro_casos_20260922/auditoria_resolucoes.json`; a referência mensal híbrida contida nesse relatório antigo não foi reutilizada nesta revisão. A nova auditoria mensal está em [auditoria_mensal_v1_pura.json](../resultados/relatorios/correcao_timesnet_pura_20260923/auditoria_mensal_v1_pura.json).
 
-O PDF, seus valores, hashes e renderizações são conferidos na pasta `relatorios/tabela_resultados_ghi_pura_20260923`. Os contratos históricos continuam intactos. Mudanças de código, configuração ou dados exigem uma nova pasta de busca; não se alteram hashes para forçar retomada. Para reproduzir a inferência, preservar dispositivo, tamanho e ordem dos lotes, pois a escolha de frequências da TimesNet depende do lote.
-A [auditoria consolidada desta revisão](../relatorios/correcao_timesnet_pura_20260923/auditoria_quatro_casos_puros.json) reúne somente as quatro tarefas puras e confere 328 artefatos. Passaram 81 testes de busca mensal, checkpoints, locks e geração da tabela. Há uma ressalva histórica de procedência: os contratos canônicos mensais divergem de seus manifestos antigos, embora as previsões, checkpoints e demais 54 arquivos de cada tarefa permaneçam íntegros. Essa divergência foi registrada, sem modificar os contratos; as previsões do benchmark consolidado também foram conferidas contra as canônicas. Os dez checkpoints da busca mensal pura reproduziram exatamente suas previsões em CPU.
+O PDF, seus valores, hashes e renderizações são conferidos na pasta `resultados/relatorios/tabela_resultados_ghi_pura_20260923`. Os contratos históricos continuam intactos. Mudanças de código, configuração ou dados exigem uma nova pasta de busca; não se alteram hashes para forçar retomada. Para reproduzir a inferência, preservar dispositivo, tamanho e ordem dos lotes, pois a escolha de frequências da TimesNet depende do lote.
+A [auditoria consolidada desta revisão](../resultados/relatorios/correcao_timesnet_pura_20260923/auditoria_quatro_casos_puros.json) reúne somente as quatro tarefas puras e confere 328 artefatos. Passaram 81 testes de busca mensal, checkpoints, locks e geração da tabela. Há uma ressalva histórica de procedência: os contratos canônicos mensais divergem de seus manifestos antigos, embora as previsões, checkpoints e demais 54 arquivos de cada tarefa permaneçam íntegros. Essa divergência foi registrada, sem modificar os contratos; as previsões do benchmark consolidado também foram conferidas contra as canônicas. Os dez checkpoints da busca mensal pura reproduziram exatamente suas previsões em CPU.

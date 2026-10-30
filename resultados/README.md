@@ -1,5 +1,18 @@
 # Resultados
 
+Tudo o que o código produz fica nesta área: previsões, métricas, modelos
+treinados, gráficos, PDFs, análises e auditorias.
+
+| Conteúdo | Onde encontrar |
+|---|---|
+| Evidências de um experimento | pasta identificada pela execução |
+| Modelos treinados preservados | [`modelos/`](modelos/) |
+| Análises, auditorias e painéis | [`relatorios/`](relatorios/) |
+| PDFs exportados | [`pdf/`](pdf/) |
+
+O programa que gera um arquivo fica em [`../codigo_fonte/`](../codigo_fonte/).
+As instruções para executar ficam em [`../documentacao/`](../documentacao/).
+
 Este diretório separa evidência científica atual de execuções históricas. Uma
 pasta só deve ser tratada como publicável quando seu `status_execucao.json`
 declara conclusão e resultado publicável, e quando o manifesto e os hashes são

@@ -5,8 +5,8 @@ import pytest
 
 torch = pytest.importorskip("torch")
 
-from codigo_fonte import modelos_baselines_adicionais as r
-from codigo_fonte import experimento_baselines_gpu as g
+from codigo_fonte.modelos import modelos_baselines_adicionais as r
+from codigo_fonte.experimentos import experimento_baselines_gpu as g
 
 DISPOSITIVOS = ["cpu", pytest.param("cuda", marks=pytest.mark.skipif(
     not torch.cuda.is_available(), reason="sem CUDA"))]

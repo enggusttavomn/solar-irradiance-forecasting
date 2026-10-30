@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "verificado_em_utc": "2026-10-28T01:58:11.397874+00:00",
+  "metodo": "Comparacao recursiva exata; floats comparados por float.hex; nenhuma tolerancia ou arredondamento adicional.",
+  "verificacao_visual_incluida": false,
+  "perfis": {
+    "artigo": {
+      "manifesto_original": "resultados/relatorios/quantizacao_modelos_artigo_20261019_explicacoes/manifesto.json",
+      "sha256_manifesto_original": "09392d6a3209d70336e93ccc16c52df54aeb5a4e1e62c1550fec25a7dfaa88b2",
+      "manifesto_novo": "resultados/relatorios/pdfs_resumidos_legiveis_20261027/artigo/manifesto.json",
+      "sha256_manifesto_novo": "26367aa371c038a46e6a32ca1b6159e565ee40e4228157e334f2a97210414b70",
+      "campos_exatamente_iguais": {
+        "modelos": true,
+        "rotulos": true,
+        "rankings_selecionados": true,
+        "escolhas_validacao": true,
+        "linhas_teste": true,
+        "classificacoes": true,
+        "comparacoes_historicas": true,
+        "contagens_quantizacao": true,
+        "contagens_historico_sem_quantizacao": true,
+        "celulas_pdf": true
+      },
+      "linhas_teste": 864,
+      "classificacoes": 72,
+      "comparacoes_historicas": 96,
+      "celulas_inteiras_iguais": 1264,
+      "fontes_cientificas_iguais": 7,
+      "fontes": {
+        "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_final_atual/auditoria.json": {
+          "sha256": "b48b7fbefbd1b267c25c276dc6f6d10692603ac45969946d879f1b52cb5a43d5",
+          "confere_no_disco": true
+        },
+        "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_final_atual/metricas_auditadas.csv": {
+          "sha256": "b75304b021d1bcf07389ffe7e8668122029b9de85f0f9a31e0a751db22bdbbdc",
+          "confere_no_disco": true
+        },
+        "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_1998_2022/auditoria.json": {
+          "sha256": "73264016a986720643046268ee78601d3007f824da8a3e4851560430958ed61b",
+          "confere_no_disco": true
+        },
+        "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_1998_2022/metricas_auditadas.csv": {
+          "sha256": "82d188c94b168c6414a37eb73b7edd8ef56f51181201add5cfa4c29167e0affb",
+          "confere_no_disco": true
+        },
+        "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_curto_pareado/auditoria.json": {
+          "sha256": "fa2cb6fa59feaa56cc4f2c5a7fb611e1b793bbb0b3ea7d1fb11e104fb1a9eb7b",
+          "confere_no_disco": true
+        },
+        "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_curto_pareado/metricas_auditadas.csv": {
+          "sha256": "cbe5576eafe03a1396b22d96ea8b74e6a22640a4ba3d37b6f1f8b3db04eae441",
+          "confere_no_disco": true
+        },
+        "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_pareamento_historico/pareamento.json": {
+          "sha256": "93b48cabfa185490830e9b1124c914c2593eb119b390ebe0ff294ef9b1a83bff",
+          "confere_no_disco": true
+        }
+      },
+      "pdf_novo": {
+        "assinatura_pdf": true,
+        "EOF_final": true,
+        "sha256": "338fd9538ba10d2ae35798cb895843ee8591762e2f6348c6c2e622c1c8a92ae2",
+        "confere_manifesto": true,
+        "paginas_manifesto": 10
+      }
+    },
+    "disciplina": {
+      "manifesto_original": "resultados/relatorios/quantizacao_modelos_disciplina_20261019/manifesto.json",
+      "sha256_manifesto_original": "99c6202c4e1b8bc2fd224346805f28fd6874ea454f7c6629c425177bb2e9b367",
+      "manifesto_novo": "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/manifesto.json",
+      "sha256_manifesto_novo": "81a6cf9791f47b530f434a5b3abf750df95d00a1145f1cdea8f98c54a92567a2",
+      "campos_exatamente_iguais": {
+        "modelos": true,
+        "rotulos": true,
+        "rankings_selecionados": true,
+        "escolhas_validacao": true,
+        "linhas_teste": true,
+        "classificacoes": true,
+        "comparacoes_historicas": true,
+        "contagens_quantizacao": true,
+        "contagens_historico_sem_quantizacao": true,
+        "celulas_pdf": true
+      },
+      "linhas_teste": 432,
+      "classificacoes": 36,
+      "comparacoes_historicas": 48,
+      "celulas_inteiras_iguais": 760,
+      "fontes_cientificas_iguais": 7,
+      "fontes": {
+        "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_final_atual/auditoria.json": {
+          "sha256": "b48b7fbefbd1b267c25c276dc6f6d10692603ac45969946d879f1b52cb5a43d5",
+          "confere_no_disco": true
+        },
+        "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_final_atual/metricas_auditadas.csv": {
+          "sha256": "b75304b021d1bcf07389ffe7e8668122029b9de85f0f9a31e0a751db22bdbbdc",
+          "confere_no_disco": true
+        },
+        "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_1998_2022/auditoria.json": {
+          "sha256": "73264016a986720643046268ee78601d3007f824da8a3e4851560430958ed61b",
+          "confere_no_disco": true
+        },
+        "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_1998_2022/metricas_auditadas.csv": {
+          "sha256": "82d188c94b168c6414a37eb73b7edd8ef56f51181201add5cfa4c29167e0affb",
+          "confere_no_disco": true
+        },
+        "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_curto_pareado/auditoria.json": {
+          "sha256": "fa2cb6fa59feaa56cc4f2c5a7fb611e1b793bbb0b3ea7d1fb11e104fb1a9eb7b",
+          "confere_no_disco": true
+        },
+        "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_curto_pareado/metricas_auditadas.csv": {
+          "sha256": "cbe5576eafe03a1396b22d96ea8b74e6a22640a4ba3d37b6f1f8b3db04eae441",
+          "confere_no_disco": true
+        },
+        "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_pareamento_historico/pareamento.json": {
+          "sha256": "93b48cabfa185490830e9b1124c914c2593eb119b390ebe0ff294ef9b1a83bff",
+          "confere_no_disco": true
+        }
+      },
+      "pdf_novo": {
+        "assinatura_pdf": true,
+        "EOF_final": true,
+        "sha256": "147089bf214caea6705bac231ca20140f63f4fa0e0f6f2d3fe1ff56dd6d80e8b",
+        "confere_manifesto": true,
+        "paginas_manifesto": 10
+      }
+    }
+  },
+  "originais_nasca_preservados": [
+    {
+      "arquivo": "resultados/pdf/quantizacao_ghi_modelos_para_artigo.pdf",
+      "referencia_archive": "refs/archive/meus-projetos-backup/2026-10-27:TCC/output/pdf/quantizacao_ghi_modelos_para_artigo.pdf",
+      "bytes": 157764,
+      "sha256_archive": "c95a187b427894aa228b3ef4cf095af696371eaea10eb705dedf90c759bf9589",
+      "sha256_atual": "c95a187b427894aa228b3ef4cf095af696371eaea10eb705dedf90c759bf9589",
+      "identico_ao_archive": true
+    },
+    {
+      "arquivo": "resultados/pdf/quantizacao_ghi_modelos_para_artigo_com_explicacoes.pdf",
+      "referencia_archive": "refs/archive/meus-projetos-backup/2026-10-27:TCC/output/pdf/quantizacao_ghi_modelos_para_artigo_com_explicacoes.pdf",
+      "bytes": 158996,
+      "sha256_archive": "d87e83a7d8ff87aac6021f7a33f2fc6ee74aaf8f3acc2bb6e2bc33688b2ffb8f",
+      "sha256_atual": "d87e83a7d8ff87aac6021f7a33f2fc6ee74aaf8f3acc2bb6e2bc33688b2ffb8f",
+      "identico_ao_archive": true
+    },
+    {
+      "arquivo": "resultados/pdf/quantizacao_ghi_modelos_para_disciplina.pdf",
+      "referencia_archive": "refs/archive/meus-projetos-backup/2026-10-27:TCC/output/pdf/quantizacao_ghi_modelos_para_disciplina.pdf",
+      "bytes": 149268,
+      "sha256_archive": "5148161ed0174cb6029ff4b1ed6790acf8e07b0bd418c5959affa436f075f3b8",
+      "sha256_atual": "5148161ed0174cb6029ff4b1ed6790acf8e07b0bd418c5959affa436f075f3b8",
+      "identico_ao_archive": true
+    },
+    {
+      "arquivo": "resultados/pdf/quantizacao_ghi_unificado_compacto.pdf",
+      "referencia_archive": "refs/archive/meus-projetos-backup/2026-10-27:TCC/output/pdf/quantizacao_ghi_unificado_compacto.pdf",
+      "bytes": 175428,
+      "sha256_archive": "329d97924a64200f6e0d13e7822273ab780f6d92e6073ee3525f6a95bda225ef",
+      "sha256_atual": "329d97924a64200f6e0d13e7822273ab780f6d92e6073ee3525f6a95bda225ef",
+      "identico_ao_archive": true
+    }
+  ],
+  "aprovado": true
+}

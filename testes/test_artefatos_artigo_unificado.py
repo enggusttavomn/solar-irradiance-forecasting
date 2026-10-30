@@ -7,13 +7,9 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-import codigo_fonte.artefatos_artigo_unificado as artefatos
-from codigo_fonte.artefatos_fragmentados import preparar_manifesto_fragmentado
-from codigo_fonte.artefatos_artigo_unificado import (
-    ArtefatoNaoPublicavelError,
-    gerar_artefatos_artigo_unificado,
-    sha256_arquivo,
-)
+import codigo_fonte.publicacoes.artefatos_artigo_unificado as artefatos
+from codigo_fonte.utilitarios.artefatos_fragmentados import preparar_manifesto_fragmentado
+from codigo_fonte.publicacoes.artefatos_artigo_unificado import ArtefatoNaoPublicavelError, gerar_artefatos_artigo_unificado, sha256_arquivo
 
 
 SEMENTES = (11, 23, 42, 67, 89)
@@ -82,10 +78,10 @@ def test_latex_contem_tabular_na_largura_da_coluna_e_fecha_balanceado(
 
 
 def test_caminho_portatil_remove_prefixo_da_maquina() -> None:
-    caminho = artefatos.RAIZ_PROJETO / "codigo_fonte" / "artefatos_artigo_unificado.py"
+    caminho = artefatos.RAIZ_PROJETO / 'codigo_fonte/publicacoes/artefatos_artigo_unificado.py'
 
     assert artefatos.caminho_portatil(caminho) == (
-        "codigo_fonte/artefatos_artigo_unificado.py"
+        "codigo_fonte/publicacoes/artefatos_artigo_unificado.py"
     )
 
 
@@ -970,7 +966,7 @@ def test_latex_destaca_todos_os_empates_exatos_sem_destacar_na(tmp_path: Path) -
 
 
 def test_cli_padrao_usa_resultado_corrigido_e_pasta_nova(monkeypatch: pytest.MonkeyPatch) -> None:
-    import gerar_artefatos_artigo_unificado as cli
+    import codigo_fonte.publicacoes.gerar_artefatos_artigo_unificado as cli
 
     chamadas = []
     def gerar_simulado(**argumentos):

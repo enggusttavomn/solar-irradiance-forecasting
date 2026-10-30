@@ -10,8 +10,8 @@ from codigo_fonte.modelos.probabilisticos import DeepAR, DeepNPTS
 from codigo_fonte.modelos.referencias_simples.climatologia import prever as climatologia
 from codigo_fonte.modelos.referencias_simples.persistencia import prever as persistencia
 from codigo_fonte.modelos.referencias_simples.sazonal_ingenuo import prever as sazonal
-from codigo_fonte.modelos_tabulares_globais import prever_baselines_mensais
-from codigo_fonte.preparacao.base_mensal import carregar_base_mensal
+from codigo_fonte.modelos.tabulares.modelos_tabulares_globais import prever_baselines_mensais
+from codigo_fonte.coleta_e_preparacao.base_mensal import carregar_base_mensal
 
 
 RAIZ = Path(__file__).resolve().parents[1]

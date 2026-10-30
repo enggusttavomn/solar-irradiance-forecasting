@@ -5,7 +5,7 @@ from types import SimpleNamespace
 import pytest
 import torch
 
-from codigo_fonte import experimento_atencao_deterministica_v1 as a
+from codigo_fonte.experimentos import experimento_atencao_deterministica_v1 as a
 
 
 def test_contexto_reaplica_estrito_e_restaura_em_erro(monkeypatch):

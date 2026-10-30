@@ -1,0 +1,542 @@
+[
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\informer\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\lstm\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\atual\\daily_30\\transformer\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\informer\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      42
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\lstm\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      42
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\atual\\hourly_72_extension\\transformer\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      42
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\atual\\monthly_1\\informer\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\atual\\monthly_1\\lstm\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\atual\\monthly_1\\transformer\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\atual\\monthly_6\\informer\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\atual\\monthly_6\\lstm\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\atual\\monthly_6\\transformer\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\informer\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\lstm\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\daily_30\\transformer\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\informer\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      42
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\lstm\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      42
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\hourly_72_extension\\transformer\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      42
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\informer\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\lstm\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_1\\transformer\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\informer\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\lstm\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_1998_2022\\monthly_6\\transformer\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\informer\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\lstm\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\daily_30\\transformer\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\informer\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      42
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\lstm\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      42
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\hourly_72_extension\\transformer\\contrato_execucao.json",
+    "batch_size": 128,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cuda",
+    "max_epocas": 30,
+    "paciencia": 5,
+    "sementes": [
+      42
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\informer\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\lstm\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_1\\transformer\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\informer\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\lstm\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  },
+  {
+    "path": "resultados\\quantizacao_todos_modelos_20260929\\historico_curto_pareado\\monthly_6\\transformer\\contrato_execucao.json",
+    "batch_size": 32,
+    "criterio_epocas": "MSE_normalizado",
+    "criterio_niveis": "macro_MAE_fisico_ensemble_horizonte_completo",
+    "dispositivo": "cpu",
+    "max_epocas": 300,
+    "paciencia": 30,
+    "sementes": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ]
+  }
+]

@@ -6,9 +6,9 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from codigo_fonte import experimento_multirresolucao as base
-from codigo_fonte import experimento_quantizacao_timesnet as exp
-from codigo_fonte import otimizacao_timesnet_mensal as mensal
+from codigo_fonte.experimentos import experimento_multirresolucao as base
+from codigo_fonte.experimentos import experimento_quantizacao_timesnet as exp
+from codigo_fonte.experimentos import otimizacao_timesnet_mensal as mensal
 
 
 @pytest.fixture
@@ -146,7 +146,7 @@ def test_ensemble_aplica_piso_apos_media():
 
 @pytest.fixture
 def snapshot_pdf(tmp_path, monkeypatch):
-    from scripts import auditar_quantizacao_timesnet as auditor
+    from codigo_fonte.analises_e_relatorios import auditar_quantizacao_timesnet as auditor
     monkeypatch.setattr(exp, "RAIZ", tmp_path)
     pdf = tmp_path/"documentacao/tabela_resultados_ghi_2024.pdf"
     pdf.parent.mkdir()
@@ -156,7 +156,7 @@ def snapshot_pdf(tmp_path, monkeypatch):
     outro = tmp_path/"dados.csv"
     outro.write_bytes(b"dados originais")
     fontes = {str(p): base.sha256_arquivo(p) for p in (pdf, outro)}
-    entrega = tmp_path/"relatorios/quantizacao_timesnet_20260923/entrega_pdf.json"
+    entrega = tmp_path/"resultados/relatorios/quantizacao_timesnet_20260923/entrega_pdf.json"
     def registrar():
         base.salvar_json_atomico({
             "pdf": {"path": str(pdf), "sha256": base.sha256_arquivo(pdf)},

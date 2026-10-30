@@ -10,7 +10,7 @@ import pandas as pd
 import pytest
 import torch
 
-from codigo_fonte import experimento_quantizacao_resolucoes as exp
+from codigo_fonte.experimentos import experimento_quantizacao_resolucoes as exp
 
 
 def _json(path, obj):

@@ -5,13 +5,8 @@ from __future__ import annotations
 import numpy as np
 import joblib
 
-from codigo_fonte.dados_mensais_globais import carregar_base_mensal_global
-from codigo_fonte.modelos_tabulares_globais import (
-    prever_baselines_mensais,
-    salvar_modelo_joblib,
-    treinar_mlp_global,
-    treinar_xgboost_global,
-)
+from codigo_fonte.coleta_e_preparacao.base_mensal import carregar_base_mensal_global
+from codigo_fonte.modelos.tabulares.modelos_tabulares_globais import prever_baselines_mensais, salvar_modelo_joblib, treinar_mlp_global, treinar_xgboost_global
 
 
 def test_baselines_globais_sao_finitos_e_tem_um_valor_por_alvo() -> None:

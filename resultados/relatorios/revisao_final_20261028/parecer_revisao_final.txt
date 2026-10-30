@@ -1,0 +1,154 @@
+REVISÃO FINAL DOS ARTIGOS E DO RELATÓRIO — 28/10/2026
+
+O relatório revisado e as fontes atuais dos artigos têm resultados numericamente consistentes nas verificações realizadas. Ainda há pendências antes de tratar todo o pacote como versão final: os três PDFs da revista estão antigos, a reprodução local está incompleta e alguns textos de orientação descrevem experimentos anteriores. IEEE e BTSym merecem uma discussão mais explícita dos comparadores que ficaram fora dos seus recortes.
+
+
+ESTADO DOS DOCUMENTOS
+
+Relatório revisado EA019: Pronto para leitura final do conteúdo. 36 páginas após compactação verificada; dez tabelas de resultados/apêndices conferidas integralmente. Falta preencher o link do vídeo antes da entrega, se exigido.
+
+Revista: fontes LaTeX: Coerentes nos números conferidos. Benchmark atual inclui onze modelos. A comparação TimesNet/DilatedRNN é focal e não representa liderança no benchmark inteiro.
+
+Revista: principal, visualização IEEE e suplemento em PDF: Atualizar antes da leitura final. PDFs preservam a compilação anterior e divergem substantivamente das fontes atuais.
+
+IEEE horário com TimesNet: Pode ser lido; discutir escopo. Números e trechos substantivos do PDF conferem. XGBoost da mesma execução é mais forte e está fora da tabela editorial.
+
+BTSym mensal com DilatedRNN: Pode ser lido; discutir escopo. Números e análises pareadas conferem. Climatologia, LSTM e RNN da mesma execução superam o modelo destacado.
+
+MCSM: Manter como material histórico. Os resultados próprios do estudo legado conferem. O método aproximado não deve ser confundido com DeepNPTS implementado posteriormente.
+
+Artigos de referência: Uso central adequado no recorte revisado. Metadados centrais confirmados em fontes primárias; há questões específicas no artigo externo de Cabral para leitura crítica.
+
+
+REDUÇÃO DOS ESPAÇOS EM BRANCO
+
+Após o pedido adicional de reduzir espaços em branco, o relatório revisado foi compactado de 37 para 36 páginas. Foram ajustadas quebras internas, espaçamento de legendas/notas e margens verticais de tabelas. Texto, fontes, quinze tabelas, treze figuras e sete equações foram preservados. As 36 páginas foram inspecionadas individualmente e as 37 entradas do sumário conferem com o PDF. DOCX e PDF no caminho original foram atualizados; a versão anterior está preservada nesta pasta.
+
+
+PONTOS A RESOLVER
+
+
+1. Os três PDFs da revista não representam as fontes atuais. [Alta — versão do documento]
+
+O título de main.pdf, main_ieee.pdf e supplementary_material.pdf ainda é o anterior. main.pdf, páginas 12 e 17, atribui ao XGBoost a liderança diária em 1 e 3 dias; a seção atual de resultados inclui ARIMA, com MAEs de 39,95 e 43,04 W/m². O suplemento PDF tem sete modelos, enquanto o suplemento em LaTeX contempla onze modelos e doze tabelas de métricas. A diferença ultrapassa a redação do título.
+
+Ajuste recomendado: Recompilar main.tex, main_ieee.tex e supplementary_material.tex a partir da mesma revisão e conferir títulos, benchmark, conclusões, referências, numeração e layout. Os PDFs não foram sobrescritos nesta auditoria.
+
+Fontes: artigos/revista_unificado/main.tex — Título atual, linhas 46–47; artigos/revista_unificado/main.pdf#page=12 — PDF antigo, página 12; artigos/revista_unificado/main_ieee.pdf — Visualização IEEE antiga; artigos/revista_unificado/supplementary_material.pdf — Suplemento antigo; artigos/revista_unificado/sections/07_results_and_discussion.tex — Benchmark atual, linhas 143–163; artigos/revista_unificado/supplementary_material.tex — Suplemento atual, linhas 54–59
+
+
+2. IEEE e BTSym usam conjuntos restritos de comparadores. [Média — discussão científica]
+
+No IEEE, o XGBoost da mesma execução tem RMSE de 96,05 / 98,23 / 99,22 W/m² em 24 / 48 / 72 horas, contra 97,21 / 100,26 / 101,04 da TimesNet. No BTSym, a DilatedRNN tem MAE de 13,4222 W/m², enquanto Climatologia, LSTM e RNN têm 12,0713 / 12,2221 / 12,5544. Os manuscritos delimitam os conjuntos comparados; portanto, não há erro aritmético na liderança dentro do recorte. A competitividade fica menos bem demonstrada sem explicitar esses resultados adicionais.
+
+Ajuste recomendado: Considerar incluir XGBoost no IEEE e ao menos climatologia no BTSym, ou registrar claramente os resultados omitidos na discussão e o motivo do recorte. Um suplemento com o benchmark completo fortaleceria ambos sem novos treinamentos. Evitar generalizar “melhor entre os métodos comparados” para “melhor método do projeto”.
+
+Fontes: artigos/ieee/artigo.tex — Escopo e resultados, linhas 42–44 e 462–489; artigos/ieee/README.md — Recorte editorial, linhas 32–35; artigos/btsym26/main.tex — Resumo e resultados, linhas 44 e 178–195; resultados/avaliacao_mensal_canonica/metricas_medias_modelos.csv — Comparadores mensais completos
+
+
+3. O conjunto local de previsões da revista está incompleto nos caminhos declarados. [Média — reprodução]
+
+Não estão presentes previsoes_validacao.csv.gz ou previsoes_teste.csv.gz nas quatro pastas de avaliacao_multirresolucao_corrigida_v2. Métricas, contratos e derivados preservados permitem conferir tabelas. A falta impede uma nova reprodução integral de curvas e métricas diretamente das previsões nesses caminhos. O artigo já declara que o bundle completo não integra o snapshot público; o README local ainda oferece a regeneração como se todos os insumos estivessem disponíveis.
+
+Ajuste recomendado: Localizar ou restaurar as previsões arquivadas, preservando seus hashes, e identificar a pasta completa no README. Se não forem recuperadas agora, qualificar a instrução de reprodução. O gerador focal grava tabelas antes de tentar ler a previsão ausente; não executá-lo como simples teste no estado atual.
+
+Fontes: artigos/revista_unificado/README.md — Promessa de reprodução local, linhas 102–105; codigo_fonte/analises_e_relatorios/gerar_comparacao_focal_artigo.py — Gravação e leitura, linhas 126–133; artigos/revista_unificado/main.tex — Disponibilidade do bundle, linhas 115–121
+
+
+4. Guias e índices ainda associam artigos atuais a experimentos antigos. [Média — orientação de leitura]
+
+documentacao/guia_dos_artigos.md diz que IEEE e MCSM apresentam o mesmo experimento mensal de DeepNPTS. O IEEE atual é o estudo horário de TimesNet. O README da avaliação mensal canônica também se apresenta como fonte atual de IEEE e MCSM, embora hoje seja fonte do BTSym e de antecedentes mensais.
+
+Ajuste recomendado: Atualizar os dois textos com um mapa de artigo → experimento → pasta de resultados. O guia antigo pode ser preservado como histórico, desde que identificado claramente. Para a leitura atual, usar o README de artigos/ e os manuscritos correspondentes.
+
+Fontes: documentacao/guia_dos_artigos.md — Linhas 3–10 e 26; resultados/avaliacao_mensal_canonica/README.md — Linhas 3–5; artigos/README.md — Mapa atual dos quatro manuscritos
+
+
+5. O “DeepNPTS aproximado” do MCSM é um algoritmo histórico distinto. [Média se houver nova circulação — nomenclatura]
+
+O estudo MCSM usa um suavizador por distância e recência, atualmente nomeado VizinhosHistoricosApproxRegressor. Seus sete conjuntos de métricas conferem com os artefatos legados: MAE da aproximação de 12,9571 W/m², cinco vitórias locais e reduções declaradas confirmadas. O DeepNPTS canônico posterior, com MAE de 17,7009, usa outro algoritmo/protocolo. Esses valores não se contradizem.
+
+Ajuste recomendado: Manter a versão histórica identificada. Se o manuscrito voltar a circular, preferir “método de vizinhos históricos ponderados” e explicar a inspiração, sem apresentar a aproximação como reprodução da arquitetura DeepNPTS.
+
+Fontes: artigos/mcsm/artigo_ghi_iii_mcsm.tex — Método e limitações, linhas 128–152 e 224–226; codigo_fonte/experimentos/experimentos_redes_avancadas.py — Algoritmo legado, linhas 213–262
+
+
+6. Há links locais quebrados e acentos danificados. [Baixa — documentação]
+
+CITATION_VERIFICATION.md do BTSym aponta para codigo_fonte/dados_mensais_globais.py e codigo_fonte/modelos_neurais_globais.py, que foram movidos. O README da revista contém “?” literais em palavras acentuadas no bloco de posicionamento. O README do IEEE ainda descreve nomes e caminhos antigos dos PDFs de referência e do gerador legado.
+
+Ajuste recomendado: Atualizar os apontadores para coleta_e_preparacao/base_mensal.py e modelos/recorrentes/modelos_neurais_globais.py, corrigir os acentos e revisar os caminhos editoriais. Preservar hashes históricos de execuções; atualizar a documentação de navegação, não reescrever a proveniência antiga.
+
+Fontes: artigos/btsym26/CITATION_VERIFICATION.md — Linhas 40–42; artigos/revista_unificado/README.md — Linhas 24–35; artigos/ieee/README.md — Referências e gerador legado
+
+
+CONFERÊNCIAS APROVADAS
+
+- Relatório EA019: dez tabelas de resultados e apêndices verificadas célula a célula — 108 linhas e 732 células de dados — sem divergência na apresentação. As tabelas de dados/protocolo também foram lidas e os parâmetros de 36 contratos conferidos, sem divergência.
+
+- Foram cruzadas 432 linhas de teste com 432 linhas de validação dos três regimes. MAE, nRMSE e R² coincidem exatamente entre os CSVs lidos. Algumas células de MSE/RMSE diferem apenas na última representação de ponto flutuante (máximos 4,55×10⁻¹³ e 2,84×10⁻¹⁴); nenhuma diferença altera os valores exibidos ou as conclusões.
+
+- Todas as 36 condições selecionadas correspondem ao menor macro-MAE de validação no horizonte completo. Os sete arquivos-fonte auditados mantêm os hashes registrados.
+
+- Contagens do relatório confirmadas: quantização melhora cinco combinações, piora quatro e mantém controle em três; o histórico longo melhora onze dos doze controles. As doze médias locais reproduzem os macro-MAEs, com diferença máxima de 3,56×10⁻¹⁵ W/m².
+
+- Vitórias por localidade confirmadas: horária Transformer 7 / LSTM 3; diária Transformer 6 / LSTM 4; cada tarefa mensal Informer 5 / LSTM 3 / Transformer 2.
+
+- Revista: 43 células da tabela terminal conferem com o consolidado; médias locais, redução mensal de 6,38%, desvios entre sementes e vitórias pareadas conferem. Não foram encontradas chaves de citação ausentes ou referências internas sem destino nas fontes examinadas.
+
+- IEEE: métricas dos quatro métodos, épocas LSTM=22 e TimesNet=14 e redução de RMSE de 3,48% em 72 horas confirmadas. O verificador de figura acusa diferença binária de PNG, mas os pixels são iguais; não é divergência científica da imagem.
+
+- BTSym: médias, métricas locais, épocas, contagens de vitórias/derrotas (66/54 contra DeepAR; 75/45 contra MLP; 63/57 contra sazonal; 97/23 contra persistência), caudas de erro e resumo de seis localidades contra DeepAR conferem.
+
+- Apresentação: 37 páginas do relatório revistas em folhas de contato, com fórmulas/tabelas principais ampliadas; IEEE/BTSym com todas as páginas em contato e tabelas ampliadas. Não foram observados cortes ou sobreposições relevantes. As quatro páginas representativas inspecionadas da revista também estão legíveis, mas o PDF precisa de nova avaliação visual após recompilar.
+
+- O relatório distingue corretamente treino/validação/teste, refit, média das previsões e média dos erros, unidades W/m², nRMSE percentual, macro-RMSE e raiz do macro-MSE. Também explicita clipping não isolado, float32 sem compressão medida, uma semente horária e ausência de inferência de significância estatística.
+
+
+REFERÊNCIAS E MATERIAIS-BASE
+
+Cabral, Fraidenraich e Capretz, Solar Energy 317 (2026), 114964: Referência e descrição corretas no relatório e nos manuscritos. Estudo principal de 40 localidades, contexto e saída de 60 meses. O caso adicional é horário, com saída de cinco dias; não equivale a prever cinco médias diárias.
+https://www.sciencedirect.com/science/article/pii/S0038092X26006535
+
+NSRDB GOES Aggregated PSM v4 / NLR: A documentação confirma grade nominal de 4 km, produto de 30 minutos e consultas em intervalos de 30 ou 60 minutos. A referência técnica do relatório está correta.
+https://developer.nlr.gov/docs/solar/nsrdb/nsrdb-GOES-aggregated-v4-0-0-download/
+
+Informer, Zhou et al., AAAI 2021: Autores, DOI 10.1609/aaai.v35i12.17325, volume 35(12) e páginas 11106–11115 confirmados. A redução assintótica descrita no relatório não é tratada como medição de velocidade do projeto.
+https://ojs.aaai.org/index.php/AAAI/article/view/17325
+
+pvlib python: 2023 project update: Autoria e metadados JOSS 8(92), 5994 confirmados.
+https://joss.theoj.org/papers/10.21105/joss.05994
+
+Verification of deterministic solar forecasts, Yang et al.: Título, DOI, Solar Energy 210, páginas 20–37, ano 2020 confirmados.
+https://escholarship.org/uc/item/6w14r65n
+
+artigo1.pdf — SBrT 2024, autoencoders e DGA: Trata de diagnóstico de transformadores elétricos por gases dissolvidos. Não é artigo sobre a arquitetura Transformer nem sobre previsão de GHI. Não foi encontrada citação indevida nos textos-alvo.
+https://biblioteca.sbrt.org.br/articles/4714
+
+artigo2.pdf — SBrT 2024, NCA e reconhecimento de cargas: Trata de classificação de aparelhos em gestão residencial de energia. Não foi encontrado uso indevido de seus resultados na previsão de GHI.
+https://biblioteca.sbrt.org.br/articles/4614
+
+
+QUESTÕES NO ARTIGO EXTERNO DE CABRAL
+
+O próprio artigo externo de Cabral merece leitura crítica em três pontos. Na Tabela 8 (Reno, p.10), Smart Persistence tem RMSE=21,4389 e R²=0,9393, enquanto SARIMA tem RMSE=9,2924 e R²=0,9391. Sob a definição usual e um mesmo vetor observado, RMSE²/(1−R²) deveria ser a mesma variância: esses pares implicam aproximadamente 7.572,10 e 1.417,88. A Tabela 14 (Manaus) também apresenta pares incompatíveis com essa hipótese. Isso pede esclarecimento sobre cálculo, transcrição ou vetores de avaliação, sem permitir escolher qual coluna está incorreta. Além disso, os algoritmos descrevem normalização antes da separação temporal, sem demonstrar ajuste exclusivo no treino, e “20 anos, 1998–2018” deixa ambíguos os limites inclusivos. Essas são questões do texto externo; não demonstram vazamento no código não disponibilizado e não invalidam os resultados próprios do TCC. O relatório usa esse trabalho como contexto e delimita corretamente a impossibilidade de comparação direta.
+
+
+ORDEM SUGERIDA DE LEITURA
+
+1. Começar pelo relatório revisado: resumo → Tabelas 2 e 3 → seleção/refit → métricas → Tabelas 6 a 8 → conclusão. Conferir se cada afirmação pode ser explicada com a tabela correspondente.
+
+2. Ler IEEE e BTSym com atenção ao conjunto comparado. Marcar frases em que “melhor” precise permanecer acompanhado de “entre os métodos deste recorte”.
+
+3. Ler a revista a partir das fontes atuais ou de uma nova compilação. Comparar o benchmark amplo e o suplemento com a comparação focal TimesNet/DilatedRNN.
+
+4. Usar o artigo de Cabral para fundamentos e desenho de pesquisa, mantendo separados dados, horizontes, algoritmos e resultados. Levar as dúvidas sobre suas tabelas e normalização para discussão técnica.
+
+5. Na revisão de linguagem, priorizar frases sobre causalidade, eficiência computacional, significância, generalização para novos locais e energia fotovoltaica: os textos atuais em geral já fazem as ressalvas necessárias.
+
+6. Antes da entrega, preencher o link do vídeo do relatório se exigido, atualizar o mapa de versões e conferir o PDF recém-gerado. A leitura final pode corrigir redação sem alterar manualmente CSVs científicos.
+
+
+ALCANCE DA REVISÃO
+
+Esta é uma revisão científica e editorial com recálculos sobre artefatos preservados. Não houve treinamento, edição dos artigos ou envio a serviços externos. A edição adicional do relatório foi somente de layout, com preservação do conteúdo científico e atualização do sumário. A ausência das previsões individuais nas pastas declaradas limita a reprodução integral da revista. As referências centrais e uma seleção de estudos recentes foram verificadas em fontes primárias; não foram reexecutados experimentos de terceiros nem auditadas exaustivamente todas as referências, originalidade textual ou regras de um evento/periódico ainda não indicado. Alguns detalhes bibliográficos continuam pendentes por acesso limitado ao texto integral e estão identificados na nota de referências.

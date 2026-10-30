@@ -27,21 +27,21 @@ O piso zero continua aplicado às previsões depois de inverter o min-max. As ci
 
 ## Execução e rastreabilidade
 
-O novo código fica em `codigo_fonte/quantizacao_timesnet.py` e `codigo_fonte/experimento_quantizacao_timesnet.py`. Os módulos históricos de treinamento e os resultados anteriores foram preservados. Os novos artefatos ficam em `resultados/quantizacao_timesnet_mensal_20260923`.
+O novo código fica em `codigo_fonte/experimentos/quantizacao_timesnet.py` e `codigo_fonte/experimentos/experimento_quantizacao_timesnet.py`. Os módulos históricos de treinamento e os resultados anteriores foram preservados. Os novos artefatos ficam em `resultados/quantizacao_timesnet_mensal_20260923`.
 
 Na raiz do projeto, usando `.venv-baselines-gpu-20260912/Scripts/python.exe`:
 
 ```powershell
-python -m codigo_fonte.experimento_quantizacao_timesnet --tarefa monthly_1 --fase selecao --workers 2
-python -m codigo_fonte.experimento_quantizacao_timesnet --tarefa monthly_6 --fase selecao --workers 2
-python -m codigo_fonte.experimento_quantizacao_timesnet --fase congelar
-python -m codigo_fonte.experimento_quantizacao_timesnet --tarefa monthly_1 --fase refit --workers 2
-python -m codigo_fonte.experimento_quantizacao_timesnet --tarefa monthly_6 --fase refit --workers 2
+python -m codigo_fonte.experimentos.experimento_quantizacao_timesnet --tarefa monthly_1 --fase selecao --workers 2
+python -m codigo_fonte.experimentos.experimento_quantizacao_timesnet --tarefa monthly_6 --fase selecao --workers 2
+python -m codigo_fonte.experimentos.experimento_quantizacao_timesnet --fase congelar
+python -m codigo_fonte.experimentos.experimento_quantizacao_timesnet --tarefa monthly_1 --fase refit --workers 2
+python -m codigo_fonte.experimentos.experimento_quantizacao_timesnet --tarefa monthly_6 --fase refit --workers 2
 ```
 
 Cada checkpoint inclui os níveis, as escalas, as identidades das localidades, os parâmetros da rede, a semente e as referências às seleções congeladas. Cada semente possui histórico de épocas, previsão e duração. Contratos vinculam código, dados e configurações por hashes; retomadas incompatíveis são recusadas. Uma mudança de configuração exige outra pasta de saída.
 
-O PDF mantém as quatro páginas anteriores e acrescenta duas páginas de comparação mensal. O relatório e a cópia do PDF anterior ficam em `relatorios/quantizacao_timesnet_20260923`.
+O PDF mantém as quatro páginas anteriores e acrescenta duas páginas de comparação mensal. O relatório e a cópia do PDF anterior ficam em `resultados/relatorios/quantizacao_timesnet_20260923`.
 
 ## Resultado da seleção em 2023
 
@@ -71,7 +71,7 @@ Os 64 níveis apresentaram o menor MAE observado no teste: redução de 0,0639 W
 
 Os controles reproduziram exatamente as previsões do experimento puro anterior, nas cinco sementes e na média. O PDF apresenta as quatro variantes, destaca a seleção de 2023 e mantém os resultados das quatro tarefas anteriores.
 
-A implementação e o gerador passaram em 84 testes automatizados. Os registros de testes, reprodução dos controles, auditoria dos modelos e verificação do PDF ficam em `relatorios/quantizacao_timesnet_20260923`.
+A implementação e o gerador passaram em 84 testes automatizados. Os registros de testes, reprodução dos controles, auditoria dos modelos e verificação do PDF ficam em `resultados/relatorios/quantizacao_timesnet_20260923`.
 
 ## Limites da comparação
 

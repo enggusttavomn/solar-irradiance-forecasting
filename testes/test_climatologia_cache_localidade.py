@@ -5,9 +5,9 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from codigo_fonte import experimento_multirresolucao as original
-from codigo_fonte import quantizacao_referencias as q
-from codigo_fonte.climatologia_cache_localidade import prever_climatologia
+from codigo_fonte.experimentos import experimento_multirresolucao as original
+from codigo_fonte.experimentos import quantizacao_referencias as q
+from codigo_fonte.modelos.referencias_simples.climatologia_cache_localidade import prever_climatologia
 
 
 def fixture(frequencia, niveis, fallback):

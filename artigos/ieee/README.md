@@ -45,13 +45,13 @@ pip install -r requirements_horario_timesnet.txt
 Na raiz do repositório, a coleta horária pode ser reproduzida com:
 
 ```bash
-python executaveis/coletar_dados_horarios_nsrdb.py --inicio 2019 --fim 2024
+python -m codigo_fonte.coleta_e_preparacao.coletar_dados_horarios_nsrdb --inicio 2019 --fim 2024
 ```
 
 A avaliação completa é executada com:
 
 ```bash
-python executaveis/executar_avaliacao_horaria_timesnet.py \
+python -m codigo_fonte.experimentos.experimento_horario_timesnet \
   --modo completa \
   --confirmar-execucao-longa \
   --saida resultados/avaliacao_horaria_timesnet
@@ -63,13 +63,13 @@ blocos numéricos do manuscrito e regenerar as duas figuras publicadas no pacote
 do Overleaf:
 
 ```bash
-python executaveis/atualizar_artigo_ieee_timesnet.py
+python -m codigo_fonte.publicacoes.atualizar_artigo_ieee_timesnet
 ```
 
 Para apenas conferir se o artigo está sincronizado, sem escrever:
 
 ```bash
-python executaveis/atualizar_artigo_ieee_timesnet.py --verificar
+python -m codigo_fonte.publicacoes.atualizar_artigo_ieee_timesnet --verificar
 ```
 
 Compile `artigo.tex` duas vezes com pdfLaTeX no Overleaf ou localmente com uma

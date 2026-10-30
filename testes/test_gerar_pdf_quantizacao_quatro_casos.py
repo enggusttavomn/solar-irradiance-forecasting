@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from scripts import gerar_pdf_quantizacao_quatro_casos as pdf
+from codigo_fonte.analises_e_relatorios import gerar_pdf_quantizacao_quatro_casos as pdf
 
 
 def assinar(contrato, selecao):

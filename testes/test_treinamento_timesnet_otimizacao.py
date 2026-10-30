@@ -10,12 +10,8 @@ import pytest
 import torch
 from torch import nn
 
-import codigo_fonte.treinamento_timesnet_otimizacao as treino
-from codigo_fonte.experimento_multirresolucao import (
-    ConfiguracaoMultirresolucao,
-    JanelasDiretas,
-    TAREFAS_CANONICAS,
-)
+import codigo_fonte.experimentos.treinamento_timesnet_otimizacao as treino
+from codigo_fonte.experimentos.experimento_multirresolucao import ConfiguracaoMultirresolucao, JanelasDiretas, TAREFAS_CANONICAS
 
 
 def _janelas(ids=(0, 0, 0, 1), ano=2020) -> JanelasDiretas:

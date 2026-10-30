@@ -7,9 +7,9 @@ import numpy as np
 import pytest
 from statsmodels.tsa.arima.model import ARIMA
 
-from codigo_fonte.arima_checkpoint_compacto import compactar_resultado, hash_array
-from codigo_fonte.quantizacao_timesnet import quantizar_entradas
-from codigo_fonte.experimento_baselines_adicionais import ORDENS_ARIMA
+from codigo_fonte.modelos.referencias_simples.arima_checkpoint_compacto import compactar_resultado, hash_array
+from codigo_fonte.experimentos.quantizacao_timesnet import quantizar_entradas
+from codigo_fonte.experimentos.experimento_baselines_adicionais import ORDENS_ARIMA
 
 
 def assert_bits(um, outro):

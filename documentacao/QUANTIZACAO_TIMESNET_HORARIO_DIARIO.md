@@ -4,7 +4,7 @@
 
 Este experimento completa os dois casos que ainda não tinham comparação de quantização: previsão horária até 72 horas e diária até 30 dias. Ele mantém o min-max e testa as entradas da TimesNet com 64, 128 e 256 níveis, além de um controle sem quantização.
 
-**Situação deste registro:** os treinamentos completos do horário e do diário foram concluídos, complementando os dois casos mensais. Os resultados estão registrados abaixo. A [auditoria independente](../relatorios/quantizacao_timesnet_quatro_casos_20260927/auditoria_quantizacao_resolucoes.json) foi aprovada, com 48 de 48 checkpoints verificados. Foram conferidos 788 arquivos anteriores, com os resultados históricos preservados e somente a atualização autorizada do PDF; sua [versão anterior de seis páginas permanece em backup](../relatorios/quantizacao_timesnet_quatro_casos_20260927/fonte_6_paginas.pdf). O [PDF atualizado foi entregue com oito páginas](tabela_resultados_ghi_2024.pdf), após a aprovação da verificação visual. Os resultados mensais já existentes pertencem a outro experimento e não são substituídos por este.
+**Situação deste registro:** os treinamentos completos do horário e do diário foram concluídos, complementando os dois casos mensais. Os resultados estão registrados abaixo. A [auditoria independente](../resultados/relatorios/quantizacao_timesnet_quatro_casos_20260927/auditoria_quantizacao_resolucoes.json) foi aprovada, com 48 de 48 checkpoints verificados. Foram conferidos 788 arquivos anteriores, com os resultados históricos preservados e somente a atualização autorizada do PDF; sua [versão anterior de seis páginas permanece em backup](../resultados/relatorios/quantizacao_timesnet_quatro_casos_20260927/fonte_6_paginas.pdf). O [PDF atualizado foi entregue com oito páginas](tabela_resultados_ghi_2024.pdf), após a aprovação da verificação visual. Os resultados mensais já existentes pertencem a outro experimento e não são substituídos por este.
 
 O recorte de dados continua sendo **2019–2024**, nas dez localidades do projeto. A ampliação do histórico, discutida para o feedback ao Thales, não faz parte desta execução.
 
@@ -153,22 +153,22 @@ O controle sem quantização é novamente executado e comparado às previsões b
 Execute a partir da raiz do projeto, usando o ambiente que contém as dependências e CUDA:
 
 ```powershell
-.\.venv-baselines-gpu-20260912\Scripts\python.exe -X utf8 scripts/rodar_quantizacao_resolucoes.py --smoke
-.\.venv-baselines-gpu-20260912\Scripts\python.exe -X utf8 scripts/rodar_quantizacao_resolucoes.py
+.\.venv-baselines-gpu-20260912\Scripts\python.exe -X utf8 codigo_fonte/experimentos/rodar_quantizacao_resolucoes.py --smoke
+.\.venv-baselines-gpu-20260912\Scripts\python.exe -X utf8 codigo_fonte/experimentos/rodar_quantizacao_resolucoes.py
 ```
 
 O primeiro comando faz uma integração reduzida: duas localidades, três origens por localidade, uma semente por caso e uma época. Seus números não são resultados científicos. O segundo executa todas as amostras. O executor inicia horário e diário em paralelo, com um worker por caso; termina as duas seleções, congela-as e somente então inicia os refits.
 
-O executor registra o andamento e mantém o computador ativo durante o processo, restabelecendo a preferência normal de suspensão ao terminar ou encontrar um erro. Os logs ficam em `relatorios/quantizacao_timesnet_quatro_casos_20260927/`, junto de `runner_smoke.json` ou `runner_completo.json`.
+O executor registra o andamento e mantém o computador ativo durante o processo, restabelecendo a preferência normal de suspensão ao terminar ou encontrar um erro. Os logs ficam em `resultados/relatorios/quantizacao_timesnet_quatro_casos_20260927/`, junto de `runner_smoke.json` ou `runner_completo.json`.
 
 Também é possível executar as fases individualmente:
 
 ```powershell
-.\.venv-baselines-gpu-20260912\Scripts\python.exe -m codigo_fonte.experimento_quantizacao_resolucoes --tarefa hourly_72_extension --fase selecao --workers 1
-.\.venv-baselines-gpu-20260912\Scripts\python.exe -m codigo_fonte.experimento_quantizacao_resolucoes --tarefa daily_30 --fase selecao --workers 1
-.\.venv-baselines-gpu-20260912\Scripts\python.exe -m codigo_fonte.experimento_quantizacao_resolucoes --fase congelar
-.\.venv-baselines-gpu-20260912\Scripts\python.exe -m codigo_fonte.experimento_quantizacao_resolucoes --tarefa hourly_72_extension --fase refit --workers 1
-.\.venv-baselines-gpu-20260912\Scripts\python.exe -m codigo_fonte.experimento_quantizacao_resolucoes --tarefa daily_30 --fase refit --workers 1
+.\.venv-baselines-gpu-20260912\Scripts\python.exe -m codigo_fonte.experimentos.experimento_quantizacao_resolucoes --tarefa hourly_72_extension --fase selecao --workers 1
+.\.venv-baselines-gpu-20260912\Scripts\python.exe -m codigo_fonte.experimentos.experimento_quantizacao_resolucoes --tarefa daily_30 --fase selecao --workers 1
+.\.venv-baselines-gpu-20260912\Scripts\python.exe -m codigo_fonte.experimentos.experimento_quantizacao_resolucoes --fase congelar
+.\.venv-baselines-gpu-20260912\Scripts\python.exe -m codigo_fonte.experimentos.experimento_quantizacao_resolucoes --tarefa hourly_72_extension --fase refit --workers 1
+.\.venv-baselines-gpu-20260912\Scripts\python.exe -m codigo_fonte.experimentos.experimento_quantizacao_resolucoes --tarefa daily_30 --fase refit --workers 1
 ```
 
 Para retomar após uma interrupção, use o mesmo comando, ambiente, saída e número de workers. O cache concluído por semente é reaproveitado apenas quando contrato, fase, nível, variante, semente, épocas e hashes coincidem. Uma semente interrompida antes de gravar todos os artefatos é treinada novamente. O programa não retoma no meio de uma época.
@@ -199,10 +199,10 @@ Os novos testes unitários aprovados foram 38 para o treinador e 53 para o orque
 
 ## Implementação de referência
 
-- [Orquestrador](../codigo_fonte/experimento_quantizacao_resolucoes.py)
-- [Treinador com quantização de entradas](../codigo_fonte/treinamento_timesnet_quantizado_resolucoes.py)
-- [Definição comum da quantização](../codigo_fonte/quantizacao_timesnet.py)
-- [Executor das duas tarefas](../scripts/rodar_quantizacao_resolucoes.py)
+- [Orquestrador](../codigo_fonte/experimentos/experimento_quantizacao_resolucoes.py)
+- [Treinador com quantização de entradas](../codigo_fonte/experimentos/treinamento_timesnet_quantizado_resolucoes.py)
+- [Definição comum da quantização](../codigo_fonte/experimentos/quantizacao_timesnet.py)
+- [Executor das duas tarefas](../codigo_fonte/experimentos/rodar_quantizacao_resolucoes.py)
 - [Testes do treinador](../testes/test_treinamento_timesnet_quantizado_resolucoes.py)
 - [Testes do orquestrador](../testes/test_experimento_quantizacao_resolucoes.py)
 - [Documentação da quantização mensal](QUANTIZACAO_TIMESNET_MENSAL.md)

@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from codigo_fonte.baselines import normalizar_previsoes_fisicas, prever_baselines
+from codigo_fonte.modelos.referencias_simples.baselines import normalizar_previsoes_fisicas, prever_baselines
 
 
 def _ghi(data: pd.Timestamp) -> float:

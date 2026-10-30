@@ -9,8 +9,7 @@ A suíte do projeto está organizada assim:
 | Pasta | Responsabilidade |
 | --- | --- |
 | `testes/` | Dados, modelos, métricas, experimentos e integridade dos artigos. |
-| `testes/operacao/` | Testes operacionais novos e testes que podem ser reorganizados sem alterar contratos históricos. |
-| `tests/` | Testes cujos caminhos ou hashes aparecem em manifestos e recibos de auditoria preservados. |
+| `testes/operacao/` | Painéis, filas, processos, retomadas e integração dos controles. |
 
 Execute todos os testes a partir da raiz do projeto:
 
@@ -21,7 +20,7 @@ python -m pytest -q
 Para verificar somente a operação e os contratos históricos:
 
 ```powershell
-python -m pytest testes/operacao tests -q
+python -m pytest testes/operacao -q
 ```
 
 Para executar um módulo específico:
@@ -30,14 +29,14 @@ Para executar um módulo específico:
 python -m pytest testes/operacao/test_painel_progresso_quantizacao.py -q
 ```
 
-O `pyproject.toml` descobre as duas pastas e usa o modo de importação `importlib`
-para permitir os arquivos `test_json_atomico.py` existentes em ambas, mantendo
-seus nomes e conteúdos auditados.
+O `pyproject.toml` descobre apenas `testes/`, incluindo esta subpasta, e usa o
+modo de importação `importlib`. Os testes complementares de durabilidade JSON
+foram reunidos no mesmo arquivo.
 
 Adicione novos testes operacionais aqui. Prefira fixtures temporárias do `pytest`
 e mocks para subprocessos; saídas de testes não devem ir para `resultados/`.
 
-Como exceção histórica, `test_finalizar_sequencia_recuperacao.py` depende do
-auxiliar local `tmp/recuperacao_20261001/finalizar_sequencia.py`. Essa referência
-foi preservada durante a organização; o módulo é ignorado quando o auxiliar não
-está disponível, como em um clone que não inclui os arquivos locais de `tmp/`.
+O finalizador de recuperação agora faz parte do código em
+[`codigo_fonte/acompanhamento/finalizar_sequencia_recuperacao.py`](../../codigo_fonte/acompanhamento/finalizar_sequencia_recuperacao.py).
+Seu teste não depende mais de um programa local em `tmp/` e também pode rodar
+em um clone do projeto.

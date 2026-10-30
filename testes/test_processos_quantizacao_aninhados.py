@@ -2,7 +2,7 @@ import json
 import sys
 import time
 
-from scripts.processos_quantizacao import ProcessoProprio
+from codigo_fonte.acompanhamento.processos_quantizacao import ProcessoProprio
 
 
 def test_jobs_aninhados_coordenador_runner_treino(tmp_path):
@@ -11,7 +11,7 @@ def test_jobs_aninhados_coordenador_runner_treino(tmp_path):
     codigo_treino = "import os,json;from pathlib import Path;Path(" + repr(str(treino)) + ").write_text(json.dumps({'pid':os.getpid(),'ok':True}))"
     codigo_runner = (
         'import sys,time,json;from pathlib import Path\n'
-        'from scripts.processos_quantizacao import ProcessoProprio\n'
+        'from codigo_fonte.acompanhamento.processos_quantizacao import ProcessoProprio\n'
         'p=ProcessoProprio([sys.executable,\'-c\',' + repr(codigo_treino) + '])\n'
         'try:\n'
         ' while p.poll() is None: time.sleep(.05)\n'

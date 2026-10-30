@@ -8,18 +8,9 @@ import matplotlib.image as mpimg
 import pandas as pd
 import pytest
 
-from codigo_fonte.contexto_geografico import (
-    DIRETORIO_KOPPEN_PADRAO,
-    FONTE_DOI,
-    carregar_legenda_koppen,
-    construir_contexto_geografico,
-    decompor_codigo_koppen,
-    gerar_mapa_contexto,
-    salvar_contexto_csv,
-    validar_tabela_contexto,
-)
-from codigo_fonte.localidades_ev import LOCALIDADES_EV
-from gerar_contexto_geografico import main
+from codigo_fonte.coleta_e_preparacao.contexto_geografico import DIRETORIO_KOPPEN_PADRAO, FONTE_DOI, carregar_legenda_koppen, construir_contexto_geografico, decompor_codigo_koppen, gerar_mapa_contexto, salvar_contexto_csv, validar_tabela_contexto
+from codigo_fonte.coleta_e_preparacao.localidades import LOCALIDADES_EV
+from codigo_fonte.coleta_e_preparacao.gerar_contexto_geografico import main
 
 
 CLASSES_ESPERADAS = {

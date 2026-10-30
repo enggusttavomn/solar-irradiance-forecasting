@@ -10,11 +10,11 @@ import torch
 from torch import nn
 from torch.utils.data import TensorDataset
 
-from codigo_fonte import experimento_multirresolucao as base
-from codigo_fonte import treinamento_timesnet_resolucoes as original
-from codigo_fonte import treinamento_timesnet_quantizado_resolucoes as treino
-from codigo_fonte.experimento_horario_timesnet import JanelasHorarias
-from codigo_fonte.quantizacao_timesnet import quantizar_entradas
+from codigo_fonte.experimentos import experimento_multirresolucao as base
+from codigo_fonte.experimentos import treinamento_timesnet_resolucoes as original
+from codigo_fonte.experimentos import treinamento_timesnet_quantizado_resolucoes as treino
+from codigo_fonte.experimentos.experimento_horario_timesnet import JanelasHorarias
+from codigo_fonte.experimentos.quantizacao_timesnet import quantizar_entradas
 
 
 def _escalas():

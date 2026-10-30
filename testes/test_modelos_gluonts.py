@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-import codigo_fonte.modelos_globais_gluonts as globais
+import codigo_fonte.modelos.probabilisticos.modelos_globais_gluonts as globais
 
 
 class _CudaFalso:
@@ -388,9 +388,7 @@ def test_previsao_probabilistica_resume_media_mediana_e_quantis() -> None:
 def test_rede_deepnpts_registra_e_restaura_embeddings() -> None:
     torch = pytest.importorskip("torch")
     pytest.importorskip("gluonts")
-    from codigo_fonte.redes_deepnpts_registradas import (
-        DeepNPTSNetworkDiscreteRegistrada,
-    )
+    from codigo_fonte.modelos.probabilisticos.redes_deepnpts_registradas import DeepNPTSNetworkDiscreteRegistrada
 
     parametros = {
         "context_length": 4,

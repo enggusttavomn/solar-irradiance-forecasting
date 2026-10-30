@@ -1,0 +1,515 @@
+{
+  "scope": "Fresh verification against saved metrics, selections, local metrics and file hashes; no retraining or full forecast replay.",
+  "tables_total": 15,
+  "numeric_tables_checked": [
+    {
+      "table": 6,
+      "rows": 12,
+      "cells": 84,
+      "passed": true
+    },
+    {
+      "table": 7,
+      "rows": 12,
+      "cells": 84,
+      "passed": true
+    },
+    {
+      "table": 8,
+      "rows": 12,
+      "cells": 60,
+      "passed": true
+    },
+    {
+      "table": 9,
+      "rows": 9,
+      "cells": 72,
+      "passed": true
+    },
+    {
+      "table": 10,
+      "rows": 15,
+      "cells": 120,
+      "passed": true
+    },
+    {
+      "table": 11,
+      "rows": 3,
+      "cells": 24,
+      "passed": true
+    },
+    {
+      "table": 12,
+      "rows": 9,
+      "cells": 72,
+      "passed": true
+    },
+    {
+      "table": 13,
+      "rows": 12,
+      "cells": 72,
+      "passed": true
+    },
+    {
+      "table": 14,
+      "rows": 12,
+      "cells": 72,
+      "passed": true
+    },
+    {
+      "table": 15,
+      "rows": 12,
+      "cells": 72,
+      "passed": true
+    }
+  ],
+  "issues": [],
+  "source_hashes": [
+    {
+      "path": "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_final_atual/auditoria.json",
+      "matches": true
+    },
+    {
+      "path": "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_final_atual/metricas_auditadas.csv",
+      "matches": true
+    },
+    {
+      "path": "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_1998_2022/auditoria.json",
+      "matches": true
+    },
+    {
+      "path": "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_1998_2022/metricas_auditadas.csv",
+      "matches": true
+    },
+    {
+      "path": "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_curto_pareado/auditoria.json",
+      "matches": true
+    },
+    {
+      "path": "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_curto_pareado/metricas_auditadas.csv",
+      "matches": true
+    },
+    {
+      "path": "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_pareamento_historico/pareamento.json",
+      "matches": true
+    }
+  ],
+  "source_rows_validation_and_test": 864,
+  "derived_test_rows": 432,
+  "derived_metrics_equal_source": false,
+  "derived_differences": {
+    "MAE_wm2": {
+      "different_cells": 0,
+      "max_absolute": 0.0
+    },
+    "MSE_w2m4": {
+      "different_cells": 6,
+      "max_absolute": 4.547473508864641e-13
+    },
+    "RMSE_wm2": {
+      "different_cells": 19,
+      "max_absolute": 2.842170943040401e-14
+    },
+    "nRMSE": {
+      "different_cells": 0,
+      "max_absolute": 0.0
+    },
+    "R2": {
+      "different_cells": 0,
+      "max_absolute": 0.0
+    }
+  },
+  "derived_metrics_numerically_agree": true,
+  "validation_selection_checks": [
+    {
+      "regime": "atual",
+      "task": "hourly_72_extension",
+      "model": "Transformer",
+      "chosen": "sem_quantizacao",
+      "minimum_validation": "sem_quantizacao",
+      "passed": true
+    },
+    {
+      "regime": "atual",
+      "task": "hourly_72_extension",
+      "model": "Informer",
+      "chosen": "sem_quantizacao",
+      "minimum_validation": "sem_quantizacao",
+      "passed": true
+    },
+    {
+      "regime": "atual",
+      "task": "hourly_72_extension",
+      "model": "LSTM",
+      "chosen": "q64",
+      "minimum_validation": "q64",
+      "passed": true
+    },
+    {
+      "regime": "atual",
+      "task": "daily_30",
+      "model": "Transformer",
+      "chosen": "q256",
+      "minimum_validation": "q256",
+      "passed": true
+    },
+    {
+      "regime": "atual",
+      "task": "daily_30",
+      "model": "Informer",
+      "chosen": "q64",
+      "minimum_validation": "q64",
+      "passed": true
+    },
+    {
+      "regime": "atual",
+      "task": "daily_30",
+      "model": "LSTM",
+      "chosen": "sem_quantizacao",
+      "minimum_validation": "sem_quantizacao",
+      "passed": true
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_1",
+      "model": "Transformer",
+      "chosen": "q128",
+      "minimum_validation": "q128",
+      "passed": true
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_1",
+      "model": "Informer",
+      "chosen": "q128",
+      "minimum_validation": "q128",
+      "passed": true
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_1",
+      "model": "LSTM",
+      "chosen": "q128",
+      "minimum_validation": "q128",
+      "passed": true
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_6",
+      "model": "Transformer",
+      "chosen": "q64",
+      "minimum_validation": "q64",
+      "passed": true
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_6",
+      "model": "Informer",
+      "chosen": "q128",
+      "minimum_validation": "q128",
+      "passed": true
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_6",
+      "model": "LSTM",
+      "chosen": "q128",
+      "minimum_validation": "q128",
+      "passed": true
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "hourly_72_extension",
+      "model": "Transformer",
+      "chosen": "q128",
+      "minimum_validation": "q128",
+      "passed": true
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "hourly_72_extension",
+      "model": "Informer",
+      "chosen": "q128",
+      "minimum_validation": "q128",
+      "passed": true
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "hourly_72_extension",
+      "model": "LSTM",
+      "chosen": "q64",
+      "minimum_validation": "q64",
+      "passed": true
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "daily_30",
+      "model": "Transformer",
+      "chosen": "q128",
+      "minimum_validation": "q128",
+      "passed": true
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "daily_30",
+      "model": "Informer",
+      "chosen": "q256",
+      "minimum_validation": "q256",
+      "passed": true
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "daily_30",
+      "model": "LSTM",
+      "chosen": "q64",
+      "minimum_validation": "q64",
+      "passed": true
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "monthly_1",
+      "model": "Transformer",
+      "chosen": "q64",
+      "minimum_validation": "q64",
+      "passed": true
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "monthly_1",
+      "model": "Informer",
+      "chosen": "q256",
+      "minimum_validation": "q256",
+      "passed": true
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "monthly_1",
+      "model": "LSTM",
+      "chosen": "q64",
+      "minimum_validation": "q64",
+      "passed": true
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "monthly_6",
+      "model": "Transformer",
+      "chosen": "sem_quantizacao",
+      "minimum_validation": "sem_quantizacao",
+      "passed": true
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "monthly_6",
+      "model": "Informer",
+      "chosen": "q64",
+      "minimum_validation": "q64",
+      "passed": true
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "monthly_6",
+      "model": "LSTM",
+      "chosen": "q64",
+      "minimum_validation": "q64",
+      "passed": true
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "hourly_72_extension",
+      "model": "Transformer",
+      "chosen": "q64",
+      "minimum_validation": "q64",
+      "passed": true
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "hourly_72_extension",
+      "model": "Informer",
+      "chosen": "q128",
+      "minimum_validation": "q128",
+      "passed": true
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "hourly_72_extension",
+      "model": "LSTM",
+      "chosen": "q128",
+      "minimum_validation": "q128",
+      "passed": true
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "daily_30",
+      "model": "Transformer",
+      "chosen": "q128",
+      "minimum_validation": "q128",
+      "passed": true
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "daily_30",
+      "model": "Informer",
+      "chosen": "q64",
+      "minimum_validation": "q64",
+      "passed": true
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "daily_30",
+      "model": "LSTM",
+      "chosen": "q128",
+      "minimum_validation": "q128",
+      "passed": true
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "monthly_1",
+      "model": "Transformer",
+      "chosen": "q128",
+      "minimum_validation": "q128",
+      "passed": true
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "monthly_1",
+      "model": "Informer",
+      "chosen": "sem_quantizacao",
+      "minimum_validation": "sem_quantizacao",
+      "passed": true
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "monthly_1",
+      "model": "LSTM",
+      "chosen": "sem_quantizacao",
+      "minimum_validation": "sem_quantizacao",
+      "passed": true
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "monthly_6",
+      "model": "Transformer",
+      "chosen": "q64",
+      "minimum_validation": "q64",
+      "passed": true
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "monthly_6",
+      "model": "Informer",
+      "chosen": "q64",
+      "minimum_validation": "q64",
+      "passed": true
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "monthly_6",
+      "model": "LSTM",
+      "chosen": "q64",
+      "minimum_validation": "q64",
+      "passed": true
+    }
+  ],
+  "local_macro_checks": [
+    {
+      "task": "hourly_72_extension",
+      "model": "Transformer",
+      "locations": 10,
+      "delta": 0.0
+    },
+    {
+      "task": "hourly_72_extension",
+      "model": "Informer",
+      "locations": 10,
+      "delta": 0.0
+    },
+    {
+      "task": "hourly_72_extension",
+      "model": "LSTM",
+      "locations": 10,
+      "delta": 0.0
+    },
+    {
+      "task": "daily_30",
+      "model": "Transformer",
+      "locations": 10,
+      "delta": 0.0
+    },
+    {
+      "task": "daily_30",
+      "model": "Informer",
+      "locations": 10,
+      "delta": 0.0
+    },
+    {
+      "task": "daily_30",
+      "model": "LSTM",
+      "locations": 10,
+      "delta": 0.0
+    },
+    {
+      "task": "monthly_1",
+      "model": "Transformer",
+      "locations": 10,
+      "delta": 1.7763568394002505e-15
+    },
+    {
+      "task": "monthly_1",
+      "model": "Informer",
+      "locations": 10,
+      "delta": 1.7763568394002505e-15
+    },
+    {
+      "task": "monthly_1",
+      "model": "LSTM",
+      "locations": 10,
+      "delta": 1.7763568394002505e-15
+    },
+    {
+      "task": "monthly_6",
+      "model": "Transformer",
+      "locations": 10,
+      "delta": 0.0
+    },
+    {
+      "task": "monthly_6",
+      "model": "Informer",
+      "locations": 10,
+      "delta": 1.7763568394002505e-15
+    },
+    {
+      "task": "monthly_6",
+      "model": "LSTM",
+      "locations": 10,
+      "delta": 3.552713678800501e-15
+    }
+  ],
+  "local_winners": {
+    "hourly_72_extension": {
+      "Transformer": 7,
+      "LSTM": 3
+    },
+    "daily_30": {
+      "LSTM": 4,
+      "Transformer": 6
+    },
+    "monthly_1": {
+      "Informer": 5,
+      "LSTM": 3,
+      "Transformer": 2
+    },
+    "monthly_6": {
+      "Informer": 5,
+      "LSTM": 3,
+      "Transformer": 2
+    }
+  },
+  "quantization_effects_2024": {
+    "control": 3,
+    "improved": 5,
+    "worsened": 4
+  },
+  "historical_controls_improved": 11,
+  "pdf_sha256": "8792ad47587db1bbcbd5c863d43f9fe80c08cab14db3115930d98ba684414338",
+  "docx_sha256": "3c3f8d1b5df51bc1b1067d3373be307094776c534253025d9a35664b26502dfb"
+}

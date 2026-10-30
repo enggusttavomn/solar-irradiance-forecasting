@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from scripts.gerar_comparacao_focal_artigo import select_week
+from codigo_fonte.analises_e_relatorios.gerar_comparacao_focal_artigo import select_week
 
 
 SITE = "Factory under test"

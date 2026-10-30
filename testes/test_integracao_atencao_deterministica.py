@@ -3,8 +3,8 @@ from types import SimpleNamespace
 
 import pytest
 
-from scripts import auditar_quantizacao_todos_modelos as auditor
-from scripts.rodar_quantizacao_todos_modelos import comando
+from codigo_fonte.analises_e_relatorios import auditar_quantizacao_todos_modelos as auditor
+from codigo_fonte.experimentos.rodar_quantizacao_todos_modelos import comando
 
 
 @pytest.mark.parametrize('regime', ['atual', 'historico_1998_2022', 'historico_curto_pareado'])
@@ -14,7 +14,7 @@ def test_atencao_mesma_politica_nos_tres_regimes(tmp_path, regime, tarefa, model
     args = SimpleNamespace(regime=regime, saida=tmp_path, smoke=False, protocolo=None)
     for fase in ('selecao', 'refit'):
         cmd = comando(args, tarefa, modelo, fase)
-        assert cmd[cmd.index('-m')+1] == 'codigo_fonte.experimento_atencao_deterministica_v1'
+        assert cmd[cmd.index('-m')+1] == 'codigo_fonte.experimentos.experimento_atencao_deterministica_v1'
         assert '--dispositivo' not in cmd
 
 
@@ -24,7 +24,7 @@ def test_atencao_mesma_politica_nos_tres_regimes(tmp_path, regime, tarefa, model
 def test_fora_do_escopo_preserva_motor(tmp_path, tarefa, modelo):
     args = SimpleNamespace(regime='atual', saida=tmp_path, smoke=False, protocolo=None)
     cmd = comando(args, tarefa, modelo, 'selecao')
-    assert cmd[cmd.index('-m')+1] == 'codigo_fonte.experimento_quantizacao_concorrentes'
+    assert cmd[cmd.index('-m')+1] == 'codigo_fonte.experimentos.experimento_quantizacao_concorrentes'
 
 
 def test_replay_legado_preserva_execucao_existente(monkeypatch):
@@ -39,7 +39,7 @@ def test_replay_estrito_recusa_politica_desconhecida():
 
 
 def test_replay_recusa_contrato_estrito_divergente_e_restaura(monkeypatch):
-    from codigo_fonte import experimento_atencao_deterministica_v1 as estrito
+    from codigo_fonte.experimentos import experimento_atencao_deterministica_v1 as estrito
     eventos = []
     @contextmanager
     def contexto(**kwargs):

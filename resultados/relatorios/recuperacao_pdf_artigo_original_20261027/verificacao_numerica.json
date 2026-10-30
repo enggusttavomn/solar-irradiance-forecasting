@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "aprovado": true,
+  "verificado_em_utc": "2026-10-28T02:05:48.011137+00:00",
+  "metodo": "Comparacao recursiva estrita de tipos, valores, ordem de listas e floats por float.hex; nenhuma tolerancia.",
+  "manifesto_original": "resultados/relatorios/quantizacao_modelos_artigo_20261019/manifesto.json",
+  "sha256_manifesto_original": "a25705b7c88ff6fe1ffbf3ea94aba7efaf7c4602e49c0b849a9db644aef200c3",
+  "manifesto_novo": "resultados/relatorios/recuperacao_pdf_artigo_original_20261027/manifesto.json",
+  "sha256_manifesto_novo": "344ed49cc26da6012ceb23c1293c1a3857604ccb88a911a66a64e15def07a5aa",
+  "campos_exatamente_iguais": {
+    "modelos": true,
+    "rotulos": true,
+    "rankings_selecionados": true,
+    "escolhas_validacao": true,
+    "linhas_teste": true,
+    "classificacoes": true,
+    "comparacoes_historicas": true,
+    "contagens_quantizacao": true,
+    "contagens_historico_sem_quantizacao": true,
+    "secoes": true,
+    "celulas_pdf": true,
+    "textos_pdf": true
+  },
+  "resumo": {
+    "modelos": 6,
+    "linhas_teste": 864,
+    "rankings": 72,
+    "comparacoes_historicas": 96,
+    "secoes": 10,
+    "celulas_com_textos_e_geometria_iguais": 1264,
+    "blocos_textuais_com_geometria_igual": 15
+  },
+  "fontes_cientificas": {
+    "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_final_atual/auditoria.json": {
+      "sha256": "b48b7fbefbd1b267c25c276dc6f6d10692603ac45969946d879f1b52cb5a43d5",
+      "confere_no_disco": true
+    },
+    "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_final_atual/metricas_auditadas.csv": {
+      "sha256": "b75304b021d1bcf07389ffe7e8668122029b9de85f0f9a31e0a751db22bdbbdc",
+      "confere_no_disco": true
+    },
+    "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_1998_2022/auditoria.json": {
+      "sha256": "73264016a986720643046268ee78601d3007f824da8a3e4851560430958ed61b",
+      "confere_no_disco": true
+    },
+    "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_1998_2022/metricas_auditadas.csv": {
+      "sha256": "82d188c94b168c6414a37eb73b7edd8ef56f51181201add5cfa4c29167e0affb",
+      "confere_no_disco": true
+    },
+    "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_curto_pareado/auditoria.json": {
+      "sha256": "fa2cb6fa59feaa56cc4f2c5a7fb611e1b793bbb0b3ea7d1fb11e104fb1a9eb7b",
+      "confere_no_disco": true
+    },
+    "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_curto_pareado/metricas_auditadas.csv": {
+      "sha256": "cbe5576eafe03a1396b22d96ea8b74e6a22640a4ba3d37b6f1f8b3db04eae441",
+      "confere_no_disco": true
+    },
+    "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_pareamento_historico/pareamento.json": {
+      "sha256": "93b48cabfa185490830e9b1124c914c2593eb119b390ebe0ff294ef9b1a83bff",
+      "confere_no_disco": true
+    }
+  },
+  "pdf_novo": {
+    "arquivo": "resultados/pdf/legiveis/quantizacao_ghi_modelos_para_artigo.pdf",
+    "bytes": 151375,
+    "assinatura_pdf": true,
+    "EOF_final": true,
+    "paginas_reais": 10,
+    "sha256": "1ae68caaf201661f93a675c9382c60f3d054b6c7149344fc6af43aec29855dd4",
+    "sha256_confere_manifesto": true
+  },
+  "originais_nasca_preservados": [
+    {
+      "arquivo": "resultados/pdf/quantizacao_ghi_modelos_para_artigo.pdf",
+      "referencia_archive": "refs/archive/meus-projetos-backup/2026-10-27:TCC/output/pdf/quantizacao_ghi_modelos_para_artigo.pdf",
+      "sha256_archive": "c95a187b427894aa228b3ef4cf095af696371eaea10eb705dedf90c759bf9589",
+      "sha256_atual": "c95a187b427894aa228b3ef4cf095af696371eaea10eb705dedf90c759bf9589",
+      "identico_ao_archive": true
+    },
+    {
+      "arquivo": "resultados/pdf/quantizacao_ghi_modelos_para_artigo_com_explicacoes.pdf",
+      "referencia_archive": "refs/archive/meus-projetos-backup/2026-10-27:TCC/output/pdf/quantizacao_ghi_modelos_para_artigo_com_explicacoes.pdf",
+      "sha256_archive": "d87e83a7d8ff87aac6021f7a33f2fc6ee74aaf8f3acc2bb6e2bc33688b2ffb8f",
+      "sha256_atual": "d87e83a7d8ff87aac6021f7a33f2fc6ee74aaf8f3acc2bb6e2bc33688b2ffb8f",
+      "identico_ao_archive": true
+    },
+    {
+      "arquivo": "resultados/pdf/quantizacao_ghi_modelos_para_disciplina.pdf",
+      "referencia_archive": "refs/archive/meus-projetos-backup/2026-10-27:TCC/output/pdf/quantizacao_ghi_modelos_para_disciplina.pdf",
+      "sha256_archive": "5148161ed0174cb6029ff4b1ed6790acf8e07b0bd418c5959affa436f075f3b8",
+      "sha256_atual": "5148161ed0174cb6029ff4b1ed6790acf8e07b0bd418c5959affa436f075f3b8",
+      "identico_ao_archive": true
+    },
+    {
+      "arquivo": "resultados/pdf/quantizacao_ghi_unificado_compacto.pdf",
+      "referencia_archive": "refs/archive/meus-projetos-backup/2026-10-27:TCC/output/pdf/quantizacao_ghi_unificado_compacto.pdf",
+      "sha256_archive": "329d97924a64200f6e0d13e7822273ab780f6d92e6073ee3525f6a95bda225ef",
+      "sha256_atual": "329d97924a64200f6e0d13e7822273ab780f6d92e6073ee3525f6a95bda225ef",
+      "identico_ao_archive": true
+    }
+  ],
+  "limites": "A igualdade verificada cobre dados e geometria registrados nos manifestos. Cabecalhos/subtitulos foram reconstruidos por inferencia; nao se afirma identidade de bytes nem identidade visual integral com o PDF original NASCA. A verificacao visual e realizada separadamente."
+}

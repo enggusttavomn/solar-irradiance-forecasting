@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from scripts import auditar_quantizacao_resolucoes as audit
+from codigo_fonte.analises_e_relatorios import auditar_quantizacao_resolucoes as audit
 
 
 def salvar(path, value):
@@ -50,7 +50,7 @@ def test_snapshot_so_aceita_pdf_com_backup_e_entrega(monkeypatch, tmp_path):
     pdf.parent.mkdir()
     pdf.write_bytes(b"old-pdf")
     old_sha = audit.base.sha256_arquivo(pdf)
-    snapshot = tmp_path/"relatorios/snapshot_anteriores.json"
+    snapshot = tmp_path/"resultados/relatorios/snapshot_anteriores.json"
     salvar(snapshot, {str(pdf): old_sha})
     pdf.write_bytes(b"new-pdf")
     with pytest.raises(AssertionError, match="Historico alterado"):

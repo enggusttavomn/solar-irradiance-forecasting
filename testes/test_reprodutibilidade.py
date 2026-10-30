@@ -9,15 +9,7 @@ import random
 import numpy as np
 import pytest
 
-from codigo_fonte.reprodutibilidade import (
-    DEPENDENCIAS_CIENTIFICAS,
-    construir_manifesto,
-    definir_seed_global,
-    json_canonico,
-    salvar_manifesto,
-    sha256_arquivo,
-    sha256_configuracao,
-)
+from codigo_fonte.utilitarios.reprodutibilidade import DEPENDENCIAS_CIENTIFICAS, construir_manifesto, definir_seed_global, json_canonico, salvar_manifesto, sha256_arquivo, sha256_configuracao
 
 
 def test_json_canonico_independe_da_ordem_das_chaves() -> None:

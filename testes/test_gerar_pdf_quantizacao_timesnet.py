@@ -7,9 +7,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from scripts.gerar_pdf_quantizacao_timesnet import (
-    SEMENTES, VARIANTES, validar_metadados, validar_previsoes, validar_diagnostico,
-)
+from codigo_fonte.analises_e_relatorios.gerar_pdf_quantizacao_timesnet import SEMENTES, VARIANTES, validar_metadados, validar_previsoes, validar_diagnostico
 
 
 def assinar(contrato, selecao):

@@ -23,13 +23,13 @@ Ambos usam um bloco, dropout 0,1 e lote 32. As épocas finais para as sementes 1
 
 ## Busca e validação
 
-A grade padrão de `codigo_fonte/otimizacao_timesnet_mensal.py` contém apenas candidatos de alvo bruto. Compara perdas MSE, MAE e Huber (delta 0,1 na escala normalizada), taxas 0,001/0,0003, dimensões 8/16, um/dois blocos e janelas de 12/24/36 meses. O máximo é 300 épocas, com paciência de 30. No histórico disponível (2019–2024), a janela de 36 meses é descartada pelo mínimo de 18 origens de ajuste por localidade.
+A grade padrão de `codigo_fonte/experimentos/otimizacao_timesnet_mensal.py` contém apenas candidatos de alvo bruto. Compara perdas MSE, MAE e Huber (delta 0,1 na escala normalizada), taxas 0,001/0,0003, dimensões 8/16, um/dois blocos e janelas de 12/24/36 meses. O máximo é 300 épocas, com paciência de 30. No histórico disponível (2019–2024), a janela de 36 meses é descartada pelo mínimo de 18 origens de ajuste por localidade.
 
 A seleção das épocas e do candidato usa macro-MAE físico em 2023. A configuração canônica escolhia épocas por MSE normalizado; essa mudança também integra a otimização, além dos hiperparâmetros. A classificação dos candidatos utiliza as previsões médias das cinco sementes, antes do piso zero, e não a média dos seus erros individuais. Essa média reúne treinamentos da mesma TimesNet; não combina a rede com climatologia.
 
 A normalização min–max por localidade permanece ativa, ajustada somente antes do corte temporal de cada fase. A saída é contínua, sem quantização. Após congelar a seleção, o vencedor é reinicializado e treinado até 2023 pelas épocas selecionadas; só então se calcula o teste de 2024.
 
-A auditoria de 23/09/2026 confere os rankings, caches de validação, escolhas de épocas e previsões, e reproduz os dez checkpoints mensais em CPU. Ela permite reutilizar os experimentos puros já existentes sem refazer o treinamento. Ver [auditoria_mensal_v1_pura.json](../relatorios/correcao_timesnet_pura_20260923/auditoria_mensal_v1_pura.json).
+A auditoria de 23/09/2026 confere os rankings, caches de validação, escolhas de épocas e previsões, e reproduz os dez checkpoints mensais em CPU. Ela permite reutilizar os experimentos puros já existentes sem refazer o treinamento. Ver [auditoria_mensal_v1_pura.json](../resultados/relatorios/correcao_timesnet_pura_20260923/auditoria_mensal_v1_pura.json).
 
 ## Limites de interpretação
 
@@ -43,10 +43,10 @@ Na raiz do projeto, usando o ambiente `.venv-baselines-gpu-20260912`:
 
 ```powershell
 # Nova pasta: seleção somente em 2023.
-python -m scripts.otimizar_timesnet_mensal --pasta-saida resultados/timesnet_pura_nova_busca
+python -m codigo_fonte.experimentos.otimizacao_timesnet_mensal --pasta-saida resultados/timesnet_pura_nova_busca
 
 # Mesma configuração: refit e teste apenas do candidato congelado.
-python -m scripts.otimizar_timesnet_mensal --pasta-saida resultados/timesnet_pura_nova_busca --avaliar-teste
+python -m codigo_fonte.experimentos.otimizacao_timesnet_mensal --pasta-saida resultados/timesnet_pura_nova_busca --avaliar-teste
 ```
 
 O padrão contém somente a TimesNet pura. `--candidatos`, `--sementes`, `--max-epocas`, `--paciencia` e `--minimo-origens` delimitam a busca. `--pasta-csv` aceita histórico diário ampliado, e `--inicio-ajuste` define a primeira origem. Dados, código ou configuração diferentes exigem outra pasta: os contratos históricos e seus hashes devem ser preservados. O treinamento mensal usa CPU e uma thread.
@@ -55,6 +55,6 @@ Para contextos de 12/24 meses com as mesmas origens de treino, usar `--inicio-aj
 
 ## Histórico da variante retirada
 
-`resultados/busca_timesnet_mensal_v2_20260920` contém o experimento adicional com alvo de desvio da climatologia. Seus MAEs 13,2363 e 13,1671 pertencem a outro procedimento e não substituem os valores da TimesNet pura acima. Os artefatos e a auditoria antiga em `relatorios/otimizacao_timesnet_20260922` permanecem preservados para rastreabilidade. As rotinas que leem esses checkpoints continuam disponíveis, mas seus candidatos saíram da grade padrão e o gerador do PDF principal recusa essa busca híbrida.
+`resultados/busca_timesnet_mensal_v2_20260920` contém o experimento adicional com alvo de desvio da climatologia. Seus MAEs 13,2363 e 13,1671 pertencem a outro procedimento e não substituem os valores da TimesNet pura acima. Os artefatos e a auditoria antiga em `resultados/relatorios/otimizacao_timesnet_20260922` permanecem preservados para rastreabilidade. As rotinas que leem esses checkpoints continuam disponíveis, mas seus candidatos saíram da grade padrão e o gerador do PDF principal recusa essa busca híbrida.
 
-A versão anterior desta documentação e do PDF está em `relatorios/correcao_timesnet_pura_20260923/antes_correcao/`. O [protocolo das quatro tarefas](OTIMIZACAO_TIMESNET_QUATRO_CASOS.md) reúne os resultados corrigidos.
+A versão anterior desta documentação e do PDF está em `resultados/relatorios/correcao_timesnet_pura_20260923/antes_correcao/`. O [protocolo das quatro tarefas](OTIMIZACAO_TIMESNET_QUATRO_CASOS.md) reúne os resultados corrigidos.

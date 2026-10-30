@@ -6,10 +6,10 @@ from unittest.mock import patch
 
 import pytest
 
-from scripts.json_atomico import salvar_json
-from scripts.processos_quantizacao import TravaDiretorio, ProcessoProprio, ExecucaoOcupada
-from scripts.coordenar_quantizacao_historica import conferir_porta_atual, aguardar_atual
-from scripts.metricas_quantizacao_todos import sha256
+from codigo_fonte.utilitarios.json_atomico import salvar_json
+from codigo_fonte.acompanhamento.processos_quantizacao import TravaDiretorio, ProcessoProprio, ExecucaoOcupada
+from codigo_fonte.acompanhamento.coordenar_quantizacao_historica import conferir_porta_atual, aguardar_atual
+from codigo_fonte.acompanhamento.metricas_quantizacao_todos import sha256
 
 
 @pytest.mark.parametrize('tentativas', [0, -1, 1.5, True])
@@ -29,7 +29,7 @@ def test_json_cleanup_nao_mascara_erro_original(tmp_path):
 def test_lock_entre_processos_e_liberado_no_encerramento(tmp_path):
     pronto = tmp_path / 'pronto'
     pasta = tmp_path / 'trava'
-    codigo = ('from scripts.processos_quantizacao import TravaDiretorio;from pathlib import Path;import time\n'
+    codigo = ('from codigo_fonte.acompanhamento.processos_quantizacao import TravaDiretorio;from pathlib import Path;import time\n'
               + 'with TravaDiretorio(' + repr(str(pasta)) + '):\n'
               + ' Path(' + repr(str(pronto)) + ').write_text(\'pronto\')\n time.sleep(120)\n')
     p = ProcessoProprio([sys.executable, '-c', codigo])

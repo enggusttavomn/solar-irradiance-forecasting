@@ -10,8 +10,8 @@ import pandas as pd
 import pytest
 import torch
 
-from codigo_fonte import experimento_quantizacao_concorrentes as x
-from codigo_fonte import experimento_multirresolucao as m
+from codigo_fonte.experimentos import experimento_quantizacao_concorrentes as x
+from codigo_fonte.experimentos import experimento_multirresolucao as m
 
 
 @pytest.fixture
@@ -38,9 +38,10 @@ def fontes_configuracao_sinteticas(tmp_path, monkeypatch):
                contrato)
 
     # O contrato continua calculando hashes reais das fontes usadas na execucao.
-    for nome in ("dilated_rnn_direta.py", "timesnet_horario.py",
-                 "treinamento_timesnet_otimizacao.py", "treinamento_timesnet_quantizado_resolucoes.py",
-                 "treinamento_timesnet_resolucoes.py"):
+    for nome in ("modelos/recorrentes/dilated_rnn_direta.py", "modelos/timesnet_horario.py",
+                 "experimentos/treinamento_timesnet_otimizacao.py",
+                 "experimentos/treinamento_timesnet_quantizado_resolucoes.py",
+                 "experimentos/treinamento_timesnet_resolucoes.py"):
         relativo = Path("codigo_fonte") / nome
         destino = raiz / relativo
         destino.parent.mkdir(parents=True, exist_ok=True)

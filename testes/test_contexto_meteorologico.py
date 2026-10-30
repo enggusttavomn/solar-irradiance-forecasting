@@ -7,12 +7,7 @@ from pathlib import Path
 
 import numpy as np
 
-from codigo_fonte.contexto_meteorologico import (
-    PARAMETROS_POWER,
-    coletar_contexto_meteorologico,
-    construir_url_power,
-    interpretar_resposta_power,
-)
+from codigo_fonte.coleta_e_preparacao.contexto_meteorologico import PARAMETROS_POWER, coletar_contexto_meteorologico, construir_url_power, interpretar_resposta_power
 
 
 def _resposta() -> dict[str, object]:

@@ -2,7 +2,7 @@ from datetime import datetime, timedelta, timezone
 import math
 import unittest
 
-from scripts.estimativa_tempo_quantizacao import estimar_restante
+from codigo_fonte.acompanhamento.estimativa_tempo_quantizacao import estimar_restante
 
 
 AGORA = datetime(2026, 9, 30, 17, tzinfo=timezone.utc)

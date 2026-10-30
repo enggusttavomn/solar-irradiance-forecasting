@@ -6,12 +6,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from codigo_fonte.preprocessamento import (
-    limpar_serie_ghi,
-    normalizar_minmax,
-    preparar_serie_temporal,
-    quantizar_ghi,
-)
+from codigo_fonte.coleta_e_preparacao.preprocessamento import limpar_serie_ghi, normalizar_minmax, preparar_serie_temporal, quantizar_ghi
 
 
 def test_limpeza_ordena_remove_invalidos_e_consolida_dias() -> None:

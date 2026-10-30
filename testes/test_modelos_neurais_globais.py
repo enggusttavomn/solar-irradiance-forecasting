@@ -7,16 +7,8 @@ import pytest
 
 pytest.importorskip("tensorflow")
 
-from codigo_fonte.dados_mensais_globais import (
-    carregar_base_mensal_global,
-    matrizes_keras,
-)
-from codigo_fonte.modelos_neurais_globais import (
-    construir_rede_global,
-    prever_rede_global,
-    salvar_rede_global,
-    treinar_rede_global_com_validacao_temporal,
-)
+from codigo_fonte.coleta_e_preparacao.base_mensal import carregar_base_mensal_global, matrizes_keras
+from codigo_fonte.modelos.recorrentes.modelos_neurais_globais import construir_rede_global, prever_rede_global, salvar_rede_global, treinar_rede_global_com_validacao_temporal
 
 
 @pytest.mark.parametrize("tipo", ["RNN", "LSTM", "DilatedRNN"])

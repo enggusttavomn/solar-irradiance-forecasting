@@ -1,11 +1,6 @@
 """Rede neural recorrente simples usada no protocolo mensal."""
 
-from codigo_fonte.modelos_neurais_globais import (
-    construir_rede_global,
-    prever_rede_global,
-    salvar_rede_global,
-    treinar_rede_global_com_validacao_temporal,
-)
+from codigo_fonte.modelos.recorrentes.modelos_neurais_globais import construir_rede_global, prever_rede_global, salvar_rede_global, treinar_rede_global_com_validacao_temporal
 
 
 def construir(**configuracao):

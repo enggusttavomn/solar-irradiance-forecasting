@@ -1,7 +1,7 @@
 """Datas lidas do CSV devem ter a mesma semantica que datas do contexto."""
 import pandas as pd
 import pytest
-from scripts.metricas_quantizacao_todos import comparar_amostras, normalizar_chaves
+from codigo_fonte.acompanhamento.metricas_quantizacao_todos import comparar_amostras, normalizar_chaves
 
 
 def exemplo(unidade):

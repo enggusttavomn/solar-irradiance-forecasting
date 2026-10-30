@@ -2,8 +2,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from codigo_fonte.historico_nsrdb_expandido import verificar_ano_horario, serializar_tempo_ns
-from codigo_fonte.historico_nsrdb_agregacao import media_diaria_api
+from codigo_fonte.coleta_e_preparacao.historico_nsrdb_expandido import verificar_ano_horario, serializar_tempo_ns
+from codigo_fonte.coleta_e_preparacao.historico_nsrdb_agregacao import media_diaria_api
 
 
 def exemplo(ano=2000):

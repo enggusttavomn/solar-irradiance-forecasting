@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 import pytest
-from codigo_fonte import experimento_quantizacao_concorrentes as x
+from codigo_fonte.experimentos import experimento_quantizacao_concorrentes as x
 
 
 def aceite(tmp_path):

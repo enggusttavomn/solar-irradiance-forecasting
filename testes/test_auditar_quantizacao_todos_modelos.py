@@ -4,9 +4,9 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from scripts.auditar_quantizacao_todos_modelos import conferir_hashes, normalizacao_independente
-from scripts.metricas_quantizacao_todos import sha256
-from scripts.rodar_quantizacao_todos_modelos import comando, recurso
+from codigo_fonte.analises_e_relatorios.auditar_quantizacao_todos_modelos import conferir_hashes, normalizacao_independente
+from codigo_fonte.acompanhamento.metricas_quantizacao_todos import sha256
+from codigo_fonte.experimentos.rodar_quantizacao_todos_modelos import comando, recurso
 
 
 @pytest.mark.parametrize("niveis", [None, 64, 128, 256])

@@ -7,7 +7,7 @@ sufixo:
 *_features_mensal_v2.csv
 ```
 
-Eles sao recriados por `treinar_todas_localidades.py --frequencia mensal` e
+Eles sao recriados por `codigo_fonte/experimentos/codigo_fonte.experimentos.treinar_todas_localidades.py --frequencia mensal` e
 contem 12 defasagens mensais consecutivas, medias moveis de 3/6/12 meses,
 calendario circular do mes-alvo e alvo continuo normalizado por min--max. As
 colunas com `quantizado` permanecem apenas para auditoria e nao sao usadas como

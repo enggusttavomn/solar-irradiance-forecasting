@@ -11,6 +11,8 @@ import pandas as pd
 import pytest
 from sklearn.metrics import r2_score
 
+from codigo_fonte.utilitarios.migracao import ler_fonte_historica
+
 
 RAIZ = Path(__file__).resolve().parents[1]
 BASE = RAIZ / "resultados" / "avaliacao_mensal_corrigida"
@@ -263,7 +265,7 @@ def test_reavaliacao_dos_modelos_salvos_reconstroi_os_ensembles() -> None:
             assert np.allclose(ensemble, publicado, rtol=0, atol=2e-6)
 
 
-def test_manifesto_referencia_os_bytes_atuais() -> None:
+def test_manifesto_referencia_os_bytes_originais_preservados() -> None:
     manifesto = json.loads((BASE / "manifesto_execucao.json").read_text(encoding="utf-8"))
     config = manifesto["configuracao"]
     assert config["frequencia"] == "mensal"
@@ -273,7 +275,6 @@ def test_manifesto_referencia_os_bytes_atuais() -> None:
     assert config["referencia_primaria"] == "Climatologia"
 
     for registro in manifesto["arquivos_entrada"]:
-        caminho = RAIZ / registro["caminho"]
-        assert caminho.is_file(), registro["caminho"]
-        digest = hashlib.sha256(caminho.read_bytes()).hexdigest()
+        conteudo = ler_fonte_historica(registro["caminho"], registro["sha256"])
+        digest = hashlib.sha256(conteudo).hexdigest()
         assert digest == registro["sha256"], registro["caminho"]
