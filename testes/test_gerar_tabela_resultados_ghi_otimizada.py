@@ -4,13 +4,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from scripts.gerar_tabela_resultados_ghi_otimizada import (
-    calcular_macro,
-    conferir_observacoes,
-    nota_teto_epocas,
-    normalizar_chaves,
-    validar_mensal_pura,
-)
+from codigo_fonte.analises_e_relatorios.gerar_tabela_resultados_ghi_otimizada import calcular_macro, conferir_observacoes, nota_teto_epocas, normalizar_chaves, validar_mensal_pura
 
 
 def previsoes(locais=2):

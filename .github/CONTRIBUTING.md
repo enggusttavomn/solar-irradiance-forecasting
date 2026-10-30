@@ -1,53 +1,46 @@
 # Como contribuir
 
-Contribuições que melhorem a correção, a reprodutibilidade ou a documentação
-são bem-vindas. Como este repositório também preserva artefatos científicos,
-mudanças em dados e resultados exigem rastreabilidade adicional.
+O projeto preserva código e evidências científicas. Mudanças devem deixar
+claro o que foi alterado e como o comportamento foi conferido.
 
 ## Preparar o ambiente
 
 1. Crie uma branch a partir de `main`.
 2. Use CPython 3.12 e um ambiente virtual.
-3. Instale `requirements.txt` para o ambiente completo ou
-   `requirements-test.txt` para a suíte de CI.
+3. Instale `requirements.txt` ou `requirements-test.txt` para a suíte de CI.
 4. Execute `python -m pytest -q` antes de abrir o pull request.
 
-## Diretrizes
+## Onde trabalhar
 
-- Mantenha credenciais apenas em `.env`; nunca versione chaves da NREL, tokens
-  do Overleaf ou dados pessoais.
-- Consulte o [guia da estrutura](../documentacao/estrutura_do_projeto.md)
-  antes de criar ou mover arquivos. Use `codigo_fonte/` para lógica
-  reutilizável e a subpasta adequada de `scripts/` para comandos e automações de coleta, treinamento,
-  auditoria, operação, relatórios ou apresentações.
-- Chame os comandos agrupados com `python -m scripts.<grupo>.<comando>` a
-  partir da raiz. As implementações existentes continuam disponíveis nos
-  caminhos originais para preservar manifestos, hashes e retomadas.
-- Preserve os quatro executáveis científicos da raiz e os arquivos
-  registrados por manifestos e auditorias. Uma nova implementação deve ter
-  seu próprio caminho; uma alteração deliberada do contrato exige atualizar
-  a proveniência e validar os artefatos afetados.
-- Não altere manualmente tabelas e figuras derivadas. Atualize o gerador e
-  regenere os artefatos a partir das fontes versionadas.
-- Uma nova execução publicável deve registrar configuração, sementes, versão
-  do ambiente, status e hashes dos insumos relevantes.
-- Guarde resultados científicos e sua proveniência em `resultados/`,
-  auditorias e revisões datadas em `relatorios/` e guias em `documentacao/`.
-  Use uma pasta nova para cada execução que produza evidência.
-- Use `output/` para prévias e saídas temporárias locais. Não versione caches,
-  logs novos sem valor de auditoria, ambientes virtuais ou saídas
-  intermediárias; preserve os registros científicos existentes.
-- Adicione testes científicos em `testes/` e testes dos scripts e
-  supervisores em `testes/operacao/`. Os testes históricos em `tests/` mantêm
-  seus caminhos por contratos de auditoria; novos testes seguem `testes/`.
-- Evite adicionar binários grandes quando um script e uma fonte verificável
-  puderem reproduzi-los.
-- Documente limitações metodológicas junto com qualquer novo resultado.
+- Use `codigo_fonte/<tarefa>/` para funções, programas e comandos da mesma área.
+  O [catálogo](../codigo_fonte/COMANDOS.md) mostra as entradas disponíveis.
+- Execute módulos a partir da raiz: `python -m codigo_fonte.<area>.<modulo>`.
+- Guarde previsões, métricas, modelos treinados e manifestos em `resultados/`.
+  Análises e auditorias vão em `resultados/relatorios/`; PDFs exportados em
+  `resultados/pdf/`. Use uma pasta nova por execução.
+- Coloque guias e protocolos em `documentacao/`, manuscritos em `artigos/`,
+  entradas em `dados/` e testes em `testes/`. Os testes de operação local
+  ficam em `testes/operacao/`.
+- Use `tmp/` para prévias provisórias. Não versione ambientes, caches ou
+  arquivos intermediários sem valor de evidência.
+
+Consulte o [guia da estrutura](../documentacao/estrutura_do_projeto.md) antes
+de criar ou mover arquivos. A
+[migração registrada](../documentacao/organizacao/reorganizacao_codigo_20261027.json)
+preserva fontes originais de auditorias; os manifestos históricos mantêm
+seus dados da época.
+
+## Cuidados com a pesquisa
+
+- Mantenha credenciais somente em `.env` ou nos mecanismos locais configurados.
+- Regere tabelas e figuras pelo código em vez de editar derivados manualmente.
+- Registre configuração, sementes, ambiente, status e hashes das entradas de
+  uma nova execução publicável.
+- Preserve evidências anteriores e documente limitações metodológicas.
+- Evite binários grandes quando fontes e geradores verificáveis forem suficientes.
 
 ## Pull request
 
-Explique o problema, a solução e como a mudança foi validada. Se houver
-alteração numérica, identifique exatamente os arquivos de entrada, o comando de
-execução e os artefatos afetados. Pull requests devem manter a suíte verde e
-não podem misturar uma reorganização ampla com mudanças científicas não
-relacionadas.
+Explique o problema, a mudança e a validação. Se houver alteração numérica,
+identifique entradas, comando e artefatos afetados. Separe mudanças científicas
+sem relação de uma reorganização do código e mantenha a suíte de testes verde.

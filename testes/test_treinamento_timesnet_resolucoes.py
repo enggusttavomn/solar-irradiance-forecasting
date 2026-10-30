@@ -9,9 +9,9 @@ import pytest
 import torch
 from torch import nn
 
-from codigo_fonte import experimento_multirresolucao as base
-from codigo_fonte.experimento_horario_timesnet import JanelasHorarias
-from codigo_fonte import treinamento_timesnet_resolucoes as treino
+from codigo_fonte.experimentos import experimento_multirresolucao as base
+from codigo_fonte.experimentos.experimento_horario_timesnet import JanelasHorarias
+from codigo_fonte.experimentos import treinamento_timesnet_resolucoes as treino
 
 
 def _escalas():

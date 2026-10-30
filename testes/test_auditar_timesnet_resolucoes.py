@@ -8,9 +8,9 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from codigo_fonte import otimizacao_timesnet_resolucoes as busca
+from codigo_fonte.experimentos import otimizacao_timesnet_resolucoes as busca
 
-from scripts import auditar_timesnet_resolucoes as audit
+from codigo_fonte.analises_e_relatorios import auditar_timesnet_resolucoes as audit
 from testes.test_otimizacao_timesnet_resolucoes import _contexto, _busca_falsa, _Rede
 
 

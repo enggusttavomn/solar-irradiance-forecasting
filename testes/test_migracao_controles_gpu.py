@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 import pytest
-from scripts import verificar_migracao_controles_gpu as v
+from codigo_fonte.analises_e_relatorios import verificar_migracao_controles_gpu as v
 
 
 def salvar(path,data):

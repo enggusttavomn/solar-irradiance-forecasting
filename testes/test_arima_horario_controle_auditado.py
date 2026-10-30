@@ -5,7 +5,7 @@ from types import SimpleNamespace
 import numpy as np
 import pytest
 
-from codigo_fonte import experimento_arima_horario_controle_auditado_v1 as a
+from codigo_fonte.experimentos import experimento_arima_horario_controle_auditado_v1 as a
 
 
 def contexto():

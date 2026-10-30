@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from codigo_fonte import otimizacao_timesnet_mensal as otim
-from codigo_fonte import experimento_multirresolucao as base
+from codigo_fonte.experimentos import otimizacao_timesnet_mensal as otim
+from codigo_fonte.experimentos import experimento_multirresolucao as base
 
 
 def series_mensais(tmp_path):

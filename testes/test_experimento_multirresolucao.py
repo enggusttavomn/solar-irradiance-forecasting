@@ -11,34 +11,9 @@ import pandas as pd
 import pytest
 import torch
 
-import codigo_fonte.experimento_multirresolucao as multires
-from codigo_fonte.experimento_horario_timesnet import JanelasHorarias
-from codigo_fonte.experimento_multirresolucao import (
-    ConfiguracaoMultirresolucao,
-    Estimativa,
-    IntervaloParticao,
-    SerieResolucao,
-    TAREFA_HORARIA_EXTENSAO,
-    TAREFAS_CANONICAS,
-    ajustar_escalas_pre_corte,
-    agregar_series_mensais,
-    anexar_dilated_a_previsoes_oficiais,
-    calcular_metricas_estimativas,
-    carregar_series_diarias,
-    construir_contrato,
-    construir_janelas,
-    criar_modelo_neural,
-    executar_avaliacao_multirresolucao,
-    prever_climatologia,
-    prever_sazonal_anual,
-    salvar_csv_atomico,
-    salvar_joblib_atomico,
-    salvar_json_atomico,
-    salvar_npz_atomico,
-    salvar_torch_atomico,
-    sha256_arquivo,
-    validar_ou_criar_contrato,
-)
+import codigo_fonte.experimentos.experimento_multirresolucao as multires
+from codigo_fonte.experimentos.experimento_horario_timesnet import JanelasHorarias
+from codigo_fonte.experimentos.experimento_multirresolucao import ConfiguracaoMultirresolucao, Estimativa, IntervaloParticao, SerieResolucao, TAREFA_HORARIA_EXTENSAO, TAREFAS_CANONICAS, ajustar_escalas_pre_corte, agregar_series_mensais, anexar_dilated_a_previsoes_oficiais, calcular_metricas_estimativas, carregar_series_diarias, construir_contrato, construir_janelas, criar_modelo_neural, executar_avaliacao_multirresolucao, prever_climatologia, prever_sazonal_anual, salvar_csv_atomico, salvar_joblib_atomico, salvar_json_atomico, salvar_npz_atomico, salvar_torch_atomico, sha256_arquivo, validar_ou_criar_contrato
 
 
 def _serie_sintetica_diaria(tmp_path: Path) -> SerieResolucao:

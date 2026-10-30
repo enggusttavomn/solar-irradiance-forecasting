@@ -5,12 +5,7 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from codigo_fonte.figuras_experimento_canonico import (
-    figura_deepnpts_vs_melhor_concorrente,
-    figura_intervalo_deepnpts,
-    figura_ranking_mae,
-    figura_serie_previsoes,
-)
+from codigo_fonte.analises_e_relatorios.figuras_resultados import figura_deepnpts_vs_melhor_concorrente, figura_intervalo_deepnpts, figura_ranking_mae, figura_serie_previsoes
 
 
 def _dados():

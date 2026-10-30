@@ -1,28 +1,22 @@
-# Modelos do protocolo mensal
+# Modelos de previsão
 
-Esta pasta e a entrada recomendada para estudar os dez metodos comparados no
-artigo. Cada metodo possui um arquivo com o mesmo nome usado no texto.
+Os modelos ficam juntos nesta área. As famílias organizam as implementações
+e suas funções de construção, treinamento e previsão.
 
-```text
-modelos/
-├── referencias_simples/
-│   ├── persistencia.py
-│   ├── sazonal_ingenuo.py
-│   └── climatologia.py
-├── tabulares/
-│   ├── xgboost.py
-│   └── mlp.py
-├── recorrentes/
-│   ├── rnn.py
-│   ├── lstm.py
-│   └── dilated_rnn.py
-└── probabilisticos/
-    ├── deepar.py
-    └── deepnpts.py
-```
+| Pasta ou arquivo | Conteúdo |
+|---|---|
+| [`referencias_simples/`](referencias_simples/) | persistência, sazonal ingênuo, climatologia e suporte aos modelos estatísticos |
+| [`tabulares/`](tabulares/) | XGBoost e MLP |
+| [`recorrentes/`](recorrentes/) | RNN, LSTM e DilatedRNN |
+| [`probabilisticos/`](probabilisticos/) | DeepAR e DeepNPTS |
+| [`timesnet_horario.py`](timesnet_horario.py) | componentes e arquitetura TimesNet |
+| [`modelos_baselines_adicionais.py`](modelos_baselines_adicionais.py) | modelos de referência adicionais |
 
-Os arquivos desta estrutura expoem funcoes com nomes simples, como
-`construir`, `treinar` e `prever`. Eles delegam aos motores cientificos usados
-na execucao canonica. Esses motores antigos nao foram apagados nem alterados,
-pois seus caminhos e hashes estao registrados em
-`resultados/avaliacao_mensal_canonica/manifesto_execucao.json`.
+As funções públicas por modelo reutilizam as implementações da própria
+família. Os experimentos que coordenam treinamento e avaliação ficam em
+[`../experimentos/`](../experimentos/); os modelos treinados e as métricas
+produzidas ficam em [`../../resultados/`](../../resultados/).
+
+O código anterior à reorganização está preservado no
+[arquivo de fontes originais](../../documentacao/organizacao/fontes_antes_reorganizacao_20261027.zip),
+identificado pelo registro de migração para conferir auditorias históricas.

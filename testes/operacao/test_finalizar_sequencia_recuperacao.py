@@ -1,21 +1,12 @@
 """Guardas da retomada: fixtures locais, sem modelos, treinos ou coordenadores reais."""
 from datetime import datetime, timedelta, timezone
-import importlib.util
 import json
 from pathlib import Path
 import sys
 from types import SimpleNamespace
 import pytest
 
-PATH = Path(__file__).resolve().parents[2] / 'tmp/recuperacao_20261001/finalizar_sequencia.py'
-if not PATH.is_file():
-    pytest.skip(
-        'Teste historico requer o auxiliar local tmp/recuperacao_20261001/finalizar_sequencia.py',
-        allow_module_level=True,
-    )
-spec = importlib.util.spec_from_file_location('finalizar_sequencia_revisada', PATH)
-f = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(f)
+from codigo_fonte.acompanhamento import finalizar_sequencia_recuperacao as f
 AGORA = datetime(2026, 10, 1, 23, tzinfo=timezone.utc)
 
 
@@ -185,7 +176,7 @@ def test_fila_integral_ativa_bloqueia_coordenacao_duplicada(tmp_path):
 
 
 def preparar_main(tmp_path, monkeypatch, *, xgb_etapa='concluida'):
-    rel, saida = tmp_path / 'relatorios', tmp_path / 'resultados'
+    rel, saida = tmp_path / 'resultados/relatorios', tmp_path / 'resultados'
     preencher_refits(saida)
     paths = {'RNN': rel / 'recuperacao_20261001/runner.json',
              'XGBoost': rel / 'recuperacao_xgboost_20261001/runner.json'}
@@ -197,7 +188,7 @@ def preparar_main(tmp_path, monkeypatch, *, xgb_etapa='concluida'):
     monkeypatch.setattr(f, 'FILAS_RECUPERACAO', paths)
     monkeypatch.setattr(f, 'identidade', lambda pid: {'pid': pid, 'creation_time': 'fixture'})
     monkeypatch.setattr(f.ctypes, 'windll', SimpleNamespace(kernel32=SimpleNamespace(
-        SetThreadExecutionState=lambda flag: 1)))
+        SetThreadExecutionState=lambda flag: 1)), raising=False)
     monkeypatch.setattr(f, 'conferir_escopo_rnn', lambda rel: 'escopo-fixo')
     conferir_original = f.conferir_fila
     monkeypatch.setattr(f, 'conferir_fila', lambda registro, nome: conferir_original(
@@ -240,11 +231,11 @@ def test_main_mantem_travas_e_valida_adapter_antes_dos_coordenadores(tmp_path, m
         def __init__(self, cmd, **kwargs):
             modulo = cmd[4]
             assert eventos[0] == 'adapter'
-            if modulo == 'scripts.coordenar_quantizacao_atual':
+            if modulo == 'codigo_fonte.acompanhamento.coordenar_quantizacao_atual':
                 assert all(p.parent in travas for p in paths.values())
                 gravar(rel / 'coordenacao_atual/status.json', {'etapa': 'pronto_para_revisao_visual'})
             else:
-                assert modulo == 'scripts.coordenar_quantizacao_historica'
+                assert modulo == 'codigo_fonte.acompanhamento.coordenar_quantizacao_historica'
                 assert all(p.parent not in travas for p in paths.values())
                 gravar(rel / 'coordenacao_historica/status.json', {'etapa': 'pronto_para_revisao_visual'})
             eventos.append(modulo)
@@ -256,17 +247,21 @@ def test_main_mantem_travas_e_valida_adapter_antes_dos_coordenadores(tmp_path, m
             pass
 
     import types
-    fake = types.ModuleType('codigo_fonte.experimento_xgboost_horario_controle_auditado_v1')
+    fake = types.ModuleType('codigo_fonte.experimentos.experimento_xgboost_horario_controle_auditado_v1')
     fake.validar_controle_adaptado = validar
     package = types.ModuleType('codigo_fonte')
-    package.experimento_xgboost_horario_controle_auditado_v1 = fake
+    experimentos = types.ModuleType('codigo_fonte.experimentos')
+    experimentos.__path__ = []
+    experimentos.experimento_xgboost_horario_controle_auditado_v1 = fake
+    package.experimentos = experimentos
     monkeypatch.setitem(sys.modules, 'codigo_fonte', package)
+    monkeypatch.setitem(sys.modules, 'codigo_fonte.experimentos', experimentos)
     monkeypatch.setitem(sys.modules, fake.__name__, fake)
     monkeypatch.setattr(f, 'TravaDiretorio', Trava)
     monkeypatch.setattr(f, 'ProcessoProprio', Filho)
     f.main()
-    assert eventos == ['adapter', 'scripts.coordenar_quantizacao_atual',
-                       'scripts.coordenar_quantizacao_historica']
+    assert eventos == ['adapter', 'codigo_fonte.acompanhamento.coordenar_quantizacao_atual',
+                       'codigo_fonte.acompanhamento.coordenar_quantizacao_historica']
     assert not travas
     status = json.loads((rel / 'finalizacao_20261001/status.json').read_text())
     assert status['etapa'] == 'pronto_para_revisao_visual'

@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from codigo_fonte.dados_horarios_nsrdb import carregar_dados_horarios
+from codigo_fonte.coleta_e_preparacao.dados_horarios_nsrdb import carregar_dados_horarios
 
 
 def _gravar_ano(pasta: Path, ano: int, horas: int) -> None:

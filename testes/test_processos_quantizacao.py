@@ -8,10 +8,9 @@ from unittest.mock import patch
 
 import pytest
 
-from scripts import processos_quantizacao as processos
-from scripts.processos_quantizacao import (TravaDiretorio, ExecucaoOcupada, ProcessoProprio,
-                                           identidade, mesma_instancia, processos_da_fila_ativos)
-from scripts.coordenacao_quantizacao import auditoria_publicavel, controles_solicitados, aguardar_filas
+from codigo_fonte.acompanhamento import processos_quantizacao as processos
+from codigo_fonte.acompanhamento.processos_quantizacao import TravaDiretorio, ExecucaoOcupada, ProcessoProprio, identidade, mesma_instancia, processos_da_fila_ativos
+from codigo_fonte.acompanhamento.coordenacao_quantizacao import auditoria_publicavel, controles_solicitados, aguardar_filas
 
 
 def esperar(fn, segundos=40):
@@ -289,10 +288,10 @@ def test_auditoria_completa_exige_44_pares_e_replay():
 
 def test_runner_dispatch_arima_restrito():
     from types import SimpleNamespace
-    from scripts.rodar_quantizacao_todos_modelos import comando
+    from codigo_fonte.experimentos.rodar_quantizacao_todos_modelos import comando
     args = SimpleNamespace(regime='atual', smoke=False, saida=Path('tmp'), protocolo=None)
-    assert 'codigo_fonte.experimento_arima_horario_controle_auditado_v1' in comando(args, 'hourly_72_extension', 'ARIMA', 'selecao')
+    assert 'codigo_fonte.experimentos.experimento_arima_horario_controle_auditado_v1' in comando(args, 'hourly_72_extension', 'ARIMA', 'selecao')
     for regime, tarefa, smoke in [('atual', 'daily_30', False), ('atual', 'hourly_72_extension', True),
                                   ('historico_1998_2022', 'hourly_72_extension', False)]:
         args.regime, args.smoke = regime, smoke
-        assert 'codigo_fonte.experimento_quantizacao_estatisticos' in comando(args, tarefa, 'ARIMA', 'selecao')
+        assert 'codigo_fonte.experimentos.experimento_quantizacao_estatisticos' in comando(args, tarefa, 'ARIMA', 'selecao')

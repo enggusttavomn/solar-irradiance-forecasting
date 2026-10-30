@@ -2,9 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from scripts.metricas_quantizacao_todos import (
-    calcular_metricas, comparar_amostras, comparar_metricas, validar_previsoes,
-)
+from codigo_fonte.acompanhamento.metricas_quantizacao_todos import calcular_metricas, comparar_amostras, comparar_metricas, validar_previsoes
 
 
 def amostra():

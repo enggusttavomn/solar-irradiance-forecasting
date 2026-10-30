@@ -1,8 +1,7 @@
 [tool.pytest.ini_options]
 minversion = "9.0"
-pythonpath = [".", "executaveis"]
-testpaths = ["testes", "tests"]
-# Ambos os diretórios contêm test_json_atomico.py; preserve os nomes auditados.
+pythonpath = ["."]
+testpaths = ["testes"]
 addopts = "--import-mode=importlib"
 
 [tool.coverage.run]

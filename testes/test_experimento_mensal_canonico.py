@@ -8,19 +8,9 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from codigo_fonte.dados_mensais_globais import carregar_base_mensal_global
-from codigo_fonte.experimento_mensal_canonico import (
-    ConfiguracaoExperimento,
-    _contrato_retomada,
-    _inverter_por_linha,
-    _mapear_amostras_gluonts,
-    _parser,
-    _resumo_modelos,
-    _salvar_status,
-    _series_gluonts,
-    executar_experimento,
-)
-from codigo_fonte.modelos_globais_gluonts import PrevisaoProbabilistica
+from codigo_fonte.coleta_e_preparacao.base_mensal import carregar_base_mensal_global
+from codigo_fonte.experimentos.experimento_mensal_canonico import ConfiguracaoExperimento, _contrato_retomada, _inverter_por_linha, _mapear_amostras_gluonts, _parser, _resumo_modelos, _salvar_status, _series_gluonts, executar_experimento
+from codigo_fonte.modelos.probabilisticos.modelos_globais_gluonts import PrevisaoProbabilistica
 
 
 def test_configuracao_rejeita_sementes_repetidas() -> None:

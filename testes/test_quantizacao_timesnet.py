@@ -10,20 +10,9 @@ import pytest
 import torch
 from torch import nn
 
-import codigo_fonte.treinamento_timesnet_otimizacao as treino
-from codigo_fonte.experimento_multirresolucao import (
-    ConfiguracaoMultirresolucao,
-    JanelasDiretas,
-    TAREFAS_CANONICAS,
-    prever_rede,
-)
-from codigo_fonte.quantizacao_timesnet import (
-    JanelasDiretasQuantizadas,
-    aplicar_quantizacao,
-    diagnosticar_quantizacao,
-    normalizar_entradas,
-    quantizar_entradas,
-)
+import codigo_fonte.experimentos.treinamento_timesnet_otimizacao as treino
+from codigo_fonte.experimentos.experimento_multirresolucao import ConfiguracaoMultirresolucao, JanelasDiretas, TAREFAS_CANONICAS, prever_rede
+from codigo_fonte.experimentos.quantizacao_timesnet import JanelasDiretasQuantizadas, aplicar_quantizacao, diagnosticar_quantizacao, normalizar_entradas, quantizar_entradas
 
 
 def _janelas(ano: int = 2020) -> JanelasDiretas:

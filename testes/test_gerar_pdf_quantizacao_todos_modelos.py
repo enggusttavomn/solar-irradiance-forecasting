@@ -4,8 +4,8 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from scripts.gerar_pdf_quantizacao_todos_modelos import carregar_auditoria, numero, validar_pareamento
-from scripts.metricas_quantizacao_todos import MODELOS, TAREFAS, VARIANTES, sha256
+from codigo_fonte.analises_e_relatorios.gerar_pdf_quantizacao_todos_modelos import carregar_auditoria, numero, validar_pareamento
+from codigo_fonte.acompanhamento.metricas_quantizacao_todos import MODELOS, TAREFAS, VARIANTES, sha256
 
 
 def criar_fonte(tmp_path):

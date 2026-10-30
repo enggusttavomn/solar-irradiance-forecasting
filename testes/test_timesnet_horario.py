@@ -8,12 +8,7 @@ import pytest
 
 torch = pytest.importorskip("torch")
 
-from codigo_fonte.timesnet_horario import (  # noqa: E402
-    InceptionBlock2D,
-    TimesBlock,
-    TimesNetHorario,
-    fft_top_k_periods,
-)
+from codigo_fonte.modelos.timesnet_horario import InceptionBlock2D, TimesBlock, TimesNetHorario, fft_top_k_periods
 
 
 def test_fft_detecta_periodo_diario_sem_selecionar_frequencia_zero() -> None:

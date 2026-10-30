@@ -6,11 +6,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from codigo_fonte.features import (
-    criar_features_temporais,
-    dividir_treino_teste_temporal,
-)
-from codigo_fonte.preprocessamento import preparar_serie_temporal
+from codigo_fonte.coleta_e_preparacao.features import criar_features_temporais, dividir_treino_teste_temporal
+from codigo_fonte.coleta_e_preparacao.preprocessamento import preparar_serie_temporal
 
 
 def _serie_transformada(periodos: int = 15) -> pd.DataFrame:

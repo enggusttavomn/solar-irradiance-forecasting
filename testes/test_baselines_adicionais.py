@@ -9,9 +9,9 @@ import pytest
 torch = pytest.importorskip("torch")
 from torch.nn import functional as F
 
-from codigo_fonte import modelos_baselines_adicionais as r
-from codigo_fonte import experimento_baselines_adicionais as e
-from codigo_fonte import consolidar_baselines_adicionais as c
+from codigo_fonte.modelos import modelos_baselines_adicionais as r
+from codigo_fonte.experimentos import experimento_baselines_adicionais as e
+from codigo_fonte.analises_e_relatorios import consolidar_baselines_adicionais as c
 
 
 @pytest.mark.parametrize("modelo", ["GRU", "Transformer", "Informer"])

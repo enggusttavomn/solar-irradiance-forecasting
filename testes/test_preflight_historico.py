@@ -3,9 +3,9 @@ from pathlib import Path
 
 import pytest
 
-from scripts import coordenar_quantizacao_historica as c
-from scripts.auditar_pareamento_historicos import QUANTIDADES_FONTES, hash_obj
-from scripts.metricas_quantizacao_todos import sha256
+from codigo_fonte.acompanhamento import coordenar_quantizacao_historica as c
+from codigo_fonte.analises_e_relatorios.auditar_pareamento_historicos import QUANTIDADES_FONTES, hash_obj
+from codigo_fonte.acompanhamento.metricas_quantizacao_todos import sha256
 
 
 def gravar(path, obj):
@@ -23,7 +23,7 @@ def preparar(tmp_path, monkeypatch):
     entradas = {grupo: [arquivo(f'dados/{grupo}/{i}.csv') for i in range(n)]
                 for grupo, n in QUANTIDADES_FONTES.items()}
     manifesto = arquivo('manifesto.json')
-    motor = arquivo('codigo_fonte/experimento_quantizacao_concorrentes.py')
+    motor = arquivo('codigo_fonte/experimentos/experimento_quantizacao_concorrentes.py')
     contrato = {'ok': True, 'aprovado': True, 'entradas': entradas,
                 'manifesto_horario': manifesto, 'auditorias': {}}
     contrato['sha256_contrato'] = hash_obj(contrato)
@@ -71,6 +71,6 @@ def test_preflight_exige_hash_fisico_aprovacao_e_motor(tmp_path, monkeypatch):
     audit['aprovado'] = True
     gravar(ap, audit)
     monkeypatch.setattr(c, 'HASH_AUDITORIA_DADOS', sha256(ap))
-    (tmp_path / 'codigo_fonte/experimento_quantizacao_concorrentes.py').write_text('outro motor')
+    (tmp_path / 'codigo_fonte/experimentos/experimento_quantizacao_concorrentes.py').write_text('outro motor')
     with pytest.raises(ValueError, match='Fonte alterada'):
         c.preflight_historico(protocolos, ap, raiz=tmp_path)

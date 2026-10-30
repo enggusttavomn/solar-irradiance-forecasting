@@ -7,9 +7,9 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from codigo_fonte import quantizacao_referencias as q
-from codigo_fonte import experimento_multirresolucao as m
-from codigo_fonte import experimento_horario_timesnet as h
+from codigo_fonte.experimentos import quantizacao_referencias as q
+from codigo_fonte.experimentos import experimento_multirresolucao as m
+from codigo_fonte.experimentos import experimento_horario_timesnet as h
 
 
 def escala():

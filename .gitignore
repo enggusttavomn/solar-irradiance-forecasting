@@ -58,15 +58,18 @@ desktop.ini
 # Estado de ferramentas locais
 .codex_*
 .overleaf-sync/
+/.aws/
+/.ssh/
+/debug.log
 /.tools/
 /.consolidacao/
 /.claude/settings.local.json
-/documentacao/referencias_legadas/artigo_revista_unificado/
+/documentacao/materiais_de_referencia/artigo_revista_unificado/
 
 # Saídas locais ou intermediárias do projeto
 /tmp/
-/output/*
-!/output/README.md
+/resultados/pdf/*
+!/resultados/pdf/README.md
 /dados/processados/ghi_features.csv
 /resultados/logs/
 /resultados/*smoke*/

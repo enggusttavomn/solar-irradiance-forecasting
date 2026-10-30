@@ -19,6 +19,6 @@ invalidos.
 Comandos:
 
 ```bash
-python treinar_todas_localidades.py --validar-dados
-python treinar_todas_localidades.py --somente-download --forcar-download
+python -m codigo_fonte.experimentos.codigo_fonte.experimentos.treinar_todas_localidades --validar-dados
+python -m codigo_fonte.experimentos.codigo_fonte.experimentos.treinar_todas_localidades --somente-download --forcar-download
 ```

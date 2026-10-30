@@ -5,9 +5,9 @@ from types import SimpleNamespace
 from unittest import TestCase, mock
 import json
 import unittest
-from scripts import rodar_quantizacao_todos_modelos as runner
-from scripts import auditar_quantizacao_todos_modelos as auditor
-from scripts import gerar_pdf_quantizacao_todos_modelos as pdf
+from codigo_fonte.experimentos import rodar_quantizacao_todos_modelos as runner
+from codigo_fonte.analises_e_relatorios import auditar_quantizacao_todos_modelos as auditor
+from codigo_fonte.analises_e_relatorios import gerar_pdf_quantizacao_todos_modelos as pdf
 
 class Encaminhamento(TestCase):
  def args(self, **kw):
@@ -16,7 +16,7 @@ class Encaminhamento(TestCase):
   return SimpleNamespace(**d)
  def test_somente_refit_xgboost_horario_atual_completo(self):
   a=self.args()
-  esperado='codigo_fonte.experimento_xgboost_horario_controle_auditado_v1'
+  esperado='codigo_fonte.experimentos.experimento_xgboost_horario_controle_auditado_v1'
   self.assertIn(esperado,runner.comando(a,'hourly_72_extension','XGBoost','refit'))
   for fase in ('selecao','congelar'):
    with self.subTest(fase=fase):
@@ -52,7 +52,7 @@ class Auditoria(TestCase):
    with self.subTest(kw=kw):
     with self.assertRaises(AssertionError): self.call(**kw)
  def test_fontes_validas_vinculadas_ao_relatorio_e_mutacao_rejeitada(self):
-  from codigo_fonte import experimento_xgboost_horario_controle_auditado_v1 as a
+  from codigo_fonte.experimentos import experimento_xgboost_horario_controle_auditado_v1 as a
   fonte=self.gravar('fonte.json',{'valor':1})
   fontes={str(fonte.resolve()):pdf.sha256(fonte)}
   evidencia=self.gravar('evidencia.json',{'fontes_sha256':fontes})

@@ -1,10 +1,6 @@
 """XGBoost global das dez localidades."""
 
-from codigo_fonte.modelos_tabulares_globais import (
-    ResultadoXGBoostGlobal,
-    salvar_modelo_joblib,
-    treinar_xgboost_global,
-)
+from codigo_fonte.modelos.tabulares.modelos_tabulares_globais import ResultadoXGBoostGlobal, salvar_modelo_joblib, treinar_xgboost_global
 
 
 treinar = treinar_xgboost_global

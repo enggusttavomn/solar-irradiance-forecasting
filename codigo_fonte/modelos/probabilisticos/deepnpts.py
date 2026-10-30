@@ -1,10 +1,6 @@
 """DeepNPTS discreto, modelo principal avaliado pelo projeto."""
 
-from codigo_fonte.modelos_globais_gluonts import (
-    DeepNPTSGlobalGluonTS,
-    carregar_modelo_global_gluonts,
-    previsoes_para_dataframe,
-)
+from codigo_fonte.modelos.probabilisticos.modelos_globais_gluonts import DeepNPTSGlobalGluonTS, carregar_modelo_global_gluonts, previsoes_para_dataframe
 
 
 DeepNPTS = DeepNPTSGlobalGluonTS
@@ -15,10 +11,7 @@ para_dataframe = previsoes_para_dataframe
 def redes_com_embeddings_registrados():
     """Retorna as redes corrigidas, importando PyTorch apenas quando necessario."""
 
-    from codigo_fonte.redes_deepnpts_registradas import (
-        DeepNPTSNetworkDiscreteRegistrada,
-        DeepNPTSNetworkSmoothRegistrada,
-    )
+    from codigo_fonte.modelos.probabilisticos.redes_deepnpts_registradas import DeepNPTSNetworkDiscreteRegistrada, DeepNPTSNetworkSmoothRegistrada
 
     return DeepNPTSNetworkDiscreteRegistrada, DeepNPTSNetworkSmoothRegistrada
 

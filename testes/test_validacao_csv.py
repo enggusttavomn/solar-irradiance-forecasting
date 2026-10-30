@@ -5,15 +5,9 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from codigo_fonte.localidades_ev import LOCALIDADES_EV
-from codigo_fonte.preprocessamento import (
-    NSRDB_API_URL,
-    NSRDB_DAILY_AGGREGATION,
-    NSRDB_GHI_UNIT,
-    NSRDB_PRODUCT,
-    NSRDB_SOURCE,
-)
-from treinar_todas_localidades import validar_csv_nrel_localidade
+from codigo_fonte.coleta_e_preparacao.localidades import LOCALIDADES_EV
+from codigo_fonte.coleta_e_preparacao.preprocessamento import NSRDB_API_URL, NSRDB_DAILY_AGGREGATION, NSRDB_GHI_UNIT, NSRDB_PRODUCT, NSRDB_SOURCE
+from codigo_fonte.experimentos.treinar_todas_localidades import validar_csv_nrel_localidade
 
 
 @pytest.fixture()

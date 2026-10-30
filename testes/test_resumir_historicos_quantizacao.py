@@ -5,7 +5,7 @@ import json
 import pandas as pd
 import pytest
 
-from scripts import resumir_historicos_quantizacao as r
+from codigo_fonte.analises_e_relatorios import resumir_historicos_quantizacao as r
 
 
 def salvar(obj, path):
@@ -102,7 +102,7 @@ def test_recusa_incompletude_duplicacao_e_fonte_alterada(cenario, erro):
 @pytest.mark.parametrize("campo,valor", [("ok", False), ("publicavel", False), ("escopo_completo", False),
                                         ("modo", "smoke"), ("replay_novo_executado", False)])
 def test_loader_real_rejeita_auditoria_incompleta_antes_de_ler_metricas(tmp_path, campo, valor):
-    from scripts.gerar_pdf_quantizacao_todos_modelos import carregar_auditoria
+    from codigo_fonte.analises_e_relatorios.gerar_pdf_quantizacao_todos_modelos import carregar_auditoria
     documento = {"ok": True, "publicavel": True, "escopo_completo": True,
                  "modo": "completa", "replay_novo_executado": True}
     documento[campo] = valor

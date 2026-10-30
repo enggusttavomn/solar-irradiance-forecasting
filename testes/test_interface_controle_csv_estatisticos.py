@@ -4,7 +4,7 @@ from dataclasses import replace
 import numpy as np
 import pytest
 
-from codigo_fonte import experimento_quantizacao_estatisticos as run
+from codigo_fonte.experimentos import experimento_quantizacao_estatisticos as run
 from testes.test_experimento_quantizacao_estatisticos import contexto
 
 

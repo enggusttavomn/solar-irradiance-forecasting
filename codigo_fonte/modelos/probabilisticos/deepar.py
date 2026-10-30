@@ -1,10 +1,6 @@
 """DeepAR global probabilistico usado como comparador do DeepNPTS."""
 
-from codigo_fonte.modelos_globais_gluonts import (
-    DeepARGlobalGluonTS,
-    carregar_modelo_global_gluonts,
-    previsoes_para_dataframe,
-)
+from codigo_fonte.modelos.probabilisticos.modelos_globais_gluonts import DeepARGlobalGluonTS, carregar_modelo_global_gluonts, previsoes_para_dataframe
 
 
 DeepAR = DeepARGlobalGluonTS

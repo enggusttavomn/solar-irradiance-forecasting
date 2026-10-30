@@ -7,11 +7,7 @@ import pytest
 
 tf = pytest.importorskip("tensorflow")
 
-from codigo_fonte.dilated_rnn import (  # noqa: E402
-    DilatedRNNRegressor,
-    DilatedSimpleRNNCell,
-    construir_dilated_rnn,
-)
+from codigo_fonte.modelos.recorrentes.nucleo_dilated_rnn import DilatedRNNRegressor, DilatedSimpleRNNCell, construir_dilated_rnn
 
 
 def test_modelo_aceita_sequencia_real_e_covariaveis_auxiliares() -> None:

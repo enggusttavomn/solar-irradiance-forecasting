@@ -3,7 +3,7 @@
 from codigo_fonte.modelos.referencias_simples.climatologia import prever as prever_climatologia
 from codigo_fonte.modelos.referencias_simples.persistencia import prever as prever_persistencia
 from codigo_fonte.modelos.referencias_simples.sazonal_ingenuo import prever as prever_sazonal
-from codigo_fonte.modelos_tabulares_globais import prever_baselines_mensais as prever_todas
+from codigo_fonte.modelos.tabulares.modelos_tabulares_globais import prever_baselines_mensais as prever_todas
 
 __all__ = [
     "prever_climatologia",

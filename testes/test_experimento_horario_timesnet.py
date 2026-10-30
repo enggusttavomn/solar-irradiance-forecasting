@@ -9,21 +9,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-import codigo_fonte.experimento_horario_timesnet as experimento_horario
-from codigo_fonte.experimento_horario_timesnet import (
-    ConfiguracaoExperimentoHorario,
-    JanelasHorarias,
-    MODELOS,
-    SerieLocalidade,
-    ajustar_escalas_pre_corte,
-    aplicar_pos_processamento_fisico,
-    calcular_elevacao_solar,
-    construir_janelas_diarias,
-    executar_experimento,
-    preparar_series_localidades,
-    prever_persistencia_diaria,
-    prever_sazonal_ingenuo_anual,
-)
+import codigo_fonte.experimentos.experimento_horario_timesnet as experimento_horario
+from codigo_fonte.experimentos.experimento_horario_timesnet import ConfiguracaoExperimentoHorario, JanelasHorarias, MODELOS, SerieLocalidade, ajustar_escalas_pre_corte, aplicar_pos_processamento_fisico, calcular_elevacao_solar, construir_janelas_diarias, executar_experimento, preparar_series_localidades, prever_persistencia_diaria, prever_sazonal_ingenuo_anual
 
 
 def test_substituicao_atomica_repete_bloqueio_transitorio_windows(

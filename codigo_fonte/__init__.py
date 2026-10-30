@@ -1,14 +1,10 @@
-"""Pacote principal do projeto de previsao diaria e mensal de GHI.
+"""Código da pesquisa organizado por finalidade.
 
-Os modulos deste pacote separam as responsabilidades do pipeline:
-
-* ``preprocessamento`` le, limpa e transforma a serie;
-* ``features`` converte a serie em uma base supervisionada;
-* ``modelos`` treina XGBoost, MLP, RNN, LSTM e vizinhos historicos;
-* ``baselines`` implementa persistencia, sazonal ingenuo e climatologia;
-* ``avaliacao`` calcula metricas pontuais/probabilisticas e salva previsoes;
-* ``graficos`` gera as figuras de avaliacao.
-
-Manter a logica nos modulos, em vez de somente nos notebooks, permite testar e
-reutilizar o mesmo comportamento nos dois scripts de treinamento.
+O registro de aliases permite carregar objetos antigos sem recriar os
+arquivos removidos. Nenhum modelo é importado ao registrar a compatibilidade.
 """
+
+from .utilitarios.compatibilidade import instalar_aliases as _instalar_aliases
+
+_instalar_aliases()
+del _instalar_aliases

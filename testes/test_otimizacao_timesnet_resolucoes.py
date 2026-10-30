@@ -11,8 +11,8 @@ import pytest
 import torch
 from torch import nn
 
-from codigo_fonte import otimizacao_timesnet_resolucoes as otim
-from codigo_fonte.experimento_horario_timesnet import JanelasHorarias
+from codigo_fonte.experimentos import otimizacao_timesnet_resolucoes as otim
+from codigo_fonte.experimentos.experimento_horario_timesnet import JanelasHorarias
 
 
 def _contexto(horario=False):

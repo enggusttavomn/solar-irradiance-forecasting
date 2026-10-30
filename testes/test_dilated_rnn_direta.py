@@ -2,10 +2,7 @@ import numpy as np
 import pytest
 import torch
 
-from codigo_fonte.dilated_rnn_direta import (
-    CamadaRNNDilatada,
-    DilatedRNNDireta,
-)
+from codigo_fonte.modelos.recorrentes.dilated_rnn_direta import CamadaRNNDilatada, DilatedRNNDireta
 
 
 def test_camada_dilatada_equivale_a_recorrencia_manual():

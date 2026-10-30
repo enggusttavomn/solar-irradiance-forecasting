@@ -8,7 +8,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-import codigo_fonte.otimizacao_timesnet_mensal as otim
+import codigo_fonte.experimentos.otimizacao_timesnet_mensal as otim
 
 
 @pytest.fixture

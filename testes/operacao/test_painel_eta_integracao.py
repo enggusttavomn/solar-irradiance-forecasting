@@ -1,7 +1,7 @@
 """Integração da ETA com contagens e filas; fixtures pequenas, sem treinos."""
 from datetime import datetime, timezone
 import json
-from scripts import painel_progresso_quantizacao as p
+from codigo_fonte.acompanhamento import painel_progresso_quantizacao as p
 
 AGORA = datetime(2026, 9, 30, 17, tzinfo=timezone.utc)
 

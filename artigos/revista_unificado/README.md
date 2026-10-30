@@ -100,7 +100,7 @@ anterior auditada está em
   CSVs e manifesto dos novos elementos de apresentação.
 
 Para reproduzir as tabelas e figuras focais a partir dos dados locais, execute
-na raiz `python scripts/gerar_comparacao_focal_artigo.py`. Esse comando usa
+na raiz `python -m codigo_fonte.analises_e_relatorios.gerar_comparacao_focal_artigo`. Esse comando usa
 previsões salvas e não treina novamente os modelos. Os três documentos foram
 compilados com Tectonic nesta revisão.
 
