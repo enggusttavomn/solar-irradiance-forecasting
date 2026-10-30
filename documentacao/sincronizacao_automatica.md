@@ -1,14 +1,17 @@
 # Sincronização automática com o GitHub
 
-A tarefa do Windows `EA019-GitHub-AutoSync` verifica este projeto a cada minuto
-e ao entrar na conta do Windows. Quando as alterações salvas ficam pelo menos
-15 segundos sem mudanças, o sincronizador cria um commit e faz push para
-`origin/main`. Arquivos novos, alterações e exclusões entram no commit.
+A tarefa do Windows `EA019-GitHub-AutoSync` inicia um monitor ao entrar na
+conta do Windows. Ele observa as alterações salvas neste projeto e, após
+15 segundos sem novos salvamentos, cria um commit e faz push para `origin/main`.
+Arquivos novos, alterações, renomeações e exclusões entram no commit.
+Não há verificação de envio a cada minuto: o monitor é acionado por alterações.
 
-O computador precisa estar ligado, com sua conta conectada e acesso à internet.
-O ChatGPT não precisa ficar aberto. Sem internet, os commits permanecem locais
-e o envio é tentado novamente nas próximas verificações. Salve e aguarde o
-envio antes de desligar o computador.
+O monitor utiliza `pythonw.exe`, sem abrir PowerShell ou Terminal. O computador
+precisa estar ligado, com sua conta conectada e acesso à internet. O ChatGPT
+não precisa ficar aberto. Ao iniciar, o monitor também verifica alterações
+pendentes feitas enquanto estava desligado. Sem internet, os commits permanecem
+locais e o monitor tenta novamente com intervalos progressivos enquanto houver
+envio pendente. Salve e aguarde o envio antes de desligar o computador.
 
 ## Instalar ou reativar
 
@@ -19,11 +22,11 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\codigo_fonte\publicaco
 ```
 
 O instalador utiliza o Python de `.venv\Scripts\python.exe`, quando disponível,
-ou um Python 3.10 ou superior no PATH, além do Git for Windows. A tarefa guarda
-os caminhos completos dos executáveis e funciona em segundo plano. Ela usa
-as credenciais Git existentes da sua conta, sem salvar senha no script, e
-executa com os privilégios normais da sua conta. Instale-a na sua conta do
-Windows depois de conseguir fazer um push manual.
+ou um Python 3.10 ou superior no PATH, além do Git for Windows. É necessário
+ter `pythonw.exe` junto ao Python selecionado. A tarefa guarda os caminhos
+completos dos executáveis e usa as credenciais Git existentes da sua conta,
+sem salvar senha no script. Executa com os privilégios normais da sua conta.
+Instale-a na sua conta do Windows depois de conseguir fazer um push manual.
 
 O Git precisa ter sua identidade configurada para criar commits. Se ainda
 estiver ausente, configure-a somente neste repositório:
@@ -34,8 +37,9 @@ git config user.email "seu-email-do-github"
 ```
 
 Reinstale se mover a pasta do projeto ou substituir o Python utilizado. A
-instalação recusa substituir uma tarefa com o mesmo nome que pertença a outro
-projeto ou usuário.
+instalação migra a tarefa antiga que executava PowerShell a cada minuto e
+recusa substituir uma tarefa de outro projeto ou usuário. Ao reinstalar,
+aguarda o monitor anterior concluir um eventual envio antes de substituí-lo.
 
 ## Consultar o envio
 
@@ -44,9 +48,11 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\codigo_fonte\publicaco
 ```
 
 O comando mostra a tarefa, a última execução e o resultado do sincronizador.
-Também é possível consultar `.git/auto-sync/status.json` e
-`.git/auto-sync/sync.log`. Esses arquivos são locais e não entram nos commits.
-O log mantém um histórico limitado para não crescer indefinidamente.
+No modo por alteração, a tarefa permanece `Running` enquanto o monitor está
+ativo; o código `267009` (`0x41301`) significa tarefa em execução.
+Também é possível consultar `.git/auto-sync/status.json`,
+`.git/auto-sync/monitor.json` e `.git/auto-sync/sync.log`. Esses arquivos são
+locais e não entram nos commits. O log mantém um histórico limitado.
 
 Para verificar o projeto sem criar commit ou fazer push:
 
@@ -84,6 +90,7 @@ O `.gitignore` continua valendo: credenciais, ambientes, caches e as saídas
 locais já ignoradas, incluindo os PDFs exportados em `resultados/pdf/`, não
 são enviados. O GitHub recebe as mudanças dos arquivos que fazem parte do
 repositório. Mudanças ainda não salvas no editor ficam fora do envio.
+Os próprios logs do monitor não disparam novos envios.
 
 ## Desativar
 
@@ -91,9 +98,7 @@ repositório. Mudanças ainda não salvas no editor ficam fora do envio.
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\codigo_fonte\publicacoes\configurar_sincronizacao_automatica.ps1 -Desativar
 ```
 
+O comando impede o início no próximo login e solicita que o monitor encerre.
+Se houver um envio em andamento, ele pode terminar normalmente antes da saída.
 Para reativar, execute novamente o comando de instalação. Os sincronizadores
-manuais `sincronizar_projeto.cmd` e `sincronizar_projeto.sh` continuam
-disponíveis para o fluxo com commit manual.
-
-Se houver um envio em andamento ao desativar, ele pode terminar normalmente;
-as próximas execuções ficam desabilitadas.
+manuais `sincronizar_projeto.cmd` e `sincronizar_projeto.sh` continuam disponíveis.
