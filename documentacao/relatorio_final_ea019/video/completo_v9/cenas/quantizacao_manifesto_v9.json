@@ -1,0 +1,227 @@
+{
+  "version": 9,
+  "duration": 64,
+  "cues": [
+    [
+      0,
+      8,
+      "Quantizar aproxima cada leitura de um nível disponível. Aqui usamos um exemplo, numa escala de zero a mil."
+    ],
+    [
+      8,
+      15,
+      "A leitura original é quatrocentos e trinta e sete. Primeiro, ela é normalizada."
+    ],
+    [
+      15,
+      23,
+      "Com sessenta e quatro níveis, escolhemos o degrau mais próximo e reconstruímos aproximadamente quatrocentos e quarenta e quatro."
+    ],
+    [
+      23,
+      31,
+      "Com cento e vinte e oito níveis, o mesmo valor vira aproximadamente quatrocentos e trinta e três."
+    ],
+    [
+      31,
+      37,
+      "Com duzentos e cinquenta e seis, fica próximo de quatrocentos e trinta e cinco."
+    ],
+    [
+      37,
+      44,
+      "Mais níveis diminuem o espaço entre degraus. O instante da leitura continua o mesmo."
+    ],
+    [
+      44,
+      51,
+      "A transformação atua só no GHI de entrada. A localidade segue separada; pesos, alvos e saídas continuam contínuos."
+    ],
+    [
+      51,
+      58,
+      "Nas variantes quantizadas, limitamos extremos antes de arredondar. O controle contínuo não faz essas duas operações."
+    ],
+    [
+      58,
+      64,
+      "A condição é escolhida na validação e mantida no teste, para cada modelo e tarefa."
+    ]
+  ],
+  "qa_times": [
+    4,
+    11.5,
+    20.3,
+    27.5,
+    34.5,
+    40.5,
+    48,
+    54.8,
+    62.5
+  ],
+  "numerical_example_is_didactic": true,
+  "illustrative_scaler_min": 0,
+  "illustrative_scaler_max": 1000,
+  "original_example_W_m2": 437,
+  "examples": [
+    {
+      "levels": 64,
+      "normalized_original": 0.437,
+      "nearest_index": 28,
+      "normalized_float32": 0.4444444477558136,
+      "reconstructed_W_m2": 444.4444477558136,
+      "input_absolute_difference_W_m2": 7.444447755813599
+    },
+    {
+      "levels": 128,
+      "normalized_original": 0.437,
+      "nearest_index": 55,
+      "normalized_float32": 0.4330708682537079,
+      "reconstructed_W_m2": 433.0708682537079,
+      "input_absolute_difference_W_m2": 3.9291317462921143
+    },
+    {
+      "levels": 256,
+      "normalized_original": 0.437,
+      "nearest_index": 111,
+      "normalized_float32": 0.43529412150382996,
+      "reconstructed_W_m2": 435.29412150382996,
+      "input_absolute_difference_W_m2": 1.705878496170044
+    }
+  ],
+  "levels": [
+    64,
+    128,
+    256
+  ],
+  "formula": "float32(rint(clip(u,0,1)*(N-1))/(N-1))",
+  "clipping_precedes_rounding": true,
+  "continuous_control_uses_clipping": false,
+  "continuous_control_rounds": false,
+  "locality_identifier_bypasses_quantizer": true,
+  "reconstructed_dtype": "float32",
+  "quantization_applies_to": "input GHI only",
+  "weights_targets_outputs_continuous": true,
+  "uniform_quantization_not_integer_network_inference": true,
+  "timestamps_unchanged": true,
+  "source_code": "codigo_fonte/experimentos/quantizacao_timesnet.py:43-61",
+  "module": "quantization_v9",
+  "start": 290,
+  "end": 354,
+  "chapter": "quantizacao",
+  "fps": 30,
+  "frames": 1920,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "resolution_percentage": 100,
+  "samples": 16,
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\quantizacao_3d_v9.mp4",
+  "render_complete": true,
+  "source_fingerprint": "3959b49fc0b3884c6fcf450aacc05141373dfa41a2626633e29debdcbea8d4a5",
+  "source_hashes": {
+    "codigo_fonte/video_ea019/director_v9.py": "60d34e82b64ff49d93109ee63eb0603f5704a34e5e0dc5f9422774ac3d693ec0",
+    "codigo_fonte/video_ea019/config_v9.py": "1112a80bf6b4eca0068554ee86bf76348230c62839b7d9ca26d58dce25c7139d",
+    "codigo_fonte/video_ea019/common_v7.py": "4867b4c429436a2e602de07bbbc1d16d6644506917894c8dca3588dc7e4e3587",
+    "codigo_fonte/video_ea019/blender_pilot.py": "d048c56e8559a13e2eb462299421e618817bdd0fee186412172e75843ad3207d",
+    "codigo_fonte/video_ea019/factory_site_v6.py": "9ef07ea1f676d8970a2d007c0bf2918ddf63c7cad3b0ad00d3ac0d7723d23c55",
+    "codigo_fonte/video_ea019/retime_v9.py": "a3bac65c3d4843b6037277d3434168390cbe7607b5b725cbadca8b5a6f47c96a",
+    "codigo_fonte/video_ea019/quantization_v9.py": "b5eba6e84aec20f35e45605dc2513711674fd0a881b2edd2471964090e79ba03",
+    "documentacao/relatorio_final_ea019/video/completo_v8/fontes_resultados_v8.json": "de42f0a99982bca8f029a92f91df7694a3855b1a44614ba6deeb8aa2d7b56494",
+    "documentacao/relatorio_final_ea019/video/revisao_ate_plano22_v7/referencias/ghi_distributions_training.json": "c6e42479d11556b890fb607bf2f5d90a65fc066103c566512f21f1509dcda6bc",
+    "codigo_fonte/video_ea019/assets/americas_land.json": "7a8a908caa2b1a512bcc287083cfbcd21e332f4e006a67b1b5ef14d380327278",
+    "codigo_fonte/video_ea019/assets/localities_report.json": "47df949b87d15c04e0931fdc020bf8cfb63278937f8dfd6ad2dd401e44a0b4a7"
+  },
+  "blocks": [
+    {
+      "first_frame": 1,
+      "last_frame": 300,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\quantizacao\\f00001_00300.mp4",
+      "bytes": 2332095,
+      "sha256": "4e795c74b7db49fefdb817fac15cd08c58925606630d7d9d162b3a07199e1bb2",
+      "source_fingerprint": "3959b49fc0b3884c6fcf450aacc05141373dfa41a2626633e29debdcbea8d4a5",
+      "reused": false
+    },
+    {
+      "first_frame": 301,
+      "last_frame": 600,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\quantizacao\\f00301_00600.mp4",
+      "bytes": 2367014,
+      "sha256": "a12d970634a2634dbfb9d5b3ad8d4f6a5e21e07b289247429faef03ff72ad019",
+      "source_fingerprint": "3959b49fc0b3884c6fcf450aacc05141373dfa41a2626633e29debdcbea8d4a5",
+      "reused": false
+    },
+    {
+      "first_frame": 601,
+      "last_frame": 900,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\quantizacao\\f00601_00900.mp4",
+      "bytes": 2386496,
+      "sha256": "f372e8fa100c7e8ce7bde9c21fcde786ca43ae289cc4dbc25e5848fa6f82afa1",
+      "source_fingerprint": "3959b49fc0b3884c6fcf450aacc05141373dfa41a2626633e29debdcbea8d4a5",
+      "reused": false
+    },
+    {
+      "first_frame": 901,
+      "last_frame": 1200,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\quantizacao\\f00901_01200.mp4",
+      "bytes": 2478933,
+      "sha256": "af6d1b77f59839c8b4383ab72c02487eef345444f465580fe9888d284b9f7d96",
+      "source_fingerprint": "3959b49fc0b3884c6fcf450aacc05141373dfa41a2626633e29debdcbea8d4a5",
+      "reused": false
+    },
+    {
+      "first_frame": 1201,
+      "last_frame": 1500,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\quantizacao\\f01201_01500.mp4",
+      "bytes": 2589954,
+      "sha256": "7affe7002dab32f1220f15b57037a65ef66bc9419e0ca56d6592e00644b573b2",
+      "source_fingerprint": "3959b49fc0b3884c6fcf450aacc05141373dfa41a2626633e29debdcbea8d4a5",
+      "reused": false
+    },
+    {
+      "first_frame": 1501,
+      "last_frame": 1800,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\quantizacao\\f01501_01800.mp4",
+      "bytes": 2448302,
+      "sha256": "f30a4d24339ebc0d03d9f8aa4d6ec27a36fb9d598eb46f21191723f45a35cec3",
+      "source_fingerprint": "3959b49fc0b3884c6fcf450aacc05141373dfa41a2626633e29debdcbea8d4a5",
+      "reused": false
+    },
+    {
+      "first_frame": 1801,
+      "last_frame": 1920,
+      "frame_count": 120,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\quantizacao\\f01801_01920.mp4",
+      "bytes": 921867,
+      "sha256": "f0da0f44d605d4af1d26c577a034302783d3fe45599ab624afeb95104915f9bb",
+      "source_fingerprint": "3959b49fc0b3884c6fcf450aacc05141373dfa41a2626633e29debdcbea8d4a5",
+      "reused": false
+    }
+  ],
+  "raw_verification": {
+    "path": "documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\quantizacao_3d_v9.mp4",
+    "bytes": 15523869,
+    "sha256": "091cf27e4f4fa664faa9c1b3eb36a7b0c34fc73acce9f0b7be94820a214daf07",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frame_count": 1920,
+    "duration_seconds": 64,
+    "codec": "H.264",
+    "audio_tracks": 0,
+    "full_decode_errors": 0
+  },
+  "gpu": {
+    "renderer": "Intel(R) Arc(TM) B390 GPU",
+    "vendor": "Intel",
+    "backend": "OPENGL",
+    "engine": "BLENDER_EEVEE_NEXT"
+  }
+}

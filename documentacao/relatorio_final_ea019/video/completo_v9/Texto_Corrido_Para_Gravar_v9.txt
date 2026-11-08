@@ -1,0 +1,181 @@
+﻿Olá, eu sou Gustavo de Melo Nascimento, da Engenharia Elétrica da Unicamp. Neste trabalho, comparo LSTM, Transformer e Informer na previsão da irradiância solar em localidades ligadas à fabricação de veículos elétricos.
+
+GHI mede a potência solar recebida por unidade de área horizontal.
+
+Aqui temos um metro quadrado. A unidade do GHI é watt por metro quadrado.
+
+A direta normal, DNI, é medida num plano perpendicular aos raios, como este.
+
+Multiplicamos a DNI pelo cosseno do ângulo com a vertical e somamos a luz difusa.
+
+Durante o dia, a luz varia. À noite, o GHI solar zera.
+
+As nuvens alteram a luz e a curva.
+
+O histórico registra esses ciclos e as mudanças da atmosfera.
+
+A previsão tenta antecipar a continuação dessa curva.
+
+Prever o recurso solar pode apoiar estimativas de geração fotovoltaica.
+
+Essas estimativas podem orientar compras de energia, armazenamento e horários de consumo.
+
+Comparei LSTM, Transformer e Informer. Como funcionam?
+
+Na LSTM, os valores entram em ordem.
+
+A memória muda a cada passo, por portas aprendidas.
+
+Elas regulam o que reter, acrescentar e transmitir.
+
+O estado final ajuda na previsão.
+
+No Transformer, cada posição reúne valor e ordem temporal.
+
+Consultas comparam representações com suas chaves.
+
+Os pesos calculados orientam a combinação dos valores.
+
+Essas representações seguem para a previsão do horizonte.
+
+Em sequências longas, o Informer detalha algumas consultas.
+
+A seleção usa uma estimativa de esparsidade.
+
+Em outra etapa, reduz a sequência interna do codificador.
+
+A atenção cruzada permanece completa.
+
+Os três recebem o mesmo histórico e a mesma localidade.
+
+Cada modelo produz diretamente um vetor para o mesmo horizonte.
+
+As localidades deste estudo estão nas Américas.
+
+São dez regiões: uma no Brasil, oito nos Estados Unidos e uma no México.
+
+A NSRDB estima a irradiância com satélites e dados atmosféricos.
+
+Modelos físicos combinam essas informações e estimam a irradiância em cada região consultada.
+
+A curva mostra quando os valores ocorreram. Já as barras agrupam esses valores por faixa.
+
+Estas três leituras reais de Camaçari pertencem à mesma faixa de GHI.
+
+Essa faixa reúne cerca de quatro vírgula oito por cento das horas com valor positivo.
+
+Cada barra mostra a porcentagem naquela faixa. As horas com valor zero são contadas separadamente.
+
+Com intervalos e escalas iguais, comparamos a distribuição dos valores entre as dez localidades.
+
+Usamos leituras anteriores da região da fábrica. Este trecho real é de Camaçari.
+
+Esses valores mantêm a ordem no tempo e formam parte da janela de entrada.
+
+A rede também identifica a região e aprende uma representação para cada localidade.
+
+Assim, entram duas informações: os valores anteriores de GHI e a região à qual pertencem.
+
+Em cada tarefa, uma mesma rede compartilha parâmetros entre as dez localidades.
+
+São quatro tarefas de previsão, com janelas e horizontes diferentes.
+
+Na horária, entram duas semanas de histórico.
+
+Prevemos os próximos três dias de irradiância.
+
+Na diária, entra um ano de histórico.
+
+A previsão contém os próximos trinta dias.
+
+Na primeira mensal, entram doze meses e prevemos o seguinte.
+
+A outra rede prevê seis meses. É uma análise exploratória.
+
+As tarefas mensais foram treinadas separadamente: uma prevê um mês; a outra, seis.
+
+Treinei inicialmente com dados de 2019 a 2022.
+
+Validação em 2023; teste em 2024.
+
+Escolhi as configurações pela validação, por modelo e tarefa. A normalização respeitou os cortes temporais.
+
+Depois, reiniciei o treinamento com 2019 a 2023 e avaliei as previsões em 2024.
+
+Essa análise é retrospectiva: o teste de 2024 já havia sido examinado, o que limita sua independência.
+
+Comparei a precisão das previsões. Velocidade e memória computacional não foram medidas.
+
+Quantizar aproxima cada leitura de um nível disponível. Aqui usamos um exemplo, numa escala de zero a mil.
+
+A leitura original é quatrocentos e trinta e sete. Primeiro, ela é normalizada.
+
+Com sessenta e quatro níveis, escolhemos o degrau mais próximo e reconstruímos aproximadamente quatrocentos e quarenta e quatro.
+
+Com cento e vinte e oito níveis, o mesmo valor vira aproximadamente quatrocentos e trinta e três.
+
+Com duzentos e cinquenta e seis, fica próximo de quatrocentos e trinta e cinco.
+
+Mais níveis diminuem o espaço entre degraus. O instante da leitura continua o mesmo.
+
+A transformação atua só no GHI de entrada. A localidade segue separada; pesos, alvos e saídas continuam contínuos.
+
+Nas variantes quantizadas, limitamos extremos antes de arredondar. O controle contínuo não faz essas duas operações.
+
+A condição é escolhida na validação e mantida no teste, para cada modelo e tarefa.
+
+MAE é o erro absoluto médio: o tamanho médio da diferença entre previsão e referência, no mesmo instante.
+
+Aqui, a referência é seiscentos e a previsão, seiscentos e cinquenta. A distância é cinquenta, sem considerar o sinal.
+
+Reunimos as cinco diferenças e dividimos por cinco. Neste exemplo, o MAE vale vinte e oito watts por metro quadrado.
+
+Quando a previsão se aproxima da referência, as distâncias encolhem e o MAE diminui.
+
+Se todos os valores coincidem, o MAE é zero. Na mesma tarefa, menor é melhor.
+
+Calculamos o MAE de cada localidade e fazemos outra média. As dez localidades recebem o mesmo peso: um décimo cada.
+
+Na avaliação cumulativa, entram todos os passos até o limite, incluindo a noite. Setenta e duas horas correspondem a três dias.
+
+Compare os modelos dentro de cada tarefa: escalas e alvos são diferentes.
+
+No horário, o Transformer teve o menor macro-MAE: 53,21 watts por metro quadrado.
+
+A vantagem sobre a LSTM foi de aproximadamente 0,32 watt por metro quadrado.
+
+Na diária, o Transformer liderou: 43,89 watts por metro quadrado de macro-MAE.
+
+A diferença para a LSTM foi de aproximadamente 0,30 watt por metro quadrado. Os valores são próximos.
+
+No mensal de um passo, o Informer liderou: 12,73 watts por metro quadrado.
+
+Os três modelos são comparados na mesma tarefa, com as condições selecionadas para cada um.
+
+Em seis meses, o Informer liderou: erro cumulativo de 13,67 watts por metro quadrado.
+
+Essa rede é diferente da mensal de um passo. O resultado de seis meses permanece exploratório.
+
+A liderança varia entre localidades. As cores indicam o menor MAE em cada região.
+
+Nos dois mensais, o Informer lidera cinco localidades, mas as localidades vencedoras mudam.
+
+Na diária, a LSTM liderou os horizontes menores, até 14 dias. Em 30 dias, o Transformer apresentou a menor média.
+
+Quantizar foi uma hipótese de melhoria, não uma garantia. Houve ganhos e perdas.
+
+Numa análise histórica separada, comparei históricos longo e curto nas mesmas datas de avaliação.
+
+Histórico longo: menor erro em onze de doze casos, exceto na LSTM horária.
+
+Isso não isola uma causa: anos e normalização também mudaram.
+
+As diferenças são descritivas. O horário usa uma semente; as demais tarefas combinam cinco previsões.
+
+A tarefa de seis meses é exploratória: sete origens por localidade, com alvos compartilhados.
+
+Localidades inéditas ainda precisam ser avaliadas.
+
+No horizonte completo, Transformer teve menor erro horário e diário; Informer, nas tarefas mensais.
+
+A escolha depende da tarefa, do horizonte e da localidade. Novos testes devem confirmar essa comparação.

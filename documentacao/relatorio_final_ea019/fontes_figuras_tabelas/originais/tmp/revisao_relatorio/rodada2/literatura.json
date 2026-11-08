@@ -1,0 +1,95 @@
+{
+  "scope": "Proposta textual para o TCC com conjunto experimental restrito a Transformer, Informer e LSTM. Nenhum resultado, modelo experimental ou documento Word foi modificado.",
+  "suggested_placement": "Substituir a subseção Relação com os artigos do projeto por Posicionamento na literatura, ao final da fundamentação. A motivação pode ser incorporada à Introdução logo após a formulação do problema de quantização. Ajustar a numeração de subseções e o sumário na edição final.",
+  "subsection": {
+    "title": "Posicionamento na literatura",
+    "paragraphs": [
+      "A literatura de previsão solar reúne estudos sobre a representação das séries e a verificação das previsões. A comparação entre trabalhos exige considerar a variável prevista, a resolução temporal, o horizonte e as informações disponíveis na emissão, além das métricas e dos períodos avaliados [9,13]. Assim, resultados de uma arquitetura em determinado conjunto de dados não estabelecem sua superioridade em outras tarefas. Essa distinção orienta o posicionamento da comparação realizada neste TCC.",
+      "Guariso, Nunnari e Sangiorgio [15] investigam a previsão de irradiância global com modelos autorregressivos, incluindo LSTM, a partir de valores anteriores da própria irradiância. O estudo considera históricos de 24 horas e horizontes de uma a doze horas, além de avaliar a aplicação das redes em outras estações sem novo treinamento. Esse antecedente mostra que o uso do histórico de irradiância como informação dinâmica já possui base experimental na literatura. O presente trabalho utiliza tarefas e localidades diferentes, compartilha parâmetros entre os locais do ajuste e não avalia transferência para localidades inéditas. Portanto, a comparação é conceitual, e seus erros não são confrontados numericamente.",
+      "O recorte das três redes permite examinar mecanismos distintos de representação temporal: memória recorrente na LSTM [3], atenção completa no Transformer [4] e seleção esparsa de consultas no Informer [5]. Essa escolha organiza uma comparação entre implementações, sem pressupor uma arquitetura vencedora. Em séries temporais gerais, Zeng et al. [16] questionam a vantagem automática de soluções baseadas em Transformer e examinam a influência de componentes do desenho experimental e da arquitetura. Como seu estudo não trata especificamente de GHI, ele fundamenta uma postura de avaliação empírica, sem determinar a classificação das redes nas tarefas solares deste relatório.",
+      "Na aplicação solar, Chen e Zhou [17] propõem uma adaptação do Informer para previsão de GHI que combina um mecanismo de atualização contínua das previsões com análise de interpretabilidade. O trabalho utiliza dados meteorológicos de Beijing em períodos de verão e inverno, nas escalas de 10, 30 e 60 minutos. Esse exemplo confirma a pertinência do Informer à previsão solar, mas também evidencia a importância de distinguir entradas e implementação. Seus resultados pertencem a uma adaptação e a um conjunto informacional diferentes do protocolo deste TCC, no qual as redes recebem histórico de GHI e identidade da localidade.",
+      "A precisão das entradas constitui outra dimensão da comparação. A teoria de quantização descreve a substituição de amplitudes por um conjunto finito de valores e as distorções introduzidas nessa representação [6]. Já Jacob et al. [7] estudam quantização e treinamento voltados à inferência com aritmética inteira. Essas formulações não são equivalentes à transformação aqui avaliada: neste TCC, apenas o histórico de GHI é discretizado e reconstruído em float32, enquanto pesos, alvos e saídas permanecem contínuos. A avaliação investiga, portanto, a resposta preditiva à representação da entrada, sem atribuir aos experimentos ganhos de memória ou velocidade.",
+      "O posicionamento do trabalho é, assim, empírico: comparar as três implementações sob condições de entrada e regras temporais explícitas, examinando como sua ordenação varia entre tarefas, horizontes e localidades. A comparação pareada dos históricos acrescenta outra perspectiva sobre a informação disponível para ajuste. O objetivo não é reivindicar a primeira aplicação dessas redes à irradiância, mas documentar resultados verificáveis no recorte adotado. A seleção pela validação, a agregação local e a distinção entre arredondamento e clipping delimitam o que pode ser concluído a partir dessa evidência."
+    ]
+  },
+  "motivation": {
+    "title": "Motivação da quantização das entradas",
+    "paragraph": "A quantização das entradas permite investigar quanta resolução de amplitude é necessária para a previsão. Em cadeias de aquisição e representação digital, a amplitude é descrita por um conjunto finito de níveis, com uma distorção associada [6]. Examinar a sensibilidade das redes a essa redução pode orientar estudos posteriores de armazenamento ou processamento com precisão limitada. Aqui, essa pergunta é abordada no plano preditivo: comparam-se entradas contínuas e reconstruídas em diferentes níveis, sem emular um sensor específico. Uma eventual implantação com aritmética inteira constitui outra etapa, que exigiria implementação e medições próprias, como distingue a abordagem de Jacob et al. [7]."
+  },
+  "new_references": [
+    {
+      "number": 15,
+      "reference": "[15] GUARISO, G.; NUNNARI, G.; SANGIORGIO, M. Multi-Step Solar Irradiance Forecasting and Domain Adaptation of Deep Neural Networks. Energies, v. 13, n. 15, 3987, 2020. DOI: 10.3390/en13153987.",
+      "doi": "https://doi.org/10.3390/en13153987",
+      "primary_url": "https://www.mdpi.com/1996-1073/13/15/3987",
+      "author_repository_url": "https://re.public.polimi.it/handle/11311/1146265",
+      "why_added": "Acrescenta precedente solar autorregressivo com LSTM, informação dinâmica restrita ao histórico e previsão de vários passos, permitindo delimitar a contribuição sem reivindicar novidade de entrada.",
+      "verified_online": true,
+      "verified_claims": [
+        "Autores, ano, periódico, volume, número, identificador de artigo e DOI.",
+        "Formulação puramente autorregressiva descrita no conteúdo primário da editora.",
+        "Seção 3.1: histórico de 24 horas e horizonte variando de 1 a 12 horas.",
+        "Seção 3.2: aplicação das redes em outras estações sem novo treinamento."
+      ],
+      "access_note": "Conteúdo primário da MDPI recuperado pela pesquisa web, incluindo resumo e trechos extensos das seções metodológicas e de resultados. A abertura direta da página retornou limitação de acesso, sem impedir a conferência dos trechos utilizados. Não foram importadas conclusões das notas internas sem confirmação primária."
+    },
+    {
+      "number": 16,
+      "reference": "[16] ZENG, A.; CHEN, M.; ZHANG, L.; XU, Q. Are Transformers Effective for Time Series Forecasting? Proceedings of the AAAI Conference on Artificial Intelligence, v. 37, n. 9, p. 11121–11128, 2023. DOI: 10.1609/aaai.v37i9.26317.",
+      "doi": "https://doi.org/10.1609/aaai.v37i9.26317",
+      "primary_url": "https://ojs.aaai.org/index.php/AAAI/article/view/26317",
+      "author_version_url": "https://arxiv.org/abs/2205.13504",
+      "why_added": "Acrescenta contraponto empírico à ideia de superioridade automática da atenção, sem importar resultados de outras bases para o experimento solar nem acrescentar modelos ao conjunto do TCC.",
+      "verified_online": true,
+      "verified_claims": [
+        "Autores, ano dos anais, volume, número, páginas e DOI na página oficial da AAAI.",
+        "O resumo original questiona a efetividade automática de Transformers em previsão temporal e descreve estudos empíricos de elementos do desenho das arquiteturas.",
+        "A versão dos autores no arXiv tem os mesmos título e autores."
+      ],
+      "access_note": "Metadados e resumo da editora foram recuperados pela pesquisa web; a versão dos autores foi aberta no arXiv. A afirmação empregada é limitada ao objetivo do estudo e não reproduz suas conclusões como uma lei geral contra Transformers."
+    },
+    {
+      "number": 17,
+      "reference": "[17] CHEN, W.; ZHOU, G. An interpretable prediction model for global horizontal irradiance based on Improved-Informer. Measurement, v. 258, parte E, 119449, 2026. DOI: 10.1016/j.measurement.2025.119449.",
+      "doi": "https://doi.org/10.1016/j.measurement.2025.119449",
+      "primary_url": "https://www.sciencedirect.com/science/article/abs/pii/S0263224125028088",
+      "why_added": "Fornece aplicação solar diretamente pertinente ao Informer e esclarece por que o conjunto de entradas e as adaptações do modelo impedem comparação numérica direta com este TCC.",
+      "verified_online": true,
+      "verified_claims": [
+        "Wei Chen e Guobing Zhou, título, Measurement volume 258, parte E, artigo 119449 e DOI na editora.",
+        "Resumo primário: mecanismo continuous rolling, interpretabilidade por LIME, dados meteorológicos de Beijing, verão/inverno e escalas de 10, 30 e 60 minutos.",
+        "O fascículo informado pela editora é de 30 de janeiro de 2026; o 2025 incorporado ao DOI não é o ano do fascículo."
+      ],
+      "access_note": "Foram conferidos metadados, resumo e destaques primários recuperados da ScienceDirect pela pesquisa. Não foi alegada leitura integral do PDF nem utilizados detalhes de partição, escala de erro ou ganho numérico que exigiriam conferência adicional.",
+      "year_note": "A nota bibliográfica antiga do repositório usa 2025; a proposta corrige para o ano do fascículo, 2026."
+    }
+  ],
+  "reused_references": [
+    {
+      "numbers": [3, 4, 5],
+      "use": "Fundamentar a escolha entre recorrência, atenção completa e atenção esparsa. A fundamentação existente já descreve a implementação específica das três redes."
+    },
+    {
+      "numbers": [6, 7],
+      "use": "Distinguir quantização de amplitude de entradas de inferência inteira e quantização de redes; não é necessário aumentar a bibliografia apenas para repetir essa distinção.",
+      "primary_urls_checked": [
+        "https://eecs.umich.edu/courses/eecs651/w03/quantization.pdf",
+        "https://openaccess.thecvf.com/content_cvpr_2018/papers/Jacob_Quantization_and_Training_CVPR_2018_paper.pdf",
+        "https://ieeexplore.ieee.org/abstract/document/8578384"
+      ]
+    },
+    {
+      "numbers": [9, 13],
+      "use": "Situar a previsão solar e a necessidade de distinguir condições informacionais e de avaliação."
+    }
+  ],
+  "editorial_notes": [
+    "Os novos números 15 a 17 são provisórios e devem ser reconciliados com quaisquer outras referências novas na edição principal.",
+    "A seção usa três fontes novas, com alegações qualitativas e diferenças de protocolo, sem importar MAEs, rankings ou resultados de outras arquiteturas.",
+    "A motivação apresenta armazenamento e processamento de precisão limitada como estudos posteriores, não como benefícios demonstrados pelo TCC.",
+    "A motivação preditiva não implica isolamento causal do arredondamento: a metodologia e a discussão devem continuar informando que as variantes também incluem clipping.",
+    "Evitar acrescentar os trabalhos TimesNet/DilatedRNN da nota interna como novos comparadores; a nota serviu à descoberta bibliográfica, não à definição do escopo atual.",
+    "Não foram incluídos detalhes de artigos marcados FULL TEXT PENDENTE sem nova confirmação em fonte primária."
+  ],
+  "docx_edited": false
+}

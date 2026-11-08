@@ -1,0 +1,340 @@
+WEBVTT
+
+00:00:00.150 --> 00:00:04.957
+O trabalho foi desenvolvido na disciplina
+EA019, com orientação
+
+00:00:05.057 --> 00:00:10.704
+do professor Gustavo Fraidenraich e
+coorientação de Thales Wulfert Cabral.
+
+00:00:10.804 --> 00:00:14.695
+O foco é a previsão em diferentes escalas
+de tempo,
+
+00:00:14.795 --> 00:00:19.450
+em localidades associadas à fabricação de
+veículos elétricos.
+
+00:00:20.150 --> 00:00:24.899
+A irradiância global horizontal, ou GHI,
+representa a potência da radiação
+
+00:00:24.999 --> 00:00:29.106
+solar que chega a uma superfície
+horizontal por unidade de área.
+
+00:00:29.206 --> 00:00:31.645
+Sua unidade é watt por metro quadrado.
+
+00:00:31.745 --> 00:00:37.007
+Parte dessa radiação chega diretamente do
+Sol, e parte é espalhada pela atmosfera.
+
+00:00:37.107 --> 00:00:40.701
+A geometria solar estabelece padrões
+diários e sazonais,
+
+00:00:40.801 --> 00:00:44.074
+enquanto as condições atmosféricas alteram
+a curva.
+
+00:00:44.174 --> 00:00:47.704
+Assim, mesmo quando conhecemos o
+comportamento passado,
+
+00:00:47.804 --> 00:00:50.179
+o futuro não é uma simples repetição.
+
+00:00:50.279 --> 00:00:54.450
+A pergunta é: quanto conseguimos antecipar
+usando esse histórico?
+
+00:00:55.150 --> 00:00:59.024
+Prever o recurso solar pode apoiar o
+planejamento energético.
+
+00:00:59.124 --> 00:01:01.093
+Meu objetivo foi comparar LSTM,
+
+00:01:01.193 --> 00:01:05.258
+Transformer e Informer em diferentes
+escalas de tempo e examinar
+
+00:01:05.358 --> 00:01:08.915
+a influência das entradas e do histórico
+de treinamento.
+
+00:01:09.015 --> 00:01:10.793
+O estudo avalia irradiância;
+
+00:01:10.893 --> 00:01:14.450
+o contexto industrial orienta a escolha
+das localidades.
+
+00:01:15.150 --> 00:01:21.386
+Utilizei estimativas da base NSRDB para
+dez localidades associadas à fabricação
+
+00:01:21.486 --> 00:01:27.643
+de veículos elétricos: uma no Brasil, oito
+nos Estados Unidos e uma no México.
+
+00:01:27.743 --> 00:01:34.058
+Esses dados representam células da base, e
+não sensores instalados nas fábricas.
+
+00:01:34.158 --> 00:01:38.657
+As redes receberam o histórico de GHI e
+uma representação
+
+00:01:38.757 --> 00:01:41.994
+aprendida da identificação da localidade.
+
+00:01:42.094 --> 00:01:45.804
+Temperatura, imagens e previsões
+meteorológicas
+
+00:01:45.904 --> 00:01:48.982
+não foram entradas desses experimentos.
+
+00:01:49.082 --> 00:01:54.450
+Os parâmetros foram compartilhados entre
+as localidades do conjunto.
+
+00:01:55.150 --> 00:01:58.160
+Organizei quatro tarefas de previsão.
+
+00:01:58.260 --> 00:02:01.677
+Na horária, usei trezentas e trinta e seis
+
+00:02:01.777 --> 00:02:05.438
+horas para prever as próximas setenta e
+duas.
+
+00:02:05.538 --> 00:02:10.745
+Na diária, trezentos e sessenta e cinco
+dias para prever trinta.
+
+00:02:10.845 --> 00:02:16.865
+Nas tarefas mensais, utilizei doze meses
+para prever um mês ou seis meses.
+
+00:02:16.965 --> 00:02:20.464
+São redes treinadas para tarefas
+distintas.
+
+00:02:20.564 --> 00:02:24.794
+Por isso, o primeiro passo da previsão de
+seis meses
+
+00:02:24.894 --> 00:02:29.450
+não deve ser confundido com a tarefa
+mensal de um passo.
+
+00:02:30.150 --> 00:02:36.650
+No protocolo consolidado, separei os
+períodos em treinamento inicial,
+
+00:02:36.750 --> 00:02:42.517
+de dois mil e dezenove a dois mil e vinte
+e dois; validação,
+
+00:02:42.617 --> 00:02:48.961
+em dois mil e vinte e três; e teste, em
+dois mil e vinte e quatro.
+
+00:02:49.061 --> 00:02:53.963
+As configurações seguiram a seleção pela
+validação,
+
+00:02:54.063 --> 00:02:58.485
+com novo ajuste nos dados anteriores ao
+teste.
+
+00:02:58.585 --> 00:03:04.160
+A avaliação é retrospectiva, e sua
+interpretação considera
+
+00:03:04.260 --> 00:03:09.450
+que já existia exposição anterior ao
+período de teste.
+
+00:03:10.150 --> 00:03:15.836
+Os modelos tratam o histórico de maneiras
+diferentes.
+
+00:03:15.936 --> 00:03:22.436
+A LSTM percorre a sequência e atualiza uma
+representação de memória.
+
+00:03:22.536 --> 00:03:26.720
+O Transformer usa atenção para combinar
+
+00:03:26.820 --> 00:03:31.969
+informações de diferentes posições da
+sequência.
+
+00:03:32.069 --> 00:03:37.111
+As posições temporais também são
+representadas,
+
+00:03:37.211 --> 00:03:40.751
+para indicar a ordem dos valores.
+
+00:03:40.851 --> 00:03:46.537
+O Informer utiliza uma estratégia de
+atenção esparsa,
+
+00:03:46.637 --> 00:03:53.137
+chamada ProbSparse, e reduz representações
+entre camadas do codificador.
+
+00:03:53.237 --> 00:03:57.850
+Esses desenhos simplificam as
+arquiteturas.
+
+00:03:57.950 --> 00:04:04.450
+O estudo compara precisão preditiva, sem
+medir velocidade ou consumo de memória.
+
+00:04:05.150 --> 00:04:10.439
+Também comparei o histórico contínuo com
+entradas representadas em sessenta
+
+00:04:10.539 --> 00:04:15.406
+e quatro, cento e vinte e oito ou duzentos
+e cinquenta e seis níveis.
+
+00:04:15.506 --> 00:04:19.455
+Visualmente, é como aproximar as
+amplitudes por degraus.
+
+00:04:19.555 --> 00:04:23.364
+Apenas a entrada de GHI passou por essa
+transformação;
+
+00:04:23.464 --> 00:04:26.496
+os pesos e as saídas continuaram
+contínuos.
+
+00:04:26.596 --> 00:04:28.430
+Nas variantes quantizadas,
+
+00:04:28.530 --> 00:04:33.114
+valores extremos também foram limitados ao
+intervalo normalizado.
+
+00:04:33.214 --> 00:04:36.529
+A condição selecionada na validação foi
+mantida
+
+00:04:36.629 --> 00:04:39.450
+na apresentação dos resultados do teste.
+
+00:04:40.150 --> 00:04:42.264
+Para avaliar as previsões,
+
+00:04:42.364 --> 00:04:46.348
+usei principalmente o erro absoluto médio,
+o MAE.
+
+00:04:46.448 --> 00:04:50.594
+Ele resume a distância entre previsão e
+referência,
+
+00:04:50.694 --> 00:04:53.296
+na mesma unidade da irradiância.
+
+00:04:53.396 --> 00:04:59.819
+Calculei as métricas por localidade e
+depois obtive uma média com pesos iguais.
+
+00:04:59.919 --> 00:05:06.098
+Nos resultados cumulativos, o erro reúne
+os passos até o horizonte indicado;
+
+00:05:06.198 --> 00:05:09.450
+não representa apenas o último instante.
+
+00:05:10.150 --> 00:05:16.650
+Nas configurações selecionadas, o
+Transformer apresentou o menor MAE
+
+00:05:16.750 --> 00:05:23.250
+agregado nos horizontes completos horário
+e diário: cinquenta e três vírgula
+
+00:05:23.350 --> 00:05:29.850
+vinte e um e quarenta e três vírgula
+oitenta e nove watts por metro quadrado.
+
+00:05:29.950 --> 00:05:34.018
+As vantagens sobre a LSTM foram pequenas:
+
+00:05:34.118 --> 00:05:39.874
+cerca de zero vírgula trinta e dois e zero
+vírgula trinta.
+
+00:05:39.974 --> 00:05:41.958
+Nas tarefas mensais,
+
+00:05:42.058 --> 00:05:48.558
+o Informer com cento e vinte e oito níveis
+apresentou os menores erros: doze
+
+00:05:48.658 --> 00:05:55.158
+vírgula setenta e três em um mês e treze
+vírgula sessenta e sete em seis meses.
+
+00:05:55.258 --> 00:06:00.915
+A liderança também variou entre
+localidades e horizontes.
+
+00:06:01.015 --> 00:06:03.992
+Na tarefa diária, por exemplo,
+
+00:06:04.092 --> 00:06:09.450
+a LSTM liderou os recortes menores, até
+quatorze dias.
+
+00:06:10.150 --> 00:06:13.276
+A quantização não trouxe vantagem
+universal.
+
+00:06:13.376 --> 00:06:17.142
+Em uma análise histórica separada, com
+teste pareado,
+
+00:06:17.242 --> 00:06:22.784
+o histórico longo apresentou menor MAE em
+onze das doze combinações contínuas.
+
+00:06:22.884 --> 00:06:25.868
+Incluir anos anteriores esteve associado à
+
+00:06:25.968 --> 00:06:29.450
+melhora na maioria dos controles, sem
+garanti-la.
+
+00:06:30.150 --> 00:06:35.271
+Os resultados são descritivos, sem
+demonstração de significância estatística.
+
+00:06:35.371 --> 00:06:39.894
+O horário utilizou uma semente, e seis
+meses permanece exploratório.
+
+00:06:39.994 --> 00:06:44.450
+Há sobreposição de alvos; localidades
+inéditas não foram avaliadas.
+
+00:06:45.150 --> 00:06:50.624
+Neste estudo, o Transformer liderou os
+horizontes completos horário e diário;
+
+00:06:50.724 --> 00:06:52.359
+o Informer, os mensais.
+
+00:06:52.459 --> 00:06:54.450
+A escolha depende da tarefa.

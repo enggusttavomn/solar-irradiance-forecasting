@@ -1,0 +1,223 @@
+{
+  "version": 8,
+  "duration": 62,
+  "cues": [
+    [
+      0,
+      6,
+      "As tarefas mensais usam redes distintas: uma prevê um mês e outra, seis."
+    ],
+    [
+      6,
+      12,
+      "Embora seus primeiros valores se refiram ao mês seguinte, vêm de treinamentos diferentes."
+    ],
+    [
+      12,
+      19,
+      "Treinei inicialmente com dados de 2019 a 2022."
+    ],
+    [
+      19,
+      26,
+      "A validação usa 2023, e o teste, 2024."
+    ],
+    [
+      26,
+      32,
+      "A validação orientou a escolha das configurações. A normalização respeitou os cortes temporais."
+    ],
+    [
+      32,
+      38,
+      "A escolha foi feita por tarefa e modelo, entre as alternativas do protocolo consolidado."
+    ],
+    [
+      38,
+      49,
+      "Após a seleção, reiniciei o treinamento em 2019–2023. Depois, avaliei em 2024."
+    ],
+    [
+      49,
+      56,
+      "Teste retrospectivo: havia exposição anterior a 2024, com independência limitada."
+    ],
+    [
+      56,
+      59,
+      "Neste estudo, comparamos a precisão das previsões."
+    ],
+    [
+      59,
+      62,
+      "Velocidade e memória computacional não foram medidas."
+    ]
+  ],
+  "qa_times": [
+    3,
+    8.5,
+    16,
+    23,
+    29,
+    35.5,
+    41.8,
+    47.5,
+    52.5,
+    59.5
+  ],
+  "global_scope_seconds": [
+    224,
+    286
+  ],
+  "monthly_first_outputs_same_target_month": true,
+  "monthly_training_objectives_distinct": [
+    1,
+    6
+  ],
+  "separate_monthly_networks": true,
+  "comparison_variable": "predictive precision",
+  "speed_measured": false,
+  "memory_measured": false,
+  "protocol": {
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "training_initial": [
+      2019,
+      2022
+    ],
+    "validation": 2023,
+    "refit": [
+      2019,
+      2023
+    ],
+    "test": 2024,
+    "configuration_selection_visual": "symbolic candidates without invented validation error scores",
+    "fresh_training_restarted": true,
+    "prior_exposure_to_test_explicit": true,
+    "prior_exposure_not_drawn_as_training_on_test": true
+  },
+  "source_report_pages": [
+    11,
+    12,
+    13,
+    15,
+    29
+  ],
+  "source_audit": "documentacao/relatorio_final_ea019/video/completo_v8/fontes_resultados_v8.json",
+  "illustrative_geometry_not_measured_forecasts": true,
+  "object_count": 219,
+  "chapter": "metodologia",
+  "start": 224,
+  "end": 286,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\metodologia_v8.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\metodologia_3d_v8.mp4",
+  "fps": 30,
+  "frames": 1860,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "resolution_percentage": 100,
+  "samples": 16,
+  "render_complete": true,
+  "source_fingerprint": "2a0292b1f7466d1c1db177fb1dd8fc838374a6790c30c3b971ab26dc38eef037",
+  "source_hashes": {
+    "codigo_fonte\\video_ea019\\director_v8.py": "8acbf3219a7c301f7f5c15e761bd881e37413ba51b0900df805f8cd62cff7512",
+    "codigo_fonte\\video_ea019\\methodology_v8.py": "426aedaa97d1b983c860a64b32ac058161176a4c39ece0d65a54a70bf95f39d8",
+    "codigo_fonte\\video_ea019\\common_v7.py": "4867b4c429436a2e602de07bbbc1d16d6644506917894c8dca3588dc7e4e3587",
+    "codigo_fonte\\video_ea019\\blender_pilot.py": "d048c56e8559a13e2eb462299421e618817bdd0fee186412172e75843ad3207d",
+    "codigo_fonte\\video_ea019\\factory_site_v6.py": "9ef07ea1f676d8970a2d007c0bf2918ddf63c7cad3b0ad00d3ac0d7723d23c55",
+    "documentacao\\relatorio_final_ea019\\video\\completo_v8\\fontes_resultados_v8.json": "de42f0a99982bca8f029a92f91df7694a3855b1a44614ba6deeb8aa2d7b56494"
+  },
+  "blocks": [
+    {
+      "first_frame": 1,
+      "last_frame": 300,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\metodologia\\f00001_00300.mp4",
+      "bytes": 2941001,
+      "sha256": "b3ab4ab5b9b08e7385b9d476bd3899d716699997a7ceef4e90f359ab76809661",
+      "source_fingerprint": "2a0292b1f7466d1c1db177fb1dd8fc838374a6790c30c3b971ab26dc38eef037",
+      "reused": true
+    },
+    {
+      "first_frame": 301,
+      "last_frame": 600,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\metodologia\\f00301_00600.mp4",
+      "bytes": 3102212,
+      "sha256": "18b9de098ff68c0fc1afd4d89990923ae15219cbba5e1e76e1026da89048032d",
+      "source_fingerprint": "2a0292b1f7466d1c1db177fb1dd8fc838374a6790c30c3b971ab26dc38eef037",
+      "reused": true
+    },
+    {
+      "first_frame": 601,
+      "last_frame": 900,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\metodologia\\f00601_00900.mp4",
+      "bytes": 2997131,
+      "sha256": "a01623ceaaad103e6f1caf21f31efd056954a03a49b75bcd8beabc63fb7e6dd1",
+      "source_fingerprint": "2a0292b1f7466d1c1db177fb1dd8fc838374a6790c30c3b971ab26dc38eef037",
+      "reused": true
+    },
+    {
+      "first_frame": 901,
+      "last_frame": 1200,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\metodologia\\f00901_01200.mp4",
+      "bytes": 3122760,
+      "sha256": "bd28aefb4cb07206a80352cea6c6e9b59a9b23fcb6dd7876141a3ed879dd2d2c",
+      "source_fingerprint": "2a0292b1f7466d1c1db177fb1dd8fc838374a6790c30c3b971ab26dc38eef037",
+      "reused": true
+    },
+    {
+      "first_frame": 1201,
+      "last_frame": 1500,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\metodologia\\f01201_01500.mp4",
+      "bytes": 2911285,
+      "sha256": "8b3150d7a12d3b459f94c80a5e51d1251977e2a86b11350580e023cf7a47f9f7",
+      "source_fingerprint": "2a0292b1f7466d1c1db177fb1dd8fc838374a6790c30c3b971ab26dc38eef037",
+      "reused": true
+    },
+    {
+      "first_frame": 1501,
+      "last_frame": 1800,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\metodologia\\f01501_01800.mp4",
+      "bytes": 3288532,
+      "sha256": "1256b34544ad706bcc573dc3336f9a76f947dc001d142a65c53ec05af83212e0",
+      "source_fingerprint": "2a0292b1f7466d1c1db177fb1dd8fc838374a6790c30c3b971ab26dc38eef037",
+      "reused": false
+    },
+    {
+      "first_frame": 1801,
+      "last_frame": 1860,
+      "frame_count": 60,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\metodologia\\f01801_01860.mp4",
+      "bytes": 580683,
+      "sha256": "6d20c0104f31d72cb93e07c24e1b93f974fb76858316e9a34a7d4b78844c9f49",
+      "source_fingerprint": "2a0292b1f7466d1c1db177fb1dd8fc838374a6790c30c3b971ab26dc38eef037",
+      "reused": false
+    }
+  ],
+  "raw_verification": {
+    "path": "documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\metodologia_3d_v8.mp4",
+    "bytes": 18942667,
+    "sha256": "7161e2d635dc8dee93f87eee08c3cb352d40d045ea225f01576bdb5ab8dcfbf2",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frame_count": 1860,
+    "duration_seconds": 62,
+    "codec": "H.264",
+    "audio_tracks": 0,
+    "full_decode_errors": 0
+  }
+}

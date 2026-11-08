@@ -1,0 +1,25 @@
+PILOTO VISUAL 3D — EA019 — V1
+
+Abrir assistir_piloto.html ou o MP4 com legendas.
+
+Saídas finais:
+- piloto_ghi_v1_com_legendas.mp4: títulos, rótulos e legendas embutidas.
+- piloto_ghi_v1_sem_legendas.mp4: conserva títulos e rótulos, sem legendas de fala.
+- piloto_ghi_v1.srt: legendas condensadas deste piloto.
+
+Características planejadas para estas saídas: 30 segundos, Full HD 1920×1080,
+30 quadros por segundo, H.264, sem áudio e sem imagens do aluno.
+
+Este é um piloto condensado para avaliar aparência, movimento e texto. As
+curvas são ilustrativas. As falas do vídeo completo de 6min55s permanecem
+em ../trecho_animado_v2/falas_trecho_animado_v2.txt. O piloto não substitui
+automaticamente esse roteiro nem representa todo o trecho animado.
+
+Projeto editável: piloto_ghi_v1.blend.
+Render interno sem títulos: piloto_ghi_v1_sem_textos.mp4.
+Código e comandos: ../../../../codigo_fonte/video_ea019/README.md.
+Verificação técnica após a composição: verificacao_mp4_piloto_v1.json.
+Quadros extraídos para revisão: verificacao_visual/.
+
+Os MP4s são silenciosos para receber sua narração depois. Não foi gerada
+voz sintética nem simulada a voz do aluno.

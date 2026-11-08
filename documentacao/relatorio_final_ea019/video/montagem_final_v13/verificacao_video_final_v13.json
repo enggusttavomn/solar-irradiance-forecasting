@@ -1,0 +1,85 @@
+{
+  "version": 13,
+  "status": "complete",
+  "files": [
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v13\\Video_TCC_Final_SomenteVozNatural_v13.mp4",
+      "bytes": 54404389,
+      "sha256": "575c4c87f873c92b224fc37d9955c1dcfda45af548959cd93860c59d4df99f89",
+      "has_audio": true,
+      "ffmpeg_header": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\montagem_final_v13\\Video_TCC_Final_SomenteVozNatural_v13.mp4':\n  Metadata:\n    major_brand     : isom\n    minor_version   : 512\n    compatible_brands: isomiso2avc1mp41\n    encoder         : Lavf61.7.100\n  Duration: 00:08:08.90, start: 0.000000, bitrate: 890 kb/s\n  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 650 kb/s, 30 fps, 30 tbr, 15360 tbn (default)\n      Metadata:\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 230 kb/s (default)\n      Metadata:\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\nAt least one output file must be specified\n",
+      "full_decode_errors": "",
+      "decoded_frames": 14667,
+      "mp4_header": {
+        "handler": "vide",
+        "media_timescale": 15360,
+        "duration_seconds": 488.9,
+        "width": 1920.0,
+        "height": 1080.0,
+        "frame_count": 14667,
+        "sample_table_seconds": 488.9,
+        "fps": 30.0,
+        "codec_tag": "avc1",
+        "avc_profile_idc": 100,
+        "avc_level_idc": 40,
+        "video_tracks": 1,
+        "audio_tracks": 1
+      }
+    },
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v13\\Video_TCC_Final_ComTrilhaVozNatural_v13.mp4",
+      "bytes": 56254339,
+      "sha256": "2789059249fe6f1964156853cf133dba23f9334d2df28f2063c0c5ca83a13ba5",
+      "has_audio": true,
+      "ffmpeg_header": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\montagem_final_v13\\Video_TCC_Final_ComTrilhaVozNatural_v13.mp4':\n  Metadata:\n    major_brand     : isom\n    minor_version   : 512\n    compatible_brands: isomiso2avc1mp41\n    encoder         : Lavf61.7.100\n  Duration: 00:08:08.90, start: 0.000000, bitrate: 920 kb/s\n  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 650 kb/s, 30 fps, 30 tbr, 15360 tbn (default)\n      Metadata:\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 261 kb/s (default)\n      Metadata:\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\nAt least one output file must be specified\n",
+      "full_decode_errors": "",
+      "decoded_frames": 14667,
+      "mp4_header": {
+        "handler": "vide",
+        "media_timescale": 15360,
+        "duration_seconds": 488.9,
+        "width": 1920.0,
+        "height": 1080.0,
+        "frame_count": 14667,
+        "sample_table_seconds": 488.9,
+        "fps": 30.0,
+        "codec_tag": "avc1",
+        "avc_profile_idc": 100,
+        "avc_level_idc": 40,
+        "video_tracks": 1,
+        "audio_tracks": 1
+      }
+    }
+  ],
+  "duration_seconds": 488.9,
+  "frames": 14667,
+  "fps": 30,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "voice_natural_original": true,
+  "voice_processing_filters": [],
+  "voice_constant_gain_db": -1.0,
+  "music_ducking_used": true,
+  "same_video_bitstream": true,
+  "video_stream_sha256": "SHA256=537b1a2467725bf77a6e31fdefe634e3a8066b633a9a466cb4bf6f79389b02c7",
+  "manifest_path": "documentacao/relatorio_final_ea019/video/montagem_final_v13/manifesto_voz_natural_v13.json",
+  "completed_utc": "2026-11-05T14:33:31.520389+00:00",
+  "audio_review_passed": true,
+  "sampled_visual_review_passed": true,
+  "final_retaken_ending_verified": true,
+  "qa": {
+    "audio_qa": "tmp\\montagem_final_v13\\qa_audio_original_v13.json",
+    "audio_qa_sha256": "8e3f7840b52d32f89a3bb9338a37d0569e3a92f64337eb603ead36802c56c507",
+    "visual_qa": "tmp\\montagem_final_v13\\qa_visual_transicoes_v13.json",
+    "visual_qa_sha256": "11d4806b580de32c2246a9e918953ae1019457bb064c8be4322812c5acf5ef31",
+    "root_visual_review": "Full-size GHI annotation preview, transition sheets01/08, and6final closing stills inspected.",
+    "audio_source_identity_verified": true,
+    "audio_listening_performed": false,
+    "full_realtime_playback_reviewed": false,
+    "external_uploads_performed": false,
+    "report_modified": false,
+    "publication_deferred_by_user": true
+  }
+}

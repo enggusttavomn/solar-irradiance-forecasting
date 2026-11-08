@@ -1,0 +1,173 @@
+{
+  "id": 8,
+  "start": 245,
+  "end": 280,
+  "duration": 35,
+  "title": "Quantização como transformação das entradas",
+  "narration": "Também comparei o histórico contínuo com entradas representadas em sessenta e quatro, cento e vinte e oito ou duzentos e cinquenta e seis níveis. Visualmente, é como aproximar as amplitudes por degraus. Apenas a entrada de GHI passou por essa transformação; os pesos e as saídas continuaram contínuos. Nas variantes quantizadas, valores extremos também foram limitados ao intervalo normalizado. A condição selecionada na validação foi mantida na apresentação dos resultados do teste.",
+  "label_events": [],
+  "notes": [
+    "O identificador da localidade não passa pelo quantizador; alvos, pesos e saídas não são quantizados.",
+    "Os valores discretizados são reconstruídos em float32; não apresentar o experimento como inferência inteira nem compressão implementada de pesos.",
+    "O controle contínuo não aplica clipping. Os contrastes refletem arredondamento e saturação juntos; não isolam o efeito exclusivo da discretização.",
+    "Não afirmar ausência absoluta de consulta anterior ao teste: a exposição anterior registrada no relatório já foi apresentada na cena 7."
+  ],
+  "start_seconds": 245,
+  "end_seconds": 280,
+  "duration_seconds": 35,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v4\\cenas\\cena_08.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v4\\cenas\\cena_08_3d.mp4",
+  "frame_count": 1050,
+  "rendered": false,
+  "scene_metadata": {
+    "native_geometry": true,
+    "real_levels": [
+      64,
+      128,
+      256
+    ],
+    "steps_for_demonstration": 8
+  },
+  "render_style": {
+    "chapter_id": 8,
+    "engine": "BLENDER_WORKBENCH",
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "antialiasing": "8",
+    "codec": "H264",
+    "encoding_preset": "REALTIME",
+    "background_srgb_hex": "#07090D",
+    "palette": {
+      "background": "#07090D",
+      "graphite": "#171C22",
+      "white": "#F3F5F7",
+      "secondary": "#A9B2BE",
+      "axes": "#626D7A",
+      "gold": "#E9B95F",
+      "coral": "#F28779",
+      "cyan": "#58CADA",
+      "violet": "#AA91E8"
+    },
+    "hidden_decorative_objects": [],
+    "materials": [
+      {
+        "material": "Arredondar · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Clipping · texto",
+        "srgb_hex": "#E9B95F",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "GHI · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "ID · texto",
+        "srgb_hex": "#58CADA",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Limite 0 · texto",
+        "srgb_hex": "#A9B2BE",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Limite 1 · texto",
+        "srgb_hex": "#A9B2BE",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Mantida · texto",
+        "srgb_hex": "#E9B95F",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Níveis 128 · texto",
+        "srgb_hex": "#E9B95F",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Níveis 256 · texto",
+        "srgb_hex": "#E9B95F",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Níveis 64 · texto",
+        "srgb_hex": "#E9B95F",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Níveis None · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Quantizador · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Quantização v4 body",
+        "srgb_hex": "#344456",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Quantização v4 cyan",
+        "srgb_hex": "#58CADA",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Quantização v4 gold",
+        "srgb_hex": "#E9B95F",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Quantização v4 muted",
+        "srgb_hex": "#A9B2BE",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Quantização v4 white",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Teste · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Validação · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "float32 · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      }
+    ],
+    "baked_emission_focus": [],
+    "camera_and_timing_unchanged": true,
+    "version": 4,
+    "perspective_camera": true,
+    "specular_highlights": true,
+    "no_fixed_headers": true
+  },
+  "qa_times": [
+    3,
+    8,
+    12,
+    17,
+    23,
+    27,
+    32
+  ]
+}

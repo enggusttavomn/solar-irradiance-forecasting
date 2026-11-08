@@ -1,104 +1,80 @@
-# Sincronização automática com o GitHub
+# Sincronização do EA019 com o GitHub pelo VS Code
 
-A tarefa do Windows `EA019-GitHub-AutoSync` inicia um monitor ao entrar na
-conta do Windows. Ele observa as alterações salvas neste projeto e, após
-15 segundos sem novos salvamentos, cria um commit e faz push para `origin/main`.
-Arquivos novos, alterações, renomeações e exclusões entram no commit.
-Não há verificação de envio a cada minuto: o monitor é acionado por alterações.
+A sincronização está vinculada ao salvamento no VS Code, somente neste projeto.
+Após 15 segundos sem novos salvamentos, a extensão local **EA019: GitHub ao salvar**
+executa um ciclo de commit e envio para `origin/main`. O processo Python encerra
+quando o envio termina. Em repouso, não há monitor externo nem consulta periódica
+ao GitHub; a integração utiliza os eventos do VS Code já aberto.
 
-O monitor utiliza `pythonw.exe`, sem abrir PowerShell ou Terminal. O computador
-precisa estar ligado, com sua conta conectada e acesso à internet. O ChatGPT
-não precisa ficar aberto. Ao iniciar, o monitor também verifica alterações
-pendentes feitas enquanto estava desligado. Sem internet, os commits permanecem
-locais e o monitor tenta novamente com intervalos progressivos enquanto houver
-envio pendente. Salve e aguarde o envio antes de desligar o computador.
+A tarefa antiga `EA019-GitHub-AutoSync` do Windows permanece desabilitada.
+Não use o instalador antigo de monitor para configurar este modo.
 
-## Instalar ou reativar
+## Uso diário
 
-Na raiz do projeto, execute no PowerShell:
+Abra esta pasta no VS Code, edite e salve normalmente. Arquivos novos,
+renomeações e exclusões feitos pelo explorador do VS Code também acionam o envio.
+O ciclo considera todas as alterações elegíveis pendentes no repositório,
+respeitando o `.gitignore`, e não apenas o último arquivo salvo.
 
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\codigo_fonte\publicacoes\configurar_sincronizacao_automatica.ps1
+Aguarde os 15 segundos e a conclusão do envio antes de fechar o editor ou desligar
+o computador. Fechar o VS Code cancela um envio que ainda estava apenas agendado;
+um envio já iniciado pode terminar normalmente. Alterações feitas fora do VS Code
+serão consideradas no próximo salvamento pelo editor ou no comando manual abaixo.
+
+Para iniciar um envio pelo editor, abra a paleta de comandos (`Ctrl+Shift+P`) e
+selecione **EA019: Enviar alteracoes ao GitHub agora**.
+
+Sem rede, os commits permanecem locais. Um novo salvamento ou o comando acima
+tenta enviá-los novamente. Não há tentativas periódicas em segundo plano.
+
+## Consultar o resultado
+
+No VS Code, abra **Exibir > Saída** e escolha **EA019: GitHub ao salvar**.
+O sincronizador também registra o resultado em `.git/auto-sync/status.json` e
+`.git/auto-sync/sync.log`. Esses arquivos não entram nos commits.
+
+O envio aguarda se a branch atual não for `main`, houver alterações preparadas
+manualmente para commit, conflito, merge/rebase ou bloqueio Git. Conclua essa
+operação e salve novamente ou use o comando de envio para retomar.
+
+Se o GitHub tiver commits que a cópia local ainda não recebeu, o envio é
+interrompido. Atualize e integre a cópia local manualmente. A automação não executa
+pull, reset ou push forçado. Arquivos de 100 MiB ou mais exigem tratamento manual.
+
+## Configuração vinculada à pasta
+
+A habilitação e os caminhos ficam em `.vscode/settings.json`, apenas neste projeto:
+
+```json
+{
+  "ea019GitHubSync.enabled": true,
+  "ea019GitHubSync.delaySeconds": 15,
+  "ea019GitHubSync.pythonPath": ".tools/python/cpython-3.12.16-windows-x86_64-none/python.exe",
+  "ea019GitHubSync.gitPath": "C:/Program Files/Git/cmd/git.exe"
+}
 ```
 
-O instalador utiliza o Python de `.venv\Scripts\python.exe`, quando disponível,
-ou um Python 3.10 ou superior no PATH, além do Git for Windows. É necessário
-ter `pythonw.exe` junto ao Python selecionado. A tarefa guarda os caminhos
-completos dos executáveis e usa as credenciais Git existentes da sua conta,
-sem salvar senha no script. Executa com os privilégios normais da sua conta.
-Instale-a na sua conta do Windows depois de conseguir fazer um push manual.
+Outras preferências existentes desse arquivo devem ser preservadas. Para desligar,
+defina `ea019GitHubSync.enabled` como `false`. O padrão da extensão é desabilitado
+em todas as outras pastas. A extensão exige uma pasta de trabalho confiável.
 
-O Git precisa ter sua identidade configurada para criar commits. Se ainda
-estiver ausente, configure-a somente neste repositório:
+O caminho do Python é relativo ao projeto e não depende do nome da pasta. Se esse
+Python for substituído, ajuste o caminho na configuração. A sincronização utiliza
+somente a biblioteca padrão do Python e as credenciais Git já configuradas.
 
-```powershell
-git config user.name "Seu nome"
-git config user.email "seu-email-do-github"
-```
+## Reinstalar a extensão
 
-Reinstale se mover a pasta do projeto ou substituir o Python utilizado. A
-instalação migra a tarefa antiga que executava PowerShell a cada minuto e
-recusa substituir uma tarefa de outro projeto ou usuário. Ao reinstalar,
-aguarda o monitor anterior concluir um eventual envio antes de substituí-lo.
-
-## Consultar o envio
+O código da extensão está em `codigo_fonte/publicacoes/vscode_github_sync/`.
+Para gerar um pacote instalável, execute a partir da raiz do projeto:
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\codigo_fonte\publicacoes\configurar_sincronizacao_automatica.ps1 -Status
+& .\.tools\python\cpython-3.12.16-windows-x86_64-none\python.exe .\codigo_fonte\publicacoes\empacotar_extensao_vscode.py
 ```
 
-O comando mostra a tarefa, a última execução e o resultado do sincronizador.
-No modo por alteração, a tarefa permanece `Running` enquanto o monitor está
-ativo; o código `267009` (`0x41301`) significa tarefa em execução.
-Também é possível consultar `.git/auto-sync/status.json`,
-`.git/auto-sync/monitor.json` e `.git/auto-sync/sync.log`. Esses arquivos são
-locais e não entram nos commits. O log mantém um histórico limitado.
+No VS Code, selecione **Extensions: Install from VSIX...** e escolha o pacote
+gerado em `.git/auto-sync/vscode/`. Preserve também as configurações acima ao
+preparar outra cópia do projeto. O `.vscode` é uma configuração local e já é
+ignorado pelo Git neste repositório.
 
-Para verificar o projeto sem criar commit ou fazer push:
-
-```powershell
-.\.venv\Scripts\python.exe .\codigo_fonte\publicacoes\sincronizar_automaticamente.py --check
-```
-
-## Trabalhar em outro computador
-
-Antes de editar no outro computador, atualize sua cópia:
-
-```powershell
-git pull --ff-only
-```
-
-A tarefa funciona neste computador. Para também enviar automaticamente
-alterações feitas em outro Windows, instale-a na cópia daquele computador.
-Os computadores precisam receber as alterações do GitHub antes de continuar
-o trabalho local. O sincronizador faz fetch e push; ele não altera seus
-arquivos com pull automático.
-
-## Quando a automação aguarda
-
-O envio aguarda se você estiver em outra branch, com arquivos já preparados
-manualmente para commit, durante merge/rebase ou enquanto houver conflito ou
-bloqueio do Git. Conclua essa operação para retomar a sincronização.
-
-Se `origin/main` tiver commits que a cópia local ainda não recebeu, a automação
-interrompe o envio e registra o motivo. Atualize a cópia local e resolva os
-conflitos normalmente; a automação não faz push forçado nem substitui o
-histórico remoto. Arquivos com 100 MiB ou mais precisam de tratamento manual,
-pois impedem um push comum para o GitHub.
-
-O `.gitignore` continua valendo: credenciais, ambientes, caches e as saídas
-locais já ignoradas, incluindo os PDFs exportados em `resultados/pdf/`, não
-são enviados. O GitHub recebe as mudanças dos arquivos que fazem parte do
-repositório. Mudanças ainda não salvas no editor ficam fora do envio.
-Os próprios logs do monitor não disparam novos envios.
-
-## Desativar
-
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\codigo_fonte\publicacoes\configurar_sincronizacao_automatica.ps1 -Desativar
-```
-
-O comando impede o início no próximo login e solicita que o monitor encerre.
-Se houver um envio em andamento, ele pode terminar normalmente antes da saída.
-Para reativar, execute novamente o comando de instalação. Os sincronizadores
-manuais `sincronizar_projeto.cmd` e `sincronizar_projeto.sh` continuam disponíveis.
+Os comandos manuais de sincronização existentes continuam disponíveis. O modo
+`--watch` do sincronizador é legado e não é iniciado por esta integração.

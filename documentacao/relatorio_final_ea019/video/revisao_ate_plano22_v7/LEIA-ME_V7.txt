@@ -1,0 +1,51 @@
+REVISÃO V7 — DO INÍCIO ATÉ O PLANO22
+
+Vídeo contínuo de3min44s, sem áudio, para revisão e gravação posterior da
+narração. Inclui os40s aprovados daV6, sem alterar os arquivos anteriores.
+
+ORGANIZAÇÃO ATUAL
+0:00–0:40 Introdução solar, fábrica, GHI e planejamento fotovoltaico aprovados.
+0:40–1:40 LSTM, Transformer e Informer, apresentados individualmente; depois,
+            a mesma entrada percorre os três modelos para comparação.
+1:40–2:34 Localidades, origem NSRDB, distribuições reais e célula geográfica.
+2:34–3:44 Histórico de GHI, identificação da localidade, compartilhamento de
+            parâmetros e quatro tarefas explicadas separadamente.
+
+Os planos9–22 foram ampliados para dar tempo às explicações solicitadas.
+Esta exportação termina no plano22; as cenas posteriores ficam para a
+próxima revisão. A explicação das redes foi antecipada, de modo que sua
+repetição no bloco posterior do roteiro pode ser retirada na montagem final.
+
+DADOS E REPRESENTAÇÕES
+As distribuições usam350.640 estimativas horárias NSRDB do calendário local
+fixo2019–2022,35.064 por localidade. Os perfis positivos são condicionados
+a GHI>0; a fração de horas com GHI=0 aparece separadamente.
+As coordenadas e contornos cartográficos vêm dos arquivos auditados do
+projeto. As fábricas são símbolos e reconstruções genéricas, sem marcas.
+A NSRDB é uma base de dados: não foi inventada uma sede nem um sensor
+nas fábricas. Seu nome aparece como texto, sem um logotipo oficial inventado.
+
+As conexões, estados e valores internos das redes são representações
+didáticas. Não são pesos ou tensores extraídos de redes treinadas.
+A atenção esparsa seleciona consultas; não seleciona simplesmente os
+maiores valores de GHI. A redução interna do Informer é uma etapa distinta.
+Nas janelas de tarefa, a quebra nos eixos indica que a entrada e a saída
+foram ajustadas visualmente em escalas horizontais independentes.
+As curvas usadas para explicar as tarefas não são resultados experimentais.
+
+REFERÊNCIAS CONSULTADAS
+Relatório final do projeto, arquivos de dados e implementações, com hashes
+e páginas registradas em fontes_relatorio_v7.json.
+3Blue1Brown, Attention in transformers, step-by-step:
+https://www.3blue1brown.com/lessons/attention/
+Vaswani etal., Attention Is All You Need:
+https://arxiv.org/abs/1706.03762
+Zhou etal., Informer:
+https://arxiv.org/abs/2012.07436
+Hochreiter e Schmidhuber, Long Short-Term Memory:
+https://www.bioinf.jku.at/publications/older/2604.pdf
+Documentação oficial NSRDB:
+https://developer.nlr.gov/docs/solar/nsrdb/
+
+Os movimentos e objetos desta revisão foram criados para este vídeo;
+não foram incorporados trechos de vídeos dos canais de referência.

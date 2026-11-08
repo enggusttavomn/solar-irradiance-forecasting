@@ -1,0 +1,123 @@
+{
+  "id": 9,
+  "start": 280,
+  "end": 310,
+  "duration": 30,
+  "title": "Como ler o MAE e os horizontes cumulativos",
+  "narration": "Para avaliar as previsões, usei principalmente o erro absoluto médio, o MAE. Ele resume a distância entre previsão e referência, na mesma unidade da irradiância. Calculei as métricas por localidade e depois obtive uma média com pesos iguais. Nos resultados cumulativos, o erro reúne os passos até o horizonte indicado; não representa apenas o último instante.",
+  "label_events": [],
+  "notes": [
+    "Uma animação conceitual da métrica pode usar valores didáticos, desde que identificados como exemplo.",
+    "Nos gráficos de resultados, utilizar somente dados reais conferidos nos artefatos do projeto.",
+    "Previsões de origens distintas para um mesmo alvo permanecem na avaliação, e a sobreposição introduz dependência entre os erros.",
+    "No horário, leads exatos de 24, 48 e 72 horas podem coincidir com a noite; não usar valores nulos nesses instantes como evidência de previsão diurna perfeita."
+  ],
+  "start_seconds": 280,
+  "end_seconds": 310,
+  "duration_seconds": 30,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v4\\cenas\\cena_09.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v4\\cenas\\cena_09_3d.mp4",
+  "frame_count": 900,
+  "rendered": false,
+  "scene_metadata": {
+    "metric": "macro-MAE W/m²",
+    "equal_locality_weights": 10,
+    "cumulative": true
+  },
+  "render_style": {
+    "chapter_id": 9,
+    "engine": "BLENDER_WORKBENCH",
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "antialiasing": "8",
+    "codec": "H264",
+    "encoding_preset": "REALTIME",
+    "background_srgb_hex": "#07090D",
+    "palette": {
+      "background": "#07090D",
+      "graphite": "#171C22",
+      "white": "#F3F5F7",
+      "secondary": "#A9B2BE",
+      "axes": "#626D7A",
+      "gold": "#E9B95F",
+      "coral": "#F28779",
+      "cyan": "#58CADA",
+      "violet": "#AA91E8"
+    },
+    "hidden_decorative_objects": [],
+    "materials": [
+      {
+        "material": "Acumulado · texto",
+        "srgb_hex": "#A9B2BE",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Horizonte · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "MAE v4 body",
+        "srgb_hex": "#344456",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "MAE v4 cyan",
+        "srgb_hex": "#58CADA",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "MAE v4 gold",
+        "srgb_hex": "#E9B95F",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "MAE v4 muted",
+        "srgb_hex": "#A9B2BE",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "MAE v4 white",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Macro · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Métrica · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Previsão · texto",
+        "srgb_hex": "#E9B95F",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Referência · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      }
+    ],
+    "baked_emission_focus": [],
+    "camera_and_timing_unchanged": true,
+    "version": 4,
+    "perspective_camera": true,
+    "specular_highlights": true,
+    "no_fixed_headers": true
+  },
+  "qa_times": [
+    3,
+    8,
+    12,
+    16.5,
+    23,
+    28
+  ]
+}

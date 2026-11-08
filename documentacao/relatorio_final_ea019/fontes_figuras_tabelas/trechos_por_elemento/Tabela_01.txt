@@ -1,0 +1,56 @@
+Tabela 1 — Localidades e coordenadas de referência
+Página(s) do PDF: 10
+
+TRECHOS PARA CONSULTA. Use os arquivos completos em originais/ para edição.
+Os números à esquerda são as linhas originais; este TXT não é executável.
+
+table
+Arquivo original: tmp/relatorio_final_ea019/build_report_completo.py
+Linhas: 275–280
+
+ 275 | sites=[['BYD Camaçari','BR','−12,6734','−38,2812'],['Tesla Nevada','EUA','39,5404','−119,4391'],['Tesla Texas','EUA','30,2219','−97,6188'],['Hyundai Georgia','EUA','32,1605','−81,4510'],['Rivian Normal','EUA','40,5093','−89,0545'],['Tesla Fremont','EUA','37,4927','−121,9415'],['Lucid Casa Grande','EUA','32,8569','−111,7784'],['GM Factory Zero','EUA','42,3815','−83,0453'],['Ford Rouge EV Center','EUA','42,3056','−83,1676'],['BMW San Luis Potosí','MX','21,9683','−100,8492']]
+ 276 | fig('11_mapa','Distribuição geográfica e contexto climático das dez localidades',
+ 277 |     'Mapa reproduzido da Figura 1 do artigo [14]. Os números 1 a 10 seguem a ordem da Tabela 1. Os painéis ampliam os Estados Unidos e a região de Detroit. Cores e códigos climáticos têm função descritiva e não são entradas dos modelos.',
+ 278 |     source='Nascimento, Cabral e Fraidenraich [14]')
+ 279 | page()
+ 280 | table('Localidades e coordenadas de referência',['Localidade','País','Latitude','Longitude'],sites,[7.7,2,3.65,3.65],note='Coordenadas em graus decimais, conforme a tabela de localidades do manuscrito do projeto.')
+
+Função auxiliar que formata e insere a tabela
+Arquivo original: tmp/relatorio_final_ea019/build_report_completo.py
+Linhas: 125–159
+
+ 125 | def table(title,heads,rows,widths=None,note='',size=10.5):
+ 126 |     global tn
+ 127 |     tn+=1
+ 128 |     c=p(f'Tabela {tn} — {title}','Caption');c.paragraph_format.keep_with_next=True
+ 129 |     t=doc.add_table(rows=1, cols=len(heads));t.alignment=WD_TABLE_ALIGNMENT.CENTER;t.autofit=False
+ 130 |     if widths is None:widths=[17/len(heads)]*len(heads)
+ 131 |     for col,w in zip(t.columns,widths):col.width=Cm(w)
+ 132 |     tblPr=t._tbl.tblPr
+ 133 |     borders=OxmlElement('w:tblBorders')
+ 134 |     for side in ['top','left','bottom','right','insideH','insideV']:
+ 135 |         el=OxmlElement('w:'+side)
+ 136 |         for k,v in [('val','single'),('sz','4'),('color','D9D9D9')]:el.set(qn('w:'+k),v)
+ 137 |         borders.append(el)
+ 138 |     tblPr.append(borders)
+ 139 |     margins=OxmlElement('w:tblCellMar')
+ 140 |     for side in ['top','left','bottom','right']:
+ 141 |         el=OxmlElement('w:'+side);el.set(qn('w:w'),'90');el.set(qn('w:type'),'dxa');margins.append(el)
+ 142 |     tblPr.append(margins)
+ 143 |     for j,s in enumerate(heads):t.rows[0].cells[j].text=str(s)
+ 144 |     repeat=OxmlElement('w:tblHeader');repeat.set(qn('w:val'),'true');t.rows[0]._tr.get_or_add_trPr().append(repeat)
+ 145 |     for row in rows:
+ 146 |         cells=t.add_row().cells
+ 147 |         for j,s in enumerate(row):cells[j].text=str(s)
+ 148 |     for i,row in enumerate(t.rows):
+ 149 |         pr=row._tr.get_or_add_trPr();pr.append(OxmlElement('w:cantSplit'))
+ 150 |         for j,cell in enumerate(row.cells):
+ 151 |             cell.width=Cm(widths[j]);cell.vertical_alignment=WD_CELL_VERTICAL_ALIGNMENT.CENTER
+ 152 |             if i==0:
+ 153 |                 sh=OxmlElement('w:shd');sh.set(qn('w:fill'),'E8ECEF');cell._tc.get_or_add_tcPr().append(sh)
+ 154 |             for par in cell.paragraphs:
+ 155 |                 par.style=styles['TabelaCorpo'];par.alignment=WD_ALIGN_PARAGRAPH.LEFT if j==0 else WD_ALIGN_PARAGRAPH.CENTER
+ 156 |                 if len(rows)<=6 and i<len(t.rows)-1:par.paragraph_format.keep_with_next=True
+ 157 |                 for r in par.runs:r.font.name='Times New Roman';r.font.size=Pt(size);r.bold=i==0
+ 158 |     p('Fonte: elaboração própria a partir dos dados e contratos auditados do projeto.'+(' '+note if note else ''),'Fonte')
+ 159 |     captions.append(('Tabela',tn,title));return t

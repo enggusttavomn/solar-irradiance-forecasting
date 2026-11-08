@@ -1,0 +1,284 @@
+{
+  "version": 7,
+  "chapter": "geografia",
+  "duration": 54,
+  "duration_seconds": 54,
+  "qa_times": [
+    1,
+    5.4,
+    9,
+    12,
+    16.5,
+    21.5,
+    26.5,
+    32.5,
+    37.8,
+    42,
+    46,
+    51.5
+  ],
+  "cues": [
+    [
+      0,
+      4,
+      "As localidades deste estudo estão nas Américas."
+    ],
+    [
+      4,
+      10,
+      "São dez regiões: uma no Brasil, oito nos Estados Unidos e uma no México."
+    ],
+    [
+      10,
+      16,
+      "A NSRDB usa observações de satélite e informações da atmosfera para estimar o recurso solar."
+    ],
+    [
+      16,
+      25,
+      "Modelos físicos combinam essas informações e produzem estimativas de irradiância para células geográficas."
+    ],
+    [
+      25,
+      31,
+      "Estas distribuições usam valores horários reais do período de treinamento, de 2019 a 2022."
+    ],
+    [
+      31,
+      38.5,
+      "Os perfis mostram os valores positivos. A porcentagem de horas com GHI igual a zero aparece separadamente."
+    ],
+    [
+      38.5,
+      44,
+      "A distribuição varia entre as dez localidades do conjunto."
+    ],
+    [
+      44,
+      49,
+      "Cada região consultada corresponde a uma célula geográfica da base."
+    ],
+    [
+      49,
+      54,
+      "A sequência dessas estimativas forma o histórico de GHI usado pelas redes."
+    ]
+  ],
+  "coordinate_source": "codigo_fonte\\video_ea019\\assets\\localities_report.json",
+  "coordinates_exact": true,
+  "localities": [
+    {
+      "id": 1,
+      "label": "BYD Camaçari",
+      "source_name": "BYD Camacari",
+      "country": "BR",
+      "latitude": -12.6733774,
+      "longitude": -38.2812339,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/319513382",
+      "display_label": "Camaçari",
+      "projected_anchor": [
+        2.0859383050000004,
+        -0.13,
+        2.56633113
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Tesla Nevada",
+      "source_name": "Tesla Gigafactory Nevada",
+      "country": "US",
+      "latitude": 39.5403926,
+      "longitude": -119.4390524,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/422015619",
+      "display_label": "Nevada",
+      "projected_anchor": [
+        -1.9719526199999997,
+        -0.13,
+        5.17701963
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Tesla Texas",
+      "source_name": "Tesla Gigafactory Texas",
+      "country": "US",
+      "latitude": 30.2219321,
+      "longitude": -97.6187733,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/990257143",
+      "display_label": "Texas",
+      "projected_anchor": [
+        -0.8809386650000001,
+        -0.13,
+        4.711096605
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Hyundai Georgia",
+      "source_name": "Hyundai Metaplant Georgia",
+      "country": "US",
+      "latitude": 32.1605262,
+      "longitude": -81.4509985,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/1207640268",
+      "display_label": "Geórgia",
+      "projected_anchor": [
+        -0.07254992499999979,
+        -0.13,
+        4.80802631
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Rivian Normal",
+      "source_name": "Rivian Normal",
+      "country": "US",
+      "latitude": 40.5092914,
+      "longitude": -89.0545444,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/438033786",
+      "display_label": "Normal",
+      "projected_anchor": [
+        -0.4527272199999999,
+        -0.13,
+        5.22546457
+      ]
+    },
+    {
+      "id": 6,
+      "label": "Tesla Fremont",
+      "source_name": "Tesla Fremont Factory",
+      "country": "US",
+      "latitude": 37.4926897,
+      "longitude": -121.9415083,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/38080584",
+      "display_label": "Fremont",
+      "projected_anchor": [
+        -2.097075415,
+        -0.13,
+        5.074634485
+      ]
+    },
+    {
+      "id": 7,
+      "label": "Lucid Casa Grande",
+      "source_name": "Lucid AMP 1 Casa Grande",
+      "country": "US",
+      "latitude": 32.8568519,
+      "longitude": -111.7784376,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/1254715766",
+      "display_label": "Casa Grande",
+      "projected_anchor": [
+        -1.5889218800000002,
+        -0.13,
+        4.8428425950000005
+      ]
+    },
+    {
+      "id": 8,
+      "label": "GM Factory Zero",
+      "source_name": "GM Factory Zero",
+      "country": "US",
+      "latitude": 42.3815123,
+      "longitude": -83.0453415,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/554307172",
+      "display_label": "Detroit",
+      "projected_anchor": [
+        -0.15226707500000025,
+        -0.13,
+        5.319075615
+      ]
+    },
+    {
+      "id": 9,
+      "label": "Ford Rouge EV Center",
+      "source_name": "Ford Rouge Electric Vehicle Center",
+      "country": "US",
+      "latitude": 42.3056229,
+      "longitude": -83.1676332,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/496054397",
+      "display_label": "Dearborn",
+      "projected_anchor": [
+        -0.15838165999999987,
+        -0.13,
+        5.315281145
+      ]
+    },
+    {
+      "id": 10,
+      "label": "BMW San Luis Potosí",
+      "source_name": "BMW San Luis Potosi",
+      "country": "MX",
+      "latitude": 21.9682649,
+      "longitude": -100.8491733,
+      "coordinate_source_url": "https://www.openstreetmap.org/way/553644102",
+      "display_label": "San Luis Potosí",
+      "projected_anchor": [
+        -1.0424586650000003,
+        -0.13,
+        4.298413245
+      ]
+    }
+  ],
+  "country_counts": {
+    "BR": 1,
+    "US": 8,
+    "MX": 1
+  },
+  "generic_factory_symbols_no_branding": true,
+  "factory_symbols_not_to_scale": true,
+  "map_source": {
+    "file": "codigo_fonte\\video_ea019\\assets\\americas_land.json",
+    "sha256": "7a8a908caa2b1a512bcc287083cfbcd21e332f4e006a67b1b5ef14d380327278",
+    "source_page": "https://www.naturalearthdata.com/downloads/110m-physical-vectors/110m-land/",
+    "license": "Public domain",
+    "projection": "Uniform equirectangular longitude/latitude in XZ; not hand-drawn",
+    "land_tint": "Stylistic natural palette, not a measured vegetation or climate map"
+  },
+  "nsrdb_workflow": [
+    "satellite observations",
+    "cloud and atmospheric properties",
+    "physical radiation modelling",
+    "geographic-cell irradiance estimates",
+    "GHI time series"
+  ],
+  "nsrdb_source_urls": [
+    "https://www.nrel.gov/docs/fy17osti/67722.pdf",
+    "https://www.nrel.gov/docs/fy20osti/75548.pdf"
+  ],
+  "nsrdb_logo": "Typographic name only; no invented official logo",
+  "no_factory_sensors_or_nsrdb_buildings": true,
+  "distribution_source": "documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\referencias\\ghi_distributions_training.json",
+  "distribution_source_sha256": "c6e42479d11556b890fb607bf2f5d90a65fc066103c566512f21f1509dcda6bc",
+  "source_period": {
+    "start_local": "2019-01-01",
+    "end_local_exclusive": "2023-01-01",
+    "timezone": "fixed NSRDB UTC offset per locality; no daylight savings"
+  },
+  "source_sample_count": 350640,
+  "distribution_condition": "GHI > 0",
+  "zero_fraction_shown_separately": true,
+  "frequency_bin_width_w_m2": 50,
+  "frequency_vertical_max_probability": 0.25,
+  "distribution_presentation": "One large shared 0-25% frequency plot; each real locality histogram grows in turn, with faint previous profiles and final comparison",
+  "map_zoom_removed": true,
+  "detroit_dearborn_callouts_anchored_to_exact_coordinates": true,
+  "synthetic_distribution_or_history": false,
+  "real_history_example": {
+    "locality_id": 1,
+    "start_local": "2019-01-01T00:00:00",
+    "hours": 168
+  },
+  "object_count": 393,
+  "start": 100,
+  "end": 154,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\cenas\\geografia_v7.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\cenas\\geografia_3d_v7.mp4",
+  "fps": 30,
+  "frames": 1620,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "resolution_percentage": 100,
+  "samples": 16,
+  "render_complete": true
+}

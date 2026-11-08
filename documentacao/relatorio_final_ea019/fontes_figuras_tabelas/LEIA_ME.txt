@@ -1,0 +1,52 @@
+FONTES DAS FIGURAS, IMAGENS E TABELAS — RELATÓRIO EA019
+
+Abra INDICE.html. O índice é autocontido: as miniaturas e os trechos de código
+podem ser consultados sem executar Python. Para abrir os scripts completos pelos
+links, extraia o ZIP inteiro, preservando as pastas.
+
+CONTEÚDO
+- 9 figuras numeradas e 17 tabelas, identificadas por título e página do PDF.
+- 26 arquivos TXT com os trechos específicos e seus auxiliares.
+- originais/: scripts completos e entradas preservadas, com a hierarquia original.
+- imagens_institucionais/: dois logos ativos e um logo legado/inativo.
+- proveniencia/: mapas detalhados, dependências e verificações.
+- utilitarios/: dois utilitários novos de entrega, separados das fontes históricas.
+- MANIFESTO.json: caminho, tamanho e SHA-256 dos arquivos originais copiados.
+
+COMO INTERPRETAR OS SCRIPTS
+Várias figuras/tabelas compartilham o mesmo gerador. Os trechos TXT têm números
+de linha para consulta e não são scripts independentes. Os arquivos completos
+foram copiados sem alterar seu conteúdo. As tabelas são objetos do DOCX, não
+imagens; as funções table/add_table montam e formatam suas células.
+
+REPRODUÇÃO
+Os scripts foram desenvolvidos em etapas. Muitos contêm caminhos da máquina
+original e dependem de versões anteriores do documento. Não se oferece um
+comando único para reconstruir o relatório atual. Consulte a ordem das etapas
+em proveniencia/pipeline_dependencias.json e adapte os caminhos em uma cópia
+isolada do projeto antes de executar os geradores ou editores históricos.
+Os resultados, curvas e logs já existentes acompanham o pacote; não é necessário
+treinar modelos para consultar o código. Os dois grandes rasters Köppen–Geiger
+não acompanham o ZIP; seus caminhos, tamanhos e hashes estão registrados em
+proveniencia/entradas_externas_nao_incluidas.json. O PNG exato do mapa utilizado
+no relatório foi incluído. Mantenha os créditos de suas fontes.
+
+Dependências dos geradores: Python com numpy, pandas, python-docx, lxml, Pillow,
+pypdf e PyMuPDF; matplotlib/rasterio para o mapa; Node.js com sharp para SVG/PNG.
+A exportação histórica do DOCX usou Microsoft Word no Windows e fontes Times
+New Roman/Arial. Esses componentes não são distribuídos neste pacote.
+
+UTILITÁRIOS NOVOS
+rasterizar_svg_relatorio.cjs foi criado para converter SVGs preservados sem
+executar o builder do relatório. Use --help para consultar seus argumentos.
+As Figuras 7 e 8 foram testadas com ele e os PNGs resultantes coincidiram
+integralmente com os atuais. Isso não é apresentado como o comando histórico.
+empacotar_fontes_elementos_relatorio.py é apenas o montador desta entrega;
+depende dos mapas de proveniência existentes no projeto de origem.
+
+VERIFICAÇÃO
+As 9 imagens numeradas correspondem byte a byte às imagens do DOCX atual.
+As 996 células das 17 tabelas conferem com a reconstrução de suas fontes.
+O relatório PDF e o DOCX de produção permaneceram inalterados ao empacotar.
+Os scripts históricos não foram executados nesta preparação. A verificação
+sintática e de hashes não equivale à execução integral do pipeline.

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vídeo final — ritmo didático</title><style>
+body{margin:0;background:#000;color:#eee;font:16px Segoe UI,Arial}main{max-width:1280px;margin:auto;padding:20px}
+h1{font-size:24px}video{width:100%;background:#000}p{line-height:1.5}select,button{font:inherit;background:#171b1e;color:#a8d7e0;border:1px solid #344349;border-radius:6px;padding:9px;margin:4px}
+a{color:#a8d7e0;margin-right:20px}nav{display:flex;flex-wrap:wrap;margin:16px 0}button{cursor:pointer}
+</style><main><h1>Vídeo final — ritmo didático</h1><p>9min48s · Full HD · Animações na velocidade original</p>
+<video controls playsinline preload="metadata" poster="../montagem_final_v10/previas/Capa_Fundo_Preto_Apresentador_Colorido_v5.png" src="Video_TCC_Ritmo_Didatico_Somente_Voz_v11.mp4"></video>
+<p><label>Áudio: <select><option value="Video_TCC_Ritmo_Didatico_Somente_Voz_v11.mp4">Somente voz</option><option value="Video_TCC_Ritmo_Didatico_Com_Trilha_v11.mp4">Voz com trilha sonora</option></select></label></p>
+<nav aria-label="Ir para um trecho"><button data-time="0.000000">Introdução</button><button data-time="14.133333">GHI e aplicações</button><button data-time="69.033333">Como funcionam as redes</button><button data-time="129.833333">Localidades e dados</button><button data-time="189.833333">Entradas e tarefas</button><button data-time="260.000000">Protocolo de avaliação</button><button data-time="308.000000">Quantização</button><button data-time="373.166667">Entendendo o MAE</button><button data-time="439.166667">Resultados</button><button data-time="527.233333">Interpretação e limites</button><button data-time="567.166667">Conclusão</button></nav>
+<p><a href="Video_TCC_Ritmo_Didatico_Somente_Voz_v11.mp4" download>Baixar sem música</a><a href="Video_TCC_Ritmo_Didatico_Com_Trilha_v11.mp4" download>Baixar com música</a><a href="Legendas_Finais_v11.srt" download>Legendas</a></p>
+</main><script>
+const v=document.querySelector('video');document.querySelector('select').onchange=e=>{const t=v.currentTime,play=!v.paused;v.pause();v.src=e.target.value;v.addEventListener('loadedmetadata',()=>{v.currentTime=t;if(play)v.play().catch(()=>{})},{once:true})};
+document.querySelectorAll('button[data-time]').forEach(b=>b.onclick=()=>{v.currentTime=Number(b.dataset.time);v.play().catch(()=>{})});
+</script></html>

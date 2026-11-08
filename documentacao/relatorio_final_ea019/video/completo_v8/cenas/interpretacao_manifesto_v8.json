@@ -1,0 +1,259 @@
+{
+  "duration": 74,
+  "cues": [
+    [
+      0,
+      11,
+      "A quantização não teve vantagem universal: cinco combinações melhoraram, quatro pioraram e três mantiveram o controle."
+    ],
+    [
+      11,
+      21,
+      "Em uma análise histórica separada, os dois históricos usaram os mesmos alvos e datas de avaliação."
+    ],
+    [
+      21,
+      31,
+      "O histórico longo teve menor erro em onze dos doze controles contínuos. A exceção foi a LSTM horária."
+    ],
+    [
+      31,
+      37,
+      "Essa associação não isola uma causa: os anos e a normalização também mudaram."
+    ],
+    [
+      37,
+      45,
+      "Os resultados são descritivos, sem significância estatística demonstrada. O horário utilizou uma semente."
+    ],
+    [
+      45,
+      52,
+      "A tarefa de seis meses tem apenas sete origens de teste por localidade e permanece exploratória."
+    ],
+    [
+      52,
+      59,
+      "Há alvos compartilhados entre janelas. A generalização para localidades inéditas não foi avaliada."
+    ],
+    [
+      59,
+      67,
+      "No conjunto avaliado, Transformer liderou os horizontes completos horário e diário; Informer, os mensais."
+    ],
+    [
+      67,
+      74,
+      "Portanto, a escolha depende da tarefa, dentro dos limites deste estudo."
+    ]
+  ],
+  "qa_times": [
+    1.5,
+    6,
+    16,
+    25,
+    29.5,
+    34,
+    41,
+    48.5,
+    53.5,
+    57,
+    63,
+    70.5
+  ],
+  "quantization_observed_counts": {
+    "improved": 5,
+    "worse": 4,
+    "control_retained": 3
+  },
+  "paired_history_count": 11,
+  "paired_history_total": 12,
+  "history_evaluation_period": "2019-04 a 2022-12",
+  "history_values_are_separate_from_2024": true,
+  "historical_exception": {
+    "task": "hourly_72_extension",
+    "model": "LSTM",
+    "condition": "Controle",
+    "horizon": 72,
+    "short_mae": 53.718654043715766,
+    "long_mae": 61.60577795269222,
+    "delta_long_minus_short": 7.887123908976456,
+    "delta_pct": 14.682281321788103,
+    "delta_pct_display": "14,68",
+    "long_improved": false,
+    "sources": {
+      "historico_curto_pareado": {
+        "mae": 53.718654043715766,
+        "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/lstm/sem_quantizacao/metricas_teste.csv"
+      },
+      "historico_1998_2022": {
+        "mae": 61.60577795269222,
+        "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/lstm/sem_quantizacao/metricas_teste.csv"
+      }
+    },
+    "report_page": 27,
+    "report_table": 8
+  },
+  "source_notes": "documentacao\\relatorio_final_ea019\\video\\completo_v8\\fontes_resultados_v8.json",
+  "no_inferential_significance_claim": true,
+  "unseen_site_is_symbolic_not_a_geographic_point": true,
+  "monthly6_test_origins": 7,
+  "final_factory_generic": true,
+  "factory_site_metadata": {
+    "main_building_dimensions_m": [
+      60,
+      32,
+      10
+    ],
+    "site_dimensions_m": [
+      88,
+      64
+    ],
+    "front_negative_y": true,
+    "reference_center_m": [
+      8.0,
+      -7.5,
+      10.26
+    ],
+    "reference_horizontal": true,
+    "reference_area_m2": 1.0,
+    "generic_sign": "ELECTRIC VEHICLE MANUFACTURING",
+    "generic_architecture_no_manufacturer_association": true,
+    "landscaping": "11 individually branched broadleaf trees, 6 shrubs, individual batched leaves and grass blades",
+    "tree_canopies_are_not_spheres": true,
+    "pv_application_separate_collection": true,
+    "site_object_count": 159,
+    "pv_object_count": 2,
+    "bounds_min_m": [
+      -44,
+      -32,
+      -0.21
+    ],
+    "bounds_max_m": [
+      44,
+      32,
+      11.6
+    ]
+  },
+  "final_curve_is_not_electricity_generation": true,
+  "personal_camera_footage_included": false,
+  "version": 8,
+  "chapter": "interpretacao",
+  "start": 476,
+  "end": 550,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\interpretacao_v8.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\interpretacao_3d_v8.mp4",
+  "fps": 30,
+  "frames": 2220,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "resolution_percentage": 100,
+  "samples": 16,
+  "render_complete": true,
+  "source_fingerprint": "ab8b7d54e12f881271a4500bbe9fa171ec1d7fe67391ff10006cec753fe713ab",
+  "source_hashes": {
+    "codigo_fonte\\video_ea019\\director_v8.py": "8acbf3219a7c301f7f5c15e761bd881e37413ba51b0900df805f8cd62cff7512",
+    "codigo_fonte\\video_ea019\\interpretation_v8.py": "2b2fb0520c0ab45b5c630d448aa591495d25403e0d127161ef1aca980b5cb40c",
+    "codigo_fonte\\video_ea019\\common_v7.py": "4867b4c429436a2e602de07bbbc1d16d6644506917894c8dca3588dc7e4e3587",
+    "codigo_fonte\\video_ea019\\blender_pilot.py": "d048c56e8559a13e2eb462299421e618817bdd0fee186412172e75843ad3207d",
+    "codigo_fonte\\video_ea019\\factory_site_v6.py": "9ef07ea1f676d8970a2d007c0bf2918ddf63c7cad3b0ad00d3ac0d7723d23c55",
+    "documentacao\\relatorio_final_ea019\\video\\completo_v8\\fontes_resultados_v8.json": "de42f0a99982bca8f029a92f91df7694a3855b1a44614ba6deeb8aa2d7b56494"
+  },
+  "blocks": [
+    {
+      "first_frame": 1,
+      "last_frame": 300,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\interpretacao\\f00001_00300.mp4",
+      "bytes": 2584079,
+      "sha256": "fc5eb84580b27e33ad072b122e82865e91e4febe1c23889adb534331bf9124de",
+      "source_fingerprint": "ab8b7d54e12f881271a4500bbe9fa171ec1d7fe67391ff10006cec753fe713ab",
+      "reused": false
+    },
+    {
+      "first_frame": 301,
+      "last_frame": 600,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\interpretacao\\f00301_00600.mp4",
+      "bytes": 3191316,
+      "sha256": "65b5ae0321e0f849bd7fb53e3e121416fc5994baaa0c74ec5cb770746675f83e",
+      "source_fingerprint": "ab8b7d54e12f881271a4500bbe9fa171ec1d7fe67391ff10006cec753fe713ab",
+      "reused": false
+    },
+    {
+      "first_frame": 601,
+      "last_frame": 900,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\interpretacao\\f00601_00900.mp4",
+      "bytes": 3865882,
+      "sha256": "30f1f656bfc566df24b8fa2a0ae925bf3205fc9fcce2a3f4b34af77efbb8eca9",
+      "source_fingerprint": "ab8b7d54e12f881271a4500bbe9fa171ec1d7fe67391ff10006cec753fe713ab",
+      "reused": false
+    },
+    {
+      "first_frame": 901,
+      "last_frame": 1200,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\interpretacao\\f00901_01200.mp4",
+      "bytes": 2589303,
+      "sha256": "7e2f2afa2d22fa659a6a5c35aa588ff732c14b8e9802a1e92e26d7af5d6dcae8",
+      "source_fingerprint": "ab8b7d54e12f881271a4500bbe9fa171ec1d7fe67391ff10006cec753fe713ab",
+      "reused": false
+    },
+    {
+      "first_frame": 1201,
+      "last_frame": 1500,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\interpretacao\\f01201_01500.mp4",
+      "bytes": 2537189,
+      "sha256": "4ca00fe7726a78e3eec04a4a6e6a3c6edc5314bbdb356cfb17176a71fbd5085e",
+      "source_fingerprint": "ab8b7d54e12f881271a4500bbe9fa171ec1d7fe67391ff10006cec753fe713ab",
+      "reused": false
+    },
+    {
+      "first_frame": 1501,
+      "last_frame": 1800,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\interpretacao\\f01501_01800.mp4",
+      "bytes": 2985330,
+      "sha256": "3436e93315ec525d13085ac5e090eea50fa9b58426bef1bff4336d2c18313d25",
+      "source_fingerprint": "ab8b7d54e12f881271a4500bbe9fa171ec1d7fe67391ff10006cec753fe713ab",
+      "reused": false
+    },
+    {
+      "first_frame": 1801,
+      "last_frame": 2100,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\interpretacao\\f01801_02100.mp4",
+      "bytes": 13886546,
+      "sha256": "c12de0aca2e9656dcc519c1c10222007ed82f234d66f9632b936e2fc366fb5b9",
+      "source_fingerprint": "ab8b7d54e12f881271a4500bbe9fa171ec1d7fe67391ff10006cec753fe713ab",
+      "reused": false
+    },
+    {
+      "first_frame": 2101,
+      "last_frame": 2220,
+      "frame_count": 120,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\interpretacao\\f02101_02220.mp4",
+      "bytes": 4530645,
+      "sha256": "012900fad0d55bd2076e9c01e0ca945ee69dfd1761e6116a0fb58be3a27b3440",
+      "source_fingerprint": "ab8b7d54e12f881271a4500bbe9fa171ec1d7fe67391ff10006cec753fe713ab",
+      "reused": false
+    }
+  ],
+  "raw_verification": {
+    "path": "documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\interpretacao_3d_v8.mp4",
+    "bytes": 36169293,
+    "sha256": "7be0cca953ba7e93c5ecc86959293520fbb2c3e04f2bcda447c0cc13a84f3150",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frame_count": 2220,
+    "duration_seconds": 74,
+    "codec": "H.264",
+    "audio_tracks": 0,
+    "full_decode_errors": 0
+  }
+}

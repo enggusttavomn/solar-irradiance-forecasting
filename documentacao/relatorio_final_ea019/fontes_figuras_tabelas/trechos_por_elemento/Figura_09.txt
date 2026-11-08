@@ -1,0 +1,198 @@
+Figura 9 — Trajetórias de validação dos controles contínuos na tarefa horária
+Página(s) do PDF: 28
+
+TRECHOS PARA CONSULTA. Use os arquivos completos em originais/ para edição.
+Os números à esquerda são as linhas originais; este TXT não é executável.
+
+script completo / load_log / ymap / xmap / text / line
+Arquivo original: tmp/revisao_relatorio/rodada2/figuras/gerar_diagnostico_treinamento.py
+Linhas: 1–162
+
+   1 | """Audit and plot frozen selection losses. Never loads models or forecasts."""
+   2 | from pathlib import Path
+   3 | import csv
+   4 | import hashlib
+   5 | import json
+   6 | import math
+   7 | import sys
+   8 | import html
+   9 | import subprocess
+  10 | import os
+  11 | 
+  12 | HERE=Path(__file__).resolve().parent
+  13 | ROOT=HERE.parents[3]
+  14 | BASE=ROOT/'resultados/quantizacao_todos_modelos_20260929'
+  15 | MODELS=('Transformer','Informer','LSTM')
+  16 | REGIMES=('atual','historico_1998_2022','historico_curto_pareado')
+  17 | TASKS=('hourly_72_extension','daily_30','monthly_1','monthly_6')
+  18 | COLORS={'Transformer':'#245B86','Informer':'#B55B36','LSTM':'#337A71'}
+  19 | LINESTYLES={'Transformer':'','Informer':'12 7','LSTM':'14 6 3 6'}
+  20 | TITLES={'atual':('A  Atual','Validação: 2023'),
+  21 |         'historico_1998_2022':('B  Histórico longo','Validação: abr/2018–mar/2019'),
+  22 |         'historico_curto_pareado':('C  Histórico curto pareado','Validação: abr/2018–mar/2019')}
+  23 | 
+  24 | def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+  25 | def relative(p):return str(p.relative_to(ROOT)).replace('\\','/')
+  26 | def load_json(p):return json.loads(p.read_text(encoding='utf-8'))
+  27 | def load_log(p):
+  28 |     with p.open(encoding='utf-8-sig',newline='') as stream:
+  29 |         f=[{k.lower():float(v) for k,v in row.items()} for row in csv.DictReader(stream)]
+  30 |     needed=['epoca','mse_treino_normalizado','mse_validacao_normalizado']
+  31 |     assert f and set(needed).issubset(f[0]),p
+  32 |     assert all(math.isfinite(r[k]) for r in f for k in needed),p
+  33 |     assert [int(r['epoca']) for r in f]==list(range(1,len(f)+1)),p
+  34 |     assert all(r['mse_validacao_normalizado']>0 for r in f),p
+  35 |     return f
+  36 | 
+  37 | def save_rows(path,rows):
+  38 |     with path.open('w',encoding='utf-8-sig',newline='') as stream:
+  39 |         writer=csv.DictWriter(stream,fieldnames=list(rows[0]))
+  40 |         writer.writeheader();writer.writerows(rows)
+  41 | 
+  42 | def recorded_csv_hash(meta,p):
+  43 |     matching=[v for k,v in meta['arquivos_sha256'].items() if k.replace('\\','/').endswith('/'+p.name)]
+  44 |     assert len(matching)==1,(p,matching)
+  45 |     return matching[0]
+  46 | 
+  47 | curves=[];curve_frames=[]
+  48 | for regime in REGIMES:
+  49 |     for model in MODELS:
+  50 |         folder=BASE/regime/'hourly_72_extension'/model.lower()
+  51 |         selected=load_json(folder/'selecao_congelada.json')
+  52 |         control=next(v for v in selected['ranking'] if v['nome']=='sem_quantizacao')
+  53 |         epoch=int(control['epocas']['42'])
+  54 |         csv_path=folder/'sem_quantizacao/selecao/seed42.csv'
+  55 |         json_path=csv_path.with_suffix('.json')
+  56 |         meta=load_json(json_path)
+  57 |         frame=load_log(csv_path)
+  58 |         assert meta['fase']=='selecao' and meta['variante']=='sem_quantizacao' and meta['seed']==42
+  59 |         assert meta['epocas']==epoch,(json_path,epoch)
+  60 |         assert int(min(frame,key=lambda r:r['mse_validacao_normalizado'])['epoca'])==epoch
+  61 |         assert digest(csv_path)==recorded_csv_hash(meta,csv_path),csv_path
+  62 |         best=next(r for r in frame if int(r['epoca'])==epoch)
+  63 |         curves.append({'regime':regime,'task':'hourly_72_extension','model':model,'variant':'sem_quantizacao','phase':'selecao','seed':42,'selected_epoch':epoch,'epochs_logged':len(frame),'first_validation_mse':frame[0]['mse_validacao_normalizado'],'selected_validation_mse':best['mse_validacao_normalizado'],'last_validation_mse':frame[-1]['mse_validacao_normalizado'],'selected_train_mse':best['mse_treino_normalizado'],'selection_csv':relative(csv_path),'selection_csv_sha256':digest(csv_path),'selection_json':relative(json_path),'selection_json_sha256':digest(json_path),'recorded_csv_hash_matches':True,'selection_frozen_json':relative(folder/'selecao_congelada.json'),'selection_frozen_json_sha256':digest(folder/'selecao_congelada.json')})
+  64 |         for row in frame:curve_frames.append({'regime':regime,'modelo':model,'variante':'sem_quantizacao','semente':42,**row,'epoca_escolhida':int(row['epoca'])==epoch})
+  65 | combined=curve_frames
+  66 | save_rows(HERE/'dados_curvas_selecao_horaria.csv',combined)
+  67 | 
+  68 | # Read all loss logs for the three report models to distinguish reaching the
+  69 | # budget from having the selected epoch at its upper boundary.
+  70 | cap_rows=[];cap_summary=[]
+  71 | for regime in REGIMES:
+  72 |     for task in TASKS:
+  73 |         for model in MODELS:
+  74 |             folder=BASE/regime/task/model.lower()
+  75 |             frozen=load_json(folder/'selecao_congelada.json')
+  76 |             contract=load_json(folder/'contrato_execucao.json')
+  77 |             cap=int(contract['parametros']['max_epocas'])
+  78 |             subset=[]
+  79 |             for variant in frozen['ranking']:
+  80 |                 for seed,epoch in variant['epocas'].items():
+  81 |                     p=folder/variant['nome']/'selecao'/f'seed{seed}.csv'
+  82 |                     f=load_log(p)
+  83 |                     chosen=int(epoch)
+  84 |                     assert chosen==int(min(f,key=lambda r:r['mse_validacao_normalizado'])['epoca']),(p,chosen)
+  85 |                     row={'regime':regime,'tarefa':task,'modelo':model,'variante':variant['nome'],'semente':int(seed),'limite_epocas':cap,'epoca_escolhida':chosen,'epocas_registradas':len(f),'escolhida_no_teto':chosen==cap,'execucao_atingiu_teto':len(f)==cap,'fonte':relative(p),'sha256':digest(p)}
+  86 |                     cap_rows.append(row);subset.append(row)
+  87 |             cap_summary.append({'regime':regime,'task':task,'model':model,'max_epochs':cap,'n_variant_seed_runs':len(subset),'selected_epoch_at_cap':sum(x['escolhida_no_teto'] for x in subset),'logged_to_cap':sum(x['execucao_atingiu_teto'] for x in subset)})
+  88 | save_rows(HERE/'auditoria_tetos_epocas.csv',cap_rows)
+  89 | 
+  90 | # SVG authored directly; bundled sharp rasterizes it. No package installation,
+  91 | # repository environment, matplotlib, forecasts or trained models are used.
+  92 | elements=['<svg xmlns="http://www.w3.org/2000/svg" width="17cm" height="10.3cm" viewBox="0 0 1700 1030">',
+  93 |           '<title>Seleção horária: controles contínuos</title>',
+  94 |           '<desc>MSE de validação normalizado dos registros canônicos de seleção. Somente Transformer, Informer e LSTM; semente 42; sem novos treinamentos.</desc>',
+  95 |           '<rect width="1700" height="1030" fill="white"/>',
+  96 |           '<g font-family="DejaVu Sans,Arial,sans-serif" fill="#26323B">']
+  97 | def text(x,y,s,size=30,fill='#26323B',anchor='start',weight='normal',extra=''):
+  98 |     elements.append(f'<text x="{x}" y="{y}" font-size="{size}" fill="{fill}" text-anchor="{anchor}" font-weight="{weight}" {extra}>{html.escape(s)}</text>')
+  99 | def line(x1,y1,x2,y2,stroke='#DDE3E8',width=2,dash=''):
+ 100 |     elements.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{stroke}" stroke-width="{width}"'+(f' stroke-dasharray="{dash}"' if dash else '')+'/>')
+ 101 | text(850,56,'Seleção horária: controles contínuos',size=40,anchor='middle',weight='bold')
+ 102 | text(850,105,'MSE de validação normalizado · semente 42 · saída de 72 horas',size=30,fill='#56636E',anchor='middle')
+ 103 | for xpos,model in zip([350,760,1120],MODELS):
+ 104 |     line(xpos,160,xpos+85,160,COLORS[model],5,LINESTYLES[model]);text(xpos+105,170,model,size=31)
+ 105 | text(42,508,'MSE normalizado (escala log)',size=30,anchor='middle',extra='transform="rotate(-90 42 508)"')
+ 106 | def ymap(value):return 700-(math.log(value)-math.log(.0085))/(math.log(.09)-math.log(.0085))*400
+ 107 | for i,regime in enumerate(REGIMES):
+ 108 |     left=140+i*530;right=left+450
+ 109 |     def xmap(epoch):return left+(epoch-.5)/30.5*450
+ 110 |     text(left,236,TITLES[regime][0],size=31,weight='bold')
+ 111 |     text(left,277,TITLES[regime][1],size=25.5,fill='#56636E')
+ 112 |     for value in [.01,.02,.04,.08]:
+ 113 |         y=ymap(value);line(left,y,right,y)
+ 114 |         text(left-14,y+9,f'{value:.2f}'.replace('.',','),size=28,anchor='end',fill='#56636E')
+ 115 |     line(left,300,left,700,'#B7C1C9',2);line(left,700,right,700,'#B7C1C9',2)
+ 116 |     for epoch in [1,10,20,30]:
+ 117 |         x=xmap(epoch);line(x,700,x,711,'#93A1AC',2);text(x,748,str(epoch),size=28,anchor='middle',fill='#56636E')
+ 118 |     text((left+right)/2,790,'Época',size=30,anchor='middle')
+ 119 |     for j,model in enumerate(MODELS):
+ 120 |         rows=[r for r in combined if r['regime']==regime and r['modelo']==model]
+ 121 |         info=next(c for c in curves if c['regime']==regime and c['model']==model)
+ 122 |         points=' '.join(f'{xmap(r["epoca"]):.3f},{ymap(r["mse_validacao_normalizado"]):.3f}' for r in rows)
+ 123 |         dash=LINESTYLES[model]
+ 124 |         elements.append(f'<polyline points="{points}" fill="none" stroke="{COLORS[model]}" stroke-width="5" stroke-linejoin="round"'+(f' stroke-dasharray="{dash}"' if dash else '')+'/>')
+ 125 |         elements.append(f'<circle cx="{xmap(info["selected_epoch"]):.3f}" cy="{ymap(info["selected_validation_mse"]):.3f}" r="9" fill="white" stroke="{COLORS[model]}" stroke-width="4"/>')
+ 126 |         text(left,846+38*j,f'{model}: época {info["selected_epoch"]}',size=28,fill=COLORS[model])
+ 127 | text(850,976,'○ Época escolhida na validação · curvas completas até a parada ou o teto',size=28,fill='#3E4B56',anchor='middle')
+ 128 | text(850,1015,'Escalas próprias por regime; longo e curto compartilham a validação histórica.',size=26,fill='#56636E',anchor='middle')
+ 129 | elements.extend(['</g>','</svg>'])
+ 130 | stem=HERE/'diagnostico_treinamento_horario_controles'
+ 131 | stem.with_suffix('.svg').write_text('\n'.join(elements),encoding='utf-8')
+ 132 | node=Path('C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe')
+ 133 | sharp='C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp'
+ 134 | renderer=HERE/'rasterizar_diagnostico.cjs'
+ 135 | renderer.write_text("const sharp = require("+json.dumps(sharp)+");\nconst fs = require('fs');\nconst svg = fs.readFileSync(process.argv[2], 'utf8').replace('width=\"17cm\" height=\"10.3cm\"', 'width=\"3012\" height=\"1825\"');\nsharp(Buffer.from(svg), {density:72}).resize({width:3012,height:1825}).flatten({background:'#ffffff'}).png().withMetadata({density:450}).toFile(process.argv[3]).then(info => console.log(JSON.stringify(info))).catch(error => { console.error(error); process.exit(1); });\n",encoding='utf-8')
+ 136 | render_env=dict(os.environ)
+ 137 | render_env['XDG_CACHE_HOME']=str(HERE/'cache')
+ 138 | (HERE/'cache').mkdir(exist_ok=True)
+ 139 | subprocess.run([str(node),str(renderer),str(stem.with_suffix('.svg')),str(stem.with_suffix('.png'))],check=True,env=render_env)
+ 140 | 
+ 141 | caption=('Figura — Trajetórias de validação na seleção horária dos controles contínuos. '
+ 142 |          'Fonte: elaboração própria a partir dos registros canônicos de seleção de Transformer, Informer e LSTM, semente 42. '
+ 143 |          'Cada painel apresenta o MSE de validação na escala normalizada do respectivo regime, em eixo vertical logarítmico; '
+ 144 |          'os círculos marcam as épocas escolhidas. As curvas incluem todas as épocas registradas até a parada antecipada ou o teto de 30 épocas. '
+ 145 |          'As escalas são ajustadas separadamente; os históricos longo e curto compartilham a validação, enquanto o regime atual usa 2023. '
+ 146 |          'As trajetórias não isolam o efeito do tamanho do histórico. '
+ 147 |          'Não foram utilizados registros de refit nem executados novos treinamentos.')
+ 148 | interpretation=('Nas execuções horárias dos controles contínuos, o Informer apresentou uma trajetória de validação diferente das demais redes nos regimes atual e histórico curto pareado. '
+ 149 |                 'No histórico longo, sua perda diminuiu ao longo das épocas registradas. Esses registros ajudam a caracterizar diferenças na otimização sob as configurações executadas, '
+ 150 |                 'mas não demonstram uma causa isolada do erro de teste nem estabelecem uma conclusão formal de convergência. '
+ 151 |                 'A tarefa horária dispõe de uma única semente, e os valores normalizados utilizam as escalas de cada regime. '
+ 152 |                 'Os históricos longo e curto compartilham os mesmos alvos de validação; o regime atual avalia outro período.')
+ 153 | budget=('A época escolhida coincidiu com o teto de 30 em quatro das quatro condições de entrada do Transformer horário no regime atual. '
+ 154 |         'Na tarefa diária atual, isso ocorreu em oito de 20 combinações de condição e semente do Transformer e em cinco de 20 da LSTM; '
+ 155 |         'na tarefa diária do histórico curto pareado, ocorreu em onze de 20 combinações da LSTM. '
+ 156 |         'Esses casos indicam que a busca por épocas terminou na fronteira do orçamento estabelecido. '
+ 157 |         'Não demonstram, por si só, que as redes ficaram subtreinadas ou que ampliar o orçamento reduziria o erro de teste; essa hipótese exigiria outra avaliação.')
+ 158 | text={'caption':caption,'short_discussion':interpretation,'epoch_budget_paragraph':budget,'scope_note':'The figure shows only continuous controls. Main report rankings using validation-selected quantization variants must remain unchanged.'}
+ 159 | (HERE/'sugestao_caption_treinamento.json').write_text(json.dumps(text,ensure_ascii=False,indent=2),encoding='utf-8')
+ 160 | manifest={'scope':'Frozen canonical hourly SELECTION logs only; continuous controls of Transformer, Informer and LSTM, seed 42, in three regimes. No refit logs, model loading, forecast generation or new training.','curves':curves,'combined_log_rows':len(combined),'epoch_budget_summary':cap_summary,'epoch_budget_runs':len(cap_rows),'figure_size_cm':[17,10.3],'vertical_axis':'logarithmic MSE in each regime normalization','sources_csv_hashes_verified':True,'outputs':{p.name:digest(p) for p in [stem.with_suffix('.png'),stem.with_suffix('.svg'),HERE/'dados_curvas_selecao_horaria.csv',HERE/'auditoria_tetos_epocas.csv']}}
+ 161 | (HERE/'manifesto_diagnostico_treinamento.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
+ 162 | print(json.dumps({'figure':relative(stem.with_suffix('.png')),'curves':len(curves),'combined_log_rows':len(combined),'budget_runs':len(cap_rows),'nonzero_cap_counts':[r for r in cap_summary if r['selected_epoch_at_cap']]},ensure_ascii=True,indent=2))
+
+Rasteriza o SVG em 3012×1825 pixels com metadados de 450 dpi.
+Arquivo original: tmp/revisao_relatorio/rodada2/figuras/rasterizar_diagnostico.cjs
+Linhas: 1–4
+
+   1 | const sharp = require("C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp");
+   2 | const fs = require('fs');
+   3 | const svg = fs.readFileSync(process.argv[2], 'utf8').replace('width="17cm" height="10.3cm"', 'width="3012" height="1825"');
+   4 | sharp(Buffer.from(svg), {density:72}).resize({width:3012,height:1825}).flatten({background:'#ffffff'}).png().withMetadata({density:450}).toFile(process.argv[3]).then(info => console.log(JSON.stringify(info))).catch(error => { console.error(error); process.exit(1); });
+
+Insere a imagem, legenda e interpretação no DOCX antes da renumeração final.
+Arquivo original: tmp/revisao_relatorio/rodada2/editar_tcc.py
+Linhas: 186–197
+
+ 186 | # Loss diagnosis uses only the same three models, from already completed training.
+ 187 | paragraph('Diagnóstico dos registros de treinamento', 'Heading 2', before=P[234]._p)
+ 188 | paragraph('A Figura 13 apresenta as trajetórias de seleção horária dos controles contínuos. Elas complementam a comparação da Tabela 8, sem alterar as condições selecionadas na validação utilizadas nas tabelas principais. Nos controles do regime atual, as épocas escolhidas foram 30 para Transformer, quatro para Informer e 25 para LSTM.', before=P[234]._p)
+ 189 | paragraph('Figura 13 — Trajetórias de validação dos controles contínuos na tarefa horária', 'Caption', before=P[234]._p, keep=True)
+ 190 | picture = paragraph('', before=P[234]._p, keep=True)
+ 191 | picture.alignment = WD_ALIGN_PARAGRAPH.CENTER
+ 192 | picture.paragraph_format.first_line_indent = Cm(0)
+ 193 | pic = picture.add_run().add_picture(str(HERE / 'figuras/diagnostico_treinamento_horario_controles.png'), width=Cm(17))
+ 194 | pic._inline.docPr.set('descr', 'Perda de validação por época de Transformer, Informer e LSTM, controles contínuos horários nos três regimes temporais.')
+ 195 | paragraph('Fonte: elaboração própria com os registros de seleção dos três modelos, semente 42. MSE de validação normalizado em eixo vertical logarítmico; círculos indicam as épocas escolhidas. O regime atual avalia 2023; os históricos compartilham a validação, mas usam escalas ajustadas em períodos distintos. As curvas incluem as épocas registradas até a parada antecipada ou o teto de 30 épocas e não isolam o efeito da duração do histórico.', 'Fonte', before=P[234]._p)
+ 196 | paragraph(diagnosis['short_discussion'], before=P[234]._p)
+ 197 | paragraph(diagnosis['epoch_budget_paragraph'], before=P[234]._p)

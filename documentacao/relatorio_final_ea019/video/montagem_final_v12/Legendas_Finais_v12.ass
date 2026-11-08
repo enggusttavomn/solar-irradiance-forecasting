@@ -1,0 +1,139 @@
+﻿[Script Info]
+Title: V12 continuous recorded narration and global captions
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI,44,&H00FBF6F3,&H00FFFFFF,&H80000000,&H80000000,0,0,0,0,100,100,0,0,3,12,0,2,110,110,80,1
+Style: Header,Segoe UI,58,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,-1,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Eyebrow,Segoe UI,24,&H00EDDD67,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,1.4,0,1,0.5,0,7,0,0,0,1
+Style: Text,Segoe UI,40,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Small,Segoe UI,26,&H00C9B9AA,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.5,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 10,0:00:00.07,0:00:04.57,Caption,,0,0,0,,{\an2\pos(600,985)\fs40\c&H00FBF6F3&\b0\fad(80,80)}Olá, eu sou Gustavo, aluno da Engenharia\NElétrica da Unicamp. Neste trabalho,
+Dialogue: 10,0:00:04.57,0:00:09.93,Caption,,0,0,0,,{\an2\pos(600,985)\fs40\c&H00FBF6F3&\b0\fad(80,80)}comparo LSTM, Transformer e Informer na\Nprevisão da irradiância solar em
+Dialogue: 10,0:00:09.93,0:00:12.79,Caption,,0,0,0,,{\an2\pos(600,985)\fs40\c&H00FBF6F3&\b0\fad(80,80)}localidades ligadas à fabricação de\Nveículos elétricos.
+Dialogue: 10,0:00:14.33,0:00:18.79,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Para entender essa previsão, primeiro\Nprecisamos entender a irradiância global
+Dialogue: 10,0:00:18.79,0:00:24.09,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}horizontal, ou GHI: a potência solar\Nrecebida por unidade de área horizontal,
+Dialogue: 10,0:00:24.09,0:00:29.42,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}em watts por metro quadrado. Parte dessa\Nluz vem diretamente do Sol, e parte
+Dialogue: 10,0:00:29.42,0:00:31.83,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}chega depois de ser espalhada pela\Natmosfera.
+Dialogue: 10,0:00:34.13,0:00:38.82,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}A direta normal, chamada DNI, é medida num\Nplano perpendicular aos raios solares.
+Dialogue: 10,0:00:39.19,0:00:43.44,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Para obter sua contribuição na horizontal,\Nusamos o cosseno do ângulo com a vertical.
+Dialogue: 10,0:00:43.85,0:00:47.68,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Somando a luz difusa recebida na\Nhorizontal, temos o GHI.
+Dialogue: 10,0:00:50.31,0:00:55.37,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Essa composição varia. À noite, o GHI\Nsolar zera; durante o dia, as nuvens
+Dialogue: 10,0:00:55.37,0:00:59.79,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}modificam a curva. Prever sua continuação\Npode apoiar estimativas de geração
+Dialogue: 10,0:00:59.79,0:01:04.69,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}fotovoltaica e, com elas, o planejamento\Nde compras de energia, armazenamento e
+Dialogue: 10,0:01:04.69,0:01:05.60,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}horários de consumo.
+Dialogue: 10,0:01:07.81,0:01:11.65,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Para antecipar essa disponibilidade,\Nprecisamos transformar informações do
+Dialogue: 10,0:01:11.65,0:01:15.57,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}passado em uma previsão. Comparei três\Nformas de fazer isso.
+Dialogue: 10,0:01:16.95,0:01:22.05,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Na LSTM, os valores entram em ordem. A\Nrede atualiza uma memória a cada passo,
+Dialogue: 10,0:01:22.35,0:01:27.08,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}usando portas aprendidas para controlar o\Nque reter, acrescentar e transmitir.
+Dialogue: 10,0:01:27.91,0:01:31.28,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}O estado final reúne informações úteis\Npara prever o que vem depois.
+Dialogue: 10,0:01:33.22,0:01:37.74,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}O Transformer relaciona posições da\Nsequência por atenção. Cada posição gera
+Dialogue: 10,0:01:37.74,0:01:42.64,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}uma consulta, comparada às chaves das\Noutras posições. Essas relações produzem
+Dialogue: 10,0:01:42.64,0:01:47.81,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}pesos, que controlam a contribuição de\Ncada posição na combinação dos valores. A
+Dialogue: 10,0:01:47.81,0:01:50.66,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}representação também inclui a ordem\Ntemporal dos valores.
+Dialogue: 10,0:01:52.01,0:01:56.36,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}O Informer modifica esse processamento\Npara sequências longas: detalha a atenção
+Dialogue: 10,0:01:56.36,0:02:01.52,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}de algumas consultas e reduz a sequência\Ninterna do codificador. A atenção que liga
+Dialogue: 10,0:02:01.52,0:02:06.72,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}o histórico processado à etapa de\Nprevisão, chamada atenção cruzada,
+Dialogue: 10,0:02:07.46,0:02:12.75,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}permanece completa. Neste projeto, os três\Nmodelos produzem diretamente o vetor de
+Dialogue: 10,0:02:12.75,0:02:17.59,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}valores futuros. Para compará-los, usei a\Nmesma base de dados e os mesmos cortes
+Dialogue: 10,0:02:17.59,0:02:18.18,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}temporais.
+Dialogue: 10,0:02:19.56,0:02:24.38,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Essa base cobre dez localidades nas\NAméricas: uma no Brasil, oito nos Estados
+Dialogue: 10,0:02:24.38,0:02:29.24,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Unidos e uma no México, associadas à\Nfabricação de veículos elétricos. Os
+Dialogue: 10,0:02:29.24,0:02:34.58,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}valores vêm da NSRDB, que combina\Nsatélites, informações atmosféricas
+Dialogue: 10,0:02:34.58,0:02:37.89,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}e modelos físicos para estimar a\Nirradiância em cada região.
+Dialogue: 10,0:02:40.69,0:02:44.67,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Podemos observar esses dados de duas\Nmaneiras. A curva mostra quando cada valor
+Dialogue: 10,0:02:44.67,0:02:49.27,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}ocorreu. O histograma agrupa valores por\Nfaixa e mostra a porcentagem de horas em
+Dialogue: 10,0:02:49.27,0:02:52.86,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}cada uma. No exemplo de Camaçari, a faixa\Nentre quatrocentos e quatrocentos e
+Dialogue: 10,0:02:52.86,0:02:57.80,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}cinquenta watts por metro quadrado reúne\Ncerca de quatro vírgula oito por cento das
+Dialogue: 10,0:02:57.80,0:03:03.13,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}horas com GHI positivo. Os valores zero\Nsão contados separadamente. Assim,
+Dialogue: 10,0:03:03.40,0:03:07.06,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}comparamos as distribuições entre\Nlocalidades, sem confundir porcentagem de
+Dialogue: 10,0:03:07.06,0:03:08.59,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}ocorrências com passagem do tempo.
+Dialogue: 10,0:03:09.54,0:03:14.26,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Para prever, porém, também precisamos da\Nordem em que os valores aconteceram. Por
+Dialogue: 10,0:03:14.26,0:03:18.81,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}isso, a entrada reúne uma janela de GHI\Nanterior e a identificação da localidade.
+Dialogue: 10,0:03:19.24,0:03:23.12,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}A rede aprende uma representação de cada\Nregião e compartilha seus parâmetros entre
+Dialogue: 10,0:03:23.12,0:03:24.13,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}as dez localidades.
+Dialogue: 10,0:03:24.79,0:03:28.73,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}A janela e o futuro previsto mudam\Nconforme a tarefa. Na horária, entram duas
+Dialogue: 10,0:03:28.73,0:03:33.39,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}semanas e prevemos três dias. Na diária,\Nentra um ano e prevemos trinta dias. Nas
+Dialogue: 10,0:03:33.39,0:03:38.22,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}mensais, entram doze meses, para prever um\Nmês ou seis meses. Essas duas tarefas
+Dialogue: 10,0:03:38.22,0:03:42.29,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}mensais usam redes treinadas\Nseparadamente. Cada tarefa mantém as
+Dialogue: 10,0:03:42.29,0:03:44.78,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}mesmas entradas para comparar os três\Nmodelos.
+Dialogue: 10,0:03:45.53,0:03:49.85,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Definidas essas tarefas, organizei os\Ndados no tempo. O treinamento inicial usou
+Dialogue: 10,0:03:49.85,0:03:55.10,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}dois mil e dezenove a dois mil e vinte e\Ndois; a validação,
+Dialogue: 10,0:03:55.61,0:04:00.83,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}dois mil e vinte e três. Selecionei\Nconfigurações e épocas pela validação,
+Dialogue: 10,0:04:01.01,0:04:04.26,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}com a normalização ajustada ao histórico\Nde treino correspondente.
+Dialogue: 10,0:04:04.92,0:04:09.54,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Depois, reiniciei o treinamento com dois\Nmil e dezenove a dois mil e vinte e três e
+Dialogue: 10,0:04:09.54,0:04:14.06,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}avaliei as previsões em dois mil e vinte e\Nquatro. Como esse ano já havia sido
+Dialogue: 10,0:04:14.06,0:04:18.19,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}examinado, essa avaliação é retrospectiva,\Ncom independência limitada.
+Dialogue: 10,0:04:19.14,0:04:23.74,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Dentro desse protocolo, testei uma\Nhipótese adicional: mudar a representação
+Dialogue: 10,0:04:23.74,0:04:27.96,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}do GHI de entrada. Quantizar significa\Naproximar cada leitura de um dos níveis
+Dialogue: 10,0:04:27.96,0:04:28.77,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}disponíveis.
+Dialogue: 10,0:04:29.72,0:04:33.90,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Acompanhe a leitura quatrocentos e trinta\Ne sete, numa escala didática de zero a
+Dialogue: 10,0:04:33.90,0:04:38.03,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}mil. Depois da normalização, com sessenta\Ne quatro níveis ela é reconstruída como
+Dialogue: 10,0:04:38.03,0:04:42.63,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}aproximadamente quatrocentos e quarenta e\Nquatro. Com cento e vinte e oito, fica
+Dialogue: 10,0:04:42.63,0:04:47.58,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}perto de quatrocentos e trinta e três; com\Nduzentos e cinquenta e seis, perto de
+Dialogue: 10,0:04:47.58,0:04:52.17,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}quatrocentos e trinta e cinco. Mais níveis\Nreduzem o espaço entre os degraus,
+Dialogue: 10,0:04:52.45,0:04:53.96,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}mantendo o instante da leitura.
+Dialogue: 10,0:04:55.41,0:04:59.41,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Nas variantes quantizadas, limitamos\Nextremos antes de arredondar. A
+Dialogue: 10,0:04:59.41,0:05:03.87,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}transformação atua apenas no GHI de\Nentrada: a localidade segue separada, e
+Dialogue: 10,0:05:03.87,0:05:07.94,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}pesos, alvos e saídas permanecem\Ncontínuos. Comparei essas variantes ao
+Dialogue: 10,0:05:07.94,0:05:10.67,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}controle contínuo, escolhendo a condição\Nna validação.
+Dialogue: 10,0:05:11.54,0:05:15.93,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Essa aproximação da entrada ainda não é o\Nerro da previsão. Para avaliar a saída,
+Dialogue: 10,0:05:16.08,0:05:20.12,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}usamos o MAE, o erro absoluto médio. No\Ngráfico, ele começa pela distância
+Dialogue: 10,0:05:20.12,0:05:23.05,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}vertical entre previsão e referência no\Nmesmo instante.
+Dialogue: 10,0:05:23.57,0:05:27.55,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Se a referência é seiscentos e a previsão\Né seiscentos e cinquenta, a diferença
+Dialogue: 10,0:05:27.55,0:05:31.81,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}absoluta é cinquenta. Reunindo as cinco\Ndiferenças do exemplo, vinte, trinta,
+Dialogue: 10,0:05:31.81,0:05:36.73,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}cinquenta, trinta e dez, e dividindo por\Ncinco, chegamos a vinte e oito watts por
+Dialogue: 10,0:05:36.73,0:05:37.38,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}metro quadrado.
+Dialogue: 10,0:05:38.82,0:05:44.08,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Quando as curvas se aproximam, essas\Ndistâncias diminuem. Se todos
+Dialogue: 10,0:05:44.08,0:05:48.94,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}os valores coincidem, o MAE é zero.\NPortanto, na mesma tarefa, menor MAE
+Dialogue: 10,0:05:48.94,0:05:51.01,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}indica uma previsão mais próxima da\Nreferência.
+Dialogue: 10,0:05:51.86,0:05:56.06,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Calculamos esse erro para cada localidade\Ne depois fazemos outra média, dando o
+Dialogue: 10,0:05:56.06,0:06:01.34,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}mesmo peso às dez regiões. É o macro-MAE.\NNa avaliação cumulativa, entram todos
+Dialogue: 10,0:06:01.34,0:06:04.01,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}os passos até o horizonte escolhido,\Nincluindo a noite.
+Dialogue: 10,0:06:06.46,0:06:10.39,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Setenta e duas horas representam três dias\Ncompletos. Com essa régua, podemos
+Dialogue: 10,0:06:10.39,0:06:11.60,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}interpretar os resultados.
+Dialogue: 10,0:06:12.46,0:06:17.56,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Nos horizontes completos, o Transformer\Napresentou o menor macro-MAE horário, com
+Dialogue: 10,0:06:17.56,0:06:22.91,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}cinquenta e três vírgula vinte e um watts\Npor metro quadrado. Na diária, também
+Dialogue: 10,0:06:22.91,0:06:28.25,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}liderou, com quarenta e três vírgula\Noitenta e nove. As diferenças para
+Dialogue: 10,0:06:28.25,0:06:30.12,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}a LSTM foram pequenas.
+Dialogue: 10,0:06:32.26,0:06:36.56,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Nas tarefas mensais, o Informer teve os\Nmenores erros: doze
+Dialogue: 10,0:06:36.56,0:06:41.57,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}vírgula setenta e três em um mês, também\Nem watts por metro quadrado. Esses valores
+Dialogue: 10,0:06:41.57,0:06:45.49,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}devem ser comparados dentro de cada\Ntarefa, porque as escalas e os alvos
+Dialogue: 10,0:06:45.49,0:06:45.90,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}mudam.
+Dialogue: 10,0:06:47.35,0:06:51.84,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}A visão por localidade e horizonte\Ncomplementa essas médias. Na diária, por
+Dialogue: 10,0:06:51.84,0:06:56.22,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}exemplo, a LSTM liderou os recortes\Navaliados de até quatorze dias; o
+Dialogue: 10,0:06:56.22,0:07:00.19,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Transformer liderou em trinta dias. Nas\Nduas tarefas mensais, o Informer venceu em
+Dialogue: 10,0:07:00.19,0:07:04.86,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}cinco localidades, mas elas não foram\Nexatamente as mesmas. As médias resumem o
+Dialogue: 10,0:07:04.86,0:07:07.07,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}desempenho; os detalhes mostram sua\Ndistribuição.
+Dialogue: 10,0:07:07.81,0:07:11.15,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}As análises adicionais ajudam a\Ninterpretar esse conjunto. Comparadas ao
+Dialogue: 10,0:07:11.15,0:07:14.61,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}controle contínuo, as variantes\Nquantizadas escolhidas na validação
+Dialogue: 10,0:07:14.61,0:07:19.77,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}reduziram o erro em cinco combinações de\Nmodelo e tarefa e aumentaram em quatro.
+Dialogue: 10,0:07:20.72,0:07:23.39,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Nas três restantes, foi selecionado o\Npróprio controle.
+Dialogue: 10,0:07:24.86,0:07:28.62,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Numa comparação histórica separada, nos\Ncontroles contínuos, o histórico longo
+Dialogue: 10,0:07:28.62,0:07:33.92,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}teve menor erro em onze de doze casos,\Nexceto na LSTM horária. Isso
+Dialogue: 10,0:07:33.92,0:07:37.41,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}também envolve mudanças nos anos e na\Nnormalização, sem isolar uma causa.
+Dialogue: 10,0:07:38.36,0:07:41.64,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}O estudo avaliou precisão, sem medir\Nvelocidade computacional ou produção
+Dialogue: 10,0:07:41.64,0:07:45.93,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}fotovoltaica. A tarefa de seis meses\Npermanece exploratória, e as diferenças
+Dialogue: 10,0:07:45.93,0:07:47.52,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}observadas são descritivas.
+Dialogue: 10,0:07:48.47,0:07:53.75,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Projeto entrega uma comparação\Nexperimental das três arquiteturas em dez
+Dialogue: 10,0:07:53.75,0:07:58.51,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}localidades, sob um protocolo comum. Nos\Nhorizontes completos avaliados, o
+Dialogue: 10,0:07:58.51,0:08:03.03,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}Transformer liderou as previsões horárias\Ne diárias, e o Informer, as mensais. Esses
+Dialogue: 10,0:08:03.03,0:08:06.29,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}resultados oferecem uma base experimental\Npara orientar a escolha dos modelos na
+Dialogue: 10,0:08:06.29,0:08:09.19,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(80,80)}previsão da irradiância solar. Obrigado\Npela atenção.
+Dialogue: 4,0:07:48.47,0:07:56.71,Text,,0,0,0,,{\an8\pos(960,92)\fs49\c&H00FBF6F3&\b1\fad(280,280)}3 arquiteturas · 10 localidades
+Dialogue: 4,0:07:48.47,0:07:56.71,Text,,0,0,0,,{\an8\pos(960,154)\fs31\c&H00C9B9AA&\b0\fad(280,280)}Um protocolo comum de avaliação
+Dialogue: 4,0:07:56.71,0:08:02.77,Text,,0,0,0,,{\an8\pos(960,78)\fs43\c&H00EDDD67&\b1\fad(220,220)}Transformer · horária e diária
+Dialogue: 4,0:07:56.71,0:08:02.77,Text,,0,0,0,,{\an8\pos(960,137)\fs43\c&H00F39AC3&\b1\fad(220,220)}Informer · tarefas mensais
+Dialogue: 4,0:07:56.71,0:08:02.77,Text,,0,0,0,,{\an8\pos(960,199)\fs27\c&H00C9B9AA&\b0\fad(220,220)}Nos horizontes completos avaliados
+Dialogue: 4,0:08:02.77,0:08:10.60,Text,,0,0,0,,{\an8\pos(960,75)\fs44\c&H00FBF6F3&\b1\fad(260,260)}Uma base experimental para orientar
+Dialogue: 4,0:08:02.77,0:08:10.60,Text,,0,0,0,,{\an8\pos(960,133)\fs40\c&H00FBF6F3&\b0\fad(260,260)}a escolha dos modelos de previsão solar
+Dialogue: 4,0:08:09.40,0:08:10.60,Text,,0,0,0,,{\an8\pos(960,213)\fs29\c&H00C9B9AA&\b0\fad(180,180)}Obrigado pela atenção

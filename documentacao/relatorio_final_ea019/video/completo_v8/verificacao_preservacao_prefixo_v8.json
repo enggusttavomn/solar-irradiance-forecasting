@@ -1,0 +1,192 @@
+{
+  "version": 8,
+  "generated_utc": "2026-11-03T19:30:27.022616+00:00",
+  "status": "passed",
+  "approved_v7_prefix_preserved_pixel_exact": true,
+  "approved_v7_source_hashes_match": true,
+  "prefix_seconds": 224,
+  "expected_frame_count_per_variant": 6720,
+  "expected_resolution": [
+    1920,
+    1080
+  ],
+  "expected_fps": 30,
+  "pixel_format": "yuv420p",
+  "pixel_comparison": "decoded per-frame MD5 in decode order",
+  "timestamp_and_header_fields_ignored_for_pixel_equality": true,
+  "header_dimensions_and_time_base_checked_separately": true,
+  "v7_verification_encoding": "utf-8-sig",
+  "variants": [
+    {
+      "variant": "com_legendas",
+      "pixel_md5_equal": true,
+      "approved_v7_frames": 6720,
+      "v8_prefix_frames": 6720,
+      "expected_frames": 6720,
+      "frame_count_matches": true,
+      "frame_size_matches": true,
+      "resolution_matches": true,
+      "fps_matches": true,
+      "decoded_frame_bytes": {
+        "approved_v7": [
+          3110400
+        ],
+        "v8": [
+          3110400
+        ]
+      },
+      "decoded_resolution": {
+        "approved_v7": [
+          1920,
+          1080
+        ],
+        "v8": [
+          1920,
+          1080
+        ]
+      },
+      "decoded_fps": {
+        "approved_v7": 30.0,
+        "v8": 30.0
+      },
+      "mismatch_count": 0,
+      "first_mismatched_frames_1based": [],
+      "approved_v7_frame_hash_sequence_sha256": "cfc444fc6db2ac6881ba909b22c04492c95d67f2eaa0732e1625dcffaa1d7a88",
+      "v8_prefix_frame_hash_sequence_sha256": "cfc444fc6db2ac6881ba909b22c04492c95d67f2eaa0732e1625dcffaa1d7a88",
+      "approved_v7_audio_tracks": 0,
+      "v8_audio_tracks": 0,
+      "inputs_unchanged_during_check": true,
+      "files_before": {
+        "approved_v7": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\Video_GHI_Inicio_ate_Plano22_com_legendas_v7.mp4",
+          "bytes": 25136929,
+          "mtime_ns": 1793724533200535200,
+          "sha256": "97dc1fb8f5f0b950793bcf7de5c011309938d59f556b1ba98a18057463fd04a2"
+        },
+        "v8": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\Video_TCC_GHI_Completo_com_legendas_v8.mp4",
+          "bytes": 52016148,
+          "mtime_ns": 1793733844079036600,
+          "sha256": "c612e1f68f2b0d834819568af7238538e09629cc7f36196469aace28eac2adf7"
+        }
+      },
+      "files_after": {
+        "approved_v7": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\Video_GHI_Inicio_ate_Plano22_com_legendas_v7.mp4",
+          "bytes": 25136929,
+          "mtime_ns": 1793724533200535200,
+          "sha256": "97dc1fb8f5f0b950793bcf7de5c011309938d59f556b1ba98a18057463fd04a2"
+        },
+        "v8": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\Video_TCC_GHI_Completo_com_legendas_v8.mp4",
+          "bytes": 52016148,
+          "mtime_ns": 1793733844079036600,
+          "sha256": "c612e1f68f2b0d834819568af7238538e09629cc7f36196469aace28eac2adf7"
+        }
+      },
+      "full_prefix_decode_errors": 0
+    },
+    {
+      "variant": "sem_legendas",
+      "pixel_md5_equal": true,
+      "approved_v7_frames": 6720,
+      "v8_prefix_frames": 6720,
+      "expected_frames": 6720,
+      "frame_count_matches": true,
+      "frame_size_matches": true,
+      "resolution_matches": true,
+      "fps_matches": true,
+      "decoded_frame_bytes": {
+        "approved_v7": [
+          3110400
+        ],
+        "v8": [
+          3110400
+        ]
+      },
+      "decoded_resolution": {
+        "approved_v7": [
+          1920,
+          1080
+        ],
+        "v8": [
+          1920,
+          1080
+        ]
+      },
+      "decoded_fps": {
+        "approved_v7": 30.0,
+        "v8": 30.0
+      },
+      "mismatch_count": 0,
+      "first_mismatched_frames_1based": [],
+      "approved_v7_frame_hash_sequence_sha256": "07db74eedb3db1b8b9c394a9726481cb769be431f6579b0764def16ee247f289",
+      "v8_prefix_frame_hash_sequence_sha256": "07db74eedb3db1b8b9c394a9726481cb769be431f6579b0764def16ee247f289",
+      "approved_v7_audio_tracks": 0,
+      "v8_audio_tracks": 0,
+      "inputs_unchanged_during_check": true,
+      "files_before": {
+        "approved_v7": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\Video_GHI_Inicio_ate_Plano22_sem_legendas_v7.mp4",
+          "bytes": 24236653,
+          "mtime_ns": 1793724574016725100,
+          "sha256": "9703b3ddfe513d2bd1a8322a1c11f8300b03a46f28029e19900fb7d5bd6f8384"
+        },
+        "v8": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\Video_TCC_GHI_Completo_sem_legendas_v8.mp4",
+          "bytes": 50138127,
+          "mtime_ns": 1793734220000706700,
+          "sha256": "ac03985ee3b2c264f03e27b6d1f2d0b803e49bc2e308576191b6d9b5e080c818"
+        }
+      },
+      "files_after": {
+        "approved_v7": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\Video_GHI_Inicio_ate_Plano22_sem_legendas_v7.mp4",
+          "bytes": 24236653,
+          "mtime_ns": 1793724574016725100,
+          "sha256": "9703b3ddfe513d2bd1a8322a1c11f8300b03a46f28029e19900fb7d5bd6f8384"
+        },
+        "v8": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\Video_TCC_GHI_Completo_sem_legendas_v8.mp4",
+          "bytes": 50138127,
+          "mtime_ns": 1793734220000706700,
+          "sha256": "ac03985ee3b2c264f03e27b6d1f2d0b803e49bc2e308576191b6d9b5e080c818"
+        }
+      },
+      "full_prefix_decode_errors": 0
+    }
+  ],
+  "errors": [],
+  "input_videos_modified_by_utility": false,
+  "audio_modified_by_utility": false,
+  "video_or_audio_encoding_performed": false,
+  "scope": "Approved V7 sources and first224seconds of the final V8 exports; not a full V8 duration audit",
+  "only_output_written": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\verificacao_preservacao_prefixo_v8.json",
+  "approved_v7_verification_file": {
+    "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\verificacao_video_v7.json",
+    "bytes": 9776,
+    "mtime_ns": 1793724748992539200,
+    "sha256": "e29ed173a48e5f7580214b45be8b010456042670646e6ac54f1c4f3f6e8e3c68"
+  },
+  "approved_v7_source_integrity": {
+    "com_legendas": {
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\Video_GHI_Inicio_ate_Plano22_com_legendas_v7.mp4",
+      "declared_bytes": 25136929,
+      "declared_sha256": "97dc1fb8f5f0b950793bcf7de5c011309938d59f556b1ba98a18057463fd04a2",
+      "actual_bytes": 25136929,
+      "actual_sha256": "97dc1fb8f5f0b950793bcf7de5c011309938d59f556b1ba98a18057463fd04a2",
+      "matches": true
+    },
+    "sem_legendas": {
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\Video_GHI_Inicio_ate_Plano22_sem_legendas_v7.mp4",
+      "declared_bytes": 24236653,
+      "declared_sha256": "9703b3ddfe513d2bd1a8322a1c11f8300b03a46f28029e19900fb7d5bd6f8384",
+      "actual_bytes": 24236653,
+      "actual_sha256": "9703b3ddfe513d2bd1a8322a1c11f8300b03a46f28029e19900fb7d5bd6f8384",
+      "matches": true
+    }
+  },
+  "all_inputs_unchanged_during_check": true,
+  "approved_v7_verification_unchanged": true,
+  "completed_utc": "2026-11-03T19:32:27.167148+00:00"
+}

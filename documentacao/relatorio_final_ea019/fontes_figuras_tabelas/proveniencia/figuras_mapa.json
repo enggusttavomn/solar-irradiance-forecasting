@@ -1,0 +1,1343 @@
+{
+  "scope": "9 figuras numeradas e imagens institucionais do relatório canônico atual; nenhum arquivo de produção foi alterado ou regenerado.",
+  "canonical_report": {
+    "docx": "documentacao\\relatorio_final_ea019\\Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.docx",
+    "pdf": "documentacao\\relatorio_final_ea019\\Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.pdf",
+    "docx_sha256": "e087a0942cbbb744c9bfbc6efbccd6a869fa914bf4b5ab2f7dc602263fa3ae7b",
+    "pdf_sha256": "5798b2ae3925d273c751ad95d9166eb14f1f6e6a399120cb4430f3b9b517880a"
+  },
+  "page_count": 37,
+  "numbered_figure_count": 9,
+  "active_unnumbered_unique_images": 2,
+  "inactive_template_unique_images": 1,
+  "verification_method": "Títulos e assets extraídos do DOCX, páginas dos títulos extraídas do PDF, SHA-256 do binário incorporado comparado ao asset preservado.",
+  "figures": [
+    {
+      "number": 1,
+      "title": "Distribuição geográfica e contexto climático das dez localidades",
+      "caption": "Figura 1 — Distribuição geográfica e contexto climático das dez localidades",
+      "page": 9,
+      "asset": "tmp/relatorio_final_ea019/revisao_artigo/figuras/11_mapa.png",
+      "asset_sha256": "aece8c4ab312c551f7011fc7aa06cbe51d87e6c70439c5787a02e7ab46a7f8c8",
+      "asset_dimensions_px": [
+        3000,
+        2010
+      ],
+      "vector_asset": null,
+      "matching_preserved_png_assets": [
+        "tmp/relatorio_final_ea019/revisao_artigo/figuras/11_mapa.png",
+        "artigos/revista_unificado/figures/mapa_contexto_geografico.png"
+      ],
+      "docx_media": "word/media/image4.png",
+      "docx_relationship": "rId12",
+      "binary_match_verified": true,
+      "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+      "function": "shutil.copy2(...)",
+      "line_start": 168,
+      "line_end": 168,
+      "main_script": {
+        "path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+        "exists": true,
+        "bytes": 12563,
+        "sha256": "69b4fc2587cd3e1fbb617cb7e71fc4df4af2f5d4782b5815873bbf53cec641ad",
+        "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+        "function": "shutil.copy2(...)",
+        "line_start": 168,
+        "line_end": 168,
+        "role": "Importa, sem redesenhar, o PNG preservado do artigo."
+      },
+      "supporting_scripts": [
+        {
+          "path": "codigo_fonte/coleta_e_preparacao/contexto_geografico.py",
+          "exists": true,
+          "bytes": 26793,
+          "sha256": "fd8ddc3f067d83fed989c0c926c79462a0600f99e82df6e7c55ded56006d73e6",
+          "script_path": "codigo_fonte/coleta_e_preparacao/contexto_geografico.py",
+          "function": "gerar_mapa_contexto",
+          "line_start": 496,
+          "line_end": 751,
+          "role": "Gerador geográfico associado: Matplotlib, Rasterio e classes Köppen–Geiger."
+        },
+        {
+          "path": "codigo_fonte/coleta_e_preparacao/contexto_geografico.py",
+          "exists": true,
+          "bytes": 26793,
+          "sha256": "fd8ddc3f067d83fed989c0c926c79462a0600f99e82df6e7c55ded56006d73e6",
+          "script_path": "codigo_fonte/coleta_e_preparacao/contexto_geografico.py",
+          "function": "construir_contexto_geografico",
+          "line_start": 277,
+          "line_end": 414,
+          "role": "Amostra os rasters nas coordenadas canônicas."
+        },
+        {
+          "path": "codigo_fonte/coleta_e_preparacao/contexto_geografico.py",
+          "exists": true,
+          "bytes": 26793,
+          "sha256": "fd8ddc3f067d83fed989c0c926c79462a0600f99e82df6e7c55ded56006d73e6",
+          "script_path": "codigo_fonte/coleta_e_preparacao/contexto_geografico.py",
+          "function": "gerar_artefatos_contexto",
+          "line_start": 754,
+          "line_end": 773,
+          "role": "Encadeia a construção da tabela, CSV e mapas."
+        },
+        {
+          "path": "codigo_fonte/coleta_e_preparacao/localidades.py",
+          "exists": true,
+          "bytes": 6720,
+          "sha256": "ab325cf26249f851a11758728700f288635b115c3d3eeb91120c185b1f9564d1",
+          "script_path": "codigo_fonte/coleta_e_preparacao/localidades.py",
+          "function": "LOCALIDADES_EV",
+          "line_start": 1,
+          "line_end": 190,
+          "role": "Cadastro canônico das dez fábricas e proveniência das coordenadas."
+        }
+      ],
+      "inputs": [
+        {
+          "path": "artigos/revista_unificado/figures/mapa_contexto_geografico.png",
+          "exists": true,
+          "bytes": 294879,
+          "sha256": "aece8c4ab312c551f7011fc7aa06cbe51d87e6c70439c5787a02e7ab46a7f8c8"
+        },
+        {
+          "path": "dados/externos/koppen_geiger/Beck_KG_V1/legend.txt",
+          "exists": true,
+          "bytes": 2334,
+          "sha256": "22dd0d6a5bdd4b6d8c1c081343d7ff02e348811348cfb75a54ca32a27393ae23"
+        },
+        {
+          "path": "dados/externos/koppen_geiger/Beck_KG_V1/Beck_KG_V1_present_0p0083.tif",
+          "exists": true,
+          "bytes": 23094320,
+          "sha256": "a343fdfdb4c4a427c774bedd75ae4f2a6420c3f465de7d51892e8712dfaa2d27"
+        },
+        {
+          "path": "dados/externos/koppen_geiger/Beck_KG_V1/Beck_KG_V1_present_conf_0p0083.tif",
+          "exists": true,
+          "bytes": 39649740,
+          "sha256": "249247d61a4b10b2fb436c98e289f756dd7f4783fd75cc8c930ebad7c5dcd81b"
+        },
+        {
+          "path": "dados/externos/koppen_geiger/Beck_KG_V1/Beck_KG_V1_present_0p5.tif",
+          "exists": true,
+          "bytes": 32282,
+          "sha256": "4dcc0f4a6343af2ac354c4a9676262510c3a96acceab2d992a6c2f5e86659756"
+        }
+      ],
+      "input_patterns": [],
+      "source": "Asset importado de artigos/revista_unificado/figures/mapa_contexto_geografico.png, com igualdade binária comprovada. Os metadados do PNG identificam TCC GHI project / Matplotlib and Rasterio / Beck_KG_V1.",
+      "source_caption_in_report": "Fonte: elaboração própria.",
+      "status": "Importação exata comprovada; gerador geográfico associado identificado, sem regeneração nesta auditoria.",
+      "notes": [
+        "O PNG atual em resultados/artigo_revista_unificado/mapa_contexto_geografico.png tem outro hash e outras dimensões; não é o asset exibido no relatório.",
+        "O código associado declara figsize=(10,6.7) e dpi padrão 300, coerentes com os 3000×2010 pixels do PNG importado; isso não comprova reprodução binária."
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Perfis de referência da GHI nas resoluções horária, diária e mensal",
+      "caption": "Figura 2 — Perfis de referência da GHI nas resoluções horária, diária e mensal",
+      "page": 11,
+      "asset": "tmp/relatorio_final_ea019/revisao_artigo/figuras/10_perfis_dados.png",
+      "asset_sha256": "62a119834d859eedf1769a3a66c48f26d4d9d5c801a8fedfdc8a9c13101922e5",
+      "asset_dimensions_px": [
+        3000,
+        2338
+      ],
+      "vector_asset": {
+        "path": "tmp/relatorio_final_ea019/revisao_artigo/figuras/10_perfis_dados.svg",
+        "exists": true,
+        "bytes": 12012,
+        "sha256": "e7f0d1576570370df08f823eac4d4bc6cd8355e4e8198b054c14ad2beb1ed4ca"
+      },
+      "matching_preserved_png_assets": [
+        "tmp/relatorio_final_ea019/revisao_artigo/figuras/10_perfis_dados.png"
+      ],
+      "docx_media": "word/media/image5.png",
+      "docx_relationship": "rId13",
+      "binary_match_verified": true,
+      "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+      "function": "bloco Perfis reais / save(\"10_perfis_dados\", ...)",
+      "line_start": 133,
+      "line_end": 167,
+      "main_script": {
+        "path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+        "exists": true,
+        "bytes": 12563,
+        "sha256": "69b4fc2587cd3e1fbb617cb7e71fc4df4af2f5d4782b5815873bbf53cec641ad",
+        "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+        "function": "bloco Perfis reais / save(\"10_perfis_dados\", ...)",
+        "line_start": 133,
+        "line_end": 167,
+        "role": "Seleciona os dados de referência de Camaçari e desenha três painéis."
+      },
+      "supporting_scripts": [
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+          "exists": true,
+          "bytes": 12563,
+          "sha256": "69b4fc2587cd3e1fbb617cb7e71fc4df4af2f5d4782b5815873bbf53cec641ad",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+          "function": "text / rect / line / arrow / block / save",
+          "line_start": 1,
+          "line_end": 40,
+          "role": "Dependências, utilitários SVG e ajuste tipográfico."
+        },
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs",
+          "exists": true,
+          "bytes": 539,
+          "sha256": "b69861a3df9e0ca1b567f406cf067c33a1fdae057710b77bddd5e9a36372a71a",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs",
+          "function": "IIFE assíncrona",
+          "line_start": 1,
+          "line_end": 9,
+          "role": "Rasteriza os SVGs da pasta figuras com sharp a 180 dpi."
+        }
+      ],
+      "inputs": [
+        {
+          "path": "dados/brutos/localidades_ev/byd_camacari.csv",
+          "exists": true,
+          "bytes": 1492308,
+          "sha256": "8347f0b81babcf58456e14568c875e9df7ca6aba792e8865cff5e5df1afde783"
+        },
+        {
+          "path": "dados/brutos/localidades_ev_horario/nsrdb_ghi_horaria_2024.csv.gz",
+          "exists": true,
+          "bytes": 381036,
+          "sha256": "88430743a2b9e6f82e394f683cfdea4ad93324fe59756d17edcfbad6d9f8eac1"
+        },
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/dados_perfis_referencia.json",
+          "exists": true,
+          "bytes": 4217,
+          "sha256": "6800b1c9defff395ae2256e4f5cd4c0a8e81d7e078929f74e55096d5a34d2029"
+        }
+      ],
+      "input_patterns": [],
+      "source": "Dados reais de referência da NSRDB para BYD Camaçari, sem seleção por erro de previsão.",
+      "source_caption_in_report": "Fonte: elaboração própria. Séries NSRDB de BYD Camaçari. Semana de 1 a 7 de janeiro, médias diárias de janeiro e médias mensais de 2024. Horária e diária provêm de consultas independentes; a mensal é calculada das diárias. Escalas verticais próprias por painel.",
+      "status": "PNG atual idêntico ao asset gerado preservado.",
+      "notes": [
+        "Painéis: 168 médias horárias de 1–7/jan/2024, 31 médias diárias de janeiro e 12 médias mensais de 2024.",
+        "A hora local usa o campo timezone_nsrdb. A série diária é consulta independente da horária; mensal é a média das médias diárias."
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Fluxo experimental em etapas de dados, seleção e avaliação",
+      "caption": "Figura 3 — Fluxo experimental em etapas de dados, seleção e avaliação",
+      "page": 13,
+      "asset": "tmp/relatorio_final_ea019/revisao_artigo/figuras/01_fluxo.png",
+      "asset_sha256": "5c64b12e77f6f4f960d8be640af739fcb194bf244343130fafce1f7ce93193ab",
+      "asset_dimensions_px": [
+        3000,
+        1788
+      ],
+      "vector_asset": {
+        "path": "tmp/relatorio_final_ea019/revisao_artigo/figuras/01_fluxo.svg",
+        "exists": true,
+        "bytes": 7741,
+        "sha256": "4a96d045db17635ed3a992fdfef7373cd1ed7afd6665c16f99d2f2bc899df287"
+      },
+      "matching_preserved_png_assets": [
+        "tmp/relatorio_final_ea019/revisao_artigo/figuras/01_fluxo.png"
+      ],
+      "docx_media": "word/media/image8.png",
+      "docx_relationship": "rId16",
+      "binary_match_verified": true,
+      "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+      "function": "bloco Fluxo experimental / save(\"01_fluxo\", ...)",
+      "line_start": 42,
+      "line_end": 62,
+      "main_script": {
+        "path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+        "exists": true,
+        "bytes": 12563,
+        "sha256": "69b4fc2587cd3e1fbb617cb7e71fc4df4af2f5d4782b5815873bbf53cec641ad",
+        "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+        "function": "bloco Fluxo experimental / save(\"01_fluxo\", ...)",
+        "line_start": 42,
+        "line_end": 62,
+        "role": "Desenha dados/tarefas, seleção/refit e teste/avaliação em três faixas."
+      },
+      "supporting_scripts": [
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+          "exists": true,
+          "bytes": 12563,
+          "sha256": "69b4fc2587cd3e1fbb617cb7e71fc4df4af2f5d4782b5815873bbf53cec641ad",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+          "function": "text / rect / line / arrow / block / save",
+          "line_start": 1,
+          "line_end": 40,
+          "role": "Dependências, utilitários SVG e ajuste tipográfico."
+        },
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs",
+          "exists": true,
+          "bytes": 539,
+          "sha256": "b69861a3df9e0ca1b567f406cf067c33a1fdae057710b77bddd5e9a36372a71a",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs",
+          "function": "IIFE assíncrona",
+          "line_start": 1,
+          "line_end": 9,
+          "role": "Rasteriza os SVGs da pasta figuras com sharp a 180 dpi."
+        }
+      ],
+      "inputs": [],
+      "input_patterns": [],
+      "source": "Diagrama autoral gerado em SVG a partir da descrição do protocolo experimental.",
+      "source_caption_in_report": "Fonte: elaboração própria.",
+      "status": "PNG atual idêntico ao asset gerado preservado.",
+      "notes": [
+        "O comentário do código registra referência conceitual à organização da Figura 2 do artigo usado como referência visual; não importa uma imagem desse artigo."
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Quantização uniforme e saturação das entradas",
+      "caption": "Figura 4 — Quantização uniforme e saturação das entradas",
+      "page": 14,
+      "asset": "tmp/relatorio_final_ea019/revisao_artigo/figuras/02_quantizador.png",
+      "asset_sha256": "b3507bbafd2025a2b287efda7adc4aa8474828cb3c0efa717bb9281a19d1f8fa",
+      "asset_dimensions_px": [
+        3000,
+        1538
+      ],
+      "vector_asset": {
+        "path": "tmp/relatorio_final_ea019/revisao_artigo/figuras/02_quantizador.svg",
+        "exists": true,
+        "bytes": 16570,
+        "sha256": "f69607a0b477256b30f50d5966257caac7525cf015dc6c77bb5666b4466743ff"
+      },
+      "matching_preserved_png_assets": [
+        "tmp/relatorio_final_ea019/revisao_artigo/figuras/02_quantizador.png"
+      ],
+      "docx_media": "word/media/image9.png",
+      "docx_relationship": "rId17",
+      "binary_match_verified": true,
+      "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+      "function": "bloco Quantização / save(\"02_quantizador\", ...)",
+      "line_start": 64,
+      "line_end": 82,
+      "main_script": {
+        "path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+        "exists": true,
+        "bytes": 12563,
+        "sha256": "69b4fc2587cd3e1fbb617cb7e71fc4df4af2f5d4782b5815873bbf53cec641ad",
+        "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+        "function": "bloco Quantização / save(\"02_quantizador\", ...)",
+        "line_start": 64,
+        "line_end": 82,
+        "role": "Calcula uma escada com np.rint(np.clip(v,0,1)*7)/7 e desenha os eixos/legendas."
+      },
+      "supporting_scripts": [
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+          "exists": true,
+          "bytes": 12563,
+          "sha256": "69b4fc2587cd3e1fbb617cb7e71fc4df4af2f5d4782b5815873bbf53cec641ad",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+          "function": "text / rect / line / arrow / block / save",
+          "line_start": 1,
+          "line_end": 40,
+          "role": "Dependências, utilitários SVG e ajuste tipográfico."
+        },
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs",
+          "exists": true,
+          "bytes": 539,
+          "sha256": "b69861a3df9e0ca1b567f406cf067c33a1fdae057710b77bddd5e9a36372a71a",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs",
+          "function": "IIFE assíncrona",
+          "line_start": 1,
+          "line_end": 9,
+          "role": "Rasteriza os SVGs da pasta figuras com sharp a 180 dpi."
+        }
+      ],
+      "inputs": [],
+      "input_patterns": [],
+      "source": "Esquema matemático autoral do quantizador uniforme e da saturação das entradas.",
+      "source_caption_in_report": "Fonte: elaboração própria. Escada com oito níveis exclusivamente para legibilidade. As execuções avaliadas usam 64, 128 e 256 níveis; a linha tracejada representa o controle sem clipping.",
+      "status": "PNG atual idêntico ao asset gerado preservado.",
+      "notes": [
+        "O desenho usa 8 níveis para leitura. Os experimentos usam 64, 128 e 256 níveis. O controle contínuo não aplica clipping."
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Estruturas implementadas dos três modelos",
+      "caption": "Figura 5 — Estruturas implementadas dos três modelos",
+      "page": 19,
+      "asset": "tmp/revisao_relatorio/rodada2/figuras/arquiteturas_corrigidas.png",
+      "asset_sha256": "c5a95b82e40acc14b0022c0767ec124d1a94b88bf5d77db84779e3d3c024ff69",
+      "asset_dimensions_px": [
+        3000,
+        2100
+      ],
+      "vector_asset": {
+        "path": "tmp/revisao_relatorio/rodada2/figuras/arquiteturas_corrigidas.svg",
+        "exists": true,
+        "bytes": 6976,
+        "sha256": "529008e1f679289a98f52b68a67dad5cf24aa4ec337a9d628ee91b7a73d87350"
+      },
+      "matching_preserved_png_assets": [
+        "tmp/revisao_relatorio/rodada2/figuras/arquiteturas_corrigidas.png"
+      ],
+      "docx_media": "word/media/image10.png",
+      "docx_relationship": "rId18",
+      "binary_match_verified": true,
+      "script_path": "tmp/revisao_relatorio/rodada2/preparar_diagrama.cjs",
+      "function": "IIFE assíncrona",
+      "line_start": 1,
+      "line_end": 12,
+      "main_script": {
+        "path": "tmp/revisao_relatorio/rodada2/preparar_diagrama.cjs",
+        "exists": true,
+        "bytes": 870,
+        "sha256": "4d2c9bfe06f331372c16f74db93394936df974035e2a73999b5cf70baf7f801d",
+        "script_path": "tmp/revisao_relatorio/rodada2/preparar_diagrama.cjs",
+        "function": "IIFE assíncrona",
+        "line_start": 1,
+        "line_end": 12,
+        "role": "Lê o SVG das arquiteturas, padroniza Distilação → Destilação e rasteriza com sharp."
+      },
+      "supporting_scripts": [
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+          "exists": true,
+          "bytes": 12563,
+          "sha256": "69b4fc2587cd3e1fbb617cb7e71fc4df4af2f5d4782b5815873bbf53cec641ad",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+          "function": "bloco Arquiteturas / save(\"03_arquiteturas\", ...)",
+          "line_start": 84,
+          "line_end": 102,
+          "role": "Desenha a estrutura implementada das três redes."
+        },
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+          "exists": true,
+          "bytes": 12563,
+          "sha256": "69b4fc2587cd3e1fbb617cb7e71fc4df4af2f5d4782b5815873bbf53cec641ad",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+          "function": "text / rect / line / arrow / block / save",
+          "line_start": 1,
+          "line_end": 40,
+          "role": "Dependências, utilitários SVG e ajuste tipográfico."
+        },
+        {
+          "path": "tmp/revisao_relatorio/rodada2/editar_tcc.py",
+          "exists": true,
+          "bytes": 30827,
+          "sha256": "ac1d88428ab0ce51dc78b617ad0c7b2b35ad9cb5974235ef87d186cdfbd84aae",
+          "script_path": "tmp/revisao_relatorio/rodada2/editar_tcc.py",
+          "function": "substituição do blob de imagem do DOCX",
+          "line_start": 289,
+          "line_end": 292,
+          "role": "Insere o PNG corrigido na figura de arquiteturas existente."
+        }
+      ],
+      "inputs": [
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/figuras/03_arquiteturas.svg",
+          "exists": true,
+          "bytes": 6976,
+          "sha256": "0e8699a19e90eca865f2d85179299d7440491dc639bd63f6e8504ebe2f2dcd86"
+        },
+        {
+          "path": "tmp/revisao_relatorio/rodada2/figuras/arquiteturas_corrigidas.svg",
+          "exists": true,
+          "bytes": 6976,
+          "sha256": "529008e1f679289a98f52b68a67dad5cf24aa4ec337a9d628ee91b7a73d87350"
+        }
+      ],
+      "input_patterns": [],
+      "source": "Diagrama autoral das implementações do projeto, com correção posterior da grafia destilação.",
+      "source_caption_in_report": "Fonte: elaboração própria. Esquemas próprios baseados no código do projeto. Os zeros do decoder marcam posições futuras e não fornecem os valores do alvo.",
+      "status": "PNG da revisão posterior idêntico ao incorporado no DOCX.",
+      "notes": [
+        "Não usar diretamente o PNG antigo 03_arquiteturas.png para a versão final; o asset efetivo está em rodada2."
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Desempenho por localidade nas quatro tarefas",
+      "caption": "Figura 6 — Desempenho por localidade nas quatro tarefas",
+      "page": 22,
+      "asset": "tmp/relatorio_final_ea019/revisao_artigo/figuras/12_localidades.png",
+      "asset_sha256": "e88f0be1a1ffab85f14fdcbb61cbbe756621f4ef766787f0a23bee34d126bc32",
+      "asset_dimensions_px": [
+        2889,
+        2689
+      ],
+      "vector_asset": {
+        "path": "tmp/relatorio_final_ea019/revisao_artigo/11_mae_localidades.svg",
+        "exists": true,
+        "bytes": 67740,
+        "sha256": "1b0a98c404a4267d8554d91d508f05bb8b1b5d7e6a03385d0e915b7b84af6fd1"
+      },
+      "matching_preserved_png_assets": [
+        "tmp/relatorio_final_ea019/revisao_artigo/11_mae_localidades.png",
+        "tmp/relatorio_final_ea019/revisao_artigo/figuras/12_localidades.png"
+      ],
+      "docx_media": "word/media/image12.png",
+      "docx_relationship": "rId20",
+      "binary_match_verified": true,
+      "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_localidade_heatmap.py",
+      "function": "bloco matriz por localidade",
+      "line_start": 26,
+      "line_end": 91,
+      "main_script": {
+        "path": "tmp/relatorio_final_ea019/revisao_artigo/make_localidade_heatmap.py",
+        "exists": true,
+        "bytes": 6062,
+        "sha256": "8740fe8abd00d6035d9471d728ebdfac92c1d41a149cdf53e9513544cd623015",
+        "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_localidade_heatmap.py",
+        "function": "bloco matriz por localidade",
+        "line_start": 26,
+        "line_end": 91,
+        "role": "Lê a condição validada, recupera MAEs locais, verifica as médias macro e desenha quatro painéis."
+      },
+      "supporting_scripts": [
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/make_localidade_heatmap.py",
+          "exists": true,
+          "bytes": 6062,
+          "sha256": "8740fe8abd00d6035d9471d728ebdfac92c1d41a149cdf53e9513544cd623015",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_localidade_heatmap.py",
+          "function": "configurações / text / rect / fmt / variant",
+          "line_start": 1,
+          "line_end": 25,
+          "role": "Define dados, modelos, tarefas e utilitários SVG."
+        },
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize_localidade.cjs",
+          "exists": true,
+          "bytes": 407,
+          "sha256": "3576b6d80b13ccd81740c5d9bb44b024a7eb9e6b29c1cdb44b0bad460fb6d5dd",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize_localidade.cjs",
+          "function": "IIFE assíncrona",
+          "line_start": 1,
+          "line_end": 7,
+          "role": "Converte 11_mae_localidades.svg para PNG com sharp a 160 dpi."
+        },
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/prepare_revision.py",
+          "exists": true,
+          "bytes": 11135,
+          "sha256": "9bba844e1c323c4b15b091f33dd2e21cfcff99d750cb6b30362c2048a43cf11f",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/prepare_revision.py",
+          "function": "bloco de cópia dos assets",
+          "line_start": 76,
+          "line_end": 79,
+          "role": "Copia as figuras comparativas e o mapa de calor para os nomes usados no builder."
+        }
+      ],
+      "inputs": [
+        {
+          "path": "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv",
+          "exists": true,
+          "bytes": 6479,
+          "sha256": "9db39841e2729cd6e6d7642674d6f068af5db2403c6352b5380a2f4d535a6ddb"
+        },
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/11_mae_localidades_dados.json",
+          "exists": true,
+          "bytes": 35451,
+          "sha256": "dda5a8b451af988362ac1b7b2d5b1e8cef23602eaac6341716af5fa4389ff00d"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/sem_quantizacao/metricas_por_localidade_teste.csv",
+          "exists": true,
+          "bytes": 5284,
+          "sha256": "5f651175470038b5ca0853cd38a81bf17423c2b118b1fc09db2246493d0fcda5"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/sem_quantizacao/metricas_por_localidade_teste.csv",
+          "exists": true,
+          "bytes": 5183,
+          "sha256": "9c73bc3fac104b67e15be31169eac23716c0ed84f2b4ac9053c7a3102d77f523"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/q64/metricas_por_localidade_teste.csv",
+          "exists": true,
+          "bytes": 4708,
+          "sha256": "854750bb5d336ac57a26aac680b7974ac34b256f4a16c702b1535fe71a27d1f7"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/q256/metricas_por_localidade_teste.csv",
+          "exists": true,
+          "bytes": 7610,
+          "sha256": "3a5b31bb4f51e3441cea254bbdda7e4b35ce7228b66bd2271031797ebef51a55"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/informer/q64/metricas_por_localidade_teste.csv",
+          "exists": true,
+          "bytes": 7424,
+          "sha256": "78ac523321fe1aecda3d76e92b950ebfa2dc66ed93359be53a2146006b656b50"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/lstm/sem_quantizacao/metricas_por_localidade_teste.csv",
+          "exists": true,
+          "bytes": 7833,
+          "sha256": "fdc09d8bc8a8513deb718828e474b37e09a1578b4b18e361d7e2a58414d7c813"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/transformer/q128/metricas_por_localidade_teste.csv",
+          "exists": true,
+          "bytes": 1611,
+          "sha256": "ef9c5067dcdd1bef62584c821c6980d8ff88787f9ee06a4c14d411fbc2c931e0"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/informer/q128/metricas_por_localidade_teste.csv",
+          "exists": true,
+          "bytes": 1573,
+          "sha256": "1d1a2123524f9ccc65727cf654203eb1a0a0d9b726f925e2994cbba6aedd8b87"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/lstm/q128/metricas_por_localidade_teste.csv",
+          "exists": true,
+          "bytes": 1549,
+          "sha256": "e03cf8290d27f1e9ed761f5f2c61bbd7ee6841f376babaa1e8ba7a30bf710432"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/transformer/q64/metricas_por_localidade_teste.csv",
+          "exists": true,
+          "bytes": 4631,
+          "sha256": "53935b3c5ddb5c543bb33250a63e83e05cd59cc6bbd9b98ac88aff57cf96d465"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/informer/q128/metricas_por_localidade_teste.csv",
+          "exists": true,
+          "bytes": 4564,
+          "sha256": "8e6baac321cd01f2d81d7811777be41bd393735ffcb5eed8f681732b10c58612"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/lstm/q128/metricas_por_localidade_teste.csv",
+          "exists": true,
+          "bytes": 4458,
+          "sha256": "33195a353156bfee589b7944a4330ede8ec0cf22bbbaa02062cb0efb4f8fc538"
+        }
+      ],
+      "input_patterns": [
+        "resultados/quantizacao_todos_modelos_20260929/atual/{tarefa}/{modelo_lower}/{variante_escolhida}/metricas_por_localidade_teste.csv"
+      ],
+      "source": "MAE local de teste das quatro tarefas e três modelos, na condição de entrada escolhida pela validação.",
+      "source_caption_in_report": "Fonte: elaboração própria. Métricas locais de teste com seleção fixa pela validação. Escala de cor própria por painel. Contorno e negrito indicam o menor MAE local com a precisão integral dos dados; valores arredondados podem parecer empatados. A comparação é descritiva e não indica significância estatística.",
+      "status": "PNG atual idêntico a 11_mae_localidades.png; cópia para 12_localidades.png comprovada.",
+      "notes": [
+        "120 células: 4 tarefas × 3 modelos × 10 localidades. O script verifica 12 médias macro contra o ranking.",
+        "As cores têm escala própria em cada tarefa. Contorno/negrito marcam o menor MAE local e não significância estatística."
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Perfis cumulativos de erro nos horizontes de cada tarefa",
+      "caption": "Figura 7 — Perfis cumulativos de erro nos horizontes de cada tarefa",
+      "page": 24,
+      "asset": "tmp/relatorio_final_ea019/revisao_artigo/figuras/07_horizontes.png",
+      "asset_sha256": "5d8a545b5d1a7bc74ef0c97638ea97b1259cbe5b4fd78d51c7498fd033fccff4",
+      "asset_dimensions_px": [
+        3000,
+        2375
+      ],
+      "vector_asset": {
+        "path": "tmp/relatorio_final_ea019/revisao_artigo/figuras_comparativas/07_horizontes.svg",
+        "exists": true,
+        "bytes": 14252,
+        "sha256": "191611a69545988b3c670938d0d3405e9a72b3b5762b1b098fd7299be0ae3719"
+      },
+      "matching_preserved_png_assets": [
+        "tmp/relatorio_final_ea019/revisao_artigo/figuras/07_horizontes.png",
+        "tmp/relatorio_final_ea019/revisao_artigo/figuras_comparativas/07_horizontes.png"
+      ],
+      "docx_media": "word/media/image14.png",
+      "docx_relationship": "rId22",
+      "binary_match_verified": true,
+      "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py",
+      "function": "bloco Perfis cumulativos / save(\"07_horizontes\", ...)",
+      "line_start": 145,
+      "line_end": 190,
+      "main_script": {
+        "path": "tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py",
+        "exists": true,
+        "bytes": 12314,
+        "sha256": "3e375f41cd4723fb6c217a72d8e8c858e5a61f80d5b94e3454b1a47ea44d0b81",
+        "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py",
+        "function": "bloco Perfis cumulativos / save(\"07_horizontes\", ...)",
+        "line_start": 145,
+        "line_end": 190,
+        "role": "Traça o MAE cumulativo por horizonte, com a condição validada fixa e espaçamento temporal real."
+      },
+      "supporting_scripts": [
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py",
+          "exists": true,
+          "bytes": 12314,
+          "sha256": "3e375f41cd4723fb6c217a72d8e8c858e5a61f80d5b94e3454b1a47ea44d0b81",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py",
+          "function": "fmt / text / line / rect / circle / save / chosen / row / nice_top",
+          "line_start": 1,
+          "line_end": 52,
+          "role": "Leitura das métricas, escolha validada e utilitários SVG."
+        },
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/prepare_revision.py",
+          "exists": true,
+          "bytes": 11135,
+          "sha256": "9bba844e1c323c4b15b091f33dd2e21cfcff99d750cb6b30362c2048a43cf11f",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/prepare_revision.py",
+          "function": "bloco de cópia dos assets",
+          "line_start": 76,
+          "line_end": 79,
+          "role": "Copia as figuras comparativas e o mapa de calor para os nomes usados no builder."
+        },
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs",
+          "exists": true,
+          "bytes": 539,
+          "sha256": "b69861a3df9e0ca1b567f406cf067c33a1fdae057710b77bddd5e9a36372a71a",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs",
+          "function": "IIFE assíncrona",
+          "line_start": 1,
+          "line_end": 9,
+          "role": "Rasteriza os SVGs da pasta figuras com sharp a 180 dpi."
+        }
+      ],
+      "inputs": [
+        {
+          "path": "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/metricas_teste_modelos_disciplina.csv",
+          "exists": true,
+          "bytes": 72109,
+          "sha256": "a488912f66236ab4ae647a15d5816eb2c6c425c2d84ebba391d5203191cd7df0"
+        },
+        {
+          "path": "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv",
+          "exists": true,
+          "bytes": 6479,
+          "sha256": "9db39841e2729cd6e6d7642674d6f068af5db2403c6352b5380a2f4d535a6ddb"
+        }
+      ],
+      "input_patterns": [],
+      "source": "Métricas macro de teste de 2024 das condições fixadas na validação, em cada tarefa.",
+      "source_caption_in_report": "Fonte: elaboração própria. Macro-MAE cumulativo, com pesos iguais entre localidades. A condição de entrada permanece fixa pela escolha no horizonte completo da validação. O painel mensal de seis passos é exploratório.",
+      "status": "PNG atual idêntico ao asset em figuras_comparativas.",
+      "notes": [
+        "O MAE em h reúne os passos de 1 até h; não representa erro no lead h isolado.",
+        "Os PNGs preservados têm densidade 180 dpi. Não foi localizado um comando histórico separado de rasterização apontando diretamente para figuras_comparativas; rasterize.cjs preserva o método sharp utilizado para os SVGs em figuras."
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Sensibilidade do MAE à resolução de amplitude no regime atual",
+      "caption": "Figura 8 — Sensibilidade do MAE à resolução de amplitude no regime atual",
+      "page": 26,
+      "asset": "tmp/relatorio_final_ea019/revisao_artigo/figuras/05_quantizacao.png",
+      "asset_sha256": "8d0edb8f3da26885bac40caf60f441a3ad06cf908d73f590ef293116e892deda",
+      "asset_dimensions_px": [
+        3000,
+        2775
+      ],
+      "vector_asset": {
+        "path": "tmp/relatorio_final_ea019/revisao_artigo/figuras_comparativas/05_quantizacao.svg",
+        "exists": true,
+        "bytes": 12416,
+        "sha256": "8b46942745ee5e82bea46aa45c93d017b9cd3ce98583b80c49b82e51c6fc8518"
+      },
+      "matching_preserved_png_assets": [
+        "tmp/relatorio_final_ea019/revisao_artigo/figuras/05_quantizacao.png",
+        "tmp/relatorio_final_ea019/revisao_artigo/figuras_comparativas/05_quantizacao.png"
+      ],
+      "docx_media": "word/media/image13.png",
+      "docx_relationship": "rId21",
+      "binary_match_verified": true,
+      "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py",
+      "function": "bloco Sensibilidade à quantização / save(\"05_quantizacao\", ...)",
+      "line_start": 81,
+      "line_end": 110,
+      "main_script": {
+        "path": "tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py",
+        "exists": true,
+        "bytes": 12314,
+        "sha256": "3e375f41cd4723fb6c217a72d8e8c858e5a61f80d5b94e3454b1a47ea44d0b81",
+        "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py",
+        "function": "bloco Sensibilidade à quantização / save(\"05_quantizacao\", ...)",
+        "line_start": 81,
+        "line_end": 110,
+        "role": "Calcula Δ=100×(MAE_quantizado/MAE_controle−1), monta a matriz e marca a escolha validada."
+      },
+      "supporting_scripts": [
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py",
+          "exists": true,
+          "bytes": 12314,
+          "sha256": "3e375f41cd4723fb6c217a72d8e8c858e5a61f80d5b94e3454b1a47ea44d0b81",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py",
+          "function": "fmt / text / line / rect / circle / save / chosen / row / nice_top",
+          "line_start": 1,
+          "line_end": 52,
+          "role": "Leitura das métricas, escolha validada e utilitários SVG."
+        },
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/prepare_revision.py",
+          "exists": true,
+          "bytes": 11135,
+          "sha256": "9bba844e1c323c4b15b091f33dd2e21cfcff99d750cb6b30362c2048a43cf11f",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/prepare_revision.py",
+          "function": "bloco de cópia dos assets",
+          "line_start": 76,
+          "line_end": 79,
+          "role": "Copia as figuras comparativas e o mapa de calor para os nomes usados no builder."
+        },
+        {
+          "path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs",
+          "exists": true,
+          "bytes": 539,
+          "sha256": "b69861a3df9e0ca1b567f406cf067c33a1fdae057710b77bddd5e9a36372a71a",
+          "script_path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs",
+          "function": "IIFE assíncrona",
+          "line_start": 1,
+          "line_end": 9,
+          "role": "Rasteriza os SVGs da pasta figuras com sharp a 180 dpi."
+        }
+      ],
+      "inputs": [
+        {
+          "path": "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/metricas_teste_modelos_disciplina.csv",
+          "exists": true,
+          "bytes": 72109,
+          "sha256": "a488912f66236ab4ae647a15d5816eb2c6c425c2d84ebba391d5203191cd7df0"
+        },
+        {
+          "path": "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv",
+          "exists": true,
+          "bytes": 6479,
+          "sha256": "9db39841e2729cd6e6d7642674d6f068af5db2403c6352b5380a2f4d535a6ddb"
+        },
+        {
+          "path": "tmp/relatorio_final_ea019/figuras/dados_graficos.json",
+          "exists": true,
+          "bytes": 9360,
+          "sha256": "02e5928a7f157c7ce2cf4800d7de872810ea0622614746720e7930a87151c640"
+        }
+      ],
+      "input_patterns": [],
+      "source": "MAEs de teste de 2024 para Q64/Q128/Q256 e controle contínuo do mesmo modelo e tarefa.",
+      "source_caption_in_report": "Fonte: elaboração própria. Variações do macro-MAE calculadas em relação ao controle do mesmo modelo e tarefa. Estrela identifica a condição escolhida na validação; contorno destaca escolhas quantizadas.",
+      "status": "PNG atual idêntico ao asset em figuras_comparativas.",
+      "notes": [
+        "A cor satura em |Δ|≥10%, com valores exatos em cada célula. A estrela indica escolha na validação, não a melhor célula no teste.",
+        "dados_graficos.json é uma verificação independente final do script completo (linhas 193–202), não a fonte numérica principal da matriz.",
+        "Mesma observação de rasterização da Figura 7."
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Trajetórias de validação dos controles contínuos na tarefa horária",
+      "caption": "Figura 9 — Trajetórias de validação dos controles contínuos na tarefa horária",
+      "page": 28,
+      "asset": "tmp/revisao_relatorio/rodada2/figuras/diagnostico_treinamento_horario_controles.png",
+      "asset_sha256": "e36d502beee5fbe85a1767ff072267a6f3bd27174316a23656d43c349b01d4ec",
+      "asset_dimensions_px": [
+        3012,
+        1825
+      ],
+      "vector_asset": {
+        "path": "tmp/revisao_relatorio/rodada2/figuras/diagnostico_treinamento_horario_controles.svg",
+        "exists": true,
+        "bytes": 14873,
+        "sha256": "3223316d2c18ea3a4ceeba87df0f0d4189ee86cc099492e66a36547cb1d7edac"
+      },
+      "matching_preserved_png_assets": [
+        "tmp/revisao_relatorio/rodada2/figuras/diagnostico_treinamento_horario_controles.png"
+      ],
+      "docx_media": "word/media/image17.png",
+      "docx_relationship": "rId25",
+      "binary_match_verified": true,
+      "script_path": "tmp/revisao_relatorio/rodada2/figuras/gerar_diagnostico_treinamento.py",
+      "function": "script completo / load_log / ymap / xmap / text / line",
+      "line_start": 1,
+      "line_end": 162,
+      "main_script": {
+        "path": "tmp/revisao_relatorio/rodada2/figuras/gerar_diagnostico_treinamento.py",
+        "exists": true,
+        "bytes": 13634,
+        "sha256": "8d89006e176f34878b47fb141a23185a91819f0967036b67b8f3c8ba6b35fe64",
+        "script_path": "tmp/revisao_relatorio/rodada2/figuras/gerar_diagnostico_treinamento.py",
+        "function": "script completo / load_log / ymap / xmap / text / line",
+        "line_start": 1,
+        "line_end": 162,
+        "role": "Audita os logs congelados de seleção, desenha as nove trajetórias horárias e renderiza o diagnóstico."
+      },
+      "supporting_scripts": [
+        {
+          "path": "tmp/revisao_relatorio/rodada2/figuras/rasterizar_diagnostico.cjs",
+          "exists": true,
+          "bytes": 545,
+          "sha256": "03c2ace09ec87ca702500aae80dcbc09899ddd464bbe46df9a9e107b89511e91",
+          "script_path": "tmp/revisao_relatorio/rodada2/figuras/rasterizar_diagnostico.cjs",
+          "function": "renderização sharp",
+          "line_start": 1,
+          "line_end": 4,
+          "role": "Rasteriza o SVG em 3012×1825 pixels com metadados de 450 dpi."
+        },
+        {
+          "path": "tmp/revisao_relatorio/rodada2/editar_tcc.py",
+          "exists": true,
+          "bytes": 30827,
+          "sha256": "ac1d88428ab0ce51dc78b617ad0c7b2b35ad9cb5974235ef87d186cdfbd84aae",
+          "script_path": "tmp/revisao_relatorio/rodada2/editar_tcc.py",
+          "function": "bloco Diagnóstico dos registros de treinamento",
+          "line_start": 186,
+          "line_end": 197,
+          "role": "Insere a imagem, legenda e interpretação no DOCX antes da renumeração final."
+        }
+      ],
+      "inputs": [
+        {
+          "path": "tmp/revisao_relatorio/rodada2/figuras/manifesto_diagnostico_treinamento.json",
+          "exists": true,
+          "bytes": 20683,
+          "sha256": "eaf8812b82712fead3d8e2d7394dac2ca8f856301569b7a4ee52264117a46ad2"
+        },
+        {
+          "path": "tmp/revisao_relatorio/rodada2/figuras/dados_curvas_selecao_horaria.csv",
+          "exists": true,
+          "bytes": 18147,
+          "sha256": "212e67427de0b6f60afa56dfd1781aab1bdb634fb52fc147b2e2a487a0b1afb8"
+        },
+        {
+          "path": "tmp/revisao_relatorio/rodada2/figuras/auditoria_tetos_epocas.csv",
+          "exists": true,
+          "bytes": 139698,
+          "sha256": "cd15e6aa56bfe0568948b54e56f72518271a2bcef752ea640cad0fbbf28aabc9"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/selecao_congelada.json",
+          "exists": true,
+          "bytes": 10099,
+          "sha256": "e737a77feab7c8046b0488e3aca87f949e091547cd78109c20aadde6a2be60ab"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/sem_quantizacao/selecao/seed42.csv",
+          "exists": true,
+          "bytes": 442,
+          "sha256": "eb280b369ef8121a9e27c47e1914b2eca7fcaa0dd3d8cb572cebe56a3a2d8143"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/sem_quantizacao/selecao/seed42.json",
+          "exists": true,
+          "bytes": 1100,
+          "sha256": "f1b56a0a9c09df9d9e6ba581de0327403df2a21716348a7e7df36a538c5a2bfc"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/selecao_congelada.json",
+          "exists": true,
+          "bytes": 9937,
+          "sha256": "bb2ee2fcab7ee570bcba1aa7a87907151215249d7c5d1914141bc6abc9e47d32"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/sem_quantizacao/selecao/seed42.csv",
+          "exists": true,
+          "bytes": 1417,
+          "sha256": "c323ee34d555075740cc0c9d8bc77d8d338b2e087683aa59cd10803a3d4ad8df"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/sem_quantizacao/selecao/seed42.json",
+          "exists": true,
+          "bytes": 1088,
+          "sha256": "ff5dbccf53707fec0959f991c4aff0186e86b83b11daa0c31759c2da8ac9966a"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/selecao_congelada.json",
+          "exists": true,
+          "bytes": 10212,
+          "sha256": "1b728189756fd36d9461d158b19ab228ec79f4f1aef0095e513ecc6b762ea1e0"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/sem_quantizacao/selecao/seed42.csv",
+          "exists": true,
+          "bytes": 1414,
+          "sha256": "d8db895ed1236840e0d434e380676c17f3e015439258e4f1324a70f11ac2d21a"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/sem_quantizacao/selecao/seed42.json",
+          "exists": true,
+          "bytes": 1110,
+          "sha256": "d793f06239ec9b11436cf4316c8111a632e2d0b115329278d7032c8d6dea1b7e"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/informer/selecao_congelada.json",
+          "exists": true,
+          "bytes": 10323,
+          "sha256": "e73bc1e2390a5121507c39a034c983f4e64cee35cfcb1cfdc870e4451712c34b"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/informer/sem_quantizacao/selecao/seed42.csv",
+          "exists": true,
+          "bytes": 809,
+          "sha256": "81fa19ae848f5fcf5186bd4bafb8d0e31178a7c60f7020a3edb6e954fb57f8fd"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/informer/sem_quantizacao/selecao/seed42.json",
+          "exists": true,
+          "bytes": 1143,
+          "sha256": "461bb4bf41a3d86857c2c5f8b4f6424fca89f0952704367fc502ce393030bbc1"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/lstm/selecao_congelada.json",
+          "exists": true,
+          "bytes": 9656,
+          "sha256": "2fede94637b6db14cca22b96016a6a9a238ae319a8de03ad0e9b612feb51c909"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/lstm/sem_quantizacao/selecao/seed42.csv",
+          "exists": true,
+          "bytes": 551,
+          "sha256": "c9995b1760f3d3fb0386967606665908b880b9bbfb75f82176ab65af5b414a7c"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/lstm/sem_quantizacao/selecao/seed42.json",
+          "exists": true,
+          "bytes": 1130,
+          "sha256": "fb0aa856ee1aba49fc716ef2944905904a051473565e500665a3ef4d8ea300d6"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/transformer/selecao_congelada.json",
+          "exists": true,
+          "bytes": 10430,
+          "sha256": "acc21912737802120d7e64cdf99d7ff7571a3c5e28b673fe239e7c6718dab778"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/transformer/sem_quantizacao/selecao/seed42.csv",
+          "exists": true,
+          "bytes": 1186,
+          "sha256": "a5e54e230722577e20a3d95a38d44bc6d3e7ebcb2da1811d56a9e626e3aad7fc"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/transformer/sem_quantizacao/selecao/seed42.json",
+          "exists": true,
+          "bytes": 1152,
+          "sha256": "f1fa5e2a1a0ef426bf15e6c104d57a275309d6183ae38551528f05b49537bdcc"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/informer/selecao_congelada.json",
+          "exists": true,
+          "bytes": 10463,
+          "sha256": "444f1388a3322287f720e443afa30fb875714a9b35b20ecc57090ea4f363ba73"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/informer/sem_quantizacao/selecao/seed42.csv",
+          "exists": true,
+          "bytes": 440,
+          "sha256": "c0ea660c8b3edcb5050bd80079150ba870f98700411767472cb478aa696b10a8"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/informer/sem_quantizacao/selecao/seed42.json",
+          "exists": true,
+          "bytes": 1154,
+          "sha256": "b8674a5d8160d37b9f86ec42c15b1ad5acf959dac65416905b4e467cb2de7971"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/lstm/selecao_congelada.json",
+          "exists": true,
+          "bytes": 9793,
+          "sha256": "b05dae467a19abe04981ac1e0771cbce6b8c950a7a351bb99678d6da033cd465"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/lstm/sem_quantizacao/selecao/seed42.csv",
+          "exists": true,
+          "bytes": 1183,
+          "sha256": "34cac98d9a6266ddbb57e260a9b14b583a7c4380f1399f8786ced000629fdefb"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/lstm/sem_quantizacao/selecao/seed42.json",
+          "exists": true,
+          "bytes": 1142,
+          "sha256": "197e72ffc256b2a803d9de193937e4ebc610c61345dafdfe64f449a59aa1ce34"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/transformer/selecao_congelada.json",
+          "exists": true,
+          "bytes": 10568,
+          "sha256": "172586f0931e9bc6d30db44e753ec1dfb1b111c19864abcd4afa70ae28d1c462"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/transformer/sem_quantizacao/selecao/seed42.csv",
+          "exists": true,
+          "bytes": 1415,
+          "sha256": "32231b372a036c2382626c024aff2fef28dbfbcf63b6c988b3bb079bfe4da837"
+        },
+        {
+          "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/transformer/sem_quantizacao/selecao/seed42.json",
+          "exists": true,
+          "bytes": 1164,
+          "sha256": "2d3ce36e984dc06f0ace305e3ece873a57846ec1b1cc0fdce6a38534fe2a17d4"
+        }
+      ],
+      "input_patterns": [
+        "resultados/quantizacao_todos_modelos_20260929/{regime}/hourly_72_extension/{modelo_lower}/sem_quantizacao/selecao/seed42.{csv,json}",
+        "resultados/quantizacao_todos_modelos_20260929/{regime}/{tarefa}/{modelo_lower}/selecao_congelada.json",
+        "resultados/quantizacao_todos_modelos_20260929/{regime}/{tarefa}/{modelo_lower}/contrato_execucao.json",
+        "resultados/quantizacao_todos_modelos_20260929/{regime}/{tarefa}/{modelo_lower}/{variante}/selecao/seed{semente}.csv"
+      ],
+      "source": "Logs canônicos de seleção dos controles contínuos horários: Transformer, Informer e LSTM, semente 42, em três regimes.",
+      "source_caption_in_report": "Fonte: elaboração própria com os registros de seleção dos três modelos, semente 42. MSE de validação normalizado em eixo vertical logarítmico; círculos indicam as épocas escolhidas. O regime atual avalia 2023; os históricos compartilham a validação, mas usam escalas ajustadas em períodos distintos. As curvas incluem as épocas registradas até a parada antecipada ou o teto de 30 épocas e não isolam o efeito da duração do histórico.",
+      "status": "PNG da revisão posterior idêntico ao incorporado no DOCX.",
+      "notes": [
+        "O desenho das curvas usa apenas os nove logs horários contínuos; a execução do script também audita os tetos de épocas dos demais registros nas linhas 68–88.",
+        "Eixo vertical: MSE normalizado logarítmico, sem comparação direta dos valores normalizados entre regimes. Não são logs de refit."
+      ]
+    }
+  ],
+  "unnumbered_images": [
+    {
+      "number": null,
+      "title": "Logotipo FEEC–Unicamp (versão atual)",
+      "active_in_current_report": true,
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "asset": "tmp/relatorio_final_ea019/template_media/image1.png",
+      "asset_sha256": "0c3cafd495a80856ebc4f6ed2cc55e0365fa538c483aeef643307fbcf90ae81c",
+      "docx_media": "word/media/image1.png",
+      "docx_uses": [
+        {
+          "part": "word/header1.xml",
+          "relationship": "rId1"
+        }
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "function": "Document(REF), preservação dos cabeçalhos do modelo",
+      "line_start": 14,
+      "line_end": 38,
+      "source": "Logotipo institucional herdado, sem desenho ou geração pelo projeto. Binariamente igual ao arquivo do modelo_referencia.docx.",
+      "input_template": {
+        "path": "tmp/relatorio_final_ea019/modelo_referencia.docx",
+        "exists": true,
+        "bytes": 84469,
+        "sha256": "aecee899b62d0042f5104d90332a6fb0fd13a90779cb69fb3ea7df4740e3e9d1"
+      },
+      "status": "Importado do modelo institucional; não existe script autoral de desenho do logotipo.",
+      "notes": []
+    },
+    {
+      "number": null,
+      "title": "Logotipo UNICAMP",
+      "active_in_current_report": true,
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "asset": "tmp/relatorio_final_ea019/template_media/image2.jpeg",
+      "asset_sha256": "505cb9becf08c4dfed4fbc7b578f38b09881e1818b7e1b720b98b2f678632e04",
+      "docx_media": "word/media/image2.jpeg",
+      "docx_uses": [
+        {
+          "part": "word/header1.xml",
+          "relationship": "rId2"
+        },
+        {
+          "part": "word/header2.xml",
+          "relationship": "rId2"
+        }
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "function": "Document(REF), preservação dos cabeçalhos do modelo",
+      "line_start": 14,
+      "line_end": 38,
+      "source": "Logotipo institucional herdado, sem desenho ou geração pelo projeto. Binariamente igual ao arquivo do modelo_referencia.docx.",
+      "input_template": {
+        "path": "tmp/relatorio_final_ea019/modelo_referencia.docx",
+        "exists": true,
+        "bytes": 84469,
+        "sha256": "aecee899b62d0042f5104d90332a6fb0fd13a90779cb69fb3ea7df4740e3e9d1"
+      },
+      "status": "Importado do modelo institucional; não existe script autoral de desenho do logotipo.",
+      "notes": []
+    },
+    {
+      "number": null,
+      "title": "Logotipo FEEC (versão antiga, cabeçalho inativo)",
+      "active_in_current_report": false,
+      "pages": [],
+      "asset": "tmp/relatorio_final_ea019/template_media/image3.png",
+      "asset_sha256": "91f1a6f663a41279e0a2bdb98a2fe1391e477c9acac6b393caedd865ef773173",
+      "docx_media": "word/media/image3.png",
+      "docx_uses": [
+        {
+          "part": "word/header2.xml",
+          "relationship": "rId1"
+        }
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "function": "Document(REF), preservação dos cabeçalhos do modelo",
+      "line_start": 14,
+      "line_end": 38,
+      "source": "Logotipo institucional herdado, sem desenho ou geração pelo projeto. Binariamente igual ao arquivo do modelo_referencia.docx.",
+      "input_template": {
+        "path": "tmp/relatorio_final_ea019/modelo_referencia.docx",
+        "exists": true,
+        "bytes": 84469,
+        "sha256": "aecee899b62d0042f5104d90332a6fb0fd13a90779cb69fb3ea7df4740e3e9d1"
+      },
+      "status": "Importado do modelo institucional; não existe script autoral de desenho do logotipo.",
+      "notes": [
+        "O cabeçalho de primeira página existe como parte do DOCX, porém a seção não tem w:titlePg; assim, esse cabeçalho não é ativado no documento final."
+      ]
+    }
+  ],
+  "scripts_to_package": [
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+      "exists": true,
+      "bytes": 12563,
+      "sha256": "69b4fc2587cd3e1fbb617cb7e71fc4df4af2f5d4782b5815873bbf53cec641ad"
+    },
+    {
+      "path": "codigo_fonte/coleta_e_preparacao/contexto_geografico.py",
+      "exists": true,
+      "bytes": 26793,
+      "sha256": "fd8ddc3f067d83fed989c0c926c79462a0600f99e82df6e7c55ded56006d73e6"
+    },
+    {
+      "path": "codigo_fonte/coleta_e_preparacao/localidades.py",
+      "exists": true,
+      "bytes": 6720,
+      "sha256": "ab325cf26249f851a11758728700f288635b115c3d3eeb91120c185b1f9564d1"
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs",
+      "exists": true,
+      "bytes": 539,
+      "sha256": "b69861a3df9e0ca1b567f406cf067c33a1fdae057710b77bddd5e9a36372a71a"
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/preparar_diagrama.cjs",
+      "exists": true,
+      "bytes": 870,
+      "sha256": "4d2c9bfe06f331372c16f74db93394936df974035e2a73999b5cf70baf7f801d"
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/editar_tcc.py",
+      "exists": true,
+      "bytes": 30827,
+      "sha256": "ac1d88428ab0ce51dc78b617ad0c7b2b35ad9cb5974235ef87d186cdfbd84aae"
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_artigo/make_localidade_heatmap.py",
+      "exists": true,
+      "bytes": 6062,
+      "sha256": "8740fe8abd00d6035d9471d728ebdfac92c1d41a149cdf53e9513544cd623015"
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize_localidade.cjs",
+      "exists": true,
+      "bytes": 407,
+      "sha256": "3576b6d80b13ccd81740c5d9bb44b024a7eb9e6b29c1cdb44b0bad460fb6d5dd"
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_artigo/prepare_revision.py",
+      "exists": true,
+      "bytes": 11135,
+      "sha256": "9bba844e1c323c4b15b091f33dd2e21cfcff99d750cb6b30362c2048a43cf11f"
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py",
+      "exists": true,
+      "bytes": 12314,
+      "sha256": "3e375f41cd4723fb6c217a72d8e8c858e5a61f80d5b94e3454b1a47ea44d0b81"
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/figuras/gerar_diagnostico_treinamento.py",
+      "exists": true,
+      "bytes": 13634,
+      "sha256": "8d89006e176f34878b47fb141a23185a91819f0967036b67b8f3c8ba6b35fe64"
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/figuras/rasterizar_diagnostico.cjs",
+      "exists": true,
+      "bytes": 545,
+      "sha256": "03c2ace09ec87ca702500aae80dcbc09899ddd464bbe46df9a9e107b89511e91"
+    }
+  ],
+  "global_notes": [
+    "Os scripts históricos do builder têm numeração anterior. A numeração e as páginas deste mapa foram extraídas do relatório canônico final.",
+    "Imagens remanescentes em word/media sem referência visível no corpo não foram confundidas com figuras atuais.",
+    "Os scripts Python de diagramas executam blocos no nível do módulo; os nomes de função anotados descrevem esses blocos e citam a função save correspondente.",
+    "O pacote deve manter os assets e os caminhos relativos; scripts de builders e patches não devem ser executados contra os relatórios canônicos por simples consulta."
+  ]
+}

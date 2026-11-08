@@ -1,0 +1,285 @@
+{
+  "id": 9,
+  "start": 280,
+  "end": 310,
+  "duration": 30,
+  "title": "Como ler o MAE e os horizontes cumulativos",
+  "narration": "Para avaliar as previsões, usei principalmente o erro absoluto médio, o MAE. Ele resume a distância entre previsão e referência, na mesma unidade da irradiância. Calculei as métricas por localidade e depois obtive uma média com pesos iguais. Nos resultados cumulativos, o erro reúne os passos até o horizonte indicado; não representa apenas o último instante.",
+  "label_events": [],
+  "notes": [
+    "Uma animação conceitual da métrica pode usar valores didáticos, desde que identificados como exemplo.",
+    "Nos gráficos de resultados, utilizar somente dados reais conferidos nos artefatos do projeto.",
+    "Previsões de origens distintas para um mesmo alvo permanecem na avaliação, e a sobreposição introduz dependência entre os erros.",
+    "No horário, leads exatos de 24, 48 e 72 horas podem coincidir com a noite; não usar valores nulos nesses instantes como evidência de previsão diurna perfeita."
+  ],
+  "start_seconds": 280,
+  "end_seconds": 310,
+  "duration_seconds": 30,
+  "frame_count": 900,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v5\\cenas\\cena_09.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v5\\cenas\\cena_09_3d.mp4",
+  "rendered": false,
+  "scene_metadata": {
+    "metric": "macro-MAE W/m²",
+    "equal_locality_weights": 10,
+    "cumulative": true,
+    "geometry_from_version": 4
+  },
+  "render_style": {
+    "version": 5,
+    "chapter_id": 9,
+    "engine": "BLENDER_WORKBENCH",
+    "background_srgb": "#07090D",
+    "palette": {
+      "coral": "#EC8061",
+      "coral_body": "#D96D50",
+      "cyan": "#40BACE",
+      "cyan_body": "#269CAF",
+      "violet": "#AD8DDE",
+      "violet_body": "#9474CE",
+      "gold": "#F0B84C",
+      "body": "#526A7C",
+      "graphite": "#405664",
+      "white": "#F3F5F7",
+      "secondary": "#BBC7D0",
+      "axes": "#7C8C9A"
+    },
+    "material_count": 13,
+    "roles": {
+      "line": 3,
+      "font": 6,
+      "solid": 3,
+      "marker": 1
+    },
+    "materials": [
+      {
+        "source": "MAE v4 white",
+        "material": "MAE v4 white · V5 line",
+        "role": "line",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 0.49,
+        "metallic": 0.0,
+        "emission_strength": 0.18,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Referência · texto",
+        "material": "Referência · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "MAE v4 gold",
+        "material": "MAE v4 gold · V5 line",
+        "role": "line",
+        "source_srgb": "#E9B95F",
+        "srgb": "#F0B84C",
+        "roughness": 0.49,
+        "metallic": 0.0,
+        "emission_strength": 0.18,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Previsão · texto",
+        "material": "Previsão · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#E9B95F",
+        "srgb": "#F0B84C",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "MAE v4 gold",
+        "material": "MAE v4 gold · V5 solid",
+        "role": "solid",
+        "source_srgb": "#E9B95F",
+        "srgb": "#F0B84C",
+        "roughness": 0.57,
+        "metallic": 0.0,
+        "emission_strength": 0.0,
+        "focus_keys": 0,
+        "fine_surface_grain": true
+      },
+      {
+        "source": "Métrica · texto",
+        "material": "Métrica · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "MAE v4 cyan",
+        "material": "MAE v4 cyan · V5 solid",
+        "role": "solid",
+        "source_srgb": "#58CADA",
+        "srgb": "#40BACE",
+        "roughness": 0.57,
+        "metallic": 0.0,
+        "emission_strength": 0.0,
+        "focus_keys": 0,
+        "fine_surface_grain": true
+      },
+      {
+        "source": "MAE v4 muted",
+        "material": "MAE v4 muted · V5 line",
+        "role": "line",
+        "source_srgb": "#A9B2BE",
+        "srgb": "#BBC7D0",
+        "roughness": 0.49,
+        "metallic": 0.0,
+        "emission_strength": 0.18,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "MAE v4 gold",
+        "material": "MAE v4 gold · V5 marker",
+        "role": "marker",
+        "source_srgb": "#E9B95F",
+        "srgb": "#F0B84C",
+        "roughness": 0.45,
+        "metallic": 0.0,
+        "emission_strength": 0.08,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Macro · texto",
+        "material": "Macro · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "MAE v4 body",
+        "material": "MAE v4 body · V5 solid",
+        "role": "solid",
+        "source_srgb": "#344456",
+        "srgb": "#526A7C",
+        "roughness": 0.57,
+        "metallic": 0.0,
+        "emission_strength": 0.0,
+        "focus_keys": 0,
+        "fine_surface_grain": true
+      },
+      {
+        "source": "Horizonte · texto",
+        "material": "Horizonte · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Acumulado · texto",
+        "material": "Acumulado · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#A9B2BE",
+        "srgb": "#BBC7D0",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      }
+    ],
+    "lights": {
+      "areas": [
+        {
+          "name": "V5 soft key",
+          "type": "AREA",
+          "location": [
+            1.8,
+            -5.5,
+            9
+          ],
+          "energy_w": 1450.0,
+          "colour": [
+            1.0,
+            0.95,
+            0.88
+          ],
+          "size": 6.0
+        },
+        {
+          "name": "V5 sky fill",
+          "type": "AREA",
+          "location": [
+            -6,
+            -3.5,
+            4.5
+          ],
+          "energy_w": 750.0,
+          "colour": [
+            0.84,
+            0.92,
+            1.0
+          ],
+          "size": 5.5
+        },
+        {
+          "name": "V5 soft rim",
+          "type": "AREA",
+          "location": [
+            5,
+            4,
+            8
+          ],
+          "energy_w": 1400.0,
+          "colour": [
+            1.0,
+            0.97,
+            0.92
+          ],
+          "size": 5.0
+        }
+      ],
+      "retained_factory_sun": [],
+      "intent": "broad neutral sources; subtle warm/cool separation, no coloured neon rim"
+    },
+    "render_config": {
+      "studio_light": "paint.sl",
+      "aa": "8",
+      "specular_highlights": false
+    },
+    "compositor_enabled": false,
+    "raytracing_enabled": false,
+    "camera_and_object_animation_unchanged": true,
+    "timing_unchanged": true,
+    "focus_animation_baked_without_frame_handlers": true
+  },
+  "qa_times": [
+    3,
+    8,
+    12,
+    16.5,
+    23,
+    28
+  ]
+}

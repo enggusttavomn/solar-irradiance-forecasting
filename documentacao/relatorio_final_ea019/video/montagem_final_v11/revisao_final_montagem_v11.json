@@ -1,0 +1,89 @@
+{
+  "version": 11,
+  "status": "complete",
+  "completed_utc": "2026-11-05T00:38:35.929528+00:00",
+  "duration_seconds": 587.8,
+  "duration_display": "9min47.8s",
+  "previous_v10_duration_seconds": 453.4,
+  "recovered_visual_time_seconds": 134.4,
+  "frames": 17634,
+  "fps": 30,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "files": [
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v11\\Video_TCC_Ritmo_Didatico_Somente_Voz_v11.mp4",
+      "bytes": 54083634,
+      "sha256": "84e736a98e7655f69805e685ff59dbbd24e32ced46160ee1ec58218175498ef2",
+      "has_audio": true,
+      "ffmpeg_header": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\montagem_final_v11\\Video_TCC_Ritmo_Didatico_Somente_Voz_v11.mp4':\n  Metadata:\n    major_brand     : isom\n    minor_version   : 512\n    compatible_brands: isomiso2avc1mp41\n    encoder         : Lavf61.7.100\n  Duration: 00:09:47.80, start: 0.000000, bitrate: 736 kb/s\n  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 579 kb/s, 30 fps, 30 tbr, 15360 tbn (default)\n      Metadata:\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 147 kb/s (default)\n      Metadata:\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\nAt least one output file must be specified\n",
+      "full_decode_errors": "",
+      "decoded_frames": 17634
+    },
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v11\\Video_TCC_Ritmo_Didatico_Com_Trilha_v11.mp4",
+      "bytes": 57276402,
+      "sha256": "18413deeff4f2aba6f1372bd9935b352c51e02bb42e5a5f0c8df89d43ce8a2f7",
+      "has_audio": true,
+      "ffmpeg_header": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\montagem_final_v11\\Video_TCC_Ritmo_Didatico_Com_Trilha_v11.mp4':\n  Metadata:\n    major_brand     : isom\n    minor_version   : 512\n    compatible_brands: isomiso2avc1mp41\n    encoder         : Lavf61.7.100\n  Duration: 00:09:47.80, start: 0.000000, bitrate: 779 kb/s\n  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 579 kb/s, 30 fps, 30 tbr, 15360 tbn (default)\n      Metadata:\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 191 kb/s (default)\n      Metadata:\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\nAt least one output file must be specified\n",
+      "full_decode_errors": "",
+      "decoded_frames": 17634
+    }
+  ],
+  "body_phases": 88,
+  "native_body_animation_seconds": 547.0,
+  "body_output_seconds": 553.0333333333333,
+  "body_animation_speed": 1.0,
+  "accelerated_body_scenes": 0,
+  "reading_pauses_and_native_motion_preserved": true,
+  "voice_time_stretch_used": false,
+  "voice_synthesis_used": false,
+  "all_90_edited_voice_clips_unchanged": true,
+  "all_130_caption_texts_unchanged_and_retimed_with_voice": true,
+  "same_retake_selections_and_new_ending_as_v10": true,
+  "opening_approved_colors_and_black_background_preserved": true,
+  "lstm_exception_label_repair_preserved": true,
+  "visual_midpoint_and_extra_samples_reviewed": 99,
+  "timeline_items_covered": 90,
+  "sequential_temporal_samples_reviewed": 132,
+  "temporal_phases_covered": 22,
+  "temporal_source_1x_correspondence_passed": true,
+  "sampled_visual_review_passed": true,
+  "sampled_temporal_review_passed": true,
+  "objective_audio_review_passed": true,
+  "full_decode_passed_both_exports": true,
+  "same_video_bitstream_in_both_versions": true,
+  "encoder": "Intel Quick Sync h264_qsv",
+  "full_realtime_playback_reviewed": false,
+  "audio_listening_performed": false,
+  "review_scope_limit": "Reviewed static and sequential frame samples and objective source/audio checks; no full realtime playback or human listening.",
+  "reports": [
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v11/revisao/qa_visual_v11.json",
+      "sha256": "6a4fad3cdb964e6c5fed6603e4a1b2612dc52aebfafcfe499ca3aea4cf127eaf"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v11/revisao/qa_temporal_v11.json",
+      "sha256": "6ae8d6a68ddb1dfe2a3d9e5ec7024afccf42434e7e347cd64438d1744c2ae150"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v11/revisao/audit_audio_mix_v11.json",
+      "sha256": "9cff8904059e0b83bb46c43e29cf74fe7fc30752e199408ec9ee3a05139a58c2"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v11/revisao/plano_ritmo_v11.json",
+      "sha256": "c585305d27d0fc5b617bb4bbdc1ff557421db0f21845a0d961d792b4da60872e"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v11/revisao/ancoras_visuais.json",
+      "sha256": "4f078615a0b81ed3adbb958f922a2115e55f002f7207007123279557501d336b"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v11/revisao/qa_central_v11.json",
+      "sha256": "ae10579a144980d63ddde01fcf7fa494e8f11948c0ef6ed293e4894796f37f58"
+    }
+  ],
+  "production_sources_preserved": true
+}

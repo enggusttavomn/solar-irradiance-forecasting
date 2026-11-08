@@ -1,0 +1,88 @@
+Figura 4 — Quantização uniforme e saturação das entradas
+Página(s) do PDF: 14
+
+TRECHOS PARA CONSULTA. Use os arquivos completos em originais/ para edição.
+Os números à esquerda são as linhas originais; este TXT não é executável.
+
+bloco Quantização / save("02_quantizador", ...)
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py
+Linhas: 64–82
+
+  64 | # A precise amplitude diagram, including the deliberate asymmetry of clipping.
+  65 | z=text(35,39,'Apenas a amplitude do histórico de GHI é transformada',27,bold=True)
+  66 | x0,y0,w,h=100,448,625,315
+  67 | xx=lambda v:x0+(v+.15)/1.3*w
+  68 | yy=lambda v:y0-v*h
+  69 | for v in [0,.25,.5,.75,1]:
+  70 |     z+=line(x0,yy(v),x0+w,yy(v),GRID,1)+text(x0-13,yy(v)+7,str(v).replace('.',','),22,'end')
+  71 |     z+=text(xx(v),y0+32,str(v).replace('.',','),22,'middle')
+  72 | z+=line(x0,y0,x0+w,y0,INK)+line(x0,y0,x0,y0-h,INK)
+  73 | z+=line(xx(-.15),yy(-.15),xx(1.15),yy(1.15),MUTED,2,'8 6')
+  74 | pts=[f'{xx(v):.3f},{yy(np.rint(np.clip(v,0,1)*7)/7):.3f}' for v in np.linspace(-.15,1.15,800)]
+  75 | z+=f'<polyline points="{" ".join(pts)}" fill="none" stroke="{BLUE}" stroke-width="4"/>'
+  76 | z+=text(x0+w/2,525,'Entrada normalizada u',24,'middle')
+  77 | z+=text(25,290,'Saída QN(u)',24,'middle',rotate=-90)
+  78 | z+=line(790,115,850,115,MUTED,2,'8 6')+text(868,123,'Controle contínuo',23)
+  79 | z+=line(790,160,850,160,BLUE,4)+text(868,168,'Entrada quantizada',23)
+  80 | for i,s in enumerate(['8 níveis no esquema ilustrativo','64, 128 ou 256 no experimento','Passo de amplitude 1 / (N − 1)','Saturação abaixo de 0 e acima de 1','Reconstrução em float32']):z+=text(790,235+i*42,s,23)
+  81 | z+=text(35,585,'O controle não aplica clipping; a comparação reúne arredondamento e saturação.',24,color=MUTED)
+  82 | save('02_quantizador',z,615)
+
+Dependências, utilitários SVG e ajuste tipográfico.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py
+Linhas: 1–40
+
+   1 | from pathlib import Path
+   2 | from html import escape
+   3 | import json, shutil
+   4 | import numpy as np
+   5 | import pandas as pd
+   6 | from PIL import ImageFont
+   7 | 
+   8 | HERE = Path(__file__).resolve().parent
+   9 | ROOT = HERE.parents[2]
+  10 | OUT = HERE / 'figuras'
+  11 | OUT.mkdir(parents=True, exist_ok=True)
+  12 | BLUE, ORANGE, GREEN = '#245680', '#B65B35', '#35776C'
+  13 | INK, MUTED, GRID = '#202A30', '#52616B', '#D9E0E4'
+  14 | 
+  15 | def text(x,y,s,size=24,anchor='start',bold=False,color=INK,rotate=None):
+  16 |     tf = f' transform="rotate({rotate} {x} {y})"' if rotate else ''
+  17 |     return f'<text x="{x}" y="{y}" font-size="{size}" text-anchor="{anchor}" font-weight="{700 if bold else 400}" fill="{color}"{tf}>{escape(str(s))}</text>'
+  18 | 
+  19 | def rect(x,y,w,h,fill='white',stroke=GRID,r=6):
+  20 |     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}" stroke="{stroke}" stroke-width="1.8"/>'
+  21 | 
+  22 | def line(x,y,x2,y2,color=GRID,width=2,dash=''):
+  23 |     return f'<line x1="{x}" y1="{y}" x2="{x2}" y2="{y2}" stroke="{color}" stroke-width="{width}" stroke-dasharray="{dash}"/>'
+  24 | 
+  25 | def arrow(x,y,x2,y2,color=MUTED):
+  26 |     return line(x,y,x2,y2,color,2.4)+f'<path d="M{x2-8},{y2-6} L{x2},{y2} L{x2-8},{y2+6}" fill="none" stroke="{color}" stroke-width="2.4"/>'
+  27 | 
+  28 | def block(x,y,w,h,title,lines,color=BLUE,fill='#F1F6FA',size=23):
+  29 |     z=rect(x,y,w,h,fill,color)
+  30 |     def fit(s,desired,bold=False):
+  31 |         font='C:/Windows/Fonts/arialbd.ttf' if bold else 'C:/Windows/Fonts/arial.ttf'
+  32 |         while ImageFont.truetype(font,int(desired)).getlength(s)>w-30:desired-=.5
+  33 |         assert desired>=19,(s,desired)
+  34 |         return desired
+  35 |     z+=text(x+15,y+31,title,fit(title,25,True),bold=True,color=color)
+  36 |     for i,s in enumerate(lines):z+=text(x+15,y+65+i*29,s,fit(s,size))
+  37 |     return z
+  38 | 
+  39 | def save(name,z,h):
+  40 |     (OUT/(name+'.svg')).write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{h}" viewBox="0 0 1200 {h}"><rect width="1200" height="{h}" fill="white"/><g font-family="Arial,sans-serif">{z}</g></svg>',encoding='utf-8')
+
+Rasteriza os SVGs da pasta figuras com sharp a 180 dpi.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs
+Linhas: 1–9
+
+   1 | const fs=require('fs');
+   2 | const path=require('path');
+   3 | const sharp=require('C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+   4 | (async()=>{
+   5 |   const dir=path.join(__dirname,'figuras');
+   6 |   for(const name of fs.readdirSync(dir).filter(s=>s.endsWith('.svg')))
+   7 |     await sharp(path.join(dir,name),{density:180}).png().toFile(path.join(dir,name.replace('.svg','.png')));
+   8 |   console.log('Figuras metodológicas e séries de referência renderizadas.');
+   9 | })().catch(e=>{console.error(e);process.exit(1)});

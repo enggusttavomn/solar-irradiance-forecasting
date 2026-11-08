@@ -1,0 +1,24 @@
+PATCH DA EXCEÇÃO LSTM — MONTAGEM V10
+
+Arquivo final: matriz_historica_corrigida_6s_v10.mp4
+Sem áudio e sem legendas de narração incorporadas.
+Full HD, 30 fps, exatamente 180 quadros / 6 segundos.
+
+SUBSTITUIR O INTERVALO
+520,000 a 526,000 segundos da animação V9 isolada (8:40–8:46),
+equivalente a 12–18 segundos locais do capítulo conclusão.
+Esses tempos NÃO incluem a apresentação pessoal e não correspondem
+aos tempos finais depois de sincronizar a narração real.
+Na montagem por fases, este arquivo substitui o segmento da matriz inteira.
+
+CORREÇÃO
+O texto antigo que ficava atrás dos blocos foi esvaziado na cópia carregada.
+A informação agora aparece em uma linha abaixo da matriz, à frente:
+L: longo · C: curto     Exceção: LSTM horária
+A faixa abaixo permanece livre para as legendas da narração.
+
+Originais V8/V9 preservados. O SHA do blend original foi conferido antes/depois.
+Script reprodutível: codigo_fonte/video_ea019/patch_excecao_lstm_v10.py
+Manifesto técnico e revisão amostral: patch_excecao_lstm_v10.json
+QA FHD: três stills locais 15/16,5/17,5s e dois quadros do MP4 real 1,5/4,8s.
+Renderização EEVEE pela Intel Arc B390, 16 amostras e 2 threads de CPU.

@@ -1,0 +1,131 @@
+﻿FALAS PARA NARRAR — INÍCIO ATÉ O PLANO22
+Duração3min44s. Sem filmagens pessoais; sem áudio.
+
+0:00.0–0:04.4
+GHI é a potência solar recebida por unidade de área horizontal.
+
+0:04.4–0:10.8
+Aqui, a região mede um metro por um metro. A unidade é watt por metro quadrado.
+
+0:10.8–0:16.0
+Parte da luz vem diretamente do Sol, e parte é espalhada pela atmosfera.
+
+0:16.0–0:21.0
+A luz varia durante o dia. À noite, a irradiância solar praticamente zera.
+
+0:21.0–0:25.2
+A passagem de nuvens modifica a luz recebida e a curva.
+
+0:25.2–0:30.0
+O histórico reúne esses padrões diários e as variações da atmosfera.
+
+0:30.0–0:35.0
+Com esse histórico, tentamos antecipar a continuação da curva.
+
+0:35.0–0:40.0
+Prever o recurso solar pode apoiar o planejamento fotovoltaico. Meu objetivo foi...
+
+0:40.0–0:44.0
+comparar LSTM, Transformer e Informer.
+
+0:44.0–0:48.0
+Na LSTM, os valores entram em ordem.
+
+0:48.0–0:52.0
+A memória muda a cada passo, por portas aprendidas.
+
+0:52.0–0:56.0
+Elas regulam o que reter, acrescentar e transmitir.
+
+0:56.0–0:59.0
+O estado final ajuda a prever todo o horizonte.
+
+0:59.0–1:03.0
+No Transformer, cada posição reúne valor e ordem temporal.
+
+1:03.0–1:07.0
+Consultas comparam representações com suas chaves.
+
+1:07.0–1:11.0
+Os pesos calculados orientam a combinação dos valores.
+
+1:11.0–1:15.0
+Essas representações seguem para a previsão do horizonte.
+
+1:15.0–1:19.0
+Em sequências longas, o Informer detalha algumas consultas.
+
+1:19.0–1:23.0
+A seleção usa uma estimativa de esparsidade.
+
+1:23.0–1:27.0
+Em outra etapa, reduz a sequência interna do codificador.
+
+1:27.0–1:31.0
+A atenção cruzada permanece completa.
+
+1:31.0–1:35.0
+O mesmo histórico e ID entram nos três modelos.
+
+1:35.0–1:40.0
+Cada modelo produz diretamente um vetor para o mesmo horizonte.
+
+1:40.0–1:44.0
+As localidades deste estudo estão nas Américas.
+
+1:44.0–1:50.0
+São dez regiões: uma no Brasil, oito nos Estados Unidos e uma no México.
+
+1:50.0–1:56.0
+A NSRDB usa observações de satélite e informações da atmosfera para estimar o recurso solar.
+
+1:56.0–2:05.0
+Modelos físicos combinam essas informações e produzem estimativas de irradiância para células geográficas.
+
+2:05.0–2:11.0
+Estas distribuições usam valores reais do período de treinamento.
+
+2:11.0–2:18.5
+Os perfis mostram os valores positivos. A porcentagem de horas com GHI igual a zero aparece separadamente.
+
+2:18.5–2:24.0
+A distribuição varia entre as dez localidades do conjunto.
+
+2:24.0–2:29.0
+Cada região consultada corresponde a uma célula geográfica da base.
+
+2:29.0–2:34.0
+A sequência dessas estimativas forma o histórico de GHI usado pelas redes.
+
+2:34.0–2:42.0
+Uma entrada é o histórico de GHI: uma sequência de valores, organizada no tempo.
+
+2:42.0–2:50.0
+A outra entrada identifica a localidade. Esse número se transforma numa representação aprendida pela rede.
+
+2:50.0–2:58.0
+Neste experimento, os modelos recebem o histórico de GHI e a identificação da localidade.
+
+2:58.0–3:06.0
+Cada modelo compartilha seus parâmetros entre as dez localidades. Os dados mudam; a estrutura é a mesma.
+
+3:06.0–3:10.0
+Comparei quatro tarefas, em diferentes escalas de tempo.
+
+3:10.0–3:15.5
+Na tarefa horária, 336 horas formam duas semanas de histórico.
+
+3:15.5–3:21.0
+A rede prevê as próximas 72 horas: três dias de irradiância.
+
+3:21.0–3:26.5
+Na diária, 365 valores representam um ano de histórico.
+
+3:26.5–3:32.0
+A saída prevê os próximos trinta dias, mantendo a separação entre passado e futuro.
+
+3:32.0–3:38.0
+Na mensal de um passo, doze meses ajudam a prever o mês seguinte.
+
+3:38.0–3:44.0
+Na outra mensal, uma rede própria prevê seis meses. Essa análise é exploratória.

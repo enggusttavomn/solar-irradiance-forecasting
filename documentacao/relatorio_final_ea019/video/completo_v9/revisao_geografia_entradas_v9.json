@@ -1,0 +1,66 @@
+{
+  "version": 9,
+  "reviewer": "v9_inputs_data",
+  "status": "reviewed_ready_for_root_decision",
+  "approval_granted": false,
+  "automatically_approved": false,
+  "production_rendered": false,
+  "full_length_playback_reviewed": false,
+  "source_hashes": {
+    "codigo_fonte/video_ea019/geography_data_v9.py": "32d8afaaa22ddd640065bd0d13e2b939c83dca020ba21baa4e55d8e9f7db5aef",
+    "codigo_fonte/video_ea019/inputs_tasks_v9.py": "1b9e91a7305c46d8cf74d2776cd8bf420157508bb0bbd5523574b40245189ac5"
+  },
+  "manifest_source_hashes_match_current_modules": true,
+  "geography_duration_seconds": 60,
+  "inputs_duration_seconds": 64,
+  "factual_checks": {
+    "source": "documentacao/relatorio_final_ea019/video/revisao_ate_plano22_v7/referencias/ghi_distributions_training.json",
+    "locality": "Camaçari",
+    "bin_w_m2": [400, 450],
+    "bin_left_closed_right_open": true,
+    "positive_hours_in_bin": 881,
+    "all_strictly_positive_hours": 18496,
+    "percent": 4.763192041522491,
+    "display_percent": "aproximadamente 4,8%",
+    "three_actual_readings_w_m2": [439.0, 428.5, 430.5],
+    "three_actual_reading_indices": [7, 31, 55],
+    "initial_actual_window_fragment_w_m2": [19, 193, 439, 673.5, 867, 1001],
+    "initial_window_local_date": "2019-01-01",
+    "initial_window_local_hours": [5, 6, 7, 8, 9, 10],
+    "frequency_denominator_explicit": "Hours strictly GHI > 0 per locality",
+    "zero_frequency_denominator_explicit": "All hours per locality",
+    "factory_symbols_are_generic_geographic_identifiers_not_ground_sensors": true,
+    "all_ten_localities_shown": true,
+    "forecast_windows_preserved": {
+      "hourly": [336, 72],
+      "daily": [365, 30],
+      "monthly_1": [12, 1],
+      "monthly_6": [12, 6]
+    },
+    "monthly_networks_distinct": true,
+    "embedding_and_forecast_geometry_are_illustrative": true
+  },
+  "visual_review": {
+    "geography_reviewed_stages_seconds": [29, 35, 42, 49, 57.6, 59],
+    "inputs_reviewed_seconds": [5, 16, 17.5, 27, 31, 38, 43, 46, 51, 58, 62],
+    "named_factory_icons_replace_unexplained_ID_boxes": true,
+    "clear_temporal_curve_to_frequency_transition": true,
+    "percent_example_and_denominator_legible": true,
+    "labels_positioned_in_front_of_plot_geometry": true,
+    "retimed_task_actions_visit_all_Blender45_slots_once": true,
+    "material_layout_findings_remaining": []
+  },
+  "render_operator_observation": {
+    "observation": "Some persistent text geometry appeared partially absent in a second nonconsecutive write_still render. Its evaluated hide_render remained false and camera values were unchanged. A fresh-process still of the same frame and all four consecutive animation=True frames were correct. Root should validate the late plot in the final encoded animation.",
+    "cause_not_proven": true,
+    "font_mesh_conversion_attempt_reverted": true,
+    "original_Segoe_font_geometry_retained": true,
+    "consecutive_animation_frames_tested": [1729, 1730, 1731, 1732],
+    "last_consecutive_frame_path": "documentacao/relatorio_final_ea019/video/completo_v9/qa_3d/geografia_animation_1732.png",
+    "standard_57_6_png_copied_from_actual_animation_frame_1729": true,
+    "late_nonconsecutive_still_59_png_is_not_approval_evidence": true,
+    "final_movie_local_seconds_to_check": [49, 57.6, 59]
+  },
+  "root_approval_required": true,
+  "gpu_jobs_remaining_for_this_agent": 0
+}

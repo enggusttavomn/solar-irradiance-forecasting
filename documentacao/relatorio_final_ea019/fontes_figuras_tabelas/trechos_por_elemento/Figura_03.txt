@@ -1,0 +1,90 @@
+Figura 3 — Fluxo experimental em etapas de dados, seleção e avaliação
+Página(s) do PDF: 13
+
+TRECHOS PARA CONSULTA. Use os arquivos completos em originais/ para edição.
+Os números à esquerda são as linhas originais; este TXT não é executável.
+
+bloco Fluxo experimental / save("01_fluxo", ...)
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py
+Linhas: 42–62
+
+  42 | # Three bands follow the conceptual organization of Figure 2 of the supplied paper.
+  43 | z=''
+  44 | bands=[(15,'A','DADOS E TAREFAS',BLUE),(237,'B','SELEÇÃO E REFIT',ORANGE),(459,'C','TESTE E AVALIAÇÃO',GREEN)]
+  45 | for y,letter,title,color in bands:
+  46 |     z+=rect(10,y,53,192,color,color)
+  47 |     z+=text(36,y+106,letter,33,'middle',True,'white')
+  48 |     z+=text(79,y+26,title,24,bold=True,color=color)
+  49 | z+=block(79,60,340,139,'Fonte e auditoria',['10 células da NSRDB','Brasil, EUA e México','GHI regular, finita e ≥ 0'])
+  50 | z+=block(457,60,340,139,'Entradas causais',['Histórico de GHI + ID local','Escala anterior ao corte','Alvos dentro da partição'])
+  51 | z+=block(835,60,350,139,'Quatro tarefas diretas',['336 h → 72 h; 365 d → 30 d','12 meses → 1 mês','12 → 6 meses exploratórios'])
+  52 | z+=arrow(420,130,454,130)+arrow(798,130,832,130)
+  53 | z+=block(79,282,340,139,'Condições de entrada',['Contínua, Q64, Q128 ou Q256','Quantização somente em X','LSTM, Transformer e Informer'],ORANGE,'#FCF5EF')
+  54 | z+=block(457,282,340,139,'Validação fixa escolhas',['Épocas por variante/semente','Nível pelo macro-MAE completo','Teste fora da seleção'],ORANGE,'#FCF5EF')
+  55 | z+=block(835,282,350,139,'Refit e congelamento',['Reiniciar na mesma semente','Ajuste com dados pré-teste','Fixar rede, escala e nível'],ORANGE,'#FCF5EF')
+  56 | z+=arrow(420,352,454,352)+arrow(798,352,832,352)
+  57 | z+=block(79,504,340,139,'Previsões de teste',['Origens com histórico causal','Vetor futuro contínuo direto','Sem reajustar pesos ou escala'],GREEN,'#F0F7F4')
+  58 | z+=block(457,504,340,139,'Regras comuns',['Inversão; média de sementes','Piso zero em todas as tarefas','Noite zerada na tarefa horária'],GREEN,'#F0F7F4')
+  59 | z+=block(835,504,350,139,'Evidência por localidade',['MAE, RMSE, nRMSE e R² locais','Média macro com pesos iguais','Horizontes cumulativos'],GREEN,'#F0F7F4')
+  60 | z+=arrow(420,574,454,574)+arrow(798,574,832,574)
+  61 | z+=text(80,689,'O alvo y e os pesos permanecem contínuos; o ID local não passa pelo quantizador.',24,color=MUTED)
+  62 | save('01_fluxo',z,715)
+
+Dependências, utilitários SVG e ajuste tipográfico.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py
+Linhas: 1–40
+
+   1 | from pathlib import Path
+   2 | from html import escape
+   3 | import json, shutil
+   4 | import numpy as np
+   5 | import pandas as pd
+   6 | from PIL import ImageFont
+   7 | 
+   8 | HERE = Path(__file__).resolve().parent
+   9 | ROOT = HERE.parents[2]
+  10 | OUT = HERE / 'figuras'
+  11 | OUT.mkdir(parents=True, exist_ok=True)
+  12 | BLUE, ORANGE, GREEN = '#245680', '#B65B35', '#35776C'
+  13 | INK, MUTED, GRID = '#202A30', '#52616B', '#D9E0E4'
+  14 | 
+  15 | def text(x,y,s,size=24,anchor='start',bold=False,color=INK,rotate=None):
+  16 |     tf = f' transform="rotate({rotate} {x} {y})"' if rotate else ''
+  17 |     return f'<text x="{x}" y="{y}" font-size="{size}" text-anchor="{anchor}" font-weight="{700 if bold else 400}" fill="{color}"{tf}>{escape(str(s))}</text>'
+  18 | 
+  19 | def rect(x,y,w,h,fill='white',stroke=GRID,r=6):
+  20 |     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}" stroke="{stroke}" stroke-width="1.8"/>'
+  21 | 
+  22 | def line(x,y,x2,y2,color=GRID,width=2,dash=''):
+  23 |     return f'<line x1="{x}" y1="{y}" x2="{x2}" y2="{y2}" stroke="{color}" stroke-width="{width}" stroke-dasharray="{dash}"/>'
+  24 | 
+  25 | def arrow(x,y,x2,y2,color=MUTED):
+  26 |     return line(x,y,x2,y2,color,2.4)+f'<path d="M{x2-8},{y2-6} L{x2},{y2} L{x2-8},{y2+6}" fill="none" stroke="{color}" stroke-width="2.4"/>'
+  27 | 
+  28 | def block(x,y,w,h,title,lines,color=BLUE,fill='#F1F6FA',size=23):
+  29 |     z=rect(x,y,w,h,fill,color)
+  30 |     def fit(s,desired,bold=False):
+  31 |         font='C:/Windows/Fonts/arialbd.ttf' if bold else 'C:/Windows/Fonts/arial.ttf'
+  32 |         while ImageFont.truetype(font,int(desired)).getlength(s)>w-30:desired-=.5
+  33 |         assert desired>=19,(s,desired)
+  34 |         return desired
+  35 |     z+=text(x+15,y+31,title,fit(title,25,True),bold=True,color=color)
+  36 |     for i,s in enumerate(lines):z+=text(x+15,y+65+i*29,s,fit(s,size))
+  37 |     return z
+  38 | 
+  39 | def save(name,z,h):
+  40 |     (OUT/(name+'.svg')).write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{h}" viewBox="0 0 1200 {h}"><rect width="1200" height="{h}" fill="white"/><g font-family="Arial,sans-serif">{z}</g></svg>',encoding='utf-8')
+
+Rasteriza os SVGs da pasta figuras com sharp a 180 dpi.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs
+Linhas: 1–9
+
+   1 | const fs=require('fs');
+   2 | const path=require('path');
+   3 | const sharp=require('C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+   4 | (async()=>{
+   5 |   const dir=path.join(__dirname,'figuras');
+   6 |   for(const name of fs.readdirSync(dir).filter(s=>s.endsWith('.svg')))
+   7 |     await sharp(path.join(dir,name),{density:180}).png().toFile(path.join(dir,name.replace('.svg','.png')));
+   8 |   console.log('Figuras metodológicas e séries de referência renderizadas.');
+   9 | })().catch(e=>{console.error(e);process.exit(1)});

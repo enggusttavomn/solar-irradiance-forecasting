@@ -1,0 +1,136 @@
+Figura 7 — Perfis cumulativos de erro nos horizontes de cada tarefa
+Página(s) do PDF: 24
+
+TRECHOS PARA CONSULTA. Use os arquivos completos em originais/ para edição.
+Os números à esquerda são as linhas originais; este TXT não é executável.
+
+bloco Perfis cumulativos / save("07_horizontes", ...)
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py
+Linhas: 145–190
+
+ 145 | # Cumulative horizon profiles with actual physical horizon spacing.
+ 146 | b = ''
+ 147 | for k, (t, H, label) in enumerate(TASKS):
+ 148 |     px, py = (k % 2) * 600, (k // 2) * 400
+ 149 |     b += text(px + 20, py + 34, f'{chr(65+k)}  {label.replace(" · exploratório", "")}', 27, weight='bold')
+ 150 |     if H == 6:
+ 151 |         b += text(px + 20, py + 66, 'Exploratório', 22, fill='#666')
+ 152 |     groups = []
+ 153 |     for m in MODELS:
+ 154 |         q = chosen('atual', t, m).variante
+ 155 |         z = D[(D.regime == 'atual') & (D.tarefa == t) & (D.modelo == m) & (D.variante == q)].sort_values('horizonte')
+ 156 |         assert z.horizonte.is_unique
+ 157 |         groups.append((m, q, z))
+ 158 |     top = nice_top(max(float(z.MAE_wm2.max()) for _, _, z in groups) * 1.1)
+ 159 |     horizons = sorted(int(v) for v in groups[0][2].horizonte.unique())
+ 160 |     x, y, w, h = px + 95, py + 292, 460, 205
+ 161 |     for v in [0, top/4, top/2, 3*top/4, top]:
+ 162 |         yy = y - v/top*h
+ 163 |         b += line(x, yy, x+w, yy) + text(x-14, yy+8, fmt(v, 0), 22, 'end', '#5A6268')
+ 164 |     b += text(px+27, py+190, 'MAE (W/m²)', 23, 'middle', '#5A6268', rotate=-90)
+ 165 |     if len(horizons) == 1:
+ 166 |         for j, (m, q, z) in enumerate(groups):
+ 167 |             value = float(z.iloc[0].MAE_wm2)
+ 168 |             xx, yy = x + 70 + j*160, y-value/top*h
+ 169 |             b += circle(xx, yy, 7, COL[m]) + text(xx, yy-17, fmt(value), 23, 'middle', COL[m])
+ 170 |             b += text(xx, y+33, m, 22, 'middle', COL[m])
+ 171 |             audit['horizontes'].append({'tarefa':t,'modelo':m,'variante':q,'horizonte':1,'mae':value})
+ 172 |         b += text(px+325, py+372, 'Uma previsão mensal por origem', 23, 'middle', '#5A6268')
+ 173 |     else:
+ 174 |         xp = lambda v: x + (v-min(horizons))/(max(horizons)-min(horizons))*w
+ 175 |         for m, q, z in groups:
+ 176 |             pts = [(xp(float(a.horizonte)), y-float(a.MAE_wm2)/top*h) for a in z.itertuples()]
+ 177 |             b += f'<polyline points="{" ".join(f"{a},{c}" for a,c in pts)}" fill="none" stroke="{COL[m]}" stroke-width="3.5"/>'
+ 178 |             for (xx,yy),a in zip(pts,z.itertuples()):
+ 179 |                 b += circle(xx,yy,5.5,COL[m])
+ 180 |                 audit['horizontes'].append({'tarefa':t,'modelo':m,'variante':q,'horizonte':int(a.horizonte),'mae':float(a.MAE_wm2)})
+ 181 |         for v in horizons:
+ 182 |             b += text(xp(v), y+33, str(v), 22, 'middle', '#5A6268')
+ 183 |         unit = 'horas' if H == 72 else ('dias' if H == 30 else 'meses')
+ 184 |         b += text(px+325, py+372, f'Horizonte cumulativo ({unit})', 23, 'middle', '#5A6268')
+ 185 | for j, m in enumerate(MODELS):
+ 186 |     xx = 95 + j*365
+ 187 |     b += line(xx, 835, xx+50, 835, COL[m], 4) + circle(xx+25,835,5.5,COL[m]) + text(xx+65,843,m,25,fill=COL[m])
+ 188 | b += text(20, 890, 'Teste de 2024 · condição de entrada fixa pela validação do horizonte completo', 24, fill='#4E575E')
+ 189 | b += text(20, 926, 'Cada MAE reúne os passos de 1 até o horizonte indicado; não é erro de lead exato.', 23, fill='#4E575E')
+ 190 | save('07_horizontes', b, 950)
+
+Leitura das métricas, escolha validada e utilitários SVG.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py
+Linhas: 1–52
+
+   1 | from pathlib import Path
+   2 | from html import escape
+   3 | import json
+   4 | import math
+   5 | import pandas as pd
+   6 | 
+   7 | ROOT = Path(__file__).resolve().parents[3]
+   8 | OUT = Path(__file__).parent / 'figuras_comparativas'
+   9 | OUT.mkdir(parents=True, exist_ok=True)
+  10 | BASE = ROOT / 'resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina'
+  11 | D = pd.read_csv(BASE / 'metricas_teste_modelos_disciplina.csv')
+  12 | R = pd.read_csv(BASE / 'classificacoes_modelos_disciplina.csv')
+  13 | MODELS = ['Transformer', 'Informer', 'LSTM']
+  14 | COL = {'Transformer': '#245680', 'Informer': '#B65B35', 'LSTM': '#35776C'}
+  15 | TASKS = [('hourly_72_extension', 72, 'Horária 1–72 h'), ('daily_30', 30, 'Diária 1–30 dias'),
+  16 |          ('monthly_1', 1, 'Mensal 1 passo'), ('monthly_6', 6, 'Mensal 1–6 passos · exploratório')]
+  17 | 
+  18 | def fmt(v, n=2):
+  19 |     return f'{float(v):.{n}f}'.replace('.', ',')
+  20 | 
+  21 | def text(x, y, s, size=25, anchor='start', fill='#20262B', weight='normal', rotate=None):
+  22 |     transform = f' transform="rotate({rotate} {x} {y})"' if rotate else ''
+  23 |     return f'<text x="{x}" y="{y}" font-size="{size}" text-anchor="{anchor}" fill="{fill}" font-weight="{weight}"{transform}>{escape(str(s))}</text>'
+  24 | 
+  25 | def line(x1, y1, x2, y2, stroke='#DCE1E5', width=1.5, dash=''):
+  26 |     return f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{stroke}" stroke-width="{width}" stroke-dasharray="{dash}"/>'
+  27 | 
+  28 | def rect(x, y, w, h, fill='#FFF', stroke='none', width=1.5, radius=0):
+  29 |     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{fill}" stroke="{stroke}" stroke-width="{width}" rx="{radius}"/>'
+  30 | 
+  31 | def circle(x, y, r, fill, stroke='none', width=2.5):
+  32 |     return f'<circle cx="{x}" cy="{y}" r="{r}" fill="{fill}" stroke="{stroke}" stroke-width="{width}"/>'
+  33 | 
+  34 | def save(name, body, height):
+  35 |     (OUT / (name + '.svg')).write_text(
+  36 |         f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{height}" viewBox="0 0 1200 {height}">'
+  37 |         f'<rect width="1200" height="{height}" fill="white"/><g font-family="Arial,sans-serif">{body}</g></svg>', encoding='utf-8')
+  38 | 
+  39 | def chosen(reg, task, model):
+  40 |     z = R[(R.regime == reg) & (R.tarefa == task) & (R.modelo == model)]
+  41 |     assert len(z) == 1
+  42 |     return z.iloc[0]
+  43 | 
+  44 | def row(reg, task, model, horizon, variant):
+  45 |     z = D[(D.regime == reg) & (D.tarefa == task) & (D.modelo == model) & (D.horizonte == horizon) & (D.variante == variant)]
+  46 |     assert len(z) == 1
+  47 |     return z.iloc[0]
+  48 | 
+  49 | def nice_top(v):
+  50 |     base = 10 ** math.floor(math.log10(v))
+  51 |     return next(n * base for n in [1, 2, 4, 6, 8, 10] if n * base >= v)
+  52 | 
+
+Copia as figuras comparativas e o mapa de calor para os nomes usados no builder.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/prepare_revision.py
+Linhas: 76–79
+
+  76 | for name in ['04_mae_atual','05_quantizacao','06_historico','07_horizontes']:
+  77 |     for ext in ['png','svg']:
+  78 |         shutil.copy2(HERE/'figuras_comparativas'/f'{name}.{ext}',HERE/'figuras'/f'{name}.{ext}')
+  79 | shutil.copy2(HERE/'11_mae_localidades.png',HERE/'figuras/12_localidades.png')
+
+Rasteriza os SVGs da pasta figuras com sharp a 180 dpi.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs
+Linhas: 1–9
+
+   1 | const fs=require('fs');
+   2 | const path=require('path');
+   3 | const sharp=require('C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+   4 | (async()=>{
+   5 |   const dir=path.join(__dirname,'figuras');
+   6 |   for(const name of fs.readdirSync(dir).filter(s=>s.endsWith('.svg')))
+   7 |     await sharp(path.join(dir,name),{density:180}).png().toFile(path.join(dir,name.replace('.svg','.png')));
+   8 |   console.log('Figuras metodológicas e séries de referência renderizadas.');
+   9 | })().catch(e=>{console.error(e);process.exit(1)});

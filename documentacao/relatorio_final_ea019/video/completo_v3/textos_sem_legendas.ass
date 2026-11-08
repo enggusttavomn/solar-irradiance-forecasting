@@ -1,0 +1,476 @@
+﻿[Script Info]
+Title: EA019 - 63-shot animated cut v3
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI,44,&H00F7F5F3,&H00FFFFFF,&H80000000,&H80000000,0,0,0,0,100,100,0,0,3,12,0,2,110,110,80,1
+Style: Text,Segoe UI,40,&H00F7F5F3,&H00FFFFFF,&H9007090D,&H00000000,0,0,0,0,100,100,0,0,1,1,0,7,0,0,0,1
+Style: Drawing,Segoe UI,40,&H00F7F5F3,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 3,0:00:20.00,0:00:55.00,Text,,0,0,0,,{\an7\pos(110,46)\fs24\c&H00BEB2A9&\b0\fad(160,160)}C02  ·  EA019
+Dialogue: 3,0:00:20.00,0:00:55.00,Text,,0,0,0,,{\an7\pos(110,95)\fs70\c&H00F7F5F3&\b1\fad(160,160)}Irradiância global horizontal
+Dialogue: 3,0:00:55.00,0:01:15.00,Text,,0,0,0,,{\an7\pos(110,46)\fs24\c&H00BEB2A9&\b0\fad(160,160)}C03  ·  EA019
+Dialogue: 3,0:00:55.00,0:01:15.00,Text,,0,0,0,,{\an7\pos(110,95)\fs70\c&H00F7F5F3&\b1\fad(160,160)}Objetivo da comparação
+Dialogue: 3,0:01:15.00,0:01:55.00,Text,,0,0,0,,{\an7\pos(110,46)\fs24\c&H00BEB2A9&\b0\fad(160,160)}C04  ·  EA019
+Dialogue: 3,0:01:15.00,0:01:55.00,Text,,0,0,0,,{\an7\pos(110,95)\fs70\c&H00F7F5F3&\b1\fad(160,160)}Dados e localidades
+Dialogue: 3,0:01:55.00,0:02:30.00,Text,,0,0,0,,{\an7\pos(110,46)\fs24\c&H00BEB2A9&\b0\fad(160,160)}C05  ·  EA019
+Dialogue: 3,0:01:55.00,0:02:30.00,Text,,0,0,0,,{\an7\pos(110,95)\fs70\c&H00F7F5F3&\b1\fad(160,160)}Quatro tarefas de previsão
+Dialogue: 3,0:02:30.00,0:03:10.00,Text,,0,0,0,,{\an7\pos(110,46)\fs24\c&H00BEB2A9&\b0\fad(160,160)}C06  ·  EA019
+Dialogue: 3,0:02:30.00,0:03:10.00,Text,,0,0,0,,{\an7\pos(110,95)\fs70\c&H00F7F5F3&\b1\fad(160,160)}Protocolo e avaliação retrospectiva
+Dialogue: 3,0:03:10.00,0:04:05.00,Text,,0,0,0,,{\an7\pos(110,46)\fs24\c&H00BEB2A9&\b0\fad(160,160)}C07  ·  EA019
+Dialogue: 3,0:03:10.00,0:04:05.00,Text,,0,0,0,,{\an7\pos(110,95)\fs70\c&H00F7F5F3&\b1\fad(160,160)}Como os modelos tratam o histórico
+Dialogue: 3,0:04:05.00,0:04:40.00,Text,,0,0,0,,{\an7\pos(110,46)\fs24\c&H00BEB2A9&\b0\fad(160,160)}C08  ·  EA019
+Dialogue: 3,0:04:05.00,0:04:40.00,Text,,0,0,0,,{\an7\pos(110,95)\fs70\c&H00F7F5F3&\b1\fad(160,160)}Quantização das entradas
+Dialogue: 3,0:04:40.00,0:05:10.00,Text,,0,0,0,,{\an7\pos(110,46)\fs24\c&H00BEB2A9&\b0\fad(160,160)}C09  ·  EA019
+Dialogue: 3,0:04:40.00,0:05:10.00,Text,,0,0,0,,{\an7\pos(110,95)\fs70\c&H00F7F5F3&\b1\fad(160,160)}Como ler o erro da previsão
+Dialogue: 3,0:05:10.00,0:06:10.00,Text,,0,0,0,,{\an7\pos(110,46)\fs24\c&H00BEB2A9&\b0\fad(160,160)}C10  ·  EA019
+Dialogue: 3,0:05:10.00,0:06:10.00,Text,,0,0,0,,{\an7\pos(110,95)\fs70\c&H00F7F5F3&\b1\fad(160,160)}Resultados por tarefa
+Dialogue: 3,0:06:10.00,0:06:30.00,Text,,0,0,0,,{\an7\pos(110,46)\fs24\c&H00BEB2A9&\b0\fad(160,160)}C11  ·  EA019
+Dialogue: 3,0:06:10.00,0:06:30.00,Text,,0,0,0,,{\an7\pos(110,95)\fs70\c&H00F7F5F3&\b1\fad(160,160)}Quantização e histórico de treinamento
+Dialogue: 3,0:06:30.00,0:06:45.00,Text,,0,0,0,,{\an7\pos(110,46)\fs24\c&H00BEB2A9&\b0\fad(160,160)}C12  ·  EA019
+Dialogue: 3,0:06:30.00,0:06:45.00,Text,,0,0,0,,{\an7\pos(110,95)\fs70\c&H00F7F5F3&\b1\fad(160,160)}Limitações da interpretação
+Dialogue: 3,0:06:45.00,0:06:55.00,Text,,0,0,0,,{\an7\pos(110,46)\fs24\c&H00BEB2A9&\b0\fad(160,160)}C13  ·  EA019
+Dialogue: 3,0:06:45.00,0:06:55.00,Text,,0,0,0,,{\an7\pos(110,95)\fs70\c&H00F7F5F3&\b1\fad(160,160)}A escolha depende da tarefa
+Dialogue: 2,0:00:00.00,0:00:06.00,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&H00&}m 0 0 l 1920 0 l 1920 850 l 0 850{\p0}
+Dialogue: 4,0:00:00.00,0:00:06.00,Text,,0,0,0,,{\an7\pos(120,170)\fs58\c&H00F7F5F3&\b1\fad(160,160)}Universidade Estadual de Campinas
+Dialogue: 4,0:00:00.00,0:00:06.00,Text,,0,0,0,,{\an7\pos(120,255)\fs42\c&H00BEB2A9&\b0\fad(160,160)}Faculdade de Engenharia Elétrica e de Computação
+Dialogue: 4,0:00:00.00,0:00:06.00,Text,,0,0,0,,{\an7\pos(120,400)\fs60\c&H00F7F5F3&\b1\fad(160,160)}Gustavo de Melo Nascimento
+Dialogue: 4,0:00:00.00,0:00:06.00,Text,,0,0,0,,{\an7\pos(120,495)\fs40\c&H00BEB2A9&\b0\fad(160,160)}RA 239679   ·   Engenharia Elétrica (41)
+Dialogue: 2,0:00:06.00,0:00:14.00,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&H00&}m 0 0 l 1920 0 l 1920 850 l 0 850{\p0}
+Dialogue: 4,0:00:06.00,0:00:14.00,Text,,0,0,0,,{\an7\pos(120,160)\fs60\c&H00F7F5F3&\b1\fad(160,160)}Previsão multirresolução de\Nirradiância global horizontal\Nem localidades associadas à\Nfabricação de veículos elétricos
+Dialogue: 4,0:00:06.00,0:00:14.00,Text,,0,0,0,,{\an7\pos(120,525)\fs40\c&H005FB9E9&\b0\fad(160,160)}Avaliação comparativa de Transformer, Informer e LSTM
+Dialogue: 2,0:00:14.00,0:00:20.00,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&H00&}m 0 0 l 1920 0 l 1920 850 l 0 850{\p0}
+Dialogue: 4,0:00:14.00,0:00:20.00,Text,,0,0,0,,{\an7\pos(120,185)\fs36\c&H00BEB2A9&\b0\fad(160,160)}Orientador
+Dialogue: 4,0:00:14.00,0:00:20.00,Text,,0,0,0,,{\an7\pos(120,240)\fs56\c&H00F7F5F3&\b1\fad(160,160)}Prof. Dr. Gustavo Fraidenraich
+Dialogue: 4,0:00:14.00,0:00:20.00,Text,,0,0,0,,{\an7\pos(120,335)\fs36\c&H00BEB2A9&\b0\fad(160,160)}Coorientador
+Dialogue: 4,0:00:14.00,0:00:20.00,Text,,0,0,0,,{\an7\pos(120,390)\fs56\c&H00F7F5F3&\b1\fad(160,160)}Thales Wulfert Cabral
+Dialogue: 4,0:00:14.00,0:00:20.00,Text,,0,0,0,,{\an7\pos(120,520)\fs40\c&H005FB9E9&\b0\fad(160,160)}EA019   ·   2º semestre de 2026
+Dialogue: 4,0:00:14.00,0:00:20.00,Text,,0,0,0,,{\an7\pos(120,590)\fs36\c&H00BEB2A9&\b0\fad(160,160)}Campinas, 2026
+Dialogue: 4,0:00:20.00,0:00:24.00,Text,,0,0,0,,{\an7\pos(1350,330)\fs64\c&H005FB9E9&\b0\fad(160,160)}GHI
+Dialogue: 4,0:00:20.00,0:00:24.00,Text,,0,0,0,,{\an7\pos(1350,505)\fs40\c&H00F7F5F3&\b0\fad(160,160)}Superfície\Nhorizontal
+Dialogue: 4,0:00:20.00,0:00:24.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Ilustração conceitual · fábrica ilustrativa
+Dialogue: 4,0:00:24.00,0:00:29.00,Text,,0,0,0,,{\an7\pos(1350,330)\fs40\c&H00F7F5F3&\b0\fad(160,160)}Superfície\Nhorizontal
+Dialogue: 4,0:00:24.00,0:00:29.00,Text,,0,0,0,,{\an7\pos(1350,505)\fs40\c&H005FB9E9&\b0\fad(160,160)}Área de referência\N1 m²
+Dialogue: 4,0:00:24.00,0:00:29.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Ilustração conceitual · fábrica ilustrativa
+Dialogue: 4,0:00:29.00,0:00:32.00,Text,,0,0,0,,{\an7\pos(1350,330)\fs68\c&H005FB9E9&\b0\fad(160,160)}W/m²
+Dialogue: 4,0:00:29.00,0:00:32.00,Text,,0,0,0,,{\an7\pos(1350,500)\fs40\c&H00F7F5F3&\b0\fad(160,160)}Potência por\Nunidade de área
+Dialogue: 4,0:00:29.00,0:00:32.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Ilustração conceitual · fábrica ilustrativa
+Dialogue: 4,0:00:32.00,0:00:37.00,Text,,0,0,0,,{\an7\pos(1350,330)\fs40\c&H005FB9E9&\b0\fad(160,160)}Direta sobre\Na horizontal
+Dialogue: 4,0:00:32.00,0:00:37.00,Text,,0,0,0,,{\an7\pos(1350,565)\fs40\c&H005FB9E9&\b0\fad(160,160)}Difusa do céu
+Dialogue: 4,0:00:32.00,0:00:37.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Ilustração conceitual · fábrica ilustrativa
+Dialogue: 4,0:00:37.00,0:00:44.00,Text,,0,0,0,,{\an7\pos(1350,330)\fs38\c&H00F7F5F3&\b0\fad(160,160)}Padrões diários\Ne sazonais
+Dialogue: 4,0:00:37.00,0:00:44.00,Text,,0,0,0,,{\an7\pos(1350,555)\fs38\c&H00BEB2A9&\b0\fad(160,160)}Variação\Natmosférica
+Dialogue: 4,0:00:37.00,0:00:44.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Ilustração conceitual · fábrica ilustrativa
+Dialogue: 4,0:00:44.00,0:00:50.00,Text,,0,0,0,,{\an8\pos(400,265)\fs38\c&H00F7F5F3&\b0\fad(160,160)}Histórico de GHI
+Dialogue: 4,0:00:44.00,0:00:50.00,Text,,0,0,0,,{\an8\pos(1115,265)\fs36\c&H00BEB2A9&\b0\fad(160,160)}Presente
+Dialogue: 4,0:00:44.00,0:00:50.00,Text,,0,0,0,,{\an8\pos(1510,265)\fs38\c&H00BEB2A9&\b0\fad(160,160)}Futuro a prever
+Dialogue: 4,0:00:44.00,0:00:50.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Ilustração conceitual · fábrica ilustrativa
+Dialogue: 4,0:00:50.00,0:00:55.00,Text,,0,0,0,,{\an8\pos(400,265)\fs38\c&H00F7F5F3&\b0\fad(160,160)}Histórico de GHI
+Dialogue: 4,0:00:50.00,0:00:55.00,Text,,0,0,0,,{\an8\pos(1115,265)\fs36\c&H00BEB2A9&\b0\fad(160,160)}Presente
+Dialogue: 4,0:00:50.00,0:00:55.00,Text,,0,0,0,,{\an8\pos(1510,265)\fs38\c&H00BEB2A9&\b0\fad(160,160)}Futuro a prever
+Dialogue: 4,0:00:50.00,0:00:55.00,Text,,0,0,0,,{\an8\pos(960,200)\fs38\c&H00F7F5F3&\b0\fad(160,160)}Quanto conseguimos antecipar?
+Dialogue: 4,0:00:50.00,0:00:55.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Ilustração conceitual · fábrica ilustrativa
+Dialogue: 4,0:00:55.00,0:01:00.00,Text,,0,0,0,,{\an7\pos(1050,320)\fs50\c&H00F7F5F3&\b1\fad(160,160)}Prever o recurso solar
+Dialogue: 4,0:00:55.00,0:01:00.00,Text,,0,0,0,,{\an8\pos(960,730)\fs40\c&H00F7F5F3&\b0\fad(160,160)}Informação para o planejamento energético
+Dialogue: 4,0:01:00.00,0:01:07.00,Text,,0,0,0,,{\an8\pos(350,260)\fs42\c&H007987F2&\b1\fad(160,160)}LSTM
+Dialogue: 4,0:01:00.00,0:01:07.00,Text,,0,0,0,,{\an8\pos(960,260)\fs42\c&H00DACA58&\b1\fad(160,160)}Transformer
+Dialogue: 4,0:01:00.00,0:01:07.00,Text,,0,0,0,,{\an8\pos(1570,260)\fs42\c&H00E891AA&\b1\fad(160,160)}Informer
+Dialogue: 4,0:01:00.00,0:01:07.00,Text,,0,0,0,,{\an8\pos(960,730)\fs44\c&H00F7F5F3&\b0\fad(160,160)}Comparar precisão preditiva
+Dialogue: 4,0:01:07.00,0:01:15.00,Text,,0,0,0,,{\an7\pos(220,260)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Escala temporal
+Dialogue: 4,0:01:08.70,0:01:15.00,Text,,0,0,0,,{\an7\pos(780,260)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Representação da entrada
+Dialogue: 4,0:01:10.40,0:01:15.00,Text,,0,0,0,,{\an7\pos(1340,260)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Histórico de treinamento
+Dialogue: 4,0:01:07.00,0:01:15.00,Text,,0,0,0,,{\an8\pos(960,730)\fs44\c&H005FB9E9&\b0\fad(160,160)}Variável prevista: GHI
+Dialogue: 4,0:01:15.00,0:01:21.00,Text,,0,0,0,,{\an7\pos(1290,310)\fs60\c&H00F7F5F3&\b1\fad(160,160)}NSRDB
+Dialogue: 4,0:01:15.00,0:01:21.00,Text,,0,0,0,,{\an7\pos(1290,405)\fs38\c&H00F7F5F3&\b0\fad(160,160)}Estimativas modeladas
+Dialogue: 4,0:01:15.00,0:01:21.00,Text,,0,0,0,,{\an7\pos(1290,565)\fs44\c&H005FB9E9&\b0\fad(160,160)}10 localidades
+Dialogue: 4,0:01:15.00,0:01:21.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Fonte: relatório, Tabela 1 · coordenadas das 10 localidades
+Dialogue: 4,0:01:21.00,0:01:27.00,Text,,0,0,0,,{\an7\pos(1260,300)\fs64\c&H005FB9E9&\b1\fad(160,160)}1
+Dialogue: 4,0:01:21.00,0:01:27.00,Text,,0,0,0,,{\an7\pos(1350,317)\fs38\c&H00F7F5F3&\b0\fad(160,160)}Brasil
+Dialogue: 4,0:01:21.00,0:01:27.00,Text,,0,0,0,,{\an7\pos(1260,445)\fs64\c&H005FB9E9&\b1\fad(160,160)}8
+Dialogue: 4,0:01:21.00,0:01:27.00,Text,,0,0,0,,{\an7\pos(1350,462)\fs38\c&H00F7F5F3&\b0\fad(160,160)}Estados Unidos
+Dialogue: 4,0:01:21.00,0:01:27.00,Text,,0,0,0,,{\an7\pos(1260,590)\fs64\c&H005FB9E9&\b1\fad(160,160)}1
+Dialogue: 4,0:01:21.00,0:01:27.00,Text,,0,0,0,,{\an7\pos(1350,607)\fs38\c&H00F7F5F3&\b0\fad(160,160)}México
+Dialogue: 4,0:01:21.00,0:01:27.00,Text,,0,0,0,,{\an7\pos(265,520)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Detroit · detalhe
+Dialogue: 4,0:01:21.50,0:01:27.00,Text,,0,0,0,,{\an7\pos(430,590)\fs24\c&H00BEB2A9&\b0\fad(160,160)}GM
+Dialogue: 4,0:01:21.50,0:01:27.00,Text,,0,0,0,,{\an7\pos(330,715)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Ford
+Dialogue: 4,0:01:21.00,0:01:27.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Fonte: relatório, Tabela 1 · coordenadas das 10 localidades
+Dialogue: 4,0:01:27.00,0:01:34.00,Text,,0,0,0,,{\an7\pos(1120,260)\fs42\c&H00F7F5F3&\b1\fad(160,160)}Célula da base NSRDB
+Dialogue: 4,0:01:27.00,0:01:34.00,Text,,0,0,0,,{\an8\pos(960,730)\fs40\c&H00F7F5F3&\b0\fad(160,160)}Estimativas nas coordenadas das localidades
+Dialogue: 4,0:01:27.00,0:01:34.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Esquema de localização · célula ilustrativa da base NSRDB
+Dialogue: 4,0:01:34.00,0:01:42.00,Text,,0,0,0,,{\an7\pos(150,260)\fs40\c&H00F7F5F3&\b0\fad(160,160)}Histórico de GHI
+Dialogue: 4,0:01:34.00,0:01:42.00,Text,,0,0,0,,{\an7\pos(1120,260)\fs38\c&H00F7F5F3&\b0\fad(160,160)}Identificação aprendida\Nda localidade
+Dialogue: 4,0:01:34.00,0:01:42.00,Text,,0,0,0,,{\an8\pos(960,730)\fs42\c&H00F7F5F3&\b0\fad(160,160)}Entradas da rede
+Dialogue: 4,0:01:34.00,0:01:42.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Séries ilustrativas · entradas efetivas dos experimentos
+Dialogue: 4,0:01:42.00,0:01:49.00,Text,,0,0,0,,{\an8\pos(960,255)\fs46\c&H00F7F5F3&\b1\fad(160,160)}GHI + identificação da localidade
+Dialogue: 4,0:01:42.00,0:01:49.00,Text,,0,0,0,,{\an8\pos(960,700)\fs36\c&H00BEB2A9&\b0\fad(160,160)}Sem temperatura, imagens ou previsão\Nmeteorológica como entradas
+Dialogue: 4,0:01:49.00,0:01:55.00,Text,,0,0,0,,{\an8\pos(960,690)\fs40\c&H00F7F5F3&\b0\fad(160,160)}Parâmetros compartilhados entre\Nas localidades do conjunto
+Dialogue: 4,0:01:55.00,0:02:00.00,Text,,0,0,0,,{\an7\pos(180,245)\fs42\c&H00F7F5F3&\b0\fad(160,160)}Tarefa
+Dialogue: 4,0:01:55.00,0:02:00.00,Text,,0,0,0,,{\an8\pos(680,245)\fs42\c&H00F7F5F3&\b0\fad(160,160)}Histórico
+Dialogue: 4,0:01:55.00,0:02:00.00,Text,,0,0,0,,{\an8\pos(1450,245)\fs42\c&H005FB9E9&\b0\fad(160,160)}Previsão
+Dialogue: 1,0:01:55.30,0:02:00.00,Drawing,,0,0,0,,{\an7\pos(130,330)\p1\bord0\shad0\c&H00221C17&\alpha&H30&}m 0 0 l 1640 0 l 1640 82 l 0 82{\p0}
+Dialogue: 4,0:01:55.30,0:02:00.00,Text,,0,0,0,,{\an7\pos(180,340)\fs38\c&H00F7F5F3&\b1\fad(160,160)}Horária
+Dialogue: 4,0:01:55.30,0:02:00.00,Text,,0,0,0,,{\an8\pos(680,340)\fs38\c&H00F7F5F3&\b0\fad(160,160)}336 horas
+Dialogue: 4,0:01:55.30,0:02:00.00,Text,,0,0,0,,{\an7\pos(1060,340)\fs44\c&H005FB9E9&\b0\fad(160,160)}→
+Dialogue: 4,0:01:55.30,0:02:00.00,Text,,0,0,0,,{\an8\pos(1450,340)\fs38\c&H005FB9E9&\b0\fad(160,160)}72 horas
+Dialogue: 1,0:01:55.90,0:02:00.00,Drawing,,0,0,0,,{\an7\pos(130,430)\p1\bord0\shad0\c&H00221C17&\alpha&H30&}m 0 0 l 1640 0 l 1640 82 l 0 82{\p0}
+Dialogue: 4,0:01:55.90,0:02:00.00,Text,,0,0,0,,{\an7\pos(180,440)\fs38\c&H00F7F5F3&\b1\fad(160,160)}Diária
+Dialogue: 4,0:01:55.90,0:02:00.00,Text,,0,0,0,,{\an8\pos(680,440)\fs38\c&H00F7F5F3&\b0\fad(160,160)}365 dias
+Dialogue: 4,0:01:55.90,0:02:00.00,Text,,0,0,0,,{\an7\pos(1060,440)\fs44\c&H005FB9E9&\b0\fad(160,160)}→
+Dialogue: 4,0:01:55.90,0:02:00.00,Text,,0,0,0,,{\an8\pos(1450,440)\fs38\c&H005FB9E9&\b0\fad(160,160)}30 dias
+Dialogue: 1,0:01:56.50,0:02:00.00,Drawing,,0,0,0,,{\an7\pos(130,530)\p1\bord0\shad0\c&H00221C17&\alpha&H30&}m 0 0 l 1640 0 l 1640 82 l 0 82{\p0}
+Dialogue: 4,0:01:56.50,0:02:00.00,Text,,0,0,0,,{\an7\pos(180,540)\fs38\c&H00F7F5F3&\b1\fad(160,160)}Mensal · 1 passo
+Dialogue: 4,0:01:56.50,0:02:00.00,Text,,0,0,0,,{\an8\pos(680,540)\fs38\c&H00F7F5F3&\b0\fad(160,160)}12 meses
+Dialogue: 4,0:01:56.50,0:02:00.00,Text,,0,0,0,,{\an7\pos(1060,540)\fs44\c&H005FB9E9&\b0\fad(160,160)}→
+Dialogue: 4,0:01:56.50,0:02:00.00,Text,,0,0,0,,{\an8\pos(1450,540)\fs38\c&H005FB9E9&\b0\fad(160,160)}1 mês
+Dialogue: 1,0:01:57.10,0:02:00.00,Drawing,,0,0,0,,{\an7\pos(130,630)\p1\bord0\shad0\c&H00221C17&\alpha&H30&}m 0 0 l 1640 0 l 1640 82 l 0 82{\p0}
+Dialogue: 4,0:01:57.10,0:02:00.00,Text,,0,0,0,,{\an7\pos(180,640)\fs38\c&H00F7F5F3&\b1\fad(160,160)}Mensal · 6 passos
+Dialogue: 4,0:01:57.10,0:02:00.00,Text,,0,0,0,,{\an8\pos(680,640)\fs38\c&H00F7F5F3&\b0\fad(160,160)}12 meses
+Dialogue: 4,0:01:57.10,0:02:00.00,Text,,0,0,0,,{\an7\pos(1060,640)\fs44\c&H005FB9E9&\b0\fad(160,160)}→
+Dialogue: 4,0:01:57.10,0:02:00.00,Text,,0,0,0,,{\an8\pos(1450,640)\fs38\c&H005FB9E9&\b0\fad(160,160)}6 meses
+Dialogue: 4,0:02:00.00,0:02:06.00,Text,,0,0,0,,{\an7\pos(130,250)\fs48\c&H00F7F5F3&\b1\fad(160,160)}Horária
+Dialogue: 4,0:02:00.00,0:02:06.00,Text,,0,0,0,,{\an8\pos(960,710)\fs44\c&H00F7F5F3&\b0\fad(160,160)}336 h de histórico  →  72 h de previsão
+Dialogue: 4,0:02:06.00,0:02:11.00,Text,,0,0,0,,{\an7\pos(130,250)\fs48\c&H00F7F5F3&\b1\fad(160,160)}Diária
+Dialogue: 4,0:02:06.00,0:02:11.00,Text,,0,0,0,,{\an8\pos(960,710)\fs44\c&H00F7F5F3&\b0\fad(160,160)}365 d de histórico  →  30 d de previsão
+Dialogue: 4,0:02:11.00,0:02:16.00,Text,,0,0,0,,{\an7\pos(130,250)\fs48\c&H00F7F5F3&\b1\fad(160,160)}Mensal · 1 passo
+Dialogue: 4,0:02:11.00,0:02:16.00,Text,,0,0,0,,{\an8\pos(960,710)\fs44\c&H00F7F5F3&\b0\fad(160,160)}12 meses  →  1 mês
+Dialogue: 4,0:02:16.00,0:02:21.00,Text,,0,0,0,,{\an7\pos(130,250)\fs48\c&H00F7F5F3&\b1\fad(160,160)}Mensal · 6 passos
+Dialogue: 4,0:02:16.00,0:02:21.00,Text,,0,0,0,,{\an8\pos(960,710)\fs44\c&H00F7F5F3&\b0\fad(160,160)}12 meses  →  6 meses
+Dialogue: 4,0:02:16.00,0:02:21.00,Text,,0,0,0,,{\an9\pos(1800,260)\fs32\c&H00E891AA&\b0\fad(160,160)}Exploratória
+Dialogue: 4,0:02:21.00,0:02:30.00,Text,,0,0,0,,{\an8\pos(960,250)\fs48\c&H00F7F5F3&\b1\fad(160,160)}Tarefas distintas
+Dialogue: 4,0:02:21.00,0:02:30.00,Text,,0,0,0,,{\an8\pos(960,690)\fs38\c&H00F7F5F3&\b0\fad(160,160)}Redes treinadas separadamente\N1 passo ≠ primeiro passo da rede de 6 saídas
+Dialogue: 4,0:02:30.00,0:02:37.00,Text,,0,0,0,,{\an7\pos(190,265)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Treinamento inicial
+Dialogue: 4,0:02:30.00,0:02:37.00,Text,,0,0,0,,{\an7\pos(190,320)\fs46\c&H005FB9E9&\b1\fad(160,160)}2019–2022
+Dialogue: 4,0:02:37.00,0:02:43.00,Text,,0,0,0,,{\an7\pos(190,265)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Treinamento inicial
+Dialogue: 4,0:02:37.00,0:02:43.00,Text,,0,0,0,,{\an7\pos(190,320)\fs46\c&H005FB9E9&\b1\fad(160,160)}2019–2022
+Dialogue: 4,0:02:37.00,0:02:43.00,Text,,0,0,0,,{\an7\pos(1080,265)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Validação
+Dialogue: 4,0:02:37.00,0:02:43.00,Text,,0,0,0,,{\an7\pos(1080,320)\fs46\c&H005FB9E9&\b1\fad(160,160)}2023
+Dialogue: 4,0:02:43.00,0:02:49.00,Text,,0,0,0,,{\an7\pos(190,265)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Treinamento inicial
+Dialogue: 4,0:02:43.00,0:02:49.00,Text,,0,0,0,,{\an7\pos(190,320)\fs46\c&H005FB9E9&\b1\fad(160,160)}2019–2022
+Dialogue: 4,0:02:43.00,0:02:49.00,Text,,0,0,0,,{\an7\pos(1080,265)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Validação
+Dialogue: 4,0:02:43.00,0:02:49.00,Text,,0,0,0,,{\an7\pos(1080,320)\fs46\c&H005FB9E9&\b1\fad(160,160)}2023
+Dialogue: 4,0:02:43.00,0:02:49.00,Text,,0,0,0,,{\an7\pos(1450,265)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Teste retrospectivo
+Dialogue: 4,0:02:43.00,0:02:49.00,Text,,0,0,0,,{\an7\pos(1450,320)\fs46\c&H00F7F5F3&\b1\fad(160,160)}2024
+Dialogue: 4,0:02:49.00,0:02:54.00,Text,,0,0,0,,{\an8\pos(960,250)\fs46\c&H00F7F5F3&\b1\fad(160,160)}Seleção pela validação
+Dialogue: 4,0:02:49.00,0:02:54.00,Text,,0,0,0,,{\an8\pos(960,730)\fs40\c&H005FB9E9&\b0\fad(160,160)}Configuração selecionada
+Dialogue: 4,0:02:54.00,0:02:59.00,Text,,0,0,0,,{\an8\pos(960,255)\fs46\c&H00F7F5F3&\b1\fad(160,160)}Novo ajuste: 2019–2023
+Dialogue: 4,0:02:54.00,0:02:59.00,Text,,0,0,0,,{\an8\pos(960,730)\fs40\c&H005FB9E9&\b0\fad(160,160)}Configuração selecionada mantida
+Dialogue: 4,0:02:59.00,0:03:04.00,Text,,0,0,0,,{\an7\pos(1480,265)\fs46\c&H00F7F5F3&\b1\fad(160,160)}Teste: 2024
+Dialogue: 4,0:02:59.00,0:03:04.00,Text,,0,0,0,,{\an8\pos(960,730)\fs44\c&H00F7F5F3&\b0\fad(160,160)}Avaliação retrospectiva
+Dialogue: 4,0:03:04.00,0:03:10.00,Text,,0,0,0,,{\an8\pos(960,260)\fs46\c&H00F7F5F3&\b1\fad(160,160)}Houve exposição anterior\Nao período de teste
+Dialogue: 4,0:03:04.00,0:03:10.00,Text,,0,0,0,,{\an8\pos(960,730)\fs38\c&H00BEB2A9&\b0\fad(160,160)}Interpretação retrospectiva dos resultados
+Dialogue: 4,0:03:10.00,0:03:16.00,Text,,0,0,0,,{\an8\pos(350,255)\fs42\c&H007987F2&\b1\fad(160,160)}LSTM
+Dialogue: 4,0:03:10.00,0:03:16.00,Text,,0,0,0,,{\an8\pos(960,255)\fs42\c&H00DACA58&\b1\fad(160,160)}Transformer
+Dialogue: 4,0:03:10.00,0:03:16.00,Text,,0,0,0,,{\an8\pos(1570,255)\fs42\c&H00E891AA&\b1\fad(160,160)}Informer
+Dialogue: 4,0:03:10.00,0:03:16.00,Text,,0,0,0,,{\an8\pos(960,730)\fs40\c&H00F7F5F3&\b0\fad(160,160)}Mesmo histórico
+Dialogue: 4,0:03:10.00,0:03:16.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Esquema simplificado das arquiteturas
+Dialogue: 4,0:03:16.00,0:03:22.50,Text,,0,0,0,,{\an7\pos(130,245)\fs52\c&H007987F2&\b1\fad(160,160)}LSTM
+Dialogue: 4,0:03:16.00,0:03:22.50,Text,,0,0,0,,{\an7\pos(430,255)\fs40\c&H007987F2&\b0\fad(160,160)}Memória temporal
+Dialogue: 4,0:03:16.00,0:03:22.50,Text,,0,0,0,,{\an8\pos(960,730)\fs38\c&H00F7F5F3&\b0\fad(160,160)}Vetor futuro direto
+Dialogue: 4,0:03:16.00,0:03:22.50,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Esquema simplificado das arquiteturas
+Dialogue: 4,0:03:22.50,0:03:32.10,Text,,0,0,0,,{\an7\pos(130,245)\fs52\c&H00DACA58&\b1\fad(160,160)}Transformer
+Dialogue: 4,0:03:22.50,0:03:32.10,Text,,0,0,0,,{\an8\pos(960,730)\fs44\c&H00DACA58&\b0\fad(160,160)}Atenção entre posições
+Dialogue: 4,0:03:22.50,0:03:32.10,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Esquema simplificado das arquiteturas
+Dialogue: 4,0:03:32.10,0:03:40.80,Text,,0,0,0,,{\an7\pos(130,245)\fs46\c&H00F7F5F3&\b1\fad(160,160)}Ordem temporal
+Dialogue: 4,0:03:32.10,0:03:40.80,Text,,0,0,0,,{\an8\pos(960,730)\fs38\c&H00F7F5F3&\b0\fad(160,160)}Histórico de GHI + representação posicional
+Dialogue: 4,0:03:32.10,0:03:40.80,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Esquema simplificado das arquiteturas
+Dialogue: 4,0:03:40.80,0:03:47.00,Text,,0,0,0,,{\an7\pos(130,245)\fs52\c&H00E891AA&\b1\fad(160,160)}Informer
+Dialogue: 4,0:03:40.80,0:03:47.00,Text,,0,0,0,,{\an7\pos(1430,255)\fs40\c&H00E891AA&\b0\fad(160,160)}ProbSparse
+Dialogue: 4,0:03:40.80,0:03:47.00,Text,,0,0,0,,{\an8\pos(960,730)\fs44\c&H00E891AA&\b0\fad(160,160)}Consultas selecionadas
+Dialogue: 4,0:03:40.80,0:03:47.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Esquema simplificado das arquiteturas
+Dialogue: 4,0:03:47.00,0:03:53.20,Text,,0,0,0,,{\an7\pos(130,245)\fs46\c&H00E891AA&\b1\fad(160,160)}ProbSparse
+Dialogue: 4,0:03:47.00,0:03:53.20,Text,,0,0,0,,{\an8\pos(960,695)\fs38\c&H00F7F5F3&\b0\fad(160,160)}Redução temporal no codificador\NAtenção cruzada completa
+Dialogue: 4,0:03:47.00,0:03:53.20,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Esquema simplificado das arquiteturas
+Dialogue: 4,0:03:53.20,0:04:05.00,Text,,0,0,0,,{\an8\pos(960,250)\fs46\c&H00F7F5F3&\b1\fad(160,160)}Avaliação realizada: precisão preditiva
+Dialogue: 4,0:03:53.20,0:04:05.00,Text,,0,0,0,,{\an8\pos(960,730)\fs40\c&H00BEB2A9&\b0\fad(160,160)}Velocidade e memória não medidas
+Dialogue: 4,0:03:53.20,0:04:05.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Esquema simplificado das arquiteturas
+Dialogue: 4,0:04:05.00,0:04:15.50,Text,,0,0,0,,{\an8\pos(330,255)\fs42\c&H00F7F5F3&\b1\fad(160,160)}Contínuo
+Dialogue: 4,0:04:05.00,0:04:15.50,Text,,0,0,0,,{\an8\pos(750,255)\fs42\c&H005FB9E9&\b1\fad(160,160)}Q64
+Dialogue: 4,0:04:05.00,0:04:15.50,Text,,0,0,0,,{\an8\pos(1170,255)\fs42\c&H005FB9E9&\b1\fad(160,160)}Q128
+Dialogue: 4,0:04:05.00,0:04:15.50,Text,,0,0,0,,{\an8\pos(1590,255)\fs42\c&H005FB9E9&\b1\fad(160,160)}Q256
+Dialogue: 4,0:04:05.00,0:04:15.50,Text,,0,0,0,,{\an8\pos(960,730)\fs40\c&H00F7F5F3&\b0\fad(160,160)}Representação da entrada
+Dialogue: 4,0:04:05.00,0:04:15.50,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Ilustração conceitual · quantização da entrada de GHI
+Dialogue: 4,0:04:15.50,0:04:19.50,Text,,0,0,0,,{\an8\pos(960,250)\fs46\c&H00F7F5F3&\b1\fad(160,160)}Aproximação por níveis
+Dialogue: 4,0:04:15.50,0:04:19.50,Text,,0,0,0,,{\an8\pos(960,730)\fs36\c&H00BEB2A9&\b0\fad(160,160)}Poucos degraus: ilustração
+Dialogue: 4,0:04:15.50,0:04:19.50,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Ilustração conceitual · quantização da entrada de GHI
+Dialogue: 4,0:04:19.50,0:04:26.60,Text,,0,0,0,,{\an7\pos(130,250)\fs46\c&H00F7F5F3&\b1\fad(160,160)}Somente a entrada de GHI
+Dialogue: 4,0:04:19.50,0:04:26.60,Text,,0,0,0,,{\an8\pos(920,320)\fs36\c&H005FB9E9&\b0\fad(160,160)}Quantizador
+Dialogue: 4,0:04:19.50,0:04:26.60,Text,,0,0,0,,{\an8\pos(1440,320)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Reconstrução\Nem float32
+Dialogue: 4,0:04:19.50,0:04:26.60,Text,,0,0,0,,{\an7\pos(150,625)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Identificação da localidade
+Dialogue: 4,0:04:19.50,0:04:26.60,Text,,0,0,0,,{\an8\pos(960,740)\fs38\c&H00F7F5F3&\b0\fad(160,160)}Pesos, alvos e saída contínuos
+Dialogue: 4,0:04:19.50,0:04:26.60,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Ilustração conceitual · quantização da entrada de GHI
+Dialogue: 4,0:04:26.60,0:04:33.20,Text,,0,0,0,,{\an8\pos(960,250)\fs46\c&H00F7F5F3&\b1\fad(160,160)}Clipping + arredondamento
+Dialogue: 4,0:04:26.60,0:04:33.20,Text,,0,0,0,,{\an8\pos(960,695)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Variantes quantizadas: intervalo normalizado [0,1]\NControle sem clipping
+Dialogue: 4,0:04:26.60,0:04:33.20,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Ilustração conceitual · quantização da entrada de GHI
+Dialogue: 4,0:04:33.20,0:04:40.00,Text,,0,0,0,,{\an8\pos(500,270)\fs44\c&H00F7F5F3&\b0\fad(160,160)}Validação
+Dialogue: 4,0:04:33.20,0:04:40.00,Text,,0,0,0,,{\an8\pos(1430,270)\fs44\c&H00F7F5F3&\b0\fad(160,160)}Teste
+Dialogue: 4,0:04:33.20,0:04:40.00,Text,,0,0,0,,{\an8\pos(960,730)\fs42\c&H005FB9E9&\b0\fad(160,160)}Condição selecionada mantida no teste
+Dialogue: 4,0:04:40.00,0:04:46.50,Text,,0,0,0,,{\an7\pos(1350,300)\fs70\c&H005FB9E9&\b1\fad(160,160)}MAE
+Dialogue: 4,0:04:40.00,0:04:46.50,Text,,0,0,0,,{\an7\pos(1350,410)\fs42\c&H00F7F5F3&\b0\fad(160,160)}Erro absoluto\Nmédio
+Dialogue: 4,0:04:40.00,0:04:46.50,Text,,0,0,0,,{\an7\pos(1350,575)\fs48\c&H005FB9E9&\b0\fad(160,160)}W/m²
+Dialogue: 4,0:04:40.00,0:04:46.50,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Exemplo didático · curvas sem correspondência com resultados experimentais
+Dialogue: 4,0:04:46.50,0:04:53.40,Text,,0,0,0,,{\an7\pos(280,265)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Referência
+Dialogue: 4,0:04:46.50,0:04:53.40,Text,,0,0,0,,{\an7\pos(650,265)\fs36\c&H005FB9E9&\b0\fad(160,160)}Previsão
+Dialogue: 4,0:04:46.50,0:04:53.40,Text,,0,0,0,,{\an7\pos(1350,370)\fs42\c&H00F7F5F3&\b0\fad(160,160)}Distâncias\Nabsolutas
+Dialogue: 4,0:04:46.50,0:04:53.40,Text,,0,0,0,,{\an8\pos(960,730)\fs42\c&H00F7F5F3&\b0\fad(160,160)}MAE em W/m²
+Dialogue: 4,0:04:46.50,0:04:53.40,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Exemplo didático · curvas sem correspondência com resultados experimentais
+Dialogue: 4,0:04:53.40,0:05:00.00,Text,,0,0,0,,{\an7\pos(130,255)\fs44\c&H00F7F5F3&\b1\fad(160,160)}Métrica por localidade
+Dialogue: 4,0:04:53.40,0:05:00.00,Text,,0,0,0,,{\an7\pos(1390,255)\fs44\c&H00F7F5F3&\b1\fad(160,160)}Média macro
+Dialogue: 4,0:04:53.40,0:05:00.00,Text,,0,0,0,,{\an8\pos(960,730)\fs42\c&H00F7F5F3&\b0\fad(160,160)}10 localidades · mesmo peso
+Dialogue: 4,0:05:00.00,0:05:10.00,Text,,0,0,0,,{\an8\pos(960,250)\fs48\c&H00F7F5F3&\b1\fad(160,160)}Horizonte cumulativo
+Dialogue: 4,0:05:00.00,0:05:10.00,Text,,0,0,0,,{\an8\pos(960,690)\fs40\c&H00F7F5F3&\b0\fad(160,160)}Até 72 h = passos 1 a 72\NTodos os passos até o horizonte
+Dialogue: 1,0:05:10.00,0:05:23.50,Drawing,,0,0,0,,{\an7\pos(95,220)\p1\bord0\shad0\c&H000D0907&\alpha&H00&}m 0 0 l 1730 0 l 1730 588 l 0 588{\p0}
+Dialogue: 4,0:05:10.00,0:05:23.50,Text,,0,0,0,,{\an7\pos(130,235)\fs46\c&H00F7F5F3&\b1\fad(160,160)}Horária · até 72 h
+Dialogue: 4,0:05:10.00,0:05:23.50,Text,,0,0,0,,{\an7\pos(145,350)\fs42\c&H00DACA58&\b1\fad(160,160)}Transformer
+Dialogue: 4,0:05:10.00,0:05:23.50,Text,,0,0,0,,{\an7\pos(470,359)\fs34\c&H00BEB2A9&\b0\fad(160,160)}Controle
+Dialogue: 2,0:05:10.00,0:05:23.50,Drawing,,0,0,0,,{\an7\pos(690,361)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 800 0 l 800 33 l 0 33{\p0}
+Dialogue: 3,0:05:10.25,0:05:23.50,Drawing,,0,0,0,,{\an7\pos(690,361)\p1\bord0\shad0\c&H00DACA58&\alpha&H00&\clip(690,361,691,394)\t(0,1000,\clip(690,361,974,394))}m 0 0 l 284 0 l 284 33 l 0 33{\p0}
+Dialogue: 4,0:05:10.25,0:05:23.50,Text,,0,0,0,,{\an9\pos(1770,340)\fs54\c&H00F7F5F3&\b1\fad(160,160)}53,21
+Dialogue: 4,0:05:10.00,0:05:23.50,Text,,0,0,0,,{\an7\pos(145,472)\fs42\c&H00E891AA&\b1\fad(160,160)}Informer
+Dialogue: 4,0:05:10.00,0:05:23.50,Text,,0,0,0,,{\an7\pos(470,481)\fs34\c&H00BEB2A9&\b0\fad(160,160)}Controle
+Dialogue: 2,0:05:10.00,0:05:23.50,Drawing,,0,0,0,,{\an7\pos(690,483)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 800 0 l 800 33 l 0 33{\p0}
+Dialogue: 3,0:05:10.37,0:05:23.50,Drawing,,0,0,0,,{\an7\pos(690,483)\p1\bord0\shad0\c&H00E891AA&\alpha&H00&\clip(690,483,691,516)\t(0,1000,\clip(690,483,1424,516))}m 0 0 l 734 0 l 734 33 l 0 33{\p0}
+Dialogue: 4,0:05:10.37,0:05:23.50,Text,,0,0,0,,{\an9\pos(1770,462)\fs54\c&H00F7F5F3&\b0\fad(160,160)}137,68
+Dialogue: 4,0:05:10.00,0:05:23.50,Text,,0,0,0,,{\an7\pos(145,594)\fs42\c&H007987F2&\b1\fad(160,160)}LSTM
+Dialogue: 4,0:05:10.00,0:05:23.50,Text,,0,0,0,,{\an7\pos(470,603)\fs34\c&H00BEB2A9&\b0\fad(160,160)}Q64
+Dialogue: 2,0:05:10.00,0:05:23.50,Drawing,,0,0,0,,{\an7\pos(690,605)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 800 0 l 800 33 l 0 33{\p0}
+Dialogue: 3,0:05:10.49,0:05:23.50,Drawing,,0,0,0,,{\an7\pos(690,605)\p1\bord0\shad0\c&H007987F2&\alpha&H00&\clip(690,605,691,638)\t(0,1000,\clip(690,605,975,638))}m 0 0 l 285 0 l 285 33 l 0 33{\p0}
+Dialogue: 4,0:05:10.49,0:05:23.50,Text,,0,0,0,,{\an9\pos(1770,584)\fs54\c&H00F7F5F3&\b0\fad(160,160)}53,52
+Dialogue: 4,0:05:10.00,0:05:23.50,Text,,0,0,0,,{\an8\pos(690,724)\fs28\c&H00BEB2A9&\b0\fad(160,160)}0
+Dialogue: 4,0:05:10.00,0:05:23.50,Text,,0,0,0,,{\an8\pos(957,724)\fs28\c&H00BEB2A9&\b0\fad(160,160)}50
+Dialogue: 4,0:05:10.00,0:05:23.50,Text,,0,0,0,,{\an8\pos(1223,724)\fs28\c&H00BEB2A9&\b0\fad(160,160)}100
+Dialogue: 4,0:05:10.00,0:05:23.50,Text,,0,0,0,,{\an8\pos(1490,724)\fs28\c&H00BEB2A9&\b0\fad(160,160)}150
+Dialogue: 4,0:05:10.00,0:05:23.50,Text,,0,0,0,,{\an7\pos(690,775)\fs28\c&H00BEB2A9&\b0\fad(160,160)}Macro-MAE [W/m²]  ·  menor é melhor
+Dialogue: 4,0:05:10.00,0:05:23.50,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Fonte: relatório, Tabela 6 · condições selecionadas na validação
+Dialogue: 1,0:05:23.50,0:05:29.90,Drawing,,0,0,0,,{\an7\pos(95,220)\p1\bord0\shad0\c&H000D0907&\alpha&H00&}m 0 0 l 1730 0 l 1730 588 l 0 588{\p0}
+Dialogue: 4,0:05:23.50,0:05:29.90,Text,,0,0,0,,{\an7\pos(130,235)\fs46\c&H00F7F5F3&\b1\fad(160,160)}Diária · até 30 d
+Dialogue: 4,0:05:23.50,0:05:29.90,Text,,0,0,0,,{\an7\pos(145,350)\fs42\c&H00DACA58&\b1\fad(160,160)}Transformer
+Dialogue: 4,0:05:23.50,0:05:29.90,Text,,0,0,0,,{\an7\pos(470,359)\fs34\c&H00BEB2A9&\b0\fad(160,160)}Q256
+Dialogue: 2,0:05:23.50,0:05:29.90,Drawing,,0,0,0,,{\an7\pos(690,361)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 800 0 l 800 33 l 0 33{\p0}
+Dialogue: 3,0:05:23.75,0:05:29.90,Drawing,,0,0,0,,{\an7\pos(690,361)\p1\bord0\shad0\c&H00DACA58&\alpha&H00&\clip(690,361,691,394)\t(0,1000,\clip(690,361,1392,394))}m 0 0 l 702 0 l 702 33 l 0 33{\p0}
+Dialogue: 4,0:05:23.75,0:05:29.90,Text,,0,0,0,,{\an9\pos(1770,340)\fs54\c&H00F7F5F3&\b1\fad(160,160)}43,89
+Dialogue: 4,0:05:23.50,0:05:29.90,Text,,0,0,0,,{\an7\pos(145,472)\fs42\c&H00E891AA&\b1\fad(160,160)}Informer
+Dialogue: 4,0:05:23.50,0:05:29.90,Text,,0,0,0,,{\an7\pos(470,481)\fs34\c&H00BEB2A9&\b0\fad(160,160)}Q64
+Dialogue: 2,0:05:23.50,0:05:29.90,Drawing,,0,0,0,,{\an7\pos(690,483)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 800 0 l 800 33 l 0 33{\p0}
+Dialogue: 3,0:05:23.87,0:05:29.90,Drawing,,0,0,0,,{\an7\pos(690,483)\p1\bord0\shad0\c&H00E891AA&\alpha&H00&\clip(690,483,691,516)\t(0,1000,\clip(690,483,1417,516))}m 0 0 l 727 0 l 727 33 l 0 33{\p0}
+Dialogue: 4,0:05:23.87,0:05:29.90,Text,,0,0,0,,{\an9\pos(1770,462)\fs54\c&H00F7F5F3&\b0\fad(160,160)}45,46
+Dialogue: 4,0:05:23.50,0:05:29.90,Text,,0,0,0,,{\an7\pos(145,594)\fs42\c&H007987F2&\b1\fad(160,160)}LSTM
+Dialogue: 4,0:05:23.50,0:05:29.90,Text,,0,0,0,,{\an7\pos(470,603)\fs34\c&H00BEB2A9&\b0\fad(160,160)}Controle
+Dialogue: 2,0:05:23.50,0:05:29.90,Drawing,,0,0,0,,{\an7\pos(690,605)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 800 0 l 800 33 l 0 33{\p0}
+Dialogue: 3,0:05:23.99,0:05:29.90,Drawing,,0,0,0,,{\an7\pos(690,605)\p1\bord0\shad0\c&H007987F2&\alpha&H00&\clip(690,605,691,638)\t(0,1000,\clip(690,605,1397,638))}m 0 0 l 707 0 l 707 33 l 0 33{\p0}
+Dialogue: 4,0:05:23.99,0:05:29.90,Text,,0,0,0,,{\an9\pos(1770,584)\fs54\c&H00F7F5F3&\b0\fad(160,160)}44,18
+Dialogue: 4,0:05:23.50,0:05:29.90,Text,,0,0,0,,{\an8\pos(690,724)\fs28\c&H00BEB2A9&\b0\fad(160,160)}0
+Dialogue: 4,0:05:23.50,0:05:29.90,Text,,0,0,0,,{\an8\pos(1090,724)\fs28\c&H00BEB2A9&\b0\fad(160,160)}25
+Dialogue: 4,0:05:23.50,0:05:29.90,Text,,0,0,0,,{\an8\pos(1490,724)\fs28\c&H00BEB2A9&\b0\fad(160,160)}50
+Dialogue: 4,0:05:23.50,0:05:29.90,Text,,0,0,0,,{\an7\pos(690,775)\fs28\c&H00BEB2A9&\b0\fad(160,160)}Macro-MAE [W/m²]  ·  menor é melhor
+Dialogue: 4,0:05:23.50,0:05:29.90,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Fonte: relatório, Tabela 6 · condições selecionadas na validação
+Dialogue: 1,0:05:29.90,0:05:40.00,Drawing,,0,0,0,,{\an7\pos(95,220)\p1\bord0\shad0\c&H000D0907&\alpha&H00&}m 0 0 l 1730 0 l 1730 588 l 0 588{\p0}
+Dialogue: 4,0:05:29.90,0:05:40.00,Text,,0,0,0,,{\an7\pos(130,245)\fs46\c&H00F7F5F3&\b1\fad(160,160)}Vantagem de MAE sobre a LSTM
+Dialogue: 4,0:05:29.90,0:05:40.00,Text,,0,0,0,,{\an7\pos(130,345)\fs40\c&H00BEB2A9&\b0\fad(160,160)}Horária
+Dialogue: 4,0:05:29.90,0:05:40.00,Text,,0,0,0,,{\an7\pos(130,410)\fs66\c&H00DACA58&\b1\fad(160,160)}≈ 0,32 W/m²
+Dialogue: 4,0:05:29.90,0:05:40.00,Text,,0,0,0,,{\an7\pos(130,550)\fs30\c&H00DACA58&\b0\fad(160,160)}Transformer
+Dialogue: 2,0:05:29.90,0:05:40.00,Drawing,,0,0,0,,{\an7\pos(375,560)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 390 0 l 390 22 l 0 22{\p0}
+Dialogue: 3,0:05:30.20,0:05:40.00,Drawing,,0,0,0,,{\an7\pos(375,560)\p1\bord0\shad0\c&H00DACA58&\alpha&H00&\clip(375,560,376,582)\t(0,1000,\clip(375,560,513,582))}m 0 0 l 138 0 l 138 22 l 0 22{\p0}
+Dialogue: 4,0:05:29.90,0:05:40.00,Text,,0,0,0,,{\an7\pos(130,625)\fs30\c&H007987F2&\b0\fad(160,160)}LSTM
+Dialogue: 2,0:05:29.90,0:05:40.00,Drawing,,0,0,0,,{\an7\pos(375,635)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 390 0 l 390 22 l 0 22{\p0}
+Dialogue: 3,0:05:30.20,0:05:40.00,Drawing,,0,0,0,,{\an7\pos(375,635)\p1\bord0\shad0\c&H007987F2&\alpha&H00&\clip(375,635,376,657)\t(0,1000,\clip(375,635,514,657))}m 0 0 l 139 0 l 139 22 l 0 22{\p0}
+Dialogue: 4,0:05:29.90,0:05:40.00,Text,,0,0,0,,{\an7\pos(375,700)\fs28\c&H00BEB2A9&\b0\fad(160,160)}Escala: 0–150 W/m²
+Dialogue: 4,0:05:29.90,0:05:40.00,Text,,0,0,0,,{\an7\pos(1000,345)\fs40\c&H00BEB2A9&\b0\fad(160,160)}Diária
+Dialogue: 4,0:05:29.90,0:05:40.00,Text,,0,0,0,,{\an7\pos(1000,410)\fs66\c&H00DACA58&\b1\fad(160,160)}≈ 0,30 W/m²
+Dialogue: 4,0:05:29.90,0:05:40.00,Text,,0,0,0,,{\an7\pos(1000,550)\fs30\c&H00DACA58&\b0\fad(160,160)}Transformer
+Dialogue: 2,0:05:29.90,0:05:40.00,Drawing,,0,0,0,,{\an7\pos(1245,560)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 390 0 l 390 22 l 0 22{\p0}
+Dialogue: 3,0:05:30.20,0:05:40.00,Drawing,,0,0,0,,{\an7\pos(1245,560)\p1\bord0\shad0\c&H00DACA58&\alpha&H00&\clip(1245,560,1246,582)\t(0,1000,\clip(1245,560,1587,582))}m 0 0 l 342 0 l 342 22 l 0 22{\p0}
+Dialogue: 4,0:05:29.90,0:05:40.00,Text,,0,0,0,,{\an7\pos(1000,625)\fs30\c&H007987F2&\b0\fad(160,160)}LSTM
+Dialogue: 2,0:05:29.90,0:05:40.00,Drawing,,0,0,0,,{\an7\pos(1245,635)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 390 0 l 390 22 l 0 22{\p0}
+Dialogue: 3,0:05:30.20,0:05:40.00,Drawing,,0,0,0,,{\an7\pos(1245,635)\p1\bord0\shad0\c&H007987F2&\alpha&H00&\clip(1245,635,1246,657)\t(0,1000,\clip(1245,635,1590,657))}m 0 0 l 345 0 l 345 22 l 0 22{\p0}
+Dialogue: 4,0:05:29.90,0:05:40.00,Text,,0,0,0,,{\an7\pos(1245,700)\fs28\c&H00BEB2A9&\b0\fad(160,160)}Escala: 0–50 W/m²
+Dialogue: 4,0:05:29.90,0:05:40.00,Text,,0,0,0,,{\an8\pos(960,765)\fs36\c&H00BEB2A9&\b0\fad(160,160)}Diferenças pequenas e descritivas
+Dialogue: 4,0:05:29.90,0:05:40.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Fonte: relatório, Tabela 6 · condições selecionadas na validação
+Dialogue: 1,0:05:40.00,0:05:48.60,Drawing,,0,0,0,,{\an7\pos(95,220)\p1\bord0\shad0\c&H000D0907&\alpha&H00&}m 0 0 l 1730 0 l 1730 588 l 0 588{\p0}
+Dialogue: 4,0:05:40.00,0:05:48.60,Text,,0,0,0,,{\an7\pos(130,235)\fs46\c&H00F7F5F3&\b1\fad(160,160)}Mensal · 1 passo
+Dialogue: 4,0:05:40.00,0:05:48.60,Text,,0,0,0,,{\an7\pos(145,350)\fs42\c&H00DACA58&\b1\fad(160,160)}Transformer
+Dialogue: 4,0:05:40.00,0:05:48.60,Text,,0,0,0,,{\an7\pos(470,359)\fs34\c&H00BEB2A9&\b0\fad(160,160)}Q128
+Dialogue: 2,0:05:40.00,0:05:48.60,Drawing,,0,0,0,,{\an7\pos(690,361)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 800 0 l 800 33 l 0 33{\p0}
+Dialogue: 3,0:05:40.25,0:05:48.60,Drawing,,0,0,0,,{\an7\pos(690,361)\p1\bord0\shad0\c&H00DACA58&\alpha&H00&\clip(690,361,691,394)\t(0,1000,\clip(690,361,1347,394))}m 0 0 l 657 0 l 657 33 l 0 33{\p0}
+Dialogue: 4,0:05:40.25,0:05:48.60,Text,,0,0,0,,{\an9\pos(1770,340)\fs54\c&H00F7F5F3&\b0\fad(160,160)}13,15
+Dialogue: 4,0:05:40.00,0:05:48.60,Text,,0,0,0,,{\an7\pos(145,472)\fs42\c&H00E891AA&\b1\fad(160,160)}Informer
+Dialogue: 4,0:05:40.00,0:05:48.60,Text,,0,0,0,,{\an7\pos(470,481)\fs34\c&H00BEB2A9&\b0\fad(160,160)}Q128
+Dialogue: 2,0:05:40.00,0:05:48.60,Drawing,,0,0,0,,{\an7\pos(690,483)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 800 0 l 800 33 l 0 33{\p0}
+Dialogue: 3,0:05:40.37,0:05:48.60,Drawing,,0,0,0,,{\an7\pos(690,483)\p1\bord0\shad0\c&H00E891AA&\alpha&H00&\clip(690,483,691,516)\t(0,1000,\clip(690,483,1326,516))}m 0 0 l 636 0 l 636 33 l 0 33{\p0}
+Dialogue: 4,0:05:40.37,0:05:48.60,Text,,0,0,0,,{\an9\pos(1770,462)\fs54\c&H00F7F5F3&\b1\fad(160,160)}12,73
+Dialogue: 4,0:05:40.00,0:05:48.60,Text,,0,0,0,,{\an7\pos(145,594)\fs42\c&H007987F2&\b1\fad(160,160)}LSTM
+Dialogue: 4,0:05:40.00,0:05:48.60,Text,,0,0,0,,{\an7\pos(470,603)\fs34\c&H00BEB2A9&\b0\fad(160,160)}Q128
+Dialogue: 2,0:05:40.00,0:05:48.60,Drawing,,0,0,0,,{\an7\pos(690,605)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 800 0 l 800 33 l 0 33{\p0}
+Dialogue: 3,0:05:40.49,0:05:48.60,Drawing,,0,0,0,,{\an7\pos(690,605)\p1\bord0\shad0\c&H007987F2&\alpha&H00&\clip(690,605,691,638)\t(0,1000,\clip(690,605,1404,638))}m 0 0 l 714 0 l 714 33 l 0 33{\p0}
+Dialogue: 4,0:05:40.49,0:05:48.60,Text,,0,0,0,,{\an9\pos(1770,584)\fs54\c&H00F7F5F3&\b0\fad(160,160)}14,29
+Dialogue: 4,0:05:40.00,0:05:48.60,Text,,0,0,0,,{\an8\pos(690,724)\fs28\c&H00BEB2A9&\b0\fad(160,160)}0
+Dialogue: 4,0:05:40.00,0:05:48.60,Text,,0,0,0,,{\an8\pos(1090,724)\fs28\c&H00BEB2A9&\b0\fad(160,160)}8
+Dialogue: 4,0:05:40.00,0:05:48.60,Text,,0,0,0,,{\an8\pos(1490,724)\fs28\c&H00BEB2A9&\b0\fad(160,160)}16
+Dialogue: 4,0:05:40.00,0:05:48.60,Text,,0,0,0,,{\an7\pos(690,775)\fs28\c&H00BEB2A9&\b0\fad(160,160)}Macro-MAE [W/m²]  ·  menor é melhor
+Dialogue: 4,0:05:40.00,0:05:48.60,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Fonte: relatório, Tabela 6 · condições selecionadas na validação
+Dialogue: 1,0:05:48.60,0:05:55.20,Drawing,,0,0,0,,{\an7\pos(95,220)\p1\bord0\shad0\c&H000D0907&\alpha&H00&}m 0 0 l 1730 0 l 1730 588 l 0 588{\p0}
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an7\pos(130,235)\fs40\c&H00F7F5F3&\b1\fad(160,160)}Mensal · 1 passo
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an7\pos(130,345)\fs36\c&H00DACA58&\b1\fad(160,160)}Transformer
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an9\pos(890,347)\fs30\c&H00BEB2A9&\b0\fad(160,160)}Q128
+Dialogue: 2,0:05:48.60,0:05:55.20,Drawing,,0,0,0,,{\an7\pos(130,401)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 640 0 l 640 21 l 0 21{\p0}
+Dialogue: 3,0:05:48.85,0:05:55.20,Drawing,,0,0,0,,{\an7\pos(130,401)\p1\bord0\shad0\c&H00DACA58&\alpha&H00&\clip(130,401,131,422)\t(0,1000,\clip(130,401,656,422))}m 0 0 l 526 0 l 526 21 l 0 21{\p0}
+Dialogue: 4,0:05:48.85,0:05:55.20,Text,,0,0,0,,{\an9\pos(895,389)\fs44\c&H00F7F5F3&\b0\fad(160,160)}13,15
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an7\pos(130,462)\fs36\c&H00E891AA&\b1\fad(160,160)}Informer
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an9\pos(890,464)\fs30\c&H00BEB2A9&\b0\fad(160,160)}Q128
+Dialogue: 2,0:05:48.60,0:05:55.20,Drawing,,0,0,0,,{\an7\pos(130,518)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 640 0 l 640 21 l 0 21{\p0}
+Dialogue: 3,0:05:48.95,0:05:55.20,Drawing,,0,0,0,,{\an7\pos(130,518)\p1\bord0\shad0\c&H00E891AA&\alpha&H00&\clip(130,518,131,539)\t(0,1000,\clip(130,518,639,539))}m 0 0 l 509 0 l 509 21 l 0 21{\p0}
+Dialogue: 4,0:05:48.95,0:05:55.20,Text,,0,0,0,,{\an9\pos(895,506)\fs44\c&H00F7F5F3&\b1\fad(160,160)}12,73
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an7\pos(130,579)\fs36\c&H007987F2&\b1\fad(160,160)}LSTM
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an9\pos(890,581)\fs30\c&H00BEB2A9&\b0\fad(160,160)}Q128
+Dialogue: 2,0:05:48.60,0:05:55.20,Drawing,,0,0,0,,{\an7\pos(130,635)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 640 0 l 640 21 l 0 21{\p0}
+Dialogue: 3,0:05:49.05,0:05:55.20,Drawing,,0,0,0,,{\an7\pos(130,635)\p1\bord0\shad0\c&H007987F2&\alpha&H00&\clip(130,635,131,656)\t(0,1000,\clip(130,635,702,656))}m 0 0 l 572 0 l 572 21 l 0 21{\p0}
+Dialogue: 4,0:05:49.05,0:05:55.20,Text,,0,0,0,,{\an9\pos(895,623)\fs44\c&H00F7F5F3&\b0\fad(160,160)}14,29
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an8\pos(130,723)\fs26\c&H00BEB2A9&\b0\fad(160,160)}0
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an8\pos(450,723)\fs26\c&H00BEB2A9&\b0\fad(160,160)}8
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an8\pos(770,723)\fs26\c&H00BEB2A9&\b0\fad(160,160)}16
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an7\pos(130,770)\fs28\c&H00BEB2A9&\b0\fad(160,160)}Macro-MAE [W/m²]
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an7\pos(1020,235)\fs40\c&H00F7F5F3&\b1\fad(160,160)}Mensal · até 6 passos
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an7\pos(1020,295)\fs30\c&H00E891AA&\b0\fad(160,160)}Avaliação exploratória
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an7\pos(1020,345)\fs36\c&H00DACA58&\b1\fad(160,160)}Transformer
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an9\pos(1780,347)\fs30\c&H00BEB2A9&\b0\fad(160,160)}Q64
+Dialogue: 2,0:05:48.60,0:05:55.20,Drawing,,0,0,0,,{\an7\pos(1020,401)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 640 0 l 640 21 l 0 21{\p0}
+Dialogue: 3,0:05:48.85,0:05:55.20,Drawing,,0,0,0,,{\an7\pos(1020,401)\p1\bord0\shad0\c&H00DACA58&\alpha&H00&\clip(1020,401,1021,422)\t(0,1000,\clip(1020,401,1596,422))}m 0 0 l 576 0 l 576 21 l 0 21{\p0}
+Dialogue: 4,0:05:48.85,0:05:55.20,Text,,0,0,0,,{\an9\pos(1785,389)\fs44\c&H00F7F5F3&\b0\fad(160,160)}14,40
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an7\pos(1020,462)\fs36\c&H00E891AA&\b1\fad(160,160)}Informer
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an9\pos(1780,464)\fs30\c&H00BEB2A9&\b0\fad(160,160)}Q128
+Dialogue: 2,0:05:48.60,0:05:55.20,Drawing,,0,0,0,,{\an7\pos(1020,518)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 640 0 l 640 21 l 0 21{\p0}
+Dialogue: 3,0:05:48.95,0:05:55.20,Drawing,,0,0,0,,{\an7\pos(1020,518)\p1\bord0\shad0\c&H00E891AA&\alpha&H00&\clip(1020,518,1021,539)\t(0,1000,\clip(1020,518,1567,539))}m 0 0 l 547 0 l 547 21 l 0 21{\p0}
+Dialogue: 4,0:05:48.95,0:05:55.20,Text,,0,0,0,,{\an9\pos(1785,506)\fs44\c&H00F7F5F3&\b1\fad(160,160)}13,67
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an7\pos(1020,579)\fs36\c&H007987F2&\b1\fad(160,160)}LSTM
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an9\pos(1780,581)\fs30\c&H00BEB2A9&\b0\fad(160,160)}Q128
+Dialogue: 2,0:05:48.60,0:05:55.20,Drawing,,0,0,0,,{\an7\pos(1020,635)\p1\bord0\shad0\c&H007A6D62&\alpha&HB8&}m 0 0 l 640 0 l 640 21 l 0 21{\p0}
+Dialogue: 3,0:05:49.05,0:05:55.20,Drawing,,0,0,0,,{\an7\pos(1020,635)\p1\bord0\shad0\c&H007987F2&\alpha&H00&\clip(1020,635,1021,656)\t(0,1000,\clip(1020,635,1610,656))}m 0 0 l 590 0 l 590 21 l 0 21{\p0}
+Dialogue: 4,0:05:49.05,0:05:55.20,Text,,0,0,0,,{\an9\pos(1785,623)\fs44\c&H00F7F5F3&\b0\fad(160,160)}14,76
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an8\pos(1020,723)\fs26\c&H00BEB2A9&\b0\fad(160,160)}0
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an8\pos(1340,723)\fs26\c&H00BEB2A9&\b0\fad(160,160)}8
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an8\pos(1660,723)\fs26\c&H00BEB2A9&\b0\fad(160,160)}16
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an7\pos(1020,770)\fs28\c&H00BEB2A9&\b0\fad(160,160)}Macro-MAE [W/m²]
+Dialogue: 4,0:05:48.60,0:05:55.20,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Fonte: relatório, Tabela 6 · condições selecionadas na validação
+Dialogue: 1,0:05:55.20,0:06:01.00,Drawing,,0,0,0,,{\an7\pos(95,220)\p1\bord0\shad0\c&H000D0907&\alpha&H00&}m 0 0 l 1730 0 l 1730 588 l 0 588{\p0}
+Dialogue: 4,0:05:55.20,0:06:01.00,Text,,0,0,0,,{\an7\pos(130,245)\fs48\c&H00F7F5F3&\b1\fad(160,160)}A liderança varia por localidade
+Dialogue: 4,0:05:55.20,0:06:01.00,Text,,0,0,0,,{\an7\pos(150,360)\fs44\c&H00F7F5F3&\b1\fad(160,160)}Horária
+Dialogue: 4,0:05:55.20,0:06:01.00,Text,,0,0,0,,{\an7\pos(150,455)\fs40\c&H00DACA58&\b0\fad(160,160)}Transformer
+Dialogue: 4,0:05:55.20,0:06:01.00,Text,,0,0,0,,{\an7\pos(640,430)\fs80\c&H00DACA58&\b1\fad(160,160)}7
+Dialogue: 4,0:05:55.20,0:06:01.00,Text,,0,0,0,,{\an7\pos(150,580)\fs40\c&H007987F2&\b0\fad(160,160)}LSTM
+Dialogue: 4,0:05:55.20,0:06:01.00,Text,,0,0,0,,{\an7\pos(640,555)\fs80\c&H007987F2&\b1\fad(160,160)}3
+Dialogue: 4,0:05:55.20,0:06:01.00,Text,,0,0,0,,{\an7\pos(1030,360)\fs44\c&H00F7F5F3&\b1\fad(160,160)}Diária
+Dialogue: 4,0:05:55.20,0:06:01.00,Text,,0,0,0,,{\an7\pos(1030,455)\fs40\c&H00DACA58&\b0\fad(160,160)}Transformer
+Dialogue: 4,0:05:55.20,0:06:01.00,Text,,0,0,0,,{\an7\pos(1520,430)\fs80\c&H00DACA58&\b1\fad(160,160)}6
+Dialogue: 4,0:05:55.20,0:06:01.00,Text,,0,0,0,,{\an7\pos(1030,580)\fs40\c&H007987F2&\b0\fad(160,160)}LSTM
+Dialogue: 4,0:05:55.20,0:06:01.00,Text,,0,0,0,,{\an7\pos(1520,555)\fs80\c&H007987F2&\b1\fad(160,160)}4
+Dialogue: 4,0:05:55.20,0:06:01.00,Text,,0,0,0,,{\an8\pos(960,755)\fs36\c&H00BEB2A9&\b0\fad(160,160)}Contagem entre as 10 localidades avaliadas
+Dialogue: 4,0:05:55.20,0:06:01.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Fonte: relatório, Figura 6
+Dialogue: 1,0:06:01.00,0:06:10.00,Drawing,,0,0,0,,{\an7\pos(95,220)\p1\bord0\shad0\c&H000D0907&\alpha&H00&}m 0 0 l 1730 0 l 1730 588 l 0 588{\p0}
+Dialogue: 4,0:06:01.00,0:06:10.00,Text,,0,0,0,,{\an7\pos(130,245)\fs48\c&H00F7F5F3&\b1\fad(160,160)}Diária · horizontes cumulativos
+Dialogue: 2,0:06:01.00,0:06:10.00,Drawing,,0,0,0,,{\an7\pos(250,445)\p1\bord0\shad0\c&H007A6D62&\alpha&H00&}m 0 0 l 1400 0 l 1400 3 l 0 3{\p0}
+Dialogue: 3,0:06:01.00,0:06:10.00,Drawing,,0,0,0,,{\an7\pos(241,435)\p1\bord0\shad0\c&H007987F2&\alpha&H00&}m 0 0 l 18 0 l 18 23 l 0 23{\p0}
+Dialogue: 4,0:06:01.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(250,345)\fs52\c&H00F7F5F3&\b1\fad(160,160)}1 d
+Dialogue: 4,0:06:01.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(250,505)\fs36\c&H007987F2&\b0\fad(160,160)}LSTM
+Dialogue: 3,0:06:01.00,0:06:10.00,Drawing,,0,0,0,,{\an7\pos(591,435)\p1\bord0\shad0\c&H007987F2&\alpha&H00&}m 0 0 l 18 0 l 18 23 l 0 23{\p0}
+Dialogue: 4,0:06:01.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(600,345)\fs52\c&H00F7F5F3&\b1\fad(160,160)}3 d
+Dialogue: 4,0:06:01.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(600,505)\fs36\c&H007987F2&\b0\fad(160,160)}LSTM
+Dialogue: 3,0:06:01.00,0:06:10.00,Drawing,,0,0,0,,{\an7\pos(941,435)\p1\bord0\shad0\c&H007987F2&\alpha&H00&}m 0 0 l 18 0 l 18 23 l 0 23{\p0}
+Dialogue: 4,0:06:01.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(950,345)\fs52\c&H00F7F5F3&\b1\fad(160,160)}7 d
+Dialogue: 4,0:06:01.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(950,505)\fs36\c&H007987F2&\b0\fad(160,160)}LSTM
+Dialogue: 3,0:06:01.00,0:06:10.00,Drawing,,0,0,0,,{\an7\pos(1291,435)\p1\bord0\shad0\c&H007987F2&\alpha&H00&}m 0 0 l 18 0 l 18 23 l 0 23{\p0}
+Dialogue: 4,0:06:01.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(1300,345)\fs52\c&H00F7F5F3&\b1\fad(160,160)}14 d
+Dialogue: 4,0:06:01.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(1300,505)\fs36\c&H007987F2&\b0\fad(160,160)}LSTM
+Dialogue: 3,0:06:01.00,0:06:10.00,Drawing,,0,0,0,,{\an7\pos(1641,435)\p1\bord0\shad0\c&H00DACA58&\alpha&H00&}m 0 0 l 18 0 l 18 23 l 0 23{\p0}
+Dialogue: 4,0:06:01.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(1650,345)\fs52\c&H00F7F5F3&\b1\fad(160,160)}30 d
+Dialogue: 4,0:06:01.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(1650,505)\fs36\c&H00DACA58&\b0\fad(160,160)}Transformer
+Dialogue: 4,0:06:01.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(960,700)\fs36\c&H00BEB2A9&\b0\fad(160,160)}Condição selecionada mantida nos diferentes recortes
+Dialogue: 4,0:06:01.00,0:06:10.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Fonte: relatório, Tabela 10
+Dialogue: 4,0:06:10.00,0:06:13.40,Text,,0,0,0,,{\an8\pos(960,255)\fs50\c&H00F7F5F3&\b1\fad(160,160)}Sem benefício universal
+Dialogue: 4,0:06:10.00,0:06:13.40,Text,,0,0,0,,{\an8\pos(350,330)\fs76\c&H005FB9E9&\b1\fad(160,160)}5
+Dialogue: 4,0:06:10.00,0:06:13.40,Text,,0,0,0,,{\an8\pos(350,435)\fs36\c&H00F7F5F3&\b0\fad(160,160)}melhoras
+Dialogue: 4,0:06:10.00,0:06:13.40,Text,,0,0,0,,{\an8\pos(960,330)\fs76\c&H005FB9E9&\b1\fad(160,160)}4
+Dialogue: 4,0:06:10.00,0:06:13.40,Text,,0,0,0,,{\an8\pos(960,435)\fs36\c&H00F7F5F3&\b0\fad(160,160)}pioras
+Dialogue: 4,0:06:10.00,0:06:13.40,Text,,0,0,0,,{\an8\pos(1570,330)\fs76\c&H005FB9E9&\b1\fad(160,160)}3
+Dialogue: 4,0:06:10.00,0:06:13.40,Text,,0,0,0,,{\an8\pos(1570,435)\fs36\c&H00F7F5F3&\b0\fad(160,160)}controles
+Dialogue: 4,0:06:10.00,0:06:13.40,Text,,0,0,0,,{\an8\pos(960,730)\fs40\c&H00F7F5F3&\b0\fad(160,160)}12 combinações de modelo e tarefa
+Dialogue: 4,0:06:10.00,0:06:13.40,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Fonte: relatório, Tabela 7 · condição selecionada na validação e teste de 2024
+Dialogue: 4,0:06:13.40,0:06:22.90,Text,,0,0,0,,{\an7\pos(130,250)\fs44\c&H00F7F5F3&\b1\fad(160,160)}Análise histórica separada · teste pareado
+Dialogue: 4,0:06:13.40,0:06:22.90,Text,,0,0,0,,{\an7\pos(1420,355)\fs66\c&H005FB9E9&\b1\fad(160,160)}11 de 12
+Dialogue: 4,0:06:13.40,0:06:22.90,Text,,0,0,0,,{\an7\pos(1420,460)\fs38\c&H00F7F5F3&\b0\fad(160,160)}controles\Ncontínuos
+Dialogue: 4,0:06:13.40,0:06:22.90,Text,,0,0,0,,{\an8\pos(960,730)\fs42\c&H00F7F5F3&\b0\fad(160,160)}Histórico longo: menor MAE
+Dialogue: 4,0:06:13.40,0:06:22.90,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Fonte: relatório, Tabela 8 · análise histórica separada da avaliação principal
+Dialogue: 4,0:06:22.90,0:06:30.00,Text,,0,0,0,,{\an8\pos(960,255)\fs48\c&H00F7F5F3&\b1\fad(160,160)}Associação observada
+Dialogue: 4,0:06:22.90,0:06:30.00,Text,,0,0,0,,{\an8\pos(960,690)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Melhora na maioria dos controles; sem garantia\NQuantidade, anos e normalização mudam juntos
+Dialogue: 4,0:06:22.90,0:06:30.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Fonte: relatório, Tabela 8 · análise histórica separada da avaliação principal
+Dialogue: 4,0:06:30.00,0:06:35.30,Text,,0,0,0,,{\an8\pos(960,280)\fs56\c&H00F7F5F3&\b1\fad(160,160)}Resultados descritivos
+Dialogue: 4,0:06:30.00,0:06:35.30,Text,,0,0,0,,{\an8\pos(960,700)\fs42\c&H00F7F5F3&\b0\fad(160,160)}Sem demonstração de significância estatística
+Dialogue: 4,0:06:35.30,0:06:40.00,Text,,0,0,0,,{\an8\pos(480,300)\fs48\c&H00F7F5F3&\b1\fad(160,160)}Horário
+Dialogue: 4,0:06:35.30,0:06:40.00,Text,,0,0,0,,{\an8\pos(480,690)\fs42\c&H00BEB2A9&\b0\fad(160,160)}Uma semente
+Dialogue: 4,0:06:35.30,0:06:40.00,Text,,0,0,0,,{\an8\pos(1440,300)\fs48\c&H00F7F5F3&\b1\fad(160,160)}Seis passos
+Dialogue: 4,0:06:35.30,0:06:40.00,Text,,0,0,0,,{\an8\pos(1440,690)\fs42\c&H00E891AA&\b0\fad(160,160)}Exploratório
+Dialogue: 4,0:06:40.00,0:06:45.00,Text,,0,0,0,,{\an8\pos(480,290)\fs40\c&H00F7F5F3&\b0\fad(160,160)}Janelas compartilham alvos
+Dialogue: 4,0:06:40.00,0:06:45.00,Text,,0,0,0,,{\an8\pos(1440,290)\fs40\c&H00F7F5F3&\b0\fad(160,160)}Localidades inéditas
+Dialogue: 4,0:06:40.00,0:06:45.00,Text,,0,0,0,,{\an8\pos(1440,690)\fs42\c&H00BEB2A9&\b0\fad(160,160)}Não avaliadas
+Dialogue: 1,0:06:45.00,0:06:50.70,Drawing,,0,0,0,,{\an7\pos(100,225)\p1\bord0\shad0\c&H000D0907&\alpha&H00&}m 0 0 l 1720 0 l 1720 575 l 0 575{\p0}
+Dialogue: 4,0:06:45.00,0:06:50.70,Text,,0,0,0,,{\an7\pos(160,285)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Horária · até 72 h
+Dialogue: 4,0:06:45.00,0:06:50.70,Text,,0,0,0,,{\an7\pos(160,343)\fs38\c&H00DACA58&\b1\fad(160,160)}Transformer
+Dialogue: 4,0:06:45.00,0:06:50.70,Text,,0,0,0,,{\an7\pos(580,340)\fs40\c&H00DACA58&\b0\fad(160,160)}53,21 W/m²
+Dialogue: 4,0:06:45.00,0:06:50.70,Text,,0,0,0,,{\an7\pos(1060,285)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Diária · até 30 d
+Dialogue: 4,0:06:45.00,0:06:50.70,Text,,0,0,0,,{\an7\pos(1060,343)\fs38\c&H00DACA58&\b1\fad(160,160)}Transformer
+Dialogue: 4,0:06:45.00,0:06:50.70,Text,,0,0,0,,{\an7\pos(1480,340)\fs40\c&H00DACA58&\b0\fad(160,160)}43,89 W/m²
+Dialogue: 4,0:06:45.00,0:06:50.70,Text,,0,0,0,,{\an7\pos(160,510)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Mensal · 1 passo
+Dialogue: 4,0:06:45.00,0:06:50.70,Text,,0,0,0,,{\an7\pos(160,568)\fs38\c&H00BEB2A9&\b1\fad(160,160)}Informer
+Dialogue: 4,0:06:45.00,0:06:50.70,Text,,0,0,0,,{\an7\pos(580,565)\fs40\c&H00BEB2A9&\b0\fad(160,160)}12,73 W/m²
+Dialogue: 4,0:06:45.00,0:06:50.70,Text,,0,0,0,,{\an7\pos(1060,510)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Mensal · até 6 passos
+Dialogue: 4,0:06:45.00,0:06:50.70,Text,,0,0,0,,{\an7\pos(1060,568)\fs38\c&H00BEB2A9&\b1\fad(160,160)}Informer
+Dialogue: 4,0:06:45.00,0:06:50.70,Text,,0,0,0,,{\an7\pos(1480,565)\fs40\c&H00BEB2A9&\b0\fad(160,160)}13,67 W/m²
+Dialogue: 4,0:06:45.00,0:06:50.70,Text,,0,0,0,,{\an7\pos(1060,690)\fs30\c&H00E891AA&\b0\fad(160,160)}Seis passos: exploratório
+Dialogue: 4,0:06:45.00,0:06:50.70,Text,,0,0,0,,{\an8\pos(960,755)\fs40\c&H00F7F5F3&\b0\fad(160,160)}Nas configurações avaliadas
+Dialogue: 4,0:06:45.00,0:06:50.70,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Fonte: relatório, Tabela 6 · resultados descritivos no teste retrospectivo de 2024
+Dialogue: 1,0:06:50.70,0:06:55.00,Drawing,,0,0,0,,{\an7\pos(100,225)\p1\bord0\shad0\c&H000D0907&\alpha&H00&}m 0 0 l 1720 0 l 1720 575 l 0 575{\p0}
+Dialogue: 4,0:06:50.70,0:06:55.00,Text,,0,0,0,,{\an7\pos(160,285)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Horária · até 72 h
+Dialogue: 4,0:06:50.70,0:06:55.00,Text,,0,0,0,,{\an7\pos(160,343)\fs38\c&H00BEB2A9&\b1\fad(160,160)}Transformer
+Dialogue: 4,0:06:50.70,0:06:55.00,Text,,0,0,0,,{\an7\pos(580,340)\fs40\c&H00BEB2A9&\b0\fad(160,160)}53,21 W/m²
+Dialogue: 4,0:06:50.70,0:06:55.00,Text,,0,0,0,,{\an7\pos(1060,285)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Diária · até 30 d
+Dialogue: 4,0:06:50.70,0:06:55.00,Text,,0,0,0,,{\an7\pos(1060,343)\fs38\c&H00BEB2A9&\b1\fad(160,160)}Transformer
+Dialogue: 4,0:06:50.70,0:06:55.00,Text,,0,0,0,,{\an7\pos(1480,340)\fs40\c&H00BEB2A9&\b0\fad(160,160)}43,89 W/m²
+Dialogue: 4,0:06:50.70,0:06:55.00,Text,,0,0,0,,{\an7\pos(160,510)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Mensal · 1 passo
+Dialogue: 4,0:06:50.70,0:06:55.00,Text,,0,0,0,,{\an7\pos(160,568)\fs38\c&H00E891AA&\b1\fad(160,160)}Informer
+Dialogue: 4,0:06:50.70,0:06:55.00,Text,,0,0,0,,{\an7\pos(580,565)\fs40\c&H00E891AA&\b0\fad(160,160)}12,73 W/m²
+Dialogue: 4,0:06:50.70,0:06:55.00,Text,,0,0,0,,{\an7\pos(1060,510)\fs36\c&H00F7F5F3&\b0\fad(160,160)}Mensal · até 6 passos
+Dialogue: 4,0:06:50.70,0:06:55.00,Text,,0,0,0,,{\an7\pos(1060,568)\fs38\c&H00E891AA&\b1\fad(160,160)}Informer
+Dialogue: 4,0:06:50.70,0:06:55.00,Text,,0,0,0,,{\an7\pos(1480,565)\fs40\c&H00E891AA&\b0\fad(160,160)}13,67 W/m²
+Dialogue: 4,0:06:50.70,0:06:55.00,Text,,0,0,0,,{\an7\pos(1060,690)\fs30\c&H00E891AA&\b0\fad(160,160)}Seis passos: exploratório
+Dialogue: 4,0:06:50.70,0:06:55.00,Text,,0,0,0,,{\an8\pos(960,755)\fs40\c&H00F7F5F3&\b0\fad(160,160)}A escolha depende da tarefa
+Dialogue: 4,0:06:50.70,0:06:55.00,Text,,0,0,0,,{\an7\pos(110,820)\fs24\c&H00BEB2A9&\b0\fad(160,160)}Fonte: relatório, Tabela 6 · resultados descritivos no teste retrospectivo de 2024
+Dialogue: 0,0:00:19.87,0:00:20.00,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&HFF&\t(0,133,\alpha&H00&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:00:20.00,0:00:20.13,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&H00&\t(0,133,\alpha&HFF&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:00:54.87,0:00:55.00,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&HFF&\t(0,133,\alpha&H00&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:00:55.00,0:00:55.13,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&H00&\t(0,133,\alpha&HFF&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:01:14.87,0:01:15.00,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&HFF&\t(0,133,\alpha&H00&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:01:15.00,0:01:15.13,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&H00&\t(0,133,\alpha&HFF&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:01:54.87,0:01:55.00,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&HFF&\t(0,133,\alpha&H00&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:01:55.00,0:01:55.13,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&H00&\t(0,133,\alpha&HFF&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:02:29.87,0:02:30.00,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&HFF&\t(0,133,\alpha&H00&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:02:30.00,0:02:30.13,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&H00&\t(0,133,\alpha&HFF&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:03:09.87,0:03:10.00,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&HFF&\t(0,133,\alpha&H00&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:03:10.00,0:03:10.13,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&H00&\t(0,133,\alpha&HFF&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:04:04.87,0:04:05.00,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&HFF&\t(0,133,\alpha&H00&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:04:05.00,0:04:05.13,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&H00&\t(0,133,\alpha&HFF&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:04:39.87,0:04:40.00,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&HFF&\t(0,133,\alpha&H00&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:04:40.00,0:04:40.13,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&H00&\t(0,133,\alpha&HFF&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:05:09.87,0:05:10.00,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&HFF&\t(0,133,\alpha&H00&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:05:10.00,0:05:10.13,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&H00&\t(0,133,\alpha&HFF&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:06:09.87,0:06:10.00,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&HFF&\t(0,133,\alpha&H00&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:06:10.00,0:06:10.13,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&H00&\t(0,133,\alpha&HFF&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:06:29.87,0:06:30.00,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&HFF&\t(0,133,\alpha&H00&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:06:30.00,0:06:30.13,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&H00&\t(0,133,\alpha&HFF&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:06:44.87,0:06:45.00,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&HFF&\t(0,133,\alpha&H00&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}
+Dialogue: 0,0:06:45.00,0:06:45.13,Drawing,,0,0,0,,{\an7\pos(0,0)\p1\bord0\shad0\c&H000D0907&\alpha&H00&\t(0,133,\alpha&HFF&)}m 0 0 l 1920 0 l 1920 1080 l 0 1080{\p0}

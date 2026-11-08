@@ -1,0 +1,2876 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-03T17:07:11.344412+00:00",
+  "purpose": "Fontes e dados numéricos auditados para a continuação animada V8; sem treinamento ou alteração dos resultados.",
+  "source_report": "documentacao/relatorio_final_ea019/Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.pdf",
+  "report_page_numbering": "physical PDF page equals printed page",
+  "source_csv_data_modified": false,
+  "synthetic_measured_data_used": false,
+  "main_results": [
+    {
+      "task": "hourly_72_extension",
+      "model": "Transformer",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 72,
+      "mae": 53.20606057784014,
+      "mae_display": "53,21",
+      "rmse": 103.71784856106339,
+      "nrmse_ratio": 0.5164360908420276,
+      "r2": 0.8606659219817381,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/sem_quantizacao/metricas_teste.csv",
+      "validation_mae": 54.434666878870885,
+      "epochs_per_seed": {
+        "42": 30
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "hourly_72_extension",
+      "model": "Informer",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 72,
+      "mae": 137.6798450004447,
+      "mae_display": "137,68",
+      "rmse": 245.54686591405007,
+      "nrmse_ratio": 1.185163731967008,
+      "r2": 0.28993091654543396,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/sem_quantizacao/metricas_teste.csv",
+      "validation_mae": 131.08577467063995,
+      "epochs_per_seed": {
+        "42": 4
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "hourly_72_extension",
+      "model": "LSTM",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 72,
+      "mae": 53.52407363312925,
+      "mae_display": "53,52",
+      "rmse": 104.72065279640663,
+      "nrmse_ratio": 0.5223374888236471,
+      "r2": 0.8570514332678547,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/q64/metricas_teste.csv",
+      "validation_mae": 53.49251190119687,
+      "epochs_per_seed": {
+        "42": 23
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "daily_30",
+      "model": "Transformer",
+      "condition": "Q256",
+      "variant": "q256",
+      "horizon": 30,
+      "mae": 43.886935199784816,
+      "mae_display": "43,89",
+      "rmse": 55.119665240795804,
+      "nrmse_ratio": 0.26543865454099447,
+      "r2": 0.5329743982005973,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/q256/metricas_teste.csv",
+      "validation_mae": 44.466835828232036,
+      "epochs_per_seed": {
+        "11": 6,
+        "23": 30,
+        "42": 16,
+        "67": 30,
+        "89": 26
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "daily_30",
+      "model": "Informer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 30,
+      "mae": 45.46025832169786,
+      "mae_display": "45,46",
+      "rmse": 56.75247962030261,
+      "nrmse_ratio": 0.2731912371645903,
+      "r2": 0.5098431531277011,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/informer/q64/metricas_teste.csv",
+      "validation_mae": 45.2267364305841,
+      "epochs_per_seed": {
+        "11": 9,
+        "23": 12,
+        "42": 7,
+        "67": 18,
+        "89": 7
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/informer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "daily_30",
+      "model": "LSTM",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 30,
+      "mae": 44.18417844043798,
+      "mae_display": "44,18",
+      "rmse": 55.72329359839857,
+      "nrmse_ratio": 0.267999602551314,
+      "r2": 0.5281437095698529,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/lstm/sem_quantizacao/metricas_teste.csv",
+      "validation_mae": 45.49056574044416,
+      "epochs_per_seed": {
+        "11": 18,
+        "23": 29,
+        "42": 30,
+        "67": 16,
+        "89": 27
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/lstm/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "monthly_1",
+      "model": "Transformer",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 1,
+      "mae": 13.14665204056439,
+      "mae_display": "13,15",
+      "rmse": 16.53168877221926,
+      "nrmse_ratio": 0.08215119820525492,
+      "r2": 0.8969481695660855,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/transformer/q128/metricas_teste.csv",
+      "validation_mae": 14.983718744656112,
+      "epochs_per_seed": {
+        "11": 114,
+        "23": 103,
+        "42": 56,
+        "67": 122,
+        "89": 113
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/transformer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "monthly_1",
+      "model": "Informer",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 1,
+      "mae": 12.726569676449799,
+      "mae_display": "12,73",
+      "rmse": 16.10845206172568,
+      "nrmse_ratio": 0.07984189535466973,
+      "r2": 0.9070324535233926,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/informer/q128/metricas_teste.csv",
+      "validation_mae": 14.491070466442869,
+      "epochs_per_seed": {
+        "11": 134,
+        "23": 51,
+        "42": 82,
+        "67": 77,
+        "89": 64
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/informer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "monthly_1",
+      "model": "LSTM",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 1,
+      "mae": 14.288273183476639,
+      "mae_display": "14,29",
+      "rmse": 17.458970938618407,
+      "nrmse_ratio": 0.08463845871731587,
+      "r2": 0.8854964548277462,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/lstm/q128/metricas_teste.csv",
+      "validation_mae": 15.58509129820398,
+      "epochs_per_seed": {
+        "11": 60,
+        "23": 93,
+        "42": 100,
+        "67": 92,
+        "89": 68
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/lstm/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "monthly_6",
+      "model": "Transformer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 6,
+      "mae": 14.396546948646185,
+      "mae_display": "14,40",
+      "rmse": 17.6170381016554,
+      "nrmse_ratio": 0.07622229446861754,
+      "r2": 0.8561637590240526,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/transformer/q64/metricas_teste.csv",
+      "validation_mae": 16.609786388151733,
+      "epochs_per_seed": {
+        "11": 262,
+        "23": 167,
+        "42": 115,
+        "67": 256,
+        "89": 119
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/transformer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "monthly_6",
+      "model": "Informer",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 6,
+      "mae": 13.667870528923487,
+      "mae_display": "13,67",
+      "rmse": 17.105469379943806,
+      "nrmse_ratio": 0.07407788101248577,
+      "r2": 0.8672423474509786,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/informer/q128/metricas_teste.csv",
+      "validation_mae": 17.097482276941243,
+      "epochs_per_seed": {
+        "11": 102,
+        "23": 112,
+        "42": 132,
+        "67": 113,
+        "89": 163
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/informer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "monthly_6",
+      "model": "LSTM",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 6,
+      "mae": 14.762258865384492,
+      "mae_display": "14,76",
+      "rmse": 18.11861327892496,
+      "nrmse_ratio": 0.07698642334185354,
+      "r2": 0.8379872352158095,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/lstm/q128/metricas_teste.csv",
+      "validation_mae": 16.25570719635113,
+      "epochs_per_seed": {
+        "11": 55,
+        "23": 99,
+        "42": 86,
+        "67": 133,
+        "89": 75
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/lstm/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    }
+  ],
+  "per_locality_winners": {
+    "hourly_72_extension": {
+      "by_locality_id": {
+        "1": {
+          "locality_id": 1,
+          "label": "Camaçari",
+          "source_name": "BYD Camacari",
+          "winner": "LSTM",
+          "maes": {
+            "Transformer": 55.56156578882907,
+            "Informer": 151.69394822446625,
+            "LSTM": 53.34257797185927
+          },
+          "maes_display": {
+            "Transformer": "55,56",
+            "Informer": "151,69",
+            "LSTM": "53,34"
+          }
+        },
+        "2": {
+          "locality_id": 2,
+          "label": "Nevada",
+          "source_name": "Tesla Gigafactory Nevada",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 42.193784036358316,
+            "Informer": 136.84971012997337,
+            "LSTM": 43.26542104346385
+          },
+          "maes_display": {
+            "Transformer": "42,19",
+            "Informer": "136,85",
+            "LSTM": "43,27"
+          }
+        },
+        "3": {
+          "locality_id": 3,
+          "label": "Texas",
+          "source_name": "Tesla Gigafactory Texas",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 59.859258746177545,
+            "Informer": 140.7354638370847,
+            "LSTM": 60.235578827774525
+          },
+          "maes_display": {
+            "Transformer": "59,86",
+            "Informer": "140,74",
+            "LSTM": "60,24"
+          }
+        },
+        "4": {
+          "locality_id": 4,
+          "label": "Geórgia",
+          "source_name": "Hyundai Metaplant Georgia",
+          "winner": "LSTM",
+          "maes": {
+            "Transformer": 62.51555888067015,
+            "Informer": 131.66461570441032,
+            "LSTM": 62.46513089575808
+          },
+          "maes_display": {
+            "Transformer": "62,52",
+            "Informer": "131,66",
+            "LSTM": "62,47"
+          }
+        },
+        "5": {
+          "locality_id": 5,
+          "label": "Normal",
+          "source_name": "Rivian Normal",
+          "winner": "LSTM",
+          "maes": {
+            "Transformer": 62.19804473652555,
+            "Informer": 121.95107116611896,
+            "LSTM": 61.823956385260956
+          },
+          "maes_display": {
+            "Transformer": "62,20",
+            "Informer": "121,95",
+            "LSTM": "61,82"
+          }
+        },
+        "6": {
+          "locality_id": 6,
+          "label": "Fremont",
+          "source_name": "Tesla Fremont Factory",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 38.369707408167,
+            "Informer": 145.2239480545698,
+            "LSTM": 38.947978697481794
+          },
+          "maes_display": {
+            "Transformer": "38,37",
+            "Informer": "145,22",
+            "LSTM": "38,95"
+          }
+        },
+        "7": {
+          "locality_id": 7,
+          "label": "Casa Grande",
+          "source_name": "Lucid AMP 1 Casa Grande",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 34.871335622101235,
+            "Informer": 156.04925019427094,
+            "LSTM": 36.29641026537237
+          },
+          "maes_display": {
+            "Transformer": "34,87",
+            "Informer": "156,05",
+            "LSTM": "36,30"
+          }
+        },
+        "8": {
+          "locality_id": 8,
+          "label": "Detroit",
+          "source_name": "GM Factory Zero",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 62.71230255328387,
+            "Informer": 112.7569130562157,
+            "LSTM": 63.85285598760773
+          },
+          "maes_display": {
+            "Transformer": "62,71",
+            "Informer": "112,76",
+            "LSTM": "63,85"
+          }
+        },
+        "9": {
+          "locality_id": 9,
+          "label": "Dearborn",
+          "source_name": "Ford Rouge Electric Vehicle Center",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 62.28082866169328,
+            "Informer": 110.6294538545561,
+            "LSTM": 63.10980200029178
+          },
+          "maes_display": {
+            "Transformer": "62,28",
+            "Informer": "110,63",
+            "LSTM": "63,11"
+          }
+        },
+        "10": {
+          "locality_id": 10,
+          "label": "San Luis Potosí",
+          "source_name": "BMW San Luis Potosi",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 51.498219344595334,
+            "Informer": 169.24407578278064,
+            "LSTM": 51.90102425642213
+          },
+          "maes_display": {
+            "Transformer": "51,50",
+            "Informer": "169,24",
+            "LSTM": "51,90"
+          }
+        }
+      },
+      "leader_counts": {
+        "LSTM": 3,
+        "Transformer": 7
+      },
+      "report_pages": [
+        22,
+        23
+      ],
+      "ranking_uses_full_precision": true
+    },
+    "daily_30": {
+      "by_locality_id": {
+        "1": {
+          "locality_id": 1,
+          "label": "Camaçari",
+          "source_name": "BYD Camacari",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 42.55029856182182,
+            "Informer": 44.585227925154676,
+            "LSTM": 43.81199883866462
+          },
+          "maes_display": {
+            "Transformer": "42,55",
+            "Informer": "44,59",
+            "LSTM": "43,81"
+          }
+        },
+        "2": {
+          "locality_id": 2,
+          "label": "Nevada",
+          "source_name": "Tesla Gigafactory Nevada",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 35.39966210814372,
+            "Informer": 37.66096260535477,
+            "LSTM": 36.32737392920499
+          },
+          "maes_display": {
+            "Transformer": "35,40",
+            "Informer": "37,66",
+            "LSTM": "36,33"
+          }
+        },
+        "3": {
+          "locality_id": 3,
+          "label": "Texas",
+          "source_name": "Tesla Gigafactory Texas",
+          "winner": "LSTM",
+          "maes": {
+            "Transformer": 50.65779194988121,
+            "Informer": 51.64944343298898,
+            "LSTM": 50.520657682320895
+          },
+          "maes_display": {
+            "Transformer": "50,66",
+            "Informer": "51,65",
+            "LSTM": "50,52"
+          }
+        },
+        "4": {
+          "locality_id": 4,
+          "label": "Geórgia",
+          "source_name": "Hyundai Metaplant Georgia",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 53.37325151615187,
+            "Informer": 54.565631428098065,
+            "LSTM": 53.47705437651438
+          },
+          "maes_display": {
+            "Transformer": "53,37",
+            "Informer": "54,57",
+            "LSTM": "53,48"
+          }
+        },
+        "5": {
+          "locality_id": 5,
+          "label": "Normal",
+          "source_name": "Rivian Normal",
+          "winner": "LSTM",
+          "maes": {
+            "Transformer": 53.91426537576932,
+            "Informer": 56.51932815979755,
+            "LSTM": 52.96291005331173
+          },
+          "maes_display": {
+            "Transformer": "53,91",
+            "Informer": "56,52",
+            "LSTM": "52,96"
+          }
+        },
+        "6": {
+          "locality_id": 6,
+          "label": "Fremont",
+          "source_name": "Tesla Fremont Factory",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 29.485695347537987,
+            "Informer": 31.591668445537007,
+            "LSTM": 33.40228447850572
+          },
+          "maes_display": {
+            "Transformer": "29,49",
+            "Informer": "31,59",
+            "LSTM": "33,40"
+          }
+        },
+        "7": {
+          "locality_id": 7,
+          "label": "Casa Grande",
+          "source_name": "Lucid AMP 1 Casa Grande",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 26.387160196984727,
+            "Informer": 29.461041428317003,
+            "LSTM": 27.647726277409063
+          },
+          "maes_display": {
+            "Transformer": "26,39",
+            "Informer": "29,46",
+            "LSTM": "27,65"
+          }
+        },
+        "8": {
+          "locality_id": 8,
+          "label": "Detroit",
+          "source_name": "GM Factory Zero",
+          "winner": "LSTM",
+          "maes": {
+            "Transformer": 53.96292937409898,
+            "Informer": 54.58614418919946,
+            "LSTM": 53.36039103033331
+          },
+          "maes_display": {
+            "Transformer": "53,96",
+            "Informer": "54,59",
+            "LSTM": "53,36"
+          }
+        },
+        "9": {
+          "locality_id": 9,
+          "label": "Dearborn",
+          "source_name": "Ford Rouge Electric Vehicle Center",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 52.27295206218393,
+            "Informer": 53.292547456794885,
+            "LSTM": 52.281459171762755
+          },
+          "maes_display": {
+            "Transformer": "52,27",
+            "Informer": "53,29",
+            "LSTM": "52,28"
+          }
+        },
+        "10": {
+          "locality_id": 10,
+          "label": "San Luis Potosí",
+          "source_name": "BMW San Luis Potosi",
+          "winner": "LSTM",
+          "maes": {
+            "Transformer": 40.86534550527457,
+            "Informer": 40.690588145736164,
+            "LSTM": 38.04992856635237
+          },
+          "maes_display": {
+            "Transformer": "40,87",
+            "Informer": "40,69",
+            "LSTM": "38,05"
+          }
+        }
+      },
+      "leader_counts": {
+        "Transformer": 6,
+        "LSTM": 4
+      },
+      "report_pages": [
+        22,
+        23
+      ],
+      "ranking_uses_full_precision": true
+    },
+    "monthly_1": {
+      "by_locality_id": {
+        "1": {
+          "locality_id": 1,
+          "label": "Camaçari",
+          "source_name": "BYD Camacari",
+          "winner": "Informer",
+          "maes": {
+            "Transformer": 15.223703345314552,
+            "Informer": 14.262680296633135,
+            "LSTM": 15.861745707751806
+          },
+          "maes_display": {
+            "Transformer": "15,22",
+            "Informer": "14,26",
+            "LSTM": "15,86"
+          }
+        },
+        "2": {
+          "locality_id": 2,
+          "label": "Nevada",
+          "source_name": "Tesla Gigafactory Nevada",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 5.93005492051197,
+            "Informer": 8.254336611329299,
+            "LSTM": 10.76806212363372
+          },
+          "maes_display": {
+            "Transformer": "5,93",
+            "Informer": "8,25",
+            "LSTM": "10,77"
+          }
+        },
+        "3": {
+          "locality_id": 3,
+          "label": "Texas",
+          "source_name": "Tesla Gigafactory Texas",
+          "winner": "Informer",
+          "maes": {
+            "Transformer": 13.937785062467073,
+            "Informer": 11.091678811263627,
+            "LSTM": 16.065515723618997
+          },
+          "maes_display": {
+            "Transformer": "13,94",
+            "Informer": "11,09",
+            "LSTM": "16,07"
+          }
+        },
+        "4": {
+          "locality_id": 4,
+          "label": "Geórgia",
+          "source_name": "Hyundai Metaplant Georgia",
+          "winner": "LSTM",
+          "maes": {
+            "Transformer": 13.98958915394814,
+            "Informer": 12.90350720210918,
+            "LSTM": 12.080187713090302
+          },
+          "maes_display": {
+            "Transformer": "13,99",
+            "Informer": "12,90",
+            "LSTM": "12,08"
+          }
+        },
+        "5": {
+          "locality_id": 5,
+          "label": "Normal",
+          "source_name": "Rivian Normal",
+          "winner": "Informer",
+          "maes": {
+            "Transformer": 16.082689679424504,
+            "Informer": 13.57367990811502,
+            "LSTM": 17.04478432901725
+          },
+          "maes_display": {
+            "Transformer": "16,08",
+            "Informer": "13,57",
+            "LSTM": "17,04"
+          }
+        },
+        "6": {
+          "locality_id": 6,
+          "label": "Fremont",
+          "source_name": "Tesla Fremont Factory",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 6.956000166103165,
+            "Informer": 8.967120252147954,
+            "LSTM": 9.847960462120307
+          },
+          "maes_display": {
+            "Transformer": "6,96",
+            "Informer": "8,97",
+            "LSTM": "9,85"
+          }
+        },
+        "7": {
+          "locality_id": 7,
+          "label": "Casa Grande",
+          "source_name": "Lucid AMP 1 Casa Grande",
+          "winner": "Informer",
+          "maes": {
+            "Transformer": 8.809853276187972,
+            "Informer": 8.790288853584132,
+            "LSTM": 13.744913298534007
+          },
+          "maes_display": {
+            "Transformer": "8,81",
+            "Informer": "8,79",
+            "LSTM": "13,74"
+          }
+        },
+        "8": {
+          "locality_id": 8,
+          "label": "Detroit",
+          "source_name": "GM Factory Zero",
+          "winner": "LSTM",
+          "maes": {
+            "Transformer": 15.578938624152519,
+            "Informer": 15.032703278010947,
+            "LSTM": 12.256195301235413
+          },
+          "maes_display": {
+            "Transformer": "15,58",
+            "Informer": "15,03",
+            "LSTM": "12,26"
+          }
+        },
+        "9": {
+          "locality_id": 9,
+          "label": "Dearborn",
+          "source_name": "Ford Rouge Electric Vehicle Center",
+          "winner": "LSTM",
+          "maes": {
+            "Transformer": 15.499544421496845,
+            "Informer": 15.306517437146896,
+            "LSTM": 11.989647844101773
+          },
+          "maes_display": {
+            "Transformer": "15,50",
+            "Informer": "15,31",
+            "LSTM": "11,99"
+          }
+        },
+        "10": {
+          "locality_id": 10,
+          "label": "San Luis Potosí",
+          "source_name": "BMW San Luis Potosi",
+          "winner": "Informer",
+          "maes": {
+            "Transformer": 19.458361756037167,
+            "Informer": 19.0831841141578,
+            "LSTM": 23.223719331662824
+          },
+          "maes_display": {
+            "Transformer": "19,46",
+            "Informer": "19,08",
+            "LSTM": "23,22"
+          }
+        }
+      },
+      "leader_counts": {
+        "Informer": 5,
+        "Transformer": 2,
+        "LSTM": 3
+      },
+      "report_pages": [
+        22,
+        23
+      ],
+      "ranking_uses_full_precision": true
+    },
+    "monthly_6": {
+      "by_locality_id": {
+        "1": {
+          "locality_id": 1,
+          "label": "Camaçari",
+          "source_name": "BYD Camacari",
+          "winner": "Informer",
+          "maes": {
+            "Transformer": 14.793621221337329,
+            "Informer": 12.606808185389426,
+            "LSTM": 14.80003483587425
+          },
+          "maes_display": {
+            "Transformer": "14,79",
+            "Informer": "12,61",
+            "LSTM": "14,80"
+          }
+        },
+        "2": {
+          "locality_id": 2,
+          "label": "Nevada",
+          "source_name": "Tesla Gigafactory Nevada",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 8.134744885996046,
+            "Informer": 8.449066195819828,
+            "LSTM": 11.895210491424471
+          },
+          "maes_display": {
+            "Transformer": "8,13",
+            "Informer": "8,45",
+            "LSTM": "11,90"
+          }
+        },
+        "3": {
+          "locality_id": 3,
+          "label": "Texas",
+          "source_name": "Tesla Gigafactory Texas",
+          "winner": "Informer",
+          "maes": {
+            "Transformer": 16.563844831079866,
+            "Informer": 14.247166156413744,
+            "LSTM": 15.0695645148209
+          },
+          "maes_display": {
+            "Transformer": "16,56",
+            "Informer": "14,25",
+            "LSTM": "15,07"
+          }
+        },
+        "4": {
+          "locality_id": 4,
+          "label": "Geórgia",
+          "source_name": "Hyundai Metaplant Georgia",
+          "winner": "LSTM",
+          "maes": {
+            "Transformer": 15.21741996336498,
+            "Informer": 15.42848729579019,
+            "LSTM": 14.603995382756946
+          },
+          "maes_display": {
+            "Transformer": "15,22",
+            "Informer": "15,43",
+            "LSTM": "14,60"
+          }
+        },
+        "5": {
+          "locality_id": 5,
+          "label": "Normal",
+          "source_name": "Rivian Normal",
+          "winner": "Transformer",
+          "maes": {
+            "Transformer": 14.459199796890577,
+            "Informer": 14.698825506036128,
+            "LSTM": 17.60809914041733
+          },
+          "maes_display": {
+            "Transformer": "14,46",
+            "Informer": "14,70",
+            "LSTM": "17,61"
+          }
+        },
+        "6": {
+          "locality_id": 6,
+          "label": "Fremont",
+          "source_name": "Tesla Fremont Factory",
+          "winner": "Informer",
+          "maes": {
+            "Transformer": 8.736300339613113,
+            "Informer": 8.057070328856598,
+            "LSTM": 10.987716726054392
+          },
+          "maes_display": {
+            "Transformer": "8,74",
+            "Informer": "8,06",
+            "LSTM": "10,99"
+          }
+        },
+        "7": {
+          "locality_id": 7,
+          "label": "Casa Grande",
+          "source_name": "Lucid AMP 1 Casa Grande",
+          "winner": "Informer",
+          "maes": {
+            "Transformer": 12.486016694119577,
+            "Informer": 12.153305200719675,
+            "LSTM": 14.418866037710096
+          },
+          "maes_display": {
+            "Transformer": "12,49",
+            "Informer": "12,15",
+            "LSTM": "14,42"
+          }
+        },
+        "8": {
+          "locality_id": 8,
+          "label": "Detroit",
+          "source_name": "GM Factory Zero",
+          "winner": "LSTM",
+          "maes": {
+            "Transformer": 16.321129848640904,
+            "Informer": 15.332658005204962,
+            "LSTM": 11.083115115499524
+          },
+          "maes_display": {
+            "Transformer": "16,32",
+            "Informer": "15,33",
+            "LSTM": "11,08"
+          }
+        },
+        "9": {
+          "locality_id": 9,
+          "label": "Dearborn",
+          "source_name": "Ford Rouge Electric Vehicle Center",
+          "winner": "LSTM",
+          "maes": {
+            "Transformer": 13.8315010357214,
+            "Informer": 13.56992011054582,
+            "LSTM": 10.803919452340907
+          },
+          "maes_display": {
+            "Transformer": "13,83",
+            "Informer": "13,57",
+            "LSTM": "10,80"
+          }
+        },
+        "10": {
+          "locality_id": 10,
+          "label": "San Luis Potosí",
+          "source_name": "BMW San Luis Potosi",
+          "winner": "Informer",
+          "maes": {
+            "Transformer": 23.42169086969805,
+            "Informer": 22.135398304458505,
+            "LSTM": 26.352066956946114
+          },
+          "maes_display": {
+            "Transformer": "23,42",
+            "Informer": "22,14",
+            "LSTM": "26,35"
+          }
+        }
+      },
+      "leader_counts": {
+        "Informer": 5,
+        "Transformer": 2,
+        "LSTM": 3
+      },
+      "report_pages": [
+        22,
+        23
+      ],
+      "ranking_uses_full_precision": true
+    }
+  },
+  "daily_horizons": [
+    {
+      "task": "daily_30",
+      "model": "Transformer",
+      "condition": "Q256",
+      "variant": "q256",
+      "horizon": 1,
+      "unit": "d",
+      "mae": 44.74632809965753,
+      "rmse": 55.68220215252031,
+      "nrmse_ratio": 0.2685186328224155,
+      "r2": 0.5262358980381687,
+      "mae_display": "44,75"
+    },
+    {
+      "task": "daily_30",
+      "model": "Transformer",
+      "condition": "Q256",
+      "variant": "q256",
+      "horizon": 3,
+      "unit": "d",
+      "mae": 44.693084708279464,
+      "rmse": 55.68888598147688,
+      "nrmse_ratio": 0.26845440662851927,
+      "r2": 0.5244296591718658,
+      "mae_display": "44,69"
+    },
+    {
+      "task": "daily_30",
+      "model": "Transformer",
+      "condition": "Q256",
+      "variant": "q256",
+      "horizon": 7,
+      "unit": "d",
+      "mae": 44.63684735704519,
+      "rmse": 55.72338031495527,
+      "nrmse_ratio": 0.2684952558389116,
+      "r2": 0.5225883379895853,
+      "mae_display": "44,64"
+    },
+    {
+      "task": "daily_30",
+      "model": "Transformer",
+      "condition": "Q256",
+      "variant": "q256",
+      "horizon": 14,
+      "unit": "d",
+      "mae": 44.38249798890659,
+      "rmse": 55.483620913401055,
+      "nrmse_ratio": 0.2671452388553174,
+      "r2": 0.5253637011444392,
+      "mae_display": "44,38"
+    },
+    {
+      "task": "daily_30",
+      "model": "Transformer",
+      "condition": "Q256",
+      "variant": "q256",
+      "horizon": 30,
+      "unit": "d",
+      "mae": 43.886935199784816,
+      "rmse": 55.119665240795804,
+      "nrmse_ratio": 0.26543865454099447,
+      "r2": 0.5329743982005973,
+      "mae_display": "43,89"
+    },
+    {
+      "task": "daily_30",
+      "model": "Informer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 1,
+      "unit": "d",
+      "mae": 47.30537271466751,
+      "rmse": 59.05409369059595,
+      "nrmse_ratio": 0.28485678013249266,
+      "r2": 0.47978902292617687,
+      "mae_display": "47,31"
+    },
+    {
+      "task": "daily_30",
+      "model": "Informer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 3,
+      "unit": "d",
+      "mae": 47.24335038832726,
+      "rmse": 58.91749772718966,
+      "nrmse_ratio": 0.2840737592178169,
+      "r2": 0.479419314585148,
+      "mae_display": "47,24"
+    },
+    {
+      "task": "daily_30",
+      "model": "Informer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 7,
+      "unit": "d",
+      "mae": 46.84120702546428,
+      "rmse": 58.27338295358918,
+      "nrmse_ratio": 0.2808261582348127,
+      "r2": 0.4870812353135398,
+      "mae_display": "46,84"
+    },
+    {
+      "task": "daily_30",
+      "model": "Informer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 14,
+      "unit": "d",
+      "mae": 46.15816943498835,
+      "rmse": 57.326234403697626,
+      "nrmse_ratio": 0.2761042751092662,
+      "r2": 0.49958738046090845,
+      "mae_display": "46,16"
+    },
+    {
+      "task": "daily_30",
+      "model": "Informer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 30,
+      "unit": "d",
+      "mae": 45.46025832169786,
+      "rmse": 56.75247962030261,
+      "nrmse_ratio": 0.2731912371645903,
+      "r2": 0.5098431531277011,
+      "mae_display": "45,46"
+    },
+    {
+      "task": "daily_30",
+      "model": "LSTM",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 1,
+      "unit": "d",
+      "mae": 42.10805003892148,
+      "rmse": 53.67508112297024,
+      "nrmse_ratio": 0.25892603710147466,
+      "r2": 0.5642642728763693,
+      "mae_display": "42,11"
+    },
+    {
+      "task": "daily_30",
+      "model": "LSTM",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 3,
+      "unit": "d",
+      "mae": 43.17603874502977,
+      "rmse": 54.760592356686814,
+      "nrmse_ratio": 0.26387847640188805,
+      "r2": 0.5445988810879762,
+      "mae_display": "43,18"
+    },
+    {
+      "task": "daily_30",
+      "model": "LSTM",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 7,
+      "unit": "d",
+      "mae": 43.73460353976761,
+      "rmse": 55.28679130636847,
+      "nrmse_ratio": 0.2661005169568859,
+      "r2": 0.5346156112965347,
+      "mae_display": "43,73"
+    },
+    {
+      "task": "daily_30",
+      "model": "LSTM",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 14,
+      "unit": "d",
+      "mae": 44.02039039452082,
+      "rmse": 55.57217204900411,
+      "nrmse_ratio": 0.2672589311187613,
+      "r2": 0.5292944666797939,
+      "mae_display": "44,02"
+    },
+    {
+      "task": "daily_30",
+      "model": "LSTM",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 30,
+      "unit": "d",
+      "mae": 44.18417844043798,
+      "rmse": 55.72329359839857,
+      "nrmse_ratio": 0.267999602551314,
+      "r2": 0.5281437095698529,
+      "mae_display": "44,18"
+    }
+  ],
+  "daily_horizon_leaders": [
+    {
+      "horizon": 1,
+      "unit": "d",
+      "winner": "LSTM",
+      "maes": {
+        "Transformer": 44.74632809965753,
+        "Informer": 47.30537271466751,
+        "LSTM": 42.10805003892148
+      }
+    },
+    {
+      "horizon": 3,
+      "unit": "d",
+      "winner": "LSTM",
+      "maes": {
+        "Transformer": 44.693084708279464,
+        "Informer": 47.24335038832726,
+        "LSTM": 43.17603874502977
+      }
+    },
+    {
+      "horizon": 7,
+      "unit": "d",
+      "winner": "LSTM",
+      "maes": {
+        "Transformer": 44.63684735704519,
+        "Informer": 46.84120702546428,
+        "LSTM": 43.73460353976761
+      }
+    },
+    {
+      "horizon": 14,
+      "unit": "d",
+      "winner": "LSTM",
+      "maes": {
+        "Transformer": 44.38249798890659,
+        "Informer": 46.15816943498835,
+        "LSTM": 44.02039039452082
+      }
+    },
+    {
+      "horizon": 30,
+      "unit": "d",
+      "winner": "Transformer",
+      "maes": {
+        "Transformer": 43.886935199784816,
+        "Informer": 45.46025832169786,
+        "LSTM": 44.18417844043798
+      }
+    }
+  ],
+  "deltas_from_full_precision": [
+    {
+      "task": "hourly_72_extension",
+      "lower_mae_model": "Transformer",
+      "comparison_model": "LSTM",
+      "absolute_advantage_w_m2": 0.31801305528910717,
+      "display": "0,32",
+      "formula": "MAE_LSTM - MAE_Transformer (unrounded) "
+    },
+    {
+      "task": "daily_30",
+      "lower_mae_model": "Transformer",
+      "comparison_model": "LSTM",
+      "absolute_advantage_w_m2": 0.29724324065316665,
+      "display": "0,30",
+      "formula": "MAE_LSTM - MAE_Transformer (unrounded) "
+    }
+  ],
+  "selected_macro_all_horizons": [
+    {
+      "task": "hourly_72_extension",
+      "model": "Transformer",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 24,
+      "unit": "h",
+      "mae": 51.29114486444528,
+      "rmse": 100.81519931425157,
+      "nrmse_ratio": 0.5020641220156461,
+      "r2": 0.8683861815870557
+    },
+    {
+      "task": "hourly_72_extension",
+      "model": "Transformer",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 48,
+      "unit": "h",
+      "mae": 52.829462106163206,
+      "rmse": 103.09732230461438,
+      "nrmse_ratio": 0.513373748047449,
+      "r2": 0.8624179896464639
+    },
+    {
+      "task": "hourly_72_extension",
+      "model": "Transformer",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 72,
+      "unit": "h",
+      "mae": 53.20606057784014,
+      "rmse": 103.71784856106339,
+      "nrmse_ratio": 0.5164360908420276,
+      "r2": 0.8606659219817381
+    },
+    {
+      "task": "hourly_72_extension",
+      "model": "Informer",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 24,
+      "unit": "h",
+      "mae": 142.24562073078937,
+      "rmse": 253.56301879372546,
+      "nrmse_ratio": 1.2244755764111035,
+      "r2": 0.24275107771426815
+    },
+    {
+      "task": "hourly_72_extension",
+      "model": "Informer",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 48,
+      "unit": "h",
+      "mae": 134.18901415517627,
+      "rmse": 239.53493374383612,
+      "nrmse_ratio": 1.1571658058319483,
+      "r2": 0.32313083212507204
+    },
+    {
+      "task": "hourly_72_extension",
+      "model": "Informer",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 72,
+      "unit": "h",
+      "mae": 137.6798450004447,
+      "rmse": 245.54686591405007,
+      "nrmse_ratio": 1.185163731967008,
+      "r2": 0.28993091654543396
+    },
+    {
+      "task": "hourly_72_extension",
+      "model": "LSTM",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 24,
+      "unit": "h",
+      "mae": 51.84290740408228,
+      "rmse": 100.0376798882156,
+      "nrmse_ratio": 0.4998741462303188,
+      "r2": 0.8686652401118125
+    },
+    {
+      "task": "hourly_72_extension",
+      "model": "LSTM",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 48,
+      "unit": "h",
+      "mae": 52.8803721594479,
+      "rmse": 103.41969957727368,
+      "nrmse_ratio": 0.516316374081109,
+      "r2": 0.8601264008458486
+    },
+    {
+      "task": "hourly_72_extension",
+      "model": "LSTM",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 72,
+      "unit": "h",
+      "mae": 53.52407363312925,
+      "rmse": 104.72065279640663,
+      "nrmse_ratio": 0.5223374888236471,
+      "r2": 0.8570514332678547
+    },
+    {
+      "task": "daily_30",
+      "model": "Transformer",
+      "condition": "Q256",
+      "variant": "q256",
+      "horizon": 1,
+      "unit": "d",
+      "mae": 44.74632809965753,
+      "rmse": 55.68220215252031,
+      "nrmse_ratio": 0.2685186328224155,
+      "r2": 0.5262358980381687
+    },
+    {
+      "task": "daily_30",
+      "model": "Transformer",
+      "condition": "Q256",
+      "variant": "q256",
+      "horizon": 3,
+      "unit": "d",
+      "mae": 44.693084708279464,
+      "rmse": 55.68888598147688,
+      "nrmse_ratio": 0.26845440662851927,
+      "r2": 0.5244296591718658
+    },
+    {
+      "task": "daily_30",
+      "model": "Transformer",
+      "condition": "Q256",
+      "variant": "q256",
+      "horizon": 7,
+      "unit": "d",
+      "mae": 44.63684735704519,
+      "rmse": 55.72338031495527,
+      "nrmse_ratio": 0.2684952558389116,
+      "r2": 0.5225883379895853
+    },
+    {
+      "task": "daily_30",
+      "model": "Transformer",
+      "condition": "Q256",
+      "variant": "q256",
+      "horizon": 14,
+      "unit": "d",
+      "mae": 44.38249798890659,
+      "rmse": 55.483620913401055,
+      "nrmse_ratio": 0.2671452388553174,
+      "r2": 0.5253637011444392
+    },
+    {
+      "task": "daily_30",
+      "model": "Transformer",
+      "condition": "Q256",
+      "variant": "q256",
+      "horizon": 30,
+      "unit": "d",
+      "mae": 43.886935199784816,
+      "rmse": 55.119665240795804,
+      "nrmse_ratio": 0.26543865454099447,
+      "r2": 0.5329743982005973
+    },
+    {
+      "task": "daily_30",
+      "model": "Informer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 1,
+      "unit": "d",
+      "mae": 47.30537271466751,
+      "rmse": 59.05409369059595,
+      "nrmse_ratio": 0.28485678013249266,
+      "r2": 0.47978902292617687
+    },
+    {
+      "task": "daily_30",
+      "model": "Informer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 3,
+      "unit": "d",
+      "mae": 47.24335038832726,
+      "rmse": 58.91749772718966,
+      "nrmse_ratio": 0.2840737592178169,
+      "r2": 0.479419314585148
+    },
+    {
+      "task": "daily_30",
+      "model": "Informer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 7,
+      "unit": "d",
+      "mae": 46.84120702546428,
+      "rmse": 58.27338295358918,
+      "nrmse_ratio": 0.2808261582348127,
+      "r2": 0.4870812353135398
+    },
+    {
+      "task": "daily_30",
+      "model": "Informer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 14,
+      "unit": "d",
+      "mae": 46.15816943498835,
+      "rmse": 57.326234403697626,
+      "nrmse_ratio": 0.2761042751092662,
+      "r2": 0.49958738046090845
+    },
+    {
+      "task": "daily_30",
+      "model": "Informer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 30,
+      "unit": "d",
+      "mae": 45.46025832169786,
+      "rmse": 56.75247962030261,
+      "nrmse_ratio": 0.2731912371645903,
+      "r2": 0.5098431531277011
+    },
+    {
+      "task": "daily_30",
+      "model": "LSTM",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 1,
+      "unit": "d",
+      "mae": 42.10805003892148,
+      "rmse": 53.67508112297024,
+      "nrmse_ratio": 0.25892603710147466,
+      "r2": 0.5642642728763693
+    },
+    {
+      "task": "daily_30",
+      "model": "LSTM",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 3,
+      "unit": "d",
+      "mae": 43.17603874502977,
+      "rmse": 54.760592356686814,
+      "nrmse_ratio": 0.26387847640188805,
+      "r2": 0.5445988810879762
+    },
+    {
+      "task": "daily_30",
+      "model": "LSTM",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 7,
+      "unit": "d",
+      "mae": 43.73460353976761,
+      "rmse": 55.28679130636847,
+      "nrmse_ratio": 0.2661005169568859,
+      "r2": 0.5346156112965347
+    },
+    {
+      "task": "daily_30",
+      "model": "LSTM",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 14,
+      "unit": "d",
+      "mae": 44.02039039452082,
+      "rmse": 55.57217204900411,
+      "nrmse_ratio": 0.2672589311187613,
+      "r2": 0.5292944666797939
+    },
+    {
+      "task": "daily_30",
+      "model": "LSTM",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 30,
+      "unit": "d",
+      "mae": 44.18417844043798,
+      "rmse": 55.72329359839857,
+      "nrmse_ratio": 0.267999602551314,
+      "r2": 0.5281437095698529
+    },
+    {
+      "task": "monthly_1",
+      "model": "Transformer",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 1,
+      "unit": "mês",
+      "mae": 13.14665204056439,
+      "rmse": 16.53168877221926,
+      "nrmse_ratio": 0.08215119820525492,
+      "r2": 0.8969481695660855
+    },
+    {
+      "task": "monthly_1",
+      "model": "Informer",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 1,
+      "unit": "mês",
+      "mae": 12.726569676449799,
+      "rmse": 16.10845206172568,
+      "nrmse_ratio": 0.07984189535466973,
+      "r2": 0.9070324535233926
+    },
+    {
+      "task": "monthly_1",
+      "model": "LSTM",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 1,
+      "unit": "mês",
+      "mae": 14.288273183476639,
+      "rmse": 17.458970938618407,
+      "nrmse_ratio": 0.08463845871731587,
+      "r2": 0.8854964548277462
+    },
+    {
+      "task": "monthly_6",
+      "model": "Transformer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 1,
+      "unit": "meses",
+      "mae": 15.67175719132752,
+      "rmse": 18.716440307023895,
+      "nrmse_ratio": 0.08568605090712708,
+      "r2": 0.8750422112706909
+    },
+    {
+      "task": "monthly_6",
+      "model": "Transformer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 3,
+      "unit": "meses",
+      "mae": 14.376663806655628,
+      "rmse": 17.62169052043299,
+      "nrmse_ratio": 0.07494649030138975,
+      "r2": 0.8419100627914607
+    },
+    {
+      "task": "monthly_6",
+      "model": "Transformer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 6,
+      "unit": "meses",
+      "mae": 14.396546948646185,
+      "rmse": 17.6170381016554,
+      "nrmse_ratio": 0.07622229446861754,
+      "r2": 0.8561637590240526
+    },
+    {
+      "task": "monthly_6",
+      "model": "Informer",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 1,
+      "unit": "meses",
+      "mae": 14.019624339809871,
+      "rmse": 17.401861105627084,
+      "nrmse_ratio": 0.08006515220470961,
+      "r2": 0.8943519921127244
+    },
+    {
+      "task": "monthly_6",
+      "model": "Informer",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 3,
+      "unit": "meses",
+      "mae": 12.98503056329405,
+      "rmse": 16.401570862020854,
+      "nrmse_ratio": 0.0699166892278619,
+      "r2": 0.862530241329577
+    },
+    {
+      "task": "monthly_6",
+      "model": "Informer",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 6,
+      "unit": "meses",
+      "mae": 13.667870528923487,
+      "rmse": 17.105469379943806,
+      "nrmse_ratio": 0.07407788101248577,
+      "r2": 0.8672423474509786
+    },
+    {
+      "task": "monthly_6",
+      "model": "LSTM",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 1,
+      "unit": "meses",
+      "mae": 15.770562068314433,
+      "rmse": 19.49393928818063,
+      "nrmse_ratio": 0.08741601210174911,
+      "r2": 0.854066149028293
+    },
+    {
+      "task": "monthly_6",
+      "model": "LSTM",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 3,
+      "unit": "meses",
+      "mae": 15.35351858768409,
+      "rmse": 18.853266331729163,
+      "nrmse_ratio": 0.07890492725739927,
+      "r2": 0.8082015419582598
+    },
+    {
+      "task": "monthly_6",
+      "model": "LSTM",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 6,
+      "unit": "meses",
+      "mae": 14.762258865384492,
+      "rmse": 18.11861327892496,
+      "nrmse_ratio": 0.07698642334185354,
+      "r2": 0.8379872352158095
+    }
+  ],
+  "quantization": {
+    "formula": "Q_N(u)=rint((N-1)*clip(u,0,1))/(N-1)",
+    "normalization": "u=(x-a)/(b-a), minmax ajustado por localidade usando apenas dados anteriores ao corte da seleção/refit.",
+    "conditions": [
+      "Controle",
+      "Q64",
+      "Q128",
+      "Q256"
+    ],
+    "levels": [
+      64,
+      128,
+      256
+    ],
+    "applies_to": "Apenas amplitudes do histórico de entrada de GHI; não quantiza alvos, saídas, pesos ou identificador de localidade.",
+    "control": "Normalização contínua sem clipping e sem arredondamento.",
+    "quantized": "Clipping [0,1] e arredondamento uniforme com empates para o inteiro par; reconstrução float32.",
+    "nominal_bits": [
+      6,
+      7,
+      8
+    ],
+    "memory_or_runtime_savings_measured": false,
+    "isolation_warning": "Comparação conjunta de clipping, arredondamento e ajustes próprios por variante. Não isola regularização, clipping ou efeito causal da quantização.",
+    "selection_rule": "Escolher condição pelo macro-MAE do horizonte completo da validação; fixar escolha no teste e nos horizontes menores. Empate prioriza Controle,Q64,Q128,Q256.",
+    "results": [
+      {
+        "task": "hourly_72_extension",
+        "model": "Transformer",
+        "selected_condition": "Controle",
+        "selected_variant": "sem_quantizacao",
+        "validation_mae": 54.434666878870885,
+        "control_mae": 53.20606057784014,
+        "selected_mae": 53.20606057784014,
+        "delta_pct": 0.0,
+        "delta_pct_display": "0,00",
+        "outcome": "control_retained",
+        "report_pages": [
+          24,
+          25
+        ],
+        "report_table": 7
+      },
+      {
+        "task": "hourly_72_extension",
+        "model": "Informer",
+        "selected_condition": "Controle",
+        "selected_variant": "sem_quantizacao",
+        "validation_mae": 131.08577467063995,
+        "control_mae": 137.6798450004447,
+        "selected_mae": 137.6798450004447,
+        "delta_pct": 0.0,
+        "delta_pct_display": "0,00",
+        "outcome": "control_retained",
+        "report_pages": [
+          24,
+          25
+        ],
+        "report_table": 7
+      },
+      {
+        "task": "hourly_72_extension",
+        "model": "LSTM",
+        "selected_condition": "Q64",
+        "selected_variant": "q64",
+        "validation_mae": 53.49251190119687,
+        "control_mae": 54.09466099661823,
+        "selected_mae": 53.52407363312925,
+        "delta_pct": -1.0547942310326186,
+        "delta_pct_display": "-1,05",
+        "outcome": "improved",
+        "report_pages": [
+          24,
+          25
+        ],
+        "report_table": 7
+      },
+      {
+        "task": "daily_30",
+        "model": "Transformer",
+        "selected_condition": "Q256",
+        "selected_variant": "q256",
+        "validation_mae": 44.466835828232036,
+        "control_mae": 43.88073430279,
+        "selected_mae": 43.886935199784816,
+        "delta_pct": 0.01413125166052076,
+        "delta_pct_display": "0,01",
+        "outcome": "worse",
+        "report_pages": [
+          24,
+          25
+        ],
+        "report_table": 7
+      },
+      {
+        "task": "daily_30",
+        "model": "Informer",
+        "selected_condition": "Q64",
+        "selected_variant": "q64",
+        "validation_mae": 45.2267364305841,
+        "control_mae": 45.46744876321793,
+        "selected_mae": 45.46025832169786,
+        "delta_pct": -0.015814482043008393,
+        "delta_pct_display": "-0,02",
+        "outcome": "improved",
+        "report_pages": [
+          24,
+          25
+        ],
+        "report_table": 7
+      },
+      {
+        "task": "daily_30",
+        "model": "LSTM",
+        "selected_condition": "Controle",
+        "selected_variant": "sem_quantizacao",
+        "validation_mae": 45.49056574044416,
+        "control_mae": 44.18417844043798,
+        "selected_mae": 44.18417844043798,
+        "delta_pct": 0.0,
+        "delta_pct_display": "0,00",
+        "outcome": "control_retained",
+        "report_pages": [
+          24,
+          25
+        ],
+        "report_table": 7
+      },
+      {
+        "task": "monthly_1",
+        "model": "Transformer",
+        "selected_condition": "Q128",
+        "selected_variant": "q128",
+        "validation_mae": 14.983718744656112,
+        "control_mae": 13.119633028727671,
+        "selected_mae": 13.14665204056439,
+        "delta_pct": 0.20594335053090163,
+        "delta_pct_display": "0,21",
+        "outcome": "worse",
+        "report_pages": [
+          24,
+          25
+        ],
+        "report_table": 7
+      },
+      {
+        "task": "monthly_1",
+        "model": "Informer",
+        "selected_condition": "Q128",
+        "selected_variant": "q128",
+        "validation_mae": 14.491070466442869,
+        "control_mae": 12.848129249249364,
+        "selected_mae": 12.726569676449799,
+        "delta_pct": -0.9461266340130225,
+        "delta_pct_display": "-0,95",
+        "outcome": "improved",
+        "report_pages": [
+          24,
+          25
+        ],
+        "report_table": 7
+      },
+      {
+        "task": "monthly_1",
+        "model": "LSTM",
+        "selected_condition": "Q128",
+        "selected_variant": "q128",
+        "validation_mae": 15.58509129820398,
+        "control_mae": 14.271117238712117,
+        "selected_mae": 14.288273183476639,
+        "delta_pct": 0.12021444766765477,
+        "delta_pct_display": "0,12",
+        "outcome": "worse",
+        "report_pages": [
+          24,
+          25
+        ],
+        "report_table": 7
+      },
+      {
+        "task": "monthly_6",
+        "model": "Transformer",
+        "selected_condition": "Q64",
+        "selected_variant": "q64",
+        "validation_mae": 16.609786388151733,
+        "control_mae": 14.4302393812808,
+        "selected_mae": 14.396546948646185,
+        "delta_pct": -0.23348491833282692,
+        "delta_pct_display": "-0,23",
+        "outcome": "improved",
+        "report_pages": [
+          24,
+          25
+        ],
+        "report_table": 7
+      },
+      {
+        "task": "monthly_6",
+        "model": "Informer",
+        "selected_condition": "Q128",
+        "selected_variant": "q128",
+        "validation_mae": 17.097482276941243,
+        "control_mae": 13.88030430052568,
+        "selected_mae": 13.667870528923487,
+        "delta_pct": -1.530469123750744,
+        "delta_pct_display": "-1,53",
+        "outcome": "improved",
+        "report_pages": [
+          24,
+          25
+        ],
+        "report_table": 7
+      },
+      {
+        "task": "monthly_6",
+        "model": "LSTM",
+        "selected_condition": "Q128",
+        "selected_variant": "q128",
+        "validation_mae": 16.25570719635113,
+        "control_mae": 14.756546484240767,
+        "selected_mae": 14.762258865384492,
+        "delta_pct": 0.03871082674951065,
+        "delta_pct_display": "0,04",
+        "outcome": "worse",
+        "report_pages": [
+          24,
+          25
+        ],
+        "report_table": 7
+      }
+    ],
+    "outcome_counts": {
+      "control_retained": 3,
+      "improved": 5,
+      "worse": 4
+    },
+    "report_pages": [
+      13,
+      14,
+      15,
+      24,
+      25,
+      29,
+      30
+    ]
+  },
+  "paired_history": {
+    "results": [
+      {
+        "task": "hourly_72_extension",
+        "model": "Transformer",
+        "condition": "Controle",
+        "horizon": 72,
+        "short_mae": 55.47965221551219,
+        "long_mae": 52.36725859075091,
+        "delta_long_minus_short": -3.112393624761282,
+        "delta_pct": -5.609973207242014,
+        "delta_pct_display": "-5,61",
+        "long_improved": true,
+        "sources": {
+          "historico_curto_pareado": {
+            "mae": 55.47965221551219,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/transformer/sem_quantizacao/metricas_teste.csv"
+          },
+          "historico_1998_2022": {
+            "mae": 52.36725859075091,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/transformer/sem_quantizacao/metricas_teste.csv"
+          }
+        },
+        "report_page": 27,
+        "report_table": 8
+      },
+      {
+        "task": "hourly_72_extension",
+        "model": "Informer",
+        "condition": "Controle",
+        "horizon": 72,
+        "short_mae": 136.21119896499007,
+        "long_mae": 60.89796203559331,
+        "delta_long_minus_short": -75.31323692939677,
+        "delta_pct": -55.29151604395926,
+        "delta_pct_display": "-55,29",
+        "long_improved": true,
+        "sources": {
+          "historico_curto_pareado": {
+            "mae": 136.21119896499007,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/informer/sem_quantizacao/metricas_teste.csv"
+          },
+          "historico_1998_2022": {
+            "mae": 60.89796203559331,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/informer/sem_quantizacao/metricas_teste.csv"
+          }
+        },
+        "report_page": 27,
+        "report_table": 8
+      },
+      {
+        "task": "hourly_72_extension",
+        "model": "LSTM",
+        "condition": "Controle",
+        "horizon": 72,
+        "short_mae": 53.718654043715766,
+        "long_mae": 61.60577795269222,
+        "delta_long_minus_short": 7.887123908976456,
+        "delta_pct": 14.682281321788103,
+        "delta_pct_display": "14,68",
+        "long_improved": false,
+        "sources": {
+          "historico_curto_pareado": {
+            "mae": 53.718654043715766,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/lstm/sem_quantizacao/metricas_teste.csv"
+          },
+          "historico_1998_2022": {
+            "mae": 61.60577795269222,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/lstm/sem_quantizacao/metricas_teste.csv"
+          }
+        },
+        "report_page": 27,
+        "report_table": 8
+      },
+      {
+        "task": "daily_30",
+        "model": "Transformer",
+        "condition": "Controle",
+        "horizon": 30,
+        "short_mae": 44.66667602708622,
+        "long_mae": 44.484976988081414,
+        "delta_long_minus_short": -0.18169903900480477,
+        "delta_pct": -0.40678880804700945,
+        "delta_pct_display": "-0,41",
+        "long_improved": true,
+        "sources": {
+          "historico_curto_pareado": {
+            "mae": 44.66667602708622,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/daily_30/transformer/sem_quantizacao/metricas_teste.csv"
+          },
+          "historico_1998_2022": {
+            "mae": 44.484976988081414,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/daily_30/transformer/sem_quantizacao/metricas_teste.csv"
+          }
+        },
+        "report_page": 27,
+        "report_table": 8
+      },
+      {
+        "task": "daily_30",
+        "model": "Informer",
+        "condition": "Controle",
+        "horizon": 30,
+        "short_mae": 46.022251973810356,
+        "long_mae": 43.592515960510255,
+        "delta_long_minus_short": -2.4297360133001007,
+        "delta_pct": -5.279480923016933,
+        "delta_pct_display": "-5,28",
+        "long_improved": true,
+        "sources": {
+          "historico_curto_pareado": {
+            "mae": 46.022251973810356,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/daily_30/informer/sem_quantizacao/metricas_teste.csv"
+          },
+          "historico_1998_2022": {
+            "mae": 43.592515960510255,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/daily_30/informer/sem_quantizacao/metricas_teste.csv"
+          }
+        },
+        "report_page": 27,
+        "report_table": 8
+      },
+      {
+        "task": "daily_30",
+        "model": "LSTM",
+        "condition": "Controle",
+        "horizon": 30,
+        "short_mae": 44.26934388410392,
+        "long_mae": 43.28337671641044,
+        "delta_long_minus_short": -0.9859671676934809,
+        "delta_pct": -2.2272007696222507,
+        "delta_pct_display": "-2,23",
+        "long_improved": true,
+        "sources": {
+          "historico_curto_pareado": {
+            "mae": 44.26934388410392,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/daily_30/lstm/sem_quantizacao/metricas_teste.csv"
+          },
+          "historico_1998_2022": {
+            "mae": 43.28337671641044,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/daily_30/lstm/sem_quantizacao/metricas_teste.csv"
+          }
+        },
+        "report_page": 27,
+        "report_table": 8
+      },
+      {
+        "task": "monthly_1",
+        "model": "Transformer",
+        "condition": "Controle",
+        "horizon": 1,
+        "short_mae": 16.39742331218239,
+        "long_mae": 14.082466874442218,
+        "delta_long_minus_short": -2.3149564377401717,
+        "delta_pct": -14.117806155679869,
+        "delta_pct_display": "-14,12",
+        "long_improved": true,
+        "sources": {
+          "historico_curto_pareado": {
+            "mae": 16.39742331218239,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_1/transformer/sem_quantizacao/metricas_teste.csv"
+          },
+          "historico_1998_2022": {
+            "mae": 14.082466874442218,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_1/transformer/sem_quantizacao/metricas_teste.csv"
+          }
+        },
+        "report_page": 27,
+        "report_table": 8
+      },
+      {
+        "task": "monthly_1",
+        "model": "Informer",
+        "condition": "Controle",
+        "horizon": 1,
+        "short_mae": 16.21827759865641,
+        "long_mae": 13.883087205951412,
+        "delta_long_minus_short": -2.335190392704998,
+        "delta_pct": -14.39851043675844,
+        "delta_pct_display": "-14,40",
+        "long_improved": true,
+        "sources": {
+          "historico_curto_pareado": {
+            "mae": 16.21827759865641,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_1/informer/sem_quantizacao/metricas_teste.csv"
+          },
+          "historico_1998_2022": {
+            "mae": 13.883087205951412,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_1/informer/sem_quantizacao/metricas_teste.csv"
+          }
+        },
+        "report_page": 27,
+        "report_table": 8
+      },
+      {
+        "task": "monthly_1",
+        "model": "LSTM",
+        "condition": "Controle",
+        "horizon": 1,
+        "short_mae": 15.445973830335376,
+        "long_mae": 14.659262417413393,
+        "delta_long_minus_short": -0.7867114129219832,
+        "delta_pct": -5.093310538807905,
+        "delta_pct_display": "-5,09",
+        "long_improved": true,
+        "sources": {
+          "historico_curto_pareado": {
+            "mae": 15.445973830335376,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_1/lstm/sem_quantizacao/metricas_teste.csv"
+          },
+          "historico_1998_2022": {
+            "mae": 14.659262417413393,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_1/lstm/sem_quantizacao/metricas_teste.csv"
+          }
+        },
+        "report_page": 27,
+        "report_table": 8
+      },
+      {
+        "task": "monthly_6",
+        "model": "Transformer",
+        "condition": "Controle",
+        "horizon": 6,
+        "short_mae": 17.19502149377113,
+        "long_mae": 14.911236249856305,
+        "delta_long_minus_short": -2.2837852439148243,
+        "delta_pct": -13.281665537563425,
+        "delta_pct_display": "-13,28",
+        "long_improved": true,
+        "sources": {
+          "historico_curto_pareado": {
+            "mae": 17.19502149377113,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_6/transformer/sem_quantizacao/metricas_teste.csv"
+          },
+          "historico_1998_2022": {
+            "mae": 14.911236249856305,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_6/transformer/sem_quantizacao/metricas_teste.csv"
+          }
+        },
+        "report_page": 27,
+        "report_table": 8
+      },
+      {
+        "task": "monthly_6",
+        "model": "Informer",
+        "condition": "Controle",
+        "horizon": 6,
+        "short_mae": 16.222214264749166,
+        "long_mae": 14.72473590626257,
+        "delta_long_minus_short": -1.497478358486596,
+        "delta_pct": -9.231035505064266,
+        "delta_pct_display": "-9,23",
+        "long_improved": true,
+        "sources": {
+          "historico_curto_pareado": {
+            "mae": 16.222214264749166,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_6/informer/sem_quantizacao/metricas_teste.csv"
+          },
+          "historico_1998_2022": {
+            "mae": 14.72473590626257,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_6/informer/sem_quantizacao/metricas_teste.csv"
+          }
+        },
+        "report_page": 27,
+        "report_table": 8
+      },
+      {
+        "task": "monthly_6",
+        "model": "LSTM",
+        "condition": "Controle",
+        "horizon": 6,
+        "short_mae": 15.392517062552297,
+        "long_mae": 15.053674359951918,
+        "delta_long_minus_short": -0.3388427026003793,
+        "delta_pct": -2.201346935159376,
+        "delta_pct_display": "-2,20",
+        "long_improved": true,
+        "sources": {
+          "historico_curto_pareado": {
+            "mae": 15.392517062552297,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_6/lstm/sem_quantizacao/metricas_teste.csv"
+          },
+          "historico_1998_2022": {
+            "mae": 15.053674359951918,
+            "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_6/lstm/sem_quantizacao/metricas_teste.csv"
+          }
+        },
+        "report_page": 27,
+        "report_table": 8
+      }
+    ],
+    "long_improved_count": 11,
+    "total_combinations": 12,
+    "exception": {
+      "task": "hourly_72_extension",
+      "model": "LSTM",
+      "condition": "Controle",
+      "horizon": 72,
+      "short_mae": 53.718654043715766,
+      "long_mae": 61.60577795269222,
+      "delta_long_minus_short": 7.887123908976456,
+      "delta_pct": 14.682281321788103,
+      "delta_pct_display": "14,68",
+      "long_improved": false,
+      "sources": {
+        "historico_curto_pareado": {
+          "mae": 53.718654043715766,
+          "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/lstm/sem_quantizacao/metricas_teste.csv"
+        },
+        "historico_1998_2022": {
+          "mae": 61.60577795269222,
+          "source_csv": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/lstm/sem_quantizacao/metricas_teste.csv"
+        }
+      },
+      "report_page": 27,
+      "report_table": 8
+    },
+    "validation_period": "2018-04 a 2019-03",
+    "test_period": "2019-04 a 2022-12",
+    "long_initial_training": "1998-01 a 2018-03",
+    "short_initial_training": "2014-04 a 2018-03",
+    "long_refit": "1998-01 a 2019-03",
+    "short_refit": "2014-04 a 2019-03",
+    "same_evaluation_dates_and_targets": true,
+    "hourly_excluded_origin_local": "2022-12-29",
+    "hourly_exclusion_reason": "Cobertura UTC não completa o horizonte local; excluir dos dois históricos, sem preenchimento.",
+    "causal_warning": "Ampliação altera janelas, composição de anos e extremos da normalização; não isola quantidade de dados como causa. Não comparar erros históricos diretamente com 2024.",
+    "report_pages": [
+      12,
+      26,
+      27,
+      29
+    ]
+  },
+  "protocol": {
+    "regime": "atual",
+    "initial_history": "2019-01 a 2022-12",
+    "validation": "2023-01 a 2023-12",
+    "refit": "2019-01 a 2023-12",
+    "test": "2024-01 a 2024-12",
+    "epochs_selected_on": "MSE de validação normalizado, por modelo/tarefa/variante/semente",
+    "input_condition_selected_on": "Macro-MAE da previsão combinada em W/m², horizonte completo da validação.",
+    "refit_reinitializes_same_seed": true,
+    "test_choices_fixed": true,
+    "nested_validation": false,
+    "same_validation_selects_epochs_and_condition": true,
+    "prior_test_exposure": "2024 já foi examinado em etapas anteriores; embora as execuções respeitem os cortes, o teste não é totalmente independente. Análise retrospectiva.",
+    "seeds_hourly": [
+      42
+    ],
+    "seeds_daily_monthly": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ],
+    "ensembling": "Média aritmética das cinco previsões em W/m² antes do pós-processamento; não média dos erros.",
+    "postprocessing": "Piso zero em todas as tarefas; no horário, anulação por elevação solar não positiva no centro do intervalo (pvlib). Sem teto comum.",
+    "report_pages": [
+      12,
+      15,
+      29
+    ]
+  },
+  "metrics": {
+    "primary": "Macro-MAE cumulativo em W/m²",
+    "mae": "Média de |referência - previsão| nos pares de origem e passo de uma localidade.",
+    "macro": "Média simples dos dez MAEs locais, igual peso por localidade.",
+    "cumulative": "Horizonte H reúne todos os passos 1...H, de todas as origens válidas; não é somente erro no último passo.",
+    "overlap": "Alvos podem aparecer em previsões de origens diferentes; pares não são independentes.",
+    "night": "Cumulativo horário inclui dia/noite e pós-processamento solar; não comparar diretamente com métricas somente diurnas.",
+    "secondary": [
+      "RMSE",
+      "nRMSE",
+      "R²"
+    ],
+    "nrmse": "RMSE local dividido pela média local da referência, macro das razões; CSV razão, apresentação percentual ×100.",
+    "macro_rmse_warning": "Macro-RMSE não é raiz do macro-MSE.",
+    "rank_rounding": "Classificar pela precisão integral; arredondar apenas na apresentação.",
+    "decreasing_cumulative_warning": "MAE cumulativo decrescente não significa que o último passo isolado ficou mais fácil.",
+    "report_pages": [
+      15,
+      16,
+      21,
+      23
+    ]
+  },
+  "tasks": {
+    "hourly_72_extension": {
+      "label": "Horária",
+      "context": 336,
+      "horizon": 72,
+      "unit": "h",
+      "origins_per_locality": 363,
+      "historical_origins_per_locality": 1368
+    },
+    "daily_30": {
+      "label": "Diária",
+      "context": 365,
+      "horizon": 30,
+      "unit": "d",
+      "origins_per_locality": 337,
+      "historical_origins_per_locality": 1342
+    },
+    "monthly_1": {
+      "label": "Mensal · 1 passo",
+      "context": 12,
+      "horizon": 1,
+      "unit": "mês",
+      "origins_per_locality": 12,
+      "historical_origins_per_locality": 45
+    },
+    "monthly_6": {
+      "label": "Mensal · 6 passos",
+      "context": 12,
+      "horizon": 6,
+      "unit": "meses",
+      "origins_per_locality": 7,
+      "historical_origins_per_locality": 40
+    }
+  },
+  "monthly_distinction": {
+    "separately_trained_networks": true,
+    "monthly_1": "Rede treinada para 12 meses de contexto → 1 saída; Informer Q128 MAE 12,7265696764498 W/m².",
+    "monthly_6": "Outra rede treinada para 12 meses de contexto → 6 saídas, avaliada cumulativamente em 1,3,6 passos.",
+    "monthly_6_first_step_informer_mae": 14.019624339809871,
+    "monthly_6_first_step_is_not_monthly_1": true,
+    "monthly_6_test_origins_per_locality": 7,
+    "monthly_6_origin_step_pairs_all_localities": 420,
+    "pairs_independent": false,
+    "exploratory": true,
+    "report_pages": [
+      11,
+      12,
+      23,
+      32,
+      33
+    ]
+  },
+  "limitations": [
+    {
+      "claim": "Uma semente horária; diária/mensais usam média de cinco previsões. Não há intervalo de confiança ou demonstração de significância estatística.",
+      "pages": [
+        15,
+        29
+      ]
+    },
+    {
+      "claim": "Mensal de seis passos tem sete origens por localidade em 2024; alvos sobrepostos e possível correlação espacial.",
+      "pages": [
+        23,
+        29
+      ]
+    },
+    {
+      "claim": "Apenas dez localidades intencionalmente escolhidas, todas conhecidas no ajuste; não avaliou generalização para localidades inéditas.",
+      "pages": [
+        8,
+        9,
+        29
+      ],
+      "evidence_kind": "Inferência da divisão cronológica das mesmas dez séries/IDs, não uma citação literal.",
+      "code_source": "codigo_fonte/experimentos/experimento_quantizacao_concorrentes.py:135-183 e278-297"
+    },
+    {
+      "claim": "NSRDB é produto modelado por célula, não sensores da fábrica.",
+      "pages": [
+        9,
+        29
+      ]
+    },
+    {
+      "claim": "2024 previamente examinado; análise retrospectiva com independência limitada do teste.",
+      "pages": [
+        29
+      ]
+    },
+    {
+      "claim": "Não há persistência/climatologia no protocolo comparativo final de três redes; não quantifica ganho contra referências simples.",
+      "pages": [
+        29,
+        30
+      ]
+    },
+    {
+      "claim": "Não mediu operação FV, aquisição em tempo real, consumo industrial, geração elétrica, economia financeira, redução de memória ou velocidade.",
+      "pages": [
+        8,
+        14,
+        29,
+        30
+      ]
+    },
+    {
+      "claim": "Capacidade e custo computacional das arquiteturas não equalizados; resultados não constituem ranking universal de arquiteturas.",
+      "pages": [
+        28,
+        29,
+        36,
+        37
+      ]
+    }
+  ],
+  "extracted_csvs": {
+    "selected_macro_all_horizons": "documentacao/relatorio_final_ea019/video/completo_v8/referencias/metricas_selecionadas_teste_2024.csv",
+    "selected_per_locality_full_horizons": "documentacao/relatorio_final_ea019/video/completo_v8/referencias/metricas_locais_selecionadas_teste_2024.csv",
+    "all_conditions_full_horizons": "documentacao/relatorio_final_ea019/video/completo_v8/referencias/mae_todas_condicoes_teste_2024.csv",
+    "paired_history_controls": "documentacao/relatorio_final_ea019/video/completo_v8/referencias/comparacao_historicos_controles.csv"
+  },
+  "validation_checks": {
+    "main_12_values_match_consolidated_csv": true,
+    "per_locality_counts_match_report": true,
+    "daily_leaders_match_report": true,
+    "quantization_counts_match_report": true,
+    "paired_history_11_of_12_match_report": true
+  },
+  "source_files": [
+    {
+      "path": "codigo_fonte/video_ea019/assets/localities_report.json",
+      "sha256": "47df949b87d15c04e0931fdc020bf8cfb63278937f8dfd6ad2dd401e44a0b4a7"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/selecao_congelada.json",
+      "sha256": "1b728189756fd36d9461d158b19ab228ec79f4f1aef0095e513ecc6b762ea1e0"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "0ef32f11cd1fb4b498ba17fdb2c4e52fa619ca0cd555cb1f1763a35669bc32c5"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/q64/metricas_teste.csv",
+      "sha256": "8119bbc795ea53cfea0f54a018d2077b21a0c230d0b8ab253bd43254e0d64c57"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/q128/metricas_teste.csv",
+      "sha256": "77900939157d52650f9172f2721f2a71f3a46e8753ab27fc63450744789fbf30"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/q256/metricas_teste.csv",
+      "sha256": "462a34b33f04d97d660aebccb28a3d7380bfb86c7a2f1b514c82c15b10177255"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/sem_quantizacao/metricas_por_localidade_teste.csv",
+      "sha256": "5f651175470038b5ca0853cd38a81bf17423c2b118b1fc09db2246493d0fcda5"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/transformer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "0168556113b0e158a8b8a4cf5d2756a0ded6aee1c2e375dc68f8a02b15249284"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/transformer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "fd7efcd512ad256f06590bd40ea83f6bdb341d21e5743a73b99c5dbc1129975f"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/selecao_congelada.json",
+      "sha256": "e737a77feab7c8046b0488e3aca87f949e091547cd78109c20aadde6a2be60ab"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "38830e1ce70c29752592bb89935d4c9b72fa67ac03ce0b328f5934658896ecee"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/q64/metricas_teste.csv",
+      "sha256": "fbc06330d8f21e4d4f6c65eccdfd381f55119947ad74f03d28e5bc8e0094e704"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/q128/metricas_teste.csv",
+      "sha256": "af2c2d397546008637e2f9dab157001897261b8a0dd7a3a57b62a7540f55e2ae"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/q256/metricas_teste.csv",
+      "sha256": "1efa64eb9aa25ce1ae831eb07091d4f596ebdf9c417be3ca4c93abc4faaddc4f"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/sem_quantizacao/metricas_por_localidade_teste.csv",
+      "sha256": "9c73bc3fac104b67e15be31169eac23716c0ed84f2b4ac9053c7a3102d77f523"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/informer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "f3d9e1a86fb17e3af0937a7fc58f5e5fd07ec31d19f4587f41c28b97f87c67c7"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/informer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "9059359fcd31acb5eaacf925eba29d88b84e3cd11be7000609361ea1bf0d845e"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/selecao_congelada.json",
+      "sha256": "bb2ee2fcab7ee570bcba1aa7a87907151215249d7c5d1914141bc6abc9e47d32"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/sem_quantizacao/metricas_teste.csv",
+      "sha256": "df16a9c22dee725f62cd62bcafd863a42a9f197c393a7227ced366388b413b90"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/q64/metricas_teste.csv",
+      "sha256": "d9983f72eda6d374896d0f3257264556b288a92218328588f6eca42fa5879e83"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/q128/metricas_teste.csv",
+      "sha256": "d3547382dab7c41516ed2cce1f4f8610115272f0ff51a8f813063ec31dfd29bc"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/q256/metricas_teste.csv",
+      "sha256": "b87f951bfbf970a65ba47b9fdcd8ef149e11681dea93754e000c1c14cbc5fcf8"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/q64/metricas_por_localidade_teste.csv",
+      "sha256": "854750bb5d336ac57a26aac680b7974ac34b256f4a16c702b1535fe71a27d1f7"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/lstm/sem_quantizacao/metricas_teste.csv",
+      "sha256": "d8dc4f4f54ff3998ef9537e85ffdab23d803d2b20921296d99fd3bdc4166666f"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/lstm/sem_quantizacao/metricas_teste.csv",
+      "sha256": "f74e94284aa5d28f3eb279f9de3f06ffbf65189f55224a181605da13993d947f"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/selecao_congelada.json",
+      "sha256": "19cfc55019aea84acd7f0c549f470813686b07f5463d331e07432f120fab5e40"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "f9e8b1b67b28426ad22ed826ad71ee023b4dca587a8715204862ae98d809694a"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/q64/metricas_teste.csv",
+      "sha256": "a96a1cfda0e262aa51a86b0b3bdef27ee07bb5f20bab6e7ffef9c0b5c621d07c"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/q128/metricas_teste.csv",
+      "sha256": "284b5a35ac98c279d7999747457d3f59eb99518cbdcae564cde529e43d3e09df"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/q256/metricas_teste.csv",
+      "sha256": "b64dc22c7a3c7168e617b8afa6196b8526aa4bff87583b1eece9258877047652"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/q256/metricas_por_localidade_teste.csv",
+      "sha256": "3a5b31bb4f51e3441cea254bbdda7e4b35ce7228b66bd2271031797ebef51a55"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/daily_30/transformer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "2a89f74c3db7dcb828f41c7db1eb6f97b9f8bffdcb55e43ad247d7942116f5a4"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/daily_30/transformer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "cd91f883741747ad77cb9b8e06741998e0465ba930fa4802632c2293e2e9b8cd"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/informer/selecao_congelada.json",
+      "sha256": "fb5cd4e7030a1633fe69203423c3d9ccf5fbe7e97d76b00647386b558bf2d63f"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/informer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "13ce4e700738dd1709145e2f9380b123118bc22af8ff7792c58371b040af7802"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/informer/q64/metricas_teste.csv",
+      "sha256": "34e93ef0069dc8149724292693adfa0640b650f79b259b7dabe68b03e8421d11"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/informer/q128/metricas_teste.csv",
+      "sha256": "cd5a178879c8cd3c4f93418a62483ae2f4dad0e6ea1ca853ec3cf53074934a40"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/informer/q256/metricas_teste.csv",
+      "sha256": "9c81580cd47462ca4e4500f43f3eb7ac9b9d8100da1d097308ef530b37435680"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/informer/q64/metricas_por_localidade_teste.csv",
+      "sha256": "78ac523321fe1aecda3d76e92b950ebfa2dc66ed93359be53a2146006b656b50"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/daily_30/informer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "bf899099c22d99f6115becc9fde723cdedc2748aa84fcedf00b2866fa08753ac"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/daily_30/informer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "73124ca1f2ccc9bfe979088a1609319275cdeaa08bfd689a3e3ff40b7302eb35"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/lstm/selecao_congelada.json",
+      "sha256": "46c1ff767ecab028bd4ce8b88f8083a2edce5c86aaaf32270ecda44697606ee3"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/lstm/sem_quantizacao/metricas_teste.csv",
+      "sha256": "c12218ea94963e6bd5595594ee41a5eb213b4bcbf229f4507a81c16f50739ed3"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/lstm/q64/metricas_teste.csv",
+      "sha256": "792408e3358697c1f07fbf90778f82356c8dafbdc98d72e3c67e3620a9b1f6e1"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/lstm/q128/metricas_teste.csv",
+      "sha256": "e0c95d48361ec238a8313b88252cd9206277306ea902cff16b1e715b3d0ddd7d"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/lstm/q256/metricas_teste.csv",
+      "sha256": "edf9e5480c02bd73081632c05294da941955f708ba262ba2c5f8959c1f15fbe6"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/lstm/sem_quantizacao/metricas_por_localidade_teste.csv",
+      "sha256": "fdc09d8bc8a8513deb718828e474b37e09a1578b4b18e361d7e2a58414d7c813"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/daily_30/lstm/sem_quantizacao/metricas_teste.csv",
+      "sha256": "2175f932953f917914aeb3cfdd5f1bdabe29a1e777e180aeb57313ba68f9227f"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/daily_30/lstm/sem_quantizacao/metricas_teste.csv",
+      "sha256": "3977576e5fbf9f8f8b586483d3f72a8d947ae6087bfabf0e4e2c0d94b5b6f750"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/transformer/selecao_congelada.json",
+      "sha256": "7650608df45779efea728e3b98a28485bab2e03cc754164656091cc92a77f845"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/transformer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "b4dfbbec110fa9ae66d393d8955242dc495a944bcea54653016cad4d471a7a19"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/transformer/q64/metricas_teste.csv",
+      "sha256": "b64a80baa9191a6a25fa2c4e7fa6b2e3c0b28cc6c7a862ea04fdad58659ffa10"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/transformer/q128/metricas_teste.csv",
+      "sha256": "c82bbf48ab4c9660cc5b414e3bb1ac3da51161c163d8cdbbbe5a1bb571a4ffe9"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/transformer/q256/metricas_teste.csv",
+      "sha256": "fef24a83709449d8b08172cb1a4056286f8862c4b8e35ebe5d1ecac77d80b65f"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/transformer/q128/metricas_por_localidade_teste.csv",
+      "sha256": "ef9c5067dcdd1bef62584c821c6980d8ff88787f9ee06a4c14d411fbc2c931e0"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_1/transformer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "50ff38d52b889210e3007b1562eff10e462936767024545a6740c38c206638bf"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_1/transformer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "b2a541b2c1f94e7b32d252dd15fe77a1f2482707e2557cc3a1d66eada402e156"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/informer/selecao_congelada.json",
+      "sha256": "3218c7500ae8d88ce35d9fd343933d55c47e2a419739239c8060e6daa3e0b1ba"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/informer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "ef817512093561d212718dba8c8891b0091f2c6762435b0b700df26637b2233b"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/informer/q64/metricas_teste.csv",
+      "sha256": "1b5d41fba219a17c173d035a72d2d431ef27db64090fbb035569b49dafa9e045"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/informer/q128/metricas_teste.csv",
+      "sha256": "54058c3686665f08e25381e0e9cf859d25b59aca4a412feedaf4af671458b31b"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/informer/q256/metricas_teste.csv",
+      "sha256": "a5b74065caf92ec47dd08bea8aa8ea89ec2621f5ae2d90941f8d5db7297aacdd"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/informer/q128/metricas_por_localidade_teste.csv",
+      "sha256": "1d1a2123524f9ccc65727cf654203eb1a0a0d9b726f925e2994cbba6aedd8b87"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_1/informer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "233b457daa34f64b1c664f5dc47587665614e0d2009d2dda7c761189914492db"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_1/informer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "950c8c2af8b8acc9b4cd0cc41337e8dbfb25ecbc14fb08a5387ab41787c2d542"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/lstm/selecao_congelada.json",
+      "sha256": "ddaf407bb68f9107577c8af0206a679c53d19e938f6fb61e9d264b23db66c6e7"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/lstm/sem_quantizacao/metricas_teste.csv",
+      "sha256": "16844df0a86a146d11e177637c31ee44c09f07672c96f14b8d099d537ca2a0d7"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/lstm/q64/metricas_teste.csv",
+      "sha256": "89fe68b819ab7bf9fba33cb0d16642ba88dc9252b1e7aac64d382e5bf4d88841"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/lstm/q128/metricas_teste.csv",
+      "sha256": "a065234589ae70e5e2ae027cea5691f3fc9ce4f066b981382ce167b8ce91fb95"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/lstm/q256/metricas_teste.csv",
+      "sha256": "73b5c37fc39d6e7efd7086e46872744777c30b9ddd80408feed197848591d457"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/lstm/q128/metricas_por_localidade_teste.csv",
+      "sha256": "e03cf8290d27f1e9ed761f5f2c61bbd7ee6841f376babaa1e8ba7a30bf710432"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_1/lstm/sem_quantizacao/metricas_teste.csv",
+      "sha256": "d9d824476be432080ad5cccbd84851372703dacd806db7905b78804f2c409dde"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_1/lstm/sem_quantizacao/metricas_teste.csv",
+      "sha256": "938268905ad52f26122aeab3fc72a8659ed842d615b9df315a110378323e6ecb"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/transformer/selecao_congelada.json",
+      "sha256": "f72951d401b2ce835e76de22263a05c4ac30b3fb8941aa7ccf57e1da5cdef77d"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/transformer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "78213274b90d4457b6b57b9cd3fecf972b33e6a18c5a18de6406d76cdb7957f5"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/transformer/q64/metricas_teste.csv",
+      "sha256": "498a1f5aec958ab8e017b86adfe112e321ef72f8edbe5ca69d22e4ebac6abe56"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/transformer/q128/metricas_teste.csv",
+      "sha256": "c5c3f8b9f31bfdecac3e5211b4be9bf626c3f0fecf4b23d0a6897438b15af145"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/transformer/q256/metricas_teste.csv",
+      "sha256": "b603aea2642a116794a7161cffae396c7314d5d9024c33ee42af9267237f5525"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/transformer/q64/metricas_por_localidade_teste.csv",
+      "sha256": "53935b3c5ddb5c543bb33250a63e83e05cd59cc6bbd9b98ac88aff57cf96d465"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_6/transformer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "6b4cff33d2b0ad37bb50f210a96734d0aaed4dd9379fb99c5d406af118834980"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_6/transformer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "942acf4f76a89c96b7fad9701bee4c48446611c79c90cf42b1fbffeeb5262d0b"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/informer/selecao_congelada.json",
+      "sha256": "ffbff7985ca03f0c926be10b003a92d2f115062156e555441916042908fa5471"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/informer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "6236f7f6625f9b1d83a4674860d771bb2b1b1993b9f98c34e0f3ecbb22ba3b89"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/informer/q64/metricas_teste.csv",
+      "sha256": "d9bb74a0f48fe69782fe5ada3f471dea6e86bae6577df9b1ba80dc1720320ec8"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/informer/q128/metricas_teste.csv",
+      "sha256": "0843e1a6377a8108c101f18167b7a0a94324092ec402c612f2547ec45113f66b"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/informer/q256/metricas_teste.csv",
+      "sha256": "5360348a9e9a386950fb5ad101acb2f42b27e4223e8aaa7f447c1bfdb6afa35f"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/informer/q128/metricas_por_localidade_teste.csv",
+      "sha256": "8e6baac321cd01f2d81d7811777be41bd393735ffcb5eed8f681732b10c58612"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_6/informer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "6f16bd1c711e20cdebdecb1378a639d13bd81880983fbe5f0d6ab224ab7c2976"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_6/informer/sem_quantizacao/metricas_teste.csv",
+      "sha256": "9f7bc2c09b3f9e95ebffb5dd643fe28034cc9d6c3e2fa36c11e8e36a2a14361a"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/lstm/selecao_congelada.json",
+      "sha256": "ad0e130300f4d60f0a42c823fdc651eb6348415b92b140098d672041c1f7ccfc"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/lstm/sem_quantizacao/metricas_teste.csv",
+      "sha256": "1d8ed81afa379a3ef93bf36af2ddb2567b8741119403c02ba113fd9d172be0bb"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/lstm/q64/metricas_teste.csv",
+      "sha256": "b9ced95f9d1eaf9630a699aacc096824363ec22f885086b521b6c8f6cf478a50"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/lstm/q128/metricas_teste.csv",
+      "sha256": "26d5f8eee857396dfbc2362ab87ddf1259f6c98e760bf46648bf09931495db0a"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/lstm/q256/metricas_teste.csv",
+      "sha256": "dbb6d33f8cfd65bcfeb8b04235ed626d5943d183405c748d1d0a047e3236833b"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/lstm/q128/metricas_por_localidade_teste.csv",
+      "sha256": "33195a353156bfee589b7944a4330ede8ec0cf22bbbaa02062cb0efb4f8fc538"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_6/lstm/sem_quantizacao/metricas_teste.csv",
+      "sha256": "6beed8fad6d10d67bc41bd67cfe421154206c0b10ce36a33aca4df6369a9ad6f"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_6/lstm/sem_quantizacao/metricas_teste.csv",
+      "sha256": "533f526d9bc0043763b0cb9a316dc9b3d11ddc4d421027dc57342f53410aa17c"
+    },
+    {
+      "path": "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/metricas_teste_modelos_disciplina.csv",
+      "sha256": "a488912f66236ab4ae647a15d5816eb2c6c425c2d84ebba391d5203191cd7df0"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.pdf",
+      "sha256": "97b500b484aec0bf4d336ee2b351858e1e7f8fff59cb6969f09f722b63edc807"
+    },
+    {
+      "path": "codigo_fonte/experimentos/quantizacao_timesnet.py",
+      "sha256": "f8567564a636d9db100091ede8af5a1b6adfc6bf3fd5873167232dcf0e60ae7c"
+    },
+    {
+      "path": "codigo_fonte/experimentos/experimento_quantizacao_concorrentes.py",
+      "sha256": "949268cf23c74ef9b977ab02e20e2db5598d074cee1cc4ac179c7e50894b7f59"
+    },
+    {
+      "path": "codigo_fonte/experimentos/experimento_multirresolucao.py",
+      "sha256": "6bea008b7c113acc88c3bb0c4af945d1c303518d6baa8debcc63a23b5bc13056"
+    }
+  ],
+  "audit_scope": {
+    "report_and_saved_csv_reviewed": true,
+    "retraining_performed": false,
+    "new_predictions_or_measured_results_generated": false,
+    "all_selected_choices_preserved": true,
+    "unseen_location_evaluation_present": false
+  }
+}

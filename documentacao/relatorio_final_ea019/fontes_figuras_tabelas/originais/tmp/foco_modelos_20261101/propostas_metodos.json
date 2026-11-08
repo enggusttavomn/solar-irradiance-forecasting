@@ -1,0 +1,29 @@
+{
+  "scope": "Delimitação e metodologia para comparação dos modelos como objetivo principal; quantização e duração do histórico como análises de apoio. Nenhum treinamento, alteração de números ou edição do DOCX.",
+  "replacements": [
+    {
+      "id": 98,
+      "text": "A comparação se concentra na precisão preditiva das três implementações. A quantização é examinada como opção de pré-processamento do histórico: as entradas discretizadas são reconstruídas em float32, os pesos permanecem contínuos e não se medem memória ou tempo de execução. Os resultados descrevem as implementações e os protocolos utilizados; pequenas diferenças médias não demonstram superioridade estatística nem permitem generalizar a classificação a famílias inteiras de modelos."
+    },
+    {
+      "id": 215,
+      "text": "Como análise complementar, os regimes longo e curto pareado avaliam a duração do histórico nos mesmos alvos e datas de validação e teste. A diferença está no início do histórico disponível para ajuste. O regime atual testa 2024, outro período; confrontar diretamente seus erros com os históricos misturaria a duração do treinamento com a mudança do período avaliado."
+    },
+    {
+      "id": 220,
+      "text": "3.5 Normalização e condições de entrada"
+    },
+    {
+      "id": 254,
+      "text": "Para cada modelo, tarefa, condição de entrada e semente, treina-se uma rede global com as dez localidades. Os três modelos minimizam MSE na escala normalizada, e cada execução seleciona seu número de épocas pela perda de validação. Depois, escolhe-se a condição de entrada pelo menor macro-MAE em W/m² da previsão combinada na validação, no horizonte completo. Em empate, a prioridade é controle, 64, 128 e 256 níveis. Essa escolha permanece fixa nos horizontes menores e no teste. A comparação entre redes com entradas contínuas utiliza uma condição comum de representação; a comparação das escolhas da validação considera cada rede com seu pré-processamento selecionado. O fluxo está na Figura 3; as Seções 4.2 a 4.4 descrevem as redes, e as Tabelas 16 e 17 do Apêndice C detalham suas configurações e quantidades de parâmetros."
+    }
+  ],
+  "notes": [
+    "Manter a distinção entre a comparação sob entradas contínuas comuns e a comparação das configurações selecionadas na validação também na abertura dos resultados e na conclusão. As duas comparam implementações e orçamentos concretos, sem isolar universalmente o efeito da família arquitetural.",
+    "Não trocar retrospectivamente uma condição selecionada na validação por outra de menor MAE de teste; o controle contínuo deve ser apresentado como análise de referência já existente, não como nova escolha de hiperparâmetro feita no teste.",
+    "Não reduzir ou remover o detalhamento técnico da quantização: Equações 1–2, Tabela 4, clipping somente nas variantes quantizadas, reconstrução float32, alvos contínuos e limitações permanecem necessários para reproduzir as configurações comparadas.",
+    "A Figura 3 pode permanecer: o fluxo de dados, seleção e avaliação continua correto quando a condição de entrada é uma escolha auxiliar de preparação. A Figura 4 continua útil na metodologia para explicar a preparação das entradas; não precisa tornar-se resultado principal.",
+    "Sementes, pós-processamento, épocas, orçamento, métricas macro, cobertura das origens e pareamento dos históricos permanecem válidos e não requerem alteração.",
+    "Atualizar o texto correspondente do sumário via campos após mudar o título da Seção 3.5. Nenhuma tabela ou legenda precisa ser renumerada por estas propostas."
+  ]
+}

@@ -1,0 +1,484 @@
+{
+  "version": 7,
+  "duration": 224,
+  "phases": [
+    [
+      0,
+      4.4,
+      "GHI é a potência solar recebida por unidade de área horizontal."
+    ],
+    [
+      4.4,
+      10.8,
+      "Aqui, a região mede um metro por um metro. A unidade é watt por metro quadrado."
+    ],
+    [
+      10.8,
+      16,
+      "Parte da luz vem diretamente do Sol, e parte é espalhada pela atmosfera."
+    ],
+    [
+      16,
+      21,
+      "A luz varia durante o dia. À noite, a irradiância solar praticamente zera."
+    ],
+    [
+      21,
+      25.2,
+      "A passagem de nuvens modifica a luz recebida e a curva."
+    ],
+    [
+      25.2,
+      30,
+      "O histórico reúne esses padrões diários e as variações da atmosfera."
+    ],
+    [
+      30,
+      35,
+      "Com esse histórico, tentamos antecipar a continuação da curva."
+    ],
+    [
+      35,
+      40,
+      "Prever o recurso solar pode apoiar o planejamento fotovoltaico. Meu objetivo foi..."
+    ],
+    [
+      40,
+      44,
+      "comparar LSTM, Transformer e Informer."
+    ],
+    [
+      44,
+      48,
+      "Na LSTM, os valores entram em ordem."
+    ],
+    [
+      48,
+      52,
+      "A memória muda a cada passo, por portas aprendidas."
+    ],
+    [
+      52,
+      56,
+      "Elas regulam o que reter, acrescentar e transmitir."
+    ],
+    [
+      56,
+      59,
+      "O estado final ajuda a prever todo o horizonte."
+    ],
+    [
+      59,
+      63,
+      "No Transformer, cada posição reúne valor e ordem temporal."
+    ],
+    [
+      63,
+      67,
+      "Consultas comparam representações com suas chaves."
+    ],
+    [
+      67,
+      71,
+      "Os pesos calculados orientam a combinação dos valores."
+    ],
+    [
+      71,
+      75,
+      "Essas representações seguem para a previsão do horizonte."
+    ],
+    [
+      75,
+      79,
+      "Em sequências longas, o Informer detalha algumas consultas."
+    ],
+    [
+      79,
+      83,
+      "A seleção usa uma estimativa de esparsidade."
+    ],
+    [
+      83,
+      87,
+      "Em outra etapa, reduz a sequência interna do codificador."
+    ],
+    [
+      87,
+      91,
+      "A atenção cruzada permanece completa."
+    ],
+    [
+      91,
+      95,
+      "O mesmo histórico e ID entram nos três modelos."
+    ],
+    [
+      95,
+      100,
+      "Cada modelo produz diretamente um vetor para o mesmo horizonte."
+    ],
+    [
+      100,
+      104,
+      "As localidades deste estudo estão nas Américas."
+    ],
+    [
+      104,
+      110,
+      "São dez regiões: uma no Brasil, oito nos Estados Unidos e uma no México."
+    ],
+    [
+      110,
+      116,
+      "A NSRDB usa observações de satélite e informações da atmosfera para estimar o recurso solar."
+    ],
+    [
+      116,
+      125,
+      "Modelos físicos combinam essas informações e produzem estimativas de irradiância para células geográficas."
+    ],
+    [
+      125,
+      131,
+      "Estas distribuições usam valores reais do período de treinamento."
+    ],
+    [
+      131,
+      138.5,
+      "Os perfis mostram os valores positivos. A porcentagem de horas com GHI igual a zero aparece separadamente."
+    ],
+    [
+      138.5,
+      144,
+      "A distribuição varia entre as dez localidades do conjunto."
+    ],
+    [
+      144,
+      149,
+      "Cada região consultada corresponde a uma célula geográfica da base."
+    ],
+    [
+      149,
+      154,
+      "A sequência dessas estimativas forma o histórico de GHI usado pelas redes."
+    ],
+    [
+      154,
+      162,
+      "Uma entrada é o histórico de GHI: uma sequência de valores, organizada no tempo."
+    ],
+    [
+      162,
+      170,
+      "A outra entrada identifica a localidade. Esse número se transforma numa representação aprendida pela rede."
+    ],
+    [
+      170,
+      178,
+      "Neste experimento, os modelos recebem o histórico de GHI e a identificação da localidade."
+    ],
+    [
+      178,
+      186,
+      "Cada modelo compartilha seus parâmetros entre as dez localidades. Os dados mudam; a estrutura é a mesma."
+    ],
+    [
+      186,
+      190,
+      "Comparei quatro tarefas, em diferentes escalas de tempo."
+    ],
+    [
+      190,
+      195.5,
+      "Na tarefa horária, 336 horas formam duas semanas de histórico."
+    ],
+    [
+      195.5,
+      201,
+      "A rede prevê as próximas 72 horas: três dias de irradiância."
+    ],
+    [
+      201,
+      206.5,
+      "Na diária, 365 valores representam um ano de histórico."
+    ],
+    [
+      206.5,
+      212,
+      "A saída prevê os próximos trinta dias, mantendo a separação entre passado e futuro."
+    ],
+    [
+      212,
+      218,
+      "Na mensal de um passo, doze meses ajudam a prever o mês seguinte."
+    ],
+    [
+      218,
+      224,
+      "Na outra mensal, uma rede própria prevê seis meses. Essa análise é exploratória."
+    ]
+  ],
+  "cues": [
+    {
+      "start": 0,
+      "end": 4.4,
+      "text": "GHI é a potência solar recebida por\nunidade de área horizontal."
+    },
+    {
+      "start": 4.4,
+      "end": 10.8,
+      "text": "Aqui, a região mede um metro por um metro.\nA unidade é watt por metro quadrado."
+    },
+    {
+      "start": 10.8,
+      "end": 16,
+      "text": "Parte da luz vem diretamente do Sol, e\nparte é espalhada pela atmosfera."
+    },
+    {
+      "start": 16,
+      "end": 21,
+      "text": "A luz varia durante o dia. À noite, a\nirradiância solar praticamente zera."
+    },
+    {
+      "start": 21,
+      "end": 25.2,
+      "text": "A passagem de nuvens modifica a luz\nrecebida e a curva."
+    },
+    {
+      "start": 25.2,
+      "end": 30,
+      "text": "O histórico reúne esses padrões diários e\nas variações da atmosfera."
+    },
+    {
+      "start": 30,
+      "end": 35,
+      "text": "Com esse histórico, tentamos antecipar a\ncontinuação da curva."
+    },
+    {
+      "start": 35,
+      "end": 37.19512195121951,
+      "text": "Prever o recurso solar pode apoiar o"
+    },
+    {
+      "start": 37.19512195121951,
+      "end": 40,
+      "text": "planejamento fotovoltaico. Meu objetivo\nfoi..."
+    },
+    {
+      "start": 40,
+      "end": 44,
+      "text": "comparar LSTM, Transformer e Informer."
+    },
+    {
+      "start": 44,
+      "end": 48,
+      "text": "Na LSTM, os valores entram em ordem."
+    },
+    {
+      "start": 48,
+      "end": 52,
+      "text": "A memória muda a cada passo, por portas\naprendidas."
+    },
+    {
+      "start": 52,
+      "end": 56,
+      "text": "Elas regulam o que reter, acrescentar e\ntransmitir."
+    },
+    {
+      "start": 56,
+      "end": 59,
+      "text": "O estado final ajuda a prever todo o\nhorizonte."
+    },
+    {
+      "start": 59,
+      "end": 63,
+      "text": "No Transformer, cada posição reúne valor e\nordem temporal."
+    },
+    {
+      "start": 63,
+      "end": 67,
+      "text": "Consultas comparam representações com suas\nchaves."
+    },
+    {
+      "start": 67,
+      "end": 71,
+      "text": "Os pesos calculados orientam a combinação\ndos valores."
+    },
+    {
+      "start": 71,
+      "end": 75,
+      "text": "Essas representações seguem para a\nprevisão do horizonte."
+    },
+    {
+      "start": 75,
+      "end": 79,
+      "text": "Em sequências longas, o Informer detalha\nalgumas consultas."
+    },
+    {
+      "start": 79,
+      "end": 83,
+      "text": "A seleção usa uma estimativa de\nesparsidade."
+    },
+    {
+      "start": 83,
+      "end": 87,
+      "text": "Em outra etapa, reduz a sequência interna\ndo codificador."
+    },
+    {
+      "start": 87,
+      "end": 91,
+      "text": "A atenção cruzada permanece completa."
+    },
+    {
+      "start": 91,
+      "end": 95,
+      "text": "O mesmo histórico e ID entram nos três\nmodelos."
+    },
+    {
+      "start": 95,
+      "end": 100,
+      "text": "Cada modelo produz diretamente um vetor\npara o mesmo horizonte."
+    },
+    {
+      "start": 100,
+      "end": 104,
+      "text": "As localidades deste estudo estão nas\nAméricas."
+    },
+    {
+      "start": 104,
+      "end": 110,
+      "text": "São dez regiões: uma no Brasil, oito nos\nEstados Unidos e uma no México."
+    },
+    {
+      "start": 110,
+      "end": 112.43956043956044,
+      "text": "A NSRDB usa observações de satélite e"
+    },
+    {
+      "start": 112.43956043956044,
+      "end": 116,
+      "text": "informações da atmosfera para estimar o\nrecurso solar."
+    },
+    {
+      "start": 116,
+      "end": 119.6,
+      "text": "Modelos físicos combinam essas informações"
+    },
+    {
+      "start": 119.6,
+      "end": 125,
+      "text": "e produzem estimativas de irradiância para\ncélulas geográficas."
+    },
+    {
+      "start": 125,
+      "end": 131,
+      "text": "Estas distribuições usam valores reais do\nperíodo de treinamento."
+    },
+    {
+      "start": 131,
+      "end": 133.92857142857142,
+      "text": "Os perfis mostram os valores positivos. A"
+    },
+    {
+      "start": 133.92857142857142,
+      "end": 138.5,
+      "text": "porcentagem de horas com GHI igual a zero\naparece separadamente."
+    },
+    {
+      "start": 138.5,
+      "end": 144,
+      "text": "A distribuição varia entre as dez\nlocalidades do conjunto."
+    },
+    {
+      "start": 144,
+      "end": 149,
+      "text": "Cada região consultada corresponde a uma\ncélula geográfica da base."
+    },
+    {
+      "start": 149,
+      "end": 154,
+      "text": "A sequência dessas estimativas forma o\nhistórico de GHI usado pelas redes."
+    },
+    {
+      "start": 154,
+      "end": 162,
+      "text": "Uma entrada é o histórico de GHI: uma\nsequência de valores, organizada no tempo."
+    },
+    {
+      "start": 162,
+      "end": 165.04761904761904,
+      "text": "A outra entrada identifica a localidade."
+    },
+    {
+      "start": 165.04761904761904,
+      "end": 170,
+      "text": "Esse número se transforma numa\nrepresentação aprendida pela rede."
+    },
+    {
+      "start": 170,
+      "end": 173.54545454545453,
+      "text": "Neste experimento, os modelos recebem o"
+    },
+    {
+      "start": 173.54545454545453,
+      "end": 178,
+      "text": "histórico de GHI e a identificação da\nlocalidade."
+    },
+    {
+      "start": 178,
+      "end": 181.02912621359224,
+      "text": "Cada modelo compartilha seus parâmetros"
+    },
+    {
+      "start": 181.02912621359224,
+      "end": 186,
+      "text": "entre as dez localidades. Os dados mudam;\na estrutura é a mesma."
+    },
+    {
+      "start": 186,
+      "end": 190,
+      "text": "Comparei quatro tarefas, em diferentes\nescalas de tempo."
+    },
+    {
+      "start": 190,
+      "end": 195.5,
+      "text": "Na tarefa horária, 336 horas formam duas\nsemanas de histórico."
+    },
+    {
+      "start": 195.5,
+      "end": 201,
+      "text": "A rede prevê as próximas 72 horas: três\ndias de irradiância."
+    },
+    {
+      "start": 201,
+      "end": 206.5,
+      "text": "Na diária, 365 valores representam um ano\nde histórico."
+    },
+    {
+      "start": 206.5,
+      "end": 209.0487804878049,
+      "text": "A saída prevê os próximos trinta dias,"
+    },
+    {
+      "start": 209.0487804878049,
+      "end": 212,
+      "text": "mantendo a separação entre passado e\nfuturo."
+    },
+    {
+      "start": 212,
+      "end": 218,
+      "text": "Na mensal de um passo, doze meses ajudam a\nprever o mês seguinte."
+    },
+    {
+      "start": 218,
+      "end": 224,
+      "text": "Na outra mensal, uma rede própria prevê\nseis meses. Essa análise é exploratória."
+    }
+  ],
+  "approved_intro_reused": true,
+  "approved_intro_seconds": 40,
+  "review_through_storyboard_plan": 22,
+  "narration_recorded": false,
+  "camera_footage_included": false,
+  "original_storyboard_retimed_for_explanation": true
+}

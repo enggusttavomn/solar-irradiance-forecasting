@@ -1,0 +1,771 @@
+{
+  "status": "pass",
+  "flags": [],
+  "reviewer": "qa_geral_final_v12 independent visual reviewer",
+  "completed_at_utc": "2026-11-05T13:52:17.0803696Z",
+  "revision_gate": "THIRD_FINAL_SAMPLES_READY received from root before any visual inspection",
+  "scope": {
+    "method": "Visual review of every tile in six definitive contact sheets, with seven full-resolution still enlargements. Static sample review only.",
+    "contact_sheets_reviewed": [
+      1,
+      2,
+      3,
+      7,
+      8,
+      9
+    ],
+    "contact_frames_reviewed": 66,
+    "frame_indices_1_based": [
+      [
+        1,
+        36
+      ],
+      [
+        73,
+        102
+      ]
+    ],
+    "enlarged_times_seconds": [
+      7.0,
+      37.98333,
+      45.71667,
+      401.1,
+      451.4,
+      479.28333,
+      490.35
+    ],
+    "audio_listened": false,
+    "full_realtime_playback": false,
+    "production_files_modified": false
+  },
+  "checks": [
+    {
+      "check": "Capa e apresentador",
+      "result": "pass",
+      "evidence": "7.00 s enlargement: complete title and credits; cyan, lavender and salmon model colors preserved; face and chair retain color; no obvious unintended holes in visible head, shoulders, torso or chair. Lower torso meets frame edge as composed."
+    },
+    {
+      "check": "DNI, GHI e unidades",
+      "result": "pass",
+      "evidence": "37.98333 and 45.71667 s enlargements: DNI measurement plane, 90-degree mark, horizontal area 1 m2 and GHI = DNI cos(theta_z) + DHI visible. Charts use W/m2 for GHI and Macro-MAE."
+    },
+    {
+      "check": "Resultados numericos",
+      "result": "pass",
+      "evidence": "Contact sheets 07/08 show hourly Transformer 53.21, daily Transformer 43.89, monthly-one Informer 12.73 and monthly-six Informer 13.67. 401.10 s full-frame confirms 13.67, with Transformer 14.40 and LSTM 14.76."
+    },
+    {
+      "check": "Legendas e graficos",
+      "result": "pass",
+      "evidence": "All 66 reviewed tiles: captions remain in lower reserved area and do not cover plot axes, bars, values or matrix footnote. Captions over 3D factory shots remain readable using translucent boxes."
+    },
+    {
+      "check": "Rodape da excecao LSTM",
+      "result": "pass",
+      "evidence": "451.40 s enlargement: L: longo / C: curto and Excecao: LSTM horaria below matrix, clearly above closed captions; no collision."
+    },
+    {
+      "check": "Conclusao e encerramento",
+      "result": "pass",
+      "evidence": "479.28333 s enlargement: factory with strong conclusion Transformer - horaria e diaria / Informer - tarefas mensais and qualification Nos horizontes completos avaliados. 490.35 s sample shows final thank-you/base experimental card during fade; no visible stale weaker conclusion wording."
+    },
+    {
+      "check": "Mensal seis e legenda apos retirada da leitura incorreta",
+      "result": "pass_visual_only",
+      "evidence": "401.10 s chart keeps 13.67. Caption visible there continues the monthly-one 12.73 statement; it does not insert a written claim that 13.67 was spoken. This review did not listen to narration."
+    }
+  ],
+  "manifest": {
+    "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/amostras_exportacao_v12.json",
+    "sha256": "4bf5276ce874dafb5609009825dddc1635938dc4d71388fa34a8fc664da9eb59",
+    "bytes": 29595
+  },
+  "manifest_video_sha256": "ee512579def3cf3bf74c4ca354a62b28c03c048ad75e412d9a8ec98fd0ff2cb5",
+  "current_videos": [
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/Video_TCC_Final_Continuo_Somente_Voz_v12.mp4",
+      "sha256": "ee512579def3cf3bf74c4ca354a62b28c03c048ad75e412d9a8ec98fd0ff2cb5",
+      "bytes": 50792351
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/Video_TCC_Final_Continuo_Com_Trilha_v12.mp4",
+      "sha256": "4f186150cec098b7c5a322222d15c5070870cae42871e983c7045ad5e39f277f",
+      "bytes": 50937392
+    }
+  ],
+  "voice_video_matches_manifest": true,
+  "contact_sheets_current_hashes": [
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral_contato_v12_01.png",
+      "sha256": "1c8f2645019031c4fa1c807b71823655247f5a4db1f5b51078b9a7ca36b5ff8a",
+      "bytes": 1350013,
+      "sheet": 1,
+      "visually_reviewed": true,
+      "matches_manifest_sha256": true
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral_contato_v12_02.png",
+      "sha256": "799ed4ca5b5efa815ef033b63ecb820c0ad10fb12428c7bdc375bac4b3e3f4e6",
+      "bytes": 851789,
+      "sheet": 2,
+      "visually_reviewed": true,
+      "matches_manifest_sha256": true
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral_contato_v12_03.png",
+      "sha256": "454bbb9049fc7bd1b6d6a470c59a22ae91b6138c2db73f8699fbb2a3b764f083",
+      "bytes": 452956,
+      "sheet": 3,
+      "visually_reviewed": true,
+      "matches_manifest_sha256": true
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral_contato_v12_04.png",
+      "sha256": "7ab2feb41f015f8bd1e66e59255427169fe525c4680a0c00a5e16d3f44b78778",
+      "bytes": 401855,
+      "sheet": 4,
+      "visually_reviewed": false,
+      "matches_manifest_sha256": true
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral_contato_v12_05.png",
+      "sha256": "f5322ce9f9a5c6b4ebc1afc4a07ef2ca28bfa2fca55bd181b83efa03e4b7f600",
+      "bytes": 385851,
+      "sheet": 5,
+      "visually_reviewed": false,
+      "matches_manifest_sha256": true
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral_contato_v12_06.png",
+      "sha256": "112a5111607846defd2fc7cf8df8e8cdb1edf25ec3e880673b7c64783d45206e",
+      "bytes": 347288,
+      "sheet": 6,
+      "visually_reviewed": false,
+      "matches_manifest_sha256": true
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral_contato_v12_07.png",
+      "sha256": "71e22fa8d43c135267460c9ad15273c125fde63450531af6ddd82318840fcfdc",
+      "bytes": 374537,
+      "sheet": 7,
+      "visually_reviewed": true,
+      "matches_manifest_sha256": true
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral_contato_v12_08.png",
+      "sha256": "319f1f8942c001df28d4ccdb8e00dacdebe54ae4f5bf3592b3a05659666c83c4",
+      "bytes": 418588,
+      "sheet": 8,
+      "visually_reviewed": true,
+      "matches_manifest_sha256": true
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral_contato_v12_09.png",
+      "sha256": "613839a03c435ef53c6735d56cc52f40b214af10f4ac4bd2d2ec70050a0001cc",
+      "bytes": 334957,
+      "sheet": 9,
+      "visually_reviewed": true,
+      "matches_manifest_sha256": true
+    }
+  ],
+  "reviewed_frames_current_hashes": [
+    {
+      "index_1_based": 1,
+      "time": 0.5,
+      "label": "0:00.50",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_0.50000.png",
+      "sheet": 1.0,
+      "sha256": "b1574de4bf74161ba2bc3922f37dc42524c5bc6b0352d270ad72c2bd98e96a09",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 2,
+      "time": 7.0,
+      "label": "0:07.00",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_7.00000.png",
+      "sheet": 1.0,
+      "sha256": "5385d33bf01cfd7e0dcfa70e87e21681086b2ebff5acc28543d6c50aa8f73376",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 3,
+      "time": 7.06667,
+      "label": "0:07.07",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_7.06667.png",
+      "sheet": 1.0,
+      "sha256": "a16da472522fa46f9cd193236ebd3d59dfff5326429a57f9466be6c184e0c1a8",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 4,
+      "time": 13.0,
+      "label": "0:13.00",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_13.00000.png",
+      "sheet": 1.0,
+      "sha256": "cb9df12d9a2864f727dd0caf805ef7acc58560cd38cb840ddf406c2dc27294ca",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 5,
+      "time": 17.06667,
+      "label": "0:17.07",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_17.06667.png",
+      "sheet": 1.0,
+      "sha256": "93ea9b6a873d45bb7d05444ec258ddb82208d8c51c5ae8280083f0e660c77ce9",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 6,
+      "time": 23.05833,
+      "label": "0:23.06",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_23.05833.png",
+      "sheet": 1.0,
+      "sha256": "3ec3b08775e034e156ac18ba9e12d21aa0929768b782071e4b4681c66f07dd2b",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 7,
+      "time": 27.16667,
+      "label": "0:27.17",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_27.16667.png",
+      "sheet": 1.0,
+      "sha256": "fef7a492b4d962a82719262585bcb32ac0cbc4805e93c642f119075d07d91921",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 8,
+      "time": 37.98333,
+      "label": "0:37.98",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_37.98333.png",
+      "sheet": 1.0,
+      "sha256": "9dab481fd646ba625e1a3f4cdd2a2f1c6163563c0002702e94b12008da3fb4d4",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 9,
+      "time": 40.88333,
+      "label": "0:40.88",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_40.88333.png",
+      "sheet": 1.0,
+      "sha256": "987801bbd699cce54ae6e411932b82fa4082c88863dd04918546f1323b5242ac",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 10,
+      "time": 45.71667,
+      "label": "0:45.72",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_45.71667.png",
+      "sheet": 1.0,
+      "sha256": "11931ec9fc3cb2d18423198b4d1d47d80a884d6100c471fb19a0fcabc3baba87",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 11,
+      "time": 52.3,
+      "label": "0:52.30",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_52.30000.png",
+      "sheet": 1.0,
+      "sha256": "5441b09f1d761b88fdf06198ac63782fec7ac01134526d5b550d05438f59dabd",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 12,
+      "time": 56.3,
+      "label": "0:56.30",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_56.30000.png",
+      "sheet": 1.0,
+      "sha256": "b5479811abc7621e47b94599b222125db182bda3fd1484a3b8deb616aa606e64",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 13,
+      "time": 57.93333,
+      "label": "0:57.93",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_57.93333.png",
+      "sheet": 2.0,
+      "sha256": "1a68dea916540ad84e57b7de399374b6fdb94d756ba51b641e939ca955d4e237",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 14,
+      "time": 58.95,
+      "label": "0:58.95",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_58.95000.png",
+      "sheet": 2.0,
+      "sha256": "28e73b1079b8935f01ae635ed31f097370047b25cdca784b3177a09de5e96013",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 15,
+      "time": 61.25,
+      "label": "1:01.25",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_61.25000.png",
+      "sheet": 2.0,
+      "sha256": "3bf54600daeba51c2cb207111c5b3d4fa4af3c8a6f73cb8226851f20845b40b9",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 16,
+      "time": 67.8,
+      "label": "1:07.80",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_67.80000.png",
+      "sheet": 2.0,
+      "sha256": "3d8cf8b297da9a7731967852992e2feca99cd259d49408268cb8ad5ae92ecf8c",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 17,
+      "time": 71.66833,
+      "label": "1:11.67",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_71.66833.png",
+      "sheet": 2.0,
+      "sha256": "ceb7170433e92fd4767a99af671e489831dd7d44225c2c8b1114d86165a73d5b",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 18,
+      "time": 75.2,
+      "label": "1:15.20",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_75.20000.png",
+      "sheet": 2.0,
+      "sha256": "0a073b8b9ce46050290bd7cc25c18047991eacee42efedba5429b52245943d12",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 19,
+      "time": 84.09333,
+      "label": "1:24.09",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_84.09333.png",
+      "sheet": 2.0,
+      "sha256": "72c95ae4e53103c9054df9757e9355de182409738268ec07bdbf2ac72e5d2d4c",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 20,
+      "time": 84.95,
+      "label": "1:24.95",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_84.95000.png",
+      "sheet": 2.0,
+      "sha256": "3e09bf528ff3f737c5635d5a1b75cc7ee7b710dc823d55307d1bbe11f4b9657e",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 21,
+      "time": 101.91833,
+      "label": "1:41.92",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_101.91833.png",
+      "sheet": 2.0,
+      "sha256": "1ff57e4393d756030444191767886ba67fcdbff003b098ea365223d61850b987",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 22,
+      "time": 102.2,
+      "label": "1:42.20",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_102.20000.png",
+      "sheet": 2.0,
+      "sha256": "61a42adffefc82e3728022a7e16caab91cfc459262213ea1e1e04e3ef5461831",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 23,
+      "time": 113.7,
+      "label": "1:53.70",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_113.70000.png",
+      "sheet": 2.0,
+      "sha256": "8bffd697b0334e80853ad2a074c211e797b43a5f2360196c4a1ac4ca786882b3",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 24,
+      "time": 117.2,
+      "label": "1:57.20",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_117.20000.png",
+      "sheet": 2.0,
+      "sha256": "81d2d308ce8243bfa568046cd6a9951806ca510b92d04a89d35ba6b548e21a5b",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 25,
+      "time": 121.6,
+      "label": "2:01.60",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_121.60000.png",
+      "sheet": 3.0,
+      "sha256": "9368bfc10825ab41c6982536afdb4df707fc917e0f279b7daaaa54f64c68e236",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 26,
+      "time": 125.07333,
+      "label": "2:05.07",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_125.07333.png",
+      "sheet": 3.0,
+      "sha256": "5de48a42a5a668215c4ef8b8fc574c1d567877ba0dfe008ccf3af1a2cfa51485",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 27,
+      "time": 126.7,
+      "label": "2:06.70",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_126.70000.png",
+      "sheet": 3.0,
+      "sha256": "55946895f71396bf78f8f8f79c2509af72781f6ebec35955e2f3f7a34214a796",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 28,
+      "time": 134.05,
+      "label": "2:14.05",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_134.05000.png",
+      "sheet": 3.0,
+      "sha256": "557889e72b58c98cf935aaaa4fe291ea3ca1b94b5d548e150619301c13ab55a7",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 29,
+      "time": 144.25,
+      "label": "2:24.25",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_144.25000.png",
+      "sheet": 3.0,
+      "sha256": "030beae60b5d1c77bee26cd6b0959cbe16825502520846e92722c648d9fd9030",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 30,
+      "time": 148.70333,
+      "label": "2:28.70",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_148.70333.png",
+      "sheet": 3.0,
+      "sha256": "df88ba20a197097c56cee2f2c96208ba0002265910627e2d75ecca3b5371a486",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 31,
+      "time": 152.3,
+      "label": "2:32.30",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_152.30000.png",
+      "sheet": 3.0,
+      "sha256": "e7dd1163366d76ef01d34f44e85f13782c9ea82b2acda1c2e3d3f13f2ab37712",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 32,
+      "time": 158.9,
+      "label": "2:38.90",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_158.90000.png",
+      "sheet": 3.0,
+      "sha256": "336c929e758c1c26449838bd42b232e535a4ce2cf648ed246fee2bbf6e8e9f51",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 33,
+      "time": 163.5,
+      "label": "2:43.50",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_163.50000.png",
+      "sheet": 3.0,
+      "sha256": "a3aa307e11b4014500d630001caa6e4b871da469c8a2f2bacccbe7c9772b4dfc",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 34,
+      "time": 169.95,
+      "label": "2:49.95",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_169.95000.png",
+      "sheet": 3.0,
+      "sha256": "d8a5e1875476e3a2483338fb17ec6d031ef6d20b7c6c698808e1f6dc75f34ac7",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 35,
+      "time": 174.61833,
+      "label": "2:54.62",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_174.61833.png",
+      "sheet": 3.0,
+      "sha256": "474a37189dfadb86c9e44b11c185ae0419ac573d55e3d35b93ac872bcf9056bf",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 36,
+      "time": 177.3,
+      "label": "2:57.30",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_177.30000.png",
+      "sheet": 3.0,
+      "sha256": "df82896695a73668720e9c5b01936add9b260f98eb3cb801aee17bffc3ef2bb4",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 73,
+      "time": 343.58333,
+      "label": "5:43.58",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_343.58333.png",
+      "sheet": 7.0,
+      "sha256": "c28c410df2f5f5494e4715363d888c8a34c68e6e731a42213b503f4460b2d8a5",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 74,
+      "time": 344.89333,
+      "label": "5:44.89",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_344.89333.png",
+      "sheet": 7.0,
+      "sha256": "850bff4f2e33faa6e2f72096d6d258d6b4f14c00c7fed8aea977806b9c140b22",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 75,
+      "time": 354.6,
+      "label": "5:54.60",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_354.60000.png",
+      "sheet": 7.0,
+      "sha256": "6a63c743cbf980071b095085e262ee32bef968b3f9120d96be31cd6a8fba78b1",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 76,
+      "time": 361.70833,
+      "label": "6:01.71",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_361.70833.png",
+      "sheet": 7.0,
+      "sha256": "50166c5e675f4df07e48d1ead7ff4d975402890501a497dcb0663eef344c06f4",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 77,
+      "time": 365.45,
+      "label": "6:05.45",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_365.45000.png",
+      "sheet": 7.0,
+      "sha256": "56ba25d739d8363cb4ce06dd468f2661308eb9977a673fc38447b23704a9488e",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 78,
+      "time": 375.4,
+      "label": "6:15.40",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_375.40000.png",
+      "sheet": 7.0,
+      "sha256": "b49ee9ff9da80bbe9d7a3130e3fab55ce2dd88e7c6c174ab9d5db6f6a23bdb70",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 79,
+      "time": 380.3,
+      "label": "6:20.30",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_380.30000.png",
+      "sheet": 7.0,
+      "sha256": "9dc19c88fe0bc63cb214fd9ab4d503770bce10ac457cd615a396f93cf7e00c6d",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 80,
+      "time": 381.26833,
+      "label": "6:21.27",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_381.26833.png",
+      "sheet": 7.0,
+      "sha256": "872213002d3a2b147507f3ae1dc350b5a1336436996e275f8ce6287c76e7f8fd",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 81,
+      "time": 384.7,
+      "label": "6:24.70",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_384.70000.png",
+      "sheet": 7.0,
+      "sha256": "41700ad4dcb4e49ffc4e22ea66d99e1b5677d96f5d938dac22e31f728d9adaa8",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 82,
+      "time": 389.75,
+      "label": "6:29.75",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_389.75000.png",
+      "sheet": 7.0,
+      "sha256": "5ec784c38979d0acf616d375d8249cbe190c8cc5d5b5515e870b6185688236b7",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 83,
+      "time": 395.4,
+      "label": "6:35.40",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_395.40000.png",
+      "sheet": 7.0,
+      "sha256": "2b9f705f95653a281829c7640f26a0fed6520dd22d27ba7f8355ef385fdaeab1",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 84,
+      "time": 399.05583,
+      "label": "6:39.06",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_399.05583.png",
+      "sheet": 7.0,
+      "sha256": "82fe20878dd96c69cbbe5af272b482a02b65190aa95844ede0a6a1d476490c2d",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 85,
+      "time": 401.1,
+      "label": "6:41.10",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_401.10000.png",
+      "sheet": 8.0,
+      "sha256": "bc32a8b825c46f6278cfc187c81a5f5c26a2229c0813d45cdd30e21bd0d0f1c4",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 86,
+      "time": 406.25,
+      "label": "6:46.25",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_406.25000.png",
+      "sheet": 8.0,
+      "sha256": "6a98b002b4fc17ed15f3880f43f7b2d8eebcafee1a5c94cca28cef4323689f89",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 87,
+      "time": 413.25,
+      "label": "6:53.25",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_413.25000.png",
+      "sheet": 8.0,
+      "sha256": "6cd6cd10a7728317674e40e90a2de6eff3cde8cccc6d71cefe5276b4003a4738",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 88,
+      "time": 417.18333,
+      "label": "6:57.18",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_417.18333.png",
+      "sheet": 8.0,
+      "sha256": "12970135a5c4b33c5b8ab3e499199f2953f227d247b2701875d1aaf526bca193",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 89,
+      "time": 422.4,
+      "label": "7:02.40",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_422.40000.png",
+      "sheet": 8.0,
+      "sha256": "6382c74b756b518c4a2a2e8997ba913af6a594fdb88623bb8e6d763c50dbfaa6",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 90,
+      "time": 429.1,
+      "label": "7:09.10",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_429.10000.png",
+      "sheet": 8.0,
+      "sha256": "fa751da6864881a1e0403f8cb3f7db99880db7369ea486f5d8fbf77aef8d0f91",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 91,
+      "time": 435.57333,
+      "label": "7:15.57",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_435.57333.png",
+      "sheet": 8.0,
+      "sha256": "8b7d5943dcfa5664a4769ab4f2a30a910437d6d40e0aa6631f4712621d4e5065",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 92,
+      "time": 437.5,
+      "label": "7:17.50",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_437.50000.png",
+      "sheet": 8.0,
+      "sha256": "de408a8b8d990de925a17b45d7a3806926374670228898a4408ac2f6aed345aa",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 93,
+      "time": 446.4,
+      "label": "7:26.40",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_446.40000.png",
+      "sheet": 8.0,
+      "sha256": "9654bda58cdb6031e004af01edefb49fe51080fd67517f8589153dcc61a8ee45",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 94,
+      "time": 451.10833,
+      "label": "7:31.11",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_451.10833.png",
+      "sheet": 8.0,
+      "sha256": "418278435c9803e9fb4f99d9405bfd729052cee65740f56914e0a0832c874de0",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 95,
+      "time": 451.4,
+      "label": "7:31.40",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_451.40000.png",
+      "sheet": 8.0,
+      "sha256": "e6d48b14d344ee1df4b40ba803d631a182c9e86a3b69890f6ee77798e1efb0f7",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 96,
+      "time": 456.1,
+      "label": "7:36.10",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_456.10000.png",
+      "sheet": 8.0,
+      "sha256": "23bac0e00c1dcf175d8b38d4a4fadd1ca48d902118907fdfdf11347e1f4e034f",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 97,
+      "time": 459.7,
+      "label": "7:39.70",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_459.70000.png",
+      "sheet": 9.0,
+      "sha256": "f34d53a33e4f03a395f82809193f6f1fb123f9e4173977cd62cacf542e8a08ad",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 98,
+      "time": 462.91333,
+      "label": "7:42.91",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_462.91333.png",
+      "sheet": 9.0,
+      "sha256": "ae4c9ac2b66ceed652c9b8574e354d564437badee98e9b6b521df2ffb2b07461",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 99,
+      "time": 464.78333,
+      "label": "7:44.78",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_464.78333.png",
+      "sheet": 9.0,
+      "sha256": "b9ad1a3882b273b5bd221faa671c0b75ca59f37ef51e77dd6edc5c126869b091",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 100,
+      "time": 478.80333,
+      "label": "7:58.80",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_478.80333.png",
+      "sheet": 9.0,
+      "sha256": "896b23e4b9d963d6a60c744f727fd3efd2f696ddaf6d6b481e46b983c0956501",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 101,
+      "time": 479.28333,
+      "label": "7:59.28",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_479.28333.png",
+      "sheet": 9.0,
+      "sha256": "106c90f3f1825f8fa9ca789493cb7bb0fe901b683afee9bb09ced50e41dd88eb",
+      "matches_manifest_sha256": true
+    },
+    {
+      "index_1_based": 102,
+      "time": 490.35,
+      "label": "8:10.35",
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_490.35000.png",
+      "sheet": 9.0,
+      "sha256": "294c96447c67ad661ec53c7dc19b3852787b25f7cdad55deea9489ea7d0ed9d4",
+      "matches_manifest_sha256": true
+    }
+  ],
+  "limitations": [
+    "Only assigned contact sheets 01, 02, 03, 07, 08 and 09 visually reviewed; sheets 04, 05 and 06 are hashed but left to root review.",
+    "No claim of listening, full playback, source comparison, temporal smoothness verification, or complete body/chair presence beyond visible sampled framing."
+  ]
+}

@@ -1,0 +1,567 @@
+﻿1
+00:00:00,000 --> 00:00:04,400
+GHI é a potência solar recebida por
+unidade de área horizontal.
+
+2
+00:00:04,400 --> 00:00:10,800
+Aqui, a região mede um metro por um metro.
+A unidade é watt por metro quadrado.
+
+3
+00:00:10,800 --> 00:00:16,000
+Parte da luz vem diretamente do Sol, e
+parte é espalhada pela atmosfera.
+
+4
+00:00:16,000 --> 00:00:21,000
+A luz varia durante o dia. À noite, a
+irradiância solar praticamente zera.
+
+5
+00:00:21,000 --> 00:00:25,200
+A passagem de nuvens modifica a luz
+recebida e a curva.
+
+6
+00:00:25,200 --> 00:00:30,000
+O histórico reúne esses padrões diários e
+as variações da atmosfera.
+
+7
+00:00:30,000 --> 00:00:35,000
+Com esse histórico, tentamos antecipar a
+continuação da curva.
+
+8
+00:00:35,000 --> 00:00:37,195
+Prever o recurso solar pode apoiar o
+
+9
+00:00:37,195 --> 00:00:40,000
+planejamento fotovoltaico. Meu objetivo
+foi...
+
+10
+00:00:40,000 --> 00:00:44,000
+comparar LSTM, Transformer e Informer.
+
+11
+00:00:44,000 --> 00:00:48,000
+Na LSTM, os valores entram em ordem.
+
+12
+00:00:48,000 --> 00:00:52,000
+A memória muda a cada passo, por portas
+aprendidas.
+
+13
+00:00:52,000 --> 00:00:56,000
+Elas regulam o que reter, acrescentar e
+transmitir.
+
+14
+00:00:56,000 --> 00:00:59,000
+O estado final ajuda a prever todo o
+horizonte.
+
+15
+00:00:59,000 --> 00:01:03,000
+No Transformer, cada posição reúne valor e
+ordem temporal.
+
+16
+00:01:03,000 --> 00:01:07,000
+Consultas comparam representações com suas
+chaves.
+
+17
+00:01:07,000 --> 00:01:11,000
+Os pesos calculados orientam a combinação
+dos valores.
+
+18
+00:01:11,000 --> 00:01:15,000
+Essas representações seguem para a
+previsão do horizonte.
+
+19
+00:01:15,000 --> 00:01:19,000
+Em sequências longas, o Informer detalha
+algumas consultas.
+
+20
+00:01:19,000 --> 00:01:23,000
+A seleção usa uma estimativa de
+esparsidade.
+
+21
+00:01:23,000 --> 00:01:27,000
+Em outra etapa, reduz a sequência interna
+do codificador.
+
+22
+00:01:27,000 --> 00:01:31,000
+A atenção cruzada permanece completa.
+
+23
+00:01:31,000 --> 00:01:35,000
+O mesmo histórico e ID entram nos três
+modelos.
+
+24
+00:01:35,000 --> 00:01:40,000
+Cada modelo produz diretamente um vetor
+para o mesmo horizonte.
+
+25
+00:01:40,000 --> 00:01:44,000
+As localidades deste estudo estão nas
+Américas.
+
+26
+00:01:44,000 --> 00:01:50,000
+São dez regiões: uma no Brasil, oito nos
+Estados Unidos e uma no México.
+
+27
+00:01:50,000 --> 00:01:52,440
+A NSRDB usa observações de satélite e
+
+28
+00:01:52,440 --> 00:01:56,000
+informações da atmosfera para estimar o
+recurso solar.
+
+29
+00:01:56,000 --> 00:01:59,600
+Modelos físicos combinam essas informações
+
+30
+00:01:59,600 --> 00:02:05,000
+e produzem estimativas de irradiância para
+células geográficas.
+
+31
+00:02:05,000 --> 00:02:11,000
+Estas distribuições usam valores reais do
+período de treinamento.
+
+32
+00:02:11,000 --> 00:02:13,929
+Os perfis mostram os valores positivos. A
+
+33
+00:02:13,929 --> 00:02:18,500
+porcentagem de horas com GHI igual a zero
+aparece separadamente.
+
+34
+00:02:18,500 --> 00:02:24,000
+A distribuição varia entre as dez
+localidades do conjunto.
+
+35
+00:02:24,000 --> 00:02:29,000
+Cada região consultada corresponde a uma
+célula geográfica da base.
+
+36
+00:02:29,000 --> 00:02:34,000
+A sequência dessas estimativas forma o
+histórico de GHI usado pelas redes.
+
+37
+00:02:34,000 --> 00:02:42,000
+Uma entrada é o histórico de GHI: uma
+sequência de valores, organizada no tempo.
+
+38
+00:02:42,000 --> 00:02:45,048
+A outra entrada identifica a localidade.
+
+39
+00:02:45,048 --> 00:02:50,000
+Esse número se transforma numa
+representação aprendida pela rede.
+
+40
+00:02:50,000 --> 00:02:53,545
+Neste experimento, os modelos recebem o
+
+41
+00:02:53,545 --> 00:02:58,000
+histórico de GHI e a identificação da
+localidade.
+
+42
+00:02:58,000 --> 00:03:01,029
+Cada modelo compartilha seus parâmetros
+
+43
+00:03:01,029 --> 00:03:06,000
+entre as dez localidades. Os dados mudam;
+a estrutura é a mesma.
+
+44
+00:03:06,000 --> 00:03:10,000
+Comparei quatro tarefas, em diferentes
+escalas de tempo.
+
+45
+00:03:10,000 --> 00:03:15,500
+Na tarefa horária, 336 horas formam duas
+semanas de histórico.
+
+46
+00:03:15,500 --> 00:03:21,000
+A rede prevê as próximas 72 horas: três
+dias de irradiância.
+
+47
+00:03:21,000 --> 00:03:26,500
+Na diária, 365 valores representam um ano
+de histórico.
+
+48
+00:03:26,500 --> 00:03:29,049
+A saída prevê os próximos trinta dias,
+
+49
+00:03:29,049 --> 00:03:32,000
+mantendo a separação entre passado e
+futuro.
+
+50
+00:03:32,000 --> 00:03:38,000
+Na mensal de um passo, doze meses ajudam a
+prever o mês seguinte.
+
+51
+00:03:38,000 --> 00:03:44,000
+Na outra mensal, uma rede própria prevê
+seis meses. Essa análise é exploratória.
+
+52
+00:03:44,000 --> 00:03:50,000
+As tarefas mensais usam redes distintas:
+uma prevê um mês e outra, seis.
+
+53
+00:03:50,000 --> 00:03:52,727
+Embora seus primeiros valores se refiram
+
+54
+00:03:52,727 --> 00:03:56,000
+ao mês seguinte, vêm de treinamentos
+diferentes.
+
+55
+00:03:56,000 --> 00:04:03,000
+Treinei inicialmente com dados de 2019 a
+2022.
+
+56
+00:04:03,000 --> 00:04:10,000
+A validação usa 2023, e o teste, 2024.
+
+57
+00:04:10,000 --> 00:04:12,170
+A validação orientou a escolha das
+
+58
+00:04:12,170 --> 00:04:16,000
+configurações. A normalização respeitou os
+cortes temporais.
+
+59
+00:04:16,000 --> 00:04:18,759
+A escolha foi feita por tarefa e modelo,
+
+60
+00:04:18,759 --> 00:04:22,000
+entre as alternativas do protocolo
+consolidado.
+
+61
+00:04:22,000 --> 00:04:33,000
+Após a seleção, reiniciei o treinamento em
+2019–2023. Depois, avaliei em 2024.
+
+62
+00:04:33,000 --> 00:04:36,150
+Teste retrospectivo: havia exposição
+
+63
+00:04:36,150 --> 00:04:40,000
+anterior a 2024, com independência
+limitada.
+
+64
+00:04:40,000 --> 00:04:43,000
+Neste estudo, comparamos a precisão das
+previsões.
+
+65
+00:04:43,000 --> 00:04:46,000
+Velocidade e memória computacional não
+foram medidas.
+
+66
+00:04:46,000 --> 00:04:55,000
+Nos três modelos, comparei entradas
+contínuas com 64, 128 ou 256 níveis.
+
+67
+00:04:55,000 --> 00:05:01,000
+Quantizar aproxima cada amplitude de um
+dos níveis disponíveis.
+
+68
+00:05:01,000 --> 00:05:07,000
+Mais níveis reduzem os degraus. Os
+instantes da série são mantidos.
+
+69
+00:05:07,000 --> 00:05:09,929
+Somente o GHI passa pela transformação; a
+
+70
+00:05:09,929 --> 00:05:13,000
+identificação da localidade segue
+separada.
+
+71
+00:05:13,000 --> 00:05:20,000
+Os valores são reconstruídos em float32.
+Pesos, alvos e saídas continuam contínuos.
+
+72
+00:05:20,000 --> 00:05:24,000
+Nas variantes quantizadas, o clipping vem
+antes do arredondamento.
+
+73
+00:05:24,000 --> 00:05:27,000
+O contraste reúne os dois efeitos.
+
+74
+00:05:27,000 --> 00:05:31,000
+O controle contínuo mantém os valores sem
+clipping.
+
+75
+00:05:31,000 --> 00:05:35,061
+Para cada modelo e tarefa, a condição
+
+76
+00:05:35,061 --> 00:05:40,000
+escolhida em 2023 segue para o teste de
+2024.
+
+77
+00:05:40,000 --> 00:05:42,330
+Para comparar precisão, usamos
+
+78
+00:05:42,330 --> 00:05:48,000
+principalmente o erro absoluto médio, o
+MAE. Ele mantém a unidade do GHI.
+
+79
+00:05:48,000 --> 00:05:51,326
+Em cada instante, tomamos a distância
+
+80
+00:05:51,326 --> 00:05:56,000
+entre previsão e referência, sem
+considerar o sinal.
+
+81
+00:05:56,000 --> 00:06:01,000
+Neste exemplo, cinco distâncias são
+reunidas para calcular a média.
+
+82
+00:06:01,000 --> 00:06:07,000
+A média deste exemplo é vinte e oito watts
+por metro quadrado.
+
+83
+00:06:07,000 --> 00:06:10,431
+Primeiro calculamos o erro de cada
+
+84
+00:06:10,431 --> 00:06:18,000
+localidade. Depois, as dez localidades
+recebem o mesmo peso na macro média.
+
+85
+00:06:18,000 --> 00:06:21,670
+Nos horizontes cumulativos, entram todos
+
+86
+00:06:21,670 --> 00:06:28,000
+os passos até o limite. Em 72 horas, o
+erro reúne três dias inteiros.
+
+87
+00:06:28,000 --> 00:06:35,000
+Compare os modelos dentro de cada tarefa:
+escalas e alvos são diferentes.
+
+88
+00:06:35,000 --> 00:06:44,000
+No horário, o Transformer teve o menor
+macro-MAE: 53,21 watts por metro quadrado.
+
+89
+00:06:44,000 --> 00:06:47,200
+A vantagem sobre a LSTM foi de
+
+90
+00:06:47,200 --> 00:06:52,000
+aproximadamente 0,32 watt por metro
+quadrado.
+
+91
+00:06:52,000 --> 00:07:00,000
+Na diária, o Transformer liderou: 43,89
+watts por metro quadrado de macro-MAE.
+
+92
+00:07:00,000 --> 00:07:02,400
+A diferença para a LSTM foi de
+
+93
+00:07:02,400 --> 00:07:08,000
+aproximadamente 0,30 watt por metro
+quadrado. Os valores são próximos.
+
+94
+00:07:08,000 --> 00:07:16,000
+No mensal de um passo, o Informer liderou:
+12,73 watts por metro quadrado.
+
+95
+00:07:16,000 --> 00:07:18,600
+Os três modelos são comparados na mesma
+
+96
+00:07:18,600 --> 00:07:22,000
+tarefa, com as condições selecionadas para
+cada um.
+
+97
+00:07:22,000 --> 00:07:25,250
+Em seis meses, o Informer liderou: erro
+
+98
+00:07:25,250 --> 00:07:29,000
+cumulativo de 13,67 watts por metro
+quadrado.
+
+99
+00:07:29,000 --> 00:07:31,785
+Essa rede é diferente da mensal de um
+
+100
+00:07:31,785 --> 00:07:36,000
+passo. O resultado de seis meses permanece
+exploratório.
+
+101
+00:07:36,000 --> 00:07:42,000
+A liderança varia entre localidades. As
+cores indicam o menor MAE em cada região.
+
+102
+00:07:42,000 --> 00:07:44,733
+Nos dois mensais, o Informer lidera cinco
+
+103
+00:07:44,733 --> 00:07:48,000
+localidades, mas as localidades vencedoras
+mudam.
+
+104
+00:07:48,000 --> 00:07:50,786
+Na diária, a LSTM liderou os horizontes
+
+105
+00:07:50,786 --> 00:07:56,000
+menores, até 14 dias. Em 30 dias, o
+Transformer apresentou a menor média.
+
+106
+00:07:56,000 --> 00:07:59,949
+A quantização não teve vantagem universal:
+
+107
+00:07:59,949 --> 00:08:07,000
+cinco combinações melhoraram, quatro
+pioraram e três mantiveram o controle.
+
+108
+00:08:07,000 --> 00:08:11,330
+Em uma análise histórica separada, os dois
+
+109
+00:08:11,330 --> 00:08:17,000
+históricos usaram os mesmos alvos e datas
+de avaliação.
+
+110
+00:08:17,000 --> 00:08:21,100
+O histórico longo teve menor erro em onze
+
+111
+00:08:21,100 --> 00:08:27,000
+dos doze controles contínuos. A exceção
+foi a LSTM horária.
+
+112
+00:08:27,000 --> 00:08:33,000
+Essa associação não isola uma causa: os
+anos e a normalização também mudaram.
+
+113
+00:08:33,000 --> 00:08:35,615
+Os resultados são descritivos, sem
+
+114
+00:08:35,615 --> 00:08:41,000
+significância estatística demonstrada. O
+horário utilizou uma semente.
+
+115
+00:08:41,000 --> 00:08:43,800
+A tarefa de seis meses tem apenas sete
+
+116
+00:08:43,800 --> 00:08:48,000
+origens de teste por localidade e
+permanece exploratória.
+
+117
+00:08:48,000 --> 00:08:50,887
+Há alvos compartilhados entre janelas. A
+
+118
+00:08:50,887 --> 00:08:55,000
+generalização para localidades inéditas
+não foi avaliada.
+
+119
+00:08:55,000 --> 00:08:58,154
+No conjunto avaliado, Transformer liderou
+
+120
+00:08:58,154 --> 00:09:03,000
+os horizontes completos horário e diário;
+Informer, os mensais.
+
+121
+00:09:03,000 --> 00:09:10,000
+Portanto, a escolha depende da tarefa,
+dentro dos limites deste estudo.

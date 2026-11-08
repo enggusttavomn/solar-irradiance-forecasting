@@ -1,0 +1,21 @@
+﻿[Script Info]
+Title: EA019 scientific animation - deterministic text overlay
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI,44,&H00FBF6F3,&H00FFFFFF,&H80000000,&H80000000,0,0,0,0,100,100,0,0,3,12,0,2,110,110,80,1
+Style: Header,Segoe UI,58,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,-1,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Eyebrow,Segoe UI,24,&H00EDDD67,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,1.4,0,1,0.5,0,7,0,0,0,1
+Style: Text,Segoe UI,40,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Small,Segoe UI,26,&H00C9B9AA,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.5,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 10,0:00:00.55,0:00:06.38,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Aqui, a referência é seiscentos e a\Nprevisão, seiscentos e cinquenta. A
+Dialogue: 10,0:00:06.38,0:00:08.16,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}distância é cinquenta, sem considerar o\Nsinal.

@@ -1,0 +1,635 @@
+Figura 1 — Distribuição geográfica e contexto climático das dez localidades
+Página(s) do PDF: 9
+
+TRECHOS PARA CONSULTA. Use os arquivos completos em originais/ para edição.
+Os números à esquerda são as linhas originais; este TXT não é executável.
+
+shutil.copy2(...)
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py
+Linhas: 168–168
+
+ 168 | shutil.copy2(ROOT/'artigos/revista_unificado/figures/mapa_contexto_geografico.png',OUT/'11_mapa.png')
+
+Gerador geográfico associado: Matplotlib, Rasterio e classes Köppen–Geiger.
+Arquivo original: codigo_fonte/coleta_e_preparacao/contexto_geografico.py
+Linhas: 496–751
+
+ 496 | def gerar_mapa_contexto(
+ 497 |     tabela: pd.DataFrame,
+ 498 |     diretorio_koppen: str | Path = DIRETORIO_KOPPEN_PADRAO,
+ 499 |     caminho_png: str | Path = MAPA_PNG_PADRAO,
+ 500 |     caminho_pdf: str | Path = MAPA_PDF_PADRAO,
+ 501 |     dpi: int = 300,
+ 502 | ) -> tuple[Path, Path]:
+ 503 |     """Gera mapa das Américas, painel dos EUA e detalhe Ford/GM."""
+ 504 | 
+ 505 |     if dpi < 72:
+ 506 |         raise ValueError("DPI deve ser pelo menos 72.")
+ 507 |     validar_tabela_contexto(tabela)
+ 508 |     arquivos = resolver_arquivos_koppen(diretorio_koppen)
+ 509 |     classes = carregar_legenda_koppen(arquivos.legenda)
+ 510 | 
+ 511 |     import matplotlib
+ 512 | 
+ 513 |     matplotlib.use("Agg", force=True)
+ 514 |     import matplotlib.pyplot as plt
+ 515 |     from matplotlib.colors import BoundaryNorm, ListedColormap
+ 516 |     from matplotlib.patches import Patch
+ 517 | 
+ 518 |     cores = ["#dceef8"] + [
+ 519 |         tuple(canal / 255 for canal in classes[i].rgb) for i in range(1, 31)
+ 520 |     ]
+ 521 |     cmap = ListedColormap(cores, name="koppen_geiger_beck_2018")
+ 522 |     cmap.set_bad("#dceef8")
+ 523 |     norm = BoundaryNorm(np.arange(-0.5, 31.5, 1), cmap.N)
+ 524 | 
+ 525 |     tabela_ordenada = tabela.sort_values("ordem").copy()
+ 526 |     fig = plt.figure(figsize=(10, 6.7))
+ 527 |     grade = fig.add_gridspec(
+ 528 |         2,
+ 529 |         2,
+ 530 |         width_ratios=(2.7, 1.3),
+ 531 |         height_ratios=(1.0, 1.3),
+ 532 |     )
+ 533 |     ax_mundo = fig.add_subplot(grade[:, 0])
+ 534 |     ax_eua = fig.add_subplot(grade[0, 1])
+ 535 |     ax_detroit = fig.add_subplot(grade[1, 1])
+ 536 | 
+ 537 |     with rasterio.open(arquivos.fundo_05grau) as fundo:
+ 538 |         if fundo.crs != rasterio.CRS.from_epsg(4326):
+ 539 |             raise ValueError("Raster cartográfico de fundo deve usar EPSG:4326.")
+ 540 |         for eixo in (ax_mundo, ax_eua, ax_detroit):
+ 541 |             _desenhar_fundo(eixo, fundo, cmap, norm)
+ 542 | 
+ 543 |     def configurar(eixo, xlim, ylim, titulo):
+ 544 |         eixo.set_xlim(*xlim)
+ 545 |         eixo.set_ylim(*ylim)
+ 546 |         eixo.set_title(titulo, loc="left", fontsize=12, fontweight="bold")
+ 547 |         eixo.set_xlabel("Longitude (°)", fontsize=10)
+ 548 |         eixo.set_ylabel("Latitude (°)", fontsize=10)
+ 549 |         eixo.grid(
+ 550 |             color="white",
+ 551 |             alpha=0.55,
+ 552 |             linewidth=0.45,
+ 553 |             linestyle=":",
+ 554 |             zorder=1,
+ 555 |         )
+ 556 | 
+ 557 |     configurar(ax_mundo, (-130, -30), (-35, 55), "(a) Americas context")
+ 558 |     configurar(
+ 559 |         ax_eua,
+ 560 |         (-126, -79),
+ 561 |         (24, 47),
+ 562 |         "(b) United States",
+ 563 |     )
+ 564 |     configurar(
+ 565 |         ax_detroit,
+ 566 |         (-83.28, -82.92),
+ 567 |         (42.22, 42.47),
+ 568 |         "(c) Detroit: Ford and GM",
+ 569 |     )
+ 570 | 
+ 571 |     for _, registro in tabela_ordenada.iterrows():
+ 572 |         ordem = int(registro["ordem"])
+ 573 |         longitude = float(registro["longitude"])
+ 574 |         latitude = float(registro["latitude"])
+ 575 |         classe_id = int(registro["classe_id"])
+ 576 |         cor = classes[classe_id].cor_hex
+ 577 |         ax_mundo.scatter(
+ 578 |             longitude,
+ 579 |             latitude,
+ 580 |             s=95,
+ 581 |             c=cor,
+ 582 |             edgecolors="black",
+ 583 |             linewidths=1.0,
+ 584 |             zorder=4,
+ 585 |         )
+ 586 |         ax_mundo.annotate(
+ 587 |             str(ordem),
+ 588 |             (longitude, latitude),
+ 589 |             ha="center",
+ 590 |             va="center",
+ 591 |             fontsize=9,
+ 592 |             fontweight="bold",
+ 593 |             color="black",
+ 594 |             zorder=5,
+ 595 |         )
+ 596 | 
+ 597 |     tabela_eua = tabela_ordenada[tabela_ordenada["pais"].eq("EUA")]
+ 598 |     deslocamentos = {
+ 599 |         "Tesla Gigafactory Nevada": (5, 6),
+ 600 |         "Tesla Gigafactory Texas": (5, -12),
+ 601 |         "Hyundai Metaplant Georgia": (-5, -13),
+ 602 |         "Rivian Normal": (-5, 7),
+ 603 |         "Tesla Fremont Factory": (5, -12),
+ 604 |         "Lucid AMP 1 Casa Grande": (5, 6),
+ 605 |         "GM Factory Zero": (6, 8),
+ 606 |         "Ford Rouge Electric Vehicle Center": (6, -13),
+ 607 |     }
+ 608 |     for _, registro in tabela_eua.iterrows():
+ 609 |         nome = str(registro["localidade"])
+ 610 |         longitude = float(registro["longitude"])
+ 611 |         latitude = float(registro["latitude"])
+ 612 |         classe_id = int(registro["classe_id"])
+ 613 |         ax_eua.scatter(
+ 614 |             longitude,
+ 615 |             latitude,
+ 616 |             s=72,
+ 617 |             c=classes[classe_id].cor_hex,
+ 618 |             edgecolors="black",
+ 619 |             linewidths=0.9,
+ 620 |             zorder=4,
+ 621 |         )
+ 622 |         dx, dy = deslocamentos.get(nome, (5, 5))
+ 623 |         ax_eua.annotate(
+ 624 |             str(int(registro["ordem"])),
+ 625 |             (longitude, latitude),
+ 626 |             xytext=(dx, dy),
+ 627 |             textcoords="offset points",
+ 628 |             fontsize=9,
+ 629 |             fontweight="bold",
+ 630 |             arrowprops={"arrowstyle": "-", "lw": 0.5, "color": "#333333"},
+ 631 |             zorder=5,
+ 632 |         )
+ 633 | 
+ 634 |     tabela_detroit = tabela_ordenada[
+ 635 |         tabela_ordenada["localidade"].isin(
+ 636 |             ["GM Factory Zero", "Ford Rouge Electric Vehicle Center"]
+ 637 |         )
+ 638 |     ]
+ 639 |     rotulos_detroit = {
+ 640 |         "GM Factory Zero": ("GM Factory Zero", (-8, 8), "right"),
+ 641 |         "Ford Rouge Electric Vehicle Center": (
+ 642 |             "Ford Rouge EV Center",
+ 643 |             (10, -15),
+ 644 |             "left",
+ 645 |         ),
+ 646 |     }
+ 647 |     for _, registro in tabela_detroit.iterrows():
+ 648 |         nome = str(registro["localidade"])
+ 649 |         longitude = float(registro["longitude"])
+ 650 |         latitude = float(registro["latitude"])
+ 651 |         classe_id = int(registro["classe_id"])
+ 652 |         rotulo, deslocamento, alinhamento_horizontal = rotulos_detroit[nome]
+ 653 |         ax_detroit.scatter(
+ 654 |             longitude,
+ 655 |             latitude,
+ 656 |             s=95,
+ 657 |             c=classes[classe_id].cor_hex,
+ 658 |             edgecolors="black",
+ 659 |             linewidths=1.0,
+ 660 |             zorder=4,
+ 661 |         )
+ 662 |         ax_detroit.annotate(
+ 663 |             rotulo,
+ 664 |             (longitude, latitude),
+ 665 |             xytext=deslocamento,
+ 666 |             textcoords="offset points",
+ 667 |             fontsize=9,
+ 668 |             ha=alinhamento_horizontal,
+ 669 |             va="center",
+ 670 |             arrowprops={"arrowstyle": "-", "lw": 0.7, "color": "#333333"},
+ 671 |             zorder=5,
+ 672 |         )
+ 673 | 
+ 674 |     classes_presentes = sorted(
+ 675 |         {int(valor) for valor in tabela_ordenada["classe_id"]}
+ 676 |     )
+ 677 |     legenda_classes = [
+ 678 |         Patch(
+ 679 |             facecolor=classes[classe_id].cor_hex,
+ 680 |             edgecolor="black",
+ 681 |             label=classes[classe_id].codigo,
+ 682 |         )
+ 683 |         for classe_id in classes_presentes
+ 684 |     ]
+ 685 |     fig.legend(
+ 686 |         handles=legenda_classes,
+ 687 |         title="Köppen–Geiger classes at study sites",
+ 688 |         loc="lower center",
+ 689 |         bbox_to_anchor=(0.5, 0.02),
+ 690 |         ncol=len(legenda_classes),
+ 691 |         fontsize=8.5,
+ 692 |         title_fontsize=8.5,
+ 693 |         columnspacing=1.0,
+ 694 |         handlelength=1.4,
+ 695 |         handletextpad=0.45,
+ 696 |         borderaxespad=0.0,
+ 697 |         frameon=False,
+ 698 |     )
+ 699 |     # Mapas com aspecto igual encolhem dentro da celula: alinhar (b) ao topo e
+ 700 |     # (c) a base do painel (a) evita um vazio solto entre os dois detalhes.
+ 701 |     ax_eua.set_anchor("NW")
+ 702 |     ax_detroit.set_anchor("SW")
+ 703 |     fig.subplots_adjust(
+ 704 |         left=0.075,
+ 705 |         right=0.985,
+ 706 |         top=0.955,
+ 707 |         bottom=0.14,
+ 708 |         wspace=0.30,
+ 709 |         hspace=0.30,
+ 710 |     )
+ 711 | 
+ 712 |     destino_png = Path(caminho_png)
+ 713 |     destino_pdf = Path(caminho_pdf)
+ 714 |     destino_png.parent.mkdir(parents=True, exist_ok=True)
+ 715 |     destino_pdf.parent.mkdir(parents=True, exist_ok=True)
+ 716 |     titulo = "Köppen–Geiger climate context of the study locations"
+ 717 |     fig.savefig(
+ 718 |         destino_png,
+ 719 |         dpi=dpi,
+ 720 |         facecolor="white",
+ 721 |         metadata={
+ 722 |             "Title": titulo,
+ 723 |             "Author": "TCC GHI project",
+ 724 |             "Description": (
+ 725 |                 f"Original map generated from {VERSAO_PRODUTO}; {FONTE_URL}"
+ 726 |             ),
+ 727 |             "Software": "Matplotlib and Rasterio",
+ 728 |         },
+ 729 |     )
+ 730 |     fig.savefig(
+ 731 |         destino_pdf,
+ 732 |         facecolor="white",
+ 733 |         metadata={
+ 734 |             "Title": titulo,
+ 735 |             "Author": "TCC GHI project",
+ 736 |             "Subject": (
+ 737 |                 f"Original map generated from {VERSAO_PRODUTO}; {FONTE_URL}"
+ 738 |             ),
+ 739 |             "Keywords": "Koppen-Geiger, climate, GHI, factories",
+ 740 |             "Creator": "Matplotlib and Rasterio",
+ 741 |             "CreationDate": None,
+ 742 |             "ModDate": None,
+ 743 |         },
+ 744 |     )
+ 745 |     plt.close(fig)
+ 746 | 
+ 747 |     if not destino_png.is_file() or destino_png.stat().st_size == 0:
+ 748 |         raise RuntimeError("Falha ao gerar o mapa PNG.")
+ 749 |     if not destino_pdf.is_file() or destino_pdf.stat().st_size == 0:
+ 750 |         raise RuntimeError("Falha ao gerar o mapa PDF.")
+ 751 |     return destino_png, destino_pdf
+
+Amostra os rasters nas coordenadas canônicas.
+Arquivo original: codigo_fonte/coleta_e_preparacao/contexto_geografico.py
+Linhas: 277–414
+
+ 277 | def construir_contexto_geografico(
+ 278 |     diretorio_koppen: str | Path = DIRETORIO_KOPPEN_PADRAO,
+ 279 |     localidades: Sequence[Mapping[str, object]] | None = None,
+ 280 | ) -> pd.DataFrame:
+ 281 |     """Amostra classe e confiança presentes de 1 km nas localidades."""
+ 282 | 
+ 283 |     arquivos = resolver_arquivos_koppen(diretorio_koppen)
+ 284 |     classes = carregar_legenda_koppen(arquivos.legenda)
+ 285 |     registros_localidades = list(LOCALIDADES_EV if localidades is None else localidades)
+ 286 |     if not registros_localidades:
+ 287 |         raise ValueError("Ao menos uma localidade é necessária.")
+ 288 | 
+ 289 |     hashes = {
+ 290 |         "md5_raster_classe_1km": md5_arquivo(arquivos.classe_1km),
+ 291 |         "md5_raster_confianca_1km": md5_arquivo(arquivos.confianca_1km),
+ 292 |         "md5_raster_fundo_05grau": md5_arquivo(arquivos.fundo_05grau),
+ 293 |         "md5_legenda": md5_arquivo(arquivos.legenda),
+ 294 |     }
+ 295 | 
+ 296 |     linhas: list[dict[str, object]] = []
+ 297 |     with rasterio.open(arquivos.classe_1km) as classe_ds, rasterio.open(
+ 298 |         arquivos.confianca_1km
+ 299 |     ) as confianca_ds:
+ 300 |         _validar_par_rasters(classe_ds, confianca_ds)
+ 301 |         resolucao_lon, resolucao_lat = classe_ds.res
+ 302 |         software_raster = classe_ds.tags().get("TIFFTAG_SOFTWARE", "")
+ 303 | 
+ 304 |         for ordem, localidade in enumerate(registros_localidades, start=1):
+ 305 |             _validar_localidade(localidade)
+ 306 |             latitude = float(localidade["lat"])
+ 307 |             longitude = float(localidade["lon"])
+ 308 |             (
+ 309 |                 classe_id,
+ 310 |                 linha_pixel,
+ 311 |                 coluna_pixel,
+ 312 |                 centro_lon,
+ 313 |                 centro_lat,
+ 314 |             ) = _amostrar_pixel(classe_ds, longitude, latitude)
+ 315 |             (
+ 316 |                 confianca_pct,
+ 317 |                 linha_confianca,
+ 318 |                 coluna_confianca,
+ 319 |                 _,
+ 320 |                 _,
+ 321 |             ) = _amostrar_pixel(confianca_ds, longitude, latitude)
+ 322 |             if (linha_pixel, coluna_pixel) != (
+ 323 |                 linha_confianca,
+ 324 |                 coluna_confianca,
+ 325 |             ):
+ 326 |                 raise ValueError("Classe e confiança foram amostradas em pixels distintos.")
+ 327 |             if classe_id not in classes:
+ 328 |                 raise ValueError(
+ 329 |                     f"Classe {classe_id} sem legenda em {localidade['nome']}."
+ 330 |                 )
+ 331 |             if not 0 <= confianca_pct <= 100:
+ 332 |                 raise ValueError(
+ 333 |                     f"Confiança fora de 0--100 em {localidade['nome']}: "
+ 334 |                     f"{confianca_pct}."
+ 335 |                 )
+ 336 | 
+ 337 |             classe = classes[classe_id]
+ 338 |             principal, precipitacao, temperatura = decompor_codigo_koppen(
+ 339 |                 classe.codigo
+ 340 |             )
+ 341 |             descricao_pt = "; ".join(
+ 342 |                 parte
+ 343 |                 for parte in (principal, precipitacao, temperatura)
+ 344 |                 if parte != "não se aplica"
+ 345 |             )
+ 346 |             distancia_centro = distancia_haversine_km(
+ 347 |                 latitude,
+ 348 |                 longitude,
+ 349 |                 centro_lat,
+ 350 |                 centro_lon,
+ 351 |             )
+ 352 | 
+ 353 |             linha = {
+ 354 |                 "ordem": ordem,
+ 355 |                 "localidade": str(localidade["nome"]),
+ 356 |                 "pais": str(localidade["pais"]),
+ 357 |                 "latitude": latitude,
+ 358 |                 "longitude": longitude,
+ 359 |                 "endereco_localidade": str(localidade["endereco"]),
+ 360 |                 "fonte_localidade": str(localidade["fonte_localidade"]),
+ 361 |                 "fonte_coordenadas": str(localidade["fonte_coordenadas"]),
+ 362 |                 "osm_elemento": str(localidade["osm_elemento"]),
+ 363 |                 "metodo_coordenadas": str(localidade["metodo_coordenadas"]),
+ 364 |                 "classe_id": classe.identificador,
+ 365 |                 "classe_codigo": classe.codigo,
+ 366 |                 "classe_descricao_fonte": classe.descricao_fonte,
+ 367 |                 "classe_descricao_pt": descricao_pt,
+ 368 |                 "clima_principal": principal,
+ 369 |                 "criterio_precipitacao": precipitacao,
+ 370 |                 "criterio_temperatura": temperatura,
+ 371 |                 "classe_cor_rgb": ",".join(str(canal) for canal in classe.rgb),
+ 372 |                 "classe_cor_hex": classe.cor_hex,
+ 373 |                 "confianca_pct": confianca_pct,
+ 374 |                 "confianca_interpretacao": (
+ 375 |                     "valor percentual fornecido pelo raster de confiança"
+ 376 |                 ),
+ 377 |                 "pixel_linha": linha_pixel,
+ 378 |                 "pixel_coluna": coluna_pixel,
+ 379 |                 "pixel_centro_latitude": centro_lat,
+ 380 |                 "pixel_centro_longitude": centro_lon,
+ 381 |                 "distancia_ponto_centro_pixel_km": distancia_centro,
+ 382 |                 "metodo_amostragem": (
+ 383 |                     "célula raster que contém o ponto WGS84; sem interpolação"
+ 384 |                 ),
+ 385 |                 "crs": classe_ds.crs.to_string(),
+ 386 |                 "resolucao_longitude_graus": float(resolucao_lon),
+ 387 |                 "resolucao_latitude_graus": float(resolucao_lat),
+ 388 |                 "resolucao_nominal": "1 km",
+ 389 |                 "versao_produto": VERSAO_PRODUTO,
+ 390 |                 "cenario_produto": CENARIO_PRODUTO,
+ 391 |                 "arquivo_raster_classe_1km": _caminho_auditavel(
+ 392 |                     arquivos.classe_1km
+ 393 |                 ),
+ 394 |                 "arquivo_raster_confianca_1km": _caminho_auditavel(
+ 395 |                     arquivos.confianca_1km
+ 396 |                 ),
+ 397 |                 "arquivo_raster_fundo_05grau": _caminho_auditavel(
+ 398 |                     arquivos.fundo_05grau
+ 399 |                 ),
+ 400 |                 "arquivo_legenda": _caminho_auditavel(arquivos.legenda),
+ 401 |                 "software_criacao_raster": software_raster,
+ 402 |                 "fonte_autores": FONTE_AUTORES,
+ 403 |                 "fonte_titulo": FONTE_TITULO,
+ 404 |                 "fonte_periodico": FONTE_PERIODICO,
+ 405 |                 "fonte_ano": FONTE_ANO,
+ 406 |                 "fonte_doi": FONTE_DOI,
+ 407 |                 "fonte_url": FONTE_URL,
+ 408 |                 **hashes,
+ 409 |             }
+ 410 |             linhas.append(linha)
+ 411 | 
+ 412 |     tabela = pd.DataFrame(linhas)
+ 413 |     validar_tabela_contexto(tabela)
+ 414 |     return tabela
+
+Encadeia a construção da tabela, CSV e mapas.
+Arquivo original: codigo_fonte/coleta_e_preparacao/contexto_geografico.py
+Linhas: 754–773
+
+ 754 | def gerar_artefatos_contexto(
+ 755 |     diretorio_koppen: str | Path = DIRETORIO_KOPPEN_PADRAO,
+ 756 |     caminho_csv: str | Path = CSV_CONTEXTO_PADRAO,
+ 757 |     caminho_png: str | Path = MAPA_PNG_PADRAO,
+ 758 |     caminho_pdf: str | Path = MAPA_PDF_PADRAO,
+ 759 |     dpi: int = 300,
+ 760 | ) -> tuple[pd.DataFrame, tuple[Path, Path]]:
+ 761 |     """Executa a tabela auditável e os dois formatos do mapa."""
+ 762 | 
+ 763 |     tabela = construir_contexto_geografico(diretorio_koppen=diretorio_koppen)
+ 764 |     salvar_contexto_csv(tabela, caminho_csv)
+ 765 |     mapas = gerar_mapa_contexto(
+ 766 |         tabela,
+ 767 |         diretorio_koppen=diretorio_koppen,
+ 768 |         caminho_png=caminho_png,
+ 769 |         caminho_pdf=caminho_pdf,
+ 770 |         dpi=dpi,
+ 771 |     )
+ 772 |     return tabela, mapas
+ 773 | 
+
+Cadastro canônico das dez fábricas e proveniência das coordenadas.
+Arquivo original: codigo_fonte/coleta_e_preparacao/localidades.py
+Linhas: 1–190
+
+   1 | """Cadastro auditavel das localidades usadas no estudo.
+   2 | 
+   3 | Cada item identifica uma fabrica e registra de onde vieram o endereco e as
+   4 | coordenadas. O cadastro e separado dos scripts para que coleta, validacao,
+   5 | notebooks e testes utilizem exatamente os mesmos pontos geograficos.
+   6 | """
+   7 | 
+   8 | from __future__ import annotations
+   9 | 
+  10 | import math
+  11 | 
+  12 | import pandas as pd
+  13 | 
+  14 | 
+  15 | # Texto comum gravado nos CSVs para documentar como os pontos foram obtidos.
+  16 | METODO_COORDENADAS = (
+  17 |     "Centroide do elemento da fabrica no OpenStreetMap/Nominatim, "
+  18 |     "validado contra fonte oficial da empresa em 2026-06-06"
+  19 | )
+  20 | 
+  21 | # Lista de dicionarios: um dicionario representa uma localidade independente.
+  22 | # As URLs sao parte da proveniencia e nao sao usadas como entrada dos modelos.
+  23 | LOCALIDADES_EV = [
+  24 |     {
+  25 |         "nome": "BYD Camacari",
+  26 |         "pais": "Brasil",
+  27 |         "lat": -12.6733774,
+  28 |         "lon": -38.2812339,
+  29 |         "endereco": "Avenida Henry Ford, Polo Industrial, Camacari, Bahia, Brasil",
+  30 |         "fonte_localidade": (
+  31 |             "https://www.byd.com/br/noticias-byd-brasil/"
+  32 |             "byd-retoma-producao-em-camacari-e-chega-a-quase-20-mil-veiculos-.html"
+  33 |         ),
+  34 |         "fonte_coordenadas": "https://www.openstreetmap.org/way/319513382",
+  35 |         "osm_elemento": "way/319513382",
+  36 |     },
+  37 |     {
+  38 |         "nome": "Tesla Gigafactory Nevada",
+  39 |         "pais": "EUA",
+  40 |         "lat": 39.5403926,
+  41 |         "lon": -119.4390524,
+  42 |         "endereco": "1 Electric Avenue, Storey County, Nevada 89437, EUA",
+  43 |         "fonte_localidade": "https://www.tesla.com/contact",
+  44 |         "fonte_coordenadas": "https://www.openstreetmap.org/way/422015619",
+  45 |         "osm_elemento": "way/422015619",
+  46 |     },
+  47 |     {
+  48 |         "nome": "Tesla Gigafactory Texas",
+  49 |         "pais": "EUA",
+  50 |         "lat": 30.2219321,
+  51 |         "lon": -97.6187733,
+  52 |         "endereco": "1 Tesla Road, Austin, Texas 78725, EUA",
+  53 |         "fonte_localidade": "https://www.tesla.com/giga-texas",
+  54 |         "fonte_coordenadas": "https://www.openstreetmap.org/way/990257143",
+  55 |         "osm_elemento": "way/990257143",
+  56 |     },
+  57 |     {
+  58 |         "nome": "Hyundai Metaplant Georgia",
+  59 |         "pais": "EUA",
+  60 |         "lat": 32.1605262,
+  61 |         "lon": -81.4509985,
+  62 |         "endereco": "1500 Genesis Drive, Ellabell, Georgia 31308, EUA",
+  63 |         "fonte_localidade": (
+  64 |             "https://www.hyundaimotorgroup.com/en/news/CONT0000000000173041"
+  65 |         ),
+  66 |         "fonte_coordenadas": "https://www.openstreetmap.org/way/1207640268",
+  67 |         "osm_elemento": "way/1207640268",
+  68 |     },
+  69 |     {
+  70 |         "nome": "Rivian Normal",
+  71 |         "pais": "EUA",
+  72 |         "lat": 40.5092914,
+  73 |         "lon": -89.0545444,
+  74 |         "endereco": "100 Rivian Motorway, Normal, Illinois 61761, EUA",
+  75 |         "fonte_localidade": "https://stories.rivian.com/r2-expansion-03-2025",
+  76 |         "fonte_coordenadas": "https://www.openstreetmap.org/way/438033786",
+  77 |         "osm_elemento": "way/438033786",
+  78 |     },
+  79 |     {
+  80 |         "nome": "Tesla Fremont Factory",
+  81 |         "pais": "EUA",
+  82 |         "lat": 37.4926897,
+  83 |         "lon": -121.9415083,
+  84 |         "endereco": "45500 Fremont Boulevard, Fremont, California 94538, EUA",
+  85 |         "fonte_localidade": "https://www.tesla.com/contact",
+  86 |         "fonte_coordenadas": "https://www.openstreetmap.org/way/38080584",
+  87 |         "osm_elemento": "way/38080584",
+  88 |     },
+  89 |     {
+  90 |         "nome": "Lucid AMP 1 Casa Grande",
+  91 |         "pais": "EUA",
+  92 |         "lat": 32.8568519,
+  93 |         "lon": -111.7784376,
+  94 |         "endereco": "317 S. Thornton Road, Casa Grande, Arizona 85193, EUA",
+  95 |         "fonte_localidade": (
+  96 |             "https://ir.lucidmotors.com/news-releases/news-release-details/"
+  97 |             "lucid-starts-production-groundbreaking-lucid-air-arizona/"
+  98 |         ),
+  99 |         "fonte_coordenadas": "https://www.openstreetmap.org/way/1254715766",
+ 100 |         "osm_elemento": "way/1254715766",
+ 101 |     },
+ 102 |     {
+ 103 |         "nome": "GM Factory Zero",
+ 104 |         "pais": "EUA",
+ 105 |         "lat": 42.3815123,
+ 106 |         "lon": -83.0453415,
+ 107 |         "endereco": "2500 East Grand Boulevard, Detroit, Michigan 48211, EUA",
+ 108 |         "fonte_localidade": "https://www.gm.com/company/facilities/factory-zero",
+ 109 |         "fonte_coordenadas": "https://www.openstreetmap.org/way/554307172",
+ 110 |         "osm_elemento": "way/554307172",
+ 111 |     },
+ 112 |     {
+ 113 |         "nome": "Ford Rouge Electric Vehicle Center",
+ 114 |         "pais": "EUA",
+ 115 |         "lat": 42.3056229,
+ 116 |         "lon": -83.1676332,
+ 117 |         "endereco": "Ford River Rouge Complex, Dearborn, Michigan 48120, EUA",
+ 118 |         "fonte_localidade": (
+ 119 |             "https://corporate.ford.com/corporate/articles/products/f-150-lightning"
+ 120 |         ),
+ 121 |         "fonte_coordenadas": "https://www.openstreetmap.org/way/496054397",
+ 122 |         "osm_elemento": "way/496054397",
+ 123 |     },
+ 124 |     {
+ 125 |         "nome": "BMW San Luis Potosi",
+ 126 |         "pais": "Mexico",
+ 127 |         "lat": 21.9682649,
+ 128 |         "lon": -100.8491733,
+ 129 |         "endereco": (
+ 130 |             "Boulevard BMW 655, Parque Industrial Desarrollo Logistik II, "
+ 131 |             "Villa de Reyes, San Luis Potosi 79526, Mexico"
+ 132 |         ),
+ 133 |         "fonte_localidade": (
+ 134 |             "https://www.bmwgroup-werke.com/san-luis-potosi/en/contact.html"
+ 135 |         ),
+ 136 |         "fonte_coordenadas": "https://www.openstreetmap.org/way/553644102",
+ 137 |         "osm_elemento": "way/553644102",
+ 138 |     },
+ 139 | ]
+ 140 | 
+ 141 | # Evita repetir o mesmo texto em todos os dez dicionarios acima.
+ 142 | for localidade in LOCALIDADES_EV:
+ 143 |     localidade["metodo_coordenadas"] = METODO_COORDENADAS
+ 144 | 
+ 145 | 
+ 146 | def distancia_haversine_km(
+ 147 |     lat1: float,
+ 148 |     lon1: float,
+ 149 |     lat2: float,
+ 150 |     lon2: float,
+ 151 | ) -> float:
+ 152 |     """Calcula a distancia de grande circulo entre dois pontos.
+ 153 | 
+ 154 |     A formula de Haversine considera a curvatura da Terra. Ela e usada para
+ 155 |     confirmar que o ponto de grade retornado pelo NSRDB esta proximo da fabrica.
+ 156 |     """
+ 157 |     # Raio medio da Terra recomendado pela International Union of Geodesy.
+ 158 |     raio_terra_km = 6371.0088
+ 159 | 
+ 160 |     # Funcoes trigonometricas de ``math`` trabalham com radianos.
+ 161 |     phi1 = math.radians(lat1)
+ 162 |     phi2 = math.radians(lat2)
+ 163 |     delta_phi = math.radians(lat2 - lat1)
+ 164 |     delta_lambda = math.radians(lon2 - lon1)
+ 165 |     # Termo intermediario da formula de Haversine.
+ 166 |     a = (
+ 167 |         math.sin(delta_phi / 2) ** 2
+ 168 |         + math.cos(phi1) * math.cos(phi2) * math.sin(delta_lambda / 2) ** 2
+ 169 |     )
+ 170 |     # O arco angular e convertido em distancia ao multiplicar pelo raio.
+ 171 |     return 2 * raio_terra_km * math.asin(math.sqrt(a))
+ 172 | 
+ 173 | 
+ 174 | def dataframe_localidades() -> pd.DataFrame:
+ 175 |     """Retorna uma copia tabular sem expor a lista global a alteracoes."""
+ 176 |     return pd.DataFrame(LOCALIDADES_EV).copy()
+ 177 | 
+ 178 | 
+ 179 | # Interface publica deste modulo.
+ 180 | __all__ = [
+ 181 |     "LOCALIDADES_EV",
+ 182 |     "METODO_COORDENADAS",
+ 183 |     "dataframe_localidades",
+ 184 |     "distancia_haversine_km",
+ 185 | ]
+ 186 | 
+ 187 | 
+ 188 | LOCALIDADES = LOCALIDADES_EV
+ 189 | listar_localidades = dataframe_localidades
+ 190 | 

@@ -1,0 +1,52 @@
+{
+  "name": "ea019-github-sync",
+  "displayName": "EA019: GitHub ao salvar",
+  "description": "Envia alteracoes do EA019 ao GitHub ao salvar no VS Code, sem monitor externo.",
+  "version": "1.0.0",
+  "publisher": "ea019-local",
+  "private": true,
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "extensionKind": ["workspace"],
+  "capabilities": {
+    "untrustedWorkspaces": { "supported": false },
+    "virtualWorkspaces": { "supported": false }
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "ea019GitHubSync.syncNow",
+        "title": "EA019: Enviar alteracoes ao GitHub agora"
+      }
+    ],
+    "configuration": {
+      "title": "EA019: GitHub ao salvar",
+      "properties": {
+        "ea019GitHubSync.enabled": {
+          "type": "boolean", "default": false, "scope": "resource",
+          "description": "Enviar ao GitHub ao salvar arquivos neste projeto pelo VS Code."
+        },
+        "ea019GitHubSync.delaySeconds": {
+          "type": "number", "default": 15, "minimum": 0, "maximum": 3600, "scope": "resource",
+          "description": "Espera apos o ultimo salvamento antes de iniciar o envio."
+        },
+        "ea019GitHubSync.runner": {
+          "type": "string", "default": "codigo_fonte/publicacoes/sincronizar_automaticamente.py", "scope": "resource",
+          "description": "Caminho do sincronizador de um ciclo, relativo a pasta do projeto."
+        },
+        "ea019GitHubSync.pythonPath": {
+          "type": "string", "default": ".venv/Scripts/python.exe", "scope": "resource",
+          "description": "Executavel Python, absoluto ou relativo a pasta do projeto; sem argumentos."
+        },
+        "ea019GitHubSync.gitPath": {
+          "type": "string", "default": "git", "scope": "resource",
+          "description": "Executavel Git, absoluto ou disponivel no PATH; sem argumentos."
+        }
+      }
+    }
+  },
+  "scripts": { "test": "node --test test/extension.test.js" },
+  "license": "UNLICENSED"
+}

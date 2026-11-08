@@ -1,0 +1,58 @@
+{
+  "version": 10,
+  "status": "encoded_pending_manual_visual_review",
+  "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v10\\intro_1080p30_com_audio_v10.mp4",
+  "sha256": "bfb13f7a942aedd1ef3e104d158017572e64eaa99421f9241e654f52b40e8013",
+  "source_path": "C:\\Users\\gusta\\Pictures\\Camera Roll\\WIN_20261104_20_01_05_Pro.mp4",
+  "source_sha256": "d2efee2b2cae4055f0687bb9763936cf93a346660b1532338e96faa85d9d2ba3",
+  "source_original_unmodified": true,
+  "background_path": "documentacao\\relatorio_final_ea019\\video\\abertura_apresentacao_v1\\capa_apresentacao_fundo_v1.png",
+  "background_sha256": "d27cb4d0bae142ad42036e5a36b7db3ef391eb84926e59f3e9e2d668c7d90efd",
+  "duration_seconds": 14.133333333333333,
+  "fps": 30,
+  "frame_count": 424,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "audio": "original recording, 48kHz AAC stereo, padded only to last video frame",
+  "method": "RVM recurrent alpha plus feathered fixed chair polygons; original RGB preserved",
+  "model_url": "https://github.com/PeterL1n/RobustVideoMatting/releases/download/v1.0.0/rvm_mobilenetv3_fp32.onnx",
+  "model_license": "GPL-3.0",
+  "model_sha256": "88d4531297118f595bf2fd60f6f566aec2e559393802d1f436c380f0cbbd2828",
+  "provider": "CPUExecutionProvider",
+  "onnxruntime_version": "1.31.1",
+  "intra_op_threads": 4,
+  "input_resolution": [
+    960,
+    540
+  ],
+  "downsample_ratio": 0.5,
+  "recurrent_states_recycled": true,
+  "roi": [
+    220,
+    90,
+    800,
+    540
+  ],
+  "presenter_region": [
+    1300,
+    600,
+    560,
+    480
+  ],
+  "matte_lossless_path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v10\\intro_matte_960x540_v10.mkv",
+  "qa_frames": [
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0000.png",
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0060.png",
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0120.png",
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0210.png",
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0360.png",
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0420.png"
+  ],
+  "full_decode_errors": 0,
+  "full_decode_frame_count": 424,
+  "cover_pixels_outside_overlay_verified_identical_before_encoding": true,
+  "generative_images_used_in_video": false,
+  "elapsed_seconds": 76.62
+}

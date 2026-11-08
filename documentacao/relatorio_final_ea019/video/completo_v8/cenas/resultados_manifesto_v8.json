@@ -1,0 +1,620 @@
+{
+  "version": 8,
+  "chapter": "resultados",
+  "duration": 88,
+  "duration_seconds": 88,
+  "global_seconds": [
+    388,
+    476
+  ],
+  "qa_times": [
+    3,
+    12,
+    21,
+    29,
+    37,
+    47,
+    61,
+    69.5,
+    72.5,
+    75.5,
+    78.5,
+    85
+  ],
+  "cues": [
+    [
+      0,
+      7,
+      "Compare os modelos dentro de cada tarefa: escalas e alvos são diferentes."
+    ],
+    [
+      7,
+      16,
+      "No horizonte horário completo de 72 horas, o Transformer teve o menor Macro-MAE: 53,21 watts por metro quadrado."
+    ],
+    [
+      16,
+      24,
+      "A vantagem sobre a LSTM foi pequena: cerca de 0,32 watt por metro quadrado, calculada antes do arredondamento."
+    ],
+    [
+      24,
+      32,
+      "Na tarefa diária, até 30 dias, o Transformer também apresentou o menor Macro-MAE: 43,89 watts por metro quadrado."
+    ],
+    [
+      32,
+      40,
+      "A diferença para a LSTM foi de aproximadamente 0,30 watt por metro quadrado. Os valores são próximos."
+    ],
+    [
+      40,
+      48,
+      "No mensal de um passo, o Informer com 128 níveis teve o menor erro: 12,73 watts por metro quadrado."
+    ],
+    [
+      48,
+      54,
+      "Os três modelos são comparados na mesma tarefa, com as condições selecionadas para cada um."
+    ],
+    [
+      54,
+      61,
+      "Na tarefa de seis meses, o Informer Q128 também teve o menor MAE cumulativo: 13,67 watts por metro quadrado."
+    ],
+    [
+      61,
+      68,
+      "Essa rede é diferente da mensal de um passo. O resultado de seis meses permanece exploratório."
+    ],
+    [
+      68,
+      74,
+      "A liderança varia entre localidades. As cores indicam o menor MAE em cada região."
+    ],
+    [
+      74,
+      80,
+      "Nos dois mensais, o Informer lidera cinco localidades, mas as localidades vencedoras mudam."
+    ],
+    [
+      80,
+      88,
+      "Na diária, a LSTM liderou os horizontes menores, até 14 dias. Em 30 dias, o Transformer apresentou a menor média."
+    ]
+  ],
+  "sources": {
+    "audited_json": "documentacao\\relatorio_final_ea019\\video\\completo_v8\\fontes_resultados_v8.json",
+    "audited_json_sha256": "de42f0a99982bca8f029a92f91df7694a3855b1a44614ba6deeb8aa2d7b56494",
+    "primary_csv_extracts": {
+      "selected_macro_all_horizons": "documentacao/relatorio_final_ea019/video/completo_v8/referencias/metricas_selecionadas_teste_2024.csv",
+      "selected_per_locality_full_horizons": "documentacao/relatorio_final_ea019/video/completo_v8/referencias/metricas_locais_selecionadas_teste_2024.csv",
+      "all_conditions_full_horizons": "documentacao/relatorio_final_ea019/video/completo_v8/referencias/mae_todas_condicoes_teste_2024.csv",
+      "paired_history_controls": "documentacao/relatorio_final_ea019/video/completo_v8/referencias/comparacao_historicos_controles.csv"
+    },
+    "report": "documentacao/relatorio_final_ea019/Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.pdf",
+    "map": "codigo_fonte\\video_ea019\\assets\\americas_land.json",
+    "coordinates": "codigo_fonte\\video_ea019\\assets\\localities_report.json"
+  },
+  "selected_results_only": true,
+  "selection_frozen_by_validation_not_reranked_on_test": true,
+  "main_results": [
+    {
+      "task": "hourly_72_extension",
+      "model": "Transformer",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 72,
+      "mae": 53.20606057784014,
+      "mae_display": "53,21",
+      "rmse": 103.71784856106339,
+      "nrmse_ratio": 0.5164360908420276,
+      "r2": 0.8606659219817381,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/sem_quantizacao/metricas_teste.csv",
+      "validation_mae": 54.434666878870885,
+      "epochs_per_seed": {
+        "42": 30
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "hourly_72_extension",
+      "model": "Informer",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 72,
+      "mae": 137.6798450004447,
+      "mae_display": "137,68",
+      "rmse": 245.54686591405007,
+      "nrmse_ratio": 1.185163731967008,
+      "r2": 0.28993091654543396,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/sem_quantizacao/metricas_teste.csv",
+      "validation_mae": 131.08577467063995,
+      "epochs_per_seed": {
+        "42": 4
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "hourly_72_extension",
+      "model": "LSTM",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 72,
+      "mae": 53.52407363312925,
+      "mae_display": "53,52",
+      "rmse": 104.72065279640663,
+      "nrmse_ratio": 0.5223374888236471,
+      "r2": 0.8570514332678547,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/q64/metricas_teste.csv",
+      "validation_mae": 53.49251190119687,
+      "epochs_per_seed": {
+        "42": 23
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "daily_30",
+      "model": "Transformer",
+      "condition": "Q256",
+      "variant": "q256",
+      "horizon": 30,
+      "mae": 43.886935199784816,
+      "mae_display": "43,89",
+      "rmse": 55.119665240795804,
+      "nrmse_ratio": 0.26543865454099447,
+      "r2": 0.5329743982005973,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/q256/metricas_teste.csv",
+      "validation_mae": 44.466835828232036,
+      "epochs_per_seed": {
+        "11": 6,
+        "23": 30,
+        "42": 16,
+        "67": 30,
+        "89": 26
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "daily_30",
+      "model": "Informer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 30,
+      "mae": 45.46025832169786,
+      "mae_display": "45,46",
+      "rmse": 56.75247962030261,
+      "nrmse_ratio": 0.2731912371645903,
+      "r2": 0.5098431531277011,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/informer/q64/metricas_teste.csv",
+      "validation_mae": 45.2267364305841,
+      "epochs_per_seed": {
+        "11": 9,
+        "23": 12,
+        "42": 7,
+        "67": 18,
+        "89": 7
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/informer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "daily_30",
+      "model": "LSTM",
+      "condition": "Controle",
+      "variant": "sem_quantizacao",
+      "horizon": 30,
+      "mae": 44.18417844043798,
+      "mae_display": "44,18",
+      "rmse": 55.72329359839857,
+      "nrmse_ratio": 0.267999602551314,
+      "r2": 0.5281437095698529,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/lstm/sem_quantizacao/metricas_teste.csv",
+      "validation_mae": 45.49056574044416,
+      "epochs_per_seed": {
+        "11": 18,
+        "23": 29,
+        "42": 30,
+        "67": 16,
+        "89": 27
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/lstm/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "monthly_1",
+      "model": "Transformer",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 1,
+      "mae": 13.14665204056439,
+      "mae_display": "13,15",
+      "rmse": 16.53168877221926,
+      "nrmse_ratio": 0.08215119820525492,
+      "r2": 0.8969481695660855,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/transformer/q128/metricas_teste.csv",
+      "validation_mae": 14.983718744656112,
+      "epochs_per_seed": {
+        "11": 114,
+        "23": 103,
+        "42": 56,
+        "67": 122,
+        "89": 113
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/transformer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "monthly_1",
+      "model": "Informer",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 1,
+      "mae": 12.726569676449799,
+      "mae_display": "12,73",
+      "rmse": 16.10845206172568,
+      "nrmse_ratio": 0.07984189535466973,
+      "r2": 0.9070324535233926,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/informer/q128/metricas_teste.csv",
+      "validation_mae": 14.491070466442869,
+      "epochs_per_seed": {
+        "11": 134,
+        "23": 51,
+        "42": 82,
+        "67": 77,
+        "89": 64
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/informer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "monthly_1",
+      "model": "LSTM",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 1,
+      "mae": 14.288273183476639,
+      "mae_display": "14,29",
+      "rmse": 17.458970938618407,
+      "nrmse_ratio": 0.08463845871731587,
+      "r2": 0.8854964548277462,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/lstm/q128/metricas_teste.csv",
+      "validation_mae": 15.58509129820398,
+      "epochs_per_seed": {
+        "11": 60,
+        "23": 93,
+        "42": 100,
+        "67": 92,
+        "89": 68
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/lstm/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "monthly_6",
+      "model": "Transformer",
+      "condition": "Q64",
+      "variant": "q64",
+      "horizon": 6,
+      "mae": 14.396546948646185,
+      "mae_display": "14,40",
+      "rmse": 17.6170381016554,
+      "nrmse_ratio": 0.07622229446861754,
+      "r2": 0.8561637590240526,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/transformer/q64/metricas_teste.csv",
+      "validation_mae": 16.609786388151733,
+      "epochs_per_seed": {
+        "11": 262,
+        "23": 167,
+        "42": 115,
+        "67": 256,
+        "89": 119
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/transformer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "monthly_6",
+      "model": "Informer",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 6,
+      "mae": 13.667870528923487,
+      "mae_display": "13,67",
+      "rmse": 17.105469379943806,
+      "nrmse_ratio": 0.07407788101248577,
+      "r2": 0.8672423474509786,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/informer/q128/metricas_teste.csv",
+      "validation_mae": 17.097482276941243,
+      "epochs_per_seed": {
+        "11": 102,
+        "23": 112,
+        "42": 132,
+        "67": 113,
+        "89": 163
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/informer/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    },
+    {
+      "task": "monthly_6",
+      "model": "LSTM",
+      "condition": "Q128",
+      "variant": "q128",
+      "horizon": 6,
+      "mae": 14.762258865384492,
+      "mae_display": "14,76",
+      "rmse": 18.11861327892496,
+      "nrmse_ratio": 0.07698642334185354,
+      "r2": 0.8379872352158095,
+      "selected": true,
+      "source_csv": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/lstm/q128/metricas_teste.csv",
+      "validation_mae": 16.25570719635113,
+      "epochs_per_seed": {
+        "11": 55,
+        "23": 99,
+        "42": 86,
+        "67": 133,
+        "89": 75
+      },
+      "source_selection": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/lstm/selecao_congelada.json",
+      "report_page": 21,
+      "report_table": 6
+    }
+  ],
+  "deltas_from_full_precision": [
+    {
+      "task": "hourly_72_extension",
+      "lower_mae_model": "Transformer",
+      "comparison_model": "LSTM",
+      "absolute_advantage_w_m2": 0.31801305528910717,
+      "display": "0,32",
+      "formula": "MAE_LSTM - MAE_Transformer (unrounded) "
+    },
+    {
+      "task": "daily_30",
+      "lower_mae_model": "Transformer",
+      "comparison_model": "LSTM",
+      "absolute_advantage_w_m2": 0.29724324065316665,
+      "display": "0,30",
+      "formula": "MAE_LSTM - MAE_Transformer (unrounded) "
+    }
+  ],
+  "per_locality_leader_counts": {
+    "hourly_72_extension": {
+      "LSTM": 3,
+      "Transformer": 7
+    },
+    "daily_30": {
+      "Transformer": 6,
+      "LSTM": 4
+    },
+    "monthly_1": {
+      "Informer": 5,
+      "Transformer": 2,
+      "LSTM": 3
+    },
+    "monthly_6": {
+      "Informer": 5,
+      "Transformer": 2,
+      "LSTM": 3
+    }
+  },
+  "monthly_winner_maps_loaded_separately": true,
+  "daily_horizon_leaders": [
+    {
+      "horizon": 1,
+      "unit": "d",
+      "winner": "LSTM",
+      "maes": {
+        "Transformer": 44.74632809965753,
+        "Informer": 47.30537271466751,
+        "LSTM": 42.10805003892148
+      }
+    },
+    {
+      "horizon": 3,
+      "unit": "d",
+      "winner": "LSTM",
+      "maes": {
+        "Transformer": 44.693084708279464,
+        "Informer": 47.24335038832726,
+        "LSTM": 43.17603874502977
+      }
+    },
+    {
+      "horizon": 7,
+      "unit": "d",
+      "winner": "LSTM",
+      "maes": {
+        "Transformer": 44.63684735704519,
+        "Informer": 46.84120702546428,
+        "LSTM": 43.73460353976761
+      }
+    },
+    {
+      "horizon": 14,
+      "unit": "d",
+      "winner": "LSTM",
+      "maes": {
+        "Transformer": 44.38249798890659,
+        "Informer": 46.15816943498835,
+        "LSTM": 44.02039039452082
+      }
+    },
+    {
+      "horizon": 30,
+      "unit": "d",
+      "winner": "Transformer",
+      "maes": {
+        "Transformer": 43.886935199784816,
+        "Informer": 45.46025832169786,
+        "LSTM": 44.18417844043798
+      }
+    }
+  ],
+  "synthetic_measured_data_used": false,
+  "camera_quantitative_front_orthographic": true,
+  "all_numeric_bar_axes_start_at_zero": true,
+  "small_differences_not_visually_exaggerated": true,
+  "tasks_have_separate_axis_scales_and_targets": true,
+  "horizon_glyph_sizes_are_categorical": true,
+  "caption_reserve_y_pixels": [
+    900,
+    1000
+  ],
+  "object_count": 315,
+  "start": 388,
+  "end": 476,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\resultados_v8.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\resultados_3d_v8.mp4",
+  "fps": 30,
+  "frames": 2640,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "resolution_percentage": 100,
+  "samples": 16,
+  "render_complete": true,
+  "source_fingerprint": "63f31957ff170ada45e446f77e1fc66675e97140b2688d8cc461461985de4737",
+  "source_hashes": {
+    "codigo_fonte\\video_ea019\\director_v8.py": "8acbf3219a7c301f7f5c15e761bd881e37413ba51b0900df805f8cd62cff7512",
+    "codigo_fonte\\video_ea019\\results_v8.py": "8de7c286013e589dd5499eae46deab1be45d34d68f8bf2687af60cf0e57707b9",
+    "codigo_fonte\\video_ea019\\common_v7.py": "4867b4c429436a2e602de07bbbc1d16d6644506917894c8dca3588dc7e4e3587",
+    "codigo_fonte\\video_ea019\\blender_pilot.py": "d048c56e8559a13e2eb462299421e618817bdd0fee186412172e75843ad3207d",
+    "codigo_fonte\\video_ea019\\factory_site_v6.py": "9ef07ea1f676d8970a2d007c0bf2918ddf63c7cad3b0ad00d3ac0d7723d23c55",
+    "documentacao\\relatorio_final_ea019\\video\\completo_v8\\fontes_resultados_v8.json": "de42f0a99982bca8f029a92f91df7694a3855b1a44614ba6deeb8aa2d7b56494"
+  },
+  "blocks": [
+    {
+      "first_frame": 1,
+      "last_frame": 300,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\resultados\\f00001_00300.mp4",
+      "bytes": 2415529,
+      "sha256": "fb06738f1c870c1e43c3613913fc48253aa302d711433c753eba3c2abe88ba6e",
+      "source_fingerprint": "63f31957ff170ada45e446f77e1fc66675e97140b2688d8cc461461985de4737",
+      "reused": true
+    },
+    {
+      "first_frame": 301,
+      "last_frame": 600,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\resultados\\f00301_00600.mp4",
+      "bytes": 2374600,
+      "sha256": "e1a1c2078bfd92d9908ba9e69ae580aa2be3c89ab954bdb6005ff905426dab1d",
+      "source_fingerprint": "63f31957ff170ada45e446f77e1fc66675e97140b2688d8cc461461985de4737",
+      "reused": true
+    },
+    {
+      "first_frame": 601,
+      "last_frame": 900,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\resultados\\f00601_00900.mp4",
+      "bytes": 2427130,
+      "sha256": "b931d7ca798b88b87db0317b768a898dd102f74fe99b3dc3db22256fc0e731ac",
+      "source_fingerprint": "63f31957ff170ada45e446f77e1fc66675e97140b2688d8cc461461985de4737",
+      "reused": true
+    },
+    {
+      "first_frame": 901,
+      "last_frame": 1200,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\resultados\\f00901_01200.mp4",
+      "bytes": 2468411,
+      "sha256": "b138035ce75132dab46d3613d8b7ad09ade15f4d94efcbecfb86547b91ec2889",
+      "source_fingerprint": "63f31957ff170ada45e446f77e1fc66675e97140b2688d8cc461461985de4737",
+      "reused": true
+    },
+    {
+      "first_frame": 1201,
+      "last_frame": 1500,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\resultados\\f01201_01500.mp4",
+      "bytes": 2388195,
+      "sha256": "927b991fb4ddac14692590230fb3cd2772c8c1b96cf915e568d0b1adc79be861",
+      "source_fingerprint": "63f31957ff170ada45e446f77e1fc66675e97140b2688d8cc461461985de4737",
+      "reused": true
+    },
+    {
+      "first_frame": 1501,
+      "last_frame": 1800,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\resultados\\f01501_01800.mp4",
+      "bytes": 2420950,
+      "sha256": "df38d88734b1d7c7a25f8d1f6f0af30918e3257db965aa598b4ed030ca3c99e0",
+      "source_fingerprint": "63f31957ff170ada45e446f77e1fc66675e97140b2688d8cc461461985de4737",
+      "reused": false
+    },
+    {
+      "first_frame": 1801,
+      "last_frame": 2100,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\resultados\\f01801_02100.mp4",
+      "bytes": 2545722,
+      "sha256": "d2cfc7ec94636c4651d2225cfae5691bc8c60013f3558ad667018545e3ab7201",
+      "source_fingerprint": "63f31957ff170ada45e446f77e1fc66675e97140b2688d8cc461461985de4737",
+      "reused": false
+    },
+    {
+      "first_frame": 2101,
+      "last_frame": 2400,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\resultados\\f02101_02400.mp4",
+      "bytes": 2757969,
+      "sha256": "5cdcbc6115077b1770cbb805110ee10aa48dfeed13140561f047c21e509c3005",
+      "source_fingerprint": "63f31957ff170ada45e446f77e1fc66675e97140b2688d8cc461461985de4737",
+      "reused": false
+    },
+    {
+      "first_frame": 2401,
+      "last_frame": 2640,
+      "frame_count": 240,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\resultados\\f02401_02640.mp4",
+      "bytes": 1906081,
+      "sha256": "db40a0ea21e09019af7bd2d5c5544ac7379c61d9c31cdbf02d3d650958170524",
+      "source_fingerprint": "63f31957ff170ada45e446f77e1fc66675e97140b2688d8cc461461985de4737",
+      "reused": false
+    }
+  ],
+  "raw_verification": {
+    "path": "documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\resultados_3d_v8.mp4",
+    "bytes": 21703746,
+    "sha256": "e3e182b5e7e745628f44e5dd25c1b9a13fdf4b47d26111747c8c807e3d6d92d1",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frame_count": 2640,
+    "duration_seconds": 88,
+    "codec": "H.264",
+    "audio_tracks": 0,
+    "full_decode_errors": 0
+  }
+}

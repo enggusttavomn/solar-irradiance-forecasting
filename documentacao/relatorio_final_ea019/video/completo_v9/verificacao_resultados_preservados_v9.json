@@ -1,0 +1,242 @@
+{
+  "version": 9,
+  "generated_utc": "2026-11-04T19:15:39.593333+00:00",
+  "status": "passed",
+  "approved_v8_results_preserved_pixel_exact": true,
+  "approved_v8_source_hashes_match": true,
+  "v9_results_global_seconds": [
+    420,
+    508
+  ],
+  "results_seconds": 88,
+  "expected_frame_count_per_variant": 2640,
+  "expected_resolution": [
+    1920,
+    1080
+  ],
+  "expected_fps": 30,
+  "pixel_format": "yuv420p",
+  "expected_decoding_passes": 4,
+  "decoding_passes_started": 4,
+  "pixel_comparison": "Ordered MD5 hashes of decoded frames; timestamps ignored",
+  "timestamps_used_for_pixel_equality": false,
+  "frame_count_size_dimensions_and_time_base_checked_separately": true,
+  "variants": [
+    {
+      "variant": "com_legendas",
+      "pixel_md5_equal": true,
+      "approved_v8_frames": 2640,
+      "v9_interval_frames": 2640,
+      "expected_frames": 2640,
+      "frame_count_matches": true,
+      "frame_size_matches": true,
+      "resolution_matches": true,
+      "fps_matches": true,
+      "decoded_frame_bytes": {
+        "approved_v8": [
+          3110400
+        ],
+        "v9": [
+          3110400
+        ]
+      },
+      "decoded_resolution": {
+        "approved_v8": [
+          1920,
+          1080
+        ],
+        "v9": [
+          1920,
+          1080
+        ]
+      },
+      "decoded_fps": {
+        "approved_v8": 30.0,
+        "v9": 30.0
+      },
+      "mismatch_count": 0,
+      "first_mismatched_frames_1based": [],
+      "approved_v8_frame_hash_sequence_sha256": "f74491149c0dbaad2cb3d0683aa668049fbaa3cdef844b3d38053c30b0d2c8a5",
+      "v9_interval_frame_hash_sequence_sha256": "f74491149c0dbaad2cb3d0683aa668049fbaa3cdef844b3d38053c30b0d2c8a5",
+      "decode_return_codes": [
+        0,
+        0
+      ],
+      "decode_stderr_empty": true,
+      "interval_decode_errors": 0,
+      "input_side_seek_seconds": 420,
+      "accurate_seek_default_retained": true,
+      "files_before": {
+        "approved_v8": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\resultados_com_legendas_v8.mp4",
+          "bytes": 3098554,
+          "mtime_ns": 1793733822748971800,
+          "sha256": "6c49d37b0b89ea7a2d1568680e65d98b3db0e72d659f43f335f8bf447a49a7c5"
+        },
+        "final_v9": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\Video_TCC_GHI_Revisado_com_legendas_v9.mp4",
+          "bytes": 55228021,
+          "mtime_ns": 1793819625635830600,
+          "sha256": "79315bcc10791c7a734b1b8f6b1f2c5236dd6848dff690f0acf043ab51a7f89c"
+        }
+      },
+      "files_after": {
+        "approved_v8": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\resultados_com_legendas_v8.mp4",
+          "bytes": 3098554,
+          "mtime_ns": 1793733822748971800,
+          "sha256": "6c49d37b0b89ea7a2d1568680e65d98b3db0e72d659f43f335f8bf447a49a7c5"
+        },
+        "final_v9": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\Video_TCC_GHI_Revisado_com_legendas_v9.mp4",
+          "bytes": 55228021,
+          "mtime_ns": 1793819625635830600,
+          "sha256": "79315bcc10791c7a734b1b8f6b1f2c5236dd6848dff690f0acf043ab51a7f89c"
+        }
+      },
+      "inputs_unchanged_during_check": true
+    },
+    {
+      "variant": "sem_legendas",
+      "pixel_md5_equal": true,
+      "approved_v8_frames": 2640,
+      "v9_interval_frames": 2640,
+      "expected_frames": 2640,
+      "frame_count_matches": true,
+      "frame_size_matches": true,
+      "resolution_matches": true,
+      "fps_matches": true,
+      "decoded_frame_bytes": {
+        "approved_v8": [
+          3110400
+        ],
+        "v9": [
+          3110400
+        ]
+      },
+      "decoded_resolution": {
+        "approved_v8": [
+          1920,
+          1080
+        ],
+        "v9": [
+          1920,
+          1080
+        ]
+      },
+      "decoded_fps": {
+        "approved_v8": 30.0,
+        "v9": 30.0
+      },
+      "mismatch_count": 0,
+      "first_mismatched_frames_1based": [],
+      "approved_v8_frame_hash_sequence_sha256": "11550d4b6d34ca3f74c127ad17f911811fac6400158a6c18ba5fea2cdc2c4caf",
+      "v9_interval_frame_hash_sequence_sha256": "11550d4b6d34ca3f74c127ad17f911811fac6400158a6c18ba5fea2cdc2c4caf",
+      "decode_return_codes": [
+        0,
+        0
+      ],
+      "decode_stderr_empty": true,
+      "interval_decode_errors": 0,
+      "input_side_seek_seconds": 420,
+      "accurate_seek_default_retained": true,
+      "files_before": {
+        "approved_v8": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\resultados_sem_legendas_v8.mp4",
+          "bytes": 2856627,
+          "mtime_ns": 1793734200466452600,
+          "sha256": "a9e898a6534558b3239cbc0ea03d4cb861c5ae00ba3ab58d37eedb70d6f49005"
+        },
+        "final_v9": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+          "bytes": 53803753,
+          "mtime_ns": 1793819644511585000,
+          "sha256": "ce322662821b71131b5181cf0f691de1df43e7257886a934364111f3d33725fb"
+        }
+      },
+      "files_after": {
+        "approved_v8": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\resultados_sem_legendas_v8.mp4",
+          "bytes": 2856627,
+          "mtime_ns": 1793734200466452600,
+          "sha256": "a9e898a6534558b3239cbc0ea03d4cb861c5ae00ba3ab58d37eedb70d6f49005"
+        },
+        "final_v9": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+          "bytes": 53803753,
+          "mtime_ns": 1793819644511585000,
+          "sha256": "ce322662821b71131b5181cf0f691de1df43e7257886a934364111f3d33725fb"
+        }
+      },
+      "inputs_unchanged_during_check": true
+    }
+  ],
+  "errors": [],
+  "gpu_jobs_started": false,
+  "video_or_audio_encoding_performed": false,
+  "input_videos_modified_by_utility": false,
+  "scope": "Only the approved 88-second results chapter; not a full V9 duration or visual audit",
+  "only_output_written": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\verificacao_resultados_preservados_v9.json",
+  "input_integrity_checks": [
+    {
+      "variant": "com_legendas",
+      "role": "approved_v8",
+      "matches_completed_verification": true,
+      "declared_sha256": "6c49d37b0b89ea7a2d1568680e65d98b3db0e72d659f43f335f8bf447a49a7c5",
+      "actual_sha256": "6c49d37b0b89ea7a2d1568680e65d98b3db0e72d659f43f335f8bf447a49a7c5"
+    },
+    {
+      "variant": "com_legendas",
+      "role": "final_v9",
+      "matches_completed_verification": true,
+      "declared_sha256": "79315bcc10791c7a734b1b8f6b1f2c5236dd6848dff690f0acf043ab51a7f89c",
+      "actual_sha256": "79315bcc10791c7a734b1b8f6b1f2c5236dd6848dff690f0acf043ab51a7f89c"
+    },
+    {
+      "variant": "sem_legendas",
+      "role": "approved_v8",
+      "matches_completed_verification": true,
+      "declared_sha256": "a9e898a6534558b3239cbc0ea03d4cb861c5ae00ba3ab58d37eedb70d6f49005",
+      "actual_sha256": "a9e898a6534558b3239cbc0ea03d4cb861c5ae00ba3ab58d37eedb70d6f49005"
+    },
+    {
+      "variant": "sem_legendas",
+      "role": "final_v9",
+      "matches_completed_verification": true,
+      "declared_sha256": "ce322662821b71131b5181cf0f691de1df43e7257886a934364111f3d33725fb",
+      "actual_sha256": "ce322662821b71131b5181cf0f691de1df43e7257886a934364111f3d33725fb"
+    }
+  ],
+  "final_v9_hashes_match_completed_verification": true,
+  "all_inputs_unchanged_during_check": true,
+  "completed_verification_reports_unchanged": true,
+  "completed_verification_reports_before": {
+    "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\verificacao_video_v8.json": {
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\verificacao_video_v8.json",
+      "bytes": 14905,
+      "mtime_ns": 1793734435255311100,
+      "sha256": "c6c1dfe72dcb709ecad505a6190baf31d368e368049b1eb9f63a4da7be7a8701"
+    },
+    "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\verificacao_video_v9.json": {
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\verificacao_video_v9.json",
+      "bytes": 18963,
+      "mtime_ns": 1793819739415418000,
+      "sha256": "3920b127eb3ff265b09ba0adfadb5ae7ecf4e04f3e1bb78db753b07aafe11125"
+    }
+  },
+  "completed_verification_reports_after": {
+    "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\verificacao_video_v8.json": {
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\verificacao_video_v8.json",
+      "bytes": 14905,
+      "mtime_ns": 1793734435255311100,
+      "sha256": "c6c1dfe72dcb709ecad505a6190baf31d368e368049b1eb9f63a4da7be7a8701"
+    },
+    "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\verificacao_video_v9.json": {
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\verificacao_video_v9.json",
+      "bytes": 18963,
+      "mtime_ns": 1793819739415418000,
+      "sha256": "3920b127eb3ff265b09ba0adfadb5ae7ecf4e04f3e1bb78db753b07aafe11125"
+    }
+  },
+  "completed_utc": "2026-11-04T19:17:19.185624+00:00"
+}

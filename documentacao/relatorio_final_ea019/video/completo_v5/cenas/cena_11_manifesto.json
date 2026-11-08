@@ -1,0 +1,345 @@
+{
+  "id": 11,
+  "start": 370,
+  "end": 390,
+  "duration": 20,
+  "title": "Quantização e duração do histórico",
+  "narration": "A quantização não trouxe vantagem universal. Em uma análise histórica separada, com teste pareado, o histórico longo apresentou menor MAE em onze das doze combinações contínuas. Incluir anos anteriores esteve associado à melhora na maioria dos controles, sem garanti-la.",
+  "label_events": [],
+  "notes": [
+    "A comparação de históricos utiliza os mesmos alvos e datas de validação e teste nos regimes longo e curto pareado.",
+    "Não confrontar diretamente o erro histórico com o erro do teste de 2024 para atribuir diferenças à duração do histórico.",
+    "Incluir anos anteriores modifica o número de janelas, a composição dos anos e os extremos da normalização; o resultado não isola quantidade de dados como causa.",
+    "Na análise de quantização de 2024, a condição selecionada melhora cinco combinações, piora quatro e mantém o controle contínuo em três."
+  ],
+  "start_seconds": 370,
+  "end_seconds": 390,
+  "duration_seconds": 20,
+  "frame_count": 600,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v5\\cenas\\cena_11.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v5\\cenas\\cena_11_3d.mp4",
+  "rendered": false,
+  "scene_metadata": {
+    "selected_conditions_counts": [
+      5,
+      4,
+      3
+    ],
+    "historical_paired_controls_improved": 11,
+    "historical_controls_total": 12,
+    "geometry_from_version": 4
+  },
+  "render_style": {
+    "version": 5,
+    "chapter_id": 11,
+    "engine": "BLENDER_WORKBENCH",
+    "background_srgb": "#07090D",
+    "palette": {
+      "coral": "#EC8061",
+      "coral_body": "#D96D50",
+      "cyan": "#40BACE",
+      "cyan_body": "#269CAF",
+      "violet": "#AD8DDE",
+      "violet_body": "#9474CE",
+      "gold": "#F0B84C",
+      "body": "#526A7C",
+      "graphite": "#405664",
+      "white": "#F3F5F7",
+      "secondary": "#BBC7D0",
+      "axes": "#7C8C9A"
+    },
+    "material_count": 18,
+    "roles": {
+      "font": 11,
+      "solid": 3,
+      "line": 4
+    },
+    "materials": [
+      {
+        "source": "melhoras · texto",
+        "material": "melhoras · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "melhoras label · texto",
+        "material": "melhoras label · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Complementos v4 gold",
+        "material": "Complementos v4 gold · V5 solid",
+        "role": "solid",
+        "source_srgb": "#E9B95F",
+        "srgb": "#F0B84C",
+        "roughness": 0.57,
+        "metallic": 0.0,
+        "emission_strength": 0.0,
+        "focus_keys": 0,
+        "fine_surface_grain": true
+      },
+      {
+        "source": "pioras · texto",
+        "material": "pioras · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "pioras label · texto",
+        "material": "pioras label · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Complementos v4 coral",
+        "material": "Complementos v4 coral · V5 solid",
+        "role": "solid",
+        "source_srgb": "#F28779",
+        "srgb": "#EC8061",
+        "roughness": 0.57,
+        "metallic": 0.0,
+        "emission_strength": 0.0,
+        "focus_keys": 0,
+        "fine_surface_grain": true
+      },
+      {
+        "source": "controles · texto",
+        "material": "controles · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "controles label · texto",
+        "material": "controles label · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Complementos v4 muted",
+        "material": "Complementos v4 muted · V5 solid",
+        "role": "solid",
+        "source_srgb": "#A9B2BE",
+        "srgb": "#BBC7D0",
+        "roughness": 0.57,
+        "metallic": 0.0,
+        "emission_strength": 0.0,
+        "focus_keys": 0,
+        "fine_surface_grain": true
+      },
+      {
+        "source": "Complementos v4 cyan",
+        "material": "Complementos v4 cyan · V5 line",
+        "role": "line",
+        "source_srgb": "#58CADA",
+        "srgb": "#40BACE",
+        "roughness": 0.49,
+        "metallic": 0.0,
+        "emission_strength": 0.18,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Complementos v4 white",
+        "material": "Complementos v4 white · V5 line",
+        "role": "line",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 0.49,
+        "metallic": 0.0,
+        "emission_strength": 0.18,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Complementos v4 gold",
+        "material": "Complementos v4 gold · V5 line",
+        "role": "line",
+        "source_srgb": "#E9B95F",
+        "srgb": "#F0B84C",
+        "roughness": 0.49,
+        "metallic": 0.0,
+        "emission_strength": 0.18,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Histórico longo · texto",
+        "material": "Histórico longo · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Histórico curto · texto",
+        "material": "Histórico curto · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Complementos v4 muted",
+        "material": "Complementos v4 muted · V5 line",
+        "role": "line",
+        "source_srgb": "#A9B2BE",
+        "srgb": "#BBC7D0",
+        "roughness": 0.49,
+        "metallic": 0.0,
+        "emission_strength": 0.18,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Pareado · texto",
+        "material": "Pareado · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Onze · texto",
+        "material": "Onze · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#E9B95F",
+        "srgb": "#F0B84C",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Associação · texto",
+        "material": "Associação · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      }
+    ],
+    "lights": {
+      "areas": [
+        {
+          "name": "V5 soft key",
+          "type": "AREA",
+          "location": [
+            1.8,
+            -5.5,
+            9
+          ],
+          "energy_w": 1450.0,
+          "colour": [
+            1.0,
+            0.95,
+            0.88
+          ],
+          "size": 6.0
+        },
+        {
+          "name": "V5 sky fill",
+          "type": "AREA",
+          "location": [
+            -6,
+            -3.5,
+            4.5
+          ],
+          "energy_w": 750.0,
+          "colour": [
+            0.84,
+            0.92,
+            1.0
+          ],
+          "size": 5.5
+        },
+        {
+          "name": "V5 soft rim",
+          "type": "AREA",
+          "location": [
+            5,
+            4,
+            8
+          ],
+          "energy_w": 1400.0,
+          "colour": [
+            1.0,
+            0.97,
+            0.92
+          ],
+          "size": 5.0
+        }
+      ],
+      "retained_factory_sun": [],
+      "intent": "broad neutral sources; subtle warm/cool separation, no coloured neon rim"
+    },
+    "render_config": {
+      "studio_light": "paint.sl",
+      "aa": "8",
+      "specular_highlights": false
+    },
+    "compositor_enabled": false,
+    "raytracing_enabled": false,
+    "camera_and_object_animation_unchanged": true,
+    "timing_unchanged": true,
+    "focus_animation_baked_without_frame_handlers": true
+  },
+  "qa_times": [
+    1.7,
+    7,
+    15
+  ]
+}

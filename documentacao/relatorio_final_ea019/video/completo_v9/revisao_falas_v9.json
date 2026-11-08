@@ -1,0 +1,105 @@
+{
+  "version": 9,
+  "reviewer": "v9_solar_science",
+  "reviewed_utc": "2026-11-04T19:14:41.295866+00:00",
+  "status": "approved_textual_scientific_and_narration_review",
+  "automatically_approved": false,
+  "frozen_render_sources_modified": false,
+  "gpu_jobs_started": false,
+  "chapter_timeline_continuous": true,
+  "phase_count": 90,
+  "animation_seconds": 560,
+  "opening_camera_seconds": 20,
+  "outro_camera_seconds": 0,
+  "total_seconds": 580,
+  "narration_paragraphs_match_plan": true,
+  "replacement_unicode_characters": 0,
+  "both_srt_files_valid": true,
+  "animation_base_words": 1112,
+  "animation_expanded_spoken_words_estimate": 1230,
+  "estimated_average_spoken_wpm": 131.8,
+  "opening_base_words": 32,
+  "maximum_estimated_wpm": 172.5,
+  "highest_rate_segments": [
+    {
+      "start": 500,
+      "end": 508,
+      "estimated_spoken_words": 23,
+      "estimated_wpm": 172.5,
+      "text": "Na diária, a LSTM liderou os horizontes menores, até 14 dias. Em 30 dias, o Transformer apresentou a menor média."
+    },
+    {
+      "start": 334,
+      "end": 341,
+      "estimated_spoken_words": 20,
+      "estimated_wpm": 171.4,
+      "text": "A transformação atua só no GHI de entrada. A localidade segue separada; pesos, alvos e saídas continuam contínuos."
+    },
+    {
+      "start": 390,
+      "end": 396,
+      "estimated_spoken_words": 17,
+      "estimated_wpm": 170.0,
+      "text": "Se todos os valores coincidem, o MAE é zero. Na mesma tarefa, menor é melhor."
+    },
+    {
+      "start": 25,
+      "end": 30,
+      "estimated_spoken_words": 14,
+      "estimated_wpm": 168.0,
+      "text": "Durante o dia, a luz varia. À noite, o GHI solar zera."
+    },
+    {
+      "start": 452,
+      "end": 460,
+      "estimated_spoken_words": 22,
+      "estimated_wpm": 165.0,
+      "text": "A diferença para a LSTM foi de aproximadamente 0,30 watt por metro quadrado. Os valores são próximos."
+    }
+  ],
+  "denominators_verified": {
+    "histogram": "881/18496 strictly positive GHI hours in400–450W/m² =4.763192% rounded4.8%; zeros counted separately",
+    "macro_mae": "Equal1/10 weight perlocality",
+    "MAE": "Mean absolute differences between temporally aligned forecast-reference pairs",
+    "cumulative": "All forecaststeps1…H, includingnight"
+  },
+  "numerical_examples_verified": {
+    "quantization": "Didactic minmax0–1000:437→Q64444.444,Q128433.071,Q256435.294W/m²",
+    "MAE": "(20+30+50+30+10)/5=28W/m²;0perfect;smallerbetterwithinmatchingtask"
+  },
+  "report_conclusion_page30_aligned": true,
+  "requested_revisions_implemented": [
+    "DNI reference plane perpendicular to sunlight and horizontal projection distinguished; diffuse sky receipt correctly explained.",
+    "PotentialPV/grid/storage/consumption applications are possibilities, not measuredprojectoutputs.",
+    "Histogramfrequencyis percentageofpositivehourlyobservations, not timeorfrequencyinHz.",
+    "KnownfactorylocalitiesreplacetheanonymousIDdescription.",
+    "Numerical quantization and absolute error are explicit; low MAE is better within a comparable task.",
+    "Openingcamerafootageonly;conclusionnarratedoverthefactoryscene."
+  ],
+  "voice_fixes_verified": [
+    "NSRDB sentence shortened without loss of satellite/atmosphere/irradiance meaning.",
+    "MAE wording now uses the same instant, rather than restrictingthedefinitiontohours.",
+    "Historical11/12sentence shortened;thehourlyLSTMexceptionretained.",
+    "Validation2023/test2024 phrase shortened so both years can be spoken calmly.",
+    "The winner summary explicitly says full horizon; the following cue retains task, horizon and locality dependence. This removes ambiguity about shorter daily horizons led by LSTM."
+  ],
+  "remaining_rhythm_recommendations": [],
+  "material_findings_remaining": [],
+  "review_limit": "Textualandtimingreview;notan audio recordingorfullvideoplayback.",
+  "reviewed_text_file_hashes": {
+    "plano_video_v9.json": "9ba4a024c3ad20f8c5f53fc18c6062179642afe7974c67a0bce90ac0b92ff368",
+    "Texto_Corrido_Para_Gravar_v9.txt": "c345de947236c5480c8ce66a4437f7201b020f90cc03e843b1595b7a08005ad0",
+    "Falas_Para_Gravar_Video_v9.txt": "7a34c800339e7fccc72a6659aa18a0338d4aa2f0bf375b1f3690c83f4c7082ba",
+    "Legendas_Animacao_v9.srt": "1c9a2c1a825b568b75d366ae1b03a9bfb846828c5c6ae01a9bac9e4aa31face1",
+    "Legendas_Com_Apresentacao_v9.srt": "a61deabb526876122ad5ae0b3bb1c3aba12d7af468d35e1335bd17fa66144e78"
+  },
+  "revised_conclusion_summary": {
+    "animation_start": 547,
+    "animation_end": 553,
+    "words": 14,
+    "estimated_wpm": 140.0,
+    "text": "No horizonte completo, Transformer teve menor erro horário e diário; Informer, nas tarefas mensais.",
+    "contextual_qualification_resolved_in_canonical_text": true
+  },
+  "prior_review_archive": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\tmp\\v9_pdf_falas\\before_horizon_clarification\\revisao_falas_v9.json"
+}

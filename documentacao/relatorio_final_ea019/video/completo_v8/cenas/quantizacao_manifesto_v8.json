@@ -1,0 +1,209 @@
+{
+  "version": 8,
+  "duration": 54,
+  "cues": [
+    [
+      0,
+      9,
+      "Nos três modelos, comparei entradas contínuas com 64, 128 ou 256 níveis."
+    ],
+    [
+      9,
+      15,
+      "Quantizar aproxima cada amplitude de um dos níveis disponíveis."
+    ],
+    [
+      15,
+      21,
+      "Mais níveis reduzem os degraus. Os instantes da série são mantidos."
+    ],
+    [
+      21,
+      27,
+      "Somente o GHI passa pela transformação; a identificação da localidade segue separada."
+    ],
+    [
+      27,
+      34,
+      "Os valores são reconstruídos em float32. Pesos, alvos e saídas continuam contínuos."
+    ],
+    [
+      34,
+      38,
+      "Nas variantes quantizadas, o clipping vem antes do arredondamento."
+    ],
+    [
+      38,
+      41,
+      "O contraste reúne os dois efeitos."
+    ],
+    [
+      41,
+      45,
+      "O controle contínuo mantém os valores sem clipping."
+    ],
+    [
+      45,
+      54,
+      "Para cada modelo e tarefa, a condição escolhida em 2023 segue para o teste de 2024."
+    ]
+  ],
+  "qa_times": [
+    2.6,
+    5.2,
+    7.6,
+    12.3,
+    16.1,
+    19.4,
+    24.6,
+    30.5,
+    36.5,
+    39.4,
+    43.0,
+    50.8
+  ],
+  "global_scope_seconds": [
+    286,
+    340
+  ],
+  "levels": [
+    64,
+    128,
+    256
+  ],
+  "quantization_source": "codigo_fonte/experimentos/quantizacao_timesnet.py:43-61",
+  "formula": "float32(rint(clip(x,0,1)*(N-1))/(N-1))",
+  "rounding_ties": "nearest even",
+  "clipping_precedes_rounding": true,
+  "quantization_applies_to": "input GHI only",
+  "timestamps_unchanged": true,
+  "locality_identifier_bypasses_quantizer": true,
+  "weights_targets_and_outputs_continuous": true,
+  "reconstructed_dtype": "float32",
+  "integer_network_inference_claimed": false,
+  "continuous_control_uses_clipping": false,
+  "contrast_combines_clipping_and_rounding": true,
+  "zoom_shows_actual_subset_of_declared_lattice": true,
+  "zoom_example": [
+    {
+      "levels": 64,
+      "original": 0.5,
+      "reconstructed_float32": 0.5079365372657776,
+      "visible_subset_count": 6
+    },
+    {
+      "levels": 128,
+      "original": 0.5,
+      "reconstructed_float32": 0.5039370059967041,
+      "visible_subset_count": 10
+    },
+    {
+      "levels": 256,
+      "original": 0.5,
+      "reconstructed_float32": 0.501960813999176,
+      "visible_subset_count": 20
+    }
+  ],
+  "validation_selection_applied_per_task_and_model": true,
+  "no_universal_selected_level_depicted": true,
+  "illustrative_curves_not_measured_experimental_predictions": true,
+  "object_count": 591,
+  "chapter": "quantizacao",
+  "start": 286,
+  "end": 340,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\quantizacao_v8.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\quantizacao_3d_v8.mp4",
+  "fps": 30,
+  "frames": 1620,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "resolution_percentage": 100,
+  "samples": 16,
+  "render_complete": true,
+  "source_fingerprint": "5bf0dd0d92de950d4aee30564c9756c5905489231d37546ecf9f9dbd678e7e15",
+  "source_hashes": {
+    "codigo_fonte\\video_ea019\\director_v8.py": "8acbf3219a7c301f7f5c15e761bd881e37413ba51b0900df805f8cd62cff7512",
+    "codigo_fonte\\video_ea019\\quantization_v8.py": "bfd5d8169cb5a439ed387729ac22837361447ae02de50eca92425a639097e3ce",
+    "codigo_fonte\\video_ea019\\common_v7.py": "4867b4c429436a2e602de07bbbc1d16d6644506917894c8dca3588dc7e4e3587",
+    "codigo_fonte\\video_ea019\\blender_pilot.py": "d048c56e8559a13e2eb462299421e618817bdd0fee186412172e75843ad3207d",
+    "codigo_fonte\\video_ea019\\factory_site_v6.py": "9ef07ea1f676d8970a2d007c0bf2918ddf63c7cad3b0ad00d3ac0d7723d23c55",
+    "documentacao\\relatorio_final_ea019\\video\\completo_v8\\fontes_resultados_v8.json": "de42f0a99982bca8f029a92f91df7694a3855b1a44614ba6deeb8aa2d7b56494"
+  },
+  "blocks": [
+    {
+      "first_frame": 1,
+      "last_frame": 300,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\quantizacao\\f00001_00300.mp4",
+      "bytes": 3369875,
+      "sha256": "b1c5545f0bd4b1771ebb0293e472e09683fbb595d15288575a946f1210ba5d8f",
+      "source_fingerprint": "5bf0dd0d92de950d4aee30564c9756c5905489231d37546ecf9f9dbd678e7e15",
+      "reused": false
+    },
+    {
+      "first_frame": 301,
+      "last_frame": 600,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\quantizacao\\f00301_00600.mp4",
+      "bytes": 2417736,
+      "sha256": "b27f91254f65090c47e7bc345b51bdadf338c264e175509d6f066e47fad0645c",
+      "source_fingerprint": "5bf0dd0d92de950d4aee30564c9756c5905489231d37546ecf9f9dbd678e7e15",
+      "reused": false
+    },
+    {
+      "first_frame": 601,
+      "last_frame": 900,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\quantizacao\\f00601_00900.mp4",
+      "bytes": 2615803,
+      "sha256": "27ed0d01f3783ea0689371602b12419deca25abe04212d7c8c52ddb7c35d7ad2",
+      "source_fingerprint": "5bf0dd0d92de950d4aee30564c9756c5905489231d37546ecf9f9dbd678e7e15",
+      "reused": false
+    },
+    {
+      "first_frame": 901,
+      "last_frame": 1200,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\quantizacao\\f00901_01200.mp4",
+      "bytes": 2698956,
+      "sha256": "44a0fda5e49e3c445e35ba8ca03a952aa21388d13237dce3cbed67b246f5a0bb",
+      "source_fingerprint": "5bf0dd0d92de950d4aee30564c9756c5905489231d37546ecf9f9dbd678e7e15",
+      "reused": false
+    },
+    {
+      "first_frame": 1201,
+      "last_frame": 1500,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\quantizacao\\f01201_01500.mp4",
+      "bytes": 2549802,
+      "sha256": "5e9d9db1d77320180918d570683edc7f770a04447684e4583e0139a147f99e1c",
+      "source_fingerprint": "5bf0dd0d92de950d4aee30564c9756c5905489231d37546ecf9f9dbd678e7e15",
+      "reused": false
+    },
+    {
+      "first_frame": 1501,
+      "last_frame": 1620,
+      "frame_count": 120,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\quantizacao\\f01501_01620.mp4",
+      "bytes": 927995,
+      "sha256": "0903de3744305b440fc819357a00f5dad56b158cccb4bf5adc9903483e357ab7",
+      "source_fingerprint": "5bf0dd0d92de950d4aee30564c9756c5905489231d37546ecf9f9dbd678e7e15",
+      "reused": false
+    }
+  ],
+  "raw_verification": {
+    "path": "documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\quantizacao_3d_v8.mp4",
+    "bytes": 14579540,
+    "sha256": "0d888a1c28de923ac674cb78d5596f6417bf4d78d037e3d79c3591522692d169",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frame_count": 1620,
+    "duration_seconds": 54,
+    "codec": "H.264",
+    "audio_tracks": 0,
+    "full_decode_errors": 0
+  }
+}

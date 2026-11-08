@@ -1,0 +1,33 @@
+﻿[Script Info]
+Title: EA019 scientific animation - deterministic text overlay
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI,44,&H00FBF6F3,&H00FFFFFF,&H80000000,&H80000000,0,0,0,0,100,100,0,0,3,12,0,2,110,110,80,1
+Style: Header,Segoe UI,58,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,-1,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Eyebrow,Segoe UI,24,&H00EDDD67,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,1.4,0,1,0.5,0,7,0,0,0,1
+Style: Text,Segoe UI,40,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Small,Segoe UI,26,&H00C9B9AA,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.5,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 10,0:00:00.00,0:00:06.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Usamos leituras anteriores da região da\Nfábrica. Este trecho real é de Camaçari.
+Dialogue: 10,0:00:06.00,0:00:12.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Esses valores mantêm a ordem no tempo e\Nformam parte da janela de entrada.
+Dialogue: 10,0:00:12.00,0:00:15.41,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A rede também identifica a região e
+Dialogue: 10,0:00:15.41,0:00:20.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}aprende uma representação para cada\Nlocalidade.
+Dialogue: 10,0:00:20.00,0:00:23.82,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Assim, entram duas informações: os valores
+Dialogue: 10,0:00:23.82,0:00:28.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}anteriores de GHI e a região à qual\Npertencem.
+Dialogue: 10,0:00:28.00,0:00:34.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Em cada tarefa, uma mesma rede compartilha\Nparâmetros entre as dez localidades.
+Dialogue: 10,0:00:34.00,0:00:38.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}São quatro tarefas de previsão, com\Njanelas e horizontes diferentes.
+Dialogue: 10,0:00:38.00,0:00:42.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Na horária, entram duas semanas de\Nhistórico.
+Dialogue: 10,0:00:42.00,0:00:46.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Prevemos os próximos três dias de\Nirradiância.
+Dialogue: 10,0:00:46.00,0:00:50.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Na diária, entra um ano de histórico.
+Dialogue: 10,0:00:50.00,0:00:54.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A previsão contém os próximos trinta dias.
+Dialogue: 10,0:00:54.00,0:00:59.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Na primeira mensal, entram doze meses e\Nprevemos o seguinte.
+Dialogue: 10,0:00:59.00,0:01:04.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A outra rede prevê seis meses. É uma\Nanálise exploratória.

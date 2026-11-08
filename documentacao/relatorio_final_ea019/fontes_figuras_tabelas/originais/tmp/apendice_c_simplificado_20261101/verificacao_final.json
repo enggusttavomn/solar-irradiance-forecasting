@@ -1,0 +1,525 @@
+{
+  "pages_before": 36,
+  "pages_after": 35,
+  "appendix_pages_before": [
+    34,
+    35,
+    36
+  ],
+  "appendix_pages_after": [
+    34,
+    35
+  ],
+  "text_before_appendix_identical_except_contents": true,
+  "pixel_identical_pages": [
+    1,
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33
+  ],
+  "contents_page_updated": 3,
+  "tables_unchanged": 17,
+  "equations_unchanged": 7,
+  "figures_unchanged": 9,
+  "references_unchanged": 16,
+  "changed_parts": [
+    "word/document.xml"
+  ],
+  "toc_checks": [
+    {
+      "heading": "1 INTRODUÇÃO",
+      "page": 5
+    },
+    {
+      "heading": "1.1 Questões de pesquisa",
+      "page": 5
+    },
+    {
+      "heading": "2 OBJETIVOS",
+      "page": 6
+    },
+    {
+      "heading": "2.1 Objetivo geral",
+      "page": 6
+    },
+    {
+      "heading": "2.2 Objetivos específicos",
+      "page": 6
+    },
+    {
+      "heading": "2.3 Delimitação do estudo",
+      "page": 6
+    },
+    {
+      "heading": "3 METODOLOGIA",
+      "page": 7
+    },
+    {
+      "heading": "3.1 Dados utilizados",
+      "page": 7
+    },
+    {
+      "heading": "3.2 Resoluções temporais da GHI",
+      "page": 8
+    },
+    {
+      "heading": "3.3 Tarefas e janelas temporais",
+      "page": 9
+    },
+    {
+      "heading": "3.4 Separação cronológica e comparação pareada",
+      "page": 10
+    },
+    {
+      "heading": "3.5 Normalização e condições de entrada",
+      "page": 11
+    },
+    {
+      "heading": "3.6 Treinamento, seleção e refit",
+      "page": 13
+    },
+    {
+      "heading": "3.7 Análise dos dados e métricas",
+      "page": 13
+    },
+    {
+      "heading": "4 DESENVOLVIMENTO",
+      "page": 15
+    },
+    {
+      "heading": "4.1 Fundamentos físicos da GHI",
+      "page": 15
+    },
+    {
+      "heading": "4.2 LSTM e memória temporal",
+      "page": 15
+    },
+    {
+      "heading": "4.3 Transformer e atenção",
+      "page": 15
+    },
+    {
+      "heading": "4.4 Informer e atenção esparsa",
+      "page": 16
+    },
+    {
+      "heading": "4.5 Trabalhos relacionados e posicionamento",
+      "page": 17
+    },
+    {
+      "heading": "5 RESULTADOS",
+      "page": 19
+    },
+    {
+      "heading": "5.1 Desempenho no teste de 2024",
+      "page": 19
+    },
+    {
+      "heading": "5.2 Heterogeneidade entre localidades",
+      "page": 20
+    },
+    {
+      "heading": "5.3 Comportamento nos horizontes cumulativos",
+      "page": 21
+    },
+    {
+      "heading": "5.4 Quantização como análise de pré-processamento",
+      "page": 22
+    },
+    {
+      "heading": "5.5 Análise complementar da duração do histórico",
+      "page": 24
+    },
+    {
+      "heading": "5.6 Diagnóstico dos registros de treinamento",
+      "page": 25
+    },
+    {
+      "heading": "5.7 Discussão integrada e limitações",
+      "page": 26
+    },
+    {
+      "heading": "6 CONCLUSÃO",
+      "page": 28
+    },
+    {
+      "heading": "7 REFERÊNCIAS BIBLIOGRÁFICAS",
+      "page": 29
+    },
+    {
+      "heading": "APÊNDICE A — RESULTADOS POR HORIZONTE NO REGIME ATUAL",
+      "page": 30
+    },
+    {
+      "heading": "APÊNDICE B — COMPARAÇÃO DAS QUATRO CONDIÇÕES DE ENTRADA",
+      "page": 32
+    },
+    {
+      "heading": "B.1 Atual",
+      "page": 32
+    },
+    {
+      "heading": "B.2 Histórico longo",
+      "page": 32
+    },
+    {
+      "heading": "B.3 Histórico curto",
+      "page": 33
+    },
+    {
+      "heading": "APÊNDICE C — CONFIGURAÇÕES DAS IMPLEMENTAÇÕES",
+      "page": 34
+    },
+    {
+      "heading": "C.1 Configurações e parâmetros treináveis",
+      "page": 34
+    },
+    {
+      "heading": "C.2 Ambiente das execuções",
+      "page": 35
+    }
+  ],
+  "paragraphs_replaced": 7,
+  "paragraphs_removed": 31,
+  "changes": [
+    {
+      "source_id": 1235,
+      "action": "replace",
+      "before": "APÊNDICE C — CONFIGURAÇÕES E PROVENIÊNCIA DOS RESULTADOS",
+      "after": "APÊNDICE C — CONFIGURAÇÕES DAS IMPLEMENTAÇÕES",
+      "page_before": 34,
+      "page_after": 34
+    },
+    {
+      "source_id": 1236,
+      "action": "replace",
+      "before": "Os números deste relatório foram consolidados de artefatos locais já produzidos pelo projeto, sem execução de novos treinamentos. A extração foi filtrada para Transformer, Informer e LSTM. Foram verificadas 432 linhas de teste e suas 432 correspondentes de validação, 36 classificações de horizonte completo e as 48 comparações históricas de mesma variante. Os sete arquivos-fonte abaixo mantiveram os hashes registrados nas auditorias.",
+      "after": "Este apêndice resume as configurações das três implementações e o ambiente das execuções. Os resultados foram consolidados de experimentos já realizados, mantendo as escolhas na validação e o pareamento dos históricos.",
+      "page_before": 34,
+      "page_after": 34
+    },
+    {
+      "source_id": 1255,
+      "action": "replace",
+      "before": "C.2 Configurações e parâmetros treináveis",
+      "after": "C.1 Configurações e parâmetros treináveis",
+      "page_before": 35,
+      "page_after": 34
+    },
+    {
+      "source_id": 1256,
+      "action": "replace",
+      "before": "As configurações abaixo descrevem a implementação efetivamente executada, conferida nas fontes preservadas cujos hashes coincidem com os registros dos experimentos. Em todas as tarefas há uma entrada de GHI por instante e uma representação aprendida de oito dimensões para cada uma das dez localidades. C indica o comprimento do histórico e H, o horizonte de saída.",
+      "after": "Em todas as tarefas há uma entrada de GHI por instante e uma representação aprendida de oito dimensões para cada uma das dez localidades. C indica o comprimento do histórico e H, o horizonte de saída.",
+      "page_before": 35,
+      "page_after": 34
+    },
+    {
+      "source_id": 1294,
+      "action": "replace",
+      "before": "Fonte: elaboração própria a partir das fontes executadas identificadas neste apêndice. No Informer, ProbSparse atua nas autoatenções; a atenção cruzada permanece completa. O dropout indicado atua nos blocos residuais e feedforward; os pesos da atenção ProbSparse não recebem dropout nesta implementação.",
+      "after": "Fonte: elaboração própria com base nas configurações das implementações avaliadas. No Informer, ProbSparse atua nas autoatenções; a atenção cruzada permanece completa. O dropout indicado atua nos blocos residuais e feedforward; os pesos da atenção ProbSparse não recebem dropout nesta implementação.",
+      "page_before": 35,
+      "page_after": 34
+    },
+    {
+      "source_id": 1319,
+      "action": "replace",
+      "before": "C.3 Ambiente registrado nas execuções",
+      "after": "C.2 Ambiente das execuções",
+      "page_before": 36,
+      "page_after": 35
+    },
+    {
+      "source_id": 1320,
+      "action": "replace",
+      "before": "Os 36 registros canônicos de configuração informam NumPy 2.4.4, pandas 3.0.3 e PyTorch 2.12.0+cu126. As tarefas horária e diária utilizam CUDA 12.6, enquanto as mensais utilizam CPU. Nos registros de Transformer e Informer horários e diários, o ambiente também identifica a GPU NVIDIA GeForce GTX 1650 with Max-Q Design e o código cuDNN 91002. Os registros da LSTM informam CUDA, sem especificar o modelo da GPU.",
+      "after": "O ambiente registrado utiliza NumPy 2.4.4, pandas 3.0.3 e PyTorch 2.12.0+cu126. As tarefas horária e diária usam CUDA 12.6; as mensais, CPU. Para Transformer e Informer horários e diários, consta a GPU NVIDIA GeForce GTX 1650 with Max-Q Design e cuDNN 91002. Na LSTM, consta CUDA sem identificação da GPU. O modelo da CPU e a versão de Python não foram registrados. A reprodução também depende das sementes e regras de determinismo descritas na metodologia.",
+      "page_before": 36,
+      "page_after": 35
+    },
+    {
+      "source_id": 1237,
+      "action": "remove",
+      "before": "Os caminhos são relativos à raiz do repositório. O diretório-base dos registros auditados é resultados/relatorios/quantizacao_todos_modelos_20260929. Os nomes dos arquivos de saída da disciplina ficam em resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina. As tabelas do relatório são editáveis, enquanto as figuras foram geradas diretamente das mesmas métricas em precisão integral.",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1238,
+      "action": "remove",
+      "before": "Fonte 1: auditoria_final_atual/auditoria.json",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1239,
+      "action": "remove",
+      "before": "SHA256: b48b7fbefbd1b267c25c276dc6f6d10692603ac45969946d879f1b52cb5a43d5",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1240,
+      "action": "remove",
+      "before": "Fonte 2: auditoria_final_atual/metricas_auditadas.csv",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1241,
+      "action": "remove",
+      "before": "SHA256: b75304b021d1bcf07389ffe7e8668122029b9de85f0f9a31e0a751db22bdbbdc",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1242,
+      "action": "remove",
+      "before": "Fonte 3: auditoria_historico_1998_2022/auditoria.json",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1243,
+      "action": "remove",
+      "before": "SHA256: 73264016a986720643046268ee78601d3007f824da8a3e4851560430958ed61b",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1244,
+      "action": "remove",
+      "before": "Fonte 4: auditoria_historico_1998_2022/metricas_auditadas.csv",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1245,
+      "action": "remove",
+      "before": "SHA256: 82d188c94b168c6414a37eb73b7edd8ef56f51181201add5cfa4c29167e0affb",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1246,
+      "action": "remove",
+      "before": "Fonte 5: auditoria_historico_curto_pareado/auditoria.json",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1247,
+      "action": "remove",
+      "before": "SHA256: fa2cb6fa59feaa56cc4f2c5a7fb611e1b793bbb0b3ea7d1fb11e104fb1a9eb7b",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1248,
+      "action": "remove",
+      "before": "Fonte 6: auditoria_historico_curto_pareado/metricas_auditadas.csv",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1249,
+      "action": "remove",
+      "before": "SHA256: cbe5576eafe03a1396b22d96ea8b74e6a22640a4ba3d37b6f1f8b3db04eae441",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1250,
+      "action": "remove",
+      "before": "Fonte 7: auditoria_pareamento_historico/pareamento.json",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1251,
+      "action": "remove",
+      "before": "SHA256: 93b48cabfa185490830e9b1124c914c2593eb119b390ebe0ff294ef9b1a83bff",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1252,
+      "action": "remove",
+      "before": "C.1 Sequência de verificação",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1253,
+      "action": "remove",
+      "before": "A consolidação verifica a integridade dos arquivos e o pareamento histórico antes de comparar os resultados. Em cada combinação de regime, tarefa e modelo, recupera as quatro condições, confere a escolha pelo macro-MAE da validação e mantém essa escolha fixa nos demais horizontes. As métricas de teste são apenas então organizadas em figuras e tabelas. O arredondamento em casas decimais é aplicado somente na apresentação.",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1254,
+      "action": "remove",
+      "before": "A matriz local usa metricas_por_localidade_teste.csv das doze combinações atuais; suas médias conferem com os macro-MAEs auditados. Os perfis de BYD Camaçari utilizam dados/brutos/localidades_ev/byd_camacari.csv e dados/brutos/localidades_ev_horario/nsrdb_ghi_horaria_2024.csv.gz. As trajetórias de perda da Figura 9 provêm dos CSVs de seleção horária dos controles contínuos, semente 42, com hashes conferidos nos metadados das respectivas execuções.",
+      "after": "",
+      "page_before": 34,
+      "page_after": null
+    },
+    {
+      "source_id": 1321,
+      "action": "remove",
+      "before": "O modelo da CPU e a versão de Python não estão registrados diretamente nesses arquivos canônicos. Esses campos permanecem sem especificação, em vez de serem inferidos de um ambiente posterior. O sufixo cu126 identifica a distribuição instalada do PyTorch; não indica uso de GPU nas tarefas mensais. As fontes, versões e dispositivos declarados devem ser considerados em uma tentativa de reprodução, juntamente com as regras de determinismo e as sementes descritas na metodologia.",
+      "after": "",
+      "page_before": 36,
+      "page_after": null
+    },
+    {
+      "source_id": 1322,
+      "action": "remove",
+      "before": "C.4 Repositório e identificação do código executado",
+      "after": "",
+      "page_before": 36,
+      "page_after": null
+    },
+    {
+      "source_id": 1323,
+      "action": "remove",
+      "before": "Repositório do projeto: https://github.com/enggusttavomn/solar-irradiance-forecasting",
+      "after": "",
+      "page_before": 36,
+      "page_after": null
+    },
+    {
+      "source_id": 1324,
+      "action": "remove",
+      "before": "O retrato consultado do repositório corresponde ao commit 3abe546cc217aff2c95a3a12bd1411c9e29c553e, de 29 de outubro de 2026. Esse identificador é posterior aos treinamentos e não é apresentado como versão de execução de todos eles. Para identificar as fontes executadas, utilizam-se os hashes SHA256 registrados em contrato_execucao.json, juntamente com os hashes das entradas e configurações. Os metadados de seleção e refit vinculam cada resultado ao conteúdo do respectivo registro.",
+      "after": "",
+      "page_before": 36,
+      "page_after": null
+    },
+    {
+      "source_id": 1325,
+      "action": "remove",
+      "before": "As quatro fontes abaixo foram conferidas no arquivo documentacao/organizacao/fontes_antes_reorganizacao_20261027.zip e seus hashes coincidem com os registrados nos 36 contratos. Os caminhos indicam os membros internos do arquivo de preservação, anteriores à reorganização de pastas e imports. Essa identificação permite distinguir a fonte executada de versões posteriores do repositório.",
+      "after": "",
+      "page_before": 36,
+      "page_after": null
+    },
+    {
+      "source_id": 1326,
+      "action": "remove",
+      "before": "codigo_fonte/modelos_baselines_adicionais.py",
+      "after": "",
+      "page_before": 36,
+      "page_after": null
+    },
+    {
+      "source_id": 1327,
+      "action": "remove",
+      "before": "SHA256: f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988",
+      "after": "",
+      "page_before": 36,
+      "page_after": null
+    },
+    {
+      "source_id": 1328,
+      "action": "remove",
+      "before": "codigo_fonte/experimento_horario_timesnet.py",
+      "after": "",
+      "page_before": 36,
+      "page_after": null
+    },
+    {
+      "source_id": 1329,
+      "action": "remove",
+      "before": "SHA256: 2cc59451b0fbcbedbf3068d2f1c45595ff84daf46e8318a88080df208e7bb8e9",
+      "after": "",
+      "page_before": 36,
+      "page_after": null
+    },
+    {
+      "source_id": 1330,
+      "action": "remove",
+      "before": "codigo_fonte/experimento_multirresolucao.py",
+      "after": "",
+      "page_before": 36,
+      "page_after": null
+    },
+    {
+      "source_id": 1331,
+      "action": "remove",
+      "before": "SHA256: 8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+      "after": "",
+      "page_before": 36,
+      "page_after": null
+    },
+    {
+      "source_id": 1332,
+      "action": "remove",
+      "before": "codigo_fonte/experimento_quantizacao_concorrentes.py",
+      "after": "",
+      "page_before": 36,
+      "page_after": null
+    },
+    {
+      "source_id": 1333,
+      "action": "remove",
+      "before": "SHA256: ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+      "after": "",
+      "page_before": 36,
+      "page_after": null
+    }
+  ],
+  "docx_sha256": "19e965367aed6fc598a90c59a8f60b0274d6252770a42524c12354e3e985592d",
+  "pdf_sha256": "7cca4b8e7946a5aeb3c94d91897883ae7f5785fc96ced6194240f7e7beaa2ec9",
+  "new_training": false,
+  "published_docx": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.docx",
+  "published_pdf": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.pdf",
+  "complete_change_review": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\tmp\\apendice_c_simplificado_20261101\\alteracoes_completas.html",
+  "visual_review_passed": true
+}

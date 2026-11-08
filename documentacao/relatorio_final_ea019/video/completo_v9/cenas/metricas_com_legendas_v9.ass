@@ -1,0 +1,32 @@
+﻿[Script Info]
+Title: EA019 scientific animation - deterministic text overlay
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI,44,&H00FBF6F3,&H00FFFFFF,&H80000000,&H80000000,0,0,0,0,100,100,0,0,3,12,0,2,110,110,80,1
+Style: Header,Segoe UI,58,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,-1,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Eyebrow,Segoe UI,24,&H00EDDD67,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,1.4,0,1,0.5,0,7,0,0,0,1
+Style: Text,Segoe UI,40,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Small,Segoe UI,26,&H00C9B9AA,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.5,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 10,0:00:00.00,0:00:03.29,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}MAE é o erro absoluto médio: o tamanho
+Dialogue: 10,0:00:03.29,0:00:09.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}médio da diferença entre previsão e\Nreferência, no mesmo instante.
+Dialogue: 10,0:00:09.00,0:00:14.46,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Aqui, a referência é seiscentos e a\Nprevisão, seiscentos e cinquenta. A
+Dialogue: 10,0:00:14.46,0:00:18.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}distância é cinquenta, sem considerar o\Nsinal.
+Dialogue: 10,0:00:18.00,0:00:21.48,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Reunimos as cinco diferenças e dividimos
+Dialogue: 10,0:00:21.48,0:00:28.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}por cinco. Neste exemplo, o MAE vale vinte\Ne oito watts por metro quadrado.
+Dialogue: 10,0:00:28.00,0:00:31.08,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Quando a previsão se aproxima da
+Dialogue: 10,0:00:31.08,0:00:36.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}referência, as distâncias encolhem e o MAE\Ndiminui.
+Dialogue: 10,0:00:36.00,0:00:42.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Se todos os valores coincidem, o MAE é\Nzero. Na mesma tarefa, menor é melhor.
+Dialogue: 10,0:00:42.00,0:00:45.89,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Calculamos o MAE de cada localidade e
+Dialogue: 10,0:00:45.89,0:00:54.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}fazemos outra média. As dez localidades\Nrecebem o mesmo peso: um décimo cada.
+Dialogue: 10,0:00:54.00,0:01:01.62,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Na avaliação cumulativa, entram todos os\Npassos até o limite, incluindo a noite.
+Dialogue: 10,0:01:01.62,0:01:06.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Setenta e duas horas correspondem a três\Ndias.

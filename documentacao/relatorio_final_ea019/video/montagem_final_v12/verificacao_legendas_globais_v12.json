@@ -1,0 +1,1506 @@
+{
+  "version": 12,
+  "status": "ready_for_encoding",
+  "generated_utc": "2026-11-05T13:48:28.448651+00:00",
+  "voice_manifest_path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/voz_e_legendas_continuas_v12.json",
+  "voice_manifest_sha256": "ff4bc4a04a334a6e8b8887edcac75e9b92a298f11b245b005e321684ae056a93",
+  "voice_audio_path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/audio/voz_completa_continua_v12.wav",
+  "voice_audio_sha256": "2fcbd2f4e0b17feeba57cc7134501d8b7411fbbf5caaa05f64f20879ea9f0516",
+  "duration_seconds": 490.6,
+  "frames": 14718,
+  "captions": 112,
+  "global_events": 120,
+  "intro_caption_count": 3,
+  "body_caption_count": 109,
+  "maximum_caption_lines": 2,
+  "maximum_caption_line_characters": 42,
+  "caption_word_changes": false,
+  "orthographic_corrections": [
+    {
+      "cue_index": 107,
+      "before": "projeto entrega uma comparação\nexperimental das três arquiteturas em dez",
+      "after": "Projeto entrega uma comparação\nexperimental das três arquiteturas em dez",
+      "reason": "Capitalization of the reviewed spoken sentence start; no article added."
+    }
+  ],
+  "incorrect_numeric_clause_added_back": false,
+  "closing_anchors": {
+    "factory_closing_start": 468.4683333333333,
+    "winner_summary_start": 476.7083333333333,
+    "experimental_contribution_start": 482.7683333333333,
+    "thanks_start": 489.40000000000003,
+    "spoken_thanks_start": 488.3183333333333,
+    "source": "Paragraph26 reviewed words, using their edited global timestamps."
+  },
+  "captions_at_global_time": true,
+  "restarted_on_visual_boundaries": false,
+  "caption_font": "Segoe UI",
+  "body_caption_anchor": [
+    960,
+    985
+  ],
+  "body_caption_fontsize": 44,
+  "intro_caption_anchor": [
+    600,
+    985
+  ],
+  "intro_caption_fontsize": 40,
+  "fade_ms": 80,
+  "overlay_events": [
+    {
+      "start": 0.07,
+      "end": 4.57,
+      "text": "Olá, eu sou Gustavo, aluno da Engenharia\nElétrica da Unicamp. Neste trabalho,",
+      "anchor": [
+        600,
+        985
+      ],
+      "font_size": 40,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 4.57,
+      "end": 9.93,
+      "text": "comparo LSTM, Transformer e Informer na\nprevisão da irradiância solar em",
+      "anchor": [
+        600,
+        985
+      ],
+      "font_size": 40,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 9.93,
+      "end": 12.79,
+      "text": "localidades ligadas à fabricação de\nveículos elétricos.",
+      "anchor": [
+        600,
+        985
+      ],
+      "font_size": 40,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 14.333333333333332,
+      "end": 18.793333333333333,
+      "text": "Para entender essa previsão, primeiro\nprecisamos entender a irradiância global",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 18.793333333333333,
+      "end": 24.093333333333334,
+      "text": "horizontal, ou GHI: a potência solar\nrecebida por unidade de área horizontal,",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 24.093333333333334,
+      "end": 29.423333333333332,
+      "text": "em watts por metro quadrado. Parte dessa\nluz vem diretamente do Sol, e parte",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 29.423333333333332,
+      "end": 31.833333333333332,
+      "text": "chega depois de ser espalhada pela\natmosfera.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 34.13333333333333,
+      "end": 38.82333333333333,
+      "text": "A direta normal, chamada DNI, é medida num\nplano perpendicular aos raios solares.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 39.19333333333333,
+      "end": 43.44333333333333,
+      "text": "Para obter sua contribuição na horizontal,\nusamos o cosseno do ângulo com a vertical.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 43.85333333333333,
+      "end": 47.68333333333333,
+      "text": "Somando a luz difusa recebida na\nhorizontal, temos o GHI.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 50.31333333333333,
+      "end": 55.373333333333335,
+      "text": "Essa composição varia. À noite, o GHI\nsolar zera; durante o dia, as nuvens",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 55.373333333333335,
+      "end": 59.79333333333333,
+      "text": "modificam a curva. Prever sua continuação\npode apoiar estimativas de geração",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 59.79333333333333,
+      "end": 64.69333333333333,
+      "text": "fotovoltaica e, com elas, o planejamento\nde compras de energia, armazenamento e",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 64.69333333333333,
+      "end": 65.60333333333334,
+      "text": "horários de consumo.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 67.81333333333333,
+      "end": 71.65333333333334,
+      "text": "Para antecipar essa disponibilidade,\nprecisamos transformar informações do",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 71.65333333333334,
+      "end": 75.57333333333334,
+      "text": "passado em uma previsão. Comparei três\nformas de fazer isso.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 76.95333333333333,
+      "end": 82.05333333333333,
+      "text": "Na LSTM, os valores entram em ordem. A\nrede atualiza uma memória a cada passo,",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 82.35333333333332,
+      "end": 87.08333333333333,
+      "text": "usando portas aprendidas para controlar o\nque reter, acrescentar e transmitir.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 87.91333333333333,
+      "end": 91.28333333333332,
+      "text": "O estado final reúne informações úteis\npara prever o que vem depois.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 93.22333333333333,
+      "end": 97.74333333333334,
+      "text": "O Transformer relaciona posições da\nsequência por atenção. Cada posição gera",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 97.74333333333334,
+      "end": 102.64333333333335,
+      "text": "uma consulta, comparada às chaves das\noutras posições. Essas relações produzem",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 102.64333333333335,
+      "end": 107.81333333333333,
+      "text": "pesos, que controlam a contribuição de\ncada posição na combinação dos valores. A",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 107.81333333333333,
+      "end": 110.66333333333334,
+      "text": "representação também inclui a ordem\ntemporal dos valores.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 112.01333333333332,
+      "end": 116.36333333333334,
+      "text": "O Informer modifica esse processamento\npara sequências longas: detalha a atenção",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 116.36333333333334,
+      "end": 121.52333333333334,
+      "text": "de algumas consultas e reduz a sequência\ninterna do codificador. A atenção que liga",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 121.52333333333334,
+      "end": 126.72333333333334,
+      "text": "o histórico processado à etapa de\nprevisão, chamada atenção cruzada,",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 127.46333333333334,
+      "end": 132.75333333333333,
+      "text": "permanece completa. Neste projeto, os três\nmodelos produzem diretamente o vetor de",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 132.75333333333333,
+      "end": 137.59333333333333,
+      "text": "valores futuros. Para compará-los, usei a\nmesma base de dados e os mesmos cortes",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 137.59333333333333,
+      "end": 138.18333333333334,
+      "text": "temporais.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 139.56333333333333,
+      "end": 144.38333333333333,
+      "text": "Essa base cobre dez localidades nas\nAméricas: uma no Brasil, oito nos Estados",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 144.38333333333333,
+      "end": 149.24333333333334,
+      "text": "Unidos e uma no México, associadas à\nfabricação de veículos elétricos. Os",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 149.24333333333334,
+      "end": 154.58333333333331,
+      "text": "valores vêm da NSRDB, que combina\nsatélites, informações atmosféricas",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 154.58333333333331,
+      "end": 157.89333333333335,
+      "text": "e modelos físicos para estimar a\nirradiância em cada região.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 160.69333333333333,
+      "end": 164.67333333333332,
+      "text": "Podemos observar esses dados de duas\nmaneiras. A curva mostra quando cada valor",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 164.67333333333332,
+      "end": 169.2733333333333,
+      "text": "ocorreu. O histograma agrupa valores por\nfaixa e mostra a porcentagem de horas em",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 169.2733333333333,
+      "end": 172.86333333333332,
+      "text": "cada uma. No exemplo de Camaçari, a faixa\nentre quatrocentos e quatrocentos e",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 172.86333333333332,
+      "end": 177.8033333333333,
+      "text": "cinquenta watts por metro quadrado reúne\ncerca de quatro vírgula oito por cento das",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 177.8033333333333,
+      "end": 183.13333333333333,
+      "text": "horas com GHI positivo. Os valores zero\nsão contados separadamente. Assim,",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 183.40333333333334,
+      "end": 187.06333333333333,
+      "text": "comparamos as distribuições entre\nlocalidades, sem confundir porcentagem de",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 187.06333333333333,
+      "end": 188.59333333333333,
+      "text": "ocorrências com passagem do tempo.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 189.54333333333332,
+      "end": 194.26333333333332,
+      "text": "Para prever, porém, também precisamos da\nordem em que os valores aconteceram. Por",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 194.26333333333332,
+      "end": 198.81333333333333,
+      "text": "isso, a entrada reúne uma janela de GHI\nanterior e a identificação da localidade.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 199.24333333333334,
+      "end": 203.12333333333333,
+      "text": "A rede aprende uma representação de cada\nregião e compartilha seus parâmetros entre",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 203.12333333333333,
+      "end": 204.13333333333333,
+      "text": "as dez localidades.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 204.79333333333332,
+      "end": 208.73333333333332,
+      "text": "A janela e o futuro previsto mudam\nconforme a tarefa. Na horária, entram duas",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 208.73333333333332,
+      "end": 213.39333333333332,
+      "text": "semanas e prevemos três dias. Na diária,\nentra um ano e prevemos trinta dias. Nas",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 213.39333333333332,
+      "end": 218.22333333333333,
+      "text": "mensais, entram doze meses, para prever um\nmês ou seis meses. Essas duas tarefas",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 218.22333333333333,
+      "end": 222.29333333333332,
+      "text": "mensais usam redes treinadas\nseparadamente. Cada tarefa mantém as",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 222.29333333333332,
+      "end": 224.78333333333333,
+      "text": "mesmas entradas para comparar os três\nmodelos.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 225.53333333333333,
+      "end": 229.85333333333332,
+      "text": "Definidas essas tarefas, organizei os\ndados no tempo. O treinamento inicial usou",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 229.85333333333332,
+      "end": 235.10333333333332,
+      "text": "dois mil e dezenove a dois mil e vinte e\ndois; a validação,",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 235.61333333333332,
+      "end": 240.83333333333334,
+      "text": "dois mil e vinte e três. Selecionei\nconfigurações e épocas pela validação,",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 241.01333333333332,
+      "end": 244.26333333333335,
+      "text": "com a normalização ajustada ao histórico\nde treino correspondente.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 244.92333333333332,
+      "end": 249.54333333333332,
+      "text": "Depois, reiniciei o treinamento com dois\nmil e dezenove a dois mil e vinte e três e",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 249.54333333333332,
+      "end": 254.06333333333333,
+      "text": "avaliei as previsões em dois mil e vinte e\nquatro. Como esse ano já havia sido",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 254.06333333333333,
+      "end": 258.1933333333333,
+      "text": "examinado, essa avaliação é retrospectiva,\ncom independência limitada.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 259.1433333333333,
+      "end": 263.74333333333334,
+      "text": "Dentro desse protocolo, testei uma\nhipótese adicional: mudar a representação",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 263.74333333333334,
+      "end": 267.96333333333337,
+      "text": "do GHI de entrada. Quantizar significa\naproximar cada leitura de um dos níveis",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 267.96333333333337,
+      "end": 268.77333333333337,
+      "text": "disponíveis.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 269.72333333333336,
+      "end": 273.9033333333333,
+      "text": "Acompanhe a leitura quatrocentos e trinta\ne sete, numa escala didática de zero a",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 273.9033333333333,
+      "end": 278.0333333333333,
+      "text": "mil. Depois da normalização, com sessenta\ne quatro níveis ela é reconstruída como",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 278.0333333333333,
+      "end": 282.6333333333333,
+      "text": "aproximadamente quatrocentos e quarenta e\nquatro. Com cento e vinte e oito, fica",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 282.6333333333333,
+      "end": 287.5833333333333,
+      "text": "perto de quatrocentos e trinta e três; com\nduzentos e cinquenta e seis, perto de",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 287.5833333333333,
+      "end": 292.17333333333335,
+      "text": "quatrocentos e trinta e cinco. Mais níveis\nreduzem o espaço entre os degraus,",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 292.4533333333333,
+      "end": 293.9633333333333,
+      "text": "mantendo o instante da leitura.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 295.4133333333333,
+      "end": 299.4133333333333,
+      "text": "Nas variantes quantizadas, limitamos\nextremos antes de arredondar. A",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 299.4133333333333,
+      "end": 303.87333333333333,
+      "text": "transformação atua apenas no GHI de\nentrada: a localidade segue separada, e",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 303.87333333333333,
+      "end": 307.9433333333333,
+      "text": "pesos, alvos e saídas permanecem\ncontínuos. Comparei essas variantes ao",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 307.9433333333333,
+      "end": 310.67333333333335,
+      "text": "controle contínuo, escolhendo a condição\nna validação.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 311.54333333333335,
+      "end": 315.93333333333334,
+      "text": "Essa aproximação da entrada ainda não é o\nerro da previsão. Para avaliar a saída,",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 316.0833333333333,
+      "end": 320.12333333333333,
+      "text": "usamos o MAE, o erro absoluto médio. No\ngráfico, ele começa pela distância",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 320.12333333333333,
+      "end": 323.05333333333334,
+      "text": "vertical entre previsão e referência no\nmesmo instante.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 323.5733333333333,
+      "end": 327.55333333333334,
+      "text": "Se a referência é seiscentos e a previsão\né seiscentos e cinquenta, a diferença",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 327.55333333333334,
+      "end": 331.81333333333333,
+      "text": "absoluta é cinquenta. Reunindo as cinco\ndiferenças do exemplo, vinte, trinta,",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 331.81333333333333,
+      "end": 336.73333333333335,
+      "text": "cinquenta, trinta e dez, e dividindo por\ncinco, chegamos a vinte e oito watts por",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 336.73333333333335,
+      "end": 337.3833333333333,
+      "text": "metro quadrado.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 338.8233333333333,
+      "end": 344.0833333333333,
+      "text": "Quando as curvas se aproximam, essas\ndistâncias diminuem. Se todos",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 344.0833333333333,
+      "end": 348.9433333333333,
+      "text": "os valores coincidem, o MAE é zero.\nPortanto, na mesma tarefa, menor MAE",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 348.9433333333333,
+      "end": 351.0133333333333,
+      "text": "indica uma previsão mais próxima da\nreferência.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 351.86333333333334,
+      "end": 356.06333333333333,
+      "text": "Calculamos esse erro para cada localidade\ne depois fazemos outra média, dando o",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 356.06333333333333,
+      "end": 361.3433333333333,
+      "text": "mesmo peso às dez regiões. É o macro-MAE.\nNa avaliação cumulativa, entram todos",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 361.3433333333333,
+      "end": 364.0133333333333,
+      "text": "os passos até o horizonte escolhido,\nincluindo a noite.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 366.4633333333333,
+      "end": 370.3933333333333,
+      "text": "Setenta e duas horas representam três dias\ncompletos. Com essa régua, podemos",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 370.3933333333333,
+      "end": 371.60333333333335,
+      "text": "interpretar os resultados.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 372.4633333333333,
+      "end": 377.56333333333333,
+      "text": "Nos horizontes completos, o Transformer\napresentou o menor macro-MAE horário, com",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 377.56333333333333,
+      "end": 382.9133333333333,
+      "text": "cinquenta e três vírgula vinte e um watts\npor metro quadrado. Na diária, também",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 382.9133333333333,
+      "end": 388.25333333333333,
+      "text": "liderou, com quarenta e três vírgula\noitenta e nove. As diferenças para",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 388.25333333333333,
+      "end": 390.12333333333333,
+      "text": "a LSTM foram pequenas.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 392.2633333333333,
+      "end": 396.56333333333333,
+      "text": "Nas tarefas mensais, o Informer teve os\nmenores erros: doze",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 396.56333333333333,
+      "end": 401.5683333333333,
+      "text": "vírgula setenta e três em um mês, também\nem watts por metro quadrado. Esses valores",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 401.5683333333333,
+      "end": 405.48833333333334,
+      "text": "devem ser comparados dentro de cada\ntarefa, porque as escalas e os alvos",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 405.48833333333334,
+      "end": 405.8983333333333,
+      "text": "mudam.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 407.3483333333333,
+      "end": 411.8383333333333,
+      "text": "A visão por localidade e horizonte\ncomplementa essas médias. Na diária, por",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 411.8383333333333,
+      "end": 416.2183333333333,
+      "text": "exemplo, a LSTM liderou os recortes\navaliados de até quatorze dias; o",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 416.2183333333333,
+      "end": 420.18833333333333,
+      "text": "Transformer liderou em trinta dias. Nas\nduas tarefas mensais, o Informer venceu em",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 420.18833333333333,
+      "end": 424.85833333333335,
+      "text": "cinco localidades, mas elas não foram\nexatamente as mesmas. As médias resumem o",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 424.85833333333335,
+      "end": 427.0683333333333,
+      "text": "desempenho; os detalhes mostram sua\ndistribuição.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 427.80833333333334,
+      "end": 431.1483333333333,
+      "text": "As análises adicionais ajudam a\ninterpretar esse conjunto. Comparadas ao",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 431.1483333333333,
+      "end": 434.60833333333335,
+      "text": "controle contínuo, as variantes\nquantizadas escolhidas na validação",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 434.60833333333335,
+      "end": 439.7683333333333,
+      "text": "reduziram o erro em cinco combinações de\nmodelo e tarefa e aumentaram em quatro.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 440.7183333333333,
+      "end": 443.3883333333333,
+      "text": "Nas três restantes, foi selecionado o\npróprio controle.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 444.85833333333335,
+      "end": 448.61833333333334,
+      "text": "Numa comparação histórica separada, nos\ncontroles contínuos, o histórico longo",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 448.61833333333334,
+      "end": 453.91833333333335,
+      "text": "teve menor erro em onze de doze casos,\nexceto na LSTM horária. Isso",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 453.91833333333335,
+      "end": 457.40833333333336,
+      "text": "também envolve mudanças nos anos e na\nnormalização, sem isolar uma causa.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 458.35833333333335,
+      "end": 461.6383333333333,
+      "text": "O estudo avaliou precisão, sem medir\nvelocidade computacional ou produção",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 461.6383333333333,
+      "end": 465.92833333333334,
+      "text": "fotovoltaica. A tarefa de seis meses\npermanece exploratória, e as diferenças",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 465.92833333333334,
+      "end": 467.5183333333333,
+      "text": "observadas são descritivas.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 468.4683333333333,
+      "end": 473.74833333333333,
+      "text": "Projeto entrega uma comparação\nexperimental das três arquiteturas em dez",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 473.74833333333333,
+      "end": 478.5083333333333,
+      "text": "localidades, sob um protocolo comum. Nos\nhorizontes completos avaliados, o",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 478.5083333333333,
+      "end": 483.0283333333333,
+      "text": "Transformer liderou as previsões horárias\ne diárias, e o Informer, as mensais. Esses",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 483.0283333333333,
+      "end": 486.2883333333333,
+      "text": "resultados oferecem uma base experimental\npara orientar a escolha dos modelos na",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 486.2883333333333,
+      "end": 489.18833333333333,
+      "text": "previsão da irradiância solar. Obrigado\npela atenção.",
+      "anchor": [
+        960,
+        985
+      ],
+      "font_size": 44,
+      "layer": 10,
+      "style": "Caption"
+    },
+    {
+      "start": 468.4683333333333,
+      "end": 476.7083333333333,
+      "text": "3 arquiteturas · 10 localidades",
+      "anchor": [
+        960,
+        92
+      ],
+      "font_size": 49,
+      "layer": 4,
+      "style": "Text"
+    },
+    {
+      "start": 468.4683333333333,
+      "end": 476.7083333333333,
+      "text": "Um protocolo comum de avaliação",
+      "anchor": [
+        960,
+        154
+      ],
+      "font_size": 31,
+      "layer": 4,
+      "style": "Text"
+    },
+    {
+      "start": 476.7083333333333,
+      "end": 482.7683333333333,
+      "text": "Transformer · horária e diária",
+      "anchor": [
+        960,
+        78
+      ],
+      "font_size": 43,
+      "layer": 4,
+      "style": "Text"
+    },
+    {
+      "start": 476.7083333333333,
+      "end": 482.7683333333333,
+      "text": "Informer · tarefas mensais",
+      "anchor": [
+        960,
+        137
+      ],
+      "font_size": 43,
+      "layer": 4,
+      "style": "Text"
+    },
+    {
+      "start": 476.7083333333333,
+      "end": 482.7683333333333,
+      "text": "Nos horizontes completos avaliados",
+      "anchor": [
+        960,
+        199
+      ],
+      "font_size": 27,
+      "layer": 4,
+      "style": "Text"
+    },
+    {
+      "start": 482.7683333333333,
+      "end": 490.6,
+      "text": "Uma base experimental para orientar",
+      "anchor": [
+        960,
+        75
+      ],
+      "font_size": 44,
+      "layer": 4,
+      "style": "Text"
+    },
+    {
+      "start": 482.7683333333333,
+      "end": 490.6,
+      "text": "a escolha dos modelos de previsão solar",
+      "anchor": [
+        960,
+        133
+      ],
+      "font_size": 40,
+      "layer": 4,
+      "style": "Text"
+    },
+    {
+      "start": 489.40000000000003,
+      "end": 490.6,
+      "text": "Obrigado pela atenção",
+      "anchor": [
+        960,
+        213
+      ],
+      "font_size": 29,
+      "layer": 4,
+      "style": "Text"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/Legendas_Finais_v12.srt",
+      "sha256": "46b72ee1434fdd1f05e3e123889d735f3e4c3ccdca30956c301dcb6d4d17a5eb",
+      "bytes": 12300
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/Legendas_Finais_v12.ass",
+      "sha256": "4e004692af7c3d1c1f5394558e56b5265facf410692d433b5cee0a8fc28b9156",
+      "bytes": 21740
+    }
+  ],
+  "visual_inspection_performed": false,
+  "visual_items_count": 71,
+  "timeline_sha256": "3d65570540336d96a3d552ae53e1e3f9a0b6de0fce9954552d228b2f04d24432"
+}

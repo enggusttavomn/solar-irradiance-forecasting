@@ -1,0 +1,733 @@
+{
+  "id": 5,
+  "start": 95,
+  "end": 130,
+  "duration": 35,
+  "title": "Quatro tarefas de previsão",
+  "narration": "Organizei quatro tarefas de previsão. Na horária, usei trezentas e trinta e seis horas para prever as próximas setenta e duas. Na diária, trezentos e sessenta e cinco dias para prever trinta. Nas tarefas mensais, utilizei doze meses para prever um mês ou seis meses. São redes treinadas para tarefas distintas. Por isso, o primeiro passo da previsão de seis meses não deve ser confundido com a tarefa mensal de um passo.",
+  "label_events": [
+    {
+      "start": 95,
+      "end": 100,
+      "start_local": 0,
+      "end_local": 5,
+      "text": "Histórico",
+      "x": 430,
+      "y": 240,
+      "size": 40,
+      "color": "F3F5F7",
+      "align": 8,
+      "available": 1700
+    },
+    {
+      "start": 95,
+      "end": 100,
+      "start_local": 0,
+      "end_local": 5,
+      "text": "Previsão",
+      "x": 1450,
+      "y": 240,
+      "size": 40,
+      "color": "E9B95F",
+      "align": 8,
+      "available": 1700
+    },
+    {
+      "start": 100,
+      "end": 106,
+      "start_local": 5,
+      "end_local": 11,
+      "text": "Horária · 336 h → 72 h",
+      "x": 960,
+      "y": 730,
+      "size": 44,
+      "color": "F3F5F7",
+      "align": 8,
+      "available": 1700
+    },
+    {
+      "start": 106,
+      "end": 111,
+      "start_local": 11,
+      "end_local": 16,
+      "text": "Diária · 365 d → 30 d",
+      "x": 960,
+      "y": 730,
+      "size": 44,
+      "color": "F3F5F7",
+      "align": 8,
+      "available": 1700
+    },
+    {
+      "start": 111,
+      "end": 116,
+      "start_local": 16,
+      "end_local": 21,
+      "text": "Mensal · 12 meses → 1 mês",
+      "x": 960,
+      "y": 730,
+      "size": 44,
+      "color": "F3F5F7",
+      "align": 8,
+      "available": 1700
+    },
+    {
+      "start": 116,
+      "end": 121,
+      "start_local": 21,
+      "end_local": 26,
+      "text": "Mensal · 12 meses → 6 meses",
+      "x": 960,
+      "y": 730,
+      "size": 44,
+      "color": "F3F5F7",
+      "align": 8,
+      "available": 1700
+    },
+    {
+      "start": 116,
+      "end": 121,
+      "start_local": 21,
+      "end_local": 26,
+      "text": "Exploratória",
+      "x": 1650,
+      "y": 240,
+      "size": 32,
+      "color": "AA91E8",
+      "align": 8,
+      "available": 1700
+    },
+    {
+      "start": 121,
+      "end": 130,
+      "start_local": 26,
+      "end_local": 35,
+      "text": "Redes distintas: 1 e 6 saídas",
+      "x": 960,
+      "y": 730,
+      "size": 40,
+      "color": "F3F5F7",
+      "align": 8,
+      "available": 1700
+    }
+  ],
+  "notes": [
+    "Distinguir contexto de entrada, horizonte de saída e intervalo entre origens da previsão.",
+    "Na tarefa horária, um vetor de 72 previsões é emitido a cada 24 horas, não a cada 72 horas.",
+    "O primeiro passo da rede de seis saídas não é o resultado da rede mensal de um passo."
+  ],
+  "start_seconds": 95,
+  "end_seconds": 130,
+  "duration_seconds": 35,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v4\\cenas\\cena_05.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v4\\cenas\\cena_05_3d.mp4",
+  "frame_count": 1050,
+  "rendered": false,
+  "scene_metadata": {
+    "version": 4,
+    "chapter_id": 5,
+    "duration_seconds": 35.0,
+    "fps": 30,
+    "frame_count": 1050,
+    "projection": "PERSP",
+    "static_frontal_camera": false,
+    "native_text_objects": 0,
+    "palette_srgb": {
+      "background": "#07090D",
+      "body": "#171C22",
+      "white": "#F3F5F7",
+      "secondary": "#A9B2BE",
+      "axes": "#626D7A",
+      "gold": "#E9B95F",
+      "coral": "#F28779",
+      "cyan": "#58CADA",
+      "violet": "#AA91E8"
+    },
+    "objects_created": 269,
+    "objects": [
+      "Duas tarefas mensais distintas 0",
+      "Duas tarefas mensais distintas 1",
+      "Rede mensal distinta 0 00",
+      "Rede mensal distinta 0 01",
+      "Rede mensal distinta 0 02",
+      "Rede mensal distinta 0 03",
+      "Rede mensal distinta 0 04",
+      "Rede mensal distinta 0 05",
+      "Rede mensal distinta 0 06",
+      "Rede mensal distinta 0 07",
+      "Rede mensal distinta 0 08",
+      "Rede mensal distinta 0 09",
+      "Rede mensal distinta 0 10",
+      "Rede mensal distinta 0 11",
+      "Rede mensal distinta 1 00",
+      "Rede mensal distinta 1 01",
+      "Rede mensal distinta 1 02",
+      "Rede mensal distinta 1 03",
+      "Rede mensal distinta 1 04",
+      "Rede mensal distinta 1 05",
+      "Rede mensal distinta 1 06",
+      "Rede mensal distinta 1 07",
+      "Rede mensal distinta 1 08",
+      "Rede mensal distinta 1 09",
+      "Rede mensal distinta 1 10",
+      "Rede mensal distinta 1 11",
+      "Tarefa 0 · eixo",
+      "Tarefa 0 · janela 00",
+      "Tarefa 0 · janela 01",
+      "Tarefa 0 · janela 02",
+      "Tarefa 0 · janela 03",
+      "Tarefa 0 · janela 04",
+      "Tarefa 0 · janela 05",
+      "Tarefa 0 · janela 06",
+      "Tarefa 0 · janela 07",
+      "Tarefa 0 · janela 08",
+      "Tarefa 0 · janela 09",
+      "Tarefa 0 · janela 10",
+      "Tarefa 0 · janela 11",
+      "Tarefa 0 · observado",
+      "Tarefa 0 · presente",
+      "Tarefa 0 · vetor futuro 0",
+      "Tarefa 0 · vetor futuro 1",
+      "Tarefa 0 · vetor futuro 10",
+      "Tarefa 0 · vetor futuro 11",
+      "Tarefa 0 · vetor futuro 12",
+      "Tarefa 0 · vetor futuro 13",
+      "Tarefa 0 · vetor futuro 14",
+      "Tarefa 0 · vetor futuro 15",
+      "Tarefa 0 · vetor futuro 16",
+      "Tarefa 0 · vetor futuro 17",
+      "Tarefa 0 · vetor futuro 2",
+      "Tarefa 0 · vetor futuro 3",
+      "Tarefa 0 · vetor futuro 4",
+      "Tarefa 0 · vetor futuro 5",
+      "Tarefa 0 · vetor futuro 6",
+      "Tarefa 0 · vetor futuro 7",
+      "Tarefa 0 · vetor futuro 8",
+      "Tarefa 0 · vetor futuro 9",
+      "Tarefa 1 · eixo",
+      "Tarefa 1 · janela 00",
+      "Tarefa 1 · janela 01",
+      "Tarefa 1 · janela 02",
+      "Tarefa 1 · janela 03",
+      "Tarefa 1 · janela 04",
+      "Tarefa 1 · janela 05",
+      "Tarefa 1 · janela 06",
+      "Tarefa 1 · janela 07",
+      "Tarefa 1 · janela 08",
+      "Tarefa 1 · janela 09",
+      "Tarefa 1 · janela 10",
+      "Tarefa 1 · janela 11",
+      "Tarefa 1 · observado",
+      "Tarefa 1 · presente",
+      "Tarefa 1 · vetor futuro 0",
+      "Tarefa 1 · vetor futuro 1",
+      "Tarefa 1 · vetor futuro 10",
+      "Tarefa 1 · vetor futuro 11",
+      "Tarefa 1 · vetor futuro 12",
+      "Tarefa 1 · vetor futuro 13",
+      "Tarefa 1 · vetor futuro 14",
+      "Tarefa 1 · vetor futuro 15",
+      "Tarefa 1 · vetor futuro 16",
+      "Tarefa 1 · vetor futuro 17",
+      "Tarefa 1 · vetor futuro 2",
+      "Tarefa 1 · vetor futuro 3",
+      "Tarefa 1 · vetor futuro 4",
+      "Tarefa 1 · vetor futuro 5",
+      "Tarefa 1 · vetor futuro 6",
+      "Tarefa 1 · vetor futuro 7",
+      "Tarefa 1 · vetor futuro 8",
+      "Tarefa 1 · vetor futuro 9",
+      "Tarefa 2 · eixo",
+      "Tarefa 2 · janela 00",
+      "Tarefa 2 · janela 01",
+      "Tarefa 2 · janela 02",
+      "Tarefa 2 · janela 03",
+      "Tarefa 2 · janela 04",
+      "Tarefa 2 · janela 05",
+      "Tarefa 2 · janela 06",
+      "Tarefa 2 · janela 07",
+      "Tarefa 2 · janela 08",
+      "Tarefa 2 · janela 09",
+      "Tarefa 2 · janela 10",
+      "Tarefa 2 · janela 11",
+      "Tarefa 2 · observado",
+      "Tarefa 2 · presente",
+      "Tarefa 2 · vetor futuro 0",
+      "Tarefa 2 · vetor futuro 1",
+      "Tarefa 2 · vetor futuro 10",
+      "Tarefa 2 · vetor futuro 11",
+      "Tarefa 2 · vetor futuro 12",
+      "Tarefa 2 · vetor futuro 13",
+      "Tarefa 2 · vetor futuro 14",
+      "Tarefa 2 · vetor futuro 15",
+      "Tarefa 2 · vetor futuro 16",
+      "Tarefa 2 · vetor futuro 17",
+      "Tarefa 2 · vetor futuro 2",
+      "Tarefa 2 · vetor futuro 3",
+      "Tarefa 2 · vetor futuro 4",
+      "Tarefa 2 · vetor futuro 5",
+      "Tarefa 2 · vetor futuro 6",
+      "Tarefa 2 · vetor futuro 7",
+      "Tarefa 2 · vetor futuro 8",
+      "Tarefa 2 · vetor futuro 9",
+      "Tarefa 3 · eixo",
+      "Tarefa 3 · janela 00",
+      "Tarefa 3 · janela 01",
+      "Tarefa 3 · janela 02",
+      "Tarefa 3 · janela 03",
+      "Tarefa 3 · janela 04",
+      "Tarefa 3 · janela 05",
+      "Tarefa 3 · janela 06",
+      "Tarefa 3 · janela 07",
+      "Tarefa 3 · janela 08",
+      "Tarefa 3 · janela 09",
+      "Tarefa 3 · janela 10",
+      "Tarefa 3 · janela 11",
+      "Tarefa 3 · observado",
+      "Tarefa 3 · presente",
+      "Tarefa 3 · vetor futuro 0",
+      "Tarefa 3 · vetor futuro 1",
+      "Tarefa 3 · vetor futuro 10",
+      "Tarefa 3 · vetor futuro 11",
+      "Tarefa 3 · vetor futuro 12",
+      "Tarefa 3 · vetor futuro 13",
+      "Tarefa 3 · vetor futuro 14",
+      "Tarefa 3 · vetor futuro 15",
+      "Tarefa 3 · vetor futuro 16",
+      "Tarefa 3 · vetor futuro 17",
+      "Tarefa 3 · vetor futuro 2",
+      "Tarefa 3 · vetor futuro 3",
+      "Tarefa 3 · vetor futuro 4",
+      "Tarefa 3 · vetor futuro 5",
+      "Tarefa 3 · vetor futuro 6",
+      "Tarefa 3 · vetor futuro 7",
+      "Tarefa 3 · vetor futuro 8",
+      "Tarefa 3 · vetor futuro 9",
+      "V4 eixo apenas do horizonte mensal de um passo",
+      "V4 mensal 2 posicao futura 1",
+      "V4 mensal 2 variacao sazonal observada",
+      "V4 mensal 3 posicao futura 1",
+      "V4 mensal 3 posicao futura 2",
+      "V4 mensal 3 posicao futura 3",
+      "V4 mensal 3 posicao futura 4",
+      "V4 mensal 3 posicao futura 5",
+      "V4 mensal 3 posicao futura 6",
+      "V4 mensal 3 variacao sazonal observada",
+      "V4 pacote introduz tarefa 0",
+      "V4 pacote introduz tarefa 1",
+      "V4 pacote introduz tarefa 2",
+      "V4 pacote introduz tarefa 3",
+      "V4 physical task window 0",
+      "V4 physical task window 1",
+      "V4 physical task window 2",
+      "V4 physical task window 3",
+      "V4 processamento rede mensal independente 0",
+      "V4 processamento rede mensal independente 1",
+      "V4 quatro resolucoes em fitas espaciais 0",
+      "V4 quatro resolucoes em fitas espaciais 1",
+      "V4 quatro resolucoes em fitas espaciais 2",
+      "V4 quatro resolucoes em fitas espaciais 3",
+      "V4 rede mensal independente 0 no 0 0",
+      "V4 rede mensal independente 0 no 0 1",
+      "V4 rede mensal independente 0 no 1 0",
+      "V4 rede mensal independente 0 no 1 1",
+      "V4 rede mensal independente 1 no 0 0",
+      "V4 rede mensal independente 1 no 0 1",
+      "V4 rede mensal independente 1 no 1 0",
+      "V4 rede mensal independente 1 no 1 1",
+      "V4 tarefa 0 dado na janela 0",
+      "V4 tarefa 0 dado na janela 1",
+      "V4 tarefa 0 dado na janela 10",
+      "V4 tarefa 0 dado na janela 11",
+      "V4 tarefa 0 dado na janela 12",
+      "V4 tarefa 0 dado na janela 2",
+      "V4 tarefa 0 dado na janela 3",
+      "V4 tarefa 0 dado na janela 4",
+      "V4 tarefa 0 dado na janela 5",
+      "V4 tarefa 0 dado na janela 6",
+      "V4 tarefa 0 dado na janela 7",
+      "V4 tarefa 0 dado na janela 8",
+      "V4 tarefa 0 dado na janela 9",
+      "V4 tarefa 0 lateral volumetrica -1.29",
+      "V4 tarefa 0 lateral volumetrica 0.34",
+      "V4 tarefa 1 dado na janela 0",
+      "V4 tarefa 1 dado na janela 1",
+      "V4 tarefa 1 dado na janela 10",
+      "V4 tarefa 1 dado na janela 11",
+      "V4 tarefa 1 dado na janela 12",
+      "V4 tarefa 1 dado na janela 2",
+      "V4 tarefa 1 dado na janela 3",
+      "V4 tarefa 1 dado na janela 4",
+      "V4 tarefa 1 dado na janela 5",
+      "V4 tarefa 1 dado na janela 6",
+      "V4 tarefa 1 dado na janela 7",
+      "V4 tarefa 1 dado na janela 8",
+      "V4 tarefa 1 dado na janela 9",
+      "V4 tarefa 1 lateral volumetrica -1.29",
+      "V4 tarefa 1 lateral volumetrica 0.34",
+      "V4 tarefa 2 dado na janela 0",
+      "V4 tarefa 2 dado na janela 1",
+      "V4 tarefa 2 dado na janela 10",
+      "V4 tarefa 2 dado na janela 11",
+      "V4 tarefa 2 dado na janela 12",
+      "V4 tarefa 2 dado na janela 2",
+      "V4 tarefa 2 dado na janela 3",
+      "V4 tarefa 2 dado na janela 4",
+      "V4 tarefa 2 dado na janela 5",
+      "V4 tarefa 2 dado na janela 6",
+      "V4 tarefa 2 dado na janela 7",
+      "V4 tarefa 2 dado na janela 8",
+      "V4 tarefa 2 dado na janela 9",
+      "V4 tarefa 2 lateral volumetrica -1.29",
+      "V4 tarefa 2 lateral volumetrica 0.34",
+      "V4 tarefa 3 dado na janela 0",
+      "V4 tarefa 3 dado na janela 1",
+      "V4 tarefa 3 dado na janela 10",
+      "V4 tarefa 3 dado na janela 11",
+      "V4 tarefa 3 dado na janela 12",
+      "V4 tarefa 3 dado na janela 2",
+      "V4 tarefa 3 dado na janela 3",
+      "V4 tarefa 3 dado na janela 4",
+      "V4 tarefa 3 dado na janela 5",
+      "V4 tarefa 3 dado na janela 6",
+      "V4 tarefa 3 dado na janela 7",
+      "V4 tarefa 3 dado na janela 8",
+      "V4 tarefa 3 dado na janela 9",
+      "V4 tarefa 3 lateral volumetrica -1.29",
+      "V4 tarefa 3 lateral volumetrica 0.34",
+      "V4 tarefa mensal 0 entrada 0",
+      "V4 tarefa mensal 0 entrada 1",
+      "V4 tarefa mensal 0 entrada 2",
+      "V4 tarefa mensal 0 entrada 3",
+      "V4 tarefa mensal 0 entrada 4",
+      "V4 tarefa mensal 0 entrada 5",
+      "V4 tarefa mensal 0 saida 1",
+      "V4 tarefa mensal 1 entrada 0",
+      "V4 tarefa mensal 1 entrada 1",
+      "V4 tarefa mensal 1 entrada 2",
+      "V4 tarefa mensal 1 entrada 3",
+      "V4 tarefa mensal 1 entrada 4",
+      "V4 tarefa mensal 1 entrada 5",
+      "V4 tarefa mensal 1 saida 1",
+      "V4 tarefa mensal 1 saida 2",
+      "V4 tarefa mensal 1 saida 3",
+      "V4 tarefa mensal 1 saida 4",
+      "V4 tarefa mensal 1 saida 5",
+      "V4 tarefa mensal 1 saida 6"
+    ],
+    "render_started": false,
+    "source": {
+      "phases": [
+        [
+          5,
+          11
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          16,
+          21
+        ],
+        [
+          21,
+          26
+        ]
+      ],
+      "input_future_distinct": true
+    },
+    "camera": {
+      "projection": "PERSP",
+      "name": "V4 camera perspectiva acompanhando a explicacao",
+      "keys": [
+        {
+          "second": 0.0,
+          "location": [
+            -4.4,
+            -11.8,
+            5.2
+          ],
+          "target": [
+            0,
+            0,
+            1.7
+          ],
+          "lens_mm": 42
+        },
+        {
+          "second": 4.8,
+          "location": [
+            2.3,
+            -12.1,
+            4.9
+          ],
+          "target": [
+            0,
+            0,
+            2.35
+          ],
+          "lens_mm": 42
+        },
+        {
+          "second": 6.4,
+          "location": [
+            2.7,
+            -12.0,
+            5.0
+          ],
+          "target": [
+            0,
+            0,
+            2.65
+          ],
+          "lens_mm": 42
+        },
+        {
+          "second": 10.6,
+          "location": [
+            -1.8,
+            -12.3,
+            4.7
+          ],
+          "target": [
+            0,
+            0,
+            2.55
+          ],
+          "lens_mm": 42
+        },
+        {
+          "second": 12.2,
+          "location": [
+            -2.5,
+            -12.1,
+            5.0
+          ],
+          "target": [
+            0,
+            0,
+            2.55
+          ],
+          "lens_mm": 42
+        },
+        {
+          "second": 15.7,
+          "location": [
+            1.5,
+            -12.4,
+            4.6
+          ],
+          "target": [
+            0,
+            0,
+            2.55
+          ],
+          "lens_mm": 42
+        },
+        {
+          "second": 17.3,
+          "location": [
+            2.4,
+            -9.8,
+            4.8
+          ],
+          "target": [
+            -0.45,
+            0,
+            2.55
+          ],
+          "lens_mm": 44
+        },
+        {
+          "second": 20.6,
+          "location": [
+            -1.5,
+            -9.9,
+            4.7
+          ],
+          "target": [
+            -0.45,
+            0,
+            2.55
+          ],
+          "lens_mm": 44
+        },
+        {
+          "second": 22.2,
+          "location": [
+            -2.2,
+            -12.1,
+            5.0
+          ],
+          "target": [
+            0,
+            0,
+            2.55
+          ],
+          "lens_mm": 42
+        },
+        {
+          "second": 25.7,
+          "location": [
+            1.4,
+            -12.0,
+            4.6
+          ],
+          "target": [
+            0,
+            0,
+            2.55
+          ],
+          "lens_mm": 42
+        },
+        {
+          "second": 27.1,
+          "location": [
+            3.0,
+            -11.9,
+            4.8
+          ],
+          "target": [
+            0,
+            0,
+            2.5
+          ],
+          "lens_mm": 42
+        },
+        {
+          "second": 35.0,
+          "location": [
+            -2.0,
+            -11.8,
+            4.6
+          ],
+          "target": [
+            0,
+            0,
+            2.4
+          ],
+          "lens_mm": 42
+        }
+      ],
+      "intent": "acompanhar o objeto, aproximar detalhes e conservar profundidade",
+      "caption_region": "15 por cento inferiores",
+      "header_region_reserved": false
+    },
+    "phases": [
+      [
+        0.0,
+        5.0,
+        "quatro historias volumetricas introdutorias"
+      ],
+      [
+        5.0,
+        11.0,
+        "336 horas para 72 horas"
+      ],
+      [
+        11.0,
+        16.0,
+        "365 dias para 30 dias"
+      ],
+      [
+        16.0,
+        21.0,
+        "12 meses para um mes"
+      ],
+      [
+        21.0,
+        26.0,
+        "12 meses para seis meses, exploratoria"
+      ],
+      [
+        26.0,
+        35.0,
+        "duas redes mensais e vetores de 1 versus 6 saidas"
+      ]
+    ],
+    "monthly_networks_independently_trained": true,
+    "curves_and_amplitudes_are_illustrative": true,
+    "blank_intro_replaced": true,
+    "output_counts": [
+      1,
+      6
+    ]
+  },
+  "render_style": {
+    "chapter_id": 5,
+    "engine": "BLENDER_WORKBENCH",
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "antialiasing": "8",
+    "codec": "H264",
+    "encoding_preset": "REALTIME",
+    "background_srgb_hex": "#07090D",
+    "palette": {
+      "background": "#07090D",
+      "graphite": "#171C22",
+      "white": "#F3F5F7",
+      "secondary": "#A9B2BE",
+      "axes": "#626D7A",
+      "gold": "#E9B95F",
+      "coral": "#F28779",
+      "cyan": "#58CADA",
+      "violet": "#AA91E8"
+    },
+    "hidden_decorative_objects": [],
+    "materials": [
+      {
+        "material": "Tarefas · eixo",
+        "srgb_hex": "#626D7A",
+        "kind": "line_or_marker"
+      },
+      {
+        "material": "Tarefas · histórico",
+        "srgb_hex": "#F3F5F7",
+        "kind": "line_or_marker"
+      },
+      {
+        "material": "Tarefas · previsão",
+        "srgb_hex": "#E9B95F",
+        "kind": "line_or_marker"
+      },
+      {
+        "material": "V4 tasks common geometry",
+        "srgb_hex": "#A9B2BE",
+        "kind": "line_or_marker"
+      },
+      {
+        "material": "V4 tasks future positions",
+        "srgb_hex": "#E9B95F",
+        "kind": "line_or_marker"
+      },
+      {
+        "material": "V4 tasks physical history",
+        "srgb_hex": "#F3F5F7",
+        "kind": "line_or_marker"
+      },
+      {
+        "material": "V4 tasks window side walls",
+        "srgb_hex": "#46515D",
+        "kind": "matte_surface"
+      }
+    ],
+    "baked_emission_focus": [],
+    "camera_and_timing_unchanged": true,
+    "version": 4,
+    "perspective_camera": true,
+    "specular_highlights": true,
+    "no_fixed_headers": true
+  },
+  "qa_times": [
+    2.5,
+    8,
+    13.5,
+    18.5,
+    23.5,
+    30
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "id": 11,
+  "start": 370,
+  "end": 390,
+  "duration": 20,
+  "title": "Quantização e duração do histórico",
+  "narration": "A quantização não trouxe vantagem universal. Em uma análise histórica separada, com teste pareado, o histórico longo apresentou menor MAE em onze das doze combinações contínuas. Incluir anos anteriores esteve associado à melhora na maioria dos controles, sem garanti-la.",
+  "label_events": [],
+  "notes": [
+    "A comparação de históricos utiliza os mesmos alvos e datas de validação e teste nos regimes longo e curto pareado.",
+    "Não confrontar diretamente o erro histórico com o erro do teste de 2024 para atribuir diferenças à duração do histórico.",
+    "Incluir anos anteriores modifica o número de janelas, a composição dos anos e os extremos da normalização; o resultado não isola quantidade de dados como causa.",
+    "Na análise de quantização de 2024, a condição selecionada melhora cinco combinações, piora quatro e mantém o controle contínuo em três."
+  ],
+  "start_seconds": 370,
+  "end_seconds": 390,
+  "duration_seconds": 20,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v4\\cenas\\cena_11.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v4\\cenas\\cena_11_3d.mp4",
+  "frame_count": 600,
+  "rendered": false,
+  "scene_metadata": {
+    "selected_conditions_counts": [
+      5,
+      4,
+      3
+    ],
+    "historical_paired_controls_improved": 11,
+    "historical_controls_total": 12
+  },
+  "render_style": {
+    "chapter_id": 11,
+    "engine": "BLENDER_WORKBENCH",
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "antialiasing": "8",
+    "codec": "H264",
+    "encoding_preset": "REALTIME",
+    "background_srgb_hex": "#07090D",
+    "palette": {
+      "background": "#07090D",
+      "graphite": "#171C22",
+      "white": "#F3F5F7",
+      "secondary": "#A9B2BE",
+      "axes": "#626D7A",
+      "gold": "#E9B95F",
+      "coral": "#F28779",
+      "cyan": "#58CADA",
+      "violet": "#AA91E8"
+    },
+    "hidden_decorative_objects": [],
+    "materials": [
+      {
+        "material": "Associação · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Complementos v4 coral",
+        "srgb_hex": "#F28779",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Complementos v4 cyan",
+        "srgb_hex": "#58CADA",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Complementos v4 gold",
+        "srgb_hex": "#E9B95F",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Complementos v4 muted",
+        "srgb_hex": "#A9B2BE",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Complementos v4 white",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Histórico curto · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Histórico longo · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Onze · texto",
+        "srgb_hex": "#E9B95F",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "Pareado · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "controles label · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "controles · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "melhoras label · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "melhoras · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "pioras label · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "pioras · texto",
+        "srgb_hex": "#F3F5F7",
+        "kind": "matte_surface"
+      }
+    ],
+    "baked_emission_focus": [],
+    "camera_and_timing_unchanged": true,
+    "version": 4,
+    "perspective_camera": true,
+    "specular_highlights": true,
+    "no_fixed_headers": true
+  },
+  "qa_times": [
+    1.7,
+    7,
+    15
+  ]
+}

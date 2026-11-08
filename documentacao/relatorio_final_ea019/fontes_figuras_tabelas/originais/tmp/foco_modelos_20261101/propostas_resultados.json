@@ -1,0 +1,72 @@
+{
+  "replacements": [
+    {
+      "id": 332,
+      "text": "Este TCC compara as implementações de Transformer, Informer e LSTM na previsão de GHI em diferentes tarefas, horizontes e localidades. As quatro condições de entrada e as diferentes durações do histórico permitem examinar a sensibilidade dessa comparação ao processamento e aos dados disponíveis para ajuste. As escolhas de configuração permanecem fixadas pela validação, e os resultados descrevem as execuções específicas das três redes."
+    },
+    {
+      "id": 334,
+      "text": "A comparação entre Transformer, Informer e LSTM utiliza o horizonte cumulativo completo de cada tarefa e a condição de entrada selecionada na validação. Os controles contínuos também permitem comparar as três redes sob uma condição de entrada comum. O Apêndice A detalha os horizontes menores, e o Apêndice B reúne os MAEs das quatro condições nos três regimes temporais. Classificações e gráficos são calculados com a precisão integral dos arquivos; os valores são arredondados apenas na apresentação."
+    },
+    {
+      "id": 335,
+      "text": "A análise começa pelo teste de 2024 e examina o desempenho agregado, as diferenças entre localidades e o comportamento por horizonte. Em seguida, a quantização e os históricos pareados são examinados como análises complementares, e os registros de treinamento contextualizam as diferenças observadas. Todos os resultados desta seção pertencem a Transformer, Informer e LSTM."
+    },
+    {
+      "id": 430,
+      "text": "A Tabela 6 reúne as configurações selecionadas na validação de 2023 e avaliadas no teste de 2024. Nos controles contínuos, o Transformer liderou os horizontes completos horário e diário, com macro-MAEs de 53,21 e 43,88 W/m²; o Informer liderou um e seis meses, com 12,85 e 13,88 W/m². Esses controles, detalhados no Apêndice B, oferecem uma comparação sob condição de entrada comum. Tanto os controles quanto as configurações selecionadas utilizam a semente 42 na tarefa horária e a média das previsões de cinco sementes nas demais tarefas, conforme a Seção 3.6."
+    },
+    {
+      "id": 431,
+      "text": "Nas configurações selecionadas da Tabela 6, o Transformer apresentou os menores macro-MAEs nos horizontes completos horário e diário, de 53,21 e 43,89 W/m², com vantagens de 0,32 e 0,30 W/m² sobre a LSTM. A proximidade entre essas redes torna relevante examinar os recortes por horizonte e localidade. O Informer obteve MAE horário de 137,68 W/m². Esse resultado caracteriza a execução avaliada; uma única semente é insuficiente para determinar a causa do erro elevado."
+    },
+    {
+      "id": 432,
+      "text": "Nas tarefas mensais, o Informer com 128 níveis apresentou os menores macro-MAEs: 12,73 W/m² em um passo e 13,67 W/m² em seis passos. Em cada uma das quatro tarefas, a ordem dos três modelos no horizonte completo foi a mesma nos controles contínuos e nas configurações selecionadas. Assim, a mudança de liderança entre as tarefas horária e mensal também aparece quando as redes recebem entradas contínuas. Essa concordância se refere aos horizontes completos e não implica liderança em todos os locais ou passos. A Tabela 6 compara as redes com suas configurações escolhidas na validação, sem isolar o efeito da arquitetura."
+    },
+    {
+      "id": 440,
+      "text": "5.3 Quantização como análise de pré-processamento"
+    },
+    {
+      "id": 534,
+      "text": "Esta análise examina a quantização como opção de pré-processamento das entradas e verifica como a condição selecionada se comporta no teste. A Figura 7 apresenta a variação de MAE dos três níveis em relação ao controle do mesmo modelo e tarefa. Cada variante tem seu próprio ajuste e número de épocas escolhido na validação; as quantizadas também aplicam clipping. A Tabela 7 destaca a condição selecionada antes do teste, inclusive quando é o controle."
+    },
+    {
+      "id": 548,
+      "text": "5.5 Análise complementar da duração do histórico"
+    },
+    {
+      "id": 549,
+      "text": "Para contextualizar a comparação entre as redes, os históricos longo e curto são confrontados nos mesmos alvos e datas de validação e teste, conforme a Tabela 3. Na tarefa horária, ambos utilizam as 1.368 origens válidas por localidade após a exclusão da janela incompleta descrita na metodologia. O pareamento evita que a mudança do período de avaliação se confunda com a ampliação do histórico."
+    },
+    {
+      "id": 627,
+      "text": "A comparação entre os modelos mostrou que a ordenação varia entre tarefas, localidades e horizontes. Nos horizontes completos de 2024, a classificação dos três modelos foi a mesma sob controle contínuo e sob as configurações selecionadas na validação. O resultado mensal favorável do Informer não se estendeu à tarefa horária, e as pequenas diferenças agregadas entre Transformer e LSTM coexistiram com mudanças de liderança local. Esses resultados não sustentam uma preferência geral por arquitetura. A comparação utiliza dados e regras de avaliação comuns, mas as tarefas diferem em resolução, contexto e horizonte, e as redes não têm capacidade ou custo computacional equalizados."
+    },
+    {
+      "id": 628,
+      "text": "Como análise de pré-processamento, a quantização não apresentou benefício uniforme, e a condição escolhida na validação nem sempre preservou a vantagem sobre o controle no teste. A análise dos demais níveis caracteriza essa sensibilidade sem refazer a seleção. Uma possível regularização por redução de precisão permanece como hipótese: o desenho combina arredondamento com clipping e não identifica um mecanismo isolado. Um controle com apenas clipping permitiria separar melhor esses efeitos."
+    },
+    {
+      "id": 635,
+      "text": "O TCC comparou Transformer, Informer e LSTM na previsão de GHI em quatro tarefas temporais. No teste de 2024, com as configurações selecionadas na validação, o Transformer apresentou os menores MAEs cumulativos completos nas tarefas horária e diária, de 53,21 e 43,89 W/m². O Informer liderou as tarefas mensais de um e seis passos, com 12,73 e 13,67 W/m². A classificação dos três modelos em cada horizonte completo também foi observada nos controles contínuos. Os resultados descrevem as implementações, os dados e as configurações avaliadas."
+    },
+    {
+      "id": 636,
+      "text": "A resposta à comparação entre os modelos depende da tarefa e do recorte de avaliação. A LSTM liderou os horizontes diários de 1, 3, 7 e 14 dias, enquanto o Transformer apresentou menor MAE no horizonte completo de 30 dias. A análise por localidade também revelou mudanças de liderança em relação à média macro. Portanto, o resultado agregado orienta a escolha entre as configurações avaliadas para cada tarefa, sem estabelecer superioridade geral de uma arquitetura. As diferenças pequenas permanecem descritivas, sem demonstração de significância estatística."
+    },
+    {
+      "id": 637,
+      "text": "A quantização foi examinada como opção de pré-processamento. A condição quantizada selecionada reduziu o MAE em cinco das doze combinações de modelo e tarefa de 2024 e o elevou em quatro; nas três restantes, selecionou-se o controle contínuo. A resposta variou conforme o modelo e a tarefa, e a escolha de uma entrada quantizada na validação não garantiu vantagem posterior. Manter a escolha original preservou a função do teste. Como as variantes também incluem clipping, os resultados caracterizam a transformação conjunta, sem identificar um benefício exclusivo do arredondamento."
+    },
+    {
+      "id": 638,
+      "text": "A análise complementar da duração do histórico mostrou redução de MAE nos controles contínuos em onze das doze combinações pareadas. A exceção da LSTM horária indica que incluir anos anteriores não garante melhora. Como essa ampliação modifica a quantidade de janelas, os anos representados e os extremos da normalização, o resultado não isola um mecanismo causal único. As trajetórias de treinamento também variaram entre os históricos e ajudam a contextualizar as execuções, sem explicar isoladamente suas diferenças de erro."
+    },
+    {
+      "id": 639,
+      "text": "As próximas investigações podem examinar a estabilidade da comparação entre os modelos em novos anos de teste, com mais sementes na tarefa horária e diferentes orçamentos de treinamento, mantendo as escolhas anteriores ao teste. Referências simples, como persistência e climatologia, permitiriam avaliar o ganho das redes em relação a alternativas de menor complexidade. Caso a análise do pré-processamento seja aprofundada, um controle com apenas clipping ajudaria a distinguir seus efeitos dos do arredondamento. A eficiência de implantação requer uma etapa própria de implementação e medição, além da precisão preditiva estudada aqui."
+    }
+  ]
+}

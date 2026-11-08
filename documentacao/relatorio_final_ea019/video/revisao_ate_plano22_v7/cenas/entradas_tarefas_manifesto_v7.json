@@ -1,0 +1,121 @@
+{
+  "duration": 70,
+  "qa_times": [
+    3.5,
+    6.8,
+    12,
+    20,
+    28,
+    34,
+    39,
+    44,
+    50,
+    55,
+    61,
+    67.5
+  ],
+  "cues": [
+    [
+      0,
+      8,
+      "Uma entrada é o histórico de GHI: uma sequência de valores, organizada no tempo."
+    ],
+    [
+      8,
+      16,
+      "A outra entrada identifica a localidade. Esse número se transforma numa representação aprendida pela rede."
+    ],
+    [
+      16,
+      24,
+      "Neste experimento, os modelos recebem o histórico de GHI e a identificação da localidade."
+    ],
+    [
+      24,
+      32,
+      "Cada modelo compartilha seus parâmetros entre as dez localidades. Os dados mudam; a estrutura é a mesma."
+    ],
+    [
+      32,
+      36,
+      "A previsão foi organizada em quatro tarefas, com escalas e horizontes diferentes."
+    ],
+    [
+      36,
+      41.5,
+      "Na tarefa horária, a entrada reúne 336 horas, equivalentes a duas semanas."
+    ],
+    [
+      41.5,
+      47,
+      "Com esse histórico, a rede prevê as próximas 72 horas: três dias de irradiância."
+    ],
+    [
+      47,
+      52.5,
+      "Na tarefa diária, 365 valores representam um ano de histórico."
+    ],
+    [
+      52.5,
+      58,
+      "A saída contém os próximos trinta dias. A escala muda, mas a ideia de passado e futuro permanece."
+    ],
+    [
+      58,
+      64,
+      "Na primeira tarefa mensal, doze meses de histórico ajudam a prever o mês seguinte."
+    ],
+    [
+      64,
+      70,
+      "Na outra tarefa mensal, uma rede treinada separadamente prevê seis meses. Essa análise é exploratória."
+    ]
+  ],
+  "source_report_pages": [
+    11,
+    12,
+    18,
+    19,
+    20,
+    21
+  ],
+  "illustrative_values": true,
+  "tasks": {
+    "hourly": [
+      336,
+      72
+    ],
+    "daily": [
+      365,
+      30
+    ],
+    "monthly1": [
+      12,
+      1
+    ],
+    "monthly6": [
+      12,
+      6
+    ]
+  },
+  "monthly_networks_trained_separately": true,
+  "input_scope": [
+    "GHI history",
+    "locality ID"
+  ],
+  "input_output_windows_have_independent_horizontal_scales": true,
+  "chapter": "entradas_tarefas",
+  "start": 154,
+  "end": 224,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\cenas\\entradas_tarefas_v7.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\cenas\\entradas_tarefas_3d_v7.mp4",
+  "fps": 30,
+  "frames": 2100,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "resolution_percentage": 100,
+  "samples": 16,
+  "render_complete": true
+}

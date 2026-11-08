@@ -1,0 +1,2016 @@
+{
+  "escopo": "17 tabelas numeradas da versão canônica atual de37p; nenhuma figura ou tabela foi alterada.",
+  "relatorio": {
+    "docx": "documentacao\\relatorio_final_ea019\\Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.docx",
+    "pdf": "documentacao\\relatorio_final_ea019\\Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.pdf",
+    "docx_sha256": "e087a0942cbbb744c9bfbc6efbccd6a869fa914bf4b5ab2f7dc602263fa3ae7b",
+    "pdf_sha256": "5798b2ae3925d273c751ad95d9166eb14f1f6e6a399120cb4430f3b9b517880a",
+    "paginas": 37
+  },
+  "metodo": "Leitura de XML/DOCX e PDF, localização AST das chamadas de geração e reconstrução em memória de todas as células com dados CSV/JSON/literais. Nenhum construtor de documento foi executado.",
+  "tabelas": [
+    {
+      "numero": 1,
+      "titulo": "Localidades e coordenadas de referência",
+      "paginas_caption_pdf": [
+        10
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "line_start": 275,
+      "line_end": 280,
+      "function_or_block": "table",
+      "linhas_incluindo_cabecalho": 11,
+      "colunas": 4,
+      "gerador": {
+        "script": "tmp/relatorio_final_ea019/build_report_completo.py",
+        "funcao": "table",
+        "linha_chamada": 280,
+        "fim_chamada": 280,
+        "trecho_construcao_inicio": 275,
+        "trecho_construcao_fim": 280,
+        "helper_inicio": 125,
+        "helper_fim": 159
+      },
+      "fontes": [
+        "tmp/relatorio_final_ea019/build_report_completo.py"
+      ],
+      "nota": "Dados literais transcritos da tabela de localidades do manuscrito de referência; a tabela não é uma imagem.",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 44,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Localidade",
+          "País",
+          "Latitude",
+          "Longitude"
+        ],
+        [
+          "BYD Camaçari",
+          "BR",
+          "−12,6734",
+          "−38,2812"
+        ],
+        [
+          "Tesla Nevada",
+          "EUA",
+          "39,5404",
+          "−119,4391"
+        ],
+        [
+          "Tesla Texas",
+          "EUA",
+          "30,2219",
+          "−97,6188"
+        ],
+        [
+          "Hyundai Georgia",
+          "EUA",
+          "32,1605",
+          "−81,4510"
+        ],
+        [
+          "Rivian Normal",
+          "EUA",
+          "40,5093",
+          "−89,0545"
+        ],
+        [
+          "Tesla Fremont",
+          "EUA",
+          "37,4927",
+          "−121,9415"
+        ],
+        [
+          "Lucid Casa Grande",
+          "EUA",
+          "32,8569",
+          "−111,7784"
+        ],
+        [
+          "GM Factory Zero",
+          "EUA",
+          "42,3815",
+          "−83,0453"
+        ],
+        [
+          "Ford Rouge EV Center",
+          "EUA",
+          "42,3056",
+          "−83,1676"
+        ],
+        [
+          "BMW San Luis Potosí",
+          "MX",
+          "21,9683",
+          "−100,8492"
+        ]
+      ]
+    },
+    {
+      "numero": 2,
+      "titulo": "Contextos de entrada e cobertura efetiva de teste",
+      "paginas_caption_pdf": [
+        11
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "line_start": 291,
+      "line_end": 293,
+      "function_or_block": "table",
+      "linhas_incluindo_cabecalho": 5,
+      "colunas": 5,
+      "gerador": {
+        "script": "tmp/relatorio_final_ea019/build_report_completo.py",
+        "funcao": "table",
+        "linha_chamada": 291,
+        "fim_chamada": 292,
+        "trecho_construcao_inicio": 291,
+        "trecho_construcao_fim": 293,
+        "helper_inicio": 125,
+        "helper_fim": 159
+      },
+      "fontes": [
+        "tmp/relatorio_final_ea019/build_report_completo.py"
+      ],
+      "nota": "Contextos, horizontes e contagens efetivas auditadas de origens; valores explicitados no código.",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 25,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Tarefa",
+          "Contexto C",
+          "Saída H",
+          "Origens 2024 por local",
+          "Origens históricas por local"
+        ],
+        [
+          "Horária",
+          "336 horas",
+          "72 horas",
+          "363",
+          "1.368"
+        ],
+        [
+          "Diária",
+          "365 dias",
+          "30 dias",
+          "337",
+          "1.342"
+        ],
+        [
+          "Mensal um passo",
+          "12 meses",
+          "1 mês",
+          "12",
+          "45"
+        ],
+        [
+          "Mensal seis passos",
+          "12 meses",
+          "6 meses",
+          "7",
+          "40"
+        ]
+      ]
+    },
+    {
+      "numero": 3,
+      "titulo": "Regimes temporais de seleção e avaliação",
+      "paginas_caption_pdf": [
+        12
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "line_start": 299,
+      "line_end": 302,
+      "function_or_block": "table",
+      "linhas_incluindo_cabecalho": 4,
+      "colunas": 5,
+      "gerador": {
+        "script": "tmp/relatorio_final_ea019/build_report_completo.py",
+        "funcao": "table",
+        "linha_chamada": 299,
+        "fim_chamada": 302,
+        "trecho_construcao_inicio": 299,
+        "trecho_construcao_fim": 302,
+        "helper_inicio": 125,
+        "helper_fim": 159
+      },
+      "fontes": [
+        "tmp/relatorio_final_ea019/build_report_completo.py"
+      ],
+      "nota": "Partições cronológicas explicitadas no código, coerentes com os contratos dos experimentos.",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 20,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Regime",
+          "Histórico inicial",
+          "Validação",
+          "Refit antes do teste",
+          "Teste"
+        ],
+        [
+          "Atual",
+          "jan 2019 a dez 2022",
+          "jan a dez 2023",
+          "jan 2019 a dez 2023",
+          "jan a dez 2024"
+        ],
+        [
+          "Histórico longo",
+          "jan 1998 a mar 2018",
+          "abr 2018 a mar 2019",
+          "jan 1998 a mar 2019",
+          "abr 2019 a dez 2022"
+        ],
+        [
+          "Histórico curto pareado",
+          "abr 2014 a mar 2018",
+          "abr 2018 a mar 2019",
+          "abr 2014 a mar 2019",
+          "abr 2019 a dez 2022"
+        ]
+      ]
+    },
+    {
+      "numero": 4,
+      "titulo": "Condições de entrada e resolução nominal",
+      "paginas_caption_pdf": [
+        14
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "line_start": 316,
+      "line_end": 317,
+      "function_or_block": "table",
+      "linhas_incluindo_cabecalho": 5,
+      "colunas": 4,
+      "gerador": {
+        "script": "tmp/relatorio_final_ea019/build_report_completo.py",
+        "funcao": "table",
+        "linha_chamada": 316,
+        "fim_chamada": 317,
+        "trecho_construcao_inicio": 316,
+        "trecho_construcao_fim": 317,
+        "helper_inicio": 125,
+        "helper_fim": 159
+      },
+      "fontes": [
+        "tmp/relatorio_final_ea019/build_report_completo.py"
+      ],
+      "nota": "Passos 1/(N−1) e limites 1/[2(N−1)] para N=64,128,256; não é um limite de erro da previsão.",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 20,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Condição",
+          "Níveis",
+          "Passo normalizado",
+          "Erro máximo de arredondamento"
+        ],
+        [
+          "Controle",
+          "Contínuo",
+          "Não se aplica",
+          "Não se aplica"
+        ],
+        [
+          "Q64",
+          "64",
+          "0,015873",
+          "0,007937"
+        ],
+        [
+          "Q128",
+          "128",
+          "0,007874",
+          "0,003937"
+        ],
+        [
+          "Q256",
+          "256",
+          "0,003922",
+          "0,001961"
+        ]
+      ]
+    },
+    {
+      "numero": 5,
+      "titulo": "Parâmetros efetivos de treinamento por tarefa",
+      "paginas_caption_pdf": [
+        15
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "line_start": 326,
+      "line_end": 327,
+      "function_or_block": "table",
+      "linhas_incluindo_cabecalho": 5,
+      "colunas": 6,
+      "gerador": {
+        "script": "tmp/relatorio_final_ea019/build_report_completo.py",
+        "funcao": "table",
+        "linha_chamada": 326,
+        "fim_chamada": 327,
+        "trecho_construcao_inicio": 326,
+        "trecho_construcao_fim": 327,
+        "helper_inicio": 125,
+        "helper_fim": 159
+      },
+      "fontes": [
+        "tmp/relatorio_final_ea019/build_report_completo.py"
+      ],
+      "nota": "Hiperparâmetros explícitos conferidos nos contratos; não medem custos computacionais.",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 30,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Tarefa",
+          "Épocas máximas",
+          "Paciência",
+          "Lote",
+          "Sementes",
+          "Dispositivo"
+        ],
+        [
+          "Horária",
+          "30",
+          "5",
+          "128",
+          "42",
+          "GPU"
+        ],
+        [
+          "Diária",
+          "30",
+          "5",
+          "128",
+          "11 23 42 67 89",
+          "GPU"
+        ],
+        [
+          "Mensal um passo",
+          "300",
+          "30",
+          "32",
+          "11 23 42 67 89",
+          "CPU"
+        ],
+        [
+          "Mensal seis passos",
+          "300",
+          "30",
+          "32",
+          "11 23 42 67 89",
+          "CPU"
+        ]
+      ]
+    },
+    {
+      "numero": 6,
+      "titulo": "Resultados cumulativos completos no regime atual",
+      "paginas_caption_pdf": [
+        21
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "line_start": 360,
+      "line_end": 364,
+      "function_or_block": "table / laço de montagem por tarefa e modelo",
+      "linhas_incluindo_cabecalho": 13,
+      "colunas": 7,
+      "gerador": {
+        "script": "tmp/relatorio_final_ea019/build_report_completo.py",
+        "funcao": "table",
+        "linha_chamada": 364,
+        "fim_chamada": 364,
+        "trecho_construcao_inicio": 360,
+        "trecho_construcao_fim": 364,
+        "helper_inicio": 125,
+        "helper_fim": 159
+      },
+      "fontes": [
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv"
+      ],
+      "nota": "Uma condição por tarefa/modelo selecionada antes do teste, média macro das dez localidades.",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 91,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Tarefa",
+          "Modelo",
+          "Entrada",
+          "MAE W/m²",
+          "RMSE W/m²",
+          "nRMSE %",
+          "R²"
+        ],
+        [
+          "Horária 72 h",
+          "Transformer",
+          "Controle",
+          "53,21",
+          "103,72",
+          "51,64",
+          "0,8607"
+        ],
+        [
+          "Horária 72 h",
+          "Informer",
+          "Controle",
+          "137,68",
+          "245,55",
+          "118,52",
+          "0,2899"
+        ],
+        [
+          "Horária 72 h",
+          "LSTM",
+          "64",
+          "53,52",
+          "104,72",
+          "52,23",
+          "0,8571"
+        ],
+        [
+          "Diária 30 d",
+          "Transformer",
+          "256",
+          "43,89",
+          "55,12",
+          "26,54",
+          "0,5330"
+        ],
+        [
+          "Diária 30 d",
+          "Informer",
+          "64",
+          "45,46",
+          "56,75",
+          "27,32",
+          "0,5098"
+        ],
+        [
+          "Diária 30 d",
+          "LSTM",
+          "Controle",
+          "44,18",
+          "55,72",
+          "26,80",
+          "0,5281"
+        ],
+        [
+          "Mensal 1 m",
+          "Transformer",
+          "128",
+          "13,15",
+          "16,53",
+          "8,22",
+          "0,8969"
+        ],
+        [
+          "Mensal 1 m",
+          "Informer",
+          "128",
+          "12,73",
+          "16,11",
+          "7,98",
+          "0,9070"
+        ],
+        [
+          "Mensal 1 m",
+          "LSTM",
+          "128",
+          "14,29",
+          "17,46",
+          "8,46",
+          "0,8855"
+        ],
+        [
+          "Mensal 6 m",
+          "Transformer",
+          "64",
+          "14,40",
+          "17,62",
+          "7,62",
+          "0,8562"
+        ],
+        [
+          "Mensal 6 m",
+          "Informer",
+          "128",
+          "13,67",
+          "17,11",
+          "7,41",
+          "0,8672"
+        ],
+        [
+          "Mensal 6 m",
+          "LSTM",
+          "128",
+          "14,76",
+          "18,12",
+          "7,70",
+          "0,8380"
+        ]
+      ]
+    },
+    {
+      "numero": 7,
+      "titulo": "Nível escolhido e comparação com o controle no teste de 2024",
+      "paginas_caption_pdf": [
+        24
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "line_start": 380,
+      "line_end": 387,
+      "function_or_block": "table / laço de montagem por tarefa e modelo",
+      "linhas_incluindo_cabecalho": 13,
+      "colunas": 7,
+      "gerador": {
+        "script": "tmp/relatorio_final_ea019/build_report_completo.py",
+        "funcao": "table",
+        "linha_chamada": 387,
+        "fim_chamada": 387,
+        "trecho_construcao_inicio": 380,
+        "trecho_construcao_fim": 387,
+        "helper_inicio": 125,
+        "helper_fim": 159
+      },
+      "fontes": [
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv",
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/metricas_teste_modelos_disciplina.csv",
+        "tmp/relatorio_final_ea019/evidencias_disciplina.json"
+      ],
+      "nota": "Escolha de validação preservada no teste; delta percentual em relação ao controle do mesmo modelo/tarefa.",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 91,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Tarefa",
+          "Modelo",
+          "Escolha",
+          "MAE val",
+          "MAE controle teste",
+          "MAE escolha teste",
+          "Δ teste %"
+        ],
+        [
+          "Horária 72 h",
+          "Transformer",
+          "Controle",
+          "54,43",
+          "53,21",
+          "53,21",
+          "0,00"
+        ],
+        [
+          "Horária 72 h",
+          "Informer",
+          "Controle",
+          "131,09",
+          "137,68",
+          "137,68",
+          "0,00"
+        ],
+        [
+          "Horária 72 h",
+          "LSTM",
+          "64",
+          "53,49",
+          "54,09",
+          "53,52",
+          "-1,05"
+        ],
+        [
+          "Diária 30 d",
+          "Transformer",
+          "256",
+          "44,47",
+          "43,88",
+          "43,89",
+          "0,01"
+        ],
+        [
+          "Diária 30 d",
+          "Informer",
+          "64",
+          "45,23",
+          "45,47",
+          "45,46",
+          "-0,02"
+        ],
+        [
+          "Diária 30 d",
+          "LSTM",
+          "Controle",
+          "45,49",
+          "44,18",
+          "44,18",
+          "0,00"
+        ],
+        [
+          "Mensal 1 m",
+          "Transformer",
+          "128",
+          "14,98",
+          "13,12",
+          "13,15",
+          "0,21"
+        ],
+        [
+          "Mensal 1 m",
+          "Informer",
+          "128",
+          "14,49",
+          "12,85",
+          "12,73",
+          "-0,95"
+        ],
+        [
+          "Mensal 1 m",
+          "LSTM",
+          "128",
+          "15,59",
+          "14,27",
+          "14,29",
+          "0,12"
+        ],
+        [
+          "Mensal 6 m",
+          "Transformer",
+          "64",
+          "16,61",
+          "14,43",
+          "14,40",
+          "-0,23"
+        ],
+        [
+          "Mensal 6 m",
+          "Informer",
+          "128",
+          "17,10",
+          "13,88",
+          "13,67",
+          "-1,53"
+        ],
+        [
+          "Mensal 6 m",
+          "LSTM",
+          "128",
+          "16,26",
+          "14,76",
+          "14,76",
+          "0,04"
+        ]
+      ]
+    },
+    {
+      "numero": 8,
+      "titulo": "Comparação pareada dos históricos no controle sem quantização",
+      "paginas_caption_pdf": [
+        27
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "line_start": 391,
+      "line_end": 396,
+      "function_or_block": "table / laço de montagem por tarefa e modelo",
+      "linhas_incluindo_cabecalho": 13,
+      "colunas": 5,
+      "gerador": {
+        "script": "tmp/relatorio_final_ea019/build_report_completo.py",
+        "funcao": "table",
+        "linha_chamada": 396,
+        "fim_chamada": 396,
+        "trecho_construcao_inicio": 391,
+        "trecho_construcao_fim": 396,
+        "helper_inicio": 125,
+        "helper_fim": 159
+      },
+      "fontes": [
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/metricas_teste_modelos_disciplina.csv"
+      ],
+      "nota": "Controles contínuos, teste histórico pareado; delta=100*(longo/curto−1).",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 65,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Tarefa",
+          "Modelo",
+          "MAE curto",
+          "MAE longo",
+          "Δ longo %"
+        ],
+        [
+          "Horária 72 h",
+          "Transformer",
+          "55,48",
+          "52,37",
+          "-5,61"
+        ],
+        [
+          "Horária 72 h",
+          "Informer",
+          "136,21",
+          "60,90",
+          "-55,29"
+        ],
+        [
+          "Horária 72 h",
+          "LSTM",
+          "53,72",
+          "61,61",
+          "14,68"
+        ],
+        [
+          "Diária 30 d",
+          "Transformer",
+          "44,67",
+          "44,48",
+          "-0,41"
+        ],
+        [
+          "Diária 30 d",
+          "Informer",
+          "46,02",
+          "43,59",
+          "-5,28"
+        ],
+        [
+          "Diária 30 d",
+          "LSTM",
+          "44,27",
+          "43,28",
+          "-2,23"
+        ],
+        [
+          "Mensal 1 m",
+          "Transformer",
+          "16,40",
+          "14,08",
+          "-14,12"
+        ],
+        [
+          "Mensal 1 m",
+          "Informer",
+          "16,22",
+          "13,88",
+          "-14,40"
+        ],
+        [
+          "Mensal 1 m",
+          "LSTM",
+          "15,45",
+          "14,66",
+          "-5,09"
+        ],
+        [
+          "Mensal 6 m",
+          "Transformer",
+          "17,20",
+          "14,91",
+          "-13,28"
+        ],
+        [
+          "Mensal 6 m",
+          "Informer",
+          "16,22",
+          "14,72",
+          "-9,23"
+        ],
+        [
+          "Mensal 6 m",
+          "LSTM",
+          "15,39",
+          "15,05",
+          "-2,20"
+        ]
+      ]
+    },
+    {
+      "numero": 9,
+      "titulo": "Detalhamento cumulativo da tarefa horária 72 h",
+      "paginas_caption_pdf": [
+        32
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "line_start": 455,
+      "line_end": 461,
+      "function_or_block": "table / laço de montagem por tarefa e modelo",
+      "linhas_incluindo_cabecalho": 10,
+      "colunas": 8,
+      "gerador": {
+        "script": "tmp/relatorio_final_ea019/build_report_completo.py",
+        "funcao": "table",
+        "linha_chamada": 461,
+        "fim_chamada": 461,
+        "trecho_construcao_inicio": 455,
+        "trecho_construcao_fim": 461,
+        "helper_inicio": 125,
+        "helper_fim": 159
+      },
+      "fontes": [
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/metricas_teste_modelos_disciplina.csv",
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv"
+      ],
+      "nota": "Condição escolhida para H=72 permanece fixa nos checkpoints 24,48,72.",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 80,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Modelo",
+          "H",
+          "Entrada",
+          "MAE",
+          "MSE",
+          "RMSE",
+          "nRMSE %",
+          "R²"
+        ],
+        [
+          "Transformer",
+          "24",
+          "Controle",
+          "51,29",
+          "10.390,25",
+          "100,82",
+          "50,21",
+          "0,8684"
+        ],
+        [
+          "Transformer",
+          "48",
+          "Controle",
+          "52,83",
+          "10.871,30",
+          "103,10",
+          "51,34",
+          "0,8624"
+        ],
+        [
+          "Transformer",
+          "72",
+          "Controle",
+          "53,21",
+          "11.010,18",
+          "103,72",
+          "51,64",
+          "0,8607"
+        ],
+        [
+          "Informer",
+          "24",
+          "Controle",
+          "142,25",
+          "64.862,35",
+          "253,56",
+          "122,45",
+          "0,2428"
+        ],
+        [
+          "Informer",
+          "48",
+          "Controle",
+          "134,19",
+          "57.954,86",
+          "239,53",
+          "115,72",
+          "0,3231"
+        ],
+        [
+          "Informer",
+          "72",
+          "Controle",
+          "137,68",
+          "60.924,69",
+          "245,55",
+          "118,52",
+          "0,2899"
+        ],
+        [
+          "LSTM",
+          "24",
+          "64",
+          "51,84",
+          "10.275,89",
+          "100,04",
+          "49,99",
+          "0,8687"
+        ],
+        [
+          "LSTM",
+          "48",
+          "64",
+          "52,88",
+          "10.976,41",
+          "103,42",
+          "51,63",
+          "0,8601"
+        ],
+        [
+          "LSTM",
+          "72",
+          "64",
+          "53,52",
+          "11.242,94",
+          "104,72",
+          "52,23",
+          "0,8571"
+        ]
+      ]
+    },
+    {
+      "numero": 10,
+      "titulo": "Detalhamento cumulativo da tarefa diária 30 d",
+      "paginas_caption_pdf": [
+        32
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "line_start": 455,
+      "line_end": 461,
+      "function_or_block": "table / laço de montagem por tarefa e modelo",
+      "linhas_incluindo_cabecalho": 16,
+      "colunas": 8,
+      "gerador": {
+        "script": "tmp/relatorio_final_ea019/build_report_completo.py",
+        "funcao": "table",
+        "linha_chamada": 461,
+        "fim_chamada": 461,
+        "trecho_construcao_inicio": 455,
+        "trecho_construcao_fim": 461,
+        "helper_inicio": 125,
+        "helper_fim": 159
+      },
+      "fontes": [
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/metricas_teste_modelos_disciplina.csv",
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv"
+      ],
+      "nota": "Condição escolhida para H=30 permanece fixa nos checkpoints 1,3,7,14,30.",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 128,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Modelo",
+          "H",
+          "Entrada",
+          "MAE",
+          "MSE",
+          "RMSE",
+          "nRMSE %",
+          "R²"
+        ],
+        [
+          "Transformer",
+          "1",
+          "256",
+          "44,75",
+          "3.201,77",
+          "55,68",
+          "26,85",
+          "0,5262"
+        ],
+        [
+          "Transformer",
+          "3",
+          "256",
+          "44,69",
+          "3.203,12",
+          "55,69",
+          "26,85",
+          "0,5244"
+        ],
+        [
+          "Transformer",
+          "7",
+          "256",
+          "44,64",
+          "3.208,72",
+          "55,72",
+          "26,85",
+          "0,5226"
+        ],
+        [
+          "Transformer",
+          "14",
+          "256",
+          "44,38",
+          "3.182,90",
+          "55,48",
+          "26,71",
+          "0,5254"
+        ],
+        [
+          "Transformer",
+          "30",
+          "256",
+          "43,89",
+          "3.139,69",
+          "55,12",
+          "26,54",
+          "0,5330"
+        ],
+        [
+          "Informer",
+          "1",
+          "64",
+          "47,31",
+          "3.583,26",
+          "59,05",
+          "28,49",
+          "0,4798"
+        ],
+        [
+          "Informer",
+          "3",
+          "64",
+          "47,24",
+          "3.566,77",
+          "58,92",
+          "28,41",
+          "0,4794"
+        ],
+        [
+          "Informer",
+          "7",
+          "64",
+          "46,84",
+          "3.493,90",
+          "58,27",
+          "28,08",
+          "0,4871"
+        ],
+        [
+          "Informer",
+          "14",
+          "64",
+          "46,16",
+          "3.388,51",
+          "57,33",
+          "27,61",
+          "0,4996"
+        ],
+        [
+          "Informer",
+          "30",
+          "64",
+          "45,46",
+          "3.316,59",
+          "56,75",
+          "27,32",
+          "0,5098"
+        ],
+        [
+          "LSTM",
+          "1",
+          "Controle",
+          "42,11",
+          "2.970,42",
+          "53,68",
+          "25,89",
+          "0,5643"
+        ],
+        [
+          "LSTM",
+          "3",
+          "Controle",
+          "43,18",
+          "3.087,77",
+          "54,76",
+          "26,39",
+          "0,5446"
+        ],
+        [
+          "LSTM",
+          "7",
+          "Controle",
+          "43,73",
+          "3.143,79",
+          "55,29",
+          "26,61",
+          "0,5346"
+        ],
+        [
+          "LSTM",
+          "14",
+          "Controle",
+          "44,02",
+          "3.176,92",
+          "55,57",
+          "26,73",
+          "0,5293"
+        ],
+        [
+          "LSTM",
+          "30",
+          "Controle",
+          "44,18",
+          "3.191,41",
+          "55,72",
+          "26,80",
+          "0,5281"
+        ]
+      ]
+    },
+    {
+      "numero": 11,
+      "titulo": "Detalhamento cumulativo da tarefa mensal 1 m",
+      "paginas_caption_pdf": [
+        33
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "line_start": 455,
+      "line_end": 461,
+      "function_or_block": "table / laço de montagem por tarefa e modelo",
+      "linhas_incluindo_cabecalho": 4,
+      "colunas": 8,
+      "gerador": {
+        "script": "tmp/relatorio_final_ea019/build_report_completo.py",
+        "funcao": "table",
+        "linha_chamada": 461,
+        "fim_chamada": 461,
+        "trecho_construcao_inicio": 455,
+        "trecho_construcao_fim": 461,
+        "helper_inicio": 125,
+        "helper_fim": 159
+      },
+      "fontes": [
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/metricas_teste_modelos_disciplina.csv",
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv"
+      ],
+      "nota": "Rede mensal com H=1, distinta da rede mensal de seis passos.",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 32,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Modelo",
+          "H",
+          "Entrada",
+          "MAE",
+          "MSE",
+          "RMSE",
+          "nRMSE %",
+          "R²"
+        ],
+        [
+          "Transformer",
+          "1",
+          "128",
+          "13,15",
+          "304,94",
+          "16,53",
+          "8,22",
+          "0,8969"
+        ],
+        [
+          "Informer",
+          "1",
+          "128",
+          "12,73",
+          "279,45",
+          "16,11",
+          "7,98",
+          "0,9070"
+        ],
+        [
+          "LSTM",
+          "1",
+          "128",
+          "14,29",
+          "328,45",
+          "17,46",
+          "8,46",
+          "0,8855"
+        ]
+      ]
+    },
+    {
+      "numero": 12,
+      "titulo": "Detalhamento cumulativo da tarefa mensal 6 m",
+      "paginas_caption_pdf": [
+        33
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "line_start": 455,
+      "line_end": 461,
+      "function_or_block": "table / laço de montagem por tarefa e modelo",
+      "linhas_incluindo_cabecalho": 10,
+      "colunas": 8,
+      "gerador": {
+        "script": "tmp/relatorio_final_ea019/build_report_completo.py",
+        "funcao": "table",
+        "linha_chamada": 461,
+        "fim_chamada": 461,
+        "trecho_construcao_inicio": 455,
+        "trecho_construcao_fim": 461,
+        "helper_inicio": 125,
+        "helper_fim": 159
+      },
+      "fontes": [
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/metricas_teste_modelos_disciplina.csv",
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv"
+      ],
+      "nota": "Condição escolhida para H=6 permanece fixa nos checkpoints 1,3,6.",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 80,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Modelo",
+          "H",
+          "Entrada",
+          "MAE",
+          "MSE",
+          "RMSE",
+          "nRMSE %",
+          "R²"
+        ],
+        [
+          "Transformer",
+          "1",
+          "64",
+          "15,67",
+          "377,30",
+          "18,72",
+          "8,57",
+          "0,8750"
+        ],
+        [
+          "Transformer",
+          "3",
+          "64",
+          "14,38",
+          "336,43",
+          "17,62",
+          "7,49",
+          "0,8419"
+        ],
+        [
+          "Transformer",
+          "6",
+          "64",
+          "14,40",
+          "337,58",
+          "17,62",
+          "7,62",
+          "0,8562"
+        ],
+        [
+          "Informer",
+          "1",
+          "128",
+          "14,02",
+          "324,42",
+          "17,40",
+          "8,01",
+          "0,8944"
+        ],
+        [
+          "Informer",
+          "3",
+          "128",
+          "12,99",
+          "291,11",
+          "16,40",
+          "6,99",
+          "0,8625"
+        ],
+        [
+          "Informer",
+          "6",
+          "128",
+          "13,67",
+          "317,26",
+          "17,11",
+          "7,41",
+          "0,8672"
+        ],
+        [
+          "LSTM",
+          "1",
+          "128",
+          "15,77",
+          "410,47",
+          "19,49",
+          "8,74",
+          "0,8541"
+        ],
+        [
+          "LSTM",
+          "3",
+          "128",
+          "15,35",
+          "389,21",
+          "18,85",
+          "7,89",
+          "0,8082"
+        ],
+        [
+          "LSTM",
+          "6",
+          "128",
+          "14,76",
+          "360,46",
+          "18,12",
+          "7,70",
+          "0,8380"
+        ]
+      ]
+    },
+    {
+      "numero": 13,
+      "titulo": "MAE por condição de entrada no regime atual",
+      "paginas_caption_pdf": [
+        34
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "line_start": 465,
+      "line_end": 474,
+      "function_or_block": "table / laço de montagem por tarefa e modelo",
+      "linhas_incluindo_cabecalho": 13,
+      "colunas": 6,
+      "gerador": {
+        "script": "tmp/relatorio_final_ea019/build_report_completo.py",
+        "funcao": "table",
+        "linha_chamada": 474,
+        "fim_chamada": 474,
+        "trecho_construcao_inicio": 465,
+        "trecho_construcao_fim": 474,
+        "helper_inicio": 125,
+        "helper_fim": 159
+      },
+      "fontes": [
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/metricas_teste_modelos_disciplina.csv",
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv"
+      ],
+      "nota": "Macro-MAEs de teste atual para controle/Q64/Q128/Q256; asterisco aponta a escolha da validação.",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 78,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Tarefa",
+          "Modelo",
+          "Controle",
+          "64 níveis",
+          "128 níveis",
+          "256 níveis"
+        ],
+        [
+          "Horária 72 h",
+          "Transformer",
+          "53,2061 *",
+          "53,2072",
+          "53,2168",
+          "53,2171"
+        ],
+        [
+          "Horária 72 h",
+          "Informer",
+          "137,6798 *",
+          "137,8672",
+          "137,8436",
+          "137,6502"
+        ],
+        [
+          "Horária 72 h",
+          "LSTM",
+          "54,0947",
+          "53,5241 *",
+          "54,2942",
+          "53,1808"
+        ],
+        [
+          "Diária 30 d",
+          "Transformer",
+          "43,8807",
+          "43,8784",
+          "43,8786",
+          "43,8869 *"
+        ],
+        [
+          "Diária 30 d",
+          "Informer",
+          "45,4674",
+          "45,4603 *",
+          "45,4609",
+          "45,4803"
+        ],
+        [
+          "Diária 30 d",
+          "LSTM",
+          "44,1842 *",
+          "44,2079",
+          "44,6199",
+          "44,4134"
+        ],
+        [
+          "Mensal 1 m",
+          "Transformer",
+          "13,1196",
+          "13,0420",
+          "13,1467 *",
+          "13,1037"
+        ],
+        [
+          "Mensal 1 m",
+          "Informer",
+          "12,8481",
+          "12,5473",
+          "12,7266 *",
+          "12,3181"
+        ],
+        [
+          "Mensal 1 m",
+          "LSTM",
+          "14,2711",
+          "14,2693",
+          "14,2883 *",
+          "14,2729"
+        ],
+        [
+          "Mensal 6 m",
+          "Transformer",
+          "14,4302",
+          "14,3965 *",
+          "14,4868",
+          "14,4332"
+        ],
+        [
+          "Mensal 6 m",
+          "Informer",
+          "13,8803",
+          "13,6067",
+          "13,6679 *",
+          "13,6751"
+        ],
+        [
+          "Mensal 6 m",
+          "LSTM",
+          "14,7565",
+          "14,7505",
+          "14,7623 *",
+          "14,7763"
+        ]
+      ]
+    },
+    {
+      "numero": 14,
+      "titulo": "MAE por condição de entrada no regime histórico longo",
+      "paginas_caption_pdf": [
+        34
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "line_start": 465,
+      "line_end": 474,
+      "function_or_block": "table / laço de montagem por tarefa e modelo",
+      "linhas_incluindo_cabecalho": 13,
+      "colunas": 6,
+      "gerador": {
+        "script": "tmp/relatorio_final_ea019/build_report_completo.py",
+        "funcao": "table",
+        "linha_chamada": 474,
+        "fim_chamada": 474,
+        "trecho_construcao_inicio": 465,
+        "trecho_construcao_fim": 474,
+        "helper_inicio": 125,
+        "helper_fim": 159
+      },
+      "fontes": [
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/metricas_teste_modelos_disciplina.csv",
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv"
+      ],
+      "nota": "Mesma apresentação para histórico longo; teste comum ao histórico curto pareado.",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 78,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Tarefa",
+          "Modelo",
+          "Controle",
+          "64 níveis",
+          "128 níveis",
+          "256 níveis"
+        ],
+        [
+          "Horária 72 h",
+          "Transformer",
+          "52,3673",
+          "52,3777",
+          "52,3996 *",
+          "52,4073"
+        ],
+        [
+          "Horária 72 h",
+          "Informer",
+          "60,8980",
+          "60,1353",
+          "57,1305 *",
+          "59,7161"
+        ],
+        [
+          "Horária 72 h",
+          "LSTM",
+          "61,6058",
+          "55,2721 *",
+          "52,6016",
+          "54,4099"
+        ],
+        [
+          "Diária 30 d",
+          "Transformer",
+          "44,4850",
+          "44,4986",
+          "44,4859 *",
+          "44,4873"
+        ],
+        [
+          "Diária 30 d",
+          "Informer",
+          "43,5925",
+          "43,5012",
+          "43,7886",
+          "43,2117 *"
+        ],
+        [
+          "Diária 30 d",
+          "LSTM",
+          "43,2834",
+          "43,1961 *",
+          "43,5516",
+          "43,3009"
+        ],
+        [
+          "Mensal 1 m",
+          "Transformer",
+          "14,0825",
+          "14,2894 *",
+          "14,0814",
+          "14,0756"
+        ],
+        [
+          "Mensal 1 m",
+          "Informer",
+          "13,8831",
+          "14,0359",
+          "13,8982",
+          "14,1303 *"
+        ],
+        [
+          "Mensal 1 m",
+          "LSTM",
+          "14,6593",
+          "14,6602 *",
+          "14,6667",
+          "14,6686"
+        ],
+        [
+          "Mensal 6 m",
+          "Transformer",
+          "14,9112 *",
+          "14,9171",
+          "14,9232",
+          "14,8961"
+        ],
+        [
+          "Mensal 6 m",
+          "Informer",
+          "14,7247",
+          "14,7252 *",
+          "14,6693",
+          "14,7287"
+        ],
+        [
+          "Mensal 6 m",
+          "LSTM",
+          "15,0537",
+          "15,0560 *",
+          "15,0483",
+          "15,0458"
+        ]
+      ]
+    },
+    {
+      "numero": 15,
+      "titulo": "MAE por condição de entrada no regime histórico curto",
+      "paginas_caption_pdf": [
+        35
+      ],
+      "script_path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "line_start": 465,
+      "line_end": 474,
+      "function_or_block": "table / laço de montagem por tarefa e modelo",
+      "linhas_incluindo_cabecalho": 13,
+      "colunas": 6,
+      "gerador": {
+        "script": "tmp/relatorio_final_ea019/build_report_completo.py",
+        "funcao": "table",
+        "linha_chamada": 474,
+        "fim_chamada": 474,
+        "trecho_construcao_inicio": 465,
+        "trecho_construcao_fim": 474,
+        "helper_inicio": 125,
+        "helper_fim": 159
+      },
+      "fontes": [
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/metricas_teste_modelos_disciplina.csv",
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv"
+      ],
+      "nota": "Mesma apresentação para histórico curto pareado; teste comum ao histórico longo.",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 78,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Tarefa",
+          "Modelo",
+          "Controle",
+          "64 níveis",
+          "128 níveis",
+          "256 níveis"
+        ],
+        [
+          "Horária 72 h",
+          "Transformer",
+          "55,4797",
+          "55,4867 *",
+          "55,5125",
+          "55,4898"
+        ],
+        [
+          "Horária 72 h",
+          "Informer",
+          "136,2112",
+          "136,1581",
+          "136,1523 *",
+          "136,2357"
+        ],
+        [
+          "Horária 72 h",
+          "LSTM",
+          "53,7187",
+          "53,7857",
+          "56,8112 *",
+          "55,7366"
+        ],
+        [
+          "Diária 30 d",
+          "Transformer",
+          "44,6667",
+          "44,6719",
+          "44,6657 *",
+          "44,6657"
+        ],
+        [
+          "Diária 30 d",
+          "Informer",
+          "46,0223",
+          "46,4971 *",
+          "46,0388",
+          "46,0253"
+        ],
+        [
+          "Diária 30 d",
+          "LSTM",
+          "44,2693",
+          "44,6329",
+          "44,3700 *",
+          "44,2247"
+        ],
+        [
+          "Mensal 1 m",
+          "Transformer",
+          "16,3974",
+          "16,4656",
+          "16,4060 *",
+          "16,4124"
+        ],
+        [
+          "Mensal 1 m",
+          "Informer",
+          "16,2183 *",
+          "16,2646",
+          "16,2255",
+          "16,2251"
+        ],
+        [
+          "Mensal 1 m",
+          "LSTM",
+          "15,4460 *",
+          "15,4773",
+          "15,4459",
+          "15,4370"
+        ],
+        [
+          "Mensal 6 m",
+          "Transformer",
+          "17,1950",
+          "17,2057 *",
+          "17,1874",
+          "17,1043"
+        ],
+        [
+          "Mensal 6 m",
+          "Informer",
+          "16,2222",
+          "16,3077 *",
+          "16,2373",
+          "16,2368"
+        ],
+        [
+          "Mensal 6 m",
+          "LSTM",
+          "15,3925",
+          "15,4064 *",
+          "15,3839",
+          "15,3895"
+        ]
+      ]
+    },
+    {
+      "numero": 16,
+      "titulo": "Configurações das três arquiteturas",
+      "paginas_caption_pdf": [
+        36
+      ],
+      "script_path": "tmp/revisao_relatorio/rodada2/editar_tcc.py",
+      "line_start": 235,
+      "line_end": 246,
+      "function_or_block": "add_table",
+      "linhas_incluindo_cabecalho": 9,
+      "colunas": 4,
+      "gerador": {
+        "script": "tmp/revisao_relatorio/rodada2/editar_tcc.py",
+        "funcao": "add_table",
+        "linha_chamada": 235,
+        "fim_chamada": 245,
+        "trecho_construcao_inicio": 235,
+        "trecho_construcao_fim": 246,
+        "helper_inicio": 73,
+        "helper_fim": 121
+      },
+      "fontes": [
+        "tmp/revisao_relatorio/rodada2/editar_tcc.py",
+        "tmp/revisao_relatorio/rodada2/reprodutibilidade.json",
+        "documentacao/organizacao/fontes_antes_reorganizacao_20261027.zip"
+      ],
+      "nota": "Acrescentada na segunda revisão; especificações verificadas nas fontes preservadas e em 36 contratos.",
+      "scripts_complementares": [],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 36,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Componente",
+          "LSTM",
+          "Transformer",
+          "Informer"
+        ],
+        [
+          "Estado ou dimensão interna",
+          "32 unidades",
+          "16",
+          "16"
+        ],
+        [
+          "Camadas recorrentes ou de encoder",
+          "1 recorrente",
+          "2 encoders",
+          "2 encoders"
+        ],
+        [
+          "Camadas de decoder",
+          "Não se aplica",
+          "1",
+          "1"
+        ],
+        [
+          "Cabeças de atenção",
+          "Não se aplica",
+          "2",
+          "2"
+        ],
+        [
+          "Dimensão feedforward",
+          "Não se aplica",
+          "32",
+          "32"
+        ],
+        [
+          "Dropout",
+          "0",
+          "0,1",
+          "0,1"
+        ],
+        [
+          "Contexto observado no decoder",
+          "Não se aplica",
+          "⌊C/2⌋",
+          "⌊C/2⌋"
+        ],
+        [
+          "Fator ProbSparse",
+          "Não se aplica",
+          "Não se aplica",
+          "5"
+        ]
+      ]
+    },
+    {
+      "numero": 17,
+      "titulo": "Quantidade de parâmetros treináveis por tarefa",
+      "paginas_caption_pdf": [
+        36
+      ],
+      "script_path": "tmp/revisao_relatorio/rodada2/editar_tcc.py",
+      "line_start": 248,
+      "line_end": 252,
+      "function_or_block": "add_table",
+      "linhas_incluindo_cabecalho": 5,
+      "colunas": 4,
+      "gerador": {
+        "script": "tmp/revisao_relatorio/rodada2/editar_tcc.py",
+        "funcao": "add_table",
+        "linha_chamada": 249,
+        "fim_chamada": 252,
+        "trecho_construcao_inicio": 248,
+        "trecho_construcao_fim": 252,
+        "helper_inicio": 73,
+        "helper_fim": 121
+      },
+      "fontes": [
+        "tmp/revisao_relatorio/rodada2/reprodutibilidade.json",
+        "tmp/revisao_relatorio/rodada2/preparar_reprodutibilidade.py",
+        "documentacao/organizacao/fontes_antes_reorganizacao_20261027.zip"
+      ],
+      "nota": "Acrescentada na segunda revisão; contagem algébrica de pesos/biases (exclui buffers), a partir das fontes arquivadas; LSTM=4560+41H, Transformer=8161, Informer=8977.",
+      "scripts_complementares": [
+        {
+          "script_path": "tmp/revisao_relatorio/rodada2/preparar_reprodutibilidade.py",
+          "line_start": 98,
+          "line_end": 124,
+          "function_or_block": "Contagem algébrica dos parâmetros treináveis e montagem de parameter_table"
+        }
+      ],
+      "verificacao": {
+        "conteudo_reconstruido_confere_integralmente_com_docx_atual": true,
+        "celulas_verificadas": 20,
+        "diferencas": []
+      },
+      "execucao_isolada": "Não. O gerador original faz parte de um pipeline histórico de documento e depende de contexto; este mapeamento não executa o build.",
+      "rows_canonicas": [
+        [
+          "Tarefa",
+          "LSTM",
+          "Transformer",
+          "Informer"
+        ],
+        [
+          "Horária",
+          "7.512",
+          "8.161",
+          "8.977"
+        ],
+        [
+          "Diária",
+          "5.790",
+          "8.161",
+          "8.977"
+        ],
+        [
+          "Mensal de um passo",
+          "4.601",
+          "8.161",
+          "8.977"
+        ],
+        [
+          "Mensal de seis passos",
+          "4.806",
+          "8.161",
+          "8.977"
+        ]
+      ]
+    }
+  ],
+  "cadeia_preservacao": [
+    {
+      "script": "tmp/revisao_relatorio/rodada2/editar_tcc.py",
+      "linhas": [
+        293,
+        294
+      ],
+      "evidencia": "Asserção de que as primeiras 15 tabelas mantêm todas as células; adiciona 16 e 17."
+    },
+    {
+      "script": "tmp/foco_modelos_20261101/reescrever.py",
+      "linhas": [
+        147,
+        154
+      ],
+      "evidencia": "Asserção de tabelas XML preservadas; total17."
+    },
+    {
+      "script": "tmp/compactacao_layout_20261101/ajustar_layout.py",
+      "evidencia": "Comparação XML das tabelas antes/depois;17 preservadas."
+    },
+    {
+      "script": "tmp/apendice_c_simplificado_20261101/simplificar.py",
+      "evidencia": "Comparação XML das tabelas antes/depois;17 preservadas."
+    },
+    {
+      "script": "tmp/pre_textuais_20261101/inserir.py",
+      "linhas": [
+        64,
+        67
+      ],
+      "evidencia": "Todos os elementos existentes preservados;17 tabelas. Acrescenta duas páginas pré-textuais."
+    }
+  ],
+  "sha256_fontes": {
+    "documentacao/organizacao/fontes_antes_reorganizacao_20261027.zip": "ce50b893ad72cb91f330b318aab31f1d38f470d39a04e1b21dd1f061c48efb8b",
+    "documentacao\\relatorio_final_ea019\\Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.docx": "e087a0942cbbb744c9bfbc6efbccd6a869fa914bf4b5ab2f7dc602263fa3ae7b",
+    "documentacao\\relatorio_final_ea019\\Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.pdf": "5798b2ae3925d273c751ad95d9166eb14f1f6e6a399120cb4430f3b9b517880a",
+    "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv": "9db39841e2729cd6e6d7642674d6f068af5db2403c6352b5380a2f4d535a6ddb",
+    "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/metricas_teste_modelos_disciplina.csv": "a488912f66236ab4ae647a15d5816eb2c6c425c2d84ebba391d5203191cd7df0",
+    "tmp/relatorio_final_ea019/build_report_completo.py": "04b017f30d9f4f009a228b2712d0f66f33c64b125e1d60024c3dbeb5116d8af0",
+    "tmp/relatorio_final_ea019/evidencias_disciplina.json": "95487b3c728933ce485b7ba9e94444db831635f0bc327615c073f732ad803f48",
+    "tmp/revisao_relatorio/rodada2/editar_tcc.py": "ac1d88428ab0ce51dc78b617ad0c7b2b35ad9cb5974235ef87d186cdfbd84aae",
+    "tmp/revisao_relatorio/rodada2/preparar_reprodutibilidade.py": "f3ea33140827cc238d7df0f2a0b25c82005325eb2bf26bf3d993bb7683367f9e",
+    "tmp/revisao_relatorio/rodada2/reprodutibilidade.json": "1d8bb1016870cc95e58bd9e4e7ee9f632dc5e47a7fe5db69c640c97823b7c25f"
+  },
+  "limitacoes": [
+    "Os números de página registrados são as páginas das legendas, não necessariamente toda a extensão de uma tabela com continuação.",
+    "Os scripts originais são etapas históricas; seus caminhos de entrada/saída precisam de adaptação para um novo build. Não são17 scripts independentes.",
+    "Tabelas1–5 contêm parâmetros/literais explicitados no gerador; a verificação integral das células não substitui a auditoria científica original dos contratos."
+  ]
+}

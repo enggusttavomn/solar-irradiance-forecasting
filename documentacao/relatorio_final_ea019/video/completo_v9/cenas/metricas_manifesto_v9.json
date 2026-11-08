@@ -1,0 +1,227 @@
+{
+  "version": 9,
+  "duration": 66,
+  "cues": [
+    [
+      0,
+      9,
+      "MAE é o erro absoluto médio: o tamanho médio da diferença entre previsão e referência, na mesma hora."
+    ],
+    [
+      9,
+      18,
+      "Aqui, a referência é seiscentos e a previsão, seiscentos e cinquenta. A distância é cinquenta, sem considerar o sinal."
+    ],
+    [
+      18,
+      28,
+      "Reunimos as cinco diferenças e dividimos por cinco. Neste exemplo, o MAE vale vinte e oito watts por metro quadrado."
+    ],
+    [
+      28,
+      36,
+      "Quando a previsão se aproxima da referência, as distâncias encolhem e o MAE diminui."
+    ],
+    [
+      36,
+      42,
+      "Se todos os valores coincidem, o MAE é zero. Na mesma tarefa, menor é melhor."
+    ],
+    [
+      42,
+      54,
+      "Calculamos o MAE de cada localidade e fazemos outra média. As dez localidades recebem o mesmo peso: um décimo cada."
+    ],
+    [
+      54,
+      66,
+      "Na avaliação cumulativa, entram todos os passos até o limite, incluindo a noite. Setenta e duas horas correspondem a três dias."
+    ]
+  ],
+  "qa_times": [
+    5.8,
+    13,
+    22.5,
+    25.5,
+    29,
+    33.5,
+    39.5,
+    49.5,
+    64.5
+  ],
+  "example_reference": [
+    0,
+    200,
+    600,
+    300,
+    0
+  ],
+  "example_prediction": [
+    20,
+    170,
+    650,
+    270,
+    10
+  ],
+  "example_absolute_errors": [
+    20,
+    30,
+    50,
+    30,
+    10
+  ],
+  "example_mae": 28,
+  "numeric_example_is_not_an_experiment_result": true,
+  "distance_is_vertical_at_same_time": true,
+  "zoom_reference_W_m2": 600,
+  "zoom_prediction_W_m2": 650,
+  "zoom_absolute_error_W_m2": 50,
+  "improvement_example_mae_plateaus": [
+    28,
+    14,
+    0
+  ],
+  "mae_lower_is_better_for_same_task": true,
+  "zero_means_all_example_predictions_match": true,
+  "macro_equal_locality_weight": 0.1,
+  "macro_localities": [
+    "Camaçari",
+    "Nevada",
+    "Texas",
+    "Geórgia",
+    "Normal",
+    "Fremont",
+    "Casa Grande",
+    "Detroit",
+    "Dearborn",
+    "San Luis Potosí"
+  ],
+  "cumulative_includes_steps_1_through_H": true,
+  "cumulative_includes_night": true,
+  "cumulative_bars_are_didactic_time_step_markers_not_measured_errors": true,
+  "source_report_pages": [
+    15,
+    16,
+    21,
+    23
+  ],
+  "module": "metrics_v9",
+  "start": 354,
+  "end": 420,
+  "chapter": "metricas",
+  "fps": 30,
+  "frames": 1980,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "resolution_percentage": 100,
+  "samples": 16,
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\metricas_3d_v9.mp4",
+  "render_complete": true,
+  "source_fingerprint": "4c3d0e57f74414e3a0b6425b066c4c76bf44e4c7740a80f7cbbb8684b8f60bf4",
+  "source_hashes": {
+    "codigo_fonte/video_ea019/director_v9.py": "60d34e82b64ff49d93109ee63eb0603f5704a34e5e0dc5f9422774ac3d693ec0",
+    "codigo_fonte/video_ea019/config_v9.py": "1112a80bf6b4eca0068554ee86bf76348230c62839b7d9ca26d58dce25c7139d",
+    "codigo_fonte/video_ea019/common_v7.py": "4867b4c429436a2e602de07bbbc1d16d6644506917894c8dca3588dc7e4e3587",
+    "codigo_fonte/video_ea019/blender_pilot.py": "d048c56e8559a13e2eb462299421e618817bdd0fee186412172e75843ad3207d",
+    "codigo_fonte/video_ea019/factory_site_v6.py": "9ef07ea1f676d8970a2d007c0bf2918ddf63c7cad3b0ad00d3ac0d7723d23c55",
+    "codigo_fonte/video_ea019/retime_v9.py": "a3bac65c3d4843b6037277d3434168390cbe7607b5b725cbadca8b5a6f47c96a",
+    "codigo_fonte/video_ea019/metrics_v9.py": "1727569d05aa8764c5004aba9a20739ea82aae35ed9757b86eab0b20de0943d0",
+    "documentacao/relatorio_final_ea019/video/completo_v8/fontes_resultados_v8.json": "de42f0a99982bca8f029a92f91df7694a3855b1a44614ba6deeb8aa2d7b56494",
+    "documentacao/relatorio_final_ea019/video/revisao_ate_plano22_v7/referencias/ghi_distributions_training.json": "c6e42479d11556b890fb607bf2f5d90a65fc066103c566512f21f1509dcda6bc",
+    "codigo_fonte/video_ea019/assets/americas_land.json": "7a8a908caa2b1a512bcc287083cfbcd21e332f4e006a67b1b5ef14d380327278",
+    "codigo_fonte/video_ea019/assets/localities_report.json": "47df949b87d15c04e0931fdc020bf8cfb63278937f8dfd6ad2dd401e44a0b4a7"
+  },
+  "blocks": [
+    {
+      "first_frame": 1,
+      "last_frame": 300,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\metricas\\f00001_00300.mp4",
+      "bytes": 2636640,
+      "sha256": "b81c1a50b13edba2eaecf234585821a44ebdc3fce769c98a02f3f7724cd9bfeb",
+      "source_fingerprint": "4c3d0e57f74414e3a0b6425b066c4c76bf44e4c7740a80f7cbbb8684b8f60bf4",
+      "reused": false
+    },
+    {
+      "first_frame": 301,
+      "last_frame": 600,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\metricas\\f00301_00600.mp4",
+      "bytes": 2519838,
+      "sha256": "fc93229e0a986fa7dba1aa7269bb8787824fd262ab97cca2eb5614b2a90efe8f",
+      "source_fingerprint": "4c3d0e57f74414e3a0b6425b066c4c76bf44e4c7740a80f7cbbb8684b8f60bf4",
+      "reused": false
+    },
+    {
+      "first_frame": 601,
+      "last_frame": 900,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\metricas\\f00601_00900.mp4",
+      "bytes": 2338710,
+      "sha256": "07251b18784cbab60cfa8d88675873c748c4204398eff229a601f165ad342528",
+      "source_fingerprint": "4c3d0e57f74414e3a0b6425b066c4c76bf44e4c7740a80f7cbbb8684b8f60bf4",
+      "reused": false
+    },
+    {
+      "first_frame": 901,
+      "last_frame": 1200,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\metricas\\f00901_01200.mp4",
+      "bytes": 2587464,
+      "sha256": "e609da69c98d25df209aca109dadf323a96af513439a0b48f3c8b9fb7c878740",
+      "source_fingerprint": "4c3d0e57f74414e3a0b6425b066c4c76bf44e4c7740a80f7cbbb8684b8f60bf4",
+      "reused": false
+    },
+    {
+      "first_frame": 1201,
+      "last_frame": 1500,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\metricas\\f01201_01500.mp4",
+      "bytes": 2720557,
+      "sha256": "fa7ecee29b5568480d81557a68dd939a994edc61061d604d1cbf7c057acdc4dd",
+      "source_fingerprint": "4c3d0e57f74414e3a0b6425b066c4c76bf44e4c7740a80f7cbbb8684b8f60bf4",
+      "reused": false
+    },
+    {
+      "first_frame": 1501,
+      "last_frame": 1800,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\metricas\\f01501_01800.mp4",
+      "bytes": 2537016,
+      "sha256": "32805940edac1bf89d32f790a42d31a7361e610e2a23ed4822d923f837e4cd6f",
+      "source_fingerprint": "4c3d0e57f74414e3a0b6425b066c4c76bf44e4c7740a80f7cbbb8684b8f60bf4",
+      "reused": false
+    },
+    {
+      "first_frame": 1801,
+      "last_frame": 1980,
+      "frame_count": 180,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\metricas\\f01801_01980.mp4",
+      "bytes": 1402620,
+      "sha256": "b7cc1ce8c6efbf14e7bcea36f7ff8c5686148607dec129070a5ecec6b4ed4006",
+      "source_fingerprint": "4c3d0e57f74414e3a0b6425b066c4c76bf44e4c7740a80f7cbbb8684b8f60bf4",
+      "reused": false
+    }
+  ],
+  "raw_verification": {
+    "path": "documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\metricas_3d_v9.mp4",
+    "bytes": 16742170,
+    "sha256": "ab53a31231e3e221a0cfdec314d00ed36132ad31d84302293c7f2198806ab51e",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frame_count": 1980,
+    "duration_seconds": 66,
+    "codec": "H.264",
+    "audio_tracks": 0,
+    "full_decode_errors": 0
+  },
+  "gpu": {
+    "renderer": "Intel(R) Arc(TM) B390 GPU",
+    "vendor": "Intel",
+    "backend": "OPENGL",
+    "engine": "BLENDER_EEVEE_NEXT"
+  }
+}

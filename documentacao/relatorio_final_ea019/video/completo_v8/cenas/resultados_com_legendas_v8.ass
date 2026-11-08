@@ -1,0 +1,38 @@
+﻿[Script Info]
+Title: EA019 scientific animation - deterministic text overlay
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI,44,&H00FBF6F3,&H00FFFFFF,&H80000000,&H80000000,0,0,0,0,100,100,0,0,3,12,0,2,110,110,80,1
+Style: Header,Segoe UI,58,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,-1,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Eyebrow,Segoe UI,24,&H00EDDD67,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,1.4,0,1,0.5,0,7,0,0,0,1
+Style: Text,Segoe UI,40,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Small,Segoe UI,26,&H00C9B9AA,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.5,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 10,0:00:00.00,0:00:07.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Compare os modelos dentro de cada tarefa:\Nescalas e alvos são diferentes.
+Dialogue: 10,0:00:07.00,0:00:16.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}No horário, o Transformer teve o menor\Nmacro-MAE: 53,21 watts por metro quadrado.
+Dialogue: 10,0:00:16.00,0:00:19.20,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A vantagem sobre a LSTM foi de
+Dialogue: 10,0:00:19.20,0:00:24.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}aproximadamente 0,32 watt por metro\Nquadrado.
+Dialogue: 10,0:00:24.00,0:00:32.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Na diária, o Transformer liderou: 43,89\Nwatts por metro quadrado de macro-MAE.
+Dialogue: 10,0:00:32.00,0:00:34.40,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A diferença para a LSTM foi de
+Dialogue: 10,0:00:34.40,0:00:40.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}aproximadamente 0,30 watt por metro\Nquadrado. Os valores são próximos.
+Dialogue: 10,0:00:40.00,0:00:48.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}No mensal de um passo, o Informer liderou:\N12,73 watts por metro quadrado.
+Dialogue: 10,0:00:48.00,0:00:50.60,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Os três modelos são comparados na mesma
+Dialogue: 10,0:00:50.60,0:00:54.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}tarefa, com as condições selecionadas para\Ncada um.
+Dialogue: 10,0:00:54.00,0:00:57.25,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Em seis meses, o Informer liderou: erro
+Dialogue: 10,0:00:57.25,0:01:01.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}cumulativo de 13,67 watts por metro\Nquadrado.
+Dialogue: 10,0:01:01.00,0:01:03.78,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Essa rede é diferente da mensal de um
+Dialogue: 10,0:01:03.78,0:01:08.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}passo. O resultado de seis meses permanece\Nexploratório.
+Dialogue: 10,0:01:08.00,0:01:14.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A liderança varia entre localidades. As\Ncores indicam o menor MAE em cada região.
+Dialogue: 10,0:01:14.00,0:01:16.73,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Nos dois mensais, o Informer lidera cinco
+Dialogue: 10,0:01:16.73,0:01:20.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}localidades, mas as localidades vencedoras\Nmudam.
+Dialogue: 10,0:01:20.00,0:01:22.79,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Na diária, a LSTM liderou os horizontes
+Dialogue: 10,0:01:22.79,0:01:28.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}menores, até 14 dias. Em 30 dias, o\NTransformer apresentou a menor média.

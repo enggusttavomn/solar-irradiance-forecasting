@@ -1,0 +1,195 @@
+{
+  "version": 9,
+  "duration": 60,
+  "qa_times": [
+    4.5,
+    16.5,
+    29,
+    35,
+    42,
+    49,
+    56,
+    59
+  ],
+  "cues": [
+    [
+      0,
+      4,
+      "As localidades deste estudo estão nas Américas."
+    ],
+    [
+      4,
+      10,
+      "São dez regiões: uma no Brasil, oito nos Estados Unidos e uma no México."
+    ],
+    [
+      10,
+      16,
+      "A NSRDB usa observações de satélite e informações da atmosfera para estimar o recurso solar."
+    ],
+    [
+      16,
+      25,
+      "Modelos físicos combinam essas informações e estimam a irradiância em cada região consultada."
+    ],
+    [
+      25,
+      32,
+      "A curva mostra quando os valores ocorreram. Já as barras agrupam esses valores por faixa."
+    ],
+    [
+      32,
+      38,
+      "Estas três leituras reais de Camaçari pertencem à mesma faixa de GHI."
+    ],
+    [
+      38,
+      45,
+      "Essa faixa reúne cerca de quatro vírgula oito por cento das horas com valor positivo."
+    ],
+    [
+      45,
+      53,
+      "Cada barra mostra a porcentagem naquela faixa. As horas com valor zero são contadas separadamente."
+    ],
+    [
+      53,
+      60,
+      "Com intervalos e escalas iguais, comparamos a distribuição dos valores entre as dez localidades."
+    ]
+  ],
+  "distribution_source": "documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\referencias\\ghi_distributions_training.json",
+  "distribution_source_sha256": "c6e42479d11556b890fb607bf2f5d90a65fc066103c566512f21f1509dcda6bc",
+  "synthetic_distribution_or_history": false,
+  "frequency_denominator": "per-locality hours strictly GHI > 0",
+  "example_bin": {
+    "locality": "Camaçari",
+    "range_w_m2": [
+      400,
+      450
+    ],
+    "left_closed_right_open": true,
+    "count": 881,
+    "positive_hours": 18496,
+    "percent": 4.763192041522491
+  },
+  "source_period": {
+    "start_local": "2019-01-01",
+    "end_local_exclusive": "2023-01-01",
+    "timezone": "fixed NSRDB UTC offset per locality; no daylight savings"
+  },
+  "all_ten_localities_shown": true,
+  "temporal_curve_and_histogram_distinguished": true,
+  "no_factory_sensor_claim": true,
+  "zeros_separate": true,
+  "module": "geography_data_v9",
+  "start": 112,
+  "end": 172,
+  "chapter": "geografia",
+  "fps": 30,
+  "frames": 1800,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "resolution_percentage": 100,
+  "samples": 16,
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\geografia_3d_v9.mp4",
+  "render_complete": true,
+  "source_fingerprint": "920e3b716e6bfa929a3a101286a7d023d5cc43cff60656a2600eaff96b6bee64",
+  "source_hashes": {
+    "codigo_fonte/video_ea019/director_v9.py": "60d34e82b64ff49d93109ee63eb0603f5704a34e5e0dc5f9422774ac3d693ec0",
+    "codigo_fonte/video_ea019/config_v9.py": "1112a80bf6b4eca0068554ee86bf76348230c62839b7d9ca26d58dce25c7139d",
+    "codigo_fonte/video_ea019/common_v7.py": "4867b4c429436a2e602de07bbbc1d16d6644506917894c8dca3588dc7e4e3587",
+    "codigo_fonte/video_ea019/blender_pilot.py": "d048c56e8559a13e2eb462299421e618817bdd0fee186412172e75843ad3207d",
+    "codigo_fonte/video_ea019/factory_site_v6.py": "9ef07ea1f676d8970a2d007c0bf2918ddf63c7cad3b0ad00d3ac0d7723d23c55",
+    "codigo_fonte/video_ea019/retime_v9.py": "a3bac65c3d4843b6037277d3434168390cbe7607b5b725cbadca8b5a6f47c96a",
+    "codigo_fonte/video_ea019/geography_data_v9.py": "32d8afaaa22ddd640065bd0d13e2b939c83dca020ba21baa4e55d8e9f7db5aef",
+    "codigo_fonte/video_ea019/geography_data_v7.py": "a7076dcf291c034e1ab32ce5336839686690ee4a17dad20cf02219bac9deb69d",
+    "documentacao/relatorio_final_ea019/video/completo_v8/fontes_resultados_v8.json": "de42f0a99982bca8f029a92f91df7694a3855b1a44614ba6deeb8aa2d7b56494",
+    "documentacao/relatorio_final_ea019/video/revisao_ate_plano22_v7/referencias/ghi_distributions_training.json": "c6e42479d11556b890fb607bf2f5d90a65fc066103c566512f21f1509dcda6bc",
+    "codigo_fonte/video_ea019/assets/americas_land.json": "7a8a908caa2b1a512bcc287083cfbcd21e332f4e006a67b1b5ef14d380327278",
+    "codigo_fonte/video_ea019/assets/localities_report.json": "47df949b87d15c04e0931fdc020bf8cfb63278937f8dfd6ad2dd401e44a0b4a7"
+  },
+  "blocks": [
+    {
+      "first_frame": 1,
+      "last_frame": 300,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\geografia\\f00001_00300.mp4",
+      "bytes": 3224618,
+      "sha256": "3c36e726fa356ae48e358a70e60b65604f26119557f2e71e3f4dfeb393e3bb1a",
+      "source_fingerprint": "920e3b716e6bfa929a3a101286a7d023d5cc43cff60656a2600eaff96b6bee64",
+      "reused": false
+    },
+    {
+      "first_frame": 301,
+      "last_frame": 600,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\geografia\\f00301_00600.mp4",
+      "bytes": 3288145,
+      "sha256": "07003239b858cb2d2d238ef75eda781aa49f1f702591634629d6425d3e03f606",
+      "source_fingerprint": "920e3b716e6bfa929a3a101286a7d023d5cc43cff60656a2600eaff96b6bee64",
+      "reused": false
+    },
+    {
+      "first_frame": 601,
+      "last_frame": 900,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\geografia\\f00601_00900.mp4",
+      "bytes": 3059673,
+      "sha256": "bbae75a0bce8babf6754b75b2573fe8ebdf0559f8e7d834b22f8a00021c9dc1a",
+      "source_fingerprint": "920e3b716e6bfa929a3a101286a7d023d5cc43cff60656a2600eaff96b6bee64",
+      "reused": false
+    },
+    {
+      "first_frame": 901,
+      "last_frame": 1200,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\geografia\\f00901_01200.mp4",
+      "bytes": 2396452,
+      "sha256": "320387063bf79f8217608688304567f2bde47dcdbea78a420427f98e9a6ff03f",
+      "source_fingerprint": "920e3b716e6bfa929a3a101286a7d023d5cc43cff60656a2600eaff96b6bee64",
+      "reused": false
+    },
+    {
+      "first_frame": 1201,
+      "last_frame": 1500,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\geografia\\f01201_01500.mp4",
+      "bytes": 2878543,
+      "sha256": "67ffc27a6bc49f59e90ff988d812a8ed99d88c97655be6ef208ec0befebe38af",
+      "source_fingerprint": "920e3b716e6bfa929a3a101286a7d023d5cc43cff60656a2600eaff96b6bee64",
+      "reused": false
+    },
+    {
+      "first_frame": 1501,
+      "last_frame": 1800,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\geografia\\f01501_01800.mp4",
+      "bytes": 3153562,
+      "sha256": "f7d9c7871f104c649cf4c57aac919b096f4d6eb25c489d6e1b6ca6bb2f5e5804",
+      "source_fingerprint": "920e3b716e6bfa929a3a101286a7d023d5cc43cff60656a2600eaff96b6bee64",
+      "reused": false
+    }
+  ],
+  "raw_verification": {
+    "path": "documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\geografia_3d_v9.mp4",
+    "bytes": 18000796,
+    "sha256": "bc7d1c0f53d3044c8ee2b3d40fd9c44dc2e123cd5f92b2910adfd64ab1febdbd",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frame_count": 1800,
+    "duration_seconds": 60,
+    "codec": "H.264",
+    "audio_tracks": 0,
+    "full_decode_errors": 0
+  },
+  "gpu": {
+    "renderer": "Intel(R) Arc(TM) B390 GPU",
+    "vendor": "Intel",
+    "backend": "OPENGL",
+    "engine": "BLENDER_EEVEE_NEXT"
+  }
+}

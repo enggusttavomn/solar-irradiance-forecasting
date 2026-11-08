@@ -1,0 +1,416 @@
+{
+  "version": 12,
+  "status": "ready_for_editing",
+  "generated_utc": "2026-11-05T13:05:40.217641+00:00",
+  "source_path": "C:\\Users\\gusta\\OneDrive\\Documents\\Sound Recordings\\GRAVACAO.m4a",
+  "source_sha256": "64afb2c901412c499cdaa0e2c8438075beb30309f9fbb05e36145e271bae5d3e",
+  "source_modified": false,
+  "raw_path": "tmp/montagem_final_v12/voice_pcm/gravacao_raw_48k.wav",
+  "raw_sha256": "0e1a74a727c39afa2dba86f703b485cea6547c30f590c566f4116b3f86e528a2",
+  "clean_path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/audio/gravacao_limpa_integral_48k.wav",
+  "clean_sha256": "44de60b8f152043e14f7e7910bc46e4f6da1538ad02d29b31d513941ae6217aa",
+  "sample_rate": 48000,
+  "channels": 1,
+  "sample_width_bytes": 2,
+  "source_pcm_samples": 27823104,
+  "clean_pcm_samples": 27823104,
+  "duration_seconds": 579.648,
+  "timebase": "First decoded original PCM sample = 0; no compressed-source seeking.",
+  "base_filters": "highpass=f=70,afftdn=nr=6:nf=-60:tn=0:gs=6",
+  "actual_filtergraph": "[0:a]highpass=f=70,asplit=2[h][d];[d]apad=pad_len=1200,afftdn=nr=6:nf=-60:tn=0:gs=6,atrim=start_sample=1200:end_sample=27824304,asetpts=PTS-STARTPTS[c]",
+  "denoiser_noise_reduction_limit_db": 6,
+  "noise_floor_dbfs": -60,
+  "noise_tracking": false,
+  "gain_smoothing_radius": 6,
+  "algorithmic_delay_measured_before_compensation_samples": 1200,
+  "algorithmic_delay_compensated_seconds": 0.025,
+  "input_extended_by_zero_samples": 1200,
+  "uniform_output_gain": 0.7255074463697991,
+  "uniform_output_gain_db": -2.7871625149530805,
+  "global_loudness_normalization_performed": false,
+  "normalization_recommendation": "Normalize the assembled final voice edit to about -16 LUFS with a true-peak ceiling; keep timestamps/sample length unchanged.",
+  "raw_peak_dbfs": 0.0,
+  "raw_samples_at_or_above_0_999": 1097,
+  "raw_peak_fraction": 3.942766414559641e-05,
+  "raw_rms_dbfs": -21.492870354515645,
+  "highpass_float_peak_before_headroom_gain": 1.1594853401184082,
+  "clean_float_peak_before_headroom_gain": 1.1597332954406738,
+  "clean_output_peak_dbfs": -1.4999483342019322,
+  "clean_output_samples_at_or_above_0_999": 0,
+  "clean_output_rms_dbfs": -24.304491916990266,
+  "alignment_checks": [
+    {
+      "source_start_seconds": 2,
+      "duration_seconds": 4,
+      "best_lag_samples": 0,
+      "voice_band_correlation_at_zero_lag": 0.9999984480375969
+    },
+    {
+      "source_start_seconds": 38,
+      "duration_seconds": 4,
+      "best_lag_samples": 0,
+      "voice_band_correlation_at_zero_lag": 0.9999994864542469
+    },
+    {
+      "source_start_seconds": 102,
+      "duration_seconds": 4,
+      "best_lag_samples": 0,
+      "voice_band_correlation_at_zero_lag": 0.999999132160564
+    },
+    {
+      "source_start_seconds": 183,
+      "duration_seconds": 4,
+      "best_lag_samples": 0,
+      "voice_band_correlation_at_zero_lag": 0.9999996752442283
+    },
+    {
+      "source_start_seconds": 305,
+      "duration_seconds": 4,
+      "best_lag_samples": 0,
+      "voice_band_correlation_at_zero_lag": 0.9999983076450393
+    },
+    {
+      "source_start_seconds": 450,
+      "duration_seconds": 4,
+      "best_lag_samples": 0,
+      "voice_band_correlation_at_zero_lag": 0.995447540050997
+    },
+    {
+      "source_start_seconds": 560,
+      "duration_seconds": 4,
+      "best_lag_samples": 0,
+      "voice_band_correlation_at_zero_lag": 0.9999983612341679
+    }
+  ],
+  "comparison_windows_ms": 100,
+  "voice_window_criterion": "Original RMS > -35 dBFS",
+  "voice_windows": 3651,
+  "median_denoiser_attenuation_in_voice_windows_db": 0.000454421089539983,
+  "quiet_candidate_criterion": "-80 <= original 100ms RMS < -50 dBFS; a proxy, not labeled noise ground truth.",
+  "quiet_candidate_windows": 1502,
+  "median_denoiser_attenuation_in_quiet_candidate_windows_db": 2.1506976076548057,
+  "denoiser_attenuation_comparison_excludes_uniform_gain": true,
+  "reading_cuts_or_retakes_selected": false,
+  "silences_removed": false,
+  "speech_synthesis_used": false,
+  "voice_time_stretch_used": false,
+  "hard_gate_used": false,
+  "spectral_declick_or_declip_used": false,
+  "audio_listening_performed": false,
+  "limitations": [
+    "Stationary low-level background is attenuated conservatively. No claim of removing all external noises or voices overlapping speech.",
+    "Short original near-full-scale samples cannot be reconstructed reliably by these filters.",
+    "Metrics and waveform/source alignment checks do not replace human listening.",
+    "Background events during unused speech gaps should be removed during the edit, not by gating every quiet syllable."
+  ],
+  "stereo_input_check": {
+    "sample_duration_seconds": 44.9999375,
+    "channel_correlation": 0.9999999999999998,
+    "channel_rms_dbfs": [
+      -21.65992803843983,
+      -21.65992803843983
+    ],
+    "channel_peak_dbfs": [
+      0.01942897029221058,
+      0.01942897029221058
+    ],
+    "mono_downmix": "FFmpeg -ac1 standard equal-weight stereo-to-mono; first45s channels checked"
+  },
+  "original_near_full_scale_event_times": [
+    {
+      "start": 0.7532291666666666,
+      "end": 0.7532916666666667,
+      "near_fullscale_samples": 3
+    },
+    {
+      "start": 15.328770833333333,
+      "end": 15.329354166666667,
+      "near_fullscale_samples": 5
+    },
+    {
+      "start": 16.833875,
+      "end": 16.833875,
+      "near_fullscale_samples": 1
+    },
+    {
+      "start": 54.0850625,
+      "end": 54.09760416666666,
+      "near_fullscale_samples": 8
+    },
+    {
+      "start": 54.68120833333333,
+      "end": 54.681270833333336,
+      "near_fullscale_samples": 2
+    },
+    {
+      "start": 60.8375,
+      "end": 60.8375625,
+      "near_fullscale_samples": 3
+    },
+    {
+      "start": 74.37864583333334,
+      "end": 74.40570833333334,
+      "near_fullscale_samples": 39
+    },
+    {
+      "start": 79.833875,
+      "end": 79.90470833333333,
+      "near_fullscale_samples": 41
+    },
+    {
+      "start": 85.3190625,
+      "end": 85.319125,
+      "near_fullscale_samples": 3
+    },
+    {
+      "start": 85.4295,
+      "end": 85.42954166666667,
+      "near_fullscale_samples": 2
+    },
+    {
+      "start": 91.11797916666667,
+      "end": 91.118125,
+      "near_fullscale_samples": 6
+    },
+    {
+      "start": 95.38704166666666,
+      "end": 95.38708333333334,
+      "near_fullscale_samples": 3
+    },
+    {
+      "start": 98.64122916666666,
+      "end": 98.66229166666666,
+      "near_fullscale_samples": 27
+    },
+    {
+      "start": 102.05833333333334,
+      "end": 102.08308333333333,
+      "near_fullscale_samples": 13
+    },
+    {
+      "start": 109.11102083333333,
+      "end": 109.1965625,
+      "near_fullscale_samples": 53
+    },
+    {
+      "start": 120.32497916666667,
+      "end": 120.325125,
+      "near_fullscale_samples": 6
+    },
+    {
+      "start": 120.83572916666667,
+      "end": 120.88547916666667,
+      "near_fullscale_samples": 18
+    },
+    {
+      "start": 122.03204166666667,
+      "end": 122.09854166666666,
+      "near_fullscale_samples": 42
+    },
+    {
+      "start": 122.48254166666666,
+      "end": 122.48254166666666,
+      "near_fullscale_samples": 1
+    },
+    {
+      "start": 126.42154166666667,
+      "end": 126.51289583333333,
+      "near_fullscale_samples": 270
+    },
+    {
+      "start": 136.0655,
+      "end": 136.078125,
+      "near_fullscale_samples": 10
+    },
+    {
+      "start": 143.5831875,
+      "end": 143.58322916666665,
+      "near_fullscale_samples": 2
+    },
+    {
+      "start": 148.022375,
+      "end": 148.02241666666666,
+      "near_fullscale_samples": 2
+    },
+    {
+      "start": 158.035875,
+      "end": 158.0570625,
+      "near_fullscale_samples": 4
+    },
+    {
+      "start": 162.42010416666668,
+      "end": 162.459125,
+      "near_fullscale_samples": 14
+    },
+    {
+      "start": 168.97604166666667,
+      "end": 168.97616666666667,
+      "near_fullscale_samples": 5
+    },
+    {
+      "start": 170.72841666666667,
+      "end": 170.72847916666666,
+      "near_fullscale_samples": 3
+    },
+    {
+      "start": 180.66316666666665,
+      "end": 180.66316666666665,
+      "near_fullscale_samples": 1
+    },
+    {
+      "start": 183.44022916666665,
+      "end": 183.484375,
+      "near_fullscale_samples": 8
+    },
+    {
+      "start": 196.47691666666665,
+      "end": 196.49972916666667,
+      "near_fullscale_samples": 14
+    },
+    {
+      "start": 217.77816666666666,
+      "end": 217.85639583333332,
+      "near_fullscale_samples": 53
+    },
+    {
+      "start": 279.059125,
+      "end": 279.05925,
+      "near_fullscale_samples": 7
+    },
+    {
+      "start": 281.68216666666666,
+      "end": 281.73477083333336,
+      "near_fullscale_samples": 86
+    },
+    {
+      "start": 313.6776875,
+      "end": 313.7495833333333,
+      "near_fullscale_samples": 97
+    },
+    {
+      "start": 323.2860625,
+      "end": 323.2861041666667,
+      "near_fullscale_samples": 3
+    },
+    {
+      "start": 324.0808125,
+      "end": 324.11597916666665,
+      "near_fullscale_samples": 16
+    },
+    {
+      "start": 330.2248333333333,
+      "end": 330.22485416666666,
+      "near_fullscale_samples": 2
+    },
+    {
+      "start": 340.32729166666667,
+      "end": 340.32739583333336,
+      "near_fullscale_samples": 4
+    },
+    {
+      "start": 342.98895833333336,
+      "end": 343.0196666666667,
+      "near_fullscale_samples": 14
+    },
+    {
+      "start": 346.38033333333334,
+      "end": 346.41239583333333,
+      "near_fullscale_samples": 4
+    },
+    {
+      "start": 348.17245833333334,
+      "end": 348.17245833333334,
+      "near_fullscale_samples": 1
+    },
+    {
+      "start": 377.7559375,
+      "end": 377.8225625,
+      "near_fullscale_samples": 19
+    },
+    {
+      "start": 383.01866666666666,
+      "end": 383.0660625,
+      "near_fullscale_samples": 17
+    },
+    {
+      "start": 386.3929791666667,
+      "end": 386.4480208333333,
+      "near_fullscale_samples": 43
+    },
+    {
+      "start": 400.2158125,
+      "end": 400.256125,
+      "near_fullscale_samples": 17
+    },
+    {
+      "start": 402.117375,
+      "end": 402.11741666666666,
+      "near_fullscale_samples": 2
+    },
+    {
+      "start": 408.7489375,
+      "end": 408.7489375,
+      "near_fullscale_samples": 1
+    },
+    {
+      "start": 409.06041666666664,
+      "end": 409.10520833333334,
+      "near_fullscale_samples": 23
+    },
+    {
+      "start": 415.7370833333333,
+      "end": 415.7698125,
+      "near_fullscale_samples": 7
+    },
+    {
+      "start": 421.3455833333333,
+      "end": 421.3456458333333,
+      "near_fullscale_samples": 4
+    },
+    {
+      "start": 441.0277708333333,
+      "end": 441.0278333333333,
+      "near_fullscale_samples": 3
+    },
+    {
+      "start": 441.468875,
+      "end": 441.468875,
+      "near_fullscale_samples": 1
+    },
+    {
+      "start": 459.0825,
+      "end": 459.09425,
+      "near_fullscale_samples": 9
+    },
+    {
+      "start": 473.3170416666667,
+      "end": 473.3170416666667,
+      "near_fullscale_samples": 1
+    },
+    {
+      "start": 498.277625,
+      "end": 498.277625,
+      "near_fullscale_samples": 1
+    },
+    {
+      "start": 498.3764375,
+      "end": 498.3887291666667,
+      "near_fullscale_samples": 4
+    },
+    {
+      "start": 549.7972083333333,
+      "end": 549.8322916666667,
+      "near_fullscale_samples": 46
+    },
+    {
+      "start": 555.0774375,
+      "end": 555.0774375,
+      "near_fullscale_samples": 1
+    },
+    {
+      "start": 555.899,
+      "end": 555.8990208333333,
+      "near_fullscale_samples": 2
+    }
+  ]
+}

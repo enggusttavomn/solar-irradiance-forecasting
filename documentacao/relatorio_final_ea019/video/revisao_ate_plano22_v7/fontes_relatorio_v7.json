@@ -1,0 +1,423 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-11-03T15:45:26.132559+00:00",
+  "purpose": "Scientific source notes for revised plans9-22; no training or data changes",
+  "primary_sources": [
+    {
+      "path": "documentacao/relatorio_final_ea019/Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.pdf",
+      "sha256": "97b500b484aec0bf4d336ee2b351858e1e7f8fff59cb6969f09f722b63edc807"
+    },
+    {
+      "path": "codigo_fonte/coleta_e_preparacao/localidades.py",
+      "sha256": "ab325cf26249f851a11758728700f288635b115c3d3eeb91120c185b1f9564d1"
+    },
+    {
+      "path": "codigo_fonte/coleta_e_preparacao/dados_horarios_nsrdb.py",
+      "sha256": "5c53b7e7c0132a7226ba6dc17feb2e07094b9140841139fcf910791970b113fc"
+    },
+    {
+      "path": "codigo_fonte/coleta_e_preparacao/preprocessamento.py",
+      "sha256": "55ec9363b250aea57d18d605e9a395a0cdd7a666027cf8467123b073da9ab216"
+    },
+    {
+      "path": "codigo_fonte/experimentos/experimento_multirresolucao.py",
+      "sha256": "6bea008b7c113acc88c3bb0c4af945d1c303518d6baa8debcc63a23b5bc13056"
+    },
+    {
+      "path": "codigo_fonte/experimentos/experimento_horario_timesnet.py",
+      "sha256": "d6f7539dc06143ae6700b5326d4f5df2a5453ce5d8683a92836f8f19084fd332"
+    },
+    {
+      "path": "codigo_fonte/modelos/modelos_baselines_adicionais.py",
+      "sha256": "f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988"
+    },
+    {
+      "path": "codigo_fonte/experimentos/quantizacao_timesnet.py",
+      "sha256": "f8567564a636d9db100091ede8af5a1b6adfc6bf3fd5873167232dcf0e60ae7c"
+    },
+    {
+      "path": "codigo_fonte/experimentos/experimento_quantizacao_concorrentes.py",
+      "sha256": "949268cf23c74ef9b977ab02e20e2db5598d074cee1cc4ac179c7e50894b7f59"
+    }
+  ],
+  "report_pages_physical_equal_printed": true,
+  "localities": {
+    "report_page": 10,
+    "report_table": 1,
+    "map_page": 9,
+    "count": 10,
+    "country_counts": {
+      "BR": 1,
+      "US": 8,
+      "MX": 1
+    },
+    "coordinate_order": "longitude,latitude",
+    "semantics": "Reference coordinates select the nearest NSRDB geographic cell; actual grid coordinates are separately recorded. No factory sensors. Intentional selection, not random.",
+    "items": [
+      {
+        "id": 1,
+        "label": "BYD Camaçari",
+        "source_name": "BYD Camacari",
+        "country": "BR",
+        "latitude": -12.6733774,
+        "longitude": -38.2812339,
+        "coordinate_source_url": "https://www.openstreetmap.org/way/319513382",
+        "actual_nsrdb_grid": {
+          "latitude": -12.67,
+          "longitude": -38.3,
+          "site_id": 2000061,
+          "timezone_utc_offset_hours": -3
+        }
+      },
+      {
+        "id": 2,
+        "label": "Tesla Nevada",
+        "source_name": "Tesla Gigafactory Nevada",
+        "country": "US",
+        "latitude": 39.5403926,
+        "longitude": -119.4390524,
+        "coordinate_source_url": "https://www.openstreetmap.org/way/422015619",
+        "actual_nsrdb_grid": {
+          "latitude": 39.53,
+          "longitude": -119.42,
+          "site_id": 184510,
+          "timezone_utc_offset_hours": -8
+        }
+      },
+      {
+        "id": 3,
+        "label": "Tesla Texas",
+        "source_name": "Tesla Gigafactory Texas",
+        "country": "US",
+        "latitude": 30.2219321,
+        "longitude": -97.6187733,
+        "coordinate_source_url": "https://www.openstreetmap.org/way/990257143",
+        "actual_nsrdb_grid": {
+          "latitude": 30.21,
+          "longitude": -97.62,
+          "site_id": 681461,
+          "timezone_utc_offset_hours": -6
+        }
+      },
+      {
+        "id": 4,
+        "label": "Hyundai Georgia",
+        "source_name": "Hyundai Metaplant Georgia",
+        "country": "US",
+        "latitude": 32.1605262,
+        "longitude": -81.4509985,
+        "coordinate_source_url": "https://www.openstreetmap.org/way/1207640268",
+        "actual_nsrdb_grid": {
+          "latitude": 32.17,
+          "longitude": -81.46,
+          "site_id": 1031588,
+          "timezone_utc_offset_hours": -5
+        }
+      },
+      {
+        "id": 5,
+        "label": "Rivian Normal",
+        "source_name": "Rivian Normal",
+        "country": "US",
+        "latitude": 40.5092914,
+        "longitude": -89.0545444,
+        "coordinate_source_url": "https://www.openstreetmap.org/way/438033786",
+        "actual_nsrdb_grid": {
+          "latitude": 40.49,
+          "longitude": -89.06,
+          "site_id": 871382,
+          "timezone_utc_offset_hours": -6
+        }
+      },
+      {
+        "id": 6,
+        "label": "Tesla Fremont",
+        "source_name": "Tesla Fremont Factory",
+        "country": "US",
+        "latitude": 37.4926897,
+        "longitude": -121.9415083,
+        "coordinate_source_url": "https://www.openstreetmap.org/way/38080584",
+        "actual_nsrdb_grid": {
+          "latitude": 37.49,
+          "longitude": -121.94,
+          "site_id": 144390,
+          "timezone_utc_offset_hours": -8
+        }
+      },
+      {
+        "id": 7,
+        "label": "Lucid Casa Grande",
+        "source_name": "Lucid AMP 1 Casa Grande",
+        "country": "US",
+        "latitude": 32.8568519,
+        "longitude": -111.7784376,
+        "coordinate_source_url": "https://www.openstreetmap.org/way/1254715766",
+        "actual_nsrdb_grid": {
+          "latitude": 32.85,
+          "longitude": -111.78,
+          "site_id": 329823,
+          "timezone_utc_offset_hours": -7
+        }
+      },
+      {
+        "id": 8,
+        "label": "GM Factory Zero",
+        "source_name": "GM Factory Zero",
+        "country": "US",
+        "latitude": 42.3815123,
+        "longitude": -83.0453415,
+        "coordinate_source_url": "https://www.openstreetmap.org/way/554307172",
+        "actual_nsrdb_grid": {
+          "latitude": 42.37,
+          "longitude": -83.06,
+          "site_id": 998284,
+          "timezone_utc_offset_hours": -5
+        }
+      },
+      {
+        "id": 9,
+        "label": "Ford Rouge EV Center",
+        "source_name": "Ford Rouge Electric Vehicle Center",
+        "country": "US",
+        "latitude": 42.3056229,
+        "longitude": -83.1676332,
+        "coordinate_source_url": "https://www.openstreetmap.org/way/496054397",
+        "actual_nsrdb_grid": {
+          "latitude": 42.29,
+          "longitude": -83.18,
+          "site_id": 995809,
+          "timezone_utc_offset_hours": -5
+        }
+      },
+      {
+        "id": 10,
+        "label": "BMW San Luis Potosí",
+        "source_name": "BMW San Luis Potosi",
+        "country": "MX",
+        "latitude": 21.9682649,
+        "longitude": -100.8491733,
+        "coordinate_source_url": "https://www.openstreetmap.org/way/553644102",
+        "actual_nsrdb_grid": {
+          "latitude": 21.97,
+          "longitude": -100.86,
+          "site_id": 593265,
+          "timezone_utc_offset_hours": -6
+        }
+      }
+    ]
+  },
+  "data_provenance": {
+    "report_pages": [
+      7,
+      9,
+      10,
+      11
+    ],
+    "dataset": "GOES Aggregated PSM v4",
+    "hourly_preserved_version": "4.0.0",
+    "daily_preserved_versions": [
+      "4.0.0;4.0.1;4.1.2.dev4+g3b38bc8.d20250228"
+    ],
+    "nominal_cell_size_km": 4,
+    "native_interval_minutes": 30,
+    "quantity": "global horizontal solar irradiance",
+    "unit": "W/m2",
+    "hourly": "Arithmetic mean of native30minute pairs from publicS3 HDF5. StoredUTC; modeling uses fixed local NSRDB offset without daylight saving.",
+    "daily": "Independent API60minute query, then daily arithmetic mean.",
+    "monthly": "Arithmetic means of daily means, retaining W/m2.",
+    "critical": "Hourly and daily are not aggregates of the same raw records. Do not animate an exact h-to-d aggregation between these independently queried products.",
+    "satellite_pipeline": "GOES observations -> cloud properties and ancillary atmosphere -> Physical Solar Model -> gridded irradiance. This describes data provenance, not neural network inputs.",
+    "not_ground_factory_measurements": true,
+    "pv_generation_factory_load_finance_evaluated": false
+  },
+  "official_supplemental_sources": [
+    {
+      "url": "https://developer.nlr.gov/docs/solar/nsrdb/nsrdb-GOES-aggregated-v4-0-0-download/",
+      "supports": "Same preserved GOESAggregatedv4 product:4km,30minute native,30or60minuteAPI,nearestgridpoint. Current year list does not replace project records."
+    },
+    {
+      "url": "https://developer.nlr.gov/docs/solar/nsrdb/nsrdb_data_query/",
+      "supports": "PSMv4 retrieves cloud properties using PATMOS-x. REST2 for clear sky, FARMS for cloudyGHI, FARMS-DNI for cloudyDNI; ancillary aerosol optical depth and precipitable water vapor."
+    }
+  ],
+  "inputs_and_preprocessing": {
+    "report_pages": [
+      8,
+      10,
+      12,
+      13,
+      14,
+      17,
+      18,
+      36
+    ],
+    "only_network_inputs": [
+      "past univariate GHI sequence",
+      "learned locality ID embedding"
+    ],
+    "embedding_dimensions": 8,
+    "not_inputs": [
+      "temperature",
+      "cloud images",
+      "numerical weather predictions",
+      "factory demand",
+      "PV generation",
+      "calendar embeddings"
+    ],
+    "validation": "Nonfinite/negativeGHI, invaliddates, duplicates and gaps fail validation; unsorted records sorted. No interpolation or zero filling.",
+    "normalization": "Per-locality min-max from admissible pre-cut history: u=(x-a)/(b-a); safe amplitude1 if constant. Selection pre2023, refit pre2024. Targets normalized too.",
+    "quantization": "GHI input amplitudes only: rint(clip(u,0,1)*(N-1))/(N-1), N64/128/256, ties-to-even, reconstructed float32.",
+    "not_quantized": [
+      "ID",
+      "weights",
+      "targets",
+      "regression outputs"
+    ],
+    "control": "Continuous min-max, no clipping or rounding. Quantized contrasts combine clipping and rounding.",
+    "postprocessing": "Inverse scale to W/m2, nonnegative floor; hourly night predictions annulled using pvlib solar position. Not proof of network predicting daytime variability.",
+    "sharing": "Parameters shared across10localities per architecture/task; separate tasks use separately trained networks."
+  },
+  "architectures": {
+    "report_pages": [
+      17,
+      18,
+      36
+    ],
+    "items": {
+      "LSTM": {
+        "source": "experimento_horario_timesnet.py:LSTMEncoderDireto via experimento_multirresolucao.py",
+        "hidden_units": 32,
+        "recurrent_layers": 1,
+        "dropout": 0,
+        "embedding_dimensions": 8,
+        "head": "last hidden state32 concatenated with ID embedding8 -> linear40toH",
+        "direct_horizon": true,
+        "feedback_of_previous_predictions": false,
+        "visual_constraint": "Smooth learned gates; do not imply binary switches or measured gate relevance."
+      },
+      "Transformer": {
+        "source": "modelos_baselines_adicionais.py:TransformerDireto(informer=False)",
+        "d_model": 16,
+        "d_ff": 32,
+        "heads": 2,
+        "encoder_layers": 2,
+        "decoder_layers": 1,
+        "dropout": 0.1,
+        "encoder_input": "linearGHI1to16 + sinusoidalpositions + projectedIDembedding8to16",
+        "decoder_input": "last floor(C/2) observed values followed byH zero placeholders, never future targets",
+        "decoder_observed_context": {
+          "hourly": 168,
+          "daily": 182,
+          "monthly": 6
+        },
+        "self_attention_encoder": "full",
+        "self_attention_decoder": "full causal",
+        "cross_attention": "full",
+        "head": "shared linear16to1 over finalH decoder positions",
+        "direct_horizon": true,
+        "pretrained_language_model": false,
+        "visual_constraint": "Separate Q/K scores, normalized weights, and weightedV sum; illustrative intensities are not measured attention."
+      },
+      "Informer": {
+        "source": "modelos_baselines_adicionais.py:TransformerDireto(informer=True)",
+        "same_dimensions_as_Transformer": true,
+        "probsparse_factor": 5,
+        "sparse_attention": "Encoder self-attention and causal decoder self-attention",
+        "selection": "Queries by estimated sampled score sparsity, not by GHI magnitude and not simply strongest edges of already computed full attention",
+        "selection_count": "min(Lq,max(1,5*ceil(log(max(2,Lq)))))",
+        "selected_queries_at_L12": 12,
+        "cross_attention": "full",
+        "distillation_count": 1,
+        "distillation": "Conv1d16to16,kernel3,circularpadding1; BatchNorm; ELU; MaxPoolkernel3,stride2,padding1",
+        "internal_sequence_lengths": {
+          "hourly": [
+            336,
+            168
+          ],
+          "daily": [
+            365,
+            183
+          ],
+          "monthly": [
+            12,
+            6
+          ]
+        },
+        "direct_horizon": true,
+        "measured_speed_memory_savings": false,
+        "visual_constraints": [
+          "Separate query selection from internal representation reduction.",
+          "Do not show distillation deleting half of raw timestamps.",
+          "With monthly12 positions all queries can be selected."
+        ]
+      }
+    },
+    "warning": "Older Keras models in modelos_neurais_globais.py are not the compact PyTorch LSTM consolidated in the report."
+  },
+  "tasks": [
+    {
+      "id": "hourly_72_extension",
+      "C": 336,
+      "H": 72,
+      "unit": "hours",
+      "origin_spacing": 24,
+      "origin_time": "00:00 fixed local NSRDB time",
+      "origins_2024_per_locality": 363,
+      "origins_historical_per_locality": 1368,
+      "exploratory": false
+    },
+    {
+      "id": "daily_30",
+      "C": 365,
+      "H": 30,
+      "unit": "days",
+      "origin_spacing": 1,
+      "origins_2024_per_locality": 337,
+      "origins_historical_per_locality": 1342,
+      "exploratory": false
+    },
+    {
+      "id": "monthly_1",
+      "C": 12,
+      "H": 1,
+      "unit": "months",
+      "origin_spacing": 1,
+      "origins_2024_per_locality": 12,
+      "origins_historical_per_locality": 45,
+      "exploratory": false
+    },
+    {
+      "id": "monthly_6",
+      "C": 12,
+      "H": 6,
+      "unit": "months",
+      "origin_spacing": 1,
+      "origins_2024_per_locality": 7,
+      "origins_historical_per_locality": 40,
+      "exploratory": true
+    }
+  ],
+  "task_constraints": {
+    "report_page": 11,
+    "table": 2,
+    "notes": [
+      "C=context,H=output,origin spacing independent.",
+      "Monthly1 output and first output ofmonthly6 are different separately trained tasks.",
+      "Every target vector stays inside evaluation partition; overlapping origins share targets."
+    ]
+  },
+  "distribution_artifact": {
+    "path": "referencias/ghi_distributions_training.json",
+    "period_local": [
+      "2019-01-01",
+      "2023-01-01 exclusive"
+    ],
+    "total_values": 350640,
+    "values_per_locality": 35064,
+    "histogram_bin_width_w_m2": 50,
+    "zeros_retained": true,
+    "synthetic": false,
+    "source_hashes_match_manifest": true,
+    "semantics": "Distribution of modeled NSRDB hourly GHI, including night zeros; not ground sensors or factory loads. GHI>0 subset is not a solar-elevation daylight mask."
+  }
+}

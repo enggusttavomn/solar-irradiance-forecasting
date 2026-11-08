@@ -1,0 +1,34 @@
+﻿[Script Info]
+Title: EA019 scientific animation - deterministic text overlay
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI,44,&H00FBF6F3,&H00FFFFFF,&H80000000,&H80000000,0,0,0,0,100,100,0,0,3,12,0,2,110,110,80,1
+Style: Header,Segoe UI,58,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,-1,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Eyebrow,Segoe UI,24,&H00EDDD67,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,1.4,0,1,0.5,0,7,0,0,0,1
+Style: Text,Segoe UI,40,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Small,Segoe UI,26,&H00C9B9AA,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.5,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 10,0:00:00.00,0:00:04.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Comparei LSTM, Transformer e Informer.\NComo funcionam?
+Dialogue: 10,0:00:04.00,0:00:08.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Na LSTM, os valores entram em ordem.
+Dialogue: 10,0:00:08.00,0:00:12.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A memória muda a cada passo, por portas\Naprendidas.
+Dialogue: 10,0:00:12.00,0:00:16.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Elas regulam o que reter, acrescentar e\Ntransmitir.
+Dialogue: 10,0:00:16.00,0:00:19.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}O estado final ajuda na previsão.
+Dialogue: 10,0:00:19.00,0:00:23.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}No Transformer, cada posição reúne valor e\Nordem temporal.
+Dialogue: 10,0:00:23.00,0:00:27.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Consultas comparam representações com suas\Nchaves.
+Dialogue: 10,0:00:27.00,0:00:31.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Os pesos calculados orientam a combinação\Ndos valores.
+Dialogue: 10,0:00:31.00,0:00:35.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Essas representações seguem para a\Nprevisão do horizonte.
+Dialogue: 10,0:00:35.00,0:00:39.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Em sequências longas, o Informer detalha\Nalgumas consultas.
+Dialogue: 10,0:00:39.00,0:00:43.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A seleção usa uma estimativa de\Nesparsidade.
+Dialogue: 10,0:00:43.00,0:00:47.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Em outra etapa, reduz a sequência interna\Ndo codificador.
+Dialogue: 10,0:00:47.00,0:00:51.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A atenção cruzada permanece completa.
+Dialogue: 10,0:00:51.00,0:00:55.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Os três recebem o mesmo histórico e a\Nmesma localidade.
+Dialogue: 10,0:00:55.00,0:01:00.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Cada modelo produz diretamente um vetor\Npara o mesmo horizonte.

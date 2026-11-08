@@ -1,0 +1,48 @@
+﻿ROTEIRO DE NARRAÇÃO — VERSÃO 1
+Gustavo de Melo Nascimento | UNICAMP / FEEC | EA019 | 2026
+Duração planejada: 8 minutos. Você aparece de 0:00 a 0:25 e de 7:20 a 8:00.
+Leia apenas os parágrafos de fala. Tempos e títulos são orientações de produção.
+Os tempos das legendas são uma base para a primeira montagem; ajustar à gravação real.
+Grave por cena, deixando um breve silêncio antes e depois de cada fala.
+
+CENA 01 | 0:00–0:25 | Apresentação do aluno
+Olá, eu sou Gustavo de Melo Nascimento, estudante de Engenharia Elétrica da Unicamp. Neste trabalho, comparei três modelos de aprendizado profundo para prever a irradiância solar: LSTM, Transformer e Informer. Vou apresentar o problema, como organizei a comparação e o que os resultados mostraram.
+
+CENA 02 | 0:25–0:45 | Identificação institucional e título
+O trabalho foi desenvolvido na disciplina EA019, com orientação do professor Gustavo Fraidenraich e coorientação de Thales Wulfert Cabral. O foco é a previsão em diferentes escalas de tempo, em localidades associadas à fabricação de veículos elétricos.
+
+CENA 03 | 0:45–1:20 | O que é irradiância global horizontal
+A irradiância global horizontal, ou GHI, representa a potência da radiação solar que chega a uma superfície horizontal por unidade de área. Sua unidade é watt por metro quadrado. Parte dessa radiação chega diretamente do Sol, e parte é espalhada pela atmosfera. A geometria solar estabelece padrões diários e sazonais, enquanto as condições atmosféricas alteram a curva. Assim, mesmo quando conhecemos o comportamento passado, o futuro não é uma simples repetição. A pergunta é: quanto conseguimos antecipar usando esse histórico?
+
+CENA 04 | 1:20–1:40 | Objetivo da comparação
+Meu objetivo foi comparar os três modelos em diferentes escalas de tempo. Também examinei como a transformação das entradas e a duração do histórico de treinamento se relacionaram com o desempenho. O estudo prevê irradiância, e não diretamente geração fotovoltaica.
+
+CENA 05 | 1:40–2:20 | Dados e localidades
+Utilizei estimativas da base NSRDB para dez localidades associadas à fabricação de veículos elétricos: uma no Brasil, oito nos Estados Unidos e uma no México. Esses dados representam células da base, e não sensores instalados nas fábricas. As redes receberam o histórico de GHI e uma representação aprendida da identificação da localidade. Temperatura, imagens e previsões meteorológicas não foram entradas desses experimentos. Os parâmetros foram compartilhados entre as localidades do conjunto.
+
+CENA 06 | 2:20–2:55 | Quatro tarefas de previsão
+Organizei quatro tarefas de previsão. Na horária, usei trezentas e trinta e seis horas para prever as próximas setenta e duas. Na diária, trezentos e sessenta e cinco dias para prever trinta. Nas tarefas mensais, utilizei doze meses para prever um mês ou seis meses. São redes treinadas para tarefas distintas. Por isso, o primeiro passo da previsão de seis meses não deve ser confundido com a tarefa mensal de um passo.
+
+CENA 07 | 2:55–3:35 | Protocolo consolidado e avaliação retrospectiva
+No protocolo consolidado, separei os períodos em treinamento inicial, de dois mil e dezenove a dois mil e vinte e dois; validação, em dois mil e vinte e três; e teste, em dois mil e vinte e quatro. As configurações seguiram a seleção pela validação, com novo ajuste nos dados anteriores ao teste. A avaliação é retrospectiva, e sua interpretação considera que já existia exposição anterior ao período de teste.
+
+CENA 08 | 3:35–4:30 | Como os três modelos tratam o histórico
+Os modelos tratam o histórico de maneiras diferentes. A LSTM percorre a sequência e atualiza uma representação de memória, controlando a informação que é mantida e transmitida. O Transformer usa atenção para combinar informações de diferentes posições da sequência. As posições temporais também são representadas, para indicar a ordem dos valores. O Informer utiliza uma estratégia de atenção esparsa, chamada ProbSparse, e reduz representações entre camadas do codificador. No Informer implementado, a atenção cruzada continuou completa; a simplificação visual não significa que todas as operações da rede sejam esparsas. Esses desenhos simplificam as arquiteturas para explicar a ideia central. No projeto, comparei o erro de previsão. Não medi velocidade nem consumo de memória para afirmar que um modelo foi computacionalmente superior.
+
+CENA 09 | 4:30–5:05 | Quantização como transformação das entradas
+Também comparei o histórico contínuo com entradas representadas em sessenta e quatro, cento e vinte e oito ou duzentos e cinquenta e seis níveis. Visualmente, é como aproximar as amplitudes por degraus. Apenas a entrada de GHI passou por essa transformação; os pesos e as saídas continuaram contínuos. Nas variantes quantizadas, valores extremos também foram limitados ao intervalo normalizado. A condição selecionada na validação foi mantida na apresentação dos resultados do teste.
+
+CENA 10 | 5:05–5:35 | Como ler o MAE e os horizontes cumulativos
+Para avaliar as previsões, usei principalmente o erro absoluto médio, o MAE. Ele resume a distância entre previsão e referência, na mesma unidade da irradiância. Calculei as métricas por localidade e depois obtive uma média com pesos iguais. Nos resultados cumulativos, o erro reúne os passos até o horizonte indicado; não representa apenas o último instante.
+
+CENA 11 | 5:35–6:35 | Resultados principais de 2024
+Nas configurações selecionadas, o Transformer apresentou o menor MAE agregado nos horizontes completos horário e diário: cinquenta e três vírgula vinte e um e quarenta e três vírgula oitenta e nove watts por metro quadrado. As vantagens sobre a LSTM foram pequenas: cerca de zero vírgula trinta e dois e zero vírgula trinta. Nas tarefas mensais, o Informer com cento e vinte e oito níveis apresentou os menores erros: doze vírgula setenta e três em um mês e treze vírgula sessenta e sete em seis meses. A liderança também variou entre localidades e horizontes. Na tarefa diária, por exemplo, a LSTM liderou os recortes menores, até quatorze dias.
+
+CENA 12 | 6:35–6:55 | Quantização e duração do histórico
+A quantização não trouxe vantagem universal. Em uma análise histórica separada, com teste pareado, o histórico longo apresentou menor MAE em onze das doze combinações contínuas. Incluir anos anteriores esteve associado à melhora na maioria dos controles, sem garanti-la.
+
+CENA 13 | 6:55–7:20 | Limitações da interpretação
+Esses resultados descrevem as execuções avaliadas, sem demonstrar significância estatística das diferenças. A tarefa horária utilizou apenas uma semente. A previsão de seis meses teve poucas origens de teste por localidade e permanece exploratória. As janelas também se sobrepõem, repetindo alguns alvos. A generalização para localidades inéditas não foi avaliada.
+
+CENA 14 | 7:20–8:00 | Conclusão e encerramento do aluno
+Minha conclusão é que a escolha do modelo depende da tarefa, do horizonte e da localidade. O Transformer liderou os horizontes completos horário e diário deste estudo, enquanto o Informer liderou os mensais. Essas médias precisam ser lidas junto com as diferenças locais e as limitações da avaliação. Para continuar o trabalho, considero importante ampliar as repetições e comparar também com referências simples de previsão. Obrigado por acompanhar.

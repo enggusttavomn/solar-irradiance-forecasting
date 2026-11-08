@@ -1,0 +1,397 @@
+{
+  "id": 8,
+  "start": 245,
+  "end": 280,
+  "duration": 35,
+  "title": "Quantização como transformação das entradas",
+  "narration": "Também comparei o histórico contínuo com entradas representadas em sessenta e quatro, cento e vinte e oito ou duzentos e cinquenta e seis níveis. Visualmente, é como aproximar as amplitudes por degraus. Apenas a entrada de GHI passou por essa transformação; os pesos e as saídas continuaram contínuos. Nas variantes quantizadas, valores extremos também foram limitados ao intervalo normalizado. A condição selecionada na validação foi mantida na apresentação dos resultados do teste.",
+  "label_events": [],
+  "notes": [
+    "O identificador da localidade não passa pelo quantizador; alvos, pesos e saídas não são quantizados.",
+    "Os valores discretizados são reconstruídos em float32; não apresentar o experimento como inferência inteira nem compressão implementada de pesos.",
+    "O controle contínuo não aplica clipping. Os contrastes refletem arredondamento e saturação juntos; não isolam o efeito exclusivo da discretização.",
+    "Não afirmar ausência absoluta de consulta anterior ao teste: a exposição anterior registrada no relatório já foi apresentada na cena 7."
+  ],
+  "start_seconds": 245,
+  "end_seconds": 280,
+  "duration_seconds": 35,
+  "frame_count": 1050,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v5\\cenas\\cena_08.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v5\\cenas\\cena_08_3d.mp4",
+  "rendered": false,
+  "scene_metadata": {
+    "native_geometry": true,
+    "real_levels": [
+      64,
+      128,
+      256
+    ],
+    "steps_for_demonstration": 8,
+    "geometry_from_version": 4
+  },
+  "render_style": {
+    "version": 5,
+    "chapter_id": 8,
+    "engine": "BLENDER_WORKBENCH",
+    "background_srgb": "#07090D",
+    "palette": {
+      "coral": "#EC8061",
+      "coral_body": "#D96D50",
+      "cyan": "#40BACE",
+      "cyan_body": "#269CAF",
+      "violet": "#AD8DDE",
+      "violet_body": "#9474CE",
+      "gold": "#F0B84C",
+      "body": "#526A7C",
+      "graphite": "#405664",
+      "white": "#F3F5F7",
+      "secondary": "#BBC7D0",
+      "axes": "#7C8C9A"
+    },
+    "material_count": 22,
+    "roles": {
+      "line": 4,
+      "font": 15,
+      "solid": 3
+    },
+    "materials": [
+      {
+        "source": "Quantização v4 white",
+        "material": "Quantização v4 white · V5 line",
+        "role": "line",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 0.49,
+        "metallic": 0.0,
+        "emission_strength": 0.18,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Níveis None · texto",
+        "material": "Níveis None · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Quantização v4 body",
+        "material": "Quantização v4 body · V5 solid",
+        "role": "solid",
+        "source_srgb": "#344456",
+        "srgb": "#526A7C",
+        "roughness": 0.57,
+        "metallic": 0.0,
+        "emission_strength": 0.0,
+        "focus_keys": 0,
+        "fine_surface_grain": true
+      },
+      {
+        "source": "Quantização v4 gold",
+        "material": "Quantização v4 gold · V5 line",
+        "role": "line",
+        "source_srgb": "#E9B95F",
+        "srgb": "#F0B84C",
+        "roughness": 0.49,
+        "metallic": 0.0,
+        "emission_strength": 0.18,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Níveis 64 · texto",
+        "material": "Níveis 64 · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#E9B95F",
+        "srgb": "#F0B84C",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Níveis 128 · texto",
+        "material": "Níveis 128 · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#E9B95F",
+        "srgb": "#F0B84C",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Níveis 256 · texto",
+        "material": "Níveis 256 · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#E9B95F",
+        "srgb": "#F0B84C",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Quantização v4 gold",
+        "material": "Quantização v4 gold · V5 solid",
+        "role": "solid",
+        "source_srgb": "#E9B95F",
+        "srgb": "#F0B84C",
+        "roughness": 0.57,
+        "metallic": 0.0,
+        "emission_strength": 0.0,
+        "focus_keys": 0,
+        "fine_surface_grain": true
+      },
+      {
+        "source": "Arredondar · texto",
+        "material": "Arredondar · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "GHI · texto",
+        "material": "GHI · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Quantizador · texto",
+        "material": "Quantizador · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "float32 · texto",
+        "material": "float32 · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Quantização v4 cyan",
+        "material": "Quantização v4 cyan · V5 line",
+        "role": "line",
+        "source_srgb": "#58CADA",
+        "srgb": "#40BACE",
+        "roughness": 0.49,
+        "metallic": 0.0,
+        "emission_strength": 0.18,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Quantização v4 cyan",
+        "material": "Quantização v4 cyan · V5 solid",
+        "role": "solid",
+        "source_srgb": "#58CADA",
+        "srgb": "#40BACE",
+        "roughness": 0.57,
+        "metallic": 0.0,
+        "emission_strength": 0.0,
+        "focus_keys": 0,
+        "fine_surface_grain": true
+      },
+      {
+        "source": "ID · texto",
+        "material": "ID · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#58CADA",
+        "srgb": "#40BACE",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Quantização v4 muted",
+        "material": "Quantização v4 muted · V5 line",
+        "role": "line",
+        "source_srgb": "#A9B2BE",
+        "srgb": "#BBC7D0",
+        "roughness": 0.49,
+        "metallic": 0.0,
+        "emission_strength": 0.18,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Limite 0 · texto",
+        "material": "Limite 0 · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#A9B2BE",
+        "srgb": "#BBC7D0",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Limite 1 · texto",
+        "material": "Limite 1 · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#A9B2BE",
+        "srgb": "#BBC7D0",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Clipping · texto",
+        "material": "Clipping · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#E9B95F",
+        "srgb": "#F0B84C",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Validação · texto",
+        "material": "Validação · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Teste · texto",
+        "material": "Teste · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#F3F5F7",
+        "srgb": "#F3F5F7",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      },
+      {
+        "source": "Mantida · texto",
+        "material": "Mantida · texto · V5 font",
+        "role": "font",
+        "source_srgb": "#E9B95F",
+        "srgb": "#F0B84C",
+        "roughness": 1.0,
+        "metallic": 0.0,
+        "emission_strength": 1.0,
+        "focus_keys": 0,
+        "fine_surface_grain": false
+      }
+    ],
+    "lights": {
+      "areas": [
+        {
+          "name": "V5 soft key",
+          "type": "AREA",
+          "location": [
+            1.8,
+            -5.5,
+            9
+          ],
+          "energy_w": 1450.0,
+          "colour": [
+            1.0,
+            0.95,
+            0.88
+          ],
+          "size": 6.0
+        },
+        {
+          "name": "V5 sky fill",
+          "type": "AREA",
+          "location": [
+            -6,
+            -3.5,
+            4.5
+          ],
+          "energy_w": 750.0,
+          "colour": [
+            0.84,
+            0.92,
+            1.0
+          ],
+          "size": 5.5
+        },
+        {
+          "name": "V5 soft rim",
+          "type": "AREA",
+          "location": [
+            5,
+            4,
+            8
+          ],
+          "energy_w": 1400.0,
+          "colour": [
+            1.0,
+            0.97,
+            0.92
+          ],
+          "size": 5.0
+        }
+      ],
+      "retained_factory_sun": [],
+      "intent": "broad neutral sources; subtle warm/cool separation, no coloured neon rim"
+    },
+    "render_config": {
+      "studio_light": "paint.sl",
+      "aa": "8",
+      "specular_highlights": false
+    },
+    "compositor_enabled": false,
+    "raytracing_enabled": false,
+    "camera_and_object_animation_unchanged": true,
+    "timing_unchanged": true,
+    "focus_animation_baked_without_frame_handlers": true
+  },
+  "qa_times": [
+    3,
+    8,
+    12,
+    17,
+    23,
+    27,
+    32
+  ]
+}

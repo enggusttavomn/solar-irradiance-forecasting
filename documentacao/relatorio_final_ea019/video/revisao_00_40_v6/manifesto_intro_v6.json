@@ -1,0 +1,217 @@
+{
+  "version": 6,
+  "scope_seconds": [
+    0,
+    40
+  ],
+  "duration_seconds": 40,
+  "frame_count": 1200,
+  "fps": 30,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_00_40_v6\\intro_00_40_v6.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_00_40_v6\\intro_00_40_3d_v6.mp4",
+  "qa_times": [
+    1,
+    3.5,
+    7,
+    10,
+    12,
+    14.5,
+    17,
+    18.5,
+    20.5,
+    22.5,
+    24.5,
+    27,
+    31,
+    34,
+    36.5,
+    39
+  ],
+  "factory": {
+    "main_building_dimensions_m": [
+      60,
+      32,
+      10
+    ],
+    "site_dimensions_m": [
+      88,
+      64
+    ],
+    "front_negative_y": true,
+    "reference_center_m": [
+      8.0,
+      -7.5,
+      10.26
+    ],
+    "reference_horizontal": true,
+    "reference_area_m2": 1.0,
+    "generic_sign": "ELECTRIC VEHICLE MANUFACTURING",
+    "generic_architecture_no_manufacturer_association": true,
+    "landscaping": "11 individually branched broadleaf trees, 6 shrubs, individual batched leaves and grass blades",
+    "tree_canopies_are_not_spheres": true,
+    "pv_application_separate_collection": true,
+    "site_object_count": 159,
+    "pv_object_count": 2,
+    "bounds_min_m": [
+      -44,
+      -32,
+      -0.21
+    ],
+    "bounds_max_m": [
+      44,
+      32,
+      11.6
+    ]
+  },
+  "solar": {
+    "version": 6,
+    "sun_representation": "near-white textured flat photosphere, limb darkening and feathered aureole",
+    "sun_distance_m": 72.0,
+    "sun_angular_radius_exaggerated_for_legibility": true,
+    "sun_spheres": 0,
+    "yellow_ray_curves": 0,
+    "ray_arrowheads": 0,
+    "direct_representation": "bounded soft volumetric air scattering aligned with physical sunlight",
+    "diffuse_representation": "five feathered sky scattering media plus three broad cool sky AREA fills",
+    "cloud_representation": "fifteen bounded procedural density volumes arranged in three multi-lobed cumulus banks",
+    "cloud_shading": "volumetric illumination and coordinated attenuation of directional sunlight",
+    "cloud_objects": 15,
+    "global_volume": false,
+    "night_solar_energy": 0,
+    "solar_cycle_seconds": [
+      16,
+      21
+    ],
+    "solar_cycle_hours": [
+      0,
+      24
+    ],
+    "render_recommendations": {
+      "engine": "BLENDER_EEVEE_NEXT",
+      "samples": 24,
+      "volumetric_tile_size": "8 or 16",
+      "volumetric_samples": 32,
+      "colour_management": "AgX Medium High Contrast",
+      "glare": "restrained FOG_GLOW; threshold>=2, small strength"
+    },
+    "sun_positions": {
+      "0": [
+        -28.0,
+        -36.80630111694336,
+        65.2976303100586
+      ],
+      "12": [
+        -28.0,
+        -36.80630111694336,
+        65.2976303100586
+      ],
+      "14": [
+        -28.0,
+        -36.80630111694336,
+        65.2976303100586
+      ],
+      "17.25": [
+        -64.0,
+        -7.5,
+        10.260000228881836
+      ],
+      "18.5": [
+        8.0,
+        -41.34000015258789,
+        73.81198120117188
+      ],
+      "19.75": [
+        80.0,
+        -7.5,
+        10.260000228881836
+      ],
+      "20.5": [
+        50.32053756713867,
+        19.87713623046875,
+        -41.154632568359375
+      ],
+      "22.5": [
+        -28.0,
+        -36.80630111694336,
+        65.2976303100586
+      ],
+      "37": [
+        -28.0,
+        -36.80630111694336,
+        65.2976303100586
+      ]
+    },
+    "default_receiver_m": [
+      8.0,
+      -7.5,
+      10.260000228881836
+    ],
+    "interpretation": "Didactic solar/atmospheric animation; no weather model or PV performance simulation."
+  },
+  "reference": {
+    "reference_area_m2": 1,
+    "dimensions_m": [
+      1,
+      1
+    ],
+    "dimension_style": "technical extension lines and double-headed arrows"
+  },
+  "graphs": {
+    "day_cycle_chart": [
+      16,
+      21
+    ],
+    "cloud_chart": [
+      21.15,
+      25.12
+    ],
+    "history_chart": [
+      25,
+      35
+    ],
+    "future_style": "dashed curve only",
+    "question_mark": false,
+    "night_ghi_zero": true
+  },
+  "render_config": {
+    "taa_render_samples": 24,
+    "taa_samples": 24,
+    "use_raytracing": false,
+    "use_shadows": true,
+    "use_fast_gi": false,
+    "shadow_ray_count": 1,
+    "shadow_step_count": 6,
+    "shadow_resolution_scale": 1.0,
+    "use_volumetric_shadows": true,
+    "volumetric_samples": 32,
+    "volumetric_tile_size": "8",
+    "volumetric_start": 0.1,
+    "volumetric_end": 300.0
+  },
+  "reference_sources": [
+    {
+      "kind": "architecture",
+      "url": "https://www.hyundaimotorgroup.com/en/news/hyundai-motor-group-metaplant-america-celebrates-grand-opening-powering-us-economic-growth",
+      "role": "architectural vocabulary only; generic unbranded model"
+    },
+    {
+      "kind": "scientific",
+      "file": "Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.pdf",
+      "pages": [
+        7,
+        8,
+        17,
+        29
+      ],
+      "equation": "GHI = DHI + DNI cos(theta_z)"
+    }
+  ],
+  "pv_application_potential_only": true,
+  "pv_generation_estimated": false,
+  "factory_name_generic": true,
+  "v5_files_modified": false
+}

@@ -1,0 +1,476 @@
+{
+  "id": 3,
+  "start": 35,
+  "end": 55,
+  "duration": 20,
+  "title": "Objetivo da comparação",
+  "narration": "Prever o recurso solar pode apoiar o planejamento energético. Meu objetivo foi comparar LSTM, Transformer e Informer em diferentes escalas de tempo e examinar a influência das entradas e do histórico de treinamento. O estudo avalia irradiância; o contexto industrial orienta a escolha das localidades.",
+  "label_events": [
+    {
+      "start": 35,
+      "end": 40,
+      "start_local": 0,
+      "end_local": 5,
+      "text": "Prever GHI",
+      "x": 960,
+      "y": 240,
+      "size": 46,
+      "color": "F3F5F7",
+      "align": 8,
+      "available": 1700
+    },
+    {
+      "start": 40,
+      "end": 47,
+      "start_local": 5,
+      "end_local": 12,
+      "text": "LSTM",
+      "x": 350,
+      "y": 240,
+      "size": 40,
+      "color": "F28779",
+      "align": 8,
+      "available": 1700
+    },
+    {
+      "start": 40,
+      "end": 47,
+      "start_local": 5,
+      "end_local": 12,
+      "text": "Transformer",
+      "x": 960,
+      "y": 240,
+      "size": 40,
+      "color": "58CADA",
+      "align": 8,
+      "available": 1700
+    },
+    {
+      "start": 40,
+      "end": 47,
+      "start_local": 5,
+      "end_local": 12,
+      "text": "Informer",
+      "x": 1570,
+      "y": 240,
+      "size": 40,
+      "color": "AA91E8",
+      "align": 8,
+      "available": 1700
+    },
+    {
+      "start": 47,
+      "end": 50,
+      "start_local": 12,
+      "end_local": 15,
+      "text": "Escala temporal",
+      "x": 960,
+      "y": 730,
+      "size": 38,
+      "color": "F3F5F7",
+      "align": 8,
+      "available": 1700
+    },
+    {
+      "start": 50,
+      "end": 52.5,
+      "start_local": 15,
+      "end_local": 17.5,
+      "text": "Representação da entrada",
+      "x": 960,
+      "y": 730,
+      "size": 38,
+      "color": "F3F5F7",
+      "align": 8,
+      "available": 1700
+    },
+    {
+      "start": 52.5,
+      "end": 55,
+      "start_local": 17.5,
+      "end_local": 20,
+      "text": "Histórico de treinamento",
+      "x": 960,
+      "y": 730,
+      "size": 38,
+      "color": "F3F5F7",
+      "align": 8,
+      "available": 1700
+    }
+  ],
+  "notes": [
+    "O objetivo se restringe às três implementações avaliadas no relatório.",
+    "Não converter os erros de irradiância em ganho energético, financeiro ou operacional."
+  ],
+  "start_seconds": 35,
+  "end_seconds": 55,
+  "duration_seconds": 20,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v4\\cenas\\cena_03.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v4\\cenas\\cena_03_3d.mp4",
+  "frame_count": 600,
+  "rendered": false,
+  "scene_metadata": {
+    "version": 4,
+    "chapter_id": 3,
+    "duration_seconds": 20.0,
+    "fps": 30,
+    "frame_count": 600,
+    "projection": "PERSP",
+    "static_frontal_camera": false,
+    "native_text_objects": 0,
+    "palette_srgb": {
+      "background": "#07090D",
+      "body": "#171C22",
+      "white": "#F3F5F7",
+      "secondary": "#A9B2BE",
+      "axes": "#626D7A",
+      "gold": "#E9B95F",
+      "coral": "#F28779",
+      "cyan": "#58CADA",
+      "violet": "#AA91E8"
+    },
+    "objects_created": 122,
+    "objects": [
+      "Objetivo · entrada 0 · eixo",
+      "Objetivo · entrada 0 · ponta",
+      "Objetivo · entrada 1 · eixo",
+      "Objetivo · entrada 1 · ponta",
+      "Objetivo · entrada 2 · eixo",
+      "Objetivo · entrada 2 · ponta",
+      "Objetivo · fluxo 0",
+      "Objetivo · fluxo 1",
+      "Objetivo · fluxo 2",
+      "Objetivo · futuro comum",
+      "Objetivo · histórico comum",
+      "Objetivo · horizonte compartilhado",
+      "Objetivo · origem",
+      "Objetivo · rede 0 00",
+      "Objetivo · rede 0 01",
+      "Objetivo · rede 0 02",
+      "Objetivo · rede 0 03",
+      "Objetivo · rede 0 04",
+      "Objetivo · rede 0 05",
+      "Objetivo · rede 0 06",
+      "Objetivo · rede 0 07",
+      "Objetivo · rede 0 08",
+      "Objetivo · rede 0 09",
+      "Objetivo · rede 0 10",
+      "Objetivo · rede 0 11",
+      "Objetivo · rede 1 00",
+      "Objetivo · rede 1 01",
+      "Objetivo · rede 1 02",
+      "Objetivo · rede 1 03",
+      "Objetivo · rede 1 04",
+      "Objetivo · rede 1 05",
+      "Objetivo · rede 1 06",
+      "Objetivo · rede 1 07",
+      "Objetivo · rede 1 08",
+      "Objetivo · rede 1 09",
+      "Objetivo · rede 1 10",
+      "Objetivo · rede 1 11",
+      "Objetivo · rede 2 00",
+      "Objetivo · rede 2 01",
+      "Objetivo · rede 2 02",
+      "Objetivo · rede 2 03",
+      "Objetivo · rede 2 04",
+      "Objetivo · rede 2 05",
+      "Objetivo · rede 2 06",
+      "Objetivo · rede 2 07",
+      "Objetivo · rede 2 08",
+      "Objetivo · rede 2 09",
+      "Objetivo · rede 2 10",
+      "Objetivo · rede 2 11",
+      "Objetivo · representação 0",
+      "Objetivo · representação 1",
+      "Objetivo · representação 2",
+      "Objetivo · saída 0 · eixo",
+      "Objetivo · saída 0 · ponta",
+      "Objetivo · saída 1 · eixo",
+      "Objetivo · saída 1 · ponta",
+      "Objetivo · saída 2 · eixo",
+      "Objetivo · saída 2 · ponta",
+      "V4 amostra historica fisica 0",
+      "V4 amostra historica fisica 1",
+      "V4 amostra historica fisica 2",
+      "V4 amostra historica fisica 3",
+      "V4 amostra historica fisica 4",
+      "V4 amostra historica fisica 5",
+      "V4 amostra historica fisica 6",
+      "V4 entrada compartilhada modelo 0 0",
+      "V4 entrada compartilhada modelo 0 1",
+      "V4 entrada compartilhada modelo 0 2",
+      "V4 entrada compartilhada modelo 1 0",
+      "V4 entrada compartilhada modelo 1 1",
+      "V4 entrada compartilhada modelo 1 2",
+      "V4 entrada compartilhada modelo 2 0",
+      "V4 entrada compartilhada modelo 2 1",
+      "V4 entrada compartilhada modelo 2 2",
+      "V4 modelo 0 no 0 0",
+      "V4 modelo 0 no 0 1",
+      "V4 modelo 0 no 0 2",
+      "V4 modelo 0 no 1 0",
+      "V4 modelo 0 no 1 1",
+      "V4 modelo 0 no 1 2",
+      "V4 modelo 0 relacao interna 0 0",
+      "V4 modelo 0 relacao interna 0 1",
+      "V4 modelo 0 relacao interna 0 2",
+      "V4 modelo 0 relacao interna 1 0",
+      "V4 modelo 0 relacao interna 1 1",
+      "V4 modelo 0 relacao interna 1 2",
+      "V4 modelo 0 relacao interna 2 0",
+      "V4 modelo 0 relacao interna 2 1",
+      "V4 modelo 0 relacao interna 2 2",
+      "V4 modelo 1 no 0 0",
+      "V4 modelo 1 no 0 1",
+      "V4 modelo 1 no 0 2",
+      "V4 modelo 1 no 1 0",
+      "V4 modelo 1 no 1 1",
+      "V4 modelo 1 no 1 2",
+      "V4 modelo 1 relacao interna 0 0",
+      "V4 modelo 1 relacao interna 0 1",
+      "V4 modelo 1 relacao interna 0 2",
+      "V4 modelo 1 relacao interna 1 0",
+      "V4 modelo 1 relacao interna 1 1",
+      "V4 modelo 1 relacao interna 1 2",
+      "V4 modelo 1 relacao interna 2 0",
+      "V4 modelo 1 relacao interna 2 1",
+      "V4 modelo 1 relacao interna 2 2",
+      "V4 modelo 2 no 0 0",
+      "V4 modelo 2 no 0 1",
+      "V4 modelo 2 no 0 2",
+      "V4 modelo 2 no 1 0",
+      "V4 modelo 2 no 1 1",
+      "V4 modelo 2 no 1 2",
+      "V4 modelo 2 relacao interna 0 0",
+      "V4 modelo 2 relacao interna 0 1",
+      "V4 modelo 2 relacao interna 0 2",
+      "V4 modelo 2 relacao interna 1 0",
+      "V4 modelo 2 relacao interna 1 1",
+      "V4 modelo 2 relacao interna 1 2",
+      "V4 modelo 2 relacao interna 2 0",
+      "V4 modelo 2 relacao interna 2 1",
+      "V4 modelo 2 relacao interna 2 2",
+      "V4 saida comparavel ilustrativa 0",
+      "V4 saida comparavel ilustrativa 1",
+      "V4 saida comparavel ilustrativa 2"
+    ],
+    "render_started": false,
+    "source": {
+      "name": "objective",
+      "duration_seconds": 20,
+      "fps": 30,
+      "object_count": 58,
+      "text_objects": 0
+    },
+    "camera": {
+      "projection": "PERSP",
+      "name": "V4 camera perspectiva acompanhando a explicacao",
+      "keys": [
+        {
+          "second": 0.0,
+          "location": [
+            -4.6,
+            -7.3,
+            2.9
+          ],
+          "target": [
+            -1.1,
+            -0.65,
+            0.65
+          ],
+          "lens_mm": 40
+        },
+        {
+          "second": 4.6,
+          "location": [
+            2.3,
+            -8.0,
+            3.2
+          ],
+          "target": [
+            0,
+            -0.65,
+            0.8
+          ],
+          "lens_mm": 42
+        },
+        {
+          "second": 7.4,
+          "location": [
+            3.6,
+            -9.3,
+            4.8
+          ],
+          "target": [
+            0,
+            0,
+            1.45
+          ],
+          "lens_mm": 42
+        },
+        {
+          "second": 11.6,
+          "location": [
+            -3.1,
+            -9.7,
+            5.0
+          ],
+          "target": [
+            0,
+            0,
+            1.85
+          ],
+          "lens_mm": 42
+        },
+        {
+          "second": 14.3,
+          "location": [
+            -1.7,
+            -7.1,
+            5.3
+          ],
+          "target": [
+            0,
+            0.35,
+            2.5
+          ],
+          "lens_mm": 44
+        },
+        {
+          "second": 17.0,
+          "location": [
+            2.8,
+            -9.4,
+            4.8
+          ],
+          "target": [
+            0,
+            0.1,
+            1.9
+          ],
+          "lens_mm": 42
+        },
+        {
+          "second": 20.0,
+          "location": [
+            1.1,
+            -9.6,
+            4.4
+          ],
+          "target": [
+            0,
+            0,
+            1.8
+          ],
+          "lens_mm": 42
+        }
+      ],
+      "intent": "acompanhar o objeto, aproximar detalhes e conservar profundidade",
+      "caption_region": "15 por cento inferiores",
+      "header_region_reserved": false
+    },
+    "phases": [
+      [
+        0.0,
+        6.0,
+        "historico compartilhado em primeiro plano"
+      ],
+      [
+        6.0,
+        12.0,
+        "entrada atravessa tres modelos preenchidos"
+      ],
+      [
+        12.0,
+        20.0,
+        "saidas comparaveis e criterios da comparacao"
+      ]
+    ],
+    "outputs_are_illustrative": true,
+    "no_empty_model_bodies": true
+  },
+  "render_style": {
+    "chapter_id": 3,
+    "engine": "BLENDER_WORKBENCH",
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "antialiasing": "8",
+    "codec": "H264",
+    "encoding_preset": "REALTIME",
+    "background_srgb_hex": "#07090D",
+    "palette": {
+      "background": "#07090D",
+      "graphite": "#171C22",
+      "white": "#F3F5F7",
+      "secondary": "#A9B2BE",
+      "axes": "#626D7A",
+      "gold": "#E9B95F",
+      "coral": "#F28779",
+      "cyan": "#58CADA",
+      "violet": "#AA91E8"
+    },
+    "hidden_decorative_objects": [],
+    "materials": [
+      {
+        "material": "Objetivo · Informer",
+        "srgb_hex": "#AA91E8",
+        "kind": "line_or_marker"
+      },
+      {
+        "material": "Objetivo · LSTM",
+        "srgb_hex": "#F28779",
+        "kind": "line_or_marker"
+      },
+      {
+        "material": "Objetivo · Transformer/previsão",
+        "srgb_hex": "#58CADA",
+        "kind": "line_or_marker"
+      },
+      {
+        "material": "Objetivo · referência",
+        "srgb_hex": "#F3F5F7",
+        "kind": "line_or_marker"
+      },
+      {
+        "material": "Objetivo · vidro escuro",
+        "srgb_hex": "#171C22",
+        "kind": "matte_surface"
+      },
+      {
+        "material": "V4 objective common observations",
+        "srgb_hex": "#F3F5F7",
+        "kind": "line_or_marker"
+      },
+      {
+        "material": "V4 objective coral internal information",
+        "srgb_hex": "#F28779",
+        "kind": "line_or_marker"
+      },
+      {
+        "material": "V4 objective cyan internal information",
+        "srgb_hex": "#58CADA",
+        "kind": "line_or_marker"
+      },
+      {
+        "material": "V4 objective violet internal information",
+        "srgb_hex": "#AA91E8",
+        "kind": "line_or_marker"
+      }
+    ],
+    "baked_emission_focus": [],
+    "camera_and_timing_unchanged": true,
+    "version": 4,
+    "perspective_camera": true,
+    "specular_highlights": true,
+    "no_fixed_headers": true
+  },
+  "qa_times": [
+    3,
+    9,
+    15,
+    19
+  ]
+}

@@ -1,0 +1,33 @@
+﻿[Script Info]
+Title: EA019 scientific animation - deterministic text overlay
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI,44,&H00FBF6F3,&H00FFFFFF,&H80000000,&H80000000,0,0,0,0,100,100,0,0,3,12,0,2,110,110,80,1
+Style: Header,Segoe UI,58,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,-1,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Eyebrow,Segoe UI,24,&H00EDDD67,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,1.4,0,1,0.5,0,7,0,0,0,1
+Style: Text,Segoe UI,40,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Small,Segoe UI,26,&H00C9B9AA,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.5,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 10,0:00:00.00,0:00:06.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Quantizar foi uma hipótese de melhoria,\Nnão uma garantia. Houve ganhos e perdas.
+Dialogue: 10,0:00:06.00,0:00:08.56,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Numa análise histórica separada, comparei
+Dialogue: 10,0:00:08.56,0:00:12.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}históricos longo e curto nas mesmas datas\Nde avaliação.
+Dialogue: 10,0:00:12.00,0:00:18.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Histórico longo: menor erro em onze de\Ndoze casos, exceto na LSTM horária.
+Dialogue: 10,0:00:18.00,0:00:22.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Isso não isola uma causa: anos e\Nnormalização também mudaram.
+Dialogue: 10,0:00:22.00,0:00:24.40,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}As diferenças são descritivas. O horário
+Dialogue: 10,0:00:24.40,0:00:28.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}usa uma semente; as demais tarefas\Ncombinam cinco previsões.
+Dialogue: 10,0:00:28.00,0:00:31.30,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A tarefa de seis meses é exploratória:
+Dialogue: 10,0:00:31.30,0:00:36.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}sete origens por localidade, com alvos\Ncompartilhados.
+Dialogue: 10,0:00:36.00,0:00:39.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Localidades inéditas ainda precisam ser\Navaliadas.
+Dialogue: 10,0:00:39.00,0:00:41.39,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}No horizonte completo, Transformer teve
+Dialogue: 10,0:00:41.39,0:00:45.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}menor erro horário e diário; Informer, nas\Ntarefas mensais.
+Dialogue: 10,0:00:45.00,0:00:47.79,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A escolha depende da tarefa, do horizonte
+Dialogue: 10,0:00:47.79,0:00:52.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}e da localidade. Novos testes devem\Nconfirmar essa comparação.

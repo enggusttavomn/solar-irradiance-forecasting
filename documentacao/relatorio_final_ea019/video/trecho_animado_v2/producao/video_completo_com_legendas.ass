@@ -1,0 +1,283 @@
+﻿[Script Info]
+Title: EA019 scientific animation - deterministic text overlay
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI,44,&H00FBF6F3,&H00FFFFFF,&H80000000,&H80000000,0,0,0,0,100,100,0,0,3,12,0,2,110,110,80,1
+Style: Header,Segoe UI,58,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,-1,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Eyebrow,Segoe UI,24,&H00EDDD67,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,1.4,0,1,0.5,0,7,0,0,0,1
+Style: Text,Segoe UI,40,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Small,Segoe UI,26,&H00C9B9AA,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.5,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 3,0:00:20.00,0:00:55.00,Eyebrow,,0,0,0,,{\an7\pos(110,46)\fs23\c&H00EDDD67&\b0\fad(220,220)}RECURSO SOLAR · GHI
+Dialogue: 3,0:00:20.00,0:00:55.00,Header,,0,0,0,,{\an7\pos(110,95)\fs58\c&H00FBF6F3&\b1\fad(220,220)}Irradiância global horizontal
+Dialogue: 3,0:00:55.00,0:01:15.00,Eyebrow,,0,0,0,,{\an7\pos(110,46)\fs23\c&H00EDDD67&\b0\fad(220,220)}OBJETIVO
+Dialogue: 3,0:00:55.00,0:01:15.00,Header,,0,0,0,,{\an7\pos(110,95)\fs58\c&H00FBF6F3&\b1\fad(220,220)}Por que prever o recurso solar?
+Dialogue: 3,0:01:15.00,0:01:55.00,Eyebrow,,0,0,0,,{\an7\pos(110,46)\fs23\c&H00EDDD67&\b0\fad(220,220)}DADOS · NSRDB
+Dialogue: 3,0:01:15.00,0:01:55.00,Header,,0,0,0,,{\an7\pos(110,95)\fs58\c&H00FBF6F3&\b1\fad(220,220)}Dos dados às séries temporais
+Dialogue: 3,0:01:55.00,0:02:30.00,Eyebrow,,0,0,0,,{\an7\pos(110,46)\fs23\c&H00EDDD67&\b0\fad(220,220)}PASSADO → FUTURO
+Dialogue: 3,0:01:55.00,0:02:30.00,Header,,0,0,0,,{\an7\pos(110,95)\fs58\c&H00FBF6F3&\b1\fad(220,220)}Quatro tarefas de previsão
+Dialogue: 3,0:02:30.00,0:03:10.00,Eyebrow,,0,0,0,,{\an7\pos(110,46)\fs23\c&H00EDDD67&\b0\fad(220,220)}TREINAMENTO · VALIDAÇÃO · TESTE
+Dialogue: 3,0:02:30.00,0:03:10.00,Header,,0,0,0,,{\an7\pos(110,95)\fs58\c&H00FBF6F3&\b1\fad(220,220)}Uma comparação retrospectiva
+Dialogue: 3,0:03:10.00,0:04:05.00,Eyebrow,,0,0,0,,{\an7\pos(110,46)\fs23\c&H00EDDD67&\b0\fad(220,220)}LSTM · TRANSFORMER · INFORMER
+Dialogue: 3,0:03:10.00,0:04:05.00,Header,,0,0,0,,{\an7\pos(110,95)\fs58\c&H00FBF6F3&\b1\fad(220,220)}Três formas de aprender com o passado
+Dialogue: 3,0:04:05.00,0:04:40.00,Eyebrow,,0,0,0,,{\an7\pos(110,46)\fs23\c&H00EDDD67&\b0\fad(220,220)}QUANTIZAÇÃO
+Dialogue: 3,0:04:05.00,0:04:40.00,Header,,0,0,0,,{\an7\pos(110,95)\fs58\c&H00FBF6F3&\b1\fad(220,220)}A representação da entrada
+Dialogue: 3,0:04:40.00,0:05:10.00,Eyebrow,,0,0,0,,{\an7\pos(110,46)\fs23\c&H00EDDD67&\b0\fad(220,220)}AVALIAÇÃO · MACRO-MAE
+Dialogue: 3,0:04:40.00,0:05:10.00,Header,,0,0,0,,{\an7\pos(110,95)\fs58\c&H00FBF6F3&\b1\fad(220,220)}Como ler o erro de previsão
+Dialogue: 3,0:05:10.00,0:06:10.00,Eyebrow,,0,0,0,,{\an7\pos(110,46)\fs23\c&H00EDDD67&\b0\fad(220,220)}RESULTADOS · TESTE DE 2024
+Dialogue: 3,0:05:10.00,0:06:10.00,Header,,0,0,0,,{\an7\pos(110,95)\fs58\c&H00FBF6F3&\b1\fad(220,220)}O desempenho nas quatro tarefas
+Dialogue: 3,0:06:10.00,0:06:30.00,Eyebrow,,0,0,0,,{\an7\pos(110,46)\fs23\c&H00EDDD67&\b0\fad(220,220)}ANÁLISES COMPLEMENTARES
+Dialogue: 3,0:06:10.00,0:06:30.00,Header,,0,0,0,,{\an7\pos(110,95)\fs58\c&H00FBF6F3&\b1\fad(220,220)}O que muda com a entrada e o histórico
+Dialogue: 3,0:06:30.00,0:06:45.00,Eyebrow,,0,0,0,,{\an7\pos(110,46)\fs23\c&H00EDDD67&\b0\fad(220,220)}ESCOPO DAS CONCLUSÕES
+Dialogue: 3,0:06:30.00,0:06:45.00,Header,,0,0,0,,{\an7\pos(110,95)\fs58\c&H00FBF6F3&\b1\fad(220,220)}Limites da interpretação
+Dialogue: 3,0:06:45.00,0:06:55.00,Eyebrow,,0,0,0,,{\an7\pos(110,46)\fs23\c&H00EDDD67&\b0\fad(220,220)}SÍNTESE
+Dialogue: 3,0:06:45.00,0:06:55.00,Header,,0,0,0,,{\an7\pos(110,95)\fs58\c&H00FBF6F3&\b1\fad(220,220)}A escolha depende da tarefa
+Dialogue: 4,0:00:00.00,0:00:06.00,Text,,0,0,0,,{\an7\pos(120,185)\fs35\c&H00C9B9AA&\b0\fad(220,220)}UNIVERSIDADE ESTADUAL DE CAMPINAS
+Dialogue: 4,0:00:00.00,0:00:06.00,Text,,0,0,0,,{\an7\pos(120,245)\fs30\c&H00C9B9AA&\b0\fad(220,220)}Faculdade de Engenharia Elétrica e de Computação
+Dialogue: 4,0:00:00.00,0:00:06.00,Text,,0,0,0,,{\an7\pos(120,375)\fs58\c&H00FBF6F3&\b1\fad(220,220)}Gustavo de Melo Nascimento
+Dialogue: 4,0:00:00.00,0:00:06.00,Text,,0,0,0,,{\an7\pos(120,465)\fs35\c&H00FBF6F3&\b0\fad(220,220)}RA 239679 · Engenharia Elétrica (41)
+Dialogue: 4,0:00:06.00,0:00:14.00,Text,,0,0,0,,{\an7\pos(120,215)\fs50\c&H00FBF6F3&\b1\fad(220,220)}Previsão multirresolução de\Nirradiância global horizontal\Nem localidades associadas à\Nfabricação de veículos elétricos
+Dialogue: 4,0:00:06.00,0:00:14.00,Text,,0,0,0,,{\an7\pos(120,525)\fs34\c&H008AD3FF&\b0\fad(220,220)}Avaliação comparativa de Transformer, Informer e LSTM
+Dialogue: 4,0:00:14.00,0:00:20.00,Text,,0,0,0,,{\an7\pos(120,275)\fs43\c&H00FBF6F3&\b0\fad(220,220)}Orientador: Prof. Dr. Gustavo Fraidenraich
+Dialogue: 4,0:00:14.00,0:00:20.00,Text,,0,0,0,,{\an7\pos(120,365)\fs43\c&H00FBF6F3&\b0\fad(220,220)}Coorientador: Thales Wulfert Cabral
+Dialogue: 4,0:00:14.00,0:00:20.00,Text,,0,0,0,,{\an7\pos(120,505)\fs35\c&H008AD3FF&\b0\fad(220,220)}EA019 · 2º semestre de 2026
+Dialogue: 4,0:00:14.00,0:00:20.00,Text,,0,0,0,,{\an7\pos(120,565)\fs32\c&H00C9B9AA&\b0\fad(220,220)}Campinas, 2026
+Dialogue: 4,0:00:24.00,0:00:44.00,Text,,0,0,0,,{\an7\pos(1300,350)\fs50\c&H008AD3FF&\b1\fad(220,220)}GHI
+Dialogue: 4,0:00:29.00,0:00:44.00,Text,,0,0,0,,{\an7\pos(1380,740)\fs47\c&H008AD3FF&\b0\fad(220,220)}W/m²
+Dialogue: 4,0:00:32.00,0:00:43.00,Text,,0,0,0,,{\an7\pos(1200,480)\fs30\c&H008AD3FF&\b0\fad(220,220)}Radiação direta + difusa
+Dialogue: 4,0:00:45.00,0:00:55.00,Text,,0,0,0,,{\an8\pos(400,300)\fs34\c&H00FBF6F3&\b0\fad(220,220)}Histórico de GHI
+Dialogue: 4,0:00:48.00,0:00:55.00,Text,,0,0,0,,{\an8\pos(1160,300)\fs32\c&H00C9B9AA&\b0\fad(220,220)}Presente
+Dialogue: 4,0:00:48.00,0:00:55.00,Text,,0,0,0,,{\an8\pos(1500,300)\fs34\c&H00EDDD67&\b0\fad(220,220)}Futuro
+Dialogue: 4,0:00:20.00,0:00:55.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Ilustração conceitual · Fonte: relatório, seção 4.1
+Dialogue: 4,0:00:55.00,0:01:02.00,Text,,0,0,0,,{\an7\pos(160,300)\fs52\c&H00FBF6F3&\b1\fad(220,220)}Prever o recurso solar\Napoia o planejamento
+Dialogue: 4,0:01:02.00,0:01:15.00,Text,,0,0,0,,{\an8\pos(340,625)\fs40\c&H0097A1FF&\b0\fad(220,220)}LSTM
+Dialogue: 4,0:01:02.00,0:01:15.00,Text,,0,0,0,,{\an8\pos(960,625)\fs40\c&H00EDDD67&\b0\fad(220,220)}Transformer
+Dialogue: 4,0:01:02.00,0:01:15.00,Text,,0,0,0,,{\an8\pos(1580,625)\fs40\c&H00F39AC3&\b0\fad(220,220)}Informer
+Dialogue: 4,0:00:55.00,0:01:15.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Escalas temporais · representação da entrada · histórico de treinamento
+Dialogue: 4,0:01:17.00,0:01:33.00,Text,,0,0,0,,{\an7\pos(1260,300)\fs53\c&H008AD3FF&\b1\fad(220,220)}10 localidades
+Dialogue: 4,0:01:19.00,0:01:33.00,Text,,0,0,0,,{\an7\pos(1260,405)\fs37\c&H00FBF6F3&\b0\fad(220,220)}1 Brasil\N8 Estados Unidos\N1 México
+Dialogue: 4,0:01:27.00,0:01:33.00,Text,,0,0,0,,{\an7\pos(265,515)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Detroit · ampliação
+Dialogue: 4,0:01:27.50,0:01:33.00,Text,,0,0,0,,{\an7\pos(500,595)\fs24\c&H00FBF6F3&\b0\fad(220,220)}GM Factory Zero
+Dialogue: 4,0:01:27.50,0:01:33.00,Text,,0,0,0,,{\an7\pos(500,680)\fs24\c&H00FBF6F3&\b0\fad(220,220)}Ford Rouge EV Center
+Dialogue: 4,0:01:33.00,0:01:44.00,Text,,0,0,0,,{\an7\pos(1260,300)\fs38\c&H008AD3FF&\b0\fad(220,220)}Históricos de GHI
+Dialogue: 4,0:01:33.00,0:01:44.00,Text,,0,0,0,,{\an7\pos(1260,375)\fs30\c&H00C9B9AA&\b0\fad(220,220)}Ilustração conceitual
+Dialogue: 4,0:01:44.00,0:01:55.00,Text,,0,0,0,,{\an7\pos(280,285)\fs28\c&H00FBF6F3&\b0\fad(220,220)}Histórico de GHI
+Dialogue: 4,0:01:44.00,0:01:55.00,Text,,0,0,0,,{\an7\pos(280,550)\fs28\c&H00EDDD67&\b0\fad(220,220)}Identificação aprendida
+Dialogue: 4,0:01:44.00,0:01:55.00,Text,,0,0,0,,{\an7\pos(795,325)\fs26\c&H00EDDD67&\b0\fad(220,220)}Modelo compartilhado
+Dialogue: 4,0:01:44.00,0:01:55.00,Text,,0,0,0,,{\an8\pos(960,730)\fs38\c&H00FBF6F3&\b0\fad(220,220)}Histórico de GHI + identificação da localidade
+Dialogue: 4,0:01:15.00,0:01:55.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Dados: NSRDB · Localidades e coordenadas: relatório, Tabela 1
+Dialogue: 4,0:01:55.00,0:02:03.00,Text,,0,0,0,,{\an8\pos(960,240)\fs39\c&H00C9B9AA&\b0\fad(220,220)}Horária
+Dialogue: 4,0:01:55.00,0:02:03.00,Text,,0,0,0,,{\an8\pos(960,310)\fs73\c&H00EDDD67&\b1\fad(220,220)}336 h → 72 h
+Dialogue: 4,0:02:03.00,0:02:11.00,Text,,0,0,0,,{\an8\pos(960,240)\fs39\c&H00C9B9AA&\b0\fad(220,220)}Diária
+Dialogue: 4,0:02:03.00,0:02:11.00,Text,,0,0,0,,{\an8\pos(960,310)\fs73\c&H00EDDD67&\b1\fad(220,220)}365 d → 30 d
+Dialogue: 4,0:02:11.00,0:02:19.00,Text,,0,0,0,,{\an8\pos(960,240)\fs39\c&H00C9B9AA&\b0\fad(220,220)}Mensal · um passo
+Dialogue: 4,0:02:11.00,0:02:19.00,Text,,0,0,0,,{\an8\pos(960,310)\fs73\c&H00EDDD67&\b1\fad(220,220)}12 meses → 1 mês
+Dialogue: 4,0:02:19.00,0:02:30.00,Text,,0,0,0,,{\an8\pos(960,240)\fs39\c&H00C9B9AA&\b0\fad(220,220)}Mensal · seis passos
+Dialogue: 4,0:02:19.00,0:02:30.00,Text,,0,0,0,,{\an8\pos(960,310)\fs73\c&H00EDDD67&\b1\fad(220,220)}12 meses → 6 meses
+Dialogue: 4,0:02:19.00,0:02:30.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Seis passos: tarefa exploratória · Redes treinadas separadamente
+Dialogue: 4,0:02:30.00,0:02:40.00,Text,,0,0,0,,{\an8\pos(315,355)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Treinamento inicial
+Dialogue: 4,0:02:30.00,0:02:40.00,Text,,0,0,0,,{\an8\pos(315,430)\fs47\c&H00EDDD67&\b1\fad(220,220)}2019–2022
+Dialogue: 4,0:02:38.00,0:02:49.00,Text,,0,0,0,,{\an8\pos(745,355)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Validação
+Dialogue: 4,0:02:38.00,0:02:49.00,Text,,0,0,0,,{\an8\pos(745,430)\fs47\c&H00EDDD67&\b1\fad(220,220)}2023
+Dialogue: 4,0:02:46.00,0:03:01.00,Text,,0,0,0,,{\an8\pos(1175,355)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Novo ajuste
+Dialogue: 4,0:02:46.00,0:03:01.00,Text,,0,0,0,,{\an8\pos(1175,430)\fs47\c&H00EDDD67&\b1\fad(220,220)}2019–2023
+Dialogue: 4,0:02:54.00,0:03:10.00,Text,,0,0,0,,{\an8\pos(1605,355)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Teste retrospectivo
+Dialogue: 4,0:02:54.00,0:03:10.00,Text,,0,0,0,,{\an8\pos(1605,430)\fs47\c&H00EDDD67&\b1\fad(220,220)}2024
+Dialogue: 4,0:02:57.00,0:03:10.00,Text,,0,0,0,,{\an8\pos(960,745)\fs31\c&H008AD3FF&\b0\fad(220,220)}Houve exposição anterior ao período de teste
+Dialogue: 4,0:02:30.00,0:03:10.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Fonte: relatório, seções 3.4, 3.6 e 5.7 · Avaliação retrospectiva
+Dialogue: 4,0:03:10.00,0:03:28.00,Text,,0,0,0,,{\an8\pos(960,255)\fs50\c&H0097A1FF&\b1\fad(220,220)}LSTM
+Dialogue: 4,0:03:10.00,0:03:28.00,Text,,0,0,0,,{\an8\pos(960,690)\fs35\c&H0097A1FF&\b0\fad(220,220)}Memória temporal
+Dialogue: 4,0:03:28.00,0:03:46.00,Text,,0,0,0,,{\an8\pos(960,255)\fs50\c&H00EDDD67&\b1\fad(220,220)}Transformer
+Dialogue: 4,0:03:28.00,0:03:46.00,Text,,0,0,0,,{\an8\pos(960,690)\fs35\c&H00EDDD67&\b0\fad(220,220)}Atenção entre posições
+Dialogue: 4,0:03:46.00,0:04:05.00,Text,,0,0,0,,{\an8\pos(960,255)\fs50\c&H00F39AC3&\b1\fad(220,220)}Informer
+Dialogue: 4,0:03:46.00,0:04:05.00,Text,,0,0,0,,{\an8\pos(960,690)\fs35\c&H00F39AC3&\b0\fad(220,220)}ProbSparse + redução temporal
+Dialogue: 4,0:03:55.00,0:04:05.00,Text,,0,0,0,,{\an8\pos(960,750)\fs26\c&H00C9B9AA&\b0\fad(220,220)}Na implementação: atenção cruzada completa
+Dialogue: 4,0:03:10.00,0:04:05.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Esquemas simplificados · Fonte: relatório, seções 4.2–4.4
+Dialogue: 4,0:04:05.00,0:04:10.00,Text,,0,0,0,,{\an8\pos(1460,300)\fs56\c&H00EDDD67&\b1\fad(220,220)}Contínuo
+Dialogue: 4,0:04:10.00,0:04:20.00,Text,,0,0,0,,{\an8\pos(1460,300)\fs56\c&H00EDDD67&\b1\fad(220,220)}Q64
+Dialogue: 4,0:04:20.00,0:04:30.00,Text,,0,0,0,,{\an8\pos(1460,300)\fs56\c&H00EDDD67&\b1\fad(220,220)}Q128
+Dialogue: 4,0:04:30.00,0:04:40.00,Text,,0,0,0,,{\an8\pos(1460,300)\fs56\c&H00EDDD67&\b1\fad(220,220)}Q256
+Dialogue: 4,0:04:11.00,0:04:40.00,Text,,0,0,0,,{\an8\pos(1460,600)\fs32\c&H00FBF6F3&\b0\fad(220,220)}Somente a entrada de GHI
+Dialogue: 4,0:04:18.00,0:04:40.00,Text,,0,0,0,,{\an8\pos(1460,665)\fs32\c&H00C9B9AA&\b0\fad(220,220)}Pesos e saída contínuos
+Dialogue: 4,0:04:05.00,0:04:40.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Clipping + arredondamento · Reconstrução em float32 · Fonte: relatório, seção 3.5
+Dialogue: 4,0:04:41.00,0:04:54.00,Text,,0,0,0,,{\an8\pos(1450,300)\fs74\c&H00EDDD67&\b1\fad(220,220)}MAE
+Dialogue: 4,0:04:41.00,0:04:54.00,Text,,0,0,0,,{\an8\pos(1450,410)\fs45\c&H00C9B9AA&\b0\fad(220,220)}W/m²
+Dialogue: 4,0:04:54.00,0:05:02.00,Text,,0,0,0,,{\an8\pos(960,260)\fs45\c&H00FBF6F3&\b0\fad(220,220)}Mesmo peso por localidade
+Dialogue: 4,0:05:02.00,0:05:10.00,Text,,0,0,0,,{\an8\pos(960,260)\fs45\c&H00EDDD67&\b0\fad(220,220)}Até 72 h = passos 1 a 72
+Dialogue: 4,0:04:40.00,0:05:10.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Exemplo didático da métrica · Fonte: relatório, seção 3.7
+Dialogue: 4,0:05:10.00,0:05:22.00,Text,,0,0,0,,{\an7\pos(180,245)\fs45\c&H00FBF6F3&\b1\fad(220,220)}Horária · até 72 horas
+Dialogue: 4,0:05:10.00,0:05:22.00,Text,,0,0,0,,{\an8\pos(1335,285)\fs27\c&H00C9B9AA&\b0\fad(220,220)}Macro-MAE (W/m²)
+Dialogue: 4,0:05:10.50,0:05:22.00,Text,,0,0,0,,{\an7\pos(210,365)\fs44\c&H00EDDD67&\b1\fad(220,220)}Transformer
+Dialogue: 4,0:05:10.50,0:05:22.00,Text,,0,0,0,,{\an7\pos(730,377)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Controle
+Dialogue: 4,0:05:10.50,0:05:22.00,Text,,0,0,0,,{\an9\pos(1445,356)\fs63\c&H00EDDD67&\b1\fad(220,220)}53,21
+Dialogue: 4,0:05:11.30,0:05:22.00,Text,,0,0,0,,{\an7\pos(210,493)\fs44\c&H00F39AC3&\b1\fad(220,220)}Informer
+Dialogue: 4,0:05:11.30,0:05:22.00,Text,,0,0,0,,{\an7\pos(730,505)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Controle
+Dialogue: 4,0:05:11.30,0:05:22.00,Text,,0,0,0,,{\an9\pos(1445,484)\fs63\c&H00FBF6F3&\b0\fad(220,220)}137,68
+Dialogue: 4,0:05:12.10,0:05:22.00,Text,,0,0,0,,{\an7\pos(210,621)\fs44\c&H0097A1FF&\b1\fad(220,220)}LSTM
+Dialogue: 4,0:05:12.10,0:05:22.00,Text,,0,0,0,,{\an7\pos(730,633)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Q64
+Dialogue: 4,0:05:12.10,0:05:22.00,Text,,0,0,0,,{\an9\pos(1445,612)\fs63\c&H00FBF6F3&\b0\fad(220,220)}53,52
+Dialogue: 4,0:05:10.00,0:05:22.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Fonte: relatório, Tabela 6 · Configurações selecionadas na validação
+Dialogue: 4,0:05:22.00,0:05:34.00,Text,,0,0,0,,{\an7\pos(180,245)\fs45\c&H00FBF6F3&\b1\fad(220,220)}Diária · até 30 dias
+Dialogue: 4,0:05:22.00,0:05:34.00,Text,,0,0,0,,{\an8\pos(1335,285)\fs27\c&H00C9B9AA&\b0\fad(220,220)}Macro-MAE (W/m²)
+Dialogue: 4,0:05:22.50,0:05:34.00,Text,,0,0,0,,{\an7\pos(210,365)\fs44\c&H00EDDD67&\b1\fad(220,220)}Transformer
+Dialogue: 4,0:05:22.50,0:05:34.00,Text,,0,0,0,,{\an7\pos(730,377)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Q256
+Dialogue: 4,0:05:22.50,0:05:34.00,Text,,0,0,0,,{\an9\pos(1445,356)\fs63\c&H00EDDD67&\b1\fad(220,220)}43,89
+Dialogue: 4,0:05:23.30,0:05:34.00,Text,,0,0,0,,{\an7\pos(210,493)\fs44\c&H00F39AC3&\b1\fad(220,220)}Informer
+Dialogue: 4,0:05:23.30,0:05:34.00,Text,,0,0,0,,{\an7\pos(730,505)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Q64
+Dialogue: 4,0:05:23.30,0:05:34.00,Text,,0,0,0,,{\an9\pos(1445,484)\fs63\c&H00FBF6F3&\b0\fad(220,220)}45,46
+Dialogue: 4,0:05:24.10,0:05:34.00,Text,,0,0,0,,{\an7\pos(210,621)\fs44\c&H0097A1FF&\b1\fad(220,220)}LSTM
+Dialogue: 4,0:05:24.10,0:05:34.00,Text,,0,0,0,,{\an7\pos(730,633)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Controle
+Dialogue: 4,0:05:24.10,0:05:34.00,Text,,0,0,0,,{\an9\pos(1445,612)\fs63\c&H00FBF6F3&\b0\fad(220,220)}44,18
+Dialogue: 4,0:05:22.00,0:05:34.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Fonte: relatório, Tabela 6 · Configurações selecionadas na validação
+Dialogue: 4,0:05:34.00,0:05:46.00,Text,,0,0,0,,{\an7\pos(180,245)\fs45\c&H00FBF6F3&\b1\fad(220,220)}Mensal · um passo
+Dialogue: 4,0:05:34.00,0:05:46.00,Text,,0,0,0,,{\an8\pos(1335,285)\fs27\c&H00C9B9AA&\b0\fad(220,220)}Macro-MAE (W/m²)
+Dialogue: 4,0:05:34.50,0:05:46.00,Text,,0,0,0,,{\an7\pos(210,365)\fs44\c&H00EDDD67&\b1\fad(220,220)}Transformer
+Dialogue: 4,0:05:34.50,0:05:46.00,Text,,0,0,0,,{\an7\pos(730,377)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Q128
+Dialogue: 4,0:05:34.50,0:05:46.00,Text,,0,0,0,,{\an9\pos(1445,356)\fs63\c&H00FBF6F3&\b0\fad(220,220)}13,15
+Dialogue: 4,0:05:35.30,0:05:46.00,Text,,0,0,0,,{\an7\pos(210,493)\fs44\c&H00F39AC3&\b1\fad(220,220)}Informer
+Dialogue: 4,0:05:35.30,0:05:46.00,Text,,0,0,0,,{\an7\pos(730,505)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Q128
+Dialogue: 4,0:05:35.30,0:05:46.00,Text,,0,0,0,,{\an9\pos(1445,484)\fs63\c&H00F39AC3&\b1\fad(220,220)}12,73
+Dialogue: 4,0:05:36.10,0:05:46.00,Text,,0,0,0,,{\an7\pos(210,621)\fs44\c&H0097A1FF&\b1\fad(220,220)}LSTM
+Dialogue: 4,0:05:36.10,0:05:46.00,Text,,0,0,0,,{\an7\pos(730,633)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Q128
+Dialogue: 4,0:05:36.10,0:05:46.00,Text,,0,0,0,,{\an9\pos(1445,612)\fs63\c&H00FBF6F3&\b0\fad(220,220)}14,29
+Dialogue: 4,0:05:34.00,0:05:46.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Fonte: relatório, Tabela 6 · Configurações selecionadas na validação
+Dialogue: 4,0:05:46.00,0:05:58.00,Text,,0,0,0,,{\an7\pos(180,245)\fs45\c&H00FBF6F3&\b1\fad(220,220)}Mensal · até seis passos
+Dialogue: 4,0:05:46.00,0:05:58.00,Text,,0,0,0,,{\an8\pos(1335,285)\fs27\c&H00C9B9AA&\b0\fad(220,220)}Macro-MAE (W/m²)
+Dialogue: 4,0:05:46.50,0:05:58.00,Text,,0,0,0,,{\an7\pos(210,365)\fs44\c&H00EDDD67&\b1\fad(220,220)}Transformer
+Dialogue: 4,0:05:46.50,0:05:58.00,Text,,0,0,0,,{\an7\pos(730,377)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Q64
+Dialogue: 4,0:05:46.50,0:05:58.00,Text,,0,0,0,,{\an9\pos(1445,356)\fs63\c&H00FBF6F3&\b0\fad(220,220)}14,40
+Dialogue: 4,0:05:47.30,0:05:58.00,Text,,0,0,0,,{\an7\pos(210,493)\fs44\c&H00F39AC3&\b1\fad(220,220)}Informer
+Dialogue: 4,0:05:47.30,0:05:58.00,Text,,0,0,0,,{\an7\pos(730,505)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Q128
+Dialogue: 4,0:05:47.30,0:05:58.00,Text,,0,0,0,,{\an9\pos(1445,484)\fs63\c&H00F39AC3&\b1\fad(220,220)}13,67
+Dialogue: 4,0:05:48.10,0:05:58.00,Text,,0,0,0,,{\an7\pos(210,621)\fs44\c&H0097A1FF&\b1\fad(220,220)}LSTM
+Dialogue: 4,0:05:48.10,0:05:58.00,Text,,0,0,0,,{\an7\pos(730,633)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Q128
+Dialogue: 4,0:05:48.10,0:05:58.00,Text,,0,0,0,,{\an9\pos(1445,612)\fs63\c&H00FBF6F3&\b0\fad(220,220)}14,76
+Dialogue: 4,0:05:46.00,0:05:58.00,Text,,0,0,0,,{\an7\pos(180,745)\fs28\c&H00F39AC3&\b0\fad(220,220)}Avaliação exploratória
+Dialogue: 4,0:05:46.00,0:05:58.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Fonte: relatório, Tabela 6 · Configurações selecionadas na validação
+Dialogue: 4,0:05:58.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(960,255)\fs48\c&H00FBF6F3&\b1\fad(220,220)}Vantagens pequenas sobre a LSTM
+Dialogue: 4,0:05:58.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(550,410)\fs65\c&H00EDDD67&\b1\fad(220,220)}0,32 W/m²
+Dialogue: 4,0:05:58.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(550,510)\fs34\c&H00C9B9AA&\b0\fad(220,220)}Horária · até 72 h
+Dialogue: 4,0:05:58.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(1370,410)\fs65\c&H00EDDD67&\b1\fad(220,220)}0,30 W/m²
+Dialogue: 4,0:05:58.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(1370,510)\fs34\c&H00C9B9AA&\b0\fad(220,220)}Diária · até 30 d
+Dialogue: 4,0:06:03.00,0:06:10.00,Text,,0,0,0,,{\an8\pos(960,700)\fs34\c&H0097A1FF&\b0\fad(220,220)}Diária: LSTM lidera até 1, 3, 7 e 14 dias
+Dialogue: 4,0:05:58.00,0:06:10.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Diferenças descritivas · Fonte: relatório, seções 5.1–5.3
+Dialogue: 4,0:06:10.00,0:06:18.00,Text,,0,0,0,,{\an8\pos(960,315)\fs54\c&H00FBF6F3&\b1\fad(220,220)}Quantização:\Nsem benefício universal
+Dialogue: 4,0:06:12.00,0:06:18.00,Text,,0,0,0,,{\an8\pos(960,540)\fs33\c&H00C9B9AA&\b0\fad(220,220)}5 melhoram · 4 pioram · 3 mantêm o controle
+Dialogue: 4,0:06:10.00,0:06:18.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Condição selecionada na validação e observada no teste de 2024 · Relatório, Tabela 7
+Dialogue: 4,0:06:18.00,0:06:30.00,Text,,0,0,0,,{\an8\pos(960,310)\fs94\c&H008AD3FF&\b1\fad(220,220)}11 de 12
+Dialogue: 4,0:06:18.00,0:06:30.00,Text,,0,0,0,,{\an8\pos(960,470)\fs41\c&H00FBF6F3&\b0\fad(220,220)}controles com menor MAE no histórico longo
+Dialogue: 4,0:06:18.00,0:06:30.00,Text,,0,0,0,,{\an8\pos(960,630)\fs33\c&H00C9B9AA&\b0\fad(220,220)}Teste histórico pareado, separado de 2024
+Dialogue: 4,0:06:18.00,0:06:30.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Associação observada; efeito causal não isolado · Fonte: relatório, Tabela 8
+Dialogue: 4,0:06:30.00,0:06:35.00,Text,,0,0,0,,{\an8\pos(960,335)\fs56\c&H008AD3FF&\b1\fad(220,220)}Resultados descritivos
+Dialogue: 4,0:06:30.00,0:06:35.00,Text,,0,0,0,,{\an8\pos(960,505)\fs38\c&H00FBF6F3&\b0\fad(220,220)}Sem demonstração de significância estatística
+Dialogue: 4,0:06:35.00,0:06:40.00,Text,,0,0,0,,{\an8\pos(960,335)\fs56\c&H008AD3FF&\b1\fad(220,220)}Horário: uma semente
+Dialogue: 4,0:06:35.00,0:06:40.00,Text,,0,0,0,,{\an8\pos(960,505)\fs38\c&H00FBF6F3&\b0\fad(220,220)}Seis meses: avaliação exploratória
+Dialogue: 4,0:06:40.00,0:06:45.00,Text,,0,0,0,,{\an8\pos(960,335)\fs56\c&H008AD3FF&\b1\fad(220,220)}Alvos sobrepostos
+Dialogue: 4,0:06:40.00,0:06:45.00,Text,,0,0,0,,{\an8\pos(960,505)\fs38\c&H00FBF6F3&\b0\fad(220,220)}Localidades inéditas não foram avaliadas
+Dialogue: 4,0:06:30.00,0:06:45.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Fonte: relatório, seção 5.7
+Dialogue: 4,0:06:45.00,0:06:55.00,Text,,0,0,0,,{\an8\pos(530,345)\fs52\c&H00EDDD67&\b1\fad(220,220)}Transformer
+Dialogue: 4,0:06:45.00,0:06:55.00,Text,,0,0,0,,{\an8\pos(530,445)\fs39\c&H00FBF6F3&\b0\fad(220,220)}Horária e diária
+Dialogue: 4,0:06:45.00,0:06:55.00,Text,,0,0,0,,{\an8\pos(530,510)\fs30\c&H00C9B9AA&\b0\fad(220,220)}Horizontes completos
+Dialogue: 4,0:06:45.00,0:06:55.00,Text,,0,0,0,,{\an8\pos(1390,345)\fs52\c&H00F39AC3&\b1\fad(220,220)}Informer
+Dialogue: 4,0:06:45.00,0:06:55.00,Text,,0,0,0,,{\an8\pos(1390,445)\fs39\c&H00FBF6F3&\b0\fad(220,220)}Tarefas mensais
+Dialogue: 4,0:06:45.00,0:06:55.00,Text,,0,0,0,,{\an8\pos(960,700)\fs31\c&H00C9B9AA&\b0\fad(220,220)}Nas configurações avaliadas
+Dialogue: 4,0:06:45.00,0:06:55.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Fonte: relatório, Tabela 6 e conclusão
+Dialogue: 10,0:00:00.15,0:00:04.96,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}O trabalho foi desenvolvido na disciplina\NEA019, com orientação
+Dialogue: 10,0:00:05.06,0:00:10.70,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}do professor Gustavo Fraidenraich e\Ncoorientação de Thales Wulfert Cabral.
+Dialogue: 10,0:00:10.80,0:00:14.70,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}O foco é a previsão em diferentes escalas\Nde tempo,
+Dialogue: 10,0:00:14.80,0:00:19.45,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}em localidades associadas à fabricação de\Nveículos elétricos.
+Dialogue: 10,0:00:20.15,0:00:24.90,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A irradiância global horizontal, ou GHI,\Nrepresenta a potência da radiação
+Dialogue: 10,0:00:25.00,0:00:29.11,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}solar que chega a uma superfície\Nhorizontal por unidade de área.
+Dialogue: 10,0:00:29.21,0:00:31.64,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Sua unidade é watt por metro quadrado.
+Dialogue: 10,0:00:31.74,0:00:37.01,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Parte dessa radiação chega diretamente do\NSol, e parte é espalhada pela atmosfera.
+Dialogue: 10,0:00:37.11,0:00:40.70,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A geometria solar estabelece padrões\Ndiários e sazonais,
+Dialogue: 10,0:00:40.80,0:00:44.07,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}enquanto as condições atmosféricas alteram\Na curva.
+Dialogue: 10,0:00:44.17,0:00:47.70,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Assim, mesmo quando conhecemos o\Ncomportamento passado,
+Dialogue: 10,0:00:47.80,0:00:50.18,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}o futuro não é uma simples repetição.
+Dialogue: 10,0:00:50.28,0:00:54.45,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A pergunta é: quanto conseguimos antecipar\Nusando esse histórico?
+Dialogue: 10,0:00:55.15,0:00:59.02,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Prever o recurso solar pode apoiar o\Nplanejamento energético.
+Dialogue: 10,0:00:59.12,0:01:01.09,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Meu objetivo foi comparar LSTM,
+Dialogue: 10,0:01:01.19,0:01:05.26,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Transformer e Informer em diferentes\Nescalas de tempo e examinar
+Dialogue: 10,0:01:05.36,0:01:08.92,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}a influência das entradas e do histórico\Nde treinamento.
+Dialogue: 10,0:01:09.02,0:01:10.79,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}O estudo avalia irradiância;
+Dialogue: 10,0:01:10.89,0:01:14.45,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}o contexto industrial orienta a escolha\Ndas localidades.
+Dialogue: 10,0:01:15.15,0:01:21.39,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Utilizei estimativas da base NSRDB para\Ndez localidades associadas à fabricação
+Dialogue: 10,0:01:21.49,0:01:27.64,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}de veículos elétricos: uma no Brasil, oito\Nnos Estados Unidos e uma no México.
+Dialogue: 10,0:01:27.74,0:01:34.06,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Esses dados representam células da base, e\Nnão sensores instalados nas fábricas.
+Dialogue: 10,0:01:34.16,0:01:38.66,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}As redes receberam o histórico de GHI e\Numa representação
+Dialogue: 10,0:01:38.76,0:01:41.99,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}aprendida da identificação da localidade.
+Dialogue: 10,0:01:42.09,0:01:45.80,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Temperatura, imagens e previsões\Nmeteorológicas
+Dialogue: 10,0:01:45.90,0:01:48.98,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}não foram entradas desses experimentos.
+Dialogue: 10,0:01:49.08,0:01:54.45,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Os parâmetros foram compartilhados entre\Nas localidades do conjunto.
+Dialogue: 10,0:01:55.15,0:01:58.16,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Organizei quatro tarefas de previsão.
+Dialogue: 10,0:01:58.26,0:02:01.68,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Na horária, usei trezentas e trinta e seis
+Dialogue: 10,0:02:01.78,0:02:05.44,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}horas para prever as próximas setenta e\Nduas.
+Dialogue: 10,0:02:05.54,0:02:10.74,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Na diária, trezentos e sessenta e cinco\Ndias para prever trinta.
+Dialogue: 10,0:02:10.84,0:02:16.86,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Nas tarefas mensais, utilizei doze meses\Npara prever um mês ou seis meses.
+Dialogue: 10,0:02:16.96,0:02:20.46,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}São redes treinadas para tarefas\Ndistintas.
+Dialogue: 10,0:02:20.56,0:02:24.79,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Por isso, o primeiro passo da previsão de\Nseis meses
+Dialogue: 10,0:02:24.89,0:02:29.45,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}não deve ser confundido com a tarefa\Nmensal de um passo.
+Dialogue: 10,0:02:30.15,0:02:36.65,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}No protocolo consolidado, separei os\Nperíodos em treinamento inicial,
+Dialogue: 10,0:02:36.75,0:02:42.52,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}de dois mil e dezenove a dois mil e vinte\Ne dois; validação,
+Dialogue: 10,0:02:42.62,0:02:48.96,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}em dois mil e vinte e três; e teste, em\Ndois mil e vinte e quatro.
+Dialogue: 10,0:02:49.06,0:02:53.96,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}As configurações seguiram a seleção pela\Nvalidação,
+Dialogue: 10,0:02:54.06,0:02:58.48,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}com novo ajuste nos dados anteriores ao\Nteste.
+Dialogue: 10,0:02:58.58,0:03:04.16,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A avaliação é retrospectiva, e sua\Ninterpretação considera
+Dialogue: 10,0:03:04.26,0:03:09.45,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}que já existia exposição anterior ao\Nperíodo de teste.
+Dialogue: 10,0:03:10.15,0:03:15.84,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Os modelos tratam o histórico de maneiras\Ndiferentes.
+Dialogue: 10,0:03:15.94,0:03:22.44,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A LSTM percorre a sequência e atualiza uma\Nrepresentação de memória.
+Dialogue: 10,0:03:22.54,0:03:26.72,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}O Transformer usa atenção para combinar
+Dialogue: 10,0:03:26.82,0:03:31.97,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}informações de diferentes posições da\Nsequência.
+Dialogue: 10,0:03:32.07,0:03:37.11,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}As posições temporais também são\Nrepresentadas,
+Dialogue: 10,0:03:37.21,0:03:40.75,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}para indicar a ordem dos valores.
+Dialogue: 10,0:03:40.85,0:03:46.54,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}O Informer utiliza uma estratégia de\Natenção esparsa,
+Dialogue: 10,0:03:46.64,0:03:53.14,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}chamada ProbSparse, e reduz representações\Nentre camadas do codificador.
+Dialogue: 10,0:03:53.24,0:03:57.85,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Esses desenhos simplificam as\Narquiteturas.
+Dialogue: 10,0:03:57.95,0:04:04.45,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}O estudo compara precisão preditiva, sem\Nmedir velocidade ou consumo de memória.
+Dialogue: 10,0:04:05.15,0:04:10.44,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Também comparei o histórico contínuo com\Nentradas representadas em sessenta
+Dialogue: 10,0:04:10.54,0:04:15.41,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}e quatro, cento e vinte e oito ou duzentos\Ne cinquenta e seis níveis.
+Dialogue: 10,0:04:15.51,0:04:19.46,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Visualmente, é como aproximar as\Namplitudes por degraus.
+Dialogue: 10,0:04:19.56,0:04:23.36,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Apenas a entrada de GHI passou por essa\Ntransformação;
+Dialogue: 10,0:04:23.46,0:04:26.50,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}os pesos e as saídas continuaram\Ncontínuos.
+Dialogue: 10,0:04:26.60,0:04:28.43,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Nas variantes quantizadas,
+Dialogue: 10,0:04:28.53,0:04:33.11,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}valores extremos também foram limitados ao\Nintervalo normalizado.
+Dialogue: 10,0:04:33.21,0:04:36.53,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A condição selecionada na validação foi\Nmantida
+Dialogue: 10,0:04:36.63,0:04:39.45,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}na apresentação dos resultados do teste.
+Dialogue: 10,0:04:40.15,0:04:42.26,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Para avaliar as previsões,
+Dialogue: 10,0:04:42.36,0:04:46.35,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}usei principalmente o erro absoluto médio,\No MAE.
+Dialogue: 10,0:04:46.45,0:04:50.59,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Ele resume a distância entre previsão e\Nreferência,
+Dialogue: 10,0:04:50.69,0:04:53.30,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}na mesma unidade da irradiância.
+Dialogue: 10,0:04:53.40,0:04:59.82,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Calculei as métricas por localidade e\Ndepois obtive uma média com pesos iguais.
+Dialogue: 10,0:04:59.92,0:05:06.10,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Nos resultados cumulativos, o erro reúne\Nos passos até o horizonte indicado;
+Dialogue: 10,0:05:06.20,0:05:09.45,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}não representa apenas o último instante.
+Dialogue: 10,0:05:10.15,0:05:16.65,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Nas configurações selecionadas, o\NTransformer apresentou o menor MAE
+Dialogue: 10,0:05:16.75,0:05:23.25,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}agregado nos horizontes completos horário\Ne diário: cinquenta e três vírgula
+Dialogue: 10,0:05:23.35,0:05:29.85,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}vinte e um e quarenta e três vírgula\Noitenta e nove watts por metro quadrado.
+Dialogue: 10,0:05:29.95,0:05:34.02,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}As vantagens sobre a LSTM foram pequenas:
+Dialogue: 10,0:05:34.12,0:05:39.87,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}cerca de zero vírgula trinta e dois e zero\Nvírgula trinta.
+Dialogue: 10,0:05:39.97,0:05:41.96,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Nas tarefas mensais,
+Dialogue: 10,0:05:42.06,0:05:48.56,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}o Informer com cento e vinte e oito níveis\Napresentou os menores erros: doze
+Dialogue: 10,0:05:48.66,0:05:55.16,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}vírgula setenta e três em um mês e treze\Nvírgula sessenta e sete em seis meses.
+Dialogue: 10,0:05:55.26,0:06:00.92,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A liderança também variou entre\Nlocalidades e horizontes.
+Dialogue: 10,0:06:01.02,0:06:03.99,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Na tarefa diária, por exemplo,
+Dialogue: 10,0:06:04.09,0:06:09.45,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}a LSTM liderou os recortes menores, até\Nquatorze dias.
+Dialogue: 10,0:06:10.15,0:06:13.28,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A quantização não trouxe vantagem\Nuniversal.
+Dialogue: 10,0:06:13.38,0:06:17.14,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Em uma análise histórica separada, com\Nteste pareado,
+Dialogue: 10,0:06:17.24,0:06:22.78,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}o histórico longo apresentou menor MAE em\Nonze das doze combinações contínuas.
+Dialogue: 10,0:06:22.88,0:06:25.87,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Incluir anos anteriores esteve associado à
+Dialogue: 10,0:06:25.97,0:06:29.45,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}melhora na maioria dos controles, sem\Ngaranti-la.
+Dialogue: 10,0:06:30.15,0:06:35.27,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Os resultados são descritivos, sem\Ndemonstração de significância estatística.
+Dialogue: 10,0:06:35.37,0:06:39.89,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}O horário utilizou uma semente, e seis\Nmeses permanece exploratório.
+Dialogue: 10,0:06:39.99,0:06:44.45,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Há sobreposição de alvos; localidades\Ninéditas não foram avaliadas.
+Dialogue: 10,0:06:45.15,0:06:50.62,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Neste estudo, o Transformer liderou os\Nhorizontes completos horário e diário;
+Dialogue: 10,0:06:50.72,0:06:52.36,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}o Informer, os mensais.
+Dialogue: 10,0:06:52.46,0:06:54.45,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A escolha depende da tarefa.

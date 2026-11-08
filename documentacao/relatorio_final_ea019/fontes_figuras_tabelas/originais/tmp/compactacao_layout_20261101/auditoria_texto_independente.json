@@ -1,0 +1,286 @@
+{
+  "before": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\tmp\\compactacao_layout_20261101\\antes.docx",
+  "after": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\tmp\\compactacao_layout_20261101\\Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.docx",
+  "sha256_before": "01a161c09db38dc246d3e5b416299c5c50ed86a3c3beb6c84d5dc5a7581256b0",
+  "sha256_after": "3acf39c2d8a2100afdfb9bb78aad857c6abd681e84939d31b6994f8e990e55a4",
+  "passed": true,
+  "checks": {
+    "all_paragraph_text_outside_toc_identical_multiset": true,
+    "nonempty_prose_order_identical_excluding_only_figure6_caption_source_and_toc": true,
+    "figure6_group_immediately_after_real_heading2_before_first_prose_paragraph": true,
+    "tables_17_identical_text_and_numbers": true,
+    "native_equations_7_same_text": true,
+    "native_equations_xml_identical": true,
+    "body_drawings_9_same_relationships": true,
+    "all_image_payloads_identical": true,
+    "references_16_intact_in_same_order": true,
+    "package_part_names_identical": true,
+    "parts_outside_document_xml_identical": true,
+    "extent_changes_only_permitted_figures_and_scales": true,
+    "document_xml_identical_except_spacing_allowed_extents_figure6_position_toc_and_word_refresh_metadata": true
+  },
+  "counts": {
+    "paragraphs_excluding_toc": [
+      1294,
+      1294
+    ],
+    "toc_paragraphs": [
+      40,
+      40
+    ],
+    "tables": [
+      17,
+      17
+    ],
+    "native_equations": [
+      7,
+      7
+    ],
+    "body_drawings": [
+      9,
+      9
+    ],
+    "image_parts": 16,
+    "references": [
+      16,
+      16
+    ]
+  },
+  "text_differences": [
+    {
+      "index_excluding_toc": 394,
+      "before": "A média macro atribui o mesmo peso às dez localidades, mas pode ocultar mudanças de liderança. A Figura 6 apresenta os MAEs de cada local com a mesma condição de entrada utilizada na classificação agregada. Cada painel corresponde a uma tarefa e ao seu horizonte cumulativo completo.",
+      "after": "Figura 6 — Desempenho por localidade nas quatro tarefas"
+    },
+    {
+      "index_excluding_toc": 395,
+      "before": "Figura 6 — Desempenho por localidade nas quatro tarefas",
+      "after": ""
+    },
+    {
+      "index_excluding_toc": 396,
+      "before": "",
+      "after": "Fonte: elaboração própria. Métricas locais de teste com seleção fixa pela validação. Escala de cor própria por painel. Contorno e negrito indicam o menor MAE local com a precisão integral dos dados; valores arredondados podem parecer empatados. A comparação é descritiva e não indica significância estatística."
+    },
+    {
+      "index_excluding_toc": 397,
+      "before": "Fonte: elaboração própria. Métricas locais de teste com seleção fixa pela validação. Escala de cor própria por painel. Contorno e negrito indicam o menor MAE local com a precisão integral dos dados; valores arredondados podem parecer empatados. A comparação é descritiva e não indica significância estatística.",
+      "after": "A média macro atribui o mesmo peso às dez localidades, mas pode ocultar mudanças de liderança. A Figura 6 apresenta os MAEs de cada local com a mesma condição de entrada utilizada na classificação agregada. Cada painel corresponde a uma tarefa e ao seu horizonte cumulativo completo."
+    }
+  ],
+  "changed_parts": [
+    "word/document.xml"
+  ],
+  "text_order_notes": {
+    "full_order_identical": false,
+    "allowed_repositioned_texts": [
+      "Figura 6 — Desempenho por localidade nas quatro tarefas",
+      "Fonte: elaboração própria. Métricas locais de teste com seleção fixa pela validação. Escala de cor própria por painel. Contorno e negrito indicam o menor MAE local com a precisão integral dos dados; valores arredondados podem parecer empatados. A comparação é descritiva e não indica significância estatística."
+    ],
+    "prose_paragraphs_excluding_repositioned_figure6_texts": [
+      1270,
+      1270
+    ],
+    "unmatched_paragraph_text_before": [],
+    "unmatched_paragraph_text_after": []
+  },
+  "changed_parts_outside_document_xml": [],
+  "extent_changes": [
+    {
+      "drawing": 4,
+      "before": [
+        {
+          "type": "extent",
+          "cx": 6012000,
+          "cy": 3082152
+        },
+        {
+          "type": "ext",
+          "cx": 6012000,
+          "cy": 3082152
+        }
+      ],
+      "after": [
+        {
+          "type": "extent",
+          "cx": 5711400,
+          "cy": 2928044
+        },
+        {
+          "type": "ext",
+          "cx": 5711400,
+          "cy": 2928044
+        }
+      ],
+      "expected_scale": 0.95
+    },
+    {
+      "drawing": 6,
+      "before": [
+        {
+          "type": "extent",
+          "cx": 5796000,
+          "cy": 5394754
+        },
+        {
+          "type": "ext",
+          "cx": 5796000,
+          "cy": 5394754
+        }
+      ],
+      "after": [
+        {
+          "type": "extent",
+          "cx": 5216400,
+          "cy": 4855279
+        },
+        {
+          "type": "ext",
+          "cx": 5216400,
+          "cy": 4855279
+        }
+      ],
+      "expected_scale": 0.9
+    },
+    {
+      "drawing": 7,
+      "before": [
+        {
+          "type": "extent",
+          "cx": 6012000,
+          "cy": 4759500
+        },
+        {
+          "type": "ext",
+          "cx": 6012000,
+          "cy": 4759500
+        }
+      ],
+      "after": [
+        {
+          "type": "extent",
+          "cx": 5410800,
+          "cy": 4283550
+        },
+        {
+          "type": "ext",
+          "cx": 5410800,
+          "cy": 4283550
+        }
+      ],
+      "expected_scale": 0.9
+    }
+  ],
+  "extent_issues": [],
+  "raw_xml_equal_after_only_requested_changes_normalized": false,
+  "word_refresh_metadata": {
+    "before": {
+      "volatile_attributes": 5664,
+      "page_break_caches": 35,
+      "empty_runs": 0
+    },
+    "after": {
+      "volatile_attributes": 5664,
+      "page_break_caches": 33,
+      "empty_runs": 0
+    },
+    "normalizations": [
+      "w:rsid*",
+      "w14:paraId",
+      "w14:textId",
+      "generated _Toc bookmark names",
+      "w:lastRenderedPageBreak cache",
+      "empty runs after removing cache"
+    ],
+    "remaining_structural_differences": false
+  },
+  "toc_before": [
+    "1 INTRODUÇÃO5",
+    "1.1 Questões de pesquisa5",
+    "2 OBJETIVOS6",
+    "2.1 Objetivo geral6",
+    "2.2 Objetivos específicos6",
+    "2.3 Delimitação do estudo6",
+    "3 METODOLOGIA7",
+    "3.1 Dados utilizados7",
+    "3.2 Resoluções temporais da GHI8",
+    "3.3 Tarefas e janelas temporais9",
+    "3.4 Separação cronológica e comparação pareada10",
+    "3.5 Normalização e condições de entrada11",
+    "3.6 Treinamento, seleção e refit13",
+    "3.7 Análise dos dados e métricas14",
+    "4 DESENVOLVIMENTO15",
+    "4.1 Fundamentos físicos da GHI15",
+    "4.2 LSTM e memória temporal15",
+    "4.3 Transformer e atenção15",
+    "4.4 Informer e atenção esparsa16",
+    "4.5 Trabalhos relacionados e posicionamento17",
+    "5 RESULTADOS19",
+    "5.1 Desempenho no teste de 202419",
+    "5.2 Heterogeneidade entre localidades20",
+    "5.3 Comportamento nos horizontes cumulativos22",
+    "5.4 Quantização como análise de pré-processamento23",
+    "5.5 Análise complementar da duração do histórico25",
+    "5.6 Diagnóstico dos registros de treinamento26",
+    "5.7 Discussão integrada e limitações27",
+    "6 CONCLUSÃO29",
+    "7 REFERÊNCIAS BIBLIOGRÁFICAS30",
+    "APÊNDICE A — RESULTADOS POR HORIZONTE NO REGIME ATUAL31",
+    "APÊNDICE B — COMPARAÇÃO DAS QUATRO CONDIÇÕES DE ENTRADA33",
+    "B.1 Atual33",
+    "B.2 Histórico longo33",
+    "B.3 Histórico curto34",
+    "APÊNDICE C — CONFIGURAÇÕES E PROVENIÊNCIA DOS RESULTADOS35",
+    "C.1 Sequência de verificação35",
+    "C.2 Configurações e parâmetros treináveis36",
+    "C.3 Ambiente registrado nas execuções37",
+    "C.4 Repositório e identificação do código executado37"
+  ],
+  "toc_after": [
+    "1 INTRODUÇÃO5",
+    "1.1 Questões de pesquisa5",
+    "2 OBJETIVOS6",
+    "2.1 Objetivo geral6",
+    "2.2 Objetivos específicos6",
+    "2.3 Delimitação do estudo6",
+    "3 METODOLOGIA7",
+    "3.1 Dados utilizados7",
+    "3.2 Resoluções temporais da GHI8",
+    "3.3 Tarefas e janelas temporais9",
+    "3.4 Separação cronológica e comparação pareada10",
+    "3.5 Normalização e condições de entrada11",
+    "3.6 Treinamento, seleção e refit13",
+    "3.7 Análise dos dados e métricas13",
+    "4 DESENVOLVIMENTO15",
+    "4.1 Fundamentos físicos da GHI15",
+    "4.2 LSTM e memória temporal15",
+    "4.3 Transformer e atenção15",
+    "4.4 Informer e atenção esparsa16",
+    "4.5 Trabalhos relacionados e posicionamento17",
+    "5 RESULTADOS19",
+    "5.1 Desempenho no teste de 202419",
+    "5.2 Heterogeneidade entre localidades20",
+    "5.3 Comportamento nos horizontes cumulativos21",
+    "5.4 Quantização como análise de pré-processamento22",
+    "5.5 Análise complementar da duração do histórico24",
+    "5.6 Diagnóstico dos registros de treinamento25",
+    "5.7 Discussão integrada e limitações26",
+    "6 CONCLUSÃO28",
+    "7 REFERÊNCIAS BIBLIOGRÁFICAS29",
+    "APÊNDICE A — RESULTADOS POR HORIZONTE NO REGIME ATUAL30",
+    "APÊNDICE B — COMPARAÇÃO DAS QUATRO CONDIÇÕES DE ENTRADA32",
+    "B.1 Atual32",
+    "B.2 Histórico longo32",
+    "B.3 Histórico curto33",
+    "APÊNDICE C — CONFIGURAÇÕES E PROVENIÊNCIA DOS RESULTADOS34",
+    "C.1 Sequência de verificação34",
+    "C.2 Configurações e parâmetros treináveis35",
+    "C.3 Ambiente registrado nas execuções36",
+    "C.4 Repositório e identificação do código executado36"
+  ],
+  "notes": [
+    "Auditoria independente somente leitura das duas versões; nenhum DOCX foi editado, treinado ou renderizado.",
+    "O reposicionamento autorizado do grupo da Figura 6 para depois do Heading2 real da Seção 5.2 é verificado separadamente. Seu conteúdo e o multiconjunto integral dos textos são preservados; a ordem restante da prosa é idêntica.",
+    "Além dos ajustes de diagramação autorizados, o Word renovou identificadores internos e caches de paginação. Esses metadados não mudam o conteúdo. A verificação estrutural normaliza somente essas alterações explícitas."
+  ]
+}

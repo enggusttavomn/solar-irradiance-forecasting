@@ -1,0 +1,315 @@
+{
+  "status": "passed_all_21_material_hold_endpoint_audits",
+  "generated_utc": "2026-11-05T13:49:55.700909+00:00",
+  "scope": "Source animation code, native frame boundaries and targeted source stills. Every tail hold reviewed for interrupted one-time didactic action. Ambient loops and subsecond camera drift are excluded. This is not a final MP4 full-playback claim.",
+  "visual_schedule_sha256": "c30e6104e48debcdf1d23f70a534e118b314164b0e0de8f4177a66654dd68f1f",
+  "voice_plan_sha256": "ff4bc4a04a334a6e8b8887edcac75e9b92a298f11b245b005e321684ae056a93",
+  "audio_sha256": "2fcbd2f4e0b17feeba57cc7134501d8b7411fbbf5caaa05f64f20879ea9f0516",
+  "frames": 14718,
+  "duration": 490.6,
+  "accelerated_shots": 0,
+  "audio_or_captions_modified": false,
+  "pending_material_action_fixes": [],
+  "final_combined_corrections": [
+    {
+      "items": [
+        "unit_area",
+        "dni_normal_plane"
+      ],
+      "change": "Move split34.633333→34.333333and source split11→10.7; hold complete visible area, then native full flyout. DNI plane35.433333and all times after41.633333unchanged."
+    },
+    {
+      "items": [
+        "informer_encoder_reduction",
+        "informer_cross_attention"
+      ],
+      "change": "Move split124.9→124.5and source split99→98.6; hold completed reduction before lift and play full lift/cross at1x. All times after128.9unchanged."
+    },
+    {
+      "items": [
+        "horizontal_projection"
+      ],
+      "change": "Source end25→24.9only, preventing next-camera first-frame retention after geometry hides24.95. Output41.633333–49.8unchanged."
+    }
+  ],
+  "targeted_actual_source_stills_inspected": [
+    "tmp/montagem_final_v12/hold_audit/projection_24.866667.png",
+    "tmp/montagem_final_v12/hold_audit/projection_24.966667.png"
+  ],
+  "holds_reviewed": [
+    {
+      "id": "sun_factory",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "director_intro_v6.py; intro_v9.py",
+      "source_start": 0.0,
+      "source_end_exclusive": 5.0,
+      "last_included_source_frame_time": 4.966666666666667,
+      "latest_required_construction_completed_at": null,
+      "hold_frames": 26,
+      "hold_seconds": 0.8666666666666667,
+      "native_playback_speed": 1,
+      "reason": "Sun and factory are already established. The only remaining small movement is camera/ambient motion; its0.867sretention is expressly accepted by ROOT and does not truncate a didactic construction."
+    },
+    {
+      "id": "unit_area",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "intro_v9.py",
+      "source_start": 5.0,
+      "source_end_exclusive": 10.7,
+      "last_included_source_frame_time": 10.666666666666666,
+      "latest_required_construction_completed_at": 5.8,
+      "hold_frames": 259,
+      "hold_seconds": 8.633333333333333,
+      "native_playback_speed": 1,
+      "reason": "One-square-metre cotas are complete. Endpoint10.7precedes camera flyout and keeps the area HUD visible, rather than holding mid-flyout after its label hides10.9."
+    },
+    {
+      "id": "horizontal_projection",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "intro_v9.py:56-78",
+      "source_start": 18.0,
+      "source_end_exclusive": 24.9,
+      "last_included_source_frame_time": 24.866666666666664,
+      "latest_required_construction_completed_at": 18.0,
+      "hold_frames": 38,
+      "hold_seconds": 1.2666666666666666,
+      "native_playback_speed": 1,
+      "reason": "Zenith vertical/arc and projection are constructed. Geometry hides24.95; source end24.9means last frame24.866667retains geometry, verified against actual24.966667which already shows day/night camera. All projection action retained; no next-scene first-frame hold."
+    },
+    {
+      "id": "energy_planning_bridge",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "director_intro_v6.py",
+      "source_start": 47.0,
+      "source_end_exclusive": 52.0,
+      "last_included_source_frame_time": 51.96666666666667,
+      "latest_required_construction_completed_at": 49.0,
+      "hold_frames": 174,
+      "hold_seconds": 5.8,
+      "native_playback_speed": 1,
+      "reason": "PV/grid/battery/clock connectors and object appearances finish before49.0. At51.966667only settled application view and ambient loops remain."
+    },
+    {
+      "id": "lstm_native",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "models_explainer_v7.py",
+      "source_start": 56.0,
+      "source_end_exclusive": 71.0,
+      "last_included_source_frame_time": 70.96666666666667,
+      "latest_required_construction_completed_at": 69.8,
+      "hold_frames": 15,
+      "hold_seconds": 0.5,
+      "native_playback_speed": 1,
+      "reason": "All ordered input packets, gate/memory demonstration and direct forecast are complete before69.8. End70.966667is a finished-state read, not an interrupted gate/packet."
+    },
+    {
+      "id": "transformer_native",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "models_explainer_v7.py:233-250",
+      "source_start": 71.0,
+      "source_end_exclusive": 87.0,
+      "last_included_source_frame_time": 86.96666666666667,
+      "latest_required_construction_completed_at": 85.12,
+      "hold_frames": 90,
+      "hold_seconds": 3.0,
+      "native_playback_speed": 1,
+      "reason": "All weighted contributions finish82.35and direct forecast85.12. End86.966667retains finished context."
+    },
+    {
+      "id": "informer_encoder_reduction",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "models_explainer_v7.py:309-315",
+      "source_start": 95.0,
+      "source_end_exclusive": 98.6,
+      "last_included_source_frame_time": 98.56666666666666,
+      "latest_required_construction_completed_at": 97.61,
+      "hold_frames": 66,
+      "hold_seconds": 2.2,
+      "native_playback_speed": 1,
+      "reason": "Reduction/convolution packets complete97.61. Source end98.6last frame98.566667precedes encoder lift98.65. The next shot98.6–103plays the entire98.65–99.15lift and all cross updates through101.95at1x."
+    },
+    {
+      "id": "same_input_three_models",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "models_explainer_v7.py:381",
+      "source_start": 103.0,
+      "source_end_exclusive": 112.0,
+      "last_included_source_frame_time": 111.96666666666667,
+      "latest_required_construction_completed_at": 108.0,
+      "hold_frames": 39,
+      "hold_seconds": 1.3,
+      "native_playback_speed": 1,
+      "reason": "Synchronized packets finish106.65, forecasts107.8and arrays108.0. End111.966667is the complete comparison."
+    },
+    {
+      "id": "americas_counts",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "geography_data_v9.py:352-367",
+      "source_start": 112.0,
+      "source_end_exclusive": 115.23333333333333,
+      "last_included_source_frame_time": 115.2,
+      "latest_required_construction_completed_at": 113.8,
+      "hold_frames": 206,
+      "hold_seconds": 6.866666666666666,
+      "native_playback_speed": 1,
+      "reason": "Coastline and all ten factory symbols complete by113.8. Country counts remain visible until115.35; endpoint115.233333last frame115.2stays inside that state."
+    },
+    {
+      "id": "curve_to_histogram_bin",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "geography_data_v9.py:398-423",
+      "source_start": 142.8,
+      "source_end_exclusive": 150.0,
+      "last_included_source_frame_time": 149.96666666666667,
+      "latest_required_construction_completed_at": 145.7,
+      "hold_frames": 111,
+      "hold_seconds": 3.7,
+      "native_playback_speed": 1,
+      "reason": "Full selected-reading migration143–145.7is retained. Three example labels already appear144.5. Endpoint149.966667holds the completed400–450bucket under narration."
+    },
+    {
+      "id": "quantization_introduction",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "quantization_v9.py",
+      "source_start": 290.0,
+      "source_end_exclusive": 298.0,
+      "last_included_source_frame_time": 297.96666666666664,
+      "latest_required_construction_completed_at": 292.0,
+      "hold_frames": 72,
+      "hold_seconds": 2.4,
+      "native_playback_speed": 1,
+      "reason": "Selected437reading appears by292and one-time curve reveal by291. Endpoint297.966667is stable."
+    },
+    {
+      "id": "quantized_comparison",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "quantization_v9.py",
+      "source_start": 327.0,
+      "source_end_exclusive": 331.8,
+      "last_included_source_frame_time": 331.76666666666665,
+      "latest_required_construction_completed_at": 328.24,
+      "hold_frames": 27,
+      "hold_seconds": 0.9,
+      "native_playback_speed": 1,
+      "reason": "Last branch reveal328.24and reconstructed number328.2are complete before endpoint331.766667."
+    },
+    {
+      "id": "mae_600_650_50",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "metrics_v9.py:86",
+      "source_start": 363.0,
+      "source_end_exclusive": 369.0,
+      "last_included_source_frame_time": 368.96666666666664,
+      "latest_required_construction_completed_at": 365.5,
+      "hold_frames": 89,
+      "hold_seconds": 2.966666666666667,
+      "native_playback_speed": 1,
+      "reason": "Distance50formula appears364.5and positive-distance label365.5. Close-up camera stays unchanged363–371.4. Endpoint368.966667is fully drawn and retains50through speech."
+    },
+    {
+      "id": "mae_converges_zero",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "metrics_v9.py:118",
+      "source_start": 382.0,
+      "source_end_exclusive": 394.0,
+      "last_included_source_frame_time": 393.96666666666664,
+      "latest_required_construction_completed_at": 391.0,
+      "hold_frames": 37,
+      "hold_seconds": 1.2333333333333334,
+      "native_playback_speed": 1,
+      "reason": "Both native approaches384–387and388–391are complete. Exact zero391is visible for narration before endpoint393.966667."
+    },
+    {
+      "id": "cumulative_72_steps",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "metrics_v9.py",
+      "source_start": 408.3,
+      "source_end_exclusive": 418.3,
+      "last_included_source_frame_time": 418.26666666666665,
+      "latest_required_construction_completed_at": 416.0,
+      "hold_frames": 87,
+      "hold_seconds": 2.9,
+      "native_playback_speed": 1,
+      "reason": "Full scan408.7–415.9and cumulative72hour result416are retained. Endpoint418.266667is complete, including night contribution."
+    },
+    {
+      "id": "daily_small_difference",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "results_v8.py",
+      "source_start": 452.0,
+      "source_end_exclusive": 455.0,
+      "last_included_source_frame_time": 454.96666666666664,
+      "latest_required_construction_completed_at": 452.6,
+      "hold_frames": 33,
+      "hold_seconds": 1.1,
+      "native_playback_speed": 1,
+      "reason": "Daily bars settle445.8and difference bracket452.6. Endpoint454.966667holds the complete bracket and values."
+    },
+    {
+      "id": "compare_within_task",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "results_v8.py",
+      "source_start": 420.0,
+      "source_end_exclusive": 425.5,
+      "last_included_source_frame_time": 425.46666666666664,
+      "latest_required_construction_completed_at": 421.79,
+      "hold_frames": 18,
+      "hold_seconds": 0.6,
+      "native_playback_speed": 1,
+      "reason": "Last model box growth finishes421.79and labels420.7. Endpoint425.466667is a complete overview."
+    },
+    {
+      "id": "daily_horizon_leaders",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "results_v8.py",
+      "source_start": 500.0,
+      "source_end_exclusive": 506.4,
+      "last_included_source_frame_time": 506.3666666666666,
+      "latest_required_construction_completed_at": 502.5,
+      "hold_frames": 45,
+      "hold_seconds": 1.5,
+      "native_playback_speed": 1,
+      "reason": "Last horizon box502.2and connecting line502.5are complete before endpoint506.366667."
+    },
+    {
+      "id": "monthly_locality_leaders",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "results_v8.py",
+      "source_start": 493.0,
+      "source_end_exclusive": 500.0,
+      "last_included_source_frame_time": 499.96666666666664,
+      "latest_required_construction_completed_at": 497.0,
+      "hold_frames": 102,
+      "hold_seconds": 3.4,
+      "native_playback_speed": 1,
+      "reason": "Two discrete stable monthly color-map states begin494and497; all factory geometry already exists. Full second state retained through499.966667and hold."
+    },
+    {
+      "id": "quantization_outcomes",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "interpretation_v8.py:79-83; V9retime",
+      "source_start": 508.0,
+      "source_end_exclusive": 514.0,
+      "last_included_source_frame_time": 513.9666666666667,
+      "latest_required_construction_completed_at": 510.4,
+      "hold_frames": 234,
+      "hold_seconds": 7.8,
+      "native_playback_speed": 1,
+      "reason": "Retimed category roots settle510.345and counts appear510.4. Endpoint513.966667contains all5/4/3counts; no category travel is interrupted."
+    },
+    {
+      "id": "six_month_exploratory",
+      "status": "pass_for_material_didactic_actions",
+      "source_code_evidence": "interpretation_v8.py:148-149; V9retime",
+      "source_start": 536.0,
+      "source_end_exclusive": 541.8,
+      "last_included_source_frame_time": 541.7666666666667,
+      "latest_required_construction_completed_at": 541.7142857142857,
+      "hold_frames": 17,
+      "hold_seconds": 0.5666666666666667,
+      "native_playback_speed": 1,
+      "reason": "Retimed shared-target overlay fully grows by541.714286. Last included frame541.766667is later than completion. All origin rows finish earlier; endpoint does not freeze their growth."
+    }
+  ],
+  "next_step": "Renderer final cached pass; ROOT sequential actual-export QA and independent sample comparison."
+}

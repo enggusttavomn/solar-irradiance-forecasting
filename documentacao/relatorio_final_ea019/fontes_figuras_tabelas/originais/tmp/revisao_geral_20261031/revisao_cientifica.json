@@ -1,0 +1,177 @@
+{
+  "scope": "Revisão científica e de consistência das Seções 3, 4 e 5, conclusão e configurações; sem alteração de resultados ou novos experimentos.",
+  "source": "documentacao/relatorio_final_ea019/Relatorio_Final_GHI_Transformer_Informer_LSTM_TCC_Corrigido.docx",
+  "replacements": [
+    {
+      "id": 194,
+      "priority": "alta",
+      "text": "O protocolo divide os dados em quatro etapas cronológicas. O ajuste inicial treina a rede; a validação escolhe o número de épocas e a condição de entrada; o novo ajuste anterior ao teste (refit) reinicia o treinamento com o histórico inicial e a validação; e o teste mede o desempenho das escolhas já fixadas. A Tabela 3 apresenta as datas dos três regimes avaliados: atual, histórico longo e histórico curto pareado.",
+      "reason": "Explica o que foi feito antes de listar datas e resolve a dúvida do usuário sobre a função de cada partição. Compatível com experimento_quantizacao_concorrentes.py."
+    },
+    {
+      "id": 220,
+      "priority": "alta",
+      "text": "A Tabela 3 delimita os períodos disponíveis em cada etapa; as janelas válidas dependem também do contexto C e do horizonte H. No regime atual, por exemplo, os dados de 2019 fornecem contexto para as primeiras janelas diárias e mensais com alvos em 2020. Durante o teste, observações já disponíveis podem entrar no contexto de uma previsão posterior, enquanto pesos, escalas e condição de entrada permanecem fixos.",
+      "reason": "Remove referência à Figura 4 se excluída e distingue histórico bruto dos alvos efetivamente usados. Mantém a regra de avaliação deslizante sem refit no teste."
+    },
+    {
+      "id": 221,
+      "priority": "media",
+      "text": "Para comparar a duração do histórico, os regimes longo e curto pareado usam as mesmas datas e os mesmos alvos de validação e teste. A diferença está no início do histórico disponível para ajuste. O regime atual testa 2024, outro período; confrontar diretamente seus erros com os históricos misturaria a duração do treinamento com a mudança do período avaliado.",
+      "reason": "Torna o raciocínio da comparação pareada explícito e evita uma inferência causal indevida."
+    },
+    {
+      "id": 227,
+      "priority": "media",
+      "text": "A normalização é ajustada separadamente para cada localidade e etapa, usando somente dados anteriores ao respectivo corte. No regime atual, a seleção utiliza dados anteriores a 2023; o refit recalcula a transformação com os dados anteriores a 2024. Nos regimes históricos aplica-se a mesma regra. A Equação 1 transforma x em u, sendo a e b o mínimo e o máximo estimados nesse histórico admissível.",
+      "reason": "Esclarece que a transformação é recalculada no refit; não é a escala da seleção aplicada sem alteração até o teste."
+    },
+    {
+      "id": 253,
+      "priority": "alta",
+      "text": "O alvo y também é normalizado, mas não é quantizado. Pesos e saídas permanecem contínuos, e o identificador de localidade não passa pelo quantizador de GHI. Os valores projetados nos níveis são reconstruídos em float32. Embora 64, 128 e 256 símbolos admitam codificações nominais de 6, 7 e 8 bits, o experimento não implementa nem mede essa redução de armazenamento [6,7].",
+      "reason": "Corrige uma ambiguidade: alvo contínuo não significa alvo mantido em W/m² durante treinamento. O código treino.normalizar(escalas) transforma X e y."
+    },
+    {
+      "id": 260,
+      "priority": "alta",
+      "text": "Para cada tarefa, condição de entrada e semente, treina-se uma rede global com as dez localidades. Os três modelos minimizam MSE na escala normalizada, e cada execução seleciona seu número de épocas pela perda de validação. Depois, escolhe-se a condição de entrada pelo menor macro-MAE em W/m² da previsão combinada na validação, no horizonte completo. Em empate, a prioridade é controle, 64, 128 e 256 níveis. Essa escolha permanece fixa nos horizontes menores e no teste. O fluxo está na Figura 5, as arquiteturas nas Seções 4.2 a 4.4 e suas configurações no Apêndice C.",
+      "reason": "A metodologia precisava declarar diretamente que todos os modelos são globais, e não uma rede independente por localidade. Preserva os dois critérios distintos: MSE para épocas e macro-MAE para condição."
+    },
+    {
+      "id": 261,
+      "priority": "alta",
+      "text": "No refit, a rede é reinicializada com a mesma semente e treinada com todo o período anterior ao teste, incluindo a validação, durante o número de épocas já escolhido. Não há nova escolha da duração pelo teste. Épocas e condição de entrada utilizam a mesma janela de validação; portanto, o protocolo não é uma validação aninhada.",
+      "reason": "Distingue claramente reinício de continuação do treinamento e explicita a incorporação da validação."
+    },
+    {
+      "id": 294,
+      "priority": "media",
+      "text": "Nas tarefas diária e mensais, as previsões das sementes 11, 23, 42, 67 e 89 são convertidas para W/m² e combinadas por média aritmética, antes do pós-processamento. Na tarefa horária há somente a semente 42. As tabelas apresentam, assim, o erro da previsão combinada; esse valor difere da média dos erros individuais.",
+      "reason": "Enxuga a descrição sem perder a ordem das operações, que é cientificamente relevante."
+    },
+    {
+      "id": 544,
+      "priority": "media",
+      "text": "A Figura 10 apresenta a variação de MAE dos três níveis em relação ao controle do mesmo modelo e tarefa. Cada variante tem seu próprio ajuste e número de épocas escolhido na validação; as quantizadas também aplicam clipping. A Tabela 7 destaca a condição selecionada antes do teste, inclusive quando é o controle.",
+      "reason": "Os contrastes de teste refletem todo o procedimento de ajuste da variante. Evita sugerir uma comparação da rede com pesos fixos alterando só a entrada na inferência."
+    },
+    {
+      "id": 554,
+      "priority": "media",
+      "text": "Na tarefa mensal de seis passos, o Informer com 128 níveis apresentou MAEs cumulativos de 14,02, 12,99 e 13,67 W/m² em um, três e seis meses. O primeiro valor corresponde ao passo inicial da rede treinada para seis saídas e não ao resultado da rede mensal de um passo. O teste de 2024 tem sete origens por localidade, totalizando 420 pares de origem e passo nas dez localidades. Como as janelas compartilham alvos, esses pares não são observações independentes. A avaliação permanece exploratória.",
+      "reason": "Explica o total 420 e a diferença entre os dois experimentos mensais de modo mais concreto."
+    },
+    {
+      "id": 559,
+      "priority": "media",
+      "text": "Os históricos longo e curto pareado compartilham a validação de abril de 2018 a março de 2019 e o teste de abril de 2019 a dezembro de 2022. A auditoria confirmou os mesmos alvos e datas, com 1.368 origens horárias por localidade nos dois regimes. A comparação mantém, portanto, o período avaliado e amplia somente o histórico disponível para ajuste, ao contrário de uma comparação com o teste de 2024.",
+      "reason": "Reduz repetição da metodologia e liga diretamente o pareamento à interpretação dos resultados. Ler 'somente o histórico disponível' junto da limitação id642, que preserva os efeitos de normalização/composição."
+    },
+    {
+      "id": 560,
+      "priority": "media",
+      "text": "Nos controles contínuos, o histórico longo apresentou menor MAE em 11 das 12 combinações de modelo e tarefa. No Informer horário, o erro passou de 136,21 para 60,90 W/m², redução de 55,29%. A exceção foi a LSTM horária, cujo MAE aumentou de 53,72 para 61,61 W/m², ou 14,68%. Incorporar anos anteriores esteve, assim, associado à melhora na maioria das configurações, sem garanti-la.",
+      "reason": "Preserva todos os números centrais. Remove a digressão sobre condições selecionadas separadamente, pois a Tabela 8/Figura 12 tratam apenas dos controles."
+    },
+    {
+      "id": 641,
+      "priority": "media",
+      "text": "A quantização não apresentou benefício uniforme, e a condição escolhida na validação nem sempre preservou a vantagem sobre o controle no teste. A análise dos demais níveis caracteriza essa sensibilidade sem refazer a seleção. Uma possível regularização por redução de precisão permanece como hipótese: o desenho combina arredondamento com clipping e não identifica um mecanismo isolado. Um controle com apenas clipping permitiria separar melhor esses efeitos.",
+      "reason": "Enxuga ressalvas repetidas e evita tratar uma extensão futura como obrigação absoluta."
+    },
+    {
+      "id": 646,
+      "priority": "media",
+      "optional": true,
+      "text": "A comparação se restringe às três implementações avaliadas e não estabelece uma classificação geral dos métodos de previsão solar [9]. Como esta análise não inclui persistência ou climatologia, ela também não quantifica o ganho em relação a essas referências simples. Não se avalia eficiência computacional: os valores discretizados permanecem em float32 e os pesos não são quantizados. Conclusões sobre memória ou velocidade exigiriam implementação e medições específicas.",
+      "reason": "Explicita uma limitação relevante do recorte sem exigir novos experimentos nem alterar os resultados. Opcional por acrescentar um ponto que já está implicitamente delimitado."
+    }
+  ],
+  "recommended_deletions": [
+    {
+      "ids": [
+        195,
+        196,
+        197
+      ],
+      "reason": "Figura 4 e legenda repetem três colunas da Tabela 3, que ainda contém a coluna de refit. A explicação dos id194/220/221 preserva o pareamento. Atualizar numeração e referências se excluída."
+    },
+    {
+      "ids": [
+        653
+      ],
+      "reason": "Parágrafo genérico de contribuição repete o primeiro parágrafo da conclusão e as respostas às três questões. A exclusão não remove número, achado ou limitação."
+    }
+  ],
+  "figure_table_redundancies": [
+    {
+      "objects": "Figura 4 / Tabela 3",
+      "grade": "alta",
+      "recommendation": "Excluir Figura 4 e manter a Tabela 3 com as quatro etapas.",
+      "evidence": "A figura repete treino inicial, validação e teste por regime; a tabela acrescenta datas do refit."
+    },
+    {
+      "objects": "Figura 12 / Tabela 8",
+      "grade": "alta",
+      "recommendation": "Escolher uma representação principal. Para manter a tabela compacta com valores exatos, excluir Figura 12; se preferir o gráfico, mover a Tabela 8 para o apêndice e manter o texto interpretativo.",
+      "evidence": "Ambas representam os mesmos 12 pares de macro-MAEs dos controles curto/longo e a mesma variação percentual. O Apêndice B já guarda todos os controles e variantes com maior precisão.",
+      "affected_ids": [
+        560,
+        562,
+        628,
+        629,
+        630,
+        631,
+        633,
+        636
+      ]
+    },
+    {
+      "objects": "Figura 8 / Tabela 6",
+      "grade": "parcial",
+      "recommendation": "Podem permanecer se o objetivo é combinar leitura visual da classificação com consulta das métricas complementares. Enxugar a prosa que apenas anuncia ambos.",
+      "evidence": "O gráfico mostra apenas MAE; a tabela acrescenta condição de entrada, RMSE, nRMSE e R²."
+    },
+    {
+      "objects": "Figura 3 / Tabela 2",
+      "grade": "parcial",
+      "recommendation": "Manter: a figura explica contexto/saída; a tabela acrescenta contagens efetivas de origens.",
+      "evidence": "Apesar de repetir C e H, a tabela tem informação metodológica adicional necessária."
+    },
+    {
+      "objects": "Figura 10 / Tabela 7",
+      "grade": "baixa",
+      "recommendation": "Manter se legível: não são equivalentes.",
+      "evidence": "A figura mostra as três condições quantizadas em relação ao controle; a tabela mostra a condição escolhida na validação e seu erro absoluto de teste."
+    },
+    {
+      "objects": "Figura 11 / Apêndice A",
+      "grade": "intencional",
+      "recommendation": "Manter figura no corpo e detalhamento no apêndice.",
+      "evidence": "Figura facilita padrões por horizonte; tabelas fornecem métricas complementares e consulta numérica sem interromper o argumento."
+    }
+  ],
+  "verified_findings": [
+    "Conferidas escolhas das 12 combinações atuais por mínimo de MAE de validação no horizonte completo, diretamente no CSV auditado; todas correspondem à Tabela 6/7.",
+    "Confirmadas 5 reduções de MAE de teste, 4 aumentos e 3 escolhas do controle; deltas percentuais concordam com os arquivos em precisão integral.",
+    "Confirmados todos os 12 pares dos controles históricos da Tabela 8: 11 reduções e a exceção LSTM horária de +14,6822813%.",
+    "Confirmadas contagens de origens atuais: 363, 337, 12 e 7 por localidade; totais de pares de origem e passo mensal H6 são 7*6*10=420.",
+    "As diferenças de 0,32 W/m² no horário e 0,30 W/m² no diário no id441 estão corretas a partir da precisão integral; não substituir pela diferença dos valores já arredondados.",
+    "O código distingue seleção de épocas por MSE normalizado de escolha da condição por macro-MAE físico, e refit exige número fixo de épocas.",
+    "Arquitetura descrita corresponde ao código: LSTM encoder com cabeça direta, Transformer encoder-decoder sem alvos futuros no decoder e Informer com ProbSparse nas autoatenções, atenção cruzada completa e uma destilação.",
+    "As contagens de parâmetros da LSTM são coerentes com 4.560+41H: 7.512, 5.790, 4.601, 4.806.",
+    "A auditoria anterior de 28/10 registra conferência numérica das Tabelas 6 a 15, mas este parecer também recalculou seleções/deltas centrais diretamente nas fontes atuais."
+  ],
+  "checked_sources": [
+    "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_final_atual/metricas_auditadas.csv",
+    "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_1998_2022/metricas_auditadas.csv",
+    "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_curto_pareado/metricas_auditadas.csv",
+    "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_pareamento_historico/pareamento.json",
+    "resultados/relatorios/revisao_final_20261028/auditoria_relatorio.json",
+    "codigo_fonte/experimentos/experimento_multirresolucao.py",
+    "codigo_fonte/experimentos/experimento_quantizacao_concorrentes.py",
+    "codigo_fonte/modelos/modelos_baselines_adicionais.py"
+  ],
+  "limits": "Não houve novo treinamento ou replay completo de previsões; referências bibliográficas externas e layout não fazem parte desta subtarefa."
+}

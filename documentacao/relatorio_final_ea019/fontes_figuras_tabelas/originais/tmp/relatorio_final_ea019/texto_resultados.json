@@ -1,0 +1,35 @@
+[
+  {
+    "heading": "Desempenho dos três modelos no teste de 2024",
+    "paragraphs": [
+      "A avaliação da base atual utilizou dados de 2019 a 2024, com validação em 2023 e teste em 2024, nas mesmas dez localidades. Foram consideradas quatro tarefas: previsão horária até 72 horas, diária até 30 dias, mensal de um mês e mensal até seis meses. As condições apresentadas a seguir foram escolhidas na validação e mantidas no teste. Na tarefa horária utilizou-se a semente 42; nas tarefas diárias e mensais, as previsões resultam do ensemble das sementes 11, 23, 42, 67 e 89.",
+      "No horizonte completo de 72 horas, o Transformer sem quantização apresentou o menor MAE entre os três modelos, 53,2061 W/m², seguido pela LSTM com 64 níveis, 53,5241 W/m². O Informer sem quantização obteve 137,6798 W/m², evidenciando uma dificuldade específica dessa configuração horária. No diário de 30 dias, o Transformer com 256 níveis também liderou, com MAE de 43,8869 W/m², próximo da LSTM sem quantização, 44,1842 W/m², e abaixo do Informer com 64 níveis, 45,4603 W/m².",
+      "Nas tarefas mensais, a classificação mudou. Para um mês, o Informer com 128 níveis alcançou MAE de 12,7266 W/m², seguido pelo Transformer, 13,1467 W/m², e pela LSTM, 14,2883 W/m², ambos também com 128 níveis. Para seis meses, o Informer com 128 níveis manteve o menor MAE, 13,6679 W/m², diante de 14,3965 W/m² do Transformer com 64 níveis e 14,7623 W/m² da LSTM com 128 níveis. Portanto, a arquitetura preferível depende da resolução e da tarefa.",
+      "Esses rankings usam MAE e se restringem aos três modelos da disciplina. As métricas são calculadas por localidade e depois promediadas com pesos iguais. Assim, o RMSE publicado é a média dos RMSE locais, não a raiz do MSE médio. O nRMSE armazenado como razão deve ser multiplicado por 100 para apresentação percentual."
+    ]
+  },
+  {
+    "heading": "Efeito da quantização e papel da seleção na validação",
+    "paragraphs": [
+      "A quantização foi aplicada somente às entradas de GHI normalizadas por min-max. As variantes com 64, 128 e 256 níveis incluem clipping em [0,1] e arredondamento uniforme; o controle sem quantização não aplica essas duas operações. Alvos, pesos das redes e saídas permanecem contínuos. Como não existe um controle separado apenas com clipping, os resultados não isolam seu efeito do efeito do arredondamento, nem demonstram compressão de pesos ou redução de consumo computacional.",
+      "Mantendo a escolha da validação, a quantização reduziu o MAE de teste em cinco das 12 combinações atuais de modelo e tarefa, elevou-o em quatro e conservou o próprio controle em três. Por exemplo, a LSTM horária com 64 níveis reduziu o MAE em 1,0548% diante de seu controle. O Informer com 128 níveis reduziu-o em 0,9461% na tarefa mensal de um mês e em 1,5305% na de seis meses. Já o Transformer diário selecionado com 256 níveis apresentou aumento de 0,0141%, mostrando que a escolha da validação não garante melhora no teste.",
+      "Também não se deve substituir a condição congelada pela melhor condição observada depois no teste. A LSTM horária escolheu 64 níveis, embora 256 níveis tenham produzido MAE de teste menor. No Informer mensal de um mês, a escolha foi 128 níveis, com MAE de 12,7266 W/m², enquanto 256 níveis alcançaram 12,3181 W/m² no teste. Esses mínimos posteriores são apenas descritivos. A escolha de épocas e níveis compartilha a mesma validação; sem intervalos de confiança ou testes pareados específicos, pequenas diferenças não devem ser chamadas de estatisticamente significativas."
+    ]
+  },
+  {
+    "heading": "Comportamento nos horizontes cumulativos",
+    "paragraphs": [
+      "Os indicadores por horizonte são cumulativos: a avaliação até 24 horas inclui todos os passos de 1 a 24, e não apenas o último passo. O nível selecionado no horizonte completo permanece fixo nos subhorizontes. No Transformer horário, o MAE aumentou de 51,2911 para 52,8295 e 53,2061 W/m² nos recortes de 24, 48 e 72 horas. Na LSTM com 64 níveis, os valores correspondentes foram 51,8429, 52,8804 e 53,5241 W/m².",
+      "No diário, a classificação depende do horizonte avaliado. A LSTM apresentou menor MAE nos recortes de 1, 3, 7 e 14 dias, enquanto o Transformer liderou no horizonte completo de 30 dias. O MAE cumulativo da LSTM passou de 42,1081 W/m² em um dia para 44,1842 W/m² em 30 dias. No Transformer, passou de 44,7463 para 43,8869 W/m². A redução de uma média cumulativa não significa que prever individualmente o trigésimo dia seja mais fácil, pois os recortes combinam passos distintos.",
+      "Na tarefa mensal de seis meses, o Informer com 128 níveis apresentou MAEs cumulativos de 14,0196, 12,9850 e 13,6679 W/m² em um, três e seis meses. O primeiro desses recortes não equivale à tarefa mensal de um mês, pois corresponde a outro problema de previsão direta. Além disso, o teste de 2024 contém somente sete origens por localidade nessa tarefa. Janelas sobrepostas repetem alvos; logo, os 420 pontos totais não representam 420 observações independentes. Essa avaliação permanece exploratória."
+    ]
+  },
+  {
+    "heading": "Comparação pareada dos históricos e limites de interpretação",
+    "paragraphs": [
+      "O histórico longo, iniciado em janeiro de 1998, e o curto pareado, iniciado em abril de 2014, compartilham validação de abril de 2018 a março de 2019 e teste de abril de 2019 a dezembro de 2022. A auditoria confirmou as mesmas observações e datas para ambos. Essa comparação deve permanecer separada da base atual, cujo teste é 2024. No horário histórico, a disponibilidade efetiva permite 1.368 origens por localidade: a origem de 29/12/2022 foi excluída dos dois históricos por não conter todo o horizonte local na cobertura UTC.",
+      "Nos controles sem quantização, o histórico longo apresentou menor MAE em 11 das 12 combinações dos três modelos com quatro tarefas. O Informer horário passou de 136,2112 para 60,8980 W/m², redução descritiva de 55,2915%. A exceção foi a LSTM horária, cujo MAE aumentou de 53,7187 para 61,6058 W/m², ou 14,6823%. Comparações que usam níveis selecionados separadamente em cada histórico devem ser identificadas como comparações de configurações, porque, quando esses níveis diferem, não isolam apenas a extensão do histórico.",
+      "No histórico longo diário, a LSTM selecionada apresentou MAE de 43,1961 W/m², muito próximo dos 43,2117 W/m² do Informer. Entretanto, o RMSE favoreceu o Informer: 54,8033 contra 55,2189 W/m². Isso reforça que a conclusão depende da função de erro. Os dados NSRDB são modelados, não medições nas fábricas, e os experimentos são retrospectivos, inclusive com consulta anterior ao teste de 2024. Portanto, os resultados não comprovam causalidade climática, superioridade universal de uma arquitetura ou desempenho operacional prospectivo."
+    ]
+  }
+]

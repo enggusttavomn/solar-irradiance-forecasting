@@ -1,0 +1,101 @@
+Tabela 17 — Quantidade de parâmetros treináveis por tarefa
+Página(s) do PDF: 36
+
+TRECHOS PARA CONSULTA. Use os arquivos completos em originais/ para edição.
+Os números à esquerda são as linhas originais; este TXT não é executável.
+
+add_table
+Arquivo original: tmp/revisao_relatorio/rodada2/editar_tcc.py
+Linhas: 248–252
+
+ 248 | fmt = lambda n: f'{n:,}'.replace(',', '.')
+ 249 | add_table('Tabela 17 — Quantidade de parâmetros treináveis por tarefa',
+ 250 |           ['Tarefa', 'LSTM', 'Transformer', 'Informer'],
+ 251 |           [[r['tarefa'], fmt(r['LSTM']), fmt(r['Transformer']), fmt(r['Informer'])] for r in repro['tabela_parametros']],
+ 252 |           [6.4, 3.4, 3.6, 3.6])
+
+Função auxiliar que formata e insere a tabela
+Arquivo original: tmp/revisao_relatorio/rodada2/editar_tcc.py
+Linhas: 73–121
+
+  73 | def add_table(title, headers, rows, widths):
+  74 |     caption = paragraph(title, 'Caption', keep=True)
+  75 |     t = doc.add_table(rows=1, cols=len(headers))
+  76 |     t.alignment = WD_TABLE_ALIGNMENT.CENTER
+  77 |     t.autofit = False
+  78 |     for col, width in zip(t.columns, widths):
+  79 |         col.width = Cm(width)
+  80 |     for cell, text in zip(t.rows[0].cells, headers):
+  81 |         cell.text = text
+  82 |     for values in rows:
+  83 |         for cell, value in zip(t.add_row().cells, values):
+  84 |             cell.text = str(value)
+  85 |     borders = OxmlElement('w:tblBorders')
+  86 |     for side in ('top', 'left', 'bottom', 'right', 'insideH', 'insideV'):
+  87 |         e = OxmlElement('w:' + side)
+  88 |         for k, v in [('val', 'single'), ('sz', '4'), ('color', 'D9D9D9')]:
+  89 |             e.set(qn('w:' + k), v)
+  90 |         borders.append(e)
+  91 |     t._tbl.tblPr.append(borders)
+  92 |     padding = OxmlElement('w:tblCellMar')
+  93 |     for side in ('top', 'bottom', 'left', 'right'):
+  94 |         e = OxmlElement('w:' + side)
+  95 |         e.set(qn('w:w'), '90')
+  96 |         e.set(qn('w:type'), 'dxa')
+  97 |         padding.append(e)
+  98 |     t._tbl.tblPr.append(padding)
+  99 |     repeat = OxmlElement('w:tblHeader')
+ 100 |     repeat.set(qn('w:val'), 'true')
+ 101 |     t.rows[0]._tr.get_or_add_trPr().append(repeat)
+ 102 |     for i, row in enumerate(t.rows):
+ 103 |         row._tr.get_or_add_trPr().append(OxmlElement('w:cantSplit'))
+ 104 |         for j, cell in enumerate(row.cells):
+ 105 |             cell.width = Cm(widths[j])
+ 106 |             cell.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.CENTER
+ 107 |             if i == 0:
+ 108 |                 fill = OxmlElement('w:shd')
+ 109 |                 fill.set(qn('w:fill'), 'E8ECEF')
+ 110 |                 cell._tc.get_or_add_tcPr().append(fill)
+ 111 |             for p in cell.paragraphs:
+ 112 |                 p.style = doc.styles['TabelaCorpo']
+ 113 |                 p.alignment = WD_ALIGN_PARAGRAPH.LEFT if j == 0 else WD_ALIGN_PARAGRAPH.CENTER
+ 114 |                 p.paragraph_format.keep_with_next = i == 0
+ 115 |                 p.paragraph_format.space_after = Pt(2)
+ 116 |                 p.paragraph_format.space_before = Pt(2)
+ 117 |                 for run in p.runs:
+ 118 |                     run.font.name = 'Times New Roman'
+ 119 |                     run.font.size = Pt(10.5)
+ 120 |                     run.bold = i == 0
+ 121 |     return t
+
+Contagem algébrica dos parâmetros treináveis e montagem de parameter_table
+Arquivo original: tmp/revisao_relatorio/rodada2/preparar_reprodutibilidade.py
+Linhas: 98–124
+
+  98 | # Contagem de parâmetros treináveis por construção das camadas, incluindo biases.
+  99 | linear=lambda n_in,n_out:n_in*n_out+n_out
+ 100 | norm=lambda width:2*width
+ 101 | attention=4*linear(16,16)
+ 102 | ff=linear(16,32)+linear(32,16)
+ 103 | encoder=attention+ff+2*norm(16)
+ 104 | decoder=2*attention+ff+3*norm(16)
+ 105 | base_components={
+ 106 |     'projecoes_entrada_encoder_decoder':2*linear(1,16),
+ 107 |     'embedding_dez_localidades':10*8,
+ 108 |     'projecao_embedding':linear(8,16),
+ 109 |     'dois_blocos_encoder':2*encoder,
+ 110 |     'normalizacoes_finais_encoder_decoder':2*norm(16),
+ 111 |     'bloco_decoder':decoder,
+ 112 |     'projecao_saida_por_passo':linear(16,1)
+ 113 | }
+ 114 | transformer=sum(base_components.values())
+ 115 | distil_components={'Conv1d_pesos':16*16*3,'Conv1d_bias':16,'BatchNorm1d_peso_e_bias':2*16}
+ 116 | informer=transformer+sum(distil_components.values())
+ 117 | assert transformer==8161 and informer==8977
+ 118 | lstm_core=4*32*1+4*32*32+8*32
+ 119 | assert lstm_core==4480
+ 120 | parameter_table=[]
+ 121 | for task,label,c,h in TASKS:
+ 122 |     parameter_table.append({'tarefa':label,'slug':task,'C':c,'H':h,'LSTM':lstm_core+10*8+linear(40,h),
+ 123 |                             'Transformer':transformer,'Informer':informer,'label_len_transformer_informer':max(1,c//2)})
+ 124 | 

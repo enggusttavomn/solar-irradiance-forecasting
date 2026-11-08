@@ -1,0 +1,35 @@
+﻿[Script Info]
+Title: EA019 scientific animation - deterministic text overlay
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI,44,&H00FBF6F3,&H00FFFFFF,&H80000000,&H80000000,0,0,0,0,100,100,0,0,3,12,0,2,110,110,80,1
+Style: Header,Segoe UI,58,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,-1,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Eyebrow,Segoe UI,24,&H00EDDD67,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,1.4,0,1,0.5,0,7,0,0,0,1
+Style: Text,Segoe UI,40,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Small,Segoe UI,26,&H00C9B9AA,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.5,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 10,0:00:00.00,0:00:03.95,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A quantização não teve vantagem universal:
+Dialogue: 10,0:00:03.95,0:00:11.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}cinco combinações melhoraram, quatro\Npioraram e três mantiveram o controle.
+Dialogue: 10,0:00:11.00,0:00:15.33,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Em uma análise histórica separada, os dois
+Dialogue: 10,0:00:15.33,0:00:21.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}históricos usaram os mesmos alvos e datas\Nde avaliação.
+Dialogue: 10,0:00:21.00,0:00:25.10,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}O histórico longo teve menor erro em onze
+Dialogue: 10,0:00:25.10,0:00:31.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}dos doze controles contínuos. A exceção\Nfoi a LSTM horária.
+Dialogue: 10,0:00:31.00,0:00:37.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Essa associação não isola uma causa: os\Nanos e a normalização também mudaram.
+Dialogue: 10,0:00:37.00,0:00:39.62,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Os resultados são descritivos, sem
+Dialogue: 10,0:00:39.62,0:00:45.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}significância estatística demonstrada. O\Nhorário utilizou uma semente.
+Dialogue: 10,0:00:45.00,0:00:47.80,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A tarefa de seis meses tem apenas sete
+Dialogue: 10,0:00:47.80,0:00:52.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}origens de teste por localidade e\Npermanece exploratória.
+Dialogue: 10,0:00:52.00,0:00:54.89,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Há alvos compartilhados entre janelas. A
+Dialogue: 10,0:00:54.89,0:00:59.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}generalização para localidades inéditas\Nnão foi avaliada.
+Dialogue: 10,0:00:59.00,0:01:02.15,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}No conjunto avaliado, Transformer liderou
+Dialogue: 10,0:01:02.15,0:01:07.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}os horizontes completos horário e diário;\NInformer, os mensais.
+Dialogue: 10,0:01:07.00,0:01:14.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Portanto, a escolha depende da tarefa,\Ndentro dos limites deste estudo.

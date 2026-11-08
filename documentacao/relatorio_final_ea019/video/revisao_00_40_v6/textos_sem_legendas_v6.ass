@@ -1,0 +1,28 @@
+﻿[Script Info]
+Title: EA019 scientific animation - deterministic text overlay
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI,44,&H00FBF6F3,&H00FFFFFF,&H80000000,&H80000000,0,0,0,0,100,100,0,0,3,12,0,2,110,110,80,1
+Style: Header,Segoe UI,58,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,-1,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Eyebrow,Segoe UI,24,&H00EDDD67,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,1.4,0,1,0.5,0,7,0,0,0,1
+Style: Text,Segoe UI,40,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Small,Segoe UI,26,&H00C9B9AA,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.5,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 4,0:00:05.30,0:00:10.80,Text,,0,0,0,,{\an8\pos(960,140)\fs40\c&H00FBF6F3&\b0\fad(220,220)}Superfície horizontal
+Dialogue: 4,0:00:08.00,0:00:10.80,Text,,0,0,0,,{\an8\pos(1500,215)\fs48\c&H00FBF6F3&\b0\fad(220,220)}W/m²
+Dialogue: 4,0:00:11.10,0:00:16.00,Text,,0,0,0,,{\an8\pos(960,70)\fs59\c&H00FBF6F3&\b1\fad(220,220)}GHI = DNI · cos(θz) + DHI
+Dialogue: 4,0:00:12.90,0:00:16.00,Text,,0,0,0,,{\an8\pos(1320,170)\fs33\c&H00EEDFC6&\b0\fad(220,220)}DHI: difusa horizontal
+Dialogue: 4,0:00:11.10,0:00:16.00,Text,,0,0,0,,{\an8\pos(550,170)\fs33\c&H00D7E7EF&\b0\fad(220,220)}DNI: direta normal
+Dialogue: 4,0:00:12.00,0:00:16.00,Text,,0,0,0,,{\an8\pos(960,235)\fs32\c&H00DCD5CF&\b0\fad(220,220)}θz: ângulo com a vertical
+Dialogue: 4,0:00:11.20,0:00:16.00,Text,,0,0,0,,{\an8\pos(740,525)\fs38\c&H00D7E7EF&\b0\fad(220,220)}Direta
+Dialogue: 4,0:00:13.40,0:00:16.00,Text,,0,0,0,,{\an8\pos(1230,525)\fs38\c&H00EEDFC6&\b0\fad(220,220)}Difusa
+Dialogue: 4,0:00:35.10,0:00:40.00,Text,,0,0,0,,{\an8\pos(960,80)\fs46\c&H00FBF6F3&\b0\fad(220,220)}Planejamento fotovoltaico

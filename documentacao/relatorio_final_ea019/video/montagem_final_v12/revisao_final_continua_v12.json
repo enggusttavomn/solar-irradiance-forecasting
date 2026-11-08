@@ -1,0 +1,125 @@
+{
+  "version": 12,
+  "status": "complete",
+  "completed_utc": "2026-11-05T13:53:50.265580+00:00",
+  "duration_seconds": 490.6,
+  "fps": 30,
+  "frames": 14718,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "original_recording_seconds": 579.648,
+  "original_recording_preserved": true,
+  "new_continuous_voice_used": true,
+  "approved_personal_intro_preserved": true,
+  "voice_time_stretch_used": false,
+  "speech_synthesis_used": false,
+  "noise_reduction": "Conservative70Hz highpass and6dB FFT denoise;25ms filter latency compensated.",
+  "voice_normalization": "Whole narration at -16LUFS, not independent per-sentence gain.",
+  "visual_motion": "Selected animation actions play at native1x; redundant shots and settled tails are shortened. Key construction completeness and21 held endpoints were reviewed.",
+  "voice_and_captions_cross_visual_cuts": true,
+  "retakes_removed": 2,
+  "incorrect_numeric_clause_removed": "Spoken13.77 six-month reading only.",
+  "correct_six_month_value_on_chart": "13,67 W/m²",
+  "caption_policy": "Verified transcript/orthography; no synthetic replacement of the missing numerical reading.",
+  "full_decode_passed_both_exports": true,
+  "general_samples_reviewed": 102,
+  "temporal_samples_reviewed": 110,
+  "held_scene_endpoints_reviewed": 21,
+  "sampled_visual_and_temporal_review_passed": true,
+  "objective_audio_review_passed": true,
+  "encoder": "Intel Quick Sync h264_qsv",
+  "audio_listening_performed": false,
+  "full_realtime_playback_reviewed": false,
+  "review_scope": "Objective source/audio checks and static/sequential visual samples, not human listening or full realtime playback.",
+  "files": [
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v12\\Video_TCC_Final_Continuo_Somente_Voz_v12.mp4",
+      "bytes": 50792351,
+      "sha256": "ee512579def3cf3bf74c4ca354a62b28c03c048ad75e412d9a8ec98fd0ff2cb5",
+      "has_audio": true,
+      "ffmpeg_header": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\montagem_final_v12\\Video_TCC_Final_Continuo_Somente_Voz_v12.mp4':\n  Metadata:\n    major_brand     : isom\n    minor_version   : 512\n    compatible_brands: isomiso2avc1mp41\n    encoder         : Lavf61.7.100\n  Duration: 00:08:10.60, start: 0.000000, bitrate: 828 kb/s\n  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 630 kb/s, 30 fps, 30 tbr, 15360 tbn (default)\n      Metadata:\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 188 kb/s (default)\n      Metadata:\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\nAt least one output file must be specified\n",
+      "full_decode_errors": "",
+      "decoded_frames": 14718,
+      "mp4_header": {
+        "handler": "vide",
+        "media_timescale": 15360,
+        "duration_seconds": 490.6,
+        "width": 1920.0,
+        "height": 1080.0,
+        "frame_count": 14718,
+        "sample_table_seconds": 490.6,
+        "fps": 30.0,
+        "codec_tag": "avc1",
+        "avc_profile_idc": 100,
+        "avc_level_idc": 40,
+        "video_tracks": 1,
+        "audio_tracks": 1
+      }
+    },
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v12\\Video_TCC_Final_Continuo_Com_Trilha_v12.mp4",
+      "bytes": 50937392,
+      "sha256": "4f186150cec098b7c5a322222d15c5070870cae42871e983c7045ad5e39f277f",
+      "has_audio": true,
+      "ffmpeg_header": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\montagem_final_v12\\Video_TCC_Final_Continuo_Com_Trilha_v12.mp4':\n  Metadata:\n    major_brand     : isom\n    minor_version   : 512\n    compatible_brands: isomiso2avc1mp41\n    encoder         : Lavf61.7.100\n  Duration: 00:08:10.60, start: 0.000000, bitrate: 830 kb/s\n  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 630 kb/s, 30 fps, 30 tbr, 15360 tbn (default)\n      Metadata:\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 191 kb/s (default)\n      Metadata:\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\nAt least one output file must be specified\n",
+      "full_decode_errors": "",
+      "decoded_frames": 14718,
+      "mp4_header": {
+        "handler": "vide",
+        "media_timescale": 15360,
+        "duration_seconds": 490.6,
+        "width": 1920.0,
+        "height": 1080.0,
+        "frame_count": 14718,
+        "sample_table_seconds": 490.6,
+        "fps": 30.0,
+        "codec_tag": "avc1",
+        "avc_profile_idc": 100,
+        "avc_level_idc": 40,
+        "video_tracks": 1,
+        "audio_tracks": 1
+      }
+    }
+  ],
+  "reports": [
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v12\\revisao\\audit_edicao_continua_v12.json",
+      "sha256": "baea5704afdd8100f8e7d86a10ca61ce6dc00e6493e02e49eb514852d6a34ed5"
+    },
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v12\\revisao\\audit_audio_mix_v12.json",
+      "sha256": "bc221c80182232bc24390b4ae4d827052f605f53f77bc1bef680af9144c27209"
+    },
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v12\\revisao\\retakes_review_v12.json",
+      "sha256": "9900c8bfdfd8dbe99870dd2a6855af2465cac4988d238290a8f56d482f6bad7a"
+    },
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v12\\revisao\\observation_pause_boundaries_audit.json",
+      "sha256": "0683e3566cf3b32dd7b2b189e8306b13dec1443a87a3224dc915905f0eb00c70"
+    },
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v12\\revisao\\visual_schedule_v12.json",
+      "sha256": "c30e6104e48debcdf1d23f70a534e118b314164b0e0de8f4177a66654dd68f1f"
+    },
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v12\\revisao\\qa_geral_final_v12.json",
+      "sha256": "e60ef05fc85708d62aeed0c0d42ef478df8836dd0b62384349bee3f4c29b91e2"
+    },
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v12\\revisao\\qa_temporal_visual_v12.json",
+      "sha256": "628980c442f1180d312480ced51675714d95e21755942fa280de749d68cad660"
+    },
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v12\\revisao\\qa_hold_endpoints_v12.json",
+      "sha256": "dcd7e3465aeddcba62d7f66e3bea1d1d426cb325ba52d6d47bb0b0aece7e6822"
+    },
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v12\\revisao\\qa_root_general_final_v12.json",
+      "sha256": "826e76ffd69e503f7a3cec9b3410ab3e305020b7f13c92ba40629025fe153f0e"
+    }
+  ],
+  "external_uploads_performed": false
+}

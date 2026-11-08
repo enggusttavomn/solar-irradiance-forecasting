@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Piloto 3D · Irradiância solar · EA019</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#05080c;color:#eef4fa;font:16px/1.65 'Segoe UI',Arial,sans-serif}main{max-width:1240px;margin:auto;padding:42px 26px 65px}.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#67dded}h1{font-size:clamp(30px,4vw,48px);line-height:1.2;letter-spacing:-1px;margin:12px 0}p{color:#b9c8d8;max-width:900px}video{width:100%;aspect-ratio:16/9;display:block;background:#000;border:1px solid #293443;border-radius:10px;margin-top:26px}.controls,.files{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}button,.files a{background:#111923;border:1px solid #2b394b;border-radius:7px;color:#eef4fa;padding:10px 15px;font:inherit;text-decoration:none;cursor:pointer}button[aria-pressed=true]{color:#67dded;border-color:#67dded;background:#0f262d}.state{font-size:14px;color:#a9b8c9;margin:14px 0 0}.scenes{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:30px}.scenes article{border:1px solid #293443;background:#0e151e;padding:20px;border-radius:9px}.time{font-size:13px;color:#67dded}h2{font-size:19px;line-height:1.3;margin:8px 0}.scenes p{font-size:14px;margin-bottom:0}footer{border-top:1px solid #293443;padding-top:20px;margin-top:34px;color:#a9b8c9;font-size:14px}a{color:#67dded;text-underline-offset:4px}@media(max-width:720px){main{padding:28px 15px}.scenes{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main>
+<aside style="padding:18px 22px;border:1px solid #58cada;border-radius:9px;background:#10252b;margin-bottom:28px"><strong>O vídeo completo está em outra página.</strong><br><a href="../completo_v5/assistir_video_v5.html">Abrir a versão mais recente: V5, 6min55s e 3D com materiais e cores mais naturais</a></aside>
+<header><div class="eyebrow">Gustavo de Melo Nascimento · UNICAMP / FEEC · EA019</div>
+<h1>Da luz à previsão.</h1>
+<p>Piloto de 30 segundos para conferir movimento, profundidade 3D e leitura das legendas. Fundo preto, radiação em dourado, histórico em branco e futuro em ciano.</p></header>
+<video id="player" controls preload="metadata" poster="preview_08s.png" playsinline src="piloto_ghi_v1_com_legendas.mp4"></video>
+<div class="controls" role="group" aria-label="Versão do piloto"><button type="button" data-version="com" aria-pressed="true">Com legendas</button><button type="button" data-version="sem" aria-pressed="false">Sem legendas</button></div>
+<p class="state" id="state">Versão com legendas embutidas · 1920 × 1080 · 30 quadros por segundo · sem áudio</p>
+<div class="files"><a href="piloto_ghi_v1_com_legendas.mp4" download>Baixar MP4 com legendas</a><a href="piloto_ghi_v1_sem_legendas.mp4" download>Baixar MP4 sem legendas</a><a href="piloto_ghi_v1.srt" download>Baixar SRT do piloto</a></div>
+<div class="scenes"><article><span class="time">0:00–0:10</span><h2>A radiação chega à superfície</h2><p>Superfície horizontal, raios incidentes e movimento do fluxo de luz. A área representa uma referência de medição de irradiância.</p></article><article><span class="time">0:10–0:20</span><h2>GHI e W/m²</h2><p>Contribuições direta e difusa explicadas com uma representação conceitual da atmosfera.</p></article><article><span class="time">0:20–0:30</span><h2>Do histórico ao futuro</h2><p>A curva se desenha; uma janela destaca o passado e a linha pontilhada indica valores futuros a prever.</p></article></div>
+<footer><p>Este piloto usa legendas condensadas para demonstrar o visual; não substitui as falas do vídeo completo. As curvas são ilustrações, não resultados experimentais. Sua voz e as gravações em câmera serão incorporadas depois.</p><p>Plano completo do miolo: <a href="../trecho_animado_v2/planejamento_trecho_animado_v2.html">6min55s de cartões e animações</a>. Fonte conceitual: <a href="../../Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.pdf">relatório final, seção 4.1</a>.</p></footer>
+</main>
+<script>
+const player=document.getElementById('player');
+const state=document.getElementById('state');
+document.querySelectorAll('[data-version]').forEach(button=>button.addEventListener('click',()=>{
+  const version=button.dataset.version;
+  const time=player.currentTime||0;
+  const wasPlaying=!player.paused;
+  document.querySelectorAll('[data-version]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+  player.src=version==='com'?'piloto_ghi_v1_com_legendas.mp4':'piloto_ghi_v1_sem_legendas.mp4';
+  player.addEventListener('loadedmetadata',()=>{player.currentTime=Math.min(time,player.duration||30);if(wasPlaying)player.play();},{once:true});
+  state.textContent=(version==='com'?'Versão com legendas embutidas':'Versão com títulos e rótulos, sem legendas de fala')+' · 1920 × 1080 · 30 quadros por segundo · sem áudio';
+}));
+</script>
+</body></html>

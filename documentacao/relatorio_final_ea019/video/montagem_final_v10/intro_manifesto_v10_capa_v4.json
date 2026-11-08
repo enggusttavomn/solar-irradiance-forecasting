@@ -1,0 +1,97 @@
+{
+  "version": 10,
+  "status": "superseded_by_latest_user_color_request",
+  "cover_user_approval_pending": false,
+  "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v10\\intro_1080p30_pb_total_v10_capa_v4.mp4",
+  "sha256": "085c4070dad74592aadb78b2b90e861428c38943803537b8f79c5082975d4fa8",
+  "source_path": "C:\\Users\\gusta\\Pictures\\Camera Roll\\WIN_20261104_20_01_05_Pro.mp4",
+  "source_sha256": "d2efee2b2cae4055f0687bb9763936cf93a346660b1532338e96faa85d9d2ba3",
+  "source_original_unmodified": true,
+  "background_path": "documentacao\\relatorio_final_ea019\\video\\abertura_apresentacao_v3\\capa_apresentacao_fundo_v3.png",
+  "background_sha256": "ab025310758d315a02ecc0cb2093c1af106057d19132cf188e25a27a6d3268c2",
+  "duration_seconds": 14.133333333333333,
+  "fps": 30,
+  "frame_count": 424,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "audio": "original recording, 48kHz AAC stereo, tail aligned to exact video duration within one frame",
+  "method": "RVM recurrent alpha plus feathered fixed chair polygons; original footage with requested grayscale transform",
+  "model_url": "https://github.com/PeterL1n/RobustVideoMatting/releases/download/v1.0.0/rvm_mobilenetv3_fp32.onnx",
+  "model_license": "GPL-3.0",
+  "model_sha256": "88d4531297118f595bf2fd60f6f566aec2e559393802d1f436c380f0cbbd2828",
+  "provider": "CPUExecutionProvider",
+  "onnxruntime_version": "1.31.1",
+  "intra_op_threads": 4,
+  "input_resolution": [
+    960,
+    540
+  ],
+  "downsample_ratio": 0.5,
+  "recurrent_states_recycled": true,
+  "roi": [
+    220,
+    90,
+    800,
+    540
+  ],
+  "presenter_region": [
+    1140,
+    480,
+    740,
+    600
+  ],
+  "matte_lossless_path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v10\\intro_matte_960x540_v10.mkv",
+  "matte_cache_reused": true,
+  "monochrome_opening": true,
+  "variant": "_capa_v4",
+  "rgb_decode_resolution": [
+    1920,
+    1080
+  ],
+  "qa_frames": [
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0000_capa_v3.png",
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0060_capa_v3.png",
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0120_capa_v3.png",
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0210_capa_v3.png",
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0360_capa_v3.png",
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0420_capa_v3.png"
+  ],
+  "full_decode_errors": 0,
+  "full_decode_frame_count": 424,
+  "cover_pixels_outside_overlay_verified_identical_before_encoding": true,
+  "generative_images_used_in_video": false,
+  "elapsed_seconds": 19.13,
+  "sampled_visual_review_passed": true,
+  "full_realtime_playback_reviewed": false,
+  "manual_visual_review": {
+    "automatically_approved": false,
+    "scope": "New encoded still at7seconds; prior V3 samples preserved layout; not full real-time playback",
+    "material_findings_remaining": []
+  },
+  "matte_sha256": "79603dff30156ae337909a640ab63913738a6ac29538c8f2854e54ebd3bf0c74",
+  "coverlayout_user_approved": true,
+  "user_requested_full_monochrome": true,
+  "whole_frame_filter": "format=gray,format=yuv420p",
+  "source_composite": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v10\\intro_1080p30_com_audio_v10_capa_v3.mp4",
+  "source_composite_sha256": "3d6fb23db657e66df9627dd99a23c0b7927f2a44ee901bb20f1a27ebe4a82e71",
+  "original_audio_bitstream_preserved": true,
+  "audio_sha256": "SHA256=67f5819516096744d6310671f21252120f70363b5b55cc9ef78506abd0aad04d",
+  "monochrome_pixel_proof": {
+    "sample_seconds": 7,
+    "max_rgb_channel_spread": 0,
+    "non_gray_pixels": 0,
+    "path": "tmp/montagem_final_v10/intro/preview_real_7s_pb_total_capa_v4.png"
+  },
+  "monochrome_all_frames_chroma_neutral": {
+    "verified_frames": 424,
+    "UMIN": 128,
+    "UMAX": 128,
+    "VMIN": 128,
+    "VMAX": 128,
+    "meaning": "No chroma variation in any encoded frame"
+  },
+  "superseded_by": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v10\\intro_1080p30_colorido_fundo_preto_v10_capa_v5.mp4",
+  "current_user_preference": "Presenter and chair in original recorded colors; pure black background; colored project title palette"
+}

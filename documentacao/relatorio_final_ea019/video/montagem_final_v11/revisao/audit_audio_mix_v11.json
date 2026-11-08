@@ -1,0 +1,512 @@
+{
+  "generated_utc": "2026-11-05T00:36:18.161728+00:00",
+  "status": "pass",
+  "scope": "Objective audio measurements only; no human listening claimed; final media never rewritten.",
+  "only_outputs_written": "TMP derivative music stems and this JSON",
+  "duration_seconds": 587.8,
+  "measurements": [
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v11\\Video_TCC_Ritmo_Didatico_Somente_Voz_v11.mp4",
+      "sha256": "84e736a98e7655f69805e685ff59dbbd24e32ced46160ee1ec58218175498ef2",
+      "audio_stream": "Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 147 kb/s (default)",
+      "aac_stereo_48k": true,
+      "integrated_lufs": -16.67,
+      "true_peak_dbtp": -4.16,
+      "loudness_range_lu": 6.7,
+      "measurement": {
+        "input_i": "-16.67",
+        "input_tp": "-4.16",
+        "input_lra": "6.70",
+        "input_thresh": "-27.48",
+        "output_i": "-16.20",
+        "output_tp": "-1.73",
+        "output_lra": "6.60",
+        "output_thresh": "-27.02",
+        "normalization_type": "dynamic",
+        "target_offset": "0.20"
+      }
+    },
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v11\\Video_TCC_Ritmo_Didatico_Com_Trilha_v11.mp4",
+      "sha256": "18413deeff4f2aba6f1372bd9935b352c51e02bb42e5a5f0c8df89d43ce8a2f7",
+      "audio_stream": "Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 191 kb/s (default)",
+      "aac_stereo_48k": true,
+      "integrated_lufs": -17.83,
+      "true_peak_dbtp": -4.01,
+      "loudness_range_lu": 5.3,
+      "measurement": {
+        "input_i": "-17.83",
+        "input_tp": "-4.01",
+        "input_lra": "5.30",
+        "input_thresh": "-27.99",
+        "output_i": "-16.32",
+        "output_tp": "-2.34",
+        "output_lra": "5.60",
+        "output_thresh": "-26.47",
+        "normalization_type": "dynamic",
+        "target_offset": "0.32"
+      }
+    }
+  ],
+  "audio_packet_sha256": [
+    "SHA256=99d85dbdcd5310ecac99626b42878d4dba633f01d22c7e18dc45ad9ac4fe4e87",
+    "SHA256=a3315d5f08602aef16247741519967d31d06932010668f02d495e3de4e986908"
+  ],
+  "video_packet_sha256": [
+    "SHA256=43099fdca33fc6e24a9cd7743afc98a24789fe9e922f83f5e8285f3876fb6659",
+    "SHA256=43099fdca33fc6e24a9cd7743afc98a24789fe9e922f83f5e8285f3876fb6659"
+  ],
+  "audio_variants_different": true,
+  "same_video_packets": true,
+  "ducker_reproduced_exact_settings": {
+    "threshold": 0.04,
+    "ratio": 6,
+    "attack_ms": 25,
+    "release_ms": 650,
+    "knee": 4,
+    "link": "maximum",
+    "mix": 1,
+    "pre_gain": 0.75,
+    "input_fade_in_seconds": 1.8,
+    "output_fade_seconds": 3
+  },
+  "rms_window_ms": 100,
+  "analysis_rate": 12000,
+  "baseline_and_ducked_fades_identical": true,
+  "ignore_initial_seconds": 8,
+  "ignore_final_seconds": 4,
+  "speech_criterion": "Recorded master RMS above -32 dBFS",
+  "pause_criterion": "Master below -50 dBFS continuously >=1s; use only windows after700ms release recovery",
+  "speech": {
+    "windows": 3401,
+    "seconds": 340.1,
+    "median_music_gain_db": -14.768737281391509,
+    "p10_gain_db": -17.701494341129766,
+    "p90_gain_db": -10.4378363278784,
+    "aggregate_music_gain_db": -12.188835527933701,
+    "median_voice_dbfs": -17.62400082233899,
+    "median_music_after_dbfs": -39.63735774203369
+  },
+  "long_pause_late": {
+    "windows": 1033,
+    "seconds": 103.3,
+    "median_music_gain_db": 0.0,
+    "p10_gain_db": 0.0,
+    "p90_gain_db": 0.0,
+    "aggregate_music_gain_db": -0.001921292474215202,
+    "median_voice_dbfs": -240.0,
+    "median_music_after_dbfs": -24.669603076024586
+  },
+  "long_quiet_runs": [
+    {
+      "start": 20.9,
+      "end": 22.3,
+      "duration": 1.4
+    },
+    {
+      "start": 26.2,
+      "end": 28.0,
+      "duration": 1.8
+    },
+    {
+      "start": 32.6,
+      "end": 34.8,
+      "duration": 2.2
+    },
+    {
+      "start": 39.5,
+      "end": 41.9,
+      "duration": 2.4
+    },
+    {
+      "start": 45.4,
+      "end": 47.0,
+      "duration": 1.6
+    },
+    {
+      "start": 49.2,
+      "end": 50.9,
+      "duration": 1.7
+    },
+    {
+      "start": 54.2,
+      "end": 55.2,
+      "duration": 1.0
+    },
+    {
+      "start": 58.0,
+      "end": 59.3,
+      "duration": 1.3
+    },
+    {
+      "start": 62.8,
+      "end": 64.2,
+      "duration": 1.4
+    },
+    {
+      "start": 72.7,
+      "end": 74.1,
+      "duration": 1.4
+    },
+    {
+      "start": 76.3,
+      "end": 77.7,
+      "duration": 1.4
+    },
+    {
+      "start": 85.1,
+      "end": 86.2,
+      "duration": 1.1
+    },
+    {
+      "start": 95.9,
+      "end": 97.0,
+      "duration": 1.1
+    },
+    {
+      "start": 104.1,
+      "end": 105.2,
+      "duration": 1.1
+    },
+    {
+      "start": 119.5,
+      "end": 121.0,
+      "duration": 1.5
+    },
+    {
+      "start": 124.1,
+      "end": 125.5,
+      "duration": 1.4
+    },
+    {
+      "start": 128.5,
+      "end": 130.2,
+      "duration": 1.7
+    },
+    {
+      "start": 132.9,
+      "end": 134.4,
+      "duration": 1.5
+    },
+    {
+      "start": 138.7,
+      "end": 140.1,
+      "duration": 1.4
+    },
+    {
+      "start": 145.1,
+      "end": 146.6,
+      "duration": 1.5
+    },
+    {
+      "start": 151.7,
+      "end": 156.3,
+      "duration": 4.6
+    },
+    {
+      "start": 166.5,
+      "end": 168.2,
+      "duration": 1.7
+    },
+    {
+      "start": 173.0,
+      "end": 175.2,
+      "duration": 2.2
+    },
+    {
+      "start": 181.2,
+      "end": 183.3,
+      "duration": 2.1
+    },
+    {
+      "start": 188.5,
+      "end": 190.2,
+      "duration": 1.7
+    },
+    {
+      "start": 194.9,
+      "end": 196.5,
+      "duration": 1.6
+    },
+    {
+      "start": 200.3,
+      "end": 202.3,
+      "duration": 2.0
+    },
+    {
+      "start": 206.8,
+      "end": 210.2,
+      "duration": 3.4
+    },
+    {
+      "start": 216.1,
+      "end": 218.2,
+      "duration": 2.1
+    },
+    {
+      "start": 222.7,
+      "end": 224.1,
+      "duration": 1.4
+    },
+    {
+      "start": 227.7,
+      "end": 228.7,
+      "duration": 1.0
+    },
+    {
+      "start": 230.8,
+      "end": 232.3,
+      "duration": 1.5
+    },
+    {
+      "start": 234.8,
+      "end": 236.3,
+      "duration": 1.5
+    },
+    {
+      "start": 238.5,
+      "end": 240.5,
+      "duration": 2.0
+    },
+    {
+      "start": 242.6,
+      "end": 244.4,
+      "duration": 1.8
+    },
+    {
+      "start": 247.7,
+      "end": 249.4,
+      "duration": 1.7
+    },
+    {
+      "start": 252.6,
+      "end": 254.2,
+      "duration": 1.6
+    },
+    {
+      "start": 259.2,
+      "end": 260.7,
+      "duration": 1.5
+    },
+    {
+      "start": 263.9,
+      "end": 267.7,
+      "duration": 3.8
+    },
+    {
+      "start": 270.5,
+      "end": 273.6,
+      "duration": 3.1
+    },
+    {
+      "start": 279.5,
+      "end": 282.6,
+      "duration": 3.1
+    },
+    {
+      "start": 288.2,
+      "end": 293.5,
+      "duration": 5.3
+    },
+    {
+      "start": 300.0,
+      "end": 302.2,
+      "duration": 2.2
+    },
+    {
+      "start": 307.4,
+      "end": 308.7,
+      "duration": 1.3
+    },
+    {
+      "start": 314.0,
+      "end": 316.3,
+      "duration": 2.3
+    },
+    {
+      "start": 321.0,
+      "end": 323.3,
+      "duration": 2.3
+    },
+    {
+      "start": 329.8,
+      "end": 331.3,
+      "duration": 1.5
+    },
+    {
+      "start": 336.7,
+      "end": 339.3,
+      "duration": 2.6
+    },
+    {
+      "start": 343.7,
+      "end": 346.0,
+      "duration": 2.3
+    },
+    {
+      "start": 350.2,
+      "end": 352.5,
+      "duration": 2.3
+    },
+    {
+      "start": 366.8,
+      "end": 367.8,
+      "duration": 1.0
+    },
+    {
+      "start": 372.5,
+      "end": 373.7,
+      "duration": 1.2
+    },
+    {
+      "start": 378.9,
+      "end": 382.3,
+      "duration": 3.4
+    },
+    {
+      "start": 390.3,
+      "end": 392.2,
+      "duration": 1.9
+    },
+    {
+      "start": 399.5,
+      "end": 402.2,
+      "duration": 2.7
+    },
+    {
+      "start": 406.8,
+      "end": 409.6,
+      "duration": 2.8
+    },
+    {
+      "start": 414.6,
+      "end": 416.8,
+      "duration": 2.2
+    },
+    {
+      "start": 423.7,
+      "end": 430.5,
+      "duration": 6.8
+    },
+    {
+      "start": 437.2,
+      "end": 439.6,
+      "duration": 2.4
+    },
+    {
+      "start": 443.6,
+      "end": 446.7,
+      "duration": 3.1
+    },
+    {
+      "start": 453.1,
+      "end": 455.8,
+      "duration": 2.7
+    },
+    {
+      "start": 460.6,
+      "end": 463.5,
+      "duration": 2.9
+    },
+    {
+      "start": 469.7,
+      "end": 471.5,
+      "duration": 1.8
+    },
+    {
+      "start": 477.8,
+      "end": 480.8,
+      "duration": 3.0
+    },
+    {
+      "start": 483.0,
+      "end": 487.4,
+      "duration": 4.4
+    },
+    {
+      "start": 492.0,
+      "end": 494.6,
+      "duration": 2.6
+    },
+    {
+      "start": 497.0,
+      "end": 500.5,
+      "duration": 3.5
+    },
+    {
+      "start": 506.1,
+      "end": 507.5,
+      "duration": 1.4
+    },
+    {
+      "start": 512.5,
+      "end": 513.5,
+      "duration": 1.0
+    },
+    {
+      "start": 526.7,
+      "end": 527.9,
+      "duration": 1.2
+    },
+    {
+      "start": 531.9,
+      "end": 533.4,
+      "duration": 1.5
+    },
+    {
+      "start": 555.2,
+      "end": 556.3,
+      "duration": 1.1
+    },
+    {
+      "start": 561.5,
+      "end": 563.9,
+      "duration": 2.4
+    }
+  ],
+  "music_recovery_relative_to_speech_median_db": 14.768737281391509,
+  "voice_presence": {
+    "presentation": {
+      "start": 0.0,
+      "end": 14.133333333333333,
+      "duration": 14.133333333333333,
+      "decoded_voice_rms_dbfs": -16.40251276264094,
+      "correlation_with_recorded_voice_master": 0.9999824807219678
+    },
+    "new_ending": {
+      "start": 567.1666666666666,
+      "end": 587.8,
+      "duration": 20.633333333333333,
+      "decoded_voice_rms_dbfs": -16.495634661997187,
+      "correlation_with_recorded_voice_master": 0.999949726234109
+    }
+  },
+  "voice_presence_with_music": {
+    "presentation": {
+      "start": 0.0,
+      "end": 14.133333333333333,
+      "duration": 14.133333333333333,
+      "decoded_voice_rms_dbfs": -16.26998528206229,
+      "correlation_with_recorded_voice_master": 0.9846581762150065
+    },
+    "new_ending": {
+      "start": 567.1666666666666,
+      "end": 587.8,
+      "duration": 20.633333333333333,
+      "decoded_voice_rms_dbfs": -16.37433431778462,
+      "correlation_with_recorded_voice_master": 0.9855462874402104
+    }
+  },
+  "pcm_derivative_paths": [
+    "tmp\\montagem_final_v11\\audio_mix_audit\\music_baseline_12k_f32.raw",
+    "tmp\\montagem_final_v11\\audio_mix_audit\\music_ducked_12k_f32.raw"
+  ],
+  "errors": [],
+  "material_flags": [],
+  "no_final_reencode_performed": true,
+  "protected_files_unchanged": true,
+  "version": 11,
+  "final_ready_marker": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v11\\verificacao_video_final_v11.json",
+  "final_video_decode_frames": 17634,
+  "expected_pcm_samples": 28214400
+}

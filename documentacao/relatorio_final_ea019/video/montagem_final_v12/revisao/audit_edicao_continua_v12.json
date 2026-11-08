@@ -1,0 +1,503 @@
+{
+  "version": 12,
+  "status": "pass",
+  "generated_utc": "2026-11-05T13:29:56.100191+00:00",
+  "scope": "Independent PCM sample comparison, source-word coverage, boundary energy and caption checks. No audio listening or realtime video playback.",
+  "metadata_sha256": "ff4bc4a04a334a6e8b8887edcac75e9b92a298f11b245b005e321684ae056a93",
+  "file_sha256": {
+    "clean": "44de60b8f152043e14f7e7910bc46e4f6da1538ad02d29b31d513941ae6217aa",
+    "edited": "f64f0b1c0b811018584d0d0826cb7460f8000cf139e5c1d4bcd4e500dfbdf8e6",
+    "normalized": "79e58761814db8dd43db20b219a4c09deb4d1818d8a83251199cc4704cc51953",
+    "master": "2fcbd2f4e0b17feeba57cc7134501d8b7411fbbf5caaa05f64f20879ea9f0516",
+    "intro_source": "3d6599f3d63bc8464cd04f3705ab0d9eeca41e71a2ce7d8a68a06470f3e8ff1d"
+  },
+  "source_event_count": 20,
+  "recorded_voice_events": 16,
+  "observation_pause_events": 4,
+  "main_samples": 22809840,
+  "main_seconds": 475.205,
+  "master_samples": 23548800,
+  "master_seconds": 490.6,
+  "normalization_length_exact": true,
+  "frame_sample_exact": true,
+  "intro_full_prefix_exact": true,
+  "normalized_main_exact_in_master": true,
+  "final_tail_zero": true,
+  "all_clean_pcm_interiors_exact": true,
+  "all_ramps_and_pause_padding_exact": true,
+  "event_checks": [
+    {
+      "event": 0,
+      "kind": "recorded_voice",
+      "source_interval": [
+        0.39,
+        168.2
+      ],
+      "output_interval": [
+        0.0,
+        167.81
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -240.0,
+      "end_ramp_dbfs": -83.21963258038886
+    },
+    {
+      "event": 1,
+      "kind": "observation_pause",
+      "all_zero": true
+    },
+    {
+      "event": 2,
+      "kind": "recorded_voice",
+      "source_interval": [
+        168.2,
+        174.65
+      ],
+      "output_interval": [
+        168.46,
+        174.91
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -83.58582047229675,
+      "end_ramp_dbfs": -85.69572865648968
+    },
+    {
+      "event": 3,
+      "kind": "recorded_voice",
+      "source_interval": [
+        177.62,
+        240.76
+      ],
+      "output_interval": [
+        174.91,
+        238.05
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -77.96665886491871,
+      "end_ramp_dbfs": -92.69437379922053
+    },
+    {
+      "event": 4,
+      "kind": "recorded_voice",
+      "source_interval": [
+        243.51,
+        249.97
+      ],
+      "output_interval": [
+        238.05,
+        244.51
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -83.04143549132434,
+      "end_ramp_dbfs": -72.69683732920183
+    },
+    {
+      "event": 5,
+      "kind": "recorded_voice",
+      "source_interval": [
+        274.73,
+        285.31
+      ],
+      "output_interval": [
+        244.51,
+        255.09
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -56.716873991580165,
+      "end_ramp_dbfs": -92.62772883976986
+    },
+    {
+      "event": 6,
+      "kind": "recorded_voice",
+      "source_interval": [
+        292.21,
+        317.65
+      ],
+      "output_interval": [
+        255.09,
+        280.53
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -76.9136561301315,
+      "end_ramp_dbfs": -74.19726789733895
+    },
+    {
+      "event": 7,
+      "kind": "recorded_voice",
+      "source_interval": [
+        322.37,
+        365.35
+      ],
+      "output_interval": [
+        280.53,
+        323.51
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -240.0,
+      "end_ramp_dbfs": -85.50345422993703
+    },
+    {
+      "event": 8,
+      "kind": "observation_pause",
+      "all_zero": true
+    },
+    {
+      "event": 9,
+      "kind": "recorded_voice",
+      "source_interval": [
+        365.35,
+        368.52
+      ],
+      "output_interval": [
+        324.31,
+        327.48
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -83.49604766930092,
+      "end_ramp_dbfs": -68.21576383234483
+    },
+    {
+      "event": 10,
+      "kind": "observation_pause",
+      "all_zero": true
+    },
+    {
+      "event": 11,
+      "kind": "recorded_voice",
+      "source_interval": [
+        368.52,
+        389.1
+      ],
+      "output_interval": [
+        329.48,
+        350.06
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -64.98828306696988,
+      "end_ramp_dbfs": -74.5786931626627
+    },
+    {
+      "event": 12,
+      "kind": "observation_pause",
+      "all_zero": true
+    },
+    {
+      "event": 13,
+      "kind": "recorded_voice",
+      "source_interval": [
+        389.1,
+        394.96
+      ],
+      "output_interval": [
+        352.06,
+        357.92
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -79.01045077379467,
+      "end_ramp_dbfs": -82.52964085209737
+    },
+    {
+      "event": 14,
+      "kind": "recorded_voice",
+      "source_interval": [
+        405.4,
+        432.225
+      ],
+      "output_interval": [
+        357.92,
+        384.745
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -89.17752633055045,
+      "end_ramp_dbfs": -53.21153292454425
+    },
+    {
+      "event": 15,
+      "kind": "recorded_voice",
+      "source_interval": [
+        435.2,
+        442.92
+      ],
+      "output_interval": [
+        384.745,
+        392.465
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -68.08617040620211,
+      "end_ramp_dbfs": -102.35019738727675
+    },
+    {
+      "event": 16,
+      "kind": "recorded_voice",
+      "source_interval": [
+        454.27,
+        487.89
+      ],
+      "output_interval": [
+        392.465,
+        426.085
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -62.07043479023467,
+      "end_ramp_dbfs": -83.25005613567055
+    },
+    {
+      "event": 17,
+      "kind": "recorded_voice",
+      "source_interval": [
+        492.31,
+        509.95
+      ],
+      "output_interval": [
+        426.085,
+        443.725
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -57.701195818229536,
+      "end_ramp_dbfs": -79.39609841448934
+    },
+    {
+      "event": 18,
+      "kind": "recorded_voice",
+      "source_interval": [
+        517.75,
+        527.86
+      ],
+      "output_interval": [
+        443.725,
+        453.835
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -80.89779028170297,
+      "end_ramp_dbfs": -63.146380933232614
+    },
+    {
+      "event": 19,
+      "kind": "recorded_voice",
+      "source_interval": [
+        539.89,
+        561.26
+      ],
+      "output_interval": [
+        453.835,
+        475.205
+      ],
+      "interior_sample_exact": true,
+      "all_endpoint_ramps_exact": true,
+      "discard_intersections": [],
+      "start_ramp_dbfs": -50.74114630841625,
+      "end_ramp_dbfs": -82.01213279165985
+    }
+  ],
+  "legitimate_observed_word_count": 1103,
+  "all_legitimate_observed_words_fully_retained": true,
+  "discarded_asr_words_count": 0,
+  "discarded_asr_words": [],
+  "caption_checks": {
+    "no_wrong_13_77": true,
+    "no_faked_13_67_reading": true,
+    "hourly53_21_correct": true,
+    "monthly_model_informer": true,
+    "eight_us_locations": true,
+    "ten_localities": true,
+    "first_paragraph_retained": true,
+    "caption_count": 112,
+    "nonoverlap": true,
+    "positive_cues": true,
+    "two_lines_max": true
+  },
+  "normalization_temporal_checks": [
+    {
+      "edited_seconds": 10,
+      "best_lag_samples_within10ms": 0,
+      "lag_milliseconds": 0.0,
+      "correlation_at_zero_lag": 0.9190914031502335,
+      "dynamic_gain_or_peak_limiting_can_change_correlation": true
+    },
+    {
+      "edited_seconds": 70,
+      "best_lag_samples_within10ms": 0,
+      "lag_milliseconds": 0.0,
+      "correlation_at_zero_lag": 0.9974418992488421,
+      "dynamic_gain_or_peak_limiting_can_change_correlation": true
+    },
+    {
+      "edited_seconds": 130,
+      "best_lag_samples_within10ms": 0,
+      "lag_milliseconds": 0.0,
+      "correlation_at_zero_lag": 0.9957308860266846,
+      "dynamic_gain_or_peak_limiting_can_change_correlation": true
+    },
+    {
+      "edited_seconds": 200,
+      "best_lag_samples_within10ms": 0,
+      "lag_milliseconds": 0.0,
+      "correlation_at_zero_lag": 0.996476189405201,
+      "dynamic_gain_or_peak_limiting_can_change_correlation": true
+    },
+    {
+      "edited_seconds": 270,
+      "best_lag_samples_within10ms": 0,
+      "lag_milliseconds": 0.0,
+      "correlation_at_zero_lag": 0.9999999927111518,
+      "dynamic_gain_or_peak_limiting_can_change_correlation": true
+    },
+    {
+      "edited_seconds": 450,
+      "best_lag_samples_within10ms": 0,
+      "lag_milliseconds": 0.0,
+      "correlation_at_zero_lag": 0.9895948063576538,
+      "dynamic_gain_or_peak_limiting_can_change_correlation": true
+    }
+  ],
+  "normalization_timing_criterion": "Equal sample count plus best waveform correlation lag within1sample in voiced windows; constant-gain correlation is not required from dynamic loudnorm/limiting.",
+  "inserted_observation_pauses": [
+    [
+      168.2,
+      0.65,
+      "histogram percentage"
+    ],
+    [
+      365.35,
+      0.8,
+      "MAE28 result"
+    ],
+    [
+      368.52,
+      2.0,
+      "forecast converges to zero"
+    ],
+    [
+      389.1,
+      2.0,
+      "complete72-hour scan"
+    ]
+  ],
+  "source_gaps_shortened": [
+    {
+      "source_gap": [
+        174.15,
+        178.12
+      ],
+      "retained_seconds": 1.0,
+      "reason": "long quiet recording gap / discarded attempt"
+    },
+    {
+      "source_gap": [
+        240.26,
+        244.01
+      ],
+      "retained_seconds": 1.0,
+      "reason": "long quiet recording gap / discarded attempt"
+    },
+    {
+      "source_gap": [
+        249.47,
+        275.23
+      ],
+      "retained_seconds": 1.0,
+      "reason": "long quiet recording gap / discarded attempt"
+    },
+    {
+      "source_gap": [
+        284.81,
+        292.71
+      ],
+      "retained_seconds": 1.0,
+      "reason": "long quiet recording gap / discarded attempt"
+    },
+    {
+      "source_gap": [
+        316.9,
+        323.12
+      ],
+      "retained_seconds": 1.5,
+      "reason": "long quiet recording gap / discarded attempt"
+    },
+    {
+      "source_gap": [
+        394.46,
+        405.81
+      ],
+      "retained_seconds": 1.0,
+      "reason": "long quiet recording gap / discarded attempt"
+    },
+    {
+      "source_gap": [
+        432.19,
+        435.38
+      ],
+      "retained_seconds": 1.0,
+      "reason": "long quiet recording gap / discarded attempt"
+    },
+    {
+      "source_gap": [
+        442.17,
+        455.02
+      ],
+      "retained_seconds": 1.5,
+      "reason": "long quiet recording gap / discarded attempt"
+    },
+    {
+      "source_gap": [
+        487.39,
+        492.81
+      ],
+      "retained_seconds": 1.0,
+      "reason": "long quiet recording gap / discarded attempt"
+    },
+    {
+      "source_gap": [
+        509.45,
+        518.25
+      ],
+      "retained_seconds": 1.0,
+      "reason": "long quiet recording gap / discarded attempt"
+    },
+    {
+      "source_gap": [
+        527.36,
+        540.39
+      ],
+      "retained_seconds": 1.0,
+      "reason": "long quiet recording gap / discarded attempt"
+    }
+  ],
+  "material_conflicts": [],
+  "boundary_energy_warnings": [],
+  "observation_boundary_comparison": "tmp/montagem_final_v12/observation_pause_boundaries_audit.json",
+  "voice_time_stretch_used": false,
+  "speech_synthesis_used": false,
+  "audio_listening_performed": false,
+  "production_files_modified": false
+}

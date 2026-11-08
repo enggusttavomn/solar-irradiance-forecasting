@@ -1,0 +1,1241 @@
+{
+  "source_ranking": {
+    "path": "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv",
+    "sha256": "9db39841e2729cd6e6d7642674d6f068af5db2403c6352b5380a2f4d535a6ddb"
+  },
+  "source_files": [
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/sem_quantizacao/metricas_por_localidade_teste.csv",
+      "sha256": "5f651175470038b5ca0853cd38a81bf17423c2b118b1fc09db2246493d0fcda5"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/sem_quantizacao/metricas_por_localidade_teste.csv",
+      "sha256": "9c73bc3fac104b67e15be31169eac23716c0ed84f2b4ac9053c7a3102d77f523"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/q64/metricas_por_localidade_teste.csv",
+      "sha256": "854750bb5d336ac57a26aac680b7974ac34b256f4a16c702b1535fe71a27d1f7"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/q256/metricas_por_localidade_teste.csv",
+      "sha256": "3a5b31bb4f51e3441cea254bbdda7e4b35ce7228b66bd2271031797ebef51a55"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/informer/q64/metricas_por_localidade_teste.csv",
+      "sha256": "78ac523321fe1aecda3d76e92b950ebfa2dc66ed93359be53a2146006b656b50"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/lstm/sem_quantizacao/metricas_por_localidade_teste.csv",
+      "sha256": "fdc09d8bc8a8513deb718828e474b37e09a1578b4b18e361d7e2a58414d7c813"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/transformer/q128/metricas_por_localidade_teste.csv",
+      "sha256": "ef9c5067dcdd1bef62584c821c6980d8ff88787f9ee06a4c14d411fbc2c931e0"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/informer/q128/metricas_por_localidade_teste.csv",
+      "sha256": "1d1a2123524f9ccc65727cf654203eb1a0a0d9b726f925e2994cbba6aedd8b87"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/lstm/q128/metricas_por_localidade_teste.csv",
+      "sha256": "e03cf8290d27f1e9ed761f5f2c61bbd7ee6841f376babaa1e8ba7a30bf710432"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/transformer/q64/metricas_por_localidade_teste.csv",
+      "sha256": "53935b3c5ddb5c543bb33250a63e83e05cd59cc6bbd9b98ac88aff57cf96d465"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/informer/q128/metricas_por_localidade_teste.csv",
+      "sha256": "8e6baac321cd01f2d81d7811777be41bd393735ffcb5eed8f681732b10c58612"
+    },
+    {
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/lstm/q128/metricas_por_localidade_teste.csv",
+      "sha256": "33195a353156bfee589b7944a4330ede8ec0cf22bbbaa02062cb0efb4f8fc538"
+    }
+  ],
+  "verification": [
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Transformer",
+      "variante": "sem_quantizacao",
+      "macro_from_sites": 53.20606057784014,
+      "macro_audited": 53.20606057784014,
+      "match": true
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Informer",
+      "variante": "sem_quantizacao",
+      "macro_from_sites": 137.6798450004447,
+      "macro_audited": 137.6798450004447,
+      "match": true
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "LSTM",
+      "variante": "q64",
+      "macro_from_sites": 53.52407363312925,
+      "macro_audited": 53.52407363312925,
+      "match": true
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Transformer",
+      "variante": "q256",
+      "macro_from_sites": 43.886935199784816,
+      "macro_audited": 43.886935199784816,
+      "match": true
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Informer",
+      "variante": "q64",
+      "macro_from_sites": 45.46025832169786,
+      "macro_audited": 45.46025832169785,
+      "match": true
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "LSTM",
+      "variante": "sem_quantizacao",
+      "macro_from_sites": 44.18417844043798,
+      "macro_audited": 44.18417844043798,
+      "match": true
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Transformer",
+      "variante": "q128",
+      "macro_from_sites": 13.14665204056439,
+      "macro_audited": 13.146652040564389,
+      "match": true
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Informer",
+      "variante": "q128",
+      "macro_from_sites": 12.726569676449799,
+      "macro_audited": 12.7265696764498,
+      "match": true
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "LSTM",
+      "variante": "q128",
+      "macro_from_sites": 14.288273183476639,
+      "macro_audited": 14.288273183476637,
+      "match": true
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Transformer",
+      "variante": "q64",
+      "macro_from_sites": 14.396546948646185,
+      "macro_audited": 14.396546948646185,
+      "match": true
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Informer",
+      "variante": "q128",
+      "macro_from_sites": 13.667870528923487,
+      "macro_audited": 13.667870528923489,
+      "match": true
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "LSTM",
+      "variante": "q128",
+      "macro_from_sites": 14.762258865384492,
+      "macro_audited": 14.762258865384492,
+      "match": true
+    }
+  ],
+  "values": [
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Transformer",
+      "variante": "sem_quantizacao",
+      "localidade": "BYD Camacari",
+      "rotulo": "BYD Camaçari",
+      "MAE_wm2": 55.56156578882907
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Transformer",
+      "variante": "sem_quantizacao",
+      "localidade": "Tesla Gigafactory Nevada",
+      "rotulo": "Tesla Nevada",
+      "MAE_wm2": 42.19378403635832
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Transformer",
+      "variante": "sem_quantizacao",
+      "localidade": "Tesla Gigafactory Texas",
+      "rotulo": "Tesla Texas",
+      "MAE_wm2": 59.859258746177545
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Transformer",
+      "variante": "sem_quantizacao",
+      "localidade": "Hyundai Metaplant Georgia",
+      "rotulo": "Hyundai Georgia",
+      "MAE_wm2": 62.51555888067015
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Transformer",
+      "variante": "sem_quantizacao",
+      "localidade": "Rivian Normal",
+      "rotulo": "Rivian Normal",
+      "MAE_wm2": 62.19804473652555
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Transformer",
+      "variante": "sem_quantizacao",
+      "localidade": "Tesla Fremont Factory",
+      "rotulo": "Tesla Fremont",
+      "MAE_wm2": 38.369707408167
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Transformer",
+      "variante": "sem_quantizacao",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "rotulo": "Lucid Casa Grande",
+      "MAE_wm2": 34.871335622101235
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Transformer",
+      "variante": "sem_quantizacao",
+      "localidade": "GM Factory Zero",
+      "rotulo": "GM Factory Zero",
+      "MAE_wm2": 62.71230255328387
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Transformer",
+      "variante": "sem_quantizacao",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "rotulo": "Ford Rouge EV",
+      "MAE_wm2": 62.28082866169328
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Transformer",
+      "variante": "sem_quantizacao",
+      "localidade": "BMW San Luis Potosi",
+      "rotulo": "BMW S. L. Potosí",
+      "MAE_wm2": 51.49821934459533
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Informer",
+      "variante": "sem_quantizacao",
+      "localidade": "BYD Camacari",
+      "rotulo": "BYD Camaçari",
+      "MAE_wm2": 151.69394822446623
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Informer",
+      "variante": "sem_quantizacao",
+      "localidade": "Tesla Gigafactory Nevada",
+      "rotulo": "Tesla Nevada",
+      "MAE_wm2": 136.84971012997335
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Informer",
+      "variante": "sem_quantizacao",
+      "localidade": "Tesla Gigafactory Texas",
+      "rotulo": "Tesla Texas",
+      "MAE_wm2": 140.7354638370847
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Informer",
+      "variante": "sem_quantizacao",
+      "localidade": "Hyundai Metaplant Georgia",
+      "rotulo": "Hyundai Georgia",
+      "MAE_wm2": 131.66461570441032
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Informer",
+      "variante": "sem_quantizacao",
+      "localidade": "Rivian Normal",
+      "rotulo": "Rivian Normal",
+      "MAE_wm2": 121.95107116611896
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Informer",
+      "variante": "sem_quantizacao",
+      "localidade": "Tesla Fremont Factory",
+      "rotulo": "Tesla Fremont",
+      "MAE_wm2": 145.2239480545698
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Informer",
+      "variante": "sem_quantizacao",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "rotulo": "Lucid Casa Grande",
+      "MAE_wm2": 156.04925019427094
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Informer",
+      "variante": "sem_quantizacao",
+      "localidade": "GM Factory Zero",
+      "rotulo": "GM Factory Zero",
+      "MAE_wm2": 112.7569130562157
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Informer",
+      "variante": "sem_quantizacao",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "rotulo": "Ford Rouge EV",
+      "MAE_wm2": 110.6294538545561
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "Informer",
+      "variante": "sem_quantizacao",
+      "localidade": "BMW San Luis Potosi",
+      "rotulo": "BMW S. L. Potosí",
+      "MAE_wm2": 169.24407578278064
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "LSTM",
+      "variante": "q64",
+      "localidade": "BYD Camacari",
+      "rotulo": "BYD Camaçari",
+      "MAE_wm2": 53.34257797185927
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "LSTM",
+      "variante": "q64",
+      "localidade": "Tesla Gigafactory Nevada",
+      "rotulo": "Tesla Nevada",
+      "MAE_wm2": 43.26542104346385
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "LSTM",
+      "variante": "q64",
+      "localidade": "Tesla Gigafactory Texas",
+      "rotulo": "Tesla Texas",
+      "MAE_wm2": 60.235578827774525
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "LSTM",
+      "variante": "q64",
+      "localidade": "Hyundai Metaplant Georgia",
+      "rotulo": "Hyundai Georgia",
+      "MAE_wm2": 62.46513089575808
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "LSTM",
+      "variante": "q64",
+      "localidade": "Rivian Normal",
+      "rotulo": "Rivian Normal",
+      "MAE_wm2": 61.82395638526096
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "LSTM",
+      "variante": "q64",
+      "localidade": "Tesla Fremont Factory",
+      "rotulo": "Tesla Fremont",
+      "MAE_wm2": 38.947978697481794
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "LSTM",
+      "variante": "q64",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "rotulo": "Lucid Casa Grande",
+      "MAE_wm2": 36.29641026537237
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "LSTM",
+      "variante": "q64",
+      "localidade": "GM Factory Zero",
+      "rotulo": "GM Factory Zero",
+      "MAE_wm2": 63.85285598760773
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "LSTM",
+      "variante": "q64",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "rotulo": "Ford Rouge EV",
+      "MAE_wm2": 63.10980200029178
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "horizonte": 72,
+      "modelo": "LSTM",
+      "variante": "q64",
+      "localidade": "BMW San Luis Potosi",
+      "rotulo": "BMW S. L. Potosí",
+      "MAE_wm2": 51.90102425642213
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Transformer",
+      "variante": "q256",
+      "localidade": "BYD Camacari",
+      "rotulo": "BYD Camaçari",
+      "MAE_wm2": 42.55029856182182
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Transformer",
+      "variante": "q256",
+      "localidade": "Tesla Gigafactory Nevada",
+      "rotulo": "Tesla Nevada",
+      "MAE_wm2": 35.39966210814372
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Transformer",
+      "variante": "q256",
+      "localidade": "Tesla Gigafactory Texas",
+      "rotulo": "Tesla Texas",
+      "MAE_wm2": 50.65779194988121
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Transformer",
+      "variante": "q256",
+      "localidade": "Hyundai Metaplant Georgia",
+      "rotulo": "Hyundai Georgia",
+      "MAE_wm2": 53.37325151615187
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Transformer",
+      "variante": "q256",
+      "localidade": "Rivian Normal",
+      "rotulo": "Rivian Normal",
+      "MAE_wm2": 53.91426537576932
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Transformer",
+      "variante": "q256",
+      "localidade": "Tesla Fremont Factory",
+      "rotulo": "Tesla Fremont",
+      "MAE_wm2": 29.485695347537987
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Transformer",
+      "variante": "q256",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "rotulo": "Lucid Casa Grande",
+      "MAE_wm2": 26.387160196984727
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Transformer",
+      "variante": "q256",
+      "localidade": "GM Factory Zero",
+      "rotulo": "GM Factory Zero",
+      "MAE_wm2": 53.96292937409898
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Transformer",
+      "variante": "q256",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "rotulo": "Ford Rouge EV",
+      "MAE_wm2": 52.27295206218393
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Transformer",
+      "variante": "q256",
+      "localidade": "BMW San Luis Potosi",
+      "rotulo": "BMW S. L. Potosí",
+      "MAE_wm2": 40.86534550527457
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Informer",
+      "variante": "q64",
+      "localidade": "BYD Camacari",
+      "rotulo": "BYD Camaçari",
+      "MAE_wm2": 44.58522792515468
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Informer",
+      "variante": "q64",
+      "localidade": "Tesla Gigafactory Nevada",
+      "rotulo": "Tesla Nevada",
+      "MAE_wm2": 37.66096260535477
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Informer",
+      "variante": "q64",
+      "localidade": "Tesla Gigafactory Texas",
+      "rotulo": "Tesla Texas",
+      "MAE_wm2": 51.64944343298898
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Informer",
+      "variante": "q64",
+      "localidade": "Hyundai Metaplant Georgia",
+      "rotulo": "Hyundai Georgia",
+      "MAE_wm2": 54.56563142809807
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Informer",
+      "variante": "q64",
+      "localidade": "Rivian Normal",
+      "rotulo": "Rivian Normal",
+      "MAE_wm2": 56.51932815979755
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Informer",
+      "variante": "q64",
+      "localidade": "Tesla Fremont Factory",
+      "rotulo": "Tesla Fremont",
+      "MAE_wm2": 31.591668445537007
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Informer",
+      "variante": "q64",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "rotulo": "Lucid Casa Grande",
+      "MAE_wm2": 29.461041428317003
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Informer",
+      "variante": "q64",
+      "localidade": "GM Factory Zero",
+      "rotulo": "GM Factory Zero",
+      "MAE_wm2": 54.58614418919946
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Informer",
+      "variante": "q64",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "rotulo": "Ford Rouge EV",
+      "MAE_wm2": 53.292547456794885
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "Informer",
+      "variante": "q64",
+      "localidade": "BMW San Luis Potosi",
+      "rotulo": "BMW S. L. Potosí",
+      "MAE_wm2": 40.69058814573616
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "LSTM",
+      "variante": "sem_quantizacao",
+      "localidade": "BYD Camacari",
+      "rotulo": "BYD Camaçari",
+      "MAE_wm2": 43.81199883866462
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "LSTM",
+      "variante": "sem_quantizacao",
+      "localidade": "Tesla Gigafactory Nevada",
+      "rotulo": "Tesla Nevada",
+      "MAE_wm2": 36.32737392920499
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "LSTM",
+      "variante": "sem_quantizacao",
+      "localidade": "Tesla Gigafactory Texas",
+      "rotulo": "Tesla Texas",
+      "MAE_wm2": 50.520657682320895
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "LSTM",
+      "variante": "sem_quantizacao",
+      "localidade": "Hyundai Metaplant Georgia",
+      "rotulo": "Hyundai Georgia",
+      "MAE_wm2": 53.47705437651438
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "LSTM",
+      "variante": "sem_quantizacao",
+      "localidade": "Rivian Normal",
+      "rotulo": "Rivian Normal",
+      "MAE_wm2": 52.96291005331173
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "LSTM",
+      "variante": "sem_quantizacao",
+      "localidade": "Tesla Fremont Factory",
+      "rotulo": "Tesla Fremont",
+      "MAE_wm2": 33.40228447850572
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "LSTM",
+      "variante": "sem_quantizacao",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "rotulo": "Lucid Casa Grande",
+      "MAE_wm2": 27.647726277409063
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "LSTM",
+      "variante": "sem_quantizacao",
+      "localidade": "GM Factory Zero",
+      "rotulo": "GM Factory Zero",
+      "MAE_wm2": 53.36039103033331
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "LSTM",
+      "variante": "sem_quantizacao",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "rotulo": "Ford Rouge EV",
+      "MAE_wm2": 52.28145917176276
+    },
+    {
+      "tarefa": "daily_30",
+      "horizonte": 30,
+      "modelo": "LSTM",
+      "variante": "sem_quantizacao",
+      "localidade": "BMW San Luis Potosi",
+      "rotulo": "BMW S. L. Potosí",
+      "MAE_wm2": 38.04992856635237
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Transformer",
+      "variante": "q128",
+      "localidade": "BYD Camacari",
+      "rotulo": "BYD Camaçari",
+      "MAE_wm2": 15.223703345314552
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Transformer",
+      "variante": "q128",
+      "localidade": "Tesla Gigafactory Nevada",
+      "rotulo": "Tesla Nevada",
+      "MAE_wm2": 5.93005492051197
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Transformer",
+      "variante": "q128",
+      "localidade": "Tesla Gigafactory Texas",
+      "rotulo": "Tesla Texas",
+      "MAE_wm2": 13.937785062467071
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Transformer",
+      "variante": "q128",
+      "localidade": "Hyundai Metaplant Georgia",
+      "rotulo": "Hyundai Georgia",
+      "MAE_wm2": 13.98958915394814
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Transformer",
+      "variante": "q128",
+      "localidade": "Rivian Normal",
+      "rotulo": "Rivian Normal",
+      "MAE_wm2": 16.082689679424504
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Transformer",
+      "variante": "q128",
+      "localidade": "Tesla Fremont Factory",
+      "rotulo": "Tesla Fremont",
+      "MAE_wm2": 6.956000166103165
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Transformer",
+      "variante": "q128",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "rotulo": "Lucid Casa Grande",
+      "MAE_wm2": 8.809853276187972
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Transformer",
+      "variante": "q128",
+      "localidade": "GM Factory Zero",
+      "rotulo": "GM Factory Zero",
+      "MAE_wm2": 15.57893862415252
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Transformer",
+      "variante": "q128",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "rotulo": "Ford Rouge EV",
+      "MAE_wm2": 15.499544421496845
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Transformer",
+      "variante": "q128",
+      "localidade": "BMW San Luis Potosi",
+      "rotulo": "BMW S. L. Potosí",
+      "MAE_wm2": 19.458361756037167
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "BYD Camacari",
+      "rotulo": "BYD Camaçari",
+      "MAE_wm2": 14.262680296633135
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "Tesla Gigafactory Nevada",
+      "rotulo": "Tesla Nevada",
+      "MAE_wm2": 8.254336611329299
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "Tesla Gigafactory Texas",
+      "rotulo": "Tesla Texas",
+      "MAE_wm2": 11.091678811263629
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "Hyundai Metaplant Georgia",
+      "rotulo": "Hyundai Georgia",
+      "MAE_wm2": 12.90350720210918
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "Rivian Normal",
+      "rotulo": "Rivian Normal",
+      "MAE_wm2": 13.57367990811502
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "Tesla Fremont Factory",
+      "rotulo": "Tesla Fremont",
+      "MAE_wm2": 8.967120252147954
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "rotulo": "Lucid Casa Grande",
+      "MAE_wm2": 8.790288853584132
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "GM Factory Zero",
+      "rotulo": "GM Factory Zero",
+      "MAE_wm2": 15.032703278010947
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "rotulo": "Ford Rouge EV",
+      "MAE_wm2": 15.306517437146896
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "BMW San Luis Potosi",
+      "rotulo": "BMW S. L. Potosí",
+      "MAE_wm2": 19.0831841141578
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "BYD Camacari",
+      "rotulo": "BYD Camaçari",
+      "MAE_wm2": 15.861745707751806
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "Tesla Gigafactory Nevada",
+      "rotulo": "Tesla Nevada",
+      "MAE_wm2": 10.76806212363372
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "Tesla Gigafactory Texas",
+      "rotulo": "Tesla Texas",
+      "MAE_wm2": 16.065515723618997
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "Hyundai Metaplant Georgia",
+      "rotulo": "Hyundai Georgia",
+      "MAE_wm2": 12.080187713090302
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "Rivian Normal",
+      "rotulo": "Rivian Normal",
+      "MAE_wm2": 17.04478432901725
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "Tesla Fremont Factory",
+      "rotulo": "Tesla Fremont",
+      "MAE_wm2": 9.847960462120309
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "rotulo": "Lucid Casa Grande",
+      "MAE_wm2": 13.744913298534009
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "GM Factory Zero",
+      "rotulo": "GM Factory Zero",
+      "MAE_wm2": 12.256195301235412
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "rotulo": "Ford Rouge EV",
+      "MAE_wm2": 11.989647844101771
+    },
+    {
+      "tarefa": "monthly_1",
+      "horizonte": 1,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "BMW San Luis Potosi",
+      "rotulo": "BMW S. L. Potosí",
+      "MAE_wm2": 23.223719331662824
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Transformer",
+      "variante": "q64",
+      "localidade": "BYD Camacari",
+      "rotulo": "BYD Camaçari",
+      "MAE_wm2": 14.793621221337329
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Transformer",
+      "variante": "q64",
+      "localidade": "Tesla Gigafactory Nevada",
+      "rotulo": "Tesla Nevada",
+      "MAE_wm2": 8.134744885996046
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Transformer",
+      "variante": "q64",
+      "localidade": "Tesla Gigafactory Texas",
+      "rotulo": "Tesla Texas",
+      "MAE_wm2": 16.563844831079866
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Transformer",
+      "variante": "q64",
+      "localidade": "Hyundai Metaplant Georgia",
+      "rotulo": "Hyundai Georgia",
+      "MAE_wm2": 15.21741996336498
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Transformer",
+      "variante": "q64",
+      "localidade": "Rivian Normal",
+      "rotulo": "Rivian Normal",
+      "MAE_wm2": 14.459199796890577
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Transformer",
+      "variante": "q64",
+      "localidade": "Tesla Fremont Factory",
+      "rotulo": "Tesla Fremont",
+      "MAE_wm2": 8.736300339613113
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Transformer",
+      "variante": "q64",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "rotulo": "Lucid Casa Grande",
+      "MAE_wm2": 12.486016694119575
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Transformer",
+      "variante": "q64",
+      "localidade": "GM Factory Zero",
+      "rotulo": "GM Factory Zero",
+      "MAE_wm2": 16.321129848640904
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Transformer",
+      "variante": "q64",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "rotulo": "Ford Rouge EV",
+      "MAE_wm2": 13.8315010357214
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Transformer",
+      "variante": "q64",
+      "localidade": "BMW San Luis Potosi",
+      "rotulo": "BMW S. L. Potosí",
+      "MAE_wm2": 23.42169086969805
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "BYD Camacari",
+      "rotulo": "BYD Camaçari",
+      "MAE_wm2": 12.606808185389426
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "Tesla Gigafactory Nevada",
+      "rotulo": "Tesla Nevada",
+      "MAE_wm2": 8.449066195819828
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "Tesla Gigafactory Texas",
+      "rotulo": "Tesla Texas",
+      "MAE_wm2": 14.247166156413744
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "Hyundai Metaplant Georgia",
+      "rotulo": "Hyundai Georgia",
+      "MAE_wm2": 15.42848729579019
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "Rivian Normal",
+      "rotulo": "Rivian Normal",
+      "MAE_wm2": 14.698825506036128
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "Tesla Fremont Factory",
+      "rotulo": "Tesla Fremont",
+      "MAE_wm2": 8.057070328856598
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "rotulo": "Lucid Casa Grande",
+      "MAE_wm2": 12.153305200719675
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "GM Factory Zero",
+      "rotulo": "GM Factory Zero",
+      "MAE_wm2": 15.332658005204962
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "rotulo": "Ford Rouge EV",
+      "MAE_wm2": 13.56992011054582
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "Informer",
+      "variante": "q128",
+      "localidade": "BMW San Luis Potosi",
+      "rotulo": "BMW S. L. Potosí",
+      "MAE_wm2": 22.135398304458505
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "BYD Camacari",
+      "rotulo": "BYD Camaçari",
+      "MAE_wm2": 14.80003483587425
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "Tesla Gigafactory Nevada",
+      "rotulo": "Tesla Nevada",
+      "MAE_wm2": 11.895210491424471
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "Tesla Gigafactory Texas",
+      "rotulo": "Tesla Texas",
+      "MAE_wm2": 15.0695645148209
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "Hyundai Metaplant Georgia",
+      "rotulo": "Hyundai Georgia",
+      "MAE_wm2": 14.603995382756946
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "Rivian Normal",
+      "rotulo": "Rivian Normal",
+      "MAE_wm2": 17.60809914041733
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "Tesla Fremont Factory",
+      "rotulo": "Tesla Fremont",
+      "MAE_wm2": 10.987716726054392
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "Lucid AMP 1 Casa Grande",
+      "rotulo": "Lucid Casa Grande",
+      "MAE_wm2": 14.418866037710096
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "GM Factory Zero",
+      "rotulo": "GM Factory Zero",
+      "MAE_wm2": 11.083115115499524
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "Ford Rouge Electric Vehicle Center",
+      "rotulo": "Ford Rouge EV",
+      "MAE_wm2": 10.803919452340908
+    },
+    {
+      "tarefa": "monthly_6",
+      "horizonte": 6,
+      "modelo": "LSTM",
+      "variante": "q128",
+      "localidade": "BMW San Luis Potosi",
+      "rotulo": "BMW S. L. Potosí",
+      "MAE_wm2": 26.352066956946118
+    }
+  ],
+  "limitations": [
+    "Cores têm escala própria em cada tarefa.",
+    "Menor erro em uma localidade não comprova superioridade estatística.",
+    "Valores são MAEs das previsões combinadas, não média de MAEs por semente."
+  ]
+}

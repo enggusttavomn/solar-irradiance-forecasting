@@ -1,0 +1,135 @@
+{
+  "version": 12,
+  "status": "passed_final_temporal_sample_review",
+  "generated_utc": "2026-11-05T13:52:37.659355+00:00",
+  "reviewer": "/root/direcao_continua_v12",
+  "video_sha256": "ee512579def3cf3bf74c4ca354a62b28c03c048ad75e412d9a8ec98fd0ff2cb5",
+  "visual_schedule_sha256": "c30e6104e48debcdf1d23f70a534e118b314164b0e0de8f4177a66654dd68f1f",
+  "duration_seconds": 490.6,
+  "frames": 14718,
+  "fps": 30,
+  "scope": "Manual visual inspection of every final-pass temporal contact sheet01–10(all110stills,22items), one additional final general still27.16667for the measured-area hold, and code/endpoint audit of all21tailholds. General final review belongs to ROOT and qa_geral_final_v12. Earlier superseded general sheets are not counted as final reviewed frames here.",
+  "final_temporal_contact_sheets_manually_inspected": [
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/sequencia_contato_v12_01.png",
+      "sha256": "5db5905b8db710e009e4dea81076a428d5fe4c342bdfd8ebb9f761da02848bf1"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/sequencia_contato_v12_02.png",
+      "sha256": "6d9de2616ae72af17fda2a445751caafa16add435c017642c99ee6183e8c5a44"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/sequencia_contato_v12_03.png",
+      "sha256": "ebf693a03a080e3dea478cf30bc8219ea4276ad6f6a970dba34f6cb6624ae75f"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/sequencia_contato_v12_04.png",
+      "sha256": "70addc3dea5d6b874adf582a8f3ac9aae2962e13416186e3358fb48e7b938ead"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/sequencia_contato_v12_05.png",
+      "sha256": "1b3726080242bd97358ec50a23e69e10a1f9f50f4de3f40d568e46eac40827be"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/sequencia_contato_v12_06.png",
+      "sha256": "57537a10c1267caaad8a8bfb7882a2249d25c64bc3c3d3a88c12bf77bd0201dd"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/sequencia_contato_v12_07.png",
+      "sha256": "ea3c2107602d6bf6ae83864d18e274a3c0a88dde52432c2ae3beba3b43bc1bad"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/sequencia_contato_v12_08.png",
+      "sha256": "9bb569abdf0217328b3f7ca25d35f57180c650e970f0ee049aed2c00a10d5556"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/sequencia_contato_v12_09.png",
+      "sha256": "c281f0b76bd3cb5edb69a9b0f406a2204f34ad16aeb4526788a6099061f0843d"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/sequencia_contato_v12_10.png",
+      "sha256": "e5defbe4027d4ae66052098a99b715d63403fce1b8d2e3e81741ef48f96af675"
+    }
+  ],
+  "final_temporal_stills_reviewed_count": 110,
+  "final_temporal_items_reviewed_count": 22,
+  "additional_final_general_stills_reviewed": [
+    "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_final/geral/t_27.16667.png"
+  ],
+  "source_frame_comparison_report": "documentacao/relatorio_final_ea019/video/montagem_final_v12/verificacao_amostral_continua_v12.json",
+  "source_frame_comparison_failures": [],
+  "source_frame_comparison_all_passed": true,
+  "minimum_sampled_psnr_db": 46.59882489308391,
+  "max_sampled_foreground_rgb_mae": 2.7671642303466797,
+  "tail_hold_endpoint_audit": "tmp/montagem_final_v12/qa_hold_endpoints_v12.json",
+  "all21material_hold_endpoints_passed": true,
+  "native_speed_1x_verified_in_schedule": true,
+  "checks": [
+    {
+      "topic": "Unit area and DNI transition",
+      "status": "pass",
+      "evidence": "Final general still27.16667shows completed1m²and both1.00mcotas retained. Temporal sheet01starts34.483333with visible cotas, then full native flyout into tilted DNI plane and90°marker. The hold no longer freezes a partially moved camera with a lost area label."
+    },
+    {
+      "topic": "DNI versus horizontal projection",
+      "status": "pass",
+      "evidence": "Sheet01shows90°between direct beam and DNI measuring plane; subsequent vertical/zenith arc is separate. Equation, direct horizontal term and DHI caption remain visible. Final held projection frame retains actual geometry rather than the next day/night first frame."
+    },
+    {
+      "topic": "LSTM and Transformer mechanisms",
+      "status": "pass",
+      "evidence": "Sheets01–02retain ordered values, memory/gates/final vector and position/query/weighted values/context/future construction. Sampled stages are ordered; no unfinished construction frozen in their tail holds."
+    },
+    {
+      "topic": "Informer reduction and full cross-attention",
+      "status": "pass",
+      "evidence": "Sheet03nowholds completed convolution/reduction at2:02.15before the encoder lift. Cross begins2:04.65with the moving state and sheet04completes all query/output updates by2:08.75. Source split98.6preserves the complete lift and native frame correspondence passes."
+    },
+    {
+      "topic": "Histogram meaning",
+      "status": "pass",
+      "evidence": "Sheet04shows readings migrating from the time curve into the400≤GHI<450bucket; sheets04–05then show881/18496×100≈4.8%and positive-hour denominator. Labels and narration cue describe frequency as the percentage of hours."
+    },
+    {
+      "topic": "Quantization numerical examples",
+      "status": "pass",
+      "evidence": "Sheets05–06show selected437moving to each native lattice before numeric reconstruction.444.44,433.07,435.29remain visible through their spoken rounded values. Clipping then rounding is fully shown, preserving the input-representation explanation."
+    },
+    {
+      "topic": "MAE distance50and mean28",
+      "status": "pass",
+      "evidence": "Sheets06–07show reference600versus forecast650, explicit positive vertical distance50, then all five distances20/30/50/30/10and division by5.28appears in the completed mean view and persists as the next plot starts. Native builds and speech read windows are preserved."
+    },
+    {
+      "topic": "MAE converges to zero",
+      "status": "pass",
+      "evidence": "Sheets07–08show both successive curve approaches, complete coincidence, explicitMAE=0and interpretation. The zero state is visible while its caption is read."
+    },
+    {
+      "topic": "MacroMAE and cumulative72hours",
+      "status": "pass",
+      "evidence": "Sheet08shows all ten named factories contributing equal1/10weights. Full scan proceeds through night to all72steps; final72hours=three-days label remains visible. Completed source-frame comparisons pass."
+    },
+    {
+      "topic": "Monthly correct result13.67",
+      "status": "pass",
+      "evidence": "Sheet09shows monthly one-step12.73and separate six-step13.67with corresponding model bars. The incorrect spoken13.77clause was removed by the master editor; this review confirms the correct visible13.67, not a fabricated spoken replacement."
+    },
+    {
+      "topic": "Historical LSTM exception repair",
+      "status": "pass",
+      "evidence": "Sheets09–10show the isolated repaired matrix, all12comparisons and the readable exception footnote outside the cells. No previously reported overlapped ExceçãoLSTMtext remains behind blocks."
+    },
+    {
+      "topic": "Global caption continuity in samples",
+      "status": "pass_with_sampled_scope",
+      "evidence": "Across all110sampledframes,captions sit below the figures with stable style and phrase continuity. Absences shown are legitimate global cue gaps/reading windows; no shot-boundary subtitle duplication is seen. This is a sampled contact-sheet review and does not assert exhaustive frame-by-frame flicker detection."
+    }
+  ],
+  "material_issues": [],
+  "required_changes": [],
+  "audio_listening_performed": false,
+  "full_realtime_playback_reviewed": false,
+  "sources_or_media_changed_by_this_review": false,
+  "limits": "Contact sheets show sampled temporal evolution, not uninterrupted motion or complete human listening. Native-speed preservation and exact frame mapping are supported separately by source animation code, schedule and automated source-frame comparisons."
+}

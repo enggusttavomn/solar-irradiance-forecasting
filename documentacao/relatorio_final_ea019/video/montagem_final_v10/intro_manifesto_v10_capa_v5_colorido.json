@@ -1,0 +1,66 @@
+{
+  "version": 10,
+  "status": "provisional_encoded_pending_cover_approval",
+  "cover_user_approval_pending": true,
+  "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v10\\intro_1080p30_com_audio_v10_capa_v5_colorido.mp4",
+  "sha256": "aba9cb704277838282e3a22758488e0934245d3f0ae0256d5e13e2fe531079a7",
+  "source_path": "C:\\Users\\gusta\\Pictures\\Camera Roll\\WIN_20261104_20_01_05_Pro.mp4",
+  "source_sha256": "d2efee2b2cae4055f0687bb9763936cf93a346660b1532338e96faa85d9d2ba3",
+  "source_original_unmodified": true,
+  "background_path": "documentacao\\relatorio_final_ea019\\video\\abertura_apresentacao_v5\\capa_apresentacao_fundo_v5.png",
+  "background_sha256": "eb2659974aa20a3c4004892d5d4eb6d73bb3ae1abbfd98cd3c19bbf6ca00c73f",
+  "duration_seconds": 14.133333333333333,
+  "fps": 30,
+  "frame_count": 424,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "audio": "original recording, 48kHz AAC stereo, tail aligned to exact video duration within one frame",
+  "method": "RVM recurrent alpha plus feathered fixed chair polygons; original RGB preserved",
+  "model_url": "https://github.com/PeterL1n/RobustVideoMatting/releases/download/v1.0.0/rvm_mobilenetv3_fp32.onnx",
+  "model_license": "GPL-3.0",
+  "model_sha256": "88d4531297118f595bf2fd60f6f566aec2e559393802d1f436c380f0cbbd2828",
+  "provider": "CPUExecutionProvider",
+  "onnxruntime_version": "1.31.1",
+  "intra_op_threads": 4,
+  "input_resolution": [
+    960,
+    540
+  ],
+  "downsample_ratio": 0.5,
+  "recurrent_states_recycled": true,
+  "roi": [
+    220,
+    90,
+    800,
+    540
+  ],
+  "presenter_region": [
+    1140,
+    480,
+    740,
+    600
+  ],
+  "matte_lossless_path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v10\\intro_matte_960x540_v10.mkv",
+  "matte_cache_reused": true,
+  "monochrome_opening": false,
+  "variant": "_capa_v5_colorido",
+  "rgb_decode_resolution": [
+    1920,
+    1080
+  ],
+  "qa_frames": [
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0000_capa_v5_colorido.png",
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0060_capa_v5_colorido.png",
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0120_capa_v5_colorido.png",
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0210_capa_v5_colorido.png",
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0360_capa_v5_colorido.png",
+    "tmp\\montagem_final_v10\\intro\\qa_composicao_0420_capa_v5_colorido.png"
+  ],
+  "full_decode_errors": 0,
+  "full_decode_frame_count": 424,
+  "cover_pixels_outside_overlay_verified_identical_before_encoding": true,
+  "generative_images_used_in_video": false,
+  "elapsed_seconds": 16.87
+}

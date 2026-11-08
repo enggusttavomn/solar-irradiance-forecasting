@@ -1,0 +1,32 @@
+{
+  "render": "tmp/apendice_c_simplificado_20261101/render-v1",
+  "pages_inspected": [3, 34, 35],
+  "method": "As três páginas foram abertas individualmente em chamadas separadas de view_image, usando os PNGs integrais da renderização.",
+  "passed": true,
+  "blocking_defects": [],
+  "checks": {
+    "table_of_contents_readable": true,
+    "table_of_contents_appendix_c_updated": true,
+    "appendix_c_title_readable": true,
+    "table_16_complete_and_readable_on_page_34": true,
+    "table_17_readable_with_repeated_header": true,
+    "no_clipping_or_overlap": true,
+    "no_orphan_headings": true,
+    "section_c2_readable": true,
+    "margins_and_alignment_consistent": true
+  },
+  "page_notes": {
+    "3": "Sumário limpo, sem quebra indevida das entradas. Apêndice C e C.1 apontam para 34; C.2 para 35.",
+    "34": "Título do Apêndice C, introdução, C.1, Tabela 16 e fonte legíveis. Tabela 17 começa com cabeçalho e duas linhas de dados, sem linha cortada.",
+    "35": "Tabela 17 continua com cabeçalho repetido e duas linhas finais, seguida da fonte e comentário. C.2 tem texto junto ao título. A área branca final corresponde ao fim do documento."
+  },
+  "nonblocking_observations": [
+    {
+      "pages": [34, 35],
+      "item": "Tabela 17",
+      "observation": "A tabela tem somente quatro linhas de dados e ficou dividida em duas por página, com cabeçalho repetido corretamente. Manter a tabela inteira na página 35 seria uma melhoria opcional de apresentação, sem necessidade de alterar seu texto."
+    }
+  ],
+  "content_scope": "Revisão visual somente das páginas alteradas; nenhuma edição de conteúdo ou arquivo DOCX foi realizada.",
+  "files_edited": ["tmp/apendice_c_simplificado_20261101/qa_visual.json"]
+}

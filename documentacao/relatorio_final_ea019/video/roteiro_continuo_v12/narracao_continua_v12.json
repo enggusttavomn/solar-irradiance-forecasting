@@ -1,0 +1,163 @@
+{
+  "version": 12,
+  "status": "ready_for_new_recording",
+  "purpose": "Nova gravação contínua da narração, para remontar as animações com transições naturais e legendas sincronizadas ao áudio real.",
+  "existing_opening": {
+    "keep_existing_video_and_audio": true,
+    "duration_seconds": 14.133333333333333,
+    "text": "Olá, eu sou Gustavo, aluno da Engenharia Elétrica da Unicamp. Neste trabalho, comparo LSTM, Transformer e Informer na previsão da irradiância solar em localidades ligadas à fabricação de veículos elétricos.",
+    "instruction": "Este texto já está no vídeo de apresentação. A nova gravação começa no primeiro parágrafo abaixo; não é necessário regravar a abertura."
+  },
+  "sections": [
+    {
+      "id": "ghi",
+      "label": "O que estamos prevendo e por que isso importa",
+      "paragraphs": [
+        "Para entender essa previsão, primeiro precisamos entender a irradiância global horizontal, ou GHI: a potência solar recebida por unidade de área horizontal, em watts por metro quadrado. Parte dessa luz vem diretamente do Sol, e parte chega depois de ser espalhada pela atmosfera.",
+        "A direta normal, chamada DNI, é medida num plano perpendicular aos raios solares. Para obter sua contribuição na horizontal, usamos o cosseno do ângulo com a vertical. Somando a luz difusa recebida na horizontal, temos o GHI.",
+        "Essa composição varia. À noite, o GHI solar zera; durante o dia, as nuvens modificam a curva. Prever sua continuação pode apoiar estimativas de geração fotovoltaica e, com elas, o planejamento de compras de energia, armazenamento e horários de consumo."
+      ]
+    },
+    {
+      "id": "modelos",
+      "label": "Três maneiras de transformar o histórico em previsão",
+      "paragraphs": [
+        "Para antecipar essa disponibilidade, precisamos transformar informações do passado em uma previsão. Comparei três formas de fazer isso.",
+        "Na LSTM, os valores entram em ordem. A rede atualiza uma memória a cada passo, usando portas aprendidas para controlar o que reter, acrescentar e transmitir. O estado final reúne informações úteis para prever o que vem depois.",
+        "O Transformer relaciona posições da sequência por atenção. Cada posição gera uma consulta, comparada às chaves das outras posições. Essas relações produzem pesos, que controlam a contribuição de cada posição na combinação dos valores. A representação também inclui a ordem temporal dos valores.",
+        "O Informer modifica esse processamento para sequências longas: detalha a atenção de algumas consultas e reduz a sequência interna do codificador. A atenção que liga o histórico processado à etapa de previsão, chamada atenção cruzada, permanece completa. Neste projeto, os três modelos produzem diretamente o vetor de valores futuros. Para compará-los, usei a mesma base de dados e os mesmos cortes temporais."
+      ]
+    },
+    {
+      "id": "dados",
+      "label": "De onde vêm os dados e o que a distribuição significa",
+      "paragraphs": [
+        "Essa base cobre dez localidades nas Américas: uma no Brasil, oito nos Estados Unidos e uma no México, associadas à fabricação de veículos elétricos. Os valores vêm da NSRDB, que combina satélites, informações atmosféricas e modelos físicos para estimar a irradiância em cada região.",
+        "Podemos observar esses dados de duas maneiras. A curva mostra quando cada valor ocorreu. O histograma agrupa valores por faixa e mostra a porcentagem de horas em cada uma. No exemplo de Camaçari, a faixa entre quatrocentos e quatrocentos e cinquenta watts por metro quadrado reúne cerca de quatro vírgula oito por cento das horas com GHI positivo. Os valores zero são contados separadamente. Assim, comparamos as distribuições entre localidades, sem confundir porcentagem de ocorrências com passagem do tempo."
+      ]
+    },
+    {
+      "id": "entradas",
+      "label": "Como os dados entram e quais futuros são previstos",
+      "paragraphs": [
+        "Para prever, porém, também precisamos da ordem em que os valores aconteceram. Por isso, a entrada reúne uma janela de GHI anterior e a identificação da localidade. A rede aprende uma representação de cada região e compartilha seus parâmetros entre as dez localidades.",
+        "A janela e o futuro previsto mudam conforme a tarefa. Na horária, entram duas semanas e prevemos três dias. Na diária, entra um ano e prevemos trinta dias. Nas mensais, entram doze meses, para prever um mês ou seis meses. Essas duas tarefas mensais usam redes treinadas separadamente. Cada tarefa mantém as mesmas entradas para comparar os três modelos."
+      ]
+    },
+    {
+      "id": "protocolo",
+      "label": "Como a comparação foi organizada",
+      "paragraphs": [
+        "Definidas essas tarefas, organizei os dados no tempo. O treinamento inicial usou dois mil e dezenove a dois mil e vinte e dois; a validação, dois mil e vinte e três. Selecionei configurações e épocas pela validação, com a normalização ajustada ao histórico de treino correspondente.",
+        "Depois, reiniciei o treinamento com dois mil e dezenove a dois mil e vinte e três e avaliei as previsões em dois mil e vinte e quatro. Como esse ano já havia sido examinado, essa avaliação é retrospectiva, com independência limitada."
+      ]
+    },
+    {
+      "id": "quantizacao",
+      "label": "O que muda ao quantizar a entrada",
+      "paragraphs": [
+        "Dentro desse protocolo, testei uma hipótese adicional: mudar a representação do GHI de entrada. Quantizar significa aproximar cada leitura de um dos níveis disponíveis.",
+        "Acompanhe a leitura quatrocentos e trinta e sete, numa escala didática de zero a mil. Depois da normalização, com sessenta e quatro níveis ela é reconstruída como aproximadamente quatrocentos e quarenta e quatro. Com cento e vinte e oito, fica perto de quatrocentos e trinta e três; com duzentos e cinquenta e seis, perto de quatrocentos e trinta e cinco. Mais níveis reduzem o espaço entre os degraus, mantendo o instante da leitura.",
+        "Nas variantes quantizadas, limitamos extremos antes de arredondar. A transformação atua apenas no GHI de entrada: a localidade segue separada, e pesos, alvos e saídas permanecem contínuos. Comparei essas variantes ao controle contínuo, escolhendo a condição na validação."
+      ]
+    },
+    {
+      "id": "mae",
+      "label": "Como interpretar o erro da previsão",
+      "paragraphs": [
+        "Essa aproximação da entrada ainda não é o erro da previsão. Para avaliar a saída, usamos o MAE, o erro absoluto médio. No gráfico, ele começa pela distância vertical entre previsão e referência no mesmo instante.",
+        "Se a referência é seiscentos e a previsão é seiscentos e cinquenta, a diferença absoluta é cinquenta. Reunindo as cinco diferenças do exemplo, vinte, trinta, cinquenta, trinta e dez, e dividindo por cinco, chegamos a vinte e oito watts por metro quadrado.",
+        "Quando as curvas se aproximam, essas distâncias diminuem. Se todos os valores coincidem, o MAE é zero. Portanto, na mesma tarefa, menor MAE indica uma previsão mais próxima da referência.",
+        "Calculamos esse erro para cada localidade e depois fazemos outra média, dando o mesmo peso às dez regiões. É o macro-MAE. Na avaliação cumulativa, entram todos os passos até o horizonte escolhido, incluindo a noite. Setenta e duas horas representam três dias completos. Com essa régua, podemos interpretar os resultados."
+      ]
+    },
+    {
+      "id": "resultados",
+      "label": "O que os experimentos mostraram",
+      "paragraphs": [
+        "Nos horizontes completos, o Transformer apresentou o menor macro-MAE horário, com cinquenta e três vírgula vinte e um watts por metro quadrado. Na diária, também liderou, com quarenta e três vírgula oitenta e nove. As diferenças para a LSTM foram pequenas.",
+        "Nas tarefas mensais, o Informer teve os menores erros: doze vírgula setenta e três em um mês e treze vírgula sessenta e sete em seis meses, também em watts por metro quadrado. Esses valores devem ser comparados dentro de cada tarefa, porque as escalas e os alvos mudam.",
+        "A visão por localidade e horizonte complementa essas médias. Na diária, por exemplo, a LSTM liderou os recortes avaliados de até quatorze dias; o Transformer liderou em trinta dias. Nas duas tarefas mensais, o Informer venceu em cinco localidades, mas elas não foram exatamente as mesmas. As médias resumem o desempenho; os detalhes mostram sua distribuição."
+      ]
+    },
+    {
+      "id": "conclusao",
+      "label": "Como interpretar o conjunto e concluir com firmeza",
+      "paragraphs": [
+        "As análises adicionais ajudam a interpretar esse conjunto. Comparadas ao controle contínuo, as variantes quantizadas escolhidas na validação reduziram o erro em cinco combinações de modelo e tarefa e aumentaram em quatro. Nas três restantes, foi selecionado o próprio controle.",
+        "Numa comparação histórica separada, nos controles contínuos, o histórico longo teve menor erro em onze de doze casos, exceto na LSTM horária. Isso também envolve mudanças nos anos e na normalização, sem isolar uma causa.",
+        "O estudo avaliou precisão, sem medir velocidade computacional ou produção fotovoltaica. A tarefa de seis meses permanece exploratória, e as diferenças observadas são descritivas.",
+        "O projeto entrega uma comparação experimental das três arquiteturas em dez localidades, sob um protocolo comum. Nos horizontes completos avaliados, o Transformer liderou as previsões horárias e diárias, e o Informer, as mensais. Esses resultados oferecem uma base experimental para orientar a escolha dos modelos na previsão da irradiância solar. Obrigado pela atenção."
+      ]
+    }
+  ],
+  "planned_observation_pauses": [
+    {
+      "after_exact_sentence": "Somando a luz difusa recebida na horizontal, temos o GHI.",
+      "seconds": 1.5,
+      "purpose": "Observar a projeção direta e a soma com a difusa."
+    },
+    {
+      "after_exact_sentence": "Os valores zero são contados separadamente.",
+      "seconds": 1.5,
+      "purpose": "Ler a porcentagem do histograma e o denominador."
+    },
+    {
+      "after_exact_sentence": "Mais níveis reduzem o espaço entre os degraus, mantendo o instante da leitura.",
+      "seconds": 2.0,
+      "purpose": "Comparar os três valores reconstruídos."
+    },
+    {
+      "after_exact_sentence": "Reunindo as cinco diferenças do exemplo, vinte, trinta, cinquenta, trinta e dez, e dividindo por cinco, chegamos a vinte e oito watts por metro quadrado.",
+      "seconds": 2.0,
+      "purpose": "Acompanhar a operação e o resultado 28 W/m²."
+    },
+    {
+      "after_exact_sentence": "Se todos os valores coincidem, o MAE é zero.",
+      "seconds": 1.0,
+      "purpose": "Observar a coincidência das curvas."
+    },
+    {
+      "after_exact_sentence": "Esses valores devem ser comparados dentro de cada tarefa, porque as escalas e os alvos mudam.",
+      "seconds": 1.5,
+      "purpose": "Observar os resultados das quatro tarefas."
+    }
+  ],
+  "editing_policy": {
+    "record_main_narration_as_one_file": true,
+    "allow_sentences_to_cross_shot_boundaries": true,
+    "sync_final_captions_to_actual_new_recording": true,
+    "do_not_assign_one_sentence_to_each_old_scene": true,
+    "preserve_didactic_animation_motion_and_key_result_visibility": true,
+    "avoid_voice_time_stretch": true,
+    "reuse_approved_opening_and_existing_3d_assets": true,
+    "academic_maximum_seconds": 600,
+    "exact_final_duration_pending_new_recording": true,
+    "existing_v11_videos_modified": false,
+    "external_uploads_authorized": false
+  },
+  "written_narration_word_count": 1183,
+  "estimated_spoken_word_count_with_expanded_acronyms": 1227,
+  "estimated_duration_models": [
+    {
+      "spoken_words_per_minute": 130,
+      "estimated_total_seconds": 589.9410256410257
+    },
+    {
+      "spoken_words_per_minute": 135,
+      "estimated_total_seconds": 568.9666666666666
+    },
+    {
+      "spoken_words_per_minute": 140,
+      "estimated_total_seconds": 549.4904761904762
+    },
+    {
+      "spoken_words_per_minute": 150,
+      "estimated_total_seconds": 514.4333333333333
+    }
+  ],
+  "source_report": {
+    "path": "documentacao\\relatorio_final_ea019\\Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.pdf",
+    "sha256": "97b500b484aec0bf4d336ee2b351858e1e7f8fff59cb6969f09f722b63edc807"
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "version": 9,
+  "duration": 60,
+  "title": "Mecanismos das redes antes da comparação de entradas",
+  "qa_times": [
+    17,
+    53.8,
+    58
+  ],
+  "cues": [
+    [
+      0,
+      4,
+      "Comparei LSTM, Transformer e Informer. Como funcionam?"
+    ],
+    [
+      4,
+      8,
+      "Na LSTM, os valores entram em ordem."
+    ],
+    [
+      8,
+      12,
+      "A memória muda a cada passo, por portas aprendidas."
+    ],
+    [
+      12,
+      16,
+      "Elas regulam o que reter, acrescentar e transmitir."
+    ],
+    [
+      16,
+      19,
+      "O estado final ajuda a prever todo o horizonte."
+    ],
+    [
+      19,
+      23,
+      "No Transformer, cada posição reúne valor e ordem temporal."
+    ],
+    [
+      23,
+      27,
+      "Consultas comparam representações com suas chaves."
+    ],
+    [
+      27,
+      31,
+      "Os pesos calculados orientam a combinação dos valores."
+    ],
+    [
+      31,
+      35,
+      "Essas representações seguem para a previsão do horizonte."
+    ],
+    [
+      35,
+      39,
+      "Em sequências longas, o Informer detalha algumas consultas."
+    ],
+    [
+      39,
+      43,
+      "A seleção usa uma estimativa de esparsidade."
+    ],
+    [
+      43,
+      47,
+      "Em outra etapa, reduz a sequência interna do codificador."
+    ],
+    [
+      47,
+      51,
+      "A atenção cruzada permanece completa."
+    ],
+    [
+      51,
+      55,
+      "O mesmo histórico e a mesma localidade entram nos três modelos."
+    ],
+    [
+      55,
+      60,
+      "Cada modelo produz diretamente um vetor para o mesmo horizonte."
+    ]
+  ],
+  "phases": [
+    [
+      0,
+      4,
+      "goal"
+    ],
+    [
+      4,
+      19,
+      "LSTM sequential memory and continuous gates"
+    ],
+    [
+      19,
+      35,
+      "Transformer value-position, queries-keys, weighted values"
+    ],
+    [
+      35,
+      43,
+      "Informer selected queries in long contexts"
+    ],
+    [
+      43,
+      47,
+      "separate encoder representation distillation"
+    ],
+    [
+      47,
+      51,
+      "complete cross-attention"
+    ],
+    [
+      51,
+      60,
+      "identical history and locality inputs"
+    ]
+  ],
+  "visible_history_samples": 12,
+  "history_values_schematic": [
+    0.02,
+    0.1,
+    0.72,
+    1.0,
+    0.6,
+    0.05,
+    0.01,
+    0.18,
+    0.76,
+    0.68,
+    0.36,
+    0.02
+  ],
+  "future_vector_components_schematic": 4,
+  "all_models_output_direct_horizon": true,
+  "recursive_forecast_feedback": false,
+  "LSTM_locality_join": "final recurrent state concatenated with locality embedding before the output head",
+  "Transformer_input": "GHI projection plus position representation plus locality projection",
+  "Informer_query_selection": "illustrative estimated sparsity, not largest GHI amplitudes",
+  "Informer_selected_visible_indices": [
+    1,
+    7
+  ],
+  "Informer_short_context_note": "The local implementation can select every query on short contexts; the sparse animation depicts a long context schematically.",
+  "encoder_distillation_stages": 1,
+  "encoder_representation_count_illustrative": [
+    12,
+    6
+  ],
+  "decoder_cross_attention_complete": true,
+  "illustrative_cross_attention_edges": 24,
+  "same_history_and_locality_in_final_comparison": true,
+  "same_output_format_does_not_mean_identical_predicted_values": true,
+  "weights_states_and_predictions": "didactic geometry, not measurements extracted from the fitted networks",
+  "performance_or_speed_claims": false,
+  "error_rankings": false,
+  "object_count": 580,
+  "references": [
+    {
+      "kind": "visual",
+      "url": "https://www.3blue1brown.com/lessons/attention/"
+    },
+    {
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/1706.03762"
+    },
+    {
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2012.07436"
+    },
+    {
+      "kind": "paper",
+      "url": "https://people.idsia.ch/~juergen/lstm1997-2024head.pdf"
+    },
+    {
+      "kind": "implementation",
+      "path": "codigo_fonte/modelos/modelos_baselines_adicionais.py"
+    },
+    {
+      "kind": "implementation",
+      "path": "codigo_fonte/modelos/recorrentes/modelos_neurais_globais.py"
+    }
+  ],
+  "updated_ranges_seconds": [
+    [
+      16,
+      19
+    ],
+    [
+      51,
+      60
+    ]
+  ],
+  "known_factory_city": "Camaçari",
+  "module": "models_v9",
+  "start": 52,
+  "end": 112,
+  "chapter": "modelos",
+  "fps": 30,
+  "frames": 1800,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "resolution_percentage": 100,
+  "samples": 16,
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\modelos_3d_v9.mp4",
+  "render_complete": true,
+  "source_fingerprint": "fb54504186ed15436ad92efd91b1ca7821c910f724b46d54df183a31474218d4",
+  "source_hashes": {
+    "codigo_fonte/video_ea019/director_v9.py": "60d34e82b64ff49d93109ee63eb0603f5704a34e5e0dc5f9422774ac3d693ec0",
+    "codigo_fonte/video_ea019/config_v9.py": "1112a80bf6b4eca0068554ee86bf76348230c62839b7d9ca26d58dce25c7139d",
+    "codigo_fonte/video_ea019/common_v7.py": "4867b4c429436a2e602de07bbbc1d16d6644506917894c8dca3588dc7e4e3587",
+    "codigo_fonte/video_ea019/blender_pilot.py": "d048c56e8559a13e2eb462299421e618817bdd0fee186412172e75843ad3207d",
+    "codigo_fonte/video_ea019/factory_site_v6.py": "9ef07ea1f676d8970a2d007c0bf2918ddf63c7cad3b0ad00d3ac0d7723d23c55",
+    "codigo_fonte/video_ea019/retime_v9.py": "a3bac65c3d4843b6037277d3434168390cbe7607b5b725cbadca8b5a6f47c96a",
+    "codigo_fonte/video_ea019/models_v9.py": "7b529d92ee85a35e5695e2eb2c121c7a7477b00cc9c95592978c916534b94b80",
+    "codigo_fonte/video_ea019/models_explainer_v7.py": "b45dbcbe338e66a9568fa913a0c12bb0659dc986c4b6ac1f8282d49a8e6ec4e1",
+    "codigo_fonte/video_ea019/narration_v7.py": "0d137fc853855477bdfb7d41561c6d89f037016e82dd00858dfdcd1f784151c2",
+    "documentacao/relatorio_final_ea019/video/completo_v8/fontes_resultados_v8.json": "de42f0a99982bca8f029a92f91df7694a3855b1a44614ba6deeb8aa2d7b56494",
+    "documentacao/relatorio_final_ea019/video/revisao_ate_plano22_v7/referencias/ghi_distributions_training.json": "c6e42479d11556b890fb607bf2f5d90a65fc066103c566512f21f1509dcda6bc",
+    "documentacao/relatorio_final_ea019/video/revisao_ate_plano22_v7/cenas/modelos_3d_v7.mp4": "7ed8eb598d1f083343df9140a947cd87dec1677cf3712bfe037f729a68a4f1e8",
+    "codigo_fonte/video_ea019/assets/americas_land.json": "7a8a908caa2b1a512bcc287083cfbcd21e332f4e006a67b1b5ef14d380327278",
+    "codigo_fonte/video_ea019/assets/localities_report.json": "47df949b87d15c04e0931fdc020bf8cfb63278937f8dfd6ad2dd401e44a0b4a7"
+  },
+  "blocks": [
+    {
+      "first_frame": 481,
+      "last_frame": 570,
+      "frame_count": 90,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\modelos\\f00481_00570.mp4",
+      "bytes": 1028225,
+      "sha256": "2c277498b7b3c77f9eeaae84e130c6e42c5bf7ef8eb55e28e43be873e9fb04b5",
+      "source_fingerprint": "fb54504186ed15436ad92efd91b1ca7821c910f724b46d54df183a31474218d4",
+      "reused": false
+    },
+    {
+      "first_frame": 1531,
+      "last_frame": 1800,
+      "frame_count": 270,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\modelos\\f01531_01800.mp4",
+      "bytes": 2556114,
+      "sha256": "75716ce94fd029b328cd09f40c56db34dfd279da64e5fdda9fd4b35a85329e1c",
+      "source_fingerprint": "fb54504186ed15436ad92efd91b1ca7821c910f724b46d54df183a31474218d4",
+      "reused": false
+    }
+  ],
+  "approved_geometry_reused_ranges_seconds": [
+    [
+      0,
+      16
+    ],
+    [
+      19,
+      51
+    ]
+  ],
+  "raw_verification": {
+    "path": "documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\modelos_3d_v9.mp4",
+    "bytes": 5174863,
+    "sha256": "1bda20f41ae1206c0bd9eed15c44297786415aa93804807de1bc5a3419c5cab5",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frame_count": 1800,
+    "duration_seconds": 60,
+    "codec": "H.264",
+    "audio_tracks": 0,
+    "full_decode_errors": 0
+  },
+  "gpu": {
+    "renderer": "Intel(R) Arc(TM) B390 GPU",
+    "vendor": "Intel",
+    "backend": "OPENGL",
+    "engine": "BLENDER_EEVEE_NEXT"
+  }
+}

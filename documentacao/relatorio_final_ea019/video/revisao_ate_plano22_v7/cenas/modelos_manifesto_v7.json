@@ -1,0 +1,215 @@
+{
+  "version": 7,
+  "duration": 60,
+  "title": "Mecanismos das redes antes da comparação de entradas",
+  "qa_times": [
+    1.5,
+    6.5,
+    10.5,
+    14.0,
+    17.8,
+    21.7,
+    25.0,
+    28.8,
+    33.5,
+    37.5,
+    40.0,
+    44.8,
+    48.8,
+    53.7,
+    57.3
+  ],
+  "cues": [
+    [
+      0,
+      4,
+      "comparar LSTM, Transformer e Informer. Como eles funcionam?"
+    ],
+    [
+      4,
+      8,
+      "Na LSTM, os valores entram em ordem."
+    ],
+    [
+      8,
+      12,
+      "A memória muda a cada passo, por portas aprendidas."
+    ],
+    [
+      12,
+      16,
+      "Elas regulam o que reter, acrescentar e transmitir."
+    ],
+    [
+      16,
+      19,
+      "O estado final ajuda a prever todo o horizonte."
+    ],
+    [
+      19,
+      23,
+      "No Transformer, cada posição reúne valor e ordem temporal."
+    ],
+    [
+      23,
+      27,
+      "Consultas comparam representações com suas chaves."
+    ],
+    [
+      27,
+      31,
+      "Os pesos calculados orientam a combinação dos valores."
+    ],
+    [
+      31,
+      35,
+      "Essas representações seguem para a previsão do horizonte."
+    ],
+    [
+      35,
+      39,
+      "Em sequências longas, o Informer detalha algumas consultas."
+    ],
+    [
+      39,
+      43,
+      "A seleção usa uma estimativa de esparsidade."
+    ],
+    [
+      43,
+      47,
+      "Em outra etapa, reduz a sequência interna do codificador."
+    ],
+    [
+      47,
+      51,
+      "A atenção cruzada permanece completa."
+    ],
+    [
+      51,
+      55,
+      "Agora, o mesmo histórico e a identificação da localidade entram nos três."
+    ],
+    [
+      55,
+      60,
+      "Cada modelo produz diretamente um vetor para o mesmo horizonte."
+    ]
+  ],
+  "phases": [
+    [
+      0,
+      4,
+      "goal"
+    ],
+    [
+      4,
+      19,
+      "LSTM sequential memory and continuous gates"
+    ],
+    [
+      19,
+      35,
+      "Transformer value-position, queries-keys, weighted values"
+    ],
+    [
+      35,
+      43,
+      "Informer selected queries in long contexts"
+    ],
+    [
+      43,
+      47,
+      "separate encoder representation distillation"
+    ],
+    [
+      47,
+      51,
+      "complete cross-attention"
+    ],
+    [
+      51,
+      60,
+      "identical history and locality inputs"
+    ]
+  ],
+  "visible_history_samples": 12,
+  "history_values_schematic": [
+    0.02,
+    0.1,
+    0.72,
+    1.0,
+    0.6,
+    0.05,
+    0.01,
+    0.18,
+    0.76,
+    0.68,
+    0.36,
+    0.02
+  ],
+  "future_vector_components_schematic": 4,
+  "all_models_output_direct_horizon": true,
+  "recursive_forecast_feedback": false,
+  "LSTM_locality_join": "final recurrent state concatenated with locality embedding before the output head",
+  "Transformer_input": "GHI projection plus position representation plus locality projection",
+  "Informer_query_selection": "illustrative estimated sparsity, not largest GHI amplitudes",
+  "Informer_selected_visible_indices": [
+    1,
+    7
+  ],
+  "Informer_short_context_note": "The local implementation can select every query on short contexts; the sparse animation depicts a long context schematically.",
+  "encoder_distillation_stages": 1,
+  "encoder_representation_count_illustrative": [
+    12,
+    6
+  ],
+  "decoder_cross_attention_complete": true,
+  "illustrative_cross_attention_edges": 24,
+  "same_history_and_locality_in_final_comparison": true,
+  "same_output_format_does_not_mean_identical_predicted_values": true,
+  "weights_states_and_predictions": "didactic geometry, not measurements extracted from the fitted networks",
+  "performance_or_speed_claims": false,
+  "error_rankings": false,
+  "object_count": 580,
+  "references": [
+    {
+      "kind": "visual",
+      "url": "https://www.3blue1brown.com/lessons/attention/"
+    },
+    {
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/1706.03762"
+    },
+    {
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2012.07436"
+    },
+    {
+      "kind": "paper",
+      "url": "https://people.idsia.ch/~juergen/lstm1997-2024head.pdf"
+    },
+    {
+      "kind": "implementation",
+      "path": "codigo_fonte/modelos/modelos_baselines_adicionais.py"
+    },
+    {
+      "kind": "implementation",
+      "path": "codigo_fonte/modelos/recorrentes/modelos_neurais_globais.py"
+    }
+  ],
+  "chapter": "modelos",
+  "start": 40,
+  "end": 100,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\cenas\\modelos_v7.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\cenas\\modelos_3d_v7.mp4",
+  "fps": 30,
+  "frames": 1800,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "resolution_percentage": 100,
+  "samples": 16,
+  "render_complete": true
+}

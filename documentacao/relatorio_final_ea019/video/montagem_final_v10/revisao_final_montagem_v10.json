@@ -1,0 +1,205 @@
+{
+  "version": 10,
+  "status": "complete",
+  "completed_utc": "2026-11-05T00:14:48.836207+00:00",
+  "files": [
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v10\\Video_TCC_Final_Somente_Voz_v10.mp4",
+      "bytes": 52179001,
+      "sha256": "e588cc4b4bc8bb9f1d0a089da8aa790ad2d93c9354b6a7ef52f9d7e0e903072e",
+      "has_audio": true,
+      "ffmpeg_header": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\montagem_final_v10\\Video_TCC_Final_Somente_Voz_v10.mp4':\n  Metadata:\n    major_brand     : isom\n    minor_version   : 512\n    compatible_brands: isomiso2avc1mp41\n    encoder         : Lavf61.7.100\n  Duration: 00:07:33.40, start: 0.000000, bitrate: 920 kb/s\n  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080, 723 kb/s, 30 fps, 30 tbr, 15360 tbn (default)\n      Metadata:\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 188 kb/s (default)\n      Metadata:\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\nAt least one output file must be specified\n",
+      "full_decode_errors": "",
+      "decoded_frames": 13602
+    },
+    {
+      "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v10\\Video_TCC_Final_Com_Trilha_v10.mp4",
+      "bytes": 52302369,
+      "sha256": "ce667bf1e7115238dc51ae896884de1be97886e1d7367be499ee3d490a6b2a3a",
+      "has_audio": true,
+      "ffmpeg_header": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\montagem_final_v10\\Video_TCC_Final_Com_Trilha_v10.mp4':\n  Metadata:\n    major_brand     : isom\n    minor_version   : 512\n    compatible_brands: isomiso2avc1mp41\n    encoder         : Lavf61.7.100\n  Duration: 00:07:33.40, start: 0.000000, bitrate: 922 kb/s\n  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1920x1080, 723 kb/s, 30 fps, 30 tbr, 15360 tbn (default)\n      Metadata:\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 190 kb/s (default)\n      Metadata:\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\nAt least one output file must be specified\n",
+      "full_decode_errors": "",
+      "decoded_frames": 13602
+    }
+  ],
+  "duration_seconds": 453.4,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "decoded_frames_per_export": 13602,
+  "full_decode_passed_both_exports": true,
+  "visual_samples_reviewed": 99,
+  "timeline_items_covered": 90,
+  "sampled_visual_review_passed": true,
+  "scope_limit": "Static visual samples and objective audio/source checks; no full realtime playback or human listening.",
+  "full_realtime_playback_reviewed": false,
+  "audio_listening_performed": false,
+  "retakes": "All five specified later takes retained; discarded first attempts excluded.",
+  "voice_synthesis_used": false,
+  "voice_time_stretch_used": false,
+  "opening": "Original presenter and chair colors; project title accents; solid black background; approved two-line title distribution.",
+  "closing": "New recorded conclusion over clean factory animation, without presenter footage.",
+  "lstm_exception_label_fixed": true,
+  "same_video_bitstream_in_both_variants": true,
+  "source_files_preserved": true,
+  "reports": [
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/revisao/qa_intro_early_final.json",
+      "sha256": "9ad6cb1bb27b95d4641a21054ca203bfec5631cda661628db1f59eb4bf54d98c"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/revisao/qa_late_final.json",
+      "sha256": "6f8cdb3455e214d010abba979cc2f45ff1df811e1721dd858fc82baa8ad43dae"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/revisao/audit_edicao_independente_v10.json",
+      "sha256": "5bf1bf538617646a8f9aea3afd0bbae613d7cf5bdccb9b0dfaadc09358e44bbf"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/revisao/audit_audio_mix_v10.json",
+      "sha256": "5a86ac2f0a0834a89df727c70b8dc33bd9f27b93ffb826fef69b2b56dbcd2127"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/revisao/qa_central_final.json",
+      "sha256": "4a77f12d2709611e0cab12fa3411d50160b5672bfc620dda20b248bc9271abfa"
+    }
+  ],
+  "objective_mix_report": {
+    "generated_utc": "2026-11-05T00:14:25.715434+00:00",
+    "status": "pass",
+    "scope": "Objective audio measurements only; no human listening claimed; final media never rewritten.",
+    "only_outputs_written": "TMP derivative music stems and this JSON",
+    "duration_seconds": 453.4,
+    "measurements": [
+      {
+        "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v10\\Video_TCC_Final_Somente_Voz_v10.mp4",
+        "sha256": "e588cc4b4bc8bb9f1d0a089da8aa790ad2d93c9354b6a7ef52f9d7e0e903072e",
+        "audio_stream": "Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 188 kb/s (default)",
+        "aac_stereo_48k": true,
+        "integrated_lufs": -16.65,
+        "true_peak_dbtp": -3.9,
+        "loudness_range_lu": 3.5,
+        "measurement": {
+          "input_i": "-16.65",
+          "input_tp": "-3.90",
+          "input_lra": "3.50",
+          "input_thresh": "-27.31",
+          "output_i": "-16.22",
+          "output_tp": "-2.19",
+          "output_lra": "3.60",
+          "output_thresh": "-26.88",
+          "normalization_type": "dynamic",
+          "target_offset": "0.22"
+        }
+      },
+      {
+        "path": "documentacao\\relatorio_final_ea019\\video\\montagem_final_v10\\Video_TCC_Final_Com_Trilha_v10.mp4",
+        "sha256": "ce667bf1e7115238dc51ae896884de1be97886e1d7367be499ee3d490a6b2a3a",
+        "audio_stream": "Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 190 kb/s (default)",
+        "aac_stereo_48k": true,
+        "integrated_lufs": -16.96,
+        "true_peak_dbtp": -4.09,
+        "loudness_range_lu": 3.3,
+        "measurement": {
+          "input_i": "-16.96",
+          "input_tp": "-4.09",
+          "input_lra": "3.30",
+          "input_thresh": "-27.21",
+          "output_i": "-16.20",
+          "output_tp": "-3.15",
+          "output_lra": "3.30",
+          "output_thresh": "-26.45",
+          "normalization_type": "dynamic",
+          "target_offset": "0.20"
+        }
+      }
+    ],
+    "audio_packet_sha256": [
+      "SHA256=e96cc3b948ee88e0bca67b69281ad27269f7fa0935b96d1cbc28824e91f8a796",
+      "SHA256=151d63227dc4e8b797da4145e123170d95885a675ca42849c725cce823e8a848"
+    ],
+    "video_packet_sha256": [
+      "SHA256=7b9b6dcbb47fa9ff21ee4eb01a966622e0dcf0d2888c076e6da4649e56510097",
+      "SHA256=7b9b6dcbb47fa9ff21ee4eb01a966622e0dcf0d2888c076e6da4649e56510097"
+    ],
+    "audio_variants_different": true,
+    "same_video_packets": true,
+    "ducker_reproduced_exact_settings": {
+      "threshold": 0.04,
+      "ratio": 6,
+      "attack_ms": 25,
+      "release_ms": 650,
+      "knee": 4,
+      "link": "maximum",
+      "mix": 1,
+      "pre_gain": 0.75,
+      "input_fade_in_seconds": 1.8,
+      "output_fade_seconds": 3
+    },
+    "rms_window_ms": 100,
+    "analysis_rate": 12000,
+    "baseline_and_ducked_fades_identical": true,
+    "ignore_initial_seconds": 8,
+    "ignore_final_seconds": 4,
+    "speech_criterion": "Recorded master RMS above -32 dBFS",
+    "pause_criterion": "Master below -50 dBFS continuously >=1s; use only windows after700ms release recovery",
+    "speech": {
+      "windows": 3411,
+      "seconds": 341.1,
+      "median_music_gain_db": -14.714731494093758,
+      "p10_gain_db": -17.687256943485803,
+      "p90_gain_db": -10.537933791676615,
+      "aggregate_music_gain_db": -12.451880610396952,
+      "median_voice_dbfs": -17.636707828686994,
+      "median_music_after_dbfs": -39.34435893798952
+    },
+    "long_pause_late": {
+      "windows": 34,
+      "seconds": 3.4,
+      "median_music_gain_db": 0.0,
+      "p10_gain_db": 0.0,
+      "p90_gain_db": 0.0,
+      "aggregate_music_gain_db": -0.01390662851315939,
+      "median_voice_dbfs": -240.0,
+      "median_music_after_dbfs": -26.10179155705788
+    },
+    "long_quiet_runs": [
+      {
+        "start": 363.5,
+        "end": 365.9,
+        "duration": 2.4
+      },
+      {
+        "start": 373.0,
+        "end": 375.4,
+        "duration": 2.4
+      }
+    ],
+    "music_recovery_relative_to_speech_median_db": 14.714731494093758,
+    "voice_presence": {
+      "presentation": {
+        "start": 0.0,
+        "end": 14.133333333333333,
+        "duration": 14.133333333333333,
+        "decoded_voice_rms_dbfs": -16.40251276071189,
+        "correlation_with_recorded_voice_master": 0.9999824807249079
+      },
+      "new_ending": {
+        "start": 432.76666666666665,
+        "end": 453.4,
+        "duration": 20.633333333333333,
+        "decoded_voice_rms_dbfs": -16.50071139123171,
+        "correlation_with_recorded_voice_master": 0.9999186013876977
+      }
+    },
+    "pcm_derivative_paths": [
+      "tmp\\montagem_final_v10\\audio_mix_audit\\music_baseline_12k_f32.raw",
+      "tmp\\montagem_final_v10\\audio_mix_audit\\music_ducked_12k_f32.raw"
+    ],
+    "errors": [],
+    "material_flags": [],
+    "no_final_reencode_performed": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "scope": "Compactação editorial das Seções 3.6 e 3.7 para reduzir a página esparsa de métodos, preservando os critérios e ressalvas. Não aplicada ao DOCX.",
+  "replacements": [
+    {
+      "id": 254,
+      "text": "Para cada modelo, tarefa, condição de entrada e semente, ajusta-se uma rede global pelo MSE normalizado. As épocas são escolhidas pela perda de validação; a condição de entrada, pelo macro-MAE da previsão combinada na validação, em W/m², no horizonte completo. Em empate, priorizam-se controle, 64, 128 e 256 níveis. A condição permanece fixa no teste e nos horizontes menores. A análise distingue entradas contínuas comuns das configurações selecionadas para cada rede. A Figura 3 e as Tabelas 16 e 17 detalham o protocolo e as implementações."
+    },
+    {
+      "id": 255,
+      "text": "No refit, a rede é reinicializada na mesma semente e treinada com todo o período anterior ao teste, incluindo a validação, pelas épocas selecionadas. O teste não orienta escolhas. Épocas e entrada compartilham a validação; o protocolo não é uma validação aninhada."
+    },
+    {
+      "id": 299,
+      "text": "A avaliação cumulativa reúne os passos de um até H de todas as origens válidas, preservando previsões de origens diferentes para um mesmo alvo. Janelas sobrepostas determinam o peso temporal e impedem tratar as previsões como independentes."
+    },
+    {
+      "id": 300,
+      "text": "No horário, as emissões à meia-noite fazem os passos exatos de 24, 48 e 72 horas coincidirem com a noite. As métricas cumulativas incluem dia e noite: referência e previsão nulas reduzem o MAE frente ao recorte diurno; o nRMSE depende também da média da referência e não necessariamente diminui. Comparações entre estudos exigem o mesmo recorte horário [12]."
+    }
+  ],
+  "notes": [
+    "254 substitui a proposta anterior do mesmo ID. MSE normalizado, seleção das épocas, seleção macro-MAE físico combinado no horizonte completo, desempate, congelamento no teste/horizontes menores e distinção entre comparações são preservados.",
+    "O refit e a ressalva de validação não aninhada permanecem em255. O conjunto de dez localidades já é definido em3.1 e não precisa ser repetido em254.",
+    "299 preserva a contagem por origem/passo e a dependência decorrente das janelas sobrepostas;300 preserva o cuidado com noite, MAE, nRMSE e comparabilidade entre estudos.",
+    "A referência numérica [12] deve seguir o mapeamento corrente do documento se o root tiver renumerado as citações."
+  ]
+}

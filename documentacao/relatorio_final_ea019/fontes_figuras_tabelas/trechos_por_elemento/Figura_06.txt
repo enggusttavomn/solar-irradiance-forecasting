@@ -1,0 +1,127 @@
+Figura 6 — Desempenho por localidade nas quatro tarefas
+Página(s) do PDF: 22
+
+TRECHOS PARA CONSULTA. Use os arquivos completos em originais/ para edição.
+Os números à esquerda são as linhas originais; este TXT não é executável.
+
+bloco matriz por localidade
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/make_localidade_heatmap.py
+Linhas: 26–91
+
+  26 | rank = pd.read_csv(RANK)
+  27 | all_data=[]; source_list=[]; audit=[]; panels=[]
+  28 | for task,H,title in TASKS:
+  29 |     grid=[]; variants=[]; paths=[]
+  30 |     for model in MODELS:
+  31 |         rr = rank[(rank.regime=='atual') & (rank.tarefa==task) & (rank.modelo==model)]
+  32 |         assert len(rr)==1
+  33 |         rr=rr.iloc[0]; variants.append(rr.variante)
+  34 |         path=BASE/task/model.lower()/rr.variante/'metricas_por_localidade_teste.csv'
+  35 |         dd=pd.read_csv(path); dd=dd[dd.horizonte==H]
+  36 |         assert len(dd)==10 and dd.localidade.nunique()==10
+  37 |         assert set(dd.localidade)==set(k for k,_ in SITES)
+  38 |         vals=[float(dd.loc[dd.localidade==site,'MAE_wm2'].iloc[0]) for site,_ in SITES]
+  39 |         macro=sum(vals)/len(vals)
+  40 |         assert math.isclose(macro,float(rr.MAE_wm2),abs_tol=1e-10), (task,model,macro,rr.MAE_wm2)
+  41 |         audit.append({'tarefa':task,'modelo':model,'variante':rr.variante,'macro_from_sites':macro,'macro_audited':float(rr.MAE_wm2),'match':True})
+  42 |         grid.append(vals)
+  43 |         src={'path':str(path.relative_to(ROOT)).replace('\\','/'),'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
+  44 |         paths.append(src); source_list.append(src)
+  45 |         for (site,label),value in zip(SITES,vals):
+  46 |             all_data.append({'tarefa':task,'horizonte':H,'modelo':model,'variante':rr.variante,'localidade':site,'rotulo':label,'MAE_wm2':value})
+  47 |     panels.append((task,H,title,variants,grid))
+  48 | 
+  49 | W,HIMG=1300,1210
+  50 | b=text(18,36,'MAE por localidade no teste de 2024',32,bold=True)
+  51 | b+=text(18,73,'Horizonte cumulativo completo e condição de entrada escolhida na validação',25)
+  52 | for k,(task,HH,title,variants,grid) in enumerate(panels):
+  53 |     px=18+(k%2)*650; py=107+(k//2)*526
+  54 |     b+=text(px,py+30,chr(97+k)+') '+title,29,bold=True)
+  55 |     if task=='monthly_6': b+=text(px+615,py+29,'Exploratório',22,'end',fill='#555')
+  56 |     # Label column is compact enough for ten readable rows and three numeric columns.
+  57 |     x=px+248; rowh=35; cw=120; y=py+112
+  58 |     for j,m in enumerate(MODELS):
+  59 |         b+=text(x+j*cw+cw/2,py+68,m,22,'middle',True)
+  60 |         b+=text(x+j*cw+cw/2,py+96,variant(variants[j]),23,'middle',fill='#555')
+  61 |     flat=[a for col in grid for a in col]; vmin=min(flat); vmax=max(flat)
+  62 |     for i,(site,label) in enumerate(SITES):
+  63 |         b+=text(px,y+i*rowh+25,label,25)
+  64 |         best=min(grid[j][i] for j in range(3))
+  65 |         for j in range(3):
+  66 |             v=grid[j][i]; frac=(v-vmin)/(vmax-vmin)
+  67 |             # A monotone blue scale within each task; darker means larger MAE.
+  68 |             a=(247,250,252); z=(160,197,221)
+  69 |             rgb=tuple(round(a[q]+(z[q]-a[q])*frac) for q in range(3))
+  70 |             winner=math.isclose(v,best,abs_tol=1e-12)
+  71 |             b+=rect(x+j*cw+1,y+i*rowh+1,cw-2,rowh-2,'#%02x%02x%02x'%rgb,'#344B5F' if winner else '#fff',2 if winner else 1)
+  72 |             b+=text(x+j*cw+cw/2,y+i*rowh+25,fmt(v),26,'middle',winner)
+  73 |     by=y+10*rowh+21
+  74 |     b+=text(px,by+9,'Escala própria',22,fill='#555')
+  75 |     gx=px+180; gw=270
+  76 |     for n in range(90):
+  77 |         frac=n/89; rgb=tuple(round(a[q]+(z[q]-a[q])*frac) for q in range(3))
+  78 |         b+=rect(gx+n*gw/90,by-9,gw/90+0.3,17,'#%02x%02x%02x'%rgb)
+  79 |     b+=text(gx,by+38,fmt(vmin)+' W/m²',22)
+  80 |     b+=text(gx+gw,by+38,fmt(vmax)+' W/m²',22,'end')
+  81 |     # Per-task local winners are descriptive, not significance results.
+  82 | 
+  83 | b+=text(18,1184,'Contorno e negrito indicam o menor MAE da localidade. A comparação é descritiva.',24)
+  84 | svg=f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{HIMG}" viewBox="0 0 {W} {HIMG}"><rect width="100%" height="100%" fill="white"/><g font-family="Arial,sans-serif">{b}</g></svg>'
+  85 | (HERE/'11_mae_localidades.svg').write_text(svg,encoding='utf-8')
+  86 | meta={'source_ranking':{'path':str(RANK.relative_to(ROOT)).replace('\\','/'),'sha256':hashlib.sha256(RANK.read_bytes()).hexdigest()},'source_files':source_list,'verification':audit,'values':all_data,'limitations':['Cores têm escala própria em cada tarefa.','Menor erro em uma localidade não comprova superioridade estatística.','Valores são MAEs das previsões combinadas, não média de MAEs por semente.']}
+  87 | (HERE/'11_mae_localidades_dados.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding='utf-8')
+  88 | counts={}
+  89 | for task,HH,title,variants,grid in panels:
+  90 |     counts[task]={m:sum(grid[j][i]==min(col[i] for col in grid) for i in range(10)) for j,m in enumerate(MODELS)}
+  91 | print(json.dumps({'figure':'11_mae_localidades.svg','cells':len(all_data),'macro_checks_passed':len(audit),'local_winner_counts':counts},ensure_ascii=False))
+
+Define dados, modelos, tarefas e utilitários SVG.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/make_localidade_heatmap.py
+Linhas: 1–25
+
+   1 | from pathlib import Path
+   2 | import json, hashlib, math, html
+   3 | import pandas as pd
+   4 | 
+   5 | HERE = Path(__file__).resolve().parent
+   6 | ROOT = HERE.parents[2]
+   7 | RANK = ROOT / 'resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv'
+   8 | BASE = ROOT / 'resultados/quantizacao_todos_modelos_20260929/atual'
+   9 | MODELS = ['Transformer', 'Informer', 'LSTM']
+  10 | TASKS = [('hourly_72_extension', 72, 'Horária até 72 horas'), ('daily_30', 30, 'Diária até 30 dias'),
+  11 |          ('monthly_1', 1, 'Mensal um passo'), ('monthly_6', 6, 'Mensal seis passos')]
+  12 | SITES = [('BYD Camacari', 'BYD Camaçari'), ('Tesla Gigafactory Nevada', 'Tesla Nevada'),
+  13 |          ('Tesla Gigafactory Texas', 'Tesla Texas'), ('Hyundai Metaplant Georgia', 'Hyundai Georgia'),
+  14 |          ('Rivian Normal', 'Rivian Normal'), ('Tesla Fremont Factory', 'Tesla Fremont'),
+  15 |          ('Lucid AMP 1 Casa Grande', 'Lucid Casa Grande'), ('GM Factory Zero', 'GM Factory Zero'),
+  16 |          ('Ford Rouge Electric Vehicle Center', 'Ford Rouge EV'), ('BMW San Luis Potosi', 'BMW S. L. Potosí')]
+  17 | 
+  18 | def text(x,y,s,size=27,anchor='start',bold=False,fill='#222'):
+  19 |     return f'<text x="{x}" y="{y}" font-size="{size}" text-anchor="{anchor}" font-weight="{"bold" if bold else "normal"}" fill="{fill}">{html.escape(str(s))}</text>'
+  20 | 
+  21 | def rect(x,y,w,h,fill,stroke='none',sw=1):
+  22 |     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>'
+  23 | 
+  24 | def fmt(v,n=1): return f'{v:.{n}f}'.replace('.',',')
+  25 | def variant(q): return 'Controle' if q=='sem_quantizacao' else 'Q'+q[1:]
+
+Converte 11_mae_localidades.svg para PNG com sharp a 160 dpi.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/rasterize_localidade.cjs
+Linhas: 1–7
+
+   1 | const path=require('path');
+   2 | const sharp=require('C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+   3 | (async()=>{
+   4 |   const file=path.join(__dirname,'11_mae_localidades.svg');
+   5 |   await sharp(file,{density:160}).png().toFile(path.join(__dirname,'11_mae_localidades.png'));
+   6 |   console.log('11_mae_localidades.png');
+   7 | })().catch(e=>{console.error(e);process.exit(1)});
+
+Copia as figuras comparativas e o mapa de calor para os nomes usados no builder.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/prepare_revision.py
+Linhas: 76–79
+
+  76 | for name in ['04_mae_atual','05_quantizacao','06_historico','07_horizontes']:
+  77 |     for ext in ['png','svg']:
+  78 |         shutil.copy2(HERE/'figuras_comparativas'/f'{name}.{ext}',HERE/'figuras'/f'{name}.{ext}')
+  79 | shutil.copy2(HERE/'11_mae_localidades.png',HERE/'figuras/12_localidades.png')

@@ -1,0 +1,1349 @@
+{
+  "version": 11,
+  "status": "editorial_proposal_not_applied",
+  "scope": "Read-only source-code timing analysis and ASR word-onset comparison; no source media modified, no real-time playback or audio listening claimed.",
+  "source_files": [
+    "codigo_fonte/video_ea019/intro_v9.py",
+    "codigo_fonte/video_ea019/models_v9.py",
+    "codigo_fonte/video_ea019/models_explainer_v7.py",
+    "codigo_fonte/video_ea019/geography_data_v9.py",
+    "codigo_fonte/video_ea019/inputs_tasks_v9.py",
+    "codigo_fonte/video_ea019/methodology_v9.py",
+    "codigo_fonte/video_ea019/quantization_v9.py",
+    "codigo_fonte/video_ea019/metrics_v9.py",
+    "codigo_fonte/video_ea019/results_v8.py",
+    "codigo_fonte/video_ea019/interpretation_v9.py",
+    "codigo_fonte/video_ea019/patch_excecao_lstm_v10.py"
+  ],
+  "timebase": "Events are seconds relative to each original source visual phase. Voice onsets are relative to the exact retained PCM cut in timelineV10.",
+  "groups": [
+    {
+      "id": "dni_projection",
+      "phases": [
+        2,
+        3
+      ],
+      "risk": "The tilted DNI measurement plane, right angle and horizontal projection are different constructions; rushing or speech preceding their appearance can make normal sound like a vertical ray.",
+      "recommended_source_pacing": "Preserve 7 seconds in each phase.",
+      "voice_offsets_seconds": {
+        "2": 0.3,
+        "3": 0.35
+      },
+      "events": [
+        {
+          "phase": 2,
+          "source_local_seconds": 0.8,
+          "description": "DNI tilted plane first visible"
+        },
+        {
+          "phase": 2,
+          "source_local_seconds": 1.5,
+          "description": "90-degree marker appears"
+        },
+        {
+          "phase": 3,
+          "source_local_seconds": 0.0,
+          "description": "Roof vertical and zenith arc appear"
+        },
+        {
+          "phase": 3,
+          "source_local_seconds": 1.2,
+          "description": "Diffuse horizontal text appears"
+        }
+      ],
+      "dynamic_review": "Observe plane/90-degree marker first, then zenith arc and diffuse field. The word perpendicular must be spoken while its plane is visible. Confirm diffuse radiation is not interpreted as a single horizontal beam."
+    },
+    {
+      "id": "lstm_sequence",
+      "phases": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "risk": "Putting all voice at zero and all spare time after the final forecast hides the sequential update mechanism.",
+      "recommended_source_pacing": "Keep 4+4+4+3 seconds, or slow; keep motion continuous across phase boundaries.",
+      "voice_offsets_seconds": {
+        "11": 0.4,
+        "12": 0.3,
+        "13": 0.0,
+        "14": 0.4
+      },
+      "events": [
+        {
+          "phase": 11,
+          "source_local_seconds": 2.4,
+          "description": "First ordered input packets reach gates"
+        },
+        {
+          "phase": 12,
+          "source_local_seconds": 0.0,
+          "description": "Gate labels and ongoing updates"
+        },
+        {
+          "phase": 14,
+          "source_local_seconds": 0.75,
+          "description": "Final-state representation appears"
+        },
+        {
+          "phase": 14,
+          "source_local_seconds": 1.0,
+          "description": "Future-vector output appears"
+        }
+      ],
+      "dynamic_review": "Follow at least two successive input packets, a gate change, the memory update and final-state-to-forecast route. No jump straight to the finished network."
+    },
+    {
+      "id": "transformer_attention",
+      "phases": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "risk": "Query/key comparison, normalized weights and weighted values are different steps; a compressed single pulse does not explain them.",
+      "recommended_source_pacing": "Preserve all four 4-second phases.",
+      "voice_offsets_seconds": {
+        "15": 0.25,
+        "16": 0.3,
+        "17": 0.25,
+        "18": 0.25
+      },
+      "events": [
+        {
+          "phase": 15,
+          "source_local_seconds": 1.4,
+          "description": "Position representations appear"
+        },
+        {
+          "phase": 15,
+          "source_local_seconds": 2.1,
+          "description": "Order markers begin joining values"
+        },
+        {
+          "phase": 16,
+          "source_local_seconds": 0.15,
+          "description": "Query label"
+        },
+        {
+          "phase": 17,
+          "source_local_seconds": 0.3,
+          "description": "Weights label"
+        },
+        {
+          "phase": 18,
+          "source_local_seconds": 1.8,
+          "description": "Forecast vector appears"
+        }
+      ],
+      "dynamic_review": "Read Consulta and Chaves before tracing comparisons; see weights vary before following values into the contextual representation. Keep original relative timing."
+    },
+    {
+      "id": "informer_mechanisms",
+      "phases": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "risk": "Selected-query sparse attention, encoder reduction and complete cross attention must not collapse into one generic shrinking network.",
+      "recommended_source_pacing": "Preserve all four 4-second phases, particularly the reduction motion.",
+      "voice_offsets_seconds": {
+        "19": 0.25,
+        "20": 0.35,
+        "21": 0.2,
+        "22": 0.45
+      },
+      "events": [
+        {
+          "phase": 19,
+          "source_local_seconds": 1.2,
+          "description": "Selected queries become distinct"
+        },
+        {
+          "phase": 20,
+          "source_local_seconds": 0.0,
+          "description": "Selected-query title"
+        },
+        {
+          "phase": 21,
+          "source_local_seconds": 0.05,
+          "description": "Separate convolution/reduction stage title"
+        },
+        {
+          "phase": 22,
+          "source_local_seconds": 0.2,
+          "description": "Complete cross attention title"
+        }
+      ],
+      "dynamic_review": "Observe selected routes, then reduced encoder representations, then all encoder-to-decoder connections. Do not lengthen only a static last frame."
+    },
+    {
+      "id": "nsrdb_data_flow",
+      "phases": [
+        27,
+        28
+      ],
+      "risk": "A fast particle flow can imply a sensor in the factory rather than modeled irradiance from satellite and atmosphere.",
+      "recommended_source_pacing": "Keep 6+9 seconds; at least one complete satellite-to-atmosphere-to-model-to-cell flow must be visible.",
+      "voice_offsets_seconds": {
+        "27": 0.35,
+        "28": 0.8
+      },
+      "events": [
+        {
+          "phase": 27,
+          "source_local_seconds": 0.5,
+          "description": "NSRDB textmark"
+        },
+        {
+          "phase": 27,
+          "source_local_seconds": 3.0,
+          "description": "Atmospheric cloud input"
+        },
+        {
+          "phase": 28,
+          "source_local_seconds": 2.4,
+          "description": "Modeled irradiance output flow begins"
+        }
+      ],
+      "dynamic_review": "Trace all processing stages while narration explains estimation; leave final queried-region output readable."
+    },
+    {
+      "id": "histogram_frequency",
+      "phases": [
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "risk": "Frequency means percentage of positive hourly observations, not time frequency or one-day GHI. Numbers need reading time and the 10-site sweep must not be compressed.",
+      "recommended_source_pacing": "Preserve 7+6+7+8+7 seconds. Preserve the complete 1.2-second-per-locality sweep and final overview.",
+      "voice_offsets_seconds": {
+        "29": 0.3,
+        "30": 0.5,
+        "31": 0.35,
+        "32": 0.4,
+        "33": 0.5
+      },
+      "events": [
+        {
+          "phase": 29,
+          "source_local_seconds": 0.0,
+          "description": "72-hour time curve"
+        },
+        {
+          "phase": 30,
+          "source_local_seconds": 0.0,
+          "description": "400 <= GHI < 450 bin"
+        },
+        {
+          "phase": 30,
+          "source_local_seconds": 1.7,
+          "description": "Selected readings finish moving into bin"
+        },
+        {
+          "phase": 31,
+          "source_local_seconds": 0.5,
+          "description": "881 / 18496 calculation"
+        },
+        {
+          "phase": 31,
+          "source_local_seconds": 1.0,
+          "description": "Denominator explained"
+        },
+        {
+          "phase": 32,
+          "source_local_seconds": 0.0,
+          "description": "Full histogram and equal-width axes"
+        },
+        {
+          "phase": 33,
+          "source_local_seconds": 4.0,
+          "description": "All-site overview begins"
+        }
+      ],
+      "special_note": "Phase29 voice says Já as barras around3.05s, but the source histogram arrives only with phase30. This is an anticipatory transition in the existing narration, not exact visual synchronization. Prefer a continuous group transition; do not insert extra silence between that phrase and phase30. A source-level bridge could show the range bucket during the phrase, but is optional and would be a new visual edit.",
+      "dynamic_review": "Follow three measured readings into the same range; read881 and18496 before4.8%; observe zeros labeled separately; watch the full site sweep through San Luis Potosi and the overview."
+    },
+    {
+      "id": "history_locality_and_task_windows",
+      "phases": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "risk": "The region embedding is schematic, and input/output windows have different sample counts/scales. A held finished network alone does not explain either input.",
+      "recommended_source_pacing": "Preserve native phase durations, especially phase36(8s),37(8s),38(6s),40-43(4s each).",
+      "voice_offsets_seconds": {
+        "34": 0.3,
+        "35": 0.4,
+        "36": 0.3,
+        "37": 0.4,
+        "38": 0.3,
+        "40": 0.35,
+        "41": 0.3,
+        "42": 0.35,
+        "43": 0.3,
+        "44": 0.3,
+        "45": 0.3
+      },
+      "events": [
+        {
+          "phase": 34,
+          "source_local_seconds": 0.4,
+          "description": "Readings grow sequentially"
+        },
+        {
+          "phase": 34,
+          "source_local_seconds": 2.6,
+          "description": "Real history polyline starts drawing"
+        },
+        {
+          "phase": 36,
+          "source_local_seconds": 0.6,
+          "description": "Camacari representation grows"
+        },
+        {
+          "phase": 36,
+          "source_local_seconds": 4.0,
+          "description": "Nevada example replaces Camacari"
+        },
+        {
+          "phase": 37,
+          "source_local_seconds": 2.0,
+          "description": "Forecast output appears"
+        }
+      ],
+      "dynamic_review": "See both named region examples and the two separate input routes. For each task read historical and forecast counts, then see the dashed output appear before the next task."
+    },
+    {
+      "id": "quantization_numeric_example",
+      "phases": [
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61
+      ],
+      "risk": "Levels64/128/256 are a value lattice, not an input length. The original reading, move to nearest level and reconstructed value each need time.",
+      "recommended_source_pacing": "Keep original 8+7+8+8+6+7+7+7+6seconds; phase59 needs >=7.8s for its long natural recorded clause.",
+      "voice_offsets_seconds": {
+        "53": 0.4,
+        "54": 0.3,
+        "55": 0.25,
+        "56": 0.3,
+        "57": 0.3,
+        "58": 0.4,
+        "59": 0.25,
+        "60": 0.2,
+        "61": 0.3
+      },
+      "events": [
+        {
+          "phase": 53,
+          "source_local_seconds": 2.0,
+          "description": "Selected reading437 label"
+        },
+        {
+          "phase": 54,
+          "source_local_seconds": 1.0,
+          "description": "Normalization packet starts"
+        },
+        {
+          "phase": 54,
+          "source_local_seconds": 2.5,
+          "description": "Normalization packet finishes"
+        },
+        {
+          "phase": 55,
+          "source_local_seconds": 0.4,
+          "description": "Nearest-level movement begins"
+        },
+        {
+          "phase": 55,
+          "source_local_seconds": 1.8,
+          "description": "Nearest-level movement finishes"
+        },
+        {
+          "phase": 55,
+          "source_local_seconds": 2.2,
+          "description": "Input difference label"
+        },
+        {
+          "phase": 55,
+          "source_local_seconds": 2.0,
+          "description": "Reconstruction arithmetic appears"
+        },
+        {
+          "phase": 56,
+          "source_local_seconds": 1.8,
+          "description": "128-level result settled"
+        },
+        {
+          "phase": 57,
+          "source_local_seconds": 1.8,
+          "description": "256-level result settled"
+        },
+        {
+          "phase": 60,
+          "source_local_seconds": 2.1,
+          "description": "Clipping settles"
+        },
+        {
+          "phase": 60,
+          "source_local_seconds": 4.1,
+          "description": "Rounding settles"
+        }
+      ],
+      "special_note": "Reconstructed value labels become visible before the narrator says the final number, which is acceptable as preview and reading time. Do not try to align every word by accelerating the physical level movement. Phase59 has7.435s of retained PCM, longer than its7s source; give a slightly longer window instead of truncation.",
+      "dynamic_review": "Follow437 vertically to444.44/433.07/435.29 on the declared grid while time stays fixed; check clamping then rounding occur sequentially; see locality bypass the quantizer."
+    },
+    {
+      "id": "mae_geometric_and_arithmetic",
+      "phases": [
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "risk": "Vertical error segments, absolute value, extraction/sum and decreasing error are the key explanation. Voice at zero can announce28 before the numeric result exists.",
+      "recommended_source_pacing": "Keep 9+9+10+8+6seconds, without speeding. Phase63 has8.28s PCM and needs very small lead.",
+      "voice_offsets_seconds": {
+        "62": 0.35,
+        "63": 0.2,
+        "64": 0.95,
+        "65": 0.75,
+        "66": 0.3
+      },
+      "events": [
+        {
+          "phase": 62,
+          "source_local_seconds": 2.0,
+          "description": "First vertical difference"
+        },
+        {
+          "phase": 62,
+          "source_local_seconds": 4.0,
+          "description": "Last vertical difference appears"
+        },
+        {
+          "phase": 63,
+          "source_local_seconds": 0.5,
+          "description": "600/650 labels"
+        },
+        {
+          "phase": 63,
+          "source_local_seconds": 1.5,
+          "description": "Absolute difference formula"
+        },
+        {
+          "phase": 64,
+          "source_local_seconds": 0.0,
+          "description": "Extracted rods begin moving"
+        },
+        {
+          "phase": 64,
+          "source_local_seconds": 2.0,
+          "description": "Error rods settle"
+        },
+        {
+          "phase": 64,
+          "source_local_seconds": 3.0,
+          "description": "Arithmetic mean formula"
+        },
+        {
+          "phase": 64,
+          "source_local_seconds": 6.0,
+          "description": "28 W/m2 result"
+        },
+        {
+          "phase": 65,
+          "source_local_seconds": 2.0,
+          "description": "Forecast starts approaching reference"
+        },
+        {
+          "phase": 65,
+          "source_local_seconds": 5.0,
+          "description": "MAE14 plateau"
+        },
+        {
+          "phase": 66,
+          "source_local_seconds": 1.0,
+          "description": "MAE0 plateau"
+        }
+      ],
+      "word_anchor": {
+        "phase": 64,
+        "source_word": "28",
+        "word_onset_in_retained_pcm": 5.05,
+        "recommended_audio_offset": 0.95,
+        "expected_output_word_onset": 6.0,
+        "source_visual_event": 6.0
+      },
+      "dynamic_review": "Observe all five vertical segments. In phase64 follow rods into the arithmetic bench, read(20+30+50+30+10)/5, then hear28 while28 is visible. In phases65-66 observe28->14->0 with no stale number during interpolation."
+    },
+    {
+      "id": "macro_and_cumulative",
+      "phases": [
+        67,
+        68
+      ],
+      "risk": "Macro weighting is equal by locality; cumulative evaluation includes1..72 and night. Delayed visual completion must match the final spoken72-hour explanation.",
+      "recommended_source_pacing": "Preserve12s each; use lead time inside the active construction rather than a long frozen ending.",
+      "voice_offsets_seconds": {
+        "67": 1.2,
+        "68": 3.0
+      },
+      "events": [
+        {
+          "phase": 67,
+          "source_local_seconds": 0.7,
+          "description": "All1/10 weights visible"
+        },
+        {
+          "phase": 67,
+          "source_local_seconds": 3.0,
+          "description": "Equal contributions start flowing"
+        },
+        {
+          "phase": 67,
+          "source_local_seconds": 6.62,
+          "description": "Last contribution completes"
+        },
+        {
+          "phase": 68,
+          "source_local_seconds": 0.7,
+          "description": "Cumulative sweep begins"
+        },
+        {
+          "phase": 68,
+          "source_local_seconds": 5.0,
+          "description": "Night inclusion label"
+        },
+        {
+          "phase": 68,
+          "source_local_seconds": 7.9,
+          "description": "Sweep reaches72"
+        },
+        {
+          "phase": 68,
+          "source_local_seconds": 8.0,
+          "description": "72 hours=3 days label"
+        }
+      ],
+      "word_anchor": {
+        "phase": 68,
+        "source_word": "72",
+        "word_onset_in_retained_pcm": 4.73,
+        "recommended_audio_offset": 3.0,
+        "expected_output_word_onset": 7.73,
+        "source_visual_event": 7.9,
+        "caption_3days_onset": 8.0
+      },
+      "dynamic_review": "Watch ten equal inputs, then all72 cumulative bars lighting in order. The72 phrase should occur at the end of the sweep, not halfway across the three days."
+    },
+    {
+      "id": "results_comparisons",
+      "phases": [
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "risk": "Viewers need to read absolute MAE and small margins, and should distinguish full-horizon winners from shorter-horizon winners. Monthly spoken values were deliberately omitted, so charts need reading time.",
+      "recommended_source_pacing": "Keep original result durations, especially monthly-one8s,monthly-six7s,hourly9s,daily8s,horizon curve8s.",
+      "voice_offsets_seconds": {
+        "70": 0.5,
+        "71": 0.4,
+        "72": 0.4,
+        "73": 0.3,
+        "74": 1.5,
+        "75": 0.3,
+        "76": 1.5,
+        "77": 0.4,
+        "78": 0.3,
+        "79": 0.3,
+        "80": 0.2
+      },
+      "events": [
+        {
+          "phase": 70,
+          "source_local_seconds": 1.8,
+          "description": "Hourly bars settle and numeric labels appear"
+        },
+        {
+          "phase": 72,
+          "source_local_seconds": 1.8,
+          "description": "Daily bars settle and numeric labels appear"
+        },
+        {
+          "phase": 74,
+          "source_local_seconds": 1.8,
+          "description": "Monthly-one numeric labels appear"
+        },
+        {
+          "phase": 76,
+          "source_local_seconds": 1.8,
+          "description": "Monthly-six numeric labels appear"
+        }
+      ],
+      "special_note": "Keep correct12.73 and13.67 in graphs. Do not fill monthly visual pauses by restoring the intentionally omitted ambiguous spoken numbers.",
+      "dynamic_review": "Read selected condition, model value and winner, then small Transformer-LSTM margins. Preserve a clear pause after bars settle. See locality leaders and daily-horizon crossover as separate conclusions."
+    },
+    {
+      "id": "historical_matrix_and_limits",
+      "phases": [
+        82,
+        83,
+        84,
+        85,
+        86
+      ],
+      "risk": "The historical comparison is separate from2024 results; the exception must be readable and remaining limits should not rush into the final factory.",
+      "recommended_source_pacing": "Keep6+6+4+6+8seconds unless the whole narration needs slightly longer.",
+      "voice_offsets_seconds": {
+        "82": 0.2,
+        "83": 0.3,
+        "84": 0.0,
+        "85": 0.0,
+        "86": 0.4
+      },
+      "events": [
+        {
+          "phase": 83,
+          "source_local_seconds": 0.0,
+          "description": "Repaired legend combinesL/C and LSTM-hourly exception"
+        },
+        {
+          "phase": 83,
+          "source_local_seconds": 3.0,
+          "description": "All12comparison cells can be read as a matrix"
+        }
+      ],
+      "dynamic_review": "Confirm the repaired6-second matrix clip is used, legend always in front and no overlap with subtitles. Observe11/12 pattern, then hear the LSTM-hourly exception. Keep scientific limitations before the new firm ending."
+    }
+  ],
+  "preferred_voice_offsets_seconds_by_phase": {
+    "2": 0.3,
+    "3": 0.35,
+    "11": 0.4,
+    "12": 0.3,
+    "13": 0.0,
+    "14": 0.4,
+    "15": 0.25,
+    "16": 0.3,
+    "17": 0.25,
+    "18": 0.25,
+    "19": 0.25,
+    "20": 0.35,
+    "21": 0.2,
+    "22": 0.45,
+    "27": 0.35,
+    "28": 0.8,
+    "29": 0.3,
+    "30": 0.5,
+    "31": 0.35,
+    "32": 0.4,
+    "33": 0.5,
+    "34": 0.3,
+    "35": 0.4,
+    "36": 0.3,
+    "37": 0.4,
+    "38": 0.3,
+    "40": 0.35,
+    "41": 0.3,
+    "42": 0.35,
+    "43": 0.3,
+    "44": 0.3,
+    "45": 0.3,
+    "53": 0.4,
+    "54": 0.3,
+    "55": 0.25,
+    "56": 0.3,
+    "57": 0.3,
+    "58": 0.4,
+    "59": 0.25,
+    "60": 0.2,
+    "61": 0.3,
+    "62": 0.35,
+    "63": 0.2,
+    "64": 0.95,
+    "65": 0.75,
+    "66": 0.3,
+    "67": 1.2,
+    "68": 3.0,
+    "70": 0.5,
+    "71": 0.4,
+    "72": 0.4,
+    "73": 0.3,
+    "74": 1.5,
+    "75": 0.3,
+    "76": 1.5,
+    "77": 0.4,
+    "78": 0.3,
+    "79": 0.3,
+    "80": 0.2,
+    "82": 0.2,
+    "83": 0.3,
+    "84": 0.0,
+    "85": 0.0,
+    "86": 0.4
+  },
+  "voice_fit_checks_at_native_source_duration": [
+    {
+      "phase": 2,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 5.02,
+      "source_visual_seconds": 7,
+      "minimum_output_seconds_for_this_offset": 5.32,
+      "fits_original_duration": true,
+      "tail_if_native": 1.68
+    },
+    {
+      "phase": 3,
+      "voice_offset_seconds": 0.35,
+      "retained_voice_seconds": 4.815,
+      "source_visual_seconds": 7,
+      "minimum_output_seconds_for_this_offset": 5.165,
+      "fits_original_duration": true,
+      "tail_if_native": 1.835
+    },
+    {
+      "phase": 11,
+      "voice_offset_seconds": 0.4,
+      "retained_voice_seconds": 2.89,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 3.29,
+      "fits_original_duration": true,
+      "tail_if_native": 0.71
+    },
+    {
+      "phase": 12,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 3.285,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 3.585,
+      "fits_original_duration": true,
+      "tail_if_native": 0.415
+    },
+    {
+      "phase": 13,
+      "voice_offset_seconds": 0.0,
+      "retained_voice_seconds": 3.985,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 3.985,
+      "fits_original_duration": true,
+      "tail_if_native": 0.015
+    },
+    {
+      "phase": 14,
+      "voice_offset_seconds": 0.4,
+      "retained_voice_seconds": 2.31,
+      "source_visual_seconds": 3,
+      "minimum_output_seconds_for_this_offset": 2.71,
+      "fits_original_duration": true,
+      "tail_if_native": 0.29
+    },
+    {
+      "phase": 15,
+      "voice_offset_seconds": 0.25,
+      "retained_voice_seconds": 3.485,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 3.735,
+      "fits_original_duration": true,
+      "tail_if_native": 0.265
+    },
+    {
+      "phase": 16,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 3.155,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 3.455,
+      "fits_original_duration": true,
+      "tail_if_native": 0.545
+    },
+    {
+      "phase": 17,
+      "voice_offset_seconds": 0.25,
+      "retained_voice_seconds": 3.445,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 3.695,
+      "fits_original_duration": true,
+      "tail_if_native": 0.305
+    },
+    {
+      "phase": 18,
+      "voice_offset_seconds": 0.25,
+      "retained_voice_seconds": 3.33,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 3.58,
+      "fits_original_duration": true,
+      "tail_if_native": 0.42
+    },
+    {
+      "phase": 19,
+      "voice_offset_seconds": 0.25,
+      "retained_voice_seconds": 3.465,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 3.715,
+      "fits_original_duration": true,
+      "tail_if_native": 0.285
+    },
+    {
+      "phase": 20,
+      "voice_offset_seconds": 0.35,
+      "retained_voice_seconds": 3.135,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 3.485,
+      "fits_original_duration": true,
+      "tail_if_native": 0.515
+    },
+    {
+      "phase": 21,
+      "voice_offset_seconds": 0.2,
+      "retained_voice_seconds": 3.73,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 3.93,
+      "fits_original_duration": true,
+      "tail_if_native": 0.07
+    },
+    {
+      "phase": 22,
+      "voice_offset_seconds": 0.45,
+      "retained_voice_seconds": 2.17,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 2.62,
+      "fits_original_duration": true,
+      "tail_if_native": 1.38
+    },
+    {
+      "phase": 27,
+      "voice_offset_seconds": 0.35,
+      "retained_voice_seconds": 5.05,
+      "source_visual_seconds": 6,
+      "minimum_output_seconds_for_this_offset": 5.4,
+      "fits_original_duration": true,
+      "tail_if_native": 0.6
+    },
+    {
+      "phase": 28,
+      "voice_offset_seconds": 0.8,
+      "retained_voice_seconds": 5.405,
+      "source_visual_seconds": 9,
+      "minimum_output_seconds_for_this_offset": 6.205,
+      "fits_original_duration": true,
+      "tail_if_native": 2.795
+    },
+    {
+      "phase": 29,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 5.175,
+      "source_visual_seconds": 7,
+      "minimum_output_seconds_for_this_offset": 5.475,
+      "fits_original_duration": true,
+      "tail_if_native": 1.525
+    },
+    {
+      "phase": 30,
+      "voice_offset_seconds": 0.5,
+      "retained_voice_seconds": 4.23,
+      "source_visual_seconds": 6,
+      "minimum_output_seconds_for_this_offset": 4.73,
+      "fits_original_duration": true,
+      "tail_if_native": 1.27
+    },
+    {
+      "phase": 31,
+      "voice_offset_seconds": 0.35,
+      "retained_voice_seconds": 5.09,
+      "source_visual_seconds": 7,
+      "minimum_output_seconds_for_this_offset": 5.44,
+      "fits_original_duration": true,
+      "tail_if_native": 1.56
+    },
+    {
+      "phase": 32,
+      "voice_offset_seconds": 0.4,
+      "retained_voice_seconds": 5.93,
+      "source_visual_seconds": 8,
+      "minimum_output_seconds_for_this_offset": 6.33,
+      "fits_original_duration": true,
+      "tail_if_native": 1.67
+    },
+    {
+      "phase": 33,
+      "voice_offset_seconds": 0.5,
+      "retained_voice_seconds": 5.11,
+      "source_visual_seconds": 7,
+      "minimum_output_seconds_for_this_offset": 5.61,
+      "fits_original_duration": true,
+      "tail_if_native": 1.39
+    },
+    {
+      "phase": 34,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 5.17,
+      "source_visual_seconds": 6,
+      "minimum_output_seconds_for_this_offset": 5.47,
+      "fits_original_duration": true,
+      "tail_if_native": 0.53
+    },
+    {
+      "phase": 35,
+      "voice_offset_seconds": 0.4,
+      "retained_voice_seconds": 4.41,
+      "source_visual_seconds": 6,
+      "minimum_output_seconds_for_this_offset": 4.81,
+      "fits_original_duration": true,
+      "tail_if_native": 1.19
+    },
+    {
+      "phase": 36,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 4.86,
+      "source_visual_seconds": 8,
+      "minimum_output_seconds_for_this_offset": 5.16,
+      "fits_original_duration": true,
+      "tail_if_native": 2.84
+    },
+    {
+      "phase": 37,
+      "voice_offset_seconds": 0.4,
+      "retained_voice_seconds": 6.45,
+      "source_visual_seconds": 8,
+      "minimum_output_seconds_for_this_offset": 6.85,
+      "fits_original_duration": true,
+      "tail_if_native": 1.15
+    },
+    {
+      "phase": 38,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 4.765,
+      "source_visual_seconds": 6,
+      "minimum_output_seconds_for_this_offset": 5.065,
+      "fits_original_duration": true,
+      "tail_if_native": 0.935
+    },
+    {
+      "phase": 40,
+      "voice_offset_seconds": 0.35,
+      "retained_voice_seconds": 2.6,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 2.95,
+      "fits_original_duration": true,
+      "tail_if_native": 1.05
+    },
+    {
+      "phase": 41,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 2.69,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 2.99,
+      "fits_original_duration": true,
+      "tail_if_native": 1.01
+    },
+    {
+      "phase": 42,
+      "voice_offset_seconds": 0.35,
+      "retained_voice_seconds": 2.21,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 2.56,
+      "fits_original_duration": true,
+      "tail_if_native": 1.44
+    },
+    {
+      "phase": 43,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 2.325,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 2.625,
+      "fits_original_duration": true,
+      "tail_if_native": 1.375
+    },
+    {
+      "phase": 44,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 3.47,
+      "source_visual_seconds": 5,
+      "minimum_output_seconds_for_this_offset": 3.77,
+      "fits_original_duration": true,
+      "tail_if_native": 1.23
+    },
+    {
+      "phase": 45,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 3.495,
+      "source_visual_seconds": 5,
+      "minimum_output_seconds_for_this_offset": 3.795,
+      "fits_original_duration": true,
+      "tail_if_native": 1.205
+    },
+    {
+      "phase": 53,
+      "voice_offset_seconds": 0.4,
+      "retained_voice_seconds": 6.025,
+      "source_visual_seconds": 8,
+      "minimum_output_seconds_for_this_offset": 6.425,
+      "fits_original_duration": true,
+      "tail_if_native": 1.575
+    },
+    {
+      "phase": 54,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 5.16,
+      "source_visual_seconds": 7,
+      "minimum_output_seconds_for_this_offset": 5.46,
+      "fits_original_duration": true,
+      "tail_if_native": 1.54
+    },
+    {
+      "phase": 55,
+      "voice_offset_seconds": 0.25,
+      "retained_voice_seconds": 6.47,
+      "source_visual_seconds": 8,
+      "minimum_output_seconds_for_this_offset": 6.72,
+      "fits_original_duration": true,
+      "tail_if_native": 1.28
+    },
+    {
+      "phase": 56,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 5.39,
+      "source_visual_seconds": 8,
+      "minimum_output_seconds_for_this_offset": 5.69,
+      "fits_original_duration": true,
+      "tail_if_native": 2.31
+    },
+    {
+      "phase": 57,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 4.485,
+      "source_visual_seconds": 6,
+      "minimum_output_seconds_for_this_offset": 4.785,
+      "fits_original_duration": true,
+      "tail_if_native": 1.215
+    },
+    {
+      "phase": 58,
+      "voice_offset_seconds": 0.4,
+      "retained_voice_seconds": 5.05,
+      "source_visual_seconds": 7,
+      "minimum_output_seconds_for_this_offset": 5.45,
+      "fits_original_duration": true,
+      "tail_if_native": 1.55
+    },
+    {
+      "phase": 59,
+      "voice_offset_seconds": 0.25,
+      "retained_voice_seconds": 7.455,
+      "source_visual_seconds": 7,
+      "minimum_output_seconds_for_this_offset": 7.705,
+      "fits_original_duration": false,
+      "tail_if_native": -0.705
+    },
+    {
+      "phase": 60,
+      "voice_offset_seconds": 0.2,
+      "retained_voice_seconds": 6.815,
+      "source_visual_seconds": 7,
+      "minimum_output_seconds_for_this_offset": 7.015,
+      "fits_original_duration": false,
+      "tail_if_native": -0.015
+    },
+    {
+      "phase": 61,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 5.225,
+      "source_visual_seconds": 6,
+      "minimum_output_seconds_for_this_offset": 5.525,
+      "fits_original_duration": true,
+      "tail_if_native": 0.475
+    },
+    {
+      "phase": 62,
+      "voice_offset_seconds": 0.35,
+      "retained_voice_seconds": 5.39,
+      "source_visual_seconds": 9,
+      "minimum_output_seconds_for_this_offset": 5.74,
+      "fits_original_duration": true,
+      "tail_if_native": 3.26
+    },
+    {
+      "phase": 63,
+      "voice_offset_seconds": 0.2,
+      "retained_voice_seconds": 8.28,
+      "source_visual_seconds": 9,
+      "minimum_output_seconds_for_this_offset": 8.48,
+      "fits_original_duration": true,
+      "tail_if_native": 0.52
+    },
+    {
+      "phase": 64,
+      "voice_offset_seconds": 0.95,
+      "retained_voice_seconds": 7.625,
+      "source_visual_seconds": 10,
+      "minimum_output_seconds_for_this_offset": 8.575,
+      "fits_original_duration": true,
+      "tail_if_native": 1.425
+    },
+    {
+      "phase": 65,
+      "voice_offset_seconds": 0.75,
+      "retained_voice_seconds": 5.065,
+      "source_visual_seconds": 8,
+      "minimum_output_seconds_for_this_offset": 5.815,
+      "fits_original_duration": true,
+      "tail_if_native": 2.185
+    },
+    {
+      "phase": 66,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 5.395,
+      "source_visual_seconds": 6,
+      "minimum_output_seconds_for_this_offset": 5.695,
+      "fits_original_duration": true,
+      "tail_if_native": 0.305
+    },
+    {
+      "phase": 67,
+      "voice_offset_seconds": 1.2,
+      "retained_voice_seconds": 7.425,
+      "source_visual_seconds": 12,
+      "minimum_output_seconds_for_this_offset": 8.625,
+      "fits_original_duration": true,
+      "tail_if_native": 3.375
+    },
+    {
+      "phase": 68,
+      "voice_offset_seconds": 3.0,
+      "retained_voice_seconds": 7.06,
+      "source_visual_seconds": 12,
+      "minimum_output_seconds_for_this_offset": 10.06,
+      "fits_original_duration": true,
+      "tail_if_native": 1.94
+    },
+    {
+      "phase": 70,
+      "voice_offset_seconds": 0.5,
+      "retained_voice_seconds": 6.835,
+      "source_visual_seconds": 9,
+      "minimum_output_seconds_for_this_offset": 7.335,
+      "fits_original_duration": true,
+      "tail_if_native": 1.665
+    },
+    {
+      "phase": 71,
+      "voice_offset_seconds": 0.4,
+      "retained_voice_seconds": 5.015,
+      "source_visual_seconds": 8,
+      "minimum_output_seconds_for_this_offset": 5.415,
+      "fits_original_duration": true,
+      "tail_if_native": 2.585
+    },
+    {
+      "phase": 72,
+      "voice_offset_seconds": 0.4,
+      "retained_voice_seconds": 6.405,
+      "source_visual_seconds": 8,
+      "minimum_output_seconds_for_this_offset": 6.805,
+      "fits_original_duration": true,
+      "tail_if_native": 1.195
+    },
+    {
+      "phase": 73,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 6.53,
+      "source_visual_seconds": 8,
+      "minimum_output_seconds_for_this_offset": 6.83,
+      "fits_original_duration": true,
+      "tail_if_native": 1.17
+    },
+    {
+      "phase": 74,
+      "voice_offset_seconds": 1.5,
+      "retained_voice_seconds": 2.305,
+      "source_visual_seconds": 8,
+      "minimum_output_seconds_for_this_offset": 3.805,
+      "fits_original_duration": true,
+      "tail_if_native": 4.195
+    },
+    {
+      "phase": 75,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 4.65,
+      "source_visual_seconds": 6,
+      "minimum_output_seconds_for_this_offset": 4.95,
+      "fits_original_duration": true,
+      "tail_if_native": 1.05
+    },
+    {
+      "phase": 76,
+      "voice_offset_seconds": 1.5,
+      "retained_voice_seconds": 2.34,
+      "source_visual_seconds": 7,
+      "minimum_output_seconds_for_this_offset": 3.84,
+      "fits_original_duration": true,
+      "tail_if_native": 3.16
+    },
+    {
+      "phase": 77,
+      "voice_offset_seconds": 0.4,
+      "retained_voice_seconds": 5.765,
+      "source_visual_seconds": 7,
+      "minimum_output_seconds_for_this_offset": 6.165,
+      "fits_original_duration": true,
+      "tail_if_native": 0.835
+    },
+    {
+      "phase": 78,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 5.265,
+      "source_visual_seconds": 6,
+      "minimum_output_seconds_for_this_offset": 5.565,
+      "fits_original_duration": true,
+      "tail_if_native": 0.435
+    },
+    {
+      "phase": 79,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 5.555,
+      "source_visual_seconds": 6,
+      "minimum_output_seconds_for_this_offset": 5.855,
+      "fits_original_duration": true,
+      "tail_if_native": 0.145
+    },
+    {
+      "phase": 80,
+      "voice_offset_seconds": 0.2,
+      "retained_voice_seconds": 7.415,
+      "source_visual_seconds": 8,
+      "minimum_output_seconds_for_this_offset": 7.615,
+      "fits_original_duration": true,
+      "tail_if_native": 0.385
+    },
+    {
+      "phase": 82,
+      "voice_offset_seconds": 0.2,
+      "retained_voice_seconds": 5.5,
+      "source_visual_seconds": 6,
+      "minimum_output_seconds_for_this_offset": 5.7,
+      "fits_original_duration": true,
+      "tail_if_native": 0.3
+    },
+    {
+      "phase": 83,
+      "voice_offset_seconds": 0.3,
+      "retained_voice_seconds": 5.135,
+      "source_visual_seconds": 6.0,
+      "minimum_output_seconds_for_this_offset": 5.435,
+      "fits_original_duration": true,
+      "tail_if_native": 0.565
+    },
+    {
+      "phase": 84,
+      "voice_offset_seconds": 0.0,
+      "retained_voice_seconds": 3.87,
+      "source_visual_seconds": 4,
+      "minimum_output_seconds_for_this_offset": 3.87,
+      "fits_original_duration": true,
+      "tail_if_native": 0.13
+    },
+    {
+      "phase": 85,
+      "voice_offset_seconds": 0.0,
+      "retained_voice_seconds": 5.93,
+      "source_visual_seconds": 6,
+      "minimum_output_seconds_for_this_offset": 5.93,
+      "fits_original_duration": true,
+      "tail_if_native": 0.07
+    },
+    {
+      "phase": 86,
+      "voice_offset_seconds": 0.4,
+      "retained_voice_seconds": 5.365,
+      "source_visual_seconds": 8,
+      "minimum_output_seconds_for_this_offset": 5.765,
+      "fits_original_duration": true,
+      "tail_if_native": 2.235
+    }
+  ],
+  "general_policy": [
+    "Protect native motion duration of mechanisms and numerical examples; do not uniformly compress each scene to voice duration.",
+    "Lead time should reveal the object or start its construction; avoid spending it on a blank or barely initialized frame.",
+    "Spare time is useful during a multi-step construction and on a settled meaningful result; avoid allocating all of it to a frozen endpoint.",
+    "Offsets are proposals and must be clamped or the window enlarged if offset+retainedVoice exceeds planned phase duration; never truncate speech or overlap adjacent voices.",
+    "Move every subtitle cue by the same local offset as its associated recorded voice. Do not leave captions before the voice.",
+    "When source motion is kept at1x and extra time is needed, prefer a meaningful final plateau after the last event; do not append a frame at a scene boundary that has already faded out.",
+    "Retain all five later takes, the numerical omissions, repaired LSTM matrix and new recorded ending.",
+    "Keep total under600s. A near560s target is desirable, but comprehension has priority within the stated assignment limit."
+  ],
+  "dynamic_review_protocol": {
+    "priority_phases": [
+      2,
+      3,
+      11,
+      12,
+      16,
+      17,
+      20,
+      21,
+      29,
+      30,
+      31,
+      33,
+      36,
+      50,
+      54,
+      55,
+      56,
+      57,
+      60,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      70,
+      74,
+      76,
+      80,
+      83
+    ],
+    "sample_rate_for_sequence_contact_sheet_hz": 2,
+    "sample_before_and_after_each_key_event_seconds": 0.2,
+    "review_checks": [
+      "Review sequential samples through each full active construction, not only midpoint stills.",
+      "Compare source phase and final phase trajectories to ensure the same key events occur in order and at an intelligible rate.",
+      "Check critical word/event timing explicitly for MAE28 and cumulative72.",
+      "Verify no subtitle occupies the space needed for the numeric operation or exception legend.",
+      "Review boundary frames0.2s before and after source phase transitions to catch premature cuts/fades.",
+      "Measure all audio intervals for non-overlap and exact PCM preservation; do not infer natural sound merely from static samples.",
+      "A sequence contact sheet verifies motion order and key visibility, not full real-time fluidity. Do not claim a real-time playback audit unless actually performed."
+    ]
+  }
+}

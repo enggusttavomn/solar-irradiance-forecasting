@@ -1,0 +1,2267 @@
+{
+  "sha256": "01a161c09db38dc246d3e5b416299c5c50ed86a3c3beb6c84d5dc5a7581256b0",
+  "parts": {
+    "[Content_Types].xml": "fe4f8420ead05ab7e81b7967db4ce842ced24b6b8f2c44d5201fe77cd9bef99c",
+    "_rels/.rels": "e19238d7a71fa7a2490776252686f70e2de6238c87cd509b5e3a3cc07c2ea4df",
+    "word/document.xml": "525a24c46391790f44c72e09eb4a7dcd4d9f0e114be6adf0c0ed4672d12a1c17",
+    "word/_rels/document.xml.rels": "06107f280bdbaee9e2dab44d7a48802fbcbbd9f5c01fcb197d650fc1bfa9da44",
+    "word/footnotes.xml": "a09870afd84b21c704eb9a58c5f001f6c338d98b201485dcfd5fb3a04dbbf846",
+    "word/endnotes.xml": "17a9035666763a43a9f29ec0bd1f6e6fafc5ee1386db99e17863a2cdea4f9349",
+    "word/header1.xml": "f1cbb0167ef88fad024f7c7ba25e26ad66317446fecb92b1f8328aff4e7411e7",
+    "word/header2.xml": "5a48858e831123caf5fab985c2db17ce7e6ca932c1c5031b63c1b359e30c2330",
+    "word/_rels/header1.xml.rels": "3f0c1dd9ef6a188bd52bce444003d661b4653e8cc4fd4ceda1875f0bcd622e03",
+    "word/_rels/header2.xml.rels": "5f3529ecf9b925cecf6cde967cfbba1f2b11cad4a3f75a0f0446651323a15699",
+    "word/media/image1.png": "0c3cafd495a80856ebc4f6ed2cc55e0365fa538c483aeef643307fbcf90ae81c",
+    "word/media/image2.jpeg": "505cb9becf08c4dfed4fbc7b578f38b09881e1818b7e1b720b98b2f678632e04",
+    "word/media/image3.png": "91f1a6f663a41279e0a2bdb98a2fe1391e477c9acac6b393caedd865ef773173",
+    "word/theme/theme1.xml": "49395915f6cc932b649456e8369b23f32ee5e7531d39ba821942b12b0c2b62e1",
+    "word/settings.xml": "a5453b2e4ff737cf7eb84dd7df0789d9ebd5f9493dc92cafc7af5b8d8d33cbbd",
+    "word/numbering.xml": "f80620a09a2e4955acbdfcf23e74220e5841b953370045b0c030d5985633eb02",
+    "word/styles.xml": "bf917467a976a51323e058b86f6ab6f69e422b32ffc9d136c93934871226944d",
+    "word/webSettings.xml": "fc7190d2f79635263359dabed1d3fc1f9ff110c87ac746e7aabc05b888b0b55c",
+    "word/fontTable.xml": "053e9aea6304dc644e18e850ea391a8835e1070540864cd593f4079cbb005074",
+    "docProps/core.xml": "5401f4d3578a4dbe6f86434b6bb32203a18500ca6b2f44bc2f110d399f1b7731",
+    "docProps/app.xml": "79ebc127ace6e4557d9eddd0ea80d97c273648bfa914850ad85a4c6c673d7caf",
+    "word/footer1.xml": "3f023fbd2d7a54531e5173a495582c5d5213fb9265bd3eedf9a5421c0220ef77",
+    "word/media/image4.png": "aece8c4ab312c551f7011fc7aa06cbe51d87e6c70439c5787a02e7ab46a7f8c8",
+    "word/media/image5.png": "62a119834d859eedf1769a3a66c48f26d4d9d5c801a8fedfdc8a9c13101922e5",
+    "word/media/image6.png": "bd65dd9f385315f836fec13016b2462ebdfdbd95b1b8481aa6d0382861ee0a6b",
+    "word/media/image7.png": "4f85de3b3461f61c0ec0bc02074484060241e4f419edef28b2c815d220ae73a3",
+    "word/media/image8.png": "5c64b12e77f6f4f960d8be640af739fcb194bf244343130fafce1f7ce93193ab",
+    "word/media/image9.png": "b3507bbafd2025a2b287efda7adc4aa8474828cb3c0efa717bb9281a19d1f8fa",
+    "word/media/image10.png": "c5a95b82e40acc14b0022c0767ec124d1a94b88bf5d77db84779e3d3c024ff69",
+    "word/media/image11.png": "b9a15be05c1bc5c1a7487d50015cdd369db5a45f36b836da190b426178cd0e70",
+    "word/media/image12.png": "e88f0be1a1ffab85f14fdcbb61cbbe756621f4ef766787f0a23bee34d126bc32",
+    "word/media/image13.png": "8d0edb8f3da26885bac40caf60f441a3ad06cf908d73f590ef293116e892deda",
+    "word/media/image14.png": "5d8a545b5d1a7bc74ef0c97638ea97b1259cbe5b4fd78d51c7498fd033fccff4",
+    "word/media/image15.png": "47d7e5229d7bf6255a8612b9a9f9109ff5c29469bd86eb0a20d5d11d74634fde",
+    "word/media/image17.png": "e36d502beee5fbe85a1767ff072267a6f3bd27174316a23656d43c349b01d4ec"
+  },
+  "figures": [
+    {
+      "paragraph": 104,
+      "size_inches": {
+        "cx": 6.575,
+        "cy": 4.405
+      },
+      "neighbors": [
+        {
+          "offset": -2,
+          "text": "A documentação da API PSM v4 informa resolução espacial nominal de 4 km e registros nativos de 30 minutos, com consultas em intervalos de 30 ou 60 minutos [7]. No projeto, a série horária é formada a partir dos registros de 30 minutos. As médias diárias provêm de uma consulta independente em 60 minutos, e as mensais são médias aritméticas das diárias. Todas conservam a unidade W/m²; contudo, as séries horária e diária não devem ser tratadas como agregações do mesmo conjunto de registros brutos.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": -1,
+          "text": "Figura 1 — Distribuição geográfica e contexto climático das dez localidades",
+          "layout": {
+            "style": "Legenda",
+            "own": [
+              "<w:keepNext/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Legenda",
+                  {
+                    "after": "60",
+                    "line": "240",
+                    "lineRule": "auto",
+                    "before": "80"
+                  }
+                ],
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 0,
+          "text": "",
+          "layout": {
+            "style": "Normal",
+            "own": [
+              "<w:jc w:val=\"center\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": {
+                "after": "40"
+              },
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 1,
+          "text": "Fonte: elaboração própria.",
+          "layout": {
+            "style": "Fonte",
+            "own": [
+              "<w:pStyle w:val=\"Fonte\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Fonte",
+                  {
+                    "before": "40",
+                    "after": "100",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 2,
+          "text": "Tabela 1 — Localidades e coordenadas de referência",
+          "layout": {
+            "style": "Legenda",
+            "own": [
+              "<w:pageBreakBefore/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": {},
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Legenda",
+                  {
+                    "after": "60",
+                    "line": "240",
+                    "lineRule": "auto",
+                    "before": "80"
+                  }
+                ],
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 3,
+          "text": "Fonte: elaboração própria com dados e registros de execução do projeto (Apêndice C). Coordenadas em graus decimais.",
+          "layout": {
+            "style": "Fonte",
+            "own": [
+              "<w:pStyle w:val=\"Fonte\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Fonte",
+                  {
+                    "before": "40",
+                    "after": "100",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        }
+      ]
+    },
+    {
+      "paragraph": 113,
+      "size_inches": {
+        "cx": 6.575,
+        "cy": 5.124
+      },
+      "neighbors": [
+        {
+          "offset": -2,
+          "text": "A Figura 2 apresenta a GHI de referência de BYD Camaçari em recortes de 2024. A série horária evidencia o ciclo diurno, enquanto as médias diárias e mensais sintetizam a variação em períodos mais longos. Os painéis mantêm a unidade W/m² e ilustram a mudança de estrutura dos dados com a agregação temporal. São perfis da referência utilizada na avaliação, sem previsões dos modelos.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": -1,
+          "text": "Figura 2 — Perfis de referência da GHI nas resoluções horária, diária e mensal",
+          "layout": {
+            "style": "Legenda",
+            "own": [
+              "<w:keepNext/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Legenda",
+                  {
+                    "after": "60",
+                    "line": "240",
+                    "lineRule": "auto",
+                    "before": "80"
+                  }
+                ],
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 0,
+          "text": "",
+          "layout": {
+            "style": "Normal",
+            "own": [
+              "<w:jc w:val=\"center\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": {
+                "after": "40"
+              },
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 1,
+          "text": "Fonte: elaboração própria. Séries NSRDB de BYD Camaçari. Semana de 1 a 7 de janeiro, médias diárias de janeiro e médias mensais de 2024. Horária e diária provêm de consultas independentes; a mensal é calculada das diárias. Escalas verticais próprias por painel.",
+          "layout": {
+            "style": "Fonte",
+            "own": [
+              "<w:pStyle w:val=\"Fonte\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Fonte",
+                  {
+                    "before": "40",
+                    "after": "100",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 2,
+          "text": "3.3 Tarefas e janelas temporais",
+          "layout": {
+            "style": "Heading2",
+            "own": [
+              "<w:pStyle w:val=\"Heading2\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": [
+                [
+                  "Heading2",
+                  {}
+                ]
+              ]
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Heading2",
+                  {
+                    "before": "240",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 3,
+          "text": "Na tarefa horária, emite-se um vetor de 72 previsões uma vez por dia, às 00:00 no horário local fixo informado pela NSRDB, sem aplicação de horário de verão. Assim, o horizonte de saída é de 72 horas, mas o espaçamento entre origens consecutivas é de 24 horas.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        }
+      ]
+    },
+    {
+      "paragraph": 129,
+      "size_inches": {
+        "cx": 6.575,
+        "cy": 3.919
+      },
+      "neighbors": [
+        {
+          "offset": -2,
+          "text": "Na tarefa horária histórica, a cobertura em UTC não contém todo o horizonte local da origem de 29 de dezembro de 2022. Essa origem foi excluída dos dois históricos, resultando em 1.368 origens válidas por localidade, conforme a Tabela 2. O procedimento preserva o pareamento sem preencher a janela incompleta.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": -1,
+          "text": "Figura 3 — Fluxo experimental em etapas de dados, seleção e avaliação",
+          "layout": {
+            "style": "Legenda",
+            "own": [
+              "<w:keepNext/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Legenda",
+                  {
+                    "after": "60",
+                    "line": "240",
+                    "lineRule": "auto",
+                    "before": "80"
+                  }
+                ],
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 0,
+          "text": "",
+          "layout": {
+            "style": "Normal",
+            "own": [
+              "<w:jc w:val=\"center\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": {
+                "after": "40"
+              },
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 1,
+          "text": "Fonte: elaboração própria.",
+          "layout": {
+            "style": "Fonte",
+            "own": [
+              "<w:pStyle w:val=\"Fonte\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Fonte",
+                  {
+                    "before": "40",
+                    "after": "100",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 2,
+          "text": "3.5 Normalização e condições de entrada",
+          "layout": {
+            "style": "Heading2",
+            "own": [
+              "<w:pStyle w:val=\"Heading2\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": [
+                [
+                  "Heading2",
+                  {}
+                ]
+              ]
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Heading2",
+                  {
+                    "before": "240",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 3,
+          "text": "A normalização é ajustada separadamente para cada localidade e etapa, usando somente dados anteriores ao respectivo corte. No regime atual, a seleção utiliza dados anteriores a 2023; o refit recalcula a transformação com os dados anteriores a 2024. Nos regimes históricos aplica-se a mesma regra. A Equação 1 transforma x em u, sendo a e b o mínimo e o máximo estimados nesse histórico admissível.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        }
+      ]
+    },
+    {
+      "paragraph": 142,
+      "size_inches": {
+        "cx": 6.575,
+        "cy": 3.371
+      },
+      "neighbors": [
+        {
+          "offset": -2,
+          "text": "Em unidades físicas, o espaçamento entre níveis é Δ = (b − a)/(N − 1), em que b − a é a amplitude ajustada para a localidade. No refit horário anterior a 2024, Q64 corresponde a passos entre 16,24 e 18,04 W/m² nas dez localidades. Sob a hipótese idealizada de erro de arredondamento uniforme em cada intervalo, o RMS seria Δ/√12, entre 4,69 e 5,21 W/m² [8]. Essa aproximação descreve a entrada, não um erro empírico medido nem um limite para a saída da rede; a propagação depende da função aprendida.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": -1,
+          "text": "Figura 4 — Quantização uniforme e saturação das entradas",
+          "layout": {
+            "style": "Legenda",
+            "own": [
+              "<w:keepNext/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Legenda",
+                  {
+                    "after": "60",
+                    "line": "240",
+                    "lineRule": "auto",
+                    "before": "80"
+                  }
+                ],
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 0,
+          "text": "",
+          "layout": {
+            "style": "Normal",
+            "own": [
+              "<w:jc w:val=\"center\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": {
+                "after": "40"
+              },
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 1,
+          "text": "Fonte: elaboração própria. Escada com oito níveis exclusivamente para legibilidade. As execuções avaliadas usam 64, 128 e 256 níveis; a linha tracejada representa o controle sem clipping.",
+          "layout": {
+            "style": "Fonte",
+            "own": [
+              "<w:pStyle w:val=\"Fonte\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Fonte",
+                  {
+                    "before": "40",
+                    "after": "100",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 2,
+          "text": "3.6 Treinamento, seleção e refit",
+          "layout": {
+            "style": "Heading2",
+            "own": [
+              "<w:pStyle w:val=\"Heading2\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": [
+                [
+                  "Heading2",
+                  {}
+                ]
+              ]
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Heading2",
+                  {
+                    "before": "240",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 3,
+          "text": "Para cada modelo, tarefa, condição de entrada e semente, ajusta-se uma rede global pelo MSE normalizado. As épocas são escolhidas pela perda de validação; a condição de entrada, pelo macro-MAE da previsão combinada na validação, em W/m², no horizonte completo. Em empate, priorizam-se controle, 64, 128 e 256 níveis. A condição permanece fixa no teste e nos horizontes menores. A análise distingue entradas contínuas comuns das configurações selecionadas para cada rede. A Figura 3 e as Tabelas 16 e 17 detalham o protocolo e as implementações.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        }
+      ]
+    },
+    {
+      "paragraph": 184,
+      "size_inches": {
+        "cx": 6.575,
+        "cy": 4.602
+      },
+      "neighbors": [
+        {
+          "offset": -2,
+          "text": "A Figura 5 sintetiza as implementações e identifica as operações compartilhadas e específicas de cada rede.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": -1,
+          "text": "Figura 5 — Estruturas implementadas dos três modelos",
+          "layout": {
+            "style": "Legenda",
+            "own": [
+              "<w:keepNext/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Legenda",
+                  {
+                    "after": "60",
+                    "line": "240",
+                    "lineRule": "auto",
+                    "before": "80"
+                  }
+                ],
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 0,
+          "text": "",
+          "layout": {
+            "style": "Normal",
+            "own": [
+              "<w:jc w:val=\"center\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": {
+                "after": "40"
+              },
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 1,
+          "text": "Fonte: elaboração própria. Esquemas próprios baseados no código do projeto. Os zeros do decoder marcam posições futuras e não fornecem os valores do alvo.",
+          "layout": {
+            "style": "Fonte",
+            "own": [
+              "<w:pStyle w:val=\"Fonte\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Fonte",
+                  {
+                    "before": "40",
+                    "after": "100",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 2,
+          "text": "4.5 Trabalhos relacionados e posicionamento",
+          "layout": {
+            "style": "Heading2",
+            "own": [
+              "<w:pStyle w:val=\"Heading2\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": [
+                [
+                  "Heading2",
+                  {}
+                ]
+              ]
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Heading2",
+                  {
+                    "before": "240",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 3,
+          "text": "A comparação entre estudos de previsão solar depende da variável prevista, da resolução temporal, do horizonte, das informações disponíveis na emissão e dos períodos e métricas de avaliação [1,12]. Esses elementos orientam a seleção dos trabalhos relacionados e delimitam o confronto com os resultados deste TCC.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        }
+      ]
+    },
+    {
+      "paragraph": 206,
+      "size_inches": {
+        "cx": 6.339,
+        "cy": 5.9
+      },
+      "neighbors": [
+        {
+          "offset": -2,
+          "text": "A média macro atribui o mesmo peso às dez localidades, mas pode ocultar mudanças de liderança. A Figura 6 apresenta os MAEs de cada local com a mesma condição de entrada utilizada na classificação agregada. Cada painel corresponde a uma tarefa e ao seu horizonte cumulativo completo.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": -1,
+          "text": "Figura 6 — Desempenho por localidade nas quatro tarefas",
+          "layout": {
+            "style": "Legenda",
+            "own": [
+              "<w:keepNext/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Legenda",
+                  {
+                    "after": "60",
+                    "line": "240",
+                    "lineRule": "auto",
+                    "before": "80"
+                  }
+                ],
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 0,
+          "text": "",
+          "layout": {
+            "style": "Normal",
+            "own": [
+              "<w:jc w:val=\"center\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": {
+                "after": "40"
+              },
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 1,
+          "text": "Fonte: elaboração própria. Métricas locais de teste com seleção fixa pela validação. Escala de cor própria por painel. Contorno e negrito indicam o menor MAE local com a precisão integral dos dados; valores arredondados podem parecer empatados. A comparação é descritiva e não indica significância estatística.",
+          "layout": {
+            "style": "Fonte",
+            "own": [
+              "<w:pStyle w:val=\"Fonte\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Fonte",
+                  {
+                    "before": "40",
+                    "after": "100",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 2,
+          "text": "O Transformer apresenta o menor MAE em sete localidades na tarefa horária e seis na diária. A LSTM lidera nas três e quatro localidades restantes, respectivamente. Nas tarefas mensais de um e seis passos, o Informer lidera em cinco localidades, a LSTM em três e o Transformer em duas. Logo, o primeiro lugar na média macro não equivale a liderança em todos os locais.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 3,
+          "text": "Nos dois pontos de Detroit, GM Factory Zero e Ford Rouge EV Center, a LSTM apresentou o menor MAE nas duas tarefas mensais. Esse comportamento reforça que a melhor configuração na média macro pode perder para outra rede em uma localidade específica. Os dados revelam a heterogeneidade, mas não identificam sua causa climática.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        }
+      ]
+    },
+    {
+      "paragraph": 215,
+      "size_inches": {
+        "cx": 6.575,
+        "cy": 5.205
+      },
+      "neighbors": [
+        {
+          "offset": -2,
+          "text": "Na tarefa mensal de seis passos, o Informer com 128 níveis apresentou MAEs cumulativos de 14,02, 12,99 e 13,67 W/m² em um, três e seis meses. O primeiro valor corresponde ao passo inicial da rede treinada para seis saídas e não ao resultado da rede mensal de um passo. O teste de 2024 tem sete origens por localidade, totalizando 420 pares de origem e passo nas dez localidades. Como as janelas compartilham alvos, esses pares não são observações independentes. A avaliação permanece exploratória.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": -1,
+          "text": "Figura 7 — Perfis cumulativos de erro nos horizontes de cada tarefa",
+          "layout": {
+            "style": "Legenda",
+            "own": [
+              "<w:keepNext/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Legenda",
+                  {
+                    "after": "60",
+                    "line": "240",
+                    "lineRule": "auto",
+                    "before": "80"
+                  }
+                ],
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 0,
+          "text": "",
+          "layout": {
+            "style": "Normal",
+            "own": [
+              "<w:jc w:val=\"center\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": {
+                "after": "40"
+              },
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 1,
+          "text": "Fonte: elaboração própria. Macro-MAE cumulativo, com pesos iguais entre localidades. A condição de entrada permanece fixa pela escolha no horizonte completo da validação. O painel mensal de seis passos é exploratório.",
+          "layout": {
+            "style": "Fonte",
+            "own": [
+              "<w:pStyle w:val=\"Fonte\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Fonte",
+                  {
+                    "before": "40",
+                    "after": "100",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 2,
+          "text": "5.4 Quantização como análise de pré-processamento",
+          "layout": {
+            "style": "Heading2",
+            "own": [
+              "<w:pStyle w:val=\"Heading2\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": [
+                [
+                  "Heading2",
+                  {}
+                ]
+              ]
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Heading2",
+                  {
+                    "before": "240",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 3,
+          "text": "Tabela 7 — Nível escolhido e comparação com o controle no teste de 2024",
+          "layout": {
+            "style": "Legenda",
+            "own": [
+              "<w:keepNext/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Legenda",
+                  {
+                    "after": "60",
+                    "line": "240",
+                    "lineRule": "auto",
+                    "before": "80"
+                  }
+                ],
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        }
+      ]
+    },
+    {
+      "paragraph": 225,
+      "size_inches": {
+        "cx": 6.575,
+        "cy": 6.082
+      },
+      "neighbors": [
+        {
+          "offset": -2,
+          "text": "Os diagnósticos do teste de 2024 registram clipping em 14 de 1.219.680 entradas horárias (0,0011%) e 328 de 1.230.050 diárias (0,0267%); nas duas tarefas mensais, não há saturação no teste. Essas contagens se referem a valores escalares nas janelas de entrada, que podem se sobrepor, e não a observações independentes ou erros de previsão. Na validação de 2023, porém, há 24 de 1.440 entradas saturadas na tarefa mensal de um passo (1,67%) e nove de 840 na de seis passos (1,07%). A baixa incidência no teste caracteriza essa etapa, mas não exclui influência anterior na escolha de épocas e níveis nem mede a magnitude de seu efeito nas previsões.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": -1,
+          "text": "Figura 8 — Sensibilidade do MAE à resolução de amplitude no regime atual",
+          "layout": {
+            "style": "Legenda",
+            "own": [
+              "<w:keepNext/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Legenda",
+                  {
+                    "after": "60",
+                    "line": "240",
+                    "lineRule": "auto",
+                    "before": "80"
+                  }
+                ],
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 0,
+          "text": "",
+          "layout": {
+            "style": "Normal",
+            "own": [
+              "<w:jc w:val=\"center\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": {
+                "after": "40"
+              },
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 1,
+          "text": "Fonte: elaboração própria. Variações do macro-MAE calculadas em relação ao controle do mesmo modelo e tarefa. Estrela identifica a condição escolhida na validação; contorno destaca escolhas quantizadas.",
+          "layout": {
+            "style": "Fonte",
+            "own": [
+              "<w:pStyle w:val=\"Fonte\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Fonte",
+                  {
+                    "before": "40",
+                    "after": "100",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 2,
+          "text": "5.5 Análise complementar da duração do histórico",
+          "layout": {
+            "style": "Heading2",
+            "own": [
+              "<w:pStyle w:val=\"Heading2\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": [
+                [
+                  "Heading2",
+                  {}
+                ]
+              ]
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Heading2",
+                  {
+                    "before": "240",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 3,
+          "text": "Para contextualizar a comparação entre as redes, os históricos longo e curto são confrontados nos mesmos alvos e datas de validação e teste, conforme a Tabela 3. Na tarefa horária, ambos utilizam as 1.368 origens válidas por localidade após a exclusão da janela incompleta descrita na metodologia. O pareamento evita que a mudança do período de avaliação se confunda com a ampliação do histórico.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        }
+      ]
+    },
+    {
+      "paragraph": 236,
+      "size_inches": {
+        "cx": 6.693,
+        "cy": 4.055
+      },
+      "neighbors": [
+        {
+          "offset": -2,
+          "text": "A Figura 9 apresenta as trajetórias de seleção horária dos controles contínuos. Elas complementam a comparação da Tabela 8, sem alterar as condições selecionadas na validação utilizadas nas tabelas principais. Nos controles do regime atual, as épocas escolhidas foram 30 para Transformer, quatro para Informer e 25 para LSTM.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": -1,
+          "text": "Figura 9 — Trajetórias de validação dos controles contínuos na tarefa horária",
+          "layout": {
+            "style": "Legenda",
+            "own": [
+              "<w:keepNext/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Legenda",
+                  {
+                    "after": "60",
+                    "line": "240",
+                    "lineRule": "auto",
+                    "before": "80"
+                  }
+                ],
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 0,
+          "text": "",
+          "layout": {
+            "style": "Normal",
+            "own": [
+              "<w:jc w:val=\"center\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": {},
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 1,
+          "text": "Fonte: elaboração própria com os registros de seleção dos três modelos, semente 42. MSE de validação normalizado em eixo vertical logarítmico; círculos indicam as épocas escolhidas. O regime atual avalia 2023; os históricos compartilham a validação, mas usam escalas ajustadas em períodos distintos. As curvas incluem as épocas registradas até a parada antecipada ou o teto de 30 épocas e não isolam o efeito da duração do histórico.",
+          "layout": {
+            "style": "Fonte",
+            "own": [
+              "<w:pStyle w:val=\"Fonte\"/",
+              ""
+            ],
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Fonte",
+                  {
+                    "before": "40",
+                    "after": "100",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 2,
+          "text": "Nos controles horários dos regimes atual e histórico curto, o Informer apresentou uma trajetória de validação distinta das demais redes. Com o histórico longo, sua perda diminuiu ao longo das épocas registradas. Essas curvas caracterizam a otimização nas configurações executadas, mas não isolam a causa do erro de teste nem demonstram convergência. A interpretação também deve considerar a semente única e as escalas próprias de cada regime: longo e curto compartilham os alvos de validação, enquanto o regime atual avalia outro período.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        },
+        {
+          "offset": 3,
+          "text": "A época escolhida coincidiu com o teto de 30 em quatro das quatro condições de entrada do Transformer horário no regime atual. Na tarefa diária atual, isso ocorreu em oito de 20 combinações de condição e semente do Transformer e em cinco de 20 da LSTM; na tarefa diária do histórico curto pareado, ocorreu em onze de 20 combinações da LSTM. Esses casos indicam que a busca por épocas terminou na fronteira do orçamento estabelecido. Não demonstram, por si só, que as redes ficaram subtreinadas ou que ampliar o orçamento reduziria o erro de teste; essa hipótese exigiria outra avaliação.",
+          "layout": {
+            "style": "Normal",
+            "own": "",
+            "keepNext": {
+              "own": null,
+              "inherited": []
+            },
+            "keepLines": {
+              "own": null,
+              "inherited": []
+            },
+            "pageBreakBefore": {
+              "own": null,
+              "inherited": []
+            },
+            "spacing": {
+              "own": null,
+              "inherited": [
+                [
+                  "Normal",
+                  {
+                    "before": "0",
+                    "after": "120",
+                    "line": "240",
+                    "lineRule": "auto"
+                  }
+                ]
+              ]
+            },
+            "manual_page_breaks": 0
+          }
+        }
+      ]
+    }
+  ],
+  "pages": 37
+}

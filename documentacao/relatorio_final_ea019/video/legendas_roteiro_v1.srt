@@ -1,0 +1,520 @@
+﻿1
+00:00:00,150 --> 00:00:03,329
+Olá, eu sou Gustavo de Melo Nascimento,
+
+2
+00:00:03,429 --> 00:00:07,015
+estudante de Engenharia Elétrica da
+Unicamp.
+
+3
+00:00:07,115 --> 00:00:12,087
+Neste trabalho, comparei três modelos de
+aprendizado profundo
+
+4
+00:00:12,187 --> 00:00:17,240
+para prever a irradiância solar: LSTM,
+Transformer e Informer.
+
+5
+00:00:17,340 --> 00:00:19,460
+Vou apresentar o problema,
+
+6
+00:00:19,560 --> 00:00:24,450
+como organizei a comparação e o que os
+resultados mostraram.
+
+7
+00:00:25,150 --> 00:00:29,957
+O trabalho foi desenvolvido na disciplina
+EA019, com orientação
+
+8
+00:00:30,057 --> 00:00:35,704
+do professor Gustavo Fraidenraich e
+coorientação de Thales Wulfert Cabral.
+
+9
+00:00:35,804 --> 00:00:39,695
+O foco é a previsão em diferentes escalas
+de tempo,
+
+10
+00:00:39,795 --> 00:00:44,450
+em localidades associadas à fabricação de
+veículos elétricos.
+
+11
+00:00:45,150 --> 00:00:49,899
+A irradiância global horizontal, ou GHI,
+representa a potência da radiação
+
+12
+00:00:49,999 --> 00:00:54,106
+solar que chega a uma superfície
+horizontal por unidade de área.
+
+13
+00:00:54,206 --> 00:00:56,645
+Sua unidade é watt por metro quadrado.
+
+14
+00:00:56,745 --> 00:01:02,007
+Parte dessa radiação chega diretamente do
+Sol, e parte é espalhada pela atmosfera.
+
+15
+00:01:02,107 --> 00:01:05,701
+A geometria solar estabelece padrões
+diários e sazonais,
+
+16
+00:01:05,801 --> 00:01:09,074
+enquanto as condições atmosféricas alteram
+a curva.
+
+17
+00:01:09,174 --> 00:01:12,704
+Assim, mesmo quando conhecemos o
+comportamento passado,
+
+18
+00:01:12,804 --> 00:01:15,179
+o futuro não é uma simples repetição.
+
+19
+00:01:15,279 --> 00:01:19,450
+A pergunta é: quanto conseguimos antecipar
+usando esse histórico?
+
+20
+00:01:20,150 --> 00:01:25,444
+Meu objetivo foi comparar os três modelos
+em diferentes escalas de tempo.
+
+21
+00:01:25,544 --> 00:01:29,968
+Também examinei como a transformação das
+entradas e a duração
+
+22
+00:01:30,068 --> 00:01:34,491
+do histórico de treinamento se
+relacionaram com o desempenho.
+
+23
+00:01:34,591 --> 00:01:39,450
+O estudo prevê irradiância, e não
+diretamente geração fotovoltaica.
+
+24
+00:01:40,150 --> 00:01:46,386
+Utilizei estimativas da base NSRDB para
+dez localidades associadas à fabricação
+
+25
+00:01:46,486 --> 00:01:52,643
+de veículos elétricos: uma no Brasil, oito
+nos Estados Unidos e uma no México.
+
+26
+00:01:52,743 --> 00:01:59,058
+Esses dados representam células da base, e
+não sensores instalados nas fábricas.
+
+27
+00:01:59,158 --> 00:02:03,657
+As redes receberam o histórico de GHI e
+uma representação
+
+28
+00:02:03,757 --> 00:02:06,994
+aprendida da identificação da localidade.
+
+29
+00:02:07,094 --> 00:02:10,804
+Temperatura, imagens e previsões
+meteorológicas
+
+30
+00:02:10,904 --> 00:02:13,982
+não foram entradas desses experimentos.
+
+31
+00:02:14,082 --> 00:02:19,450
+Os parâmetros foram compartilhados entre
+as localidades do conjunto.
+
+32
+00:02:20,150 --> 00:02:23,160
+Organizei quatro tarefas de previsão.
+
+33
+00:02:23,260 --> 00:02:26,677
+Na horária, usei trezentas e trinta e seis
+
+34
+00:02:26,777 --> 00:02:30,438
+horas para prever as próximas setenta e
+duas.
+
+35
+00:02:30,538 --> 00:02:35,745
+Na diária, trezentos e sessenta e cinco
+dias para prever trinta.
+
+36
+00:02:35,845 --> 00:02:41,865
+Nas tarefas mensais, utilizei doze meses
+para prever um mês ou seis meses.
+
+37
+00:02:41,965 --> 00:02:45,464
+São redes treinadas para tarefas
+distintas.
+
+38
+00:02:45,564 --> 00:02:49,794
+Por isso, o primeiro passo da previsão de
+seis meses
+
+39
+00:02:49,894 --> 00:02:54,450
+não deve ser confundido com a tarefa
+mensal de um passo.
+
+40
+00:02:55,150 --> 00:03:01,650
+No protocolo consolidado, separei os
+períodos em treinamento inicial,
+
+41
+00:03:01,750 --> 00:03:07,517
+de dois mil e dezenove a dois mil e vinte
+e dois; validação,
+
+42
+00:03:07,617 --> 00:03:13,961
+em dois mil e vinte e três; e teste, em
+dois mil e vinte e quatro.
+
+43
+00:03:14,061 --> 00:03:18,963
+As configurações seguiram a seleção pela
+validação,
+
+44
+00:03:19,063 --> 00:03:23,485
+com novo ajuste nos dados anteriores ao
+teste.
+
+45
+00:03:23,585 --> 00:03:29,160
+A avaliação é retrospectiva, e sua
+interpretação considera
+
+46
+00:03:29,260 --> 00:03:34,450
+que já existia exposição anterior ao
+período de teste.
+
+47
+00:03:35,150 --> 00:03:38,544
+Os modelos tratam o histórico de maneiras
+diferentes.
+
+48
+00:03:38,644 --> 00:03:42,999
+A LSTM percorre a sequência e atualiza uma
+representação de memória,
+
+49
+00:03:43,099 --> 00:03:46,494
+controlando a informação que é mantida e
+transmitida.
+
+50
+00:03:46,594 --> 00:03:49,091
+O Transformer usa atenção para combinar
+
+51
+00:03:49,191 --> 00:03:52,265
+informações de diferentes posições da
+sequência.
+
+52
+00:03:52,365 --> 00:03:55,375
+As posições temporais também são
+representadas,
+
+53
+00:03:55,475 --> 00:03:57,589
+para indicar a ordem dos valores.
+
+54
+00:03:57,689 --> 00:04:01,083
+O Informer utiliza uma estratégia de
+atenção esparsa,
+
+55
+00:04:01,183 --> 00:04:05,794
+chamada ProbSparse, e reduz representações
+entre camadas do codificador.
+
+56
+00:04:05,894 --> 00:04:09,929
+No Informer implementado, a atenção
+cruzada continuou completa;
+
+57
+00:04:10,029 --> 00:04:15,345
+a simplificação visual não significa que
+todas as operações da rede sejam esparsas.
+
+58
+00:04:15,445 --> 00:04:20,120
+Esses desenhos simplificam as arquiteturas
+para explicar a ideia central.
+
+59
+00:04:20,220 --> 00:04:22,782
+No projeto, comparei o erro de previsão.
+
+60
+00:04:22,882 --> 00:04:26,404
+Não medi velocidade nem consumo de memória
+para afirmar
+
+61
+00:04:26,504 --> 00:04:29,450
+que um modelo foi computacionalmente
+superior.
+
+62
+00:04:30,150 --> 00:04:35,439
+Também comparei o histórico contínuo com
+entradas representadas em sessenta
+
+63
+00:04:35,539 --> 00:04:40,406
+e quatro, cento e vinte e oito ou duzentos
+e cinquenta e seis níveis.
+
+64
+00:04:40,506 --> 00:04:44,455
+Visualmente, é como aproximar as
+amplitudes por degraus.
+
+65
+00:04:44,555 --> 00:04:48,364
+Apenas a entrada de GHI passou por essa
+transformação;
+
+66
+00:04:48,464 --> 00:04:51,496
+os pesos e as saídas continuaram
+contínuos.
+
+67
+00:04:51,596 --> 00:04:53,430
+Nas variantes quantizadas,
+
+68
+00:04:53,530 --> 00:04:58,114
+valores extremos também foram limitados ao
+intervalo normalizado.
+
+69
+00:04:58,214 --> 00:05:01,529
+A condição selecionada na validação foi
+mantida
+
+70
+00:05:01,629 --> 00:05:04,450
+na apresentação dos resultados do teste.
+
+71
+00:05:05,150 --> 00:05:07,264
+Para avaliar as previsões,
+
+72
+00:05:07,364 --> 00:05:11,348
+usei principalmente o erro absoluto médio,
+o MAE.
+
+73
+00:05:11,448 --> 00:05:15,594
+Ele resume a distância entre previsão e
+referência,
+
+74
+00:05:15,694 --> 00:05:18,296
+na mesma unidade da irradiância.
+
+75
+00:05:18,396 --> 00:05:24,819
+Calculei as métricas por localidade e
+depois obtive uma média com pesos iguais.
+
+76
+00:05:24,919 --> 00:05:31,098
+Nos resultados cumulativos, o erro reúne
+os passos até o horizonte indicado;
+
+77
+00:05:31,198 --> 00:05:34,450
+não representa apenas o último instante.
+
+78
+00:05:35,150 --> 00:05:41,650
+Nas configurações selecionadas, o
+Transformer apresentou o menor MAE
+
+79
+00:05:41,750 --> 00:05:48,250
+agregado nos horizontes completos horário
+e diário: cinquenta e três vírgula
+
+80
+00:05:48,350 --> 00:05:54,850
+vinte e um e quarenta e três vírgula
+oitenta e nove watts por metro quadrado.
+
+81
+00:05:54,950 --> 00:05:59,018
+As vantagens sobre a LSTM foram pequenas:
+
+82
+00:05:59,118 --> 00:06:04,874
+cerca de zero vírgula trinta e dois e zero
+vírgula trinta.
+
+83
+00:06:04,974 --> 00:06:06,958
+Nas tarefas mensais,
+
+84
+00:06:07,058 --> 00:06:13,558
+o Informer com cento e vinte e oito níveis
+apresentou os menores erros: doze
+
+85
+00:06:13,658 --> 00:06:20,158
+vírgula setenta e três em um mês e treze
+vírgula sessenta e sete em seis meses.
+
+86
+00:06:20,258 --> 00:06:25,915
+A liderança também variou entre
+localidades e horizontes.
+
+87
+00:06:26,015 --> 00:06:28,992
+Na tarefa diária, por exemplo,
+
+88
+00:06:29,092 --> 00:06:34,450
+a LSTM liderou os recortes menores, até
+quatorze dias.
+
+89
+00:06:35,150 --> 00:06:38,276
+A quantização não trouxe vantagem
+universal.
+
+90
+00:06:38,376 --> 00:06:42,142
+Em uma análise histórica separada, com
+teste pareado,
+
+91
+00:06:42,242 --> 00:06:47,784
+o histórico longo apresentou menor MAE em
+onze das doze combinações contínuas.
+
+92
+00:06:47,884 --> 00:06:50,868
+Incluir anos anteriores esteve associado à
+
+93
+00:06:50,968 --> 00:06:54,450
+melhora na maioria dos controles, sem
+garanti-la.
+
+94
+00:06:55,150 --> 00:06:58,460
+Esses resultados descrevem as execuções
+avaliadas,
+
+95
+00:06:58,560 --> 00:07:02,267
+sem demonstrar significância estatística
+das diferenças.
+
+96
+00:07:02,367 --> 00:07:05,346
+A tarefa horária utilizou apenas uma
+semente.
+
+97
+00:07:05,446 --> 00:07:08,359
+A previsão de seis meses teve poucas
+origens
+
+98
+00:07:08,459 --> 00:07:11,703
+de teste por localidade e permanece
+exploratória.
+
+99
+00:07:11,803 --> 00:07:15,444
+As janelas também se sobrepõem, repetindo
+alguns alvos.
+
+100
+00:07:15,544 --> 00:07:19,450
+A generalização para localidades inéditas
+não foi avaliada.
+
+101
+00:07:20,150 --> 00:07:25,396
+Minha conclusão é que a escolha do modelo
+depende da tarefa,
+
+102
+00:07:25,496 --> 00:07:28,031
+do horizonte e da localidade.
+
+103
+00:07:28,131 --> 00:07:34,631
+O Transformer liderou os horizontes
+completos horário e diário deste estudo,
+
+104
+00:07:34,731 --> 00:07:38,141
+enquanto o Informer liderou os mensais.
+
+105
+00:07:38,241 --> 00:07:41,476
+Essas médias precisam ser lidas junto
+
+106
+00:07:41,576 --> 00:07:46,298
+com as diferenças locais e as limitações
+da avaliação.
+
+107
+00:07:46,398 --> 00:07:51,206
+Para continuar o trabalho, considero
+importante ampliar
+
+108
+00:07:51,306 --> 00:07:57,252
+as repetições e comparar também com
+referências simples de previsão.
+
+109
+00:07:57,352 --> 00:07:59,450
+Obrigado por acompanhar.

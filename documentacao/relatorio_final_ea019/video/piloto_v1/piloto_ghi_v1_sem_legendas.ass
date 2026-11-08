@@ -1,0 +1,33 @@
+﻿[Script Info]
+Title: EA019 scientific animation - deterministic text overlay
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI,44,&H00FBF6F3,&H00FFFFFF,&H80000000,&H80000000,0,0,0,0,100,100,0,0,3,12,0,2,110,110,80,1
+Style: Header,Segoe UI,58,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,-1,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Eyebrow,Segoe UI,24,&H00EDDD67,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,1.4,0,1,0.5,0,7,0,0,0,1
+Style: Text,Segoe UI,40,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Small,Segoe UI,26,&H00C9B9AA,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.5,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 3,0:00:00.00,0:00:20.00,Eyebrow,,0,0,0,,{\an7\pos(110,46)\fs23\c&H00EDDD67&\b0\fad(220,220)}RECURSO SOLAR · GHI
+Dialogue: 3,0:00:00.00,0:00:20.00,Header,,0,0,0,,{\an7\pos(110,95)\fs58\c&H00FBF6F3&\b1\fad(220,220)}Irradiância global horizontal
+Dialogue: 3,0:00:20.00,0:00:30.00,Eyebrow,,0,0,0,,{\an7\pos(110,46)\fs23\c&H00EDDD67&\b0\fad(220,220)}SÉRIES TEMPORAIS
+Dialogue: 3,0:00:20.00,0:00:30.00,Header,,0,0,0,,{\an7\pos(110,95)\fs58\c&H00FBF6F3&\b1\fad(220,220)}Do passado à previsão
+Dialogue: 3,0:00:00.00,0:00:30.00,Small,,0,0,0,,{\an9\pos(1810,48)\fs22\c&H00C9B9AA&\b0\fad(220,220)}PILOTO VISUAL · 30 s
+Dialogue: 4,0:00:03.00,0:00:20.00,Text,,0,0,0,,{\an7\pos(1300,350)\fs50\c&H008AD3FF&\b1\fad(220,220)}GHI
+Dialogue: 4,0:00:05.00,0:00:20.00,Text,,0,0,0,,{\an7\pos(1370,675)\fs30\c&H00FBF6F3&\b0\fad(220,220)}Superfície horizontal
+Dialogue: 4,0:00:09.50,0:00:20.00,Text,,0,0,0,,{\an7\pos(1380,740)\fs47\c&H008AD3FF&\b0\fad(220,220)}W/m²
+Dialogue: 4,0:00:14.00,0:00:20.00,Text,,0,0,0,,{\an7\pos(1210,405)\fs29\c&H008AD3FF&\b0\fad(220,220)}Direta
+Dialogue: 4,0:00:14.00,0:00:20.00,Text,,0,0,0,,{\an7\pos(1440,485)\fs29\c&H008AD3FF&\b0\fad(220,220)}Difusa
+Dialogue: 4,0:00:22.00,0:00:30.00,Text,,0,0,0,,{\an8\pos(400,300)\fs34\c&H00FBF6F3&\b0\fad(220,220)}Histórico de GHI
+Dialogue: 4,0:00:25.00,0:00:30.00,Text,,0,0,0,,{\an8\pos(1160,300)\fs32\c&H00C9B9AA&\b0\fad(220,220)}Presente
+Dialogue: 4,0:00:25.00,0:00:30.00,Text,,0,0,0,,{\an8\pos(1500,300)\fs34\c&H00EDDD67&\b0\fad(220,220)}Futuro
+Dialogue: 4,0:00:00.00,0:00:30.00,Small,,0,0,0,,{\an7\pos(110,810)\fs24\c&H00C9B9AA&\b0\fad(220,220)}Ilustração conceitual

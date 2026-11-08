@@ -1,0 +1,39 @@
+﻿FALAS — VÍDEO ANIMADO DO TCC — V5
+Duração: 6min55s. Ler somente os parágrafos de fala.
+A narração está organizada pelos 12 capítulos da animação; sem cartões institucionais ou filmagens.
+
+CAPÍTULO 02 | 0:00–0:35 | O que é irradiância global horizontal
+A irradiância global horizontal, ou GHI, representa a potência da radiação solar que chega a uma superfície horizontal por unidade de área. Sua unidade é watt por metro quadrado. Parte dessa radiação chega diretamente do Sol, e parte é espalhada pela atmosfera. A geometria solar estabelece padrões diários e sazonais, enquanto as condições atmosféricas alteram a curva. Assim, mesmo quando conhecemos o comportamento passado, o futuro não é uma simples repetição. A pergunta é: quanto conseguimos antecipar usando esse histórico?
+
+CAPÍTULO 03 | 0:35–0:55 | Objetivo da comparação
+Prever o recurso solar pode apoiar o planejamento energético. Meu objetivo foi comparar LSTM, Transformer e Informer em diferentes escalas de tempo e examinar a influência das entradas e do histórico de treinamento. O estudo avalia irradiância; o contexto industrial orienta a escolha das localidades.
+
+CAPÍTULO 04 | 0:55–1:35 | Dados e localidades
+Utilizei estimativas da base NSRDB para dez localidades associadas à fabricação de veículos elétricos: uma no Brasil, oito nos Estados Unidos e uma no México. Esses dados representam células da base, e não sensores instalados nas fábricas. As redes receberam o histórico de GHI e uma representação aprendida da identificação da localidade. Temperatura, imagens e previsões meteorológicas não foram entradas desses experimentos. Os parâmetros foram compartilhados entre as localidades do conjunto.
+
+CAPÍTULO 05 | 1:35–2:10 | Quatro tarefas de previsão
+Organizei quatro tarefas de previsão. Na horária, usei trezentas e trinta e seis horas para prever as próximas setenta e duas. Na diária, trezentos e sessenta e cinco dias para prever trinta. Nas tarefas mensais, utilizei doze meses para prever um mês ou seis meses. São redes treinadas para tarefas distintas. Por isso, o primeiro passo da previsão de seis meses não deve ser confundido com a tarefa mensal de um passo.
+
+CAPÍTULO 06 | 2:10–2:50 | Protocolo consolidado e avaliação retrospectiva
+No protocolo consolidado, separei os períodos em treinamento inicial, de dois mil e dezenove a dois mil e vinte e dois; validação, em dois mil e vinte e três; e teste, em dois mil e vinte e quatro. As configurações seguiram a seleção pela validação, com novo ajuste nos dados anteriores ao teste. A avaliação é retrospectiva, e sua interpretação considera que já existia exposição anterior ao período de teste.
+
+CAPÍTULO 07 | 2:50–4:05 | Como os três modelos tratam o histórico
+Cada ponto desta sequência representa um valor passado de GHI. Na LSTM, os dados entram em ordem. A rede mantém uma memória e usa portas aprendidas para controlar o que esquece, o que acrescenta e o que transmite. Assim, a memória é atualizada a cada passo e ajuda a formar a previsão. No Transformer, cada posição é representada junto com sua ordem temporal. A atenção compara representações da sequência e calcula pesos. Esses pesos orientam a combinação dos valores, permitindo reunir informações de posições diferentes. As conexões e intensidades aqui são didáticas: não exibem pesos medidos neste estudo. O Informer seleciona algumas posições de consulta para um cálculo de atenção mais detalhado. Em outra etapa, reduz o comprimento das representações entre camadas do codificador. A atenção cruzada continua completa. Nos três modelos, usamos histórico de GHI e identificação da localidade para produzir diretamente um vetor de valores futuros. Comparamos precisão; velocidade e memória não foram medidas.
+
+CAPÍTULO 08 | 4:05–4:40 | Quantização como transformação das entradas
+Também comparei o histórico contínuo com entradas representadas em sessenta e quatro, cento e vinte e oito ou duzentos e cinquenta e seis níveis. Visualmente, é como aproximar as amplitudes por degraus. Apenas a entrada de GHI passou por essa transformação; os pesos e as saídas continuaram contínuos. Nas variantes quantizadas, valores extremos também foram limitados ao intervalo normalizado. A condição selecionada na validação foi mantida na apresentação dos resultados do teste.
+
+CAPÍTULO 09 | 4:40–5:10 | Como ler o MAE e os horizontes cumulativos
+Para avaliar as previsões, usei principalmente o erro absoluto médio, o MAE. Ele resume a distância entre previsão e referência, na mesma unidade da irradiância. Calculei as métricas por localidade e depois obtive uma média com pesos iguais. Nos resultados cumulativos, o erro reúne os passos até o horizonte indicado; não representa apenas o último instante.
+
+CAPÍTULO 10 | 5:10–6:10 | Resultados principais de 2024
+Nas configurações selecionadas, o Transformer apresentou o menor MAE agregado nos horizontes completos horário e diário: cinquenta e três vírgula vinte e um e quarenta e três vírgula oitenta e nove watts por metro quadrado. As vantagens sobre a LSTM foram pequenas: cerca de zero vírgula trinta e dois e zero vírgula trinta. Nas tarefas mensais, o Informer com cento e vinte e oito níveis apresentou os menores erros: doze vírgula setenta e três em um mês e treze vírgula sessenta e sete em seis meses. A liderança também variou entre localidades e horizontes. Na tarefa diária, por exemplo, a LSTM liderou os recortes menores, até quatorze dias.
+
+CAPÍTULO 11 | 6:10–6:30 | Quantização e duração do histórico
+A quantização não trouxe vantagem universal. Em uma análise histórica separada, com teste pareado, o histórico longo apresentou menor MAE em onze das doze combinações contínuas. Incluir anos anteriores esteve associado à melhora na maioria dos controles, sem garanti-la.
+
+CAPÍTULO 12 | 6:30–6:45 | Limitações da interpretação
+Os resultados são descritivos, sem demonstração de significância estatística. O horário utilizou uma semente, e seis meses permanece exploratório. Há sobreposição de alvos; localidades inéditas não foram avaliadas.
+
+CAPÍTULO 13 | 6:45–6:55 | Síntese para a transição à sua conclusão
+Neste estudo, o Transformer liderou os horizontes completos horário e diário; o Informer, os mensais. A escolha depende da tarefa.

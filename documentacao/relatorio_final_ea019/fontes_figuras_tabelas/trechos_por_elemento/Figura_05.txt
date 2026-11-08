@@ -1,0 +1,100 @@
+Figura 5 — Estruturas implementadas dos três modelos
+Página(s) do PDF: 19
+
+TRECHOS PARA CONSULTA. Use os arquivos completos em originais/ para edição.
+Os números à esquerda são as linhas originais; este TXT não é executável.
+
+IIFE assíncrona
+Arquivo original: tmp/revisao_relatorio/rodada2/preparar_diagrama.cjs
+Linhas: 1–12
+
+   1 | const fs = require('fs');
+   2 | const path = require('path');
+   3 | const sharp = require('C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+   4 | (async () => {
+   5 |   const source = path.resolve(__dirname, '../../relatorio_final_ea019/revisao_artigo/figuras/03_arquiteturas.svg');
+   6 |   // The SVG is a code-native asset; only the spelling is standardized.
+   7 |   const target = path.join(__dirname, 'figuras/arquiteturas_corrigidas.svg');
+   8 |   const svg = fs.readFileSync(source, 'utf8').replace(/Distilação/g, 'Destilação').replace(/distilação/g, 'destilação');
+   9 |   fs.writeFileSync(target, svg);
+  10 |   await sharp(Buffer.from(svg), {density: 180}).png().toFile(target.replace(/\.svg$/, '.png'));
+  11 |   process.stdout.write('Diagrama das três arquiteturas atualizado.\n');
+  12 | })().catch(error => { process.stderr.write(String(error)); process.exit(1); });
+
+Desenha a estrutura implementada das três redes.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py
+Linhas: 84–102
+
+  84 | # Architectures are implementation diagrams, rather than generic model-family icons.
+  85 | z=text(20,36,'Mesmo histórico causal e mesma identidade local',27,bold=True)
+  86 | for y,name,color in [(65,'LSTM',GREEN),(280,'Transformer',BLUE),(520,'Informer',ORANGE)]:
+  87 |     z+=text(20,y+28,name,28,bold=True,color=color)
+  88 | z+=block(20,115,305,122,'Encoder recorrente',['Histórico C × 1','LSTM com 32 unidades'],GREEN,'#F0F7F4')
+  89 | z+=block(370,115,380,122,'Estado e identidade',['Último estado oculto: 32','Concatenar embedding local: 8'],GREEN,'#F0F7F4')
+  90 | z+=block(795,115,385,122,'Saída direta',['Camada linear 40 → H','H valores futuros contínuos'],GREEN,'#F0F7F4')
+  91 | z+=arrow(327,177,367,177)+arrow(752,177,792,177)
+  92 | z+=block(20,330,350,145,'Encoder completo',['Projeção GHI + posição + ID','2 camadas de encoder','Dimensão 16; 2 cabeças'])
+  93 | z+=block(415,330,390,145,'Decoder completo',['Autoatenção com máscara causal','Atenção cruzada à memória','1 camada de decoder'])
+  94 | z+=block(850,330,330,145,'Projeção futura',['Camada linear 16 → 1','Aplicada nas H posições','Saída contínua'])
+  95 | z+=arrow(372,402,412,402)+arrow(807,402,847,402)
+  96 | z+=block(20,570,350,155,'Encoder ProbSparse',['2 camadas; dimensão 16','Distilação entre as camadas','Conv + BN + ELU + Pool'],ORANGE,'#FCF5EF')
+  97 | z+=block(415,570,390,155,'Decoder ProbSparse',['Autoatenção causal esparsa','Atenção cruzada completa','1 camada; fator de amostragem 5'],ORANGE,'#FCF5EF')
+  98 | z+=block(850,570,330,155,'Projeção futura',['Camada linear 16 → 1','Aplicada nas H posições','Saída contínua'],ORANGE,'#FCF5EF')
+  99 | z+=arrow(372,647,412,647)+arrow(807,647,847,647)
+ 100 | z+=text(20,775,'Entrada do decoder nas redes de atenção: metade final do histórico + H zeros.',24,color=MUTED)
+ 101 | z+=text(20,812,'Os zeros indicam posições futuras; os valores reais dos alvos não entram no decoder.',24,color=MUTED)
+ 102 | save('03_arquiteturas',z,840)
+
+Dependências, utilitários SVG e ajuste tipográfico.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py
+Linhas: 1–40
+
+   1 | from pathlib import Path
+   2 | from html import escape
+   3 | import json, shutil
+   4 | import numpy as np
+   5 | import pandas as pd
+   6 | from PIL import ImageFont
+   7 | 
+   8 | HERE = Path(__file__).resolve().parent
+   9 | ROOT = HERE.parents[2]
+  10 | OUT = HERE / 'figuras'
+  11 | OUT.mkdir(parents=True, exist_ok=True)
+  12 | BLUE, ORANGE, GREEN = '#245680', '#B65B35', '#35776C'
+  13 | INK, MUTED, GRID = '#202A30', '#52616B', '#D9E0E4'
+  14 | 
+  15 | def text(x,y,s,size=24,anchor='start',bold=False,color=INK,rotate=None):
+  16 |     tf = f' transform="rotate({rotate} {x} {y})"' if rotate else ''
+  17 |     return f'<text x="{x}" y="{y}" font-size="{size}" text-anchor="{anchor}" font-weight="{700 if bold else 400}" fill="{color}"{tf}>{escape(str(s))}</text>'
+  18 | 
+  19 | def rect(x,y,w,h,fill='white',stroke=GRID,r=6):
+  20 |     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}" stroke="{stroke}" stroke-width="1.8"/>'
+  21 | 
+  22 | def line(x,y,x2,y2,color=GRID,width=2,dash=''):
+  23 |     return f'<line x1="{x}" y1="{y}" x2="{x2}" y2="{y2}" stroke="{color}" stroke-width="{width}" stroke-dasharray="{dash}"/>'
+  24 | 
+  25 | def arrow(x,y,x2,y2,color=MUTED):
+  26 |     return line(x,y,x2,y2,color,2.4)+f'<path d="M{x2-8},{y2-6} L{x2},{y2} L{x2-8},{y2+6}" fill="none" stroke="{color}" stroke-width="2.4"/>'
+  27 | 
+  28 | def block(x,y,w,h,title,lines,color=BLUE,fill='#F1F6FA',size=23):
+  29 |     z=rect(x,y,w,h,fill,color)
+  30 |     def fit(s,desired,bold=False):
+  31 |         font='C:/Windows/Fonts/arialbd.ttf' if bold else 'C:/Windows/Fonts/arial.ttf'
+  32 |         while ImageFont.truetype(font,int(desired)).getlength(s)>w-30:desired-=.5
+  33 |         assert desired>=19,(s,desired)
+  34 |         return desired
+  35 |     z+=text(x+15,y+31,title,fit(title,25,True),bold=True,color=color)
+  36 |     for i,s in enumerate(lines):z+=text(x+15,y+65+i*29,s,fit(s,size))
+  37 |     return z
+  38 | 
+  39 | def save(name,z,h):
+  40 |     (OUT/(name+'.svg')).write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{h}" viewBox="0 0 1200 {h}"><rect width="1200" height="{h}" fill="white"/><g font-family="Arial,sans-serif">{z}</g></svg>',encoding='utf-8')
+
+Insere o PNG corrigido na figura de arquiteturas existente.
+Arquivo original: tmp/revisao_relatorio/rodada2/editar_tcc.py
+Linhas: 289–292
+
+ 289 | # A source SVG is edited, retaining the existing code-native diagram and its layout.
+ 290 | architecture_rid = P[186]._p.xpath('.//a:blip/@r:embed')[0]
+ 291 | doc.part.related_parts[architecture_rid]._blob = (HERE / 'figuras/arquiteturas_corrigidas.png').read_bytes()
+ 292 | P[186]._p.xpath('.//wp:docPr')[0].set('descr', 'Estruturas implementadas de LSTM, Transformer e Informer, com destilação entre os encoders do Informer.')

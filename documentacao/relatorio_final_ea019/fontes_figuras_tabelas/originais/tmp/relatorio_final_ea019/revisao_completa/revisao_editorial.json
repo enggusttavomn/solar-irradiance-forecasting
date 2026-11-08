@@ -1,0 +1,90 @@
+{
+  "escopo": "Revisão científica e editorial somente leitura do relatório revisado de 36 páginas e do artigo de referência",
+  "fontes_lidas": [
+    "documentacao/relatorio_final_ea019/Relatorio_Final_GHI_Transformer_Informer_LSTM_Revisado.docx",
+    "documentacao/relatorio_final_ea019/Relatorio_Final_GHI_Transformer_Informer_LSTM_Revisado.pdf",
+    "documentacao/entregas_aos_orientadores/envio_orientadores_20260907/Artigo_Gustavo_Nascimento.pdf"
+  ],
+  "limite_de_leitura": "Os arquivos do plano de trabalho tentados têm cabeçalho NASCA DRM, portanto não foram interpretados como PDF ou OOXML. A identificação está sendo tratada por outra frente.",
+  "localizadores": "Índices de parágrafos são 0-based no DOCX atual e servem apenas à localização. Renumerar referências de figuras após a inclusão de novos elementos.",
+  "melhorias": [
+    {
+      "id": "titulo_contextual",
+      "prioridade": "alta",
+      "deficiencia": "O título atual nomeia apenas arquiteturas e omite o contexto industrial e a abrangência multirresolução que estruturam o artigo. O subtítulo contém a contribuição de quantização, mas não conecta o estudo às localidades.",
+      "onde": "Capa, folha de rosto e metadados",
+      "titulo_proposto": "Previsão multirresolução de irradiância solar em localidades de fábricas de veículos elétricos",
+      "subtitulo_proposto": "Transformer Informer e LSTM sob quantização das entradas",
+      "justificativa": "Mantém o contexto do título do artigo de referência sem importar TimesNet ou DilatedRNN. Localidades deixa explícito que o alvo é o recurso solar no ponto geográfico, sem afirmar medição de geração na fábrica. Usar quebras deliberadas em três ou quatro linhas na capa, mantendo a tipografia do modelo.",
+      "impacto_extensao": "Sem nova seção"
+    },
+    {
+      "id": "figuras_com_argumento",
+      "prioridade": "alta",
+      "deficiencia": "No DOCX atual nenhum parágrafo do corpo cita explicitamente uma Figura; as ocorrências estão apenas em legendas e fontes. Isso deixa imagens e argumento ligados só pela proximidade visual.",
+      "onde": "Parágrafos 107, 117, 125, 198, 201, 211, 218 e 226",
+      "substituicoes_curta_sugeridas": [
+        {"alvo": "Os perfis a seguir mostram", "texto": "A Figura 2 mostra"},
+        {"alvo": "O contexto horário corresponde a duas semanas de observações", "texto": "Como sintetiza a Figura 3, o contexto horário corresponde a duas semanas de observações"},
+        {"alvo": "Os intervalos da Tabela 3 delimitam a informação admissível.", "texto": "A Figura 4 e a Tabela 3 delimitam a informação admissível em cada etapa."},
+        {"alvo": "A matriz apresenta os MAEs de cada local", "texto": "A Figura 9 apresenta os MAEs de cada local"},
+        {"alvo": "Os indicadores por horizonte são cumulativos", "texto": "Os perfis da Figura 11 mostram erros cumulativos"},
+        {"alvo": "Nos controles sem quantização, o histórico longo apresentou menor MAE", "texto": "A Figura 12 e a Tabela 8 mostram que, nos controles sem quantização, o histórico longo apresentou menor MAE"}
+      ],
+      "nota_para_nova_curva": "Introduzir a nova figura de sete dias com uma frase sobre a leitura que ela permite e informar na legenda localidade, datas, resolução, horizonte e regra de composição das previsões. Uma semana ilustrativa não deve ser apresentada como prova do ranking anual.",
+      "impacto_extensao": "Substituições no texto existente"
+    },
+    {
+      "id": "conclusao_heterogeneidade",
+      "prioridade": "alta",
+      "deficiencia": "A conclusão atual não incorpora a heterogeneidade local já demonstrada pela Figura 9. Além disso, o próximo passo examinar perdas por localidade e a frase de discussão A avaliação por localidade é necessária tratam como ausente uma análise que o relatório já realiza.",
+      "onde": "Conclusão, parágrafos 243 e 246; discussão, parágrafo 237",
+      "substituir_paragrafo_243_por": "No teste de 2024, o Transformer apresentou os menores MAEs cumulativos completos nas tarefas horária e diária, enquanto o Informer liderou as duas tarefas mensais. A análise por localidade mostrou que essas posições agregadas não se repetem em todos os pontos: o Informer liderou em cinco das dez localidades em cada tarefa mensal, e a LSTM apresentou os menores erros nos dois pontos de Detroit. A escolha do modelo depende, portanto, da tarefa e da localidade; os resultados não sustentam uma arquitetura universalmente superior.",
+      "substituir_trecho_paragrafo_246": {"alvo": "examinar perdas por localidade", "texto": "aprofundar o diagnóstico dos erros locais por estação do ano"},
+      "substituir_trecho_paragrafo_237": {"alvo": "A avaliação por localidade e em novos anos é necessária antes de ampliar as conclusões para outros cenários.", "texto": "A análise local realizada evidencia essa heterogeneidade. Sua extensão a outros anos e a erros condicionados à estação é necessária antes de ampliar as conclusões para novos cenários."},
+      "suporte": "Parágrafos 205–206 e Figura 9 já apresentam a distribuição de lideranças. Todos os fatos propostos constam da análise atual.",
+      "impacto_extensao": "Aproximadamente 30 palavras adicionais, compensáveis pelas condensações abaixo"
+    },
+    {
+      "id": "quantizacao_coesa",
+      "prioridade": "media",
+      "deficiencia": "As subseções adjacentes Escolha por validação e efeito no teste e Efeito da quantização e papel da seleção na validação cobrem o mesmo argumento. A primeira contém somente uma tabela; a segunda repete a operação de quantização já explicada na metodologia.",
+      "onde": "Parágrafos 207–216",
+      "titulo_unificado": "Quantização e seleção da condição de entrada",
+      "acao": "Conservar Tabela 7, parágrafos interpretativos 212–213 e Figura 10 na mesma subseção. Remover o segundo subtítulo e condensar o primeiro parágrafo metodológico.",
+      "paragrafo_de_ligacao_proposto": "A Tabela 7 relaciona a condição de entrada escolhida na validação ao seu desempenho no teste. A Figura 10 amplia essa comparação para os três níveis de quantização, sempre em relação ao controle do mesmo modelo e tarefa. Como as variantes quantizadas também incluem clipping, os contrastes refletem conjuntamente saturação e arredondamento das entradas.",
+      "impacto_extensao": "Reduz uma subseção e cerca de 30 palavras, sem retirar evidência"
+    },
+    {
+      "id": "agregacao_e_hipotese",
+      "prioridade": "media",
+      "deficiencia": "Legendas de rankings e curvas usam MAE sem reiterar a agregação macro. O leitor precisa voltar à metodologia para distinguir esses gráficos do MAE local. Na discussão, a expressão especialmente diante de mudança na distribuição temporal sugere uma explicação que não é diagnosticada neste recorte.",
+      "onde": "Fontes da Tabela 6 e Figuras 8, 10, 11 e 12; parágrafo 235",
+      "nota_curta_agregacao": "Média dos MAEs das dez localidades com pesos iguais.",
+      "acao_legendas": "Usar macro-MAE nas legendas dos resultados agregados e manter MAE por localidade na Figura 9. Na Tabela 6, indicar que MAE RMSE nRMSE e R² são médias das métricas locais, evitando aplicar a mesma frase apenas ao MAE.",
+      "substituir_trecho_paragrafo_235": {"alvo": "Um nível com bom resultado na validação pode aumentar o erro no teste, especialmente diante de mudança na distribuição temporal.", "texto": "Uma condição escolhida na validação pode apresentar erro de teste maior que o controle. O experimento documenta essa diferença, mas não identifica isoladamente seu mecanismo."},
+      "impacto_extensao": "Uma frase curta por legenda; nenhuma nova figura ou tabela"
+    },
+    {
+      "id": "reduzir_inventario_numerico",
+      "prioridade": "media",
+      "deficiencia": "Os parágrafos 198–199 repetem quase todos os valores da Tabela 6 e Figura 8, com quatro casas decimais no texto e duas nos elementos visuais. Essa enumeração alonga a seção sem explicar o contraste mais relevante: a proximidade entre Transformer e LSTM no horário e no diário.",
+      "onde": "Resumo e parágrafos 198–199",
+      "substituir_paragrafos_198_199_por": [
+        "A Figura 8 mostra a mudança de classificação entre tarefas. Nos horizontes completos horário e diário, o Transformer apresentou os menores macro-MAEs, 53,21 e 43,89 W/m², respectivamente. As diferenças para a LSTM foram de apenas 0,32 e 0,30 W/m². Já o Informer apresentou erro horário de 137,68 W/m², indicando uma dificuldade específica dessa configuração.",
+        "Nas tarefas mensais, o Informer com 128 níveis apresentou os menores macro-MAEs, 12,73 W/m² em um passo e 13,67 W/m² em seis passos. A Tabela 6 reúne as condições de entrada e as métricas complementares. Esses resultados descrevem diferenças médias entre as implementações; a análise local a seguir verifica em quais localidades a ordenação se mantém."
+      ],
+      "nota_precisao": "No resumo, duas casas decimais bastam para os MAEs. Manter precisão maior apenas onde ela for necessária para explicar diferenças muito pequenas de quantização, sempre sem alegar significância.",
+      "verificacao_numerica": {"delta_lstm_transformer_horario_wm2": 0.31801305528911, "delta_lstm_transformer_diario_wm2": 0.297243240653164},
+      "impacto_extensao": "Redução verificada de 40 palavras nos dois parágrafos de resultados"
+    }
+  ],
+  "ressalvas_cientificas_a_preservar": [
+    "Quantização somente das entradas, com reconstrução float32 e clipping nas variantes quantizadas",
+    "Seleção por validação congelada antes do teste",
+    "GHI estimada pela NSRDB, não produção fotovoltaica medida",
+    "Mensal de seis passos exploratório e dependência por sobreposição das janelas",
+    "Históricos longo e curto comparados sob validação e teste pareados",
+    "Ausência de inferência de significância estatística e de medição de eficiência computacional"
+  ]
+}

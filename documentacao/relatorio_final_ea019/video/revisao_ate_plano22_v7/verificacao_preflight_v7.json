@@ -1,0 +1,56 @@
+{
+  "version": 7,
+  "stage": "preflight",
+  "reviewed_utc": "2026-11-03T16:00:52.062412+00:00",
+  "reviewer": "v6_report_review",
+  "automatically_approved": false,
+  "scene_or_production_files_edited": false,
+  "full_length_realtime_playback_reviewed": false,
+  "final_video_review_performed": false,
+  "scientific_review": {
+    "status": "approved_sampled_frames_and_sources",
+    "material_findings": [],
+    "models_samples": [
+      "modelos_10_5.png",
+      "modelos_17_8.png",
+      "modelos_25_0.png",
+      "modelos_37_5.png",
+      "modelos_48_8.png",
+      "modelos_57_3.png"
+    ],
+    "geography_samples": [
+      "geografia_5_4.png",
+      "geografia_26_5.png",
+      "geografia_32_5.png",
+      "geografia_42_0.png",
+      "geografia_51_5.png"
+    ],
+    "checks": [
+      "LSTM sequential continuous gate/memory flow and direct horizon with final-state locality join.",
+      "Transformer value/position representation, query-key comparisons and weighted values separated.",
+      "Informer long-context qualification, sampled-query estimate, distinct single encoder distillation, full cross-attention.",
+      "Internal tensors and output values didactic, not measured model activations; no measured efficiency claims.",
+      "Ten exact geographic reference coordinates; actual NSRDB cells distinguished from factory sensors.",
+      "Empirical positive GHI distributions use real2019-2022 local-calendar training values, shared50W/m2bins, zero fractions separate.",
+      "Actual168hour Camacari example preserves GHI units and provenance.",
+      "Inputs limitedto historyGHI and learned localityID; four task lengths and monthly6 separate-network exploratory interpretation verified."
+    ],
+    "nonblocking_metadata_note": "The inspected model explainer source references older Keras modelos_neurais_globais.py; consolidated LSTM source is experimento_horario_timesnet.py:LSTMEncoderDireto. Actual shown ordering matches the consolidated source."
+  },
+  "caption_preflight": {
+    "method": "Single still image plus setpts local timestamp then ASS captions; no repeated video frames rendered. Uses compose_v7.cues with narration_v7.final_cues.",
+    "sampled_composites": [
+      "tmp/v7_caption_qa/modelos_25_0_com_legendas.png",
+      "tmp/v7_caption_qa/geografia_26_5_com_legendas.png",
+      "tmp/v7_caption_qa/entradas_tarefas_44_0_com_legendas.png"
+    ],
+    "status": "No caption obstruction in the three sampled composites.",
+    "models_25": "Caption occupies empty lower area; query/key labels and geometry remain clear.",
+    "geography_26_5": "Caption below histogram and GHI axis unit; no overlap with bins, ticklabels or unit.",
+    "inputs_44": "The source QA image predates root moving dimension labels fromz0.28to0.60. Even this old sample remains readable; the new position should increase clearance, but requires final sampled confirmation.",
+    "final_checks_remaining": [
+      "Inspect actual final C44 sample after moved dimension labels.",
+      "Inspect final composed MP4 samples; this report approves preflight only."
+    ]
+  }
+}

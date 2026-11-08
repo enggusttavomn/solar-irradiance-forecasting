@@ -1,0 +1,59 @@
+﻿[Script Info]
+Title: EA019 - dynamic 3D animated cut v4
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI,44,&H00F7F5F3,&H00FFFFFF,&H80000000,&H80000000,0,0,0,0,100,100,0,0,3,12,0,2,110,110,80,1
+Style: Text,Segoe UI,40,&H00F7F5F3,&H00FFFFFF,&H9007090D,&H00000000,0,0,0,0,100,100,0,0,1,1,0,7,0,0,0,1
+Style: Drawing,Segoe UI,40,&H00F7F5F3,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 4,0:00:00.00,0:00:04.00,Text,,0,0,0,,{\an7\pos(1500,240)\fs54\c&H005FB9E9&\b0\fad(140,140)}GHI
+Dialogue: 4,0:00:04.00,0:00:09.00,Text,,0,0,0,,{\an8\pos(500,240)\fs40\c&H00F7F5F3&\b0\fad(140,140)}Horizontal
+Dialogue: 4,0:00:04.00,0:00:09.00,Text,,0,0,0,,{\an7\pos(1500,240)\fs48\c&H005FB9E9&\b0\fad(140,140)}1 m²
+Dialogue: 4,0:00:09.00,0:00:12.00,Text,,0,0,0,,{\an7\pos(1500,240)\fs54\c&H005FB9E9&\b0\fad(140,140)}W/m²
+Dialogue: 4,0:00:12.00,0:00:17.00,Text,,0,0,0,,{\an8\pos(500,240)\fs40\c&H005FB9E9&\b0\fad(140,140)}Direta
+Dialogue: 4,0:00:12.00,0:00:17.00,Text,,0,0,0,,{\an8\pos(1500,240)\fs40\c&H005FB9E9&\b0\fad(140,140)}Difusa
+Dialogue: 4,0:00:17.00,0:00:24.00,Text,,0,0,0,,{\an8\pos(400,240)\fs38\c&H00F7F5F3&\b0\fad(140,140)}Geometria solar
+Dialogue: 4,0:00:17.00,0:00:24.00,Text,,0,0,0,,{\an8\pos(1500,240)\fs38\c&H00F7F5F3&\b0\fad(140,140)}Atmosfera
+Dialogue: 4,0:00:24.00,0:00:35.00,Text,,0,0,0,,{\an8\pos(450,260)\fs38\c&H00F7F5F3&\b0\fad(140,140)}Histórico
+Dialogue: 4,0:00:24.00,0:00:35.00,Text,,0,0,0,,{\an8\pos(1050,260)\fs36\c&H00BEB2A9&\b0\fad(140,140)}Presente
+Dialogue: 4,0:00:24.00,0:00:35.00,Text,,0,0,0,,{\an8\pos(1550,260)\fs38\c&H00BEB2A9&\b0\fad(140,140)}Futuro
+Dialogue: 4,0:00:35.00,0:00:40.00,Text,,0,0,0,,{\an8\pos(960,240)\fs46\c&H00F7F5F3&\b0\fad(140,140)}Prever GHI
+Dialogue: 4,0:00:40.00,0:00:47.00,Text,,0,0,0,,{\an8\pos(350,240)\fs40\c&H007987F2&\b0\fad(140,140)}LSTM
+Dialogue: 4,0:00:40.00,0:00:47.00,Text,,0,0,0,,{\an8\pos(960,240)\fs40\c&H00DACA58&\b0\fad(140,140)}Transformer
+Dialogue: 4,0:00:40.00,0:00:47.00,Text,,0,0,0,,{\an8\pos(1570,240)\fs40\c&H00E891AA&\b0\fad(140,140)}Informer
+Dialogue: 4,0:00:47.00,0:00:50.00,Text,,0,0,0,,{\an8\pos(960,730)\fs38\c&H00F7F5F3&\b0\fad(140,140)}Escala temporal
+Dialogue: 4,0:00:50.00,0:00:52.50,Text,,0,0,0,,{\an8\pos(960,730)\fs38\c&H00F7F5F3&\b0\fad(140,140)}Representação da entrada
+Dialogue: 4,0:00:52.50,0:00:55.00,Text,,0,0,0,,{\an8\pos(960,730)\fs38\c&H00F7F5F3&\b0\fad(140,140)}Histórico de treinamento
+Dialogue: 4,0:00:55.00,0:01:01.00,Text,,0,0,0,,{\an7\pos(1500,240)\fs48\c&H00F7F5F3&\b0\fad(140,140)}NSRDB
+Dialogue: 4,0:01:01.00,0:01:07.00,Text,,0,0,0,,{\an7\pos(1320,280)\fs38\c&H00F7F5F3&\b0\fad(140,140)}1 Brasil
+Dialogue: 4,0:01:01.00,0:01:07.00,Text,,0,0,0,,{\an7\pos(1320,360)\fs38\c&H00F7F5F3&\b0\fad(140,140)}8 Estados Unidos
+Dialogue: 4,0:01:01.00,0:01:07.00,Text,,0,0,0,,{\an7\pos(1320,440)\fs38\c&H00F7F5F3&\b0\fad(140,140)}1 México
+Dialogue: 4,0:01:07.00,0:01:14.00,Text,,0,0,0,,{\an8\pos(1450,240)\fs40\c&H00F7F5F3&\b0\fad(140,140)}Célula NSRDB
+Dialogue: 4,0:01:14.00,0:01:22.00,Text,,0,0,0,,{\an8\pos(680,60)\fs38\c&H00F7F5F3&\b0\fad(140,140)}Histórico de GHI
+Dialogue: 4,0:01:14.00,0:01:22.00,Text,,0,0,0,,{\an8\pos(680,520)\fs34\c&H00F7F5F3&\b0\fad(140,140)}ID da localidade
+Dialogue: 4,0:01:22.00,0:01:29.00,Text,,0,0,0,,{\an8\pos(960,240)\fs42\c&H00F7F5F3&\b0\fad(140,140)}Entradas: GHI + ID
+Dialogue: 4,0:01:29.00,0:01:35.00,Text,,0,0,0,,{\an8\pos(960,730)\fs40\c&H00F7F5F3&\b0\fad(140,140)}Parâmetros compartilhados
+Dialogue: 4,0:01:35.00,0:01:40.00,Text,,0,0,0,,{\an8\pos(430,240)\fs40\c&H00F7F5F3&\b0\fad(140,140)}Histórico
+Dialogue: 4,0:01:35.00,0:01:40.00,Text,,0,0,0,,{\an8\pos(1450,240)\fs40\c&H005FB9E9&\b0\fad(140,140)}Previsão
+Dialogue: 4,0:01:40.00,0:01:46.00,Text,,0,0,0,,{\an8\pos(960,730)\fs44\c&H00F7F5F3&\b0\fad(140,140)}Horária · 336 h → 72 h
+Dialogue: 4,0:01:46.00,0:01:51.00,Text,,0,0,0,,{\an8\pos(960,730)\fs44\c&H00F7F5F3&\b0\fad(140,140)}Diária · 365 d → 30 d
+Dialogue: 4,0:01:51.00,0:01:56.00,Text,,0,0,0,,{\an8\pos(960,730)\fs44\c&H00F7F5F3&\b0\fad(140,140)}Mensal · 12 meses → 1 mês
+Dialogue: 4,0:01:56.00,0:02:01.00,Text,,0,0,0,,{\an8\pos(960,730)\fs44\c&H00F7F5F3&\b0\fad(140,140)}Mensal · 12 meses → 6 meses
+Dialogue: 4,0:01:56.00,0:02:01.00,Text,,0,0,0,,{\an8\pos(1650,240)\fs32\c&H00E891AA&\b0\fad(140,140)}Exploratória
+Dialogue: 4,0:02:01.00,0:02:10.00,Text,,0,0,0,,{\an8\pos(960,730)\fs40\c&H00F7F5F3&\b0\fad(140,140)}Redes distintas: 1 e 6 saídas
+Dialogue: 4,0:02:10.00,0:02:17.00,Text,,0,0,0,,{\an8\pos(960,200)\fs38\c&H00F7F5F3&\b0\fad(140,140)}Treino · 2019–2022
+Dialogue: 4,0:02:17.00,0:02:23.00,Text,,0,0,0,,{\an8\pos(960,200)\fs38\c&H00F7F5F3&\b0\fad(140,140)}Validação · 2023
+Dialogue: 4,0:02:23.00,0:02:29.00,Text,,0,0,0,,{\an8\pos(960,200)\fs38\c&H00F7F5F3&\b0\fad(140,140)}Teste · 2024
+Dialogue: 4,0:02:29.00,0:02:34.00,Text,,0,0,0,,{\an8\pos(960,730)\fs40\c&H00F7F5F3&\b0\fad(140,140)}Seleção pela validação
+Dialogue: 4,0:02:34.00,0:02:39.00,Text,,0,0,0,,{\an8\pos(960,730)\fs40\c&H00F7F5F3&\b0\fad(140,140)}Novo ajuste · 2019–2023
+Dialogue: 4,0:02:39.00,0:02:44.00,Text,,0,0,0,,{\an8\pos(960,730)\fs40\c&H00F7F5F3&\b0\fad(140,140)}Teste retrospectivo · 2024
+Dialogue: 4,0:02:44.00,0:02:50.00,Text,,0,0,0,,{\an8\pos(960,730)\fs38\c&H00F7F5F3&\b0\fad(140,140)}Houve exposição anterior ao teste

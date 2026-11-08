@@ -1,0 +1,3997 @@
+{
+  "version": 10,
+  "fps": 30,
+  "sample_rate": 48000,
+  "samples_per_frame": 1600,
+  "frames": 13602,
+  "samples": 21763200,
+  "duration": 453.4,
+  "timebase": "global start/end derived from integer 30 fps frames; source audio cuts are integer PCM48k samples",
+  "audio_path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/audio/voz_montada_v10.wav",
+  "srt_path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/Legendas_Finais_v10.srt",
+  "ass_path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/Legendas_Finais_v10.ass",
+  "items": [
+    {
+      "kind": "intro",
+      "id": "intro",
+      "index": -1,
+      "source_path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/intro_1080p30_colorido_fundo_preto_v10_capa_v5.mp4",
+      "video_start": 0.0,
+      "video_end": 14.133333333333333,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/apresentacao_normalizado_48k.wav",
+      "audio_start": 0.0,
+      "audio_end": 14.133333333333333,
+      "audio_start_sample": 0,
+      "audio_end_sample": 678400,
+      "audio_offset": 0.0,
+      "audio_samples": 678400,
+      "pad_samples": 0,
+      "frames": 424,
+      "duration": 14.133333333333333,
+      "start_frame": 0,
+      "end_frame": 424,
+      "start": 0.0,
+      "end": 14.133333333333333,
+      "text": "Olá, eu sou Gustavo, aluno da Engenharia Elétrica da Unicamp. Neste trabalho, comparo LSTM, Transformer e Informer na previsão da irradiância solar em localidades ligadas à fabricação de veículos elétricos.",
+      "cues": [
+        {
+          "start": 0.07,
+          "end": 4.57,
+          "text": "Olá, eu sou Gustavo, aluno da Engenharia\nElétrica da Unicamp. Neste trabalho,"
+        },
+        {
+          "start": 4.57,
+          "end": 9.93,
+          "text": "comparo LSTM, Transformer e Informer na\nprevisão da irradiância solar em"
+        },
+        {
+          "start": 9.93,
+          "end": 12.79,
+          "text": "localidades ligadas à fabricação de\nveículos elétricos."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 40,
+        "x": 600,
+        "y": 985,
+        "width": 1000
+      },
+      "source_role": "approved color V5, black background"
+    },
+    {
+      "kind": "body",
+      "id": "phase_00",
+      "index": 0,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 0,
+      "video_end": 5,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 0.19,
+      "audio_end": 7.165,
+      "audio_start_sample": 9120,
+      "audio_end_sample": 343920,
+      "audio_offset": 0.0,
+      "audio_samples": 334800,
+      "pad_samples": 1200,
+      "frames": 210,
+      "duration": 7.0,
+      "start_frame": 424,
+      "end_frame": 634,
+      "start": 14.133333333333333,
+      "end": 21.133333333333333,
+      "text": "GHI mede a potência solar recebida por unidade de área horizontal.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 6.64,
+          "text": "GHI mede a potência solar recebida por\nunidade de área horizontal."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 0,
+      "reference_video_end": 5,
+      "alignment_confidence": 0.7816,
+      "editorial_note": "Include opening acronym at 0.39 s despite ASR insertion/deletion around its pronunciation.",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_01",
+      "index": 1,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 5,
+      "video_end": 11,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 7.165,
+      "audio_end": 11.835,
+      "audio_start_sample": 343920,
+      "audio_end_sample": 568080,
+      "audio_offset": 0.0,
+      "audio_samples": 224160,
+      "pad_samples": 1440,
+      "frames": 141,
+      "duration": 4.7,
+      "start_frame": 634,
+      "end_frame": 775,
+      "start": 21.133333333333333,
+      "end": 25.833333333333332,
+      "text": "Aqui temos um metro quadrado. A unidade do GHI é watt por metro quadrado.",
+      "cues": [
+        {
+          "start": 0.435,
+          "end": 4.455,
+          "text": "Aqui temos um metro quadrado. A unidade do\nGHI é watt por metro quadrado."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 5,
+      "reference_video_end": 11,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_02",
+      "index": 2,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 11,
+      "video_end": 18,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 11.835,
+      "audio_end": 16.855,
+      "audio_start_sample": 568080,
+      "audio_end_sample": 809040,
+      "audio_offset": 0.0,
+      "audio_samples": 240960,
+      "pad_samples": 640,
+      "frames": 151,
+      "duration": 5.033333333333333,
+      "start_frame": 775,
+      "end_frame": 926,
+      "start": 25.833333333333332,
+      "end": 30.866666666666667,
+      "text": "A direta normal, DNI, é medida num plano perpendicular aos raios, como este.",
+      "cues": [
+        {
+          "start": 0.315,
+          "end": 4.755,
+          "text": "A direta normal, DNI, é medida num plano\nperpendicular aos raios, como este."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 11,
+      "reference_video_end": 18,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_03",
+      "index": 3,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 18,
+      "video_end": 25,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 16.855,
+      "audio_end": 21.67,
+      "audio_start_sample": 809040,
+      "audio_end_sample": 1040160,
+      "audio_offset": 0.0,
+      "audio_samples": 231120,
+      "pad_samples": 880,
+      "frames": 145,
+      "duration": 4.833333333333333,
+      "start_frame": 926,
+      "end_frame": 1071,
+      "start": 30.866666666666667,
+      "end": 35.7,
+      "text": "Multiplicamos a DNI pelo cosseno do ângulo com a vertical e somamos a luz difusa.",
+      "cues": [
+        {
+          "start": 0.365,
+          "end": 4.665,
+          "text": "Multiplicamos a DNI pelo cosseno do ângulo\ncom a vertical e somamos a luz difusa."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 18,
+      "reference_video_end": 25,
+      "alignment_confidence": 0.9799,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_04",
+      "index": 4,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 25,
+      "video_end": 30,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 24.15,
+      "audio_end": 28.155,
+      "audio_start_sample": 1159200,
+      "audio_end_sample": 1351440,
+      "audio_offset": 0.0,
+      "audio_samples": 192240,
+      "pad_samples": 1360,
+      "frames": 121,
+      "duration": 4.033333333333333,
+      "start_frame": 1071,
+      "end_frame": 1192,
+      "start": 35.7,
+      "end": 39.733333333333334,
+      "text": "Durante o dia, a luz varia. À noite, o GHI solar zera.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 3.66,
+          "text": "Durante o dia, a luz varia. À noite, o GHI\nsolar zera."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 25,
+      "reference_video_end": 30,
+      "alignment_confidence": 0.9749,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_05",
+      "index": 5,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 30,
+      "video_end": 34,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 28.155,
+      "audio_end": 30.91,
+      "audio_start_sample": 1351440,
+      "audio_end_sample": 1483680,
+      "audio_offset": 0.0,
+      "audio_samples": 132240,
+      "pad_samples": 560,
+      "frames": 83,
+      "duration": 2.7666666666666666,
+      "start_frame": 1192,
+      "end_frame": 1275,
+      "start": 39.733333333333334,
+      "end": 42.5,
+      "text": "As nuvens alteram a luz e a curva.",
+      "cues": [
+        {
+          "start": 0.445,
+          "end": 2.405,
+          "text": "As nuvens alteram a luz e a curva."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 30,
+      "reference_video_end": 34,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_06",
+      "index": 6,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 34,
+      "video_end": 38,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 30.91,
+      "audio_end": 34.88,
+      "audio_start_sample": 1483680,
+      "audio_end_sample": 1674240,
+      "audio_offset": 0.0,
+      "audio_samples": 190560,
+      "pad_samples": 1440,
+      "frames": 120,
+      "duration": 4.0,
+      "start_frame": 1275,
+      "end_frame": 1395,
+      "start": 42.5,
+      "end": 46.5,
+      "text": "O histórico registra esses ciclos e as mudanças da atmosfera.",
+      "cues": [
+        {
+          "start": 0.45,
+          "end": 3.57,
+          "text": "O histórico registra esses ciclos e as\nmudanças da atmosfera."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 34,
+      "reference_video_end": 38,
+      "alignment_confidence": 0.935,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_07",
+      "index": 7,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 38,
+      "video_end": 42,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 34.88,
+      "audio_end": 38.155,
+      "audio_start_sample": 1674240,
+      "audio_end_sample": 1831440,
+      "audio_offset": 0.0,
+      "audio_samples": 157200,
+      "pad_samples": 1200,
+      "frames": 99,
+      "duration": 3.3,
+      "start_frame": 1395,
+      "end_frame": 1494,
+      "start": 46.5,
+      "end": 49.8,
+      "text": "A previsão tenta antecipar a continuação dessa curva.",
+      "cues": [
+        {
+          "start": 0.5,
+          "end": 3.04,
+          "text": "A previsão tenta antecipar a continuação\ndessa curva."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 38,
+      "reference_video_end": 42,
+      "alignment_confidence": 0.942,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_08",
+      "index": 8,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 42,
+      "video_end": 47,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 38.155,
+      "audio_end": 41.92,
+      "audio_start_sample": 1831440,
+      "audio_end_sample": 2012160,
+      "audio_offset": 0.0,
+      "audio_samples": 180720,
+      "pad_samples": 80,
+      "frames": 113,
+      "duration": 3.7666666666666666,
+      "start_frame": 1494,
+      "end_frame": 1607,
+      "start": 49.8,
+      "end": 53.56666666666667,
+      "text": "Prever o recurso solar pode apoiar estimativas de geração fotovoltaica.",
+      "cues": [
+        {
+          "start": 0.335,
+          "end": 3.615,
+          "text": "Prever o recurso solar pode apoiar\nestimativas de geração fotovoltaica."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 42,
+      "reference_video_end": 47,
+      "alignment_confidence": 0.9582,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_09",
+      "index": 9,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 47,
+      "video_end": 52,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 43.21,
+      "audio_end": 48.0,
+      "audio_start_sample": 2074080,
+      "audio_end_sample": 2304000,
+      "audio_offset": 0.0,
+      "audio_samples": 229920,
+      "pad_samples": 480,
+      "frames": 144,
+      "duration": 4.8,
+      "start_frame": 1607,
+      "end_frame": 1751,
+      "start": 53.56666666666667,
+      "end": 58.36666666666667,
+      "text": "Essas estimativas podem orientar compras de energia, armazenamento e horários de consumo.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 2.08,
+          "text": "Essas estimativas podem orientar compras"
+        },
+        {
+          "start": 2.08,
+          "end": 4.64,
+          "text": "de energia, armazenamento e horários de\nconsumo."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 47,
+      "reference_video_end": 52,
+      "alignment_confidence": 0.9807,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_10",
+      "index": 10,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 52,
+      "video_end": 56,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 50.47,
+      "audio_end": 54.385,
+      "audio_start_sample": 2422560,
+      "audio_end_sample": 2610480,
+      "audio_offset": 0.0,
+      "audio_samples": 187920,
+      "pad_samples": 880,
+      "frames": 118,
+      "duration": 3.933333333333333,
+      "start_frame": 1751,
+      "end_frame": 1869,
+      "start": 58.36666666666667,
+      "end": 62.3,
+      "text": "Comparei LSTM, Transformer e Informer. Como funcionam?",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 3.48,
+          "text": "Comparei LSTM, Transformer e Informer.\nComo funcionam?"
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 52,
+      "reference_video_end": 56,
+      "alignment_confidence": 0.9113,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_11",
+      "index": 11,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 56,
+      "video_end": 60,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 54.385,
+      "audio_end": 57.275,
+      "audio_start_sample": 2610480,
+      "audio_end_sample": 2749200,
+      "audio_offset": 0.0,
+      "audio_samples": 138720,
+      "pad_samples": 480,
+      "frames": 87,
+      "duration": 2.9,
+      "start_frame": 1869,
+      "end_frame": 1956,
+      "start": 62.3,
+      "end": 65.2,
+      "text": "Na LSTM, os valores entram em ordem.",
+      "cues": [
+        {
+          "start": 0.535,
+          "end": 2.675,
+          "text": "Na LSTM, os valores entram em ordem."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 56,
+      "reference_video_end": 60,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_12",
+      "index": 12,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 60,
+      "video_end": 64,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 57.275,
+      "audio_end": 60.56,
+      "audio_start_sample": 2749200,
+      "audio_end_sample": 2906880,
+      "audio_offset": 0.0,
+      "audio_samples": 157680,
+      "pad_samples": 720,
+      "frames": 99,
+      "duration": 3.3,
+      "start_frame": 1956,
+      "end_frame": 2055,
+      "start": 65.2,
+      "end": 68.5,
+      "text": "A memória muda a cada passo, por portas aprendidas.",
+      "cues": [
+        {
+          "start": 0.315,
+          "end": 3.035,
+          "text": "A memória muda a cada passo, por portas\naprendidas."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 60,
+      "reference_video_end": 64,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_13",
+      "index": 13,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 64,
+      "video_end": 68,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 60.56,
+      "audio_end": 64.545,
+      "audio_start_sample": 2906880,
+      "audio_end_sample": 3098160,
+      "audio_offset": 0.0,
+      "audio_samples": 191280,
+      "pad_samples": 720,
+      "frames": 120,
+      "duration": 4.0,
+      "start_frame": 2055,
+      "end_frame": 2175,
+      "start": 68.5,
+      "end": 72.5,
+      "text": "Elas regulam o que reter, acrescentar e transmitir.",
+      "cues": [
+        {
+          "start": 0.35,
+          "end": 3.71,
+          "text": "Elas regulam o que reter, acrescentar e\ntransmitir."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 64,
+      "reference_video_end": 68,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_14",
+      "index": 14,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 68,
+      "video_end": 71,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 64.545,
+      "audio_end": 66.855,
+      "audio_start_sample": 3098160,
+      "audio_end_sample": 3209040,
+      "audio_offset": 0.0,
+      "audio_samples": 110880,
+      "pad_samples": 1120,
+      "frames": 70,
+      "duration": 2.3333333333333335,
+      "start_frame": 2175,
+      "end_frame": 2245,
+      "start": 72.5,
+      "end": 74.83333333333333,
+      "text": "O estado final ajuda na previsão.",
+      "cues": [
+        {
+          "start": 0.375,
+          "end": 2.075,
+          "text": "O estado final ajuda na previsão."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 68,
+      "reference_video_end": 71,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_15",
+      "index": 15,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 71,
+      "video_end": 75,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 66.855,
+      "audio_end": 70.34,
+      "audio_start_sample": 3209040,
+      "audio_end_sample": 3376320,
+      "audio_offset": 0.0,
+      "audio_samples": 167280,
+      "pad_samples": 720,
+      "frames": 105,
+      "duration": 3.5,
+      "start_frame": 2245,
+      "end_frame": 2350,
+      "start": 74.83333333333333,
+      "end": 78.33333333333333,
+      "text": "No Transformer, cada posição reúne valor e ordem temporal.",
+      "cues": [
+        {
+          "start": 0.335,
+          "end": 3.335,
+          "text": "No Transformer, cada posição reúne valor e\nordem temporal."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 71,
+      "reference_video_end": 75,
+      "alignment_confidence": 0.9871,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_16",
+      "index": 16,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 75,
+      "video_end": 79,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 72.02,
+      "audio_end": 75.175,
+      "audio_start_sample": 3456960,
+      "audio_end_sample": 3608400,
+      "audio_offset": 0.0,
+      "audio_samples": 151440,
+      "pad_samples": 560,
+      "frames": 95,
+      "duration": 3.1666666666666665,
+      "start_frame": 2350,
+      "end_frame": 2445,
+      "start": 78.33333333333333,
+      "end": 81.5,
+      "text": "Consultas comparam representações com suas chaves.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 2.82,
+          "text": "Consultas comparam representações com suas\nchaves."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 75,
+      "reference_video_end": 79,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_17",
+      "index": 17,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 79,
+      "video_end": 83,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 75.175,
+      "audio_end": 78.62,
+      "audio_start_sample": 3608400,
+      "audio_end_sample": 3773760,
+      "audio_offset": 0.0,
+      "audio_samples": 165360,
+      "pad_samples": 1040,
+      "frames": 104,
+      "duration": 3.466666666666667,
+      "start_frame": 2445,
+      "end_frame": 2549,
+      "start": 81.5,
+      "end": 84.96666666666667,
+      "text": "Os pesos calculados orientam a combinação dos valores.",
+      "cues": [
+        {
+          "start": 0.435,
+          "end": 3.035,
+          "text": "Os pesos calculados orientam a combinação\ndos valores."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 79,
+      "reference_video_end": 83,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_18",
+      "index": 18,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 83,
+      "video_end": 87,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 78.62,
+      "audio_end": 81.95,
+      "audio_start_sample": 3773760,
+      "audio_end_sample": 3933600,
+      "audio_offset": 0.0,
+      "audio_samples": 159840,
+      "pad_samples": 160,
+      "frames": 100,
+      "duration": 3.3333333333333335,
+      "start_frame": 2549,
+      "end_frame": 2649,
+      "start": 84.96666666666667,
+      "end": 88.3,
+      "text": "Essas representações seguem para a previsão do horizonte.",
+      "cues": [
+        {
+          "start": 0.51,
+          "end": 3.05,
+          "text": "Essas representações seguem para a\nprevisão do horizonte."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 83,
+      "reference_video_end": 87,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_19",
+      "index": 19,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 87,
+      "video_end": 91,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 81.95,
+      "audio_end": 85.415,
+      "audio_start_sample": 3933600,
+      "audio_end_sample": 4099920,
+      "audio_offset": 0.0,
+      "audio_samples": 166320,
+      "pad_samples": 80,
+      "frames": 104,
+      "duration": 3.466666666666667,
+      "start_frame": 2649,
+      "end_frame": 2753,
+      "start": 88.3,
+      "end": 91.76666666666667,
+      "text": "Em sequências longas, o Informer detalha algumas consultas.",
+      "cues": [
+        {
+          "start": 0.38,
+          "end": 3.16,
+          "text": "Em sequências longas, o Informer detalha\nalgumas consultas."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 87,
+      "reference_video_end": 91,
+      "alignment_confidence": 0.9231,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_20",
+      "index": 20,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 91,
+      "video_end": 95,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 85.415,
+      "audio_end": 88.55,
+      "audio_start_sample": 4099920,
+      "audio_end_sample": 4250400,
+      "audio_offset": 0.0,
+      "audio_samples": 150480,
+      "pad_samples": 1520,
+      "frames": 95,
+      "duration": 3.1666666666666665,
+      "start_frame": 2753,
+      "end_frame": 2848,
+      "start": 91.76666666666667,
+      "end": 94.93333333333334,
+      "text": "A seleção usa uma estimativa de esparsidade.",
+      "cues": [
+        {
+          "start": 0.405,
+          "end": 2.985,
+          "text": "A seleção usa uma estimativa de\nesparsidade."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 91,
+      "reference_video_end": 95,
+      "alignment_confidence": 0.9834,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_21",
+      "index": 21,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 95,
+      "video_end": 99,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 89.63,
+      "audio_end": 93.36,
+      "audio_start_sample": 4302240,
+      "audio_end_sample": 4481280,
+      "audio_offset": 0.0,
+      "audio_samples": 179040,
+      "pad_samples": 160,
+      "frames": 112,
+      "duration": 3.7333333333333334,
+      "start_frame": 2848,
+      "end_frame": 2960,
+      "start": 94.93333333333334,
+      "end": 98.66666666666667,
+      "text": "Em outra etapa, reduz a sequência interna do codificador.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 3.58,
+          "text": "Em outra etapa, reduz a sequência interna\ndo codificador."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 95,
+      "reference_video_end": 99,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_22",
+      "index": 22,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 99,
+      "video_end": 103,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 94.91,
+      "audio_end": 97.08,
+      "audio_start_sample": 4555680,
+      "audio_end_sample": 4659840,
+      "audio_offset": 0.0,
+      "audio_samples": 104160,
+      "pad_samples": 1440,
+      "frames": 66,
+      "duration": 2.2,
+      "start_frame": 2960,
+      "end_frame": 3026,
+      "start": 98.66666666666667,
+      "end": 100.86666666666666,
+      "text": "A atenção cruzada permanece completa.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 2.02,
+          "text": "A atenção cruzada permanece completa."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 99,
+      "reference_video_end": 103,
+      "alignment_confidence": 0.9396,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_23",
+      "index": 23,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 103,
+      "video_end": 107,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 98.52,
+      "audio_end": 101.73,
+      "audio_start_sample": 4728960,
+      "audio_end_sample": 4883040,
+      "audio_offset": 0.0,
+      "audio_samples": 154080,
+      "pad_samples": 1120,
+      "frames": 97,
+      "duration": 3.2333333333333334,
+      "start_frame": 3026,
+      "end_frame": 3123,
+      "start": 100.86666666666666,
+      "end": 104.1,
+      "text": "Os três recebem o mesmo histórico e a mesma localidade.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 3.06,
+          "text": "Os três recebem o mesmo histórico e a\nmesma localidade."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 103,
+      "reference_video_end": 107,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_24",
+      "index": 24,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 107,
+      "video_end": 112,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 102.51,
+      "audio_end": 105.86,
+      "audio_start_sample": 4920480,
+      "audio_end_sample": 5081280,
+      "audio_offset": 0.0,
+      "audio_samples": 160800,
+      "pad_samples": 800,
+      "frames": 101,
+      "duration": 3.3666666666666667,
+      "start_frame": 3123,
+      "end_frame": 3224,
+      "start": 104.1,
+      "end": 107.46666666666667,
+      "text": "Cada modelo produz diretamente um vetor para o mesmo horizonte.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 3.2,
+          "text": "Cada modelo produz diretamente um vetor\npara o mesmo horizonte."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 107,
+      "reference_video_end": 112,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_25",
+      "index": 25,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 112,
+      "video_end": 116,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 112.95,
+      "audio_end": 116.12,
+      "audio_start_sample": 5421600,
+      "audio_end_sample": 5573760,
+      "audio_offset": 0.0,
+      "audio_samples": 152160,
+      "pad_samples": 1440,
+      "frames": 96,
+      "duration": 3.2,
+      "start_frame": 3224,
+      "end_frame": 3320,
+      "start": 107.46666666666667,
+      "end": 110.66666666666667,
+      "text": "As localidades deste estudo estão nas Américas.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 2.8,
+          "text": "As localidades deste estudo estão nas\nAméricas."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 112,
+      "reference_video_end": 116,
+      "alignment_confidence": 1.0,
+      "editorial_note": "User preference: retained later take; removed first attempt.",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_26",
+      "index": 26,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 116,
+      "video_end": 122,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 116.12,
+      "audio_end": 120.7,
+      "audio_start_sample": 5573760,
+      "audio_end_sample": 5793600,
+      "audio_offset": 0.0,
+      "audio_samples": 219840,
+      "pad_samples": 960,
+      "frames": 138,
+      "duration": 4.6,
+      "start_frame": 3320,
+      "end_frame": 3458,
+      "start": 110.66666666666667,
+      "end": 115.26666666666667,
+      "text": "São dez regiões: uma no Brasil, oito nos Estados Unidos e uma no México.",
+      "cues": [
+        {
+          "start": 0.47,
+          "end": 4.43,
+          "text": "São dez regiões: uma no Brasil, oito nos\nEstados Unidos e uma no México."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 116,
+      "reference_video_end": 122,
+      "alignment_confidence": 0.8657,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_27",
+      "index": 27,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 122,
+      "video_end": 128,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 123.48,
+      "audio_end": 128.53,
+      "audio_start_sample": 5927040,
+      "audio_end_sample": 6169440,
+      "audio_offset": 0.0,
+      "audio_samples": 242400,
+      "pad_samples": 800,
+      "frames": 152,
+      "duration": 5.066666666666666,
+      "start_frame": 3458,
+      "end_frame": 3610,
+      "start": 115.26666666666667,
+      "end": 120.33333333333333,
+      "text": "A NSRDB estima a irradiância com satélites e dados atmosféricos.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 4.9,
+          "text": "A NSRDB estima a irradiância com satélites\ne dados atmosféricos."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 122,
+      "reference_video_end": 128,
+      "alignment_confidence": 0.9582,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_28",
+      "index": 28,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 128,
+      "video_end": 137,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 132.42,
+      "audio_end": 137.825,
+      "audio_start_sample": 6356160,
+      "audio_end_sample": 6615600,
+      "audio_offset": 0.0,
+      "audio_samples": 259440,
+      "pad_samples": 1360,
+      "frames": 163,
+      "duration": 5.433333333333334,
+      "start_frame": 3610,
+      "end_frame": 3773,
+      "start": 120.33333333333333,
+      "end": 125.76666666666667,
+      "text": "Modelos físicos combinam essas informações e estimam a irradiância em cada região consultada.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 2.22,
+          "text": "Modelos físicos combinam essas informações"
+        },
+        {
+          "start": 2.22,
+          "end": 5.06,
+          "text": "e estimam a irradiância em cada região\nconsultada."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 128,
+      "reference_video_end": 137,
+      "alignment_confidence": 1.0,
+      "editorial_note": "User preference: retained later take; removed first attempt.",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_29",
+      "index": 29,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 137,
+      "video_end": 144,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 137.825,
+      "audio_end": 143.0,
+      "audio_start_sample": 6615600,
+      "audio_end_sample": 6864000,
+      "audio_offset": 0.0,
+      "audio_samples": 248400,
+      "pad_samples": 1200,
+      "frames": 156,
+      "duration": 5.2,
+      "start_frame": 3773,
+      "end_frame": 3929,
+      "start": 125.76666666666667,
+      "end": 130.96666666666667,
+      "text": "A curva mostra quando os valores ocorreram. Já as barras agrupam esses valores por faixa.",
+      "cues": [
+        {
+          "start": 0.445,
+          "end": 1.665,
+          "text": "A curva mostra quando os valores"
+        },
+        {
+          "start": 1.665,
+          "end": 5.025,
+          "text": "ocorreram. Já as barras agrupam esses\nvalores por faixa."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 137,
+      "reference_video_end": 144,
+      "alignment_confidence": 0.9149,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_30",
+      "index": 30,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 144,
+      "video_end": 150,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 144.95,
+      "audio_end": 149.18,
+      "audio_start_sample": 6957600,
+      "audio_end_sample": 7160640,
+      "audio_offset": 0.0,
+      "audio_samples": 203040,
+      "pad_samples": 160,
+      "frames": 127,
+      "duration": 4.233333333333333,
+      "start_frame": 3929,
+      "end_frame": 4056,
+      "start": 130.96666666666667,
+      "end": 135.2,
+      "text": "Estas três leituras reais de Camaçari pertencem à mesma faixa de GHI.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 4.02,
+          "text": "Estas três leituras reais de Camaçari\npertencem à mesma faixa de GHI."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 144,
+      "reference_video_end": 150,
+      "alignment_confidence": 0.9497,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_31",
+      "index": 31,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 150,
+      "video_end": 157,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 149.18,
+      "audio_end": 154.27,
+      "audio_start_sample": 7160640,
+      "audio_end_sample": 7404960,
+      "audio_offset": 0.0,
+      "audio_samples": 244320,
+      "pad_samples": 480,
+      "frames": 153,
+      "duration": 5.1,
+      "start_frame": 4056,
+      "end_frame": 4209,
+      "start": 135.2,
+      "end": 140.3,
+      "text": "Essa faixa reúne cerca de quatro vírgula oito por cento das horas com valor positivo.",
+      "cues": [
+        {
+          "start": 0.31,
+          "end": 2.09,
+          "text": "Essa faixa reúne cerca de quatro vírgula"
+        },
+        {
+          "start": 2.09,
+          "end": 4.73,
+          "text": "oito por cento das horas com valor\npositivo."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 150,
+      "reference_video_end": 157,
+      "alignment_confidence": 0.93,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_32",
+      "index": 32,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 157,
+      "video_end": 165,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 154.27,
+      "audio_end": 160.2,
+      "audio_start_sample": 7404960,
+      "audio_end_sample": 7689600,
+      "audio_offset": 0.0,
+      "audio_samples": 284640,
+      "pad_samples": 160,
+      "frames": 178,
+      "duration": 5.933333333333334,
+      "start_frame": 4209,
+      "end_frame": 4387,
+      "start": 140.3,
+      "end": 146.23333333333332,
+      "text": "Cada barra mostra a porcentagem naquela faixa. As horas com valor zero são contadas separadamente.",
+      "cues": [
+        {
+          "start": 0.46,
+          "end": 2.26,
+          "text": "Cada barra mostra a porcentagem naquela"
+        },
+        {
+          "start": 2.26,
+          "end": 5.78,
+          "text": "faixa. As horas com valor zero são\ncontadas separadamente."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 157,
+      "reference_video_end": 165,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_33",
+      "index": 33,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 165,
+      "video_end": 172,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 161.63,
+      "audio_end": 166.74,
+      "audio_start_sample": 7758240,
+      "audio_end_sample": 8003520,
+      "audio_offset": 0.0,
+      "audio_samples": 245280,
+      "pad_samples": 1120,
+      "frames": 154,
+      "duration": 5.133333333333334,
+      "start_frame": 4387,
+      "end_frame": 4541,
+      "start": 146.23333333333332,
+      "end": 151.36666666666667,
+      "text": "Com intervalos e escalas iguais, comparamos a distribuição dos valores entre as dez localidades.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 1.66,
+          "text": "Com intervalos e escalas iguais,"
+        },
+        {
+          "start": 1.66,
+          "end": 4.74,
+          "text": "comparamos a distribuição dos valores\nentre as dez localidades."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 165,
+      "reference_video_end": 172,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_34",
+      "index": 34,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 172,
+      "video_end": 178,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 166.74,
+      "audio_end": 171.91,
+      "audio_start_sample": 8003520,
+      "audio_end_sample": 8251680,
+      "audio_offset": 0.0,
+      "audio_samples": 248160,
+      "pad_samples": 1440,
+      "frames": 156,
+      "duration": 5.2,
+      "start_frame": 4541,
+      "end_frame": 4697,
+      "start": 151.36666666666667,
+      "end": 156.56666666666666,
+      "text": "Usamos leituras anteriores da região da fábrica. Este trecho real é de Camaçari.",
+      "cues": [
+        {
+          "start": 0.47,
+          "end": 4.69,
+          "text": "Usamos leituras anteriores da região da\nfábrica. Este trecho real é de Camaçari."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 172,
+      "reference_video_end": 178,
+      "alignment_confidence": 0.9768,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_35",
+      "index": 35,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 178,
+      "video_end": 184,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 171.91,
+      "audio_end": 176.32,
+      "audio_start_sample": 8251680,
+      "audio_end_sample": 8463360,
+      "audio_offset": 0.0,
+      "audio_samples": 211680,
+      "pad_samples": 1120,
+      "frames": 133,
+      "duration": 4.433333333333334,
+      "start_frame": 4697,
+      "end_frame": 4830,
+      "start": 156.56666666666666,
+      "end": 161.0,
+      "text": "Esses valores mantêm a ordem no tempo e formam parte da janela de entrada.",
+      "cues": [
+        {
+          "start": 0.58,
+          "end": 4.06,
+          "text": "Esses valores mantêm a ordem no tempo e\nformam parte da janela de entrada."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 178,
+      "reference_video_end": 184,
+      "alignment_confidence": 0.9518,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_36",
+      "index": 36,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 184,
+      "video_end": 192,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 176.32,
+      "audio_end": 181.18,
+      "audio_start_sample": 8463360,
+      "audio_end_sample": 8696640,
+      "audio_offset": 0.0,
+      "audio_samples": 233280,
+      "pad_samples": 320,
+      "frames": 146,
+      "duration": 4.866666666666666,
+      "start_frame": 4830,
+      "end_frame": 4976,
+      "start": 161.0,
+      "end": 165.86666666666667,
+      "text": "A rede também identifica a região e aprende uma representação para cada localidade.",
+      "cues": [
+        {
+          "start": 0.45,
+          "end": 2.39,
+          "text": "A rede também identifica a região e"
+        },
+        {
+          "start": 2.39,
+          "end": 4.65,
+          "text": "aprende uma representação para cada\nlocalidade."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 184,
+      "reference_video_end": 192,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_37",
+      "index": 37,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 192,
+      "video_end": 200,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 181.18,
+      "audio_end": 187.63,
+      "audio_start_sample": 8696640,
+      "audio_end_sample": 9006240,
+      "audio_offset": 0.0,
+      "audio_samples": 309600,
+      "pad_samples": 800,
+      "frames": 194,
+      "duration": 6.466666666666667,
+      "start_frame": 4976,
+      "end_frame": 5170,
+      "start": 165.86666666666667,
+      "end": 172.33333333333334,
+      "text": "Assim, entram duas informações: os valores anteriores de GHI e a região à qual pertencem.",
+      "cues": [
+        {
+          "start": 0.31,
+          "end": 2.87,
+          "text": "Assim, entram duas informações: os valores"
+        },
+        {
+          "start": 2.87,
+          "end": 6.13,
+          "text": "anteriores de GHI e a região à qual\npertencem."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 192,
+      "reference_video_end": 200,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_38",
+      "index": 38,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 200,
+      "video_end": 206,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 187.63,
+      "audio_end": 192.395,
+      "audio_start_sample": 9006240,
+      "audio_end_sample": 9234960,
+      "audio_offset": 0.0,
+      "audio_samples": 228720,
+      "pad_samples": 80,
+      "frames": 143,
+      "duration": 4.766666666666667,
+      "start_frame": 5170,
+      "end_frame": 5313,
+      "start": 172.33333333333334,
+      "end": 177.1,
+      "text": "Em cada tarefa, uma mesma rede compartilha parâmetros entre as dez localidades.",
+      "cues": [
+        {
+          "start": 0.42,
+          "end": 4.48,
+          "text": "Em cada tarefa, uma mesma rede compartilha\nparâmetros entre as dez localidades."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 200,
+      "reference_video_end": 206,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_39",
+      "index": 39,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 206,
+      "video_end": 210,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 192.395,
+      "audio_end": 196.17,
+      "audio_start_sample": 9234960,
+      "audio_end_sample": 9416160,
+      "audio_offset": 0.0,
+      "audio_samples": 181200,
+      "pad_samples": 1200,
+      "frames": 114,
+      "duration": 3.8,
+      "start_frame": 5313,
+      "end_frame": 5427,
+      "start": 177.1,
+      "end": 180.9,
+      "text": "São quatro tarefas de previsão, com janelas e horizontes diferentes.",
+      "cues": [
+        {
+          "start": 0.385,
+          "end": 3.485,
+          "text": "São quatro tarefas de previsão, com\njanelas e horizontes diferentes."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 206,
+      "reference_video_end": 210,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_40",
+      "index": 40,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 210,
+      "video_end": 214,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 196.17,
+      "audio_end": 198.77,
+      "audio_start_sample": 9416160,
+      "audio_end_sample": 9540960,
+      "audio_offset": 0.0,
+      "audio_samples": 124800,
+      "pad_samples": 0,
+      "frames": 78,
+      "duration": 2.6,
+      "start_frame": 5427,
+      "end_frame": 5505,
+      "start": 180.9,
+      "end": 183.5,
+      "text": "Na horária, entram duas semanas de histórico.",
+      "cues": [
+        {
+          "start": 0.39,
+          "end": 2.45,
+          "text": "Na horária, entram duas semanas de\nhistórico."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 210,
+      "reference_video_end": 214,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_41",
+      "index": 41,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 214,
+      "video_end": 218,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 200.77,
+      "audio_end": 203.46,
+      "audio_start_sample": 9636960,
+      "audio_end_sample": 9766080,
+      "audio_offset": 0.0,
+      "audio_samples": 129120,
+      "pad_samples": 480,
+      "frames": 81,
+      "duration": 2.7,
+      "start_frame": 5505,
+      "end_frame": 5586,
+      "start": 183.5,
+      "end": 186.2,
+      "text": "Prevemos os próximos três dias de irradiância.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 2.54,
+          "text": "Prevemos os próximos três dias de\nirradiância."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 214,
+      "reference_video_end": 218,
+      "alignment_confidence": 0.9834,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_42",
+      "index": 42,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 218,
+      "video_end": 222,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 203.46,
+      "audio_end": 205.67,
+      "audio_start_sample": 9766080,
+      "audio_end_sample": 9872160,
+      "audio_offset": 0.0,
+      "audio_samples": 106080,
+      "pad_samples": 1120,
+      "frames": 67,
+      "duration": 2.2333333333333334,
+      "start_frame": 5586,
+      "end_frame": 5653,
+      "start": 186.2,
+      "end": 188.43333333333334,
+      "text": "Na diária, entra um ano de histórico.",
+      "cues": [
+        {
+          "start": 0.25,
+          "end": 2.15,
+          "text": "Na diária, entra um ano de histórico."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 218,
+      "reference_video_end": 222,
+      "alignment_confidence": 0.9569,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_43",
+      "index": 43,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 222,
+      "video_end": 226,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 205.67,
+      "audio_end": 207.995,
+      "audio_start_sample": 9872160,
+      "audio_end_sample": 9983760,
+      "audio_offset": 0.0,
+      "audio_samples": 111600,
+      "pad_samples": 400,
+      "frames": 70,
+      "duration": 2.3333333333333335,
+      "start_frame": 5653,
+      "end_frame": 5723,
+      "start": 188.43333333333334,
+      "end": 190.76666666666668,
+      "text": "A previsão contém os próximos trinta dias.",
+      "cues": [
+        {
+          "start": 0.16,
+          "end": 2.14,
+          "text": "A previsão contém os próximos trinta dias."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 222,
+      "reference_video_end": 226,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_44",
+      "index": 44,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 226,
+      "video_end": 231,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 207.995,
+      "audio_end": 211.465,
+      "audio_start_sample": 9983760,
+      "audio_end_sample": 10150320,
+      "audio_offset": 0.0,
+      "audio_samples": 166560,
+      "pad_samples": 1440,
+      "frames": 105,
+      "duration": 3.5,
+      "start_frame": 5723,
+      "end_frame": 5828,
+      "start": 190.76666666666668,
+      "end": 194.26666666666668,
+      "text": "Na primeira mensal, entram doze meses e prevemos o seguinte.",
+      "cues": [
+        {
+          "start": 0.285,
+          "end": 3.185,
+          "text": "Na primeira mensal, entram doze meses e\nprevemos o seguinte."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 226,
+      "reference_video_end": 231,
+      "alignment_confidence": 0.9698,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_45",
+      "index": 45,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 231,
+      "video_end": 236,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 211.465,
+      "audio_end": 214.96,
+      "audio_start_sample": 10150320,
+      "audio_end_sample": 10318080,
+      "audio_offset": 0.0,
+      "audio_samples": 167760,
+      "pad_samples": 240,
+      "frames": 105,
+      "duration": 3.5,
+      "start_frame": 5828,
+      "end_frame": 5933,
+      "start": 194.26666666666668,
+      "end": 197.76666666666668,
+      "text": "A outra rede prevê seis meses. É uma análise exploratória.",
+      "cues": [
+        {
+          "start": 0.385,
+          "end": 3.345,
+          "text": "A outra rede prevê seis meses. É uma\nanálise exploratória."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 231,
+      "reference_video_end": 236,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_46",
+      "index": 46,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 236,
+      "video_end": 242,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 217.3,
+      "audio_end": 222.18,
+      "audio_start_sample": 10430400,
+      "audio_end_sample": 10664640,
+      "audio_offset": 0.0,
+      "audio_samples": 234240,
+      "pad_samples": 960,
+      "frames": 147,
+      "duration": 4.9,
+      "start_frame": 5933,
+      "end_frame": 6080,
+      "start": 197.76666666666668,
+      "end": 202.66666666666666,
+      "text": "As tarefas mensais foram treinadas separadamente: uma prevê um mês; a outra, seis.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 1.64,
+          "text": "As tarefas mensais foram treinadas"
+        },
+        {
+          "start": 1.64,
+          "end": 4.73,
+          "text": "separadamente: uma prevê um mês; a outra,\nseis."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 236,
+      "reference_video_end": 242,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_47",
+      "index": 47,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 242,
+      "video_end": 249,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 223.3,
+      "audio_end": 226.61,
+      "audio_start_sample": 10718400,
+      "audio_end_sample": 10877280,
+      "audio_offset": 0.0,
+      "audio_samples": 158880,
+      "pad_samples": 1120,
+      "frames": 100,
+      "duration": 3.3333333333333335,
+      "start_frame": 6080,
+      "end_frame": 6180,
+      "start": 202.66666666666666,
+      "end": 206.0,
+      "text": "Treinei inicialmente com dados de 2019 a 2022.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 3.16,
+          "text": "Treinei inicialmente com dados de 2019 a\n2022."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 242,
+      "reference_video_end": 249,
+      "alignment_confidence": 0.9038,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_48",
+      "index": 48,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 249,
+      "video_end": 255,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 227.69,
+      "audio_end": 230.925,
+      "audio_start_sample": 10929120,
+      "audio_end_sample": 11084400,
+      "audio_offset": 0.0,
+      "audio_samples": 155280,
+      "pad_samples": 1520,
+      "frames": 98,
+      "duration": 3.2666666666666666,
+      "start_frame": 6180,
+      "end_frame": 6278,
+      "start": 206.0,
+      "end": 209.26666666666668,
+      "text": "Validação em 2023; teste em 2024.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 2.82,
+          "text": "Validação em 2023; teste em 2024."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 249,
+      "reference_video_end": 255,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_49",
+      "index": 49,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 255,
+      "video_end": 264,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 230.925,
+      "audio_end": 236.92,
+      "audio_start_sample": 11084400,
+      "audio_end_sample": 11372160,
+      "audio_offset": 0.0,
+      "audio_samples": 287760,
+      "pad_samples": 13040,
+      "frames": 188,
+      "duration": 6.266666666666667,
+      "start_frame": 6278,
+      "end_frame": 6466,
+      "start": 209.26666666666668,
+      "end": 215.53333333333333,
+      "text": "Escolhi as configurações pela validação, por modelo e tarefa. A normalização respeitou os cortes temporais.",
+      "cues": [
+        {
+          "start": 0.515,
+          "end": 2.535,
+          "text": "Escolhi as configurações pela validação,"
+        },
+        {
+          "start": 2.535,
+          "end": 6.095,
+          "text": "por modelo e tarefa. A normalização\nrespeitou os cortes temporais."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 255,
+      "reference_video_end": 264,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_50",
+      "index": 50,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 264,
+      "video_end": 275,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 246.27,
+      "audio_end": 252.04,
+      "audio_start_sample": 11820960,
+      "audio_end_sample": 12097920,
+      "audio_offset": 0.0,
+      "audio_samples": 276960,
+      "pad_samples": 1440,
+      "frames": 174,
+      "duration": 5.8,
+      "start_frame": 6466,
+      "end_frame": 6640,
+      "start": 215.53333333333333,
+      "end": 221.33333333333334,
+      "text": "Depois, reiniciei o treinamento com 2019 a 2023 e avaliei as previsões em 2024.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 5.62,
+          "text": "Depois, reiniciei o treinamento com 2019 a\n2023 e avaliei as previsões em 2024."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 264,
+      "reference_video_end": 275,
+      "alignment_confidence": 1.0,
+      "editorial_note": "User preference: retained later take; removed first attempt.",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_51",
+      "index": 51,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 275,
+      "video_end": 284,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 253.2,
+      "audio_end": 260.12,
+      "audio_start_sample": 12153600,
+      "audio_end_sample": 12485760,
+      "audio_offset": 0.0,
+      "audio_samples": 332160,
+      "pad_samples": 640,
+      "frames": 208,
+      "duration": 6.933333333333334,
+      "start_frame": 6640,
+      "end_frame": 6848,
+      "start": 221.33333333333334,
+      "end": 228.26666666666668,
+      "text": "Essa análise é retrospectiva: o teste de 2024 já havia sido examinado, o que limita sua independência.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 2.68,
+          "text": "Essa análise é retrospectiva: o teste de"
+        },
+        {
+          "start": 2.68,
+          "end": 6.51,
+          "text": "2024 já havia sido examinado, o que limita\nsua independência."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 275,
+      "reference_video_end": 284,
+      "alignment_confidence": 0.9055,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_52",
+      "index": 52,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 284,
+      "video_end": 290,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 260.12,
+      "audio_end": 265.715,
+      "audio_start_sample": 12485760,
+      "audio_end_sample": 12754320,
+      "audio_offset": 0.0,
+      "audio_samples": 268560,
+      "pad_samples": 240,
+      "frames": 168,
+      "duration": 5.6,
+      "start_frame": 6848,
+      "end_frame": 7016,
+      "start": 228.26666666666668,
+      "end": 233.86666666666667,
+      "text": "Comparei a precisão das previsões. Velocidade e memória computacional não foram medidas.",
+      "cues": [
+        {
+          "start": 0.51,
+          "end": 2.73,
+          "text": "Comparei a precisão das previsões."
+        },
+        {
+          "start": 2.73,
+          "end": 5.19,
+          "text": "Velocidade e memória computacional não\nforam medidas."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 284,
+      "reference_video_end": 290,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_53",
+      "index": 53,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 290,
+      "video_end": 298,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 265.715,
+      "audio_end": 271.74,
+      "audio_start_sample": 12754320,
+      "audio_end_sample": 13043520,
+      "audio_offset": 0.0,
+      "audio_samples": 289200,
+      "pad_samples": 400,
+      "frames": 181,
+      "duration": 6.033333333333333,
+      "start_frame": 7016,
+      "end_frame": 7197,
+      "start": 233.86666666666667,
+      "end": 239.9,
+      "text": "Quantizar aproxima cada leitura de um nível disponível. Aqui usamos um exemplo, numa escala de zero a mil.",
+      "cues": [
+        {
+          "start": 0.505,
+          "end": 2.205,
+          "text": "Quantizar aproxima cada leitura de um"
+        },
+        {
+          "start": 2.205,
+          "end": 5.805,
+          "text": "nível disponível. Aqui usamos um exemplo,\nnuma escala de zero a mil."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 290,
+      "reference_video_end": 298,
+      "alignment_confidence": 0.93,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_54",
+      "index": 54,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 298,
+      "video_end": 305,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 271.74,
+      "audio_end": 276.9,
+      "audio_start_sample": 13043520,
+      "audio_end_sample": 13291200,
+      "audio_offset": 0.0,
+      "audio_samples": 247680,
+      "pad_samples": 320,
+      "frames": 155,
+      "duration": 5.166666666666667,
+      "start_frame": 7197,
+      "end_frame": 7352,
+      "start": 239.9,
+      "end": 245.06666666666666,
+      "text": "A leitura original é quatrocentos e trinta e sete. Primeiro, ela é normalizada.",
+      "cues": [
+        {
+          "start": 0.32,
+          "end": 4.68,
+          "text": "A leitura original é quatrocentos e trinta\ne sete. Primeiro, ela é normalizada."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 298,
+      "reference_video_end": 305,
+      "alignment_confidence": 0.8227,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_55",
+      "index": 55,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 305,
+      "video_end": 313,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 276.9,
+      "audio_end": 283.37,
+      "audio_start_sample": 13291200,
+      "audio_end_sample": 13601760,
+      "audio_offset": 0.0,
+      "audio_samples": 310560,
+      "pad_samples": 1440,
+      "frames": 195,
+      "duration": 6.5,
+      "start_frame": 7352,
+      "end_frame": 7547,
+      "start": 245.06666666666666,
+      "end": 251.56666666666666,
+      "text": "Com sessenta e quatro níveis, escolhemos o degrau mais próximo e reconstruímos aproximadamente quatrocentos e quarenta e quatro.",
+      "cues": [
+        {
+          "start": 0.58,
+          "end": 3.34,
+          "text": "Com sessenta e quatro níveis, escolhemos o\ndegrau mais próximo e reconstruímos"
+        },
+        {
+          "start": 3.34,
+          "end": 6.32,
+          "text": "aproximadamente quatrocentos e quarenta e\nquatro."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 305,
+      "reference_video_end": 313,
+      "alignment_confidence": 0.8692,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_56",
+      "index": 56,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 313,
+      "video_end": 321,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 288.16,
+      "audio_end": 293.55,
+      "audio_start_sample": 13831680,
+      "audio_end_sample": 14090400,
+      "audio_offset": 0.0,
+      "audio_samples": 258720,
+      "pad_samples": 480,
+      "frames": 162,
+      "duration": 5.4,
+      "start_frame": 7547,
+      "end_frame": 7709,
+      "start": 251.56666666666666,
+      "end": 256.96666666666664,
+      "text": "Com cento e vinte e oito níveis, o mesmo valor vira aproximadamente quatrocentos e trinta e três.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 2.22,
+          "text": "Com cento e vinte e oito níveis, o mesmo"
+        },
+        {
+          "start": 2.22,
+          "end": 5.24,
+          "text": "valor vira aproximadamente quatrocentos e\ntrinta e três."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 313,
+      "reference_video_end": 321,
+      "alignment_confidence": 0.696,
+      "editorial_note": "Low lexical confidence caused by scientific model names in ASR; retain all recorded words in this monotonic sentence span.",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_57",
+      "index": 57,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 321,
+      "video_end": 327,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 294.37,
+      "audio_end": 298.855,
+      "audio_start_sample": 14129760,
+      "audio_end_sample": 14345040,
+      "audio_offset": 0.0,
+      "audio_samples": 215280,
+      "pad_samples": 720,
+      "frames": 135,
+      "duration": 4.5,
+      "start_frame": 7709,
+      "end_frame": 7844,
+      "start": 256.96666666666664,
+      "end": 261.46666666666664,
+      "text": "Com duzentos e cinquenta e seis, fica próximo de quatrocentos e trinta e cinco.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 4.0,
+          "text": "Com duzentos e cinquenta e seis, fica\npróximo de quatrocentos e trinta e cinco."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 321,
+      "reference_video_end": 327,
+      "alignment_confidence": 0.5911,
+      "editorial_note": "Low lexical confidence caused by scientific model names in ASR; retain all recorded words in this monotonic sentence span.",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_58",
+      "index": 58,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 327,
+      "video_end": 334,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 298.855,
+      "audio_end": 303.905,
+      "audio_start_sample": 14345040,
+      "audio_end_sample": 14587440,
+      "audio_offset": 0.0,
+      "audio_samples": 242400,
+      "pad_samples": 800,
+      "frames": 152,
+      "duration": 5.066666666666666,
+      "start_frame": 7844,
+      "end_frame": 7996,
+      "start": 261.46666666666664,
+      "end": 266.53333333333336,
+      "text": "Mais níveis diminuem o espaço entre degraus. O instante da leitura continua o mesmo.",
+      "cues": [
+        {
+          "start": 0.585,
+          "end": 2.065,
+          "text": "Mais níveis diminuem o espaço entre"
+        },
+        {
+          "start": 2.065,
+          "end": 4.795,
+          "text": "degraus. O instante da leitura continua o\nmesmo."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 327,
+      "reference_video_end": 334,
+      "alignment_confidence": 1.0,
+      "editorial_note": "Retain a short ASR insertion at the sentence release; next sentence begins 304.26 s.",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_59",
+      "index": 59,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 334,
+      "video_end": 341,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 303.905,
+      "audio_end": 311.36,
+      "audio_start_sample": 14587440,
+      "audio_end_sample": 14945280,
+      "audio_offset": 0.0,
+      "audio_samples": 357840,
+      "pad_samples": 560,
+      "frames": 224,
+      "duration": 7.466666666666667,
+      "start_frame": 7996,
+      "end_frame": 8220,
+      "start": 266.53333333333336,
+      "end": 274.0,
+      "text": "A transformação atua só no GHI de entrada. A localidade segue separada; pesos, alvos e saídas continuam contínuos.",
+      "cues": [
+        {
+          "start": 0.355,
+          "end": 3.005,
+          "text": "A transformação atua só no GHI de entrada."
+        },
+        {
+          "start": 3.005,
+          "end": 7.305,
+          "text": "A localidade segue separada; pesos, alvos\ne saídas continuam contínuos."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 334,
+      "reference_video_end": 341,
+      "alignment_confidence": 0.9832,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_60",
+      "index": 60,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 341,
+      "video_end": 348,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 312.89,
+      "audio_end": 319.705,
+      "audio_start_sample": 15018720,
+      "audio_end_sample": 15345840,
+      "audio_offset": 0.0,
+      "audio_samples": 327120,
+      "pad_samples": 880,
+      "frames": 205,
+      "duration": 6.833333333333333,
+      "start_frame": 8220,
+      "end_frame": 8425,
+      "start": 274.0,
+      "end": 280.8333333333333,
+      "text": "Nas variantes quantizadas, limitamos extremos antes de arredondar. O controle contínuo não faz essas duas operações.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 2.28,
+          "text": "Nas variantes quantizadas, limitamos"
+        },
+        {
+          "start": 2.28,
+          "end": 6.56,
+          "text": "extremos antes de arredondar. O controle\ncontínuo não faz essas duas operações."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 341,
+      "reference_video_end": 348,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_61",
+      "index": 61,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 348,
+      "video_end": 354,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 319.705,
+      "audio_end": 324.93,
+      "audio_start_sample": 15345840,
+      "audio_end_sample": 15596640,
+      "audio_offset": 0.0,
+      "audio_samples": 250800,
+      "pad_samples": 400,
+      "frames": 157,
+      "duration": 5.233333333333333,
+      "start_frame": 8425,
+      "end_frame": 8582,
+      "start": 280.8333333333333,
+      "end": 286.06666666666666,
+      "text": "A condição é escolhida na validação e mantida no teste, para cada modelo e tarefa.",
+      "cues": [
+        {
+          "start": 0.355,
+          "end": 2.195,
+          "text": "A condição é escolhida na validação e"
+        },
+        {
+          "start": 2.195,
+          "end": 5.075,
+          "text": "mantida no teste, para cada modelo e\ntarefa."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 348,
+      "reference_video_end": 354,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_62",
+      "index": 62,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 354,
+      "video_end": 363,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 325.69,
+      "audio_end": 331.08,
+      "audio_start_sample": 15633120,
+      "audio_end_sample": 15891840,
+      "audio_offset": 0.0,
+      "audio_samples": 258720,
+      "pad_samples": 480,
+      "frames": 162,
+      "duration": 5.4,
+      "start_frame": 8582,
+      "end_frame": 8744,
+      "start": 286.06666666666666,
+      "end": 291.46666666666664,
+      "text": "MAE é o erro absoluto médio: o tamanho médio da diferença entre previsão e referência, no mesmo instante.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 2.42,
+          "text": "MAE é o erro absoluto médio: o tamanho"
+        },
+        {
+          "start": 2.42,
+          "end": 5.14,
+          "text": "médio da diferença entre previsão e\nreferência, no mesmo instante."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 354,
+      "reference_video_end": 363,
+      "alignment_confidence": 0.9107,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_63",
+      "index": 63,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 363,
+      "video_end": 372,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 331.08,
+      "audio_end": 339.36,
+      "audio_start_sample": 15891840,
+      "audio_end_sample": 16289280,
+      "audio_offset": 0.0,
+      "audio_samples": 397440,
+      "pad_samples": 960,
+      "frames": 249,
+      "duration": 8.3,
+      "start_frame": 8744,
+      "end_frame": 8993,
+      "start": 291.46666666666664,
+      "end": 299.76666666666665,
+      "text": "Aqui, a referência é seiscentos e a previsão, seiscentos e cinquenta. A distância é cinquenta, sem considerar o sinal.",
+      "cues": [
+        {
+          "start": 0.35,
+          "end": 6.18,
+          "text": "Aqui, a referência é seiscentos e a\nprevisão, seiscentos e cinquenta. A"
+        },
+        {
+          "start": 6.18,
+          "end": 7.96,
+          "text": "distância é cinquenta, sem considerar o\nsinal."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 363,
+      "reference_video_end": 372,
+      "alignment_confidence": 0.8881,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_64",
+      "index": 64,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 372,
+      "video_end": 382,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 339.36,
+      "audio_end": 346.985,
+      "audio_start_sample": 16289280,
+      "audio_end_sample": 16655280,
+      "audio_offset": 0.0,
+      "audio_samples": 366000,
+      "pad_samples": 400,
+      "frames": 229,
+      "duration": 7.633333333333334,
+      "start_frame": 8993,
+      "end_frame": 9222,
+      "start": 299.76666666666665,
+      "end": 307.4,
+      "text": "Reunimos as cinco diferenças e dividimos por cinco. Neste exemplo, o MAE vale vinte e oito watts por metro quadrado.",
+      "cues": [
+        {
+          "start": 0.42,
+          "end": 2.04,
+          "text": "Reunimos as cinco diferenças e dividimos"
+        },
+        {
+          "start": 2.04,
+          "end": 7.21,
+          "text": "por cinco. Neste exemplo, o MAE vale vinte\ne oito watts por metro quadrado."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 372,
+      "reference_video_end": 382,
+      "alignment_confidence": 0.9031,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_65",
+      "index": 65,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 382,
+      "video_end": 390,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 346.985,
+      "audio_end": 352.05,
+      "audio_start_sample": 16655280,
+      "audio_end_sample": 16898400,
+      "audio_offset": 0.0,
+      "audio_samples": 243120,
+      "pad_samples": 80,
+      "frames": 152,
+      "duration": 5.066666666666666,
+      "start_frame": 9222,
+      "end_frame": 9374,
+      "start": 307.4,
+      "end": 312.46666666666664,
+      "text": "Quando a previsão se aproxima da referência, as distâncias encolhem e o MAE diminui.",
+      "cues": [
+        {
+          "start": 0.515,
+          "end": 1.795,
+          "text": "Quando a previsão se aproxima da"
+        },
+        {
+          "start": 1.795,
+          "end": 4.915,
+          "text": "referência, as distâncias encolhem e o MAE\ndiminui."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 382,
+      "reference_video_end": 390,
+      "alignment_confidence": 0.9668,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_66",
+      "index": 66,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 390,
+      "video_end": 396,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 354.6,
+      "audio_end": 359.995,
+      "audio_start_sample": 17020800,
+      "audio_end_sample": 17279760,
+      "audio_offset": 0.0,
+      "audio_samples": 258960,
+      "pad_samples": 240,
+      "frames": 162,
+      "duration": 5.4,
+      "start_frame": 9374,
+      "end_frame": 9536,
+      "start": 312.46666666666664,
+      "end": 317.8666666666667,
+      "text": "Se todos os valores coincidem, o MAE é zero. Na mesma tarefa, menor é melhor.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 5.06,
+          "text": "Se todos os valores coincidem, o MAE é\nzero. Na mesma tarefa, menor é melhor."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 390,
+      "reference_video_end": 396,
+      "alignment_confidence": 0.9435,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_67",
+      "index": 67,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 396,
+      "video_end": 408,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 359.995,
+      "audio_end": 367.42,
+      "audio_start_sample": 17279760,
+      "audio_end_sample": 17636160,
+      "audio_offset": 0.0,
+      "audio_samples": 356400,
+      "pad_samples": 400,
+      "frames": 223,
+      "duration": 7.433333333333334,
+      "start_frame": 9536,
+      "end_frame": 9759,
+      "start": 317.8666666666667,
+      "end": 325.3,
+      "text": "Calculamos o MAE de cada localidade e fazemos outra média. As dez localidades recebem o mesmo peso: um décimo cada.",
+      "cues": [
+        {
+          "start": 0.435,
+          "end": 2.735,
+          "text": "Calculamos o MAE de cada localidade e"
+        },
+        {
+          "start": 2.735,
+          "end": 7.235,
+          "text": "fazemos outra média. As dez localidades\nrecebem o mesmo peso: um décimo cada."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 396,
+      "reference_video_end": 408,
+      "alignment_confidence": 0.9768,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_68",
+      "index": 68,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 408,
+      "video_end": 420,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 367.42,
+      "audio_end": 374.48,
+      "audio_start_sample": 17636160,
+      "audio_end_sample": 17975040,
+      "audio_offset": 0.0,
+      "audio_samples": 338880,
+      "pad_samples": 320,
+      "frames": 212,
+      "duration": 7.066666666666666,
+      "start_frame": 9759,
+      "end_frame": 9971,
+      "start": 325.3,
+      "end": 332.3666666666667,
+      "text": "Na avaliação cumulativa, entram todos os passos até o limite, incluindo a noite. Setenta e duas horas correspondem a três dias.",
+      "cues": [
+        {
+          "start": 0.29,
+          "end": 3.91,
+          "text": "Na avaliação cumulativa, entram todos os\npassos até o limite, incluindo a noite."
+        },
+        {
+          "start": 3.91,
+          "end": 6.91,
+          "text": "Setenta e duas horas correspondem a três\ndias."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 408,
+      "reference_video_end": 420,
+      "alignment_confidence": 0.9779,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_69",
+      "index": 69,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 420,
+      "video_end": 427,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 377.15,
+      "audio_end": 381.06,
+      "audio_start_sample": 18103200,
+      "audio_end_sample": 18290880,
+      "audio_offset": 0.0,
+      "audio_samples": 187680,
+      "pad_samples": 1120,
+      "frames": 118,
+      "duration": 3.933333333333333,
+      "start_frame": 9971,
+      "end_frame": 10089,
+      "start": 332.3666666666667,
+      "end": 336.3,
+      "text": "Compare os modelos dentro de cada tarefa: escalas e alvos são diferentes.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 3.76,
+          "text": "Compare os modelos dentro de cada tarefa:\nescalas e alvos são diferentes."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 420,
+      "reference_video_end": 427,
+      "alignment_confidence": 0.9652,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_70",
+      "index": 70,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 427,
+      "video_end": 436,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 385.68,
+      "audio_end": 392.515,
+      "audio_start_sample": 18512640,
+      "audio_end_sample": 18840720,
+      "audio_offset": 0.0,
+      "audio_samples": 328080,
+      "pad_samples": 1520,
+      "frames": 206,
+      "duration": 6.866666666666666,
+      "start_frame": 10089,
+      "end_frame": 10295,
+      "start": 336.3,
+      "end": 343.1666666666667,
+      "text": "No horário, o Transformer teve o menor macro-MAE: 53,21 watts por metro quadrado.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 6.34,
+          "text": "No horário, o Transformer teve o menor\nmacro-MAE: 53,21 watts por metro quadrado."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 427,
+      "reference_video_end": 436,
+      "alignment_confidence": 0.8751,
+      "editorial_note": "User preference: retained later take; removed first attempt. Start overridden to 385.88 s: the repeated initial no is absent/mislocalized in main ASR; retain the full later utterance.",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_71",
+      "index": 71,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 436,
+      "video_end": 444,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 392.515,
+      "audio_end": 397.53,
+      "audio_start_sample": 18840720,
+      "audio_end_sample": 19081440,
+      "audio_offset": 0.0,
+      "audio_samples": 240720,
+      "pad_samples": 880,
+      "frames": 151,
+      "duration": 5.033333333333333,
+      "start_frame": 10295,
+      "end_frame": 10446,
+      "start": 343.1666666666667,
+      "end": 348.2,
+      "text": "A vantagem sobre a LSTM foi de aproximadamente 0,32 watt por metro quadrado.",
+      "cues": [
+        {
+          "start": 0.595,
+          "end": 2.375,
+          "text": "A vantagem sobre a LSTM foi de"
+        },
+        {
+          "start": 2.375,
+          "end": 5.033333,
+          "text": "aproximadamente 0,32 watt por metro\nquadrado."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 436,
+      "reference_video_end": 444,
+      "alignment_confidence": 0.8918,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_72",
+      "index": 72,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 444,
+      "video_end": 452,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 397.53,
+      "audio_end": 403.935,
+      "audio_start_sample": 19081440,
+      "audio_end_sample": 19388880,
+      "audio_offset": 0.0,
+      "audio_samples": 307440,
+      "pad_samples": 1360,
+      "frames": 193,
+      "duration": 6.433333333333334,
+      "start_frame": 10446,
+      "end_frame": 10639,
+      "start": 348.2,
+      "end": 354.6333333333333,
+      "text": "Na diária, o Transformer liderou: 43,89 watts por metro quadrado de macro-MAE.",
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 6.08,
+          "text": "Na diária, o Transformer liderou: 43,89\nwatts por metro quadrado de macro-MAE."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 444,
+      "reference_video_end": 452,
+      "alignment_confidence": 0.8908,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_73",
+      "index": 73,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 452,
+      "video_end": 460,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 403.935,
+      "audio_end": 410.465,
+      "audio_start_sample": 19388880,
+      "audio_end_sample": 19702320,
+      "audio_offset": 0.0,
+      "audio_samples": 313440,
+      "pad_samples": 160,
+      "frames": 196,
+      "duration": 6.533333333333333,
+      "start_frame": 10639,
+      "end_frame": 10835,
+      "start": 354.6333333333333,
+      "end": 361.1666666666667,
+      "text": "A diferença para a LSTM foi de aproximadamente 0,30 watt por metro quadrado. Os valores são próximos.",
+      "cues": [
+        {
+          "start": 0.425,
+          "end": 2.265,
+          "text": "A diferença para a LSTM foi de"
+        },
+        {
+          "start": 2.265,
+          "end": 6.285,
+          "text": "aproximadamente 0,30 watt por metro\nquadrado. Os valores são próximos."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 452,
+      "reference_video_end": 460,
+      "alignment_confidence": 0.9041,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_74",
+      "index": 74,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 460,
+      "video_end": 468,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 410.465,
+      "audio_end": 412.77,
+      "audio_start_sample": 19702320,
+      "audio_end_sample": 19812960,
+      "audio_offset": 0.0,
+      "audio_samples": 110640,
+      "pad_samples": 119760,
+      "frames": 144,
+      "duration": 4.8,
+      "start_frame": 10835,
+      "end_frame": 10979,
+      "start": 361.1666666666667,
+      "end": 365.96666666666664,
+      "text": "No mensal de um passo, o Informer liderou.",
+      "cues": [
+        {
+          "start": 0.345,
+          "end": 2.405,
+          "text": "No mensal de um passo, o Informer liderou."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 460,
+      "reference_video_end": 468,
+      "alignment_confidence": 0.9071,
+      "editorial_note": "editorial_numeric_omission: retain only the complete leadership clause; omit spoken numerical value and unit. Correct values remain in graphics.",
+      "numeric_omission": true,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_75",
+      "index": 75,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 468,
+      "video_end": 474,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 416.43,
+      "audio_end": 421.08,
+      "audio_start_sample": 19988640,
+      "audio_end_sample": 20211840,
+      "audio_offset": 0.0,
+      "audio_samples": 223200,
+      "pad_samples": 800,
+      "frames": 140,
+      "duration": 4.666666666666667,
+      "start_frame": 10979,
+      "end_frame": 11119,
+      "start": 365.96666666666664,
+      "end": 370.6333333333333,
+      "text": "Os três modelos são comparados na mesma tarefa, com as condições selecionadas para cada um.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 1.8,
+          "text": "Os três modelos são comparados na mesma"
+        },
+        {
+          "start": 1.8,
+          "end": 4.5,
+          "text": "tarefa, com as condições selecionadas para\ncada um."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 468,
+      "reference_video_end": 474,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_76",
+      "index": 76,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 474,
+      "video_end": 481,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 422.14,
+      "audio_end": 424.48,
+      "audio_start_sample": 20262720,
+      "audio_end_sample": 20375040,
+      "audio_offset": 0.0,
+      "audio_samples": 112320,
+      "pad_samples": 118080,
+      "frames": 144,
+      "duration": 4.8,
+      "start_frame": 11119,
+      "end_frame": 11263,
+      "start": 370.6333333333333,
+      "end": 375.43333333333334,
+      "text": "Em seis meses, o Informer liderou.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 2.44,
+          "text": "Em seis meses, o Informer liderou."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 474,
+      "reference_video_end": 481,
+      "alignment_confidence": 0.9807,
+      "editorial_note": "editorial_numeric_omission: retain only the complete leadership clause; omit spoken numerical value and unit. Correct values remain in graphics.",
+      "numeric_omission": true,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_77",
+      "index": 77,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 481,
+      "video_end": 488,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 432.17,
+      "audio_end": 437.935,
+      "audio_start_sample": 20744160,
+      "audio_end_sample": 21020880,
+      "audio_offset": 0.0,
+      "audio_samples": 276720,
+      "pad_samples": 80,
+      "frames": 173,
+      "duration": 5.766666666666667,
+      "start_frame": 11263,
+      "end_frame": 11436,
+      "start": 375.43333333333334,
+      "end": 381.2,
+      "text": "Essa rede é diferente da mensal de um passo. O resultado de seis meses permanece exploratório.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 2.1,
+          "text": "Essa rede é diferente da mensal de um"
+        },
+        {
+          "start": 2.1,
+          "end": 5.49,
+          "text": "passo. O resultado de seis meses permanece\nexploratório."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 481,
+      "reference_video_end": 488,
+      "alignment_confidence": 1.0,
+      "editorial_note": "User preference: retained later take; removed first attempt.",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_78",
+      "index": 78,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 488,
+      "video_end": 494,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 437.935,
+      "audio_end": 443.2,
+      "audio_start_sample": 21020880,
+      "audio_end_sample": 21273600,
+      "audio_offset": 0.0,
+      "audio_samples": 252720,
+      "pad_samples": 80,
+      "frames": 158,
+      "duration": 5.266666666666667,
+      "start_frame": 11436,
+      "end_frame": 11594,
+      "start": 381.2,
+      "end": 386.46666666666664,
+      "text": "A liderança varia entre localidades. As cores indicam o menor MAE em cada região.",
+      "cues": [
+        {
+          "start": 0.375,
+          "end": 4.935,
+          "text": "A liderança varia entre localidades. As\ncores indicam o menor MAE em cada região."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 488,
+      "reference_video_end": 494,
+      "alignment_confidence": 0.9161,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_79",
+      "index": 79,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 494,
+      "video_end": 500,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 443.2,
+      "audio_end": 448.755,
+      "audio_start_sample": 21273600,
+      "audio_end_sample": 21540240,
+      "audio_offset": 0.0,
+      "audio_samples": 266640,
+      "pad_samples": 560,
+      "frames": 167,
+      "duration": 5.566666666666666,
+      "start_frame": 11594,
+      "end_frame": 11761,
+      "start": 386.46666666666664,
+      "end": 392.03333333333336,
+      "text": "Nos dois mensais, o Informer lidera cinco localidades, mas as localidades vencedoras mudam.",
+      "cues": [
+        {
+          "start": 0.43,
+          "end": 2.47,
+          "text": "Nos dois mensais, o Informer lidera cinco"
+        },
+        {
+          "start": 2.47,
+          "end": 5.39,
+          "text": "localidades, mas as localidades vencedoras\nmudam."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 494,
+      "reference_video_end": 500,
+      "alignment_confidence": 0.9911,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_80",
+      "index": 80,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 500,
+      "video_end": 508,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 448.755,
+      "audio_end": 456.17,
+      "audio_start_sample": 21540240,
+      "audio_end_sample": 21896160,
+      "audio_offset": 0.0,
+      "audio_samples": 355920,
+      "pad_samples": 880,
+      "frames": 223,
+      "duration": 7.433333333333334,
+      "start_frame": 11761,
+      "end_frame": 11984,
+      "start": 392.03333333333336,
+      "end": 399.46666666666664,
+      "text": "Na diária, a LSTM liderou os horizontes menores, até 14 dias. Em 30 dias, o Transformer apresentou a menor média.",
+      "cues": [
+        {
+          "start": 0.265,
+          "end": 2.785,
+          "text": "Na diária, a LSTM liderou os horizontes"
+        },
+        {
+          "start": 2.785,
+          "end": 7.265,
+          "text": "menores, até 14 dias. Em 30 dias, o\nTransformer apresentou a menor média."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 500,
+      "reference_video_end": 508,
+      "alignment_confidence": 0.971,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_81",
+      "index": 81,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 508,
+      "video_end": 514,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 456.98,
+      "audio_end": 461.16,
+      "audio_start_sample": 21935040,
+      "audio_end_sample": 22135680,
+      "audio_offset": 0.0,
+      "audio_samples": 200640,
+      "pad_samples": 960,
+      "frames": 126,
+      "duration": 4.2,
+      "start_frame": 11984,
+      "end_frame": 12110,
+      "start": 399.46666666666664,
+      "end": 403.6666666666667,
+      "text": "Quantizar foi uma hipótese de melhoria, não uma garantia. Houve ganhos e perdas.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 4.2,
+          "text": "Quantizar foi uma hipótese de melhoria,\nnão uma garantia. Houve ganhos e perdas."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 508,
+      "reference_video_end": 514,
+      "alignment_confidence": 0.8429,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_82",
+      "index": 82,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 514,
+      "video_end": 520,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 461.16,
+      "audio_end": 466.66,
+      "audio_start_sample": 22135680,
+      "audio_end_sample": 22399680,
+      "audio_offset": 0.0,
+      "audio_samples": 264000,
+      "pad_samples": 0,
+      "frames": 165,
+      "duration": 5.5,
+      "start_frame": 12110,
+      "end_frame": 12275,
+      "start": 403.6666666666667,
+      "end": 409.1666666666667,
+      "text": "Numa análise histórica separada, comparei históricos longo e curto nas mesmas datas de avaliação.",
+      "cues": [
+        {
+          "start": 0.0,
+          "end": 2.67,
+          "text": "Numa análise histórica separada, comparei"
+        },
+        {
+          "start": 2.67,
+          "end": 5.35,
+          "text": "históricos longo e curto nas mesmas datas\nde avaliação."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 514,
+      "reference_video_end": 520,
+      "alignment_confidence": 0.9751,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_83",
+      "index": 83,
+      "source_path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/patches/matriz_historica_corrigida_6s_v10.mp4",
+      "video_start": 0.0,
+      "video_end": 6.0,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 469.08,
+      "audio_end": 474.215,
+      "audio_start_sample": 22515840,
+      "audio_end_sample": 22762320,
+      "audio_offset": 0.0,
+      "audio_samples": 246480,
+      "pad_samples": 1520,
+      "frames": 155,
+      "duration": 5.166666666666667,
+      "start_frame": 12275,
+      "end_frame": 12430,
+      "start": 409.1666666666667,
+      "end": 414.3333333333333,
+      "text": "Histórico longo: menor erro em onze de doze casos, exceto na LSTM horária.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 4.9,
+          "text": "Histórico longo: menor erro em onze de\ndoze casos, exceto na LSTM horária."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 520,
+      "reference_video_end": 526,
+      "alignment_confidence": 0.9411,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": true
+    },
+    {
+      "kind": "body",
+      "id": "phase_84",
+      "index": 84,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 526,
+      "video_end": 530,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 474.215,
+      "audio_end": 478.085,
+      "audio_start_sample": 22762320,
+      "audio_end_sample": 22948080,
+      "audio_offset": 0.0,
+      "audio_samples": 185760,
+      "pad_samples": 1440,
+      "frames": 117,
+      "duration": 3.9,
+      "start_frame": 12430,
+      "end_frame": 12547,
+      "start": 414.3333333333333,
+      "end": 418.23333333333335,
+      "text": "Isso não isola uma causa: anos e normalização também mudaram.",
+      "cues": [
+        {
+          "start": 0.335,
+          "end": 3.535,
+          "text": "Isso não isola uma causa: anos e\nnormalização também mudaram."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 526,
+      "reference_video_end": 530,
+      "alignment_confidence": 1.0,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_85",
+      "index": 85,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 530,
+      "video_end": 536,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 478.085,
+      "audio_end": 484.015,
+      "audio_start_sample": 22948080,
+      "audio_end_sample": 23232720,
+      "audio_offset": 0.0,
+      "audio_samples": 284640,
+      "pad_samples": 160,
+      "frames": 178,
+      "duration": 5.933333333333334,
+      "start_frame": 12547,
+      "end_frame": 12725,
+      "start": 418.23333333333335,
+      "end": 424.1666666666667,
+      "text": "As diferenças são descritivas. O horário usa uma semente; as demais tarefas combinam cinco previsões.",
+      "cues": [
+        {
+          "start": 0.435,
+          "end": 2.395,
+          "text": "As diferenças são descritivas. O horário"
+        },
+        {
+          "start": 2.395,
+          "end": 5.515,
+          "text": "usa uma semente; as demais tarefas\ncombinam cinco previsões."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 530,
+      "reference_video_end": 536,
+      "alignment_confidence": 0.9505,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_86",
+      "index": 86,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 536,
+      "video_end": 544,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 484.015,
+      "audio_end": 489.38,
+      "audio_start_sample": 23232720,
+      "audio_end_sample": 23490240,
+      "audio_offset": 0.0,
+      "audio_samples": 257520,
+      "pad_samples": 80,
+      "frames": 161,
+      "duration": 5.366666666666666,
+      "start_frame": 12725,
+      "end_frame": 12886,
+      "start": 424.1666666666667,
+      "end": 429.53333333333336,
+      "text": "A tarefa de seis meses é exploratória: sete origens por localidade, com alvos compartilhados.",
+      "cues": [
+        {
+          "start": 0.515,
+          "end": 2.635,
+          "text": "A tarefa de seis meses é exploratória:"
+        },
+        {
+          "start": 2.635,
+          "end": 5.215,
+          "text": "sete origens por localidade, com alvos\ncompartilhados."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 536,
+      "reference_video_end": 544,
+      "alignment_confidence": 0.9834,
+      "editorial_note": "",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "body",
+      "id": "phase_87",
+      "index": 87,
+      "source_path": "documentacao/relatorio_final_ea019/video/completo_v9/Video_TCC_GHI_Revisado_sem_legendas_v9.mp4",
+      "video_start": 544,
+      "video_end": 547,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/principal_normalizado_48k.wav",
+      "audio_start": 491.21,
+      "audio_end": 494.19,
+      "audio_start_sample": 23578080,
+      "audio_end_sample": 23721120,
+      "audio_offset": 0.0,
+      "audio_samples": 143040,
+      "pad_samples": 12160,
+      "frames": 97,
+      "duration": 3.2333333333333334,
+      "start_frame": 12886,
+      "end_frame": 12983,
+      "start": 429.53333333333336,
+      "end": 432.76666666666665,
+      "text": "Localidades inéditas ainda precisam ser avaliadas.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 3.08,
+          "text": "Localidades inéditas ainda precisam ser\navaliadas."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "reference_video_start": 544,
+      "reference_video_end": 547,
+      "alignment_confidence": 1.0,
+      "editorial_note": "Body ends here. Exclude repeated winners summary and weak ending after 494.19 s; use newly recorded ending separately.",
+      "numeric_omission": false,
+      "replacement_patch": false
+    },
+    {
+      "kind": "ending",
+      "id": "ending",
+      "index": 88,
+      "source_path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/encerramento/fabrica_encerramento_limpa_v10.png",
+      "video_start": 0.0,
+      "video_end": 20.63,
+      "audio_source": "tmp/montagem_final_v10/voice_pcm/encerramento_normalizado_48k.wav",
+      "audio_start": 0.39,
+      "audio_end": 19.82,
+      "audio_start_sample": 18720,
+      "audio_end_sample": 951360,
+      "audio_offset": 0.0,
+      "audio_samples": 932640,
+      "pad_samples": 57760,
+      "frames": 619,
+      "duration": 20.633333333333333,
+      "start_frame": 12983,
+      "end_frame": 13602,
+      "start": 432.76666666666665,
+      "end": 453.4,
+      "text": "Este projeto comparou três arquiteturas em dez localidades, sob o mesmo protocolo de avaliação. Nos horizontes completos, o Transformer teve menor erro nas previsões horárias e diárias, e o Informer liderou nas tarefas mensais. Esses resultados oferecem uma base experimental para orientar a escolha dos modelos na previsão da irradiância solar.",
+      "cues": [
+        {
+          "start": 0.2,
+          "end": 4.96,
+          "text": "Este projeto comparou três arquiteturas em\ndez localidades, sob o mesmo protocolo de"
+        },
+        {
+          "start": 4.96,
+          "end": 9.35,
+          "text": "avaliação. Nos horizontes completos, o\nTransformer teve menor erro nas previsões"
+        },
+        {
+          "start": 9.35,
+          "end": 13.77,
+          "text": "horárias e diárias, e o Informer liderou\nnas tarefas mensais. Esses resultados"
+        },
+        {
+          "start": 13.77,
+          "end": 18.37,
+          "text": "oferecem uma base experimental para\norientar a escolha dos modelos na previsão"
+        },
+        {
+          "start": 18.37,
+          "end": 19.33,
+          "text": "da irradiância solar."
+        }
+      ],
+      "caption_layout": {
+        "font_size": 44,
+        "x": 960,
+        "y": 985,
+        "width": 1700
+      },
+      "source_role": "clean factory still plate",
+      "asr_pcm_offset": 0.0,
+      "final_silent_hold_seconds": 1.2
+    }
+  ],
+  "voice_stretched": false,
+  "speech_synthesis": false,
+  "editing": {
+    "short_gap_midpoint_max_seconds": 1.2,
+    "large_gap_lead_seconds": 0.2,
+    "large_gap_tail_seconds": 0.25,
+    "cut_fade_ms": 5,
+    "numeric_omission_min_visual_seconds": 4.8,
+    "ending_final_silence_seconds": 1.2
+  }
+}

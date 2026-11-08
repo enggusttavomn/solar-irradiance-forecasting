@@ -1,0 +1,1504 @@
+{
+  "escopo": "Somente LSTM, Transformer e Informer. Leitura de36contratos canônicos (três regimes × quatro tarefas × três modelos) e fontes executadas arquivadas. Sem novos treinamentos ou instalação de pacotes.",
+  "runtime_auditoria": "C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+  "tabela_parametros": [
+    {
+      "tarefa": "Horária",
+      "slug": "hourly_72_extension",
+      "C": 336,
+      "H": 72,
+      "LSTM": 7512,
+      "Transformer": 8161,
+      "Informer": 8977,
+      "label_len_transformer_informer": 168
+    },
+    {
+      "tarefa": "Diária",
+      "slug": "daily_30",
+      "C": 365,
+      "H": 30,
+      "LSTM": 5790,
+      "Transformer": 8161,
+      "Informer": 8977,
+      "label_len_transformer_informer": 182
+    },
+    {
+      "tarefa": "Mensal de um passo",
+      "slug": "monthly_1",
+      "C": 12,
+      "H": 1,
+      "LSTM": 4601,
+      "Transformer": 8161,
+      "Informer": 8977,
+      "label_len_transformer_informer": 6
+    },
+    {
+      "tarefa": "Mensal de seis passos",
+      "slug": "monthly_6",
+      "C": 12,
+      "H": 6,
+      "LSTM": 4806,
+      "Transformer": 8161,
+      "Informer": 8977,
+      "label_len_transformer_informer": 6
+    }
+  ],
+  "tabela_arquiteturas": [
+    {
+      "modelo": "LSTM",
+      "configuracao_compacta": "Uma camada recorrente com 32 unidades; embedding de 8 dimensões; último estado de 32 dimensões concatenado ao embedding, seguido de camada linear de 40 para H.",
+      "input_size": 1,
+      "hidden_size": 32,
+      "camadas_recorrentes": 1,
+      "dropout_recorrente": 0.0,
+      "embedding_localidade": 8,
+      "d_model": null,
+      "cabecas": null,
+      "d_ff": null,
+      "label_len": null,
+      "factor": null,
+      "saida": "Direta para H valores contínuos; sem realimentação das previsões."
+    },
+    {
+      "modelo": "Transformer",
+      "configuracao_compacta": "d_model = 16; duas cabeças; d_ff = 32; dois encoders e um decoder; dropout de 0,1; embedding de 8 dimensões projetado para 16.",
+      "d_model": 16,
+      "cabecas": 2,
+      "d_ff": 32,
+      "camadas_encoder": 2,
+      "camadas_decoder": 1,
+      "dropout": 0.1,
+      "embedding_localidade": 8,
+      "label_len": "max(1, floor(C/2))",
+      "factor": null,
+      "saida": "Uma projeção linear de 16 para 1 compartilhada entre os H passos."
+    },
+    {
+      "modelo": "Informer",
+      "configuracao_compacta": "Mesmas dimensões do Transformer; ProbSparse com fator 5 no encoder e autoatenção causal do decoder; atenção cruzada completa; uma etapa de destilação entre encoders.",
+      "d_model": 16,
+      "cabecas": 2,
+      "d_ff": 32,
+      "camadas_encoder": 2,
+      "camadas_decoder": 1,
+      "dropout": 0.1,
+      "embedding_localidade": 8,
+      "label_len": "max(1, floor(C/2))",
+      "factor": 5,
+      "destilacao": "Conv1d de 16 para 16, kernel 3 e padding circular de 1; BatchNorm1d com 16 canais; ELU; MaxPool1d com kernel 3, stride 2 e padding 1.",
+      "atencao_probsparse_dropout": "A implementação não aplica dropout aos pesos ProbSparse; mantém dropout nas conexões residuais e no bloco feedforward.",
+      "saida": "Uma projeção linear de 16 para 1 compartilhada entre os H passos."
+    }
+  ],
+  "contagem_parametros": {
+    "tipo": "Contagem algébrica exata dos parâmetros treináveis definidos pelas fontes arquivadas cujo SHA256 coincide com os36contratos; inclui pesos e biases. Não exige carregar pesos nem executar inferência/treinamento.",
+    "numero_localidades": 10,
+    "transformer_componentes": {
+      "projecoes_entrada_encoder_decoder": 64,
+      "embedding_dez_localidades": 80,
+      "projecao_embedding": 144,
+      "dois_blocos_encoder": 4448,
+      "normalizacoes_finais_encoder_decoder": 64,
+      "bloco_decoder": 3344,
+      "projecao_saida_por_passo": 17
+    },
+    "attention_por_bloco": 1088,
+    "feedforward_por_bloco": 1072,
+    "encoder_por_bloco": 2224,
+    "decoder": 3344,
+    "informer_adicional_destilacao": {
+      "Conv1d_pesos": 768,
+      "Conv1d_bias": 16,
+      "BatchNorm1d_peso_e_bias": 32
+    },
+    "lstm_core": 4480,
+    "lstm_embedding": 80,
+    "lstm_cabeca": "40H + H = 41H",
+    "lstm_formula_total": "4560 + 41H",
+    "exclusoes": [
+      "Buffers de posições senoidais",
+      "Médias e variâncias móveis de BatchNorm",
+      "Contadores não treináveis"
+    ],
+    "nota_para_tabela": "Parâmetros treináveis das implementações auditadas, para dez localidades. Pesos e biases estão incluídos; buffers não treináveis estão excluídos. Transformer e Informer compartilham a projeção de saída entre passos, enquanto a cabeça da LSTM depende de H. A contagem é a mesma nas quatro condições de entrada e nos três regimes; não representa igualdade de capacidade efetiva ou de custo computacional."
+  },
+  "tabela_ambiente": [
+    {
+      "tarefa": "Horária e diária",
+      "modelos": "Transformer e Informer",
+      "dispositivo": "CUDA",
+      "GPU_registrada": "NVIDIA GeForce GTX1650 with Max-Q Design",
+      "CUDA": "12.6",
+      "cuDNN": 91002,
+      "PyTorch": "2.12.0+cu126",
+      "fonte": "execucao_numerica.ambiente nos contratos canônicos dessas arquiteturas e tarefas."
+    },
+    {
+      "tarefa": "Horária e diária",
+      "modelos": "LSTM",
+      "dispositivo": "CUDA",
+      "GPU_registrada": "Não especificada no contrato canônico",
+      "CUDA": "12.6",
+      "cuDNN": null,
+      "PyTorch": "2.12.0+cu126",
+      "fonte": "parametros.dispositivo, cuda e pacotes.torch nos contratos canônicos; não inferir modelo da GPU a partir dos contratos de outras arquiteturas."
+    },
+    {
+      "tarefa": "Mensais de um e seis passos",
+      "modelos": "LSTM, Transformer e Informer",
+      "dispositivo": "CPU",
+      "CPU_registrada": "Modelo não especificado no contrato canônico",
+      "CUDA": null,
+      "PyTorch": "2.12.0+cu126",
+      "fonte": "parametros.dispositivo e pacotes.torch nos contratos canônicos. O sufixo cu126 identifica a distribuição instalada, sem indicar uso de CUDA nessa tarefa."
+    }
+  ],
+  "pacotes_comuns_verificados": {
+    "numpy": [
+      "2.4.4"
+    ],
+    "pandas": [
+      "3.0.3"
+    ],
+    "torch": [
+      "2.12.0+cu126"
+    ]
+  },
+  "python_cpu_commit_nos_contratos_canonicos": {
+    "campos_encontrados": [],
+    "Python": "Não registrado diretamente nos36contratos canônicos inspecionados.",
+    "CPU_modelo": "Não registrado nos36contratos canônicos inspecionados.",
+    "commit_execucao": "Não registrado diretamente nos36contratos canônicos inspecionados."
+  },
+  "ambiente_antecedente_qualificado": {
+    "Python": "3.14.4",
+    "fontes": [
+      "resultados/avaliacao_baselines_revisao_20260912/hourly_72_extension/informer/contrato.json:python",
+      "resultados/avaliacao_multirresolucao_corrigida_v2/hourly_72_extension/contrato_execucao.json:dependencias.python"
+    ],
+    "uso": "Registro de etapas antecedentes, não garantia da versão de Python de todas as reexecuções de quantização. Recomenda-se não preencher a lacuna do contrato canônico com esse valor sem outra evidência."
+  },
+  "repositorio": {
+    "url": "https://github.com/enggusttavomn/solar-irradiance-forecasting",
+    "snapshot_consultado_commit": "3abe546cc217aff2c95a3a12bd1411c9e29c553e",
+    "snapshot_consultado_data_commit": "2026-10-29T23:27:53-03:00",
+    "snapshot_anterior_documentado": "6c465a6161899f458fde9a062efeb7117c4ef5de",
+    "distincao": "O commit consultado identifica o retrato atual do repositório, posterior aos experimentos, e não é apresentado como commit das execuções. As fontes efetivamente utilizadas são identificadas pelos hashes dos contratos e conferidas no arquivo ZIP de preservação."
+  },
+  "textos_prontos": {
+    "metodologia_arquiteturas": "A Tabela de configuração apresenta as dimensões das implementações utilizadas. A LSTM contém uma camada recorrente de 32 unidades e combina o último estado oculto com uma representação aprendida de 8 dimensões da localidade antes de produzir os H valores futuros. Transformer e Informer utilizam dimensão interna 16, duas cabeças de atenção, bloco feedforward de 32 unidades, dois encoders, um decoder e dropout de 0,1. O decoder recebe os últimos floor(C/2) valores observados seguidos de H zeros, usados como marcadores das posições futuras. No Informer, o fator de amostragem ProbSparse é 5 e uma etapa convolucional de destilação conecta os encoders; a atenção cruzada permanece completa.",
+    "apendice_contagem": "As quantidades de parâmetros treináveis foram obtidas pela soma das dimensões dos pesos e biases das camadas definidas nas fontes arquivadas, cujos hashes coincidem com os contratos das execuções. A contagem inclui a representação das dez localidades e exclui os buffers de posições senoidais e as estatísticas móveis de normalização. Transformer e Informer têm 8.161 e 8.977 parâmetros, respectivamente, em todas as tarefas, pois compartilham a projeção de saída entre passos. A LSTM tem 4.560 + 41H parâmetros, devido à cabeça linear que produz todo o horizonte. As quatro condições de entrada mantêm essas quantidades.",
+    "apendice_ambiente": "Os 36 contratos canônicos consultados registram NumPy 2.4.4, pandas 3.0.3 e PyTorch 2.12.0+cu126. As tarefas horária e diária utilizam CUDA 12.6; as mensais utilizam CPU. Para Transformer e Informer nas tarefas horária e diária, o ambiente numérico também identifica a GPU NVIDIA GeForce GTX 1650 with Max-Q Design e o código de versão cuDNN 91002. Os contratos da LSTM informam o uso de CUDA, mas não especificam o modelo da GPU. O modelo da CPU e a versão de Python não foram registrados diretamente nesses contratos; esses campos não são inferidos do computador utilizado nesta revisão. A distribuição de PyTorch com suporte a CUDA também aparece nos contratos mensais, o que não altera o dispositivo CPU declarado para essas tarefas.",
+    "apendice_proveniencia": "O código é disponibilizado em https://github.com/enggusttavomn/solar-irradiance-forecasting. O retrato do repositório consultado nesta revisão corresponde ao commit 3abe546cc217aff2c95a3a12bd1411c9e29c553e, de 29 de outubro de 2026. Esse identificador é posterior aos experimentos e não é atribuído às execuções. A identificação das fontes utilizadas em cada execução é feita pelos hashes SHA256 registrados em contrato_execucao.json, juntamente com hashes das entradas e dos arquivos de configuração. Os arquivos preservados em documentacao/organizacao/fontes_antes_reorganizacao_20261027.zip foram conferidos e coincidem com esses registros. Os metadados de seleção e reajuste referenciam o hash de conteúdo do contrato, ligando cada resultado às fontes e configurações correspondentes. A reorganização posterior das pastas pode alterar caminhos e imports sem substituir essa identificação do código auditado."
+  },
+  "verificacao_fontes": [
+    {
+      "arquivo_zip": "documentacao/organizacao/fontes_antes_reorganizacao_20261027.zip",
+      "membro": "codigo_fonte/modelos_baselines_adicionais.py",
+      "sha256": "f11298057fdb5762bc1c9959b2cf8c4c1cc5c1c84cc2d76cb87e825333cbb988",
+      "confere_com_36_contratos": true,
+      "localizadores": {
+        "AtencaoProjetada": {
+          "linha": 40,
+          "fim_linha": 100
+        },
+        "BlocoEncoder": {
+          "linha": 103,
+          "fim_linha": 113
+        },
+        "BlocoDecoder": {
+          "linha": 116,
+          "fim_linha": 128
+        },
+        "Distilacao": {
+          "linha": 131,
+          "fim_linha": 140
+        },
+        "TransformerDireto": {
+          "linha": 143,
+          "fim_linha": 188
+        }
+      }
+    },
+    {
+      "arquivo_zip": "documentacao/organizacao/fontes_antes_reorganizacao_20261027.zip",
+      "membro": "codigo_fonte/experimento_horario_timesnet.py",
+      "sha256": "2cc59451b0fbcbedbf3068d2f1c45595ff84daf46e8318a88080df208e7bb8e9",
+      "confere_com_36_contratos": true,
+      "localizadores": {
+        "LSTMEncoderDireto": {
+          "linha": 599,
+          "fim_linha": 651
+        },
+        "treinar_rede_direta": {
+          "linha": 703,
+          "fim_linha": 811
+        }
+      }
+    },
+    {
+      "arquivo_zip": "documentacao/organizacao/fontes_antes_reorganizacao_20261027.zip",
+      "membro": "codigo_fonte/experimento_multirresolucao.py",
+      "sha256": "8b183561cdb674a43f0ff3be83904096e06f79da9363936e7b56f417aa4482fc",
+      "confere_com_36_contratos": true,
+      "localizadores": {
+        "criar_modelo_neural": {
+          "linha": 682,
+          "fim_linha": 725
+        },
+        "treinar_rede": {
+          "linha": 764,
+          "fim_linha": 859
+        },
+        "construir_contrato": {
+          "linha": 1126,
+          "fim_linha": 1176
+        }
+      }
+    },
+    {
+      "arquivo_zip": "documentacao/organizacao/fontes_antes_reorganizacao_20261027.zip",
+      "membro": "codigo_fonte/experimento_quantizacao_concorrentes.py",
+      "sha256": "ca56d2040cc7c0bb1ec353464b861bf75c690a9330e543272eb58ca26450769a",
+      "confere_com_36_contratos": true,
+      "localizadores": {
+        "parametros": {
+          "linha": 194,
+          "fim_linha": 234
+        },
+        "construir_contrato": {
+          "linha": 237,
+          "fim_linha": 257
+        },
+        "nova_rede": {
+          "linha": 260,
+          "fim_linha": 275
+        }
+      }
+    }
+  ],
+  "sha256_zip_fontes": "ce50b893ad72cb91f330b318aab31f1d38f470d39a04e1b21dd1f061c48efb8b",
+  "contratos": [
+    {
+      "regime": "atual",
+      "tarefa": "hourly_72_extension",
+      "modelo": "transformer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/contrato_execucao.json",
+      "sha256_arquivo": "370c1239ef04a28ea55d2982de111f41a504311270070acc437cc7d703ac6b9b",
+      "sha256_contrato": "c70026bca1cfd25f222399c47bd7013fe8895d873442dbc1f4d07e4b01298cb3",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          42
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "atual",
+      "tarefa": "hourly_72_extension",
+      "modelo": "informer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/contrato_execucao.json",
+      "sha256_arquivo": "c9d655f0e57eb192362c7a2569d14b84cd72be4fcbb06d3dd6c87c5e43e448f6",
+      "sha256_contrato": "11d770dfa3dc4cd68d599f5ecf74bd01b66a8c30d1b48c49f349fba0e283c5c3",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          42
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "atual",
+      "tarefa": "hourly_72_extension",
+      "modelo": "lstm",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/lstm/contrato_execucao.json",
+      "sha256_arquivo": "814edae1b935f6e0ae65c61ef119604e9a7f0dbbb32fec7bc8e67ce14079923a",
+      "sha256_contrato": "a27eb61eaf3d6a5113912237a24a54cc46463086775a3fa6c636ea4f8c7ff17e",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          42
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "atual",
+      "tarefa": "daily_30",
+      "modelo": "transformer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/contrato_execucao.json",
+      "sha256_arquivo": "3a8b4e1ad7890be9450b82c8598a9b0fc1d7c74b19451867b80b6041fb553145",
+      "sha256_contrato": "4d963bb1237a8f29ac2e80094854dfcbdab564263573d72d2e5b43078b2fac60",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "atual",
+      "tarefa": "daily_30",
+      "modelo": "informer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/informer/contrato_execucao.json",
+      "sha256_arquivo": "ed26528764ead4f34e6e14fb6adb843194fa114fedc398ad7ce108ca8e9fbd0c",
+      "sha256_contrato": "f72067f2864e33ee2013b579279bdabc824f1aedbab45a227ed4afc258745490",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "atual",
+      "tarefa": "daily_30",
+      "modelo": "lstm",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/lstm/contrato_execucao.json",
+      "sha256_arquivo": "0682d3fe5cd5f68b6e764b37c18ec89d0d8d25ea177f4e52d8345d42fba5b3d1",
+      "sha256_contrato": "5b6041e21770178e59c059387cb0aeeff950796ebe39d986b45f049289451999",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_1",
+      "modelo": "transformer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/transformer/contrato_execucao.json",
+      "sha256_arquivo": "c17b3fca3bb44386053639269014c513b8e894da580d10356451f6012460b4c5",
+      "sha256_contrato": "e0ad9a6d81528dacaac038deab857e8a267f2cb89da1302bf183a77bfe2fa21d",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_1",
+      "modelo": "informer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/informer/contrato_execucao.json",
+      "sha256_arquivo": "51632de562e0bb6a22cdfe994a76cffab48b39844f23c7fcd993ffa658a4e3b2",
+      "sha256_contrato": "9d173d2814657b7d55e740e5562c3d11ae67cdcfed298d1835ce9493d4b8e18a",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_1",
+      "modelo": "lstm",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/lstm/contrato_execucao.json",
+      "sha256_arquivo": "a895b421ed3fe8b42f4e4422ca05d09e4a44ece35c5387e3f12b89444160f691",
+      "sha256_contrato": "e802aa68bc474c6803bc9ec1afff897f56630f454a1b078efb429c7de56b8684",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_6",
+      "modelo": "transformer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/transformer/contrato_execucao.json",
+      "sha256_arquivo": "a0987faf46290c9a9039d86067683f33ffae3467be18a8019bb8cd7de2429741",
+      "sha256_contrato": "a34727c82904c58b0eaf7eb0a88f0d4a06c316537a198d3f137d705e19763e00",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_6",
+      "modelo": "informer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/informer/contrato_execucao.json",
+      "sha256_arquivo": "e8ddfadb806c15b3a0816effb7243a0b8434c366e90e60f9c0ec0c4980e4373f",
+      "sha256_contrato": "8930446977d6e731b1631a79e139bbdd09367564c85736c8731312907ab0bb3c",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "atual",
+      "tarefa": "monthly_6",
+      "modelo": "lstm",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/lstm/contrato_execucao.json",
+      "sha256_arquivo": "28a57e1c7ba760fb9f48b9dd5f0b58eb8a8318f84c2af521569a6ee49dc8518b",
+      "sha256_contrato": "0740c9cfba924236871794422608f1eefacc85f9922b5408d8676c2ee2cabb6c",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "hourly_72_extension",
+      "modelo": "transformer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/transformer/contrato_execucao.json",
+      "sha256_arquivo": "4effee602c0f21d10de815cab162637021b332289da3b9a5eaa8601d302b28c9",
+      "sha256_contrato": "73279ad9cb4401e5f1029df6e049bd2843cd2aaee964f3bfe34941db78532d51",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          42
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "hourly_72_extension",
+      "modelo": "informer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/informer/contrato_execucao.json",
+      "sha256_arquivo": "b22a1b359175481ac7e48dfa72ccf078439ecdb73666b9895b7875b76c49e930",
+      "sha256_contrato": "8d755399dfe02d3e09205082b18b52dee571aceb35392e284607e59d6e329f44",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          42
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "hourly_72_extension",
+      "modelo": "lstm",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/lstm/contrato_execucao.json",
+      "sha256_arquivo": "1dc3d995ef2a9d2284110f64e98b64aa5d919f0cbb9a874c0330ddf2a303950c",
+      "sha256_contrato": "ef134cddfc30a1a3265aa3c9c54ec91b15aedca1f16459da87b77cbc17563f59",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          42
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "daily_30",
+      "modelo": "transformer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/daily_30/transformer/contrato_execucao.json",
+      "sha256_arquivo": "30c0d1bf8147f0aeb975163819b296308568093e3e8669e19a1acfa38b095c55",
+      "sha256_contrato": "b88a0f93e6b3ae37c621e067278cdc265187a0049a28bc53c41597c3775ca128",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "daily_30",
+      "modelo": "informer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/daily_30/informer/contrato_execucao.json",
+      "sha256_arquivo": "d56c81e818686dd46be26b0d3f9f47dfa8a2554dcf1f55ffcdbf67672ec5415d",
+      "sha256_contrato": "1f03242fd6b2e6637ef1ef1022fa8de2a556dedd24795c0b072c645e78d8abe2",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "daily_30",
+      "modelo": "lstm",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/daily_30/lstm/contrato_execucao.json",
+      "sha256_arquivo": "6b219df0a028e49cc6ea0ae1a146dd729dc129a1f8536c95e0eb680dcabd42ac",
+      "sha256_contrato": "94550e2791c4c8f3fe37fa204ad240b0c0465f26bea83573d67e487750b6217e",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "monthly_1",
+      "modelo": "transformer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_1/transformer/contrato_execucao.json",
+      "sha256_arquivo": "0b31ffeba7dff69323bd9155c997d2f77aa3d07c71e5e4e4464a4ee4c2421f98",
+      "sha256_contrato": "7ad97424d0f987630148922ce3cbe82027a6ca5d17e0179fbc6952a7e89c60d8",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "monthly_1",
+      "modelo": "informer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_1/informer/contrato_execucao.json",
+      "sha256_arquivo": "b52415c64d69106f0e0c20c89d0005b0749078bbb3d2bea17144d6844d735d53",
+      "sha256_contrato": "6782507652029ba1996d4c684948108fb3c273d247d538c4313a6209e9f4dbae",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "monthly_1",
+      "modelo": "lstm",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_1/lstm/contrato_execucao.json",
+      "sha256_arquivo": "975fb7390086596a2d22d68fed871828e8850a1edb481e45b06a7faabf8d46b2",
+      "sha256_contrato": "5e068fd8cb3199d19d0a4c52ed52b81c95eacf9eac8ac760f8113e5ea48cb0ae",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "monthly_6",
+      "modelo": "transformer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_6/transformer/contrato_execucao.json",
+      "sha256_arquivo": "bc9c1b635a869d36af27f5bd3dc1375321600ca4e4984ee6edfe9f6476666498",
+      "sha256_contrato": "00e16b17349b7424732d9e3e83f9349d375cc6786954b9db2bcaac4c500213ef",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "monthly_6",
+      "modelo": "informer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_6/informer/contrato_execucao.json",
+      "sha256_arquivo": "33d8210361dbeed40f818549aac3e23c8268f984ff1f9fa666de84cba982e1ff",
+      "sha256_contrato": "665b2d393c5af0baca40193fd4561ff76edc5665694336f53d4e0dae2b41de91",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "monthly_6",
+      "modelo": "lstm",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_6/lstm/contrato_execucao.json",
+      "sha256_arquivo": "e86caf3b335e326115710ec2046f9e6221b5a964a579120d999d0695cba83b91",
+      "sha256_contrato": "0c6777da900d30b5dc1aca531c3d1ea358a9f7af73b09489c7a23b591710b753",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "hourly_72_extension",
+      "modelo": "transformer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/transformer/contrato_execucao.json",
+      "sha256_arquivo": "03cee0e1cbf1e0c51366f110314c7ad8915cf3fe01b42eb574a057b1f4a96bfe",
+      "sha256_contrato": "7763da51f00c312722ff5368ed8968b26b4e876c0d6904eb1a2171e74ec829f8",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          42
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "hourly_72_extension",
+      "modelo": "informer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/informer/contrato_execucao.json",
+      "sha256_arquivo": "2576214f294b728f98891f11bf87253bda7c450edfd271ecff15cfa111195fa0",
+      "sha256_contrato": "e6a6ae69c93fa4f66c0c6fd96e398b3802fc1368e050335b210e24aee3f3bef7",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          42
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "hourly_72_extension",
+      "modelo": "lstm",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/lstm/contrato_execucao.json",
+      "sha256_arquivo": "f84776bde0d8690e319dfceae0820c6c5fb9b50ebc5e0f9e3ff4471a341b793b",
+      "sha256_contrato": "80424aa757ec3fb37f4bfd68aefa0b5010a02814d4f016ccf5afa2d15266e283",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          42
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "daily_30",
+      "modelo": "transformer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/daily_30/transformer/contrato_execucao.json",
+      "sha256_arquivo": "256f0b0386805206edc0247120aee8d3422d5c0add878ef5760c599a3f39e2cc",
+      "sha256_contrato": "94827cd0cfa62063240cf58fa6d06e3b16e6470e327fcc8cb115030cc0d2104c",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "daily_30",
+      "modelo": "informer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/daily_30/informer/contrato_execucao.json",
+      "sha256_arquivo": "c8e513b111185bab0874df18e5c463a5b8fce8fbe4115942d1577d7689b59748",
+      "sha256_contrato": "640dda77c119999b5c4ca5dce5ff19c41dc8217ceff6822dbd22d7d4a869432b",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "daily_30",
+      "modelo": "lstm",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/daily_30/lstm/contrato_execucao.json",
+      "sha256_arquivo": "367de2674f65509b02a85f53bdc5dd31c86b1c303afc634cf5757ca6be835d7c",
+      "sha256_contrato": "6982a365d68aa95c972ddb7831949c112376b48eb18f18739eba8440c0a04fd2",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cuda",
+      "cuda": "12.6",
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 128,
+        "max_epocas": 30,
+        "paciencia": 5,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "monthly_1",
+      "modelo": "transformer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_1/transformer/contrato_execucao.json",
+      "sha256_arquivo": "853a419dc04bcbf9fc32f5326bb9adfeda90a907e8209adca61a3d93dab0c8ae",
+      "sha256_contrato": "c95ca7394b7cbfa8258f32f957e42afffe8c019c50af0be08d7155d7fdcfadf6",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "monthly_1",
+      "modelo": "informer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_1/informer/contrato_execucao.json",
+      "sha256_arquivo": "2370c7ec011ef13fb7db229d60ba80481e276544d8cc83b686de0ce2d717e055",
+      "sha256_contrato": "e3173dcd2e4a3e9109acc57253b31a851b2786ada978f958d18a40cdc51d80f5",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "monthly_1",
+      "modelo": "lstm",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_1/lstm/contrato_execucao.json",
+      "sha256_arquivo": "e35c004c6513e6bafe5fde48fd00790cf2c50abb88cfe14f9dfe08f1d0276c7f",
+      "sha256_contrato": "0ee4632f465a4e3e6b72c88e7b63f2c691b50eecebf15fd56256a6314179d609",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "monthly_6",
+      "modelo": "transformer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_6/transformer/contrato_execucao.json",
+      "sha256_arquivo": "14bfdee466a2415e7a62cd785624e779e6db7796635fab0a05b844ee00ea39ee",
+      "sha256_contrato": "71838ab9105c0c0cc981b4a6d8b4302acdf893cb3103ea6879450b31fd9e440b",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "monthly_6",
+      "modelo": "informer",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_6/informer/contrato_execucao.json",
+      "sha256_arquivo": "da0b05adb88cef66287a54eeb37f74fee3ace0c326f5263cce3c78b0b8febaba",
+      "sha256_contrato": "361490ebf266a8c0a758e0a44ac522dbd1733552ec9e1e2ba88860ef6699e6b5",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "monthly_6",
+      "modelo": "lstm",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_6/lstm/contrato_execucao.json",
+      "sha256_arquivo": "04a24ce899ecd3dd7a60e72ea8e141284b18681aaa86a630b751fc92b250f4f6",
+      "sha256_contrato": "227282dc36809e12ca170a83a2fd910f069bccf9df92d3b91fa5d7c7c88da493",
+      "hash_conteudo_conferido": true,
+      "dispositivo": "cpu",
+      "cuda": null,
+      "pacotes": {
+        "numpy": "2.4.4",
+        "pandas": "3.0.3",
+        "torch": "2.12.0+cu126"
+      },
+      "configuracao_treino": {
+        "batch_size": 32,
+        "max_epocas": 300,
+        "paciencia": 30,
+        "sementes": [
+          11,
+          23,
+          42,
+          67,
+          89
+        ]
+      },
+      "taxa_aprendizado": 0.001,
+      "weight_decay": 1e-05
+    }
+  ],
+  "registros_gpu_explicitos": [
+    {
+      "regime": "atual",
+      "tarefa": "hourly_72_extension",
+      "modelo": "transformer",
+      "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda": "12.6",
+      "cudnn": 91002,
+      "torch": "2.12.0+cu126",
+      "threads_torch": 1,
+      "algoritmos_deterministicos": true,
+      "warn_only": false,
+      "cublas_workspace_config": ":4096:8",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/contrato_execucao.json"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "hourly_72_extension",
+      "modelo": "informer",
+      "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda": "12.6",
+      "cudnn": 91002,
+      "torch": "2.12.0+cu126",
+      "threads_torch": 1,
+      "algoritmos_deterministicos": true,
+      "warn_only": false,
+      "cublas_workspace_config": ":4096:8",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/informer/contrato_execucao.json"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "daily_30",
+      "modelo": "transformer",
+      "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda": "12.6",
+      "cudnn": 91002,
+      "torch": "2.12.0+cu126",
+      "threads_torch": 1,
+      "algoritmos_deterministicos": true,
+      "warn_only": false,
+      "cublas_workspace_config": ":4096:8",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/contrato_execucao.json"
+    },
+    {
+      "regime": "atual",
+      "tarefa": "daily_30",
+      "modelo": "informer",
+      "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda": "12.6",
+      "cudnn": 91002,
+      "torch": "2.12.0+cu126",
+      "threads_torch": 1,
+      "algoritmos_deterministicos": true,
+      "warn_only": false,
+      "cublas_workspace_config": ":4096:8",
+      "path": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/informer/contrato_execucao.json"
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "hourly_72_extension",
+      "modelo": "transformer",
+      "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda": "12.6",
+      "cudnn": 91002,
+      "torch": "2.12.0+cu126",
+      "threads_torch": 1,
+      "algoritmos_deterministicos": true,
+      "warn_only": false,
+      "cublas_workspace_config": ":4096:8",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/transformer/contrato_execucao.json"
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "hourly_72_extension",
+      "modelo": "informer",
+      "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda": "12.6",
+      "cudnn": 91002,
+      "torch": "2.12.0+cu126",
+      "threads_torch": 1,
+      "algoritmos_deterministicos": true,
+      "warn_only": false,
+      "cublas_workspace_config": ":4096:8",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/informer/contrato_execucao.json"
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "daily_30",
+      "modelo": "transformer",
+      "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda": "12.6",
+      "cudnn": 91002,
+      "torch": "2.12.0+cu126",
+      "threads_torch": 1,
+      "algoritmos_deterministicos": true,
+      "warn_only": false,
+      "cublas_workspace_config": ":4096:8",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/daily_30/transformer/contrato_execucao.json"
+    },
+    {
+      "regime": "historico_1998_2022",
+      "tarefa": "daily_30",
+      "modelo": "informer",
+      "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda": "12.6",
+      "cudnn": 91002,
+      "torch": "2.12.0+cu126",
+      "threads_torch": 1,
+      "algoritmos_deterministicos": true,
+      "warn_only": false,
+      "cublas_workspace_config": ":4096:8",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/daily_30/informer/contrato_execucao.json"
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "hourly_72_extension",
+      "modelo": "transformer",
+      "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda": "12.6",
+      "cudnn": 91002,
+      "torch": "2.12.0+cu126",
+      "threads_torch": 1,
+      "algoritmos_deterministicos": true,
+      "warn_only": false,
+      "cublas_workspace_config": ":4096:8",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/transformer/contrato_execucao.json"
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "hourly_72_extension",
+      "modelo": "informer",
+      "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda": "12.6",
+      "cudnn": 91002,
+      "torch": "2.12.0+cu126",
+      "threads_torch": 1,
+      "algoritmos_deterministicos": true,
+      "warn_only": false,
+      "cublas_workspace_config": ":4096:8",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/informer/contrato_execucao.json"
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "daily_30",
+      "modelo": "transformer",
+      "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda": "12.6",
+      "cudnn": 91002,
+      "torch": "2.12.0+cu126",
+      "threads_torch": 1,
+      "algoritmos_deterministicos": true,
+      "warn_only": false,
+      "cublas_workspace_config": ":4096:8",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/daily_30/transformer/contrato_execucao.json"
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "tarefa": "daily_30",
+      "modelo": "informer",
+      "gpu": "NVIDIA GeForce GTX 1650 with Max-Q Design",
+      "cuda": "12.6",
+      "cudnn": 91002,
+      "torch": "2.12.0+cu126",
+      "threads_torch": 1,
+      "algoritmos_deterministicos": true,
+      "warn_only": false,
+      "cublas_workspace_config": ":4096:8",
+      "path": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/daily_30/informer/contrato_execucao.json"
+    }
+  ],
+  "checagens": {
+    "contratos_lidos": 36,
+    "hashes_conteudo_contratos_conferem": true,
+    "quatro_fontes_arquivadas_conferem_em_todos_contratos": true,
+    "config_lstm32_1_embedding8_comum": true,
+    "sem_treinamento_ou_instalacao": true
+  }
+}

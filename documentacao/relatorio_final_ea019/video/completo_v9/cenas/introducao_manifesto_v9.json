@@ -1,0 +1,200 @@
+{
+  "duration": 52,
+  "cues": [
+    [
+      0,
+      5,
+      "GHI mede a potência solar recebida por unidade de área horizontal."
+    ],
+    [
+      5,
+      11,
+      "Aqui temos um metro quadrado. A unidade do GHI é watt por metro quadrado."
+    ],
+    [
+      11,
+      18,
+      "A direta normal, DNI, é medida num plano perpendicular aos raios, como este."
+    ],
+    [
+      18,
+      25,
+      "Na horizontal, projetamos a luz direta pelo cosseno do ângulo com a vertical e somamos a luz difusa."
+    ],
+    [
+      25,
+      30,
+      "Durante o dia, a luz varia. À noite, o GHI solar zera."
+    ],
+    [
+      30,
+      34,
+      "As nuvens alteram a luz e a curva."
+    ],
+    [
+      34,
+      38,
+      "O histórico registra esses ciclos e as mudanças da atmosfera."
+    ],
+    [
+      38,
+      42,
+      "A previsão tenta antecipar a continuação dessa curva."
+    ],
+    [
+      42,
+      47,
+      "Prever o recurso solar pode apoiar estimativas de geração fotovoltaica."
+    ],
+    [
+      47,
+      52,
+      "Essas estimativas podem orientar compras de energia, armazenamento e horários de consumo."
+    ]
+  ],
+  "qa_times": [
+    7,
+    14,
+    20.5,
+    26.5,
+    28.5,
+    31.8,
+    39,
+    44.5,
+    49.5
+  ],
+  "geometry": {
+    "sun_direction_unit": [
+      -0.5,
+      -0.40703195333480835,
+      0.7644115090370178
+    ],
+    "zenith_angle_degrees": 40.14533436689989,
+    "dni_plane_normal_dot_sun_direction": 1.0,
+    "ray_and_plane_tangent_angle_degrees": 90,
+    "horizontal_direct_projection_factor": 0.7644115090370178,
+    "diffuse_horizontal_refers_to_receiver_not_ray_direction": true
+  },
+  "reference_area_m2": 1,
+  "factory_generic": true,
+  "pv_applications_potential_only": true,
+  "electrical_generation_measured": false,
+  "sources": [
+    "https://pvpmc.sandia.gov/modeling-guide/1-weather-design-inputs/irradiance-insolation/global-horizontal-irradiance/",
+    "https://power.larc.nasa.gov/docs/methodology/data/derived/derived-parameters/"
+  ],
+  "v6_original_files_modified": false,
+  "module": "intro_v9",
+  "start": 0,
+  "end": 52,
+  "version": 9,
+  "chapter": "introducao",
+  "fps": 30,
+  "frames": 1560,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "resolution_percentage": 100,
+  "samples": 16,
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\introducao_3d_v9.mp4",
+  "render_complete": true,
+  "source_fingerprint": "6f934809098e97d893ddcac6fcce9190eb85d9f90a5b03ab743b5af2883ac2f6",
+  "source_hashes": {
+    "codigo_fonte/video_ea019/director_v9.py": "60d34e82b64ff49d93109ee63eb0603f5704a34e5e0dc5f9422774ac3d693ec0",
+    "codigo_fonte/video_ea019/config_v9.py": "1112a80bf6b4eca0068554ee86bf76348230c62839b7d9ca26d58dce25c7139d",
+    "codigo_fonte/video_ea019/common_v7.py": "4867b4c429436a2e602de07bbbc1d16d6644506917894c8dca3588dc7e4e3587",
+    "codigo_fonte/video_ea019/blender_pilot.py": "d048c56e8559a13e2eb462299421e618817bdd0fee186412172e75843ad3207d",
+    "codigo_fonte/video_ea019/factory_site_v6.py": "9ef07ea1f676d8970a2d007c0bf2918ddf63c7cad3b0ad00d3ac0d7723d23c55",
+    "codigo_fonte/video_ea019/retime_v9.py": "a3bac65c3d4843b6037277d3434168390cbe7607b5b725cbadca8b5a6f47c96a",
+    "codigo_fonte/video_ea019/intro_v9.py": "0da38a342f2624a973f21afe99890297d2a54a1bfb80de7e914bf3d7b3f41adc",
+    "codigo_fonte/video_ea019/director_intro_v6.py": "bcded5efb12cb6f9391538d8228ed3d6b8d0ebe64c6874ca1359abc9c219676c",
+    "codigo_fonte/video_ea019/solar_atmosphere_v6.py": "17335b73e44a53fe55124eb989a74659edc8d406bcb1f049d51f47b00e3d8625",
+    "codigo_fonte/video_ea019/common_v4.py": "ac9959a26b2947d60ca8b6a99d24d9c8a8889980b7557d1de9413058ae3d5ea8",
+    "documentacao/relatorio_final_ea019/video/completo_v8/fontes_resultados_v8.json": "de42f0a99982bca8f029a92f91df7694a3855b1a44614ba6deeb8aa2d7b56494",
+    "documentacao/relatorio_final_ea019/video/revisao_ate_plano22_v7/referencias/ghi_distributions_training.json": "c6e42479d11556b890fb607bf2f5d90a65fc066103c566512f21f1509dcda6bc",
+    "codigo_fonte/video_ea019/assets/americas_land.json": "7a8a908caa2b1a512bcc287083cfbcd21e332f4e006a67b1b5ef14d380327278",
+    "codigo_fonte/video_ea019/assets/localities_report.json": "47df949b87d15c04e0931fdc020bf8cfb63278937f8dfd6ad2dd401e44a0b4a7"
+  },
+  "blocks": [
+    {
+      "first_frame": 1,
+      "last_frame": 300,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\introducao\\f00001_00300.mp4",
+      "bytes": 11592896,
+      "sha256": "a1d3fe234eba7ccda425bcfe595280fe5dcd2e10ba4f63b430946490461089a9",
+      "source_fingerprint": "6f934809098e97d893ddcac6fcce9190eb85d9f90a5b03ab743b5af2883ac2f6",
+      "reused": false
+    },
+    {
+      "first_frame": 301,
+      "last_frame": 600,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\introducao\\f00301_00600.mp4",
+      "bytes": 8800392,
+      "sha256": "f8e032ecf56b4dca72d5e0e45223ce2a01e1a9d00b2bb2b14a087328665abca0",
+      "source_fingerprint": "6f934809098e97d893ddcac6fcce9190eb85d9f90a5b03ab743b5af2883ac2f6",
+      "reused": false
+    },
+    {
+      "first_frame": 601,
+      "last_frame": 900,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\introducao\\f00601_00900.mp4",
+      "bytes": 8811128,
+      "sha256": "75cb6378e534eed2d36af7100bcdabfcdb198d59a2db4a7108be1e91367ae4e8",
+      "source_fingerprint": "6f934809098e97d893ddcac6fcce9190eb85d9f90a5b03ab743b5af2883ac2f6",
+      "reused": false
+    },
+    {
+      "first_frame": 901,
+      "last_frame": 1200,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\introducao\\f00901_01200.mp4",
+      "bytes": 7621981,
+      "sha256": "b72d284d627e47e9b33d2edaf3f2c45bdacfbe561a9656e469a0eea23653f14c",
+      "source_fingerprint": "6f934809098e97d893ddcac6fcce9190eb85d9f90a5b03ab743b5af2883ac2f6",
+      "reused": false
+    },
+    {
+      "first_frame": 1201,
+      "last_frame": 1500,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\introducao\\f01201_01500.mp4",
+      "bytes": 14393295,
+      "sha256": "f7d338b99d2a417fef5ea2d10f6320d5d1535cef2ab776f6e950ab8f97067705",
+      "source_fingerprint": "6f934809098e97d893ddcac6fcce9190eb85d9f90a5b03ab743b5af2883ac2f6",
+      "reused": false
+    },
+    {
+      "first_frame": 1501,
+      "last_frame": 1560,
+      "frame_count": 60,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\introducao\\f01501_01560.mp4",
+      "bytes": 3151017,
+      "sha256": "6027fd673133c6e2724481aab4234b945ddc10aa54601183688845bbcb3b8f3a",
+      "source_fingerprint": "6f934809098e97d893ddcac6fcce9190eb85d9f90a5b03ab743b5af2883ac2f6",
+      "reused": false
+    }
+  ],
+  "raw_verification": {
+    "path": "documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\introducao_3d_v9.mp4",
+    "bytes": 54370207,
+    "sha256": "bd95b0d153fff68285f2399962cb186524ac6c5943cbbcfc31fb1bce5446446e",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frame_count": 1560,
+    "duration_seconds": 52,
+    "codec": "H.264",
+    "audio_tracks": 0,
+    "full_decode_errors": 0
+  },
+  "gpu": {
+    "renderer": "Intel(R) Arc(TM) B390 GPU",
+    "vendor": "Intel",
+    "backend": "OPENGL",
+    "engine": "BLENDER_EEVEE_NEXT"
+  }
+}

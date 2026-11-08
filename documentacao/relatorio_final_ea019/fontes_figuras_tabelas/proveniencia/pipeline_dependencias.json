@@ -1,0 +1,1773 @@
+{
+  "scope": "Report only: historical authoring/revisions and dependencies. No video source, no model execution, no report rebuilding performed.",
+  "status": "Read-only source and audit inspection; generated only this inventory JSON.",
+  "order_basis": "Input/output filenames, source assertions, stage documentation and published audit hashes; within-stage helper order may require the original audit instructions.",
+  "current_artifacts": {
+    "docx": {
+      "path": "documentacao/relatorio_final_ea019/Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.docx",
+      "sha256": "e087a0942cbbb744c9bfbc6efbccd6a869fa914bf4b5ab2f7dc602263fa3ae7b",
+      "matches_stage11": true
+    },
+    "pdf": {
+      "path": "documentacao/relatorio_final_ea019/Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.pdf",
+      "sha256": "5798b2ae3925d273c751ad95d9166eb14f1f6e6a399120cb4430f3b9b517880a",
+      "matches_stage12": true,
+      "pages": 37
+    },
+    "pre_link_pdf_sha256": "97b500b484aec0bf4d336ee2b351858e1e7f8fff59cb6969f09f722b63edc807",
+    "current_pdf_link": "https://youtu.be/XuWWDDLRIOg",
+    "retained_structure": {
+      "figure_captions": 9,
+      "tables": 17,
+      "native_equations": 7,
+      "references": 16
+    }
+  },
+  "stages": [
+    {
+      "order": 1,
+      "id": "base_report",
+      "purpose": "Initial institutional DOCX, native tables/equations and first generated charts.",
+      "scripts": [
+        "tmp/relatorio_final_ea019/build_report.py",
+        "tmp/relatorio_final_ea019/make_figures.py",
+        "tmp/relatorio_final_ea019/rasterize_figures.cjs"
+      ],
+      "inputs": [
+        "tmp/relatorio_final_ea019/modelo_referencia.docx",
+        "tmp/relatorio_final_ea019/evidencias_disciplina.json",
+        "tmp/relatorio_final_ea019/texto_fundamentacao.json",
+        "tmp/relatorio_final_ea019/texto_resultados.json",
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/metricas_teste_modelos_disciplina.csv",
+        "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv"
+      ],
+      "outputs_or_effects": [
+        "Original DOCX and tmp/relatorio_final_ea019/figuras/*.{svg,png}"
+      ],
+      "notes": "Historical state, not the current report. Template logos are retained assets, not generated drawings.",
+      "evidence": []
+    },
+    {
+      "order": 2,
+      "id": "article_visual_revision",
+      "purpose": "Create methodological diagrams and real-data profiles; rebuild comparative charts and local MAE map; prepare revised builder.",
+      "scripts": [
+        "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+        "tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py",
+        "tmp/relatorio_final_ea019/revisao_artigo/make_localidade_heatmap.py",
+        "tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs",
+        "tmp/relatorio_final_ea019/revisao_artigo/rasterize_localidade.cjs",
+        "tmp/relatorio_final_ea019/revisao_artigo/prepare_revision.py",
+        "tmp/relatorio_final_ea019/build_report_revisado.py",
+        "tmp/relatorio_final_ea019/revisao_artigo/patch_final_note.py"
+      ],
+      "inputs": [
+        "The two discipline CSV files from stage1",
+        "dados/brutos/localidades_ev/byd_camacari.csv",
+        "dados/brutos/localidades_ev_horario/nsrdb_ghi_horaria_2024.csv.gz",
+        "resultados/quantizacao_todos_modelos_20260929/atual/{tarefa}/{modelo}/{variante}/metricas_por_localidade_teste.csv",
+        "artigos/revista_unificado/figures/mapa_contexto_geografico.png",
+        "tmp/relatorio_final_ea019/build_report.py"
+      ],
+      "outputs_or_effects": [
+        "tmp/relatorio_final_ea019/revisao_artigo/figuras/*",
+        "tmp/relatorio_final_ea019/revisao_artigo/figuras_comparativas/*",
+        "tmp/relatorio_final_ea019/revisao_artigo/11_mae_localidades.{svg,png}",
+        "Historical revised DOCX"
+      ],
+      "notes": "prepare_revision.py is a source-to-source patcher with exact-string assertions. make_diagrams copies the archived map PNG; its original generator is documented separately.",
+      "evidence": [
+        "tmp/relatorio_final_ea019/revisao_artigo/artifact_revision.md",
+        "tmp/relatorio_final_ea019/revisao_artigo/verification_final.json"
+      ]
+    },
+    {
+      "order": 3,
+      "id": "complete_revision",
+      "purpose": "Expand text, identification and reference article material while retaining audited tables.",
+      "scripts": [
+        "tmp/relatorio_final_ea019/revisao_completa/prepare_complete.py",
+        "tmp/relatorio_final_ea019/build_report_completo.py",
+        "tmp/relatorio_final_ea019/revisao_completa/curvas/make_reference_profiles.py",
+        "tmp/relatorio_final_ea019/revisao_completa/curvas/rasterize_reference.cjs",
+        "tmp/relatorio_final_ea019/ajuste_titulo/adjust_title.py"
+      ],
+      "inputs": [
+        "tmp/relatorio_final_ea019/build_report_revisado.py",
+        "tmp/relatorio_final_ea019/revisao_completa/revisao_editorial.json",
+        "tmp/relatorio_final_ea019/texto_resultados.json",
+        "resultados/artigo_revista_unificado/revisao_20260907/perfis_sete_dias.csv",
+        "resultados/artigo_revista_unificado/revisao_20260907/metricas_perfis_sete_dias.csv",
+        "Figures and discipline inputs from previous stages"
+      ],
+      "outputs_or_effects": [
+        "Historical Relatorio_Final_GHI_Transformer_Informer_LSTM_Revisado.docx",
+        "Article-reference curves (historical figure later removed)"
+      ],
+      "notes": "Historical state had13figures/15tables. It must not be mistaken for the final9figures/17tables. Article TimesNet/DilatedRNN curves are reference material, not forecasts of the three report models.",
+      "evidence": [
+        "tmp/relatorio_final_ea019/revisao_completa/verification_final.json"
+      ]
+    },
+    {
+      "order": 4,
+      "id": "first_layout_compaction",
+      "purpose": "Compact the historical revised report before the TCC prose revisions.",
+      "scripts": [
+        "tmp/revisao_final_20261028/compactar_relatorio.py",
+        "tmp/revisao_final_20261028/ajustar_quebras_finais.py",
+        "tmp/revisao_final_20261028/finalizar_compactacao.py"
+      ],
+      "inputs": [
+        "Historical Relatorio_Final_GHI_Transformer_Informer_LSTM_Revisado.docx",
+        "tmp/revisao_final_20261028/compactacao/antes_compactacao.docx"
+      ],
+      "outputs_or_effects": [
+        "Compacted historical revised report"
+      ],
+      "notes": "Layout changes, not new numeric experiment results.",
+      "evidence": []
+    },
+    {
+      "order": 5,
+      "id": "tcc_editorial_revision",
+      "purpose": "Create the TCC-named draft from the revised report, preserving retained results.",
+      "scripts": [
+        "tmp/revisao_relatorio/revisar_tcc.py",
+        "tmp/revisao_relatorio/atualizar_metadados.py"
+      ],
+      "inputs": [
+        "Historical Relatorio_Final_GHI_Transformer_Informer_LSTM_Revisado.docx",
+        "tmp/revisao_relatorio/parecer_editorial.json",
+        "tmp/revisao_relatorio/parecer_baselines_clipping.json",
+        "tmp/revisao_relatorio/parecer_treinamento.json"
+      ],
+      "outputs_or_effects": [
+        "Historical Relatorio_Final_GHI_Transformer_Informer_LSTM_TCC.docx"
+      ],
+      "notes": "Uses exact paragraph indices/source shape; original source snapshots are required.",
+      "evidence": []
+    },
+    {
+      "order": 6,
+      "id": "tcc_scientific_corrections",
+      "purpose": "Correct prose, architecture spelling and reproducibility tables; create selection-loss diagnostic from frozen logs.",
+      "scripts": [
+        "tmp/revisao_relatorio/rodada2/preparar_reprodutibilidade.py",
+        "tmp/revisao_relatorio/rodada2/preparar_diagrama.cjs",
+        "tmp/revisao_relatorio/rodada2/figuras/gerar_diagnostico_treinamento.py",
+        "tmp/revisao_relatorio/rodada2/figuras/rasterizar_diagnostico.cjs",
+        "tmp/revisao_relatorio/rodada2/editar_tcc.py",
+        "tmp/revisao_relatorio/rodada2/ajuste_subtitulo.py",
+        "tmp/revisao_relatorio/rodada2/ajuste_titulacao.py",
+        "tmp/revisao_relatorio/rodada2/ajuste_fonte_figura1.py",
+        "tmp/revisao_relatorio/rodada2/acabamento_final.py",
+        "tmp/revisao_relatorio/rodada2/finalizar_metadados.py",
+        "tmp/revisao_relatorio/rodada2/publicar_pdf.py"
+      ],
+      "inputs": [
+        "Historical Relatorio_Final_GHI_Transformer_Informer_LSTM_TCC.docx",
+        "tmp/revisao_relatorio/rodada2/literatura.json",
+        "tmp/revisao_relatorio/rodada2/reprodutibilidade.json",
+        "tmp/revisao_relatorio/rodada2/figuras/sugestao_caption_treinamento.json",
+        "tmp/relatorio_final_ea019/revisao_artigo/figuras/03_arquiteturas.svg",
+        "resultados/quantizacao_todos_modelos_20260929/{regime}/{tarefa}/{modelo}/contrato_execucao.json",
+        "resultados/quantizacao_todos_modelos_20260929/{regime}/{tarefa}/{modelo}/selecao_congelada.json",
+        "resultados/quantizacao_todos_modelos_20260929/{regime}/{tarefa}/{modelo}/{variante}/selecao/seed{semente}.{csv,json}",
+        "documentacao/organizacao/fontes_antes_reorganizacao_20261027.zip"
+      ],
+      "outputs_or_effects": [
+        "Historical Relatorio_Final_GHI_Transformer_Informer_LSTM_TCC_Corrigido.docx",
+        "Training selection diagnostic and tables16/17 derived from archived contracts/implementation"
+      ],
+      "notes": "No new model training is performed. Numerical environment/parameter verification depends on archived contracts and the historical source ZIP. Helper scripts have their own substep preconditions.",
+      "evidence": []
+    },
+    {
+      "order": 7,
+      "id": "general_revision_20261031",
+      "purpose": "Integrate reviewed prose and citations, remove redundant figures and renumber the survivors.",
+      "scripts": [
+        "tmp/revisao_geral_20261031/revisar_documento.py",
+        "tmp/revisao_geral_20261031/verificar_independente.py"
+      ],
+      "inputs": [
+        "Historical Relatorio_Final_GHI_Transformer_Informer_LSTM_TCC_Corrigido.docx",
+        "tmp/revisao_geral_20261031/inventario_fonte.json",
+        "tmp/revisao_geral_20261031/revisao_fluidez.json",
+        "tmp/revisao_geral_20261031/revisao_cientifica.json",
+        "tmp/revisao_geral_20261031/revisao_citacoes.json"
+      ],
+      "outputs_or_effects": [
+        "Historical Relatorio_Final_GHI_Transformer_Informer_LSTM_TCC_Revisado.docx",
+        "9figures,17tables,7nativeequations"
+      ],
+      "notes": "Manifest explicitly records removal of original figures3,4,8,12; historical image numbers differ from final captions.",
+      "evidence": [
+        "tmp/revisao_geral_20261031/manifesto_final.json"
+      ]
+    },
+    {
+      "order": 8,
+      "id": "model_comparison_focus",
+      "purpose": "Rename/focus the retained final report around model comparison without inventing new metrics.",
+      "scripts": [
+        "tmp/foco_modelos_20261101/reescrever.py",
+        "tmp/foco_modelos_20261101/finalizar.py",
+        "tmp/foco_modelos_20261101/registrar_qa_final.py"
+      ],
+      "inputs": [
+        "Historical Relatorio_Final_GHI_Transformer_Informer_LSTM_TCC_Revisado.docx",
+        "tmp/foco_modelos_20261101/inventario_fonte.json",
+        "tmp/foco_modelos_20261101/propostas_introducao.json",
+        "tmp/foco_modelos_20261101/propostas_metodos.json",
+        "tmp/foco_modelos_20261101/propostas_resultados.json",
+        "tmp/foco_modelos_20261101/propostas_compactacao.json"
+      ],
+      "outputs_or_effects": [
+        "Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.docx/pdf"
+      ],
+      "notes": "Publication guards require exact earlier source hashes. Do not execute historical cleanup steps from the archived publication source.",
+      "evidence": []
+    },
+    {
+      "order": 9,
+      "id": "final_layout_compaction",
+      "purpose": "Adjust figure sizes, positions and spacing, retaining text, table contents and image bytes.",
+      "scripts": [
+        "tmp/compactacao_layout_20261101/ajustar_layout.py",
+        "tmp/compactacao_layout_20261101/auditar_texto_independente.py",
+        "tmp/compactacao_layout_20261101/finalizar_layout.py"
+      ],
+      "inputs": [
+        "tmp/compactacao_layout_20261101/antes.docx",
+        "tmp/compactacao_layout_20261101/antes.pdf",
+        "tmp/compactacao_layout_20261101/inventario_fonte.json",
+        "tmp/compactacao_layout_20261101/auditoria_texto_independente.json"
+      ],
+      "outputs_or_effects": [
+        "Canonical report reduced from37to36pages"
+      ],
+      "notes": "Changes final figures4,6,7geometry and figure6placement. No data/wording changes.",
+      "evidence": [
+        "tmp/compactacao_layout_20261101/verificacao_final.json"
+      ]
+    },
+    {
+      "order": 10,
+      "id": "appendix_c_simplification",
+      "purpose": "Simplify appendix prose while preserving all17tables,7equations and9figures.",
+      "scripts": [
+        "tmp/apendice_c_simplificado_20261101/simplificar.py",
+        "tmp/apendice_c_simplificado_20261101/auditar_independente.py",
+        "tmp/apendice_c_simplificado_20261101/verificar_e_registrar.py",
+        "tmp/apendice_c_simplificado_20261101/publicar.py"
+      ],
+      "inputs": [
+        "tmp/apendice_c_simplificado_20261101/antes.docx",
+        "tmp/apendice_c_simplificado_20261101/antes.pdf",
+        "tmp/apendice_c_simplificado_20261101/inventario_fonte.json",
+        "tmp/apendice_c_simplificado_20261101/proposta.json",
+        "tmp/apendice_c_simplificado_20261101/qa_visual.json"
+      ],
+      "outputs_or_effects": [
+        "Canonical report reduced from36to35pages"
+      ],
+      "notes": "Source patch is index/hash guarded; current final DOCX is not a valid input for rerunning this patch.",
+      "evidence": [
+        "tmp/apendice_c_simplificado_20261101/verificacao_final.json"
+      ]
+    },
+    {
+      "order": 11,
+      "id": "pretextual_pages",
+      "purpose": "Insert dedication and acknowledgments, update contents/page fields; last full DOCX/PDF publication.",
+      "scripts": [
+        "tmp/pre_textuais_20261101/preparar.py",
+        "tmp/pre_textuais_20261101/inserir.py",
+        "tmp/pre_textuais_20261101/auditar_independente.py",
+        "tmp/pre_textuais_20261101/verificar.py",
+        "tmp/pre_textuais_20261101/publicar.py"
+      ],
+      "inputs": [
+        "tmp/pre_textuais_20261101/antes.docx",
+        "tmp/pre_textuais_20261101/antes.pdf",
+        "tmp/pre_textuais_20261101/inventario_fonte.json",
+        "tmp/pre_textuais_20261101/conteudo.json",
+        "tmp/pre_textuais_20261101/qa_visual.json"
+      ],
+      "outputs_or_effects": [
+        "Canonical DOCX and pre-link PDF,37pages"
+      ],
+      "notes": "This publication is proven by hashes of the retained DOCX and PDF before the YouTube-link patch.",
+      "evidence": [
+        "tmp/pre_textuais_20261101/verificacao_final.json"
+      ]
+    },
+    {
+      "order": 12,
+      "id": "youtube_cover_link",
+      "purpose": "Final PDF-only insertion of observed YouTube URL as printed text and clickable URI.",
+      "scripts": [
+        "tmp/pdfs/youtube_link/insert_youtube_cover_link.py"
+      ],
+      "inputs": [
+        "tmp/pdfs/youtube_link/backup_antes_link_20261105.pdf",
+        "https://youtu.be/XuWWDDLRIOg",
+        "C:/Windows/Fonts/times.ttf"
+      ],
+      "outputs_or_effects": [
+        "Current canonical PDF with37pages and clickable cover link"
+      ],
+      "notes": "PDFskill authoring marker was executed once before this edit. Script creates a separate output; root then published after visual QA. Current DOCX remains the stage11file with blank video placeholder. Pages2–37and the cover outside the link region are pixel-identical.",
+      "evidence": [
+        "documentacao/relatorio_final_ea019/Verificacao_Link_Video_YouTube_v13.json"
+      ]
+    }
+  ],
+  "associated_map_generator": {
+    "scripts": [
+      "codigo_fonte/coleta_e_preparacao/contexto_geografico.py",
+      "codigo_fonte/coleta_e_preparacao/localidades.py"
+    ],
+    "local_import": "codigo_fonte.coleta_e_preparacao.localidades.LOCALIDADES_EV and distancia_haversine_km",
+    "external_data_directory": "dados/externos/koppen_geiger/Beck_KG_V1",
+    "external_data_files": [
+      "Beck_KG_V1_present_0p0083.tif",
+      "Beck_KG_V1_present_conf_0p0083.tif",
+      "Beck_KG_V1_present_0p5.tif",
+      "legend.txt"
+    ],
+    "external_data_source": "Beck et al.2018, Scientific Data, DOI10.1038/sdata.2018.214",
+    "report_asset": "artigos/revista_unificado/figures/mapa_contexto_geografico.png",
+    "article_png_sha256": "aece8c4ab312c551f7011fc7aa06cbe51d87e6c70439c5787a02e7ab46a7f8c8",
+    "report_staging_png_sha256": "aece8c4ab312c551f7011fc7aa06cbe51d87e6c70439c5787a02e7ab46a7f8c8",
+    "current_results_png_sha256": "52a5ea1859b8c295db1ea18d1fef4ebb8b1d70fd2f7be21bd646003922073118",
+    "article_and_report_staging_bytes_equal": true,
+    "current_results_png_is_same_image": false,
+    "known_sizes": {
+      "article_and_report_staging": [
+        3000,
+        2010
+      ],
+      "current_results_output": [
+        4800,
+        2700
+      ]
+    },
+    "generator_default_geometry": {
+      "figsize_inches": [
+        10,
+        6.7
+      ],
+      "dpi": 300,
+      "expected_pixels": [
+        3000,
+        2010
+      ]
+    },
+    "note": "Exact final report asset is the archived article PNG (equal by hash to report staging copy). The current geographic generator default geometry matches this archived image (10x6.7in at300dpi); the stored output under resultados is4800x2700 and differs materially, so it must not be substituted as the exact final image. Association with source is supported, but binary regeneration was not executed/proven. Preserve archived PNG and upstream raster data/locality coordinates."
+  },
+  "retained_external_assets": [
+    {
+      "asset": "UNICAMP and FEEC header logos",
+      "source": "Institutional DOCX template/header parts",
+      "handling": "Retained image bytes; not generated by Python or AI."
+    },
+    {
+      "asset": "Geographical climate map",
+      "source": "Archived project article map, originally generated from Beck_KG_V1 rasters and canonical locality coordinates",
+      "handling": "Copy into report with article attribution."
+    }
+  ],
+  "helper_scripts": [
+    "tmp/relatorio_final_ea019/render_docx_word.py",
+    "tmp/relatorio_final_ea019/word_export_readonly.ps1",
+    "tmp/relatorio_final_ea019/update_docx_fields.ps1",
+    "tmp/relatorio_final_ea019/transplant_updated_document.py",
+    "tmp/revisao_relatorio/render_docx_word.py",
+    "tmp/revisao_relatorio/word_export_readonly.ps1",
+    "tmp/revisao_relatorio/update_docx_fields.ps1",
+    "tmp/revisao_relatorio/transplant_updated_document.py",
+    "tmp/revisao_relatorio/rodada2/render_docx_word.py",
+    "tmp/revisao_relatorio/rodada2/word_export_readonly.ps1",
+    "tmp/revisao_relatorio/rodada2/update_docx_fields.ps1",
+    "tmp/revisao_relatorio/rodada2/transplant_updated_document.py",
+    "tmp/revisao_geral_20261031/render_docx_word.py",
+    "tmp/revisao_geral_20261031/word_export_readonly.ps1",
+    "tmp/revisao_geral_20261031/update_docx_fields.ps1",
+    "tmp/revisao_geral_20261031/transplant_updated_document.py"
+  ],
+  "script_inventory": [
+    {
+      "path": "tmp/relatorio_final_ea019/build_report.py",
+      "exists": true,
+      "bytes": 53195,
+      "sha256": "5927d206b0817e18cd71c298050c25cdaf0a67e849542baf15a1726ec9bf4d21",
+      "imports": [
+        "copy",
+        "docx",
+        "docx.enum.style",
+        "docx.enum.table",
+        "docx.enum.text",
+        "docx.oxml",
+        "docx.oxml.ns",
+        "docx.shared",
+        "hashlib",
+        "json",
+        "lxml",
+        "pandas",
+        "pathlib",
+        "re",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/make_figures.py",
+      "exists": true,
+      "bytes": 11860,
+      "sha256": "122c1a000f71fb350bc5a5a698ed43fcdfe5d94139d888e13a8c1e7b50e1ea1f",
+      "imports": [
+        "html",
+        "json",
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/rasterize_figures.cjs",
+      "exists": true,
+      "bytes": 507,
+      "sha256": "b0507bb2ef03f5077b66f5d30d871a8059a2e055d5948cd99dfacbd5e8d62cdc",
+      "imports": [
+        "C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp",
+        "fs",
+        "path"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+      "exists": true,
+      "bytes": 12563,
+      "sha256": "69b4fc2587cd3e1fbb617cb7e71fc4df4af2f5d4782b5815873bbf53cec641ad",
+      "imports": [
+        "PIL",
+        "html",
+        "json",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "shutil"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py",
+      "exists": true,
+      "bytes": 12314,
+      "sha256": "3e375f41cd4723fb6c217a72d8e8c858e5a61f80d5b94e3454b1a47ea44d0b81",
+      "imports": [
+        "html",
+        "json",
+        "math",
+        "pandas",
+        "pathlib"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_artigo/make_localidade_heatmap.py",
+      "exists": true,
+      "bytes": 6062,
+      "sha256": "8740fe8abd00d6035d9471d728ebdfac92c1d41a149cdf53e9513544cd623015",
+      "imports": [
+        "hashlib",
+        "html",
+        "json",
+        "math",
+        "pandas",
+        "pathlib"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs",
+      "exists": true,
+      "bytes": 539,
+      "sha256": "b69861a3df9e0ca1b567f406cf067c33a1fdae057710b77bddd5e9a36372a71a",
+      "imports": [
+        "C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp",
+        "fs",
+        "path"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_artigo/rasterize_localidade.cjs",
+      "exists": true,
+      "bytes": 407,
+      "sha256": "3576b6d80b13ccd81740c5d9bb44b024a7eb9e6b29c1cdb44b0bad460fb6d5dd",
+      "imports": [
+        "C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp",
+        "path"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_artigo/prepare_revision.py",
+      "exists": true,
+      "bytes": 11135,
+      "sha256": "9bba844e1c323c4b15b091f33dd2e21cfcff99d750cb6b30362c2048a43cf11f",
+      "imports": [
+        "pathlib",
+        "shutil"
+      ],
+      "local_imports": [],
+      "script_literal_references": [
+        "build_report.py",
+        "build_report_revisado.py"
+      ],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/build_report_revisado.py",
+      "exists": true,
+      "bytes": 57760,
+      "sha256": "9ca6a04bd7ee70225002822ec6fef497fce7efdad8eb0ccc4872796673129d83",
+      "imports": [
+        "copy",
+        "docx",
+        "docx.enum.style",
+        "docx.enum.table",
+        "docx.enum.text",
+        "docx.oxml",
+        "docx.oxml.ns",
+        "docx.shared",
+        "hashlib",
+        "json",
+        "lxml",
+        "pandas",
+        "pathlib",
+        "re",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_artigo/patch_final_note.py",
+      "exists": true,
+      "bytes": 1275,
+      "sha256": "1f719f38ca08a5e612f0c211d1021897e3bbb11da7091350c9f0363ac79fd85c",
+      "imports": [
+        "hashlib",
+        "json",
+        "lxml",
+        "pathlib",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_completa/prepare_complete.py",
+      "exists": true,
+      "bytes": 14886,
+      "sha256": "28d6f728fc009443e19f16c559e440f2ea45bdbc585556ecb8451040893a9a9c",
+      "imports": [
+        "hashlib",
+        "json",
+        "pathlib",
+        "shutil"
+      ],
+      "local_imports": [],
+      "script_literal_references": [
+        "build_report_completo.py",
+        "build_report_revisado.py"
+      ],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/build_report_completo.py",
+      "exists": true,
+      "bytes": 65639,
+      "sha256": "04b017f30d9f4f009a228b2712d0f66f33c64b125e1d60024c3dbeb5116d8af0",
+      "imports": [
+        "copy",
+        "docx",
+        "docx.enum.style",
+        "docx.enum.table",
+        "docx.enum.text",
+        "docx.oxml",
+        "docx.oxml.ns",
+        "docx.shared",
+        "hashlib",
+        "json",
+        "lxml",
+        "pandas",
+        "pathlib",
+        "re",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_completa/curvas/make_reference_profiles.py",
+      "exists": true,
+      "bytes": 6715,
+      "sha256": "85c2f71e94d937147e4ad6f64d681178c328578e8b31bd9df311be8fe73baec0",
+      "imports": [
+        "hashlib",
+        "html",
+        "json",
+        "numpy",
+        "pandas",
+        "pathlib"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/revisao_completa/curvas/rasterize_reference.cjs",
+      "exists": true,
+      "bytes": 418,
+      "sha256": "3938d6c525dc0dc36fa22620baa853f84fa65c6a84ff87b4f99fdcea873f6397",
+      "imports": [
+        "C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp",
+        "path"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/ajuste_titulo/adjust_title.py",
+      "exists": true,
+      "bytes": 4809,
+      "sha256": "553f11f57bb7d8a1cd06e39fd21abb65de4f0936fb25516057728b4aea23c823",
+      "imports": [
+        "docx",
+        "docx.shared",
+        "hashlib",
+        "json",
+        "pathlib",
+        "shutil",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [
+        "revisao_completa/prepare_complete.py"
+      ],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/revisao_final_20261028/compactar_relatorio.py",
+      "exists": true,
+      "bytes": 3425,
+      "sha256": "8845c2ca99cdfdb5a6315db2f83c06c2f0e913df4ea0bb78b05a33269eef35af",
+      "imports": [
+        "hashlib",
+        "json",
+        "lxml",
+        "pathlib",
+        "shutil",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/revisao_final_20261028/ajustar_quebras_finais.py",
+      "exists": true,
+      "bytes": 1991,
+      "sha256": "0bc4b06745aaa3b318adc15f8296fe3f29be4b74172888152b4a7e3179e8889d",
+      "imports": [
+        "json",
+        "lxml",
+        "pathlib",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/revisao_final_20261028/finalizar_compactacao.py",
+      "exists": true,
+      "bytes": 5469,
+      "sha256": "e3096fae9316315c70d2e7d6c64150ecf12c58aa2495d71aecf7bb46f429e162",
+      "imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "lxml",
+        "os",
+        "pathlib",
+        "pypdf",
+        "shutil",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/revisao_relatorio/revisar_tcc.py",
+      "exists": true,
+      "bytes": 32104,
+      "sha256": "506545a89445059699cf98e4f07cd4e98f8f599f3e619e4c7c0f22c452af6822",
+      "imports": [
+        "copy",
+        "datetime",
+        "hashlib",
+        "json",
+        "lxml",
+        "pathlib",
+        "sys",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/revisao_relatorio/atualizar_metadados.py",
+      "exists": true,
+      "bytes": 1645,
+      "sha256": "9356a9c1bf49725200e4b3ef50d2366e948e050c3c3c08bcdc34b29786c30670",
+      "imports": [
+        "json",
+        "lxml",
+        "os",
+        "pathlib",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/preparar_reprodutibilidade.py",
+      "exists": true,
+      "bytes": 17636,
+      "sha256": "f3ea33140827cc238d7df0f2a0b25c82005325eb2bf26bf3d993bb7683367f9e",
+      "imports": [
+        "ast",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "subprocess",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [
+        "codigo_fonte/experimento_horario_timesnet.py",
+        "codigo_fonte/experimento_multirresolucao.py",
+        "codigo_fonte/experimento_quantizacao_concorrentes.py",
+        "codigo_fonte/modelos_baselines_adicionais.py"
+      ],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/preparar_diagrama.cjs",
+      "exists": true,
+      "bytes": 870,
+      "sha256": "4d2c9bfe06f331372c16f74db93394936df974035e2a73999b5cf70baf7f801d",
+      "imports": [
+        "C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp",
+        "fs",
+        "path"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/figuras/gerar_diagnostico_treinamento.py",
+      "exists": true,
+      "bytes": 13634,
+      "sha256": "8d89006e176f34878b47fb141a23185a91819f0967036b67b8f3c8ba6b35fe64",
+      "imports": [
+        "csv",
+        "hashlib",
+        "html",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys"
+      ],
+      "local_imports": [],
+      "script_literal_references": [
+        "rasterizar_diagnostico.cjs"
+      ],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/figuras/rasterizar_diagnostico.cjs",
+      "exists": true,
+      "bytes": 545,
+      "sha256": "03c2ace09ec87ca702500aae80dcbc09899ddd464bbe46df9a9e107b89511e91",
+      "imports": [
+        "C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp",
+        "fs"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/editar_tcc.py",
+      "exists": true,
+      "bytes": 30827,
+      "sha256": "ac1d88428ab0ce51dc78b617ad0c7b2b35ad9cb5974235ef87d186cdfbd84aae",
+      "imports": [
+        "copy",
+        "datetime",
+        "decimal",
+        "docx",
+        "docx.enum.table",
+        "docx.enum.text",
+        "docx.opc.constants",
+        "docx.oxml",
+        "docx.oxml.ns",
+        "docx.shared",
+        "hashlib",
+        "json",
+        "lxml",
+        "pathlib",
+        "re",
+        "sys",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/ajuste_subtitulo.py",
+      "exists": true,
+      "bytes": 5123,
+      "sha256": "0bf44f792ba014fae13be80e68442461058be97a1c4753eab4bde19df0ae3b8c",
+      "imports": [
+        "PIL",
+        "docx",
+        "hashlib",
+        "io",
+        "json",
+        "pathlib",
+        "pdf2image",
+        "pypdf",
+        "sys",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/ajuste_titulacao.py",
+      "exists": true,
+      "bytes": 4112,
+      "sha256": "6524ba123e70cd5090468c59e6a33bb762cd134d097c1dd5e874fa19cb25e84b",
+      "imports": [
+        "PIL",
+        "docx",
+        "hashlib",
+        "io",
+        "json",
+        "pathlib",
+        "pdf2image",
+        "pypdf",
+        "sys",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/ajuste_fonte_figura1.py",
+      "exists": true,
+      "bytes": 4421,
+      "sha256": "1f0ac39224087c878fc17aa78e167ca068e91685d94290c9bdd7d9e6ba17ba30",
+      "imports": [
+        "PIL",
+        "docx",
+        "hashlib",
+        "io",
+        "json",
+        "pathlib",
+        "pdf2image",
+        "pypdf",
+        "sys",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/acabamento_final.py",
+      "exists": true,
+      "bytes": 2296,
+      "sha256": "32e5aa33d763dd418031063969010535b1502d6b662ea71f07bf96e68f08ece0",
+      "imports": [
+        "json",
+        "lxml",
+        "os",
+        "pathlib",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/finalizar_metadados.py",
+      "exists": true,
+      "bytes": 1695,
+      "sha256": "c35a0ffddf5ff6c2eb9e961ee1c697b092e58b563ceceb677a92a03b7d009a37",
+      "imports": [
+        "json",
+        "lxml",
+        "os",
+        "pathlib",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/publicar_pdf.py",
+      "exists": true,
+      "bytes": 2285,
+      "sha256": "3960ea122744f936c1e0df15e2585b04db97a104060f6735411fc413bcde0ba1",
+      "imports": [
+        "PIL",
+        "docx",
+        "hashlib",
+        "json",
+        "pathlib",
+        "pdf2image",
+        "pypdf",
+        "sys"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_geral_20261031/revisar_documento.py",
+      "exists": true,
+      "bytes": 15001,
+      "sha256": "fbf0b28e579059be33a845380a4161bb7720cc2d2b7442044770c7a59cac245e",
+      "imports": [
+        "copy",
+        "hashlib",
+        "json",
+        "lxml",
+        "pathlib",
+        "re",
+        "sys",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/revisao_geral_20261031/verificar_independente.py",
+      "exists": true,
+      "bytes": 19663,
+      "sha256": "e8168f9a4f346092e0210138b250dd23105e8576dbfc1b8acc8cfe632b564014",
+      "imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "pathlib",
+        "posixpath",
+        "pypdf",
+        "re",
+        "sys",
+        "unicodedata",
+        "xml.etree",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/foco_modelos_20261101/reescrever.py",
+      "exists": true,
+      "bytes": 9624,
+      "sha256": "e92cd88a5de6d2286378b898653d6fd67ee8774394c061a0e76c15633ae13545",
+      "imports": [
+        "copy",
+        "csv",
+        "datetime",
+        "hashlib",
+        "json",
+        "lxml",
+        "pathlib",
+        "re",
+        "sys",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/foco_modelos_20261101/finalizar.py",
+      "exists": true,
+      "bytes": 5154,
+      "sha256": "6cdaf64fec733cf021fe6f680efe93adb67b11bf15ea1d224b9e8ac2226c80cf",
+      "imports": [
+        "PIL",
+        "hashlib",
+        "json",
+        "lxml",
+        "pathlib",
+        "pypdf",
+        "re",
+        "shutil",
+        "sys",
+        "unicodedata",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/foco_modelos_20261101/registrar_qa_final.py",
+      "exists": true,
+      "bytes": 1475,
+      "sha256": "cd9b34d4a4e4060a0494279eb4c30950246fa8d0395950040bd21521d308cd83",
+      "imports": [
+        "hashlib",
+        "json",
+        "pathlib"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/compactacao_layout_20261101/ajustar_layout.py",
+      "exists": true,
+      "bytes": 4304,
+      "sha256": "2625d516a2eb72a780f36189b59e846e81e03471176084115870db1299de23a1",
+      "imports": [
+        "hashlib",
+        "json",
+        "lxml",
+        "pathlib",
+        "re",
+        "sys",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/compactacao_layout_20261101/auditar_texto_independente.py",
+      "exists": true,
+      "bytes": 13232,
+      "sha256": "5b34379513c646d713dee2ee0493fcff65b2c40f5a379464919121f676e0c067",
+      "imports": [
+        "collections",
+        "copy",
+        "hashlib",
+        "io",
+        "json",
+        "lxml",
+        "pathlib",
+        "re",
+        "sys",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/compactacao_layout_20261101/finalizar_layout.py",
+      "exists": true,
+      "bytes": 3568,
+      "sha256": "605cc58470e23a8c6cfec6d54b8cb0055ef301d44cef30f7678ff6998397af5d",
+      "imports": [
+        "PIL",
+        "hashlib",
+        "json",
+        "lxml",
+        "pathlib",
+        "pypdf",
+        "re",
+        "shutil",
+        "unicodedata",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/apendice_c_simplificado_20261101/simplificar.py",
+      "exists": true,
+      "bytes": 4254,
+      "sha256": "2270059083a5e8af405e5b9d1580e672ce2a6254be3200491ae67cb2e5c708a2",
+      "imports": [
+        "copy",
+        "hashlib",
+        "json",
+        "lxml",
+        "pathlib",
+        "sys",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/apendice_c_simplificado_20261101/auditar_independente.py",
+      "exists": true,
+      "bytes": 9229,
+      "sha256": "f16d157f66d6ef36eb3f044ddd90eaf625d3172aeaf3eb3ca01e8564c0c7ceca",
+      "imports": [
+        "collections",
+        "copy",
+        "hashlib",
+        "io",
+        "json",
+        "lxml",
+        "pathlib",
+        "re",
+        "sys",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/apendice_c_simplificado_20261101/verificar_e_registrar.py",
+      "exists": true,
+      "bytes": 7046,
+      "sha256": "b6e5b6a49a49b9c5edb239c729452faae1266f69233a4ce4167c5717659c7e7d",
+      "imports": [
+        "PIL",
+        "hashlib",
+        "html",
+        "json",
+        "lxml",
+        "pathlib",
+        "pypdf",
+        "re",
+        "sys",
+        "unicodedata",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/apendice_c_simplificado_20261101/publicar.py",
+      "exists": true,
+      "bytes": 1669,
+      "sha256": "f75e728ae8fa55ff35fb00ae449609753f887f36ee977949bc9d91e950d47a25",
+      "imports": [
+        "hashlib",
+        "json",
+        "pathlib",
+        "shutil"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/pre_textuais_20261101/preparar.py",
+      "exists": true,
+      "bytes": 1178,
+      "sha256": "50f9000a2d58345718c14664de3122f742ff64f990141d65a11ff88d33bfb544",
+      "imports": [
+        "hashlib",
+        "json",
+        "lxml",
+        "pathlib",
+        "shutil",
+        "sys",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/pre_textuais_20261101/inserir.py",
+      "exists": true,
+      "bytes": 4393,
+      "sha256": "cf416e2b08ee6a2babc61d3ead37918957bbb08df9509806fe07df6d5e84032c",
+      "imports": [
+        "hashlib",
+        "json",
+        "lxml",
+        "pathlib",
+        "sys",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/pre_textuais_20261101/auditar_independente.py",
+      "exists": true,
+      "bytes": 8928,
+      "sha256": "dd69f720c1ef27b93585a66170720dc10664707f3924f171952f79047e359f51",
+      "imports": [
+        "copy",
+        "hashlib",
+        "io",
+        "json",
+        "lxml",
+        "pathlib",
+        "re",
+        "sys",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/pre_textuais_20261101/verificar.py",
+      "exists": true,
+      "bytes": 4135,
+      "sha256": "6a02d7f434fdfabc86c3a2653ede2d1114ba3ca85aae573ad18b3edbc72e269f",
+      "imports": [
+        "PIL",
+        "hashlib",
+        "json",
+        "lxml",
+        "pathlib",
+        "pypdf",
+        "re",
+        "sys",
+        "unicodedata",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/pre_textuais_20261101/publicar.py",
+      "exists": true,
+      "bytes": 1467,
+      "sha256": "7d1c700b390dc512bce97ed5ec421280d4f127ac30876d3f27bb1b41b3e22bbb",
+      "imports": [
+        "hashlib",
+        "json",
+        "pathlib",
+        "shutil"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/pdfs/youtube_link/insert_youtube_cover_link.py",
+      "exists": true,
+      "bytes": 5444,
+      "sha256": "ba57e59f6112a413bc70c92aead3940c227457efc70311693d0d7c65cd45f91f",
+      "imports": [
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib",
+        "pymupdf",
+        "re",
+        "sys",
+        "urllib.parse"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "codigo_fonte/coleta_e_preparacao/contexto_geografico.py",
+      "exists": true,
+      "bytes": 26793,
+      "sha256": "fd8ddc3f067d83fed989c0c926c79462a0600f99e82df6e7c55ded56006d73e6",
+      "imports": [
+        "__future__",
+        "codigo_fonte.coleta_e_preparacao.localidades",
+        "dataclasses",
+        "hashlib",
+        "matplotlib",
+        "matplotlib.colors",
+        "matplotlib.patches",
+        "matplotlib.pyplot",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "rasterio",
+        "rasterio.windows",
+        "re",
+        "typing"
+      ],
+      "local_imports": [
+        "codigo_fonte.coleta_e_preparacao.localidades"
+      ],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "codigo_fonte/coleta_e_preparacao/localidades.py",
+      "exists": true,
+      "bytes": 6720,
+      "sha256": "ab325cf26249f851a11758728700f288635b115c3d3eeb91120c185b1f9564d1",
+      "imports": [
+        "__future__",
+        "math",
+        "pandas"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/render_docx_word.py",
+      "exists": true,
+      "bytes": 2495,
+      "sha256": "10a6ae96c12f143f044fb76fdaccbcb5cf47a3f35e6163788e1f6bf5dd6faf70",
+      "imports": [
+        "importlib.util",
+        "json",
+        "os",
+        "pathlib",
+        "signal",
+        "subprocess",
+        "sys"
+      ],
+      "local_imports": [],
+      "script_literal_references": [
+        "render_docx.py",
+        "word_export_readonly.ps1"
+      ],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/word_export_readonly.ps1",
+      "exists": true,
+      "bytes": 2381,
+      "sha256": "fe821f942c7dc18e091a1d11fa0a6f357b40138ec14a569fe700f340b0aa76b4",
+      "imports": [],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/update_docx_fields.ps1",
+      "exists": true,
+      "bytes": 7225,
+      "sha256": "fe3514becc4053fbd03b9b1c5d1029332098997b3e6082cd55853f2889617151",
+      "imports": [],
+      "local_imports": [],
+      "script_literal_references": [
+        "transplant_updated_document.py"
+      ],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/relatorio_final_ea019/transplant_updated_document.py",
+      "exists": true,
+      "bytes": 13372,
+      "sha256": "3dfb3c779e7aa07e6c15d49ddd478b5df5bf6c0067a100212fcb9b89059604cb",
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "lxml",
+        "os",
+        "pathlib",
+        "posixpath",
+        "unicodedata",
+        "urllib.parse",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_relatorio/render_docx_word.py",
+      "exists": true,
+      "bytes": 2548,
+      "sha256": "fca4c5e576c4a2da4c3265cfebb0af7b95c3b05e92012ce2488e4008eab0e916",
+      "imports": [
+        "importlib.util",
+        "json",
+        "os",
+        "pathlib",
+        "signal",
+        "subprocess",
+        "sys"
+      ],
+      "local_imports": [],
+      "script_literal_references": [
+        "render_docx.py",
+        "word_export_readonly.ps1"
+      ],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_relatorio/word_export_readonly.ps1",
+      "exists": true,
+      "bytes": 2439,
+      "sha256": "15a1f1ecec0f5467334c360097749650dffc82f0a4ff8ca1a16190eb94758559",
+      "imports": [],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/revisao_relatorio/update_docx_fields.ps1",
+      "exists": true,
+      "bytes": 7355,
+      "sha256": "ade5985d922b2fc5f515838f7fcda4f453849353c118f46933ed2a10d6031ce7",
+      "imports": [],
+      "local_imports": [],
+      "script_literal_references": [
+        "transplant_updated_document.py"
+      ],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_relatorio/transplant_updated_document.py",
+      "exists": true,
+      "bytes": 13611,
+      "sha256": "3a70f5c4365d361c1c479fc484559b31b02974ffc85c309a4e9df5aea8202f6a",
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "lxml",
+        "os",
+        "pathlib",
+        "posixpath",
+        "unicodedata",
+        "urllib.parse",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/render_docx_word.py",
+      "exists": true,
+      "bytes": 2548,
+      "sha256": "fca4c5e576c4a2da4c3265cfebb0af7b95c3b05e92012ce2488e4008eab0e916",
+      "imports": [
+        "importlib.util",
+        "json",
+        "os",
+        "pathlib",
+        "signal",
+        "subprocess",
+        "sys"
+      ],
+      "local_imports": [],
+      "script_literal_references": [
+        "render_docx.py",
+        "word_export_readonly.ps1"
+      ],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/word_export_readonly.ps1",
+      "exists": true,
+      "bytes": 2439,
+      "sha256": "15a1f1ecec0f5467334c360097749650dffc82f0a4ff8ca1a16190eb94758559",
+      "imports": [],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/update_docx_fields.ps1",
+      "exists": true,
+      "bytes": 7355,
+      "sha256": "ade5985d922b2fc5f515838f7fcda4f453849353c118f46933ed2a10d6031ce7",
+      "imports": [],
+      "local_imports": [],
+      "script_literal_references": [
+        "transplant_updated_document.py"
+      ],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_relatorio/rodada2/transplant_updated_document.py",
+      "exists": true,
+      "bytes": 13611,
+      "sha256": "3a70f5c4365d361c1c479fc484559b31b02974ffc85c309a4e9df5aea8202f6a",
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "lxml",
+        "os",
+        "pathlib",
+        "posixpath",
+        "unicodedata",
+        "urllib.parse",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_geral_20261031/render_docx_word.py",
+      "exists": true,
+      "bytes": 2548,
+      "sha256": "fca4c5e576c4a2da4c3265cfebb0af7b95c3b05e92012ce2488e4008eab0e916",
+      "imports": [
+        "importlib.util",
+        "json",
+        "os",
+        "pathlib",
+        "signal",
+        "subprocess",
+        "sys"
+      ],
+      "local_imports": [],
+      "script_literal_references": [
+        "render_docx.py",
+        "word_export_readonly.ps1"
+      ],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_geral_20261031/word_export_readonly.ps1",
+      "exists": true,
+      "bytes": 2439,
+      "sha256": "15a1f1ecec0f5467334c360097749650dffc82f0a4ff8ca1a16190eb94758559",
+      "imports": [],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": false
+    },
+    {
+      "path": "tmp/revisao_geral_20261031/update_docx_fields.ps1",
+      "exists": true,
+      "bytes": 7355,
+      "sha256": "ade5985d922b2fc5f515838f7fcda4f453849353c118f46933ed2a10d6031ce7",
+      "imports": [],
+      "local_imports": [],
+      "script_literal_references": [
+        "transplant_updated_document.py"
+      ],
+      "absolute_environment_paths_present": true
+    },
+    {
+      "path": "tmp/revisao_geral_20261031/transplant_updated_document.py",
+      "exists": true,
+      "bytes": 13611,
+      "sha256": "3a70f5c4365d361c1c479fc484559b31b02974ffc85c309a4e9df5aea8202f6a",
+      "imports": [
+        "argparse",
+        "collections",
+        "hashlib",
+        "json",
+        "lxml",
+        "os",
+        "pathlib",
+        "posixpath",
+        "unicodedata",
+        "urllib.parse",
+        "zipfile"
+      ],
+      "local_imports": [],
+      "script_literal_references": [],
+      "absolute_environment_paths_present": true
+    }
+  ],
+  "package_script_paths": [
+    "tmp/relatorio_final_ea019/build_report.py",
+    "tmp/relatorio_final_ea019/make_figures.py",
+    "tmp/relatorio_final_ea019/rasterize_figures.cjs",
+    "tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py",
+    "tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py",
+    "tmp/relatorio_final_ea019/revisao_artigo/make_localidade_heatmap.py",
+    "tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs",
+    "tmp/relatorio_final_ea019/revisao_artigo/rasterize_localidade.cjs",
+    "tmp/relatorio_final_ea019/revisao_artigo/prepare_revision.py",
+    "tmp/relatorio_final_ea019/build_report_revisado.py",
+    "tmp/relatorio_final_ea019/revisao_artigo/patch_final_note.py",
+    "tmp/relatorio_final_ea019/revisao_completa/prepare_complete.py",
+    "tmp/relatorio_final_ea019/build_report_completo.py",
+    "tmp/relatorio_final_ea019/revisao_completa/curvas/make_reference_profiles.py",
+    "tmp/relatorio_final_ea019/revisao_completa/curvas/rasterize_reference.cjs",
+    "tmp/relatorio_final_ea019/ajuste_titulo/adjust_title.py",
+    "tmp/revisao_final_20261028/compactar_relatorio.py",
+    "tmp/revisao_final_20261028/ajustar_quebras_finais.py",
+    "tmp/revisao_final_20261028/finalizar_compactacao.py",
+    "tmp/revisao_relatorio/revisar_tcc.py",
+    "tmp/revisao_relatorio/atualizar_metadados.py",
+    "tmp/revisao_relatorio/rodada2/preparar_reprodutibilidade.py",
+    "tmp/revisao_relatorio/rodada2/preparar_diagrama.cjs",
+    "tmp/revisao_relatorio/rodada2/figuras/gerar_diagnostico_treinamento.py",
+    "tmp/revisao_relatorio/rodada2/figuras/rasterizar_diagnostico.cjs",
+    "tmp/revisao_relatorio/rodada2/editar_tcc.py",
+    "tmp/revisao_relatorio/rodada2/ajuste_subtitulo.py",
+    "tmp/revisao_relatorio/rodada2/ajuste_titulacao.py",
+    "tmp/revisao_relatorio/rodada2/ajuste_fonte_figura1.py",
+    "tmp/revisao_relatorio/rodada2/acabamento_final.py",
+    "tmp/revisao_relatorio/rodada2/finalizar_metadados.py",
+    "tmp/revisao_relatorio/rodada2/publicar_pdf.py",
+    "tmp/revisao_geral_20261031/revisar_documento.py",
+    "tmp/revisao_geral_20261031/verificar_independente.py",
+    "tmp/foco_modelos_20261101/reescrever.py",
+    "tmp/foco_modelos_20261101/finalizar.py",
+    "tmp/foco_modelos_20261101/registrar_qa_final.py",
+    "tmp/compactacao_layout_20261101/ajustar_layout.py",
+    "tmp/compactacao_layout_20261101/auditar_texto_independente.py",
+    "tmp/compactacao_layout_20261101/finalizar_layout.py",
+    "tmp/apendice_c_simplificado_20261101/simplificar.py",
+    "tmp/apendice_c_simplificado_20261101/auditar_independente.py",
+    "tmp/apendice_c_simplificado_20261101/verificar_e_registrar.py",
+    "tmp/apendice_c_simplificado_20261101/publicar.py",
+    "tmp/pre_textuais_20261101/preparar.py",
+    "tmp/pre_textuais_20261101/inserir.py",
+    "tmp/pre_textuais_20261101/auditar_independente.py",
+    "tmp/pre_textuais_20261101/verificar.py",
+    "tmp/pre_textuais_20261101/publicar.py",
+    "tmp/pdfs/youtube_link/insert_youtube_cover_link.py",
+    "codigo_fonte/coleta_e_preparacao/contexto_geografico.py",
+    "codigo_fonte/coleta_e_preparacao/localidades.py",
+    "tmp/relatorio_final_ea019/render_docx_word.py",
+    "tmp/relatorio_final_ea019/word_export_readonly.ps1",
+    "tmp/relatorio_final_ea019/update_docx_fields.ps1",
+    "tmp/relatorio_final_ea019/transplant_updated_document.py",
+    "tmp/revisao_relatorio/render_docx_word.py",
+    "tmp/revisao_relatorio/word_export_readonly.ps1",
+    "tmp/revisao_relatorio/update_docx_fields.ps1",
+    "tmp/revisao_relatorio/transplant_updated_document.py",
+    "tmp/revisao_relatorio/rodada2/render_docx_word.py",
+    "tmp/revisao_relatorio/rodada2/word_export_readonly.ps1",
+    "tmp/revisao_relatorio/rodada2/update_docx_fields.ps1",
+    "tmp/revisao_relatorio/rodada2/transplant_updated_document.py",
+    "tmp/revisao_geral_20261031/render_docx_word.py",
+    "tmp/revisao_geral_20261031/word_export_readonly.ps1",
+    "tmp/revisao_geral_20261031/update_docx_fields.ps1",
+    "tmp/revisao_geral_20261031/transplant_updated_document.py"
+  ],
+  "package_small_input_paths": [
+    "dados/brutos/localidades_ev/byd_camacari.csv",
+    "documentacao/relatorio_final_ea019/Verificacao_Link_Video_YouTube_v13.json",
+    "resultados/artigo_revista_unificado/revisao_20260907/metricas_perfis_sete_dias.csv",
+    "resultados/artigo_revista_unificado/revisao_20260907/perfis_sete_dias.csv",
+    "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/classificacoes_modelos_disciplina.csv",
+    "resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina/metricas_teste_modelos_disciplina.csv",
+    "tmp/apendice_c_simplificado_20261101/inventario_fonte.json",
+    "tmp/apendice_c_simplificado_20261101/proposta.json",
+    "tmp/apendice_c_simplificado_20261101/qa_visual.json",
+    "tmp/apendice_c_simplificado_20261101/verificacao_final.json",
+    "tmp/compactacao_layout_20261101/auditoria_texto_independente.json",
+    "tmp/compactacao_layout_20261101/inventario_fonte.json",
+    "tmp/compactacao_layout_20261101/verificacao_final.json",
+    "tmp/foco_modelos_20261101/inventario_fonte.json",
+    "tmp/foco_modelos_20261101/propostas_compactacao.json",
+    "tmp/foco_modelos_20261101/propostas_introducao.json",
+    "tmp/foco_modelos_20261101/propostas_metodos.json",
+    "tmp/foco_modelos_20261101/propostas_resultados.json",
+    "tmp/pre_textuais_20261101/conteudo.json",
+    "tmp/pre_textuais_20261101/inventario_fonte.json",
+    "tmp/pre_textuais_20261101/qa_visual.json",
+    "tmp/pre_textuais_20261101/verificacao_final.json",
+    "tmp/relatorio_final_ea019/evidencias_disciplina.json",
+    "tmp/relatorio_final_ea019/revisao_artigo/artifact_revision.md",
+    "tmp/relatorio_final_ea019/revisao_artigo/verification_final.json",
+    "tmp/relatorio_final_ea019/revisao_completa/revisao_editorial.json",
+    "tmp/relatorio_final_ea019/revisao_completa/verification_final.json",
+    "tmp/relatorio_final_ea019/texto_fundamentacao.json",
+    "tmp/relatorio_final_ea019/texto_resultados.json",
+    "tmp/revisao_geral_20261031/inventario_fonte.json",
+    "tmp/revisao_geral_20261031/manifesto_final.json",
+    "tmp/revisao_geral_20261031/revisao_cientifica.json",
+    "tmp/revisao_geral_20261031/revisao_citacoes.json",
+    "tmp/revisao_geral_20261031/revisao_fluidez.json",
+    "tmp/revisao_relatorio/parecer_baselines_clipping.json",
+    "tmp/revisao_relatorio/parecer_editorial.json",
+    "tmp/revisao_relatorio/parecer_treinamento.json",
+    "tmp/revisao_relatorio/rodada2/figuras/sugestao_caption_treinamento.json",
+    "tmp/revisao_relatorio/rodada2/literatura.json",
+    "tmp/revisao_relatorio/rodada2/reprodutibilidade.json"
+  ],
+  "runtime_requirements": {
+    "python": "Python3 with pandas,numpy,python-docx,lxml,Pillow,pypdf,pymupdf; matplotlib and rasterio for original map.",
+    "node": "Node.js with sharp for SVG-to-PNG rasterization.",
+    "office": "Windows Microsoft Word COM for PDF conversion and field refresh; PowerShell helpers operate hidden Word instances.",
+    "rendering": "Bundled Poppler and the Codex documents/render_docx.py helper are referenced by wrappers; current installed paths/version may differ from hardcoded historical paths.",
+    "fonts": "Times New Roman and Arial from the original Windows installation. Font substitution changes pagination/pixels.",
+    "template": "tmp/relatorio_final_ea019/modelo_referencia.docx; header/footer/template package parts are deliberately retained."
+  },
+  "limitations": [
+    "No one-command idempotent rebuild of the current report is provided or claimed.",
+    "Patchers rely on exact earlier DOCX hashes, paragraph counts/indices and literal old text; applying them to the current DOCX will fail or would be inappropriate.",
+    "Many source paths are machine-specific or historical; builders must be adapted in an isolated copy before any replay.",
+    "Some old named production drafts were later removed. Required historical snapshots remain in temporary audit folders; their availability must be checked before replay.",
+    "A source-only ZIP cannot reproduce numeric charts without the archived CSV/JSON inputs, per-locality metrics and selection loss logs listed here and in per-element manifests.",
+    "A full replay requires retaining the project directory layout because relative imports and path-derived roots are used.",
+    "Tables mix values read from archived results with descriptive rows/labels encoded explicitly in builders or derived from audited execution contracts; source for each table belongs in the per-table manifest.",
+    "The map and institutional logos have upstream provenance and attribution requirements; do not describe all report images as newly generated artwork.",
+    "Archived article map used in the report differs in dimensions/content from the PNG currently stored under resultados. Source generator default dimensions match the article PNG, but no binary regeneration was performed; preserve the actual archived PNG in the package.",
+    "Final PDF has a clickable YouTube link added directly; current DOCX still contains the blank cover video-link field.",
+    "Historical article-reference forecast curves were later removed; their generator is included for chronology, not as evidence that those models are in the final9figures.",
+    "Do not rerun historical publication/cleanup scripts against the live production folder. Work on copied inputs, inspect renderings and compare contents before publishing."
+  ]
+}

@@ -1,0 +1,34 @@
+﻿[Script Info]
+Title: EA019 scientific animation - deterministic text overlay
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+ScaledBorderAndShadow: yes
+WrapStyle: 2
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,Segoe UI,44,&H00FBF6F3,&H00FFFFFF,&H80000000,&H80000000,0,0,0,0,100,100,0,0,3,12,0,2,110,110,80,1
+Style: Header,Segoe UI,58,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,-1,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Eyebrow,Segoe UI,24,&H00EDDD67,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,1.4,0,1,0.5,0,7,0,0,0,1
+Style: Text,Segoe UI,40,&H00FBF6F3,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.7,0,7,0,0,0,1
+Style: Small,Segoe UI,26,&H00C9B9AA,&H00FFFFFF,&HCC000000,&H00000000,0,0,0,0,100,100,0,0,1,0.5,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 10,0:00:00.00,0:00:08.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Uma entrada é o histórico de GHI: uma\Nsequência de valores, organizada no tempo.
+Dialogue: 10,0:00:08.00,0:00:11.05,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A outra entrada identifica a localidade.
+Dialogue: 10,0:00:11.05,0:00:16.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Esse número se transforma numa\Nrepresentação aprendida pela rede.
+Dialogue: 10,0:00:16.00,0:00:19.55,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Neste experimento, os modelos recebem o
+Dialogue: 10,0:00:19.55,0:00:24.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}histórico de GHI e a identificação da\Nlocalidade.
+Dialogue: 10,0:00:24.00,0:00:27.03,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Cada modelo compartilha seus parâmetros
+Dialogue: 10,0:00:27.03,0:00:32.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}entre as dez localidades. Os dados mudam;\Na estrutura é a mesma.
+Dialogue: 10,0:00:32.00,0:00:36.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Comparei quatro tarefas, em diferentes\Nescalas de tempo.
+Dialogue: 10,0:00:36.00,0:00:41.50,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Na tarefa horária, 336 horas formam duas\Nsemanas de histórico.
+Dialogue: 10,0:00:41.50,0:00:47.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A rede prevê as próximas 72 horas: três\Ndias de irradiância.
+Dialogue: 10,0:00:47.00,0:00:52.50,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Na diária, 365 valores representam um ano\Nde histórico.
+Dialogue: 10,0:00:52.50,0:00:55.05,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}A saída prevê os próximos trinta dias,
+Dialogue: 10,0:00:55.05,0:00:58.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}mantendo a separação entre passado e\Nfuturo.
+Dialogue: 10,0:00:58.00,0:01:04.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Na mensal de um passo, doze meses ajudam a\Nprever o mês seguinte.
+Dialogue: 10,0:01:04.00,0:01:10.00,Caption,,0,0,0,,{\an2\pos(960,985)\fs44\c&H00FBF6F3&\b0\fad(100,100)}Na outra mensal, uma rede própria prevê\Nseis meses. Essa análise é exploratória.

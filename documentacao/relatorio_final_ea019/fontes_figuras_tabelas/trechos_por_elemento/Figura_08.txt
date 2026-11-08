@@ -1,0 +1,120 @@
+Figura 8 — Sensibilidade do MAE à resolução de amplitude no regime atual
+Página(s) do PDF: 26
+
+TRECHOS PARA CONSULTA. Use os arquivos completos em originais/ para edição.
+Os números à esquerda são as linhas originais; este TXT não é executável.
+
+bloco Sensibilidade à quantização / save("05_quantizacao", ...)
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py
+Linhas: 81–110
+
+  81 | # Matrix: show continuous choice explicitly as well as the three quantization effects.
+  82 | b = text(20, 36, 'Variação do MAE de teste em relação à entrada contínua', 28, weight='bold')
+  83 | b += text(20, 70, 'Verde: menor erro  ·  laranja: maior erro  ·  ★ escolha na validação', 24, fill='#4E575E')
+  84 | headers = [(20, 'Modelo'), (240, 'Validação'), (580, '64 níveis'), (810, '128 níveis'), (1040, '256 níveis')]
+  85 | for x, s in headers:
+  86 |     b += text(x, 119, s, 24, 'middle' if x > 400 else 'start', weight='bold')
+  87 | for k, (t, H, label) in enumerate(TASKS):
+  88 |     y0 = 147 + k * 219
+  89 |     b += rect(10, y0 - 6, 1170, 35, '#F1F4F6')
+  90 |     b += text(20, y0 + 19, label, 24, weight='bold')
+  91 |     for j, m in enumerate(MODELS):
+  92 |         y = y0 + 42 + j * 52
+  93 |         v0 = float(row('atual', t, m, H, 'sem_quantizacao').MAE_wm2)
+  94 |         qsel = chosen('atual', t, m).variante
+  95 |         b += text(20, y + 29, m, 24, fill=COL[m], weight='bold')
+  96 |         selection = 'Controle ★' if qsel == 'sem_quantizacao' else qsel[1:] + ' níveis'
+  97 |         b += text(240, y + 29, selection, 24)
+  98 |         for c, q in enumerate(['q64', 'q128', 'q256']):
+  99 |             delta = (float(row('atual', t, m, H, q).MAE_wm2) / v0 - 1) * 100
+ 100 |             a = min(abs(delta) / 10, 1)
+ 101 |             color = (int(248-74*a), int(249-36*a), int(248-57*a)) if delta < 0 else (249, int(249-70*a), int(248-104*a))
+ 102 |             fill = '#%02x%02x%02x' % color
+ 103 |             x = 470 + c * 230
+ 104 |             b += rect(x, y, 220, 43, fill, '#64727D' if qsel == q else '#FFF', 2.2 if qsel == q else 1)
+ 105 |             value = ('★ ' if qsel == q else '') + ('+' if delta > 0 else '') + fmt(delta) + '%'
+ 106 |             b += text(x + 110, y + 29, value, 24, 'middle', weight='bold' if qsel == q else 'normal')
+ 107 |             audit['quantizacao_atual'].append({'tarefa': t, 'modelo': m, 'variante': q, 'delta_pct': delta, 'selecionado': qsel == q})
+ 108 | b += text(20, 1052, 'Δ = 100 × (MAE quantizado / MAE controle − 1). As células descrevem o teste.', 24, fill='#4E575E')
+ 109 | b += text(20, 1086, 'Intensidade de cor saturada em |Δ| ≥ 10%; valores exatos indicados em cada célula.', 23, fill='#4E575E')
+ 110 | save('05_quantizacao', b, 1110)
+
+Leitura das métricas, escolha validada e utilitários SVG.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/make_comparative_figures.py
+Linhas: 1–52
+
+   1 | from pathlib import Path
+   2 | from html import escape
+   3 | import json
+   4 | import math
+   5 | import pandas as pd
+   6 | 
+   7 | ROOT = Path(__file__).resolve().parents[3]
+   8 | OUT = Path(__file__).parent / 'figuras_comparativas'
+   9 | OUT.mkdir(parents=True, exist_ok=True)
+  10 | BASE = ROOT / 'resultados/relatorios/pdfs_resumidos_legiveis_20261027/disciplina'
+  11 | D = pd.read_csv(BASE / 'metricas_teste_modelos_disciplina.csv')
+  12 | R = pd.read_csv(BASE / 'classificacoes_modelos_disciplina.csv')
+  13 | MODELS = ['Transformer', 'Informer', 'LSTM']
+  14 | COL = {'Transformer': '#245680', 'Informer': '#B65B35', 'LSTM': '#35776C'}
+  15 | TASKS = [('hourly_72_extension', 72, 'Horária 1–72 h'), ('daily_30', 30, 'Diária 1–30 dias'),
+  16 |          ('monthly_1', 1, 'Mensal 1 passo'), ('monthly_6', 6, 'Mensal 1–6 passos · exploratório')]
+  17 | 
+  18 | def fmt(v, n=2):
+  19 |     return f'{float(v):.{n}f}'.replace('.', ',')
+  20 | 
+  21 | def text(x, y, s, size=25, anchor='start', fill='#20262B', weight='normal', rotate=None):
+  22 |     transform = f' transform="rotate({rotate} {x} {y})"' if rotate else ''
+  23 |     return f'<text x="{x}" y="{y}" font-size="{size}" text-anchor="{anchor}" fill="{fill}" font-weight="{weight}"{transform}>{escape(str(s))}</text>'
+  24 | 
+  25 | def line(x1, y1, x2, y2, stroke='#DCE1E5', width=1.5, dash=''):
+  26 |     return f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{stroke}" stroke-width="{width}" stroke-dasharray="{dash}"/>'
+  27 | 
+  28 | def rect(x, y, w, h, fill='#FFF', stroke='none', width=1.5, radius=0):
+  29 |     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="{fill}" stroke="{stroke}" stroke-width="{width}" rx="{radius}"/>'
+  30 | 
+  31 | def circle(x, y, r, fill, stroke='none', width=2.5):
+  32 |     return f'<circle cx="{x}" cy="{y}" r="{r}" fill="{fill}" stroke="{stroke}" stroke-width="{width}"/>'
+  33 | 
+  34 | def save(name, body, height):
+  35 |     (OUT / (name + '.svg')).write_text(
+  36 |         f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{height}" viewBox="0 0 1200 {height}">'
+  37 |         f'<rect width="1200" height="{height}" fill="white"/><g font-family="Arial,sans-serif">{body}</g></svg>', encoding='utf-8')
+  38 | 
+  39 | def chosen(reg, task, model):
+  40 |     z = R[(R.regime == reg) & (R.tarefa == task) & (R.modelo == model)]
+  41 |     assert len(z) == 1
+  42 |     return z.iloc[0]
+  43 | 
+  44 | def row(reg, task, model, horizon, variant):
+  45 |     z = D[(D.regime == reg) & (D.tarefa == task) & (D.modelo == model) & (D.horizonte == horizon) & (D.variante == variant)]
+  46 |     assert len(z) == 1
+  47 |     return z.iloc[0]
+  48 | 
+  49 | def nice_top(v):
+  50 |     base = 10 ** math.floor(math.log10(v))
+  51 |     return next(n * base for n in [1, 2, 4, 6, 8, 10] if n * base >= v)
+  52 | 
+
+Copia as figuras comparativas e o mapa de calor para os nomes usados no builder.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/prepare_revision.py
+Linhas: 76–79
+
+  76 | for name in ['04_mae_atual','05_quantizacao','06_historico','07_horizontes']:
+  77 |     for ext in ['png','svg']:
+  78 |         shutil.copy2(HERE/'figuras_comparativas'/f'{name}.{ext}',HERE/'figuras'/f'{name}.{ext}')
+  79 | shutil.copy2(HERE/'11_mae_localidades.png',HERE/'figuras/12_localidades.png')
+
+Rasteriza os SVGs da pasta figuras com sharp a 180 dpi.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs
+Linhas: 1–9
+
+   1 | const fs=require('fs');
+   2 | const path=require('path');
+   3 | const sharp=require('C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+   4 | (async()=>{
+   5 |   const dir=path.join(__dirname,'figuras');
+   6 |   for(const name of fs.readdirSync(dir).filter(s=>s.endsWith('.svg')))
+   7 |     await sharp(path.join(dir,name),{density:180}).png().toFile(path.join(dir,name.replace('.svg','.png')));
+   8 |   console.log('Figuras metodológicas e séries de referência renderizadas.');
+   9 | })().catch(e=>{console.error(e);process.exit(1)});

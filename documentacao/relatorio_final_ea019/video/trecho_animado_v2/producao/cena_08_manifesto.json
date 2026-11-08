@@ -1,0 +1,96 @@
+{
+  "id": 8,
+  "title": "Quantização como transformação das entradas",
+  "duration_seconds": 35,
+  "start_seconds": 245,
+  "end_seconds": 280,
+  "frame_count": 1050,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\trecho_animado_v2\\producao\\cena_08.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\trecho_animado_v2\\producao\\cena_08_3d.mp4",
+  "metadata": {
+    "object_names": [
+      "Quantização controle contínuo sem clipping",
+      "Quantização eixo amplitude de entrada",
+      "Quantização eixo amplitude representada",
+      "Quantização guia de leitura 0",
+      "Quantização guia de leitura 1",
+      "Quantização guia de leitura 2",
+      "Quantização guia de leitura 3",
+      "Quantização guia de leitura 4",
+      "Quantização guia de leitura 5",
+      "Quantização guia de leitura 6",
+      "Quantização guia de leitura 7",
+      "Quantização guia de leitura 8",
+      "Quantização limite inferior",
+      "Quantização limite superior",
+      "Quantização Q128 · diferença caso 1",
+      "Quantização Q128 · diferença caso 2",
+      "Quantização Q128 · diferença caso 3",
+      "Quantização Q128 · diferença caso 4",
+      "Quantização Q128 · entrada caso 1",
+      "Quantização Q128 · entrada caso 2",
+      "Quantização Q128 · entrada caso 3",
+      "Quantização Q128 · entrada caso 4",
+      "Quantização Q128 · níveis reais",
+      "Quantização Q128 · saída caso 1",
+      "Quantização Q128 · saída caso 2",
+      "Quantização Q128 · saída caso 3",
+      "Quantização Q128 · saída caso 4",
+      "Quantização Q256 · diferença caso 1",
+      "Quantização Q256 · diferença caso 2",
+      "Quantização Q256 · diferença caso 3",
+      "Quantização Q256 · diferença caso 4",
+      "Quantização Q256 · entrada caso 1",
+      "Quantização Q256 · entrada caso 2",
+      "Quantização Q256 · entrada caso 3",
+      "Quantização Q256 · entrada caso 4",
+      "Quantização Q256 · níveis reais",
+      "Quantização Q256 · saída caso 1",
+      "Quantização Q256 · saída caso 2",
+      "Quantização Q256 · saída caso 3",
+      "Quantização Q256 · saída caso 4",
+      "Quantização Q64 · diferença caso 1",
+      "Quantização Q64 · diferença caso 2",
+      "Quantização Q64 · diferença caso 3",
+      "Quantização Q64 · diferença caso 4",
+      "Quantização Q64 · entrada caso 1",
+      "Quantização Q64 · entrada caso 2",
+      "Quantização Q64 · entrada caso 3",
+      "Quantização Q64 · entrada caso 4",
+      "Quantização Q64 · níveis reais",
+      "Quantização Q64 · saída caso 1",
+      "Quantização Q64 · saída caso 2",
+      "Quantização Q64 · saída caso 3",
+      "Quantização Q64 · saída caso 4"
+    ],
+    "phases": [
+      {
+        "start": 0,
+        "end": 5.0,
+        "label": "Controle contínuo"
+      },
+      {
+        "start": 5.0,
+        "end": 15.0,
+        "label": "Q64"
+      },
+      {
+        "start": 15.0,
+        "end": 25.0,
+        "label": "Q128"
+      },
+      {
+        "start": 25.0,
+        "end": 35.0,
+        "label": "Q256"
+      }
+    ],
+    "axis_labels": {
+      "x": "Amplitude de entrada normalizada",
+      "z": "Amplitude representada"
+    },
+    "required_note": "Clipping + arredondamento somente na entrada de GHI. Reconstrução em float32; pesos e saídas contínuos.",
+    "visual_note": "Guias horizontais são referências de leitura, não representam a quantidade de níveis. Escadas usam 64, 128 e 256 níveis reais."
+  },
+  "rendered": false
+}

@@ -1,0 +1,207 @@
+{
+  "version": 9,
+  "duration": 54,
+  "cues": [
+    [
+      0,
+      6,
+      "As tarefas mensais foram treinadas separadamente: uma prevê um mês; a outra, seis."
+    ],
+    [
+      6,
+      13,
+      "Treinei inicialmente com dados de 2019 a 2022."
+    ],
+    [
+      13,
+      19,
+      "A validação usa 2023. O teste usa 2024."
+    ],
+    [
+      19,
+      28,
+      "Escolhi as configurações pela validação, por modelo e tarefa. A normalização respeitou os cortes temporais."
+    ],
+    [
+      28,
+      39,
+      "Depois, reiniciei o treinamento com 2019 a 2023 e avaliei as previsões em 2024."
+    ],
+    [
+      39,
+      48,
+      "Essa análise é retrospectiva: o teste de 2024 já havia sido examinado, o que limita sua independência."
+    ],
+    [
+      48,
+      54,
+      "Comparei a precisão das previsões. Velocidade e memória computacional não foram medidas."
+    ]
+  ],
+  "qa_times": [
+    3,
+    10,
+    16,
+    23,
+    33,
+    43,
+    51
+  ],
+  "global_scope_seconds": [
+    224,
+    286
+  ],
+  "monthly_first_outputs_same_target_month": true,
+  "monthly_training_objectives_distinct": [
+    1,
+    6
+  ],
+  "separate_monthly_networks": true,
+  "comparison_variable": "predictive precision",
+  "speed_measured": false,
+  "memory_measured": false,
+  "protocol": {
+    "years": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "training_initial": [
+      2019,
+      2022
+    ],
+    "validation": 2023,
+    "refit": [
+      2019,
+      2023
+    ],
+    "test": 2024,
+    "configuration_selection_visual": "symbolic candidates without invented validation error scores",
+    "fresh_training_restarted": true,
+    "prior_exposure_to_test_explicit": true,
+    "prior_exposure_not_drawn_as_training_on_test": true
+  },
+  "source_report_pages": [
+    11,
+    12,
+    13,
+    15,
+    29
+  ],
+  "source_audit": "documentacao/relatorio_final_ea019/video/completo_v8/fontes_resultados_v8.json",
+  "illustrative_geometry_not_measured_forecasts": true,
+  "object_count": 219,
+  "module": "methodology_v9",
+  "start": 236,
+  "end": 290,
+  "chapter": "metodologia",
+  "fps": 30,
+  "frames": 1620,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "resolution_percentage": 100,
+  "samples": 16,
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\metodologia_3d_v9.mp4",
+  "render_complete": true,
+  "source_fingerprint": "14f0b0e0eff0428e84e029c8e6a582329a5d827ea49d47e925946fb9732c5e2a",
+  "source_hashes": {
+    "codigo_fonte/video_ea019/director_v9.py": "60d34e82b64ff49d93109ee63eb0603f5704a34e5e0dc5f9422774ac3d693ec0",
+    "codigo_fonte/video_ea019/config_v9.py": "1112a80bf6b4eca0068554ee86bf76348230c62839b7d9ca26d58dce25c7139d",
+    "codigo_fonte/video_ea019/common_v7.py": "4867b4c429436a2e602de07bbbc1d16d6644506917894c8dca3588dc7e4e3587",
+    "codigo_fonte/video_ea019/blender_pilot.py": "d048c56e8559a13e2eb462299421e618817bdd0fee186412172e75843ad3207d",
+    "codigo_fonte/video_ea019/factory_site_v6.py": "9ef07ea1f676d8970a2d007c0bf2918ddf63c7cad3b0ad00d3ac0d7723d23c55",
+    "codigo_fonte/video_ea019/retime_v9.py": "a3bac65c3d4843b6037277d3434168390cbe7607b5b725cbadca8b5a6f47c96a",
+    "codigo_fonte/video_ea019/methodology_v9.py": "040b4f13f024039f75e623efa55cec4635ded2c975fdf64a0d8f4ff3c85ad29c",
+    "codigo_fonte/video_ea019/methodology_v8.py": "426aedaa97d1b983c860a64b32ac058161176a4c39ece0d65a54a70bf95f39d8",
+    "documentacao/relatorio_final_ea019/video/completo_v8/fontes_resultados_v8.json": "de42f0a99982bca8f029a92f91df7694a3855b1a44614ba6deeb8aa2d7b56494",
+    "documentacao/relatorio_final_ea019/video/revisao_ate_plano22_v7/referencias/ghi_distributions_training.json": "c6e42479d11556b890fb607bf2f5d90a65fc066103c566512f21f1509dcda6bc",
+    "codigo_fonte/video_ea019/assets/americas_land.json": "7a8a908caa2b1a512bcc287083cfbcd21e332f4e006a67b1b5ef14d380327278",
+    "codigo_fonte/video_ea019/assets/localities_report.json": "47df949b87d15c04e0931fdc020bf8cfb63278937f8dfd6ad2dd401e44a0b4a7"
+  },
+  "blocks": [
+    {
+      "first_frame": 1,
+      "last_frame": 300,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\metodologia\\f00001_00300.mp4",
+      "bytes": 3247089,
+      "sha256": "12bc4096f76565b124bbcb88d8f62819259ad4b5e85b6795e87a8c90c81f55a5",
+      "source_fingerprint": "14f0b0e0eff0428e84e029c8e6a582329a5d827ea49d47e925946fb9732c5e2a",
+      "reused": false
+    },
+    {
+      "first_frame": 301,
+      "last_frame": 600,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\metodologia\\f00301_00600.mp4",
+      "bytes": 2898290,
+      "sha256": "d9630276122834fad52595ff742a17eb1a5a81ea70a2b9be2641614447e5fa34",
+      "source_fingerprint": "14f0b0e0eff0428e84e029c8e6a582329a5d827ea49d47e925946fb9732c5e2a",
+      "reused": false
+    },
+    {
+      "first_frame": 601,
+      "last_frame": 900,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\metodologia\\f00601_00900.mp4",
+      "bytes": 3219673,
+      "sha256": "6b98d44a48de7d8916acd740f281d91df88e21431075e65efa38f09350844100",
+      "source_fingerprint": "14f0b0e0eff0428e84e029c8e6a582329a5d827ea49d47e925946fb9732c5e2a",
+      "reused": false
+    },
+    {
+      "first_frame": 901,
+      "last_frame": 1200,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\metodologia\\f00901_01200.mp4",
+      "bytes": 2894786,
+      "sha256": "c79a751a3a65a10381b929e16674f03ed8107e08c3583f04257c95022608cd0c",
+      "source_fingerprint": "14f0b0e0eff0428e84e029c8e6a582329a5d827ea49d47e925946fb9732c5e2a",
+      "reused": false
+    },
+    {
+      "first_frame": 1201,
+      "last_frame": 1500,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\metodologia\\f01201_01500.mp4",
+      "bytes": 3297615,
+      "sha256": "3ba333781c6f78bf702753dabaa553f75bd901f10a8775bd87e3a9d433b8423e",
+      "source_fingerprint": "14f0b0e0eff0428e84e029c8e6a582329a5d827ea49d47e925946fb9732c5e2a",
+      "reused": false
+    },
+    {
+      "first_frame": 1501,
+      "last_frame": 1620,
+      "frame_count": 120,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\metodologia\\f01501_01620.mp4",
+      "bytes": 1066950,
+      "sha256": "147a095f79f09f0dfb7cbe8e7374e85e4b29ec98ffe22e2b0906210523d6a9d8",
+      "source_fingerprint": "14f0b0e0eff0428e84e029c8e6a582329a5d827ea49d47e925946fb9732c5e2a",
+      "reused": false
+    }
+  ],
+  "raw_verification": {
+    "path": "documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\metodologia_3d_v9.mp4",
+    "bytes": 16623748,
+    "sha256": "9dbbb9d2e687114cabf74f1d3a4b01c6a178fb8bf55c84032dac183dc805375d",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frame_count": 1620,
+    "duration_seconds": 54,
+    "codec": "H.264",
+    "audio_tracks": 0,
+    "full_decode_errors": 0
+  },
+  "gpu": {
+    "renderer": "Intel(R) Arc(TM) B390 GPU",
+    "vendor": "Intel",
+    "backend": "OPENGL",
+    "engine": "BLENDER_EEVEE_NEXT"
+  }
+}

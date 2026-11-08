@@ -1,0 +1,232 @@
+{
+  "duration": 64,
+  "qa_times": [
+    5,
+    9,
+    14,
+    17.5,
+    24,
+    31,
+    36,
+    43,
+    51,
+    57,
+    62
+  ],
+  "cues": [
+    [
+      0,
+      6,
+      "Usamos leituras anteriores da região da fábrica. Este trecho real é de Camaçari."
+    ],
+    [
+      6,
+      12,
+      "Esses valores mantêm a ordem no tempo e formam parte da janela de entrada."
+    ],
+    [
+      12,
+      20,
+      "A rede também identifica a região e aprende uma representação para cada localidade."
+    ],
+    [
+      20,
+      28,
+      "Assim, entram duas informações: os valores anteriores de GHI e a região à qual pertencem."
+    ],
+    [
+      28,
+      34,
+      "Em cada tarefa, uma mesma rede compartilha parâmetros entre as dez localidades."
+    ],
+    [
+      34,
+      38,
+      "São quatro tarefas de previsão, com janelas e horizontes diferentes."
+    ],
+    [
+      38,
+      42,
+      "Na horária, entram duas semanas de histórico."
+    ],
+    [
+      42,
+      46,
+      "Prevemos os próximos três dias de irradiância."
+    ],
+    [
+      46,
+      50,
+      "Na diária, entra um ano de histórico."
+    ],
+    [
+      50,
+      54,
+      "A previsão contém os próximos trinta dias."
+    ],
+    [
+      54,
+      59,
+      "Na primeira mensal, entram doze meses e prevemos o seguinte."
+    ],
+    [
+      59,
+      64,
+      "A outra rede prevê seis meses. É uma análise exploratória."
+    ]
+  ],
+  "tasks": {
+    "hourly": [
+      336,
+      72
+    ],
+    "daily": [
+      365,
+      30
+    ],
+    "monthly1": [
+      12,
+      1
+    ],
+    "monthly6": [
+      12,
+      6
+    ]
+  },
+  "monthly_networks_trained_separately": true,
+  "real_intro_window_values": [
+    19.0,
+    193.0,
+    439.0,
+    673.5,
+    867.0,
+    1001.0
+  ],
+  "real_window_source": "documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\referencias\\ghi_distributions_training.json",
+  "named_localities_replace_ID_boxes": true,
+  "embedding_geometry_illustrative_not_actual_weights": true,
+  "task_curve_values_illustrative": true,
+  "input_output_windows_have_independent_horizontal_scales": true,
+  "module": "inputs_tasks_v9",
+  "start": 172,
+  "end": 236,
+  "version": 9,
+  "chapter": "entradas_tarefas",
+  "fps": 30,
+  "frames": 1920,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "resolution_percentage": 100,
+  "samples": 16,
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\entradas_tarefas_3d_v9.mp4",
+  "render_complete": true,
+  "source_fingerprint": "568348765b2b159cd9d796dbfe82cfc59c58b8301bb46487b5896d878eea4df8",
+  "source_hashes": {
+    "codigo_fonte/video_ea019/director_v9.py": "60d34e82b64ff49d93109ee63eb0603f5704a34e5e0dc5f9422774ac3d693ec0",
+    "codigo_fonte/video_ea019/config_v9.py": "1112a80bf6b4eca0068554ee86bf76348230c62839b7d9ca26d58dce25c7139d",
+    "codigo_fonte/video_ea019/common_v7.py": "4867b4c429436a2e602de07bbbc1d16d6644506917894c8dca3588dc7e4e3587",
+    "codigo_fonte/video_ea019/blender_pilot.py": "d048c56e8559a13e2eb462299421e618817bdd0fee186412172e75843ad3207d",
+    "codigo_fonte/video_ea019/factory_site_v6.py": "9ef07ea1f676d8970a2d007c0bf2918ddf63c7cad3b0ad00d3ac0d7723d23c55",
+    "codigo_fonte/video_ea019/retime_v9.py": "a3bac65c3d4843b6037277d3434168390cbe7607b5b725cbadca8b5a6f47c96a",
+    "codigo_fonte/video_ea019/inputs_tasks_v9.py": "1b9e91a7305c46d8cf74d2776cd8bf420157508bb0bbd5523574b40245189ac5",
+    "codigo_fonte/video_ea019/inputs_tasks_v7.py": "324a371cac8ddedafbded4d3448b08ba29d5bad24c30bbec17c37452c84c1d2c",
+    "codigo_fonte/video_ea019/geography_data_v7.py": "a7076dcf291c034e1ab32ce5336839686690ee4a17dad20cf02219bac9deb69d",
+    "documentacao/relatorio_final_ea019/video/completo_v8/fontes_resultados_v8.json": "de42f0a99982bca8f029a92f91df7694a3855b1a44614ba6deeb8aa2d7b56494",
+    "documentacao/relatorio_final_ea019/video/revisao_ate_plano22_v7/referencias/ghi_distributions_training.json": "c6e42479d11556b890fb607bf2f5d90a65fc066103c566512f21f1509dcda6bc",
+    "codigo_fonte/video_ea019/assets/americas_land.json": "7a8a908caa2b1a512bcc287083cfbcd21e332f4e006a67b1b5ef14d380327278",
+    "codigo_fonte/video_ea019/assets/localities_report.json": "47df949b87d15c04e0931fdc020bf8cfb63278937f8dfd6ad2dd401e44a0b4a7"
+  },
+  "blocks": [
+    {
+      "first_frame": 1,
+      "last_frame": 300,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\entradas_tarefas\\f00001_00300.mp4",
+      "bytes": 2369891,
+      "sha256": "c05253d78ff66d1cdde69ccb7a6a68b4612650e92ed88b578fdce9d94a5bc5cd",
+      "source_fingerprint": "568348765b2b159cd9d796dbfe82cfc59c58b8301bb46487b5896d878eea4df8",
+      "reused": false
+    },
+    {
+      "first_frame": 301,
+      "last_frame": 600,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\entradas_tarefas\\f00301_00600.mp4",
+      "bytes": 2334486,
+      "sha256": "ed8d9c05c11688bae31349772586d4baf501797ad8c7df45a7d21b87c1e7b07d",
+      "source_fingerprint": "568348765b2b159cd9d796dbfe82cfc59c58b8301bb46487b5896d878eea4df8",
+      "reused": false
+    },
+    {
+      "first_frame": 601,
+      "last_frame": 900,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\entradas_tarefas\\f00601_00900.mp4",
+      "bytes": 2565179,
+      "sha256": "7ee4affad666fa114279bc99a2e533f750544f0a814e727448f8765c961c2e9f",
+      "source_fingerprint": "568348765b2b159cd9d796dbfe82cfc59c58b8301bb46487b5896d878eea4df8",
+      "reused": false
+    },
+    {
+      "first_frame": 901,
+      "last_frame": 1200,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\entradas_tarefas\\f00901_01200.mp4",
+      "bytes": 2529099,
+      "sha256": "dc4df2765d08c8b3e2998c8d88b4a7b2bced3313c957eacc785d7a6f9c2e2069",
+      "source_fingerprint": "568348765b2b159cd9d796dbfe82cfc59c58b8301bb46487b5896d878eea4df8",
+      "reused": false
+    },
+    {
+      "first_frame": 1201,
+      "last_frame": 1500,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\entradas_tarefas\\f01201_01500.mp4",
+      "bytes": 2927874,
+      "sha256": "9b1b6d6215e6faab9e15785ed076c0c4269e56c07c5463dbf1d73e3a93e5f68f",
+      "source_fingerprint": "568348765b2b159cd9d796dbfe82cfc59c58b8301bb46487b5896d878eea4df8",
+      "reused": false
+    },
+    {
+      "first_frame": 1501,
+      "last_frame": 1800,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\entradas_tarefas\\f01501_01800.mp4",
+      "bytes": 2663719,
+      "sha256": "6b7609266ee468acce229a71411a8f75a1d4c726cb3cee1cda33243e32641aba",
+      "source_fingerprint": "568348765b2b159cd9d796dbfe82cfc59c58b8301bb46487b5896d878eea4df8",
+      "reused": false
+    },
+    {
+      "first_frame": 1801,
+      "last_frame": 1920,
+      "frame_count": 120,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\blocos\\entradas_tarefas\\f01801_01920.mp4",
+      "bytes": 973833,
+      "sha256": "80d7b8216f2d1a538acc4419806a8ee92e0ef61356accab3630268aa1b12b6e3",
+      "source_fingerprint": "568348765b2b159cd9d796dbfe82cfc59c58b8301bb46487b5896d878eea4df8",
+      "reused": false
+    }
+  ],
+  "raw_verification": {
+    "path": "documentacao\\relatorio_final_ea019\\video\\completo_v9\\cenas\\entradas_tarefas_3d_v9.mp4",
+    "bytes": 16363269,
+    "sha256": "51ffa37677acb7645975a23ead811e21c9fef7d7c8cc94d38bdca76969361a47",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frame_count": 1920,
+    "duration_seconds": 64,
+    "codec": "H.264",
+    "audio_tracks": 0,
+    "full_decode_errors": 0
+  },
+  "gpu": {
+    "renderer": "Intel(R) Arc(TM) B390 GPU",
+    "vendor": "Intel",
+    "backend": "OPENGL",
+    "engine": "BLENDER_EEVEE_NEXT"
+  }
+}

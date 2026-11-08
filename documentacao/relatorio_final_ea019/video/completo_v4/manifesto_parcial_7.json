@@ -1,0 +1,1035 @@
+{
+  "version": 4,
+  "duration_seconds": 415,
+  "fps": 30,
+  "frame_count": 12450,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "chapters": [
+    {
+      "id": 7,
+      "start": 170,
+      "end": 245,
+      "duration": 75,
+      "title": "Como os três modelos tratam o histórico",
+      "narration": "Cada ponto desta sequência representa um valor passado de GHI. Na LSTM, os dados entram em ordem. A rede mantém uma memória e usa portas aprendidas para controlar o que esquece, o que acrescenta e o que transmite. Assim, a memória é atualizada a cada passo e ajuda a formar a previsão. No Transformer, cada posição é representada junto com sua ordem temporal. A atenção compara representações da sequência e calcula pesos. Esses pesos orientam a combinação dos valores, permitindo reunir informações de posições diferentes. As conexões e intensidades aqui são didáticas: não exibem pesos medidos neste estudo. O Informer seleciona algumas posições de consulta para um cálculo de atenção mais detalhado. Em outra etapa, reduz o comprimento das representações entre camadas do codificador. A atenção cruzada continua completa. Nos três modelos, usamos histórico de GHI e identificação da localidade para produzir diretamente um vetor de valores futuros. Comparamos precisão; velocidade e memória não foram medidas.",
+      "label_events": [],
+      "notes": [
+        "As redes produzem o vetor futuro diretamente; não desenhar realimentação das previsões anteriores como se fosse o procedimento utilizado.",
+        "ProbSparse seleciona consultas por uma medida estimada; evitar representá-lo apenas como uma seleção das ligações de maior peso da atenção completa.",
+        "A atenção cruzada do Informer implementado permanece completa, e contextos curtos podem utilizar todas as consultas.",
+        "Não afirmar vantagem medida de velocidade, memória ou custo computacional.",
+        "O Transformer estudado é uma rede treinada para regressão temporal, sem um modelo de linguagem previamente treinado.",
+        "Se a gravação exigir mais pausas, o detalhe da atenção cruzada pode permanecer no visual e sair da locução sem alterar o conceito central.",
+        "Detalhe de atenção cruzada completa permanece no rótulo e nas notas para aliviar a locução. Reservar aproximadamente 17 segundos por modelo, com transições curtas.",
+        "As portas, conexões, pesos de atenção e intensidades mostrados são didáticos, sem extração dos pesos das execuções avaliadas.",
+        "LSTM 0–24 s; Transformer 24–50 s; Informer 50–75 s. A redução do encoder é mostrada numa etapa distinta da seleção de consultas."
+      ],
+      "phases": [
+        {
+          "id": "LSTM",
+          "start_local": 0,
+          "end_local": 24,
+          "narration": "Cada ponto desta sequência representa um valor passado de GHI. Na LSTM, os dados entram em ordem. A rede mantém uma memória e usa portas aprendidas para controlar o que esquece, o que acrescenta e o que transmite. Assim, a memória é atualizada a cada passo e ajuda a formar a previsão.",
+          "start": 170,
+          "end": 194
+        },
+        {
+          "id": "Transformer",
+          "start_local": 24,
+          "end_local": 50,
+          "narration": "No Transformer, cada posição é representada junto com sua ordem temporal. A atenção compara representações da sequência e calcula pesos. Esses pesos orientam a combinação dos valores, permitindo reunir informações de posições diferentes. As conexões e intensidades aqui são didáticas: não exibem pesos medidos neste estudo.",
+          "start": 194,
+          "end": 220
+        },
+        {
+          "id": "Informer",
+          "start_local": 50,
+          "end_local": 75,
+          "narration": "O Informer seleciona algumas posições de consulta para um cálculo de atenção mais detalhado. Em outra etapa, reduz o comprimento das representações entre camadas do codificador. A atenção cruzada continua completa. Nos três modelos, usamos histórico de GHI e identificação da localidade para produzir diretamente um vetor de valores futuros. Comparamos precisão; velocidade e memória não foram medidas.",
+          "start": 220,
+          "end": 245
+        }
+      ],
+      "start_seconds": 170,
+      "end_seconds": 245,
+      "duration_seconds": 75,
+      "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v4\\cenas\\cena_07.blend",
+      "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v4\\cenas\\cena_07_3d.mp4",
+      "frame_count": 2250,
+      "rendered": false,
+      "scene_metadata": {
+        "version": 4,
+        "builder": "build_networks_v4",
+        "duration_seconds": 75.0,
+        "fps": 30,
+        "frame_count": 2250,
+        "camera": "Camera perspectiva dos mecanismos V4",
+        "object_names": [
+          "Camera perspectiva dos mecanismos V4",
+          "Informer atencao cruzada completa q1 m1",
+          "Informer atencao cruzada completa q1 m2",
+          "Informer atencao cruzada completa q1 m3",
+          "Informer atencao cruzada completa q1 m4",
+          "Informer atencao cruzada completa q1 m5",
+          "Informer atencao cruzada completa q1 m6",
+          "Informer atencao cruzada completa q2 m1",
+          "Informer atencao cruzada completa q2 m2",
+          "Informer atencao cruzada completa q2 m3",
+          "Informer atencao cruzada completa q2 m4",
+          "Informer atencao cruzada completa q2 m5",
+          "Informer atencao cruzada completa q2 m6",
+          "Informer atencao cruzada completa q3 m1",
+          "Informer atencao cruzada completa q3 m2",
+          "Informer atencao cruzada completa q3 m3",
+          "Informer atencao cruzada completa q3 m4",
+          "Informer atencao cruzada completa q3 m5",
+          "Informer atencao cruzada completa q3 m6",
+          "Informer atencao cruzada completa q4 m1",
+          "Informer atencao cruzada completa q4 m2",
+          "Informer atencao cruzada completa q4 m3",
+          "Informer atencao cruzada completa q4 m4",
+          "Informer atencao cruzada completa q4 m5",
+          "Informer atencao cruzada completa q4 m6",
+          "Informer consulta 1 compara chave 01",
+          "Informer consulta 1 compara chave 02",
+          "Informer consulta 1 compara chave 03",
+          "Informer consulta 1 compara chave 04",
+          "Informer consulta 1 compara chave 05",
+          "Informer consulta 1 compara chave 06",
+          "Informer consulta 1 compara chave 07",
+          "Informer consulta 1 compara chave 08",
+          "Informer consulta 1 compara chave 09",
+          "Informer consulta 1 compara chave 10",
+          "Informer consulta 1 compara chave 11",
+          "Informer consulta 1 compara chave 12",
+          "Informer consulta 2 compara chave 01",
+          "Informer consulta 2 compara chave 02",
+          "Informer consulta 2 compara chave 03",
+          "Informer consulta 2 compara chave 04",
+          "Informer consulta 2 compara chave 05",
+          "Informer consulta 2 compara chave 06",
+          "Informer consulta 2 compara chave 07",
+          "Informer consulta 2 compara chave 08",
+          "Informer consulta 2 compara chave 09",
+          "Informer consulta 2 compara chave 10",
+          "Informer consulta 2 compara chave 11",
+          "Informer consulta 2 compara chave 12",
+          "Informer consulta selecionada 1",
+          "Informer consulta selecionada 2",
+          "Informer contexto agregado",
+          "Informer contexto rotulo",
+          "Informer cruzada rotulo",
+          "Informer destilacao rotulo",
+          "Informer fluxo destilacao 1 fonte 1",
+          "Informer fluxo destilacao 1 fonte 1.001",
+          "Informer fluxo destilacao 1 fonte 2",
+          "Informer fluxo destilacao 2 fonte 2",
+          "Informer fluxo destilacao 2 fonte 3",
+          "Informer fluxo destilacao 2 fonte 4",
+          "Informer fluxo destilacao 3 fonte 4",
+          "Informer fluxo destilacao 3 fonte 5",
+          "Informer fluxo destilacao 3 fonte 6",
+          "Informer fluxo destilacao 4 fonte 6",
+          "Informer fluxo destilacao 4 fonte 7",
+          "Informer fluxo destilacao 4 fonte 8",
+          "Informer fluxo destilacao 5 fonte 10",
+          "Informer fluxo destilacao 5 fonte 8",
+          "Informer fluxo destilacao 5 fonte 9",
+          "Informer fluxo destilacao 6 fonte 10",
+          "Informer fluxo destilacao 6 fonte 11",
+          "Informer fluxo destilacao 6 fonte 12",
+          "Informer futuro componente 1",
+          "Informer futuro componente 2",
+          "Informer futuro componente 3",
+          "Informer futuro componente 4",
+          "Informer futuro rotulo",
+          "Informer historico amostra 01",
+          "Informer historico amostra 02",
+          "Informer historico amostra 03",
+          "Informer historico amostra 04",
+          "Informer historico amostra 05",
+          "Informer historico amostra 06",
+          "Informer historico amostra 07",
+          "Informer historico amostra 08",
+          "Informer historico amostra 09",
+          "Informer historico amostra 10",
+          "Informer historico amostra 11",
+          "Informer historico amostra 12",
+          "Informer historico curva",
+          "Informer posicao futura no decoder 1",
+          "Informer posicao futura no decoder 2",
+          "Informer posicao futura no decoder 3",
+          "Informer posicao futura no decoder 4",
+          "Informer pulso consulta 1 chave 1",
+          "Informer pulso consulta 1 chave 12",
+          "Informer pulso consulta 1 chave 5",
+          "Informer pulso consulta 1 chave 9",
+          "Informer pulso consulta 2 chave 1",
+          "Informer pulso consulta 2 chave 12",
+          "Informer pulso consulta 2 chave 5",
+          "Informer pulso consulta 2 chave 9",
+          "Informer pulso cruzada q1 m1",
+          "Informer pulso cruzada q1 m3",
+          "Informer pulso cruzada q1 m6",
+          "Informer pulso cruzada q2 m1",
+          "Informer pulso cruzada q2 m3",
+          "Informer pulso cruzada q2 m6",
+          "Informer pulso cruzada q3 m1",
+          "Informer pulso cruzada q3 m3",
+          "Informer pulso cruzada q3 m6",
+          "Informer pulso cruzada q4 m1",
+          "Informer pulso cruzada q4 m3",
+          "Informer pulso cruzada q4 m6",
+          "Informer representacao destilada 1",
+          "Informer representacao destilada 2",
+          "Informer representacao destilada 3",
+          "Informer representacao destilada 4",
+          "Informer representacao destilada 5",
+          "Informer representacao destilada 6",
+          "Informer representacao inicial 01",
+          "Informer representacao inicial 02",
+          "Informer representacao inicial 03",
+          "Informer representacao inicial 04",
+          "Informer representacao inicial 05",
+          "Informer representacao inicial 06",
+          "Informer representacao inicial 07",
+          "Informer representacao inicial 08",
+          "Informer representacao inicial 09",
+          "Informer representacao inicial 10",
+          "Informer representacao inicial 11",
+          "Informer representacao inicial 12",
+          "Informer saida rotulo",
+          "Informer selecao rotulo",
+          "Informer vizinhanca encoder 1 fonte 1",
+          "Informer vizinhanca encoder 1 fonte 1.001",
+          "Informer vizinhanca encoder 1 fonte 2",
+          "Informer vizinhanca encoder 2 fonte 2",
+          "Informer vizinhanca encoder 2 fonte 3",
+          "Informer vizinhanca encoder 2 fonte 4",
+          "Informer vizinhanca encoder 3 fonte 4",
+          "Informer vizinhanca encoder 3 fonte 5",
+          "Informer vizinhanca encoder 3 fonte 6",
+          "Informer vizinhanca encoder 4 fonte 6",
+          "Informer vizinhanca encoder 4 fonte 7",
+          "Informer vizinhanca encoder 4 fonte 8",
+          "Informer vizinhanca encoder 5 fonte 10",
+          "Informer vizinhanca encoder 5 fonte 8",
+          "Informer vizinhanca encoder 5 fonte 9",
+          "Informer vizinhanca encoder 6 fonte 10",
+          "Informer vizinhanca encoder 6 fonte 11",
+          "Informer vizinhanca encoder 6 fonte 12",
+          "LSTM amostra processada 01",
+          "LSTM amostra processada 02",
+          "LSTM amostra processada 03",
+          "LSTM amostra processada 04",
+          "LSTM amostra processada 05",
+          "LSTM amostra processada 06",
+          "LSTM amostra processada 07",
+          "LSTM amostra processada 08",
+          "LSTM amostra processada 09",
+          "LSTM amostra processada 10",
+          "LSTM amostra processada 11",
+          "LSTM amostra processada 12",
+          "LSTM componente de memoria 1",
+          "LSTM componente de memoria 2",
+          "LSTM componente de memoria 3",
+          "LSTM componente de memoria 4",
+          "LSTM componente de memoria 5",
+          "LSTM componente de memoria 6",
+          "LSTM componente de memoria 7",
+          "LSTM componente de memoria 8",
+          "LSTM corpo da mesma celula",
+          "LSTM entrada rotulo",
+          "LSTM estado para saida",
+          "LSTM futuro componente 1",
+          "LSTM futuro componente 2",
+          "LSTM futuro componente 3",
+          "LSTM futuro componente 4",
+          "LSTM futuro rotulo",
+          "LSTM historico amostra 01",
+          "LSTM historico amostra 02",
+          "LSTM historico amostra 03",
+          "LSTM historico amostra 04",
+          "LSTM historico amostra 05",
+          "LSTM historico amostra 06",
+          "LSTM historico amostra 07",
+          "LSTM historico amostra 08",
+          "LSTM historico amostra 09",
+          "LSTM historico amostra 10",
+          "LSTM historico amostra 11",
+          "LSTM historico amostra 12",
+          "LSTM historico curva",
+          "LSTM ID para cabeca",
+          "LSTM ID rotulo",
+          "LSTM identificacao da localidade",
+          "LSTM memoria rotulo",
+          "LSTM memoria transportada",
+          "LSTM porta Atualizar",
+          "LSTM porta Esquecer",
+          "LSTM porta Ler",
+          "LSTM rotulo porta Atualizar",
+          "LSTM rotulo porta Esquecer",
+          "LSTM rotulo porta Ler",
+          "LSTM saida simultanea",
+          "Nome Informer",
+          "Nome LSTM",
+          "Nome Transformer",
+          "Transformer caminho valor 01",
+          "Transformer caminho valor 02",
+          "Transformer caminho valor 03",
+          "Transformer caminho valor 04",
+          "Transformer caminho valor 05",
+          "Transformer caminho valor 06",
+          "Transformer caminho valor 07",
+          "Transformer caminho valor 08",
+          "Transformer caminho valor 09",
+          "Transformer caminho valor 10",
+          "Transformer caminho valor 11",
+          "Transformer caminho valor 12",
+          "Transformer chave para peso 01",
+          "Transformer chave para peso 02",
+          "Transformer chave para peso 03",
+          "Transformer chave para peso 04",
+          "Transformer chave para peso 05",
+          "Transformer chave para peso 06",
+          "Transformer chave para peso 07",
+          "Transformer chave para peso 08",
+          "Transformer chave para peso 09",
+          "Transformer chave para peso 10",
+          "Transformer chave para peso 11",
+          "Transformer chave para peso 12",
+          "Transformer combinar rotulo",
+          "Transformer comparacao Q K 01",
+          "Transformer comparacao Q K 02",
+          "Transformer comparacao Q K 03",
+          "Transformer comparacao Q K 04",
+          "Transformer comparacao Q K 05",
+          "Transformer comparacao Q K 06",
+          "Transformer comparacao Q K 07",
+          "Transformer comparacao Q K 08",
+          "Transformer comparacao Q K 09",
+          "Transformer comparacao Q K 10",
+          "Transformer comparacao Q K 11",
+          "Transformer comparacao Q K 12",
+          "Transformer comparar rotulo",
+          "Transformer consulta destacada",
+          "Transformer consulta rotulo",
+          "Transformer contexto final decoder 1",
+          "Transformer contexto final decoder 2",
+          "Transformer contexto final decoder 3",
+          "Transformer contexto final decoder 4",
+          "Transformer contexto final decoder 5",
+          "Transformer contexto final decoder 6",
+          "Transformer decoder",
+          "Transformer decoder rotulo",
+          "Transformer entrada decoder",
+          "Transformer futuro componente 1",
+          "Transformer futuro componente 2",
+          "Transformer futuro componente 3",
+          "Transformer futuro componente 4",
+          "Transformer futuro rotulo",
+          "Transformer futuro vazio decoder 1",
+          "Transformer futuro vazio decoder 2",
+          "Transformer futuro vazio decoder 3",
+          "Transformer futuro vazio decoder 4",
+          "Transformer historico amostra 01",
+          "Transformer historico amostra 02",
+          "Transformer historico amostra 03",
+          "Transformer historico amostra 04",
+          "Transformer historico amostra 05",
+          "Transformer historico amostra 06",
+          "Transformer historico amostra 07",
+          "Transformer historico amostra 08",
+          "Transformer historico amostra 09",
+          "Transformer historico amostra 10",
+          "Transformer historico amostra 11",
+          "Transformer historico amostra 12",
+          "Transformer historico curva",
+          "Transformer marca de ordem 01",
+          "Transformer marca de ordem 02",
+          "Transformer marca de ordem 03",
+          "Transformer marca de ordem 04",
+          "Transformer marca de ordem 05",
+          "Transformer marca de ordem 06",
+          "Transformer marca de ordem 07",
+          "Transformer marca de ordem 08",
+          "Transformer marca de ordem 09",
+          "Transformer marca de ordem 10",
+          "Transformer marca de ordem 11",
+          "Transformer marca de ordem 12",
+          "Transformer peso normalizado 01",
+          "Transformer peso normalizado 02",
+          "Transformer peso normalizado 03",
+          "Transformer peso normalizado 04",
+          "Transformer peso normalizado 05",
+          "Transformer peso normalizado 06",
+          "Transformer peso normalizado 07",
+          "Transformer peso normalizado 08",
+          "Transformer peso normalizado 09",
+          "Transformer peso normalizado 10",
+          "Transformer peso normalizado 11",
+          "Transformer peso normalizado 12",
+          "Transformer pesos rotulo",
+          "Transformer posicao historica 01",
+          "Transformer posicao historica 02",
+          "Transformer posicao historica 03",
+          "Transformer posicao historica 04",
+          "Transformer posicao historica 05",
+          "Transformer posicao historica 06",
+          "Transformer posicao historica 07",
+          "Transformer posicao historica 08",
+          "Transformer posicao historica 09",
+          "Transformer posicao historica 10",
+          "Transformer posicao historica 11",
+          "Transformer posicao historica 12",
+          "Transformer posicoes rotulo",
+          "Transformer pulso comparacao 01",
+          "Transformer pulso comparacao 02",
+          "Transformer pulso comparacao 03",
+          "Transformer pulso comparacao 04",
+          "Transformer pulso comparacao 05",
+          "Transformer pulso comparacao 06",
+          "Transformer pulso comparacao 07",
+          "Transformer pulso comparacao 08",
+          "Transformer pulso comparacao 09",
+          "Transformer pulso comparacao 10",
+          "Transformer pulso comparacao 11",
+          "Transformer pulso comparacao 12",
+          "Transformer representacao combinada",
+          "Transformer valor ponderado 01",
+          "Transformer valor ponderado 02",
+          "Transformer valor ponderado 03",
+          "Transformer valor ponderado 04",
+          "Transformer valor ponderado 05",
+          "Transformer valor ponderado 06",
+          "Transformer valor ponderado 07",
+          "Transformer valor ponderado 08",
+          "Transformer valor ponderado 09",
+          "Transformer valor ponderado 10",
+          "Transformer valor ponderado 11",
+          "Transformer valor ponderado 12"
+        ],
+        "camera_keyframes": [
+          {
+            "t": 0.0,
+            "location": [
+              2.4,
+              -17.8,
+              6.6
+            ],
+            "target": [
+              0,
+              0,
+              3.0
+            ],
+            "lens": 43
+          },
+          {
+            "t": 3.0,
+            "location": [
+              2.0,
+              -16.6,
+              6.0
+            ],
+            "target": [
+              0,
+              0,
+              3.0
+            ],
+            "lens": 44
+          },
+          {
+            "t": 9.0,
+            "location": [
+              1.1,
+              -15.8,
+              5.5
+            ],
+            "target": [
+              -0.25,
+              0,
+              3.05
+            ],
+            "lens": 44
+          },
+          {
+            "t": 16.0,
+            "location": [
+              -1.0,
+              -16.0,
+              5.8
+            ],
+            "target": [
+              0.3,
+              0,
+              3.1
+            ],
+            "lens": 43
+          },
+          {
+            "t": 21.0,
+            "location": [
+              0.8,
+              -16.8,
+              6.1
+            ],
+            "target": [
+              0.6,
+              0,
+              3.0
+            ],
+            "lens": 43
+          },
+          {
+            "t": 23.9666667,
+            "location": [
+              0.8,
+              -16.8,
+              6.1
+            ],
+            "target": [
+              0.6,
+              0,
+              3.0
+            ],
+            "lens": 43,
+            "cut_after": true
+          },
+          {
+            "t": 24.0,
+            "location": [
+              -2.1,
+              -17.6,
+              6.5
+            ],
+            "target": [
+              0,
+              0,
+              3.1
+            ],
+            "lens": 43
+          },
+          {
+            "t": 28.0,
+            "location": [
+              -1.5,
+              -17.2,
+              6.3
+            ],
+            "target": [
+              0,
+              0,
+              3.3
+            ],
+            "lens": 43
+          },
+          {
+            "t": 34.0,
+            "location": [
+              0.9,
+              -16.8,
+              6.0
+            ],
+            "target": [
+              0.1,
+              0,
+              3.5
+            ],
+            "lens": 43
+          },
+          {
+            "t": 41.0,
+            "location": [
+              2.0,
+              -17.0,
+              6.2
+            ],
+            "target": [
+              0.15,
+              0,
+              3.25
+            ],
+            "lens": 44
+          },
+          {
+            "t": 46.0,
+            "location": [
+              1.5,
+              -17.5,
+              6.3
+            ],
+            "target": [
+              0.4,
+              0,
+              3.1
+            ],
+            "lens": 43
+          },
+          {
+            "t": 49.9666667,
+            "location": [
+              1.5,
+              -17.5,
+              6.3
+            ],
+            "target": [
+              0.4,
+              0,
+              3.1
+            ],
+            "lens": 43,
+            "cut_after": true
+          },
+          {
+            "t": 50.0,
+            "location": [
+              2.2,
+              -17.8,
+              6.5
+            ],
+            "target": [
+              0,
+              0,
+              3.2
+            ],
+            "lens": 43
+          },
+          {
+            "t": 54.0,
+            "location": [
+              1.2,
+              -17.0,
+              6.0
+            ],
+            "target": [
+              0,
+              0,
+              3.65
+            ],
+            "lens": 43
+          },
+          {
+            "t": 60.0,
+            "location": [
+              -1.1,
+              -17.2,
+              6.4
+            ],
+            "target": [
+              0,
+              0,
+              3.6
+            ],
+            "lens": 43
+          },
+          {
+            "t": 66.0,
+            "location": [
+              -1.5,
+              -17.5,
+              6.5
+            ],
+            "target": [
+              0,
+              0,
+              3.7
+            ],
+            "lens": 43
+          },
+          {
+            "t": 71.0,
+            "location": [
+              0.8,
+              -17.8,
+              6.3
+            ],
+            "target": [
+              0,
+              0,
+              3.65
+            ],
+            "lens": 43
+          },
+          {
+            "t": 75.0,
+            "location": [
+              1.8,
+              -17.0,
+              6.2
+            ],
+            "target": [
+              0,
+              0,
+              3.4
+            ],
+            "lens": 43
+          }
+        ],
+        "palette_srgb": {
+          "white": "#F3F5F7",
+          "secondary": "#A9B2BE",
+          "axes": "#626D7A",
+          "graphite": "#252D36",
+          "coral": "#F28779",
+          "coral_body": "#A85E56",
+          "cyan": "#58CADA",
+          "cyan_body": "#387F8C",
+          "violet": "#AA91E8",
+          "violet_body": "#706093"
+        },
+        "historical_values_schematic": [
+          0.02,
+          0.1,
+          0.72,
+          1.0,
+          0.6,
+          0.05,
+          0.01,
+          0.18,
+          0.76,
+          0.68,
+          0.36,
+          0.02
+        ],
+        "same_history_all_models": true,
+        "visible_sample_count": 12,
+        "architecture_phases": [
+          {
+            "model": "LSTM",
+            "start": 0.0,
+            "end": 24.0
+          },
+          {
+            "model": "Transformer",
+            "start": 24.0,
+            "end": 50.0
+          },
+          {
+            "model": "Informer",
+            "start": 50.0,
+            "end": 75.0
+          }
+        ],
+        "shotphases": [
+          {
+            "model": "LSTM",
+            "start": 0.0,
+            "end": 3.0,
+            "meaning": "mesma serie GHI se reorganiza para leitura sequencial"
+          },
+          {
+            "model": "LSTM",
+            "start": 3.0,
+            "end": 15.0,
+            "meaning": "valores entram em ordem, portas modulam atualizacao de memoria"
+          },
+          {
+            "model": "LSTM",
+            "start": 15.0,
+            "end": 19.0,
+            "meaning": "estado final combina-se com identificacao aprendida da localidade"
+          },
+          {
+            "model": "LSTM",
+            "start": 19.0,
+            "end": 24.0,
+            "meaning": "cabeca produz todo o vetor futuro diretamente"
+          },
+          {
+            "model": "Transformer",
+            "start": 24.0,
+            "end": 28.0,
+            "meaning": "valores tornam-se representacoes com posicao temporal"
+          },
+          {
+            "model": "Transformer",
+            "start": 28.0,
+            "end": 34.0,
+            "meaning": "consulta compara-se com chaves de todas as posicoes"
+          },
+          {
+            "model": "Transformer",
+            "start": 34.0,
+            "end": 40.0,
+            "meaning": "comparacoes produzem pesos normalizados didaticos"
+          },
+          {
+            "model": "Transformer",
+            "start": 40.0,
+            "end": 46.0,
+            "meaning": "valores ponderados se combinam em nova representacao"
+          },
+          {
+            "model": "Transformer",
+            "start": 46.0,
+            "end": 50.0,
+            "meaning": "decoder usa contexto observado e futuro inicialmente vazio"
+          },
+          {
+            "model": "Informer",
+            "start": 50.0,
+            "end": 54.0,
+            "meaning": "a mesma serie torna-se sequencia de representacoes"
+          },
+          {
+            "model": "Informer",
+            "start": 54.0,
+            "end": 60.0,
+            "meaning": "consultas selecionadas recebem calculo detalhado; demais conservam contexto"
+          },
+          {
+            "model": "Informer",
+            "start": 60.0,
+            "end": 66.0,
+            "meaning": "uma etapa de destilacao reduz comprimento entre dois blocos do encoder"
+          },
+          {
+            "model": "Informer",
+            "start": 66.0,
+            "end": 71.4,
+            "meaning": "decoder consulta todas as representacoes na atencao cruzada completa"
+          },
+          {
+            "model": "Informer",
+            "start": 71.4,
+            "end": 75.0,
+            "meaning": "saida do horizonte de previsao"
+          }
+        ],
+        "scientific_precision": {
+          "visual_weights_and_gates": "didactic; not measured learned activations or attention",
+          "lstm_forecast": "final hidden state plus locality embedding feeds direct horizon head",
+          "transformer_decoder": "last observed context plus zero future inputs; no target leakage",
+          "informer_sparse": "selected queries update full-key context; other queries retain aggregate context",
+          "informer_distillation": "one conv/batchnorm/ELU/maxpool between two encoder blocks",
+          "informer_cross_attention": "complete, including every encoded memory position",
+          "numeric_forecast_values_shown": false,
+          "efficiency_measurements_shown": false,
+          "only_inputs": "historical GHI and learned locality ID",
+          "output_components": "four visible schematic components represent a task-specific full horizon"
+        },
+        "caption_safe_area": "bottom 15 percent reserved; no footer/header or platform geometry",
+        "source_files": [
+          "codigo_fonte/experimentos/experimento_horario_timesnet.py:LSTMEncoderDireto",
+          "codigo_fonte/modelos/modelos_baselines_adicionais.py:TransformerDireto/AtencaoProjetada/Distilacao/BlocoDecoder"
+        ]
+      },
+      "render_style": {
+        "chapter_id": 7,
+        "engine": "BLENDER_WORKBENCH",
+        "resolution": [
+          1920,
+          1080
+        ],
+        "fps": 30,
+        "antialiasing": "8",
+        "codec": "H264",
+        "encoding_preset": "REALTIME",
+        "background_srgb_hex": "#07090D",
+        "palette": {
+          "background": "#07090D",
+          "graphite": "#171C22",
+          "white": "#F3F5F7",
+          "secondary": "#A9B2BE",
+          "axes": "#626D7A",
+          "gold": "#E9B95F",
+          "coral": "#F28779",
+          "cyan": "#58CADA",
+          "violet": "#AA91E8"
+        },
+        "hidden_decorative_objects": [],
+        "materials": [
+          {
+            "material": "Informer contexto rotulo · texto",
+            "srgb_hex": "#A9B2BE",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "Informer cruzada rotulo · texto",
+            "srgb_hex": "#F3F5F7",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "Informer destilacao rotulo · texto",
+            "srgb_hex": "#AA91E8",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "Informer futuro rotulo · texto",
+            "srgb_hex": "#AA91E8",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "Informer saida rotulo · texto",
+            "srgb_hex": "#AA91E8",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "Informer selecao rotulo · texto",
+            "srgb_hex": "#AA91E8",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "LSTM ID rotulo · texto",
+            "srgb_hex": "#F3F5F7",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "LSTM entrada rotulo · texto",
+            "srgb_hex": "#F3F5F7",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "LSTM futuro rotulo · texto",
+            "srgb_hex": "#F28779",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "LSTM memoria rotulo · texto",
+            "srgb_hex": "#F28779",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "LSTM rotulo porta Atualizar · texto",
+            "srgb_hex": "#F3F5F7",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "LSTM rotulo porta Esquecer · texto",
+            "srgb_hex": "#F3F5F7",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "LSTM rotulo porta Ler · texto",
+            "srgb_hex": "#F3F5F7",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "LSTM saida simultanea · texto",
+            "srgb_hex": "#F3F5F7",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "Nome Informer · texto",
+            "srgb_hex": "#AA91E8",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "Nome LSTM · texto",
+            "srgb_hex": "#F28779",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "Nome Transformer · texto",
+            "srgb_hex": "#58CADA",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "Transformer combinar rotulo · texto",
+            "srgb_hex": "#F3F5F7",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "Transformer comparar rotulo · texto",
+            "srgb_hex": "#F3F5F7",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "Transformer consulta rotulo · texto",
+            "srgb_hex": "#58CADA",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "Transformer decoder rotulo · texto",
+            "srgb_hex": "#58CADA",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "Transformer futuro rotulo · texto",
+            "srgb_hex": "#58CADA",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "Transformer pesos rotulo · texto",
+            "srgb_hex": "#58CADA",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "Transformer posicoes rotulo · texto",
+            "srgb_hex": "#F3F5F7",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "V4 redes coral",
+            "srgb_hex": "#F28779",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "V4 redes coral_body",
+            "srgb_hex": "#A85E56",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "V4 redes cyan",
+            "srgb_hex": "#58CADA",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "V4 redes cyan_body",
+            "srgb_hex": "#387F8C",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "V4 redes secondary",
+            "srgb_hex": "#A9B2BE",
+            "kind": "line_or_marker"
+          },
+          {
+            "material": "V4 redes violet",
+            "srgb_hex": "#AA91E8",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "V4 redes violet_body",
+            "srgb_hex": "#706093",
+            "kind": "matte_surface"
+          },
+          {
+            "material": "V4 redes white",
+            "srgb_hex": "#F3F5F7",
+            "kind": "line_or_marker"
+          }
+        ],
+        "baked_emission_focus": [],
+        "camera_and_timing_unchanged": true,
+        "version": 4,
+        "perspective_camera": true,
+        "specular_highlights": true,
+        "no_fixed_headers": true
+      },
+      "qa_times": [
+        3,
+        9,
+        16,
+        22,
+        27,
+        33,
+        40,
+        47,
+        53,
+        59,
+        66,
+        72
+      ]
+    }
+  ],
+  "all_prepared": false,
+  "full_rendered": false,
+  "camera_footage_included": false,
+  "narration_recorded": false,
+  "fixed_headers": false,
+  "source_banners": false
+}

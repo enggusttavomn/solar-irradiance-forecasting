@@ -1,0 +1,74 @@
+{
+  "scope": "Proposta restrita ao Apêndice C do DOCX atual. Nenhuma alteração deve ser feita no conteúdo anterior ao parágrafo 1235. O Sumário pode apenas refletir os novos títulos e a paginação.",
+  "source": "documentacao/relatorio_final_ea019/Relatorio_Final_GHI_Transformer_Informer_LSTM_Comparacao_Modelos.docx",
+  "appendix_start_id": 1235,
+  "appendix_end_id": 1333,
+  "main_body_paragraphs_after_edit": [1236, 1256, 1295, 1318, 1320],
+  "replacements": [
+    {
+      "id": 1235,
+      "text": "APÊNDICE C — CONFIGURAÇÕES DAS IMPLEMENTAÇÕES"
+    },
+    {
+      "id": 1236,
+      "text": "Este apêndice resume as configurações das três implementações e o ambiente das execuções. Os resultados foram consolidados de experimentos já realizados, sem novos treinamentos. A consolidação manteve as escolhas pelo macro-MAE da validação e o pareamento dos históricos. O arredondamento foi aplicado somente à apresentação."
+    },
+    {
+      "id": 1255,
+      "text": "C.1 Configurações e parâmetros treináveis"
+    },
+    {
+      "id": 1256,
+      "text": "Em todas as tarefas há uma entrada de GHI por instante e uma representação aprendida de oito dimensões para cada uma das dez localidades. C indica o comprimento do histórico e H, o horizonte de saída."
+    },
+    {
+      "id": 1294,
+      "text": "Fonte: elaboração própria com base nas configurações das implementações avaliadas. No Informer, ProbSparse atua nas autoatenções; a atenção cruzada permanece completa. O dropout indicado atua nos blocos residuais e feedforward; os pesos da atenção ProbSparse não recebem dropout nesta implementação."
+    },
+    {
+      "id": 1295,
+      "text": "O decoder das redes de atenção recebe 168 valores horários, 182 diários ou seis mensais, seguidos de H zeros. No Informer, a destilação entre encoders usa convolução de 16 para 16 canais, kernel 3 e padding circular 1, seguida de BatchNorm, ELU e max-pooling de kernel 3, passo 2 e padding 1. A projeção de saída de 16 para um é compartilhada entre passos. Na LSTM, o estado de 32 dimensões e o embedding de oito formam a entrada da projeção de 40 para H."
+    },
+    {
+      "id": 1319,
+      "text": "C.2 Ambiente das execuções"
+    },
+    {
+      "id": 1320,
+      "text": "O ambiente registrado utiliza NumPy 2.4.4, pandas 3.0.3 e PyTorch 2.12.0+cu126. As tarefas horária e diária usam CUDA 12.6; as mensais, CPU. Para Transformer e Informer horários e diários, consta a GPU NVIDIA GeForce GTX 1650 with Max-Q Design e cuDNN 91002. Na LSTM, consta CUDA sem identificação da GPU. O modelo da CPU e a versão de Python não foram registrados. A reprodução também depende das sementes e regras de determinismo descritas na metodologia."
+    }
+  ],
+  "remove_ids": [
+    1237, 1238, 1239, 1240, 1241, 1242, 1243, 1244, 1245,
+    1246, 1247, 1248, 1249, 1250, 1251, 1252, 1253, 1254,
+    1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1329,
+    1330, 1331, 1332, 1333
+  ],
+  "preserve_without_text_changes": {
+    "table_16_paragraph_ids": [1258, 1259, 1260, 1261, 1262, 1263, 1264, 1265, 1266, 1267, 1268, 1269, 1270, 1271, 1272, 1273, 1274, 1275, 1276, 1277, 1278, 1279, 1280, 1281, 1282, 1283, 1284, 1285, 1286, 1287, 1288, 1289, 1290, 1291, 1292, 1293],
+    "table_17_paragraph_ids": [1297, 1298, 1299, 1300, 1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 1314, 1315, 1316],
+    "captions": [1257, 1296],
+    "table_17_source": 1317,
+    "parameter_formula_and_limits": 1318
+  },
+  "complete_change_list_for_user": [
+    "Título do Apêndice C: substituir 'Configurações e proveniência dos resultados' por 'Configurações das implementações'.",
+    "Abertura: resumir a consolidação, a seleção na validação e o pareamento em um parágrafo, sem inventários de arquivos ou contagens da auditoria.",
+    "Excluir o parágrafo de diretórios e a lista dos sete arquivos de auditoria com seus hashes.",
+    "Excluir a antiga seção C.1 de verificação detalhada, incluindo os nomes de CSVs e caminhos das séries; seu sentido geral fica na abertura.",
+    "Renumerar a antiga C.2 como C.1 e simplificar sua introdução, mantendo a entrada de GHI, as dez localidades, o embedding de oito dimensões e as definições de C e H.",
+    "Preservar integralmente o conteúdo e a legenda da Tabela 16.",
+    "Na fonte da Tabela 16, substituir apenas a identificação de fontes executadas no apêndice pela referência às configurações avaliadas, preservando todas as ressalvas sobre ProbSparse, atenção cruzada e dropout.",
+    "Compactar a descrição do decoder, destilação do Informer e projeções de saída, mantendo todos os valores e operações especificados.",
+    "Preservar integralmente a Tabela 17, sua legenda, sua fonte e o parágrafo seguinte com a fórmula de parâmetros da LSTM e os limites da comparação de tamanho e custo.",
+    "Renumerar a antiga C.3 como C.2 e reunir as informações úteis de ambiente em um parágrafo, incluindo as lacunas de registro de CPU, Python e GPU da LSTM.",
+    "Excluir integralmente a antiga C.4: link do repositório, commit, explicações de contratos e arquivo de preservação, quatro nomes de código e seus hashes.",
+    "Atualizar no Sumário apenas a denominação do Apêndice C e a paginação decorrente; o conteúdo anterior ao apêndice permanece intacto."
+  ],
+  "scientific_notes": [
+    "Não alterar nenhum número nas Tabelas 16 e 17.",
+    "Não acrescentar resultados, configurações inferidas de ambiente posterior ou garantias de reprodução bit a bit.",
+    "A descrição operacional de arquitetura permanece porque complementa as tabelas e ajuda a reproduzir as implementações, independentemente da futura organização do repositório.",
+    "Os cinco parágrafos de corpo incluem o parágrafo 1318, que permanece intacto. Fontes de tabela e títulos não entram nessa contagem."
+  ]
+}

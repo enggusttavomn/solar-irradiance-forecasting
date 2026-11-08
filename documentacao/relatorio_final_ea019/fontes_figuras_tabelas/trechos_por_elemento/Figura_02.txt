@@ -1,0 +1,104 @@
+Figura 2 — Perfis de referência da GHI nas resoluções horária, diária e mensal
+Página(s) do PDF: 11
+
+TRECHOS PARA CONSULTA. Use os arquivos completos em originais/ para edição.
+Os números à esquerda são as linhas originais; este TXT não é executável.
+
+bloco Perfis reais / save("10_perfis_dados", ...)
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py
+Linhas: 133–167
+
+ 133 | # Real input series, selected by fixed calendar dates rather than forecast error.
+ 134 | dpath=ROOT/'dados/brutos/localidades_ev/byd_camacari.csv'
+ 135 | hpath=ROOT/'dados/brutos/localidades_ev_horario/nsrdb_ghi_horaria_2024.csv.gz'
+ 136 | daily=pd.read_csv(dpath,usecols=['data','ghi'])
+ 137 | daily['data']=pd.to_datetime(daily['data'])
+ 138 | daily=daily[daily.data.dt.year.eq(2024)].sort_values('data')
+ 139 | hourly=pd.read_csv(hpath,usecols=['timestamp_utc','ghi','localidade','timezone_nsrdb'])
+ 140 | hourly=hourly[hourly.localidade.eq('BYD Camacari')].copy()
+ 141 | assert len(daily)==366 and len(hourly)==8784
+ 142 | hourly['local_time']=pd.to_datetime(hourly.timestamp_utc,utc=True).dt.tz_localize(None)+pd.to_timedelta(hourly.timezone_nsrdb,unit='h')
+ 143 | hs=hourly[(hourly.local_time>='2024-01-01')&(hourly.local_time<'2024-01-08')].sort_values('local_time')
+ 144 | ds=daily[daily.data.dt.month.eq(1)]
+ 145 | ms=daily.set_index('data').ghi.resample('MS').mean()
+ 146 | z=text(20,36,'BYD Camaçari em 2024',27,bold=True)
+ 147 | z+=text(20,72,'Séries de referência da NSRDB em três resoluções temporais',24,color=MUTED)
+ 148 | chartdata=[]
+ 149 | panels=[('A  Médias horárias de 1 a 7 de janeiro',hs.ghi.to_numpy(),[0,24,48,72,96,120,144],['1','2','3','4','5','6','7'],'Dia de janeiro em hora local',0,1200),('B  Médias diárias de janeiro',ds.ghi.to_numpy(),[0,7,14,21,30],['1','8','15','22','31'],'Dia de janeiro',1,400),('C  Médias mensais de janeiro a dezembro',ms.to_numpy(),list(range(12)),['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'],'Mês de 2024',2,400)]
+ 150 | for title,vals,ticks,labels,xlab,i,top in panels:
+ 151 |     ytop=115+i*250; x,y,w,hh=95,ytop+156,1065,130
+ 152 |     z+=text(20,ytop,title,24,bold=True)
+ 153 |     for v in [0,top/2,top]:
+ 154 |         yy_=y-v/top*hh
+ 155 |         z+=line(x,yy_,x+w,yy_,GRID,1)+text(x-12,yy_+7,int(v),21,'end')
+ 156 |     xp=lambda j:x+j/(len(vals)-1)*w
+ 157 |     pts=' '.join(f'{xp(j):.2f},{y-float(v)/top*hh:.2f}' for j,v in enumerate(vals))
+ 158 |     z+=f'<polyline points="{pts}" fill="none" stroke="{BLUE}" stroke-width="2.5"/>'
+ 159 |     if i>0:
+ 160 |         for j,v in enumerate(vals):z+=f'<circle cx="{xp(j):.2f}" cy="{y-v/top*hh:.2f}" r="3.5" fill="{BLUE}"/>'
+ 161 |     for tick,label in zip(ticks,labels):z+=text(xp(tick),y+29,label,21,'middle')
+ 162 |     z+=text(25,ytop+107,'GHI W/m²',21,'middle',rotate=-90)+text(630,y+64,xlab,22,'middle')
+ 163 |     chartdata.append({'panel':title,'values':list(map(float,vals))})
+ 164 | z+=text(20,877,'Horária: média de registros de 30 min; diária: consulta independente de 60 min.',22,color=MUTED)
+ 165 | z+=text(20,911,'Mensal: média aritmética das médias diárias. Escalas verticais próprias por painel.',22,color=MUTED)
+ 166 | save('10_perfis_dados',z,935)
+ 167 | (HERE/'dados_perfis_referencia.json').write_text(json.dumps({'daily_source':str(dpath),'hourly_source':str(hpath),'hourly_n':len(hs),'daily_n':len(ds),'monthly_n':len(ms),'data':chartdata},ensure_ascii=False,indent=2),encoding='utf-8')
+
+Dependências, utilitários SVG e ajuste tipográfico.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/make_diagrams.py
+Linhas: 1–40
+
+   1 | from pathlib import Path
+   2 | from html import escape
+   3 | import json, shutil
+   4 | import numpy as np
+   5 | import pandas as pd
+   6 | from PIL import ImageFont
+   7 | 
+   8 | HERE = Path(__file__).resolve().parent
+   9 | ROOT = HERE.parents[2]
+  10 | OUT = HERE / 'figuras'
+  11 | OUT.mkdir(parents=True, exist_ok=True)
+  12 | BLUE, ORANGE, GREEN = '#245680', '#B65B35', '#35776C'
+  13 | INK, MUTED, GRID = '#202A30', '#52616B', '#D9E0E4'
+  14 | 
+  15 | def text(x,y,s,size=24,anchor='start',bold=False,color=INK,rotate=None):
+  16 |     tf = f' transform="rotate({rotate} {x} {y})"' if rotate else ''
+  17 |     return f'<text x="{x}" y="{y}" font-size="{size}" text-anchor="{anchor}" font-weight="{700 if bold else 400}" fill="{color}"{tf}>{escape(str(s))}</text>'
+  18 | 
+  19 | def rect(x,y,w,h,fill='white',stroke=GRID,r=6):
+  20 |     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}" stroke="{stroke}" stroke-width="1.8"/>'
+  21 | 
+  22 | def line(x,y,x2,y2,color=GRID,width=2,dash=''):
+  23 |     return f'<line x1="{x}" y1="{y}" x2="{x2}" y2="{y2}" stroke="{color}" stroke-width="{width}" stroke-dasharray="{dash}"/>'
+  24 | 
+  25 | def arrow(x,y,x2,y2,color=MUTED):
+  26 |     return line(x,y,x2,y2,color,2.4)+f'<path d="M{x2-8},{y2-6} L{x2},{y2} L{x2-8},{y2+6}" fill="none" stroke="{color}" stroke-width="2.4"/>'
+  27 | 
+  28 | def block(x,y,w,h,title,lines,color=BLUE,fill='#F1F6FA',size=23):
+  29 |     z=rect(x,y,w,h,fill,color)
+  30 |     def fit(s,desired,bold=False):
+  31 |         font='C:/Windows/Fonts/arialbd.ttf' if bold else 'C:/Windows/Fonts/arial.ttf'
+  32 |         while ImageFont.truetype(font,int(desired)).getlength(s)>w-30:desired-=.5
+  33 |         assert desired>=19,(s,desired)
+  34 |         return desired
+  35 |     z+=text(x+15,y+31,title,fit(title,25,True),bold=True,color=color)
+  36 |     for i,s in enumerate(lines):z+=text(x+15,y+65+i*29,s,fit(s,size))
+  37 |     return z
+  38 | 
+  39 | def save(name,z,h):
+  40 |     (OUT/(name+'.svg')).write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{h}" viewBox="0 0 1200 {h}"><rect width="1200" height="{h}" fill="white"/><g font-family="Arial,sans-serif">{z}</g></svg>',encoding='utf-8')
+
+Rasteriza os SVGs da pasta figuras com sharp a 180 dpi.
+Arquivo original: tmp/relatorio_final_ea019/revisao_artigo/rasterize.cjs
+Linhas: 1–9
+
+   1 | const fs=require('fs');
+   2 | const path=require('path');
+   3 | const sharp=require('C:/Users/gusta/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+   4 | (async()=>{
+   5 |   const dir=path.join(__dirname,'figuras');
+   6 |   for(const name of fs.readdirSync(dir).filter(s=>s.endsWith('.svg')))
+   7 |     await sharp(path.join(dir,name),{density:180}).png().toFile(path.join(dir,name.replace('.svg','.png')));
+   8 |   console.log('Figuras metodológicas e séries de referência renderizadas.');
+   9 | })().catch(e=>{console.error(e);process.exit(1)});

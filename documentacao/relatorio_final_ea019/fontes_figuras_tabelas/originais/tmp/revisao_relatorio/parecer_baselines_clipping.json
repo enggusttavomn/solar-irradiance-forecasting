@@ -1,0 +1,3103 @@
+{
+  "scope": "Read-only verification of pasted review items 2,4,5,7 and 13 using frozen local CSVs, contracts, clipping diagnostics and source code. No DOCX edits, model training or forecast replay.",
+  "sources": [
+    {
+      "path": "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_final_atual/auditoria.json",
+      "sha256": "b48b7fbefbd1b267c25c276dc6f6d10692603ac45969946d879f1b52cb5a43d5"
+    },
+    {
+      "path": "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_final_atual/metricas_auditadas.csv",
+      "sha256": "b75304b021d1bcf07389ffe7e8668122029b9de85f0f9a31e0a751db22bdbbdc"
+    },
+    {
+      "path": "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_1998_2022/auditoria.json",
+      "sha256": "73264016a986720643046268ee78601d3007f824da8a3e4851560430958ed61b"
+    },
+    {
+      "path": "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_1998_2022/metricas_auditadas.csv",
+      "sha256": "82d188c94b168c6414a37eb73b7edd8ef56f51181201add5cfa4c29167e0affb"
+    },
+    {
+      "path": "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_curto_pareado/auditoria.json",
+      "sha256": "fa2cb6fa59feaa56cc4f2c5a7fb611e1b793bbb0b3ea7d1fb11e104fb1a9eb7b"
+    },
+    {
+      "path": "resultados/relatorios/quantizacao_todos_modelos_20260929/auditoria_historico_curto_pareado/metricas_auditadas.csv",
+      "sha256": "cbe5576eafe03a1396b22d96ea8b74e6a22640a4ba3d37b6f1f8b3db04eae441"
+    }
+  ],
+  "baseline_comparability": {
+    "all_regime_audits_ok": true,
+    "all_compared_metrics_have_same_sample_counts": true,
+    "matching_key_evidence": "codigo_fonte/analises_e_relatorios/auditar_quantizacao_todos_modelos.py:280–284 calls comparar_amostras across models/variants; this checks actual evaluation keys and reference targets, beyond equal counts.",
+    "causality_evidence": "codigo_fonte/experimentos/quantizacao_referencias.py:corte_fase, prever_climatologia_horaria and previsoes_referencias use data before the phase cut and reject origins before that cut; stored audits replayed references with targets replaced by NaN.",
+    "reference_audit_details": [
+      {
+        "regime": "atual",
+        "task": "hourly_72_extension",
+        "reference": "Climatologia",
+        "audit_ok": true,
+        "selected_variant": "sem_quantizacao",
+        "replay_count": 8,
+        "replay_max_abs_difference": 2.2737367544323206e-13,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "atual",
+        "task": "hourly_72_extension",
+        "reference": "Persistencia",
+        "audit_ok": true,
+        "selected_variant": "sem_quantizacao",
+        "replay_count": 8,
+        "replay_max_abs_difference": 2.2737367544323206e-13,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "atual",
+        "task": "hourly_72_extension",
+        "reference": "Sazonal ingenuo",
+        "audit_ok": true,
+        "selected_variant": "sem_quantizacao",
+        "replay_count": 8,
+        "replay_max_abs_difference": 2.2737367544323206e-13,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "atual",
+        "task": "daily_30",
+        "reference": "Climatologia",
+        "audit_ok": true,
+        "selected_variant": "q64",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "atual",
+        "task": "daily_30",
+        "reference": "Persistencia",
+        "audit_ok": true,
+        "selected_variant": "q128",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "atual",
+        "task": "daily_30",
+        "reference": "Sazonal ingenuo",
+        "audit_ok": true,
+        "selected_variant": "q64",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "atual",
+        "task": "monthly_1",
+        "reference": "Climatologia",
+        "audit_ok": true,
+        "selected_variant": "q256",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "atual",
+        "task": "monthly_1",
+        "reference": "Persistencia",
+        "audit_ok": true,
+        "selected_variant": "q256",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "atual",
+        "task": "monthly_1",
+        "reference": "Sazonal ingenuo",
+        "audit_ok": true,
+        "selected_variant": "q128",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "atual",
+        "task": "monthly_6",
+        "reference": "Climatologia",
+        "audit_ok": true,
+        "selected_variant": "q128",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "atual",
+        "task": "monthly_6",
+        "reference": "Persistencia",
+        "audit_ok": true,
+        "selected_variant": "q64",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "atual",
+        "task": "monthly_6",
+        "reference": "Sazonal ingenuo",
+        "audit_ok": true,
+        "selected_variant": "q256",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "task": "hourly_72_extension",
+        "reference": "Climatologia",
+        "audit_ok": true,
+        "selected_variant": "sem_quantizacao",
+        "replay_count": 8,
+        "replay_max_abs_difference": 2.2737367544323206e-13,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "task": "hourly_72_extension",
+        "reference": "Persistencia",
+        "audit_ok": true,
+        "selected_variant": "sem_quantizacao",
+        "replay_count": 8,
+        "replay_max_abs_difference": 2.2737367544323206e-13,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "task": "hourly_72_extension",
+        "reference": "Sazonal ingenuo",
+        "audit_ok": true,
+        "selected_variant": "sem_quantizacao",
+        "replay_count": 8,
+        "replay_max_abs_difference": 2.2737367544323206e-13,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "task": "daily_30",
+        "reference": "Climatologia",
+        "audit_ok": true,
+        "selected_variant": "q64",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "task": "daily_30",
+        "reference": "Persistencia",
+        "audit_ok": true,
+        "selected_variant": "q64",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "task": "daily_30",
+        "reference": "Sazonal ingenuo",
+        "audit_ok": true,
+        "selected_variant": "q256",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "task": "monthly_1",
+        "reference": "Climatologia",
+        "audit_ok": true,
+        "selected_variant": "q256",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "task": "monthly_1",
+        "reference": "Persistencia",
+        "audit_ok": true,
+        "selected_variant": "q64",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "task": "monthly_1",
+        "reference": "Sazonal ingenuo",
+        "audit_ok": true,
+        "selected_variant": "q256",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "task": "monthly_6",
+        "reference": "Climatologia",
+        "audit_ok": true,
+        "selected_variant": "q256",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "task": "monthly_6",
+        "reference": "Persistencia",
+        "audit_ok": true,
+        "selected_variant": "sem_quantizacao",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_1998_2022",
+        "task": "monthly_6",
+        "reference": "Sazonal ingenuo",
+        "audit_ok": true,
+        "selected_variant": "sem_quantizacao",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "task": "hourly_72_extension",
+        "reference": "Climatologia",
+        "audit_ok": true,
+        "selected_variant": "sem_quantizacao",
+        "replay_count": 8,
+        "replay_max_abs_difference": 2.2737367544323206e-13,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "task": "hourly_72_extension",
+        "reference": "Persistencia",
+        "audit_ok": true,
+        "selected_variant": "sem_quantizacao",
+        "replay_count": 8,
+        "replay_max_abs_difference": 2.2737367544323206e-13,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "task": "hourly_72_extension",
+        "reference": "Sazonal ingenuo",
+        "audit_ok": true,
+        "selected_variant": "sem_quantizacao",
+        "replay_count": 8,
+        "replay_max_abs_difference": 2.2737367544323206e-13,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "task": "daily_30",
+        "reference": "Climatologia",
+        "audit_ok": true,
+        "selected_variant": "q64",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "task": "daily_30",
+        "reference": "Persistencia",
+        "audit_ok": true,
+        "selected_variant": "q64",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "task": "daily_30",
+        "reference": "Sazonal ingenuo",
+        "audit_ok": true,
+        "selected_variant": "q128",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "task": "monthly_1",
+        "reference": "Climatologia",
+        "audit_ok": true,
+        "selected_variant": "q128",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "task": "monthly_1",
+        "reference": "Persistencia",
+        "audit_ok": true,
+        "selected_variant": "q128",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "task": "monthly_1",
+        "reference": "Sazonal ingenuo",
+        "audit_ok": true,
+        "selected_variant": "q256",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "task": "monthly_6",
+        "reference": "Climatologia",
+        "audit_ok": true,
+        "selected_variant": "q128",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "task": "monthly_6",
+        "reference": "Persistencia",
+        "audit_ok": true,
+        "selected_variant": "q128",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      },
+      {
+        "regime": "historico_curto_pareado",
+        "task": "monthly_6",
+        "reference": "Sazonal ingenuo",
+        "audit_ok": true,
+        "selected_variant": "q256",
+        "replay_count": 8,
+        "replay_max_abs_difference": 5.684341886080802e-14,
+        "replay_targets_replaced_nan": true
+      }
+    ]
+  },
+  "SS_definition": "SS_percent = 100*(1 - macro_MAE_model / macro_MAE_reference); model variant is selected using validation at full horizon and frozen across subhorizons. Positive means lower macro-MAE than reference.",
+  "climatology_skills_by_cumulative_horizon": [
+    {
+      "regime": "atual",
+      "task": "hourly_72_extension",
+      "cumulative_horizon": 24,
+      "climatology_continuous_MAE": 52.86421946740129,
+      "climatology_selected_variant": "sem_quantizacao",
+      "climatology_selected_MAE": 52.86421946740129,
+      "climatology_source_line_continuous": 254,
+      "models": {
+        "Transformer": {
+          "variant": "sem_quantizacao",
+          "MAE": 51.29114486444528,
+          "SS_percent_vs_continuous_climatology": 2.9756886960679463,
+          "SS_percent_vs_selected_climatology": 2.9756886960679463,
+          "source_line": 134
+        },
+        "Informer": {
+          "variant": "sem_quantizacao",
+          "MAE": 142.24562073078934,
+          "SS_percent_vs_continuous_climatology": -169.07731195862087,
+          "SS_percent_vs_selected_climatology": -169.07731195862087,
+          "source_line": 158
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 51.84290740408229,
+          "SS_percent_vs_continuous_climatology": 1.9319533582611403,
+          "SS_percent_vs_selected_climatology": 1.9319533582611403,
+          "source_line": 65
+        }
+      }
+    },
+    {
+      "regime": "atual",
+      "task": "hourly_72_extension",
+      "cumulative_horizon": 48,
+      "climatology_continuous_MAE": 52.87277892561983,
+      "climatology_selected_variant": "sem_quantizacao",
+      "climatology_selected_MAE": 52.87277892561983,
+      "climatology_source_line_continuous": 255,
+      "models": {
+        "Transformer": {
+          "variant": "sem_quantizacao",
+          "MAE": 52.829462106163206,
+          "SS_percent_vs_continuous_climatology": 0.0819265042179218,
+          "SS_percent_vs_selected_climatology": 0.0819265042179218,
+          "source_line": 135
+        },
+        "Informer": {
+          "variant": "sem_quantizacao",
+          "MAE": 134.18901415517624,
+          "SS_percent_vs_continuous_climatology": -153.79603055090055,
+          "SS_percent_vs_selected_climatology": -153.79603055090055,
+          "source_line": 159
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 52.880372159447894,
+          "SS_percent_vs_continuous_climatology": -0.014361329179890525,
+          "SS_percent_vs_selected_climatology": -0.014361329179890525,
+          "source_line": 66
+        }
+      }
+    },
+    {
+      "regime": "atual",
+      "task": "hourly_72_extension",
+      "cumulative_horizon": 72,
+      "climatology_continuous_MAE": 52.87305593816958,
+      "climatology_selected_variant": "sem_quantizacao",
+      "climatology_selected_MAE": 52.87305593816958,
+      "climatology_source_line_continuous": 256,
+      "models": {
+        "Transformer": {
+          "variant": "sem_quantizacao",
+          "MAE": 53.20606057784014,
+          "SS_percent_vs_continuous_climatology": -0.6298191654743546,
+          "SS_percent_vs_selected_climatology": -0.6298191654743546,
+          "source_line": 136
+        },
+        "Informer": {
+          "variant": "sem_quantizacao",
+          "MAE": 137.6798450004447,
+          "SS_percent_vs_continuous_climatology": -160.39698776149658,
+          "SS_percent_vs_selected_climatology": -160.39698776149658,
+          "source_line": 160
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 53.52407363312925,
+          "SS_percent_vs_continuous_climatology": -1.2312844101936893,
+          "SS_percent_vs_selected_climatology": -1.2312844101936893,
+          "source_line": 67
+        }
+      }
+    },
+    {
+      "regime": "atual",
+      "task": "daily_30",
+      "cumulative_horizon": 1,
+      "climatology_continuous_MAE": 45.7364490274718,
+      "climatology_selected_variant": "q64",
+      "climatology_selected_MAE": 45.751810199364975,
+      "climatology_source_line_continuous": 686,
+      "models": {
+        "Transformer": {
+          "variant": "q256",
+          "MAE": 44.74632809965753,
+          "SS_percent_vs_continuous_climatology": 2.164839966521115,
+          "SS_percent_vs_selected_climatology": 2.197688124963848,
+          "source_line": 501
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 47.30537271466751,
+          "SS_percent_vs_continuous_climatology": -3.4303574513476764,
+          "SS_percent_vs_selected_climatology": -3.3956307051739465,
+          "source_line": 531
+        },
+        "LSTM": {
+          "variant": "sem_quantizacao",
+          "MAE": 42.10805003892148,
+          "SS_percent_vs_continuous_climatology": 7.933276556671254,
+          "SS_percent_vs_selected_climatology": 7.964187962324754,
+          "source_line": 366
+        }
+      }
+    },
+    {
+      "regime": "atual",
+      "task": "daily_30",
+      "cumulative_horizon": 3,
+      "climatology_continuous_MAE": 45.76227741845165,
+      "climatology_selected_variant": "q64",
+      "climatology_selected_MAE": 45.777388048032236,
+      "climatology_source_line_continuous": 687,
+      "models": {
+        "Transformer": {
+          "variant": "q256",
+          "MAE": 44.693084708279464,
+          "SS_percent_vs_continuous_climatology": 2.336406250929035,
+          "SS_percent_vs_selected_climatology": 2.3686439659140412,
+          "source_line": 502
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 47.24335038832725,
+          "SS_percent_vs_continuous_climatology": -3.2364494370169083,
+          "SS_percent_vs_selected_climatology": -3.2023721815601203,
+          "source_line": 532
+        },
+        "LSTM": {
+          "variant": "sem_quantizacao",
+          "MAE": 43.17603874502977,
+          "SS_percent_vs_continuous_climatology": 5.651464086398583,
+          "SS_percent_vs_selected_climatology": 5.682607536002227,
+          "source_line": 367
+        }
+      }
+    },
+    {
+      "regime": "atual",
+      "task": "daily_30",
+      "cumulative_horizon": 7,
+      "climatology_continuous_MAE": 45.74864134845515,
+      "climatology_selected_variant": "q64",
+      "climatology_selected_MAE": 45.763707807305295,
+      "climatology_source_line_continuous": 688,
+      "models": {
+        "Transformer": {
+          "variant": "q256",
+          "MAE": 44.63684735704519,
+          "SS_percent_vs_continuous_climatology": 2.4302229719604607,
+          "SS_percent_vs_selected_climatology": 2.462345173177205,
+          "source_line": 503
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 46.84120702546428,
+          "SS_percent_vs_continuous_climatology": -2.3881926212569793,
+          "SS_percent_vs_selected_climatology": -2.354484087469366,
+          "source_line": 533
+        },
+        "LSTM": {
+          "variant": "sem_quantizacao",
+          "MAE": 43.73460353976761,
+          "SS_percent_vs_continuous_climatology": 4.402399173665406,
+          "SS_percent_vs_selected_climatology": 4.433872089389079,
+          "source_line": 368
+        }
+      }
+    },
+    {
+      "regime": "atual",
+      "task": "daily_30",
+      "cumulative_horizon": 14,
+      "climatology_continuous_MAE": 45.639515316230664,
+      "climatology_selected_variant": "q64",
+      "climatology_selected_MAE": 45.65375986457919,
+      "climatology_source_line_continuous": 689,
+      "models": {
+        "Transformer": {
+          "variant": "q256",
+          "MAE": 44.382497988906586,
+          "SS_percent_vs_continuous_climatology": 2.7542302292527854,
+          "SS_percent_vs_selected_climatology": 2.7845721347891095,
+          "source_line": 504
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 46.15816943498835,
+          "SS_percent_vs_continuous_climatology": -1.136414607306846,
+          "SS_percent_vs_selected_climatology": -1.1048587715565272,
+          "source_line": 534
+        },
+        "LSTM": {
+          "variant": "sem_quantizacao",
+          "MAE": 44.02039039452082,
+          "SS_percent_vs_continuous_climatology": 3.547638292149091,
+          "SS_percent_vs_selected_climatology": 3.577732644372267,
+          "source_line": 369
+        }
+      }
+    },
+    {
+      "regime": "atual",
+      "task": "daily_30",
+      "cumulative_horizon": 30,
+      "climatology_continuous_MAE": 45.512469250642226,
+      "climatology_selected_variant": "q64",
+      "climatology_selected_MAE": 45.52649598305224,
+      "climatology_source_line_continuous": 690,
+      "models": {
+        "Transformer": {
+          "variant": "q256",
+          "MAE": 43.886935199784816,
+          "SS_percent_vs_continuous_climatology": 3.571623508066357,
+          "SS_percent_vs_selected_climatology": 3.6013331311018804,
+          "source_line": 505
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 45.46025832169785,
+          "SS_percent_vs_continuous_climatology": 0.11471785601621098,
+          "SS_percent_vs_selected_climatology": 0.145492553125659,
+          "source_line": 535
+        },
+        "LSTM": {
+          "variant": "sem_quantizacao",
+          "MAE": 44.18417844043798,
+          "SS_percent_vs_continuous_climatology": 2.918520642967537,
+          "SS_percent_vs_selected_climatology": 2.9484314872683215,
+          "source_line": 370
+        }
+      }
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_1",
+      "cumulative_horizon": 1,
+      "climatology_continuous_MAE": 12.57470514933268,
+      "climatology_selected_variant": "q256",
+      "climatology_selected_MAE": 12.566816080875448,
+      "climatology_source_line_continuous": 790,
+      "models": {
+        "Transformer": {
+          "variant": "q128",
+          "MAE": 13.146652040564387,
+          "SS_percent_vs_continuous_climatology": -4.548392065177453,
+          "SS_percent_vs_selected_climatology": -4.6140243953386895,
+          "source_line": 752
+        },
+        "Informer": {
+          "variant": "q128",
+          "MAE": 12.726569676449799,
+          "SS_percent_vs_continuous_climatology": -1.2076985131152629,
+          "SS_percent_vs_selected_climatology": -1.2712336565303017,
+          "source_line": 760
+        },
+        "LSTM": {
+          "variant": "q128",
+          "MAE": 14.288273183476637,
+          "SS_percent_vs_continuous_climatology": -13.627103091438242,
+          "SS_percent_vs_selected_climatology": -13.698434762811186,
+          "source_line": 728
+        }
+      }
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_6",
+      "cumulative_horizon": 1,
+      "climatology_continuous_MAE": 13.608649335588726,
+      "climatology_selected_variant": "q128",
+      "climatology_selected_MAE": 13.637201293391376,
+      "climatology_source_line_continuous": 1046,
+      "models": {
+        "Transformer": {
+          "variant": "q64",
+          "MAE": 15.67175719132752,
+          "SS_percent_vs_continuous_climatology": -15.160269067580767,
+          "SS_percent_vs_selected_climatology": -14.919160127980913,
+          "source_line": 929
+        },
+        "Informer": {
+          "variant": "q128",
+          "MAE": 14.019624339809871,
+          "SS_percent_vs_continuous_climatology": -3.019954398754199,
+          "SS_percent_vs_selected_climatology": -2.8042634129322286,
+          "source_line": 956
+        },
+        "LSTM": {
+          "variant": "q128",
+          "MAE": 15.77056206831443,
+          "SS_percent_vs_continuous_climatology": -15.886313765701686,
+          "SS_percent_vs_selected_climatology": -15.643684719656402,
+          "source_line": 860
+        }
+      }
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_6",
+      "cumulative_horizon": 3,
+      "climatology_continuous_MAE": 13.07721912202381,
+      "climatology_selected_variant": "q128",
+      "climatology_selected_MAE": 13.087792183279808,
+      "climatology_source_line_continuous": 1047,
+      "models": {
+        "Transformer": {
+          "variant": "q64",
+          "MAE": 14.376663806655628,
+          "SS_percent_vs_continuous_climatology": -9.93670498679171,
+          "SS_percent_vs_selected_climatology": -9.847891877611016,
+          "source_line": 930
+        },
+        "Informer": {
+          "variant": "q128",
+          "MAE": 12.985030563294046,
+          "SS_percent_vs_continuous_climatology": 0.7049553721593993,
+          "SS_percent_vs_selected_climatology": 0.7851715441894336,
+          "source_line": 957
+        },
+        "LSTM": {
+          "variant": "q128",
+          "MAE": 15.35351858768409,
+          "SS_percent_vs_continuous_climatology": -17.406601850286997,
+          "SS_percent_vs_selected_climatology": -17.311754134504366,
+          "source_line": 861
+        }
+      }
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_6",
+      "cumulative_horizon": 6,
+      "climatology_continuous_MAE": 13.027173777988978,
+      "climatology_selected_variant": "q128",
+      "climatology_selected_MAE": 13.03002312229689,
+      "climatology_source_line_continuous": 1048,
+      "models": {
+        "Transformer": {
+          "variant": "q64",
+          "MAE": 14.396546948646185,
+          "SS_percent_vs_continuous_climatology": -10.511667334713316,
+          "SS_percent_vs_selected_climatology": -10.48750116191972,
+          "source_line": 931
+        },
+        "Informer": {
+          "variant": "q128",
+          "MAE": 13.667870528923487,
+          "SS_percent_vs_continuous_climatology": -4.918156169967158,
+          "SS_percent_vs_selected_climatology": -4.895213159945322,
+          "source_line": 958
+        },
+        "LSTM": {
+          "variant": "q128",
+          "MAE": 14.762258865384492,
+          "SS_percent_vs_continuous_climatology": -13.318967851086438,
+          "SS_percent_vs_selected_climatology": -13.294187790990254,
+          "source_line": 862
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "hourly_72_extension",
+      "cumulative_horizon": 24,
+      "climatology_continuous_MAE": 52.26508339846881,
+      "climatology_selected_variant": "sem_quantizacao",
+      "climatology_selected_MAE": 52.26508339846881,
+      "climatology_source_line_continuous": 254,
+      "models": {
+        "Transformer": {
+          "variant": "q128",
+          "MAE": 50.944649711548934,
+          "SS_percent_vs_continuous_climatology": 2.5264164927335853,
+          "SS_percent_vs_selected_climatology": 2.5264164927335853,
+          "source_line": 140
+        },
+        "Informer": {
+          "variant": "q128",
+          "MAE": 52.78229478279451,
+          "SS_percent_vs_continuous_climatology": -0.9895925744200618,
+          "SS_percent_vs_selected_climatology": -0.9895925744200618,
+          "source_line": 164
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 52.322136456011165,
+          "SS_percent_vs_continuous_climatology": -0.10916094232047424,
+          "SS_percent_vs_selected_climatology": -0.10916094232047424,
+          "source_line": 65
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "hourly_72_extension",
+      "cumulative_horizon": 48,
+      "climatology_continuous_MAE": 52.25369769317549,
+      "climatology_selected_variant": "sem_quantizacao",
+      "climatology_selected_MAE": 52.25369769317549,
+      "climatology_source_line_continuous": 255,
+      "models": {
+        "Transformer": {
+          "variant": "q128",
+          "MAE": 51.78114867031593,
+          "SS_percent_vs_continuous_climatology": 0.9043360445690984,
+          "SS_percent_vs_selected_climatology": 0.9043360445690984,
+          "source_line": 141
+        },
+        "Informer": {
+          "variant": "q128",
+          "MAE": 55.78634297228424,
+          "SS_percent_vs_continuous_climatology": -6.760565156272413,
+          "SS_percent_vs_selected_climatology": -6.760565156272413,
+          "source_line": 165
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 54.368487740082834,
+          "SS_percent_vs_continuous_climatology": -4.047158651479599,
+          "SS_percent_vs_selected_climatology": -4.047158651479599,
+          "source_line": 66
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "hourly_72_extension",
+      "cumulative_horizon": 72,
+      "climatology_continuous_MAE": 52.24968361912075,
+      "climatology_selected_variant": "sem_quantizacao",
+      "climatology_selected_MAE": 52.24968361912075,
+      "climatology_source_line_continuous": 256,
+      "models": {
+        "Transformer": {
+          "variant": "q128",
+          "MAE": 52.399576347448075,
+          "SS_percent_vs_continuous_climatology": -0.28687777216027666,
+          "SS_percent_vs_selected_climatology": -0.28687777216027666,
+          "source_line": 142
+        },
+        "Informer": {
+          "variant": "q128",
+          "MAE": 57.13046460740155,
+          "SS_percent_vs_continuous_climatology": -9.341264195702559,
+          "SS_percent_vs_selected_climatology": -9.341264195702559,
+          "source_line": 166
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 55.272065716650104,
+          "SS_percent_vs_continuous_climatology": -5.784498370480673,
+          "SS_percent_vs_selected_climatology": -5.784498370480673,
+          "source_line": 67
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "daily_30",
+      "cumulative_horizon": 1,
+      "climatology_continuous_MAE": 44.384934044667204,
+      "climatology_selected_variant": "q64",
+      "climatology_selected_MAE": 44.38450411229859,
+      "climatology_source_line_continuous": 686,
+      "models": {
+        "Transformer": {
+          "variant": "q128",
+          "MAE": 44.34023509804412,
+          "SS_percent_vs_continuous_climatology": 0.10070747559994819,
+          "SS_percent_vs_selected_climatology": 0.09973979689503754,
+          "source_line": 496
+        },
+        "Informer": {
+          "variant": "q256",
+          "MAE": 43.380197412242055,
+          "SS_percent_vs_continuous_climatology": 2.263688465581637,
+          "SS_percent_vs_selected_climatology": 2.262741738683194,
+          "source_line": 541
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 40.89775995716464,
+          "SS_percent_vs_continuous_climatology": 7.856661641072204,
+          "SS_percent_vs_selected_climatology": 7.855769090744003,
+          "source_line": 371
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "daily_30",
+      "cumulative_horizon": 3,
+      "climatology_continuous_MAE": 44.382446887697235,
+      "climatology_selected_variant": "q64",
+      "climatology_selected_MAE": 44.382040153133964,
+      "climatology_source_line_continuous": 687,
+      "models": {
+        "Transformer": {
+          "variant": "q128",
+          "MAE": 44.507602360689624,
+          "SS_percent_vs_continuous_climatology": -0.28199317921582256,
+          "SS_percent_vs_selected_climatology": -0.2829122030497677,
+          "source_line": 497
+        },
+        "Informer": {
+          "variant": "q256",
+          "MAE": 43.424476564999324,
+          "SS_percent_vs_continuous_climatology": 2.1584441369848384,
+          "SS_percent_vs_selected_climatology": 2.1575474782833393,
+          "source_line": 542
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 42.37884490706388,
+          "SS_percent_vs_continuous_climatology": 4.514401798763268,
+          "SS_percent_vs_selected_climatology": 4.513526730989248,
+          "source_line": 372
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "daily_30",
+      "cumulative_horizon": 7,
+      "climatology_continuous_MAE": 44.335402723938664,
+      "climatology_selected_variant": "q64",
+      "climatology_selected_MAE": 44.33497550387638,
+      "climatology_source_line_continuous": 688,
+      "models": {
+        "Transformer": {
+          "variant": "q128",
+          "MAE": 44.53698352841776,
+          "SS_percent_vs_continuous_climatology": -0.4546723207506709,
+          "SS_percent_vs_selected_climatology": -0.45564032063967197,
+          "source_line": 498
+        },
+        "Informer": {
+          "variant": "q256",
+          "MAE": 43.43329300613699,
+          "SS_percent_vs_continuous_climatology": 2.034738972416239,
+          "SS_percent_vs_selected_climatology": 2.0337949609570694,
+          "source_line": 543
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 42.903095365457524,
+          "SS_percent_vs_continuous_climatology": 3.2306176790580343,
+          "SS_percent_vs_selected_climatology": 3.229685191308296,
+          "source_line": 373
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "daily_30",
+      "cumulative_horizon": 14,
+      "climatology_continuous_MAE": 44.26957776870037,
+      "climatology_selected_variant": "q64",
+      "climatology_selected_MAE": 44.26897618416202,
+      "climatology_source_line_continuous": 689,
+      "models": {
+        "Transformer": {
+          "variant": "q128",
+          "MAE": 44.54856777228695,
+          "SS_percent_vs_continuous_climatology": -0.6302070578676933,
+          "SS_percent_vs_selected_climatology": -0.631574552259373,
+          "source_line": 499
+        },
+        "Informer": {
+          "variant": "q256",
+          "MAE": 43.36743168843611,
+          "SS_percent_vs_continuous_climatology": 2.037846588412906,
+          "SS_percent_vs_selected_climatology": 2.0365153510111034,
+          "source_line": 544
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 43.077960742319135,
+          "SS_percent_vs_continuous_climatology": 2.691728917332792,
+          "SS_percent_vs_selected_climatology": 2.690406565736192,
+          "source_line": 374
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "daily_30",
+      "cumulative_horizon": 30,
+      "climatology_continuous_MAE": 44.123406408101275,
+      "climatology_selected_variant": "q64",
+      "climatology_selected_MAE": 44.12262678320131,
+      "climatology_source_line_continuous": 690,
+      "models": {
+        "Transformer": {
+          "variant": "q128",
+          "MAE": 44.48588615618061,
+          "SS_percent_vs_continuous_climatology": -0.8215135176253829,
+          "SS_percent_vs_selected_climatology": -0.8232949836921355,
+          "source_line": 500
+        },
+        "Informer": {
+          "variant": "q256",
+          "MAE": 43.21170716933709,
+          "SS_percent_vs_continuous_climatology": 2.0662485355999016,
+          "SS_percent_vs_selected_climatology": 2.0645180948543063,
+          "source_line": 545
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 43.19608474021656,
+          "SS_percent_vs_continuous_climatology": 2.1016547528262763,
+          "SS_percent_vs_selected_climatology": 2.0999249376909446,
+          "source_line": 375
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "monthly_1",
+      "cumulative_horizon": 1,
+      "climatology_continuous_MAE": 13.644404508894368,
+      "climatology_selected_variant": "q256",
+      "climatology_selected_MAE": 13.645333030851205,
+      "climatology_source_line_continuous": 790,
+      "models": {
+        "Transformer": {
+          "variant": "q64",
+          "MAE": 14.289408063800053,
+          "SS_percent_vs_continuous_climatology": -4.727238586962357,
+          "SS_percent_vs_selected_climatology": -4.720112228060946,
+          "source_line": 751
+        },
+        "Informer": {
+          "variant": "q256",
+          "MAE": 14.13027548518771,
+          "SS_percent_vs_continuous_climatology": -3.56095405978778,
+          "SS_percent_vs_selected_climatology": -3.553907062876971,
+          "source_line": 761
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 14.660209798663072,
+          "SS_percent_vs_continuous_climatology": -7.444848832402551,
+          "SS_percent_vs_selected_climatology": -7.437537548679063,
+          "source_line": 727
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "monthly_6",
+      "cumulative_horizon": 1,
+      "climatology_continuous_MAE": 13.998698795512642,
+      "climatology_selected_variant": "q256",
+      "climatology_selected_MAE": 13.999697159444702,
+      "climatology_source_line_continuous": 1046,
+      "models": {
+        "Transformer": {
+          "variant": "sem_quantizacao",
+          "MAE": 15.0905253105197,
+          "SS_percent_vs_continuous_climatology": -7.79948573046696,
+          "SS_percent_vs_selected_climatology": -7.791798198570921,
+          "source_line": 926
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 14.594379109194259,
+          "SS_percent_vs_continuous_climatology": -4.255254880350501,
+          "SS_percent_vs_selected_climatology": -4.247820099082378,
+          "source_line": 953
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 15.56345439612439,
+          "SS_percent_vs_continuous_climatology": -11.177864624913125,
+          "SS_percent_vs_selected_climatology": -11.169936169831507,
+          "source_line": 857
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "monthly_6",
+      "cumulative_horizon": 3,
+      "climatology_continuous_MAE": 13.852933938417257,
+      "climatology_selected_variant": "q256",
+      "climatology_selected_MAE": 13.85370844064263,
+      "climatology_source_line_continuous": 1047,
+      "models": {
+        "Transformer": {
+          "variant": "sem_quantizacao",
+          "MAE": 15.037720710603702,
+          "SS_percent_vs_continuous_climatology": -8.55260537192608,
+          "SS_percent_vs_selected_climatology": -8.546536655034087,
+          "source_line": 927
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 14.822794235175184,
+          "SS_percent_vs_continuous_climatology": -7.001118326770395,
+          "SS_percent_vs_selected_climatology": -6.995136346954922,
+          "source_line": 954
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 15.401734009423851,
+          "SS_percent_vs_continuous_climatology": -11.180303594110331,
+          "SS_percent_vs_selected_climatology": -11.17408797372823,
+          "source_line": 858
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "monthly_6",
+      "cumulative_horizon": 6,
+      "climatology_continuous_MAE": 13.681314386894865,
+      "climatology_selected_variant": "q256",
+      "climatology_selected_MAE": 13.682726886079163,
+      "climatology_source_line_continuous": 1048,
+      "models": {
+        "Transformer": {
+          "variant": "sem_quantizacao",
+          "MAE": 14.911236249856305,
+          "SS_percent_vs_continuous_climatology": -8.98979314545658,
+          "SS_percent_vs_selected_climatology": -8.978541879886759,
+          "source_line": 928
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 14.725155641520994,
+          "SS_percent_vs_continuous_climatology": -7.62968546082099,
+          "SS_percent_vs_selected_climatology": -7.618574602277572,
+          "source_line": 955
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 15.05596871175795,
+          "SS_percent_vs_continuous_climatology": -10.047677335591732,
+          "SS_percent_vs_selected_climatology": -10.036316862217909,
+          "source_line": 859
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "hourly_72_extension",
+      "cumulative_horizon": 24,
+      "climatology_continuous_MAE": 55.06290052387915,
+      "climatology_selected_variant": "sem_quantizacao",
+      "climatology_selected_MAE": 55.06290052387915,
+      "climatology_source_line_continuous": 254,
+      "models": {
+        "Transformer": {
+          "variant": "q64",
+          "MAE": 52.7786526495736,
+          "SS_percent_vs_continuous_climatology": 4.148433614235303,
+          "SS_percent_vs_selected_climatology": 4.148433614235303,
+          "source_line": 137
+        },
+        "Informer": {
+          "variant": "q128",
+          "MAE": 140.9148849558717,
+          "SS_percent_vs_continuous_climatology": -155.91620422313403,
+          "SS_percent_vs_selected_climatology": -155.91620422313403,
+          "source_line": 164
+        },
+        "LSTM": {
+          "variant": "q128",
+          "MAE": 54.04753755083932,
+          "SS_percent_vs_continuous_climatology": 1.8440056070048394,
+          "SS_percent_vs_selected_climatology": 1.8440056070048394,
+          "source_line": 68
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "hourly_72_extension",
+      "cumulative_horizon": 48,
+      "climatology_continuous_MAE": 55.05837551778753,
+      "climatology_selected_variant": "sem_quantizacao",
+      "climatology_selected_MAE": 55.05837551778753,
+      "climatology_source_line_continuous": 255,
+      "models": {
+        "Transformer": {
+          "variant": "q64",
+          "MAE": 55.264918061502115,
+          "SS_percent_vs_continuous_climatology": -0.3751337408199662,
+          "SS_percent_vs_selected_climatology": -0.3751337408199662,
+          "source_line": 138
+        },
+        "Informer": {
+          "variant": "q128",
+          "MAE": 132.811524294595,
+          "SS_percent_vs_continuous_climatology": -141.21947486752128,
+          "SS_percent_vs_selected_climatology": -141.21947486752128,
+          "source_line": 165
+        },
+        "LSTM": {
+          "variant": "q128",
+          "MAE": 56.078656741918465,
+          "SS_percent_vs_continuous_climatology": -1.8530899514122234,
+          "SS_percent_vs_selected_climatology": -1.8530899514122234,
+          "source_line": 69
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "hourly_72_extension",
+      "cumulative_horizon": 72,
+      "climatology_continuous_MAE": 55.056635294834315,
+      "climatology_selected_variant": "sem_quantizacao",
+      "climatology_selected_MAE": 55.056635294834315,
+      "climatology_source_line_continuous": 256,
+      "models": {
+        "Transformer": {
+          "variant": "q64",
+          "MAE": 55.48668471315342,
+          "SS_percent_vs_continuous_climatology": -0.7811037053320646,
+          "SS_percent_vs_selected_climatology": -0.7811037053320646,
+          "source_line": 139
+        },
+        "Informer": {
+          "variant": "q128",
+          "MAE": 136.15228411686695,
+          "SS_percent_vs_continuous_climatology": -147.2949597950484,
+          "SS_percent_vs_selected_climatology": -147.2949597950484,
+          "source_line": 166
+        },
+        "LSTM": {
+          "variant": "q128",
+          "MAE": 56.81117740389402,
+          "SS_percent_vs_continuous_climatology": -3.1867950151038826,
+          "SS_percent_vs_selected_climatology": -3.1867950151038826,
+          "source_line": 70
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "daily_30",
+      "cumulative_horizon": 1,
+      "climatology_continuous_MAE": 46.9371448623157,
+      "climatology_selected_variant": "q64",
+      "climatology_selected_MAE": 46.94628573687863,
+      "climatology_source_line_continuous": 686,
+      "models": {
+        "Transformer": {
+          "variant": "q128",
+          "MAE": 45.88498971343302,
+          "SS_percent_vs_continuous_climatology": 2.241625799713731,
+          "SS_percent_vs_selected_climatology": 2.2606602562636913,
+          "source_line": 496
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 47.916760273582085,
+          "SS_percent_vs_continuous_climatology": -2.0870792506445968,
+          "SS_percent_vs_selected_climatology": -2.0672019553212406,
+          "source_line": 531
+        },
+        "LSTM": {
+          "variant": "q128",
+          "MAE": 43.062279383495,
+          "SS_percent_vs_continuous_climatology": 8.25543498691097,
+          "SS_percent_vs_selected_climatology": 8.273298499379578,
+          "source_line": 376
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "daily_30",
+      "cumulative_horizon": 3,
+      "climatology_continuous_MAE": 46.94126123074447,
+      "climatology_selected_variant": "q64",
+      "climatology_selected_MAE": 46.950230444940914,
+      "climatology_source_line_continuous": 687,
+      "models": {
+        "Transformer": {
+          "variant": "q128",
+          "MAE": 45.587454363640056,
+          "SS_percent_vs_continuous_climatology": 2.8840445092637057,
+          "SS_percent_vs_selected_climatology": 2.9025972149359314,
+          "source_line": 497
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 47.88635877492774,
+          "SS_percent_vs_continuous_climatology": -2.013362060166113,
+          "SS_percent_vs_selected_climatology": -1.9938737704059628,
+          "source_line": 532
+        },
+        "LSTM": {
+          "variant": "q128",
+          "MAE": 43.92466735340379,
+          "SS_percent_vs_continuous_climatology": 6.426316205080884,
+          "SS_percent_vs_selected_climatology": 6.444192207076038,
+          "source_line": 377
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "daily_30",
+      "cumulative_horizon": 7,
+      "climatology_continuous_MAE": 46.90007297101669,
+      "climatology_selected_variant": "q64",
+      "climatology_selected_MAE": 46.908804301151314,
+      "climatology_source_line_continuous": 688,
+      "models": {
+        "Transformer": {
+          "variant": "q128",
+          "MAE": 45.32208388303125,
+          "SS_percent_vs_continuous_climatology": 3.364577042258776,
+          "SS_percent_vs_selected_climatology": 3.3825641939910223,
+          "source_line": 498
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 47.549917584865796,
+          "SS_percent_vs_continuous_climatology": -1.385594035750648,
+          "SS_percent_vs_selected_climatology": -1.3667227149909422,
+          "source_line": 533
+        },
+        "LSTM": {
+          "variant": "q128",
+          "MAE": 44.07025276115176,
+          "SS_percent_vs_continuous_climatology": 6.033722402977293,
+          "SS_percent_vs_selected_climatology": 6.051212735622613,
+          "source_line": 378
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "daily_30",
+      "cumulative_horizon": 14,
+      "climatology_continuous_MAE": 46.832837324084586,
+      "climatology_selected_variant": "q64",
+      "climatology_selected_MAE": 46.84182701959163,
+      "climatology_source_line_continuous": 689,
+      "models": {
+        "Transformer": {
+          "variant": "q128",
+          "MAE": 44.87531539379667,
+          "SS_percent_vs_continuous_climatology": 4.179806396827523,
+          "SS_percent_vs_selected_climatology": 4.198195823942708,
+          "source_line": 499
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 46.970309414796475,
+          "SS_percent_vs_continuous_climatology": -0.2935378221067042,
+          "SS_percent_vs_selected_climatology": -0.27428988871656124,
+          "source_line": 534
+        },
+        "LSTM": {
+          "variant": "q128",
+          "MAE": 44.28518248832477,
+          "SS_percent_vs_continuous_climatology": 5.439890003097547,
+          "SS_percent_vs_selected_climatology": 5.458037600022614,
+          "source_line": 379
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "daily_30",
+      "cumulative_horizon": 30,
+      "climatology_continuous_MAE": 46.66319758494079,
+      "climatology_selected_variant": "q64",
+      "climatology_selected_MAE": 46.67267031631239,
+      "climatology_source_line_continuous": 690,
+      "models": {
+        "Transformer": {
+          "variant": "q128",
+          "MAE": 44.665700654847214,
+          "SS_percent_vs_continuous_climatology": 4.280668778554109,
+          "SS_percent_vs_selected_climatology": 4.300096068777382,
+          "source_line": 500
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 46.49705126999878,
+          "SS_percent_vs_continuous_climatology": 0.35605428590609334,
+          "SS_percent_vs_selected_climatology": 0.3762781197720222,
+          "source_line": 535
+        },
+        "LSTM": {
+          "variant": "q128",
+          "MAE": 44.37000855935146,
+          "SS_percent_vs_continuous_climatology": 4.914341803120214,
+          "SS_percent_vs_selected_climatology": 4.933640482439106,
+          "source_line": 380
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "monthly_1",
+      "cumulative_horizon": 1,
+      "climatology_continuous_MAE": 13.924083389282226,
+      "climatology_selected_variant": "q128",
+      "climatology_selected_MAE": 13.907291235657183,
+      "climatology_source_line_continuous": 790,
+      "models": {
+        "Transformer": {
+          "variant": "q128",
+          "MAE": 16.405955287789713,
+          "SS_percent_vs_continuous_climatology": -17.82431079390012,
+          "SS_percent_vs_selected_climatology": -17.96657601967919,
+          "source_line": 752
+        },
+        "Informer": {
+          "variant": "sem_quantizacao",
+          "MAE": 16.21827759865641,
+          "SS_percent_vs_continuous_climatology": -16.476446924614763,
+          "SS_percent_vs_selected_climatology": -16.617084692050188,
+          "source_line": 758
+        },
+        "LSTM": {
+          "variant": "sem_quantizacao",
+          "MAE": 15.445973830335376,
+          "SS_percent_vs_continuous_climatology": -10.929914727633673,
+          "SS_percent_vs_selected_climatology": -11.063855416597113,
+          "source_line": 726
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "monthly_6",
+      "cumulative_horizon": 1,
+      "climatology_continuous_MAE": 14.366175407409667,
+      "climatology_selected_variant": "q128",
+      "climatology_selected_MAE": 14.350004953418303,
+      "climatology_source_line_continuous": 1046,
+      "models": {
+        "Transformer": {
+          "variant": "q64",
+          "MAE": 17.76648819994862,
+          "SS_percent_vs_continuous_climatology": -23.66887982437669,
+          "SS_percent_vs_selected_climatology": -23.808237402151413,
+          "source_line": 929
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 16.20793549691232,
+          "SS_percent_vs_continuous_climatology": -12.820114172855824,
+          "SS_percent_vs_selected_climatology": -12.947246704966764,
+          "source_line": 953
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 16.150868745331902,
+          "SS_percent_vs_continuous_climatology": -12.422884221514806,
+          "SS_percent_vs_selected_climatology": -12.549569130877657,
+          "source_line": 857
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "monthly_6",
+      "cumulative_horizon": 3,
+      "climatology_continuous_MAE": 14.205560854593912,
+      "climatology_selected_variant": "q128",
+      "climatology_selected_MAE": 14.186626887300894,
+      "climatology_source_line_continuous": 1047,
+      "models": {
+        "Transformer": {
+          "variant": "q64",
+          "MAE": 17.332823128762914,
+          "SS_percent_vs_continuous_climatology": -22.014352732561647,
+          "SS_percent_vs_selected_climatology": -22.177197345468546,
+          "source_line": 930
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 16.278547726077363,
+          "SS_percent_vs_continuous_climatology": -14.592784422257221,
+          "SS_percent_vs_selected_climatology": -14.745723951117974,
+          "source_line": 954
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 15.76311613824177,
+          "SS_percent_vs_continuous_climatology": -10.964405415532497,
+          "SS_percent_vs_selected_climatology": -11.112502383156798,
+          "source_line": 858
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "monthly_6",
+      "cumulative_horizon": 6,
+      "climatology_continuous_MAE": 14.061536679903664,
+      "climatology_selected_variant": "q128",
+      "climatology_selected_MAE": 14.042640046752203,
+      "climatology_source_line_continuous": 1048,
+      "models": {
+        "Transformer": {
+          "variant": "q64",
+          "MAE": 17.20566679077275,
+          "SS_percent_vs_continuous_climatology": -22.359790273580728,
+          "SS_percent_vs_selected_climatology": -22.524445072221976,
+          "source_line": 931
+        },
+        "Informer": {
+          "variant": "q64",
+          "MAE": 16.307666674642753,
+          "SS_percent_vs_continuous_climatology": -15.973574196547036,
+          "SS_percent_vs_selected_climatology": -16.129635313228796,
+          "source_line": 955
+        },
+        "LSTM": {
+          "variant": "q64",
+          "MAE": 15.406413511904976,
+          "SS_percent_vs_continuous_climatology": -9.564223758868184,
+          "SS_percent_vs_selected_climatology": -9.711660062583372,
+          "source_line": 859
+        }
+      }
+    }
+  ],
+  "all_simple_references_at_full_horizons": [
+    {
+      "regime": "atual",
+      "task": "hourly_72_extension",
+      "cumulative_horizon": 72,
+      "references": {
+        "Climatologia": {
+          "continuous_MAE": 52.87305593816958,
+          "selected_variant": "sem_quantizacao",
+          "selected_MAE": 52.87305593816958,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": -0.6298191654743546,
+            "Informer": -160.39698776149658,
+            "LSTM": -1.2312844101936893
+          }
+        },
+        "Persistencia": {
+          "continuous_MAE": 58.10878481787572,
+          "selected_variant": "sem_quantizacao",
+          "selected_MAE": 58.10878481787572,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 8.437148110051995,
+            "Informer": -136.93464840464347,
+            "LSTM": 7.8898762022228786
+          }
+        },
+        "Sazonal ingenuo": {
+          "continuous_MAE": 65.89645316804408,
+          "selected_variant": "sem_quantizacao",
+          "selected_MAE": 65.89645316804408,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 19.258081399072978,
+            "Informer": -108.93361991630131,
+            "LSTM": 18.775486297211984
+          }
+        }
+      }
+    },
+    {
+      "regime": "atual",
+      "task": "daily_30",
+      "cumulative_horizon": 30,
+      "references": {
+        "Climatologia": {
+          "continuous_MAE": 45.512469250642226,
+          "selected_variant": "q64",
+          "selected_MAE": 45.52649598305224,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 3.571623508066357,
+            "Informer": 0.11471785601621098,
+            "LSTM": 2.918520642967537
+          }
+        },
+        "Persistencia": {
+          "continuous_MAE": 60.27587746467365,
+          "selected_variant": "q128",
+          "selected_MAE": 60.27871283143048,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 27.189885828694948,
+            "Informer": 24.57968223135184,
+            "LSTM": 26.696747855170845
+          }
+        },
+        "Sazonal ingenuo": {
+          "continuous_MAE": 58.77648693405911,
+          "selected_variant": "q64",
+          "selected_MAE": 58.84584646143187,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 25.332496906422406,
+            "Informer": 22.65570691099764,
+            "LSTM": 24.826778963486074
+          }
+        }
+      }
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_1",
+      "cumulative_horizon": 1,
+      "references": {
+        "Climatologia": {
+          "continuous_MAE": 12.57470514933268,
+          "selected_variant": "q256",
+          "selected_MAE": 12.566816080875448,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": -4.548392065177453,
+            "Informer": -1.2076985131152629,
+            "LSTM": -13.627103091438242
+          }
+        },
+        "Persistencia": {
+          "continuous_MAE": 35.08767016728719,
+          "selected_variant": "q256",
+          "selected_MAE": 35.05553064900633,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 62.53198922047203,
+            "Informer": 63.72922563460772,
+            "LSTM": 59.27836440734151
+          }
+        },
+        "Sazonal ingenuo": {
+          "continuous_MAE": 16.94283774693807,
+          "selected_variant": "q128",
+          "selected_MAE": 17.000161572614,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 22.405843478373242,
+            "Informer": 24.885253187590973,
+            "LSTM": 15.667768310778818
+          }
+        }
+      }
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_6",
+      "cumulative_horizon": 6,
+      "references": {
+        "Climatologia": {
+          "continuous_MAE": 13.027173777988978,
+          "selected_variant": "q128",
+          "selected_MAE": 13.03002312229689,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": -10.511667334713316,
+            "Informer": -4.918156169967158,
+            "LSTM": -13.318967851086438
+          }
+        },
+        "Persistencia": {
+          "continuous_MAE": 91.8868172055199,
+          "selected_variant": "q64",
+          "selected_MAE": 91.9732297729427,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 84.33230425595659,
+            "Informer": 85.12531944777992,
+            "LSTM": 83.93430166117705
+          }
+        },
+        "Sazonal ingenuo": {
+          "continuous_MAE": 18.001219495137533,
+          "selected_variant": "q256",
+          "selected_MAE": 18.028635479487036,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 20.024601930247222,
+            "Informer": 24.072530016005665,
+            "LSTM": 17.99300669950692
+          }
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "hourly_72_extension",
+      "cumulative_horizon": 72,
+      "references": {
+        "Climatologia": {
+          "continuous_MAE": 52.24968361912075,
+          "selected_variant": "sem_quantizacao",
+          "selected_MAE": 52.24968361912075,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": -0.28687777216027666,
+            "Informer": -9.341264195702559,
+            "LSTM": -5.784498370480673
+          }
+        },
+        "Persistencia": {
+          "continuous_MAE": 59.16076998050683,
+          "selected_variant": "sem_quantizacao",
+          "selected_MAE": 59.16076998050683,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 11.428508512121349,
+            "Informer": 3.431844064528322,
+            "LSTM": 6.573113002312225
+          }
+        },
+        "Sazonal ingenuo": {
+          "continuous_MAE": 65.33406534275504,
+          "selected_variant": "sem_quantizacao",
+          "selected_MAE": 65.33406534275504,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 19.79746542244104,
+            "Informer": 12.556391053144832,
+            "LSTM": 15.400847281303797
+          }
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "daily_30",
+      "cumulative_horizon": 30,
+      "references": {
+        "Climatologia": {
+          "continuous_MAE": 44.123406408101275,
+          "selected_variant": "q64",
+          "selected_MAE": 44.12262678320131,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": -0.8215135176253829,
+            "Informer": 2.0662485355999016,
+            "LSTM": 2.1016547528262763
+          }
+        },
+        "Persistencia": {
+          "continuous_MAE": 59.64284740876157,
+          "selected_variant": "q64",
+          "selected_MAE": 59.662249101444715,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 25.41287331354738,
+            "Informer": 27.549221664106426,
+            "LSTM": 27.57541496271515
+          }
+        },
+        "Sazonal ingenuo": {
+          "continuous_MAE": 56.86119688164223,
+          "selected_variant": "q256",
+          "selected_MAE": 56.85870105534743,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 21.764070058569263,
+            "Informer": 24.004928599580555,
+            "LSTM": 24.032403274714532
+          }
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "monthly_1",
+      "cumulative_horizon": 1,
+      "references": {
+        "Climatologia": {
+          "continuous_MAE": 13.644404508894368,
+          "selected_variant": "q256",
+          "selected_MAE": 13.645333030851205,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": -4.727238586962357,
+            "Informer": -3.56095405978778,
+            "LSTM": -7.444848832402551
+          }
+        },
+        "Persistencia": {
+          "continuous_MAE": 35.487448399861655,
+          "selected_variant": "q64",
+          "selected_MAE": 35.419937939307886,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 59.733909570529285,
+            "Informer": 60.182328901272044,
+            "LSTM": 58.68902820660327
+          }
+        },
+        "Sazonal ingenuo": {
+          "continuous_MAE": 16.98891254001194,
+          "selected_variant": "q256",
+          "selected_MAE": 16.91215122115353,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 15.889801479959754,
+            "Informer": 16.826486380994808,
+            "LSTM": 13.707191298232624
+          }
+        }
+      }
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "monthly_6",
+      "cumulative_horizon": 6,
+      "references": {
+        "Climatologia": {
+          "continuous_MAE": 13.681314386894865,
+          "selected_variant": "q256",
+          "selected_MAE": 13.682726886079163,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": -8.98979314545658,
+            "Informer": -7.62968546082099,
+            "LSTM": -10.047677335591732
+          }
+        },
+        "Persistencia": {
+          "continuous_MAE": 85.89548848628996,
+          "selected_variant": "sem_quantizacao",
+          "selected_MAE": 85.89548848628996,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 82.64025676711026,
+            "Informer": 82.8568928345156,
+            "LSTM": 82.47175843913959
+          }
+        },
+        "Sazonal ingenuo": {
+          "continuous_MAE": 17.47368681112925,
+          "selected_variant": "sem_quantizacao",
+          "selected_MAE": 17.47368681112925,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 14.664624523548653,
+            "Informer": 15.729543509144717,
+            "LSTM": 13.836336461240794
+          }
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "hourly_72_extension",
+      "cumulative_horizon": 72,
+      "references": {
+        "Climatologia": {
+          "continuous_MAE": 55.056635294834315,
+          "selected_variant": "sem_quantizacao",
+          "selected_MAE": 55.056635294834315,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": -0.7811037053320646,
+            "Informer": -147.2949597950484,
+            "LSTM": -3.1867950151038826
+          }
+        },
+        "Persistencia": {
+          "continuous_MAE": 59.16076998050683,
+          "selected_variant": "sem_quantizacao",
+          "selected_MAE": 59.16076998050683,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 6.210340515453061,
+            "Informer": -130.1394727650239,
+            "LSTM": 3.971538195643809
+          }
+        },
+        "Sazonal ingenuo": {
+          "continuous_MAE": 65.33406534275504,
+          "selected_variant": "sem_quantizacao",
+          "selected_MAE": 65.33406534275504,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 15.072352497797848,
+            "Informer": -108.39401834645672,
+            "LSTM": 13.04509048097392
+          }
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "daily_30",
+      "cumulative_horizon": 30,
+      "references": {
+        "Climatologia": {
+          "continuous_MAE": 46.66319758494079,
+          "selected_variant": "q64",
+          "selected_MAE": 46.67267031631239,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 4.280668778554109,
+            "Informer": 0.35605428590609334,
+            "LSTM": 4.914341803120214
+          }
+        },
+        "Persistencia": {
+          "continuous_MAE": 59.64284740876157,
+          "selected_variant": "q64",
+          "selected_MAE": 59.662543708951205,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 25.111387877357117,
+            "Informer": 22.04085939872761,
+            "LSTM": 25.60715913634687
+          }
+        },
+        "Sazonal ingenuo": {
+          "continuous_MAE": 56.86119688164223,
+          "selected_variant": "q128",
+          "selected_MAE": 56.8647991739896,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 21.447835950727868,
+            "Informer": 18.227097177037333,
+            "LSTM": 21.967860346470435
+          }
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "monthly_1",
+      "cumulative_horizon": 1,
+      "references": {
+        "Climatologia": {
+          "continuous_MAE": 13.924083389282226,
+          "selected_variant": "q128",
+          "selected_MAE": 13.907291235657183,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": -17.82431079390012,
+            "Informer": -16.476446924614763,
+            "LSTM": -10.929914727633673
+          }
+        },
+        "Persistencia": {
+          "continuous_MAE": 35.487448399861655,
+          "selected_variant": "q128",
+          "selected_MAE": 35.336371126110954,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 53.76969596987517,
+            "Informer": 54.298552502524714,
+            "LSTM": 56.47482553184751
+          }
+        },
+        "Sazonal ingenuo": {
+          "continuous_MAE": 16.98891254001194,
+          "selected_variant": "q256",
+          "selected_MAE": 16.923990774932655,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 3.431398277254394,
+            "Informer": 4.536105177659511,
+            "LSTM": 9.082033391146515
+          }
+        }
+      }
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "monthly_6",
+      "cumulative_horizon": 6,
+      "references": {
+        "Climatologia": {
+          "continuous_MAE": 14.061536679903664,
+          "selected_variant": "q128",
+          "selected_MAE": 14.042640046752203,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": -22.359790273580728,
+            "Informer": -15.973574196547036,
+            "LSTM": -9.564223758868184
+          }
+        },
+        "Persistencia": {
+          "continuous_MAE": 85.89548848628996,
+          "selected_variant": "q128",
+          "selected_MAE": 85.69652855927276,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 79.9690681152375,
+            "Informer": 81.01452478817247,
+            "LSTM": 82.06376867585539
+          }
+        },
+        "Sazonal ingenuo": {
+          "continuous_MAE": 17.47368681112925,
+          "selected_variant": "q256",
+          "selected_MAE": 17.4013290793831,
+          "models_SS_percent_vs_continuous": {
+            "Transformer": 1.5338492858061104,
+            "Informer": 6.673005812052457,
+            "LSTM": 11.830779168524408
+          }
+        }
+      }
+    }
+  ],
+  "monthly_summary": {
+    "negative_count": 35,
+    "positive_count": 1,
+    "range_SS_percent": [
+      -23.66887982437669,
+      0.7049553721593993
+    ],
+    "positive_cases": [
+      {
+        "regime": "atual",
+        "task": "monthly_6",
+        "horizon": 3,
+        "model": "Informer",
+        "SS_percent": 0.7049553721593993
+      }
+    ]
+  },
+  "clipping_diagnostics": [
+    {
+      "regime": "atual",
+      "task": "hourly_72_extension",
+      "source_example": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/q64/clipping_{selecao,refit}.json",
+      "all_three_models_three_levels_same_saturation_counts": true,
+      "missing_files": [],
+      "parts": {
+        "ajuste": {
+          "saturados": 0,
+          "total": 4855200,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "validacao": {
+          "saturados": 14,
+          "total": 1219680,
+          "abaixo_zero": 0,
+          "acima_um": 14,
+          "fracao_saturados": 1.147842056932966e-05
+        },
+        "refit": {
+          "saturados": 0,
+          "total": 6081600,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "teste": {
+          "saturados": 14,
+          "total": 1219680,
+          "abaixo_zero": 0,
+          "acima_um": 14,
+          "fracao_saturados": 1.147842056932966e-05
+        }
+      },
+      "counting_unit": "Scalar entries in overlapping input windows, not unique observations, prediction targets or forecast errors."
+    },
+    {
+      "regime": "atual",
+      "task": "daily_30",
+      "source_example": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/q64/clipping_{selecao,refit}.json",
+      "all_three_models_three_levels_same_saturation_counts": true,
+      "missing_files": [],
+      "parts": {
+        "ajuste": {
+          "saturados": 0,
+          "total": 3894550,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "validacao": {
+          "saturados": 0,
+          "total": 1226400,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "refit": {
+          "saturados": 0,
+          "total": 5226800,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "teste": {
+          "saturados": 328,
+          "total": 1230050,
+          "abaixo_zero": 328,
+          "acima_um": 0,
+          "fracao_saturados": 0.0002666558269989025
+        }
+      },
+      "counting_unit": "Scalar entries in overlapping input windows, not unique observations, prediction targets or forecast errors."
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_1",
+      "source_example": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/transformer/q64/clipping_{selecao,refit}.json",
+      "all_three_models_three_levels_same_saturation_counts": true,
+      "missing_files": [],
+      "parts": {
+        "ajuste": {
+          "saturados": 0,
+          "total": 4320,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "validacao": {
+          "saturados": 24,
+          "total": 1440,
+          "abaixo_zero": 18,
+          "acima_um": 6,
+          "fracao_saturados": 0.016666666666666666
+        },
+        "refit": {
+          "saturados": 0,
+          "total": 5760,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "teste": {
+          "saturados": 0,
+          "total": 1440,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        }
+      },
+      "counting_unit": "Scalar entries in overlapping input windows, not unique observations, prediction targets or forecast errors."
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_6",
+      "source_example": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/transformer/q64/clipping_{selecao,refit}.json",
+      "all_three_models_three_levels_same_saturation_counts": true,
+      "missing_files": [],
+      "parts": {
+        "ajuste": {
+          "saturados": 0,
+          "total": 3720,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "validacao": {
+          "saturados": 9,
+          "total": 840,
+          "abaixo_zero": 8,
+          "acima_um": 1,
+          "fracao_saturados": 0.010714285714285714
+        },
+        "refit": {
+          "saturados": 0,
+          "total": 5160,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "teste": {
+          "saturados": 0,
+          "total": 840,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        }
+      },
+      "counting_unit": "Scalar entries in overlapping input windows, not unique observations, prediction targets or forecast errors."
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "hourly_72_extension",
+      "source_example": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/hourly_72_extension/transformer/q64/clipping_{selecao,refit}.json",
+      "all_three_models_three_levels_same_saturation_counts": true,
+      "missing_files": [],
+      "parts": {
+        "ajuste": {
+          "saturados": 0,
+          "total": 24793440,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "validacao": {
+          "saturados": 0,
+          "total": 1219680,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "refit": {
+          "saturados": 0,
+          "total": 26019840,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "teste": {
+          "saturados": 28,
+          "total": 4596480,
+          "abaixo_zero": 0,
+          "acima_um": 28,
+          "fracao_saturados": 6.091617933723197e-06
+        }
+      },
+      "counting_unit": "Scalar entries in overlapping input windows, not unique observations, prediction targets or forecast errors."
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "daily_30",
+      "source_example": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/daily_30/transformer/q64/clipping_{selecao,refit}.json",
+      "all_three_models_three_levels_same_saturation_counts": true,
+      "missing_files": [],
+      "parts": {
+        "ajuste": {
+          "saturados": 0,
+          "total": 25553650,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "validacao": {
+          "saturados": 143,
+          "total": 1226400,
+          "abaixo_zero": 143,
+          "acima_um": 0,
+          "fracao_saturados": 0.00011660143509458578
+        },
+        "refit": {
+          "saturados": 0,
+          "total": 26885900,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "teste": {
+          "saturados": 4487,
+          "total": 4898300,
+          "abaixo_zero": 3225,
+          "acima_um": 1262,
+          "fracao_saturados": 0.0009160320927668783
+        }
+      },
+      "counting_unit": "Scalar entries in overlapping input windows, not unique observations, prediction targets or forecast errors."
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "monthly_1",
+      "source_example": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_1/transformer/q64/clipping_{selecao,refit}.json",
+      "all_three_models_three_levels_same_saturation_counts": true,
+      "missing_files": [],
+      "parts": {
+        "ajuste": {
+          "saturados": 0,
+          "total": 27720,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "validacao": {
+          "saturados": 21,
+          "total": 1440,
+          "abaixo_zero": 3,
+          "acima_um": 18,
+          "fracao_saturados": 0.014583333333333334
+        },
+        "refit": {
+          "saturados": 0,
+          "total": 29160,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "teste": {
+          "saturados": 65,
+          "total": 5400,
+          "abaixo_zero": 12,
+          "acima_um": 53,
+          "fracao_saturados": 0.012037037037037037
+        }
+      },
+      "counting_unit": "Scalar entries in overlapping input windows, not unique observations, prediction targets or forecast errors."
+    },
+    {
+      "regime": "historico_1998_2022",
+      "task": "monthly_6",
+      "source_example": "resultados/quantizacao_todos_modelos_20260929/historico_1998_2022/monthly_6/transformer/q64/clipping_{selecao,refit}.json",
+      "all_three_models_three_levels_same_saturation_counts": true,
+      "missing_files": [],
+      "parts": {
+        "ajuste": {
+          "saturados": 0,
+          "total": 27120,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "validacao": {
+          "saturados": 8,
+          "total": 840,
+          "abaixo_zero": 0,
+          "acima_um": 8,
+          "fracao_saturados": 0.009523809523809525
+        },
+        "refit": {
+          "saturados": 0,
+          "total": 28560,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "teste": {
+          "saturados": 60,
+          "total": 4800,
+          "abaixo_zero": 12,
+          "acima_um": 48,
+          "fracao_saturados": 0.0125
+        }
+      },
+      "counting_unit": "Scalar entries in overlapping input windows, not unique observations, prediction targets or forecast errors."
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "hourly_72_extension",
+      "source_example": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/hourly_72_extension/transformer/q64/clipping_{selecao,refit}.json",
+      "all_three_models_three_levels_same_saturation_counts": true,
+      "missing_files": [],
+      "parts": {
+        "ajuste": {
+          "saturados": 0,
+          "total": 4855200,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "validacao": {
+          "saturados": 0,
+          "total": 1219680,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "refit": {
+          "saturados": 0,
+          "total": 6081600,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "teste": {
+          "saturados": 112,
+          "total": 4596480,
+          "abaixo_zero": 0,
+          "acima_um": 112,
+          "fracao_saturados": 2.4366471734892787e-05
+        }
+      },
+      "counting_unit": "Scalar entries in overlapping input windows, not unique observations, prediction targets or forecast errors."
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "daily_30",
+      "source_example": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/daily_30/transformer/q64/clipping_{selecao,refit}.json",
+      "all_three_models_three_levels_same_saturation_counts": true,
+      "missing_files": [],
+      "parts": {
+        "ajuste": {
+          "saturados": 0,
+          "total": 3894550,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "validacao": {
+          "saturados": 936,
+          "total": 1226400,
+          "abaixo_zero": 936,
+          "acima_um": 0,
+          "fracao_saturados": 0.0007632093933463796
+        },
+        "refit": {
+          "saturados": 0,
+          "total": 5226800,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "teste": {
+          "saturados": 11693,
+          "total": 4898300,
+          "abaixo_zero": 7555,
+          "acima_um": 4138,
+          "fracao_saturados": 0.0023871547271502357
+        }
+      },
+      "counting_unit": "Scalar entries in overlapping input windows, not unique observations, prediction targets or forecast errors."
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "monthly_1",
+      "source_example": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_1/transformer/q64/clipping_{selecao,refit}.json",
+      "all_three_models_three_levels_same_saturation_counts": true,
+      "missing_files": [],
+      "parts": {
+        "ajuste": {
+          "saturados": 0,
+          "total": 4320,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "validacao": {
+          "saturados": 24,
+          "total": 1440,
+          "abaixo_zero": 3,
+          "acima_um": 21,
+          "fracao_saturados": 0.016666666666666666
+        },
+        "refit": {
+          "saturados": 0,
+          "total": 5760,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "teste": {
+          "saturados": 176,
+          "total": 5400,
+          "abaixo_zero": 36,
+          "acima_um": 140,
+          "fracao_saturados": 0.03259259259259259
+        }
+      },
+      "counting_unit": "Scalar entries in overlapping input windows, not unique observations, prediction targets or forecast errors."
+    },
+    {
+      "regime": "historico_curto_pareado",
+      "task": "monthly_6",
+      "source_example": "resultados/quantizacao_todos_modelos_20260929/historico_curto_pareado/monthly_6/transformer/q64/clipping_{selecao,refit}.json",
+      "all_three_models_three_levels_same_saturation_counts": true,
+      "missing_files": [],
+      "parts": {
+        "ajuste": {
+          "saturados": 0,
+          "total": 3720,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "validacao": {
+          "saturados": 8,
+          "total": 840,
+          "abaixo_zero": 0,
+          "acima_um": 8,
+          "fracao_saturados": 0.009523809523809525
+        },
+        "refit": {
+          "saturados": 0,
+          "total": 5160,
+          "abaixo_zero": 0,
+          "acima_um": 0,
+          "fracao_saturados": 0.0
+        },
+        "teste": {
+          "saturados": 151,
+          "total": 4800,
+          "abaixo_zero": 36,
+          "acima_um": 115,
+          "fracao_saturados": 0.03145833333333333
+        }
+      },
+      "counting_unit": "Scalar entries in overlapping input windows, not unique observations, prediction targets or forecast errors."
+    }
+  ],
+  "quantization_steps": [
+    {
+      "regime": "atual",
+      "task": "hourly_72_extension",
+      "phase": "refit_before_2024",
+      "source": "resultados/quantizacao_todos_modelos_20260929/atual/hourly_72_extension/transformer/escalas_refit.csv",
+      "delta_Q64_min_max_Wm2": [
+        16.238095238095237,
+        18.03968253968254
+      ],
+      "uniform_error_RMS_Q64_min_max_Wm2": [
+        4.687534328420533,
+        5.207607785190554
+      ],
+      "locations": [
+        {
+          "location": "BMW San Luis Potosi",
+          "minimum": 0.0,
+          "maximum": 1136.5,
+          "amplitude": 1136.5,
+          "steps_Wm2": {
+            "64": 18.03968253968254,
+            "128": 8.948818897637794,
+            "256": 4.456862745098039
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 5.207607785190554
+        },
+        {
+          "location": "BYD Camacari",
+          "minimum": 0.0,
+          "maximum": 1087.5,
+          "amplitude": 1087.5,
+          "steps_Wm2": {
+            "64": 17.261904761904763,
+            "128": 8.562992125984252,
+            "256": 4.264705882352941
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 4.983082680505699
+        },
+        {
+          "location": "Ford Rouge Electric Vehicle Center",
+          "minimum": 0.0,
+          "maximum": 1023.0,
+          "amplitude": 1023.0,
+          "steps_Wm2": {
+            "64": 16.238095238095237,
+            "128": 8.05511811023622,
+            "256": 4.011764705882353
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 4.687534328420533
+        },
+        {
+          "location": "GM Factory Zero",
+          "minimum": 0.0,
+          "maximum": 1023.0,
+          "amplitude": 1023.0,
+          "steps_Wm2": {
+            "64": 16.238095238095237,
+            "128": 8.05511811023622,
+            "256": 4.011764705882353
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 4.687534328420533
+        },
+        {
+          "location": "Hyundai Metaplant Georgia",
+          "minimum": 0.0,
+          "maximum": 1045.5,
+          "amplitude": 1045.5,
+          "steps_Wm2": {
+            "64": 16.595238095238095,
+            "128": 8.23228346456693,
+            "256": 4.1
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 4.790632590775823
+        },
+        {
+          "location": "Lucid AMP 1 Casa Grande",
+          "minimum": 0.0,
+          "maximum": 1107.5,
+          "amplitude": 1107.5,
+          "steps_Wm2": {
+            "64": 17.57936507936508,
+            "128": 8.720472440944881,
+            "256": 4.3431372549019605
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 5.074725580377068
+        },
+        {
+          "location": "Rivian Normal",
+          "minimum": 0.0,
+          "maximum": 1031.0,
+          "amplitude": 1031.0,
+          "steps_Wm2": {
+            "64": 16.365079365079364,
+            "128": 8.118110236220472,
+            "256": 4.043137254901961
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 4.7241914883690805
+        },
+        {
+          "location": "Tesla Fremont Factory",
+          "minimum": 0.0,
+          "maximum": 1048.0,
+          "amplitude": 1048.0,
+          "steps_Wm2": {
+            "64": 16.634920634920636,
+            "128": 8.251968503937007,
+            "256": 4.109803921568627
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 4.802087953259745
+        },
+        {
+          "location": "Tesla Gigafactory Nevada",
+          "minimum": 0.0,
+          "maximum": 1078.5,
+          "amplitude": 1078.5,
+          "steps_Wm2": {
+            "64": 17.11904761904762,
+            "128": 8.492125984251969,
+            "256": 4.229411764705882
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 4.941843375563583
+        },
+        {
+          "location": "Tesla Gigafactory Texas",
+          "minimum": 0.0,
+          "maximum": 1062.0,
+          "amplitude": 1062.0,
+          "steps_Wm2": {
+            "64": 16.857142857142858,
+            "128": 8.362204724409448,
+            "256": 4.1647058823529415
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 4.866237983169703
+        }
+      ]
+    },
+    {
+      "regime": "atual",
+      "task": "daily_30",
+      "phase": "refit_before_2024",
+      "source": "resultados/quantizacao_todos_modelos_20260929/atual/daily_30/transformer/escalas_refit.csv",
+      "delta_Q64_min_max_Wm2": [
+        5.0826719677637495,
+        6.134920475974916
+      ],
+      "uniform_error_RMS_Q64_min_max_Wm2": [
+        1.4672410143954828,
+        1.7709989941305324
+      ],
+      "locations": [
+        {
+          "location": "BYD Camacari",
+          "minimum": 27.91666603088379,
+          "maximum": 348.125,
+          "amplitude": 320.2083339691162,
+          "steps_Wm2": {
+            "64": 5.0826719677637495,
+            "128": 2.5213254643237497,
+            "256": 1.2557189567416323
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.4672410143954828
+        },
+        {
+          "location": "Tesla Gigafactory Nevada",
+          "minimum": 7.916666507720947,
+          "maximum": 394.4166564941406,
+          "amplitude": 386.4999899864197,
+          "steps_Wm2": {
+            "64": 6.134920475974916,
+            "128": 3.0433070077670843,
+            "256": 1.5156862352408615
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.7709989941305324
+        },
+        {
+          "location": "Tesla Gigafactory Texas",
+          "minimum": 12.25,
+          "maximum": 367.1666564941406,
+          "amplitude": 354.9166564941406,
+          "steps_Wm2": {
+            "64": 5.633597722129216,
+            "128": 2.794619342473548,
+            "256": 1.3918300254672182
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.6262795806886827
+        },
+        {
+          "location": "Hyundai Metaplant Georgia",
+          "minimum": 8.75,
+          "maximum": 361.0833435058594,
+          "amplitude": 352.3333435058594,
+          "steps_Wm2": {
+            "64": 5.59259275406126,
+            "128": 2.7742782953217273,
+            "256": 1.3816993862974878
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.6144424660126098
+        },
+        {
+          "location": "Rivian Normal",
+          "minimum": 8.75,
+          "maximum": 375.4166564941406,
+          "amplitude": 366.6666564941406,
+          "steps_Wm2": {
+            "64": 5.820105658637153,
+            "128": 2.8871390275129185,
+            "256": 1.437908456839767
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.6801197843631122
+        },
+        {
+          "location": "Tesla Fremont Factory",
+          "minimum": 12.166666984558105,
+          "maximum": 376.3333435058594,
+          "amplitude": 364.16667652130127,
+          "steps_Wm2": {
+            "64": 5.780423436846052,
+            "128": 2.867454145837018,
+            "256": 1.4281046138090245
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.668664513646545
+        },
+        {
+          "location": "Lucid AMP 1 Casa Grande",
+          "minimum": 8.666666984558105,
+          "maximum": 386.2083435058594,
+          "amplitude": 377.54167652130127,
+          "steps_Wm2": {
+            "64": 5.9927250241476395,
+            "128": 2.9727691064669393,
+            "256": 1.4805555942011814
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.7299507029355232
+        },
+        {
+          "location": "GM Factory Zero",
+          "minimum": 3.4166667461395264,
+          "maximum": 376.9166564941406,
+          "amplitude": 373.4999897480011,
+          "steps_Wm2": {
+            "64": 5.9285712658412875,
+            "128": 2.940944801165363,
+            "256": 1.464705842149024
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.711431108121674
+        },
+        {
+          "location": "Ford Rouge Electric Vehicle Center",
+          "minimum": 3.4166667461395264,
+          "maximum": 374.4583435058594,
+          "amplitude": 371.04167675971985,
+          "steps_Wm2": {
+            "64": 5.8895504247574575,
+            "128": 2.9215880059820463,
+            "256": 1.455065399057725
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.7001667615697966
+        },
+        {
+          "location": "BMW San Luis Potosi",
+          "minimum": 27.54166603088379,
+          "maximum": 377.0,
+          "amplitude": 349.4583339691162,
+          "steps_Wm2": {
+            "64": 5.546957682049464,
+            "128": 2.751640424953671,
+            "256": 1.3704248390945735
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.6012687554573604
+        }
+      ]
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_1",
+      "phase": "refit_before_2024",
+      "source": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_1/transformer/escalas_refit.csv",
+      "delta_Q64_min_max_Wm2": [
+        2.4446362692212302,
+        4.428222171843998
+      ],
+      "uniform_error_RMS_Q64_min_max_Wm2": [
+        0.7057057040527999,
+        1.2783176314728006
+      ],
+      "locations": [
+        {
+          "location": "BYD Camacari",
+          "minimum": 154.84140014648438,
+          "maximum": 308.8534851074219,
+          "amplitude": 154.0120849609375,
+          "steps_Wm2": {
+            "64": 2.4446362692212302,
+            "128": 1.2126935823695866,
+            "256": 0.6039689606311275
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 0.7057057040527999
+        },
+        {
+          "location": "Tesla Gigafactory Nevada",
+          "minimum": 82.12903594970703,
+          "maximum": 357.0652770996094,
+          "amplitude": 274.93624114990234,
+          "steps_Wm2": {
+            "64": 4.3640673198397195,
+            "128": 2.164852292518916,
+            "256": 1.0781813378427543
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.2597977209355555
+        },
+        {
+          "location": "Tesla Gigafactory Texas",
+          "minimum": 106.35752868652344,
+          "maximum": 319.5107421875,
+          "amplitude": 213.15321350097656,
+          "steps_Wm2": {
+            "64": 3.383384341285342,
+            "128": 1.6783717598502093,
+            "256": 0.8358949549057905
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 0.9766989301065285
+        },
+        {
+          "location": "Hyundai Metaplant Georgia",
+          "minimum": 102.28359985351562,
+          "maximum": 295.18951416015625,
+          "amplitude": 192.90591430664062,
+          "steps_Wm2": {
+            "64": 3.0619986397879466,
+            "128": 1.5189442071389025,
+            "256": 0.7564937815946691
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 0.8839228694699195
+        },
+        {
+          "location": "Rivian Normal",
+          "minimum": 50.15322494506836,
+          "maximum": 294.7244567871094,
+          "amplitude": 244.57123184204102,
+          "steps_Wm2": {
+            "64": 3.882083045111762,
+            "128": 1.925757731039693,
+            "256": 0.9591028699687884
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.120660845555879
+        },
+        {
+          "location": "Tesla Fremont Factory",
+          "minimum": 76.71505737304688,
+          "maximum": 355.69305419921875,
+          "amplitude": 278.9779968261719,
+          "steps_Wm2": {
+            "64": 4.428222171843998,
+            "128": 2.196677140363558,
+            "256": 1.0940313601026348
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.2783176314728006
+        },
+        {
+          "location": "Lucid AMP 1 Casa Grande",
+          "minimum": 117.16397857666016,
+          "maximum": 361.4708251953125,
+          "amplitude": 244.30684661865234,
+          "steps_Wm2": {
+            "64": 3.8778864542643228,
+            "128": 1.9236759576271838,
+            "256": 0.9580660651711856
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.1194493941281551
+        },
+        {
+          "location": "GM Factory Zero",
+          "minimum": 36.07795715332031,
+          "maximum": 308.8861083984375,
+          "amplitude": 272.8081512451172,
+          "steps_Wm2": {
+            "64": 4.33028811500186,
+            "128": 2.148095679095411,
+            "256": 1.0698358872357536
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.2500465044324807
+        },
+        {
+          "location": "Ford Rouge Electric Vehicle Center",
+          "minimum": 35.779571533203125,
+          "maximum": 306.0763854980469,
+          "amplitude": 270.29681396484375,
+          "steps_Wm2": {
+            "64": 4.290425618489583,
+            "128": 2.1283213698019194,
+            "256": 1.0599875057444852
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.2385391928865137
+        },
+        {
+          "location": "BMW San Luis Potosi",
+          "minimum": 134.5806427001953,
+          "maximum": 330.44488525390625,
+          "amplitude": 195.86424255371094,
+          "steps_Wm2": {
+            "64": 3.108956231011285,
+            "128": 1.5422381303441806,
+            "256": 0.7680950688380821
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 0.8974783584365649
+        }
+      ]
+    },
+    {
+      "regime": "atual",
+      "task": "monthly_6",
+      "phase": "refit_before_2024",
+      "source": "resultados/quantizacao_todos_modelos_20260929/atual/monthly_6/transformer/escalas_refit.csv",
+      "delta_Q64_min_max_Wm2": [
+        2.4446362692212302,
+        4.428222171843998
+      ],
+      "uniform_error_RMS_Q64_min_max_Wm2": [
+        0.7057057040527999,
+        1.2783176314728006
+      ],
+      "locations": [
+        {
+          "location": "BYD Camacari",
+          "minimum": 154.84140014648438,
+          "maximum": 308.8534851074219,
+          "amplitude": 154.0120849609375,
+          "steps_Wm2": {
+            "64": 2.4446362692212302,
+            "128": 1.2126935823695866,
+            "256": 0.6039689606311275
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 0.7057057040527999
+        },
+        {
+          "location": "Tesla Gigafactory Nevada",
+          "minimum": 82.12903594970703,
+          "maximum": 357.0652770996094,
+          "amplitude": 274.93624114990234,
+          "steps_Wm2": {
+            "64": 4.3640673198397195,
+            "128": 2.164852292518916,
+            "256": 1.0781813378427543
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.2597977209355555
+        },
+        {
+          "location": "Tesla Gigafactory Texas",
+          "minimum": 106.35752868652344,
+          "maximum": 319.5107421875,
+          "amplitude": 213.15321350097656,
+          "steps_Wm2": {
+            "64": 3.383384341285342,
+            "128": 1.6783717598502093,
+            "256": 0.8358949549057905
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 0.9766989301065285
+        },
+        {
+          "location": "Hyundai Metaplant Georgia",
+          "minimum": 102.28359985351562,
+          "maximum": 295.18951416015625,
+          "amplitude": 192.90591430664062,
+          "steps_Wm2": {
+            "64": 3.0619986397879466,
+            "128": 1.5189442071389025,
+            "256": 0.7564937815946691
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 0.8839228694699195
+        },
+        {
+          "location": "Rivian Normal",
+          "minimum": 50.15322494506836,
+          "maximum": 294.7244567871094,
+          "amplitude": 244.57123184204102,
+          "steps_Wm2": {
+            "64": 3.882083045111762,
+            "128": 1.925757731039693,
+            "256": 0.9591028699687884
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.120660845555879
+        },
+        {
+          "location": "Tesla Fremont Factory",
+          "minimum": 76.71505737304688,
+          "maximum": 355.69305419921875,
+          "amplitude": 278.9779968261719,
+          "steps_Wm2": {
+            "64": 4.428222171843998,
+            "128": 2.196677140363558,
+            "256": 1.0940313601026348
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.2783176314728006
+        },
+        {
+          "location": "Lucid AMP 1 Casa Grande",
+          "minimum": 117.16397857666016,
+          "maximum": 361.4708251953125,
+          "amplitude": 244.30684661865234,
+          "steps_Wm2": {
+            "64": 3.8778864542643228,
+            "128": 1.9236759576271838,
+            "256": 0.9580660651711856
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.1194493941281551
+        },
+        {
+          "location": "GM Factory Zero",
+          "minimum": 36.07795715332031,
+          "maximum": 308.8861083984375,
+          "amplitude": 272.8081512451172,
+          "steps_Wm2": {
+            "64": 4.33028811500186,
+            "128": 2.148095679095411,
+            "256": 1.0698358872357536
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.2500465044324807
+        },
+        {
+          "location": "Ford Rouge Electric Vehicle Center",
+          "minimum": 35.779571533203125,
+          "maximum": 306.0763854980469,
+          "amplitude": 270.29681396484375,
+          "steps_Wm2": {
+            "64": 4.290425618489583,
+            "128": 2.1283213698019194,
+            "256": 1.0599875057444852
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 1.2385391928865137
+        },
+        {
+          "location": "BMW San Luis Potosi",
+          "minimum": 134.5806427001953,
+          "maximum": 330.44488525390625,
+          "amplitude": 195.86424255371094,
+          "steps_Wm2": {
+            "64": 3.108956231011285,
+            "128": 1.5422381303441806,
+            "256": 0.7680950688380821
+          },
+          "Q64_uniform_error_RMS_approx_Wm2": 0.8974783584365649
+        }
+      ]
+    }
+  ],
+  "sign_test_check": [
+    {
+      "regime": "atual",
+      "task": "hourly_72_extension",
+      "selected_variants_compared": [
+        "sem_quantizacao",
+        "q64"
+      ],
+      "Transformer_wins_out_of_10": 7,
+      "two_sided_exact_sign_test_p_under_iid_Bernoulli_null": 0.34375,
+      "null": "Independent locations with equal probabilities of either model winning.",
+      "cautions": [
+        "Locations were intentionally selected, are spatially correlated (including two nearby Detroit sites), and share global fitted models. Independence is not established.",
+        "The sign test concerns direction of location-level wins, not the magnitude of macro-MAE differences or temporal error uncertainty.",
+        "A nonsignificant result is not evidence of equivalence, nor does it quantify absence of significance."
+      ]
+    },
+    {
+      "regime": "atual",
+      "task": "daily_30",
+      "selected_variants_compared": [
+        "q256",
+        "sem_quantizacao"
+      ],
+      "Transformer_wins_out_of_10": 6,
+      "two_sided_exact_sign_test_p_under_iid_Bernoulli_null": 0.75390625,
+      "null": "Independent locations with equal probabilities of either model winning.",
+      "cautions": [
+        "Locations were intentionally selected, are spatially correlated (including two nearby Detroit sites), and share global fitted models. Independence is not established.",
+        "The sign test concerns direction of location-level wins, not the magnitude of macro-MAE differences or temporal error uncertainty.",
+        "A nonsignificant result is not evidence of equivalence, nor does it quantify absence of significance."
+      ]
+    }
+  ],
+  "night_metric_identity": {
+    "assumption": "Reference and prediction both exactly zero at night, with day fraction f; formulas apply per local series.",
+    "MAE_all": "f * MAE_day",
+    "RMSE_all": "sqrt(f) * RMSE_day",
+    "mean_GHI_all": "f * mean_GHI_day",
+    "nRMSE_all": "nRMSE_day / sqrt(f)",
+    "conclusion": "Including zero-error nights can reduce unnormalized errors while increasing mean-normalized RMSE. The actual fraction or daylight-only performance was not computed here."
+  },
+  "findings": [
+    {
+      "item": 2,
+      "priority": "high",
+      "verdict": "supported_with_scope_corrections",
+      "finding": "Audited continuous and quantized simple-reference results already exist for all three regimes under common samples and postprocessing. Adding a baseline table/skill calculation needs analysis of saved artifacts, not new training.",
+      "corrections": [
+        "Declare whether the reference is continuous or validation-selected and freeze the choice before inspecting test results.",
+        "Use identical task, cumulative horizon, regime, aggregation and postprocessing. SS of macro-MAEs differs from the average of local SS.",
+        "The current report statement that its analysis does not quantify gains is true as a description of the document, but treating this exclusively as unavailable future work is unnecessarily limiting.",
+        "The proposed physical explanation attributing the results to lack of meteorological inputs is a hypothesis, not a causal finding; no ablation with meteorological inputs was run."
+      ]
+    },
+    {
+      "item": 4,
+      "priority": "high",
+      "verdict": "partially_supported_overstated",
+      "finding": "2024 test saturation is rare hourly/daily and absent monthly, but 2023 monthly validation contains saturation and can affect epoch/level selection. Rare clipping is not a measured bound on its influence on outputs.",
+      "recommendation": "Quantify incidence and reduce repeated caveats; retain the distinction between clipping and rounding. Do not state that a clipping-only control is relevant only to historical monthly tasks."
+    },
+    {
+      "item": 5,
+      "priority": "medium",
+      "verdict": "useful_scale_explanation_not_causal_proof",
+      "finding": "Exact steps follow amplitude/(N-1); Q64 hourly refit steps are 16.24–18.04 W/m². Delta/sqrt(12) is a conditional approximation for uniformly distributed rounding error, not an observed RMS or bound on forecast MAE. Nighttime point masses, rounding ties, correlated solar sequences and nonlinear retraining violate a universal uniform independent error model.",
+      "recommendation": "Present exact steps or their range and the half-step maximum for in-range inputs; label any RMS calculation as an illustrative approximation. Do not infer network forecast effects solely by comparing input RMS with output MAE."
+    },
+    {
+      "item": 7,
+      "priority": "high",
+      "verdict": "arithmetic_correct_inference_not_established",
+      "finding": "The quoted two-sided binomial sign p-values are 0.34375 and 0.75390625 under an independent-location null. That independence is not established, and non-rejection does not show equivalence.",
+      "recommendation": "Keep the observed win counts as descriptive evidence; do not replace all uncertainty discussion with these p-values."
+    },
+    {
+      "item": 13,
+      "priority": "high",
+      "verdict": "MAE_claim_conditionally_correct_nRMSE_claim_incorrect",
+      "finding": "Adding perfectly zero-error night pairs reduces MAE and unnormalized RMSE, but nRMSE is divided by the mean GHI, which also decreases. In the idealized zero-night case with day fraction f, MAE_all=f*MAE_day, RMSE_all=sqrt(f)*RMSE_day, mean_all=f*mean_day, so nRMSE_all=nRMSE_day/sqrt(f), which increases.",
+      "recommendation": "State that full-day metrics include physically zeroed night predictions and cannot be directly compared with daylight-only metrics. Avoid saying nRMSE is diluted by including nights."
+    }
+  ]
+}

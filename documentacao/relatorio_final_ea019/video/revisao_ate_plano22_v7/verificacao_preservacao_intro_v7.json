@@ -1,0 +1,105 @@
+{
+  "version": 7,
+  "generated_utc": "2026-11-03T16:50:38.555740+00:00",
+  "status": "passed",
+  "approved_intro_preserved_pixel_exact": true,
+  "prefix_seconds": 40,
+  "expected_frame_count_per_variant": 1200,
+  "pixel_format": "yuv420p",
+  "pixel_comparison": "decoded per-frame MD5 in decode order",
+  "timestamp_and_header_fields_ignored": true,
+  "variants": [
+    {
+      "variant": "com_legendas",
+      "pixel_md5_equal": true,
+      "approved_v6_frames": 1200,
+      "v7_prefix_frames": 1200,
+      "expected_frames": 1200,
+      "frame_size_matches": true,
+      "mismatch_count": 0,
+      "first_mismatched_frames_1based": [],
+      "approved_v6_frame_hash_sequence_sha256": "e307974d36485075254dde99c869bd89324edd4e5aceab44e04bdf1ab91e63e8",
+      "v7_prefix_frame_hash_sequence_sha256": "e307974d36485075254dde99c869bd89324edd4e5aceab44e04bdf1ab91e63e8",
+      "approved_v6_audio_tracks": 0,
+      "v7_audio_tracks": 0,
+      "inputs_unchanged_during_check": true,
+      "files_before": {
+        "approved_v6": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_00_40_v6\\Revisao_00_40_com_legendas_v6.mp4",
+          "bytes": 12582969,
+          "mtime_ns": 1793717812184474000,
+          "sha256": "6b3e2836a59d0cb3465d0f2a3905822ee3dd58aaa6f59d1d5e3398277556cbb4"
+        },
+        "v7": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\Video_GHI_Inicio_ate_Plano22_com_legendas_v7.mp4",
+          "bytes": 25136929,
+          "mtime_ns": 1793724533200535200,
+          "sha256": "97dc1fb8f5f0b950793bcf7de5c011309938d59f556b1ba98a18057463fd04a2"
+        }
+      },
+      "files_after": {
+        "approved_v6": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_00_40_v6\\Revisao_00_40_com_legendas_v6.mp4",
+          "bytes": 12582969,
+          "mtime_ns": 1793717812184474000,
+          "sha256": "6b3e2836a59d0cb3465d0f2a3905822ee3dd58aaa6f59d1d5e3398277556cbb4"
+        },
+        "v7": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\Video_GHI_Inicio_ate_Plano22_com_legendas_v7.mp4",
+          "bytes": 25136929,
+          "mtime_ns": 1793724533200535200,
+          "sha256": "97dc1fb8f5f0b950793bcf7de5c011309938d59f556b1ba98a18057463fd04a2"
+        }
+      },
+      "full_prefix_decode_errors": 0
+    },
+    {
+      "variant": "sem_legendas",
+      "pixel_md5_equal": true,
+      "approved_v6_frames": 1200,
+      "v7_prefix_frames": 1200,
+      "expected_frames": 1200,
+      "frame_size_matches": true,
+      "mismatch_count": 0,
+      "first_mismatched_frames_1based": [],
+      "approved_v6_frame_hash_sequence_sha256": "861890bcca56b6931622b7c731980d7c03acd4b2c3b6b2f7463acece0735f1e9",
+      "v7_prefix_frame_hash_sequence_sha256": "861890bcca56b6931622b7c731980d7c03acd4b2c3b6b2f7463acece0735f1e9",
+      "approved_v6_audio_tracks": 0,
+      "v7_audio_tracks": 0,
+      "inputs_unchanged_during_check": true,
+      "files_before": {
+        "approved_v6": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_00_40_v6\\Revisao_00_40_sem_legendas_v6.mp4",
+          "bytes": 12300825,
+          "mtime_ns": 1793717820653177000,
+          "sha256": "cec0b7deff9a470b79862f1e703ebdada6c1dedb0d4ac4822243fd5b0c5c279e"
+        },
+        "v7": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\Video_GHI_Inicio_ate_Plano22_sem_legendas_v7.mp4",
+          "bytes": 24236653,
+          "mtime_ns": 1793724574016725100,
+          "sha256": "9703b3ddfe513d2bd1a8322a1c11f8300b03a46f28029e19900fb7d5bd6f8384"
+        }
+      },
+      "files_after": {
+        "approved_v6": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_00_40_v6\\Revisao_00_40_sem_legendas_v6.mp4",
+          "bytes": 12300825,
+          "mtime_ns": 1793717820653177000,
+          "sha256": "cec0b7deff9a470b79862f1e703ebdada6c1dedb0d4ac4822243fd5b0c5c279e"
+        },
+        "v7": {
+          "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\Video_GHI_Inicio_ate_Plano22_sem_legendas_v7.mp4",
+          "bytes": 24236653,
+          "mtime_ns": 1793724574016725100,
+          "sha256": "9703b3ddfe513d2bd1a8322a1c11f8300b03a46f28029e19900fb7d5bd6f8384"
+        }
+      },
+      "full_prefix_decode_errors": 0
+    }
+  ],
+  "input_videos_modified_by_utility": false,
+  "audio_modified_by_utility": false,
+  "video_or_audio_encoding_performed": false,
+  "only_output_written": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\revisao_ate_plano22_v7\\verificacao_preservacao_intro_v7.json"
+}

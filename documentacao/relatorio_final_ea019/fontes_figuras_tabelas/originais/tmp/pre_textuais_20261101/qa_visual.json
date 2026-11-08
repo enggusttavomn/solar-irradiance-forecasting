@@ -1,0 +1,34 @@
+{
+  "render": "tmp/pre_textuais_20261101/render-v2",
+  "pages_reviewed": [3, 4, 5],
+  "method": "Inspeção individual das páginas 3, 4 e 5; nova inspeção da página 3 após correção da posição vertical; confirmação de identidade pixel a pixel das páginas 4 e 5 entre render-v1 e render-v2; conferência complementar de fontes no PDF.",
+  "passed": true,
+  "blocking_defects": [],
+  "checks": {
+    "dedication_without_heading": true,
+    "dedication_right_aligned": true,
+    "dedication_near_vertical_middle": true,
+    "dedication_times_new_roman_11": true,
+    "acknowledgements_title_centered_bold_14": true,
+    "acknowledgements_body_times_new_roman_12": true,
+    "acknowledgements_body_justified_and_spaced": true,
+    "dedication_and_acknowledgements_excluded_from_toc": true,
+    "toc_readable_with_updated_page_numbers": true,
+    "no_extra_blank_page_between_new_pages_and_toc": true,
+    "no_clipping_or_overlap": true,
+    "headers_preserved": true,
+    "render_v2_pages_4_and_5_pixel_identical_to_reviewed_v1": true
+  },
+  "pdf_font_check": {
+    "dedication": {"font": "TimesNewRomanPSMT", "pdf_size": 11.04, "first_line_baseline_from_page_top_pt_approx": 381},
+    "acknowledgements_title": {"font": "TimesNewRomanPS-BoldMT", "pdf_size": 14.04},
+    "acknowledgements_body": {"font": "TimesNewRomanPSMT", "pdf_size": 12.0}
+  },
+  "page_notes": {
+    "3": "Dedicatória sem título, em três linhas alinhadas à direita, recuada e situada próxima ao meio vertical. A posição indevidamente alta do render-v1 foi corrigida no render-v2.",
+    "4": "Título Agradecimentos em negrito e centralizado; dois parágrafos breves em Times New Roman 12, justificados, legíveis e sem corte.",
+    "5": "Sumário íntegro e legível, com numeração deslocada em duas páginas. Dedicatória e agradecimentos não aparecem como entradas."
+  },
+  "files_edited": ["tmp/pre_textuais_20261101/qa_visual.json"],
+  "document_edited_by_reviewer": false
+}

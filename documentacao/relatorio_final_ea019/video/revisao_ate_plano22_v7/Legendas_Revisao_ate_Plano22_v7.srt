@@ -1,0 +1,243 @@
+﻿1
+00:00:00,000 --> 00:00:04,400
+GHI é a potência solar recebida por
+unidade de área horizontal.
+
+2
+00:00:04,400 --> 00:00:10,800
+Aqui, a região mede um metro por um metro.
+A unidade é watt por metro quadrado.
+
+3
+00:00:10,800 --> 00:00:16,000
+Parte da luz vem diretamente do Sol, e
+parte é espalhada pela atmosfera.
+
+4
+00:00:16,000 --> 00:00:21,000
+A luz varia durante o dia. À noite, a
+irradiância solar praticamente zera.
+
+5
+00:00:21,000 --> 00:00:25,200
+A passagem de nuvens modifica a luz
+recebida e a curva.
+
+6
+00:00:25,200 --> 00:00:30,000
+O histórico reúne esses padrões diários e
+as variações da atmosfera.
+
+7
+00:00:30,000 --> 00:00:35,000
+Com esse histórico, tentamos antecipar a
+continuação da curva.
+
+8
+00:00:35,000 --> 00:00:37,195
+Prever o recurso solar pode apoiar o
+
+9
+00:00:37,195 --> 00:00:40,000
+planejamento fotovoltaico. Meu objetivo
+foi...
+
+10
+00:00:40,000 --> 00:00:44,000
+comparar LSTM, Transformer e Informer.
+
+11
+00:00:44,000 --> 00:00:48,000
+Na LSTM, os valores entram em ordem.
+
+12
+00:00:48,000 --> 00:00:52,000
+A memória muda a cada passo, por portas
+aprendidas.
+
+13
+00:00:52,000 --> 00:00:56,000
+Elas regulam o que reter, acrescentar e
+transmitir.
+
+14
+00:00:56,000 --> 00:00:59,000
+O estado final ajuda a prever todo o
+horizonte.
+
+15
+00:00:59,000 --> 00:01:03,000
+No Transformer, cada posição reúne valor e
+ordem temporal.
+
+16
+00:01:03,000 --> 00:01:07,000
+Consultas comparam representações com suas
+chaves.
+
+17
+00:01:07,000 --> 00:01:11,000
+Os pesos calculados orientam a combinação
+dos valores.
+
+18
+00:01:11,000 --> 00:01:15,000
+Essas representações seguem para a
+previsão do horizonte.
+
+19
+00:01:15,000 --> 00:01:19,000
+Em sequências longas, o Informer detalha
+algumas consultas.
+
+20
+00:01:19,000 --> 00:01:23,000
+A seleção usa uma estimativa de
+esparsidade.
+
+21
+00:01:23,000 --> 00:01:27,000
+Em outra etapa, reduz a sequência interna
+do codificador.
+
+22
+00:01:27,000 --> 00:01:31,000
+A atenção cruzada permanece completa.
+
+23
+00:01:31,000 --> 00:01:35,000
+O mesmo histórico e ID entram nos três
+modelos.
+
+24
+00:01:35,000 --> 00:01:40,000
+Cada modelo produz diretamente um vetor
+para o mesmo horizonte.
+
+25
+00:01:40,000 --> 00:01:44,000
+As localidades deste estudo estão nas
+Américas.
+
+26
+00:01:44,000 --> 00:01:50,000
+São dez regiões: uma no Brasil, oito nos
+Estados Unidos e uma no México.
+
+27
+00:01:50,000 --> 00:01:52,440
+A NSRDB usa observações de satélite e
+
+28
+00:01:52,440 --> 00:01:56,000
+informações da atmosfera para estimar o
+recurso solar.
+
+29
+00:01:56,000 --> 00:01:59,600
+Modelos físicos combinam essas informações
+
+30
+00:01:59,600 --> 00:02:05,000
+e produzem estimativas de irradiância para
+células geográficas.
+
+31
+00:02:05,000 --> 00:02:11,000
+Estas distribuições usam valores reais do
+período de treinamento.
+
+32
+00:02:11,000 --> 00:02:13,929
+Os perfis mostram os valores positivos. A
+
+33
+00:02:13,929 --> 00:02:18,500
+porcentagem de horas com GHI igual a zero
+aparece separadamente.
+
+34
+00:02:18,500 --> 00:02:24,000
+A distribuição varia entre as dez
+localidades do conjunto.
+
+35
+00:02:24,000 --> 00:02:29,000
+Cada região consultada corresponde a uma
+célula geográfica da base.
+
+36
+00:02:29,000 --> 00:02:34,000
+A sequência dessas estimativas forma o
+histórico de GHI usado pelas redes.
+
+37
+00:02:34,000 --> 00:02:42,000
+Uma entrada é o histórico de GHI: uma
+sequência de valores, organizada no tempo.
+
+38
+00:02:42,000 --> 00:02:45,048
+A outra entrada identifica a localidade.
+
+39
+00:02:45,048 --> 00:02:50,000
+Esse número se transforma numa
+representação aprendida pela rede.
+
+40
+00:02:50,000 --> 00:02:53,545
+Neste experimento, os modelos recebem o
+
+41
+00:02:53,545 --> 00:02:58,000
+histórico de GHI e a identificação da
+localidade.
+
+42
+00:02:58,000 --> 00:03:01,029
+Cada modelo compartilha seus parâmetros
+
+43
+00:03:01,029 --> 00:03:06,000
+entre as dez localidades. Os dados mudam;
+a estrutura é a mesma.
+
+44
+00:03:06,000 --> 00:03:10,000
+Comparei quatro tarefas, em diferentes
+escalas de tempo.
+
+45
+00:03:10,000 --> 00:03:15,500
+Na tarefa horária, 336 horas formam duas
+semanas de histórico.
+
+46
+00:03:15,500 --> 00:03:21,000
+A rede prevê as próximas 72 horas: três
+dias de irradiância.
+
+47
+00:03:21,000 --> 00:03:26,500
+Na diária, 365 valores representam um ano
+de histórico.
+
+48
+00:03:26,500 --> 00:03:29,049
+A saída prevê os próximos trinta dias,
+
+49
+00:03:29,049 --> 00:03:32,000
+mantendo a separação entre passado e
+futuro.
+
+50
+00:03:32,000 --> 00:03:38,000
+Na mensal de um passo, doze meses ajudam a
+prever o mês seguinte.
+
+51
+00:03:38,000 --> 00:03:44,000
+Na outra mensal, uma rede própria prevê
+seis meses. Essa análise é exploratória.

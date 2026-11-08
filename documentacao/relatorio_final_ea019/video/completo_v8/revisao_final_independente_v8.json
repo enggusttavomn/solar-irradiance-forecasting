@@ -1,0 +1,52 @@
+{
+  "version": 8,
+  "reviewer": "v6_report_review",
+  "reviewed_utc": "2026-11-03T19:26:25.880606+00:00",
+  "status": "approved_sampled_scientific_and_visual_review",
+  "automatically_approved": false,
+  "scope": "Quadros extraídos do MP4 final com legendas: cinco folhas de contato com 60 amostras e oito amostras individuais Full HD. Revisão científica apoiada na auditoria prévia do relatório e dos CSVs originais.",
+  "full_length_realtime_playback_reviewed": false,
+  "audio_playback_reviewed": false,
+  "render_or_source_files_changed": false,
+  "main_finisher_verification_file_read_or_written": false,
+  "sampled_contact_sheets": [
+    "documentacao/relatorio_final_ea019/video/completo_v8/verificacao_final/contato_v8_1.png",
+    "documentacao/relatorio_final_ea019/video/completo_v8/verificacao_final/contato_v8_2.png",
+    "documentacao/relatorio_final_ea019/video/completo_v8/verificacao_final/contato_v8_3.png",
+    "documentacao/relatorio_final_ea019/video/completo_v8/verificacao_final/contato_v8_4.png",
+    "documentacao/relatorio_final_ea019/video/completo_v8/verificacao_final/contato_v8_5.png"
+  ],
+  "full_resolution_samples": [
+    "documentacao/relatorio_final_ea019/video/completo_v8/verificacao_final/t_400.png",
+    "documentacao/relatorio_final_ea019/video/completo_v8/verificacao_final/t_417.png",
+    "documentacao/relatorio_final_ea019/video/completo_v8/verificacao_final/t_435.png",
+    "documentacao/relatorio_final_ea019/video/completo_v8/verificacao_final/t_449.png",
+    "documentacao/relatorio_final_ea019/video/completo_v8/verificacao_final/t_501.png",
+    "documentacao/relatorio_final_ea019/video/completo_v8/verificacao_final/t_529_5.png",
+    "documentacao/relatorio_final_ea019/video/completo_v8/verificacao_final/t_546_5.png",
+    "documentacao/relatorio_final_ea019/video/completo_v8/verificacao_final/t_549_5.png"
+  ],
+  "material_findings": [],
+  "checked": [
+    "Cobertura amostral de 1 s até 549,5 s; transição de 223,9 para 224,1 s entre prefixo e metodologia coerente.",
+    "Metodologia: redes mensais distintas, cortes cronológicos, refit 2019–2023 e exposição prévia ao teste de 2024 explícitos.",
+    "Quantização: amplitudes de entrada, identificação separada, clipping antes do arredondamento, reconstrução float32 e controles sem clipping.",
+    "Métricas: exemplo didático de 28 W/m², pesos iguais de 1/10 e horizonte cumulativo incluindo todos os passos.",
+    "Horária: Transformer 53,21 Controle; Informer 137,68 Controle; LSTM 53,52 Q64.",
+    "Diária: Transformer 43,89 Q256; Informer 45,46 Q64; LSTM 44,18 Controle.",
+    "Mensal de um passo: Transformer 13,15 Q128; Informer 12,73 Q128; LSTM 14,29 Q128.",
+    "Mensal de seis passos: Transformer 14,40 Q64; Informer 13,67 Q128; LSTM 14,76 Q128; caráter exploratório explícito.",
+    "Eixos de barras em zero, escalas distintas por tarefa e pequenas diferenças descritas sem exagero.",
+    "Lideranças locais e por horizontes diários coerentes com os dados auditados.",
+    "Quantização: cinco melhoras, quatro pioras e três controles; histórico longo: 11 de 12 com exceção da LSTM horária, em análise pareada separada de 2024.",
+    "Sete origens mensais, alvos sobrepostos, significância não demonstrada e localidade inédita não avaliada corretamente apresentados.",
+    "Legendas e números legíveis, sem obstrução de eixos ou rótulos essenciais nas amostras.",
+    "Síntese final dependente da tarefa; fábrica/PV e curva qualitativa de recurso não reivindicam geração elétrica medida."
+  ],
+  "limits": [
+    "Esta aprovação é amostral, não equivale à revisão de cada quadro ou à reprodução integral em tempo real.",
+    "A integridade de decodificação e preservação do prefixo está a cargo do finisher; não foi reexecutada nesta revisão."
+  ],
+  "audited_source_notes": "documentacao/relatorio_final_ea019/video/completo_v8/fontes_resultados_v8.json",
+  "audited_source_notes_sha256": "de42f0a99982bca8f029a92f91df7694a3855b1a44614ba6deeb8aa2d7b56494"
+}

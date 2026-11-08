@@ -1,0 +1,145 @@
+{
+  "scope": "Verificação dos itens 15 a 25 e 27 do parecer anexado, sem edição do DOCX ou do PDF.",
+  "files_checked": {
+    "review": "C:/Users/gusta/.codex/attachments/151d3a54-5b9d-4e68-8ea8-f41d45b8f0f5/Pasted text.txt",
+    "docx": "documentacao/relatorio_final_ea019/Relatorio_Final_GHI_Transformer_Informer_LSTM_TCC.docx",
+    "pdf": "documentacao/relatorio_final_ea019/Relatorio_Final_GHI_Transformer_Informer_LSTM_TCC.pdf",
+    "template": "tmp/relatorio_final_ea019/modelo_referencia.docx",
+    "pdf_pages": 35
+  },
+  "index_convention": "Números de parágrafo a seguir usam a ordem de todos os w:p de word/document.xml, incluindo parágrafos de tabelas, começando em zero. Referências por trecho são preferíveis após novas edições.",
+  "items": [
+    {
+      "item": 15,
+      "verdict": "Parcialmente procedente; o parecer mistura divergências reais do modelo com exigências não demonstradas.",
+      "evidence": [
+        "Modelo §43: Trabalho apresentado como requisito para conclusão do curso de ENGENHARIA ELÉTRICA, orientado pelo Prof(a). Dr(a). <Nome do Docente>.",
+        "DOCX §16: Trabalho de conclusão de curso apresentado à Faculdade de Engenharia Elétrica e de Computação da Universidade Estadual de Campinas, no âmbito da disciplina EA019 do curso de Engenharia Elétrica.",
+        "O modelo contém Dedicatória de exemplo (§69), Agradecimentos com nomes a preencher (§83 e seguintes), SUMÁRIO (§105) antes de RESUMO (§130) e os exemplos 3.1. Dados Utilizados e 3.2. Análise dos dados (§157–158).",
+        "O TCC não inclui dedicatória/agradecimentos, apresenta Resumo antes de Sumário e suas subseções têm estilo Heading2, mas não numeração.",
+        "O modelo apenas apresenta APÊNDICE (FACULTATIVO) e ANEXO (FACULTATIVO), sem exemplo de APÊNDICE A – título."
+      ],
+      "recommendation": "A redação da folha de rosto, a ordem Sumário/Resumo e a numeração de subseções podem ser alinhadas ao modelo para maior fidelidade. O arquivo-modelo, isoladamente, não demonstra que agradecimentos sejam obrigatórios ou que uma única redação seja mandatória. Não inventar agradecimentos pessoais. O separador nos apêndices é padronização editorial plausível, não exigência extraída deste modelo."
+    },
+    {
+      "item": 16,
+      "verdict": "Procedente como revisão linguística.",
+      "evidence": [
+        "§5 e §14: Transformer Informer e LSTM sob quantização das entradas.",
+        "§47 e §254: Treinamento seleção e refit.",
+        "§154: Figura 2 — Perfis de referência da GHI nas resoluções horária diária e mensal.",
+        "§219: Figura 5 — Fluxo experimental em etapas de dados seleção e avaliação."
+      ],
+      "recommendation": "Inserir as vírgulas de enumeração propostas: Transformer, Informer e LSTM; Treinamento, seleção e refit; horária, diária e mensal; dados, seleção e avaliação. Atualizar o sumário junto com os títulos. São correções de pontuação interna, sem mudar conteúdo."
+    },
+    {
+      "item": 17,
+      "verdict": "Padronização opcional, não erro ortográfico comprovado.",
+      "evidence": [
+        "Distilação aparece em dois parágrafos editáveis (§320 e §321) e também dentro do diagrama da Figura 7, página 18.",
+        "O Dicionário Priberam registra distilação como entrada válida que remete a destilação."
+      ],
+      "recommendation": "Pode-se preferir destilação para uniformidade terminológica. Se essa preferência for adotada, incluir o rótulo da Figura 7. Não apresentar a forma atual como grafia inexistente.",
+      "source_url": "https://dicionario.priberam.org/distila%C3%A7%C3%A3o"
+    },
+    {
+      "item": 18,
+      "verdict": "Procedente como melhoria de clareza, com nuances.",
+      "evidence": [
+        "Busca literal no texto do DOCX: contratos 16 ocorrências; checkpoints 1, no título da Figura 11; regime 19 ocorrências, incluindo derivados no plural.",
+        "Apêndice C já fornece arquivos, caminhos, hashes e sequência de consolidação, permitindo explicar a proveniência sem jargão em cada legenda.",
+        "Tabela 3 mostra operacionalmente os três regimes, mas o termo não recebe uma definição concisa na primeira ocorrência."
+      ],
+      "recommendation": "Trocar checkpoints por horizontes de avaliação. Definir regime temporal como combinação dos períodos de ajuste, validação e teste. Nas fontes, preferir dados e registros de execução auditados do projeto, com remissão ao Apêndice C; essa redação preserva melhor a proveniência que substituir tudo apenas por dados."
+    },
+    {
+      "item": 19,
+      "verdict": "Constatação literal correta; melhoria de navegação, não falha científica.",
+      "evidence": [
+        "Tabela 2 ocorre uma vez, exclusivamente na legenda §161; o parágrafo §188 remete à Figura 3, sem citar a tabela.",
+        "Tabela 9 até Tabela 15 ocorrem somente nas respectivas legendas.",
+        "O corpo já remete aos Apêndices A e B (§330), e cada apêndice tem introdução explicativa (§651 e §981)."
+      ],
+      "recommendation": "Acrescentar Tabela 2 à remissão da seção de janelas. Nas aberturas dos apêndices, mencionar agrupadamente Tabelas 9–12 e Tabelas 13–15. Não é necessário forçar uma discussão longa e repetitiva de cada tabela."
+    },
+    {
+      "item": 20,
+      "verdict": "Boa recomendação para MAEs e percentuais narrativos; desaconselhável aplicá-la indistintamente.",
+      "evidence": [
+        "Resumo e resultados principais já apresentam MAEs com duas casas.",
+        "§534 ainda usa 1,0548%, 0,9461%, 1,5305% e 0,0141%; §§535 e 540–549 mantêm MAEs narrativos com quatro casas.",
+        "As tabelas principais mantêm R² com quatro casas; a Tabela 4 apresenta passos de quantização pequenos, e os hiperparâmetros incluem taxa 0,001 e weight decay 0,00001."
+      ],
+      "recommendation": "Usar duas casas nos MAEs e percentuais do texto, preservando precisão integral nos CSVs e nas escolhas. Manter precisão apropriada para R², coordenadas, passos de quantização e hiperparâmetros. A regra quatro casas somente no Apêndice B seria excessiva e pode apagar informação."
+    },
+    {
+      "item": 21,
+      "verdict": "Melhoria didática opcional; a notação atual não contém previsão indefinida.",
+      "evidence": [
+        "§292 já define: Seja eᵢ o valor de referência yᵢ menos a previsão.",
+        "As Equações 3–7 utilizam eᵢ, yᵢ e a média de y; não introduzem ŷ como símbolo sem definição."
+      ],
+      "recommendation": "Pode-se explicitar eᵢ = yᵢ − ŷᵢ e definir ŷᵢ como previsão, se isso facilitar a leitura. Não tratar a definição atual em palavras como uma inconsistência matemática."
+    },
+    {
+      "item": 22,
+      "verdict": "Procedente e útil à reprodução.",
+      "evidence": [
+        "A seção de tarefas informa comprimentos e quantidades, mas não explicita a frequência das emissões.",
+        "§301 informa emissões à meia-noite ao discutir os erros em leads noturnos.",
+        "codigo_fonte/experimentos/experimento_horario_timesnet.py:5–7 informa origens diárias às 00:00 no horário local fixo fornecido pela NSRDB, sem horário de verão.",
+        "O filtro de construção de janelas em experimento_horario_timesnet.py:495 seleciona hora zero, com minuto e segundo zero nas linhas seguintes."
+      ],
+      "recommendation": "Acrescentar em Tarefas e janelas: Na tarefa horária, emite-se uma previsão por dia às 00:00 no horário local fixo informado pela NSRDB, sem aplicação de horário de verão. Esse detalhe é mais preciso que dizer apenas meia-noite local."
+    },
+    {
+      "item": 23,
+      "verdict": "Recomendação bibliográfica plausível; mudança da fonte do mapa para adaptado é desaconselhável.",
+      "evidence": [
+        "§649 identifica [14] como manuscrito enviado aos orientadores em 7 set. 2026, com 19 páginas, e inclui o nome local do PDF.",
+        "§103 já declara explicitamente Mapa reproduzido da Figura 1 do artigo [14].",
+        "O SHA256 de artigos/revista_unificado/figures/mapa_contexto_geografico.png é aece8c4ab312c551f7011fc7aa06cbe51d87e6c70439c5787a02e7ab46a7f8c8 e coincide exatamente com word/media/image4.png do TCC."
+      ],
+      "recommendation": "A referência [14] pode retirar o nome local do arquivo e usar uma descrição bibliográfica de manuscrito do projeto, mantendo o caminho no Apêndice C. Não afirmar publicação ou ausência de publicação posterior sem confirmação. Na Figura 1, manter reproduzido de [14], pois o arquivo é o mesmo; usar adaptado somente se o conteúdo visual for efetivamente modificado."
+    },
+    {
+      "item": 24,
+      "verdict": "Parcialmente procedente; não concentrar todas as qualificações somente no fim.",
+      "evidence": [
+        "A versão atual já reduziu as repetições da anterior, mantendo limitações integradas na subseção própria.",
+        "Clipping continua qualificado no resumo, na metodologia, na comparação de quantização e na conclusão. Esses locais descrevem a própria transformação e a interpretação central.",
+        "Legendas locais também precisam informar que a comparação é descritiva para não depender integralmente de outro trecho."
+      ],
+      "recommendation": "Concentrar ressalvas gerais sobre causalidade, generalização e implantação na discussão de limitações. Preservar junto dos resultados as condições que mudam sua leitura: seleção feita na validação, erro cumulativo e clipping. O objetivo é reduzir repetições sem apagar qualificações essenciais."
+    },
+    {
+      "item": 25,
+      "verdict": "Lista de siglas é opcional e pode ajudar; falta de listas não é descumprimento demonstrado do modelo.",
+      "evidence": [
+        "O modelo não contém lista de siglas, figuras ou tabelas e não apresenta abstract.",
+        "O TCC já expande GHI, NSRDB, LSTM, MAE, MSE, RMSE e nRMSE em seus contextos; embedding, encoder, decoder e refit também são explicados."
+      ],
+      "recommendation": "Uma lista curta de siglas é útil à navegação, mas não substitui definições na primeira ocorrência. Expandir PSM, CPU e GPU no texto pode ser suficiente. Listas de figuras e tabelas e abstract não devem ser acrescentados como supostas exigências deste modelo."
+    },
+    {
+      "item": 27,
+      "verdict": "Parcialmente incorreto: o problema está no PDF, não no DOCX.",
+      "evidence": [
+        "docProps/core.xml do DOCX contém dc:title Previsão multirresolução de irradiância global horizontal em localidades associadas à fabricação de veículos elétricos e dc:creator Gustavo de Melo Nascimento.",
+        "O DOCX também contém assunto, palavras-chave e lastModifiedBy preenchidos.",
+        "O PDF final tem 35 páginas e metadados Producer, Creator, CreationDate e ModDate; não tem /Title ou /Author."
+      ],
+      "recommendation": "Preservar os metadados corretos do DOCX e preencher título e autor na exportação/propriedades do PDF. Não há justificativa para afirmar que ambos os arquivos estão vazios."
+    }
+  ],
+  "recommended_action_order": [22, 16, 27, 18, 19, 20, 15, 23, 24, 21, 25, 17],
+  "do_not_apply_blindly": [
+    "Não substituir reproduzido por adaptado na fonte do mapa sem modificação efetiva.",
+    "Não classificar distilação como palavra inexistente; qualquer troca é padronização.",
+    "Não declarar agradecimentos, dedicatória, abstract ou listas obrigatórios com base apenas neste modelo.",
+    "Não limitar todos os números a duas casas, apagando R², passos de quantização ou hiperparâmetros.",
+    "Não remover dos resultados todas as condições que limitam sua interpretação.",
+    "Não refazer metadados do DOCX que já estão preenchidos."
+  ],
+  "edits_performed": false
+}

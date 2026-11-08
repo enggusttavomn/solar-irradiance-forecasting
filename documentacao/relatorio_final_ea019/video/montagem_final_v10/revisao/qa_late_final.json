@@ -1,0 +1,129 @@
+{
+  "status": "passed_in_sampled_scope",
+  "scope": "Visual inspection of all27 frames in contact sheets7,8,9; enlarged checks of existing411.75s and443.0833s frames;3 supplementary final-video frames at362.3,371.8,372.7s. Read-only PCM source boundary audit. No full playback or audio listening.",
+  "full_realtime_playback_reviewed": false,
+  "audio_listened": false,
+  "final_files": [
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/Video_TCC_Final_Somente_Voz_v10.mp4",
+      "sha256": "e588cc4b4bc8bb9f1d0a089da8aa790ad2d93c9354b6a7ef52f9d7e0e903072e",
+      "bytes": 52179001
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/Video_TCC_Final_Com_Trilha_v10.mp4",
+      "sha256": "ce667bf1e7115238dc51ae896884de1be97886e1d7367be499ee3d490a6b2a3a",
+      "bytes": 52302369
+    }
+  ],
+  "source_final_video_sha256": "e588cc4b4bc8bb9f1d0a089da8aa790ad2d93c9354b6a7ef52f9d7e0e903072e",
+  "map_path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/amostras_exportacao_v10.json",
+  "global_sample_map_validation": {
+    "samples": 99,
+    "unique_timestamps": 99,
+    "sample_files_sha256_verified": 99,
+    "time_range": [
+      0.5,
+      453.15
+    ],
+    "within_final_duration": true,
+    "timeline_items_with_at_least_one_sample": 90,
+    "timeline_items_total": 90,
+    "visual_inspection_by_this_agent_count_in_map": 27
+  },
+  "contact_sheets_reviewed": [
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/verificacao_final/contato_v10_7.png",
+      "sha256": "28376d46c69b7bd7351007d935d38d26b0dfaf3192b821c519227eb462a76091"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/verificacao_final/contato_v10_8.png",
+      "sha256": "52b9dbec9595ec51bbe9891adb1a1938d2499b7550770d302b168da59702ebff"
+    },
+    {
+      "path": "documentacao/relatorio_final_ea019/video/montagem_final_v10/verificacao_final/contato_v10_9.png",
+      "sha256": "9c7996c40ebdafca5ce5ec28117e9212db346d70df7e38cdee4953cd34bbf966"
+    }
+  ],
+  "late_sample_times": [
+    328.8333,
+    334.3333,
+    339.7333,
+    345.6833,
+    351.4167,
+    357.9,
+    363.5667,
+    365.1027,
+    368.3,
+    373.0333,
+    374.5693,
+    378.3167,
+    383.8333,
+    389.25,
+    395.75,
+    401.5667,
+    406.4167,
+    411.75,
+    413.4033,
+    416.2833,
+    421.2,
+    426.85,
+    431.15,
+    441.4,
+    443.0833,
+    449.4,
+    453.15
+  ],
+  "supplementary_samples": [
+    {
+      "time": 362.3,
+      "path": "tmp/montagem_final_v10/qa_late/numeric_362.3.png",
+      "sha256": "a7e21b2421ccb21ad715dc62898b816c43078986ef6b0b5f2840b05079da9d47"
+    },
+    {
+      "time": 371.8,
+      "path": "tmp/montagem_final_v10/qa_late/numeric_371.8.png",
+      "sha256": "3502086aafe4bc1c64d41c9fcf86e29b20ad0aa7f42f0d25cb5dbe5b986d9020"
+    },
+    {
+      "time": 372.7,
+      "path": "tmp/montagem_final_v10/qa_late/numeric_372.7.png",
+      "sha256": "bf68d6dea38b01a6d114372e7430201f55c42ebb63c0796fba2e3e2920332e71"
+    }
+  ],
+  "findings": {
+    "captions": "Legible and coherent in sampled metrics/results/conclusion frames; at most two lines; no collision with chart content or historical-exception footnote.",
+    "monthly_one_step": "Informer12.73 displayed correctly; short canonical leadership caption has no narrated numerical value. Frame362.3s confirms value and short caption together.",
+    "monthly_six_steps": "Informer13.67 displayed correctly; short canonical leadership caption has no narrated numerical value. Frame372.7s confirms value and short caption together.",
+    "historical_exception": "Correct LSTM hourly exception footnote is below matrix and above caption band; enlarged411.75s frame confirms separation.",
+    "ending": "Clean factory plate, clear Transformer hourly/daily and Informer monthly headings; concluding experimental-basis card and fade-out are coherent and readable.",
+    "unresolved_visual_issues": []
+  },
+  "display_artifact_resolution": {
+    "initial_tool_display_at372_7": "Apparent missing glyph prefixes in full-resolution inline preview were not present in actual PNG pixel data. Same caption ROI in371.8s and372.7s verified identical prefix pixels.",
+    "caption_prefix_white_pixels": [
+      441,
+      441
+    ],
+    "caption_prefix_mean_absolute_pixel_difference": 0.0,
+    "caption_remaining_white_pixels": [
+      1797,
+      1797
+    ],
+    "caption_remaining_mean_absolute_pixel_difference": 0.0011396011396011395
+  },
+  "read_only_cut_guard_audit": {
+    "source_timebase": "full decoded PCM48k sample0",
+    "phase49_end_sample": 11372160,
+    "phase74_end_sample": 19812960,
+    "phase76_end_sample": 20375040,
+    "source_endpoints_seconds": [
+      236.92,
+      412.77,
+      424.48
+    ],
+    "exclusive_source_endpoints": true,
+    "postroll_in_blocked_regions_becomes_zero_padding": true,
+    "source_region_leak_found": false
+  },
+  "actions": "Only this TMP report and supplementary QA PNGs were written; no timeline, final exports, source assets or principal metadata changed."
+}

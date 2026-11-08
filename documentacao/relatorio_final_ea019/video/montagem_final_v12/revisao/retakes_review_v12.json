@@ -1,0 +1,753 @@
+{
+  "version": 12,
+  "status": "reviewed_ready_for_edit",
+  "created_utc": "2026-11-05T13:16:52.221950+00:00",
+  "scope": "Local ASR, independent short-window recognizers and objective word-boundary/spectral review. No human listening claimed; no production audio modified.",
+  "source": "C:\\Users\\gusta\\OneDrive\\Documents\\Sound Recordings\\GRAVACAO.m4a",
+  "source_sha256": "64afb2c901412c499cdaa0e2c8438075beb30309f9fbb05e36145e271bae5d3e",
+  "source_duration": 579.648,
+  "source_timebase": "Decoded full PCM starts at sample0. Clean PCM length and lag were verified separately; timestamps use the same0.",
+  "raw_transcript": "tmp/montagem_final_v12/audio/transcript_raw.json",
+  "discard_intervals": [
+    [
+      265.1,
+      267.2
+    ],
+    [
+      397.45,
+      405.4
+    ],
+    [
+      432.225,
+      435.2
+    ]
+  ],
+  "discard_ranges": [
+    [
+      265.1,
+      267.2
+    ],
+    [
+      397.45,
+      405.4
+    ],
+    [
+      432.225,
+      435.2
+    ]
+  ],
+  "retakes": [
+    {
+      "id": "quantization_opening_restart",
+      "discard": [
+        265.1,
+        267.2
+      ],
+      "keep": [
+        275.23,
+        284.81
+      ],
+      "confidence": 0.91,
+      "reason": "Aborted prefix around265.8–267.0 followed by complete Dentro desse protocolo... at275.23. Raw ASR incorrectly fused both; replacement words supplied."
+    },
+    {
+      "id": "hourly_result_restart",
+      "discard": [
+        397.45,
+        405.4
+      ],
+      "keep": [
+        405.81,
+        414.85
+      ],
+      "confidence": 0.99,
+      "reason": "Full result introduction repeated immediately after aborted number53,1. Preserve the later complete introduction and53,21."
+    }
+  ],
+  "numeric_omissions": [
+    {
+      "id": "six_month_incorrect_spoken_value",
+      "omit": [
+        432.225,
+        435.2
+      ],
+      "spoken_core": [
+        432.24,
+        434.91
+      ],
+      "keep_previous_until": 432.225,
+      "resume_after": 435.2,
+      "previous_retained_words": "doze vírgula setenta e três em um mês",
+      "next_retained_words": "também em watts por metro quadrado",
+      "omitted_text": "e treze vírgula setenta e sete em seis meses",
+      "report_value": "13,67 W/m²",
+      "asr_consistent_spoken_value": "13,77 W/m²",
+      "action_authorized_by_parent": "Omit only the incorrect six-month numeric clause; keep12.73 and the following unit; keep correct13.67 on the graph.",
+      "evidence": [
+        "Raw medium, clean medium and clean small independently transcribe13,77/setenta e sete.",
+        "Independent window438–459 contains no corrected repeat, only the next paragraph at455s.",
+        "Spectral inspection around432.0–432.4 shows the high-frequency final s of mês decaying by432.20, a quiet valley432.22–432.23, and next vowel onset432.24. Cut432.225 preserves the preceding word while excluding e.",
+        "Next também starts435.38, so resume435.20 retains180ms lead-in."
+      ],
+      "voice_number_must_not_be_synthesized_or_relabelled": true
+    }
+  ],
+  "replacement_segments": [
+    {
+      "source_range": [
+        178.0,
+        193.0
+      ],
+      "segments": [
+        {
+          "id": 1,
+          "seek": 0,
+          "start": 178.12,
+          "end": 182.46,
+          "text": " para prever, porém, também precisamos da ordem em que os valores aconteceram.",
+          "tokens": [
+            50364,
+            1690,
+            659,
+            331,
+            11,
+            1515,
+            4011,
+            11,
+            6274,
+            7974,
+            2151,
+            1120,
+            4792,
+            443,
+            846,
+            631,
+            3003,
+            38790,
+            35011,
+            335,
+            13,
+            50574
+          ],
+          "avg_logprob": -0.27959919224182767,
+          "compression_ratio": 1.425531914893617,
+          "no_speech_prob": 0.14759841561317444,
+          "words": [
+            {
+              "start": 178.12,
+              "end": 178.66,
+              "word": " para",
+              "probability": 0.312086284160614
+            },
+            {
+              "start": 178.66,
+              "end": 179.2,
+              "word": " prever,",
+              "probability": 0.9373619556427002
+            },
+            {
+              "start": 179.38,
+              "end": 179.9,
+              "word": " porém,",
+              "probability": 0.9905577600002289
+            },
+            {
+              "start": 180.24,
+              "end": 180.24,
+              "word": " também",
+              "probability": 0.8981831669807434
+            },
+            {
+              "start": 180.24,
+              "end": 180.6,
+              "word": " precisamos",
+              "probability": 0.9782624542713165
+            },
+            {
+              "start": 180.6,
+              "end": 180.78,
+              "word": " da",
+              "probability": 0.7593955993652344
+            },
+            {
+              "start": 180.78,
+              "end": 181.02,
+              "word": " ordem",
+              "probability": 0.9647892117500305
+            },
+            {
+              "start": 181.02,
+              "end": 181.14,
+              "word": " em",
+              "probability": 0.7537012100219727
+            },
+            {
+              "start": 181.14,
+              "end": 181.2,
+              "word": " que",
+              "probability": 0.9986026883125305
+            },
+            {
+              "start": 181.2,
+              "end": 181.3,
+              "word": " os",
+              "probability": 0.979145884513855
+            },
+            {
+              "start": 181.3,
+              "end": 181.5,
+              "word": " valores",
+              "probability": 0.9951379895210266
+            },
+            {
+              "start": 181.5,
+              "end": 182.46,
+              "word": " aconteceram.",
+              "probability": 0.9942168891429901
+            }
+          ],
+          "temperature": 0
+        },
+        {
+          "id": 2,
+          "seek": 0,
+          "start": 182.66,
+          "end": 187.34,
+          "text": " Por isso, a entrada reúne uma janela de HE anterior e a indicação da localidade.",
+          "tokens": [
+            50574,
+            5269,
+            4616,
+            11,
+            257,
+            37119,
+            319,
+            2481,
+            716,
+            2772,
+            25442,
+            4053,
+            368,
+            11827,
+            22272,
+            308,
+            257,
+            1016,
+            37823,
+            1120,
+            2654,
+            6014,
+            13,
+            50824
+          ],
+          "avg_logprob": -0.27959919224182767,
+          "compression_ratio": 1.425531914893617,
+          "no_speech_prob": 0.14759841561317444,
+          "words": [
+            {
+              "start": 182.66,
+              "end": 182.84,
+              "word": " Por",
+              "probability": 0.9591647982597351
+            },
+            {
+              "start": 182.84,
+              "end": 183.12,
+              "word": " isso,",
+              "probability": 0.9975950121879578
+            },
+            {
+              "start": 183.26,
+              "end": 183.44,
+              "word": " a",
+              "probability": 0.9919113516807556
+            },
+            {
+              "start": 183.44,
+              "end": 183.62,
+              "word": " entrada",
+              "probability": 0.9981402158737183
+            },
+            {
+              "start": 183.62,
+              "end": 184.04,
+              "word": " reúne",
+              "probability": 0.9609110951423645
+            },
+            {
+              "start": 184.04,
+              "end": 184.22,
+              "word": " uma",
+              "probability": 0.9838640689849854
+            },
+            {
+              "start": 184.22,
+              "end": 184.56,
+              "word": " janela",
+              "probability": 0.9914054870605469
+            },
+            {
+              "start": 184.56,
+              "end": 184.76,
+              "word": " de",
+              "probability": 0.8663482069969177
+            },
+            {
+              "start": 184.76,
+              "end": 184.92,
+              "word": " HE",
+              "probability": 0.1098700538277626
+            },
+            {
+              "start": 184.92,
+              "end": 185.68,
+              "word": " anterior",
+              "probability": 0.9869077205657959
+            },
+            {
+              "start": 185.68,
+              "end": 186.0,
+              "word": " e",
+              "probability": 0.8687227964401245
+            },
+            {
+              "start": 186.0,
+              "end": 186.06,
+              "word": " a",
+              "probability": 0.8657318949699402
+            },
+            {
+              "start": 186.06,
+              "end": 186.46,
+              "word": " indicação",
+              "probability": 0.8468906283378601
+            },
+            {
+              "start": 186.46,
+              "end": 186.68,
+              "word": " da",
+              "probability": 0.9854910373687744
+            },
+            {
+              "start": 186.68,
+              "end": 187.34,
+              "word": " localidade.",
+              "probability": 0.9981257915496826
+            }
+          ],
+          "temperature": 0
+        },
+        {
+          "id": 3,
+          "seek": 0,
+          "start": 187.82,
+          "end": 192.66,
+          "text": " A rede aprende uma representação de cada região e compartilha seus farantos entre as dez localidades.",
+          "tokens": [
+            50824,
+            316,
+            14328,
+            21003,
+            68,
+            2772,
+            2906,
+            6670,
+            368,
+            8411,
+            45697,
+            308,
+            40204,
+            1641,
+            17004,
+            1400,
+            394,
+            329,
+            3962,
+            382,
+            45057,
+            2654,
+            10284,
+            13,
+            51074
+          ],
+          "avg_logprob": -0.27959919224182767,
+          "compression_ratio": 1.425531914893617,
+          "no_speech_prob": 0.14759841561317444,
+          "words": [
+            {
+              "start": 187.82,
+              "end": 187.92,
+              "word": " A",
+              "probability": 0.9928261041641235
+            },
+            {
+              "start": 187.92,
+              "end": 188.08,
+              "word": " rede",
+              "probability": 0.9522247910499573
+            },
+            {
+              "start": 188.08,
+              "end": 188.38,
+              "word": " aprende",
+              "probability": 0.9919081330299377
+            },
+            {
+              "start": 188.38,
+              "end": 188.6,
+              "word": " uma",
+              "probability": 0.9730502963066101
+            },
+            {
+              "start": 188.6,
+              "end": 189.2,
+              "word": " representação",
+              "probability": 0.9936486482620239
+            },
+            {
+              "start": 189.2,
+              "end": 189.44,
+              "word": " de",
+              "probability": 0.9945981502532959
+            },
+            {
+              "start": 189.44,
+              "end": 189.6,
+              "word": " cada",
+              "probability": 0.9995194673538208
+            },
+            {
+              "start": 189.6,
+              "end": 190.02,
+              "word": " região",
+              "probability": 0.994208812713623
+            },
+            {
+              "start": 190.02,
+              "end": 190.42000000000002,
+              "word": " e",
+              "probability": 0.40643659234046936
+            },
+            {
+              "start": 190.42000000000002,
+              "end": 190.78,
+              "word": " compartilha",
+              "probability": 0.9233364462852478
+            },
+            {
+              "start": 190.78,
+              "end": 190.94,
+              "word": " seus",
+              "probability": 0.9635200500488281
+            },
+            {
+              "start": 190.94,
+              "end": 191.48,
+              "word": " farantos",
+              "probability": 0.6114175717035929
+            },
+            {
+              "start": 191.48,
+              "end": 191.7,
+              "word": " entre",
+              "probability": 0.9877228736877441
+            },
+            {
+              "start": 191.7,
+              "end": 191.84,
+              "word": " as",
+              "probability": 0.9923049807548523
+            },
+            {
+              "start": 191.84,
+              "end": 191.98,
+              "word": " dez",
+              "probability": 0.554378092288971
+            },
+            {
+              "start": 191.98,
+              "end": 192.66,
+              "word": " localidades.",
+              "probability": 0.998442679643631
+            }
+          ],
+          "temperature": 0
+        }
+      ],
+      "reason": "Independent clean-window ASR recovers Para prever before the main ASR first word Porém; keep the full paragraph prefix."
+    },
+    {
+      "source_range": [
+        265.0,
+        278.8
+      ],
+      "segments": [
+        {
+          "id": 1,
+          "seek": 0,
+          "start": 275.23,
+          "end": 278.45,
+          "text": " Dentro desse protocolo, testem uma hipótese adicional,",
+          "tokens": [
+            50364,
+            41622,
+            340,
+            17864,
+            10336,
+            78,
+            11,
+            1500,
+            443,
+            2772,
+            8103,
+            34712,
+            1130,
+            614,
+            33010,
+            11,
+            50529
+          ],
+          "avg_logprob": -0.2150042200088501,
+          "compression_ratio": 1.2285714285714286,
+          "no_speech_prob": 0.0032225600443780422,
+          "words": [
+            {
+              "start": 275.23,
+              "end": 275.77,
+              "word": " Dentro",
+              "probability": 0.9290337264537811
+            },
+            {
+              "start": 275.77,
+              "end": 276.03,
+              "word": " desse",
+              "probability": 0.8402574062347412
+            },
+            {
+              "start": 276.03,
+              "end": 277.07,
+              "word": " protocolo,",
+              "probability": 0.9726707339286804
+            },
+            {
+              "start": 277.19,
+              "end": 277.39,
+              "word": " testem",
+              "probability": 0.8934735655784607
+            },
+            {
+              "start": 277.39,
+              "end": 277.51,
+              "word": " uma",
+              "probability": 0.8946729898452759
+            },
+            {
+              "start": 277.51,
+              "end": 277.91,
+              "word": " hipótese",
+              "probability": 0.9475412766138712
+            },
+            {
+              "start": 277.91,
+              "end": 278.45,
+              "word": " adicional,",
+              "probability": 0.9959959089756012
+            }
+          ],
+          "temperature": 0
+        }
+      ],
+      "reason": "Main ASR fused first aborted Dentro desse around265s with later protocolo around276s. Replace with the complete later take at275.23–278.45."
+    },
+    {
+      "source_range": [
+        527.36,
+        546.8
+      ],
+      "segments": [
+        {
+          "id": 1,
+          "seek": 0,
+          "start": 540.39,
+          "end": 546.59,
+          "text": " Projeto entrega em uma comparação experimental das três arquiteturas em dez localidades.",
+          "tokens": [
+            50364,
+            1705,
+            7108,
+            78,
+            32843,
+            64,
+            846,
+            2772,
+            715,
+            2419,
+            2917,
+            17069,
+            1482,
+            20779,
+            40258,
+            16341,
+            12907,
+            846,
+            45057,
+            2654,
+            10284,
+            13,
+            50646
+          ],
+          "avg_logprob": -0.5199110610144478,
+          "compression_ratio": 1.1192660550458715,
+          "no_speech_prob": 0.18032358586788177,
+          "words": [
+            {
+              "start": 540.39,
+              "end": 541.03,
+              "word": " Projeto",
+              "probability": 0.7261908054351807
+            },
+            {
+              "start": 541.49,
+              "end": 542.79,
+              "word": " entrega",
+              "probability": 0.6517293602228165
+            },
+            {
+              "start": 542.79,
+              "end": 543.09,
+              "word": " em",
+              "probability": 0.6488314270973206
+            },
+            {
+              "start": 543.09,
+              "end": 543.31,
+              "word": " uma",
+              "probability": 0.9827105402946472
+            },
+            {
+              "start": 543.31,
+              "end": 543.75,
+              "word": " comparação",
+              "probability": 0.799609382947286
+            },
+            {
+              "start": 543.75,
+              "end": 544.27,
+              "word": " experimental",
+              "probability": 0.9587565660476685
+            },
+            {
+              "start": 544.27,
+              "end": 544.53,
+              "word": " das",
+              "probability": 0.9610059857368469
+            },
+            {
+              "start": 544.53,
+              "end": 544.75,
+              "word": " três",
+              "probability": 0.8825533986091614
+            },
+            {
+              "start": 544.75,
+              "end": 545.29,
+              "word": " arquiteturas",
+              "probability": 0.9950994253158569
+            },
+            {
+              "start": 545.29,
+              "end": 545.49,
+              "word": " em",
+              "probability": 0.769294023513794
+            },
+            {
+              "start": 545.49,
+              "end": 545.67,
+              "word": " dez",
+              "probability": 0.7703666687011719
+            },
+            {
+              "start": 545.67,
+              "end": 546.59,
+              "word": " localidades.",
+              "probability": 0.9930284023284912
+            }
+          ],
+          "temperature": 0
+        }
+      ],
+      "reason": "Main ASR attached a lone O at527.36 to Projeto at540.65 across13seconds of gap. Short-window clean ASR gives the actual later full sentence at540.39–546.59. No full earlier sentence was verified."
+    }
+  ],
+  "manual_asr_corrections": [
+    {
+      "word_index": 294,
+      "word": "oito",
+      "start": 129.94,
+      "end": 130.18,
+      "evidence": "Independent small-clean window125–136 explicitly recognizes oito nos Estados Unidos."
+    },
+    {
+      "word_index": 882,
+      "word": "Informer",
+      "start": 426.87,
+      "end": 427.27,
+      "evidence": "Independent medium-clean and small-clean windows both recognize Informer/informam, without previous Transformer context."
+    }
+  ],
+  "manual_word_corrections": [
+    {
+      "word_index": 294,
+      "word": "oito",
+      "start": 129.94,
+      "end": 130.18,
+      "evidence": "Independent small-clean window125–136 explicitly recognizes oito nos Estados Unidos."
+    },
+    {
+      "word_index": 882,
+      "word": "Informer",
+      "start": 426.87,
+      "end": 427.27,
+      "evidence": "Independent medium-clean and small-clean windows both recognize Informer/informam, without previous Transformer context."
+    }
+  ],
+  "numeric_normalizations": [
+    {
+      "source_range": [
+        410.91,
+        413.59
+      ],
+      "canonical_value": "53,21",
+      "evidence": "Raw medium prints53,20/em/1; independent clean medium prints53,20 e1. These represent the spoken vinte e um as split numeric tokens, not53.201. Keep the later correct take."
+    }
+  ],
+  "first_paragraph": {
+    "source_range": [
+      0.59,
+      18.04
+    ],
+    "retake_found": false,
+    "action": "Preserve all three initial sentences. User marking alone is not evidence of a duplicate."
+  },
+  "alignment_repair_notes": [
+    "Ending527.36–540.39 is a long gap/ASR token fusion, not a verified full repeated conclusion. Replacement starts with Projeto at540.39; source cut lead-in of>=0.20s retains a possible weak preceding O.",
+    "Small raw no-VAD hallucinated repeated entretanto in249–271 and Acompanhar around288.4. Clean VAD checks do not confirm those as legitimate retained speech. Do not add them to captions.",
+    "Use the original medium transcript except the explicit repair scopes and orthographic word corrections. Do not overwrite the untouched raw transcript.",
+    "Date repetitions2019–2023 are legitimate script content and must not be removed as retakes."
+  ],
+  "scientific_issues": [
+    {
+      "issue": "Wrong six-month numerical reading",
+      "action": "explicit numeric omission",
+      "manifest_id": "six_month_incorrect_spoken_value"
+    },
+    {
+      "issue": "Monthly model misrecognized as Transformer in contextual raw ASR",
+      "action": "orthographic recognition repair to Informer; voice unchanged",
+      "evidence": "two independent clean-window ASRs"
+    }
+  ],
+  "external_uploads_performed": false,
+  "source_or_production_audio_modified": false,
+  "audio_listening_performed": false
+}

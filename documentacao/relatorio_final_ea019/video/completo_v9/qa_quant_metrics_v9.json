@@ -1,0 +1,96 @@
+{
+  "reviewer": "v9_quant_metrics",
+  "reviewed_utc": "2026-11-04T16:28:58.351315+00:00",
+  "status": "approved_sampled_preflight",
+  "automatically_approved": false,
+  "production_render_started_by_this_agent": false,
+  "full_length_realtime_playback_reviewed": false,
+  "source_hashes": {
+    "codigo_fonte/video_ea019/quantization_v9.py": "b5eba6e84aec20f35e45605dc2513711674fd0a881b2edd2471964090e79ba03",
+    "codigo_fonte/video_ea019/metrics_v9.py": "1727569d05aa8764c5004aba9a20739ea82aae35ed9757b86eab0b20de0943d0",
+    "codigo_fonte/video_ea019/retime_v9.py": "a3bac65c3d4843b6037277d3434168390cbe7607b5b725cbadca8b5a6f47c96a"
+  },
+  "quantization_duration": 64,
+  "metrics_duration": 66,
+  "sampled_images_reviewed": [
+    "quantizacao_11_5.png",
+    "quantizacao_20_3.png",
+    "quantizacao_34_5.png",
+    "quantizacao_40_5.png",
+    "quantizacao_48_0.png",
+    "quantizacao_54_8.png",
+    "metricas_5_8.png",
+    "metricas_13_0.png",
+    "metricas_25_5.png",
+    "metricas_33_5.png",
+    "metricas_39_5.png",
+    "metricas_49_5.png",
+    "metricas_64_5.png"
+  ],
+  "numeric_checks": {
+    "illustrative_min_max_W_m2": [
+      0,
+      1000
+    ],
+    "original_W_m2": 437,
+    "Q64_W_m2": 444.44,
+    "Q128_W_m2": 433.07,
+    "Q256_W_m2": 435.29,
+    "input_absolute_differences_W_m2": [
+      7.44,
+      3.93,
+      1.71
+    ],
+    "mae_example_reference": [
+      0,
+      200,
+      600,
+      300,
+      0
+    ],
+    "mae_example_prediction": [
+      20,
+      170,
+      650,
+      270,
+      10
+    ],
+    "absolute_errors": [
+      20,
+      30,
+      50,
+      30,
+      10
+    ],
+    "mae": 28,
+    "improvement_plateaus": [
+      28,
+      14,
+      0
+    ]
+  },
+  "checked": [
+    "Explicit illustrative scaler rather than claiming experiment min/max.",
+    "Uniform quantization clips before round; continuous control does neither.",
+    "Same instant maintained; only input GHI is quantized; locality bypass uses factory/name; reconstructed float32 with continuous weights, targets and outputs.",
+    "Vertical absolute distances at the same time; no area/integral interpretation.",
+    "Numeric MAE labels held only at exact curve plateaus.",
+    "Ten named factory symbols and equal locality weights.",
+    "Cumulative horizon includes every step through72 and the night.",
+    "Annotations and formulas reserved above subtitle band."
+  ],
+  "resolved_findings": [
+    "Moved quantization persistent explanatory line toward camera to remove mesh depth occlusion.",
+    "Reduced dense Q256 ruler numeric labels to alternate real levels, keeping every level line.",
+    "Moved reconstruction formulas upward above subtitle region.",
+    "Made MAE curve point interpolation slot-safe and linear without altering hide_render booleans.",
+    "Moved MAE annotations toward camera to avoid depth occlusion at the zero-error plateau.",
+    "Routed lower central Detroit contribution around the Texas label."
+  ],
+  "material_findings_remaining": [],
+  "final_critical_layout_samples": [
+    "quantizacao_20_3.png",
+    "metricas_49_5.png"
+  ],
+  "new_import_dependency": "metrics_v9 -> retime_v9.all_fcurves"
+}

@@ -1,0 +1,376 @@
+{
+  "tarefas": [
+    [
+      "hourly_72_extension",
+      72,
+      "Horária 1–72 h"
+    ],
+    [
+      "daily_30",
+      30,
+      "Diária 1–30 dias"
+    ],
+    [
+      "monthly_1",
+      1,
+      "Mensal 1 passo"
+    ],
+    [
+      "monthly_6",
+      6,
+      "Mensal 1–6 passos"
+    ]
+  ],
+  "quantizacao_atual": [
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Transformer",
+      "variante": "q64",
+      "delta_pct": 0.0020687441586453303,
+      "selecionado": false
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Transformer",
+      "variante": "q128",
+      "delta_pct": 0.020173695727709884,
+      "selecionado": false
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Transformer",
+      "variante": "q256",
+      "delta_pct": 0.02071113082342535,
+      "selecionado": false
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Informer",
+      "variante": "q64",
+      "delta_pct": 0.1360442180111887,
+      "selecionado": false
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Informer",
+      "variante": "q128",
+      "delta_pct": 0.11897010073731451,
+      "selecionado": false
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "Informer",
+      "variante": "q256",
+      "delta_pct": -0.021523940893530824,
+      "selecionado": false
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "LSTM",
+      "variante": "q64",
+      "delta_pct": -1.0547942310326186,
+      "selecionado": true
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "LSTM",
+      "variante": "q128",
+      "delta_pct": 0.3689351031917365,
+      "selecionado": false
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "modelo": "LSTM",
+      "variante": "q256",
+      "delta_pct": -1.6893378023690286,
+      "selecionado": false
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Transformer",
+      "variante": "q64",
+      "delta_pct": -0.005360740944471143,
+      "selecionado": false
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Transformer",
+      "variante": "q128",
+      "delta_pct": -0.0049762222292248914,
+      "selecionado": false
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Transformer",
+      "variante": "q256",
+      "delta_pct": 0.01413125166052076,
+      "selecionado": true
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Informer",
+      "variante": "q64",
+      "delta_pct": -0.015814482043019495,
+      "selecionado": true
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Informer",
+      "variante": "q128",
+      "delta_pct": -0.014296484781284313,
+      "selecionado": false
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "Informer",
+      "variante": "q256",
+      "delta_pct": 0.02819509567881795,
+      "selecionado": false
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "LSTM",
+      "variante": "q64",
+      "delta_pct": 0.05378536869418138,
+      "selecionado": false
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "LSTM",
+      "variante": "q128",
+      "delta_pct": 0.9860397727646797,
+      "selecionado": false
+    },
+    {
+      "tarefa": "daily_30",
+      "modelo": "LSTM",
+      "variante": "q256",
+      "delta_pct": 0.5186922034786212,
+      "selecionado": false
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Transformer",
+      "variante": "q64",
+      "delta_pct": -0.5917158933461453,
+      "selecionado": false
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Transformer",
+      "variante": "q128",
+      "delta_pct": 0.20594335053090163,
+      "selecionado": true
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Transformer",
+      "variante": "q256",
+      "delta_pct": -0.12106687868225219,
+      "selecionado": false
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Informer",
+      "variante": "q64",
+      "delta_pct": -2.341536639469921,
+      "selecionado": false
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Informer",
+      "variante": "q128",
+      "delta_pct": -0.9461266340130114,
+      "selecionado": true
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "Informer",
+      "variante": "q256",
+      "delta_pct": -4.1253804177286195,
+      "selecionado": false
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "LSTM",
+      "variante": "q64",
+      "delta_pct": -0.012393412849931451,
+      "selecionado": false
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "LSTM",
+      "variante": "q128",
+      "delta_pct": 0.12021444766767697,
+      "selecionado": true
+    },
+    {
+      "tarefa": "monthly_1",
+      "modelo": "LSTM",
+      "variante": "q256",
+      "delta_pct": 0.012509175824382268,
+      "selecionado": false
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Transformer",
+      "variante": "q64",
+      "delta_pct": -0.23348491833280471,
+      "selecionado": true
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Transformer",
+      "variante": "q128",
+      "delta_pct": 0.3919276255922588,
+      "selecionado": false
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Transformer",
+      "variante": "q256",
+      "delta_pct": 0.020261846518332405,
+      "selecionado": false
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Informer",
+      "variante": "q64",
+      "delta_pct": -1.9713529919100692,
+      "selecionado": false
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Informer",
+      "variante": "q128",
+      "delta_pct": -1.5304691237507329,
+      "selecionado": true
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "Informer",
+      "variante": "q256",
+      "delta_pct": -1.4782950448972376,
+      "selecionado": false
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "LSTM",
+      "variante": "q64",
+      "delta_pct": -0.04066187261930754,
+      "selecionado": false
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "LSTM",
+      "variante": "q128",
+      "delta_pct": 0.038710826749532856,
+      "selecionado": true
+    },
+    {
+      "tarefa": "monthly_6",
+      "modelo": "LSTM",
+      "variante": "q256",
+      "delta_pct": 0.13406980628734022,
+      "selecionado": false
+    }
+  ],
+  "historico_pareado": [
+    {
+      "tarefa": "hourly_72_extension",
+      "rotulo": "Horária 1–72 h",
+      "modelo": "Transformer",
+      "mae_curto": 55.47965221551219,
+      "mae_longo": 52.36725859075091,
+      "delta_pct": -5.609973207242014
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "rotulo": "Horária 1–72 h",
+      "modelo": "Informer",
+      "mae_curto": 136.21119896499007,
+      "mae_longo": 60.89796203559331,
+      "delta_pct": -55.29151604395926
+    },
+    {
+      "tarefa": "hourly_72_extension",
+      "rotulo": "Horária 1–72 h",
+      "modelo": "LSTM",
+      "mae_curto": 53.718654043715766,
+      "mae_longo": 61.60577795269222,
+      "delta_pct": 14.682281321788103
+    },
+    {
+      "tarefa": "daily_30",
+      "rotulo": "Diária 1–30 dias",
+      "modelo": "Transformer",
+      "mae_curto": 44.66667602708621,
+      "mae_longo": 44.48497698808141,
+      "delta_pct": -0.40678880804700945
+    },
+    {
+      "tarefa": "daily_30",
+      "rotulo": "Diária 1–30 dias",
+      "modelo": "Informer",
+      "mae_curto": 46.02225197381036,
+      "mae_longo": 43.59251596051026,
+      "delta_pct": -5.279480923016933
+    },
+    {
+      "tarefa": "daily_30",
+      "rotulo": "Diária 1–30 dias",
+      "modelo": "LSTM",
+      "mae_curto": 44.26934388410392,
+      "mae_longo": 43.28337671641043,
+      "delta_pct": -2.2272007696222618
+    },
+    {
+      "tarefa": "monthly_1",
+      "rotulo": "Mensal 1 passo",
+      "modelo": "Transformer",
+      "mae_curto": 16.39742331218239,
+      "mae_longo": 14.082466874442218,
+      "delta_pct": -14.117806155679869
+    },
+    {
+      "tarefa": "monthly_1",
+      "rotulo": "Mensal 1 passo",
+      "modelo": "Informer",
+      "mae_curto": 16.21827759865641,
+      "mae_longo": 13.883087205951412,
+      "delta_pct": -14.39851043675844
+    },
+    {
+      "tarefa": "monthly_1",
+      "rotulo": "Mensal 1 passo",
+      "modelo": "LSTM",
+      "mae_curto": 15.445973830335376,
+      "mae_longo": 14.659262417413393,
+      "delta_pct": -5.093310538807905
+    },
+    {
+      "tarefa": "monthly_6",
+      "rotulo": "Mensal 1–6 passos",
+      "modelo": "Transformer",
+      "mae_curto": 17.19502149377113,
+      "mae_longo": 14.911236249856303,
+      "delta_pct": -13.281665537563436
+    },
+    {
+      "tarefa": "monthly_6",
+      "rotulo": "Mensal 1–6 passos",
+      "modelo": "Informer",
+      "mae_curto": 16.222214264749166,
+      "mae_longo": 14.724735906262572,
+      "delta_pct": -9.231035505064256
+    },
+    {
+      "tarefa": "monthly_6",
+      "rotulo": "Mensal 1–6 passos",
+      "modelo": "LSTM",
+      "mae_curto": 15.392517062552296,
+      "mae_longo": 15.053674359951918,
+      "delta_pct": -2.201346935159365
+    }
+  ]
+}

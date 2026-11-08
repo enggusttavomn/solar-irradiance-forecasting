@@ -1,0 +1,166 @@
+{
+  "duration": 48,
+  "cues": [
+    [
+      0,
+      8,
+      "Para comparar precisão, usamos principalmente o erro absoluto médio, o MAE. Ele mantém a unidade do GHI."
+    ],
+    [
+      8,
+      16,
+      "Em cada instante, tomamos a distância entre previsão e referência, sem considerar o sinal."
+    ],
+    [
+      16,
+      21,
+      "Neste exemplo, cinco distâncias são reunidas para calcular a média."
+    ],
+    [
+      21,
+      27,
+      "A média deste exemplo é vinte e oito watts por metro quadrado."
+    ],
+    [
+      27,
+      38,
+      "Primeiro calculamos o erro de cada localidade. Depois, as dez localidades recebem o mesmo peso na macro média."
+    ],
+    [
+      38,
+      48,
+      "Nos horizontes cumulativos, entram todos os passos até o limite. Em 72 horas, o erro reúne três dias inteiros."
+    ]
+  ],
+  "qa_times": [
+    3,
+    10,
+    18.5,
+    23.5,
+    32,
+    40.5,
+    46.8
+  ],
+  "example_reference": [
+    0,
+    200,
+    600,
+    300,
+    0
+  ],
+  "example_prediction": [
+    20,
+    170,
+    650,
+    270,
+    10
+  ],
+  "example_absolute_errors": [
+    20,
+    30,
+    50,
+    30,
+    10
+  ],
+  "example_mae": 28,
+  "numeric_example_is_not_an_experiment_result": true,
+  "macro_equal_locality_weight": 0.1,
+  "cumulative_includes_steps_1_through_H": true,
+  "cumulative_hourly_includes_night": true,
+  "source_notes": "fontes_resultados_v8.json",
+  "source_report_pages": [
+    15,
+    16,
+    21,
+    23
+  ],
+  "version": 8,
+  "chapter": "metricas",
+  "start": 340,
+  "end": 388,
+  "blend": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\metricas_v8.blend",
+  "raw_mp4": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\metricas_3d_v8.mp4",
+  "fps": 30,
+  "frames": 1440,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "resolution_percentage": 100,
+  "samples": 16,
+  "render_complete": true,
+  "source_fingerprint": "0c41626f1475ec1ba7d0d1af71617d4c28456382b3133a68747f03aa0e31d892",
+  "source_hashes": {
+    "codigo_fonte\\video_ea019\\director_v8.py": "8acbf3219a7c301f7f5c15e761bd881e37413ba51b0900df805f8cd62cff7512",
+    "codigo_fonte\\video_ea019\\metrics_v8.py": "6a67fd83aa862b16a32c00c8c03cef553dafd9143d675b9559161b7dd98ca373",
+    "codigo_fonte\\video_ea019\\common_v7.py": "4867b4c429436a2e602de07bbbc1d16d6644506917894c8dca3588dc7e4e3587",
+    "codigo_fonte\\video_ea019\\blender_pilot.py": "d048c56e8559a13e2eb462299421e618817bdd0fee186412172e75843ad3207d",
+    "codigo_fonte\\video_ea019\\factory_site_v6.py": "9ef07ea1f676d8970a2d007c0bf2918ddf63c7cad3b0ad00d3ac0d7723d23c55",
+    "documentacao\\relatorio_final_ea019\\video\\completo_v8\\fontes_resultados_v8.json": "de42f0a99982bca8f029a92f91df7694a3855b1a44614ba6deeb8aa2d7b56494"
+  },
+  "blocks": [
+    {
+      "first_frame": 1,
+      "last_frame": 300,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\metricas\\f00001_00300.mp4",
+      "bytes": 3058394,
+      "sha256": "d09cae0ac95cc9430d6b5f7faee46780b1956f1e666a2b0e92ff40e507ab6412",
+      "source_fingerprint": "0c41626f1475ec1ba7d0d1af71617d4c28456382b3133a68747f03aa0e31d892",
+      "reused": false
+    },
+    {
+      "first_frame": 301,
+      "last_frame": 600,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\metricas\\f00301_00600.mp4",
+      "bytes": 2521587,
+      "sha256": "907aae208f803dde51b53e2d1effa8ecf76a5ce39415fb630b8c357cdd545b09",
+      "source_fingerprint": "0c41626f1475ec1ba7d0d1af71617d4c28456382b3133a68747f03aa0e31d892",
+      "reused": false
+    },
+    {
+      "first_frame": 601,
+      "last_frame": 900,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\metricas\\f00601_00900.mp4",
+      "bytes": 2322054,
+      "sha256": "06c55845481b36bc373f7c806519e0f9218ceb54d7f6f9ed24b9874fde3c09b3",
+      "source_fingerprint": "0c41626f1475ec1ba7d0d1af71617d4c28456382b3133a68747f03aa0e31d892",
+      "reused": false
+    },
+    {
+      "first_frame": 901,
+      "last_frame": 1200,
+      "frame_count": 300,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\metricas\\f00901_01200.mp4",
+      "bytes": 3303825,
+      "sha256": "6a35176508eb617a49931db1eb5c5099418ee9853a9436414ca5dd13a0c791a4",
+      "source_fingerprint": "0c41626f1475ec1ba7d0d1af71617d4c28456382b3133a68747f03aa0e31d892",
+      "reused": false
+    },
+    {
+      "first_frame": 1201,
+      "last_frame": 1440,
+      "frame_count": 240,
+      "path": "C:\\Users\\gusta\\Downloads\\1) EA019 - TCC\\documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\blocos\\metricas\\f01201_01440.mp4",
+      "bytes": 2454929,
+      "sha256": "959a258d3b4c727599afcdd0e431acc508394a6637467617360a351475a30ca3",
+      "source_fingerprint": "0c41626f1475ec1ba7d0d1af71617d4c28456382b3133a68747f03aa0e31d892",
+      "reused": false
+    }
+  ],
+  "raw_verification": {
+    "path": "documentacao\\relatorio_final_ea019\\video\\completo_v8\\cenas\\metricas_3d_v8.mp4",
+    "bytes": 13660648,
+    "sha256": "488be3749e60d4bd097d7a6cfe8d96c2a06a4bae5f899a764e19af4e99cdf405",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frame_count": 1440,
+    "duration_seconds": 48,
+    "codec": "H.264",
+    "audio_tracks": 0,
+    "full_decode_errors": 0
+  }
+}

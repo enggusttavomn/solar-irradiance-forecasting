@@ -1,0 +1,1094 @@
+{
+  "version": 8,
+  "duration": 550,
+  "fps": 30,
+  "frames": 16500,
+  "personal_intro_seconds": 20,
+  "personal_outro_seconds": 20,
+  "projected_total_with_personal_footage": 590,
+  "approved_prefix_reused_seconds": 224,
+  "phases": [
+    [
+      0,
+      4.4,
+      "GHI é a potência solar recebida por unidade de área horizontal."
+    ],
+    [
+      4.4,
+      10.8,
+      "Aqui, a região mede um metro por um metro. A unidade é watt por metro quadrado."
+    ],
+    [
+      10.8,
+      16,
+      "Parte da luz vem diretamente do Sol, e parte é espalhada pela atmosfera."
+    ],
+    [
+      16,
+      21,
+      "A luz varia durante o dia. À noite, a irradiância solar praticamente zera."
+    ],
+    [
+      21,
+      25.2,
+      "A passagem de nuvens modifica a luz recebida e a curva."
+    ],
+    [
+      25.2,
+      30,
+      "O histórico reúne esses padrões diários e as variações da atmosfera."
+    ],
+    [
+      30,
+      35,
+      "Com esse histórico, tentamos antecipar a continuação da curva."
+    ],
+    [
+      35,
+      40,
+      "Prever o recurso solar pode apoiar o planejamento fotovoltaico. Meu objetivo foi..."
+    ],
+    [
+      40,
+      44,
+      "comparar LSTM, Transformer e Informer."
+    ],
+    [
+      44,
+      48,
+      "Na LSTM, os valores entram em ordem."
+    ],
+    [
+      48,
+      52,
+      "A memória muda a cada passo, por portas aprendidas."
+    ],
+    [
+      52,
+      56,
+      "Elas regulam o que reter, acrescentar e transmitir."
+    ],
+    [
+      56,
+      59,
+      "O estado final ajuda a prever todo o horizonte."
+    ],
+    [
+      59,
+      63,
+      "No Transformer, cada posição reúne valor e ordem temporal."
+    ],
+    [
+      63,
+      67,
+      "Consultas comparam representações com suas chaves."
+    ],
+    [
+      67,
+      71,
+      "Os pesos calculados orientam a combinação dos valores."
+    ],
+    [
+      71,
+      75,
+      "Essas representações seguem para a previsão do horizonte."
+    ],
+    [
+      75,
+      79,
+      "Em sequências longas, o Informer detalha algumas consultas."
+    ],
+    [
+      79,
+      83,
+      "A seleção usa uma estimativa de esparsidade."
+    ],
+    [
+      83,
+      87,
+      "Em outra etapa, reduz a sequência interna do codificador."
+    ],
+    [
+      87,
+      91,
+      "A atenção cruzada permanece completa."
+    ],
+    [
+      91,
+      95,
+      "O mesmo histórico e ID entram nos três modelos."
+    ],
+    [
+      95,
+      100,
+      "Cada modelo produz diretamente um vetor para o mesmo horizonte."
+    ],
+    [
+      100,
+      104,
+      "As localidades deste estudo estão nas Américas."
+    ],
+    [
+      104,
+      110,
+      "São dez regiões: uma no Brasil, oito nos Estados Unidos e uma no México."
+    ],
+    [
+      110,
+      116,
+      "A NSRDB usa observações de satélite e informações da atmosfera para estimar o recurso solar."
+    ],
+    [
+      116,
+      125,
+      "Modelos físicos combinam essas informações e produzem estimativas de irradiância para células geográficas."
+    ],
+    [
+      125,
+      131,
+      "Estas distribuições usam valores reais do período de treinamento."
+    ],
+    [
+      131,
+      138.5,
+      "Os perfis mostram os valores positivos. A porcentagem de horas com GHI igual a zero aparece separadamente."
+    ],
+    [
+      138.5,
+      144,
+      "A distribuição varia entre as dez localidades do conjunto."
+    ],
+    [
+      144,
+      149,
+      "Cada região consultada corresponde a uma célula geográfica da base."
+    ],
+    [
+      149,
+      154,
+      "A sequência dessas estimativas forma o histórico de GHI usado pelas redes."
+    ],
+    [
+      154,
+      162,
+      "Uma entrada é o histórico de GHI: uma sequência de valores, organizada no tempo."
+    ],
+    [
+      162,
+      170,
+      "A outra entrada identifica a localidade. Esse número se transforma numa representação aprendida pela rede."
+    ],
+    [
+      170,
+      178,
+      "Neste experimento, os modelos recebem o histórico de GHI e a identificação da localidade."
+    ],
+    [
+      178,
+      186,
+      "Cada modelo compartilha seus parâmetros entre as dez localidades. Os dados mudam; a estrutura é a mesma."
+    ],
+    [
+      186,
+      190,
+      "Comparei quatro tarefas, em diferentes escalas de tempo."
+    ],
+    [
+      190,
+      195.5,
+      "Na tarefa horária, 336 horas formam duas semanas de histórico."
+    ],
+    [
+      195.5,
+      201,
+      "A rede prevê as próximas 72 horas: três dias de irradiância."
+    ],
+    [
+      201,
+      206.5,
+      "Na diária, 365 valores representam um ano de histórico."
+    ],
+    [
+      206.5,
+      212,
+      "A saída prevê os próximos trinta dias, mantendo a separação entre passado e futuro."
+    ],
+    [
+      212,
+      218,
+      "Na mensal de um passo, doze meses ajudam a prever o mês seguinte."
+    ],
+    [
+      218,
+      224,
+      "Na outra mensal, uma rede própria prevê seis meses. Essa análise é exploratória."
+    ],
+    [
+      224,
+      230,
+      "As tarefas mensais usam redes distintas: uma prevê um mês e outra, seis."
+    ],
+    [
+      230,
+      236,
+      "Embora seus primeiros valores se refiram ao mês seguinte, vêm de treinamentos diferentes."
+    ],
+    [
+      236,
+      243,
+      "Treinei inicialmente com dados de 2019 a 2022."
+    ],
+    [
+      243,
+      250,
+      "A validação usa 2023, e o teste, 2024."
+    ],
+    [
+      250,
+      256,
+      "A validação orientou a escolha das configurações. A normalização respeitou os cortes temporais."
+    ],
+    [
+      256,
+      262,
+      "A escolha foi feita por tarefa e modelo, entre as alternativas do protocolo consolidado."
+    ],
+    [
+      262,
+      273,
+      "Após a seleção, reiniciei o treinamento em 2019–2023. Depois, avaliei em 2024."
+    ],
+    [
+      273,
+      280,
+      "Teste retrospectivo: havia exposição anterior a 2024, com independência limitada."
+    ],
+    [
+      280,
+      283,
+      "Neste estudo, comparamos a precisão das previsões."
+    ],
+    [
+      283,
+      286,
+      "Velocidade e memória computacional não foram medidas."
+    ],
+    [
+      286,
+      295,
+      "Nos três modelos, comparei entradas contínuas com 64, 128 ou 256 níveis."
+    ],
+    [
+      295,
+      301,
+      "Quantizar aproxima cada amplitude de um dos níveis disponíveis."
+    ],
+    [
+      301,
+      307,
+      "Mais níveis reduzem os degraus. Os instantes da série são mantidos."
+    ],
+    [
+      307,
+      313,
+      "Somente o GHI passa pela transformação; a identificação da localidade segue separada."
+    ],
+    [
+      313,
+      320,
+      "Os valores são reconstruídos em float32. Pesos, alvos e saídas continuam contínuos."
+    ],
+    [
+      320,
+      324,
+      "Nas variantes quantizadas, o clipping vem antes do arredondamento."
+    ],
+    [
+      324,
+      327,
+      "O contraste reúne os dois efeitos."
+    ],
+    [
+      327,
+      331,
+      "O controle contínuo mantém os valores sem clipping."
+    ],
+    [
+      331,
+      340,
+      "Para cada modelo e tarefa, a condição escolhida em 2023 segue para o teste de 2024."
+    ],
+    [
+      340,
+      348,
+      "Para comparar precisão, usamos principalmente o erro absoluto médio, o MAE. Ele mantém a unidade do GHI."
+    ],
+    [
+      348,
+      356,
+      "Em cada instante, tomamos a distância entre previsão e referência, sem considerar o sinal."
+    ],
+    [
+      356,
+      361,
+      "Neste exemplo, cinco distâncias são reunidas para calcular a média."
+    ],
+    [
+      361,
+      367,
+      "A média deste exemplo é vinte e oito watts por metro quadrado."
+    ],
+    [
+      367,
+      378,
+      "Primeiro calculamos o erro de cada localidade. Depois, as dez localidades recebem o mesmo peso na macro média."
+    ],
+    [
+      378,
+      388,
+      "Nos horizontes cumulativos, entram todos os passos até o limite. Em 72 horas, o erro reúne três dias inteiros."
+    ],
+    [
+      388,
+      395,
+      "Compare os modelos dentro de cada tarefa: escalas e alvos são diferentes."
+    ],
+    [
+      395,
+      404,
+      "No horário, o Transformer teve o menor macro-MAE: 53,21 watts por metro quadrado."
+    ],
+    [
+      404,
+      412,
+      "A vantagem sobre a LSTM foi de aproximadamente 0,32 watt por metro quadrado."
+    ],
+    [
+      412,
+      420,
+      "Na diária, o Transformer liderou: 43,89 watts por metro quadrado de macro-MAE."
+    ],
+    [
+      420,
+      428,
+      "A diferença para a LSTM foi de aproximadamente 0,30 watt por metro quadrado. Os valores são próximos."
+    ],
+    [
+      428,
+      436,
+      "No mensal de um passo, o Informer liderou: 12,73 watts por metro quadrado."
+    ],
+    [
+      436,
+      442,
+      "Os três modelos são comparados na mesma tarefa, com as condições selecionadas para cada um."
+    ],
+    [
+      442,
+      449,
+      "Em seis meses, o Informer liderou: erro cumulativo de 13,67 watts por metro quadrado."
+    ],
+    [
+      449,
+      456,
+      "Essa rede é diferente da mensal de um passo. O resultado de seis meses permanece exploratório."
+    ],
+    [
+      456,
+      462,
+      "A liderança varia entre localidades. As cores indicam o menor MAE em cada região."
+    ],
+    [
+      462,
+      468,
+      "Nos dois mensais, o Informer lidera cinco localidades, mas as localidades vencedoras mudam."
+    ],
+    [
+      468,
+      476,
+      "Na diária, a LSTM liderou os horizontes menores, até 14 dias. Em 30 dias, o Transformer apresentou a menor média."
+    ],
+    [
+      476,
+      487,
+      "A quantização não teve vantagem universal: cinco combinações melhoraram, quatro pioraram e três mantiveram o controle."
+    ],
+    [
+      487,
+      497,
+      "Em uma análise histórica separada, os dois históricos usaram os mesmos alvos e datas de avaliação."
+    ],
+    [
+      497,
+      507,
+      "O histórico longo teve menor erro em onze dos doze controles contínuos. A exceção foi a LSTM horária."
+    ],
+    [
+      507,
+      513,
+      "Essa associação não isola uma causa: os anos e a normalização também mudaram."
+    ],
+    [
+      513,
+      521,
+      "Os resultados são descritivos, sem significância estatística demonstrada. O horário utilizou uma semente."
+    ],
+    [
+      521,
+      528,
+      "A tarefa de seis meses tem apenas sete origens de teste por localidade e permanece exploratória."
+    ],
+    [
+      528,
+      535,
+      "Há alvos compartilhados entre janelas. A generalização para localidades inéditas não foi avaliada."
+    ],
+    [
+      535,
+      543,
+      "No conjunto avaliado, Transformer liderou os horizontes completos horário e diário; Informer, os mensais."
+    ],
+    [
+      543,
+      550,
+      "Portanto, a escolha depende da tarefa, dentro dos limites deste estudo."
+    ]
+  ],
+  "cues": [
+    {
+      "start": 0.0,
+      "end": 4.4,
+      "text": "GHI é a potência solar recebida por\nunidade de área horizontal."
+    },
+    {
+      "start": 4.4,
+      "end": 10.8,
+      "text": "Aqui, a região mede um metro por um metro.\nA unidade é watt por metro quadrado."
+    },
+    {
+      "start": 10.8,
+      "end": 16.0,
+      "text": "Parte da luz vem diretamente do Sol, e\nparte é espalhada pela atmosfera."
+    },
+    {
+      "start": 16.0,
+      "end": 21.0,
+      "text": "A luz varia durante o dia. À noite, a\nirradiância solar praticamente zera."
+    },
+    {
+      "start": 21.0,
+      "end": 25.2,
+      "text": "A passagem de nuvens modifica a luz\nrecebida e a curva."
+    },
+    {
+      "start": 25.2,
+      "end": 30.0,
+      "text": "O histórico reúne esses padrões diários e\nas variações da atmosfera."
+    },
+    {
+      "start": 30.0,
+      "end": 35.0,
+      "text": "Com esse histórico, tentamos antecipar a\ncontinuação da curva."
+    },
+    {
+      "start": 35.0,
+      "end": 37.195,
+      "text": "Prever o recurso solar pode apoiar o"
+    },
+    {
+      "start": 37.195,
+      "end": 40.0,
+      "text": "planejamento fotovoltaico. Meu objetivo\nfoi..."
+    },
+    {
+      "start": 40.0,
+      "end": 44.0,
+      "text": "comparar LSTM, Transformer e Informer."
+    },
+    {
+      "start": 44.0,
+      "end": 48.0,
+      "text": "Na LSTM, os valores entram em ordem."
+    },
+    {
+      "start": 48.0,
+      "end": 52.0,
+      "text": "A memória muda a cada passo, por portas\naprendidas."
+    },
+    {
+      "start": 52.0,
+      "end": 56.0,
+      "text": "Elas regulam o que reter, acrescentar e\ntransmitir."
+    },
+    {
+      "start": 56.0,
+      "end": 59.0,
+      "text": "O estado final ajuda a prever todo o\nhorizonte."
+    },
+    {
+      "start": 59.0,
+      "end": 63.0,
+      "text": "No Transformer, cada posição reúne valor e\nordem temporal."
+    },
+    {
+      "start": 63.0,
+      "end": 67.0,
+      "text": "Consultas comparam representações com suas\nchaves."
+    },
+    {
+      "start": 67.0,
+      "end": 71.0,
+      "text": "Os pesos calculados orientam a combinação\ndos valores."
+    },
+    {
+      "start": 71.0,
+      "end": 75.0,
+      "text": "Essas representações seguem para a\nprevisão do horizonte."
+    },
+    {
+      "start": 75.0,
+      "end": 79.0,
+      "text": "Em sequências longas, o Informer detalha\nalgumas consultas."
+    },
+    {
+      "start": 79.0,
+      "end": 83.0,
+      "text": "A seleção usa uma estimativa de\nesparsidade."
+    },
+    {
+      "start": 83.0,
+      "end": 87.0,
+      "text": "Em outra etapa, reduz a sequência interna\ndo codificador."
+    },
+    {
+      "start": 87.0,
+      "end": 91.0,
+      "text": "A atenção cruzada permanece completa."
+    },
+    {
+      "start": 91.0,
+      "end": 95.0,
+      "text": "O mesmo histórico e ID entram nos três\nmodelos."
+    },
+    {
+      "start": 95.0,
+      "end": 100.0,
+      "text": "Cada modelo produz diretamente um vetor\npara o mesmo horizonte."
+    },
+    {
+      "start": 100.0,
+      "end": 104.0,
+      "text": "As localidades deste estudo estão nas\nAméricas."
+    },
+    {
+      "start": 104.0,
+      "end": 110.0,
+      "text": "São dez regiões: uma no Brasil, oito nos\nEstados Unidos e uma no México."
+    },
+    {
+      "start": 110.0,
+      "end": 112.44,
+      "text": "A NSRDB usa observações de satélite e"
+    },
+    {
+      "start": 112.44,
+      "end": 116.0,
+      "text": "informações da atmosfera para estimar o\nrecurso solar."
+    },
+    {
+      "start": 116.0,
+      "end": 119.6,
+      "text": "Modelos físicos combinam essas informações"
+    },
+    {
+      "start": 119.6,
+      "end": 125.0,
+      "text": "e produzem estimativas de irradiância para\ncélulas geográficas."
+    },
+    {
+      "start": 125.0,
+      "end": 131.0,
+      "text": "Estas distribuições usam valores reais do\nperíodo de treinamento."
+    },
+    {
+      "start": 131.0,
+      "end": 133.929,
+      "text": "Os perfis mostram os valores positivos. A"
+    },
+    {
+      "start": 133.929,
+      "end": 138.5,
+      "text": "porcentagem de horas com GHI igual a zero\naparece separadamente."
+    },
+    {
+      "start": 138.5,
+      "end": 144.0,
+      "text": "A distribuição varia entre as dez\nlocalidades do conjunto."
+    },
+    {
+      "start": 144.0,
+      "end": 149.0,
+      "text": "Cada região consultada corresponde a uma\ncélula geográfica da base."
+    },
+    {
+      "start": 149.0,
+      "end": 154.0,
+      "text": "A sequência dessas estimativas forma o\nhistórico de GHI usado pelas redes."
+    },
+    {
+      "start": 154.0,
+      "end": 162.0,
+      "text": "Uma entrada é o histórico de GHI: uma\nsequência de valores, organizada no tempo."
+    },
+    {
+      "start": 162.0,
+      "end": 165.048,
+      "text": "A outra entrada identifica a localidade."
+    },
+    {
+      "start": 165.048,
+      "end": 170.0,
+      "text": "Esse número se transforma numa\nrepresentação aprendida pela rede."
+    },
+    {
+      "start": 170.0,
+      "end": 173.545,
+      "text": "Neste experimento, os modelos recebem o"
+    },
+    {
+      "start": 173.545,
+      "end": 178.0,
+      "text": "histórico de GHI e a identificação da\nlocalidade."
+    },
+    {
+      "start": 178.0,
+      "end": 181.029,
+      "text": "Cada modelo compartilha seus parâmetros"
+    },
+    {
+      "start": 181.029,
+      "end": 186.0,
+      "text": "entre as dez localidades. Os dados mudam;\na estrutura é a mesma."
+    },
+    {
+      "start": 186.0,
+      "end": 190.0,
+      "text": "Comparei quatro tarefas, em diferentes\nescalas de tempo."
+    },
+    {
+      "start": 190.0,
+      "end": 195.5,
+      "text": "Na tarefa horária, 336 horas formam duas\nsemanas de histórico."
+    },
+    {
+      "start": 195.5,
+      "end": 201.0,
+      "text": "A rede prevê as próximas 72 horas: três\ndias de irradiância."
+    },
+    {
+      "start": 201.0,
+      "end": 206.5,
+      "text": "Na diária, 365 valores representam um ano\nde histórico."
+    },
+    {
+      "start": 206.5,
+      "end": 209.049,
+      "text": "A saída prevê os próximos trinta dias,"
+    },
+    {
+      "start": 209.049,
+      "end": 212.0,
+      "text": "mantendo a separação entre passado e\nfuturo."
+    },
+    {
+      "start": 212.0,
+      "end": 218.0,
+      "text": "Na mensal de um passo, doze meses ajudam a\nprever o mês seguinte."
+    },
+    {
+      "start": 218.0,
+      "end": 224.0,
+      "text": "Na outra mensal, uma rede própria prevê\nseis meses. Essa análise é exploratória."
+    },
+    {
+      "start": 224.0,
+      "end": 230.0,
+      "text": "As tarefas mensais usam redes distintas:\numa prevê um mês e outra, seis."
+    },
+    {
+      "start": 230.0,
+      "end": 232.727,
+      "text": "Embora seus primeiros valores se refiram"
+    },
+    {
+      "start": 232.727,
+      "end": 236.0,
+      "text": "ao mês seguinte, vêm de treinamentos\ndiferentes."
+    },
+    {
+      "start": 236.0,
+      "end": 243.0,
+      "text": "Treinei inicialmente com dados de 2019 a\n2022."
+    },
+    {
+      "start": 243.0,
+      "end": 250.0,
+      "text": "A validação usa 2023, e o teste, 2024."
+    },
+    {
+      "start": 250.0,
+      "end": 252.17,
+      "text": "A validação orientou a escolha das"
+    },
+    {
+      "start": 252.17,
+      "end": 256.0,
+      "text": "configurações. A normalização respeitou os\ncortes temporais."
+    },
+    {
+      "start": 256.0,
+      "end": 258.759,
+      "text": "A escolha foi feita por tarefa e modelo,"
+    },
+    {
+      "start": 258.759,
+      "end": 262.0,
+      "text": "entre as alternativas do protocolo\nconsolidado."
+    },
+    {
+      "start": 262.0,
+      "end": 273.0,
+      "text": "Após a seleção, reiniciei o treinamento em\n2019–2023. Depois, avaliei em 2024."
+    },
+    {
+      "start": 273.0,
+      "end": 276.15,
+      "text": "Teste retrospectivo: havia exposição"
+    },
+    {
+      "start": 276.15,
+      "end": 280.0,
+      "text": "anterior a 2024, com independência\nlimitada."
+    },
+    {
+      "start": 280.0,
+      "end": 283.0,
+      "text": "Neste estudo, comparamos a precisão das\nprevisões."
+    },
+    {
+      "start": 283.0,
+      "end": 286.0,
+      "text": "Velocidade e memória computacional não\nforam medidas."
+    },
+    {
+      "start": 286.0,
+      "end": 295.0,
+      "text": "Nos três modelos, comparei entradas\ncontínuas com 64, 128 ou 256 níveis."
+    },
+    {
+      "start": 295.0,
+      "end": 301.0,
+      "text": "Quantizar aproxima cada amplitude de um\ndos níveis disponíveis."
+    },
+    {
+      "start": 301.0,
+      "end": 307.0,
+      "text": "Mais níveis reduzem os degraus. Os\ninstantes da série são mantidos."
+    },
+    {
+      "start": 307.0,
+      "end": 309.929,
+      "text": "Somente o GHI passa pela transformação; a"
+    },
+    {
+      "start": 309.929,
+      "end": 313.0,
+      "text": "identificação da localidade segue\nseparada."
+    },
+    {
+      "start": 313.0,
+      "end": 320.0,
+      "text": "Os valores são reconstruídos em float32.\nPesos, alvos e saídas continuam contínuos."
+    },
+    {
+      "start": 320.0,
+      "end": 324.0,
+      "text": "Nas variantes quantizadas, o clipping vem\nantes do arredondamento."
+    },
+    {
+      "start": 324.0,
+      "end": 327.0,
+      "text": "O contraste reúne os dois efeitos."
+    },
+    {
+      "start": 327.0,
+      "end": 331.0,
+      "text": "O controle contínuo mantém os valores sem\nclipping."
+    },
+    {
+      "start": 331.0,
+      "end": 335.061,
+      "text": "Para cada modelo e tarefa, a condição"
+    },
+    {
+      "start": 335.061,
+      "end": 340.0,
+      "text": "escolhida em 2023 segue para o teste de\n2024."
+    },
+    {
+      "start": 340.0,
+      "end": 342.33,
+      "text": "Para comparar precisão, usamos"
+    },
+    {
+      "start": 342.33,
+      "end": 348.0,
+      "text": "principalmente o erro absoluto médio, o\nMAE. Ele mantém a unidade do GHI."
+    },
+    {
+      "start": 348.0,
+      "end": 351.326,
+      "text": "Em cada instante, tomamos a distância"
+    },
+    {
+      "start": 351.326,
+      "end": 356.0,
+      "text": "entre previsão e referência, sem\nconsiderar o sinal."
+    },
+    {
+      "start": 356.0,
+      "end": 361.0,
+      "text": "Neste exemplo, cinco distâncias são\nreunidas para calcular a média."
+    },
+    {
+      "start": 361.0,
+      "end": 367.0,
+      "text": "A média deste exemplo é vinte e oito watts\npor metro quadrado."
+    },
+    {
+      "start": 367.0,
+      "end": 370.431,
+      "text": "Primeiro calculamos o erro de cada"
+    },
+    {
+      "start": 370.431,
+      "end": 378.0,
+      "text": "localidade. Depois, as dez localidades\nrecebem o mesmo peso na macro média."
+    },
+    {
+      "start": 378.0,
+      "end": 381.67,
+      "text": "Nos horizontes cumulativos, entram todos"
+    },
+    {
+      "start": 381.67,
+      "end": 388.0,
+      "text": "os passos até o limite. Em 72 horas, o\nerro reúne três dias inteiros."
+    },
+    {
+      "start": 388.0,
+      "end": 395.0,
+      "text": "Compare os modelos dentro de cada tarefa:\nescalas e alvos são diferentes."
+    },
+    {
+      "start": 395.0,
+      "end": 404.0,
+      "text": "No horário, o Transformer teve o menor\nmacro-MAE: 53,21 watts por metro quadrado."
+    },
+    {
+      "start": 404.0,
+      "end": 407.2,
+      "text": "A vantagem sobre a LSTM foi de"
+    },
+    {
+      "start": 407.2,
+      "end": 412.0,
+      "text": "aproximadamente 0,32 watt por metro\nquadrado."
+    },
+    {
+      "start": 412.0,
+      "end": 420.0,
+      "text": "Na diária, o Transformer liderou: 43,89\nwatts por metro quadrado de macro-MAE."
+    },
+    {
+      "start": 420.0,
+      "end": 422.4,
+      "text": "A diferença para a LSTM foi de"
+    },
+    {
+      "start": 422.4,
+      "end": 428.0,
+      "text": "aproximadamente 0,30 watt por metro\nquadrado. Os valores são próximos."
+    },
+    {
+      "start": 428.0,
+      "end": 436.0,
+      "text": "No mensal de um passo, o Informer liderou:\n12,73 watts por metro quadrado."
+    },
+    {
+      "start": 436.0,
+      "end": 438.6,
+      "text": "Os três modelos são comparados na mesma"
+    },
+    {
+      "start": 438.6,
+      "end": 442.0,
+      "text": "tarefa, com as condições selecionadas para\ncada um."
+    },
+    {
+      "start": 442.0,
+      "end": 445.25,
+      "text": "Em seis meses, o Informer liderou: erro"
+    },
+    {
+      "start": 445.25,
+      "end": 449.0,
+      "text": "cumulativo de 13,67 watts por metro\nquadrado."
+    },
+    {
+      "start": 449.0,
+      "end": 451.785,
+      "text": "Essa rede é diferente da mensal de um"
+    },
+    {
+      "start": 451.785,
+      "end": 456.0,
+      "text": "passo. O resultado de seis meses permanece\nexploratório."
+    },
+    {
+      "start": 456.0,
+      "end": 462.0,
+      "text": "A liderança varia entre localidades. As\ncores indicam o menor MAE em cada região."
+    },
+    {
+      "start": 462.0,
+      "end": 464.733,
+      "text": "Nos dois mensais, o Informer lidera cinco"
+    },
+    {
+      "start": 464.733,
+      "end": 468.0,
+      "text": "localidades, mas as localidades vencedoras\nmudam."
+    },
+    {
+      "start": 468.0,
+      "end": 470.786,
+      "text": "Na diária, a LSTM liderou os horizontes"
+    },
+    {
+      "start": 470.786,
+      "end": 476.0,
+      "text": "menores, até 14 dias. Em 30 dias, o\nTransformer apresentou a menor média."
+    },
+    {
+      "start": 476.0,
+      "end": 479.949,
+      "text": "A quantização não teve vantagem universal:"
+    },
+    {
+      "start": 479.949,
+      "end": 487.0,
+      "text": "cinco combinações melhoraram, quatro\npioraram e três mantiveram o controle."
+    },
+    {
+      "start": 487.0,
+      "end": 491.33,
+      "text": "Em uma análise histórica separada, os dois"
+    },
+    {
+      "start": 491.33,
+      "end": 497.0,
+      "text": "históricos usaram os mesmos alvos e datas\nde avaliação."
+    },
+    {
+      "start": 497.0,
+      "end": 501.1,
+      "text": "O histórico longo teve menor erro em onze"
+    },
+    {
+      "start": 501.1,
+      "end": 507.0,
+      "text": "dos doze controles contínuos. A exceção\nfoi a LSTM horária."
+    },
+    {
+      "start": 507.0,
+      "end": 513.0,
+      "text": "Essa associação não isola uma causa: os\nanos e a normalização também mudaram."
+    },
+    {
+      "start": 513.0,
+      "end": 515.615,
+      "text": "Os resultados são descritivos, sem"
+    },
+    {
+      "start": 515.615,
+      "end": 521.0,
+      "text": "significância estatística demonstrada. O\nhorário utilizou uma semente."
+    },
+    {
+      "start": 521.0,
+      "end": 523.8,
+      "text": "A tarefa de seis meses tem apenas sete"
+    },
+    {
+      "start": 523.8,
+      "end": 528.0,
+      "text": "origens de teste por localidade e\npermanece exploratória."
+    },
+    {
+      "start": 528.0,
+      "end": 530.887,
+      "text": "Há alvos compartilhados entre janelas. A"
+    },
+    {
+      "start": 530.887,
+      "end": 535.0,
+      "text": "generalização para localidades inéditas\nnão foi avaliada."
+    },
+    {
+      "start": 535.0,
+      "end": 538.154,
+      "text": "No conjunto avaliado, Transformer liderou"
+    },
+    {
+      "start": 538.154,
+      "end": 543.0,
+      "text": "os horizontes completos horário e diário;\nInformer, os mensais."
+    },
+    {
+      "start": 543.0,
+      "end": 550.0,
+      "text": "Portanto, a escolha depende da tarefa,\ndentro dos limites deste estudo."
+    }
+  ],
+  "chapters": [
+    {
+      "name": "metodologia",
+      "start": 224,
+      "duration": 62
+    },
+    {
+      "name": "quantizacao",
+      "start": 286,
+      "duration": 54
+    },
+    {
+      "name": "metricas",
+      "start": 340,
+      "duration": 48
+    },
+    {
+      "name": "resultados",
+      "start": 388,
+      "duration": 88
+    },
+    {
+      "name": "interpretacao",
+      "start": 476,
+      "duration": 74
+    }
+  ],
+  "narration_recorded": false,
+  "camera_footage_included": false,
+  "animated_title_cards_replacing_personal_footage": false
+}

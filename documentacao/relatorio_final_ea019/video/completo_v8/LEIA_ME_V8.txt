@@ -1,0 +1,50 @@
+VÍDEO COMPLETO — V8
+
+São 9min10s de animação. Acrescentando 20 segundos da sua apresentação antes
+e 20 segundos do seu encerramento depois, a duração prevista é 9min50s.
+O vídeo não tem áudio: está preparado para receber a sua narração.
+
+ARQUIVOS PARA ASSISTIR
+Video_TCC_GHI_Completo_com_legendas_v8.mp4 — Full HD, 30 quadros por segundo.
+Video_TCC_GHI_Completo_sem_legendas_v8.mp4 — mesmos gráficos e textos das cenas,
+mas sem as legendas da narração, para permitir ajustes na edição.
+Video_TCC_GHI_Completo_para_celular_v8.mp4 — cópia menor, 720p, com legendas.
+assistir_video_completo_v8.html — player local com atalhos por assunto.
+Na raiz do projeto, ASSISTIR_VIDEO_COMPLETO_V8.cmd abre esse player.
+
+NARRAÇÃO
+Falas_Video_Completo_v8.txt contém o texto e os intervalos para gravar.
+Legendas_Video_Completo_v8.srt contém as mesmas falas já divididas em legendas.
+Grave por trecho, usando os intervalos como referência e incluindo as pausas.
+Os tempos começam no início da animação, sem os seus 20 segundos de abertura.
+Se importar o SRT sobre a versão sem legendas e colocar sua abertura antes,
+desloque todas as legendas em 20 segundos. Na versão com legendas, elas já
+estão incorporadas à imagem e acompanham o clipe automaticamente.
+
+CAPÍTULOS DA ANIMAÇÃO
+0:00 — Sol, GHI e aplicação no planejamento energético.
+0:40 — LSTM, Transformer e Informer; mesma entrada para comparação.
+1:40 — Localidades, NSRDB e dados.
+2:34 — Entradas, preparação temporal e quatro tarefas de previsão.
+3:44 — Protocolo experimental e separação de treino, validação e teste.
+4:46 — Quantização da entrada e condições comparadas.
+5:40 — MAE, média entre localidades e erro cumulativo.
+6:28 — Resultados por tarefa, localidades e horizontes.
+7:56 — Quantização, histórico, limites da avaliação e síntese.
+9:10 — Fim da animação; ponto de entrada para o seu encerramento.
+
+CONTEÚDO E REFERÊNCIAS
+Os primeiros 3min44s aprovados na V7 são reaproveitados sem nova renderização.
+Os números dos resultados vêm do relatório e dos CSVs do projeto, registrados
+em fontes_resultados_v8.json e na pasta referencias. As representações dos
+modelos e os exemplos didáticos não substituem as medições do experimento.
+A fábrica final é uma representação genérica; não indica geração, demanda
+ou retorno econômico medidos. A comparação avalia a precisão da previsão.
+
+REVISÃO
+verificacao_video_v8.json registra duração, resolução, contagem de quadros,
+decodificação completa, hashes e amostragem visual dos arquivos exportados.
+verificacao_preservacao_prefixo_v8.json registra a comparação dos primeiros
+224 segundos com a V7, quadro a quadro, nas duas versões Full HD.
+audit_delivery_v8.json registra a correspondência entre fontes aprovadas,
+capítulos renderizados e arquivos entregues.
