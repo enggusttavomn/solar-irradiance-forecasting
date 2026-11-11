@@ -41,6 +41,19 @@ não integra o snapshot público; um clone do repositório, por si só, não per
 recalcular as métricas do artigo a partir das previsões individuais. Não copie
 números de diretórios históricos para artigos ou apresentações.
 
+## Revisão rápida do projeto
+
+| O que revisar | Caminho |
+|---|---|
+| Implementação dos modelos | [codigo_fonte/modelos/](codigo_fonte/modelos/) |
+| Protocolo e execução dos experimentos | [codigo_fonte/experimentos/](codigo_fonte/experimentos/) |
+| Testes e critérios de validação | [testes/](testes/) |
+| Contexto e resultados documentados | [artigos/revista_unificado/README.md](artigos/revista_unificado/README.md) |
+
+É possível ler o código, os testes e os manuscritos no GitHub. O pacote
+completo de previsões da avaliação atual permanece local, conforme detalhado
+abaixo; o clone público não permite recalcular todas as métricas do artigo.
+
 ## Comece por aqui
 
 Abra o [mapa do projeto](MAPA_DO_PROJETO.md) ou o
